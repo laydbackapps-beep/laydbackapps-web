@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Business Automation Audit — Questionnaire | Lay'd Back</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0f1115; color:#e8eaf0; font-family:-apple-system,'Segoe UI',Roboto,sans-serif; line-height:1.6; }
+  .wrap { max-width:720px; margin:0 auto; padding:48px 20px; }
+  .brand { color:#8b93a3; font-size:13px; letter-spacing:.5px; margin-bottom:28px; }
+  .brand b { color:#c4fb24; }
+  h1 { font-size:28px; font-weight:700; line-height:1.25; margin-bottom:10px; }
+  .sub { color:#8b93a3; font-size:15px; margin-bottom:32px; }
+  .card { background:#171a21; border:1px solid #2a2f3a; border-radius:12px; padding:24px; margin-bottom:16px; }
+  label { display:block; font-size:14px; color:#e8eaf0; margin-bottom:6px; font-weight:600; }
+  .hint { font-size:12px; color:#8b93a3; margin-bottom:14px; }
+  textarea, input { width:100%; background:#0b0e13; border:1px solid #2a2f3a; border-radius:8px;
+    color:#e8eaf0; padding:12px; font-size:14px; font-family:inherit; margin-bottom:4px; }
+  textarea { min-height:110px; resize:vertical; }
+  textarea:focus, input:focus { outline:none; border-color:#c4fb24; }
+  .err { color:#ff6b6b; font-size:14px; margin-bottom:16px; }
+  button { background:#c4fb24; color:#0f1115; border:none; border-radius:8px;
+    padding:14px 28px; font-size:15px; font-weight:700; cursor:pointer; width:100%; }
+  button:disabled { opacity:.6; cursor:wait; }
+  .ok { text-align:center; padding:48px 0; }
+  .ok h1 { color:#c4fb24; }
+  .foot { text-align:center; color:#5c6670; font-size:12.5px; padding:24px 0; }
+  .foot a { color:#9aa3ad; }
+</style>
+<!-- LB-SEO-META v1 -->
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://laydbackapps.com/audit/">
+<meta property="og:url" content="https://laydbackapps.com/audit/">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image" content="https://laydbackapps.com/assets/laydback-logo-512.png">
+<meta property="og:image:alt" content="Lay'd Back Apps — AI automation for Australian trades and small business">
+<meta name="twitter:card" content="summary_large_image">
+<!-- /LB-SEO-META v1 -->
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">LAY'D BACK / <b>BUSINESS AUTOMATION AUDIT</b></div>
+  <div id="app">
+    <h1>Loading your questionnaire…</h1>
+  </div>
+  <div class="foot">© Lay'd Back · laydbackapps.com · Questions? heath.penfold@laydbackapps.com</div>
+</div>
+<script id="laydback-api-loader">
+  // Resolves the live API base at boot: baked fallback first, then the GitHub
+  // gist pointer (updated by the keeper within ~1 min of a tunnel rotation).
+  // This page lives at a STABLE url (laydbackapps.com/audit/) so email links
+  // never break when the tunnel rotates. 2026-09-29.
+  (function () {
+    var BAKED = '';
+    window.__LAYDBACK_API_BASE = BAKED;
+    try {
+      fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+        .then(function (r) { return r.text(); })
+        .then(function (t) {
+          t = (t || '').trim();
+          if (/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(t) && !/^https:\/\/api\./i.test(t)) {
+            window.__LAYDBACK_API_BASE = t;
+          }
+        })
+        .catch(function () {})
+        .finally(function () { window.__LB_READY && window.__LB_READY(); });
+    } catch (e) { window.__LB_READY && window.__LB_READY(); }
+    setTimeout(function () { window.__LB_READY && window.__LB_READY(); }, 2500);
+  })();
+</script>
+<script>
+(function () {
+  var app = document.getElementById('app');
+  var ready = false;
+  window.__LB_READY = function () { if (ready) return; ready = true; boot(); };
+  function qs(k) {
+    var m = new RegExp('[?&]' + k + '=([^&]+)').exec(location.search);
+    return m ? decodeURIComponent(m[1]) : '';
+  }
+  var token = qs('e') || qs('token');
+  function page(html) { app.innerHTML = html; }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function boot() {
+    if (!token || !/^[0-9a-f-]{36}$/i.test(token)) {
+      page('<h1>Link not recognised</h1><p class="sub">This audit link is invalid or has been changed. If you reached this page by accident, no problem — you can start here instead.</p>' +
+        '<p style="margin:8px 0 22px"><a href="/start/" style="display:inline-block;background:#c4fb24;color:#0f1115;font-weight:700;text-decoration:none;padding:13px 24px;border-radius:8px">Get your free automation plan &rarr;</a></p>' +
+        '<p class="sub">Already booked an audit? Re-check the link from your email, or contact heath.penfold@laydbackapps.com and we will resend it.</p>');
+      return;
+    }
+    page('<h1>Tell us where repetitive work is slowing the team.</h1>' +
+      '<p class="sub">Answer with the real process, tools, and handoffs. The detail helps us make your review practical. Your written plan arrives within 48 hours of this form.</p>' +
+      '<form id="f">' +
+      '<div class="card">' +
+      '<label>Your name</label><input id="contact_name" type="text" placeholder="Who should we address the plan to?">' +
+      '<label style="margin-top:16px">Business name</label><input id="business_name" type="text" placeholder="Your business or organisation">' +
+      '<label style="margin-top:16px">Contact email *</label><input id="contact_email" type="email" required placeholder="Where the plan goes">' +
+      '<label style="margin-top:16px">Phone</label><input id="phone" type="tel" placeholder="For the 30-minute follow-up call">' +
+      '</div>' +
+      '<div class="card"><label>Describe your current process *</label>' +
+      '<div class="hint">Walk us through how the work actually happens today — who receives what, what tools are involved, where things get passed between people.</div>' +
+      '<textarea id="current_process" required></textarea></div>' +
+      '<div class="card"><label>What would \u2018fixed\u2019 look like? *</label>' +
+      '<div class="hint">If this problem disappeared, what would your team be doing instead?</div>' +
+      '<textarea id="fixed_looks_like" required></textarea></div>' +
+      '<div class="card"><label>What\u2019s your biggest pain point? *</label>' +
+      '<div class="hint">The one thing that, if it stopped hurting, would matter most.</div>' +
+      '<textarea id="pain_point" required></textarea></div>' +
+      '<div class="card"><label>What tools does the team use?</label>' +
+      '<div class="hint">Email, spreadsheets, job software, accounting, CRM — anything the work touches.</div>' +
+      '<textarea id="tools"></textarea></div>' +
+      '<div class="card"><label>Anything else we should know?</label><textarea id="extra"></textarea></div>' +
+      '<button id="btn" type="submit">Submit my audit details</button>' +
+      '</form>');
+    document.getElementById('f').addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      var btn = document.getElementById('btn');
+      btn.disabled = true; btn.textContent = 'Submitting…';
+      var g = function (id) { return document.getElementById(id).value.trim(); };
+      var answers = {
+        contact_name: g('contact_name'), business_name: g('business_name'),
+        contact_email: g('contact_email'), phone: g('phone'),
+        current_process: g('current_process'), fixed_looks_like: g('fixed_looks_like'),
+        pain_point: g('pain_point'), tools: g('tools'), extra: g('extra'),
+      };
+      try {
+        var r = await fetch((window.__LAYDBACK_API_BASE || '') + '/functions/v1/audit-intake', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token: token, answers: answers })
+        });
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        page('<div class="ok"><h1>Received.</h1><p class="sub" style="margin-top:12px">Your audit is underway. Your written plan arrives within 48 hours at ' + esc(answers.contact_email) + '.</p></div>');
+      } catch (e) {
+        btn.disabled = false; btn.textContent = 'Submit my audit details';
+        alert('Submission failed — please try again, or email heath.penfold@laydbackapps.com.');
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>

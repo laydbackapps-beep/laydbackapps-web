@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free Automation Plan for Your Trade Business — Lay'd Back</title>
+<meta name="description" content="We map the calls you miss, the quotes that go cold and the admin that eats your nights — then hand you a practical automation plan in 48 hours. Free, no obligation.">
+<meta property="og:title" content="Free automation plan for your trade business — Lay'd Back">
+<meta property="og:description" content="Missed calls, cold quotes, endless admin. We find them and automate them. Your written plan in 48 hours — free.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://laydbackapps.com/start/">
+<link rel="icon" type="image/png" href="/assets/laydback-logo-256.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0f1115; --card:#171a21; --card2:#1c2029; --line:#2a2f3a;
+    --ink:#e8eaf0; --mut:#9aa3b5; --lime:#c4fb24; --lime-ink:#1a200a;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--ink); font-family:'Outfit',-apple-system,'Segoe UI',sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 22px; }
+  .mono { font-family:'IBM Plex Mono',monospace; }
+  h1,h2,h3 { letter-spacing:-0.01em; line-height:1.15; }
+
+  /* top bar */
+  .top { display:flex; align-items:center; justify-content:space-between; padding:20px 0; }
+  .brand { display:flex; align-items:center; gap:10px; font-family:'Syne',sans-serif; font-weight:700; letter-spacing:.02em; }
+  .dot { width:26px; height:26px; border-radius:8px; background:var(--lime); color:var(--lime-ink); display:grid; place-items:center; font-weight:800; font-size:14px; }
+  .loc { font-size:11px; letter-spacing:.14em; color:var(--mut); border:1px solid var(--line); border-radius:99px; padding:6px 12px; }
+
+  /* hero */
+  .hero { display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center; padding:48px 0 26px; }
+  .eyebrow { color:var(--lime); font-size:12px; letter-spacing:.18em; text-transform:uppercase; margin-bottom:16px; }
+  .eyebrow::before { content:"— "; }
+  h1 { font-size:clamp(34px,5.2vw,56px); font-weight:800; }
+  h1 em { font-style:normal; color:var(--lime); }
+  .sub { color:var(--mut); font-size:17px; margin-top:18px; max-width:56ch; }
+  .cta { display:inline-flex; align-items:center; gap:10px; background:var(--lime); color:var(--lime-ink);
+    font-weight:800; font-size:16px; border:none; border-radius:12px; padding:17px 30px; cursor:pointer;
+    margin-top:26px; text-decoration:none; transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 0 0 0 rgba(196,251,36,0); }
+  .cta:hover { transform:translateY(-1px); box-shadow:0 8px 30px -8px rgba(196,251,36,.45); }
+  .micro { color:var(--mut); font-size:13px; margin-top:12px; }
+
+  /* phone visual */
+  .phonebox { position:relative; justify-self:center; }
+  .phone { width:min(300px,72vw); border:1px solid var(--line); border-radius:30px; padding:10px; background:#0b0e13;
+    box-shadow:0 30px 80px -30px rgba(0,0,0,.85), 0 0 0 1px rgba(196,251,36,.06); }
+  .phone img { width:100%; display:block; border-radius:20px; }
+  .chip { position:absolute; background:var(--card2); border:1px solid var(--line); color:var(--ink); font-size:12px;
+    border-radius:99px; padding:8px 14px; box-shadow:0 12px 32px -12px rgba(0,0,0,.8); white-space:nowrap; }
+  .chip b { color:var(--lime); font-weight:700; }
+  .chip1 { top:12%; left:-16px; } .chip2 { bottom:16%; right:-20px; }
+
+  /* stats */
+  .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:34px 0 8px; }
+  .stat { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px 22px; }
+  .stat b { display:block; font-family:'Syne',sans-serif; font-size:26px; font-weight:700; color:var(--lime); }
+  .stat span { color:var(--mut); font-size:13.5px; }
+
+  /* sections */
+  section { padding:64px 0 0; }
+  .kicker { font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--mut); margin-bottom:12px; }
+  h2 { font-size:clamp(26px,3.6vw,38px); font-weight:800; }
+  .lead { color:var(--mut); margin-top:12px; max-width:62ch; font-size:16px; }
+
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px; transition:border-color .2s ease, transform .2s ease; }
+  .card:hover { border-color:rgba(196,251,36,.4); transform:translateY(-2px); }
+  .card h3 { font-size:18.5px; font-weight:700; margin:14px 0 10px; }
+  .card p { color:var(--mut); font-size:14.5px; }
+  .card .money { color:var(--ink); font-size:14px; border-top:1px dashed var(--line); margin-top:16px; padding-top:14px; }
+  .card .money b { color:var(--lime); }
+  .ico { width:40px; height:40px; border-radius:10px; background:rgba(196,251,36,.09); border:1px solid rgba(196,251,36,.25); display:grid; place-items:center; font-size:19px; }
+
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; counter-reset:step; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px; position:relative; }
+  .step::before { counter-increment:step; content:"0" counter(step); font-family:'Syne',sans-serif; font-weight:800;
+    font-size:40px; color:rgba(196,251,36,.22); position:absolute; top:14px; right:20px; }
+  .step h3 { font-size:17px; font-weight:700; margin-bottom:8px; }
+  .step p { color:var(--mut); font-size:14.5px; }
+
+  /* showcase */
+  .showcase { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:34px; }
+  .shot { border:1px solid var(--line); border-radius:20px; overflow:hidden; background:#0b0e13; }
+  .shot img { width:100%; display:block; aspect-ratio:390/560; object-fit:cover; object-position:top; transition:transform .5s ease; }
+  .shot:hover img { transform:scale(1.025); }
+  .shot .cap { padding:12px 16px; font-size:12.5px; color:var(--mut); border-top:1px solid var(--line); }
+
+  /* faq */
+  details { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 22px; margin-top:12px; }
+  details summary { cursor:pointer; font-weight:600; font-size:15.5px; list-style:none; display:flex; justify-content:space-between; align-items:center; }
+  details summary::-webkit-details-marker { display:none; }
+  details summary::after { content:"+"; color:var(--lime); font-size:20px; font-weight:400; margin-left:16px; }
+  details[open] summary::after { content:"–"; }
+  details p { color:var(--mut); font-size:14.5px; margin-top:12px; max-width:80ch; }
+
+  /* form */
+  .formwrap { background:linear-gradient(180deg, var(--card2), var(--card)); border:1px solid var(--line); border-radius:22px; padding:38px; margin-top:34px; }
+  .formgrid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:24px; }
+  .field { display:flex; flex-direction:column; }
+  .field.full { grid-column:1 / -1; }
+  label { font-size:13px; font-weight:600; margin-bottom:7px; color:var(--ink); }
+  input { background:#0b0e13; border:1px solid var(--line); border-radius:10px; color:var(--ink);
+    padding:14px; font-size:15px; font-family:inherit; }
+  input:focus { outline:none; border-color:var(--lime); }
+  .consent { display:flex; gap:10px; align-items:flex-start; margin-top:16px; color:var(--mut); font-size:13px; }
+  .consent input { width:auto; margin-top:2px; }
+  .submit { width:100%; margin-top:20px; justify-content:center; }
+  .formerr { color:#ff6b6b; font-size:14px; margin-top:14px; display:none; }
+  .ok { display:none; text-align:center; padding:40px 10px; }
+  .ok h2 { color:var(--lime); }
+  .ok p { color:var(--mut); margin-top:12px; }
+  .ok a { color:var(--lime); }
+
+  /* sticky mobile CTA */
+  .sticky { position:fixed; left:0; right:0; bottom:0; z-index:40; padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    background:rgba(15,17,21,.92); backdrop-filter:blur(10px); border-top:1px solid var(--line);
+    display:none; }
+  .sticky .cta { width:100%; justify-content:center; margin:0; }
+
+  footer { padding:56px 0 90px; color:var(--mut); font-size:13px; display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+  footer a { color:var(--mut); }
+
+  /* reveal */
+  .rv { opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+  .rv.in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity:1; transform:none; transition:none; } html { scroll-behavior:auto; } }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns:1fr; padding-top:26px; gap:36px; }
+    .chip1 { left:0; } .chip2 { right:0; }
+    .cards, .steps, .showcase, .stats { grid-template-columns:1fr; }
+    .stats { grid-template-columns:repeat(3,1fr); gap:8px; }
+    .stat { padding:14px 12px; } .stat b { font-size:19px; } .stat span { font-size:11.5px; }
+    .formgrid { grid-template-columns:1fr; }
+    .formwrap { padding:26px 20px; }
+    .sticky { display:block; }
+    footer { padding-bottom:110px; }
+  }
+</style>
+<!-- LB-SEO-SCHEMA v1 (2026-10-07) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://laydbackapps.com/#business",
+  "name": "Lay'd Back Apps",
+  "url": "https://laydbackapps.com",
+  "email": "hello@laydbackapps.com",
+  "description": "Australian AI automation company. We audit how your business actually runs, find where hours and money leak, then build and deploy the automations that stop it — so the owner can finally be laydback.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Newcastle",
+    "addressRegion": "NSW",
+    "addressCountry": "AU"
+  },
+  "areaServed": [
+    "Newcastle NSW",
+    "Hunter Valley NSW",
+    "Central Coast NSW",
+    "Australia"
+  ],
+  "knowsAbout": [
+    "AI automation",
+    "Business process automation",
+    "Workflow automation",
+    "Forward deployment automation",
+    "Business automation audit"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Business automation audit"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Forward deployment automation (30/60/90 rollout)"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Scheduling and quoting automation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Customer follow-up and lead nurture automation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Invoicing and intake automation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SOP and reporting automation"
+        }
+      }
+    ]
+  }
+}
+</script>
+<!-- /LB-SEO-SCHEMA v1 -->
+<!-- LB-SEO-CRUMB v1 -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://laydbackapps.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Start here",
+   "item": "https://laydbackapps.com/start/"
+  }
+ ]
+}
+</script>
+<!-- /LB-SEO-CRUMB v1 -->
+<!-- LB-SEO-META v1 -->
+<link rel="canonical" href="https://laydbackapps.com/start/">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image" content="https://laydbackapps.com/assets/laydback-logo-512.png">
+<meta property="og:image:alt" content="Lay'd Back Apps — AI automation for Australian trades and small business">
+<meta name="twitter:card" content="summary_large_image">
+<!-- /LB-SEO-META v1 -->
+</head>
+<body>
+
+<div class="wrap">
+  <div class="top">
+    <div class="brand"><span class="dot">L</span> LAY'D BACK</div>
+    <div class="loc mono">NEWCASTLE · AUSTRALIA</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="eyebrow mono">AI automation for Australian trades &amp; service businesses</div>
+      <h1>You're on the tools.<br>Your business should be <em>running itself.</em></h1>
+      <p class="sub">We map the calls you miss, the quotes that go cold and the admin that eats your nights — then hand you a practical automation plan to fix it. Written for your business, in 48 hours. Free.</p>
+      <a class="cta" href="#start">Get my free plan <span>→</span></a>
+      <div class="micro">Free written plan in 48 hours &nbsp;·&nbsp; no obligation &nbsp;·&nbsp; takes 5 minutes</div>
+    </div>
+    <div class="phonebox rv">
+      <div class="phone"><img src="assets/shot-tuan.png" alt="A website built overnight for a Sydney concreter"></div>
+      <div style="text-align:center;color:var(--mut);font-size:12.5px;margin-top:12px;">Real build, live right now — one of 400+.</div>
+      <div class="chip chip1"><b>✓</b> Call answered &amp; booked</div>
+      <div class="chip chip2"><b>✓</b> Quote sent, follow-up running</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats rv">
+    <div class="stat"><b>400+</b><span>local business sites built overnight — with capture &amp; follow-up on top</span></div>
+    <div class="stat"><b>48h</b><span>from your questionnaire to a written plan</span></div>
+    <div class="stat"><b>24/7</b><span>AI receptionist — every call answered</span></div>
+  </div>
+
+  <!-- WHAT WE AUTOMATE -->
+  <section>
+    <div class="kicker mono">What we automate</div>
+    <h2>Where the money quietly walks out</h2>
+    <p class="lead">Every trade business leaks jobs in the same three places. We find yours — then close them.</p>
+    <div class="cards rv">
+      <div class="card">
+        <div class="ico">📞</div>
+        <h3>Never miss another job</h3>
+        <p>An AI receptionist answers every call — after hours, weekends, while you're on the machine — captures the details and books it straight in.</p>
+        <div class="money">One missed call a day ≈ <b>$1,000+ a week</b> quietly gone.</div>
+      </div>
+      <div class="card">
+        <div class="ico">📨</div>
+        <h3>Quotes that chase themselves</h3>
+        <p>Every quote followed up automatically until it's a yes or a no — without you remembering, nagging or losing track.</p>
+        <div class="money">A followed-up quote closes <b>3–5× more often</b> than a "sent it and forgot".</div>
+      </div>
+      <div class="card">
+        <div class="ico">🗂️</div>
+        <h3>Your admin, off your plate</h3>
+        <p>Invoices, job sheets, replies and reminders — drafted and sent for you, so evenings stop disappearing into paperwork.</p>
+        <div class="money">Most owners hand back <b>5–10 hours a week</b>. That's your weekends.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="kicker mono">How it works</div>
+    <h2>Three steps. That's the whole process.</h2>
+    <div class="steps rv">
+      <div class="step"><h3>Answer the questionnaire</h3><p>Five minutes, real detail. How the work actually happens today — the handoffs, the tools, the leaks.</p></div>
+      <div class="step"><h3>Get your written plan</h3><p>Within 48 hours: every place your business loses time or money, and the exact automation that fixes it.</p></div>
+      <div class="step"><h3>30-minute walkthrough</h3><p>We map the rollout together — practical, prioritised, and priced so it pays for itself.</p></div>
+    </div>
+  </section>
+
+  <!-- SHOWCASE -->
+  <section>
+    <div class="kicker mono">Built by us</div>
+    <h2>Built overnight, live right now</h2>
+    <p class="lead">The same team that maps your automation builds local business websites every night. Here's tonight's work.</p>
+    <div class="showcase rv">
+      <div class="shot"><img src="assets/shot-dmr.png" alt="DMR Roof Restorations website"><div class="cap">DMR Roof Restorations — built &amp; live</div></div>
+      <div class="shot"><img src="assets/shot-bolt.png" alt="Bolt Building Group website"><div class="cap">Bolt Building Group — built &amp; live</div></div>
+      <div class="shot"><img src="assets/shot-tuan.png" alt="Tuan Concrete website"><div class="cap">Tuan Concrete — built &amp; live</div></div>
+    </div>
+  </section>
+
+  <!-- VSL slot: auto-appears when assets/vsl.mp4 lands (see boot script) -->
+  <section id="vslslot" hidden></section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="kicker mono">Straight answers</div>
+    <h2>The things everyone asks</h2>
+    <details><summary>What does it cost?</summary><p>The plan is free — you only pay if we build together. And the audit fee is fully credited toward your build, so the review effectively pays for itself. If we can't find recoverable time or money, you shouldn't be paying — and you won't be.</p></details>
+    <details><summary>I don't have time to set this up.</summary><p>You don't set anything up. We build it, connect it and test it — you approve each step on one 30-minute call. Most owners' total time contribution is under an hour.</p></details>
+    <details><summary>We already have a website.</summary><p>Good — this isn't a website pitch. It's about what happens around your website: calls, quotes, follow-ups and admin. (And if your site is doing nothing for you, we'll tell you straight, in writing.)</p></details>
+    <details><summary>Is this just AI spam?</summary><p>No. Everything is trained on your business, speaks to your customers the way you would, and you see and approve every message before it ever runs. You can switch things on and off line by line.</p></details>
+  </section>
+
+  <!-- FORM -->
+  <section id="start">
+    <div class="kicker mono">Start here</div>
+    <h2>Get your free automation plan</h2>
+    <p class="lead">Tell us who you are — the questionnaire arrives by email and takes about five minutes. From there: your plan in 48 hours, walkthrough call within the week.</p>
+
+    <div class="formwrap rv">
+      <form id="f" novalidate>
+        <div class="formgrid">
+          <div class="field"><label for="name">Your name *</label><input id="name" type="text" autocomplete="name" required placeholder="First and last name"></div>
+          <div class="field"><label for="business">Business name</label><input id="business" type="text" autocomplete="organization" placeholder="What's the business called?"></div>
+          <div class="field"><label for="email">Email *</label><input id="email" type="email" autocomplete="email" required placeholder="Where the plan goes"></div>
+          <div class="field"><label for="phone">Mobile</label><input id="phone" type="tel" autocomplete="tel" placeholder="For the walkthrough call"></div>
+          <div class="field full consent">
+            <input id="consent" type="checkbox" checked>
+            <label for="consent" style="font-weight:400;">Yes, email me my questionnaire and plan. No spam, no lists — just this.</label>
+          </div>
+        </div>
+        <button class="cta submit" id="btn" type="submit">Send me my questionnaire <span>→</span></button>
+        <div class="formerr" id="err"></div>
+      </form>
+      <div class="ok" id="done">
+        <h2>Check your inbox.</h2>
+        <p>Your questionnaire is on its way to <b id="doneMail"></b>.<br>Answer it when you get a spare five minutes — your plan starts from there.</p>
+        <p style="font-size:13px;">Nothing arrived in a few minutes? Check spam, or email <a href="mailto:heath.penfold@laydbackapps.com">heath.penfold@laydbackapps.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© Lay'd Back · Newcastle, NSW · <a href="/privacy/">Privacy</a></span>
+    <span class="mono">Built overnight. Answered 24/7.</span>
+  </footer>
+</div>
+
+<div class="sticky"><a class="cta" href="#start">Get my free plan <span>→</span></a></div>
+
+<script id="laydback-api-loader">
+  // Resolves the live API base at boot: baked fallback first, then the GitHub
+  // gist pointer (updated by the keeper within ~1 min of a tunnel rotation).
+  (function () {
+    var BAKED = '';
+    window.__LAYDBACK_API_BASE = BAKED;
+    try {
+      fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+        .then(function (r) { return r.text(); })
+        .then(function (t) {
+          t = (t || '').trim();
+          if (/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(t) && !/^https:\/\/api\./i.test(t)) {
+            window.__LAYDBACK_API_BASE = t;
+          }
+        })
+        .catch(function () {})
+        .finally(function () { window.__LB_READY && window.__LB_READY(); });
+    } catch (e) { window.__LB_READY && window.__LB_READY(); }
+    setTimeout(function () { window.__LB_READY && window.__LB_READY(); }, 2500);
+  })();
+</script>
+<script>
+(function () {
+  var ready = false;
+  window.__LB_READY = function () { if (ready) return; ready = true; boot(); };
+
+  function utm() {
+    var out = {}, m;
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function (k) {
+      m = new RegExp('[?&]' + k + '=([^&]+)').exec(location.search);
+      if (m) out[k] = decodeURIComponent(m[1]).slice(0, 120);
+    });
+    try { sessionStorage.setItem('lb_utm', JSON.stringify(out)); } catch (e) {}
+    return out;
+  }
+
+  function boot() {
+    var utmData = utm();
+    try {
+      var saved = sessionStorage.getItem('lb_utm');
+      if (saved && !Object.keys(utmData).length) utmData = JSON.parse(saved);
+    } catch (e) {}
+
+    // VSL slot: appears automatically once assets/vsl.mp4 exists
+    fetch('assets/vsl.mp4', { method: 'HEAD' }).then(function (r) {
+      if (r.ok) {
+        var host = document.getElementById('vslslot');
+        if (host) {
+          host.innerHTML = '<div class="kicker mono">Watch</div><h2>How this works — 90 seconds</h2>' +
+            '<video style="width:100%;border-radius:18px;border:1px solid var(--line);margin-top:24px" controls preload="metadata" src="assets/vsl.mp4"></video>';
+          host.hidden = false;
+        }
+      }
+    }).catch(function () {});
+
+    var form = document.getElementById('f');
+    if (!form) return;
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var btn = document.getElementById('btn');
+      var err = document.getElementById('err');
+      var name = document.getElementById('name').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var phone = document.getElementById('phone').value.trim();
+      var business = document.getElementById('business').value.trim();
+      var consent = document.getElementById('consent').checked;
+      err.style.display = 'none';
+      if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+        err.textContent = 'Please enter your name and a valid email.'; err.style.display = 'block'; return;
+      }
+      if (!consent) {
+        err.textContent = 'We need your okay to email the questionnaire.'; err.style.display = 'block'; return;
+      }
+      btn.disabled = true; btn.textContent = 'Sending…';
+      fetch((window.__LAYDBACK_API_BASE || '') + '/functions/v1/funnel-optin', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, email: email, phone: phone, business: business, utm: utmData })
+      }).then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      }).then(function (d) {
+        if (!d.ok) throw new Error(d.error || 'failed');
+        document.getElementById('doneMail').textContent = email;
+        form.style.display = 'none';
+        document.getElementById('done').style.display = 'block';
+      }).catch(function (e) {
+        btn.disabled = false; btn.innerHTML = 'Send me my questionnaire <span>→</span>';
+        err.innerHTML = 'Something went wrong sending that — try again, or email <a style="color:#c4fb24" href="mailto:heath.penfold@laydbackapps.com">heath.penfold@laydbackapps.com</a>.';
+        err.style.display = 'block';
+      });
+    });
+
+  }
+
+  // scroll-reveal — runs immediately, never waits on the API loader (2026-10-06:
+  // above-fold content stayed hidden when the loader was slow).
+  (function () {
+    var els = document.querySelectorAll('.rv');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.12 });
+      els.forEach(function (el) { io.observe(el); });
+    } else { els.forEach(function (el) { el.classList.add('in'); }); }
+  })();
+})();
+</script>
+<!-- LB-SEO-FOOTER v1 -->
+<!-- 2026-10-07 · keep in sync: generate_site_files.py -->
+<footer id="lb-site-footer" style="background:#0f1115;border-top:1px solid #23262e;color:#9aa3ad;font:13px/1.7 -apple-system,'Segoe UI',Roboto,Arial,sans-serif;text-align:center;padding:22px 16px 30px">
+  <div><a href="/" style="color:#c4fb24;text-decoration:none">Lay'd Back Apps</a> · Newcastle, NSW · <a href="/start/" style="color:#9aa3ad;text-decoration:none">Start here</a> · <a href="/checkout/" style="color:#9aa3ad;text-decoration:none">$550 Automation Audit</a> · <a href="/privacy/" style="color:#9aa3ad;text-decoration:none">Privacy</a> · <a href="/terms/" style="color:#9aa3ad;text-decoration:none">Terms</a> · <a href="/data-deletion/" style="color:#9aa3ad;text-decoration:none">Data deletion</a></div>
+  <div style="margin-top:6px">Founder: Heath Sydney Penfold · heath.penfold@laydbackapps.com · ABN 12 261 695 159</div>
+</footer>
+<!-- /LB-SEO-FOOTER v1 -->
+</body>
+</html>
