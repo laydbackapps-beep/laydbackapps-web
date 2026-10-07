@@ -56,41 +56,74 @@
   function buildScene(canvas) {
     var rnd = function (a, b) { return a + Math.random() * (b - a); };
 
-    /* perspective floor lattice (ground plane, y = -0.6) */
-    var floor = { y: -0.6, xs: [], zs: [] };
-    for (var x = -3.0; x <= 3.0001; x += 0.75) floor.xs.push(x);
-    for (var z = -3.0; z <= 2.0001; z += 0.75) floor.zs.push(z);
+    /* perspective floor lattice (ground plane, y = -0.62), wider + deeper so the
+       vanishing geometry reads unmistakably in a still frame. */
+    var floor = { y: -0.62, xs: [], zs: [] };
+    for (var x = -3.6; x <= 3.6001; x += 0.6) floor.xs.push(x);
+    for (var z = -3.6; z <= 2.4001; z += 0.6) floor.zs.push(z);
 
-    /* floating node cloud — a shallow automation-flow lattice with depth */
-    var nodes = [];
-    for (var i = 0; i < 20; i++) {
-      var big = Math.random() < 0.22;
-      nodes.push({
-        x: rnd(-2.1, 2.1),
-        y: rnd(-0.1, 1.35),
-        z: rnd(-2.2, 1.9),
-        r: big ? rnd(3.0, 4.4) : rnd(1.5, 2.7),
-        hue: Math.random() < 0.34 ? C.lime : C.cyanSoft
-      });
+    /* three explicit depth bands (near / mid / far) so the still reads as a
+       volume with layers instead of a flat scatter of dots. */
+    function band(z0, z1, y0, y1, count, rmin, rmax) {
+      var arr = [];
+      for (var i = 0; i < count; i++) {
+        arr.push({
+          x: rnd(-2.5, 2.5),
+          y: rnd(y0, y1),
+          z: rnd(z0, z1),
+          r: rnd(rmin, rmax),
+          hue: Math.random() < 0.36 ? C.lime : C.cyanSoft
+        });
+      }
+      return arr;
     }
+    var near = band(0.95, 2.20, -0.15, 1.55, 7, 2.7, 3.9);
+    var mid  = band(-0.45, 0.90,  0.00, 1.50, 9, 1.9, 2.8);
+    var far  = band(-2.30, -0.55, 0.10, 1.35, 8, 1.2, 1.9);
+    var nodes = near.concat(mid, far);
 
-    /* rails connect a sparse set of neighbour pairs */
+    /* a deliberate centrepiece hub: one near-mid node with radiating spokes, so
+       the composition has a subject rather than only ambient field. */
+    nodes.push({ x: 0.55, y: 0.72, z: 1.35, r: 4.8, hue: C.lime });
+    var hubIdx = nodes.length - 1;
+
+    /* rails: hub spokes first, then a sparse nearest-neighbour lattice */
     var rails = [];
+    for (var h = 0; h < nodes.length; h++) {
+      if (h === hubIdx) continue;
+      var dh = Math.hypot(nodes[h].x - nodes[hubIdx].x,
+                          nodes[h].y - nodes[hubIdx].y,
+                          nodes[h].z - nodes[hubIdx].z);
+      if (dh < 2.35 && rails.length < 7) rails.push({ a: hubIdx, b: h });
+    }
     for (var j = 0; j < nodes.length; j++) {
+      if (j === hubIdx) continue;
       for (var k = j + 1; k < nodes.length; k++) {
+        if (k === hubIdx) continue;
         var a = nodes[j], b = nodes[k];
         var d = Math.hypot(a.x - b.x, a.y - b.y, a.z - b.z);
-        if (d < 1.5 && Math.random() < 0.42) rails.push({ a: j, b: k });
+        if (d < 1.35 && Math.random() < 0.4) rails.push({ a: j, b: k });
       }
     }
 
-    /* travelling pulses along rails */
-    var pulses = [];
-    for (var p = 0; p < rails.length; p++) {
-      if (Math.random() < 0.6) pulses.push({ rail: p, t: Math.random(), speed: rnd(0.05, 0.14) });
+    /* risers: vertical struts from the floor up toward near/mid nodes — the
+       clearest cheap depth cue (verticality against a receding ground plane). */
+    var risers = [];
+    for (var r2 = 0; r2 < nodes.length; r2++) {
+      var nd = nodes[r2];
+      if (nd.z > 2.0 || nd.z < -1.6) continue;
+      if (Math.random() < 0.55) risers.push({ n: r2 });
     }
 
-    return { floor: floor, nodes: nodes, rails: rails, pulses: pulses, angle: 0.0, last: 0 };
+    /* travelling pulses along rails (hub spokes always carry one) */
+    var pulses = [];
+    for (var p = 0; p < rails.length; p++) {
+      var isSpoke = (rails[p].a === hubIdx || rails[p].b === hubIdx);
+      if (isSpoke || Math.random() < 0.5) pulses.push({ rail: p, t: Math.random(), speed: rnd(0.05, 0.14) });
+    }
+
+    return { floor: floor, nodes: nodes, rails: rails, pulses: pulses, risers: risers,
+             hubIdx: hubIdx, angle: 0.0, last: 0 };
   }
 
   function attach(canvas) {
@@ -120,25 +153,26 @@
       var cos = Math.cos(ang), sin = Math.sin(ang);
       var rx = px * cos + pz * sin;
       var rz = -px * sin + pz * cos;
-      var camZ = 4.5, camY = 0.7;
+      var camZ = 4.0, camY = 0.62;
       var depth = camZ - rz;
-      if (!isNum(depth) || depth < 0.4) return null;
+      if (!isNum(depth) || depth < 0.35) return null;
       var vh = Math.min(state.h, (window.innerHeight || state.h));
-      var focal = Math.min(state.w, vh) * 1.18;
+      var focal = Math.min(state.w, vh) * 1.34;
       var s = focal / depth;
-      var cx = state.w * (0.69 + PAR.shift);
-      var cy = vh * (state.w < 640 ? 0.86 : 0.60);
+      var cx = state.w * (0.70 + PAR.shift);
+      var cy = vh * (state.w < 640 ? 0.87 : 0.61);
       var sx = cx + rx * s * 0.95;
       var sy = cy - (py - camY) * s * 0.95;
       if (!isNum(sx) || !isNum(sy) || !isNum(s)) return null;
       return { x: sx, y: sy, s: s, d: depth };
     }
 
-    /* atmospheric depth fade: near objects stronger, far ones softer */
+    /* atmospheric depth fade: near objects clearly stronger, far ones softer —
+       widened range so the depth layering is legible in a still. */
     function fade(depth) {
-      var f = 1.28 - (depth - 3.0) * 0.2;
+      var f = 1.5 - (depth - 2.6) * 0.22;
       if (!isNum(f)) return 0.5;
-      return Math.max(0.34, Math.min(1.15, f));
+      return Math.max(0.26, Math.min(1.25, f));
     }
 
     function draw() {
@@ -149,60 +183,90 @@
       /* (a) whole-canvas wash + deeper gradient toward the open right/bottom air */
       ctx.fillStyle = "rgba(" + C.cyanSoft + ",0.085)";
       ctx.fillRect(0, 0, w, h);
-      var g = ctx.createRadialGradient(w * 0.70, h * 0.72, 0, w * 0.70, h * 0.72, Math.max(w, h) * 1.0);
-      g.addColorStop(0, "rgba(" + C.cyan + ",0.20)");
-      g.addColorStop(0.5, "rgba(" + C.cyan + ",0.07)");
+      var g = ctx.createRadialGradient(w * 0.70, h * 0.74, 0, w * 0.70, h * 0.74, Math.max(w, h) * 1.05);
+      g.addColorStop(0, "rgba(" + C.cyan + ",0.22)");
+      g.addColorStop(0.5, "rgba(" + C.cyan + ",0.08)");
       g.addColorStop(1, "rgba(" + C.cyan + ",0)");
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, w, h);
 
-      /* (b) perspective floor lattice */
+      /* (b) perspective floor lattice — near lines thicker + brighter and every
+             3rd "major" line emphasised, so the ground plane clearly recedes. */
       var fi, fj, pa, pb, pf;
-      ctx.lineWidth = 1;
       for (fi = 0; fi < scene.floor.xs.length; fi++) {
         var fx = scene.floor.xs[fi];
-        pa = project(fx, scene.floor.y, -3.2); pb = project(fx, scene.floor.y, 2.2);
+        pa = project(fx, scene.floor.y, -3.7); pb = project(fx, scene.floor.y, 2.5);
         if (pa && pb) {
           pf = fade((pa.d + pb.d) * 0.5);
-          ctx.strokeStyle = "rgba(" + C.cyanSoft + "," + (0.17 * pf).toFixed(3) + ")";
+          var majorX = (fi % 3 === 0);
+          ctx.lineWidth = majorX ? 1.3 : 0.85;
+          ctx.strokeStyle = "rgba(" + C.cyanSoft + "," + ((majorX ? 0.30 : 0.18) * pf).toFixed(3) + ")";
           ctx.beginPath(); ctx.moveTo(pa.x, pa.y); ctx.lineTo(pb.x, pb.y); ctx.stroke();
         }
       }
       for (fj = 0; fj < scene.floor.zs.length; fj++) {
         var fz = scene.floor.zs[fj];
-        pa = project(-3.2, scene.floor.y, fz); pb = project(3.2, scene.floor.y, fz);
+        pa = project(-3.7, scene.floor.y, fz); pb = project(3.7, scene.floor.y, fz);
         if (pa && pb) {
           pf = fade((pa.d + pb.d) * 0.5);
-          ctx.strokeStyle = "rgba(" + C.cyanSoft + "," + (0.17 * pf).toFixed(3) + ")";
+          var majorZ = (fj % 3 === 0);
+          ctx.lineWidth = majorZ ? 1.3 : 0.85;
+          ctx.strokeStyle = "rgba(" + C.cyanSoft + "," + ((majorZ ? 0.30 : 0.18) * pf).toFixed(3) + ")";
           ctx.beginPath(); ctx.moveTo(pa.x, pa.y); ctx.lineTo(pb.x, pb.y); ctx.stroke();
         }
       }
 
-      /* (c) rails between nearby nodes */
+      /* (b2) risers — vertical struts from the floor toward near/mid nodes: the
+              clearest cheap depth cue against the receding ground plane. */
+      ctx.lineWidth = 1;
+      for (var ri = 0; ri < scene.risers.length; ri++) {
+        var rn = scene.nodes[scene.risers[ri].n];
+        if (!rn) continue;
+        var rtop = project(rn.x, rn.y, rn.z);
+        var rbot = project(rn.x, scene.floor.y, rn.z);
+        if (!rtop || !rbot) continue;
+        var rf = fade(rbot.d);
+        ctx.strokeStyle = "rgba(" + C.cyanSoft + "," + (0.14 * rf).toFixed(3) + ")";
+        ctx.beginPath(); ctx.moveTo(rtop.x, rtop.y); ctx.lineTo(rbot.x, rbot.y); ctx.stroke();
+        ctx.fillStyle = "rgba(" + C.cyanSoft + "," + (0.30 * rf).toFixed(3) + ")";
+        ctx.beginPath(); ctx.arc(rbot.x, rbot.y, Math.max(1, rbot.s * 0.0032), 0, Math.PI * 2); ctx.fill();
+      }
+
+      /* (c) rails between nearby nodes (hub spokes emphasised) */
       for (var r = 0; r < scene.rails.length; r++) {
         var rail = scene.rails[r];
         var nA = scene.nodes[rail.a], nB = scene.nodes[rail.b];
         pa = project(nA.x, nA.y, nA.z); pb = project(nB.x, nB.y, nB.z);
         if (!pa || !pb) continue;
         pf = fade((pa.d + pb.d) * 0.5);
-        ctx.strokeStyle = "rgba(" + C.cyanSoft + "," + (0.26 * pf).toFixed(3) + ")";
+        var spoke = (rail.a === scene.hubIdx || rail.b === scene.hubIdx);
+        ctx.lineWidth = spoke ? 1.25 : 1;
+        ctx.strokeStyle = "rgba(" + C.cyanSoft + "," + ((spoke ? 0.42 : 0.27) * pf).toFixed(3) + ")";
         ctx.beginPath(); ctx.moveTo(pa.x, pa.y); ctx.lineTo(pb.x, pb.y); ctx.stroke();
       }
 
-      /* (d) nodes (halo + core), brightest when near */
+      /* (d) nodes (halo + core) — radius scales with the depth band so near/mid/
+             far are unambiguous; the hub is the deliberate centrepiece. */
       for (var n = 0; n < scene.nodes.length; n++) {
         var nd = scene.nodes[n];
         var pr = project(nd.x, nd.y, nd.z);
         if (!pr) continue;
         var fr = fade(pr.d);
-        var rad = Math.max(1.1, nd.r * pr.s * 0.0075);
+        var isHub = (n === scene.hubIdx);
+        var rad = Math.max(1.1, nd.r * pr.s * (isHub ? 0.0102 : 0.0080));
         if (!isNum(rad)) continue;
-        var halo = ctx.createRadialGradient(pr.x, pr.y, 0, pr.x, pr.y, rad * 5.5);
-        halo.addColorStop(0, "rgba(" + nd.hue + "," + (0.42 * fr).toFixed(3) + ")");
+        if (isHub) {
+          ctx.strokeStyle = "rgba(" + nd.hue + "," + (0.5 * fr).toFixed(3) + ")";
+          ctx.lineWidth = 1.4;
+          ctx.beginPath(); ctx.arc(pr.x, pr.y, rad * 2.6, 0, Math.PI * 2); ctx.stroke();
+        }
+        var haloR = rad * (isHub ? 7.0 : 5.2);
+        var halo = ctx.createRadialGradient(pr.x, pr.y, 0, pr.x, pr.y, haloR);
+        halo.addColorStop(0, "rgba(" + nd.hue + "," + (0.5 * fr).toFixed(3) + ")");
         halo.addColorStop(1, "rgba(" + nd.hue + ",0)");
         ctx.fillStyle = halo;
-        ctx.beginPath(); ctx.arc(pr.x, pr.y, rad * 5.5, 0, Math.PI * 2); ctx.fill();
-        ctx.fillStyle = "rgba(" + nd.hue + "," + Math.min(1, 0.92 * fr).toFixed(3) + ")";
+        ctx.beginPath(); ctx.arc(pr.x, pr.y, haloR, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = "rgba(" + nd.hue + "," + Math.min(1, 0.95 * fr).toFixed(3) + ")";
         ctx.beginPath(); ctx.arc(pr.x, pr.y, rad, 0, Math.PI * 2); ctx.fill();
       }
 

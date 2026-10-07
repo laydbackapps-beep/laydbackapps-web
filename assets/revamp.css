@@ -100,9 +100,20 @@ section[aria-labelledby="hero-title"] figure > div:first-child {
   opacity: 0.95;
   border-color: rgba(116, 216, 225, 0.5);
 }
-/* Figcaption reads as a calm plate label. */
+/* Figcaption reads as a calm plate label — nudged up in size/contrast/spacing so
+   the microcopy is legible rather than tiny/lost (copy text itself untouched). */
 section[aria-labelledby="hero-title"] figure figcaption {
-  letter-spacing: 0.01em;
+  margin-top: 0.6rem;
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.013em;
+  color: rgba(255, 255, 255, 0.46);
+}
+@media (min-width: 640px) {
+  section[aria-labelledby="hero-title"] figure figcaption {
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.5);
+  }
 }
 
 
@@ -177,10 +188,10 @@ main#top summary {
   transition: opacity 1.4s ease;
   /* Mask keeps the 3D field in the open lower-right air and off the copy so it
      can never bleed behind the body text (contrast law). */
-  -webkit-mask-image: radial-gradient(82% 84% at 81% 90%,
-                      #000 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 68%);
-  mask-image: radial-gradient(82% 84% at 81% 90%,
-              #000 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 68%);
+  -webkit-mask-image: radial-gradient(90% 92% at 80% 92%,
+                      #000 0%, rgba(0, 0, 0, 0.55) 44%, rgba(0, 0, 0, 0) 76%);
+  mask-image: radial-gradient(90% 92% at 80% 92%,
+              #000 0%, rgba(0, 0, 0, 0.55) 44%, rgba(0, 0, 0, 0) 76%);
 }
 #lb-hero-canvas.lb-on {
   opacity: 1;
@@ -189,6 +200,42 @@ main#top summary {
 section[aria-labelledby="hero-title"] > div:nth-of-type(2) {
   position: relative;
   z-index: 1;
+}
+
+
+/* ------------------------------------------------- 5b. CATEGORY STRIP FRAME
+   The bottom category rail (ROSTERS / QUOTES | INVOICES / ORDERS | DASHBOARDS /
+   HANDOFFS) previously read as loose type floating over the 3D grid. Contain it:
+   faint house-black fill + hairline full border + soft shadow, so it reads as a
+   deliberate, seated element. Tints only — no new hues. */
+div[class*="grid-cols-3"][class*="border-y"][class*="tracking-[0.13em]"] {
+  background: linear-gradient(180deg,
+              rgba(15, 19, 24, 0.88) 0%,
+              rgba(11, 14, 18, 0.72) 100%);
+  border: 1px solid rgba(116, 216, 225, 0.17);
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset,
+              0 24px 52px -38px rgba(0, 0, 0, 0.92);
+  color: rgba(255, 255, 255, 0.52);
+}
+/* Even rail gutters; the interior dividers stay as the column markers. */
+div[class*="grid-cols-3"][class*="border-y"][class*="tracking-[0.13em]"] > span {
+  padding-left: 0.9rem;
+}
+div[class*="grid-cols-3"][class*="border-y"][class*="tracking-[0.13em]"] > span:first-child {
+  padding-left: 0;
+}
+
+
+/* ----------------------------------------------- 5c. MOBILE SUB-NAV FADE EDGE
+   The scrollable sub-nav clipped its last item at the right edge with no cue.
+   A right-edge mask fade signals "scroll for more" as an intentional affordance. */
+header nav[class*="xl:hidden"] > div[class*="overflow-x-auto"] {
+  -webkit-mask-image: linear-gradient(90deg,
+                      #000 0, #000 calc(100% - 44px), transparent 100%);
+  mask-image: linear-gradient(90deg,
+              #000 0, #000 calc(100% - 44px), transparent 100%);
 }
 
 
