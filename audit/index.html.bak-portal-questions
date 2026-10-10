@@ -59,7 +59,7 @@
         .then(function (r) { return r.text(); })
         .then(function (t) {
           t = (t || '').trim();
-          if (/^https:\/\/[a-z0-9-]+\.(?:trycloudflare\.com|ts\.net)$/.test(t) && !/^https:\/\/api\./i.test(t)) {
+          if (/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(t) && !/^https:\/\/api\./i.test(t)) {
             window.__LAYDBACK_API_BASE = t;
           }
         })
@@ -111,36 +111,6 @@
       '<div class="hint">Email, spreadsheets, job software, accounting, CRM — anything the work touches.</div>' +
       '<textarea id="tools"></textarea></div>' +
       '<div class="card"><label>Anything else we should know?</label><textarea id="extra"></textarea></div>' +
-      '<div class="card"><label>Client Portal setup <span style="color:#8b93a3;font-weight:400">(optional \u2014 gets your dashboard ready faster)</span></label>' +
-      '<div class="hint">Fill in what you can. These answers pre-load your Lay\u2019d Back dashboard \u2014 calls answered, prices ready, bookings in. Skip anything unknown; we\u2019ll pick it up on the call.</div>' +
-      '<label style="margin-top:16px">ABN</label><input id="abn" type="text" placeholder="Optional \u2014 goes on invoices">' +
-      '<label style="margin-top:16px">What area do you cover?</label><input id="service_area" type="text" placeholder="Suburbs / towns you work in">' +
-      '<label style="margin-top:16px">What are your trading hours?</label><input id="trading_hours" type="text" placeholder="e.g. Mon\u2013Fri 7am\u20134pm">' +
-      '<label style="margin-top:16px">When you can\u2019t get to the phone, what should happen?</label>' +
-      '<div class="hint">This is what we set the AI receptionist up around.</div>' +
-      '<textarea id="after_hours_pref" placeholder="e.g. answer and take the job details, book a follow-up, tell them when I\u2019m free"></textarea>' +
-      '<label style="margin-top:16px">Your current business number</label><input id="business_number" type="tel" placeholder="The number customers ring today">' +
-      '<label style="margin-top:16px">Should the AI receptionist answer your current number, or a new one?</label><input id="number_choice" type="text" placeholder="Keep my current number / new number / not sure yet">' +
-      '<label style="margin-top:16px">Best mobile for job alerts</label><input id="alerts_mobile" type="tel" placeholder="So you get an SMS when a job lands">' +
-      '</div>' +
-      '<div class="card"><label>How you talk to customers</label>' +
-      '<label style="margin-top:16px">When someone rings, how do you want the call opened?</label><div class="hint">e.g. \u201cG\u2019day, Dave from Dave\u2019s Plumbing\u201d \u2014 or leave blank and we\u2019ll draft one for your approval.</div><input id="greeting_pref" type="text" placeholder="Your greeting (or blank = we draft it)">' +
-      '<label style="margin-top:16px">Preferred tone</label><input id="tone" type="text" placeholder="Plain and friendly / professional / short and direct">' +
-      '<label style="margin-top:16px">Anything we should never do or promise?</label><div class="hint">e.g. never quote below the callout fee, never promise same-day, no fixed price without seeing it.</div><textarea id="never_rules"></textarea>' +
-      '</div>' +
-      '<div class="card"><label>Your prices &amp; recent jobs</label>' +
-      '<label style="margin-top:16px">Callout fee / minimum charge</label><input id="callout_fee" type="text" placeholder="e.g. $99 callout, or $150 minimum">' +
-      '<label style="margin-top:16px">Hourly rate (if you charge one)</label><input id="hourly_rate" type="text" placeholder="e.g. $110/h">' +
-      '<label style="margin-top:16px">Your starting prices \u2014 most common jobs</label><div class="hint">One per line with a from-price. This becomes the instant pricing on every enquiry.</div><textarea id="starting_prices" placeholder="Blocked drain \u2014 from $250&#10;Hot water replacement \u2014 from $1,200&#10;\u2026"></textarea>' +
-      '<label style="margin-top:16px">Your last 5\u201310 jobs and what you charged</label><div class="hint">Rough is fine: what the job was, what the customer paid. The dashboard uses these to cross-check new quotes.</div><textarea id="recent_jobs"></textarea>' +
-      '<label style="margin-top:16px">Materials you supply (and any markup)</label><textarea id="materials_note" placeholder="e.g. I supply the fittings, +20% on materials"></textarea>' +
-      '</div>' +
-      '<div class="card"><label>Enquiries, email &amp; booking</label>' +
-      '<label style="margin-top:16px">Where do enquiries come to you today?</label><input id="enquiry_channels" type="text" placeholder="Phone, SMS, Facebook, Instagram, website, Google\u2026">' +
-      '<label style="margin-top:16px">Best email for customer enquiries</label><input id="enquiry_email" type="email" placeholder="Where enquiries should land">' +
-      '<label style="margin-top:16px">Website / Facebook / Instagram links</label><input id="web_links" type="text" placeholder="Paste any you have">' +
-      '<label style="margin-top:16px">How should bookings work?</label><div class="hint">Days/hours you take bookings, roughly how long a callout takes, deposit wanted?</div><textarea id="booking_prefs"></textarea>' +
-      '</div>' +
       '<button id="btn" type="submit">Submit my audit details</button>' +
       '</form>');
     document.getElementById('f').addEventListener('submit', async function (ev) {
@@ -153,15 +123,6 @@
         contact_email: g('contact_email'), phone: g('phone'),
         current_process: g('current_process'), fixed_looks_like: g('fixed_looks_like'),
         pain_point: g('pain_point'), tools: g('tools'), extra: g('extra'),
-        abn: g('abn'), service_area: g('service_area'), trading_hours: g('trading_hours'),
-        after_hours_pref: g('after_hours_pref'), business_number: g('business_number'),
-        number_choice: g('number_choice'), alerts_mobile: g('alerts_mobile'),
-        greeting_pref: g('greeting_pref'), tone: g('tone'), never_rules: g('never_rules'),
-        callout_fee: g('callout_fee'), hourly_rate: g('hourly_rate'),
-        starting_prices: g('starting_prices'), recent_jobs: g('recent_jobs'),
-        materials_note: g('materials_note'), enquiry_channels: g('enquiry_channels'),
-        enquiry_email: g('enquiry_email'), web_links: g('web_links'),
-        booking_prefs: g('booking_prefs'),
       };
       try {
         var r = await fetch((window.__LAYDBACK_API_BASE || '') + '/functions/v1/audit-intake', {
