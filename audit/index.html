@@ -59,7 +59,7 @@
         .then(function (r) { return r.text(); })
         .then(function (t) {
           t = (t || '').trim();
-          if (/^https:\/\/[a-z0-9-]+\.(?:trycloudflare\.com|ts\.net)$/.test(t) && !/^https:\/\/api\./i.test(t)) {
+          if (/^https:\/\/[a-z0-9.-]+\.(?:trycloudflare\.com|ts\.net)$/.test(t) && !/^https:\/\/api\./i.test(t)) {
             window.__LAYDBACK_API_BASE = t;
           }
         })
