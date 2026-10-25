@@ -409,14 +409,37 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 <!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.42)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
 
 <!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
+
+
+<style id="lb-logo-hero">
+/* Client logo across the header: the real artwork, isolated and readable. */
+.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;
+  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
+  padding:0!important;box-shadow:none!important}
+.lb-brand .lb-mark{display:block!important;height:clamp(52px,5.4vw,78px)!important;width:auto!important;
+  max-width:none!important;max-height:none!important;object-fit:contain!important;background:none!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
+.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(46vw,520px)!important;
+  max-height:none!important;object-fit:contain!important;object-position:left center!important;
+  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
+  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
+.lb-brand .lb-brand__mark{height:clamp(52px,5.4vw,78px)!important;max-width:none!important}
+.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
+.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
+  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
+@media (max-width:720px){.lb-brand .lb-mark{height:42px!important}.lb-brand .lb-word{height:20px!important}}
+.lb-bar{background-color:#785020!important}
+.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#f7f7f4!important}
+.lb-bar .cta,.lb-bar a.cta{color:#ffffff!important}
+</style>
 </head>
 <body id="top">
 <div class="sa-progress" id="sa-progress"></div>
 
 <nav class="nav">
   <div class="wrap">
-    <a class="lb-brand" href="#top" aria-label="JTC Concreting - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#7d5522;--lb-subc:#7d5522;--lb-acc:#7d5522;"><img src="assets/logo.svg" alt="" class="lb-logo" loading="eager" decoding="async"><span class="lb-brand__mark" aria-hidden="true"></span><span class="lb-brand__word"><span class="lb-brand__name">JTC Concreting</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
-    <div class="nav-links">
+    <a class="lb-brand" href="#top" aria-label="JTC Concreting - Home"><img class="lb-mark" src="assets/logo-isolated-mark.png" alt="" loading="eager" decoding="async"><span class="name lb-brand__name">JTC Concreting</span></a><div class="nav-links">
       <a href="#services">Services</a>
       <a href="#builders">Builders</a>
       <a href="#work">Work</a>
@@ -976,5 +999,8 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
   scroll-margin-top:24px}
 
 </style>
+
+
+<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#785020","important");})();</script>
 </body>
 </html>

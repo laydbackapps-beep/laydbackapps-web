@@ -215,8 +215,32 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 <!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.42)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
 
 <!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
+
+
+<style id="lb-logo-hero">
+/* Client logo across the header: the real artwork, isolated and readable. */
+.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;
+  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
+  padding:0!important;box-shadow:none!important}
+.lb-brand .lb-mark{display:block!important;height:clamp(52px,5.4vw,78px)!important;width:auto!important;
+  max-width:none!important;max-height:none!important;object-fit:contain!important;background:none!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
+.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(46vw,520px)!important;
+  max-height:none!important;object-fit:contain!important;object-position:left center!important;
+  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
+  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
+.lb-brand .lb-brand__mark{height:clamp(52px,5.4vw,78px)!important;max-width:none!important}
+.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
+.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
+  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
+@media (max-width:720px){.lb-brand .lb-mark{height:42px!important}.lb-brand .lb-word{height:20px!important}}
+.lb-bar{background-color:#287830!important}
+.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#f7f7f4!important}
+.lb-bar .cta,.lb-bar a.cta{color:#ffffff!important}
+</style>
 </head><body><a class="skip" href="#main">Skip to content</a>
-<nav><a class="lb-brand" href="#top" aria-label="RD's Fresh Lawns - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#2E7D32;--lb-subc:#2E7D32;--lb-acc:#2E7D32;"><img src="assets/logo.svg" alt="" class="lb-logo" loading="eager" decoding="async"><span class="lb-brand__mark" aria-hidden="true"></span><span class="lb-brand__word"><span class="lb-brand__name">RD's Fresh Lawns</span><span class="lb-brand__sub"><span class="lb-acc">Lawn</span></span><span class="lb-brand__rule" aria-hidden="true"></span></span></a><div class="nav-cta"><a class="btn btn-ghost" href="#quote">Get a quote</a><a class="btn btn-primary magnetic" data-ux="magnetic" href="tel:0406273136">Call 0406 273 136</a></div></nav><header class="hero" style="position:relative;height:100vh;min-height:600px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;background:var(--bg)">
+<nav><a class="lb-brand" href="#top" aria-label="RD's Fresh Lawns - Home"><img class="lb-mark" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="name lb-brand__name">RD's Fresh Lawns</span></a><div class="nav-cta"><a class="btn btn-ghost" href="#quote">Get a quote</a><a class="btn btn-primary magnetic" data-ux="magnetic" href="tel:0406273136">Call 0406 273 136</a></div></nav><header class="hero" style="position:relative;height:100vh;min-height:600px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;background:var(--bg)">
   <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0"></canvas>
   <div class="rv" style="position:relative;z-index:1;margin-bottom:1.5rem"><span style="font:600 .8rem/1 Montserrat,sans-serif;letter-spacing:.3em;text-transform:none;color:var(--acc);background:rgba(46,125,50,.1);padding:.4rem 1rem;border-radius:999px">Central Coast · Lake Mac · Hunter Valley</span></div>
   <h1 class="rv" data-ux="words" style="position:relative;z-index:1;font:800 clamp(36px,6vw,72px)/1.05 Montserrat,sans-serif;margin:0 0 1rem;max-width:900px;color:var(--ink);text-shadow:none">Fresh lawns, tidy gardens, done right</h1>
@@ -556,4 +580,7 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
   scroll-margin-top:24px}
 
 </style>
+
+
+<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#287830","important");})();</script>
 </body></html>
