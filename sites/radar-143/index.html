@@ -297,24 +297,26 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 
 
 
+
+
 <style id="lb-logo-hero">
 /* Client logo across the header: the real artwork, isolated and readable. */
 .lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;
   text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
   padding:0!important;box-shadow:none!important}
-.lb-brand .lb-mark{display:block!important;height:clamp(52px,5.4vw,78px)!important;width:auto!important;
+.lb-brand .lb-mark{display:block!important;height:clamp(64px,7.4vw,100px)!important;width:auto!important;
   max-width:none!important;max-height:none!important;object-fit:contain!important;background:none!important;
   border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
-.lb-brand .lb-word{display:block!important;height:42px!important;width:auto!important;max-width:min(46vw,520px)!important;
+.lb-brand .lb-word{display:block!important;height:74px!important;width:auto!important;max-width:min(64vw,780px)!important;
   max-height:none!important;object-fit:contain!important;object-position:left center!important;
   background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
 .lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
   letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
-.lb-brand .lb-brand__mark{height:clamp(52px,5.4vw,78px)!important;max-width:none!important}
+.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
 .lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
 .lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
   clip:rect(0 0 0 0)!important;white-space:nowrap!important}
-@media (max-width:720px){.lb-brand .lb-mark{height:42px!important}.lb-brand .lb-word{height:33px!important}}
+@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:59px!important}}
 .lb-bar{background-color:#e0d8d8!important}
 .lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#101014!important}
 .lb-bar .cta,.lb-bar a.cta{color:#101014!important}
@@ -323,7 +325,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <nav class="nav" aria-label="Main">
   <div class="wrap nav-in">
-    <a class="lb-brand" href="#top" aria-label="A.D Lawns and Landscapes - Home"><img class="lb-word" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">A.D Lawns and Landscapes</span></a><button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
+    <a class="lb-brand" style="--lb-name:#101014" href="#top" aria-label="A.D Lawns and Landscapes - Home"><img class="lb-word" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">A.D Lawns and Landscapes</span></a><button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navlinks">
@@ -864,6 +866,8 @@ header a[href^="tel"],.site-header a[href^="tel"]{
 }
 .lb-brand__sub:empty{display:none !important}
 </style>
+
+
 <script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#e0d8d8","important");})();</script>
 </body>
 </html>
