@@ -1,0 +1,38 @@
+<script>
+// Scroll reveal with DOMContentLoaded guard (pitfall #6)
+// Must only run once .rv targets exist
+// JS safety net: setTimeout ~1100ms adds .on to ALL reveal elements
+
+(() => {
+  function startRv() {
+    const targets = document.querySelectorAll('.rv');
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('on');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+
+    targets.forEach((el) => observer.observe(el));
+
+    // Safety net: force reveal after ~1100ms
+    setTimeout(() => {
+      targets.forEach((el) => el.classList.add('on'));
+    }, 1100);
+  }
+
+  // DOMContentLoaded guard — the script must only run once .rv targets exist
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startRv, { once: true });
+  } else {
+    startRv();
+  }
+
+  // Mark html as JS-enabled for CSS reveal gating
+  document.documentElement.classList.add('js');
+})();
+</script>
