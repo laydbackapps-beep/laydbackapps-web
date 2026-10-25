@@ -409,6 +409,29 @@ section{padding-block:var(--sp-5)}
 <!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.42)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
 
 <!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
+<style id="lb-logo-hero">
+/* Client logo across the header: the real artwork, isolated and readable. */
+.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;
+  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
+  padding:0!important;box-shadow:none!important}
+.lb-brand .lb-mark{display:block!important;height:clamp(64px,7.4vw,100px)!important;width:auto!important;
+  max-width:none!important;max-height:none!important;object-fit:contain!important;background:none!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
+.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(64vw,780px)!important;
+  max-height:none!important;object-fit:contain!important;object-position:left center!important;
+  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
+  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
+.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
+.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
+.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
+  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
+.lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
+@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:20px!important}}
+.lb-bar{background-color:#f07830!important}
+.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#101014!important}
+.lb-bar .cta,.lb-bar a.cta{color:#101014!important}
+</style>
 </head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <a class="skip" href="#main" style="position:absolute;left:-9999px;top:0;z-index:200;background:#fff;color:#0B1B2B;padding:.8rem 1.2rem;font-weight:700">Skip to content</a>
@@ -418,14 +441,7 @@ section{padding-block:var(--sp-5)}
 
 <nav class="nav" aria-label="Main">
   <div class="wrap nav-in">
-    <a class="lb-brand" href="#top" aria-label="KB Climate &amp; Power, home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#ffffff;--lb-subc:#A9C3D6;--lb-acc:#FF9A4D">
-      <span class="lb-brand__mark"><img src="assets/logo.svg" alt="" class="lb-logo" loading="eager" decoding="async"></span>
-      <span class="lb-brand__word">
-        <span class="lb-brand__name">KB <span class="lb-acc">Climate & Power</span></span>
-        <span class="lb-brand__sub">Air conditioning &amp; electrical</span>
-      </span>
-    </a>
-    <div class="nav-links" id="navlinks">
+    <a class="lb-brand lb-brand--lockup lb-brand--square" style="--lb-name:#101014" href="#top" aria-label="KB Climate &amp; Power, home"><img class="lb-mark" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">KB Climate &amp; Power, home</span></a><div class="nav-links" id="navlinks">
       <a href="#services">Services</a>
       <a href="#process">How it works</a>
       <a href="#areas">Areas</a>
@@ -1577,5 +1593,6 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
   scroll-margin-top:24px}
 
 </style>
+<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#f07830","important");})();</script>
 </body>
 </html>
