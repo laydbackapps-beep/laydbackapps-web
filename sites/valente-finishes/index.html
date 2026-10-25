@@ -97,6 +97,15 @@ footer a:hover{text-decoration:underline}
 @media (max-width:980px){.bar{flex-wrap:wrap;row-gap:8px}.brand{flex:1 1 auto;min-width:0}.brand .name{font-size:14px;max-width:none}nav.main{flex:1 1 100%;flex-wrap:wrap;gap:10px 16px;justify-content:flex-start}nav.main a{font-size:13px}}
 .about p{max-width:62ch}
 section > .container > p{max-width:66ch}
+
+.ownwork{padding-block:clamp(64px,9vh,110px);padding-inline:clamp(18px,4vw,44px);border-top:1px solid var(--line)}
+.ownwork .container{max-width:1140px}
+.ownwork h2{margin-bottom:8px}
+.ownwork .own-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:22px}
+.ownwork figure{margin:0;border-radius:12px;overflow:hidden;background:var(--panel);border:1px solid var(--line)}
+.ownwork img{display:block;width:100%;height:220px;object-fit:cover}
+.ownwork figcaption{font-size:.8rem;color:rgba(255,255,255,.82);padding:9px 12px}
+@media(max-width:640px){.ownwork img{height:180px}}
 </style>
 </head>
 <body>
@@ -144,7 +153,8 @@ section > .container > p{max-width:66ch}
       <ul><li>Cement and acrylic <span>&middot; the two render systems, done properly</span></li><li>Texture finishes <span>&middot; float, sponge, bagged or trowelled</span></li><li>Repairs and patches <span>&middot; blended into the existing wall</span></li><li>Homes and businesses <span>&middot; external walls, fences and features</span></li></ul>
     </div>
   </section>
-  <section id="contact" class="alt">
+  <section class="ownwork"><div class="container"><h2>Recent work</h2><p style="color:var(--muted);max-width:62ch">Photos from our own jobs.</p><div class="own-grid"><figure><img src="assets/own-1.jpg" alt="Recent work" width="1080" height="1440" loading="lazy"><figcaption>Recent work</figcaption></figure><figure><img src="assets/own-2.jpg" alt="Recent work" width="1080" height="1187" loading="lazy"><figcaption>Recent work</figcaption></figure><figure><img src="assets/own-3.jpg" alt="Recent work" width="1080" height="810" loading="lazy"><figcaption>Recent work</figcaption></figure><figure><img src="assets/own-4.jpg" alt="Recent work" width="1080" height="810" loading="lazy"><figcaption>Recent work</figcaption></figure><figure><img src="assets/own-5.jpg" alt="Recent work" width="1080" height="565" loading="lazy"><figcaption>Recent work</figcaption></figure></div></div></section>
+<section id="contact" class="alt">
     <div class="container contactwrap">
       <div>
         <h2>Get a quote</h2>

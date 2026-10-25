@@ -90,13 +90,22 @@ footer a:hover{text-decoration:underline}
 .footbottom{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;
   gap:14px;justify-content:space-between;color:var(--muted);font-size:0.85rem}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.ownwork{padding-block:clamp(64px,9vh,110px);padding-inline:clamp(18px,4vw,44px);border-top:1px solid var(--line)}
+.ownwork .container{max-width:1140px}
+.ownwork h2{margin-bottom:8px}
+.ownwork .own-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:22px}
+.ownwork figure{margin:0;border-radius:12px;overflow:hidden;background:var(--panel);border:1px solid var(--line)}
+.ownwork img{display:block;width:100%;height:220px;object-fit:cover}
+.ownwork figcaption{font-size:.8rem;color:rgba(255,255,255,.82);padding:9px 12px}
+@media(max-width:640px){.ownwork img{height:180px}}
 </style>
 </head>
 <body>
 <header class="site">
   <div class="container bar">
     <a class="brand" href="./" aria-label="Elite Spraycrete">
-      <img style="max-width:1179px" width="1179" height="477" src="assets/logo.png" alt="" loading="eager" decoding="async">
+      <img src="assets/logo.png" alt="" loading="eager" decoding="async">
       <span class="sr">Elite Spraycrete</span>
     </a>
     <nav class="main" aria-label="Main">
@@ -123,13 +132,13 @@ footer a:hover{text-decoration:underline}
   <section id="services">
     <div class="container">
       <div class="head"><h2>What we do</h2><p>Concrete resurfacing work for homes and businesses.</p></div>
-      <div style="display:none" class="grid g3"><article class="card"><div class="swatch"></div><h3>Driveway resurfacing</h3><p>Worn, cracked or faded driveways resurfaced with a hard-wearing spray-on finish.</p></article><article class="card"><div class="swatch"></div><h3>Patios & alfrescos</h3><p>Outdoor living areas resurfaced in the colour and texture you want, ready for use.</p></article><article class="card"><div class="swatch"></div><h3>Pathways</h3><p>Paths and walkways resurfaced and sealed so they look sharp and stay safe underfoot.</p></article><article class="card"><div class="swatch"></div><h3>Premium finish</h3><p>A properly finished surface — even, consistent and built to last.</p></article><article class="card"><div class="swatch"></div><h3>Colour & texture options</h3><p>Choose the look that suits the house: modern, natural or classic.</p></article><article class="card"><div class="swatch"></div><h3>Efficient and reliable</h3><p>Clean preparation, no mess left behind, and the job done when we say.</p></article></div>
+      <div class="grid g3"><article class="card"><div class="swatch"></div><h3>Driveway resurfacing</h3><p>Worn, cracked or faded driveways resurfaced with a hard-wearing spray-on finish.</p></article><article class="card"><div class="swatch"></div><h3>Patios & alfrescos</h3><p>Outdoor living areas resurfaced in the colour and texture you want, ready for use.</p></article><article class="card"><div class="swatch"></div><h3>Pathways</h3><p>Paths and walkways resurfaced and sealed so they look sharp and stay safe underfoot.</p></article><article class="card"><div class="swatch"></div><h3>Premium finish</h3><p>A properly finished surface — even, consistent and built to last.</p></article><article class="card"><div class="swatch"></div><h3>Colour & texture options</h3><p>Choose the look that suits the house: modern, natural or classic.</p></article><article class="card"><div class="swatch"></div><h3>Efficient and reliable</h3><p>Clean preparation, no mess left behind, and the job done when we say.</p></article></div>
     </div>
   </section>
   <section id="process" class="alt">
     <div class="container">
       <div class="head"><h2>How a job runs</h2><p>From the first look to the final clean up.</p></div>
-      <div style="display:none" class="grid g3"><article class="card"><h3>We assess the surface</h3><p>We look at the condition of the slab and talk through the finish you want.</p></article><article class="card"><h3>Prepare and repair</h3><p>Cracks and worn areas are sorted first — a resurface is only as good as what is under it.</p></article><article class="card"><h3>Spray, finish, seal</h3><p>The coating goes on, gets finished to the texture you chose, and the site is left tidy.</p></article></div>
+      <div class="grid g3"><article class="card"><h3>We assess the surface</h3><p>We look at the condition of the slab and talk through the finish you want.</p></article><article class="card"><h3>Prepare and repair</h3><p>Cracks and worn areas are sorted first — a resurface is only as good as what is under it.</p></article><article class="card"><h3>Spray, finish, seal</h3><p>The coating goes on, gets finished to the texture you chose, and the site is left tidy.</p></article></div>
     </div>
   </section>
   <section id="about">
@@ -138,7 +147,8 @@ footer a:hover{text-decoration:underline}
       <ul><li>Driveways, patios, alfrescos and pathways <span>&middot; the usual surfaces we resurface</span></li><li>Stronger surfaces, better results <span>&middot; a finish that stands up to traffic and weather</span></li><li>Enhances your property <span>&middot; a surface that lifts the look of the whole house</span></li><li>Nothing else to do after <span>&middot; the area is cleaned and ready to use</span></li></ul>
     </div>
   </section>
-  <section id="contact" class="alt">
+  <section class="ownwork"><div class="container"><h2>Recent work</h2><p style="color:var(--muted);max-width:62ch">Photos from our own jobs.</p><div class="own-grid"><figure><img src="assets/own-1.jpg" alt="Recent work" width="1080" height="1440" loading="lazy"><figcaption>Recent work</figcaption></figure><figure><img src="assets/own-2.jpg" alt="Recent work" width="1080" height="1440" loading="lazy"><figcaption>Recent work</figcaption></figure><figure><img src="assets/own-3.jpg" alt="Recent work" width="1080" height="1440" loading="lazy"><figcaption>Recent work</figcaption></figure><figure><img src="assets/own-4.jpg" alt="Recent work" width="1080" height="1440" loading="lazy"><figcaption>Recent work</figcaption></figure><figure><img src="assets/own-5.jpg" alt="Recent work" width="1080" height="1350" loading="lazy"><figcaption>Recent work</figcaption></figure><figure><img src="assets/own-6.jpg" alt="Recent work" width="1080" height="1350" loading="lazy"><figcaption>Recent work</figcaption></figure></div></div></section>
+<section id="contact" class="alt">
     <div class="container contactwrap">
       <div>
         <h2>Get a quote</h2>
