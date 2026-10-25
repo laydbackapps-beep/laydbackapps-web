@@ -1,46 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Newcastle Ceramic Coating">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <linearGradient id="tile" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#243740"/>
-      <stop offset="52%" stop-color="#121d22"/>
+    <linearGradient id="sheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#48d8d8" stop-opacity="0.2"/>
+      <stop offset="40%" stop-color="#48d8d8" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#48d8d8" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#48d8d8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#48d8d8" stop-opacity="0.2"/>
+    </linearGradient>
+    <radialGradient id="bead" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#48d8d8" stop-opacity="0.7"/>
+      <stop offset="70%" stop-color="#144449" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0a1013" stop-opacity="0.1"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e2c31"/>
+      <stop offset="50%" stop-color="#101a1e"/>
       <stop offset="100%" stop-color="#0a1013"/>
     </linearGradient>
-    <linearGradient id="glow" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#48d8d8" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#48d8d8" stop-opacity="0.30"/>
-      <stop offset="100%" stop-color="#bff6f6" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="edge" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#48d8d8" stop-opacity="0.95"/>
-      <stop offset="100%" stop-color="#48d8d8" stop-opacity="0.25"/>
-    </linearGradient>
-    <linearGradient id="drop" x1="25%" y1="10%" x2="80%" y2="95%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="42%" stop-color="#d9fbfb"/>
-      <stop offset="100%" stop-color="#63e2e2"/>
-    </linearGradient>
-    <clipPath id="cut"><rect x="16" y="16" width="480" height="480" rx="112"/></clipPath>
   </defs>
-
-  <g clip-path="url(#cut)">
-    <rect x="16" y="16" width="480" height="480" fill="url(#tile)"/>
-
-    <!-- masked edge: the tape line along an uncoated boundary -->
-    <rect x="16" y="112" width="480" height="9" fill="url(#edge)"/>
-    <polygon points="446,104 486,116 446,128" fill="#48d8d8" opacity="0.9"/>
-
-    <!-- gloss behind the beading -->
-    <path d="M40 430 L440 120" stroke="url(#glow)" stroke-width="150" stroke-linecap="round"/>
-
-    <!-- beading, standing proud of the panel -->
-    <g>
-      <path d="M176 190 C 230 258 268 296 268 336 A 92 92 0 0 1 84 336 C 84 296 122 258 176 190 Z" fill="url(#drop)"/>
-      <path d="M304 300 C 330 334 349 353 349 373 A 45 45 0 0 1 259 373 C 259 353 278 334 304 300 Z" fill="url(#drop)"/>
-      <path d="M132 392 C 148 412 159 423 159 435 A 27 27 0 0 1 105 435 C 105 423 116 412 132 392 Z" fill="url(#drop)"/>
-      <circle cx="140" cy="330" r="20" fill="#ffffff" opacity="0.85"/>
-      <circle cx="292" cy="362" r="9" fill="#ffffff" opacity="0.8"/>
-    </g>
+  
+  <!-- Vehicle panel section (dark ground) -->
+  <rect x="64" y="160" width="384" height="192" rx="8" fill="url(#panel)"/>
+  
+  <!-- Masked-off edge line with tape lift -->
+  <path d="M64 160 L448 160" stroke="#48d8d8" stroke-width="2" stroke-dasharray="8,4" opacity="0.6"/>
+  <!-- Tape lift triangle -->
+  <polygon points="448,155 458,160 448,165" fill="#48d8d8" opacity="0.8"/>
+  
+  <!-- Specular sheen band sweeping diagonally -->
+  <path d="M80 320 L432 128" stroke="url(#sheen)" stroke-width="24" stroke-linecap="round" opacity="0.8"/>
+  
+  <!-- Water-bead cluster sitting proud of surface -->
+  <g fill="url(#bead)">
+    <circle cx="180" cy="280" r="16"/>
+    <circle cx="220" cy="250" r="12"/>
+    <circle cx="255" cy="275" r="10"/>
+    <circle cx="200" cy="240" r="7"/>
+    <circle cx="235" cy="260" r="6"/>
+    <circle cx="165" cy="265" r="8"/>
   </g>
-
-  <rect x="16" y="16" width="480" height="480" rx="112" fill="none" stroke="#2c4147" stroke-width="4"/>
+  
+  <!-- Additional smaller beads -->
+  <g fill="#48d8d8" opacity="0.6">
+    <circle cx="290" cy="230" r="5"/>
+    <circle cx="310" cy="255" r="4"/>
+    <circle cx="330" cy="240" r="3.5"/>
+    <circle cx="350" cy="265" r="4"/>
+  </g>
+  
+  <!-- Subtle highlight on panel edge -->
+  <path d="M64 352 L448 352" stroke="#1e2c31" stroke-width="1" opacity="0.5"/>
 </svg>

@@ -24,7 +24,6 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo",system
 img{max-width:100%;display:block}
 a{color:var(--acc);text-decoration:none}
 h1,h2,h3{margin:0;letter-spacing:-.02em;line-height:1.08;font-weight:800}
-h3{font-size:1.4rem}
 p{margin:0 0 1rem}
 .wrap{width:min(1120px,92vw);margin:0 auto}
 
@@ -37,13 +36,13 @@ p{margin:0 0 1rem}
 .nav{display:flex;align-items:center;gap:26px}
 .nav a{color:#dce5ef;font-size:.92rem;font-weight:500}
 .nav a:hover{color:var(--acc)}
-.call{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:#14202b!important;font-weight:700;font-size:.9rem;padding:11px 18px;border-radius:6px;white-space:nowrap;transition:background .2s ease}
-.call:hover{background:#8fbbdd;color:#14202b!important}
+.call{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:#14202b;font-weight:700;font-size:.9rem;padding:11px 18px;border-radius:6px;white-space:nowrap;transition:background .2s ease}
+.call:hover{background:#8fbbdd}
 @media(max-width:900px){.nav{display:none}}
 @media(max-width:520px){.lb-brand img{height:36px;width:36px;flex:0 0 36px}.lb-brand b{font-size:14px}.call{padding:9px 12px;font-size:.82rem}}
 
 /* ---------- hero ---------- */
-.hero{position:relative;min-height:min(72vh,620px);display:flex;align-items:center;padding:calc(var(--nav) + 24px) 4vw 44px;overflow:hidden;isolation:isolate;background:#14121f}
+.hero{position:relative;min-height:min(72vh,620px);display:flex;align-items:center;padding:calc(var(--nav) + 24px) 0 44px;overflow:hidden;isolation:isolate;background:#14121f}
 #heroCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block;filter:brightness(1.22) saturate(1.05)}
 .scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(100deg,rgba(18,16,29,.86) 0%,rgba(18,16,29,.55) 44%,rgba(18,16,29,.16) 100%)}
 .tint{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(120,168,208,.09);mix-blend-mode:screen}
@@ -64,7 +63,7 @@ h2{font-size:clamp(1.7rem,3.4vw,2.6rem);max-width:24ch}
 @media(max-width:820px){.svc-grid{grid-template-columns:1fr;gap:32px}}
 .pours{display:grid;gap:0;border-top:1px solid var(--line)}
 .pour{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.pour h3{font-size:1.4rem;font-weight:700;color:var(--ink)}
+.pour h3{font-size:1.12rem;font-weight:700;color:var(--ink)}
 .pour p{color:var(--muted);font-size:.96rem;margin:0}
 @media(max-width:560px){.pour{grid-template-columns:1fr;gap:6px}}
 
@@ -122,16 +121,15 @@ header,.site-header,.lb-brand,.lb-brand *{opacity:1;visibility:visible}
   .call,button[type=submit]{transition:none}
 }
 </style>
-<style id="lb-header-rule">nav,header{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:clamp(18px,4vw,64px)!important;background:#363435!important;color:#ffffff!important;padding:14px clamp(16px,4vw,48px)!important;min-height:0!important;height:auto!important}.lb-brand{display:flex!important;align-items:center!important;gap:clamp(14px,2.5vw,38px)!important;flex:0 1 auto!important;min-width:0!important;text-decoration:none!important}.lb-mark{height:clamp(56px,5vw,72px)!important;width:auto!important;object-fit:contain!important;flex:none!important;-webkit-mask-image:radial-gradient(ellipse at center,#000 74%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 74%,transparent 100%)}.lb-word{height:auto!important;max-height:clamp(26px,2.3vw,34px)!important;width:auto!important;object-fit:contain!important;max-width:min(32vw,460px)!important;flex:0 1 auto!important;min-width:0!important;-webkit-mask-image:radial-gradient(ellipse at center,#000 78%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 78%,transparent 100%)}.lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}nav ul,nav .nav-links{display:flex!important;align-items:center!important;gap:clamp(12px,2vw,26px)!important;margin:0!important;padding:0!important;list-style:none!important;flex:1 1 auto!important;justify-content:flex-end!important}nav>div,nav>span,nav>.wrap,nav>.container,nav>.nav-in,nav>.nav-links{flex:1 1 auto!important;min-width:0!important;width:auto!important;max-width:none!important;margin-left:auto!important;margin-right:0!important}nav{flex-wrap:nowrap!important}.lb-brand{overflow:hidden!important}nav{min-width:0!important;flex-wrap:wrap!important;row-gap:6px!important}.hdr__in,.nav__in,.nav-inner{min-width:0!important;flex:1 1 auto!important}nav a{color:#ffffff!important}[class*=hero-copy],[class*=hero__copy],[class*=hero-in],[class*=hero-inner]{flex-wrap:nowrap!important}[class*=hero-copy]>*,[class*=hero__copy]>*,[class*=hero-in]>*,[class*=hero-inner]>*{flex:0 0 auto!important;min-height:0!important}body{background:#363435!important;color:#ffffff!important}section,.section{background-color:transparent!important}.nav-cta,.cta{background:#2f69b6!important;color:#fff!important;border-color:#2f69b6!important}a{--lb-accent:#2f69b6}body{padding-top:0!important}[class~=hero],.hero,header#top:not(.hdr),section#top{padding-top:calc(var(--lb-navh,112px) + 20px)!important;padding-bottom:36px!important;min-height:clamp(400px,50vh,540px)!important;max-height:none!important;align-content:center!important;align-items:stretch!important;flex-wrap:wrap!important;gap:14px!important}[class~=hero]:not(.lb-hgrid),.hero:not(.lb-hgrid),header#top:not(.hdr),section#top{display:flex!important;flex-direction:row!important;justify-content:center!important;position:relative!important}[class~=hero]>*,.hero>*,header#top>*,section#top>*{flex:1 1 min(430px,100%)!important;min-width:0!important;max-width:100%!important}[class~=hero]>canvas,.hero>canvas,[class~=hero]>[class*=scrim],[class~=hero]>.lbhf{flex:none!important}[class~=hero] canvas,.hero canvas,header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important}[class~=hero]>.hero-photo,[class~=hero]>.hero-shade,[class~=hero]>[class*=scrim],header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;margin:0!important}header{overflow:visible!important}.lb-hgrid{justify-items:stretch!important}p,li,.sub,.lede{color:rgba(255,255,255,.72)!important}[class*=hero] p,[class*=hero] li,[class*=hero] .sub,[class*=hero] .lede,.hero p{color:rgba(255,255,255,.88)!important;text-shadow:0 1px 12px rgba(0,0,0,.45)}@media(max-width:820px){nav{flex-wrap:wrap!important;gap:10px!important}}</style><style id="lb-ink">header,nav.nav,.lb-brand{color:#ffffff!important}.lb-brand{overflow:visible!important}.lb-word--text{max-height:none!important;height:auto!important;white-space:normal!important;line-height:1.16;font-weight:800;font-size:clamp(14px,1.3vw,18px);max-width:min(34vw,300px)}</style><style>header,nav.nav,.lb-brand{--lb-name:currentColor}</style><style id="lb-ink2">header .brand,header .b-txt,header .b-txt *,nav .brand,nav .lb-brand,header nav a,nav.nav a,.site-head .brand,.brand__name{color:#ffffff!important}</style><style id="lb-contrast-fix">
-/* contrast stated per element, measured in the browser */
-header.site-header div.bar nav.nav a.call:nth-of-type(4){color:#0b0b0b !important}
-</style>
 </head>
 <body>
 
-<header class="site-header"><a href="/" class="lb-brand" aria-label="Loveday's Concrete Construction"><img style="max-width:800px" width="800" height="791" src="assets/logo.jpg" alt="" class="lb-mark" loading="eager" decoding="async"><span class="lb-word lb-word--text">Loveday's Concrete Construction</span></a>
+<header class="site-header">
   <div class="bar">
-    
+    <a class="lb-brand" href="#top" aria-label="Loveday's Concrete Construction home">
+      <img src="assets/logo.png" alt="Loveday's Concrete Construction logo" width="44" height="44">
+      <b>Loveday's Concrete Construction</b>
+    </a>
     <nav class="nav" aria-label="Main">
       <a href="#services">What we pour</a>
       <a href="#method">How we work</a>
@@ -157,7 +155,7 @@ header.site-header div.bar nav.nav a.call:nth-of-type(4){color:#0b0b0b !importan
 
   <section id="services" class="svc">
     <div class="wrap">
-      <div style="display:none" class="svc-grid">
+      <div class="svc-grid">
         <div class="rv">
           <span class="eyebrow">What we pour</span>
           <h2>Flat, square and true</h2>
@@ -213,7 +211,7 @@ header.site-header div.bar nav.nav a.call:nth-of-type(4){color:#0b0b0b !importan
   <section class="trust">
     <div class="wrap">
       <h2>A concreter who finishes what he starts</h2>
-      <div style="display:none" class="trust-grid">
+      <div class="trust-grid">
         <div class="rv">
           <h3>One crew, start to finish</h3>
           <p>The same hands set out, pour and finish. Nothing gets handed off to a stranger on the day.</p>
@@ -267,7 +265,7 @@ header.site-header div.bar nav.nav a.call:nth-of-type(4){color:#0b0b0b !importan
   <div class="wrap">
     <div class="f-grid">
       <div>
-        <div class="f-brand"><img style="max-width:600px" src="assets/logo.png" alt="" width="600" height="600"><span>Loveday's Concrete Construction</span></div>
+        <div class="f-brand"><img src="assets/logo.png" alt="" width="38" height="38"><span>Loveday's Concrete Construction</span></div>
         <p>Concreting across Bendigo and Central Victoria. Your satisfaction is our aim.</p>
       </div>
       <div>

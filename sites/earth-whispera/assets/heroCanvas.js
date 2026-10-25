@@ -1598,10 +1598,8 @@
         shade(TONE.clay2, 0.8 + rnd() * 0.5), [0.3, 0.8, 0.4], 1.5);
     }
 
-    /* --- dipper arm, off-frame top right into the bucket ---
-       bucket group is nudged back and up so it clears the stat row */
-    var BOF = [0, 0.52, 1.34];
-    var A0 = [9.4, 4.75, 10.4], A1 = [2.55 + BOF[0], 2.2 + BOF[1], 5.72 + BOF[2]];
+    /* --- dipper arm, off-frame top right into the bucket --- */
+    var A0 = [9.4, 4.75, 10.4], A1 = [2.55, 2.2, 5.72];
     (function () {
       var dx = A1[0] - A0[0], dy = A1[1] - A0[1], dz = A1[2] - A0[2];
       var L = Math.hypot(dx, dy, dz); dx /= L; dy /= L; dz /= L;
@@ -1636,11 +1634,11 @@
     })();
 
     /* ram and rod down the back of the arm */
-    drum(5.05, 3.42, 7.85, 3.12 + BOF[0], 2.62 + BOF[1], 6.28 + BOF[2], 0.15, 9, TONE.dark, 0.55);
-    drum(3.12 + BOF[0], 2.62 + BOF[1], 6.28 + BOF[2], 2.52 + BOF[0], 2.24 + BOF[1], 5.72 + BOF[2], 0.075, 7, TONE.wear, 0.7);
+    drum(5.05, 3.42, 7.85, 3.12, 2.62, 6.28, 0.15, 9, TONE.dark, 0.55);
+    drum(3.12, 2.62, 6.28, 2.52, 2.24, 5.72, 0.075, 7, TONE.wear, 0.7);
 
     /* --- the bucket --- */
-    var BO = [1.62 + BOF[0], 1.14 + BOF[1], 4.9 + BOF[2]];
+    var BO = [1.62, 1.14, 4.9];
     var U = [0.34, 0.94, 0], V = [-0.94, -0.34, 0], C = [0.34, -0.94, 0];
     function B(u, a, c) {
       return [BO[0] + U[0] * u + V[0] * a + C[0] * c,
@@ -1686,14 +1684,11 @@
            B(eu, -0.02, 0)[0], B(eu, -0.02, 0)[1], B(eu, -0.02, 0)[2] + 0.09, 0.055, 7, TONE.wear, 1.3);
     });
     drum(B(0.3, 0.02, -0.06)[0], B(0.3, 0.02, -0.06)[1], B(0.3, 0.02, -0.06)[2],
-         3.05 + BOF[0], 2.55 + BOF[1], 6.15 + BOF[2], 0.085, 8, TONE.steel2, 1.25);
+         3.05, 2.55, 6.15, 0.085, 8, TONE.steel2, 1.25);
 
     /* hoses from the arm down to the bucket */
-    var HOSE = [B(0.1, -0.16, 0.02),
-      [2.35 + BOF[0], 2.6 + BOF[1], 5.9 + BOF[2]], [2.9 + BOF[0], 3.1 + BOF[1], 6.5 + BOF[2]],
-      [3.5 + BOF[0] * 0.5, 3.5 + BOF[1] * 0.5, 7.2 + BOF[2] * 0.5]];
-    var PIPE = [[3.62 + BOF[0] * 0.5, 3.28 + BOF[1] * 0.5, 7.02 + BOF[2] * 0.5],
-      [2.92 + BOF[0], 2.88 + BOF[1], 6.32 + BOF[2]], [2.3 + BOF[0], 2.5 + BOF[1], 5.86 + BOF[2]]];
+    var HOSE = [B(0.1, -0.16, 0.02), [2.35, 2.6, 5.9], [2.9, 3.1, 6.5], [3.5, 3.5, 7.2]];
+    var PIPE = [[3.62, 3.28, 7.02], [2.92, 2.88, 6.32], [2.3, 2.5, 5.86]];
     var HOSE_T = 1.35;
 
     /* dust hanging over the trench */
@@ -1752,8 +1747,7 @@
         S.ctx.globalAlpha = 1;
 
         /* bucket shade thrown on the far wall */
-        var shd = [[-0.2, 1.15 + BOF[1], 9.1 + BOF[2]], [2.9, 1.05 + BOF[1], 9.15 + BOF[2]],
-          [3.1, -0.9 + BOF[1], 10.0 + BOF[2]], [-0.1, -0.75 + BOF[1], 9.95 + BOF[2]]];
+        var shd = [[-0.2, 1.15, 9.1], [2.9, 1.05, 9.15], [3.1, -0.9, 10.0], [-0.1, -0.75, 9.95]];
         var shp = [];
         var shOk = true;
         for (i = 0; i < shd.length; i++) {

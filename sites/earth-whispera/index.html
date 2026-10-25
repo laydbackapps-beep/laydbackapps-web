@@ -57,13 +57,11 @@ ul,ol{margin:0;padding:0;list-style:none}
 
 /* ---------- hero ---------- */
 .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
-  min-height:clamp(540px,76svh,740px);display:flex;align-items:flex-end;padding:calc(var(--s6) * .5) 0 var(--s4)}
+  min-height:clamp(560px,86svh,820px);display:flex;align-items:flex-end;padding:calc(var(--s6) * .7) 0 var(--s4)}
 #heroCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 .hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:
-    radial-gradient(120% 58% at 14% 100%,rgba(10,12,15,.66),rgba(10,12,15,0) 62%),
-    linear-gradient(90deg,rgba(10,12,15,.95) 0%,rgba(10,12,15,.86) 32%,rgba(10,12,15,.34) 60%,rgba(10,12,15,.06) 100%),
-    linear-gradient(180deg,rgba(10,12,15,.34) 0%,rgba(10,12,15,0) 40%,rgba(10,12,15,.62) 100%)}
+  background:linear-gradient(90deg,rgba(10,12,15,.95) 0%,rgba(10,12,15,.86) 32%,rgba(10,12,15,.34) 60%,rgba(10,12,15,.06) 100%),
+             linear-gradient(180deg,rgba(10,12,15,.34) 0%,rgba(10,12,15,0) 40%,rgba(10,12,15,.5) 100%)}
 .hero .wrap{position:relative;z-index:2;width:100%}
 .hero h1{font-size:var(--t-hero);letter-spacing:-.03em;line-height:.99;max-width:17ch;margin-bottom:var(--s3)}
 .hero h1 em{font-style:normal;color:var(--gold)}
@@ -178,16 +176,17 @@ form button:disabled{opacity:.6;cursor:wait}
 </style>
 
 <!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
-
-<!--LB-HEROGRID--><style id="lb-herogrid">[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
-<style id="lb-soc-css">.lb-soc{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;opacity:.85;text-decoration:none}.lb-soc:hover{opacity:1}footer .lb-soc{margin-right:8px}</style><style id="lb-ink">header,nav.nav,.lb-brand{color:#ffffff!important}</style><style id="lb-header-rule">nav,header{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:clamp(18px,4vw,64px)!important;background:#0f1115!important;color:#ffffff!important;padding:14px clamp(16px,4vw,48px)!important;min-height:0!important;height:auto!important}.lb-brand{display:flex!important;align-items:center!important;gap:clamp(14px,2.5vw,38px)!important;flex:0 1 auto!important;min-width:0!important;text-decoration:none!important}.lb-mark{height:clamp(56px,5vw,72px)!important;width:auto!important;object-fit:contain!important;flex:none!important;-webkit-mask-image:radial-gradient(ellipse at center,#000 74%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 74%,transparent 100%)}.lb-word{height:auto!important;max-height:clamp(26px,2.3vw,34px)!important;width:auto!important;object-fit:contain!important;max-width:min(32vw,460px)!important;flex:0 1 auto!important;min-width:0!important;-webkit-mask-image:radial-gradient(ellipse at center,#000 78%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 78%,transparent 100%)}.lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}nav ul,nav .nav-links{display:flex!important;align-items:center!important;gap:clamp(12px,2vw,26px)!important;margin:0!important;padding:0!important;list-style:none!important;flex:1 1 auto!important;justify-content:flex-end!important}nav>div,nav>span,nav>.wrap,nav>.container,nav>.nav-in,nav>.nav-links{flex:1 1 auto!important;min-width:0!important;width:auto!important;max-width:none!important;margin-left:auto!important;margin-right:0!important}nav{flex-wrap:nowrap!important}.lb-brand{overflow:hidden!important}nav{min-width:0!important;flex-wrap:wrap!important;row-gap:6px!important}.hdr__in,.nav__in,.nav-inner{min-width:0!important;flex:1 1 auto!important}nav a{color:#ffffff!important}[class*=hero-copy],[class*=hero__copy],[class*=hero-in],[class*=hero-inner]{flex-wrap:nowrap!important}[class*=hero-copy]>*,[class*=hero__copy]>*,[class*=hero-in]>*,[class*=hero-inner]>*{flex:0 0 auto!important;min-height:0!important}body{background:#0f1115!important;color:#ffffff!important}section,.section{background-color:transparent!important}.nav-cta,.cta{background:#d4b063!important;color:#fff!important;border-color:#d4b063!important}a{--lb-accent:#d4b063}body{padding-top:0!important}[class~=hero],.hero,header#top:not(.hdr),section#top{padding-top:calc(var(--lb-navh,112px) + 20px)!important;padding-bottom:36px!important;min-height:clamp(400px,50vh,540px)!important;max-height:none!important;align-content:center!important;align-items:stretch!important;flex-wrap:wrap!important;gap:14px!important}[class~=hero]:not(.lb-hgrid),.hero:not(.lb-hgrid),header#top:not(.hdr),section#top{display:flex!important;flex-direction:row!important;justify-content:center!important;position:relative!important}[class~=hero]>*,.hero>*,header#top>*,section#top>*{flex:1 1 min(430px,100%)!important;min-width:0!important;max-width:100%!important}[class~=hero]>canvas,.hero>canvas,[class~=hero]>[class*=scrim],[class~=hero]>.lbhf{flex:none!important}[class~=hero] canvas,.hero canvas,header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important}[class~=hero]>.hero-photo,[class~=hero]>.hero-shade,[class~=hero]>[class*=scrim],header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;margin:0!important}header{overflow:visible!important}.lb-hgrid{justify-items:stretch!important}p,li,.sub,.lede{color:rgba(255,255,255,.72)!important}[class*=hero] p,[class*=hero] li,[class*=hero] .sub,[class*=hero] .lede,.hero p{color:rgba(255,255,255,.88)!important;text-shadow:0 1px 12px rgba(0,0,0,.45)}@media(max-width:820px){nav{flex-wrap:wrap!important;gap:10px!important}}.lb-mark{height:clamp(56px,5vw,76px)!important}.lb-word{height:clamp(38px,4.4vw,62px)!important;max-height:none!important;max-width:min(60vw,900px)!important}</style><style id="lb-ink2">header .brand,header .b-txt,header .b-txt *,nav .brand,nav .lb-brand,header nav a,nav.nav a,.site-head .brand,.brand__name{color:#ffffff!important}</style></head><body>
+</head><body>
 <a class="skip" href="#main">Skip to content</a>
 <script>document.documentElement.classList.remove('no-js');</script>
 
-<header class="site-h"><a href="/" class="lb-brand" aria-label="Earth Whispera"><img src="assets/logo-flat.png" alt="" class="lb-mark" loading="eager" decoding="async"><span class="lb-word lb-word--text">Earth Whispera</span></a>
+<header class="site-h">
   <div class="bar">
-    
-    <span class="lb-socials"><a class="lb-soc" href="https://www.facebook.com/people/Earth-Whispera/61567067174709/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a></span><nav class="nav" aria-label="Main">
+    <a class="brand" href="#top" aria-label="Earth Whispera — home">
+      <img src="assets/logo.svg" alt="Earth Whispera logo" width="36" height="36">
+      <span>Earth Whispera</span>
+    </a>
+    <nav class="nav" aria-label="Main">
       <a class="lnk" href="#services">Services</a>
       <a class="lnk" href="#process">How we work</a>
       <a class="lnk" href="#about">About</a>
@@ -201,6 +200,7 @@ form button:disabled{opacity:.6;cursor:wait}
   <canvas id="heroCanvas" aria-hidden="true"></canvas>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap">
+    <p class="eyebrow">Kilkivan &middot; Wide Bay &middot; Burnett</p>
     <h1>Ground cut clean.<br>Pads <em>ready to build on.</em></h1>
     <p class="lede">Bulk excavation, footings, trenching, drainage, driveways and retaining walls. Owner-operated by Aaron Wakelin, on the machine from set-out to final grade.</p>
     <a class="cta" href="tel:+61417731603">
@@ -218,6 +218,7 @@ form button:disabled{opacity:.6;cursor:wait}
 <section class="sec" id="services">
   <div class="wrap">
     <div class="sec-h reveal">
+      <p class="eyebrow">What we do</p>
       <h2>Earthworks and siteworks, start to finish.</h2>
       <p>Tighter than it needs to be, every stage of the job. The cut, the fall on the trench, the compaction under a slab.</p>
     </div>
@@ -237,6 +238,7 @@ form button:disabled{opacity:.6;cursor:wait}
 <section class="sec" id="process">
   <div class="wrap">
     <div class="sec-h reveal">
+      <p class="eyebrow">How a job runs</p>
       <h2>Same bloke, first walk to last pass.</h2>
       <p>No subcontracted operator arriving halfway through. Whoever sets the job out is the one who finishes it.</p>
     </div>
@@ -251,6 +253,7 @@ form button:disabled{opacity:.6;cursor:wait}
 <section class="sec" id="work">
   <div class="wrap">
     <div class="sec-h reveal">
+      <p class="eyebrow">On site</p>
       <h2>The ground tells you what it needs.</h2>
     </div>
     <div class="work reveal">
@@ -264,6 +267,7 @@ form button:disabled{opacity:.6;cursor:wait}
 <section class="sec" id="about">
   <div class="wrap split reveal">
     <div class="body">
+      <p class="eyebrow">About Earth Whispera</p>
       <h2>Thirty years moving earth in Queensland.</h2>
       <p>Aaron Wakelin has been running excavators and dozers across the Wide Bay and Burnett since the early 1990s. House pads on sloping blocks, kilometre-long farm roads, tight residential footings: the standard does not change. Cut clean, grade true, compact hard.</p>
       <p>There are no subcontractors on the iron. You deal with the operator who quoted the job, and he owns the finish.</p>
@@ -281,6 +285,7 @@ form button:disabled{opacity:.6;cursor:wait}
 <section class="sec contact" id="contact">
   <div class="wrap contact-grid">
     <div class="reveal">
+      <p class="eyebrow">Get a quote</p>
       <h2 style="font-size:var(--t-h2)">Talk to Aaron directly.</h2>
       <a class="big-tel" href="tel:+61417731603">0417 731 603</a>
       <p class="meta"><a href="mailto:earthwhispera@gmail.com">earthwhispera@gmail.com</a></p>
@@ -314,7 +319,7 @@ form button:disabled{opacity:.6;cursor:wait}
     </div>
     <p>&copy; Earth Whispera, Kilkivan QLD</p>
   </div>
-<div class="lb-socials"><a class="lb-soc" href="https://www.facebook.com/people/Earth-Whispera/61567067174709/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a></div></footer>
+</footer>
 
 <script src="assets/heroCanvas.js"></script>
 <script>
@@ -326,8 +331,7 @@ form button:disabled{opacity:.6;cursor:wait}
   var scene = Projection.sceneExcavation(S, {
     fogCol:'#22201c',
     tone:{soil:'#453a2b', soil2:'#4e4231', clay:'#6f5940', clay2:'#82694b', sand:'#9a7d52',
-      gravel:'#6a655a', rock:'#565751', lip:'#dcaa70', wear:'#efe0c9', bush:'#2b352c', rut:'#2b2318',
-      steel:'#4d565f', steel2:'#6f7a85', dark:'#2f353c'}
+      gravel:'#6a655a', rock:'#565751', lip:'#dcaa70', wear:'#efe0c9', bush:'#2b352c', rut:'#2b2318'}
   });
   S.frame(function(t){
     var still = Projection.reduced();

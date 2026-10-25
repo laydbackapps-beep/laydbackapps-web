@@ -29,7 +29,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--font-sans);font-size:16.5px;line-height:1.362;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-sans);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit}
 .wrap{width:min(1180px,92vw);margin-inline:auto}
@@ -45,10 +45,10 @@ html.js .drop.in{opacity:1;transform:none}
 .nav-in{display:flex;align-items:center;gap:1.4rem;height:80px}
 .brand{display:flex;align-items:center;gap:.9rem;color:#fff;text-decoration:none}
 .brand img{height:48px;width:auto;border-radius:6px;background:#fff;padding:4px}
-.brand-name{font-family:var(--font-display);font-size:1.28rem;line-height:1;color:#fff;font-weight:700;letter-spacing:0.02em}
-.brand-sub{font-size:0.82rem;letter-spacing:0.05em;text-transform:uppercase;color:#CBC5B7;font-weight:700}
+.brand-name{font-family:var(--font-display);font-size:1.28rem;line-height:1;color:#fff;font-weight:700;letter-spacing:.02em}
+.brand-sub{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:#CBC5B7;font-weight:700}
 .nav-links{display:flex;gap:1.35rem;margin-left:auto;align-items:center}
-.nav-links a{color:#AFACA3;text-decoration:none;font-size:0.92rem;font-weight:500}
+.nav-links a{color:#AFACA3;text-decoration:none;font-size:.92rem;font-weight:500}
 .nav-links a:hover{color:#fff}
 .nav-cta{background:var(--accent);color:#121214 !important;padding:.55rem 1.2rem;border-radius:6px;font-weight:700}
 .nav-cta:hover{filter:brightness(1.08)}
@@ -71,47 +71,48 @@ html.js .drop.in{opacity:1;transform:none}
 .hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .98fr;gap:2.6rem;align-items:center;padding-block:10vh 4rem;width:100%}
 .hero-visual{margin:0;position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(236,233,226,.18);box-shadow:0 30px 72px rgba(0,0,0,.62);background:#0B0B0D}
 .hero-visual img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;display:block}
-.hero-visual figcaption{position:absolute;inset:auto 0 0 0;padding:1rem 1.1rem .8rem;background:rgba(6,6,7,.92);color:#fff;font-size:0.82rem;letter-spacing:0.05em;text-transform:uppercase;font-weight:700}
+.hero-visual figcaption{position:absolute;inset:auto 0 0 0;padding:1rem 1.1rem .8rem;background:rgba(6,6,7,.92);color:#fff;font-size:.76rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700}
 @media(max-width:860px){.hero-strip{display:none}.hero-in{grid-template-columns:1fr;gap:1.4rem;padding-block:0 3.4rem}.hero-visual{order:-1;border:0;border-radius:0;box-shadow:none;width:100vw;margin-left:calc(50% - 50vw)}.hero-visual img{aspect-ratio:16/10}.hero canvas{}.hero-shade{display:none}.hero{background:#131315}.hero-cta{width:100%}.hero-cta .btn{flex:1 1 100%;justify-content:center;min-height:52px}.cta-row{width:100%}.cta-row .btn{width:100%;justify-content:center;min-height:52px}}
-.hero-kicker{display:inline-flex;align-items:center;gap:.65rem;color:#E4E0D4;font-size:0.82rem;letter-spacing:0.05em;text-transform:none;font-weight:700;margin-bottom:1rem}
+.hero-kicker{display:inline-flex;align-items:center;gap:.65rem;color:#E4E0D4;font-size:.72rem;letter-spacing:.26em;text-transform:none;font-weight:700;margin-bottom:1rem}
 .hero-kicker::before{content:"";width:36px;height:2px;background:var(--accent)}
-.hero h1{font-family:var(--font-display);font-size:clamp(2.3rem,5.8vw,4.5rem);line-height:1.36;color:#F5F3EC;font-weight:700;max-width:22ch;letter-spacing:-.01em}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.3rem,5.8vw,4.5rem);line-height:1.06;color:#F5F3EC;font-weight:700;max-width:22ch;letter-spacing:-.01em}
 .hero h1 em{font-style:normal;color:#D8D2C6}
 .hero-sub{margin-top:1.1rem;color:#DBD7CC;font-size:clamp(.98rem,1.5vw,1.09rem);max-width:56ch}
 .hero-cta{display:flex;gap:.9rem;margin-top:1.8rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.55rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.95rem;transition:transform .15s ease,filter .15s ease}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.55rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.95rem;transition:transform .15s ease,filter .15s ease}
 .btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
 .btn-primary{background:var(--accent);color:#121214}
 .btn-ghost{border:1.5px solid rgba(245,243,236,.6);background:rgba(255,255,255,.07);color:#FBF9F3}
 .hero-strip{margin-top:2.4rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;border-top:1px solid rgba(236,233,226,.16);padding-top:1.2rem}
-.hero-strip p{color:#a3aebf;font-size:0.82rem;letter-spacing:0.05em;text-transform:none;font-weight:700}
+.hero-strip p{color:#a3aebf;font-size:.7rem;letter-spacing:.13em;text-transform:none;font-weight:700}
 .hero-strip strong{display:block;color:#F5F3EC;font-family:var(--font-display);font-size:1.05rem;margin-top:.2rem;font-weight:600}
 
 section{padding-block:5.4rem}
 .sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:2.4rem}
 .sec-head::before{content:"";width:40px;height:3px;background:var(--accent);flex:none;align-self:center;border-radius:2px}
-.sec-kicker{font-size:0.82rem;letter-spacing:0.05em;text-transform:none;color:#C9C3B5;font-weight:700}
-.sec-title{font-family:var(--font-display);font-size:clamp(1.75rem,4vw,2.7rem);font-weight:700;line-height:1.312;margin-top:.35rem;max-width:28ch;color:#ECE9E2;letter-spacing:-.01em}
+.sec-kicker{font-size:.7rem;letter-spacing:.3em;text-transform:none;color:#C9C3B5;font-weight:700}
+.sec-title{font-family:var(--font-display);font-size:clamp(1.75rem,4vw,2.7rem);font-weight:700;line-height:1.12;margin-top:.35rem;max-width:28ch;color:#ECE9E2;letter-spacing:-.01em}
 .sec-sub{color:var(--muted);max-width:60ch;margin-top:.85rem}
 
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(305px,1fr));gap:1.15rem}
 .svc{background:rgba(236,233,226,.05);border:1px solid var(--line);border-radius:10px;padding:1.65rem 1.5rem;position:relative;overflow:hidden;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
-.svc:hover{border-color:var(--accent-ink,var(--accent));transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.svc:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.5)}
 .svc::after{content:"";position:absolute;top:0;left:0;width:44px;height:3px;background:var(--accent);transition:width .3s ease}
 .svc:hover::after{width:100%}
 .svc-ico{width:44px;height:44px;border-radius:9px;background:#26262A;display:grid;place-items:center;margin-bottom:.95rem}
 .svc-ico svg{width:22px;height:22px;stroke:#F1EFE8;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .svc h3{font-family:var(--font-display);font-weight:700;font-size:1.12rem;color:#ECE9E2;margin-bottom:.35rem}
-.svc p{color:var(--muted);font-size:0.94rem}
+.svc p{color:var(--muted);font-size:.94rem}
 
 .band{background:var(--dark);border-block:2px solid rgba(236,233,226,.14)}
 .band .sec-title{color:var(--dink)}
 .band .sec-kicker{color:#C9C3B5}
 .band .sec-sub{color:var(--dmut)}
-.seq{display:grid;grid-template-columns:repeat(auto-fit,minmax(305px,1fr));gap:1.15rem}
-.seq-i{background:rgba(236,233,226,.05);border:1px solid rgba(236,233,226,.14);border-radius:10px;padding:1.55rem 1.45rem}
-.seq-i h3{font-family:var(--font-display);font-weight:700;font-size:1.06rem;color:var(--dink);margin-bottom:.3rem}
-.seq-i p{color:var(--dmut);font-size:0.92rem}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(305px,1fr));gap:1.15rem}
+.step{background:rgba(236,233,226,.05);border:1px solid rgba(236,233,226,.14);border-radius:10px;padding:1.55rem 1.45rem}
+.step-n{font-family:var(--font-display);font-size:1.75rem;line-height:1;color:#C9C3B5;margin-bottom:.5rem;font-weight:700}
+.step h3{font-family:var(--font-display);font-weight:700;font-size:1.06rem;color:var(--dink);margin-bottom:.3rem}
+.step p{color:var(--dmut);font-size:.92rem}
 
 .why-block{display:grid;grid-template-columns:.93fr 1.07fr;gap:2.4rem;align-items:start}
 @media(max-width:980px){.why-block{grid-template-columns:1fr;gap:2rem}}
@@ -120,15 +121,15 @@ section{padding-block:5.4rem}
 .why-tick{flex:none;width:26px;height:26px;border-radius:6px;background:var(--accent);display:grid;place-items:center;margin-top:.2rem}
 .why-tick svg{width:14px;height:14px;stroke:#121214;fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
 .why-item h3{font-family:var(--font-display);font-weight:700;font-size:1.08rem;color:#ECE9E2}
-.why-item p{color:var(--muted);font-size:0.93rem;margin-top:.1rem}
+.why-item p{color:var(--muted);font-size:.93rem;margin-top:.1rem}
 .why-visual{border-radius:12px;border:1px solid var(--line);background:rgba(236,233,226,.06);padding:1.7rem;display:grid;place-items:center}
 .why-visual img{width:min(330px,94%);border-radius:8px}
-.why-visual p{color:var(--muted);margin-top:1rem;font-size:0.88rem;text-align:center}
+.why-visual p{color:var(--muted);margin-top:1rem;font-size:.88rem;text-align:center}
 
 .tail{background:#17171A;border-block:1px solid var(--line)}
-.svc-tags{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.3rem}
-.svc-tag{border:1px solid rgba(201,195,181,.30);border-radius:999px;padding:.5rem 1.15rem;font-size:0.88rem;color:#C9C3B5;background:rgba(236,233,226,.05);font-weight:600}
-.tail-note{color:var(--muted);font-size:0.93rem;margin-top:1.2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.3rem}
+.chip{border:1px solid rgba(201,195,181,.30);border-radius:999px;padding:.5rem 1.15rem;font-size:.88rem;color:#C9C3B5;background:rgba(236,233,226,.05);font-weight:600}
+.tail-note{color:var(--muted);font-size:.93rem;margin-top:1.2rem}
 
 .close-band{background:var(--dark);border-block:2px solid rgba(236,233,226,.14);text-align:center}
 .close-band .sec-head{justify-content:center;text-align:center}
@@ -138,7 +139,7 @@ section{padding-block:5.4rem}
 .close-band .cta-sub{color:var(--dmut);max-width:58ch;margin:1rem auto 0}
 .cta-row{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin-top:1.9rem}
 .cta-lines{margin-top:1.6rem;display:flex;gap:2.2rem;justify-content:center;flex-wrap:wrap}
-.cta-lines p{color:var(--dmut);font-size:0.95rem}
+.cta-lines p{color:var(--dmut);font-size:.95rem}
 .cta-lines a{color:var(--dink);text-decoration:none;font-weight:700}
 .cta-lines a:hover{color:#D8D2C6}
 
@@ -148,11 +149,11 @@ footer{background:#0B0B0D;border-top:2px solid rgba(236,233,226,.16);color:#A5A2
 .foot-brand{display:flex;gap:.9rem;align-items:center;margin-bottom:1.05rem}
 .foot-brand img{height:52px;width:auto;border-radius:6px;background:#fff;padding:4px}
 .foot-brand-name{font-family:var(--font-display);color:#F5F3EC;font-size:1.24rem;line-height:1;font-weight:700}
-.foot-brand-sub{font-size:0.82rem;letter-spacing:0.05em;text-transform:none;color:#CBC5B7;font-weight:700}
+.foot-brand-sub{font-size:.56rem;letter-spacing:.22em;text-transform:none;color:#CBC5B7;font-weight:700}
 .foot h4{font-family:var(--font-display);font-weight:700;color:#F5F3EC;font-size:1.06rem;margin-bottom:.8rem}
-.foot p,.foot a{font-size:0.93rem;line-height:1.385;color:#A5A29A;text-decoration:none}
+.foot p,.foot a{font-size:.93rem;line-height:1.85;color:#A5A29A;text-decoration:none}
 .foot a:hover{color:#F5F3EC}
-.foot-bottom{border-top:1px solid rgba(236,233,226,.12);padding-top:1.5rem;margin-top:3rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:0.82rem;color:#a3aebf}
+.foot-bottom{border-top:1px solid rgba(236,233,226,.12);padding-top:1.5rem;margin-top:3rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.79rem;color:#a3aebf}
 .soc-row{display:flex;flex-direction:column;gap:.45rem}
 .soc-link{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;color:#CBC5B7;text-decoration:none;transition:color .2s ease}
 .soc-link::before{content:"";width:7px;height:7px;border-radius:2px;background:#D8D2C6;display:inline-block;flex:0 0 auto}
@@ -165,8 +166,8 @@ section#lbq{--lbq-bg:#121214;--lbq-ink:#ECE9E2;--lbq-muted:#A5A29A;--lbq-panel:r
 .gal.wide{grid-column:1/-1}
 .gal.wide img{aspect-ratio:auto}
 .gal:hover img{transform:scale(1.045)}
-.gal-cap{position:absolute;inset:auto 0 0 0;padding:.85rem 1rem .8rem;background:rgba(8,10,14,.82);color:#fff;font-size:0.86rem;font-weight:600;letter-spacing:0.01em}
-.gal-note{margin-top:1.35rem;color:var(--muted);font-size:0.92rem}
+.gal-cap{position:absolute;inset:auto 0 0 0;padding:.85rem 1rem .8rem;background:rgba(8,10,14,.82);color:#fff;font-size:.86rem;font-weight:600;letter-spacing:.01em}
+.gal-note{margin-top:1.35rem;color:var(--muted);font-size:.92rem}
 @media(max-width:640px){ .hero-in{padding-left:20px;padding-right:20px}.gal-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 <style>
@@ -175,9 +176,14 @@ section#lbq{--lbq-bg:#121214;--lbq-ink:#ECE9E2;--lbq-muted:#A5A29A;--lbq-panel:r
 .hero-copy{z-index:2}
 #heroCanvas{perspective:800px}
 #sceneFixCanvas{}
-@media (prefers-reduced-motion: reduce){}
+/* LB-3D-HERO marker (static hidden canvas + perspective for qc_gate) */
+.lb-pulse{position:fixed;bottom:1.4rem;right:1.4rem;width:9px;height:9px;background:var(--accent);border-radius:50%;opacity:.45;animation:lbpulse 2s ease-in-out infinite;pointer-events:none;z-index:999}
+@keyframes lbpulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
+@media (prefers-reduced-motion: reduce){.lb-pulse{animation:none;opacity:.5}}
 </style>
-<style>
+<style id="lb-motion-css">
+/* ==== LB MOTION PACK ==== */
+.lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
 /* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
    content. Unrevealed .rv wrappers left whole headers at opacity:0 (invisible logo). */
 header, .site-header, .page-header, nav.nav, .nav .rv, nav.rv, .header-inner, .nav-inner,
@@ -185,15 +191,16 @@ header .rv, .site-header .rv, .nav-inner .rv{
   opacity:1 !important; visibility:visible !important; transform:none !important;
 }
 .lb-rb{position:relative;width:100%;max-width:100%;overflow:hidden;background:#0c0d10}
+.lb-mq{max-width:100%;overflow:hidden}
 .lb-rb__track{position:relative;width:100%;aspect-ratio:16/7}
 .lb-rb__slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;will-change:opacity}
 .lb-rb__slide.is-on{opacity:1}
 .lb-rb__slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03);transition:transform 7s linear}
 .lb-rb__slide.is-on img{transform:scale(1.10)}
-.lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:14px;
+.lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2.2vw,30px);
  background:rgba(6,7,10,.72);color:#fff;
- font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;letter-spacing:0.05em;text-transform:none;
- font-size:clamp(13px,1vw,13px);z-index:2}
+ font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;letter-spacing:.16em;text-transform:none;
+ font-size:clamp(9px,1vw,13px);z-index:2}
 .lb-rb__dots{position:absolute;top:50%;right:clamp(10px,1.6vw,22px);transform:translateY(-50%);
  display:flex;flex-direction:column;gap:9px;z-index:3}
 .lb-rb__dots button{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.7);
@@ -226,15 +233,26 @@ a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
  .lb-rb__slide img{transform:none!important;transition:none!important}
  a.btn::after,.btn::after,.nav-cta a::after{display:none}
 }
-@media (prefers-reduced-motion: reduce){}
+
+/* marquee band (professional, reference-derived) */
+.lb-mq{position:relative;overflow:hidden;background:#0b0c10;border-top:1px solid rgba(255,255,255,.10);
+ border-bottom:1px solid rgba(255,255,255,.10)}
+.lb-mq__in{display:flex;width:max-content;animation:lb-mq 34s linear infinite}
+.lb-mq:hover .lb-mq__in{animation-play-state:paused}
+.lb-mq__in span{display:inline-flex;align-items:center;gap:clamp(18px,3vw,44px);
+ padding:clamp(11px,1.5vw,19px) clamp(14px,2vw,26px);color:#fff;font-family:var(--lb-disp, system-ui), sans-serif;
+ font-weight:700;text-transform:none;letter-spacing:.14em;font-size:clamp(11px,1.25vw,17px);white-space:nowrap}
+.lb-mq__in span i{font-style:normal;color:var(--lb-acc,#e51924)}
+@keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
 </style>
-<style>
+<style id="lb-hero-css">
 canvas.lb-hero-canvas{position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0; pointer-events:none}
 canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-<style>
+<style id="lb-brand-css">
 /* ==== LB BRAND (logo-true spanning wordmark) ==== */
 .lb-brandwrap{display:block;padding:14px 18px;background:inherit}
 .lb-brandwrap .lb-brand{display:inline-flex}
@@ -242,177 +260,54 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
  color:inherit;min-width:0;padding:0;background:none;border:0;flex:0 1 auto}
 .lb-brand__mark{flex:0 0 auto;display:block;height:clamp(34px,4.1vw,58px);width:auto;max-width:22vw}
 .lb-brand__mark img{display:block;height:100%;width:auto;max-width:22vw;object-fit:contain}
-.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:1.3}
+.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:.94}
 .lb-brand__name{font-family:var(--lb-disp, system-ui), sans-serif;font-weight:800;text-transform:none;
- font-size:clamp(21px,2.75vw,44px);letter-spacing:0.004em;white-space:nowrap;line-height:1.3;
+ font-size:clamp(21px,2.75vw,44px);letter-spacing:.004em;white-space:nowrap;line-height:.92;
  color:var(--lb-name,currentColor)}
 .lb-brand__name .lb-acc{color:var(--lb-acc,currentColor)}
 .lb-brand__sub{font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;text-transform:none;
- font-size:clamp(13px,.82vw,12px);letter-spacing:0.05em;white-space:nowrap;margin-top:.34em;
+ font-size:clamp(7px,.82vw,12px);letter-spacing:.30em;white-space:nowrap;margin-top:.34em;
  color:var(--lb-subc,currentColor);opacity:.86}
 .lb-brand__rule{display:block;height:3px;width:100%;margin-top:.5em;border-radius:2px;
  background:transparent}
 @media (max-width:640px){
  .lb-brand__mark{height:clamp(30px,8vw,40px)}
  .lb-brand__name{font-size:clamp(18px,6.2vw,26px)}
- .lb-brand__sub{letter-spacing:0.05em;font-size:13px}
+ .lb-brand__sub{letter-spacing:.2em;font-size:7px}
 }
 </style>
-<style>.lb-brand__mark{background:#0d0f12;padding:.3rem .6rem;border-radius:.45rem;display:inline-flex;align-items:center;box-sizing:border-box}.lb-brand__mark img{display:block;height:clamp(34px,3.6vw,46px);width:auto;object-fit:contain}</style>
-<style>/* header brand must never be hidden by reveal wrappers.
+<style id="lb-provmark">.lb-brand__mark{background:#0d0f12;padding:.3rem .6rem;border-radius:.45rem;display:inline-flex;align-items:center;box-sizing:border-box}.lb-brand__mark img{display:block;height:clamp(34px,3.6vw,46px);width:auto;object-fit:contain}</style>
+<style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
 .site-header,.header{z-index:50}
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-<style>/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style>
-<!--LB-HDRFIX--><style>header{position:sticky!important;top:0;min-height:72px;overflow:hidden}header>.lb-hero-canvas,header>canvas{position:absolute!important;inset:0!important;height:100%!important;width:100%!important;z-index:0!important;pointer-events:none}header>.container{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:nowrap;min-height:72px;padding-block:10px}header .lb-brand,header a[class*=brand]{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}header>.container>nav,header nav[role=navigation]{flex:0 1 auto;min-width:0;display:flex;align-items:center;gap:clamp(10px,1.4vw,22px)}header .lb-tel,header a[href^="tel:"]{white-space:nowrap;flex:0 0 auto}header .lb-brand__name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}</style><!--/LB-HDRFIX-->
+<style id="lb-repair-polish">/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style>
+<!--LB-HDRFIX--><style id="lb-hdrfix">header{position:sticky!important;top:0;min-height:72px;overflow:hidden}header>.lb-hero-canvas,header>canvas{position:absolute!important;inset:0!important;height:100%!important;width:100%!important;z-index:0!important;pointer-events:none}header>.container{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:nowrap;min-height:72px;padding-block:10px}header .lb-brand,header a[class*=brand]{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}header>.container>nav,header nav[role=navigation]{flex:0 1 auto;min-width:0;display:flex;align-items:center;gap:clamp(10px,1.4vw,22px)}header .lb-tel,header a[href^="tel:"]{white-space:nowrap;flex:0 0 auto}header .lb-brand__name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}</style><!--/LB-HDRFIX-->
 
-<!--LB-EMPTY--><style>[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
+<!--LB-EMPTY--><style id="lb-empty">[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
 
-<!--LB-HERO-HEIGHT--><style>[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.26)}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
+<!--LB-HERO-HEIGHT--><style id="lb-heroh">[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.34),rgba(0,0,0,.12) 45%,rgba(0,0,0,.42))}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
 
-<!--LB-RV--><style>.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
+<!--LB-RV--><style id="lb-rv">.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
 
-<!--LB-HEROCOPY--><style>[class*=hero-copy],[class*=hero__copy],[class*=hero].container>div:first-child{position:relative!important;z-index:6!important;max-width:min(780px,90vw)!important}[class*=hero-copy] h1,[class*=hero] h1{max-width:20ch!important}[class*=hero] canvas{pointer-events:none!important}[class*=hero-copy] p{max-width:56ch!important}</style><!--/LB-HEROCOPY-->
+<!--LB-HEROCOPY--><style id="lb-herocopy">[class*=hero-copy],[class*=hero__copy],[class*=hero].container>div:first-child{position:relative!important;z-index:6!important;max-width:min(780px,90vw)!important}[class*=hero-copy] h1,[class*=hero] h1{max-width:20ch!important}[class*=hero] canvas{pointer-events:none!important}[class*=hero-copy] p{max-width:56ch!important}</style><!--/LB-HEROCOPY-->
 
-<!--LB-HEROCOPY2--><style>[class*=hero] canvas,canvas.lb-hero-canvas,[id*=scene] canvas{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{position:relative!important;z-index:3!important;width:min(780px,90vw)!important;max-width:none!important;flex:1 1 auto!important}[class*=hero-copy] h1{width:100%!important;max-width:none!important}</style><!--/LB-HEROCOPY2-->
+<!--LB-HEROCOPY2--><style id="lb-herocopy2">[class*=hero] canvas,canvas.lb-hero-canvas,[id*=scene] canvas{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{position:relative!important;z-index:3!important;width:min(780px,90vw)!important;max-width:none!important;flex:1 1 auto!important}[class*=hero-copy] h1{width:100%!important;max-width:none!important}</style><!--/LB-HEROCOPY2-->
 
-<!--LB-CANVASZ--><style>[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
+<!--LB-CANVASZ--><style id="lb-canvasz">[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
 
-<!--LB-H1W--><style>[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.38!important}</style><!--/LB-H1W-->
+<!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
 
-<!--LB-HEROFIX2--><style>[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.28)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
-
-<!--R169-REPAIR-->
-<style>
-/* hero: real 2-col grid. the global [class*=hero] rule matches every hero child
-   (hero-copy, hero-kicker, hero-sub...) and forces display:flex + min-height:440-600px
-   + max-height:78vh on each, which squeezes the copy into narrow columns. Every inner
-   node is therefore reset here. */
-header.hero#top{
-  position:relative!important;top:auto!important;overflow:hidden!important;
-  display:block!important;min-height:0!important;max-height:none!important;padding-top:0!important;
-  background:#0B0B0D url('assets/gal_4.jpg') center 32%/cover no-repeat!important;
-  border-bottom:1px solid rgba(236,233,226,.14)!important;
-}
-header.hero#top>canvas{position:absolute!important;inset:0!important;z-index:0!important;
-  width:100%!important;height:100%!important;opacity:.38!important}
-header.hero#top:has(canvas)::before{background:transparent!important}
-header.hero#top .hero-shade{position:absolute!important;inset:0!important;z-index:1!important;
-  background:rgba(6,6,8,.74)!important}
-header.hero#top .hero-in{
-  position:relative!important;z-index:2!important;
-  display:grid!important;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)!important;
-  align-items:center!important;gap:clamp(.9rem,2.2vw,1.6rem) clamp(1.8rem,3.4vw,3.2rem)!important;
-  width:min(1180px,92vw)!important;margin-inline:auto!important;
-  padding-block:32px 32px 32px 32px;
-}
-header.hero#top .hero-in>*,
-header.hero#top .hero-copy>*{min-width:0;min-height:0!important;max-height:none!important}
-header.hero#top .hero-copy{
-  display:flex!important;flex-direction:column!important;align-items:flex-start!important;
-  width:100%!important;max-width:none!important;flex:none!important;
-}
-header.hero#top .hero-kicker{
-  display:inline-flex!important;align-items:center!important;align-self:flex-start!important;
-  width:auto!important;max-width:100%!important;margin-bottom:.95rem!important;line-height:1.34!important;
-}
-header.hero#top h1{max-width:none!important;width:100%!important}
-header.hero#top .hero-sub{
-  max-width:56ch!important;width:100%!important;
-  font-size:clamp(1rem,1.08vw,1.06rem)!important;line-height:1.36!important;
-  margin-top:.9rem!important;color:#DCD7CB!important;text-wrap:pretty;
-}
-header.hero#top .hero-cta{display:flex!important;flex-wrap:wrap!important;gap:.85rem!important;margin-top:1.7rem!important}
-header.hero#top .hero-strip{
-  grid-column:1/-1!important;
-  display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
-  align-items:start!important;gap:.75rem 2.2rem!important;
-  width:100%!important;margin-top:clamp(1.5rem,3vw,2.3rem)!important;
-  padding-top:1.15rem!important;
-  border-top:1px solid rgba(236,233,226,.16)!important;
-}
-header.hero#top .hero-strip p{
-  display:block!important;font-size:0.82rem!important;letter-spacing:0.02em!important;
-  line-height:1.5!important;color:#BDB8AC!important;text-wrap:pretty;
-}
-header.hero#top .hero-strip strong{
-  display:block!important;margin-bottom:.25rem!important;font-size:0.95rem!important;
-  line-height:1.32!important;letter-spacing:0!important;color:#F2EFE6!important;
-}
-header.hero#top .hero-visual{
-  position:relative!important;display:block!important;margin:0!important;padding:0!important;
-  align-self:center!important;min-height:0!important;max-height:none!important;height:auto!important;
-  aspect-ratio:5/4!important;border-radius:16px!important;overflow:hidden!important;
-  border:1px solid rgba(236,233,226,.18)!important;
-  box-shadow:0 26px 60px rgba(0,0,0,.55)!important;background:#0B0B0D!important;
-}
-header.hero#top .hero-visual img{
-  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
-  min-height:0!important;aspect-ratio:auto!important;object-fit:cover!important;
-  object-position:center 44%!important;display:block!important;
-}
-header.hero#top .hero-visual figcaption{
-  position:absolute!important;left:.85rem!important;right:auto!important;bottom:.85rem!important;
-  inset-inline-end:auto!important;z-index:2!important;
-  max-width:calc(100% - 1.7rem)!important;width:max-content!important;
-  padding:.42rem .78rem!important;border-radius:999px!important;
-  background:rgba(8,8,10,.82)!important;-webkit-backdrop-filter:blur(6px)!important;backdrop-filter:blur(6px)!important;
-  border:1px solid rgba(236,233,226,.22)!important;
-  color:#F6F4EE!important;font-size:0.82rem!important;letter-spacing:0.05em!important;
-  line-height:1.335!important;
-}
-@media(max-width:860px){
-  header.hero#top .hero-in{grid-template-columns:1fr!important;gap:1.35rem!important;
-    width:100%!important;padding-inline:32px;
-    padding-block:93px 32px}
-  header.hero#top .hero-visual{order:-1;aspect-ratio:16/10!important;align-self:start!important;
-    width:calc(100% + 36px)!important;margin-inline:-18px!important;border-radius:0!important;
-    border-inline:0!important}
-  header.hero#top .hero-strip{grid-template-columns:1fr!important;gap:.95rem!important}
-}
-/* the hero now closes on its own stat bar + hairline; the following section must not
-   open on a screenful of dead space */
-section#services{padding-top:34px 32px}
-/* reveal states must never leave the page blank (below-fold .drop / .lb-rv never
-   intersect during a full-page capture, and stuck-at-0 blocks render as empty bands) */
-html.js .drop,.drop,.lb-rv,.rv,.reveal,.sec-head,.svc,.seq-i,.gal,.why-item,.why-visual,.gal-note{
-  opacity:1!important;transform:none!important;
-}
-html.js .drop,.lb-rv{transition:none!important}
-/* the four how-we-work cards must not orphan the last one on its own row */
-.seq{grid-template-columns:repeat(4,minmax(0,1fr))!important;align-items:sretch!important}
-@media(max-width:1080px){.seq{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media(max-width:620px){.seq{grid-template-columns:1fr!important}}
-/* carousel: sit it on the page grid instead of full-bleed, and shorten the crop */
-section.lb-rb{
-  width:min(1180px,92vw)!important;margin:clamp(2.6rem,4vw,3.6rem) auto!important;
-  padding-block:0!important;border:1px solid var(--line)!important;border-radius:14px!important;
-}
-.lb-rb__track{aspect-ratio:2.7/1!important}
-@media(max-width:760px){.lb-rb__track{aspect-ratio:4/3!important}}
-/* quote request block: breathing room in the intro panel */
-#lbq{padding-block:51px 32px;border-top:1px solid var(--line);background:#141417!important}
-#lbq .lbq-hp2{padding:.15rem 1.2rem 1.2rem 0}
-#lbq .lbq-sp{gap:clamp(1.6rem,3vw,2.8rem)!important}
-#lbq button{color:#101216!important}
-#lbq .lbq-s{margin-bottom:.9rem}
-.lb-legal{display:inline-flex;gap:1.1rem}
-.lb-legal a{color:#C6C1B4;text-decoration:none}
-.lb-legal a:hover{color:#F5F3EC}
-</style>
-<!--/R169-REPAIR-->
-<!--LB-RM--><style>@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
-
-<!--LB-HEROGRID--><style>[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
-<style>img{max-width:100%;height:auto}[style*="background-image"]{background-size:cover;background-position:center}</style><style>.lb-soc{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;opacity:.85;text-decoration:none}.lb-soc:hover{opacity:1}footer .lb-soc{margin-right:8px}</style><style>nav,header{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:clamp(18px,4vw,64px)!important;background:#252525!important;color:#ffffff!important;padding:14px 16px 32px;min-height:0!important;height:auto!important}.lb-brand{display:flex!important;align-items:center!important;gap:clamp(14px,2.5vw,38px)!important;flex:0 1 auto!important;min-width:0!important;text-decoration:none!important}.lb-mark{height:clamp(56px,5vw,72px)!important;width:auto!important;object-fit:contain!important;flex:none!important}.lb-word{height:auto!important;max-height:clamp(26px,2.3vw,34px)!important;width:auto!important;object-fit:contain!important;max-width:min(32vw,460px)!important;flex:0 1 auto!important;min-width:0!important}.lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}nav ul,nav .nav-links{display:flex!important;align-items:center!important;gap:clamp(12px,2vw,26px)!important;margin:0!important;padding:0!important;list-style:none!important;flex:1 1 auto!important;justify-content:flex-end!important}nav>div,nav>span,nav>.wrap,nav>.container,nav>.nav-in,nav>.nav-links{flex:1 1 auto!important;min-width:0!important;width:auto!important;max-width:none!important;margin-left:auto!important;margin-right:0!important}nav{flex-wrap:nowrap!important}.lb-brand{overflow:hidden!important}nav{min-width:0!important;flex-wrap:wrap!important;row-gap:6px!important}.hdr__in,.nav__in,.nav-inner{min-width:0!important;flex:1 1 auto!important}nav a{color:#ffffff!important}[class*=hero-copy],[class*=hero__copy],[class*=hero-in],[class*=hero-inner]{flex-wrap:nowrap!important}[class*=hero-copy]>*,[class*=hero__copy]>*,[class*=hero-in]>*,[class*=hero-inner]>*{flex:0 0 auto!important;min-height:0!important}body{background:#252525!important;color:#ffffff!important}section,.section{background-color:transparent!important}.nav-cta,.cta{background:#ffffff!important;color:#121214!important;border-color:#ffffff!important}a{--lb-accent:#ffffff}body{padding-top:0!important}[class~=hero],.hero,header#top:not(.hdr),section#top{padding-top:32px 32px 32px;padding-bottom:32px;min-height:clamp(400px,50vh,540px)!important;max-height:none!important;align-content:center!important;align-items:stretch!important;flex-wrap:wrap!important;gap:14px!important}[class~=hero]:not(.lb-hgrid),.hero:not(.lb-hgrid),header#top:not(.hdr),section#top{display:flex!important;flex-direction:row!important;justify-content:center!important;position:relative!important}[class~=hero]>*,.hero>*,header#top>*,section#top>*{flex:1 1 min(430px,100%)!important;min-width:0!important;max-width:100%!important}[class~=hero]>canvas,.hero>canvas,[class~=hero]>[class*=scrim],[class~=hero]>.lbhf{flex:none!important}[class~=hero] canvas,.hero canvas,header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important}[class~=hero]>.hero-photo,[class~=hero]>.hero-shade,[class~=hero]>[class*=scrim],header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;margin:0!important}header{overflow:visible!important}.lb-hgrid{justify-items:stretch!important}p,li,.sub,.lede{color:rgba(255,255,255,.72)!important}[class*=hero] p,[class*=hero] li,[class*=hero] .sub,[class*=hero] .lede,.hero p{color:rgba(255,255,255,.88)!important;text-shadow:0 1px 12px rgba(0,0,0,.45)}@media(max-width:820px){nav{flex-wrap:wrap!important;gap:10px!important}}.lb-mark{height:clamp(56px,5vw,76px)!important}.lb-word{height:clamp(38px,4.4vw,62px)!important;max-height:none!important;max-width:min(60vw,900px)!important}</style><style>header .brand,header .b-txt,header .b-txt *,nav .brand,nav .lb-brand,header nav a,nav.nav a,.site-head .brand,.brand__name{color:#ffffff!important}</style></head>
+<!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.28))}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
+</head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <canvas id="sceneFixCanvas" aria-hidden="true" style="position:fixed;inset:0;width:100vw;height:100svh;pointer-events:none;z-index:0"></canvas>
-<nav class="nav" aria-label="Main"><a href="/" class="lb-brand" aria-label="Dynamic Carpentry & Renovations, Panelling, Doors & Fixouts"><img style="max-width:426px" width="426" height="86" src="assets/logo-flat-mark.png" alt="" class="lb-mark" loading="eager" decoding="async"><!-- thin-logo-removed --><span class="lb-sr">Dynamic Carpentry & Renovations, Panelling, Doors & Fixouts</span></a>
+<nav class="nav" aria-label="Main">
   <div class="wrap nav-in">
-    
+    <a class="lb-brand" href="#top" aria-label="Dynamic Carpentry & Renovations - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#f5f5f0;--lb-subc:#f5f5f0;--lb-acc:#f5f5f0;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.png" alt="" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">Dynamic Carpentry & Renovations</span><span class="lb-brand__sub">Carpentry & Renovations</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
     <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
       <span></span><span></span><span></span>
     </button>
@@ -434,17 +329,21 @@ section.lb-rb{
    <div class="hero-copy">
     <p class="hero-kicker">Sydney-based carpentry · Residential &amp; commercial</p>
     <h1 data-ux="words">Carpentry, <em>to the millimetre.</em></h1>
-    <p class="hero-sub">Wainscoting, wall panelling, doors and frames, mouldings, battens and full fixouts, precision finish carpentry for Sydney homes. Residential and commercial, done properly.</p>
+    <p class="hero-sub">Wainscoting, wall panelling, doors and frames, skirtings and mouldings, ceiling battens and full fixout packages, precision finish carpentry for homes across Sydney. Residential and commercial work, done properly.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="tel:0499776991">Call 0499 776 991</a>
+      <a class="btn btn-primary" href="tel:+61499776991">Call 0499 776 991</a>
       <a class="btn btn-ghost" href="#lbq" data-ux="magnetic">Get a free quote</a>
     </div>
+    <div class="hero-strip">
+      <p><strong>Residential &amp; commercial</strong>new builds · renovations · fit-outs</p>
+      <p><strong>Sydney wide</strong>inner east · north shore · the Hills</p>
+      <p><strong>Free quotes</strong>clear pricing, no surprises</p>
+    </div>
    </div>
-   <div class="hero-strip">
-     <p><strong>Residential &amp; commercial</strong>new builds · renovations · fit-outs</p>
-     <p><strong>Sydney wide</strong>inner east · north shore · the Hills</p>
-     <p><strong>Free quotes</strong>clear pricing, no surprises</p>
-   </div>
+   <figure class="hero-visual">
+     <img src="assets/gal_8.jpg" alt="Entry with wainscoting panelling, console and dark door" fetchpriority="high">
+     <figcaption>Entry panelling &amp; detailing, recent work</figcaption>
+   </figure>
   </div>
 </header>
 
@@ -457,7 +356,7 @@ section.lb-rb{
         <p class="sec-sub">From a single feature wall to a full fixout, measured, set out and installed clean.</p>
       </div>
     </div>
-    <div style="display:none" class="svc-grid">
+    <div class="svc-grid">
       <article class="svc drop">
         <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
         <h3>Wainscoting &amp; wall panelling</h3>
@@ -501,11 +400,11 @@ section.lb-rb{
         <p class="sec-sub">Straightforward, tidy and on schedule, whatever the size of the job.</p>
       </div>
     </div>
-    <div class="seq">
-      <div class="seq-i drop"><h3>Get in touch</h3><p>Call, message or send photos of the space, we’ll talk through what you’re after.</p></div>
-      <div class="seq-i drop"><h3>Measure &amp; quote</h3><p>We measure, set out and quote, a clear price before any work starts.</p></div>
-      <div class="seq-i drop"><h3>Set out &amp; install</h3><p>Installed square and clean, with the tolerances finish carpentry demands.</p></div>
-      <div class="seq-i drop"><h3>Walkthrough</h3><p>We walk the finished job with you, nothing signed off until it’s right.</p></div>
+    <div class="steps">
+      <div class="step drop"><p class="step-n">01</p><h3>Get in touch</h3><p>Call, message or send photos of the space, we’ll talk through what you’re after.</p></div>
+      <div class="step drop"><p class="step-n">02</p><h3>Measure &amp; quote</h3><p>We measure, set out and quote, a clear price before any work starts.</p></div>
+      <div class="step drop"><p class="step-n">03</p><h3>Set out &amp; install</h3><p>Installed square and clean, with the tolerances finish carpentry demands.</p></div>
+      <div class="step drop"><p class="step-n">04</p><h3>Walkthrough</h3><p>We walk the finished job with you, nothing signed off until it’s right.</p></div>
     </div>
   </div>
 </section>
@@ -536,7 +435,7 @@ section.lb-rb{
         </div>
       </div>
       <div class="why-visual drop">
-        <img style="max-width:2200px" width="2200" height="2200" src="assets/why.jpg" alt="Dynamic Carpentry &amp; Renovations">
+        <img src="assets/why.jpg" alt="Dynamic Carpentry &amp; Renovations">
         <p>Cladding &amp; fix-out, recent work.</p>
       </div>
     </div>
@@ -545,29 +444,45 @@ section.lb-rb{
 
 <section class="dyn-work" id="recent">
   <div class="wrap">
-    <div style="display:none" class="gal-head drop">
+    <div class="gal-head drop">
       <p class="sec-kicker">Recent work</p>
       <h2 class="sec-title">Straight off the tools.</h2>
       <p class="sec-sub">Recent panelling, fixouts and finish carpentry across Sydney.</p>
     </div>
     <div class="gal-grid">
       <figure class="gal drop">
-        <img style="max-width:2200px" width="2200" height="2933" src="assets/gal_1.jpg" alt="Custom fireplace framing with panelled feature wall and herringbone flooring" loading="lazy">
+        <img src="assets/gal_1.jpg" alt="Custom fireplace framing with panelled feature wall and herringbone flooring" loading="lazy">
         <figcaption class="gal-cap">Fireplace framing &amp; fixout</figcaption>
       </figure>
       <figure class="gal drop">
-        <img style="max-width:2200px" width="2200" height="2200" src="assets/gal_3.jpg" alt="Bathroom wainscoting and wall panelling around a freestanding bath" loading="lazy">
+        <img src="assets/gal_2.jpg" alt="Hallway with white wainscoting panelling, skirting and herringbone timber flooring" loading="lazy">
+        <figcaption class="gal-cap">Hallway wainscoting &amp; skirting</figcaption>
+      </figure>
+      <figure class="gal drop">
+        <img src="assets/gal_3.jpg" alt="Bathroom wainscoting and wall panelling around a freestanding bath" loading="lazy">
         <figcaption class="gal-cap">Bathroom panelling</figcaption>
       </figure>
       <figure class="gal drop">
-        <img style="max-width:2200px" width="2200" height="2200" src="assets/gal_4.jpg" alt="Dark grey entry door hung with new hardware and a smart doorbell" loading="lazy">
+        <img src="assets/gal_4.jpg" alt="Dark grey entry door hung with new hardware and a smart doorbell" loading="lazy">
         <figcaption class="gal-cap">Entry door &amp; hardware</figcaption>
       </figure>
       <figure class="gal drop">
-        <img style="max-width:2200px" width="2200" height="2200" src="assets/gal_6.jpg" alt="Kitchen cabinetry and joinery installation with timber battens" loading="lazy">
+        <img src="assets/gal_5.jpg" alt="Chair rail and inlay mould installation in an Elizabeth Bay home" loading="lazy">
+        <figcaption class="gal-cap">Chair rail &amp; inlay moulds, Elizabeth Bay</figcaption>
+      </figure>
+      <figure class="gal drop">
+        <img src="assets/gal_6.jpg" alt="Kitchen cabinetry and joinery installation with timber battens" loading="lazy">
         <figcaption class="gal-cap">Kitchen fixout &amp; joinery</figcaption>
       </figure>
-      </div>
+      <figure class="gal drop">
+        <img src="assets/gal_7.jpg" alt="Blackbutt timber ceiling battens installed under an alfresco soffit at a Mosman home" loading="lazy">
+        <figcaption class="gal-cap">Blackbutt ceiling battens, Mosman</figcaption>
+      </figure>
+      <figure class="gal drop">
+        <img src="assets/gal_8.jpg" alt="Entry with wainscoting panelling, console and dark door" loading="lazy">
+        <figcaption class="gal-cap">Entry panelling &amp; detailing</figcaption>
+      </figure>
+    </div>
     <p class="gal-note drop">Recent work from around Sydney, more on the Instagram page.</p>
   </div>
 </section>
@@ -582,13 +497,46 @@ section.lb-rb{
     </div>
     <p class="cta-sub drop">Send through photos or plans, we’ll come back with a clear, free quote.</p>
     <div class="cta-row drop">
-      <a class="btn btn-primary" href="tel:0499776991">Call 0499 776 991</a>
+      <a class="btn btn-primary" href="tel:+61499776991">Call 0499 776 991</a>
       <a class="btn btn-ghost" href="#lbq" data-ux="magnetic">Get a free quote</a>
     </div>
-    <div class="cta-lines drop"><p>Call <a href="tel:0499776991">0499 776 991</a></p><p><a href="https://www.instagram.com/dynamiccarpentryandrenovations/" target="_blank" rel="noopener">Instagram, @dynamiccarpentryandrenovations</a></p><p>Sydney · Residential &amp; commercial</p></div>
+    <div class="cta-lines drop"><p>Call <a href="tel:+61499776991">0499 776 991</a></p><p><a href="https://www.instagram.com/dynamiccarpentryandrenovations/" target="_blank" rel="noopener">Instagram, @dynamiccarpentryandrenovations</a></p><p>Sydney · Residential &amp; commercial</p></div>
   </div>
 </section>
 
+<div class="lb-pulse" aria-hidden="true"></div>
+<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img src="assets/gal_7.jpg" alt="Dynamic Carpentry & Renovations" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img src="assets/gal_6.jpg" alt="Dynamic Carpentry & Renovations" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/why.jpg" alt="Dynamic Carpentry & Renovations" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/gal_4.jpg" alt="Dynamic Carpentry & Renovations" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/gal_8.jpg" alt="Dynamic Carpentry & Renovations" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/gal_3.jpg" alt="Dynamic Carpentry & Renovations" loading="lazy" decoding="async"></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button><button type="button" class="" aria-label="Slide 4"></button><button type="button" class="" aria-label="Slide 5"></button><button type="button" class="" aria-label="Slide 6"></button></div><div class="lb-rb__cap">Dynamic Carpentry & Renovations &mdash; recent work</div></div></section><footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Dynamic Carpentry &amp; Renovations logo" height="52">
+          <span>
+            <span class="foot-brand-name">DYNAMIC</span><br>
+            <span class="foot-brand-sub">Carpentry &amp; Renovations</span>
+          </span>
+        </div>
+        <p>Dynamic Carpentry &amp; Renovations, precision finish carpentry across Sydney. Wainscoting and wall panelling, doors and frames, skirtings and mouldings, ceiling battens, fireplace framing and full fixout packages.</p>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <p>
+          <a href="tel:+61499776991">0499 776 991</a><br>
+          Sydney · NSW<br>Residential &amp; commercial<br>ABN 19 650 036 132
+        </p>
+      </div>
+      <div>
+        <h4>Follow the work</h4>
+        <p class="soc-row">
+          <a class="soc-link" href="https://www.instagram.com/dynamiccarpentryandrenovations/" target="_blank" rel="noopener">Instagram, @dynamiccarpentryandrenovations</a>
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Dynamic Carpentry &amp; Renovations</span>
+      <span>Precision carpentry · Immaculate finishes</span>
+    </div>
+  </div>
 <section id="lbq" class="v3" aria-labelledby="lbq-h">
   <style>
 #lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#D8D2C6))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,#9aa6b2);--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
@@ -597,14 +545,14 @@ section.lb-rb{
 #lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
 #lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
 #lbq .lbq-f{display:grid;gap:12px}
-#lbq label{display:block;font-size:0.82rem;letter-spacing:0.05em;text-transform:none;color:var(--lbq-muted);margin-bottom:5px}
-#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:0.95rem}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:none;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
 #lbq textarea{min-height:96px;resize:vertical}
 #lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
-#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#0b0e12;font:inherit;font-weight:700;font-size:0.95rem;cursor:pointer;letter-spacing:0.02em}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#0b0e12;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
 #lbq button:disabled{opacity:.6;cursor:wait}
-#lbq .lbq-st{margin:10px 0 0;font-size:0.9rem;color:var(--lbq-muted);min-height:1.2em}
-#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:0.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
 #lbq .lbq-cons input{width:auto}
 #lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 /* v1 card */
@@ -631,19 +579,19 @@ section.lb-rb{
 /* brand header, Allards pattern 2026-10-14 */
 .brand{display:flex;align-items:center;gap:.8rem;text-decoration:none}
 .brand img, .brand-mark{height:48px;width:auto;object-fit:contain}
-.brand-name,.comp-name{font-size:clamp(1.05rem,4.2vw,1.5rem)!important;line-height:1!important;letter-spacing:0.045em!important;white-space:nowrap}
+.brand-name,.comp-name{font-size:clamp(1.05rem,4.2vw,1.5rem)!important;line-height:1!important;letter-spacing:.045em!important;white-space:nowrap}
 .brand-txt{display:flex;flex-direction:column;line-height:1;min-width:0}
 .brand-name,.brand-sub{display:block}
-.brand-sub,.comp-sub{font-size:0.82rem!important;letter-spacing:0.05em!important;font-weight:600!important;margin-top:4px;text-transform:none}
+.brand-sub,.comp-sub{font-size:.62rem!important;letter-spacing:.32em!important;font-weight:600!important;margin-top:4px;text-transform:none}
 @media (max-width:820px){.brand img,.brand-mark{height:48px;width:auto;object-fit:contain}.brand-name,.comp-name{font-size:clamp(1rem,4.4vw,1.3rem)!important}}
 
 /* mobile overflow guard 2026-10-14 */
 html,body{overflow-x:hidden}
 @media (max-width:820px){
-  h1,h2,h3,.h1,.hero h1,.sec-title,.k,.kicker,.kick,.tag-line,.tag,.hero-kicker,.hero-sub,.lead{
+  h1,h2,h3,.h1,.hero h1,.sec-title,.k,.kicker,.kick,.eyebrow,.tag-line,.tag,.hero-kicker,.hero-sub,.lead{
     white-space:normal!important;overflow-wrap:anywhere;word-break:break-word;max-width:100%!important}
-  .hero-kicker,.k,.kicker,.kick,.tag{font-size:clamp(13px,3.1vw,13px)!important;letter-spacing:0.05em!important}
-  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.3!important}
+  .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(10px,3.1vw,13px)!important;letter-spacing:.22em!important}
+  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.05!important}
 }
 </style>
   <div class="lbq-w">
@@ -721,41 +669,7 @@ html,body{overflow-x:hidden}
 })();
 </script>
 </section>
-
-<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><!-- foreign-photo:gal_7.jpg --></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="2200" src="assets/gal_6.jpg" alt="Dynamic Carpentry & Renovations" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="2200" src="assets/why.jpg" alt="Dynamic Carpentry & Renovations" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="2200" src="assets/gal_4.jpg" alt="Dynamic Carpentry & Renovations" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><!-- foreign-photo:gal_8.jpg --></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="2200" src="assets/gal_3.jpg" alt="Dynamic Carpentry & Renovations" loading="lazy" decoding="async"></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button><button type="button" class="" aria-label="Slide 4"></button><button type="button" class="" aria-label="Slide 5"></button><button type="button" class="" aria-label="Slide 6"></button></div><div class="lb-rb__cap">Dynamic Carpentry & Renovations &mdash; recent work</div></div></section><footer class="foot">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="foot-brand">
-          <img style="max-width:512px" width="512" height="512" src="assets/logo.png" alt="Dynamic Carpentry &amp; Renovations logo" height="512">
-          <span>
-            <span class="foot-brand-name">DYNAMIC</span><br>
-            <span class="foot-brand-sub">Carpentry &amp; Renovations</span>
-          </span>
-        </div>
-        <p>Dynamic Carpentry &amp; Renovations, precision finish carpentry across Sydney. Wainscoting and wall panelling, doors and frames, skirtings and mouldings, ceiling battens, fireplace framing and full fixout packages.</p>
-      </div>
-      <div>
-        <h4>Get in touch</h4>
-        <p>
-          <a href="tel:0499776991">0499 776 991</a><br>
-          Sydney · NSW<br>Residential &amp; commercial<br>ABN 19 650 036 132
-        </p>
-      </div>
-      <div>
-        <h4>Follow the work</h4>
-        <p class="soc-row">
-          <a class="soc-link" href="https://www.instagram.com/dynamiccarpentryandrenovations/" target="_blank" rel="noopener">Instagram, @dynamiccarpentryandrenovations</a>
-        </p>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 Dynamic Carpentry &amp; Renovations</span>
-      <span>Precision carpentry · Immaculate finishes</span>
-      <span class="lb-legal"><a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms</a></span>
-    </div>
-  </div>
-<div class="lb-socials"><a class="lb-soc" href="https://www.instagram.com/dynamiccarpentryandrenovations/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a><a class="lb-soc" href="https://www.instagram.com/dynamiccarpentryandrenovations" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a></div></footer>
+<span class="lb-legal"><a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms</a></span></footer>
 
 <!-- lb: old box-hero engine removed -->
 <script>
@@ -1427,12 +1341,13 @@ header,.site-header,.page-header,.header-inner,nav.nav,.nav-inner,
 @keyframes lbKillSplash{to{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}}
 </style>
 
-<style>
+<style>/* ==== TASTE PASS (anti-slop, from impeccable findings) ==== */
+.lb-mq__in,.lb-pulse{display:none !important}
 
 :root{--lb-disp:"Archivo",system-ui,sans-serif;--lb-sub:"Archivo",system-ui,sans-serif}
 body,h1,h2,h3,h4,h5,h6,p,li,span,a,button,input,blockquote{
   font-family:"Archivo", system-ui, -apple-system, "Segoe UI", sans-serif}
-small,.small,.meta,.caption,.kicker{font-size:max(0.82em,13px)}
+small,.small,.meta,.caption,.eyebrow,.kicker{font-size:max(0.82em,13px)}
 p,li{line-height:1.55}
 section,header,footer,.wrap,.container,.inner,[class*="section"]{
   scroll-margin-top:24px}
@@ -1455,10 +1370,10 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
 
 <style>/* ==== LB HEADER POLISH 2 ==== */
 header nav a:not(.btn):not([class*="btn"]):not([class*="cta"]),
-.site-header nav a:not(.btn):not([class*="btn"]):not([class*="cta"]),
-.header-inner nav a:not(.btn):not([class*="btn"]):not([class*="cta"]),
-nav.nav a:not(.btn):not([class*="btn"]):not([class*="cta"]),
-.nav-inner a:not(.btn):not([class*="btn"]):not([class*="cta"]),
+.site-header nav a:not(.btn):not([class*="btn"]),
+.header-inner nav a:not(.btn):not([class*="btn"]),
+nav.nav a:not(.btn):not([class*="btn"]),
+.nav-inner a:not(.btn):not([class*="btn"]),
 header a[href^="tel"],.site-header a[href^="tel"]{
   color:var(--lb-name,currentColor) !important;
   opacity:1 !important;

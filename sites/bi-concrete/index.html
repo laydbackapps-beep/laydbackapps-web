@@ -31,213 +31,53 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--paper);color:var(--ink);font-family:Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;
-  font-size:var(--t-body);line-height:1.36;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  font-size:var(--t-body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 h1,h2,h3{text-wrap:balance;font-weight:700}
 ::selection{background:var(--acc);color:#17130f}
-.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:32px 16px}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 clamp(1rem,3vw,2rem)}
 :focus-visible{outline:2px solid var(--acc);outline-offset:3px}
 
 /* ---------- header ---------- */
 header{position:fixed;inset:0 0 auto 0;height:var(--nav);z-index:100;background:#101113;
   border-bottom:1px solid var(--line-d)}
 .hdr{max-width:var(--wrap);margin:0 auto;height:100%;display:flex;align-items:center;
-  gap:clamp(.75rem,3vw,2.5rem);padding:32px 16px}
-.brand{display:flex;align-items:center;gap:.7rem;min-width:0;flex:0 1 auto;--lb-name:#f4f2ee}
-.brand img{width:34px;height:34px;flex:0 0 auto;display:block}
-.brand-name{font-weight:700;font-size:clamp(.95rem,1.25vw,1.05rem);letter-spacing:-.015em;
-  color:#272219;line-height:1.32;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-  padding-block:.15rem}
+  gap:clamp(.75rem,3vw,2.5rem);padding:0 clamp(1rem,3vw,2rem)}
+.brand{display:flex;align-items:center;gap:.65rem;min-width:0;flex:0 1 auto;--lb-name:#f4f2ee}
+.brand img{width:36px;height:36px;border-radius:3px;flex:0 0 auto}
+.brand-name{font-weight:700;font-size:clamp(.95rem,1.3vw,1.15rem);letter-spacing:-.015em;
+  color:#f4f2ee;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hdr-nav{display:flex;align-items:center;gap:1.5rem;margin-left:auto}
-.hdr-nav a{font-size:0.9375rem;font-weight:500;color:#c9c6c0;transition:color .18s ease}
-.hdr-nav a:hover{color:#212121}
+.hdr-nav a{font-size:.9375rem;font-weight:500;color:#c9c6c0;transition:color .18s ease}
+.hdr-nav a:hover{color:#fff}
 .hdr-tel{display:inline-flex;align-items:center;gap:.45rem;flex:0 0 auto;background:var(--acc);
-  color:#17130f;font-weight:700;font-size:0.875rem;line-height:1;padding:.62rem .9rem;border-radius:2px;
+  color:#17130f;font-weight:700;font-size:.875rem;padding:.55rem .85rem;border-radius:2px;
   transition:background .18s ease}
-.hdr-tel:hover{background:#ff7440}
-@media (max-width:880px){.hdr-nav{display:none}}
+.hdr-tel:0434675562"lb-rv">.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
 
-section[id]{scroll-margin-top:calc(var(--nav) + 1rem)}
+<!--LB-HEROCOPY--><style id="lb-herocopy">[class*=hero-copy],[class*=hero__copy],[class*=hero].container>div:first-child{position:relative!important;z-index:6!important;max-width:min(780px,90vw)!important}[class*=hero-copy] h1,[class*=hero] h1{max-width:20ch!important}[class*=hero] canvas{pointer-events:none!important}[class*=hero-copy] p{max-width:56ch!important}</style><!--/LB-HEROCOPY-->
 
-/* ---------- hero ---------- */
-.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--dark);color:#f2f0eb;
-  min-height:min(100svh,940px);display:flex;flex-direction:column;
-  padding-top:32px 32px 40px 32px}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
-.hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:
-    radial-gradient(130% 95% at 4% 100%,rgba(11,12,14,.94) 0%,rgba(11,12,14,.7) 40%,rgba(11,12,14,0) 74%),
-    linear-gradient(180deg,rgba(11,12,14,.9),rgba(11,12,14,.34) 44%,rgba(11,12,14,.95))}
-.hero-in{position:relative;z-index:3;flex:1;width:100%;max-width:var(--wrap);margin:0 auto;
-  display:grid;grid-template-rows:1fr auto;gap:clamp(2rem,5vw,3.5rem);
-  padding:32px 16px 20px}
-.hero-copy{padding-bottom:24px;display:flex;flex-direction:column;justify-content:flex-end}
-.hero-kick{display:inline-flex;align-items:center;gap:.6rem;font-size:0.82rem;text-transform:uppercase;
-  letter-spacing:0.05em;color:#ff9463;font-weight:600;margin-bottom:1.1rem}
-.hero-kick::before{content:"";width:26px;height:2px;background:var(--acc);flex:0 0 auto;color:#222222}
-.hero h1{letter-spacing:-.03em;text-shadow:0 2px 30px rgba(0,0,0,.35)}
-.hero-lead{margin-top:1.55rem;max-width:50ch;color:#d6d2cb;font-size:clamp(1.02rem,1.35vw,1.14rem);line-height:1.365}
-.btn{display:inline-flex;align-items:center;gap:.6rem;margin-top:2.2rem;background:var(--acc);color:#17130f;
-  font-weight:700;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;
-  padding:.95rem 1.35rem;border-radius:2px;align-self:flex-start;
-  transition:background .18s ease,transform .18s ease}
-.btn:hover{background:#ff7440;transform:translateY(-1px)}
-.hero-spec{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;
-  gap:clamp(1.5rem,5vw,3.5rem);border-top:1px solid var(--line-d);padding-top:1.15rem;
-  font-size:0.82rem;text-transform:uppercase;letter-spacing:0.05em;color:#a5a19b}
+<!--LB-HEROCOPY2--><style id="lb-herocopy2">[class*=hero] canvas,canvas.lb-hero-canvas,[id*=scene] canvas{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{position:relative!important;z-index:3!important;width:min(780px,90vw)!important;max-width:none!important;flex:1 1 auto!important}[class*=hero-copy] h1{width:100%!important;max-width:none!important}</style><!--/LB-HEROCOPY2-->
 
-/* ---------- services ---------- */
-.svcs{padding:32px 32px;border-top:1px solid var(--line)}
-.svcs-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);align-items:end;
-  gap:clamp(1.5rem,5vw,4rem);margin-bottom:clamp(2.25rem,4vw,3.25rem);
-  padding-bottom:1.5rem;border-bottom:1px solid var(--line)}
-.svcs-head h2{font-size:var(--t-h2);letter-spacing:-.022em;line-height:1.31}
-.svcs-head p{color:#222222;max-width:42ch;justify-self:end;font-size:0.975rem}
-.svcs ol{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:clamp(1.25rem,3vw,2.5rem)}
-.svc{border-top:2px solid var(--ink);padding-top:1.3rem}
-.svc .n{display:block;font-size:0.82rem;font-weight:700;letter-spacing:0.05em;color:var(--acc);margin-bottom:2.4rem}
-.svc h3{font-size:var(--t-h3);letter-spacing:-.012em;margin-bottom:.7rem}
-.svc p{color:#222222;font-size:0.96rem;max-width:34ch}
+<!--LB-HEROBG--><style id="lb-herobg">[class*=hero-bg],[class*=hero__bg],[class*=hero-bgimg]{z-index:-1!important;pointer-events:none!important}[class*=hero-scrim],[class*=hero__scrim]{z-index:1!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{z-index:3!important}</style><!--/LB-HEROBG-->
 
-/* ---------- about ---------- */
-.about{background:var(--dark);color:#f2f0eb;padding:32px 32px}
-.about-in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
-  gap:clamp(2rem,6vw,5rem);align-items:start}
-.about-quote{font-size:clamp(1.55rem,3.1vw,2.5rem);line-height:1.316;letter-spacing:-.022em;
-  font-weight:600;max-width:22ch}
-.about-body{align-self:start}
-.about-body p{color:#c3bfb9;margin-bottom:1.05rem;max-width:46ch}
-.facts{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.7rem 1.5rem;margin-top:2rem;
-  padding-top:1.5rem;border-top:1px solid var(--line-d);font-size:0.92rem}
-.facts dt{color:#222222;text-transform:uppercase;letter-spacing:0.05em;font-size:0.82rem;padding-top:.25rem}
-.facts dd{color:#272219;min-width:0;overflow-wrap:anywhere}
-.facts dd a{border-bottom:1px solid rgba(240,90,30,.55);transition:color .18s ease,border-color .18s ease}
-.facts dd a:hover{color:#ff9463;border-color:#ff9463}
+<!--LB-CANVASZ--><style id="lb-canvasz">[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
 
-/* ---------- work ---------- */
-.work{padding:32px 32px;background:var(--paper-2);border-top:1px solid var(--line)}
-.work-head{display:flex;justify-content:space-between;align-items:baseline;gap:2rem;flex-wrap:wrap;
-  padding-bottom:1.4rem;border-bottom:1px solid var(--line);margin-bottom:clamp(1.5rem,3vw,2.25rem)}
-.work-head h2{font-size:var(--t-h2);letter-spacing:-.022em}
-.work-head p{color:#222222;font-size:0.93rem}
-.rail{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(230px,26vw,330px);grid-auto-rows:clamp(300px,32vw,410px);
-  gap:clamp(.8rem,1.5vw,1.2rem);overflow-x:auto;overscroll-behavior-x:contain;
-  scroll-snap-type:x mandatory;padding-bottom:.9rem;scrollbar-color:var(--acc) transparent;
-  scrollbar-width:thin}
-.rail figure{margin:0;scroll-snap-align:start;background:#d8d6d0;border:1px solid var(--line);overflow:hidden}
-.rail img{display:block;width:100%;height:100%;object-fit:cover}
+<!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
 
-/* ---------- contact ---------- */
-.contact{padding:32px 32px;border-top:1px solid var(--line)}
-.contact-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);
-  gap:clamp(2rem,6vw,4.5rem);align-items:start}
-.contact h2{font-size:var(--t-h2);letter-spacing:-.022em}
-.contact-lead{margin-top:.9rem;color:#222222;max-width:40ch}
-.tel-big{display:inline-block;margin-top:1.9rem;font-size:clamp(1.7rem,3.3vw,2.5rem);font-weight:800;
-  letter-spacing:-.02em;line-height:1.31;border-bottom:2px solid var(--acc);padding-bottom:.15rem;
-  transition:color .18s ease}
-.tel-big:hover{color:var(--acc)}
-.contact-meta{margin-top:1.9rem;font-size:0.92rem;color:#222222;line-height:1.37}
+<!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.42)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
 
-.contact form{position:relative;display:grid;gap:.95rem}
-.f-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.95rem}
-.contact form>div{display:grid;min-width:0}
-.contact label{display:block;font-size:0.82rem;font-weight:600;text-transform:uppercase;
-  letter-spacing:0.05em;color:#222222;margin-bottom:.4rem}
-.contact input,.contact textarea{width:100%;background:#fff;color:var(--ink);font:inherit;font-size:0.96rem;
-  border:1px solid var(--line);border-radius:2px;padding:.72rem .82rem;line-height:1.5;
-  transition:border-color .18s ease,box-shadow .18s ease}
-.contact textarea{min-height:128px;resize:vertical}
-.contact input:focus,.contact textarea:focus{border-color:var(--acc);;outline:none}
-.consent{display:flex!important;align-items:center;gap:.55rem;margin:.15rem 0 .1rem;
-  font-size:0.85rem;font-weight:400;letter-spacing:0;text-transform:none;color:#222222}
-.consent input{width:16px!important;height:16px;flex:0 0 auto;padding:0;accent-color:var(--acc)}
-.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
-.contact button{justify-self:start;margin-top:.3rem;background:var(--ink);color:#272219;border:0;cursor:pointer;
-  font:inherit;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;
-  padding:.9rem 1.5rem;border-radius:2px;transition:background .18s ease}
-.contact button:hover{background:var(--acc);color:#17130f}
-.contact button:disabled{opacity:.6;cursor:progress}
-.f-status{min-height:1.4em;font-size:0.88rem;color:#222222;margin:0}
-
-/* ---------- footer ---------- */
-footer{background:var(--dark);color:#a5a19b;border-top:1px solid var(--line-d);
-  padding:36px 32px 24px}
-.ftr{display:grid;grid-template-columns:minmax(0,1fr) auto;
-  gap:clamp(1.5rem,4vw,3rem);align-items:start;font-size:0.85rem}
-.ftr-brand{display:grid;gap:.55rem;justify-items:start;min-width:0}
-.ftr-name{color:#272219;font-weight:600;font-size:0.95rem;line-height:1.33}
-.ftr-tag{max-width:38ch;font-size:0.83rem;line-height:1.36;color:#222222}
-.ftr-nav{display:flex;flex-wrap:wrap;gap:.85rem 1.6rem;padding-top:.15rem}
-.ftr a{transition:color .18s ease}
-.ftr a:hover{color:#212121}
-.ftr-ig{display:inline-flex;align-items:center;gap:.45rem;margin-top:.35rem}
-.ftr-ig svg{flex:0 0 auto}
-.ftr-base{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;
-  gap:.6rem 1.5rem;margin-top:.9rem;padding-top:1.1rem;border-top:1px solid var(--line-d);
-  font-size:0.82rem;color:#222222}
-.ftr-base span:last-child{display:inline-flex;gap:1.25rem}
-
-/* ---------- rules ---------- */
-@media (max-width:900px){
-  .svcs-head,.about-in,.contact-in{grid-template-columns:minmax(0,1fr)}
-  .svcs-head p{justify-self:start}
-  .svcs ol{grid-template-columns:minmax(0,1fr);gap:1.5rem}
-  .svc .n{margin-bottom:1.1rem}
-  .svc p{max-width:52ch}
-  .hero-spec{grid-template-columns:minmax(0,1fr);gap:.6rem;padding-top:1rem}
-  .hero-lead{max-width:44ch}
-  .about-quote{max-width:24ch}
-  .facts{grid-template-columns:minmax(0,1fr);gap:.25rem 0}
-  .facts dd{margin-bottom:.75rem}
-  .f-row{grid-template-columns:minmax(0,1fr)}
-  .ftr{grid-template-columns:minmax(0,1fr);row-gap:1.5rem}
-  .ftr-base{flex-direction:column;align-items:flex-start}
-}
-@media (max-width:520px){
-  .brand img{width:32px;height:32px}
-  .hdr-tel span{display:none}
-}
-</style>
-<!--LB-RV--><style>.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
-
-<!--LB-HEROCOPY--><style>[class*=hero-copy],[class*=hero__copy],[class*=hero].container>div:first-child{position:relative!important;z-index:6!important;max-width:min(780px,90vw)!important}[class*=hero-copy] h1,[class*=hero] h1{max-width:20ch!important}[class*=hero] canvas{pointer-events:none!important}[class*=hero-copy] p{max-width:56ch!important}</style><!--/LB-HEROCOPY-->
-
-<!--LB-HEROCOPY2--><style>[class*=hero] canvas:canvas.lb-hero-canvas,[id*=scene] canvas{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{position:relative!important;z-index:3!important;width:min(780px,90vw)!important;max-width:none!important;flex:1 1 auto!important}[class*=hero-copy] h1{width:100%!important;max-width:none!important}</style><!--/LB-HEROCOPY2-->
-
-<!--LB-HEROBG--><style>[class*=hero-bg],[class*=hero__bg],[class*=hero-bgimg]{z-index:-1!important;pointer-events:none!important}[class*=hero-scrim],[class*=hero__scrim]{z-index:1!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{z-index:3!important}</style><!--/LB-HEROBG-->
-
-<!--LB-CANVASZ--><style>[class*=hero] canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
-
-<!--LB-H1W--><style>[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.38!important}</style><!--/LB-H1W-->
-
-<!--LB-HEROFIX2--><style>[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.28)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
-
-<!--LB-RM--><style>@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
-
-<!--LB-HEROGRID--><style>[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
-<style>.lb-soc{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;opacity:.85;text-decoration:none}.lb-soc:hover{opacity:1}footer .lb-soc{margin-right:8px}</style><style>nav,header{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:clamp(18px,4vw,64px)!important;background:#f05a1e!important;color:#212121 !important;padding:14px 16px 32px;min-height:0!important;height:auto!important}.lb-brand{display:flex!important;align-items:center!important;gap:clamp(14px,2.5vw,38px)!important;flex:0 1 auto!important;min-width:0!important;text-decoration:none!important}.lb-mark{height:clamp(56px,5vw,72px)!important;width:auto!important;object-fit:contain!important;flex:none!important;-webkit-mask-image:radial-gradient(ellipse at center,#000 74%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 74%,transparent 100%)}.lb-word{height:auto!important;max-height:clamp(26px,2.3vw,34px)!important;width:auto!important;object-fit:contain!important;max-width:min(32vw,460px)!important;flex:0 1 auto!important;min-width:0!important;-webkit-mask-image:radial-gradient(ellipse at center,#000 78%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 78%,transparent 100%)}.lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}nav ul,nav .nav-links{display:flex!important;align-items:center!important;gap:clamp(12px,2vw,26px)!important;margin:0!important;padding:0!important;list-style:none!important;flex:1 1 auto!important;justify-content:flex-end!important}nav>div,nav>span,nav>.wrap,nav>.container,nav>.nav-in,nav>.nav-links{flex:1 1 auto!important;min-width:0!important;width:auto!important;max-width:none!important;margin-left:auto!important;margin-right:0!important}nav{flex-wrap:nowrap!important}.lb-brand{overflow:hidden!important}nav{min-width:0!important;flex-wrap:wrap!important;row-gap:6px!important}.hdr__in,.nav__in,.nav-inner{min-width:0!important;flex:1 1 auto!important}nav a{color:#212121 !important}[class*=hero-copy],[class*=hero__copy],[class*=hero-in],[class*=hero-inner]{flex-wrap:nowrap!important}[class*=hero-copy]>*,[class*=hero__copy]>*,[class*=hero-in]>*,[class*=hero-inner]>*{flex:0 0 auto!important;min-height:0!important}body{background:#f05a1e!important;color:#212121 !important}section,.section{background-color:transparent!important}.nav-cta,.cta{background:#ee4d0d!important;color:#1c1c1c !important;border-color:#ee4d0d!important}a{--lb-accent:#ee4d0d}body{padding-top:0!important}[class~=hero],.hero,header#top:not(.hdr),section#top{padding-top:32px 32px 32px;padding-bottom:32px;min-height:clamp(400px,50vh,540px)!important;max-height:none!important;align-content:center!important;align-items:stretch!important;flex-wrap:wrap!important;gap:14px!important}[class~=hero]:not(.lb-hgrid),.hero:not(.lb-hgrid),header#top:not(.hdr),section#top{display:flex!important;flex-direction:row!important;justify-content:center!important;position:relative!important}[class~=hero]>*,.hero>*,header#top>*,section#top>*{flex:1 1 min(430px,100%)!important;min-width:0!important;max-width:100%!important}[class~=hero]>canvas,.hero>canvas,[class~=hero]>[class*=scrim],[class~=hero]>.lbhf{flex:none!important}[class~=hero] canvas,.hero canvas,header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important}[class~=hero]>.hero-photo,[class~=hero]>.hero-shade,[class~=hero]>[class*=scrim],header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;margin:0!important}header{overflow:visible!important}.lb-hgrid{justify-items:stretch!important}p,li,.sub,.lede{color:#212121 !important}[class*=hero] p,[class*=hero] li,[class*=hero] .sub,[class*=hero] .lede,.hero p{color:#212121 !important;text-shadow:0 1px 12px rgba(0,0,0,.45)}@media(max-width:820px){nav{flex-wrap:wrap!important;gap:10px!important}}.lb-mark{height:clamp(56px,5vw,76px)!important}.lb-word{height:clamp(38px,4.4vw,62px)!important;max-height:none!important;max-width:min(60vw,900px)!important}</style><style>header .brand,header .b-txt,header .b-txt *,nav .brand,nav .lb-brand,header nav a,nav.nav a,.site-head .brand,.brand__name{color:#212121 !important}</style><style id="lb-contrast-fix">
-/* contrast stated per element, measured in the browser */
-#hero-title{color:#0b0b0b !important}
-section.hero:nth-of-type(1) div.hero-in:nth-of-type(2) div.hero-spec.rv:nth-of-type(2) span:nth-of-type(1){color:#0b0b0b !important}
-section.hero:nth-of-type(1) div.hero-in:nth-of-type(2) div.hero-spec.rv:nth-of-type(2) span:nth-of-type(2){color:#0b0b0b !important}
-section.hero:nth-of-type(1) div.hero-in:nth-of-type(2) div.hero-spec.rv:nth-of-type(2) span:nth-of-type(3){color:#0b0b0b !important}
-#about-title{color:#0b0b0b !important}
-form button{color:#ffffff !important}
-footer div.wrap.ftr:nth-of-type(1) div.ftr-brand:nth-of-type(1) span.ftr-name:nth-of-type(1){color:#ffffff !important}
-footer div.wrap.ftr:nth-of-type(1) div.ftr-brand:nth-of-type(1) span.ftr-tag:nth-of-type(2){color:#ffffff !important}
-footer div.wrap.ftr:nth-of-type(1) div.ftr-base:nth-of-type(2) span:nth-of-type(1){color:#ffffff !important}
-div.wrap.ftr:nth-of-type(1) div.ftr-base:nth-of-type(2) span:nth-of-type(2) a:nth-of-type(1){color:#ffffff !important}
-div.wrap.ftr:nth-of-type(1) div.ftr-base:nth-of-type(2) span:nth-of-type(2) a:nth-of-type(2){color:#ffffff !important}
-</style>
+<!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
 </head>
 <body>
 
-<header class="nav"><a href="/" class="lb-brand" aria-label="B.I Concrete Constructions"><img style="max-width:210px" width="210" height="157" src="assets/logo-flat-mark.png" alt="" class="lb-mark" loading="eager" decoding="async"><img style="max-width:1888px" width="1888" height="93" src="assets/logo-word.png" alt="" class="lb-word" loading="eager" decoding="async"><span class="lb-sr">B.I Concrete Constructions</span></a>
+<header>
   <div class="hdr">
-    
+    <a class="brand" href="#top" aria-label="B.I Concrete Constructions, back to top">
+      <img src="assets/logo.svg" alt="" class="lb-logo" loading="eager" decoding="async">
+      <span class="brand-name">B.I Concrete Constructions</span>
+    </a>
     <nav class="hdr-nav" aria-label="Sections">
       <a href="#services">Services</a>
       <a href="#about">About</a>
@@ -259,7 +99,7 @@ div.wrap.ftr:nth-of-type(1) div.ftr-base:nth-of-type(2) span:nth-of-type(2) a:nt
   <div class="hero-in">
     <div class="hero-copy">
       <p class="hero-kick rv">Central Coast, Newcastle and Lake Macquarie</p>
-      <h1 id="hero-title" class="rv">Concrete construction: set out true.</h1>
+      <h1 id="hero-title" class="rv">Concrete construction, set out true.</h1>
       <p class="hero-lead rv">Formwork, steelfixing and pour-to-finish for footpaths, slabs, walls and columns. Brady runs every job, from the set-out to the cure.</p>
       <a class="btn rv" href="tel:0434675562" aria-label="Call Brady on 0434 675 562">
         Call Brady on 0434 675 562
@@ -278,21 +118,21 @@ div.wrap.ftr:nth-of-type(1) div.ftr-base:nth-of-type(2) span:nth-of-type(2) a:nt
   <div class="wrap">
     <div class="svcs-head">
       <h2 id="services-title" class="rv">What we do</h2>
-      <p class="rv">Three disciplines: one crew. Every stage is set out and braced before a metre of concrete goes in.</p>
+      <p class="rv">Three disciplines, one crew. Every stage is set out and braced before a metre of concrete goes in.</p>
     </div>
     <ol>
       <li class="svc rv">
-        
+        <span class="n">01</span>
         <h3>Formwork</h3>
         <p>Footpaths, suspended slabs, walls and columns. Shuttering built and set to spec, stripped clean for the next pour.</p>
       </li>
       <li class="svc rv">
-        
+        <span class="n">02</span>
         <h3>Steelfixing</h3>
         <p>Reinforcement scheduled, placed and tied. Mesh, bar and cage fabrication for footings, slabs and structural elements.</p>
       </li>
       <li class="svc rv">
-        
+        <span class="n">03</span>
         <h3>Concrete construction</h3>
         <p>Place, screed, finish, cure. Footpaths through to structural work, with handover records supplied on completion.</p>
       </li>
@@ -320,21 +160,21 @@ div.wrap.ftr:nth-of-type(1) div.ftr-base:nth-of-type(2) span:nth-of-type(2) a:nt
 
 <section class="work" id="work" aria-labelledby="work-title">
   <div class="wrap">
-    <div style="display:none" class="work-head">
+    <div class="work-head">
       <h2 id="work-title" class="rv">On site</h2>
       <p class="rv">Formwork sequences, rebar layouts and pour days.</p>
     </div>
   </div>
   <div class="wrap">
     <div class="rail" role="list">
-      <figure role="listitem"><img style="max-width:1600px" src="images/work_01.jpg" alt="Formwork set out on a B.I Concrete Constructions site" width="1600" height="900" loading="eager" decoding="async"></figure>
-      <figure role="listitem"><img style="max-width:1440px" src="images/work_02.jpg" alt="Reinforcement placed and tied before a pour" width="1440" height="810" loading="eager" decoding="async"></figure>
-      <figure role="listitem"><img style="max-width:1080px" src="images/work_03.jpg" alt="Concrete slab finished to level" width="1080" height="814" loading="eager" decoding="async"></figure>
-      <figure role="listitem"><img style="max-width:720px" src="images/work_04.jpg" alt="Wall formwork braced on site" width="720" height="1280" loading="eager" decoding="async"></figure>
-      <figure role="listitem"><img style="max-width:720px" src="images/work_05.jpg" alt="Steelfixing detail at a construction site" width="720" height="1280" loading="eager" decoding="async"></figure>
-      <figure role="listitem"><img style="max-width:720px" src="images/work_06.jpg" alt="Fresh concrete pour being screeded" width="720" height="1280" loading="eager" decoding="async"></figure>
-      <figure role="listitem"><img style="max-width:640px" src="images/work_07.jpg" alt="Completed concrete footpath" width="640" height="1136" loading="eager" decoding="async"></figure>
-      <figure role="listitem"><img style="max-width:640px" src="images/work_08.jpg" alt="Edge formwork on a concrete pour" width="640" height="1136" loading="eager" decoding="async"></figure>
+      <figure role="listitem"><img src="images/work_01.jpg" alt="Formwork set out on a B.I Concrete Constructions site" width="1600" height="900" loading="eager" decoding="async"></figure>
+      <figure role="listitem"><img src="images/work_02.jpg" alt="Reinforcement placed and tied before a pour" width="1440" height="810" loading="eager" decoding="async"></figure>
+      <figure role="listitem"><img src="images/work_03.jpg" alt="Concrete slab finished to level" width="1080" height="814" loading="eager" decoding="async"></figure>
+      <figure role="listitem"><img src="images/work_04.jpg" alt="Wall formwork braced on site" width="720" height="1280" loading="lazy" decoding="async"></figure>
+      <figure role="listitem"><img src="images/work_05.jpg" alt="Steelfixing detail at a construction site" width="720" height="1280" loading="lazy" decoding="async"></figure>
+      <figure role="listitem"><img src="images/work_06.jpg" alt="Fresh concrete pour being screeded" width="720" height="1280" loading="lazy" decoding="async"></figure>
+      <figure role="listitem"><img src="images/work_07.jpg" alt="Completed concrete footpath" width="640" height="1136" loading="lazy" decoding="async"></figure>
+      <figure role="listitem"><img src="images/work_08.jpg" alt="Edge formwork on a concrete pour" width="640" height="1136" loading="lazy" decoding="async"></figure>
     </div>
   </div>
 </section>
@@ -357,7 +197,7 @@ div.wrap.ftr:nth-of-type(1) div.ftr-base:nth-of-type(2) span:nth-of-type(2) a:nt
           <div><label for="p">Phone</label><input id="p" name="phone" type="tel" autocomplete="tel"></div>
         </div>
         <div><label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email"></div>
-        <div><label for="m">Job details</label><textarea id="m" name="message" placeholder="Size, location: timeframe" required></textarea></div>
+        <div><label for="m">Job details</label><textarea id="m" name="message" placeholder="Size, location, timeframe" required></textarea></div>
         <label class="consent"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
         <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
         <button type="submit">Send quote request</button>
@@ -371,30 +211,23 @@ div.wrap.ftr:nth-of-type(1) div.ftr-base:nth-of-type(2) span:nth-of-type(2) a:nt
 
 <footer>
   <div class="wrap ftr">
-    <div class="ftr-brand">
-      <span class="ftr-name">B.I Concrete Constructions Pty Ltd</span>
-      <span class="ftr-tag">Formwork, steelfixing and concrete construction across the Central Coast, Newcastle and Lake Macquarie. Based in Norah Head.</span>
-      <a class="ftr-ig" href="https://www.instagram.com/b.i_concreteconstructions/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8a4 4 0 0 1 3.4 3.4z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        @b.i_concreteconstructions
-      </a>
-    </div>
-    <nav class="ftr-nav" aria-label="Footer">
+    <span>B.I Concrete Constructions Pty Ltd</span>
+    <nav aria-label="Footer">
       <a href="#services">Services</a>
       <a href="#about">About</a>
-      <a href="#work">Work</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="ftr-base">
-      <span>&copy; 2026 B.I Concrete Constructions Pty Ltd</span>
-      <span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></span>
-    </div>
+    <a class="ftr-ig" href="https://www.instagram.com/b.i_concreteconstructions/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8a4 4 0 0 1 3.4 3.4z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      @b.i_concreteconstructions
+    </a>
+    <span><a href="privacy.html">Privacy</a> &nbsp; <a href="terms.html">Terms</a></span>
   </div>
-<div class="lb-socials"><a class="lb-soc" href="https://www.instagram.com/b.i_concreteconstructions/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a><a class="lb-soc" href="https://www.instagram.com/b.i_concreteconstructions" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a></div></footer>
+</footer>
 
 <script src="assets/heroCanvas.js"></script>
 <script>
-/* hero scene: timber frame: gable truss: set-out lines: saw bench */
+/* hero scene: timber frame, gable truss, set-out lines, saw bench */
 (function(){
   var cv = document.getElementById('heroCanvas');
   if (!cv || !window.Projection || !Projection.sceneFrame) return;
@@ -459,7 +292,7 @@ div.wrap.ftr:nth-of-type(1) div.ftr-base:nth-of-type(2) span:nth-of-type(2) a:nt
       new FormData(f).forEach(function(v,k){ d[k] = v; });
       if (d.website) return;
       if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()){
-        st.textContent = 'Add your name: a phone or email: and a few words about the job.';
+        st.textContent = 'Add your name, a phone or email, and a few words about the job.';
         st.style.color = '#ff9d8a';
         return;
       }
@@ -486,7 +319,7 @@ div.wrap.ftr:nth-of-type(1) div.ftr-base:nth-of-type(2) span:nth-of-type(2) a:nt
           } else { throw new Error((x && x.error) || 'Could not send'); }
         })
         .catch(function(err){
-          st.textContent = (err && err.message) ? err.message : 'Could not send: please try again or call 0434 675 562.';
+          st.textContent = (err && err.message) ? err.message : 'Could not send, please try again or call 0434 675 562.';
           st.style.color = '#ff9d8a';
         })
         .finally(function(){ btn.disabled = false; });

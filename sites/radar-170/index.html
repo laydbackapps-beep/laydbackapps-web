@@ -30,7 +30,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--font-sans);font-size:16.5px;line-height:1.362;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-sans);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit}
 .wrap{width:min(1180px,92vw);margin-inline:auto}
@@ -46,10 +46,10 @@ html.js .drop.in{opacity:1;transform:none}
 .nav-in{display:flex;align-items:center;gap:1.4rem;height:80px}
 .brand{display:flex;align-items:center;gap:.9rem;color:#fff;text-decoration:none}
 .brand img{height:32px;width:32px;border-radius:8px}
-.brand-name{font-family:var(--font-display);font-size:1.28rem;line-height:1;color:#fff;font-weight:700;letter-spacing:0.02em}
-.brand-sub{font-size:0.82rem;letter-spacing:0.05em;text-transform:uppercase;color:#C9CDD3;font-weight:700}
+.brand-name{font-family:var(--font-display);font-size:1.28rem;line-height:1;color:#fff;font-weight:700;letter-spacing:.02em}
+.brand-sub{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:#C9CDD3;font-weight:700}
 .nav-links{display:flex;gap:1.35rem;margin-left:auto;align-items:center}
-.nav-links a{color:#B4B6BD;text-decoration:none;font-size:0.92rem;font-weight:500}
+.nav-links a{color:#B4B6BD;text-decoration:none;font-size:.92rem;font-weight:500}
 .nav-links a:hover{color:#fff}
 .nav-cta{background:var(--accent);color:#FFFFFF !important;padding:.55rem 1.2rem;border-radius:6px;font-weight:700}
 .nav-cta:hover{filter:brightness(1.08)}
@@ -69,38 +69,38 @@ html.js .drop.in{opacity:1;transform:none}
 .hero{position:relative;min-height:95vh;display:flex;align-items:flex-start;background:#0A0A0C;overflow:hidden;padding-top:80px}
 .hero::before{content:"";position:absolute;inset:0;z-index:0;background:url("assets/hero-pour.jpg") center 50%/cover no-repeat}
 .hero canvas,.lb3d-canvas{position:absolute;inset:0;width:100%;height:100%;}
-.hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(8,8,10,.58) 0%,rgba(8,8,10,.74) 55%,rgba(8,8,10,.9) 100%)}
+.hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(8,8,10,.52),rgba(8,8,10,.82)}
 .hero-in{position:relative;z-index:2;padding-block:12.5vh 3.4rem}
-.hero-kicker{display:inline-flex;align-items:center;gap:.65rem;color:#C9CDD3;font-size:0.82rem;letter-spacing:0.05em;text-transform:uppercase;font-weight:700;margin-bottom:1rem}
+.hero-kicker{display:inline-flex;align-items:center;gap:.65rem;color:#C9CDD3;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;font-weight:700;margin-bottom:1rem}
 .hero-kicker::before{content:"";width:36px;height:2px;background:var(--accent)}
-.hero h1{font-family:var(--font-display);font-size:clamp(2.3rem,5.8vw,4.5rem);line-height:1.36;color:#F7F7F9;font-weight:700;max-width:22ch;letter-spacing:-.01em}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.3rem,5.8vw,4.5rem);line-height:1.06;color:#F7F7F9;font-weight:700;max-width:22ch;letter-spacing:-.01em}
 .hero h1 em{font-style:normal;color:#F04B3F}
 .hero-sub{margin-top:1.1rem;color:#C9CDD3;font-size:clamp(.98rem,1.5vw,1.09rem);max-width:56ch}
 .hero-cta{display:flex;gap:.9rem;margin-top:1.8rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.55rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.95rem;transition:transform .15s ease,filter .15s ease}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.55rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.95rem;transition:transform .15s ease,filter .15s ease}
 .btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
 .btn-primary{background:var(--accent);color:#FFFFFF}
 .btn-ghost{border:1.5px solid rgba(247,247,249,.35);color:#F7F7F9}
 .hero-strip{margin-top:2.6rem;display:flex;gap:2.6rem;flex-wrap:wrap;border-top:1px solid rgba(239,239,242,.16);padding-top:1.2rem}
-.hero-strip p{color:#B4B6BD;font-size:0.82rem;letter-spacing:0.05em;text-transform:none;font-weight:700}
+.hero-strip p{color:#B4B6BD;font-size:.7rem;letter-spacing:.13em;text-transform:none;font-weight:700}
 .hero-strip strong{display:block;color:#F7F7F9;font-family:var(--font-display);font-size:1.05rem;margin-top:.2rem;font-weight:600}
 
 section{padding-block:5.4rem}
 .sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:2.4rem}
 .sec-head::before{content:"";width:40px;height:3px;background:var(--accent);flex:none;align-self:center;border-radius:2px}
-.sec-kicker{font-size:0.82rem;letter-spacing:0.05em;text-transform:none;color:#C9CDD3;font-weight:700}
-.sec-title{font-family:var(--font-display);font-size:clamp(1.75rem,4vw,2.7rem);font-weight:700;line-height:1.312;margin-top:.35rem;max-width:28ch;color:#EFEFF2;letter-spacing:-.01em}
+.sec-kicker{font-size:.7rem;letter-spacing:.3em;text-transform:none;color:#C9CDD3;font-weight:700}
+.sec-title{font-family:var(--font-display);font-size:clamp(1.75rem,4vw,2.7rem);font-weight:700;line-height:1.12;margin-top:.35rem;max-width:28ch;color:#EFEFF2;letter-spacing:-.01em}
 .sec-sub{color:var(--muted);max-width:60ch;margin-top:.85rem}
 
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(311px,1fr));gap:1.15rem}
 .svc{background:rgba(239,239,242,.05);border:1px solid var(--line);border-radius:10px;padding:1.65rem 1.5rem;position:relative;overflow:hidden;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
-.svc:hover{border-color:var(--accent-ink,var(--accent));transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.svc:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.5)}
 .svc::after{content:"";position:absolute;top:0;left:0;width:44px;height:3px;background:var(--accent);transition:width .3s ease}
 .svc:hover::after{width:100%}
 .svc-ico{width:44px;height:44px;border-radius:9px;background:#2A2A2E;display:grid;place-items:center;margin-bottom:.95rem}
 .svc-ico svg{width:22px;height:22px;stroke:#F5F5F7;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .svc h3{font-family:var(--font-display);font-weight:700;font-size:1.12rem;color:#EFEFF2;margin-bottom:.35rem}
-.svc p{color:var(--muted);font-size:0.94rem}
+.svc p{color:var(--muted);font-size:.94rem}
 
 .band{background:var(--dark);border-block:2px solid rgba(239,239,242,.14)}
 .band .sec-title{color:var(--dink)}
@@ -110,7 +110,7 @@ section{padding-block:5.4rem}
 .step{background:rgba(239,239,242,.05);border:1px solid rgba(239,239,242,.14);border-radius:10px;padding:1.55rem 1.45rem}
 .step-n{font-family:var(--font-display);font-size:1.75rem;line-height:1;color:#F04B3F;margin-bottom:.5rem;font-weight:700}
 .step h3{font-family:var(--font-display);font-weight:700;font-size:1.06rem;color:var(--dink);margin-bottom:.3rem}
-.step p{color:var(--dmut);font-size:0.92rem}
+.step p{color:var(--dmut);font-size:.92rem}
 
 .why-block{display:grid;grid-template-columns:.94fr 1.06fr;gap:2.4rem;align-items:start}
 @media(max-width:980px){.why-block{grid-template-columns:1fr;gap:2rem}}
@@ -119,15 +119,15 @@ section{padding-block:5.4rem}
 .why-tick{flex:none;width:26px;height:26px;border-radius:6px;background:var(--accent);display:grid;place-items:center;margin-top:.2rem}
 .why-tick svg{width:14px;height:14px;stroke:#FFFFFF;fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
 .why-item h3{font-family:var(--font-display);font-weight:700;font-size:1.08rem;color:#EFEFF2}
-.why-item p{color:var(--muted);font-size:0.93rem;margin-top:.1rem}
+.why-item p{color:var(--muted);font-size:.93rem;margin-top:.1rem}
 .why-visual{border-radius:12px;border:1px solid var(--line);background:rgba(239,239,242,.06);padding:1.7rem;display:grid;place-items:center}
 .why-visual img{width:min(330px,94%);border-radius:8px}
-.why-visual p{color:var(--muted);margin-top:1rem;font-size:0.88rem;text-align:center}
+.why-visual p{color:var(--muted);margin-top:1rem;font-size:.88rem;text-align:center}
 
 .tail{background:#141416;border-block:1px solid var(--line)}
 .chips{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.3rem}
-.chip{border:1px solid rgba(201,205,211,.30);border-radius:999px;padding:.5rem 1.15rem;font-size:0.88rem;color:#C9CDD3;background:rgba(239,239,242,.05);font-weight:600}
-.tail-note{color:var(--muted);font-size:0.93rem;margin-top:1.2rem}
+.chip{border:1px solid rgba(201,205,211,.30);border-radius:999px;padding:.5rem 1.15rem;font-size:.88rem;color:#C9CDD3;background:rgba(239,239,242,.05);font-weight:600}
+.tail-note{color:var(--muted);font-size:.93rem;margin-top:1.2rem}
 
 .close-band{background:var(--dark);border-block:2px solid rgba(239,239,242,.14);text-align:center}
 .close-band .sec-head{justify-content:center;text-align:center}
@@ -137,7 +137,7 @@ section{padding-block:5.4rem}
 .close-band .cta-sub{color:var(--dmut);max-width:58ch;margin:1rem auto 0}
 .cta-row{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin-top:1.9rem}
 .cta-lines{margin-top:1.6rem;display:flex;gap:2.2rem;justify-content:center;flex-wrap:wrap}
-.cta-lines p{color:var(--dmut);font-size:0.95rem}
+.cta-lines p{color:var(--dmut);font-size:.95rem}
 .cta-lines a{color:var(--dink);text-decoration:none;font-weight:700}
 .cta-lines a:hover{color:#F04B3F}
 
@@ -147,14 +147,11 @@ footer{background:#08080A;border-top:2px solid rgba(239,239,242,.16);color:#A2A4
 .foot-brand{display:flex;gap:.9rem;align-items:center;margin-bottom:1.05rem}
 .foot-brand img{height:52px;width:auto;border-radius:6px;background:#fff;padding:4px}
 .foot-brand-name{font-family:var(--font-display);color:#F5F5F7;font-size:1.24rem;line-height:1;font-weight:700}
-.foot-brand-sub{font-size:0.82rem;letter-spacing:0.05em;text-transform:none;color:#C9CDD3;font-weight:700}
+.foot-brand-sub{font-size:.56rem;letter-spacing:.22em;text-transform:none;color:#C9CDD3;font-weight:700}
 .foot h4{font-family:var(--font-display);font-weight:700;color:#F5F5F7;font-size:1.06rem;margin-bottom:.8rem}
-.foot p,.foot a{font-size:0.93rem;line-height:1.385;color:#A2A4AB;text-decoration:none}
+.foot p,.foot a{font-size:.93rem;line-height:1.85;color:#A2A4AB;text-decoration:none}
 .foot a:hover{color:#F5F5F7}
-.foot-bottom{border-top:1px solid rgba(239,239,242,.12);padding-top:1.5rem;margin-top:3rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:0.82rem;color:#a3aebf}
-.foot-bottom .lb-legal{display:flex;gap:1.1rem}
-.foot-bottom .lb-legal a{font-size:0.82rem;color:#a3aebf;text-decoration:none;border-bottom:1px solid rgba(239,239,242,.2);padding-bottom:1px}
-.foot-bottom .lb-legal a:hover{color:#F5F5F7;border-color:rgba(239,239,242,.5)}
+.foot-bottom{border-top:1px solid rgba(239,239,242,.12);padding-top:1.5rem;margin-top:3rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.79rem;color:#a3aebf}
 .soc-row{display:flex;flex-direction:column;gap:.45rem}
 .soc-link{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;color:#C9CDD3;text-decoration:none;transition:color .2s ease}
 .soc-link::before{content:"";width:7px;height:7px;border-radius:2px;background:#D41A10;display:inline-block;flex:0 0 auto}
@@ -167,11 +164,13 @@ section#lbq{--lbq-bg:#0F0F11;--lbq-ink:#EFEFF2;--lbq-muted:#A2A4AB;--lbq-panel:r
 .gal.wide{grid-column:1/-1}
 .gal.wide img{aspect-ratio:16/9;object-fit:cover;object-position:center 50%}
 .gal:hover img{transform:scale(1.045)}
-.gal-cap{position:absolute;inset:auto 0 0 0;padding:.85rem 1rem .8rem;background:rgba(8,10,14,.82);color:#fff;font-size:0.86rem;font-weight:600;letter-spacing:0.01em}
-.gal-note{margin-top:1.35rem;color:var(--muted);font-size:0.92rem}
+.gal-cap{position:absolute;inset:auto 0 0 0;padding:.85rem 1rem .8rem;background:rgba(8,10,14,.82);color:#fff;font-size:.86rem;font-weight:600;letter-spacing:.01em}
+.gal-note{margin-top:1.35rem;color:var(--muted);font-size:.92rem}
 @media(max-width:640px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
-<style>.brand img,.foot-brand img{background:transparent;padding:0;border-radius:8px}</style><style>
+<style>.brand img,.foot-brand img{background:transparent;padding:0;border-radius:8px}</style><style id="lb-motion-css">
+/* ==== LB MOTION PACK ==== */
+.lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
 /* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
    content. Unrevealed .rv wrappers left whole headers at opacity:0 (invisible logo). */
 header, .site-header, .page-header, nav.nav, .nav .rv, nav.rv, .header-inner, .nav-inner,
@@ -179,17 +178,18 @@ header .rv, .site-header .rv, .nav-inner .rv{
   opacity:1 !important; visibility:visible !important; transform:none !important;
 }
 .lb-rb{position:relative;width:100%;max-width:100%;overflow:hidden;background:#0c0d10}
+.lb-mq{max-width:100%;overflow:hidden}
 .lb-rb__track{position:relative;width:100%;aspect-ratio:16/7}
 .lb-rb__slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;will-change:opacity}
 .lb-rb__slide.is-on{opacity:1}
 .lb-rb__slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03);transition:transform 7s linear}
 .lb-rb__slide.is-on img{transform:scale(1.10)}
-.lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:14px;
+.lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2.2vw,30px);
  background:rgba(6,7,10,.72);color:#fff;
- font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;letter-spacing:0.05em;text-transform:none;
- font-size:clamp(13px,1vw,13px);z-index:2}
-.lb-rb__dots{position:absolute;top:auto;bottom:calc(clamp(14px,2.2vw,30px) + 42px);right:clamp(10px,1.6vw,22px);transform:none;
- display:flex;flex-direction:row;gap:9px;z-index:3}
+ font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;letter-spacing:.16em;text-transform:none;
+ font-size:clamp(9px,1vw,13px);z-index:2}
+.lb-rb__dots{position:absolute;top:50%;right:clamp(10px,1.6vw,22px);transform:translateY(-50%);
+ display:flex;flex-direction:column;gap:9px;z-index:3}
 .lb-rb__dots button{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.7);
  background:transparent;cursor:pointer;padding:0;transition:transform .25s,background .25s}
 .lb-rb__dots button.is-on{background:#fff;transform:scale(1.35)}
@@ -220,15 +220,26 @@ a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
  .lb-rb__slide img{transform:none!important;transition:none!important}
  a.btn::after,.btn::after,.nav-cta a::after{display:none}
 }
-@media (prefers-reduced-motion: reduce){}
+
+/* marquee band (professional, reference-derived) */
+.lb-mq{position:relative;overflow:hidden;background:#0b0c10;border-top:1px solid rgba(255,255,255,.10);
+ border-bottom:1px solid rgba(255,255,255,.10)}
+.lb-mq__in{display:flex;width:max-content;animation:lb-mq 34s linear infinite}
+.lb-mq:hover .lb-mq__in{animation-play-state:paused}
+.lb-mq__in span{display:inline-flex;align-items:center;gap:clamp(18px,3vw,44px);
+ padding:clamp(11px,1.5vw,19px) clamp(14px,2vw,26px);color:#fff;font-family:var(--lb-disp, system-ui), sans-serif;
+ font-weight:700;text-transform:none;letter-spacing:.14em;font-size:clamp(11px,1.25vw,17px);white-space:nowrap}
+.lb-mq__in span i{font-style:normal;color:var(--lb-acc,#e51924)}
+@keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
 </style>
-<style>
+<style id="lb-hero-css">
 canvas.lb-hero-canvas{position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0; pointer-events:none}
 canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-<style>
+<style id="lb-brand-css">
 /* ==== LB BRAND (logo-true spanning wordmark) ==== */
 .lb-brandwrap{display:block;padding:14px 18px;background:inherit}
 .lb-brandwrap .lb-brand{display:inline-flex}
@@ -236,79 +247,48 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
  color:inherit;min-width:0;padding:0;background:none;border:0;flex:0 1 auto}
 .lb-brand__mark{flex:0 0 auto;display:block;height:clamp(34px,4.1vw,58px);width:auto;max-width:22vw}
 .lb-brand__mark img{display:block;height:100%;width:auto;max-width:22vw;object-fit:contain}
-.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:1.3}
+.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:.94}
 .lb-brand__name{font-family:var(--lb-disp, system-ui), sans-serif;font-weight:800;text-transform:none;
- font-size:clamp(21px,2.75vw,44px);letter-spacing:0.004em;white-space:nowrap;line-height:1.3;
+ font-size:clamp(21px,2.75vw,44px);letter-spacing:.004em;white-space:nowrap;line-height:.92;
  color:var(--lb-name,currentColor)}
 .lb-brand__name .lb-acc{color:var(--lb-acc,currentColor)}
 .lb-brand__sub{font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;text-transform:none;
- font-size:clamp(13px,.82vw,12px);letter-spacing:0.05em;white-space:nowrap;margin-top:.34em;
+ font-size:clamp(7px,.82vw,12px);letter-spacing:.30em;white-space:nowrap;margin-top:.34em;
  color:var(--lb-subc,currentColor);opacity:.86}
 .lb-brand__rule{display:block;height:3px;width:100%;margin-top:.5em;border-radius:2px;
  background:transparent}
 @media (max-width:640px){
  .lb-brand__mark{height:clamp(30px,8vw,40px)}
  .lb-brand__name{font-size:clamp(18px,6.2vw,26px)}
- .lb-brand__sub{letter-spacing:0.05em;font-size:13px}
+ .lb-brand__sub{letter-spacing:.2em;font-size:7px}
 }
 </style>
-<style>/* header brand must never be hidden by reveal wrappers.
+<style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
 .site-header,.header{z-index:50}
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-<style>
-/* HERO LAYOUT — photo-led hero, copy in a bounded left column, height driven by content
-   so the panel never leaves an empty dark band under the buttons. */
-header.hero{position:relative!important;top:auto!important;display:flex!important;align-items:center!important;
-  min-height:100svh!important;max-height:none!important;padding-top:80px;background:#0A0A0C}
-header.hero::before{content:""!important;position:absolute!important;inset:0!important;z-index:0!important;
-  background:url("assets/hero-pour.jpg") center 42%/cover no-repeat!important}
-header.hero .hero-in{position:relative;z-index:3;display:block!important;
-  width:min(1180px,92vw);margin-inline:auto;min-height:0!important;
-  padding-block:32px 32px}
-header.hero .hero-kicker{margin-bottom:1.05rem}
-header.hero h1{width:auto!important;max-width:12ch!important;font-size:clamp(2.15rem,4.4vw,3.5rem)!important;line-height:1.36!important}
-header.hero .hero-sub{max-width:47ch!important;margin-top:clamp(1.45rem,2.6vh,2rem);color:#DEE0E5!important}
-header.hero .hero-cta{margin-top:clamp(1.6rem,3vh,2.2rem)}
-header.hero .hero-strip{margin-top:clamp(2.2rem,5.6vh,3.2rem)!important;width:100%;gap:clamp(1.4rem,3.4vw,2.8rem);padding-block:1.25rem .1rem}
-header.hero .hero-shade{z-index:2!important;background:
-  linear-gradient(90deg,rgba(8,8,10,.96) 0%,rgba(8,8,10,.9) 42%,rgba(8,8,10,.62) 70%,rgba(8,8,10,.46) 100%),
-  linear-gradient(180deg,rgba(8,8,10,.34) 0%,rgba(8,8,10,.16) 26%,rgba(8,8,10,.78) 100%)!important}
-@media(max-width:820px){
-  header.hero{padding-top:72px}
-  header.hero::before{background-position:center 40%}
-  header.hero h1{max-width:14ch!important}
-  header.hero .hero-shade{background:
-    linear-gradient(180deg,rgba(8,8,10,.72) 0%,rgba(8,8,10,.66) 55%,rgba(8,8,10,.86) 100%)!important}
-  header.hero .hero-strip{padding-block:1rem .1rem}
-}
-</style>
-<style>/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style>
-<!--LB-HDRFIX--><style>header{position:sticky!important;top:0;min-height:72px;overflow:hidden}header>.lb-hero-canvas,header>canvas{position:absolute!important;inset:0!important;height:100%!important;width:100%!important;z-index:0!important;pointer-events:none}header>.container{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:nowrap;min-height:72px;padding-block:10px}header .lb-brand,header a[class*=brand]{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}header>.container>nav,header nav[role=navigation]{flex:0 1 auto;min-width:0;display:flex;align-items:center;gap:clamp(10px,1.4vw,22px)}header .lb-tel,header a[href^="tel:"]{white-space:nowrap;flex:0 0 auto}header .lb-brand__name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}</style><!--/LB-HDRFIX-->
+<style id="lb-repair-polish">/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style>
+<!--LB-HDRFIX--><style id="lb-hdrfix">header{position:sticky!important;top:0;min-height:72px;overflow:hidden}header>.lb-hero-canvas,header>canvas{position:absolute!important;inset:0!important;height:100%!important;width:100%!important;z-index:0!important;pointer-events:none}header>.container{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:nowrap;min-height:72px;padding-block:10px}header .lb-brand,header a[class*=brand]{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}header>.container>nav,header nav[role=navigation]{flex:0 1 auto;min-width:0;display:flex;align-items:center;gap:clamp(10px,1.4vw,22px)}header .lb-tel,header a[href^="tel:"]{white-space:nowrap;flex:0 0 auto}header .lb-brand__name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}</style><!--/LB-HDRFIX-->
 
-<!--LB-EMPTY--><style>[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
+<!--LB-EMPTY--><style id="lb-empty">[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
 
-<!--LB-HERO-HEIGHT--><style>[class*=hero]>*{position:relative;z-index:2}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
+<!--LB-HERO-HEIGHT--><style id="lb-heroh">[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.34),rgba(0,0,0,.12) 45%,rgba(0,0,0,.42))}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
 
-<!--LB-RV--><style>.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
+<!--LB-RV--><style id="lb-rv">.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
 
-<!--LB-CANVASZ--><style>[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:1!important;pointer-events:none!important;opacity:.32!important;mix-blend-mode:normal!important}</style><!--/LB-CANVASZ-->
+<!--LB-CANVASZ--><style id="lb-canvasz">[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
 
-<!--LB-H1W--><style>[class*=hero] h1,[class*=hero-copy] h1{max-width:12ch!important;width:auto!important;font-size:clamp(2.1rem,4.4vw,3.5rem)!important;line-height:1.36!important}</style><!--/LB-H1W-->
+<!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
 
-<!--LB-HEROFIX2--><style>[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.28)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
-
-<!--LB-RM--><style>@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
-
-<!--LB-HEROGRID--><style>[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
-<style>.lb-soc{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;opacity:.85;text-decoration:none}.lb-soc:hover{opacity:1}footer .lb-soc{margin-right:8px}</style><style>nav,header{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:clamp(18px,4vw,64px)!important;background:#000000!important;color:#ffffff!important;padding:14px 16px 32px;min-height:0!important;height:auto!important}.lb-brand{display:flex!important;align-items:center!important;gap:clamp(14px,2.5vw,38px)!important;flex:0 1 auto!important;min-width:0!important;text-decoration:none!important}.lb-mark{height:clamp(56px,5vw,72px)!important;width:auto!important;object-fit:contain!important;flex:none!important;-webkit-mask-image:radial-gradient(ellipse at center,#000 74%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 74%,transparent 100%)}.lb-word{height:auto!important;max-height:clamp(26px,2.3vw,34px)!important;width:auto!important;object-fit:contain!important;max-width:min(32vw,460px)!important;flex:0 1 auto!important;min-width:0!important;-webkit-mask-image:radial-gradient(ellipse at center,#000 78%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 78%,transparent 100%)}.lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}nav ul,nav .nav-links{display:flex!important;align-items:center!important;gap:clamp(12px,2vw,26px)!important;margin:0!important;padding:0!important;list-style:none!important;flex:1 1 auto!important;justify-content:flex-end!important}nav>div,nav>span,nav>.wrap,nav>.container,nav>.nav-in,nav>.nav-links{flex:1 1 auto!important;min-width:0!important;width:auto!important;max-width:none!important;margin-left:auto!important;margin-right:0!important}nav{flex-wrap:nowrap!important}.lb-brand{overflow:hidden!important}nav{min-width:0!important;flex-wrap:wrap!important;row-gap:6px!important}.hdr__in,.nav__in,.nav-inner{min-width:0!important;flex:1 1 auto!important}nav a{color:#ffffff!important}[class*=hero-copy],[class*=hero__copy],[class*=hero-in],[class*=hero-inner]{flex-wrap:nowrap!important}[class*=hero-copy]>*,[class*=hero__copy]>*,[class*=hero-in]>*,[class*=hero-inner]>*{flex:0 0 auto!important;min-height:0!important}body{background:#000000!important;color:#ffffff!important}section,.section{background-color:transparent!important}.nav-cta,.cta{background:#fe3f06!important;color:#fff!important;border-color:#fe3f06!important}a{--lb-accent:#fe3f06}body{padding-top:0!important}[class~=hero],.hero,header#top:not(.hdr),section#top{padding-top:32px 32px 32px;padding-bottom:32px;min-height:clamp(400px,50vh,540px)!important;max-height:none!important;align-content:center!important;align-items:stretch!important;flex-wrap:wrap!important;gap:14px!important}[class~=hero]:not(.lb-hgrid),.hero:not(.lb-hgrid),header#top:not(.hdr),section#top{display:flex!important;flex-direction:row!important;justify-content:center!important;position:relative!important}[class~=hero]>*,.hero>*,header#top>*,section#top>*{flex:1 1 min(430px,100%)!important;min-width:0!important;max-width:100%!important}[class~=hero]>canvas,.hero>canvas,[class~=hero]>[class*=scrim],[class~=hero]>.lbhf{flex:none!important}[class~=hero] canvas,.hero canvas,header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important}[class~=hero]>.hero-photo,[class~=hero]>.hero-shade,[class~=hero]>[class*=scrim],header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;margin:0!important}header{overflow:visible!important}.lb-hgrid{justify-items:stretch!important}p,li,.sub,.lede{color:rgba(255,255,255,.72)!important}[class*=hero] p,[class*=hero] li,[class*=hero] .sub,[class*=hero] .lede,.hero p{color:rgba(255,255,255,.88)!important;text-shadow:0 1px 12px rgba(0,0,0,.45)}@media(max-width:820px){nav{flex-wrap:wrap!important;gap:10px!important}}.lb-mark{height:clamp(56px,5vw,76px)!important}.lb-word{height:clamp(38px,4.4vw,62px)!important;max-height:none!important;max-width:min(60vw,900px)!important}</style><style>header .brand,header .b-txt,header .b-txt *,nav .brand,nav .lb-brand,header nav a,nav.nav a,.site-head .brand,.brand__name{color:#ffffff!important}</style></head>
+<!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.28))}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
+</head>
 <body>
-<nav class="nav" aria-label="Main"><a href="/" class="lb-brand" aria-label="Mana Concrete, Concrete Specialists"><img style="max-width:308px" width="308" height="110" src="assets/logo-mark.png" alt="" class="lb-mark" loading="eager" decoding="async"><img style="max-width:308px" width="308" height="105" src="assets/logo-word.png" alt="" class="lb-word" loading="eager" decoding="async"><span class="lb-sr">Mana Concrete, Concrete Specialists</span></a>
+<nav class="nav" aria-label="Main">
   <div class="wrap nav-in">
-    
+    <a class="lb-brand" href="#top" aria-label="Mana Concrete - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#f5f5f0;--lb-subc:#f5f5f0;--lb-acc:#b00000;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo-mark_radar-170.png" alt="" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">Mana Concrete</span><span class="lb-brand__sub"><span class="lb-acc">Concrete</span> Specialists</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
     <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
       <span></span><span></span><span></span>
     </button>
@@ -333,7 +313,7 @@ header.hero .hero-shade{z-index:2!important;background:
     <h1 data-ux="words">Built Mana. <em>Built right.</em></h1>
     <p class="hero-sub">Residential, commercial and decorative concrete across Newcastle, Port Stephens and the Hunter, driveways, slabs, pool surrounds, courts and premium pattern finishes. From prep to pour, done properly.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="tel:0433658016">Call 0433 658 016</a>
+      <a class="btn btn-primary" href="tel:+61433658016">Call 0433 658 016</a>
       <a class="btn btn-ghost" href="#lbq" data-ux="magnetic">Get a free quote</a>
     </div>
     <div class="hero-strip">
@@ -353,7 +333,7 @@ header.hero .hero-shade{z-index:2!important;background:
         <p class="sec-sub">Driveways to detail finishes, formed, poured and finished properly, big job or small.</p>
       </div>
     </div>
-    <div style="display:none" class="svc-grid">
+    <div class="svc-grid">
       <article class="svc drop">
         <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M4 12l2-5h12l2 5"/><rect x="3" y="12" width="18" height="5" rx="2"/><circle cx="7" cy="19" r="1.6"/><circle cx="17" cy="19" r="1.6"/></svg></div>
         <h3>Driveways &amp; crossovers</h3>
@@ -398,10 +378,10 @@ header.hero .hero-shade{z-index:2!important;background:
       </div>
     </div>
     <div class="steps">
-      <div class="step drop"><h3>Get in touch</h3><p>Call, message or send through plans, tell us about the job.</p></div>
-      <div class="step drop"><h3>Quote &amp; site check</h3><p>We look at the site, measure up and come back with a clear quote.</p></div>
-      <div class="step drop"><h3>Prep, form &amp; pour</h3><p>Set out, formed and poured, big job or small, done properly.</p></div>
-      <div class="step drop"><h3>Finish &amp; handover</h3><p>Finished to spec and walked through with you. Built Mana. Built right.</p></div>
+      <div class="step drop"><p class="step-n">01</p><h3>Get in touch</h3><p>Call, message or send through plans, tell us about the job.</p></div>
+      <div class="step drop"><p class="step-n">02</p><h3>Quote &amp; site check</h3><p>We look at the site, measure up and come back with a clear quote.</p></div>
+      <div class="step drop"><p class="step-n">03</p><h3>Prep, form &amp; pour</h3><p>Set out, formed and poured, big job or small, done properly.</p></div>
+      <div class="step drop"><p class="step-n">04</p><h3>Finish &amp; handover</h3><p>Finished to spec and walked through with you. Built Mana. Built right.</p></div>
     </div>
   </div>
 </section>
@@ -432,7 +412,7 @@ header.hero .hero-shade{z-index:2!important;background:
         </div>
       </div>
       <div class="why-visual drop">
-        <img style="max-width:2200px" width="2200" height="3544" src="assets/why.jpg" alt="Mana Concrete">
+        <img src="assets/why.jpg" alt="Mana Concrete">
         <p>On the job, Newcastle &amp; the Hunter.</p>
       </div>
     </div>
@@ -441,42 +421,42 @@ header.hero .hero-shade{z-index:2!important;background:
 
 <section class="mana-work" id="recent">
   <div class="wrap">
-    <div style="display:none" class="gal-head drop">
+    <div class="gal-head drop">
       <p class="sec-kicker">Recent work</p>
       <h2 class="sec-title">Straight off the pour.</h2>
       <p class="sec-sub">Recent concrete across Newcastle, Port Stephens and the Hunter.</p>
     </div>
     <div class="gal-grid">
       <figure class="gal drop">
-        <img style="max-width:2200px" width="2200" height="3913" src="assets/gal_1.jpg" alt="Slab set-out with steel mesh and formwork on a large concrete pour" loading="lazy">
+        <img src="assets/gal_1.jpg" alt="Slab set-out with steel mesh and formwork on a large concrete pour" loading="lazy">
         <figcaption class="gal-cap">1,000+ sqm pour, behind the scenes</figcaption>
       </figure>
       <figure class="gal drop">
-        <img style="max-width:2200px" width="2200" height="3911" src="assets/gal_2.jpg" alt="Concreters finishing a freshly poured slab edge with a cove detail" loading="lazy">
+        <img src="assets/gal_2.jpg" alt="Concreters finishing a freshly poured slab edge with a cove detail" loading="lazy">
         <figcaption class="gal-cap">Cove finish</figcaption>
       </figure>
       <figure class="gal drop">
-        <img style="max-width:2200px" width="2200" height="3911" src="assets/gal_3.jpg" alt="Aerial view of a freshly poured concrete pool surround" loading="lazy">
+        <img src="assets/gal_3.jpg" alt="Aerial view of a freshly poured concrete pool surround" loading="lazy">
         <figcaption class="gal-cap">Pool surround, prepped and poured</figcaption>
       </figure>
       <figure class="gal drop">
-        <img style="max-width:2200px" width="2200" height="3905" src="assets/gal_4.jpg" alt="Close-up of a finished patterned concrete edge" loading="lazy">
+        <img src="assets/gal_4.jpg" alt="Close-up of a finished patterned concrete edge" loading="lazy">
         <figcaption class="gal-cap">Pattern cove finish</figcaption>
       </figure>
       <figure class="gal drop">
-        <img style="max-width:2200px" width="2200" height="3905" src="assets/gal_5.jpg" alt="Excavator preparing the base for a concrete tennis court slab" loading="lazy">
+        <img src="assets/gal_5.jpg" alt="Excavator preparing the base for a concrete tennis court slab" loading="lazy">
         <figcaption class="gal-cap">Tennis court slab, prep to pour</figcaption>
       </figure>
       <figure class="gal drop">
-        <img style="max-width:2200px" width="2200" height="3911" src="assets/gal_6.jpg" alt="Concreter in high-vis overlooking a fresh pour in a Newcastle street" loading="lazy">
+        <img src="assets/gal_6.jpg" alt="Concreter in high-vis overlooking a fresh pour in a Newcastle street" loading="lazy">
         <figcaption class="gal-cap">On site, Newcastle</figcaption>
       </figure>
       <figure class="gal drop">
-        <img style="max-width:2200px" width="2200" height="3911" src="assets/gal_7.jpg" alt="The Mana Concrete crew on site beside an excavator" loading="lazy">
+        <img src="assets/gal_7.jpg" alt="The Mana Concrete crew on site beside an excavator" loading="lazy">
         <figcaption class="gal-cap">The crew</figcaption>
       </figure>
       <figure class="gal drop">
-        <img style="max-width:2200px" width="2200" height="3911" src="assets/gal_8.jpg" alt="Newly poured concrete along a suburban street" loading="lazy">
+        <img src="assets/gal_8.jpg" alt="Newly poured concrete along a suburban street" loading="lazy">
         <figcaption class="gal-cap">Fresh concrete, ready for the next stage</figcaption>
       </figure>
     </div>
@@ -494,10 +474,10 @@ header.hero .hero-shade{z-index:2!important;background:
     </div>
     <p class="cta-sub drop">Send through photos or plans, we’ll come back with a clear, free quote.</p>
     <div class="cta-row drop">
-      <a class="btn btn-primary" href="tel:0433658016">Call 0433 658 016</a>
+      <a class="btn btn-primary" href="tel:+61433658016">Call 0433 658 016</a>
       <a class="btn btn-ghost" href="#lbq" data-ux="magnetic">Get a free quote</a>
     </div>
-    <div class="cta-lines drop"><p>Call <a href="tel:0433658016">0433 658 016</a></p><p><a href="https://www.instagram.com/mana.concrete/" target="_blank" rel="noopener">Instagram, @mana.concrete</a></p><p>Newcastle · Port Stephens · Hunter</p></div>
+    <div class="cta-lines drop"><p>Call <a href="tel:+61433658016">0433 658 016</a></p><p><a href="https://www.instagram.com/mana.concrete/" target="_blank" rel="noopener">Instagram, @mana.concrete</a></p><p>Newcastle · Port Stephens · Hunter</p></div>
   </div>
 </section>
 
@@ -509,14 +489,14 @@ header.hero .hero-shade{z-index:2!important;background:
 #lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
 #lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
 #lbq .lbq-f{display:grid;gap:12px}
-#lbq label{display:block;font-size:0.82rem;letter-spacing:0.05em;text-transform:none;color:var(--lbq-muted);margin-bottom:5px}
-#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:0.95rem}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:none;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
 #lbq textarea{min-height:96px;resize:vertical}
 #lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
-#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#FFFFFF;font:inherit;font-weight:700;font-size:0.95rem;cursor:pointer;letter-spacing:0.02em}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#FFFFFF;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
 #lbq button:disabled{opacity:.6;cursor:wait}
-#lbq .lbq-st{margin:10px 0 0;font-size:0.9rem;color:var(--lbq-muted);min-height:1.2em}
-#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:0.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
 #lbq .lbq-cons input{width:auto}
 #lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 /* v1 card */
@@ -544,7 +524,7 @@ header.hero .hero-shade{z-index:2!important;background:
 .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
 .brand img,.brand-mark{height:48px;width:auto;object-fit:contain}
 .brand-name,.comp-name{font-size:1.15rem!important;line-height:1!important;letter-spacing:-.012em!important;font-weight:800!important;white-space:nowrap}
-.brand-sub,.comp-sub{font-size:0.82rem!important;letter-spacing:0.05em!important;font-weight:600!important;margin-top:4px;text-transform:none}
+.brand-sub,.comp-sub{font-size:.6rem!important;letter-spacing:.3em!important;font-weight:600!important;margin-top:4px;text-transform:none}
 @media (max-width:820px){.brand img,.brand-mark{height:48px;width:auto;object-fit:contain}.brand-name,.comp-name{font-size:1.05rem!important}}
 
 /* mobile overflow guard 2026-10-14 */
@@ -552,8 +532,8 @@ html,body{overflow-x:hidden}
 @media (max-width:820px){
   h1,h2,h3,.h1,.hero h1,.sec-title,.k,.kicker,.kick,.eyebrow,.tag-line,.tag,.hero-kicker,.hero-sub,.lead{
     white-space:normal!important;overflow-wrap:anywhere;word-break:break-word;max-width:100%!important}
-  .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(13px,3.1vw,13px)!important;letter-spacing:0.05em!important}
-  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.3!important}
+  .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(10px,3.1vw,13px)!important;letter-spacing:.22em!important}
+  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.05!important}
 }
 </style>
   <div class="lbq-w">
@@ -632,12 +612,12 @@ html,body{overflow-x:hidden}
 </script>
 </section>
 
-<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img style="max-width:2200px" width="2200" height="3911" src="assets/gal_8.jpg" alt="Mana Concrete" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="3911" src="assets/gal_6.jpg" alt="Mana Concrete" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="3911" src="assets/gal_7.jpg" alt="Mana Concrete" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="3544" src="assets/why.jpg" alt="Mana Concrete" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="1245" src="assets/hero-pour.jpg" alt="Mana Concrete" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="3913" src="assets/gal_1.jpg" alt="Mana Concrete" loading="lazy" decoding="async"></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button><button type="button" class="" aria-label="Slide 4"></button><button type="button" class="" aria-label="Slide 5"></button><button type="button" class="" aria-label="Slide 6"></button></div><div class="lb-rb__cap">Mana Concrete &mdash; recent work</div></div></section><footer class="foot">
+<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img src="assets/gal_8.jpg" alt="Mana Concrete" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img src="assets/gal_6.jpg" alt="Mana Concrete" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/gal_7.jpg" alt="Mana Concrete" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/why.jpg" alt="Mana Concrete" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/hero-pour.jpg" alt="Mana Concrete" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/gal_1.jpg" alt="Mana Concrete" loading="lazy" decoding="async"></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button><button type="button" class="" aria-label="Slide 4"></button><button type="button" class="" aria-label="Slide 5"></button><button type="button" class="" aria-label="Slide 6"></button></div><div class="lb-rb__cap">Mana Concrete &mdash; recent work</div></div></section><footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
       <div>
         <div class="foot-brand">
-          <img style="max-width:320px" width="320" height="236" src="assets/logo.png" alt="Mana Concrete logo" height="236">
+          <img src="assets/logo.png" alt="Mana Concrete logo" height="52">
           <span>
             <span class="foot-brand-name">MANA</span><br>
             <span class="foot-brand-sub">Concrete Specialists</span>
@@ -648,7 +628,7 @@ html,body{overflow-x:hidden}
       <div>
         <h4>Get in touch</h4>
         <p>
-          <a href="tel:0433658016">0433 658 016</a><br>
+          <a href="tel:+61433658016">0433 658 016</a><br>
           Newcastle · Port Stephens · Hunter<br>Residential · Commercial · Decorative
         </p>
       </div>
@@ -662,11 +642,10 @@ html,body{overflow-x:hidden}
     </div>
     <div class="foot-bottom">
       <span>© 2026 Mana Concrete</span>
-      <span class="lb-legal"><a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms</a></span>
       <span>Built Mana · Built right</span>
     </div>
   </div>
-<div class="lb-socials"><a class="lb-soc" href="https://www.instagram.com/mana.concrete/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a><a class="lb-soc" href="https://www.facebook.com/profile.php?id=61592047680693" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a></div></footer>
+<span class="lb-legal"><a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms</a></span></footer>
 
 <!-- lb: old box-hero engine removed -->
 
@@ -835,7 +814,8 @@ header,.site-header,.page-header,.header-inner,nav.nav,.nav-inner,
 @keyframes lbKillSplash{to{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}}
 </style>
 
-<style>
+<style>/* ==== TASTE PASS (anti-slop, from impeccable findings) ==== */
+.lb-mq__in{display:none !important}
 7px functional text "Concrete" (below 11px floor){font-size:max(1em,15px) !important}
 7px functional text "Specialists" (below 11px floor){font-size:max(1em,15px) !important}
 8.96px functional text "Concrete Specialists" (below 10px floor){font-size:max(1em,15px) !important}

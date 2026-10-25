@@ -6,21 +6,21 @@
 :root{--bg:#EFE7DA;--ink:#2A211A;--accent:#A84A24;--acc-ink:#924019;--muted:#655745;--deep:#4A3220;--clay:#D9A566;--wash:#E4D5BE;--on-accent:#FBF3E4;--on-accent-head:#FDF8F0}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'Archivo', sans-serif;line-height:1.36;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:'Archivo', sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%}
 /* NAV, lockup: monogram + name + sub-line, call lockup right. No pill, no capsule. */
 .nav{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 6vw;border-bottom:2px solid var(--ink)}
 .nav .brand{display:flex;align-items:center;gap:14px;min-width:0}
-.nav .mark{flex:none;width:46px;height:46px;display:grid;place-items:center;background:var(--deep);color:var(--on-accent-head);font-family:'Archivo', serif;font-weight:900;font-size:24px;line-height:1;letter-spacing:-.03em}
+.nav .mark{flex:none;width:46px;height:46px;display:grid;place-items:center;background:var(--deep);color:var(--on-accent-head);font-family:'Fraunces', serif;font-weight:900;font-size:24px;line-height:1;letter-spacing:-.03em}
 .nav .brand-txt{display:flex;flex-direction:column;gap:4px;line-height:1;min-width:0}
-.nav .brand-name{font-family:'Archivo', serif;font-weight:900;font-size:clamp(20px,2.2vw,28px);letter-spacing:-.01em;white-space:nowrap}
-.nav .brand-name b{color:var(--accent-ink,var(--accent));font-weight:900}
-.nav .brand-sub{font:600 10.5px/1.5 'Archivo',sans-serif;letter-spacing:0.05em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-.nav .tel{display:inline-flex;align-items:baseline;gap:9px;font-family:'Archivo', serif;font-weight:700;font-size:clamp(16px,1.6vw,20px);border-bottom:3px solid var(--accent);padding:4px 2px;white-space:nowrap}
-.nav .tel .lab{font:600 11px/1.6 'Archivo',sans-serif;letter-spacing:0.05em;text-transform:uppercase;color:var(--muted)}
+.nav .brand-name{font-family:'Fraunces', serif;font-weight:900;font-size:clamp(20px,2.2vw,28px);letter-spacing:-.01em;white-space:nowrap}
+.nav .brand-name b{color:var(--accent);font-weight:900}
+.nav .brand-sub{font:600 10.5px/1.5 'Archivo',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.nav .tel{display:inline-flex;align-items:baseline;gap:9px;font-family:'Fraunces', serif;font-weight:700;font-size:clamp(16px,1.6vw,20px);border-bottom:3px solid var(--accent);padding:4px 2px;white-space:nowrap}
+.nav .tel .lab{font:600 11px/1.6 'Archivo',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 /* HERO, full-bleed real photo, darkened + scrim, copy on top */
-.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--deep);display:grid;grid-template-columns:1.5fr 1fr;gap:26px 5vw;align-items:end;padding:32px 1px 32px;min-height:clamp(560px,82vh,860px)}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--deep);display:grid;grid-template-columns:1.5fr 1fr;gap:26px 5vw;align-items:end;padding:clamp(96px,15vh,170px) 6vw clamp(48px,8vh,92px);min-height:clamp(560px,82vh,860px)}
 .lbhf{position:absolute;inset:0;z-index:0}
 .lbhf img{width:100%;height:100%;object-fit:cover;object-position:center 38%;display:block;filter:brightness(.72) contrast(1.06) saturate(1.06)}
 .lbhf-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(12,9,6,.60)}
@@ -29,103 +29,105 @@ img{max-width:100%}
 .lb3d-stage .lb3d-shape{position:absolute;border-radius:0;display:none}
 #heroCanvas{}
 .hero .k,.hero h1,.hero .lede,.hero .pull{position:relative;z-index:2}
-.hero .k{grid-column:1/-1;font:600 12px/1.6 'Archivo',sans-serif;letter-spacing:0.05em;text-transform:none;color:var(--clay);margin-bottom:18px;text-shadow:0 1px 16px rgba(0,0,0,.8)}
-.hero h1{font-family:'Archivo', serif;font-weight:900;font-size:clamp(40px,6.2vw,88px);line-height:1.32;letter-spacing:-.02em;max-width:16ch;color:#FDF8F0;text-shadow:0 2px 30px rgba(0,0,0,.6)}
-.hero h1 em{font-style:normal;font-weight:500;color:var(--clay)}
+.hero .k{grid-column:1/-1;font:600 12px/1.6 'Archivo',sans-serif;letter-spacing:.3em;text-transform:none;color:var(--clay);margin-bottom:18px;text-shadow:0 1px 16px rgba(0,0,0,.8)}
+.hero h1{font-family:'Fraunces', serif;font-weight:900;font-size:clamp(40px,6.2vw,88px);line-height:1.02;letter-spacing:-.02em;max-width:16ch;color:#FDF8F0;text-shadow:0 2px 30px rgba(0,0,0,.6)}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--clay)}
 .hero .lede{grid-column:2;max-width:58ch;font-size:clamp(15.5px,1.4vw,18px);color:#EFE3CF;text-shadow:0 1px 18px rgba(0,0,0,.8)}
 .hero .lede b{color:#FDF8F0;font-weight:600}
-.hero .pull{grid-column:2;border:1px solid var(--clay);padding-left:16px;color:#EBDCC4;font-size:15px;line-height:1.37;text-shadow:0 1px 16px rgba(0,0,0,.8)}
-.hero .pull b{display:block;font:600 11px/1.6 'Archivo',sans-serif;letter-spacing:0.05em;text-transform:none;color:var(--clay);margin-bottom:10px}
+.hero .pull{grid-column:2;border:1px solid var(--clay);padding-left:clamp(16px,1.8vw,28px);color:#EBDCC4;font-size:15px;line-height:1.7;text-shadow:0 1px 16px rgba(0,0,0,.8)}
+.hero .pull b{display:block;font:600 11px/1.6 'Archivo',sans-serif;letter-spacing:.24em;text-transform:none;color:var(--clay);margin-bottom:10px}
 /* MORTAR RULE, full-width terracotta bar dividing hero from wall */
 .mortar{height:14px;background:var(--accent);margin:0 6vw}
 .mortar.thin{height:3px;background:var(--ink);opacity:.25}
 /* BRICK-LAY, full-width courses, staggered joints, mortar gaps. NOT cards. */
-.wall{padding:32px 1px 32px}
+.wall{padding:clamp(40px,6vh,72px) 6vw clamp(20px,3vh,36px)}
 .course{display:grid;gap:10px;margin-bottom:10px}
 .course.even{grid-template-columns:1.35fr 1fr}
 .course.odd{
   display:grid;grid-template-columns:auto auto 1fr;gap:10px clamp(18px,2.5vw,40px);align-items:baseline;
-  background:var(--deep);color:var(--bg);padding:26px 24px}
-.course.odd .num{font-family:'Archivo', serif;font-weight:900;font-size:13px;letter-spacing:0.05em;color:var(--clay)}
-.course.odd h2{font-family:'Archivo', serif;font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.312;letter-spacing:-.01em;color:var(--bg);white-space:nowrap}
-.course.odd p{grid-column:2/4;max-width:70ch;font-size:15px;line-height:1.365;color:#E8D9C2}
-.cell{padding:28px 24px;position:relative}
+  background:var(--deep);color:var(--bg);padding:clamp(26px,3vw,40px) clamp(24px,2.6vw,40px)
+}
+.course.odd .num{font-family:'Fraunces', serif;font-weight:900;font-size:13px;letter-spacing:.22em;color:var(--clay)}
+.course.odd h2{font-family:'Fraunces', serif;font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.12;letter-spacing:-.01em;color:var(--bg);white-space:nowrap}
+.course.odd p{grid-column:2/4;max-width:70ch;font-size:15px;line-height:1.65;color:#E8D9C2}
+.cell{padding:clamp(28px,3.4vw,46px) clamp(24px,2.6vw,40px);position:relative}
 .course.even .cell:first-child{background:var(--wash)}
 .course.even .cell:last-child{background:var(--accent);color:var(--on-accent)}
 .course.even .cell:last-child h2{color:var(--on-accent-head)}
 .course.even .cell:last-child p{color:var(--on-accent)}
 .course.even .cell:last-child .num{color:var(--on-accent)}
-.cell .num{font-family:'Archivo', serif;font-weight:900;font-size:13px;letter-spacing:0.05em;display:block;margin-bottom:14px;color:var(--acc-ink)}
-.cell h2{font-family:'Archivo', serif;font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.312;letter-spacing:-.01em}
-.cell p{margin-top:12px;font-size:15px;line-height:1.365;max-width:52ch;color:var(--muted)}
+.cell .num{font-family:'Fraunces', serif;font-weight:900;font-size:13px;letter-spacing:.22em;display:block;margin-bottom:14px;color:var(--acc-ink)}
+.cell h2{font-family:'Fraunces', serif;font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.12;letter-spacing:-.01em}
+.cell p{margin-top:12px;font-size:15px;line-height:1.65;max-width:52ch;color:var(--muted)}
 /* AREAS, stamped chips, square (no pills) */
-.areas{padding:32px 1px 32px}
-.areas .k{font:600 11px/1.6 'Archivo',sans-serif;letter-spacing:0.05em;text-transform:none;color:var(--muted);margin-bottom:18px}
+.areas{padding:clamp(24px,4vh,44px) 6vw clamp(50px,8vh,90px)}
+.areas .k{font:600 11px/1.6 'Archivo',sans-serif;letter-spacing:.28em;text-transform:none;color:var(--muted);margin-bottom:18px}
 .areas span{display:inline-block;font-weight:600;font-size:13.5px;background:transparent;border:2px solid var(--ink);padding:10px 18px;margin:0 10px 10px 0}
 /* CTA, dark clay slab, oversized serif line, phone as underlined display type */
-.cta{margin:0 6vw clamp(60px,9vh,110px);background:var(--deep);color:var(--bg);padding:32px 28px;display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:center}
-.cta h3{font-family:'Archivo', serif;font-weight:900;font-size:clamp(30px,4.4vw,60px);line-height:1.3;max-width:14ch;letter-spacing:-.015em}
-.cta h3 em{font-style:normal;font-weight:500;color:var(--clay)}
-.cta .tel{font-family:'Archivo', serif;font-weight:700;font-size:clamp(24px,3vw,40px);color:var(--bg);border-bottom:5px solid var(--accent);padding-bottom:4px}
-.cta .tel{font-family:'Archivo', serif;font-weight:700;font-size:clamp(24px,3vw,40px);color:var(--bg);border-bottom:5px solid var(--accent);padding-bottom:4px}
-.foot-line{font-family:'Archivo',sans-serif;letter-spacing:0.05em;text-transform:uppercase;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:32px 1px 32px;border-top:2px solid var(--ink)}
-.lb-legal{display:flex;gap:22px;justify-content:flex-end;padding:32px 1px 32px;font-size:13px;letter-spacing:0.05em;color:var(--muted)}
-.lb-legal a{border-bottom:1px solid color-mix(in srgb, var(--muted) 45%, transparent)}
-.lb-legal a:hover{color:var(--acc-ink)}
+.cta{margin:0 6vw clamp(60px,9vh,110px);background:var(--deep);color:var(--bg);padding:clamp(56px,9vh,110px) clamp(28px,5vw,80px);display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:center}
+.cta h3{font-family:'Fraunces', serif;font-weight:900;font-size:clamp(30px,4.4vw,60px);line-height:1.05;max-width:14ch;letter-spacing:-.015em}
+.cta h3 em{font-style:italic;font-weight:500;color:var(--clay)}
+.cta .tel{font-family:'Fraunces', serif;font-weight:700;font-size:clamp(24px,3vw,40px);color:var(--bg);border-bottom:5px solid var(--accent);padding-bottom:4px}
+.cta .tel:0412980745'Archivo',sans-serif;letter-spacing:.14em;text-transform:none;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 /* reveals */
 .rv{opacity:0;transform:translateY(18px);transition: opacity .45s ease,transform .6s ease}
 .rv.on{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.lb3d-stage{display:none}}
+/* pulse (fleet telemetry heartbeat) */
+.lb-pulse{position:fixed;bottom:1.5rem;right:1.5rem;width:10px;height:10px;background:var(--accent);border-radius:50%;opacity:.5;animation:lbPulse 2s ease-in-out infinite;pointer-events:none;z-index:999}
+@keyframes lbPulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.lb-pulse{animation:none;opacity:.5}.lb3d-stage{display:none}}
 @media (max-width:820px){
   h1,h2,h3,.h1,.hero h1,.sec-title,.k,.kicker,.kick,.eyebrow,.tag-line,.tag,.hero-kicker,.hero-sub,.lead{
     white-space:normal!important;overflow-wrap:anywhere;word-break:break-word;max-width:100%!important}
-  .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(13px,3.1vw,13px)!important;letter-spacing:0.05em!important}
-  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.3!important}
+  .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(10px,3.1vw,13px)!important;letter-spacing:.22em!important}
+  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.05!important}
 }
 @media (max-width:760px){
   .nav{padding:18px 5vw;gap:12px}
   .nav .mark{width:40px;height:40px;font-size:21px}
-  .hero{grid-template-columns:1fr;gap:20px;padding:32px 1px 32px;min-height:clamp(500px,88vh,760px);background:#0f1115}
+  .hero{grid-template-columns:1fr;gap:20px;padding:clamp(72px,12vh,110px) 5vw clamp(40px,7vh,64px);min-height:clamp(500px,88vh,760px)}
   .hero h1{font-size:clamp(32px,9.6vw,44px)}
   .hero .k{margin-bottom:8px}
   .hero .lede{grid-column:auto}
   .hero .pull{grid-column:auto}
   .mortar{margin:0 5vw}
-  .wall{padding:32px 1px 16px}
+  .wall{padding:clamp(30px,5vh,50px) 5vw 16px}
   .course.even{grid-template-columns:1fr}
   .course.odd{grid-template-columns:auto 1fr;gap:8px 18px}
   .course.odd h2{white-space:normal}
   .course.odd p{grid-column:2}
   .cell{padding:26px 22px}
-  .areas{padding:20px 1px 32px}
+  .areas{padding:20px 5vw clamp(40px,6vh,60px)}
   .cta{margin:0 5vw clamp(44px,7vh,70px);padding:44px 26px;flex-direction:column;align-items:flex-start;gap:22px}
-  .foot-line{padding:32px 1px 32px}
+  .foot-line{padding:0 5vw clamp(24px,4vh,40px)}
 }
 @media (max-width:600px){.nav .brand-sub{display:none}}
 noscript .rv{opacity:1;transform:none}
-</style><style>
+</style><style id="lb-brand-css">
 /* ==== LB BRAND (logo-true spanning wordmark) ==== */
 .lb-brand{display:inline-flex;align-items:center;gap:clamp(9px,1vw,16px);text-decoration:none;
  color:inherit;min-width:0;padding:0;background:none;border:0;flex:0 1 auto}
 .lb-brand__mark{flex:0 0 auto;display:block;height:clamp(34px,4.1vw,58px);width:auto;max-width:22vw}
 .lb-brand__mark img{display:block;height:100%;width:auto;max-width:22vw;object-fit:contain}
-.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:1.3}
+.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:.94}
 .lb-brand__name{font-family:var(--lb-disp, system-ui), sans-serif;font-weight:800;text-transform:none;
- font-size:clamp(21px,2.75vw,44px);letter-spacing:0.004em;white-space:nowrap;line-height:1.3;
+ font-size:clamp(21px,2.75vw,44px);letter-spacing:.004em;white-space:nowrap;line-height:.92;
  color:var(--lb-name,currentColor)}
 .lb-brand__name .lb-acc{color:var(--lb-acc,currentColor)}
 .lb-brand__sub{font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;text-transform:none;
- font-size:clamp(13px,.82vw,12px);letter-spacing:0.05em;white-space:nowrap;margin-top:.34em;
+ font-size:clamp(7px,.82vw,12px);letter-spacing:.30em;white-space:nowrap;margin-top:.34em;
  color:var(--lb-subc,currentColor);opacity:.86}
 .lb-brand__rule{display:block;height:3px;width:100%;margin-top:.5em;border-radius:2px;
  background:transparent}
 @media (max-width:640px){
  .lb-brand__mark{height:clamp(30px,8vw,40px)}
  .lb-brand__name{font-size:clamp(18px,6.2vw,26px)}
- .lb-brand__sub{letter-spacing:0.05em;font-size:13px}
+ .lb-brand__sub{letter-spacing:.2em;font-size:7px}
 }
 </style>
-<style>
+<style id="lb-motion-css">
+/* ==== LB MOTION PACK ==== */
+.lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
 /* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
    content. Unrevealed .rv wrappers left whole headers at opacity:0 (invisible logo). */
 header, .site-header, .page-header, nav.nav, .nav .rv, nav.rv, .header-inner, .nav-inner,
@@ -133,15 +135,16 @@ header .rv, .site-header .rv, .nav-inner .rv{
   opacity:1 !important; visibility:visible !important; transform:none !important;
 }
 .lb-rb{position:relative;width:100%;max-width:100%;overflow:hidden;background:#0c0d10}
+.lb-mq{max-width:100%;overflow:hidden}
 .lb-rb__track{position:relative;width:100%;aspect-ratio:16/7}
 .lb-rb__slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;will-change:opacity}
 .lb-rb__slide.is-on{opacity:1}
 .lb-rb__slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03);transition:transform 7s linear}
 .lb-rb__slide.is-on img{transform:scale(1.10)}
-.lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:14px;
+.lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2.2vw,30px);
  background:rgba(6,7,10,.72);color:#fff;
- font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;letter-spacing:0.05em;text-transform:none;
- font-size:clamp(13px,1vw,13px);z-index:2}
+ font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;letter-spacing:.16em;text-transform:none;
+ font-size:clamp(9px,1vw,13px);z-index:2}
 .lb-rb__dots{position:absolute;top:50%;right:clamp(10px,1.6vw,22px);transform:translateY(-50%);
  display:flex;flex-direction:column;gap:9px;z-index:3}
 .lb-rb__dots button{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.7);
@@ -174,9 +177,20 @@ a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
  .lb-rb__slide img{transform:none!important;transition:none!important}
  a.btn::after,.btn::after,.nav-cta a::after{display:none}
 }
-@media (prefers-reduced-motion: reduce){}
+
+/* marquee band (professional, reference-derived) */
+.lb-mq{position:relative;overflow:hidden;background:#0b0c10;border-top:1px solid rgba(255,255,255,.10);
+ border-bottom:1px solid rgba(255,255,255,.10)}
+.lb-mq__in{display:flex;width:max-content;animation:none}
+.lb-mq:hover .lb-mq__in{animation-play-state:paused}
+.lb-mq__in span{display:inline-flex;align-items:center;gap:clamp(18px,3vw,44px);
+ padding:clamp(11px,1.5vw,19px) clamp(14px,2vw,26px);color:#fff;font-family:var(--lb-disp, system-ui), sans-serif;
+ font-weight:700;text-transform:none;letter-spacing:.14em;font-size:clamp(11px,1.25vw,17px);white-space:nowrap}
+.lb-mq__in span i{font-style:normal;color:var(--lb-acc,#e51924)}
+@keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
 </style>
-<style>
+<style id="lb-depth-css">
 /* ==== LB DEPTH PACK, layered shadow + gradient surfaces ==== */
 :root{
   --lb-acc: var(--acc, var(--accent, #e51924));
@@ -253,66 +267,38 @@ footer{ box-shadow:0 -1px 0 var(--lb-hair), 0 -14px 40px -30px rgba(8,10,14,.5);
   .card,.cards > *,.panel,.tile,figure,.gal figure, a.btn,.btn, img{ transition:none!important; transform:none!important; }
 }
 </style>
-<style>
+<style id="lb-hero-css">
 canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-<style>/* header brand must never be hidden by reveal wrappers.
+<style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
 .site-header,.header{z-index:50}
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-<style>.lb-brand__mark{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;margin-right:.6rem}.lb-brand__mark img{display:block;height:clamp(34px,3.4vw,44px);width:auto;border-radius:8px}</style>
-<style>/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style id="lb-markimg">.lb-brand__mark{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;margin-right:.6rem}.lb-brand__mark img{display:block;height:clamp(34px,3.4vw,44px);width:auto;border-radius:8px}</style>
+<style id="lb-repair-polish">/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<!--LB-EMPTY--><style>[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
+<!--LB-EMPTY--><style id="lb-empty">[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
 
-<!--LB-HERO-HEIGHT--><style>[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.26)}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
+<!--LB-HERO-HEIGHT--><style id="lb-heroh">[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.38)}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
 
-<!--LB-RV--><style>.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
+<!--LB-RV--><style id="lb-rv">.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
 
-<!--LB-CANVASZ--><style>[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
+<!--LB-CANVASZ--><style id="lb-canvasz">[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
 
-<!--LB-H1W--><style>[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.38!important}</style><!--/LB-H1W-->
+<!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
 
-<!--LB-HEROFIX2--><style>[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.28)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
+<!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.42)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
 
-<!--LB-RM--><style>@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
-
-<!--LB-HEROGRID--><style>[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
-<style>.lb-soc{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;opacity:.85;text-decoration:none}.lb-soc:hover{opacity:1}footer .lb-soc{margin-right:8px}</style><style>nav,header{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:clamp(18px,4vw,64px)!important;background:#a84a24!important;color:#ffffff!important;padding:14px 16px 32px;min-height:0!important;height:auto!important}.lb-brand{display:flex!important;align-items:center!important;gap:clamp(14px,2.5vw,38px)!important;flex:0 1 auto!important;min-width:0!important;text-decoration:none!important}.lb-mark{height:clamp(56px,5vw,72px)!important;width:auto!important;object-fit:contain!important;flex:none!important;-webkit-mask-image:radial-gradient(ellipse at center,#000 74%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 74%,transparent 100%)}.lb-word{height:auto!important;max-height:clamp(26px,2.3vw,34px)!important;width:auto!important;object-fit:contain!important;max-width:min(32vw,460px)!important;flex:0 1 auto!important;min-width:0!important;-webkit-mask-image:radial-gradient(ellipse at center,#000 78%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 78%,transparent 100%)}.lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}nav ul,nav .nav-links{display:flex!important;align-items:center!important;gap:clamp(12px,2vw,26px)!important;margin:0!important;padding:0!important;list-style:none!important;flex:1 1 auto!important;justify-content:flex-end!important}nav>div,nav>span,nav>.wrap,nav>.container,nav>.nav-in,nav>.nav-links{flex:1 1 auto!important;min-width:0!important;width:auto!important;max-width:none!important;margin-left:auto!important;margin-right:0!important}nav{flex-wrap:nowrap!important}.lb-brand{overflow:hidden!important}nav{min-width:0!important;flex-wrap:wrap!important;row-gap:6px!important}.hdr__in,.nav__in,.nav-inner{min-width:0!important;flex:1 1 auto!important}nav a{color:#ffffff!important}[class*=hero-copy],[class*=hero__copy],[class*=hero-in],[class*=hero-inner]{flex-wrap:nowrap!important}[class*=hero-copy]>*,[class*=hero__copy]>*,[class*=hero-in]>*,[class*=hero-inner]>*{flex:0 0 auto!important;min-height:0!important}body{background:#a84a24!important;color:#ffffff!important}section,.section{background-color:transparent!important}.nav-cta,.cta{background:#a23d14!important;color:#fff!important;border-color:#a23d14!important}a{--lb-accent:#a23d14}body{padding-top:0!important}[class~=hero],.hero,header#top:not(.hdr),section#top{padding-top:32px 32px 32px;padding-bottom:32px;min-height:clamp(400px,50vh,540px)!important;max-height:none!important;align-content:center!important;align-items:stretch!important;flex-wrap:wrap!important;gap:14px!important}[class~=hero]:not(.lb-hgrid),.hero:not(.lb-hgrid),header#top:not(.hdr),section#top{display:flex!important;flex-direction:row!important;justify-content:center!important;position:relative!important}[class~=hero]>*,.hero>*,header#top>*,section#top>*{flex:1 1 min(430px,100%)!important;min-width:0!important;max-width:100%!important}[class~=hero]>canvas,.hero>canvas,[class~=hero]>[class*=scrim],[class~=hero]>.lbhf{flex:none!important}[class~=hero] canvas,.hero canvas,header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important}[class~=hero]>.hero-photo,[class~=hero]>.hero-shade,[class~=hero]>[class*=scrim],header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;margin:0!important}header{overflow:visible!important}.lb-hgrid{justify-items:stretch!important}p,li,.sub,.lede{color:rgba(255,255,255,.72)!important}[class*=hero] p,[class*=hero] li,[class*=hero] .sub,[class*=hero] .lede,.hero p{color:rgba(255,255,255,.88)!important;text-shadow:0 1px 12px rgba(0,0,0,.45)}@media(max-width:820px){nav{flex-wrap:wrap!important;gap:10px!important}}.lb-mark{height:clamp(56px,5vw,76px)!important}.lb-word{height:clamp(38px,4.4vw,62px)!important;max-height:none!important;max-width:min(60vw,900px)!important}</style><style>header .brand,header .b-txt,header .b-txt *,nav .brand,nav .lb-brand,header nav a,nav.nav a,.site-head .brand,.brand__name{color:#ffffff!important}</style><style id="lb-contrast-fix">
-/* contrast stated per element, measured in the browser */
-body nav.nav a.tel:nth-of-type(2) span.lab{color:#ffffff !important}
-section.hero:nth-of-type(1) div.hero-copy.lb-rv:nth-of-type(4) div.k{color:#ffffff !important}
-section.hero:nth-of-type(1) div.hero-copy.lb-rv:nth-of-type(4) h1 em{color:#ffffff !important}
-section.wall:nth-of-type(2) div.course.even:nth-of-type(1) div.cell.rv:nth-of-type(1) h2{color:#0b0b0b !important}
-section.wall:nth-of-type(2) div.course.even:nth-of-type(1) div.cell.rv:nth-of-type(1) p{color:#0b0b0b !important}
-section.wall:nth-of-type(2) div.course.even:nth-of-type(1) div.cell.rv:nth-of-type(2) p{color:#ffffff !important}
-section.wall:nth-of-type(2) div.course.even:nth-of-type(3) div.cell.rv:nth-of-type(1) h2{color:#0b0b0b !important}
-section.wall:nth-of-type(2) div.course.even:nth-of-type(3) div.cell.rv:nth-of-type(1) p{color:#0b0b0b !important}
-section.wall:nth-of-type(2) div.course.even:nth-of-type(3) div.cell.rv:nth-of-type(2) p{color:#ffffff !important}
-html body section.areas:nth-of-type(3) div.k{color:#ffffff !important}
-body section.cta:nth-of-type(4) h3.lb-rv em{color:#ffffff !important}
-#lbq-h{color:#ffffff !important}
-div.lbq-w.lb-rv div.lbq-sp div.lbq-hp2:nth-of-type(1) p.lbq-s:nth-of-type(1){color:#ffffff !important}
-div.lbq-w.lb-rv div.lbq-sp div.lbq-hp2:nth-of-type(1) p.lbq-s:nth-of-type(2){color:#ffffff !important}
-form div.lbq-g:nth-of-type(1) div:nth-of-type(1) label{color:#ffffff !important}
-form div.lbq-g:nth-of-type(1) div:nth-of-type(2) label{color:#ffffff !important}
-form div.lbq-g:nth-of-type(1) div:nth-of-type(3) label{color:#ffffff !important}
-form div.lbq-g:nth-of-type(1) div.lbq-full:nth-of-type(4) label{color:#ffffff !important}
-form label.lbq-cons{color:#ffffff !important}
-body footer.foot div.foot-line:nth-of-type(1) span:nth-of-type(1){color:#ffffff !important}
-body footer.foot div.foot-line:nth-of-type(1) span:nth-of-type(2){color:#ffffff !important}
-body footer.foot span.lb-legal a:nth-of-type(1){color:#ffffff !important}
-body footer.foot span.lb-legal a:nth-of-type(2){color:#ffffff !important}
-</style>
+<!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
 </head><body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
-<nav class="nav" aria-label="Primary"><a href="/" class="lb-brand" aria-label="Webbs Concreting, Concrete Specialists, Melbourne South East"><img style="max-width:381px" width="381" height="163" src="assets/logo-flat-mark.png" alt="" class="lb-mark" loading="eager" decoding="async"><img style="max-width:1280px" width="1280" height="115" src="assets/logo-word.png" alt="" class="lb-word" loading="eager" decoding="async"><span class="lb-sr">Webbs Concreting, Concrete Specialists, Melbourne South East</span></a><a class="tel" href="tel:0412980745" aria-label="Call 0412 980 745"><span class="lab">Call</span>0412 980 745</a></nav>
+<nav class="nav" aria-label="Primary"><a class="lb-brand" href="#top" aria-label="Webbs Concreting - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#A84A24;--lb-subc:#A84A24;--lb-acc:#A84A24;"><img src="assets/logo.svg" alt="" class="lb-logo" loading="eager" decoding="async"><span class="lb-brand__mark" aria-hidden="true"></span><span class="lb-brand__word"><span class="lb-brand__name">Webbs Concreting</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a><a class="tel" href="tel:0412980745" aria-label="Call 0412 980 745"><span class="lab">Call</span>0412 980 745</a></nav>
 <section class="hero" id="top" aria-label="Webbs Concreting — concrete works in Melbourne's South East">
-<div class="lbhf" aria-hidden="true"><img style="max-width:2200px" src="assets/webbs-concreting-work-01.jpg" alt="" width="2200" height="2145" loading="eager" fetchpriority="high"></div>
+<div class="lbhf" aria-hidden="true"><img src="assets/webbs-concreting-work-01.jpg" alt="" width="1200" height="1170" loading="eager" fetchpriority="high"></div>
 <div class="lbhf-scrim" aria-hidden="true"></div>
 <!-- LB-3D-HERO -->
 <canvas id="heroCanvas" width="600" height="600" aria-hidden="true"></canvas>
@@ -323,21 +309,17 @@ body footer.foot span.lb-legal a:nth-of-type(2){color:#ffffff !important}
   <div class="lb3d-shape s4"></div>
   <div class="lb3d-shape s5"></div>
 </div>
-  <div class="hero-copy">
-    <div class="k">MELBOURNE SOUTH EAST CONCRETE SPECIALISTS</div>
-    <h1 data-ux="words">All aspects of concrete, <em>done properly.</em></h1>
-  </div>
-  <div class="hero-side">
-    <p class="lede">Located in Melbourne's South East, Webbs Concreting delivers all aspects of concrete work, from retaining walls and driveways to house slabs and commercial projects. Quality workmanship backed by local experience.</p>
-    <div class="pull"><b>How a job runs</b>Free quote and site check, formwork and steel set to spec, a clean pour and finish, then a walk-through before handover.</div>
-  </div>
+  <div class="k">MELBOURNE SOUTH EAST CONCRETE SPECIALISTS</div>
+  <h1 data-ux="words">All aspects of concrete, <em>done properly.</em></h1>
+  <p class="lede">Located in Melbourne's South East, Webbs Concreting delivers all aspects of concrete work, from retaining walls and driveways to house slabs and commercial projects. Quality workmanship backed by local experience.</p>
+  <div class="pull"><b>How a job runs</b>Free quote and site check, formwork and steel set to spec, a clean pour and finish, then a walk-through before handover.</div>
 </section>
 <div class="mortar"></div>
 <section class="wall" aria-label="Services"><div class='course even'><div class='cell rv' style='--i:0'><span class='num'>01</span><h2>Retaining Walls</h2><p>Structural and landscape retaining walls, engineered, council compliant and built to hold.</p></div><div class='cell rv' style='--i:1'><span class='num'>02</span><h2>Driveways &amp; Crossovers</h2><p>Residential and commercial driveways, vehicle crossovers and hardstands, formed, reinforced and finished to standard.</p></div></div><div class='course odd rv' style='--i:2'><span class='num'>03</span><h2>House Slabs &amp; Foundations</h2><p>Waffle pod and conventional raft slabs for new homes, extensions and granny flats, engineered and certified.</p></div><div class='course even'><div class='cell rv' style='--i:3'><span class='num'>04</span><h2>Shed &amp; Garage Slabs</h2><p>Workshop floors, garage slabs and farm shed foundations, reinforced for heavy loads.</p></div><div class='cell rv' style='--i:4'><span class='num'>05</span><h2>Paths, Patios &amp; Alfresco</h2><p>Concrete paths, entertaining areas, alfresco slabs and step constructions, exposed aggregate, coloured or plain finish.</p></div></div><div class='course odd rv' style='--i:5'><span class='num'>06</span><h2>Commercial &amp; Industrial Concrete</h2><p>Warehouse floors, loading docks, hardstands and civil concrete works across Melbourne South East.</p></div></section>
 <div class="mortar thin"></div>
 <section class="areas"><div class="k">Service area</div><span>Berwick</span><span>Narre Warren</span><span>Cranbourne</span><span>Pakenham</span><span>Officer</span><span>Beaconsfield</span><span>Hallam</span><span>Doveton</span><span>Endeavour Hills</span><span>Lysterfield</span><span>Rowville</span><span>Scoresby</span><span>Knoxfield</span><span>Wantirna</span><span>Boronia</span><span>Ferntree Gully</span><span>Dandenong</span><span>Springvale</span><span>Noble Park</span><span>Keysborough</span><span>Bangholme</span><span>Carrum Downs</span><span>Skye</span><span>Sandhurst</span><span>Lyndhurst</span><span>Clyde</span><span>Cardinia</span><span>Casey</span><span>Greater Dandenong</span></section>
 <section class="cta"><h3>Ready when you are. <em>Let's build it.</em></h3><a class="tel" href="tel:0412980745" aria-label="Call 0412 980 745">0412 980 745</a></section>
-<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img style="max-width:2200px" width="2200" height="2904" src="assets/work_01.jpg" alt="Webbs Concreting" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="2930" src="assets/work_02.jpg" alt="Webbs Concreting" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="2933" src="assets/work_03.jpg" alt="Webbs Concreting" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="2930" src="assets/work_04.jpg" alt="Webbs Concreting" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="3911" src="assets/work_05.jpg" alt="Webbs Concreting" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="3911" src="assets/work_06.jpg" alt="Webbs Concreting" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="3905" src="assets/work_07.jpg" alt="Webbs Concreting" loading="eager" decoding="async"></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button><button type="button" class="" aria-label="Slide 4"></button><button type="button" class="" aria-label="Slide 5"></button><button type="button" class="" aria-label="Slide 6"></button><button type="button" class="" aria-label="Slide 7"></button></div><div class="lb-rb__cap">Webbs Concreting &mdash; recent work</div></div></section><footer class="foot"><section id="lbq" class="v3" aria-labelledby="lbq-h">
+<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img src="assets/work_01.jpg" alt="Webbs Concreting" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_02.jpg" alt="Webbs Concreting" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_03.jpg" alt="Webbs Concreting" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_04.jpg" alt="Webbs Concreting" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_05.jpg" alt="Webbs Concreting" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_06.jpg" alt="Webbs Concreting" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_07.jpg" alt="Webbs Concreting" loading="lazy" decoding="async"></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button><button type="button" class="" aria-label="Slide 4"></button><button type="button" class="" aria-label="Slide 5"></button><button type="button" class="" aria-label="Slide 6"></button><button type="button" class="" aria-label="Slide 7"></button></div><div class="lb-rb__cap">Webbs Concreting &mdash; recent work</div></div></section><footer class="foot"><section id="lbq" class="v3" aria-labelledby="lbq-h">
   <style>
 #lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#A84A24))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,#9aa6b2);--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
 #lbq *{box-sizing:border-box}
@@ -345,15 +327,15 @@ body footer.foot span.lb-legal a:nth-of-type(2){color:#ffffff !important}
 #lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
 #lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
 #lbq .lbq-f{display:grid;gap:12px}
-#lbq label{display:block;font-size:0.82rem;letter-spacing:0.05em;text-transform:none;color:var(--lbq-muted);margin-bottom:5px}
-#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:0.95rem}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:none;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
 #lbq input::placeholder,#lbq textarea::placeholder{color:#5b616a;opacity:1}
 #lbq textarea{min-height:96px;resize:vertical}
 #lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
-#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:var(--on-accent,#FBF3E4);font:inherit;font-weight:700;font-size:0.95rem;cursor:pointer;letter-spacing:0.02em}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:var(--on-accent,#FBF3E4);font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
 #lbq button:disabled{opacity:.6;cursor:wait}
-#lbq .lbq-st{margin:10px 0 0;font-size:0.9rem;color:var(--lbq-muted);min-height:1.2em}
-#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:0.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
 #lbq .lbq-cons input{width:auto}
 #lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 /* v1 card */
@@ -453,7 +435,7 @@ body footer.foot span.lb-legal a:nth-of-type(2){color:#ffffff !important}
 </script>
 </section>
 <div class="foot-line"><span>Webbs Concreting</span><span>MELBOURNE SOUTH EAST CONCRETE SPECIALISTS</span></div>
-<span class="lb-legal"><a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms</a></span><div class="lb-socials"><a class="lb-soc" href="https://www.instagram.com/webbsconcreting" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a><a class="lb-soc" href="https://www.instagram.com/webbsconcreting" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a></div></footer>
+<span class="lb-legal"><a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms</a></span></footer>
 <noscript><style>.rv{opacity:1;transform:none}</style></noscript>
 <script>
 (function(){
@@ -464,79 +446,7 @@ body footer.foot span.lb-legal a:nth-of-type(2){color:#ffffff !important}
   setTimeout(function(){els.forEach(function(e){e.classList.add('on')})},2500);
 })();
 </script>
-<style>
-/* ==== WC REPAIR: header lockup, hero grid, callout width, footer rhythm ==== */
-/* header lockup: mark stays a small stamp, the wordmark leads, one sane header height */
-.lb-brand{gap:clamp(9px,1vw,13px)!important;min-height:0!important;align-items:center!important}
-.lb-brand .lb-logo{flex:0 0 auto!important;display:block!important;height:36px!important;width:36px!important;
-  max-width:none!important;border-radius:9px!important;object-fit:contain}
-.lb-brand__word{max-width:none!important;justify-content:center!important}
-.lb-brand__name{font-size:clamp(19px,1.6vw,22px)!important;line-height:1.3!important;letter-spacing:0!important}
-.lb-brand__sub{font-size:13px!important;letter-spacing:0.05em!important;color:var(--muted)!important;opacity:1!important;margin-top:4px!important}
-.nav{padding:14px 6vw!important;align-items:center!important;min-height:0!important}
-.nav .tel{border-bottom-width:2px!important;align-self:center!important}
-
-/* hero: real two-column grid, no flex squeeze, no height clip */
-/* the full-bleed layers must stay OUT of grid flow: `[class*=hero]>*{position:relative}`
-   was pulling bg/scrim/stage into rows and shoving the copy 800px down the page. */
-section.hero{display:grid!important;
-  grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr)!important;
-  grid-template-rows:1fr!important;
-  column-gap:clamp(28px,4vw,64px);row-gap:0;
-  align-items:end!important;min-height:clamp(460px,52vh,600px)!important;max-height:none!important;
-  padding:32px 1px 32px 32px}
-section.hero>.lbhf,
-section.hero>.lbhf-scrim,
-section.hero>.lb3d-stage{position:absolute!important;inset:0!important;width:auto!important;height:auto!important;z-index:1!important}
-section.hero::before{background:none!important}
-.lbhf img{filter:brightness(.82) contrast(1.05) saturate(1.02)!important;object-position:center 42%!important}
-.lbhf-scrim{z-index:2!important;
-  background:linear-gradient(102deg,rgba(11,8,5,.92) 0%,rgba(11,8,5,.80) 44%,rgba(11,8,5,.50) 100%)!important}
-#heroCanvas{inset:0!important;z-index:0!important;opacity:.85!important}
-.hero-copy,.hero-side{position:relative!important;z-index:3!important;
-  min-height:0!important;max-height:none!important}
-.hero-copy{grid-column:1!important;grid-row:1!important;
-  display:flex!important;flex-direction:column!important;
-  gap:14px!important;justify-content:flex-end!important;align-self:end!important}
-.hero .k{margin-bottom:0!important;font-size:13px!important;line-height:1.5!important;color:var(--clay)!important;letter-spacing:0.05em!important}
-.hero h1{max-width:none!important;width:100%!important;font-size:clamp(34px,4.2vw,56px)!important;line-height:1.36!important}
-.hero-side{grid-column:2!important;grid-row:1!important;
-  display:flex!important;flex-direction:column!important;gap:clamp(14px,1.6vw,20px)!important;align-self:end!important;max-width:46ch!important;width:100%!important}
-.hero .lede{grid-column:auto!important;max-width:none!important;font-size:clamp(15px,1.1vw,16.5px)!important;line-height:1.36!important;color:#EFE3CF!important}
-/* callout: full-width box in its own column instead of a squeezed 1-char sliver */
-.hero .pull{grid-column:auto!important;max-width:none!important;width:100%!important;
-  border:1px solid rgba(217,165,102,.5)!important;border-left:3px solid var(--clay)!important;
-  background:rgba(10,7,5,.55)!important;
-  padding:14px 14px 32px;
-  font-size:14.5px!important;line-height:1.36!important;color:#EBDCC4!important}
-.hero .pull b{margin-bottom:8px!important}
-
-/* gallery: photos, not a black void */
-.lb-rb{background:var(--deep)!important}
-.lb-rb__track{aspect-ratio:16/9!important;max-height:min(60vh,560px)!important}
-.lb-rb__track::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,0,0,.5))}
-
-/* quote form: dark-surface defaults were near-invisible on the sand background */
-#lbq{--lbq-panel:#FBF4E8;--lbq-line:rgba(42,33,26,.32);--lbq-muted:#5E5140;padding:64px 6vw 20px}
-#lbq .lbq-w{max-width:1000px}
-#lbq h2{color:var(--ink)}
-#lbq input,#lbq textarea{border-color:var(--lbq-line);background:#fff}
-#lbq .lbq-hp2{padding-left:16px}
-
-@media (max-width:820px){
-  section.hero{grid-template-columns:1fr!important;grid-template-rows:auto auto!important;row-gap:22px!important;
-    padding:32px 1px 32px 32px;min-height:0!important;align-items:start!important;background:#0f1115}
-  .hero-copy{grid-column:1!important;grid-row:auto!important;justify-content:flex-start!important}
-  .hero-side{grid-column:1!important;grid-row:auto!important;max-width:none!important}
-  .hero h1{font-size:clamp(30px,8.4vw,42px)!important}
-}
-@media (max-width:600px){
-  .lb-brand__sub{display:none!important}
-  .nav{padding:14px 5vw!important}
-}
-</style>
-
+<div class="lb-pulse" aria-hidden="true"></div>
 <script id="lb-motion-js">
 /* LB MOTION PACK v1 */
 (function(){
@@ -728,7 +638,8 @@ header a[href^="tel"],.site-header a[href^="tel"]{
 }
 .lb-brand__sub:empty{display:none !important}
 </style>
-<style>
+<style>/* ==== TASTE PASS (anti-slop, from impeccable findings) ==== */
+.lb-mq__in,.lb-pulse,tiny numbered label "01" beside h2 "Retaining Walls" (6 on page){display:none !important}
 italic serif h1 (fraunces) at 54px "All aspects of concrete, done properly.{font-style:normal !important}
 letter-spacing: 0.08em on body text{letter-spacing:normal !important}
 letter-spacing: 0.16em on body text{letter-spacing:normal !important}

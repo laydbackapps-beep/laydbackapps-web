@@ -44,15 +44,15 @@ html.js .drop.in{opacity:1;transform:none}
 }
 
 .nav{position:fixed;inset:0 0 auto 0;z-index:60;background:rgba(16,28,12,.97);-webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);border-bottom:2px solid var(--accent)}
-.nav-in{display:flex;align-items:center;gap:1.2rem;height:84px}
+.nav-in{display:flex;align-items:center;gap:1.2rem;height:80px}
 .brand{display:flex;align-items:center;gap:.75rem;color:#fff;text-decoration:none;min-width:0}
-.brand img{height:52px;width:auto;border-radius:6px;background:#fff;padding:3px}
+.brand img{height:40px;width:auto;border-radius:6px;background:#fff;padding:3px}
 .brand .b-txt{display:flex;flex-direction:column;gap:4px;min-width:0}
 .brand-name{font-family:var(--font-display);font-size:clamp(1.05rem,2.6vw,1.3rem);line-height:1;color:#fff;font-weight:700;letter-spacing:.03em;white-space:nowrap}
 .brand-sub{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#CFEDB8;font-weight:700;line-height:1;white-space:nowrap}
 .nav-links{display:flex;gap:1.35rem;margin-left:auto;align-items:center}
-.nav-links a{color:#F0F7E6;text-decoration:none;font-size:.94rem;font-weight:600}
-.nav-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+.nav-links a{color:#D6E8C6;text-decoration:none;font-size:.92rem;font-weight:500}
+.nav-links a:hover{color:#fff}
 .nav-cta{background:var(--accent-dk);color:#FFFFFF !important;padding:.55rem 1.2rem;border-radius:6px;font-weight:700}
 .nav-cta:hover{filter:brightness(1.08)}
 .burger{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.35);border-radius:6px;padding:.4rem .6rem;cursor:pointer}
@@ -72,14 +72,14 @@ html.js .drop.in{opacity:1;transform:none}
   .burger{display:block}
 }
 
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:#0C1A0C;overflow:hidden;padding-top:84px;perspective:1200px}
-#heroCanvas{display:block}
-.hero-bg{position:absolute;inset:0;z-index:0;background:#0C1A0C url("assets/hero.jpg") center 42%/cover no-repeat}
-.hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(100deg,rgba(8,20,7,.95) 0%,rgba(8,20,7,.88) 42%,rgba(8,20,7,.55) 78%,rgba(8,20,7,.42) 100%)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:#0C1A0C;overflow:hidden;padding-top:80px;perspective:1200px}
+#heroCanvas{}
+.hero-bg{position:absolute;inset:0;z-index:0;background:rgba(10,11,12,.95)}
+.hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(6,16,5,.90),rgba(6,16,5,.68)}
 .hero-in{position:relative;z-index:2;display:block;padding-block:11vh 6rem;width:min(1180px,92vw);margin-inline:auto}
 @media(max-width:860px){.hero-in{padding-block:9vh 3.2rem}.hero h1{font-size:2.05rem}.hero .btn-ghost{background:#fff;color:#16300E;border-color:rgba(22,48,14,.22)}
-  .hero-bg{background-position:center 34%;filter:brightness(.82) saturate(1.06)}
-  .hero-shade{background:linear-gradient(180deg,rgba(8,20,7,.72),rgba(8,20,7,.86))}}
+  .hero-bg img{object-position:center 34%;filter:brightness(.78) saturate(1.06)}
+  .hero-shade{background:rgba(6,16,5,.40)}}
 .hero-kicker{display:inline-flex;align-items:center;gap:.65rem;color:#B7E79A;font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;font-weight:700;margin-bottom:1rem}
 .hero-kicker::before{content:"";width:36px;height:2px;background:#7CC955}
 .hero h1{font-family:var(--font-display);font-size:clamp(2.3rem,5.8vw,4.5rem);line-height:1.06;color:#FFFFFF;font-weight:700;max-width:22ch;letter-spacing:-.01em;text-shadow:0 2px 18px rgba(0,0,0,.45)}
@@ -278,7 +278,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 
 <!--LB-EMPTY--><style id="lb-empty">[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
 
-<!--LB-HERO-HEIGHT--><style id="lb-heroh">[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.26)}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
+<!--LB-HERO-HEIGHT--><style id="lb-heroh">[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.34),rgba(0,0,0,.12) 45%,rgba(0,0,0,.42))}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
 
 <!--LB-RV--><style id="lb-rv">.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
 
@@ -292,36 +292,12 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 
 <!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
 
-<!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.28)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
-
-<!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
-
-<!--LB-HEROGRID--><style id="lb-herogrid">[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
-<style id="lb-soc-css">.lb-soc{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;opacity:.85;text-decoration:none}.lb-soc:hover{opacity:1}footer .lb-soc{margin-right:8px}</style><style id="lb-header-rule">nav,header{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:clamp(18px,4vw,64px)!important;background:#e1dcd9!important;color:#111111!important;padding:14px clamp(16px,4vw,48px)!important;min-height:0!important;height:auto!important}.lb-brand{display:flex!important;align-items:center!important;gap:clamp(14px,2.5vw,38px)!important;flex:0 1 auto!important;min-width:0!important;text-decoration:none!important}.lb-mark{height:clamp(56px,5vw,72px)!important;width:auto!important;object-fit:contain!important;flex:none!important;-webkit-mask-image:radial-gradient(ellipse at center,#000 74%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 74%,transparent 100%)}.lb-word{height:auto!important;max-height:clamp(26px,2.3vw,34px)!important;width:auto!important;object-fit:contain!important;max-width:min(32vw,460px)!important;flex:0 1 auto!important;min-width:0!important;-webkit-mask-image:radial-gradient(ellipse at center,#000 78%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 78%,transparent 100%)}.lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}nav ul,nav .nav-links{display:flex!important;align-items:center!important;gap:clamp(12px,2vw,26px)!important;margin:0!important;padding:0!important;list-style:none!important;flex:1 1 auto!important;justify-content:flex-end!important}nav>div,nav>span,nav>.wrap,nav>.container,nav>.nav-in,nav>.nav-links{flex:1 1 auto!important;min-width:0!important;width:auto!important;max-width:none!important;margin-left:auto!important;margin-right:0!important}nav{flex-wrap:nowrap!important}.lb-brand{overflow:hidden!important}nav{min-width:0!important;flex-wrap:wrap!important;row-gap:6px!important}.hdr__in,.nav__in,.nav-inner{min-width:0!important;flex:1 1 auto!important}nav a{color:#111111!important}[class*=hero-copy],[class*=hero__copy],[class*=hero-in],[class*=hero-inner]{flex-wrap:nowrap!important}[class*=hero-copy]>*,[class*=hero__copy]>*,[class*=hero-in]>*,[class*=hero-inner]>*{flex:0 0 auto!important;min-height:0!important}body{background:#e1dcd9!important;color:#111111!important}section,.section{background-color:transparent!important}.nav-cta,.cta{background:#01bc62!important;color:#fff!important;border-color:#01bc62!important}a{--lb-accent:#01bc62}body{padding-top:0!important}[class~=hero],.hero,header#top:not(.hdr),section#top{padding-top:calc(var(--lb-navh,112px) + 20px)!important;padding-bottom:36px!important;min-height:clamp(400px,50vh,540px)!important;max-height:none!important;align-content:center!important;align-items:stretch!important;flex-wrap:wrap!important;gap:14px!important}[class~=hero]:not(.lb-hgrid),.hero:not(.lb-hgrid),header#top:not(.hdr),section#top{display:flex!important;flex-direction:row!important;justify-content:center!important;position:relative!important}[class~=hero]>*,.hero>*,header#top>*,section#top>*{flex:1 1 min(430px,100%)!important;min-width:0!important;max-width:100%!important}[class~=hero]>canvas,.hero>canvas,[class~=hero]>[class*=scrim],[class~=hero]>.lbhf{flex:none!important}[class~=hero] canvas,.hero canvas,header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important}[class~=hero]>.hero-photo,[class~=hero]>.hero-shade,[class~=hero]>[class*=scrim],header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;margin:0!important}header{overflow:visible!important}.lb-hgrid{justify-items:stretch!important}p,li,.sub,.lede{color:rgba(17,17,17,.7)!important}[class*=hero] p,[class*=hero] li,[class*=hero] .sub,[class*=hero] .lede,.hero p{color:rgba(255,255,255,.88)!important;text-shadow:0 1px 12px rgba(0,0,0,.45)}@media(max-width:820px){nav{flex-wrap:wrap!important;gap:10px!important}}.lb-mark{height:clamp(56px,5vw,76px)!important}.lb-word{height:clamp(38px,4.4vw,62px)!important;max-height:none!important;max-width:min(60vw,900px)!important}</style><style id="lb-ink2">header .brand,header .b-txt,header .b-txt *,nav .brand,nav .lb-brand,header nav a,nav.nav a,.site-head .brand,.brand__name{color:#0a0a0a!important}</style><style id="lb-contrast-fix">
-/* contrast stated per element, measured in the browser */
-header.hero div.wrap.hero-in:nth-of-type(3) div.hero-copy p.hero-kicker:nth-of-type(1){color:#0b0b0b !important}
-header.hero div.wrap.hero-in:nth-of-type(3) div.hero-copy h1{color:#0b0b0b !important}
-div.wrap.hero-in:nth-of-type(3) div.hero-copy h1 em{color:#0b0b0b !important}
-header.hero div.wrap.hero-in:nth-of-type(3) div.hero-copy p.hero-sub:nth-of-type(2){color:#0b0b0b !important}
-div.hero-copy div.hero-strip:nth-of-type(2) p:nth-of-type(1) strong{color:#0b0b0b !important}
-div.wrap.hero-in:nth-of-type(3) div.hero-copy div.hero-strip:nth-of-type(2) p:nth-of-type(1){color:#0b0b0b !important}
-div.hero-copy div.hero-strip:nth-of-type(2) p:nth-of-type(2) strong{color:#0b0b0b !important}
-div.wrap.hero-in:nth-of-type(3) div.hero-copy div.hero-strip:nth-of-type(2) p:nth-of-type(2){color:#0b0b0b !important}
-div.hero-copy div.hero-strip:nth-of-type(2) p:nth-of-type(3) strong{color:#0b0b0b !important}
-div.wrap.hero-in:nth-of-type(3) div.hero-copy div.hero-strip:nth-of-type(2) p:nth-of-type(3){color:#0b0b0b !important}
-div.wrap.lb-rv div.sec-head.drop:nth-of-type(1) div h2.sec-title{color:#0b0b0b !important}
-div.wrap.lb-rv div.steps:nth-of-type(2) div.step.drop:nth-of-type(1) h3{color:#0b0b0b !important}
-div.wrap.lb-rv div.steps:nth-of-type(2) div.step.drop:nth-of-type(2) h3{color:#0b0b0b !important}
-div.wrap.lb-rv div.steps:nth-of-type(2) div.step.drop:nth-of-type(3) h3{color:#0b0b0b !important}
-div.wrap.lb-rv div.steps:nth-of-type(2) div.step.drop:nth-of-type(4) h3{color:#0b0b0b !important}
-div.wrap.lb-rv div.cta-lines.drop:nth-of-type(3) p:nth-of-type(1) a{color:#0b0b0b !important}
-div.wrap.lb-rv div.cta-lines.drop:nth-of-type(3) p:nth-of-type(2) a{color:#0b0b0b !important}
-</style>
+<!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.28))}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
 </head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
-<nav class="nav" aria-label="Main"><a href="/" class="lb-brand" aria-label="A.D Lawns and Landscapes, Lawn Care & Landscaping"><img style="max-width:512px" width="512" height="498" src="assets/logo-flat.png" alt="" class="lb-mark" loading="eager" decoding="async"><span class="lb-word lb-word--text">A.D Lawns and Landscapes</span></a>
+<nav class="nav" aria-label="Main">
   <div class="wrap nav-in">
-    
+    <a class="lb-brand" href="#top" aria-label="A.D Lawns and Landscapes - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#00b058;--lb-subc:#00b058;--lb-acc:#00b058;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo-mark_radar-143.png" alt="" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">A.D Lawns and Landscapes</span><span class="lb-brand__sub"><span class="lb-acc">Lawn</span> Care & Landscaping</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
     <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
       <span></span><span></span><span></span>
     </button>
@@ -329,7 +305,7 @@ div.wrap.lb-rv div.cta-lines.drop:nth-of-type(3) p:nth-of-type(2) a{color:#0b0b0
       <a href="#services">What we do</a>
       <a href="#recent">Recent work</a>
       <a href="#process">How we work</a>
-      <a href="#why">Why A.D</a>
+      <a href="#areas">Get a quote</a>
       <a class="nav-cta" href="#lbq">Get a quote</a>
     </div>
   </div>
@@ -337,7 +313,7 @@ div.wrap.lb-rv div.cta-lines.drop:nth-of-type(3) p:nth-of-type(2) a{color:#0b0b0
 
 <header class="hero" id="top">
   <!-- LB-3D-HERO -->
-  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <canvas id="heroCanvas" hidden aria-hidden="true"></canvas>
   <div class="hero-bg"></div>
   <div class="hero-shade"></div>
   <div class="wrap hero-in">
@@ -346,7 +322,7 @@ div.wrap.lb-rv div.cta-lines.drop:nth-of-type(3) p:nth-of-type(2) a{color:#0b0b0
     <h1>Lawns worth slowing down for, <em>every single week.</em></h1>
     <p class="hero-sub">Mowing, hedging, garden care and landscaping, give the yard to a crew that treats a finish like a signature.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="tel:0406840056">Call 0406 840 056</a>
+      <a class="btn btn-primary" href="tel:+61406840056">Call 0406 840 056</a>
       <a class="btn btn-ghost" href="#lbq">Get a quote</a>
     </div>
     <div class="hero-strip">
@@ -367,7 +343,7 @@ div.wrap.lb-rv div.cta-lines.drop:nth-of-type(3) p:nth-of-type(2) a{color:#0b0b0
         <p class="sec-sub">One team for the weekly tidy and the big landscaping jobs.</p>
       </div>
     </div>
-    <div style="display:none" class="svc-grid">
+    <div class="svc-grid">
       <article class="svc drop">
         <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M3 17h8l2-4h8"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M13 13l4-8"/></svg></div>
         <h3>Lawn mowing & edging</h3>
@@ -446,7 +422,7 @@ div.wrap.lb-rv div.cta-lines.drop:nth-of-type(3) p:nth-of-type(2) a{color:#0b0b0
         </div>
       </div>
       <div class="why-visual drop">
-        <img style="max-width:1080px" width="1080" height="695" src="assets/work.jpg" alt="A.D Lawns and Landscapes">
+        <img src="assets/work.jpg" alt="A.D Lawns and Landscapes">
         <p>A.D Lawns and Landscapes, mowing and garden care.</p>
       </div>
     </div>
@@ -455,19 +431,19 @@ div.wrap.lb-rv div.cta-lines.drop:nth-of-type(3) p:nth-of-type(2) a{color:#0b0b0
 
 <section class="adl-gallery" id="recent">
   <div class="wrap">
-    <div style="display:none" class="gal-head drop">
+    <div class="gal-head drop">
       <p class="sec-kicker">In the yard</p>
       <h2 class="sec-title">Recent lawns and landscapes</h2>
       <p class="sec-sub">Mowing, care and finishes that keep the yard looking sharp.</p>
     </div>
     <div class="gal-grid">
       <figure class="gal drop">
-        <img style="max-width:1080px" width="1080" height="695" src="assets/gal_1.jpg" alt="Freshly mowed lawn with mowing stripes" loading="lazy">
+        <img src="assets/gal_1.jpg" alt="Freshly mowed lawn with mowing stripes" loading="lazy">
         <figcaption class="gal-cap">Freshly striped lawn</figcaption>
       </figure>
       <figure class="gal drop">
-        <img style="max-width:1080px" width="1080" height="695" src="assets/work.jpg" alt="Trimmed garden beds and edged lawn after a visit" loading="lazy">
-        <figcaption class="gal-cap">Beds and edges tidy</figcaption>
+        <img src="assets/gal_2.jpg" alt="Mowed lawn with clean edges" loading="lazy">
+        <figcaption class="gal-cap">Mow and finish</figcaption>
       </figure>
     </div>
     <p class="gal-note drop">Photos from recent jobs, more on request.</p>
@@ -484,19 +460,19 @@ div.wrap.lb-rv div.cta-lines.drop:nth-of-type(3) p:nth-of-type(2) a{color:#0b0b0
     </div>
     <p class="cta-sub drop">Send through a few details and we will come back with a free quote.</p>
     <div class="cta-row drop">
-      <a class="btn btn-primary" href="tel:0406840056">Call 0406 840 056</a>
+      <a class="btn btn-primary" href="tel:+61406840056">Call 0406 840 056</a>
       <a class="btn btn-ghost" href="#lbq">Get a quote</a>
     </div>
-    <div class="cta-lines drop"><p>Call <a href="tel:0406840056">0406 840 056</a></p><p>Email <a href="mailto:a.dlawnsandlandscapes@gmail.com">a.dlawnsandlandscapes@gmail.com</a></p></div>
+    <div class="cta-lines drop"><p>Call <a href="tel:+61406840056">0406 840 056</a></p><p>Email <a href="mailto:a.dlawnsandlandscapes@gmail.com">a.dlawnsandlandscapes@gmail.com</a></p></div>
   </div>
 </section>
 
-<footer class="foot">
+<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img src="assets/gal_1.jpg" alt="A.D Lawns and Landscapes" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work.jpg" alt="A.D Lawns and Landscapes" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/gal_2.jpg" alt="A.D Lawns and Landscapes" loading="lazy" decoding="async"></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button></div><div class="lb-rb__cap">A.D Lawns and Landscapes &mdash; recent work</div></div></section><footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
       <div>
         <div class="foot-brand">
-          <img style="max-width:512px" src="assets/logo.png" alt="A.D Lawns and Landscapes logo" width="512" height="498">
+          <img src="assets/logo.png" alt="A.D Lawns and Landscapes logo" width="52" height="52">
           <span class="b-txt">
             <span class="foot-brand-name">A.D Lawns and Landscapes</span>
             <span class="foot-brand-sub">Lawn Care & Landscaping</span>
@@ -507,7 +483,7 @@ div.wrap.lb-rv div.cta-lines.drop:nth-of-type(3) p:nth-of-type(2) a{color:#0b0b0
       <div>
         <h4>Get in touch</h4>
         <p>
-          <a href="tel:0406840056">0406 840 056</a><br>
+          <a href="tel:+61406840056">0406 840 056</a><br>
           <a href="mailto:a.dlawnsandlandscapes@gmail.com">a.dlawnsandlandscapes@gmail.com</a><br>Free quotes · Regular or one-off visits
         </p>
       </div>
@@ -517,8 +493,6 @@ div.wrap.lb-rv div.cta-lines.drop:nth-of-type(3) p:nth-of-type(2) a{color:#0b0b0
       <span>Lawn care & landscaping</span>
     </div>
   </div>
-<div class="lb-socials"><a class="lb-soc" href="https://www.facebook.com/p/AD-Lawns-and-Landscapes-61555259461552/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a></div></footer>
-
 <section id="lbq" class="v3" aria-labelledby="lbq-h">
   <style>
 #lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#00b058))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,#9aa6b2);--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
@@ -654,11 +628,9 @@ html,body{overflow-x:hidden}
 })();
 </script>
 </section>
-<footer class="foot foot-legal">
-  <div class="wrap"><span class="lb-legal"><a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms</a></span></div>
-</footer>
+<span class="lb-legal"><a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms</a></span></footer>
 
-<div class="lb-pulse"><span class="lb-pulse__dot" aria-hidden="true"></span><a href="#lbq">Free quote in 24h</a></div>
+<div class="lb-pulse" aria-hidden="true"></div>
 
 <!-- lb: old box-hero engine removed -->
 
@@ -744,22 +716,15 @@ html,body{overflow-x:hidden}
   function rnd(){ seed = (seed*1103515245 + 12345) % 2147483648; return seed/2147483648; }
   for (var i=0;i<N;i++) motes.push({x:rnd(), y:rnd(), z:0.25+rnd()*0.75, s:0.6+rnd()*1.9, p:rnd()*6.283});
 
-  var hasPhoto = false;
-  function syncPhoto(){ var b = document.querySelector('.hero-bg');
-    hasPhoto = !!(b && /url\(/.test(getComputedStyle(b).backgroundImage || '')); }
-
   function draw(){
-    var isDark = hasPhoto ? true : dark();   // a photo hero always sits on a dark scrim
+    var isDark = dark();
     var base = isDark ? [10,11,14] : [248,249,251];
     var ink  = isDark ? [255,255,255] : [12,14,18];
     var g = ctx.createLinearGradient(0,0,0,H);
     g.addColorStop(0, 'rgb('+base.join(',')+')');
     g.addColorStop(0.62, 'rgb('+Math.round(base[0]*1.06+2)+','+Math.round(base[1]*1.06+2)+','+Math.round(base[2]*1.09+2)+')');
     g.addColorStop(1, 'rgb('+base.join(',')+')');
-    ctx.save();
-    ctx.globalAlpha = hasPhoto ? 0.34 : 1;   // let the yard photo read under the depth field
     ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
-    ctx.restore();
 
     // aurora: two slow, wide ribbons of the brand colour
     for (var k=0;k<2;k++){
@@ -767,7 +732,7 @@ html,body{overflow-x:hidden}
       var cy = H*(0.34 + 0.16*k + 0.05*Math.cos(t*0.00017 + k*1.3));
       var rad = Math.max(W,H)*(0.46 + 0.13*k);
       var rg = ctx.createRadialGradient(cx,cy,0,cx,cy,rad);
-      var a = (isDark ? 0.15 : 0.13) * (0.72 + 0.28*Math.sin(t*0.0003 + k));
+      var a = (isDark ? 0.20 : 0.13) * (0.72 + 0.28*Math.sin(t*0.0003 + k));
       rg.addColorStop(0,'rgba('+ACC.join(',')+','+a.toFixed(3)+')');
       rg.addColorStop(0.55,'rgba('+ACC.join(',')+','+(a*0.32).toFixed(3)+')');
       rg.addColorStop(1,'rgba('+ACC.join(',')+',0)');
@@ -779,18 +744,18 @@ html,body{overflow-x:hidden}
     ctx.lineWidth = 1;
     for (var j=-9;j<=9;j++){
       var fx = vpx + j*(W/9)*1.5;
-      var al = (isDark?0.10:0.13) * (1 - Math.min(1, Math.abs(j)/11));
+      var al = (isDark?0.16:0.13) * (1 - Math.min(1, Math.abs(j)/11));
       ctx.strokeStyle = 'rgba('+ACC.join(',')+','+al.toFixed(3)+')';
       ctx.beginPath(); ctx.moveTo(vpx + j*(W/9)*0.16, hz); ctx.lineTo(fx, H+2); ctx.stroke();
     }
     for (var r=1;r<=9;r++){
       var y = hz + Math.pow(r/9, 2.15)*(H-hz+4);
-      ctx.strokeStyle = 'rgba('+ACC.join(',')+','+((isDark?0.08:0.10)*(1-r/11)).toFixed(3)+')';
+      ctx.strokeStyle = 'rgba('+ACC.join(',')+','+((isDark?0.13:0.10)*(1-r/11)).toFixed(3)+')';
       ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
     }
     var hg = ctx.createLinearGradient(0,hz-70,0,hz+70);
     hg.addColorStop(0,'rgba('+ACC.join(',')+',0)');
-    hg.addColorStop(0.5,'rgba('+ACC.join(',')+','+(isDark?0.12:0.11)+')');
+    hg.addColorStop(0.5,'rgba('+ACC.join(',')+','+(isDark?0.16:0.11)+')');
     hg.addColorStop(1,'rgba('+ACC.join(',')+',0)');
     ctx.fillStyle = hg; ctx.fillRect(0,hz-70,W,140);
 
@@ -808,13 +773,13 @@ html,body{overflow-x:hidden}
 
     // vignette to seat the copy
     var vg = ctx.createRadialGradient(W*0.5,H*0.52,Math.min(W,H)*0.30,W*0.5,H*0.52,Math.max(W,H)*0.80);
-    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1, isDark?'rgba(0,0,0,0.30)':'rgba(0,0,0,0.12)');
+    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1, isDark?'rgba(0,0,0,0.42)':'rgba(0,0,0,0.14)');
     ctx.fillStyle = vg; ctx.fillRect(0,0,W,H);
   }
 
   function loop(ts){ if (ts) t = ts; if (visible) draw(); raf = requestAnimationFrame(loop); }
-  syncPhoto(); size(); draw();
-  window.addEventListener('resize', function(){ syncPhoto(); size(); draw(); });
+  size(); draw();
+  window.addEventListener('resize', function(){ size(); draw(); });
   if (!reduce && 'IntersectionObserver' in window){
     new IntersectionObserver(function(e){ visible = e[0].isIntersecting; }, {threshold:0.02}).observe(cv);
   }
@@ -869,202 +834,10 @@ header nav a:not(.btn):not([class*="btn"]):not([class*="cta"]),
 nav.nav a:not(.btn):not([class*="btn"]),
 .nav-inner a:not(.btn):not([class*="btn"]),
 header a[href^="tel"],.site-header a[href^="tel"]{
-  color:#F0F7E6 !important;
+  color:var(--lb-name,currentColor) !important;
   opacity:1 !important;
 }
-nav.nav a.nav-cta{color:#fff !important;background:var(--accent-dk) !important}
 .lb-brand__sub:empty{display:none !important}
-</style>
-
-<style id="repair-143">
-/* --- hero layer order: photo (bottom) -> depth canvas -> shade -> copy --- */
-.hero .hero-bg{z-index:-2 !important}
-.hero canvas, #heroCanvas{z-index:-1 !important;display:block !important}
-.hero .hero-shade{z-index:1 !important}
-.hero .hero-in{z-index:2 !important}
-[class*=hero]:has(canvas):before{background:rgba(0,0,0,.16) !important}
-
-/* --- reveal must never leave content invisible in a full-page shot --- */
-html.js .drop,.lb-rv{animation:lbDropIn .5s ease-out both}
-@keyframes lbDropIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-html.js .drop.in,.lb-rv.is-in{animation:none;opacity:1;transform:none}
-
-/* --- header brand: logo at a usable size, wordmark capped --- */
-.lb-brand__mark{height:52px !important;max-width:64px !important}
-.lb-brand__mark img{height:52px !important;width:52px !important;object-fit:contain !important}
-.lb-brand__name{font-size:clamp(17px,1.55vw,22px) !important;letter-spacing:.01em !important}
-.lb-brand__sub{font-size:11px !important;letter-spacing:.16em !important;margin-top:.42em !important}
-@media(max-width:920px){
-  .lb-brand__mark,.lb-brand__mark img{height:44px !important}
-  .lb-brand__mark img{width:44px !important}
-}
-
-/* --- quote form gets breathing room now that it sits on its own --- */
-#lbq{padding:clamp(3.2rem,7vw,5.5rem) 20px !important;border-top:1px solid var(--line)}
-#lbq .lbq-hp2{padding-block:.1rem}
-#lbq h2{font-family:var(--font-display);font-weight:700}
-#lbq button{background:var(--accent-dk) !important;color:#fff !important;font-weight:700}
-#lbq input,#lbq textarea{background:#fff !important}
-
-/* --- legal bar --- */
-.foot-legal{padding-block:1.6rem !important;border-top:1px solid rgba(255,255,255,.12)}
-.foot-legal .lb-legal{display:flex;gap:1.4rem;justify-content:center;font-size:.82rem}
-.foot-legal .lb-legal a{color:#B2C69E;text-decoration:none}
-.foot-legal .lb-legal a:hover{color:#fff;text-decoration:underline}
-
-/* --- status pill (was a bare 10px dot) --- */
-.lb-pulse{width:auto !important;height:auto !important;display:inline-flex;align-items:center;gap:.55rem;
-  bottom:1.4rem !important;right:1.4rem !important;padding:.6rem 1rem .6rem .85rem !important;
-  background:#101D0B !important;border:1px solid rgba(255,255,255,.24);border-radius:999px;
-  box-shadow:0 12px 28px rgba(0,0,0,.30);opacity:1 !important;animation:none !important;
-  font-family:var(--font-sans);font-size:.82rem;font-weight:700;line-height:1;z-index:999}
-.lb-pulse a{color:#EAF7DC !important;text-decoration:none}
-.lb-pulse:hover{border-color:var(--accent)}
-.lb-pulse__dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none;animation:lbPulse 2s ease-in-out infinite}
-@media(max-width:640px){.lb-pulse{font-size:.76rem;padding:.5rem .85rem .5rem .7rem;bottom:1rem;right:1rem}}
-
-/* --- gallery: keep the pair on one grid line, no orphan gap --- */
-.gal-grid{align-items:stretch}
-.gal{min-height:0}
-.gal-note{margin-top:1.2rem}
-</style>
-
-<style id="repair-143b">
-/* ============ AUDIT 3/10 — fixes ============ */
-
-/* 1. [class*=hero] min-height leaked onto inner hero blocks (every .hero-* child got
-   min-height:522px and they stacked on top of each other, clipping the h1 and CTAs).
-   Scope the section height, neutralise the children. */
-.hero{min-height:clamp(560px,74vh,700px) !important;max-height:none !important;
-  padding-top:86px !important;display:flex !important;align-items:center !important}
-.hero .hero-in{min-height:0 !important;max-height:none !important;display:block !important;
-  width:min(1180px,92vw) !important;margin-inline:auto !important;
-  padding-block:clamp(2.4rem,6vh,4.6rem) clamp(2.6rem,6vh,4rem) !important}
-.hero .hero-copy{min-height:0 !important;max-height:none !important;display:block !important;
-  width:min(740px,100%) !important;max-width:min(740px,100%) !important}
-.hero .hero-cta,.hero .hero-strip{min-height:0 !important;max-height:none !important;align-items:center !important}
-.hero .hero-bg,.hero .hero-shade{min-height:0 !important;max-height:none !important;display:block !important}
-.hero .hero-kicker{margin-bottom:.9rem !important}
-.hero h1{margin-bottom:.2rem}
-.hero .hero-sub{margin-top:.85rem !important;color:#E7F1DB !important}
-.hero .hero-cta{margin-top:1.6rem !important}
-.hero .hero-strip{margin-top:2.3rem !important;gap:2.4rem !important}
-.hero .hero-strip p{color:#CBD7BE !important}
-/* the extra :has() black veil on top of photo + canvas + shade was graying the hero out */
-[class*=hero]:has(canvas)::before{background:transparent !important}
-
-/* 2. Hero art: let the mowing stripes read, depth field on top at low alpha */
-.hero .hero-bg{filter:saturate(1.08) brightness(1.04) contrast(1.03) !important}
-.hero .hero-shade{background:
-  linear-gradient(98deg,rgba(6,18,6,.95) 0%,rgba(6,18,6,.90) 38%,rgba(6,18,6,.62) 66%,rgba(6,18,6,.30) 100%) !important}
-
-/* 3. Header: solid readable surface, light nav text, clear CTA, no duplicate action */
-.nav{background:rgba(13,24,11,.98) !important;border-bottom:2px solid var(--accent) !important}
-.nav-in{height:88px !important}
-.nav-links a{color:#F2F8EA !important;font-weight:600 !important;opacity:1 !important}
-.nav-links a:hover,.nav-links a:focus-visible{color:#fff !important;
-  text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
-.nav-links a.nav-cta{background:#0A7C36 !important;color:#FFF !important;text-decoration:none !important;
-  padding:.6rem 1.25rem !important;border:1px solid rgba(255,255,255,.22)}
-.nav-links a.nav-cta:hover{background:#0E8F3F !important;text-decoration:none !important}
-
-/* 4. Logo: render the 512px mark at a legible size instead of a 52px thumb, keep it crisp */
-.lb-brand__mark{height:66px !important;max-width:none !important}
-.lb-brand__mark img{height:66px !important;width:auto !important;max-width:220px !important;
-  image-rendering:auto;border-radius:5px}
-.lb-brand__name{color:#F7FCEF !important;letter-spacing:.005em !important}
-.lb-brand__sub{color:#9BDB74 !important}
-@media(max-width:920px){
-  .nav-in{height:78px !important}
-  .lb-brand__mark,.lb-brand__mark img{height:48px !important}
-}
-
-/* 5. Reveal states never leave content at opacity 0 (html.js .drop beat .lb-rv.is-in) */
-html.js .drop,html.js .drop.in,html.js .drop.is-in,
-.lb-rv,.lb-rv.is-in,[class~="rv"]{opacity:1 !important;transform:none !important;animation:none !important}
-
-/* 6. Status pill: reads as a real button, never a bare dot */
-.lb-pulse{opacity:1 !important;animation:none !important;gap:.55rem !important}
-.lb-pulse a{display:inline-block}
-
-/* 7. Gallery images must not crop to a squashed box on the shared grid line */
-.gal img{aspect-ratio:4/3 !important;height:auto}
-</style>
-
-<style id="repair-143c">
-/* ============ hero: rebuild the stacking + grid (the real 3/10 cause) ============
-   [class*=hero]>* forced every child to position:relative, so .hero-bg/.hero-shade
-   collapsed to height:0 and the photo never painted. LB-HDRFIX also made the hero
-   sticky, so it stretched to 1573px and pushed the copy to y=676. */
-
-/* 1. hero is a section in flow, its own stacking context */
-header.hero,.hero{position:relative !important;top:auto !important;isolation:isolate !important;
-  min-height:clamp(560px,72vh,680px) !important;max-height:none !important;
-  display:flex !important;align-items:center !important;overflow:hidden !important;
-  padding-top:96px !important;padding-bottom:0}
-
-/* 1b. the legacy [class*=hero] min-height clamp also lands on .hero-kicker/.hero-cta/
-   .hero-strip (they contain "hero") — clear it on every descendant, then let the
-   section size itself from the copy. */
-body .hero *{min-height:0 !important;max-height:none !important}
-
-/* 2. photo -> canvas -> scrim -> copy, all absolutely placed, none as flex items */
-.hero .hero-bg{position:absolute !important;inset:0 !important;width:auto !important;height:auto !important;
-  min-height:0 !important;max-height:none !important;z-index:0 !important;display:block !important;
-  background:#0C1A0C url("assets/hero.jpg") center 40%/cover no-repeat !important;
-  filter:saturate(1.1) brightness(1.02) contrast(1.04) !important}
-.hero #heroCanvas,.hero canvas{position:absolute !important;inset:0 !important;
-  width:100% !important;height:100% !important;min-height:0 !important;z-index:1 !important;display:block !important}
-.hero .hero-shade{position:absolute !important;inset:0 !important;width:auto !important;height:auto !important;
-  min-height:0 !important;max-height:none !important;z-index:2 !important;display:block !important;
-  background:linear-gradient(96deg,rgba(6,18,6,.96) 0%,rgba(6,18,6,.90) 34%,rgba(6,18,6,.58) 64%,rgba(6,18,6,.24) 100%) !important}
-
-/* 3. copy back on the page grid: 1180px column, real gutters, never flush to the edge */
-.hero .hero-in{position:relative !important;z-index:3 !important;display:block !important;
-  flex:0 0 auto !important;width:min(1180px,92vw) !important;max-width:min(1180px,92vw) !important;
-  min-height:0 !important;max-height:none !important;margin-inline:auto !important;
-  padding-block:clamp(2rem,4vh,3.4rem) clamp(2.2rem,4vh,3.6rem) !important}
-.hero .hero-copy{display:block !important;flex:none !important;width:min(720px,100%) !important;
-  max-width:min(720px,100%) !important;min-height:0 !important;text-align:left !important}
-.hero h1{margin-top:.1rem !important}
-
-/* 4. mobile: keep the photo readable, stack CTAs full width */
-@media(max-width:860px){
-  .hero{min-height:0 !important;padding-top:84px !important}
-  .hero .hero-shade{background:linear-gradient(180deg,rgba(6,18,6,.80),rgba(6,18,6,.92)) !important}
-  .hero .hero-in{padding-block:2rem 2.4rem !important}
-}
-
-/* 5. logo: crisp, correct plate, no squeeze. Source is 512px — render it sharp. */
-.lb-brand__mark,.lb-brand__mark img{height:54px !important;width:auto !important;max-width:none !important}
-.lb-brand__mark{display:flex !important;align-items:center !important;background:#fff !important;
-  border-radius:8px;padding:4px !important;box-shadow:0 2px 10px rgba(0,0,0,.28) !important}
-.lb-brand__mark img{border-radius:5px !important;image-rendering:auto !important;object-fit:contain !important}
-.foot-brand img{height:56px !important;width:auto !important;border-radius:6px !important;
-  background:#fff !important;padding:4px !important}
-
-/* 6. footer: it now lives in a real <footer>, so make the pale-on-pale text read */
-footer.foot{background:#16260E !important;border-top:2px solid rgba(255,255,255,.16) !important;
-  color:#B2C69E !important;padding-block:3.6rem 1.4rem !important}
-footer.foot .foot-grid{align-items:start !important;column-gap:3rem !important}
-footer.foot .foot-brand-name{color:#F4F8FA !important}
-footer.foot .foot-brand-sub{color:#9BC47C !important}
-footer.foot h4{color:#F4F8FA !important}
-footer.foot p,footer.foot a{color:#C6D8B2 !important}
-footer.foot a:hover{color:#fff !important}
-footer.foot .foot-bottom{border-top:1px solid rgba(255,255,255,.14) !important;
-  color:#9FB48B !important;margin-top:2.2rem !important}
-
-/* 7. the legal strip is a footer too — keep it a distinct thin dark bar, not padded like the main one */
-footer.foot-legal{background:#0E1B09 !important;border-top:1px solid rgba(255,255,255,.10) !important;
-  padding-block:1.1rem !important}
-footer.foot-legal .lb-legal a{color:#AFC49B !important}
-
-/* 8. status pill must never sit on top of the quote form fields */
-.lb-pulse{box-shadow:0 10px 24px rgba(0,0,0,.35) !important}
-
-/* 9. quote form: since .foot is now dark, the pelvis above it needs no special casing */
-#lbq{background:var(--bg) !important}
 </style>
 </body>
 </html>

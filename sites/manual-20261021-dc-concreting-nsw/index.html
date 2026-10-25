@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent-ink:#7e6322;
+:root{
   --paper:#12110f; --ink:#f4efe4; --muted:#a79d8a; --panel:#191814; --line:#2e2b23;
   --accent:#d2a53a; --acc-ink:#17130a; --acc-deep:#c9a95f;
   --bg:var(--paper); --text:var(--ink); --color-lime:var(--accent);
@@ -19,60 +19,60 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-b);font-size:clamp(16px,1.05vw,17.5px);line-height:1.365;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-b);font-size:clamp(16px,1.05vw,17.5px);line-height:1.65;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
-h1,h2,h3{font-family:var(--font-d);font-weight:400;line-height:1.34;letter-spacing:0.005em;margin:0}
+h1,h2,h3{font-family:var(--font-d);font-weight:400;line-height:1.04;letter-spacing:.005em;margin:0}
 h2{font-size:clamp(1.7rem,3.6vw,2.7rem);margin-bottom:14px}
-h3{font-size:1.06rem;letter-spacing:0.005em;margin-bottom:8px}
+h3{font-size:1.06rem;letter-spacing:.005em;margin-bottom:8px}
 p{margin:0 0 14px}
-.wrap{width:100%;max-width:1220px;margin:0 auto;padding-inline:32px}
+.wrap{width:100%;max-width:1220px;margin:0 auto;padding-inline:var(--gut)}
 .skip{position:absolute;left:-9999px}
 /* header */
 .hdr{position:sticky;top:0;z-index:40;background:var(--panel);background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.hdr-in{display:flex;align-items:center;gap:.9rem;padding:11px 32px;max-width:1220px;margin:0 auto}
+.hdr-in{display:flex;align-items:center;gap:.9rem;padding:.7rem var(--gut);max-width:1220px;margin:0 auto}
 .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;min-width:0}
 .brand img{height:clamp(30px,3.2vw,42px);width:auto}
 .brand-txt{display:flex;flex-direction:column;min-width:0}
 .brand-name{font-family:var(--font-d);font-weight:400;font-size:clamp(1rem,1.35vw,1.2rem);line-height:1;white-space:nowrap}
-.brand-sub{font-size:0.82rem;letter-spacing:0.05em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.brand-sub{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:3px}
 .brand--logoonly{display:block}
 .brand--logoonly .brand-stack{display:flex;flex-direction:column;gap:3px;min-width:0}
 .brand--logoonly .brand-stack img{height:clamp(26px,3.2vw,44px);width:auto;max-width:min(72vw,340px)}
 .brand--logoonly .brand-sub{margin-top:0}
-.nav{margin-left:auto;display:flex;gap:1.25rem;font-size:0.95rem}
+.nav{margin-left:auto;display:flex;gap:1.25rem;font-size:.95rem}
 .nav a{text-decoration:none;color:var(--muted)}
 .nav a:hover{color:var(--ink)}
-.hdr-cta{font-weight:700;background:var(--accent);color:var(--acc-ink);text-decoration:none;padding:.62rem 1.05rem;border-radius:999px;white-space:nowrap;font-size:0.9rem}
+.hdr-cta{font-weight:700;background:var(--accent);color:var(--acc-ink);text-decoration:none;padding:.62rem 1.05rem;border-radius:999px;white-space:nowrap;font-size:.9rem}
 .hdr-cta.tel{background:transparent;border:1px solid var(--line);color:var(--ink)}
 @media(max-width:900px){
   .hdr-in{flex-wrap:wrap;row-gap:.5rem;padding-block:.6rem}
   .brand{flex:1 1 auto}
-  .brand-name{font-size:0.98rem;white-space:normal;line-height:1.36}
+  .brand-name{font-size:.98rem;white-space:normal;line-height:1.06}
   .brand-sub{display:none}
   .hdr-cta{order:2;flex:0 0 auto}
-  .nav{order:3;flex-basis:100%;margin-left:0;gap:1.05rem;font-size:0.86rem;overflow-x:auto;white-space:nowrap;padding-bottom:2px}
+  .nav{order:3;flex-basis:100%;margin-left:0;gap:1.05rem;font-size:.86rem;overflow-x:auto;white-space:nowrap;padding-bottom:2px}
 }
 /* hero */
-.hero{position:relative;isolation:isolate;display:flex;align-items:flex-end;min-height:min(80vh,760px);color:#fcfcfc;overflow:hidden;background-color:#3b3730;background-image:url("assets/hero.jpg");background-blend-mode:multiply;background-size:cover;background-position:center 52%;background-repeat:no-repeat}
+.hero{position:relative;isolation:isolate;display:flex;align-items:flex-end;min-height:min(80vh,760px);color:#fff;overflow:hidden;background:#0e1013}
 .hero-stage{perspective:1200px}
 #heroCanvas{display:none}
 .hero-bg{position:absolute;inset:0;z-index:-2}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 58%}
-.hero-scrim{display:none}
-.hero-in{padding-block:46px}
-.hero h1{font-size:clamp(2.1rem,5.6vw,4.3rem);max-width:19ch;color:#6b6b6b;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.hero-scrim{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,7,5,.58) 0%,rgba(0,0,0,.10) 58%,rgba(0,0,0,0) 100%),linear-gradient(180deg,rgba(10,9,7,.76) 0%,rgba(10,9,7,.43) 42%,rgba(10,9,7,.17) 74%,rgba(10,9,7,.60) 100%)}
+.hero-in{padding-block:clamp(46px,7vw,96px)}
+.hero h1{font-size:clamp(2.1rem,5.6vw,4.3rem);max-width:19ch;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.35)}
 .hero h1 em{font-style:normal;color:#d2a53a}
-.hero-sub{max-width:56ch;margin-top:16px;font-size:clamp(1rem,1.35vw,1.18rem);color:#6b6b6b}
+.hero-sub{max-width:56ch;margin-top:16px;font-size:clamp(1rem,1.35vw,1.18rem);color:rgba(255,255,255,.92)}
 .hero-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:26px}
 .btn{display:inline-block;text-decoration:none;font-weight:700;padding:.85rem 1.4rem;border-radius:999px;white-space:nowrap}
 .btn-acc{background:var(--accent);color:var(--acc-ink)}
-.btn-ghost{border:1px solid rgba(255,255,255,.5);color:#6b6b6b}
+.btn-ghost{border:1px solid rgba(255,255,255,.5);color:#fff}
 .hero-facts{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:30px 0 0;padding:14px 18px;border:1px solid rgba(255,255,255,.24);border-radius:12px;background:rgba(8,9,11,.42);backdrop-filter:blur(3px);width:fit-content;max-width:100%}
-.hero-facts li{font-size:0.9rem;font-weight:600;color:#6b6b6b;letter-spacing:0.01em}
+.hero-facts li{font-size:.9rem;font-weight:600;color:#fff;letter-spacing:.01em}
 .hero-facts li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:2px;background:var(--accent);margin-right:.5rem;vertical-align:middle}
 /* generic sections */
-.sec{padding-block:54px;padding-inline:32px}
+.sec{padding-block:clamp(54px,7vw,104px);padding-inline:var(--gut)}
 .sec>.wrap{padding-inline:0}
 .sec.alt{background:var(--panel)}
 .lede{max-width:62ch;color:var(--muted);margin-bottom:34px}
@@ -82,15 +82,15 @@ p{margin:0 0 14px}
 @media(max-width:880px){.g3,.g2{grid-template-columns:1fr}}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--rad);padding:22px}
 .sec.alt .card{background:var(--paper)}
-.card .num{font-family:var(--font-d);font-size:0.82rem;letter-spacing:0.05em;color:var(--acc-deep);margin-bottom:10px}
-.card p{margin:0;color:var(--muted);font-size:0.95rem}
+.card .num{font-family:var(--font-d);font-size:.8rem;letter-spacing:.16em;color:var(--acc-deep);margin-bottom:10px}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
 /* gallery */
 .gal{display:grid;gap:14px;grid-template-columns:repeat(6,1fr)}
 .gal figure{margin:0;position:relative;overflow:hidden;border-radius:var(--rad);background:#111}
 .gal img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
 .gal .big{grid-column:span 4}
 .gal .sm{grid-column:span 2}
-.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px;font-size:0.82rem;color:#fcfcfc;background:rgba(18,16,12,.78)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;font-size:.8rem;color:#fff;background:linear-gradient(180deg,transparent,rgba(0,0,0,.72))}
 @media(max-width:880px){.gal{grid-template-columns:repeat(2,1fr)}.gal .big,.gal .sm{grid-column:span 1}}
 @media(max-width:560px){.gal{grid-template-columns:1fr}}
 /* about */
@@ -100,42 +100,44 @@ p{margin:0 0 14px}
 .ticks li{padding-left:1.6rem;position:relative;margin-bottom:.55rem;color:var(--muted)}
 .ticks li::before{content:"";position:absolute;left:0;top:.55em;width:.75rem;height:.75rem;border-right:3px solid var(--accent);border-bottom:3px solid var(--accent);transform:rotate(40deg)}
 .factbox{border:1px solid var(--line);border-radius:var(--rad);padding:24px;background:var(--panel)}
-.factbox dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.5rem 1rem;font-size:0.94rem}
+.factbox dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.5rem 1rem;font-size:.94rem}
 .factbox dt{color:var(--muted)}
 .factbox dd{margin:0;font-weight:600}
 /* process */
-.stages{display:grid;gap:16px;grid-template-columns:repeat(4,1fr);}
-@media(max-width:880px){.stages{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.stages{grid-template-columns:1fr}}
-.stage{border-top:2px solid var(--accent);padding-top:16px}
-
-.stage p{color:var(--muted);font-size:0.94rem;margin:0}
+.steps{display:grid;gap:16px;grid-template-columns:repeat(4,1fr);counter-reset:s}
+@media(max-width:880px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+.step{counter-increment:s;border-top:2px solid var(--accent);padding-top:16px}
+.step::before{content:"0" counter(s);font-family:var(--font-d);font-size:.82rem;letter-spacing:.14em;color:var(--acc-deep);display:block;margin-bottom:8px}
+.step p{color:var(--muted);font-size:.94rem;margin:0}
 /* cta band */
-.band{background:var(--ink);color:var(--paper);border-radius:var(--rad);padding:26px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+.band{background:var(--ink);color:var(--paper);border-radius:var(--rad);padding:clamp(26px,4vw,52px);display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
 .band h2{color:var(--paper);margin:0}
 .band .btn-acc{background:var(--accent);color:var(--acc-ink)}
 /* footer */
-footer{border-top:1px solid var(--line);padding-block:44px 34px;font-size:0.92rem;color:var(--muted)}
-.f-in{display:grid;gap:22px;grid-template-columns:1.3fr 1fr 1fr;max-width:1220px;margin:0 auto;padding-inline:32px}
+footer{border-top:1px solid var(--line);padding-block:44px 34px;font-size:.92rem;color:var(--muted)}
+.f-in{display:grid;gap:22px;grid-template-columns:1.3fr 1fr 1fr;max-width:1220px;margin:0 auto;padding-inline:var(--gut)}
 @media(max-width:880px){.f-in{grid-template-columns:1fr}}
 .f-in strong{color:var(--ink);font-family:var(--font-d);font-size:1.02rem;display:block;margin-bottom:8px}
 .f-in a{text-decoration:none}
 .f-in a:hover{text-decoration:underline}
-.f-leg{max-width:1220px;margin:26px auto 0;padding:18px 32px 32px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:0.84rem}
+.f-leg{max-width:1220px;margin:26px auto 0;padding:18px var(--gut) 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:.84rem}
 /* reveal */
 .js .rv{opacity:0;transform:translateY(16px)}
 .rv.on{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1!important;transform:none!important}}
 </style>
 <noscript><style>.js .rv{opacity:1!important;transform:none!important}</style></noscript>
-<style>.lb-soc{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;opacity:.85;text-decoration:none}.lb-soc:hover{opacity:1}footer .lb-soc{margin-right:8px}</style><style>header,nav.nav,.lb-brand{color:#111111!important}</style><style>nav,header{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:clamp(18px,4vw,64px)!important;background:#e7c25e!important;color:#111111!important;padding:14px 16px 32px;min-height:0!important;height:auto!important}.lb-brand{display:flex!important;align-items:center!important;gap:clamp(14px,2.5vw,38px)!important;flex:0 1 auto!important;min-width:0!important;text-decoration:none!important}.lb-mark{height:clamp(56px,5vw,72px)!important;width:auto!important;object-fit:contain!important;flex:none!important;}.lb-word{height:auto!important;max-height:clamp(26px,2.3vw,34px)!important;width:auto!important;object-fit:contain!important;max-width:min(32vw,460px)!important;flex:0 1 auto!important;min-width:0!important;}.lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}nav ul,nav .nav-links{display:flex!important;align-items:center!important;gap:clamp(12px,2vw,26px)!important;margin:0!important;padding:0!important;list-style:none!important;flex:1 1 auto!important;justify-content:flex-end!important}nav>div,nav>span,nav>.wrap,nav>.container,nav>.nav-in,nav>.nav-links{flex:1 1 auto!important;min-width:0!important;width:auto!important;max-width:none!important;margin-left:auto!important;margin-right:0!important}nav{flex-wrap:nowrap!important}.lb-brand{overflow:hidden!important}nav{min-width:0!important;flex-wrap:wrap!important;row-gap:6px!important}.hdr__in,.nav__in,.nav-inner{min-width:0!important;flex:1 1 auto!important}nav a{color:#111111!important}[class*=hero-copy],[class*=hero__copy],[class*=hero-in],[class*=hero-inner]{flex-wrap:nowrap!important}[class*=hero-copy]>*,[class*=hero__copy]>*,[class*=hero-in]>*,[class*=hero-inner]>*{flex:0 0 auto!important;min-height:0!important}body{background:#12110f!important;color:#f4efe4!important}section,.section{background-color:transparent!important}.nav-cta,.cta{background:#c7971e!important;color:#333333 !important;border-color:#c7971e!important}a{--lb-accent:#c7971e}body{padding-top:0!important}[class~=hero],.hero,header#top:not(.hdr),section#top{padding-top:32px 32px 32px;padding-bottom:32px;min-height:clamp(400px,50vh,540px)!important;max-height:none!important;align-content:center!important;align-items:stretch!important;flex-wrap:wrap!important;gap:14px!important}[class~=hero]:not(.lb-hgrid),.hero:not(.lb-hgrid),header#top:not(.hdr),section#top{display:flex!important;flex-direction:row!important;justify-content:center!important;position:relative!important}[class~=hero]>*,.hero>*,header#top>*,section#top>*{flex:1 1 min(430px,100%)!important;min-width:0!important;max-width:100%!important}[class~=hero]>canvas,.hero>canvas,[class~=hero]>[class*=scrim],[class~=hero]>.lbhf{flex:none!important}[class~=hero] canvas,.hero canvas,header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important}[class~=hero]>.hero-photo,[class~=hero]>.hero-shade,[class~=hero]>[class*=scrim],header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;margin:0!important}header{overflow:visible!important}.lb-hgrid{justify-items:stretch!important}p,li,.sub,.lede{color:rgba(244,239,228,.82)!important}[class*=hero] p,[class*=hero] li,[class*=hero] .sub,[class*=hero] .lede,.hero p{color:#6b6b6b !important;text-shadow:0 1px 12px rgba(0,0,0,.45)}@media(max-width:820px){nav{flex-wrap:wrap!important;gap:10px!important}}.lb-mark{height:clamp(56px,5vw,76px)!important}.lb-word{height:clamp(38px,4.4vw,62px)!important;max-height:none!important;max-width:min(60vw,900px)!important}</style><style>header,nav.nav,.lb-brand{--lb-name:currentColor}</style><style>header .brand,header .b-txt,header .b-txt *,nav .brand,nav .lb-brand,header nav a,nav.nav a,.site-head .brand,.brand__name{color:#0a0a0a!important}</style></head>
+</head>
 <body>
 <!-- LB-3D-HERO -->
 <a class="skip" href="#top">Skip to content</a>
-<header class="hdr" id="top"><a href="/" class="lb-brand" aria-label="DC Concreting NSW"><img style="max-width:900px" width="900" height="900" src="assets/logo-flat.png" alt="" class="lb-mark" loading="eager" decoding="async"><span class="lb-word lb-word--text">DC Concreting NSW</span></a>
+<header class="hdr" id="top">
   <div class="hdr-in">
-    
-    <span class="lb-socials"><a class="lb-soc" href="https://www.facebook.com/profile.php?id=100075797030921" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a></span><nav class="nav" aria-label="Main">
+    <a class="brand" href="#top">
+      <img src="assets/logomark.svg" alt="DC Concreting NSW logo"><span class="brand-txt"><span class="brand-name">DC Concreting NSW</span><span class="brand-sub">Concreting &middot; NSW</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
       <a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#quote">Quote</a>
     </nav>
     <a class="hdr-cta" href="#quote">Get a quote</a>
@@ -144,14 +146,14 @@ footer{border-top:1px solid var(--line);padding-block:44px 34px;font-size:0.92re
 
 <section class="hero hero-stage" id="hero">
   <canvas id="heroCanvas" aria-hidden="true"></canvas>
-  <div class="hero-bg"><!-- foreign-photo:hero.jpg --></div>
+  <div class="hero-bg"><img src="assets/hero.jpg" alt="Finished concrete driveway with a curved edge"></div>
   <div class="hero-scrim"></div>
   <div class="wrap hero-in">
     <h1>Concrete slabs and driveways, <em>built to last</em>.</h1>
     <p class="hero-sub">Preparation, steel, formwork, pour and finish, house and shed slabs, driveways, footings, paths and decorative concrete across New South Wales.</p>
     <div class="hero-cta">
       <a class="btn btn-acc" href="#quote">Request a quote</a>
-      <a class="btn btn-ghost" href="tel:+61427370805">Call 0427 370 805</a>
+      
     </div>
     <ul class="hero-facts"><li>Slabs &amp; footings</li><li>Driveways &amp; crossovers</li><li>Exposed aggregate</li><li>Servicing NSW</li></ul>
   </div>
@@ -162,12 +164,12 @@ footer{border-top:1px solid var(--line);padding-block:44px 34px;font-size:0.92re
   <div class="wrap rv">
     <h2>Concreting services</h2>
     <p class="lede">Professional concreting from the first cut to the final finish, with the free consultation and straight advice we are known for.</p>
-    <div style="display:none" class="grid g3">      <article class="card"><h3>Concrete slabs</h3><p>House slabs, shed slabs, extensions and garage floors, steel and formed.</p></article>
-      <article class="card"><h3>Driveways &amp; crossovers</h3><p>Plain, broomed and exposed aggregate driveways, cut to fall and finished hard.</p></article>
-      <article class="card"><h3>Footings &amp; formwork</h3><p>Strip footings, pad footings and pier holes, set out and poured to the drawings.</p></article>
-      <article class="card"><h3>Paths, patios &amp; shed slabs</h3><p>Backyard slabs, pathways, alfresco areas and shed floors.</p></article>
-      <article class="card"><h3>Exposed aggregate &amp; decorative finishes</h3><p>Aggregate, coloured and patterned finishes with tidy control joints.</p></article>
-      <article class="card"><h3>Tight-access &amp; pump pours</h3><p>Pump and barrow access for backyards and blocks the truck can't reach.</p></article></div>
+    <div class="grid g3">      <article class="card"><div class="num">01</div><h3>Concrete slabs</h3><p>House slabs, shed slabs, extensions and garage floors, steel and formed.</p></article>
+      <article class="card"><div class="num">02</div><h3>Driveways &amp; crossovers</h3><p>Plain, broomed and exposed aggregate driveways, cut to fall and finished hard.</p></article>
+      <article class="card"><div class="num">03</div><h3>Footings &amp; formwork</h3><p>Strip footings, pad footings and pier holes, set out and poured to the drawings.</p></article>
+      <article class="card"><div class="num">04</div><h3>Paths, patios &amp; shed slabs</h3><p>Backyard slabs, pathways, alfresco areas and shed floors.</p></article>
+      <article class="card"><div class="num">05</div><h3>Exposed aggregate &amp; decorative finishes</h3><p>Aggregate, coloured and patterned finishes with tidy control joints.</p></article>
+      <article class="card"><div class="num">06</div><h3>Tight-access &amp; pump pours</h3><p>Pump and barrow access for backyards and blocks the truck can't reach.</p></article></div>
   </div>
 </section>
 
@@ -175,7 +177,10 @@ footer{border-top:1px solid var(--line);padding-block:44px 34px;font-size:0.92re
   <div class="wrap rv">
     <h2>A job like this</h2>
     <p class="lede">Finished slabs, driveways and decorative concrete of the kind we pour every week.</p>
-    <div style="display:none" class="gal">      </div>
+    <div class="gal">      <figure class="sm"><img src="assets/gal_1.jpg" alt="Driveway with control joints - a job like this" loading="lazy"><figcaption>Driveway with control joints, a job like this</figcaption></figure>
+      <figure class="sm"><img src="assets/gal_2.jpg" alt="Patterned driveway finish - a job like this" loading="lazy"><figcaption>Patterned driveway finish, a job like this</figcaption></figure>
+      <figure class="sm"><img src="assets/gal_3.jpg" alt="Finished slab and side path - a job like this" loading="lazy"><figcaption>Finished slab and side path, a job like this</figcaption></figure>
+      <figure class="sm"><img src="assets/gal_4.jpg" alt="Decorative slab and apron - a job like this" loading="lazy"><figcaption>Decorative slab and apron, a job like this</figcaption></figure></div>
   </div>
 </section>
 
@@ -193,7 +198,6 @@ footer{border-top:1px solid var(--line);padding-block:44px 34px;font-size:0.92re
         <dt>Trade</dt><dd>Concreting &amp; concrete finishes</dd>
         <dt>Area</dt><dd>New South Wales</dd>
         <dt>Work</dt><dd>Slabs &middot; driveways &middot; footings</dd>
-        <dt>Phone</dt><dd><a href="tel:+61427370805">0427 370 805</a></dd>
         <dt>Quote</dt><dd>Free consultation</dd></dl>
     </div>
   </div>
@@ -203,10 +207,10 @@ footer{border-top:1px solid var(--line);padding-block:44px 34px;font-size:0.92re
   <div class="wrap rv">
     <h2>How a pour runs</h2>
     <p class="lede">Simple from the first call, and no surprises on the day.</p>
-    <div class="stages">      <div class="stage"><h3>Site check</h3><p>We look at access, levels and drainage before anything is priced.</p></div>
-      <div class="stage"><h3>Prep &amp; form</h3><p>Excavate, compact, set levels, place steel and form the edges.</p></div>
-      <div class="stage"><h3>Pour</h3><p>Concrete placed and screeded to fall, with pump or barrow access where needed.</p></div>
-      <div class="stage"><h3>Finish &amp; cure</h3><p>Broom, aggregate or pattern finish, control joints cut, site cleaned up.</p></div></div>
+    <div class="steps">      <div class="step"><h3>Site check</h3><p>We look at access, levels and drainage before anything is priced.</p></div>
+      <div class="step"><h3>Prep &amp; form</h3><p>Excavate, compact, set levels, place steel and form the edges.</p></div>
+      <div class="step"><h3>Pour</h3><p>Concrete placed and screeded to fall, with pump or barrow access where needed.</p></div>
+      <div class="step"><h3>Finish &amp; cure</h3><p>Broom, aggregate or pattern finish, control joints cut, site cleaned up.</p></div></div>
   </div>
 </section>
 
@@ -216,7 +220,7 @@ footer{border-top:1px solid var(--line);padding-block:44px 34px;font-size:0.92re
       <h2>Free consultation, no obligation</h2>
       <div class="hero-cta" style="margin:0">
         <a class="btn btn-acc" href="#quote">Request a quote</a>
-        <a class="btn btn-ghost" href="tel:+61427370805">Call 0427 370 805</a>
+        
       </div>
     </div>
   </div>
@@ -232,14 +236,14 @@ footer{border-top:1px solid var(--line);padding-block:44px 34px;font-size:0.92re
 #lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
 #lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
 #lbq .lbq-f{display:grid;gap:12px}
-#lbq label{display:block;font-size:0.86rem;letter-spacing:0.01em;text-transform:none;color:var(--lbq-muted);margin-bottom:5px}
-#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:0.95rem}
+#lbq label{display:block;font-size:.86rem;letter-spacing:.01em;text-transform:none;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
 #lbq textarea{min-height:96px;resize:vertical}
 #lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
-#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:var(--acc-ink,#14181c);font:inherit;font-weight:700;font-size:0.95rem;cursor:pointer;letter-spacing:0.02em}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:var(--acc-ink,#14181c);font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
 #lbq button:disabled{opacity:.6;cursor:wait}
-#lbq .lbq-st{margin:10px 0 0;font-size:0.9rem;color:var(--lbq-muted);min-height:1.2em}
-#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:0.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
 #lbq .lbq-cons input{width:auto}
 #lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 /* v1 card */
@@ -355,7 +359,7 @@ footer{border-top:1px solid var(--line);padding-block:44px 34px;font-size:0.92re
     </div>
   </div>
   <div class="f-leg"><span>&copy; <span id="yr">2026</span> DC Concreting NSW</span><span>Concreting &middot; NSW</span></div>
-<div class="lb-socials"><a class="lb-soc" href="https://www.facebook.com/profile.php?id=100075797030921" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a></div></footer>
+</footer>
 
 <script>
 (function(){

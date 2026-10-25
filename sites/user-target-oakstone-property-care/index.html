@@ -2,11 +2,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>OakStone Property Care &mdash; Mowing, Hedging &amp; Pressure Washing | Illawarra</title>
 <meta name="description" content="OakStone Property Care &mdash; mowing, hedge trimming, pressure washing, weed removal and backyard maintenance across the Illawarra. Free quotes, quick turnaround. Call 0403 155 598.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#EFE7DA;--ink:#2A211A;--accent:#A84A24;--accent-deep:#8F3B1B;--muted:#655745;--deep:#4A3220;--clay:#D9A566;--wash:#E4D5BE;--on-accent:#FBF3E4;--on-accent-head:#FDF8F0;--line:rgba(42,33,26,.28);--panel:rgba(42,33,26,.05)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'Archivo', sans-serif;line-height:1.36;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:'Archivo',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%}
 /* NAV, brand lockup: monogram tile + name + area line, phone right. No pill, no capsule. */
@@ -14,17 +16,25 @@ img{max-width:100%}
 .nav .brand{display:flex;align-items:center;gap:14px;min-width:0}
 .nav .brand-mark{height:48px;width:auto;object-fit:contain}
 .nav .brand-txt{display:flex;flex-direction:column;min-width:0}
-.nav .brand-name{font-family:'Archivo', serif;font-weight:900;font-size:clamp(18px,2vw,25px);line-height:1.3;letter-spacing:-.01em}
-.nav .brand-name b{color:var(--accent-ink,var(--accent));font-weight:900}
-.nav .brand-sub{font:600 11px/1.5 'Archivo',sans-serif;letter-spacing:0.05em;text-transform:uppercase;color:var(--muted);margin-top:5px}
-.nav .tel{font-family:'Archivo', serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);border-bottom:3px solid var(--accent);padding:6px 2px;white-space:nowrap}
-.nav .tel{font-family:'Archivo',sans-serif;letter-spacing:0.05em;text-transform:uppercase;color:var(--clay);margin-bottom:0}
-.hero h1{font-family:'Archivo', serif;font-weight:900;font-size:clamp(42px,6.4vw,92px);line-height:1.32;letter-spacing:-.02em;max-width:16ch;color:#FBF6EE;text-shadow:0 2px 26px rgba(0,0,0,.55)}
-.hero h1 em{font-style:normal;font-weight:500;color:var(--clay)}
+.nav .brand-name{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(18px,2vw,25px);line-height:1.05;letter-spacing:-.01em}
+.nav .brand-name b{color:var(--accent);font-weight:900}
+.nav .brand-sub{font:600 11px/1.5 'Archivo',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.nav .tel{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);border-bottom:3px solid var(--accent);padding:6px 2px;white-space:nowrap}
+.nav .tel:hover{color:var(--accent)}
+/* HERO, real work photo, full bleed, dark scrim, light copy */
+.hero{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:flex-end;min-height:min(80vh,800px);background:#1B1009;padding:clamp(64px,11vh,132px) 6vw clamp(46px,8vh,86px)}
+.lbhf{position:absolute;inset:0;z-index:0;overflow:hidden}
+.lbhf img{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block;filter:brightness(.62) saturate(.94)}
+.lbhf-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,12,7,.76) 0%,rgba(20,12,7,.46) 44%,rgba(18,11,6,.88) 100%)}
+#heroCanvas{perspective:800px}
+.hero-in{position:relative;z-index:3;width:100%;display:grid;grid-template-columns:1.5fr 1fr;gap:20px 5vw;align-items:end}
+.hero .k{grid-column:1/-1;font:600 12px/1.6 'Archivo',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--clay);margin-bottom:20px}
+.hero h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(42px,6.4vw,92px);line-height:1.02;letter-spacing:-.02em;max-width:16ch;color:#FBF6EE;text-shadow:0 2px 26px rgba(0,0,0,.55)}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--clay)}
 .hero .lede{max-width:58ch;font-size:clamp(15.5px,1.4vw,18px);color:rgba(248,240,229,.93);text-shadow:0 1px 16px rgba(0,0,0,.5)}
 .hero .lede b{color:#FBF6EE;font-weight:600}
-.hero .pull{border:1px solid var(--clay);padding-left:22px;color:rgba(240,229,213,.92);font-size:15px;line-height:1.37;margin-top:24px;max-width:54ch}
-.hero .pull b{display:block;font:600 11px/1.6 'Archivo',sans-serif;letter-spacing:0.05em;text-transform:none;color:#FBF6EE;margin-bottom:8px}
+.hero .pull{border-left:3px solid var(--clay);padding-left:22px;color:rgba(240,229,213,.92);font-size:15px;line-height:1.7;margin-top:24px;max-width:54ch}
+.hero .pull b{display:block;font:600 11px/1.6 'Archivo',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#FBF6EE;margin-bottom:8px}
 .hero .pull span{display:block}
 /* 3D hero layer, floating geometric depth (LB-3D-HERO, decorative) */
 .lb3d-stage{position:absolute;inset:0;overflow:hidden;pointer-events:none;perspective:1200px;z-index:2;--acc:var(--clay)}
@@ -40,102 +50,110 @@ img{max-width:100%}
 @keyframes lb3dFloat4{0%,100%{transform:translateX(0) translateZ(60px) rotateY(20deg)}50%{transform:translateX(-40px) translateZ(100px) rotateY(-20deg)}}
 @keyframes lb3dFloat5{0%,100%{transform:rotate(45deg) translateZ(100px) translateY(0)}50%{transform:rotate(225deg) translateZ(60px) translateY(-20px)}}
 @media (prefers-reduced-motion:reduce){.lb3d-stage{display:none}}
-/* MORTAR RULE, a 4px terracotta course-line between hero and wall (a joint, not a bar) */
-.mortar{height:4px;background:var(--accent);margin:0 6vw}
+/* MORTAR RULE, full-width terracotta bar dividing hero from wall */
+.mortar{height:14px;background:var(--accent);margin:0 6vw}
 .mortar.thin{height:3px;background:var(--ink);opacity:.25}
 /* BRICK-LAY, full-width courses, staggered joints, mortar gaps. NOT cards. */
-.wall{padding:32px 1px 32px}
+.wall{padding:clamp(40px,6vh,72px) 6vw clamp(20px,3vh,36px)}
 .course{display:grid;gap:10px;margin-bottom:10px}
 .course.even{grid-template-columns:1.35fr 1fr}
 .course.odd{display:grid;grid-template-columns:auto auto 1fr;gap:10px clamp(18px,2.5vw,40px);align-items:baseline;background:var(--deep);color:var(--bg);padding:34px 30px}
-.course.odd .num{font-family:'Archivo', serif;font-weight:900;font-size:13px;letter-spacing:0.05em;color:var(--clay)}
-.course.odd h2{font-family:'Archivo', serif;font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.312;letter-spacing:-.01em;color:var(--bg);white-space:nowrap}
-.course.odd p{grid-column:2/4;max-width:70ch;font-size:15px;line-height:1.365;color:#E8D9C2}
+.course.odd .num{font-family:'Fraunces',serif;font-weight:900;font-size:13px;letter-spacing:.22em;color:var(--clay)}
+.course.odd h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.12;letter-spacing:-.01em;color:var(--bg);white-space:nowrap}
+.course.odd p{grid-column:2/4;max-width:70ch;font-size:15px;line-height:1.65;color:#E8D9C2}
 .cell{padding:36px 30px;position:relative}
 .course.even .cell:first-child{background:var(--wash)}
 .course.even .cell:last-child{background:var(--accent);color:var(--on-accent)}
 .course.even .cell:last-child h2{color:var(--on-accent-head)}
 .course.even .cell:last-child p{color:var(--on-accent)}
 .course.even .cell:last-child .num{color:var(--on-accent)}
-.cell .num{font-family:'Archivo', serif;font-weight:900;font-size:13px;letter-spacing:0.05em;display:block;margin-bottom:14px;color:var(--accent-ink,var(--accent))}
+.cell .num{font-family:'Fraunces',serif;font-weight:900;font-size:13px;letter-spacing:.22em;display:block;margin-bottom:14px;color:var(--accent)}
 .course.even .cell:first-child .num{color:var(--accent-deep)}
-.cell h2{font-family:'Archivo', serif;font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.312;letter-spacing:-.01em}
-.cell p{margin-top:12px;font-size:15px;line-height:1.365;max-width:52ch;color:var(--muted)}
+.cell h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.12;letter-spacing:-.01em}
+.cell p{margin-top:12px;font-size:15px;line-height:1.65;max-width:52ch;color:var(--muted)}
 /* AREAS, stamped chips, square (no pills) */
-.areas{padding:32px 1px 32px}
-.areas .k{font:600 11px/1.6 'Archivo',sans-serif;letter-spacing:0.05em;text-transform:none;color:var(--muted);margin-bottom:18px}
+.areas{padding:clamp(24px,4vh,44px) 6vw clamp(50px,8vh,90px)}
+.areas .k{font:600 11px/1.6 'Archivo',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
 .areas span{display:inline-block;font-weight:600;font-size:13.5px;background:transparent;border:2px solid var(--ink);padding:10px 18px;margin:0 10px 10px 0}
 /* CTA, dark clay slab, oversized serif line, phone as underlined display type */
-.cta{margin:0 6vw clamp(60px,9vh,110px);background:var(--deep);color:var(--bg);padding:32px 28px;display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:center}
-.cta h3{font-family:'Archivo', serif;font-weight:900;font-size:clamp(30px,4.4vw,60px);line-height:1.3;max-width:14ch;letter-spacing:-.015em}
-.cta h3 em{font-style:normal;font-weight:500;color:var(--clay)}
-.cta .tel{font-family:'Archivo', serif;font-weight:700;font-size:clamp(24px,3vw,40px);color:var(--bg);border-bottom:5px solid var(--accent);padding-bottom:4px}
-.foot{font-family:'Archivo',sans-serif;letter-spacing:0.05em;text-transform:none;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 22px}
-.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px 30px;padding:26px 6vw 44px;font-size:13.5px;line-height:1.5;color:var(--muted)}
-.foot a:hover{color:var(--accent-ink,var(--accent))}
+.cta{margin:0 6vw clamp(60px,9vh,110px);background:var(--deep);color:var(--bg);padding:clamp(56px,9vh,110px) clamp(28px,5vw,80px);display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:center}
+.cta h3{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(30px,4.4vw,60px);line-height:1.05;max-width:14ch;letter-spacing:-.015em}
+.cta h3 em{font-style:italic;font-weight:500;color:var(--clay)}
+.cta .tel{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(24px,3vw,40px);color:var(--bg);border-bottom:5px solid var(--accent);padding-bottom:4px}
+.cta .tel:hover{color:var(--clay)}
+.foot{padding:clamp(26px,4vh,44px) 6vw clamp(34px,5vh,54px);font:600 12px/1.8 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 22px}
+.foot a:hover{color:var(--accent)}
+/* pulse dot (house snippet) */
+.lb-pulse{position:fixed;bottom:1.5rem;right:1.5rem;width:12px;height:12px;background:var(--accent);border-radius:50%;opacity:.6;animation:lbPulse 2s ease-in-out infinite;pointer-events:none;z-index:999}
+@keyframes lbPulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
 /* reveals */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .45s ease,transform .6s ease}
 .rv.on{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.lb-pulse{animation:none;opacity:.7}}
 noscript .rv{opacity:1;transform:none}
 /* mobile overflow guard */
 html,body{overflow-x:hidden}
 @media (max-width:820px){
   h1,h2,h3,.h1,.hero h1,.sec-title,.k,.kicker,.kick,.eyebrow,.tag-line,.tag,.hero-kicker,.hero-sub,.lead{white-space:normal!important;overflow-wrap:anywhere;word-break:break-word;max-width:100%!important}
-  .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(13px,3.1vw,13px)!important;letter-spacing:0.05em!important}
-  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.3!important}
+  .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(10px,3.1vw,13px)!important;letter-spacing:.22em!important}
+  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.05!important}
 }
 @media (max-width:760px){
   .nav{padding:16px 5vw;gap:12px}
   .nav .brand{gap:11px}
   .nav .brand-mark{height:48px;width:auto;object-fit:contain}
   .nav .brand-name{font-size:16px}
-  .nav .brand-sub{font-size:13px;letter-spacing:0.05em;margin-top:4px}
+  .nav .brand-sub{font-size:11px;letter-spacing:.16em;margin-top:4px}
   .nav .tel{font-size:14.5px;padding:4px 0;border-bottom-width:2px}
-  .hero{padding:52px 5vw 42px;min-height:70vh;background:#0f1115}
+  .hero{padding:52px 5vw 42px;min-height:70vh}
   .hero-in{grid-template-columns:1fr;gap:22px}
   .hero h1{font-size:clamp(34px,10vw,46px)}
   .hero .lede{max-width:none}
   .hero .pull{margin-top:0}
   .mortar{margin:0 5vw}
-  .wall{padding:32px 1px 16px}
+  .wall{padding:clamp(30px,5vh,50px) 5vw 16px}
   .course.even{grid-template-columns:1fr}
   .course.odd{grid-template-columns:auto 1fr;gap:8px 18px;padding:26px 22px}
   .course.odd h2{white-space:normal}
   .course.odd p{grid-column:2}
   .cell{padding:26px 22px}
-  .areas{padding:20px 1px 32px}
+  .areas{padding:20px 5vw clamp(40px,6vh,60px)}
   .cta{margin:0 5vw clamp(44px,7vh,70px);padding:44px 26px;flex-direction:column;align-items:flex-start;gap:22px}
 }
 @media (max-width:430px){
   .nav .brand-name{font-size:14px}
-  .nav .brand-sub{font-size:13px;letter-spacing:0.05em}
+  .nav .brand-sub{font-size:11px;letter-spacing:.12em}
   .nav .tel{font-size:13px}
   .nav .brand-mark{height:48px;width:auto;object-fit:contain}
 }
-</style><style>
+</style><style id="lb-brand-css">
 /* ==== LB BRAND (logo-true spanning wordmark) ==== */
 .lb-brand{display:inline-flex;align-items:center;gap:clamp(9px,1vw,16px);text-decoration:none;
- color:inherit;min-width:0;padding:0;background:#EFE7DA;border:0;flex:0 1 auto}
+ color:inherit;min-width:0;padding:0;background:none;border:0;flex:0 1 auto}
 .lb-brand__mark{flex:0 0 auto;display:block;height:clamp(34px,4.1vw,58px);width:auto;max-width:22vw}
 .lb-brand__mark img{display:block;height:100%;width:auto;max-width:22vw;object-fit:contain}
-.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:1.3}
-.lb-brand__name{font-family:var(--lb-disp, system-ui), sans-serif;font-weight:800;text-transform:none;
- font-size:clamp(21px,2.75vw,44px);letter-spacing:0.004em;white-space:nowrap;line-height:1.3;
+.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:.94}
+.lb-brand__name{font-family:var(--lb-disp,Inter),sans-serif;font-weight:800;text-transform:uppercase;
+ font-size:clamp(21px,2.75vw,44px);letter-spacing:.004em;white-space:nowrap;line-height:.92;
  color:var(--lb-name,currentColor)}
 .lb-brand__name .lb-acc{color:var(--lb-acc,currentColor)}
-.lb-brand__sub{font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;text-transform:none;
- font-size:clamp(13px,.82vw,12px);letter-spacing:0.05em;white-space:nowrap;margin-top:.34em;
+.lb-brand__sub{font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;text-transform:uppercase;
+ font-size:clamp(7px,.82vw,12px);letter-spacing:.30em;white-space:nowrap;margin-top:.34em;
  color:var(--lb-subc,currentColor);opacity:.86}
 .lb-brand__rule{display:block;height:3px;width:100%;margin-top:.5em;border-radius:2px;
- background:transparent}
+ background:linear-gradient(90deg,var(--lb-acc,currentColor),transparent)}
 @media (max-width:640px){
  .lb-brand__mark{height:clamp(30px,8vw,40px)}
  .lb-brand__name{font-size:clamp(18px,6.2vw,26px)}
- .lb-brand__sub{letter-spacing:0.05em;font-size:13px}
+ .lb-brand__sub{letter-spacing:.2em;font-size:7px}
 }
 </style>
-<style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style id="lb-motion-css">
+/* ==== LB MOTION PACK ==== */
+.lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
 /* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
    content. Unrevealed .rv wrappers left whole headers at opacity:0 (invisible logo). */
 header, .site-header, .page-header, nav.nav, .nav .rv, nav.rv, .header-inner, .nav-inner,
@@ -143,15 +161,16 @@ header .rv, .site-header .rv, .nav-inner .rv{
   opacity:1 !important; visibility:visible !important; transform:none !important;
 }
 .lb-rb{position:relative;width:100%;max-width:100%;overflow:hidden;background:#0c0d10}
+.lb-mq{max-width:100%;overflow:hidden}
 .lb-rb__track{position:relative;width:100%;aspect-ratio:16/7}
 .lb-rb__slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;will-change:opacity}
 .lb-rb__slide.is-on{opacity:1}
 .lb-rb__slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03);transition:transform 7s linear}
 .lb-rb__slide.is-on img{transform:scale(1.10)}
-.lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:14px;
- background:rgba(6,7,10,.72);color:#fff;
- font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;letter-spacing:0.05em;text-transform:none;
- font-size:clamp(13px,1vw,13px);z-index:2}
+.lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2.2vw,30px);
+ background:linear-gradient(180deg,transparent,rgba(6,7,10,.72));color:#fff;
+ font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+ font-size:clamp(9px,1vw,13px);z-index:2}
 .lb-rb__dots{position:absolute;top:50%;right:clamp(10px,1.6vw,22px);transform:translateY(-50%);
  display:flex;flex-direction:column;gap:9px;z-index:3}
 .lb-rb__dots button{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.7);
@@ -173,7 +192,7 @@ a.btn:hover,.btn:hover,button.btn:hover,.nav-cta a:hover{transform:translateY(-2
  box-shadow:0 10px 24px -12px rgba(0,0,0,.55);filter:brightness(1.05)}
 a.btn:active,.btn:active,button.btn:active,.nav-cta a:active{transform:translateY(0) scale(.985)}
 a.btn::after,.btn::after,.nav-cta a::after{content:'';position:absolute;top:0;bottom:0;width:38%;
- left:-60%;background:rgba(255,255,255,.32);
+ left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);
  transform:skewX(-18deg);transition:left .55s ease;pointer-events:none}
 a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
 
@@ -184,9 +203,20 @@ a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
  .lb-rb__slide img{transform:none!important;transition:none!important}
  a.btn::after,.btn::after,.nav-cta a::after{display:none}
 }
-@media (prefers-reduced-motion: reduce){}
+
+/* marquee band (professional, reference-derived) */
+.lb-mq{position:relative;overflow:hidden;background:#0b0c10;border-top:1px solid rgba(255,255,255,.10);
+ border-bottom:1px solid rgba(255,255,255,.10)}
+.lb-mq__in{display:flex;width:max-content;animation:lb-mq 34s linear infinite}
+.lb-mq:hover .lb-mq__in{animation-play-state:paused}
+.lb-mq__in span{display:inline-flex;align-items:center;gap:clamp(18px,3vw,44px);
+ padding:clamp(11px,1.5vw,19px) clamp(14px,2vw,26px);color:#fff;font-family:var(--lb-disp,Inter),sans-serif;
+ font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:clamp(11px,1.25vw,17px);white-space:nowrap}
+.lb-mq__in span i{font-style:normal;color:var(--lb-acc,#e51924)}
+@keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
 </style>
-<style>
+<style id="lb-depth-css">
 /* ==== LB DEPTH PACK, layered shadow + gradient surfaces ==== */
 :root{
   --lb-acc: var(--acc, var(--accent, #e51924));
@@ -204,14 +234,15 @@ section{ position:relative; }
 section::before{
   content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
   background:
-    transparent,
-    transparent;
+    radial-gradient(120% 70% at 12% 0%, color-mix(in srgb, var(--lb-acc) 7%, transparent) 0%, transparent 58%),
+    radial-gradient(90% 60% at 100% 100%, color-mix(in srgb, var(--lb-acc) 5%, transparent) 0%, transparent 60%);
 }
 section > *{ position:relative; z-index:1; }
 
 /* cards / panels / figures: gradient surface + hairline + elevation, lift on hover */
 .card,.cards > *,.panel,.tile,.service,.box,.grid > article,.grid > div,figure,.gal figure,.gallery figure{
-  background:transparent;
+  background:linear-gradient(180deg, color-mix(in srgb, var(--lb-paper) 100%, transparent) 0%,
+                                    color-mix(in srgb, var(--lb-ink) 3%, var(--lb-paper)) 100%);
   border:1px solid var(--lb-hair);
   border-radius:14px;
   box-shadow:var(--lb-e1);
@@ -232,7 +263,7 @@ figure:hover img, .gal figure:hover img, .gallery figure:hover img{ transform:sc
 
 /* buttons: gradient fill, inset highlight, layered shadow */
 a.btn,.btn,button.btn,.nav-cta a,.btn-primary{
-  background-image:rgba(255,255,255,.16);
+  background-image:linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0) 55%);
   box-shadow:var(--lb-e1), inset 0 1px 0 rgba(255,255,255,.22);
   border-radius:10px;
 }
@@ -243,7 +274,8 @@ a.btn:hover,.btn:hover,button.btn:hover,.nav-cta a:hover{
 
 /* nav: subtle vertical gradient + hairline for separation from the page */
 .nav,nav,.site-header,header.nav{
-  background-image:transparent;
+  background-image:linear-gradient(180deg, color-mix(in srgb, var(--lb-paper) 96%, transparent) 0%,
+                                         color-mix(in srgb, var(--lb-ink) 3%, var(--lb-paper)) 100%);
   box-shadow:0 1px 0 var(--lb-hair), 0 6px 20px -14px rgba(8,10,14,.28);
 }
 
@@ -257,108 +289,72 @@ footer{ box-shadow:0 -1px 0 var(--lb-hair), 0 -14px 40px -30px rgba(8,10,14,.5);
 /* dark surfaces get stronger, softer shadows */
 @media (prefers-color-scheme: dark){ :root{ --lb-hair: rgba(255,255,255,.12); } }
 @supports not (background: color-mix(in srgb, red 5%, blue)){
-  section::before{ background:rgba(229,25,36,.06); }
+  section::before{ background:radial-gradient(120% 70% at 12% 0%, rgba(229,25,36,.06) 0%, transparent 58%); }
 }
 @media (prefers-reduced-motion: reduce){
   .card,.cards > *,.panel,.tile,figure,.gal figure, a.btn,.btn, img{ transition:none!important; transform:none!important; }
 }
 </style>
-<style>
+<style id="lb-hero-css">
 canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-<style>/* header brand must never be hidden by reveal wrappers.
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
 .site-header,.header{z-index:50}
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-<style>.lb-brand__mark{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;margin-right:.6rem}.lb-brand__mark img{display:block;height:clamp(34px,3.4vw,44px);width:auto;border-radius:8px}</style>
-<style>/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style><!--LB-EMPTY--><style>[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
-
-<!--LB-HERO-HEIGHT--><style>[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.26)}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
-
-<!--LB-RV--><style>.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
-
-<!--LB-CANVASZ--><style>[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
-
-<!--LB-H1W--><style>[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.38!important}</style><!--/LB-H1W-->
-
-<!--LB-HEROFIX2--><style>[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.28)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
-
-<!--LB-RM--><style>@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
-
-<!--LB-HEROGRID--><style>[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
-<style>
-/* header rebuilt by hand: bar is the logo's own brown, mark at 62px, logo wordmark crop beside it */
-header.site-head{background:#A84A24!important;border-bottom:2px solid #7E3417!important;padding-block:16px!important;position:sticky;top:0;z-index:70;gap:clamp(14px,2vw,26px)!important;align-items:center!important}
-header.site-head .oak-lock{display:flex!important;align-items:center;gap:15px!important;flex:0 0 auto;text-decoration:none}
-header.site-head .oak-lock__mark{display:block;height:62px!important;width:auto!important;max-width:none!important;object-fit:contain}
-header.site-head .oak-lock__word{display:block;height:22px!important;width:auto!important;max-width:none!important;object-fit:contain}
-header.site-head .nav-links a{color:#FBF3E4!important}
-header.site-head .nav-links a:hover{color:#fff!important;border-bottom-color:#FBF3E4!important}
-header.site-head .tel{color:#FBF3E4!important;border-bottom-color:#FBF3E4!important}
-@media(max-width:820px){header.site-head .oak-lock__mark{height:54px!important}header.site-head .oak-lock__word{height:19px!important}header.site-head .oak-lock{gap:11px!important}}
-</style>
-<style>.lb-soc{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;opacity:.85;text-decoration:none}.lb-soc:hover{opacity:1}footer .lb-soc{margin-right:8px}</style><style>img{max-width:100%;height:auto}[style*="background-image"]{background-size:cover;background-position:center}</style><style>nav,header{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:clamp(18px,4vw,64px)!important;background:#a84a24!important;color:#ffffff!important;padding:14px 16px 32px;min-height:0!important;height:auto!important}.lb-brand{display:flex!important;align-items:center!important;gap:clamp(14px,2.5vw,38px)!important;flex:0 1 auto!important;min-width:0!important;text-decoration:none!important}.lb-mark{height:clamp(56px,5vw,72px)!important;width:auto!important;object-fit:contain!important;flex:none!important;-webkit-mask-image:radial-gradient(ellipse at center,#000 74%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 74%,transparent 100%)}.lb-word{height:auto!important;max-height:clamp(26px,2.3vw,34px)!important;width:auto!important;object-fit:contain!important;max-width:min(32vw,460px)!important;flex:0 1 auto!important;min-width:0!important;-webkit-mask-image:radial-gradient(ellipse at center,#000 78%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 78%,transparent 100%)}.lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}nav ul,nav .nav-links{display:flex!important;align-items:center!important;gap:clamp(12px,2vw,26px)!important;margin:0!important;padding:0!important;list-style:none!important;flex:1 1 auto!important;justify-content:flex-end!important}nav>div,nav>span,nav>.wrap,nav>.container,nav>.nav-in,nav>.nav-links{flex:1 1 auto!important;min-width:0!important;width:auto!important;max-width:none!important;margin-left:auto!important;margin-right:0!important}nav{flex-wrap:nowrap!important}.lb-brand{overflow:hidden!important}nav{min-width:0!important;flex-wrap:wrap!important;row-gap:6px!important}.hdr__in,.nav__in,.nav-inner{min-width:0!important;flex:1 1 auto!important}nav a{color:#ffffff!important}[class*=hero-copy],[class*=hero__copy],[class*=hero-in],[class*=hero-inner]{flex-wrap:nowrap!important}[class*=hero-copy]>*,[class*=hero__copy]>*,[class*=hero-in]>*,[class*=hero-inner]>*{flex:0 0 auto!important;min-height:0!important}body{background:#a84a24!important;color:#ffffff!important}section,.section{background-color:transparent!important}.nav-cta,.cta{background:#a44119!important;color:#fff!important;border-color:#a44119!important}a{--lb-accent:#a44119}body{padding-top:0!important}[class~=hero],.hero,header#top:not(.hdr),section#top{padding-top:32px 32px 32px;padding-bottom:32px;min-height:clamp(400px,50vh,540px)!important;max-height:none!important;align-content:center!important;align-items:stretch!important;flex-wrap:wrap!important;gap:14px!important}[class~=hero]:not(.lb-hgrid),.hero:not(.lb-hgrid),header#top:not(.hdr),section#top{display:flex!important;flex-direction:row!important;justify-content:center!important;position:relative!important}[class~=hero]>*,.hero>*,header#top>*,section#top>*{flex:1 1 min(430px,100%)!important;min-width:0!important;max-width:100%!important}[class~=hero]>canvas,.hero>canvas,[class~=hero]>[class*=scrim],[class~=hero]>.lbhf{flex:none!important}[class~=hero] canvas,.hero canvas,header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important}[class~=hero]>.hero-photo,[class~=hero]>.hero-shade,[class~=hero]>[class*=scrim],header#top>canvas,section#top>canvas{position:absolute!important;inset:0!important;margin:0!important}header{overflow:visible!important}.lb-hgrid{justify-items:stretch!important}p,li,.sub,.lede{color:rgba(255,255,255,.72)!important}[class*=hero] p,[class*=hero] li,[class*=hero] .sub,[class*=hero] .lede,.hero p{color:rgba(255,255,255,.88)!important;text-shadow:0 1px 12px rgba(0,0,0,.45)}@media(max-width:820px){nav{flex-wrap:wrap!important;gap:10px!important}}.lb-mark{height:clamp(56px,5vw,76px)!important}.lb-word{height:clamp(38px,4.4vw,62px)!important;max-height:none!important;max-width:min(60vw,900px)!important}</style><style>header .brand,header .b-txt,header .b-txt *,nav .brand,nav .lb-brand,header nav a,nav.nav a,.site-head .brand,.brand__name{color:#ffffff!important}</style><style id="lb-contrast-fix">
-/* contrast stated per element, measured in the browser */
-section.wall:nth-of-type(2) div.course.even:nth-of-type(1) div.cell.rv:nth-of-type(1) h2{color:#0b0b0b !important}
-section.wall:nth-of-type(2) div.course.even:nth-of-type(1) div.cell.rv:nth-of-type(1) p{color:#0b0b0b !important}
-section.wall:nth-of-type(2) div.course.even:nth-of-type(1) div.cell.rv:nth-of-type(2) p{color:#ffffff !important}
-section.wall:nth-of-type(2) div.course.even:nth-of-type(3) div.cell.rv:nth-of-type(1) h2{color:#0b0b0b !important}
-section.wall:nth-of-type(2) div.course.even:nth-of-type(3) div.cell.rv:nth-of-type(1) p{color:#0b0b0b !important}
-section.wall:nth-of-type(2) div.course.even:nth-of-type(3) div.cell.rv:nth-of-type(2) p{color:#ffffff !important}
-section.areas:nth-of-type(3) div.k{color:#ffffff !important}
-body section.cta:nth-of-type(4) h3.lb-rv em{color:#ffffff !important}
-#lbq-h{color:#ffffff !important}
-section.v4:nth-of-type(5) div.lbq-w.lb-rv p.lbq-s{color:#ffffff !important}
-form div.lbq-g:nth-of-type(1) div:nth-of-type(1) label{color:#ffffff !important}
-form div.lbq-g:nth-of-type(1) div:nth-of-type(2) label{color:#ffffff !important}
-form div.lbq-g:nth-of-type(1) div:nth-of-type(3) label{color:#ffffff !important}
-form div.lbq-g:nth-of-type(1) div.lbq-full:nth-of-type(4) label{color:#ffffff !important}
-form label.lbq-cons{color:#ffffff !important}
-html body footer.foot span:nth-of-type(1){color:#ffffff !important}
-html body footer.foot span:nth-of-type(2){color:#ffffff !important}
-html body footer.foot a{color:#ffffff !important}
-body footer.foot span.lb-legal:nth-of-type(3) a:nth-of-type(1){color:#ffffff !important}
-body footer.foot span.lb-legal:nth-of-type(3) a:nth-of-type(2){color:#ffffff !important}
-</style>
+<style id="lb-markimg">.lb-brand__mark{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;margin-right:.6rem}.lb-brand__mark img{display:block;height:clamp(34px,3.4vw,44px);width:auto;border-radius:8px}</style>
 </head><body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
-<header class="nav site-head" id="top"><a href="/" class="lb-brand" aria-label="OakStone Property Care &mdash; Mowing, Hedging & Pressure Washing"><img style="max-width:326px" width="326" height="164" src="assets/logo-flat-mark.png" alt="" class="lb-mark" loading="eager" decoding="async"><img style="max-width:2978px" width="2978" height="115" src="assets/logo-word.png" alt="" class="lb-word" loading="eager" decoding="async"><span class="lb-sr">OakStone Property Care &mdash; Mowing, Hedging & Pressure Washing</span></a>
-  <a class="oak-lock" href="#top" aria-label="OakStone Property Care - Home"><img style="max-width:1200px" class="oak-lock__mark" src="assets/oak-mark.png" alt="" width="1200" height="1200" loading="eager" decoding="async"><!-- foreign-photo:word.png --></a>
-  <nav class="nav-links" aria-label="Primary"><a href="#services">Services</a><a href="#areas">Areas</a><a href="#lbq">Get a quote</a></nav>
-  <a class="tel" href="tel:0403155598">0403 155 598</a>
-</header>
+<div class="nav" id="top">
+  <a class="lb-brand" href="#top" aria-label="OakStone Property Care - Home" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#A84A24;--lb-subc:#A84A24;--lb-acc:#A84A24;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.svg" alt=""></span><span class="lb-brand__word"><span class="lb-brand__name">OakStone Property Care</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
+  <a class="tel" href="tel:+61403155598">0403 155 598</a>
+</div>
+<!-- LB-3D-HERO -->
 <section class="hero" aria-label="OakStone Property Care">
+  <div class="lbhf" aria-hidden="true"><img src="images/oakstone-property-care-work-01.jpg" alt=""></div>
+  <div class="lbhf-scrim" aria-hidden="true"></div>
   <canvas id="heroCanvas" aria-hidden="true"></canvas>
-  <h1>Lawns kept, hedges shaped, driveways washed &mdash; <em>properly</em>, all over the Illawarra.</h1>
-  <p class="hero-lede">Mowing, hedging, pressure washing and backyard clean-ups for homes and businesses &mdash; no-obligation quotes, quick turnaround.</p>
-  <a class="hero-cta" href="tel:0403155598">Call 0403 155 598 <span aria-hidden="true">&rarr;</span></a>
+  <div class="lb3d-stage" aria-hidden="true">
+    <div class="lb3d-shape s1"></div>
+    <div class="lb3d-shape s2"></div>
+    <div class="lb3d-shape s3"></div>
+    <div class="lb3d-shape s4"></div>
+    <div class="lb3d-shape s5"></div>
+  </div>
+  <div class="hero-in">
+    <div class="k">ILLAWARRA PROPERTY MAINTENANCE</div>
+    <h1 data-ux="words">Mowing, hedges &amp; <em>pressure washing</em>.</h1>
+    <p class="lede">OakStone Property Care provides cheap, affordable and efficient property maintenance across the Illawarra and surrounding areas. Mowing, hedge trimming, pressure washing, weed removal and backyard maintenance &mdash; free quotes, quick turnaround.</p>
+    <div class="pull"><b>How a job runs</b><span>Call or message with a few details &mdash; we&rsquo;ll take a look and send a free, no-obligation quote, then get the job done quickly.</span></div>
+  </div>
 </section>
 <div class="mortar"></div>
-<section class="wall" id="services" aria-label="Services"><div class='course even'><div class='cell rv' style='--i:0'><span class='num'>01</span><h2>Mowing &amp; Lawn Care</h2><p>Regular and one-off mowing, edging, whipper-snipping and lawn tidying for residential and commercial properties.</p></div><div class='cell rv' style='--i:1'><span class='num'>02</span><h2>Hedge Trimming</h2><p>Hedge trimming, shaping and canopy lifting &mdash; keep your boundaries and garden walls clean.</p></div></div><div class='course odd rv' style='--i:2'><span class='num'>03</span><h2>Pressure Washing</h2><p>High-pressure cleaning for driveways, paths, fences, roofs and walls &mdash; instant curb appeal.</p></div><div class='course even'><div class='cell rv' style='--i:3'><span class='num'>04</span><h2>Weed Removal &amp; Spraying</h2><p>Weed control, spraying and manual removal for gardens, paths, driveways and fence lines.</p></div><div class='cell rv' style='--i:4'><span class='num'>05</span><h2>Backyard Maintenance</h2><p>Full backyard tidy-ups, green waste removal, garden clean-outs and general property care.</p></div></div><div class='course odd rv' style='--i:5'><span class='num'>06</span><h2>Free Quotes</h2><p>No-obligation quotes for any property maintenance job &mdash; call or message for a competitive price.</p></div></section>
+<section class="wall" aria-label="Services"><div class='course even'><div class='cell rv' style='--i:0'><span class='num'>01</span><h2>Mowing &amp; Lawn Care</h2><p>Regular and one-off mowing, edging, whipper-snipping and lawn tidying for residential and commercial properties.</p></div><div class='cell rv' style='--i:1'><span class='num'>02</span><h2>Hedge Trimming</h2><p>Hedge trimming, shaping and canopy lifting &mdash; keep your boundaries and garden walls clean.</p></div></div><div class='course odd rv' style='--i:2'><span class='num'>03</span><h2>Pressure Washing</h2><p>High-pressure cleaning for driveways, paths, fences, roofs and walls &mdash; instant curb appeal.</p></div><div class='course even'><div class='cell rv' style='--i:3'><span class='num'>04</span><h2>Weed Removal &amp; Spraying</h2><p>Weed control, spraying and manual removal for gardens, paths, driveways and fence lines.</p></div><div class='cell rv' style='--i:4'><span class='num'>05</span><h2>Backyard Maintenance</h2><p>Full backyard tidy-ups, green waste removal, garden clean-outs and general property care.</p></div></div><div class='course odd rv' style='--i:5'><span class='num'>06</span><h2>Free Quotes</h2><p>No-obligation quotes for any property maintenance job &mdash; call or message for a competitive price.</p></div></section>
 <div class="mortar thin"></div>
-<section class="areas" id="areas"><div class="k">Service area</div><span>Illawarra</span><span>Wollongong</span><span>Shellharbour</span><span>Kiama</span><span>Dapto</span><span>Unanderra</span><span>Warrawong</span><span>Figtree</span><span>Gwynneville</span><span>Keiraville</span><span>Mount Keira</span><span>Mount Saint Thomas</span><span>Corrimal</span><span>Tarrawanna</span><span>Fairy Meadow</span><span>North Wollongong</span><span>West Wollongong</span><span>Coniston</span><span>Mangerton</span><span>Berkeley</span><span>Lake Heights</span><span>Cringila</span><span>Port Kembla</span></section>
-<section class="cta"><h3>Ready when you are. <em>Free quotes, quick turnaround.</em></h3><a class="tel" href="tel:0403155598">0403 155 598</a></section>
+<section class="areas"><div class="k">Service area</div><span>Illawarra</span><span>Wollongong</span><span>Shellharbour</span><span>Kiama</span><span>Dapto</span><span>Unanderra</span><span>Warrawong</span><span>Figtree</span><span>Gwynneville</span><span>Keiraville</span><span>Mount Keira</span><span>Mount Saint Thomas</span><span>Corrimal</span><span>Tarrawanna</span><span>Fairy Meadow</span><span>North Wollongong</span><span>West Wollongong</span><span>Coniston</span><span>Mangerton</span><span>Berkeley</span><span>Lake Heights</span><span>Cringila</span><span>Port Kembla</span></section>
+<section class="cta"><h3>Ready when you are. <em>Free quotes, quick turnaround.</em></h3><a class="tel" href="tel:+61403155598">0403 155 598</a></section>
 <div class="mortar thin"></div>
 <section id="lbq" class="v4" aria-labelledby="lbq-h">
   <style>
-#lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#A84A24))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,#9aa6b2);--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#c4fb24))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,#9aa6b2);--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
 #lbq *{box-sizing:border-box}
 #lbq .lbq-w{max-width:1060px;margin:0 auto}
 #lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
 #lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
 #lbq .lbq-f{display:grid;gap:12px}
-#lbq label{display:block;font-size:0.82rem;letter-spacing:0.05em;text-transform:none;color:var(--lbq-muted);margin-bottom:5px}
-#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:0.95rem}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
 #lbq textarea{min-height:96px;resize:vertical}
 #lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
-#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#FBF3E4;font:inherit;font-weight:700;font-size:0.95rem;cursor:pointer;letter-spacing:0.02em}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#FBF3E4;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
 #lbq button:disabled{opacity:.6;cursor:wait}
-#lbq .lbq-st{margin:10px 0 0;font-size:0.9rem;color:var(--lbq-muted);min-height:1.2em}
-#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:0.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
 #lbq .lbq-cons input{width:auto}
 #lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 /* v1 card */
@@ -375,7 +371,7 @@ body footer.foot span.lb-legal:nth-of-type(3) a:nth-of-type(2){color:#ffffff !im
 /* v3 split */
 #lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
 #lbq.v3 .lbq-g{display:grid;gap:12px}
-#lbq.v3 .lbq-hp2{border:1px solid var(--lbq-accent);padding-left:16px}
+#lbq.v3 .lbq-hp2{border-left:3px solid var(--lbq-accent);padding-left:16px}
 @media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
 /* v4 minimal */
 #lbq.v4 .lbq-w{max-width:620px}
@@ -457,8 +453,8 @@ body footer.foot span.lb-legal:nth-of-type(3) a:nth-of-type(2){color:#ffffff !im
 })();
 </script>
 </section>
-<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img style="max-width:1200px" width="1200" height="1132" src="images/oakstone-property-care-work-01.jpg" alt="OakStone Property Care &mdash; Mowing, Hedging &amp; Pressure Washing" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img style="max-width:2200px" width="2200" height="2076" src="assets/oakstone-work-01.jpg" alt="OakStone Property Care &mdash; Mowing, Hedging &amp; Pressure Washing" loading="lazy" decoding="async"></div><div class="lb-rb__slide" style="background:#0b0c10"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp, system-ui), sans-serif;font-weight:800;text-transform:none;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">OakStone Property Care &mdash; Mowing, Hedging &amp; Pressure Washing</span></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button></div><div class="lb-rb__cap">OakStone Property Care &mdash; Mowing, Hedging &amp; Pressure Washing &mdash; recent work</div></div></section><footer class="foot"><span>OakStone Property Care</span><span>Quick &amp; Efficient Property Care &middot; Illawarra</span><a href="https://www.instagram.com/oakstonepropertycare_" target="_blank" rel="noopener">Instagram</a><span class="lb-legal"><a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms</a></span><div class="lb-socials"><a class="lb-soc" href="https://www.instagram.com/oakstonepropertycare_" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a><a class="lb-soc" href="https://www.instagram.com/oakstonepropertycare_" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a></div></footer>
-
+<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img src="images/oakstone-property-care-work-01.jpg" alt="OakStone Property Care &mdash; Mowing, Hedging &amp; Pressure Washing" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img src="assets/oakstone-work-01.jpg" alt="OakStone Property Care &mdash; Mowing, Hedging &amp; Pressure Washing" loading="lazy" decoding="async"></div><div class="lb-rb__slide" style="background:linear-gradient(120deg,#0b0c10 0%,#e51924 165%)"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp,Inter),sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">OakStone Property Care &mdash; Mowing, Hedging &amp; Pressure Washing</span></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button></div><div class="lb-rb__cap">OakStone Property Care &mdash; Mowing, Hedging &amp; Pressure Washing &mdash; recent work</div></div></section><footer class="foot"><span>OakStone Property Care</span><span>Quick &amp; Efficient Property Care &middot; Illawarra</span><a href="https://www.instagram.com/oakstonepropertycare_" target="_blank" rel="noopener">Instagram</a></footer>
+<div class="lb-pulse" aria-hidden="true"></div>
 <noscript><style>.rv{opacity:1;transform:none}</style></noscript>
 <script>
 (function(){
@@ -516,117 +512,99 @@ body footer.foot span.lb-legal:nth-of-type(3) a:nth-of-type(2){color:#ffffff !im
 })();
 </script>
 <script id="lb-hero-js">
-/* LB HERO scene — warm depth field: mown-stripe perspective floor, slow clay glow, dust.
-   Deterministic, DPR-capped, pauses off-screen. Decorative only (canvas is aria-hidden). */
+/* LB HERO v2 - depth field (aurora + perspective grid + parallax motes). No literal objects. */
 (function(){
-  var cv = document.getElementById('heroCanvas');
+  var cv = document.querySelector('#heroCanvas, .hero-canvas, .lb3d-canvas, .hero-canvas-bg, canvas[data-hero], header canvas, .hero canvas');
   if (!cv) return;
   var ctx = cv.getContext('2d'); if (!ctx) return;
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var W = 0, H = 0, dpr = 1, t = 0, raf = null, visible = true;
-
-  var CLAY = [217,165,102], ACC = [168,74,36], LIGHT = [246,238,226];
+  function accent(){
+    var v = getComputedStyle(document.documentElement).getPropertyValue('--acc')
+         || getComputedStyle(document.documentElement).getPropertyValue('--accent');
+    v = (v || '').trim(); return /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(v) ? v : '#e51924';
+  }
+  function hex2rgb(h){ h = h.replace('#',''); if (h.length === 3) h = h[0]+h[0]+h[1]+h[1]+h[2]+h[2];
+    return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)]; }
+  var ACC = hex2rgb(accent());
+  function dark(){ var b = getComputedStyle(document.body).backgroundColor || '';
+    var m = b.match(/(\d+),\s*(\d+),\s*(\d+)/); if (!m) return true;
+    return (0.299*m[1] + 0.587*m[2] + 0.114*m[3]) < 128; }
 
   function size(){
     var r = cv.getBoundingClientRect();
     dpr = Math.min(2, window.devicePixelRatio || 1);
-    W = Math.max(320, Math.round(r.width || window.innerWidth));
-    H = Math.max(240, Math.round(r.height || 420));
+    W = Math.max(320, r.width || cv.clientWidth || window.innerWidth);
+    H = Math.max(240, r.height || cv.clientHeight || window.innerHeight);
     cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr);
     ctx.setTransform(dpr,0,0,dpr,0,0);
   }
 
-  // deterministic dust
-  var N = 22, motes = [], seed = 66102437;
+  // deterministic depth motes
+  var N = 46, motes = [];
+  var seed = 20261019;
   function rnd(){ seed = (seed*1103515245 + 12345) % 2147483648; return seed/2147483648; }
-  for (var i=0;i<N;i++) motes.push({x:rnd(), y:rnd(), z:0.3+rnd()*0.7, s:0.5+rnd()*1.6, p:rnd()*6.283});
+  for (var i=0;i<N;i++) motes.push({x:rnd(), y:rnd(), z:0.25+rnd()*0.75, s:0.6+rnd()*1.9, p:rnd()*6.283});
 
   function draw(){
-    // ground
+    var isDark = dark();
+    var base = isDark ? [10,11,14] : [248,249,251];
+    var ink  = isDark ? [255,255,255] : [12,14,18];
     var g = ctx.createLinearGradient(0,0,0,H);
-    g.addColorStop(0, '#2E2318');
-    g.addColorStop(0.55, '#3E2E20');
-    g.addColorStop(1, '#503A27');
+    g.addColorStop(0, 'rgb('+base.join(',')+')');
+    g.addColorStop(0.62, 'rgb('+Math.round(base[0]*1.06+2)+','+Math.round(base[1]*1.06+2)+','+Math.round(base[2]*1.09+2)+')');
+    g.addColorStop(1, 'rgb('+base.join(',')+')');
     ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
 
-    // slow clay glow, upper right — the sun on a verge
-    var gx = W*(0.74 + 0.05*Math.sin(t*0.00011));
-    var gy = H*(0.20 + 0.05*Math.cos(t*0.00014));
-    var gr = Math.max(W,H)*0.72;
-    var rg = ctx.createRadialGradient(gx,gy,0,gx,gy,gr);
-    rg.addColorStop(0, 'rgba('+CLAY.join(',')+',0.42)');
-    rg.addColorStop(0.45,'rgba('+ACC.join(',')+',0.16)');
-    rg.addColorStop(1, 'rgba('+ACC.join(',')+',0)');
-    ctx.fillStyle = rg; ctx.fillRect(0,0,W,H);
-
-    // mown stripes: bands converging on a horizon, alternating cut direction
-    var hz = H*0.66, vpx = W*0.42, cols = 11;
-    for (var j=-cols;j<=cols;j++){
-      var near = vpx + j*(W/cols)*1.45;
-      var far  = vpx + j*(W/cols)*0.15;
-      ctx.beginPath();
-      ctx.moveTo(far, hz); ctx.lineTo(near, H+2);
-      ctx.lineTo(near + (W/cols)*0.78, H+2); ctx.lineTo(far + (W/cols)*0.11, hz);
-      ctx.closePath();
-      var alt = (j % 2 === 0);
-      ctx.fillStyle = alt ? 'rgba('+LIGHT.join(',')+',0.085)' : 'rgba(0,0,0,0.07)';
-      ctx.globalAlpha = 1 - Math.min(1, Math.abs(j)/ (cols+3));
-      ctx.fill();
+    // aurora: two slow, wide ribbons of the brand colour
+    for (var k=0;k<2;k++){
+      var cx = W*(0.30 + 0.34*k + 0.05*Math.sin(t*0.00013 + k*2.1));
+      var cy = H*(0.34 + 0.16*k + 0.05*Math.cos(t*0.00017 + k*1.3));
+      var rad = Math.max(W,H)*(0.46 + 0.13*k);
+      var rg = ctx.createRadialGradient(cx,cy,0,cx,cy,rad);
+      var a = (isDark ? 0.20 : 0.13) * (0.72 + 0.28*Math.sin(t*0.0003 + k));
+      rg.addColorStop(0,'rgba('+ACC.join(',')+','+a.toFixed(3)+')');
+      rg.addColorStop(0.55,'rgba('+ACC.join(',')+','+(a*0.32).toFixed(3)+')');
+      rg.addColorStop(1,'rgba('+ACC.join(',')+',0)');
+      ctx.fillStyle = rg; ctx.fillRect(0,0,W,H);
     }
-    ctx.globalAlpha = 1;
 
-    // receding joints
-    for (var r=1;r<=8;r++){
-      var y = hz + Math.pow(r/8, 2.2)*(H-hz+6);
-      ctx.strokeStyle = 'rgba('+CLAY.join(',')+','+(0.16*(1-r/10)).toFixed(3)+')';
-      ctx.lineWidth = 1;
+    // perspective floor: clean architectural depth, not blocks
+    var hz = H*0.70, vpx = W*0.5;
+    ctx.lineWidth = 1;
+    for (var j=-9;j<=9;j++){
+      var fx = vpx + j*(W/9)*1.5;
+      var al = (isDark?0.16:0.13) * (1 - Math.min(1, Math.abs(j)/11));
+      ctx.strokeStyle = 'rgba('+ACC.join(',')+','+al.toFixed(3)+')';
+      ctx.beginPath(); ctx.moveTo(vpx + j*(W/9)*0.16, hz); ctx.lineTo(fx, H+2); ctx.stroke();
+    }
+    for (var r=1;r<=9;r++){
+      var y = hz + Math.pow(r/9, 2.15)*(H-hz+4);
+      ctx.strokeStyle = 'rgba('+ACC.join(',')+','+((isDark?0.13:0.10)*(1-r/11)).toFixed(3)+')';
       ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
     }
-    // horizon light
-    var hg = ctx.createLinearGradient(0,hz-90,0,hz+60);
-    hg.addColorStop(0,'rgba('+CLAY.join(',')+',0)');
-    hg.addColorStop(0.55,'rgba('+CLAY.join(',')+',0.22)');
-    hg.addColorStop(1,'rgba('+CLAY.join(',')+',0)');
-    ctx.fillStyle = hg; ctx.fillRect(0,hz-90,W,150);
+    var hg = ctx.createLinearGradient(0,hz-70,0,hz+70);
+    hg.addColorStop(0,'rgba('+ACC.join(',')+',0)');
+    hg.addColorStop(0.5,'rgba('+ACC.join(',')+','+(isDark?0.16:0.11)+')');
+    hg.addColorStop(1,'rgba('+ACC.join(',')+',0)');
+    ctx.fillStyle = hg; ctx.fillRect(0,hz-70,W,140);
 
-    // dust, drifting up
+    // depth motes: size + opacity track z, slow parallax drift
     for (var q=0;q<motes.length;q++){
       var m = motes[q];
-      var y = ((m.y - t*0.0000098*m.z) % 1 + 1) % 1;
-      var x = m.x + 0.012*Math.sin(t*0.00021*m.z + m.p);
-      var a = 0.22 * m.z * (0.55 + 0.45*Math.sin(t*0.0012 + m.p));
-      if (a <= 0.01) continue;
-      ctx.fillStyle = 'rgba('+LIGHT.join(',')+','+a.toFixed(3)+')';
-      ctx.beginPath(); ctx.arc(x*W, y*H, m.s*(0.55+m.z*0.9), 0, 6.283); ctx.fill();
+      var y = ((m.y + t*0.0000075*m.z) % 1);
+      var x = m.x + 0.016*Math.sin(t*0.00022*m.z + m.p);
+      var px = x*W, py = y*H;
+      var a2 = (isDark?0.42:0.30) * m.z * (0.55 + 0.45*Math.sin(t*0.0011 + m.p));
+      if (a2 <= 0) continue;
+      ctx.fillStyle = 'rgba('+ink.join(',')+','+a2.toFixed(3)+')';
+      ctx.beginPath(); ctx.arc(px, py, m.s*(0.6+m.z*0.9), 0, 6.283); ctx.fill();
     }
 
-    drawMark();
-
-    // vignette: darker at the right edge, copy sits left on the scrim
-    var vg = ctx.createLinearGradient(0,0,W,0);
-    vg.addColorStop(0,'rgba(12,9,7,0.10)');
-    vg.addColorStop(1,'rgba(12,9,7,0.26)');
+    // vignette to seat the copy
+    var vg = ctx.createRadialGradient(W*0.5,H*0.52,Math.min(W,H)*0.30,W*0.5,H*0.52,Math.max(W,H)*0.80);
+    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1, isDark?'rgba(0,0,0,0.42)':'rgba(0,0,0,0.14)');
     ctx.fillStyle = vg; ctx.fillRect(0,0,W,H);
-  }
-
-  // the client mark, drawn whole and ghosted into the right of the field (never cropped)
-  var mark = new Image();
-  mark.decoding = 'async'; mark.onload = function(){ draw(); }; mark.src = 'assets/oakstone-emblem.jpg';
-
-  function drawMark(){
-    if (!mark.complete || !mark.naturalWidth) return;
-    var size = Math.min(H*0.62, W*0.30);
-    var x = W - size - Math.max(16, W*0.045);
-    var y = (H - size)/2;
-    // light pool behind the mark so the right side is never dead flat
-    var pr = size*0.95;
-    var pg2 = ctx.createRadialGradient(x+size/2, y+size/2, 0, x+size/2, y+size/2, pr);
-    pg2.addColorStop(0, 'rgba('+CLAY.join(',')+',0.16)');
-    pg2.addColorStop(1, 'rgba('+CLAY.join(',')+',0)');
-    ctx.fillStyle = pg2; ctx.fillRect(x-pr, y-pr, pr*2, pr*2);
-    ctx.globalAlpha = W < 820 ? 0.16 : 0.30;
-    ctx.drawImage(mark, x, y, size, size);
-    ctx.globalAlpha = 1;
   }
 
   function loop(ts){ if (ts) t = ts; if (visible) draw(); raf = requestAnimationFrame(loop); }
@@ -635,8 +613,8 @@ body footer.foot span.lb-legal:nth-of-type(3) a:nth-of-type(2){color:#ffffff !im
   if (!reduce && 'IntersectionObserver' in window){
     new IntersectionObserver(function(e){ visible = e[0].isIntersecting; }, {threshold:0.02}).observe(cv);
   }
-  document.addEventListener('visibilitychange', function(){ visible = !document.hidden; });
-  if (!reduce) raf = requestAnimationFrame(loop);
+  document.addEventListener('visibilitychange', function(){ visible = !document.hidden && document.visibilityState === 'visible'; });
+  if (!reduce) raf = requestAnimationFrame(loop); 
 })();
 </script>
 <style>
@@ -650,7 +628,18 @@ header,.site-header,.page-header,.header-inner,nav.nav,.nav-inner,
 @keyframes lbKillSplash{to{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}}
 </style>
 
+<style>/* ==== TASTE PASS (anti-slop, from impeccable findings) ==== */
+.lb-mq__in,.lb-pulse,tiny numbered label "02" beside h2 "Hedge Trimming" (6 on page),tiny numbered label "03" beside h2 "Pressure Washing" (6 on page),tiny numbered label "05" beside h2 "Backyard Maintenance" (6 on page),tiny numbered label "06" beside h2 "Free Quotes" (6 on page){display:none !important}
 
+:root{--lb-disp:"Archivo",system-ui,sans-serif;--lb-sub:"Archivo",system-ui,sans-serif}
+body,h1,h2,h3,h4,h5,h6,p,li,span,a,button,input,blockquote{
+  font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
+small,.small,.meta,.caption,.eyebrow,.kicker{font-size:max(0.82em,13px)}
+p,li{line-height:1.55}
+section,header,footer,.wrap,.container,.inner,[class*="section"]{
+  scroll-margin-top:24px}
+
+</style>
 <style>/* ==== LB HEADER TRUTH ==== */
 .lb-brand{gap:clamp(8px,1vw,14px) !important;min-height:clamp(44px,5vw,64px) !important;
   align-items:center !important;flex-wrap:nowrap !important}
@@ -677,122 +666,5 @@ header a[href^="tel"],.site-header a[href^="tel"]{
   opacity:1 !important;
 }
 .lb-brand__sub:empty{display:none !important}
-</style>
-<style>
-letter-spacing: 0.08em on body text{letter-spacing:normal !important}
-letter-spacing: 0.14em on body text{letter-spacing:normal !important}
-letter-spacing: 0.16em on body text{letter-spacing:normal !important}
-
-:root{--lb-disp:"Archivo",system-ui,sans-serif;--lb-sub:"Archivo",system-ui,sans-serif}
-body,h1,h2,h3,h4,h5,h6,p,li,span,a,button,input,blockquote{
-  font-family:"Archivo", system-ui, -apple-system, "Segoe UI", sans-serif}
-small,.small,.meta,.caption,.eyebrow,.kicker{font-size:max(0.82em,13px)}
-p,li{line-height:1.55}
-section,header,footer,.wrap,.container,.inner,[class*="section"]{
-  scroll-margin-top:24px}
-
-</style>
-<style>
-/* ==== REPAIR PASS 3: hero composition, emblem lockup, footer rhythm, gallery crop ==== */
-
-/* HEADER: the client emblem is the mark; keep it a small round badge so it reads as a lockup
-   with the wordmark instead of a second competing logo. */
-.nav .brand-mark,.lb-brand__mark{width:clamp(38px,4vw,50px)!important;height:clamp(38px,4vw,50px)!important;
-  max-width:50px!important;border-radius:50%!important;overflow:hidden;flex:0 0 auto!important;
-  background:#2A211A;box-shadow:0 0 0 2px var(--accent)}
-.lb-brand__mark img{width:100%!important;height:100%!important;object-fit:cover!important;border-radius:50%!important}
-.nav .tel{color:var(--accent-deep);letter-spacing:0.05em;text-transform:none;margin-bottom:0}
-
-/* HERO is owned entirely by the lb-hero-rebuild block below. */
-
-/* GALLERY: show the mark whole inside a wide dark plate instead of a hard square crop;
-   dots move to the top-right so they stop colliding with the next arrow. */
-.lb-rb__track{aspect-ratio:16/6.4}
-.lb-rb__slide img{object-fit:contain;padding:26px;transform:none!important}
-.lb-rb__slide.is-on img{transform:none!important}
-.lb-rb__dots{top:clamp(12px,1.6vw,20px);right:clamp(12px,1.6vw,20px);bottom:auto;
-  transform:none;flex-direction:row}
-.lb-rb__cap{padding-right:64px}
-
-/* FOOTER: real rhythm, separated legal links, no run-together words */
-.foot{gap:14px 34px!important}
-.foot>span{display:inline-block}
-.foot .lb-legal{display:inline-flex;gap:16px}
-.foot .lb-legal a{text-decoration:underline;text-underline-offset:3px}
-body{letter-spacing:normal}
-
-@media (max-width:820px){
-  .lb-rb__track{aspect-ratio:4/3}
-  .lb-rb__slide img{padding:22px}
-}
-</style>
-<style>
-/* ==== HERO: one column of copy over a drawn depth field. The canvas is the only layer.
-   No emblem background (the old right-hand plate was oversized and cropped); the logo
-   stays in the nav where it reads whole. ==== */
-section.hero{
-  position:relative;isolation:isolate;
-  display:grid!important;grid-template-columns:minmax(0,1fr)!important;
-  grid-auto-flow:row;justify-items:start;
-  gap:18px!important;align-content:center!important;
-  padding:28px 32px;
-  min-height:clamp(440px,56vh,600px)!important;max-height:none!important;
-  background:#2A211A!important;
-  overflow:hidden;
-}
-/* scrim above the canvas, under the copy: guaranteed legibility whatever the scene paints */
-section.hero:has(canvas)::before{
-  content:"";position:absolute;inset:0;z-index:1!important;pointer-events:none;
-  background:linear-gradient(96deg,rgba(20,14,10,.44) 0%,rgba(20,14,10,.24) 48%,rgba(20,14,10,.02) 100%)!important;
-}
-canvas#heroCanvas{
-  position:absolute!important;inset:0!important;z-index:-1!important;
-  min-height:0!important;max-height:none!important;
-  width:100%!important;height:100%!important;display:block;
-  pointer-events:none;
-}
-/* [class*=hero] in the head also matches children named hero-* — they must not inherit the
-   section's min-height and stretch into 600px blocks. */
-section.hero > h1,section.hero > p,section.hero > a{
-  min-height:0!important;max-height:none!important;align-self:start;
-}
-section.hero h1{
-  position:relative;z-index:2;
-  width:100%!important;max-width:none!important;
-  font-family:'Archivo',serif;font-weight:900;
-  font-size:clamp(2.1rem,4vw,3.4rem)!important;line-height:1.3!important;
-  letter-spacing:-.025em;color:#FBF6EE;text-wrap:balance;
-  text-shadow:0 2px 26px rgba(0,0,0,.5);
-}
-section.hero h1 em{font-style:normal;font-weight:500;color:var(--clay)}
-section.hero .hero-lede{
-  position:relative;z-index:2;
-  max-width:54ch;font-size:clamp(15.5px,1.4vw,18px);line-height:1.362;
-  color:rgba(248,240,229,.92);text-shadow:0 1px 14px rgba(0,0,0,.45);
-}
-section.hero .hero-cta{
-  position:relative;z-index:2;margin-top:6px;
-  display:inline-flex;align-items:center;gap:12px;
-  background:var(--accent);color:var(--on-accent-head);
-  padding:15px 28px;border-radius:2px;
-  font-family:'Archivo',sans-serif;font-weight:700;font-size:15.5px;letter-spacing:0.02em;
-  border-bottom:3px solid var(--accent-deep);
-  transition:background .22s,border-color .22s,transform .22s;
-}
-section.hero .hero-cta span{font-size:17px;line-height:1;transition:transform .22s}
-section.hero .hero-cta:hover{background:var(--accent-deep);border-color:#5A2410}
-section.hero .hero-cta:hover span{transform:translateX(4px)}
-section.hero .hero-cta:focus-visible{outline:3px solid #FBF6EE;outline-offset:3px}
-/* nav links: brand | links | phone, all on one baseline */
-.nav-links{display:flex;align-items:center;gap:clamp(14px,2vw,28px);margin-left:auto;
-  font-family:'Archivo',sans-serif;font-weight:600;font-size:14px;letter-spacing:0.05em}
-.nav-links a{padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s}
-.nav-links a:hover{color:var(--accent-deep);border-bottom-color:var(--accent-ink,var(--accent))}
-@media (max-width:900px){.nav-links{display:none}}
-@media (max-width:820px){
-  section.hero{padding:28px 32px;gap:16px!important;min-height:clamp(440px,72vh,600px)!important;background:#0f1115}
-  section.hero:has(canvas)::before{background:linear-gradient(180deg,rgba(20,14,10,.72) 0%,rgba(20,14,10,.50) 60%,rgba(20,14,10,.74) 100%)!important}
-  section.hero .hero-lede{max-width:none}
-}
 </style>
 </body></html>
