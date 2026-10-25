@@ -1,0 +1,181 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Dc concrete &amp; excavation logo" width="48" height="48">
+          <span>
+            <span class="foot-brand-name">DC CONCRETE &amp; EXCAVATION</span><br>
+            <span class="foot-brand-sub">Maitland NSW</span>
+          </span>
+        </div>
+        <p>Concreting and excavation — driveways, alfresco and outdoor concrete. Servicing the Hunter Valley, Newcastle, Central Coast and Port Stephens.</p>
+      </div>
+      <div>
+        <h4>What we do</h4>
+        <p>
+          Driveways<br>
+          Alfresco areas<br>
+          Outdoor concrete<br>
+          Excavation
+        </p>
+      </div>
+      <div>
+        <h4>Find us</h4>
+        <p>
+          <a href="https://www.facebook.com/DTconcreteconstruction/" target="_blank" rel="noopener">Facebook</a><br>
+          Maitland, NSW
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Dc concrete &amp; excavation &middot; Maitland NSW</span>
+      <span>Concreting &amp; excavation</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+/* reveals — hidden only under html.js so no-JS shows everything */
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+/* safety net — reveals never stick hidden */
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+/* hero: perspective wire-grid terrain (concrete slab plane) + red survey sweep */
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;  /* pointer parallax */
+
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 30;
+    py = (e.clientY / window.innerHeight - 0.5) * 18;
+  }, {passive: true});
+
+  /* horizon at 38% height; grid converges to a vanishing point */
+  function project(x, z, vx, vy){
+    /* x in [-1,1] across the plane, z in [0,1] depth (0=near) */
+    var depth = 0.18 + z * 0.82;           /* 1 near, ~0.18 far */
+    var scale = 1 / depth;
+    var sx = vx + x * (W * 0.62) * scale;
+    var sy = vy + (z * H * 0.52) * (1 + 0.22 * scale);
+    return [sx, sy, scale];
+  }
+
+  var ROWS = 13, COLS = 16;
+  function frame(t){
+    if (!W || !H){ resize(); return; }
+    var time = (t || 0) * 0.00035;
+    var vx = W * 0.5 + px, vy = H * 0.40 + py;
+    ctx.clearRect(0, 0, W, H);
+
+    /* faint far glow */
+    var g = ctx.createRadialGradient(vx, vy, 10, vx, vy, W * 0.55);
+    g.addColorStop(0, 'rgba(200,37,27,0.10)');
+    g.addColorStop(1, 'rgba(200,37,27,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+
+    /* horizontal rows (receding) */
+    for (var r = 0; r < ROWS; r++){
+      var z = r / (ROWS - 1);
+      ctx.beginPath();
+      for (var cI = 0; cI <= COLS; cI++){
+        var x = (cI / COLS) * 2 - 1;
+        var wave = Math.sin(cI * 0.55 + time * 2.2 + r * 0.4) * 0.018 * (1 - z);
+        var p = project(x + wave, z, vx, vy);
+        if (cI === 0) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]);
+      }
+      var alpha = 0.24 * (1 - z * 0.75);
+      ctx.strokeStyle = 'rgba(154,161,168,' + alpha.toFixed(3) + ')';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+    /* vertical columns */
+    for (var cI2 = 0; cI2 <= COLS; cI2 += 2){
+      var x2 = (cI2 / COLS) * 2 - 1;
+      ctx.beginPath();
+      for (var r2 = 0; r2 < ROWS; r2++){
+        var z2 = r2 / (ROWS - 1);
+        var wave2 = Math.sin(cI2 * 0.55 + time * 2.2 + r2 * 0.4) * 0.018 * (1 - z2);
+        var p2 = project(x2 + wave2, z2, vx, vy);
+        if (r2 === 0) ctx.moveTo(p2[0], p2[1]); else ctx.lineTo(p2[0], p2[1]);
+      }
+      ctx.strokeStyle = 'rgba(154,161,168,0.13)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+    /* red survey sweep line travelling down the plane */
+    var sweepZ = 0.5 + 0.45 * Math.sin(time * 0.9);
+    ctx.beginPath();
+    for (var cI3 = 0; cI3 <= COLS; cI3++){
+      var x3 = (cI3 / COLS) * 2 - 1;
+      var wave3 = Math.sin(cI3 * 0.55 + time * 2.2 + sweepZ * 5) * 0.018 * (1 - sweepZ);
+      var p3 = project(x3 + wave3, sweepZ, vx, vy);
+      if (cI3 === 0) ctx.moveTo(p3[0], p3[1]); else ctx.lineTo(p3[0], p3[1]);
+    }
+    ctx.strokeStyle = 'rgba(224,51,39,0.75)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    /* sweep glow */
+    var sp = project(0, sweepZ, vx, vy);
+    var sg = ctx.createRadialGradient(sp[0], sp[1], 2, sp[0], sp[1], 150);
+    sg.addColorStop(0, 'rgba(224,51,39,0.30)');
+    sg.addColorStop(1, 'rgba(224,51,39,0)');
+    ctx.fillStyle = sg;
+    ctx.fillRect(sp[0] - 160, sp[1] - 80, 320, 160);
+  }
+
+  function loop(t){
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  loop(0);
+})();
+</script>
+</body>
+</html>

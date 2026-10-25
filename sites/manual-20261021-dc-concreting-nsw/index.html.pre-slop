@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>DC Concreting NSW — Concreting, Slabs &amp; Driveways</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DC Concreting NSW — driveways, slabs, footings, paths and exposed aggregate concrete work across New South Wales. Professional concreting services, built to last. Free consultation, no obligation.">
+<meta name="theme-color" content="#0f1115">
+<link rel="icon" href="assets/logomark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1115;
+  --bg2:#131519;
+  --ink:#f2f1ec;
+  --muted:#9ea3a8;
+  --accent:#d9a62b;
+  --accent-d:#c08f1c;
+  --panel:rgba(255,255,255,.04);
+  --line:rgba(255,255,255,.12);
+  --max:1120px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.08;margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+/* header */
+.header{position:sticky;top:0;z-index:60;background:rgba(15,17,21,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-in{max-width:var(--max);margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;min-width:0}
+.brand:hover{text-decoration:none}
+.brand img{height:46px;width:46px;flex:0 0 auto}
+.brand-txt{display:flex;flex-direction:column;line-height:1.05;min-width:0}
+.brand-name{font-weight:800;font-size:1.02rem;letter-spacing:.04em;text-transform:uppercase}
+.brand-sub{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:5px;font-weight:600}
+.nav{display:flex;align-items:center;gap:26px}
+.nav a{font-size:.88rem;color:#cfd3d6}
+.nav a:hover{color:var(--accent);text-decoration:none}
+.cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#141414;font-weight:700;font-size:.85rem;padding:12px 20px;border-radius:4px;border:0;cursor:pointer;transition:background .18s ease,transform .18s ease}
+.cta:hover{background:var(--accent-d);text-decoration:none;transform:translateY(-1px)}
+.cta-ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(217,166,43,.7);color:var(--accent);font-weight:700;font-size:.85rem;padding:11px 19px;border-radius:4px}
+.cta-ghost:hover{background:rgba(217,166,43,.1);text-decoration:none}
+@media(max-width:900px){.nav a:not(.cta){display:none}}
+@media(max-width:520px){.brand-sub{display:none}.brand-name{font-size:.88rem}.brand img{height:38px;width:38px}}
+
+/* hero */
+.hero{position:relative;min-height:min(84svh,700px);display:flex;align-items:center;overflow:hidden;isolation:isolate;border-bottom:1px solid var(--line)}
+#pour{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(10,11,14,.95) 0%,rgba(10,11,14,.8) 44%,rgba(10,11,14,.3) 74%,rgba(10,11,14,.6) 100%);pointer-events:none}
+.hero-in{position:relative;z-index:2;padding:92px 0 78px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:22px}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--accent);display:block}
+.hero h1{font-size:clamp(2.2rem,5.4vw,4rem);max-width:19ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lede{margin:22px 0 0;max-width:50ch;color:#c8ccd0;font-size:clamp(1rem,1.6vw,1.12rem);line-height:1.65}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);max-width:660px}
+.hero-meta span{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:#b9bec3;display:flex;align-items:center;gap:8px}
+.hero-meta span::before{content:"";width:5px;height:5px;background:var(--accent);display:block;flex:0 0 auto}
+
+/* sections */
+.section{padding:88px 0;border-bottom:1px solid var(--line)}
+.section.alt{background:var(--bg2)}
+.sec-head{max-width:62ch;margin-bottom:44px}
+.k{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:14px}
+.sec-head h2{font-size:clamp(1.65rem,3.4vw,2.4rem)}
+.sec-head p{margin:14px 0 0;color:var(--muted);font-size:1.02rem;max-width:56ch}
+.grid{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.g3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.g3{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:26px 24px;transition:border-color .2s ease,background .2s ease}
+.card:hover{border-color:rgba(217,166,43,.55);background:rgba(217,166,43,.04)}
+.card .ico{width:32px;height:32px;color:var(--accent);margin-bottom:16px}
+.card h3{font-size:1.06rem;margin-bottom:9px}
+.card p{margin:0;color:var(--muted);font-size:.94rem;line-height:1.6}
+
+/* steps */
+.steps{counter-reset:s;display:grid;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--line);align-items:start}
+.step::before{counter-increment:s;content:"0" counter(s);font-weight:900;font-size:1.1rem;color:var(--accent);padding-top:3px}
+.step h3{font-size:1.04rem;margin-bottom:6px}
+.step p{margin:0;color:var(--muted);font-size:.95rem;max-width:60ch}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr .8fr;gap:56px;align-items:center}
+@media(max-width:880px){.about{grid-template-columns:1fr;gap:34px}}
+.about h2{font-size:clamp(1.6rem,3.2vw,2.3rem);margin-bottom:18px}
+.about p{color:var(--muted);margin:0 0 16px;font-size:1rem;line-height:1.72}
+.about ul{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
+.about li{display:flex;gap:12px;align-items:flex-start;color:#d6d9dc;font-size:.96rem}
+.about li::before{content:"";width:16px;height:16px;flex:0 0 16px;margin-top:4px;border:2px solid var(--accent);border-radius:2px;background:
+ linear-gradient(var(--accent),var(--accent)) center/8px 2px no-repeat,
+ linear-gradient(var(--accent),var(--accent)) center/2px 8px no-repeat}
+.adcard{position:relative;margin:0;border:1px solid rgba(217,166,43,.4);border-radius:6px;overflow:hidden;background:#000;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.adcard figcaption{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:12px 14px;border-top:1px solid var(--line)}
+
+/* strip */
+.strip{position:relative;min-height:320px;display:flex;align-items:center;background:#0a0b0e;overflow:hidden;border-bottom:1px solid var(--line)}
+.strip-bg{position:absolute;inset:0;background:url('assets/hero.jpg') center/cover no-repeat;filter:grayscale(.4) brightness(.4)}
+.strip .wrap{position:relative;z-index:2;padding:64px 24px}
+.strip h2{font-size:clamp(1.4rem,2.8vw,2rem);max-width:26ch}
+.strip p{color:#c3c7cb;margin:14px 0 0;max-width:54ch}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start}
+@media(max-width:880px){.contact-grid{grid-template-columns:1fr}}
+.tel{display:inline-block;font-size:1.45rem;font-weight:800;letter-spacing:-.01em;color:var(--accent);margin:6px 0 4px}
+form{display:grid;gap:14px}
+label{display:block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:6px}
+input,textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:4px;color:var(--ink);font-family:inherit;font-size:.95rem;padding:12px 13px}
+input:focus,textarea:focus{outline:none;border-color:var(--accent);background:rgba(217,166,43,.06)}
+textarea{min-height:118px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.row2{grid-template-columns:1fr}}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--muted);text-transform:none;letter-spacing:0;font-weight:400}
+.consent input{width:16px;height:16px;margin-top:2px;flex:0 0 16px}
+.hp{position:absolute;left:-9999px}
+.st{margin:0;font-size:.9rem;min-height:1.2em}
+form button{justify-self:start}
+
+/* footer */
+.footer{background:#0a0b0e;padding:56px 0 26px;border-top:1px solid var(--line)}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:28px}}
+.footer h4{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;font-weight:700}
+.footer p{color:var(--muted);font-size:.92rem;max-width:34ch;margin:14px 0 0}
+.footer ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+.footer ul a{color:#cfd3d6;font-size:.93rem}
+.foot-bot{max-width:var(--max);margin:40px auto 0;padding:20px 24px 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;color:var(--muted);font-size:.82rem}
+.foot-bot a{color:var(--muted)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body id="top">
+
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="#top" aria-label="DC Concreting NSW — home">
+      <img src="assets/logomark.svg" alt="" width="46" height="46">
+      <span class="brand-txt">
+        <span class="brand-name">DC Concreting NSW</span>
+        <span class="brand-sub">Professional Concreting</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#quote">Contact</a>
+      <a href="#quote" class="cta">Free consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <canvas id="pour" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <span class="eyebrow">Concreting · NSW</span>
+    <h1>Concrete work<br>built to <em>last.</em></h1>
+    <p class="lede">Driveways, slabs, footings, paths and exposed aggregate — boxed up, poured, screeded and finished properly, with the site left clean behind us.</p>
+    <div class="hero-actions">
+      <a href="#quote" class="cta">Get a free consultation</a>
+      <a href="#services" class="cta-ghost">See what we pour</a>
+    </div>
+    <div class="hero-meta">
+      <span>Driveways &amp; crossovers</span>
+      <span>Slabs &amp; footings</span>
+      <span>Decorative finishes</span>
+      <span>Site clean-up</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="k">Services</span>
+      <h2>Concrete done properly</h2>
+      <p>Every job starts with a free consultation, a straight answer and a clear scope — no obligation, just quality advice.</p>
+    </div>
+    <div class="grid g3">
+      <article class="card rv">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 20h18"/><path d="M5 20V9l7-4 7 4v11"/><path d="M9 20v-6h6v6"/></svg>
+        <h3>House slabs &amp; footings</h3>
+        <p>Set out, formwork, reinforcement and pour for residential slabs, extensions and outbuildings.</p>
+      </article>
+      <article class="card rv">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 16l8-9 5 5 7-7"/><path d="M2 20h20"/></svg>
+        <h3>Driveways &amp; crossovers</h3>
+        <p>Vehicle crossings and driveways graded to fall, with control joints and a finish that holds up to traffic.</p>
+      </article>
+      <article class="card rv">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 17c3-3 6-3 9 0s6 3 9 0"/><path d="M3 11c3-3 6-3 9 0s6 3 9 0"/><path d="M3 5c3-3 6-3 9 0s6 3 9 0"/></svg>
+        <h3>Paths, patios &amp; entertaining areas</h3>
+        <p>Level, well-drained outdoor concrete in broom, trowel or stencil finish.</p>
+      </article>
+      <article class="card rv">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="7" cy="8" r="1.8"/><circle cx="15" cy="7" r="1.3"/><circle cx="11" cy="13" r="1.5"/><circle cx="18" cy="14" r="1.7"/><circle cx="6" cy="17" r="1.4"/><path d="M2 21h20"/></svg>
+        <h3>Exposed aggregate &amp; decorative</h3>
+        <p>Aggregate, stencil and coloured concrete for driveways and outdoor areas with a bit of character.</p>
+      </article>
+      <article class="card rv">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="8" width="18" height="9" rx="1"/><path d="M7 8V5h10v3"/><path d="M3 21h18"/></svg>
+        <h3>Shed slabs &amp; hardstands</h3>
+        <p>Level pads for sheds, carports and hardstands, set out and poured to the supplier's specification.</p>
+      </article>
+      <article class="card rv">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 4v9a2 2 0 0 0 2 2h8"/><path d="M14 11l4 4-4 4"/><path d="M4 20h6"/></svg>
+        <h3>Removal &amp; replacement</h3>
+        <p>Saw cutting, breaking out and carting away old concrete, then pouring the replacement.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="process">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="k">How it runs</span>
+      <h2>Simple, from the first call</h2>
+      <p>You get a plan before anything is cut, and a site that is tidy when we leave.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div><h3>Free consultation</h3><p>Talk through what you need on site or over the phone. Advice first, no obligation and no pressure.</p></div></div>
+      <div class="step rv"><div><h3>Quote &amp; set out</h3><p>A clear written scope and price, then the job is measured, set out and marked before a tool comes out.</p></div></div>
+      <div class="step rv"><div><h3>Prep, box up &amp; pour</h3><p>Excavate and compact the sub-base, build the formwork, fix the reinforcement, then pour, screed and finish.</p></div></div>
+      <div class="step rv"><div><h3>Clean up &amp; hand over</h3><p>Saw cut, curing advice and a full clean of the site, so the finished job is the only thing left behind.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="rv">
+        <span class="k">About us</span>
+        <h2>DC Concreting NSW</h2>
+        <p>We are a concreting crew working across New South Wales on residential driveways, slabs, footings and outdoor areas. The work is hands-on and the standard does not move: solid sub-base, correct reinforcement, accurate falls and a clean finish.</p>
+        <p>If you want a straight answer on what your job needs and what it will cost, call and have the conversation. Consultation is free and there is no obligation — just quality advice.</p>
+        <ul>
+          <li>Professional concreting services</li>
+          <li>Free consultation, no obligation</li>
+          <li>Clear scope and price before we start</li>
+          <li>Workmanship built to last</li>
+          <li>Site cleaned up on completion</li>
+        </ul>
+      </div>
+      <figure class="adcard rv">
+        <img src="assets/brand-card.jpg" alt="DC Concreting NSW — professional concreting services, built to last">
+        <figcaption>DC Concreting NSW</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="strip">
+  <div class="strip-bg" aria-hidden="true"></div>
+  <div class="wrap rv">
+    <h2>Prep is where a slab is won or lost</h2>
+    <p>Sub-base, compaction, formwork and reinforcement are checked before the truck arrives — that is what stops a driveway from cracking up in a few years.</p>
+  </div>
+</section>
+
+<section class="section alt" id="quote">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="k">Get started</span>
+      <h2>Free consultation</h2>
+      <p>Tell us the job — size, location and time frame — and we will come back to you with advice and a price.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="rv">
+        <div class="card">
+          <h3>Talk to us first</h3>
+          <p style="margin:6px 0 0">Fastest way to get an answer.</p>
+          <a class="tel" href="tel:0427370805">0427 370 805</a>
+          <p style="margin:0 0 18px">Concreting enquiries · NSW</p>
+          <p style="margin:0"><a href="https://www.facebook.com/profile.php?id=100075797030921" target="_blank" rel="noopener">Find us on Facebook</a></p>
+        </div>
+      </div>
+      <form id="lbq-form" novalidate data-site="manual-20261021-dc-concreting-nsw" data-biz="DC Concreting NSW" class="rv">
+        <div class="row2">
+          <div><label for="n">Name</label><input id="n" name="name" autocomplete="name" required></div>
+          <div><label for="p">Phone</label><input id="p" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div><label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email"></div>
+        <div><label for="m">Tell us about the job</label><textarea id="m" name="message" placeholder="What needs pouring, roughly what size, suburb and when…" required></textarea></div>
+        <input type="hidden" name="service" value="Concreting">
+        <label class="consent"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
+        <div class="hp"><label for="w">Website</label><input id="w" name="website" tabindex="-1" autocomplete="off"></div>
+        <button type="submit" class="cta">Send my request</button>
+        <p class="st" id="lbq-st" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="brand-name">DC Concreting NSW</span>
+        <p>Professional concreting services across New South Wales. Built to last.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Driveways &amp; crossovers</a></li>
+          <li><a href="#services">Slabs &amp; footings</a></li>
+          <li><a href="#services">Exposed aggregate</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0427370805">0427 370 805</a></li>
+          <li><a href="#quote">Free consultation</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=100075797030921" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>&copy; <span id="yr">2026</span> DC Concreting NSW</span>
+    <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+(function(){
+  var els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)) { els.forEach(function(e){e.classList.add('on')}); return; }
+  var io = new IntersectionObserver(function(en){
+    en.forEach(function(x){ if (x.isIntersecting){ x.target.classList.add('on'); io.unobserve(x.target); } });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
+  els.forEach(function(e){ io.observe(e) });
+  setTimeout(function(){ els.forEach(function(e){ e.classList.add('on') }) }, 1500);
+})();
+
+/* HERO — concrete pour: rebar mesh receding to a vanishing point, screed board dragging wet sheen, turning mixer drum */
+(function(){
+  var cv = document.getElementById('pour'); if (!cv) return;
+  var ctx = cv.getContext('2d'); if (!ctx) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W=0,H=0,dpr=1,t=0,vis=true;
+  var GOLD=[217,166,43];
+  function size(){
+    var r = cv.getBoundingClientRect();
+    dpr = Math.min(2, window.devicePixelRatio||1);
+    W = Math.max(320, r.width||window.innerWidth); H = Math.max(320, r.height||560);
+    cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  var seed=20261021; function rnd(){ seed=(seed*1103515245+12345)%2147483648; return seed/2147483648; }
+  var agg=[]; for (var i=0;i<180;i++) agg.push({x:rnd(),y:rnd(),s:.5+rnd()*2.1,a:.12+rnd()*.5});
+  function hz(){ return H*0.44; }
+
+  function mesh(){
+    var vpx=W*0.62, y0=hz();
+    ctx.lineWidth=1.2;
+    for (var j=-11;j<=11;j++){
+      ctx.strokeStyle='rgba('+GOLD.join(',')+','+(.30*(1-Math.abs(j)/13)).toFixed(3)+')';
+      ctx.beginPath(); ctx.moveTo(vpx+j*W*0.052, y0); ctx.lineTo(vpx+j*W*0.38, H+4); ctx.stroke();
+    }
+    for (var r=1;r<=11;r++){
+      var y=y0+Math.pow(r/11,1.85)*(H-y0+6);
+      ctx.strokeStyle='rgba('+GOLD.join(',')+','+(.26*(1-r/14)).toFixed(3)+')';
+      ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
+    }
+    ctx.strokeStyle='rgba(255,255,255,.10)';
+    for (var k=0;k<28;k++){
+      var yy=y0+Math.pow(rnd(),1.6)*(H-y0), sc=(yy-y0)/(H-y0), cx=rnd()*W, wl=5+sc*17;
+      ctx.beginPath(); ctx.moveTo(cx-wl,yy); ctx.lineTo(cx+wl,yy); ctx.stroke();
+    }
+  }
+  function screed(){
+    var y=hz()+H*0.16;
+    var x=((((t*0.00016)%1.6)-0.3)*W);
+    var g=ctx.createLinearGradient(x-W*0.44,0,x,0);
+    g.addColorStop(0,'rgba(255,255,255,0)'); g.addColorStop(.72,'rgba(255,255,255,.05)'); g.addColorStop(1,'rgba(255,255,255,.13)');
+    ctx.fillStyle=g; ctx.fillRect(x-W*0.44,hz()+4,W*0.44,H-hz());
+    ctx.save(); ctx.translate(x,y); ctx.transform(1,0,-0.55,1,0,0);
+    ctx.fillStyle='rgba(228,196,116,.9)'; ctx.fillRect(-9,-66,18,132);
+    ctx.fillStyle='rgba(255,255,255,.4)'; ctx.fillRect(-9,-66,3,132);
+    ctx.restore();
+  }
+  function drum(){
+    var cx=W*0.84, cy=H*0.27, R=Math.min(W,H)*0.15;
+    ctx.save(); ctx.translate(cx,cy); ctx.rotate(-0.22);
+    ctx.strokeStyle='rgba('+GOLD.join(',')+',.5)'; ctx.lineWidth=2;
+    ctx.beginPath(); ctx.ellipse(0,0,R*.62,R,0,0,6.283); ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(0,0,R*.26,R*.46,0,0,6.283); ctx.stroke();
+    for (var f=0;f<5;f++){
+      var a=t*0.00055+f*1.2566;
+      ctx.strokeStyle='rgba('+GOLD.join(',')+',.32)'; ctx.lineWidth=1.6;
+      ctx.beginPath();
+      ctx.moveTo(Math.cos(a)*R*.24, Math.sin(a)*R*.44);
+      ctx.quadraticCurveTo(Math.cos(a+.5)*R*.55, Math.sin(a+.5)*R*.85, Math.cos(a+.85)*R*.62, Math.sin(a+.85)*R*.98);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+  function draw(){
+    var g=ctx.createLinearGradient(0,0,W*.5,H);
+    g.addColorStop(0,'#14161b'); g.addColorStop(.45,'#101216'); g.addColorStop(1,'#0a0b0e');
+    ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+    var hg=ctx.createRadialGradient(W*.72,H*.2,0,W*.72,H*.2,Math.max(W,H)*.72);
+    hg.addColorStop(0,'rgba('+GOLD.join(',')+',.17)'); hg.addColorStop(1,'rgba('+GOLD.join(',')+',0)');
+    ctx.fillStyle=hg; ctx.fillRect(0,0,W,H);
+    var slab=ctx.createLinearGradient(0,hz(),0,H);
+    slab.addColorStop(0,'rgba(62,64,68,.55)'); slab.addColorStop(.35,'rgba(42,44,48,.62)'); slab.addColorStop(1,'rgba(22,23,26,.82)');
+    ctx.fillStyle=slab; ctx.fillRect(0,hz(),W,H-hz());
+    ctx.strokeStyle='rgba(255,255,255,.3)'; ctx.lineWidth=1.4;
+    ctx.beginPath(); ctx.moveTo(0,hz()); ctx.lineTo(W,hz()); ctx.stroke();
+    mesh();
+    for (var q=0;q<agg.length;q++){
+      var a=agg[q], yy=hz()+Math.pow(a.y,1.5)*(H-hz());
+      ctx.fillStyle='rgba(232,235,238,'+(a.a*(yy-hz())/(H-hz())*.55).toFixed(3)+')';
+      ctx.beginPath(); ctx.arc(a.x*W,yy,a.s,0,6.283); ctx.fill();
+    }
+    screed(); drum();
+    var sc=ctx.createLinearGradient(0,H*.55,0,H);
+    sc.addColorStop(0,'rgba(10,11,14,0)'); sc.addColorStop(1,'rgba(10,11,14,.5)');
+    ctx.fillStyle=sc; ctx.fillRect(0,H*.55,W,H*.45);
+  }
+  function loop(ts){ if (ts) t=ts; if (vis) draw(); requestAnimationFrame(loop); }
+  size(); draw();
+  window.addEventListener('resize', function(){ size(); draw(); });
+  document.addEventListener('visibilitychange', function(){ vis=!document.hidden; });
+  if (!reduce) requestAnimationFrame(loop);
+})();
+
+/* quote form */
+(function(){
+  var EP='https://grocery-periodically-everyone-wine.trycloudflare.com';
+  var f=document.getElementById('lbq-form'); if(!f) return;
+  var st=document.getElementById('lbq-st'), btn=f.querySelector('button[type=submit]');
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d={}; new FormData(f).forEach(function(v,k){ d[k]=v });
+    if (d.website) return;
+    if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()){
+      st.textContent='Please add your name, a phone or email, and a few words about the job.';
+      st.style.color='#ff9d8a'; return;
+    }
+    btn.disabled=true; st.textContent='Sending…'; st.style.color='';
+    fetch(EP+'/functions/v1/quote-request', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({site_id:f.dataset.site, business_name:f.dataset.biz, name:d.name, phone:d.phone, email:d.email, service:d.service||'', message:d.message, consent:!!d.consent})
+    }).then(function(r){ return r.json().catch(function(){ return {} }) })
+      .then(function(x){ if (x && x.success){ f.reset(); st.textContent="Thanks — your request is in. We'll be in touch shortly."; st.style.color='var(--accent)'; }
+        else { throw new Error((x&&x.error)||'Could not send'); } })
+      .catch(function(err){ st.textContent=(err&&err.message)||'Could not send — please try again or call.'; st.style.color='#ff9d8a'; })
+      .finally(function(){ btn.disabled=false });
+  });
+})();
+</script>
+</body>
+</html>

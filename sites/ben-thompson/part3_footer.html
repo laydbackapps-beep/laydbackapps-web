@@ -1,0 +1,212 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Ben Thompson Electrical logo" height="52">
+          <span>
+            <span class="foot-brand-name">Ben Thompson</span><br>
+            <span class="foot-brand-sub">Electrical &middot; Wingham NSW</span>
+          </span>
+        </div>
+        <p>Ben Thompson Electrical — licensed electrician in Wingham NSW, servicing all surrounding areas. Residential, commercial, solar and maintenance work.</p>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <p>
+          <a href="tel:+61437756502">0437 756 502</a><br>
+          <a href="mailto:ben@benthompsonelectrical.com.au">ben@benthompsonelectrical.com.au</a><br>
+          <a href="https://www.facebook.com/people/Ben-Thompson-Electrical/100076011744112/" target="_blank" rel="noopener">Facebook</a><br>
+          Wingham, NSW
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Ben Thompson Electrical &middot; Wingham NSW</span>
+      <span>Licensed electrician</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+/* hero: night sky, 3D perspective pylon, current pulses flowing along the wires */
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 14;
+    py = (e.clientY / window.innerHeight - 0.5) * 8;
+  }, {passive: true});
+
+  var stars = [];
+  for (var i = 0; i < 70; i++){
+    stars.push({x: Math.random(), y: Math.random() * 0.55, r: 0.6 + Math.random() * 1.4, tw: Math.random() * Math.PI * 2});
+  }
+
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+
+  function frame(t){
+    if (!W || !H){ resize(); return; }
+    var time = (t || 0) * 0.001;
+    ctx.clearRect(0, 0, W, H);
+
+    var sky = ctx.createLinearGradient(0, 0, 0, H);
+    sky.addColorStop(0, '#0A0C08');
+    sky.addColorStop(0.6, '#12160C');
+    sky.addColorStop(1, '#0D0F0C');
+    ctx.fillStyle = sky;
+    ctx.fillRect(0, 0, W, H);
+
+    /* stars */
+    for (var s = 0; s < stars.length; s++){
+      var st = stars[s];
+      var tw = 0.4 + 0.6 * (0.5 + 0.5 * Math.sin(time * 1.4 + st.tw));
+      ctx.globalAlpha = tw * 0.5;
+      ctx.fillStyle = '#DCEB4A';
+      ctx.beginPath();
+      ctx.arc(st.x * W + px * 0.3, st.y * H + py * 0.2, st.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+
+    /* 3D pylon: perspective struts converging to a vanishing point */
+    var vpx = W * 0.72 + px, vpy = H * 0.34 + py * 0.6;
+    var baseY = H * 1.02;
+    var baseSpread = Math.min(W * 0.46, 620);
+    var legBottomL = vpx - baseSpread * 0.52;
+    var legBottomR = vpx + baseSpread * 0.52;
+    var topSpread = baseSpread * 0.10;
+
+    ctx.strokeStyle = '#3A4426';
+    ctx.lineWidth = 2.2;
+    /* legs */
+    ctx.beginPath();
+    ctx.moveTo(vpx - topSpread, vpy);
+    ctx.lineTo(legBottomL, baseY);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(vpx + topSpread, vpy);
+    ctx.lineTo(legBottomR, baseY);
+    ctx.stroke();
+    /* cross braces in perspective — rows converge toward vp */
+    for (var row = 0; row < 7; row++){
+      var f = row / 7;
+      var yy = vpy + (baseY - vpy) * f;
+      var half = topSpread + (baseSpread * 0.52 - topSpread) * f;
+      var xl = vpx - half, xr = vpx + half;
+      ctx.globalAlpha = 0.5 - f * 0.15;
+      ctx.beginPath();
+      ctx.moveTo(xl, yy);
+      ctx.lineTo(xr, yy);
+      ctx.stroke();
+      /* X brace */
+      ctx.beginPath();
+      ctx.moveTo(xl, yy);
+      var nx = vpx - (topSpread + (baseSpread * 0.52 - topSpread) * ((row + 1) / 7));
+      var nyy = vpy + (baseY - vpy) * ((row + 1) / 7);
+      ctx.lineTo(nx, nyy);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(xr, yy);
+      var nx2 = vpx + (topSpread + (baseSpread * 0.52 - topSpread) * ((row + 1) / 7));
+      ctx.lineTo(nx2, nyy);
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+
+    /* power lines sweeping off the crossarms, with current pulses */
+    var armY = vpy + 6;
+    ctx.strokeStyle = 'rgba(198,214,42,0.5)';
+    ctx.lineWidth = 1.4;
+    for (var w2 = -1; w2 <= 1; w2++){
+      var lx = vpx + w2 * topSpread * 2.4;
+      ctx.beginPath();
+      ctx.moveTo(lx, armY);
+      /* catenary sag */
+      var ex = lx + (w2 === 0 ? W * 0.35 : W * 0.24) * (w2 >= 0 ? 1 : -1);
+      var ey = armY + H * 0.06;
+      ctx.quadraticCurveTo((lx + ex) / 2, ey + H * 0.035, ex, ey);
+      ctx.stroke();
+    }
+    /* current pulse travelling along the middle line */
+    var travel = (time * 0.35) % 1;
+    var px0 = vpx, py0 = armY;
+    var px1 = vpx + W * 0.35, py1 = armY + H * 0.06;
+    var midX = (px0 + px1) / 2, midY = py1 + H * 0.035;
+    /* quadratic point at travel */
+    var qx = (1-travel)*(1-travel)*px0 + 2*(1-travel)*travel*midX + travel*travel*px1;
+    var qy = (1-travel)*(1-travel)*py0 + 2*(1-travel)*travel*midY + travel*travel*py1;
+    var glow = ctx.createRadialGradient(qx, qy, 1, qx, qy, 26);
+    glow.addColorStop(0, 'rgba(220,235,74,0.85)');
+    glow.addColorStop(1, 'rgba(220,235,74,0)');
+    ctx.fillStyle = glow;
+    ctx.fillRect(qx - 30, qy - 30, 60, 60);
+    ctx.fillStyle = '#DCEB4A';
+    ctx.beginPath();
+    ctx.arc(qx, qy, 3.2, 0, Math.PI * 2);
+    ctx.fill();
+
+    /* ground glow */
+    var g = ctx.createRadialGradient(vpx, baseY, 10, vpx, baseY, W * 0.4);
+    g.addColorStop(0, 'rgba(198,214,42,0.10)');
+    g.addColorStop(1, 'rgba(198,214,42,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  function loop(t){
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

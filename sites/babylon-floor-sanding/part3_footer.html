@@ -1,0 +1,181 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Babylon Floor Sanding logo" width="56" height="56">
+          <span>
+            <span class="foot-brand-name">BABYLON</span><br>
+            <span class="foot-brand-sub">Floor Sanding</span>
+          </span>
+        </div>
+        <p>Premium timber floor sanding and polishing. 15+ years' experience. Newcastle NSW and surrounds.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p>
+          Floor sanding<br>
+          Polishing &amp; finishing<br>
+          Restoration<br>
+          New floors
+        </p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>
+          <a href="https://www.facebook.com/babylonfloorsanding" target="_blank" rel="noopener">Facebook</a><br>
+          Newcastle, NSW<br>
+          Free measure &amp; quote
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Babylon Floor Sanding &middot; Newcastle NSW</span>
+      <span>Timber floor specialists</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+/* reveals — html.js-gated */
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+/* safety net */
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+/* hero: plank perspective + travelling polished sheen (the sanding pass) */
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+  var GRAIN = [];
+  for (var g = 0; g < 60; g++){
+    GRAIN.push({ b: Math.random(), t: Math.random(), len: 0.1 + Math.random() * 0.3, a: 0.05 + Math.random() * 0.12 });
+  }
+
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 26;
+    py = (e.clientY / window.innerHeight - 0.5) * 12;
+  }, {passive: true});
+
+  /* perspective: horizontal boards, vanishing point above top-centre */
+  function boardY(t){ /* t 0..1 top..bottom -> y */
+    /* non-linear spacing: boards compress toward the top (perspective) */
+    return H * 0.16 + Math.pow(t, 1.55) * H * 0.84;
+  }
+
+  function frame(t){
+    if (!W || !H){ resize(); return; }
+    var time = (t || 0) * 0.001;
+    ctx.clearRect(0, 0, W, H);
+
+    var vpx = W * 0.5 + px;      /* vanishing point x */
+    var rows = 11;
+    var sheenT = ((time * 0.055) % 1.25) - 0.12;  /* slow travelling sheen (the polished band) */
+
+    for (var r = 0; r < rows; r++){
+      var t0 = r / rows, t1 = (r + 1) / rows;
+      var y0 = boardY(t0), y1 = boardY(t1);
+      /* board edges converge to vanishing point: half-width grows with distance from top */
+      var spread0 = 0.16 + t0 * 0.95, spread1 = 0.16 + t1 * 0.95;
+      var x0l = vpx - W * spread0 * 0.5, x0r = vpx + W * spread0 * 0.5;
+      var x1l = vpx - W * spread1 * 0.5, x1r = vpx + W * spread1 * 0.5;
+
+      /* plank body — alternating timber tones */
+      var shade = 0.5 + 0.5 * Math.sin(r * 2.1);
+      var base = 26 + shade * 16;
+      ctx.beginPath();
+      ctx.moveTo(x0l, y0); ctx.lineTo(x0r, y0); ctx.lineTo(x1r, y1); ctx.lineTo(x1l, y1); ctx.closePath();
+      ctx.fillStyle = 'rgb(' + Math.round(base + 22) + ',' + Math.round(base + 8) + ',' + Math.round(base - 6) + ')';
+      ctx.fill();
+      /* gap line */
+      ctx.strokeStyle = 'rgba(10,7,4,0.85)';
+      ctx.lineWidth = 1.6;
+      ctx.stroke();
+
+      /* grain strokes within the plank */
+      for (var gi = 0; gi < GRAIN.length; gi++){
+        var gr = GRAIN[gi];
+        if (gr.b < t0 || gr.b >= t1) continue;
+        var gy = boardY(gr.b);
+        var spread = 0.16 + gr.b * 0.95;
+        var gx = vpx + (gr.t - 0.5) * W * spread;
+        var glen = gr.len * W * spread * 0.5;
+        ctx.beginPath();
+        ctx.moveTo(gx - glen / 2, gy);
+        ctx.lineTo(gx + glen / 2, gy);
+        ctx.strokeStyle = 'rgba(150,100,52,' + gr.a.toFixed(2) + ')';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+
+    /* polished sheen: broad soft band travelling down the floor */
+    var sy = boardY(Math.max(0, Math.min(1, sheenT)));
+    var sg = ctx.createLinearGradient(0, sy - H * 0.16, 0, sy + H * 0.16);
+    sg.addColorStop(0, 'rgba(255,226,180,0)');
+    sg.addColorStop(0.5, 'rgba(255,226,180,0.16)');
+    sg.addColorStop(1, 'rgba(255,226,180,0)');
+    ctx.fillStyle = sg;
+    ctx.fillRect(0, sy - H * 0.16, W, H * 0.32);
+
+    /* warm glow from top (light source) */
+    var gg = ctx.createRadialGradient(vpx, H * 0.06, 10, vpx, H * 0.06, W * 0.7);
+    gg.addColorStop(0, 'rgba(232,182,120,0.14)');
+    gg.addColorStop(1, 'rgba(232,182,120,0)');
+    ctx.fillStyle = gg;
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  function loop(t){
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  loop(0);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/brand_block.png" alt="Stone Sydney logo" height="54">
+          <span>
+            <span class="foot-brand-name">Stone Sydney</span><br>
+            <span class="foot-brand-sub">Natural Stone Cladding</span>
+          </span>
+        </div>
+        <p>Stone Sydney — natural stone cladding for houses, feature walls, entrances, columns and fences. Quality workmanship and a clean, professional finish across all Sydney areas.</p>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <p>
+          <a href="tel:+61481216151">0481 216 151</a><br>
+          <a href="mailto:mohammad5436@icloud.com">mohammad5436@icloud.com</a><br>
+          <a href="https://www.facebook.com/people/Stone-Sydney/61595072030338/" target="_blank" rel="noopener">Facebook</a><br>
+          All Sydney areas
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Stone Sydney &middot; All Sydney Areas</span>
+      <span>Natural stone. Lasting beauty.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+/* hero: 3D perspective stone cladding wall — courses receding, gold light raking across */
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 18;
+    py = (e.clientY / window.innerHeight - 0.5) * 10;
+  }, {passive: true});
+
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+
+  function frame(t){
+    if (!W || !H){ resize(); return; }
+    var time = (t || 0) * 0.001;
+    ctx.clearRect(0, 0, W, H);
+
+    var bg = ctx.createLinearGradient(0, 0, 0, H);
+    bg.addColorStop(0, '#0E0E0E');
+    bg.addColorStop(0.58, '#181818');
+    bg.addColorStop(1, '#141414');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, W, H);
+
+    /* 3D perspective stone wall — the wall plane angled, courses in perspective */
+    var vpX = W * 0.78 + px;      /* vanishing point right */
+    var vpY = H * 0.42 + py * 0.7;
+    var wallLeft = -W * 0.15;
+
+    /* courses: horizontal stone rows converging to the vanishing point */
+    var rows = 9;
+    for (var r = 0; r <= rows; r++){
+      var rf = r / rows;
+      /* top of wall to bottom in perspective */
+      var yTop = vpY - H * 0.10;
+      var y = yTop + (H * 1.05 - yTop) * rf * rf;
+      ctx.strokeStyle = 'rgba(120,110,90,' + (0.12 + rf * 0.20) + ')';
+      ctx.lineWidth = 1 + rf * 1.5;
+      ctx.beginPath();
+      ctx.moveTo(wallLeft, y);
+      ctx.lineTo(W * 1.05, y - rf * H * 0.02);
+      ctx.stroke();
+    }
+
+    /* vertical joints: receding toward vpX — spacing compresses with depth */
+    var colCount = 14;
+    for (var col = 0; col <= colCount; col++){
+      var cf = col / colCount;
+      /* x at front (bottom) spread, converging toward vp */
+      var xFront = wallLeft + (W * 1.2) * cf;
+      ctx.strokeStyle = 'rgba(120,110,90,0.14)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(xFront, H * 1.05);
+      /* converge toward vp */
+      var xAtVp = vpX + (xFront - vpX) * 0.14;
+      ctx.lineTo(xAtVp, vpY - H * 0.10);
+      ctx.stroke();
+    }
+
+    /* a few stone blocks catching light — subtle fill variation */
+    for (var b = 0; b < 9; b++){
+      var bf = ((b * 37) % 100) / 100;
+      var bfx = ((b * 61) % 100) / 100;
+      var by = vpY - H * 0.10 + (H * 1.05 - (vpY - H * 0.10)) * bf * bf;
+      var bx = wallLeft + W * 1.2 * bfx;
+      var alpha = 0.03 + 0.05 * Math.sin(time * 0.8 + b);
+      ctx.fillStyle = 'rgba(224,185,106,' + Math.max(0.01, alpha) + ')';
+      var bw = W * 0.09 * (1 - bf * 0.5);
+      var bh = H * 0.045 * (1 - bf * 0.5);
+      ctx.fillRect(bx, by, bw, bh);
+    }
+
+    /* gold light raking across the wall */
+    var sweep = (time * 0.16) % 1.7 - 0.35;
+    var sx = wallLeft + sweep * W * 1.2;
+    var sheen = ctx.createLinearGradient(sx - 120, 0, sx + 120, 0);
+    sheen.addColorStop(0, 'rgba(224,185,106,0)');
+    sheen.addColorStop(0.5, 'rgba(224,185,106,0.16)');
+    sheen.addColorStop(1, 'rgba(224,185,106,0)');
+    ctx.fillStyle = sheen;
+    ctx.fillRect(sx - 130, 0, 260, H);
+
+    /* dust motes floating in the light */
+    for (var d = 0; d < 18; d++){
+      var dx = ((d * 79) % 100) / 100;
+      var dy = (((d * 53) % 100) / 100 + time * 0.006) % 1;
+      ctx.globalAlpha = 0.05 + 0.08 * Math.sin(time * 1.4 + d);
+      ctx.fillStyle = '#E0B96A';
+      ctx.beginPath();
+      ctx.arc(dx * W + px * 0.6, dy * H, 1.3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function loop(t){
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Eden Engineering logo" width="56" height="56">
+          <span>
+            <span class="foot-brand-name">EDEN</span><br>
+            <span class="foot-brand-sub">Engineering</span>
+          </span>
+        </div>
+        <p>Australian trailer manufacturing and engineering. Trailer builds, repairs and custom fabrication — Ingleburn, Sydney NSW.</p>
+      </div>
+      <div>
+        <h4>Capabilities</h4>
+        <p>
+          Trailer manufacturing<br>
+          Trailer repairs<br>
+          Custom fabrication<br>
+          Welding &amp; steel work<br>
+          Engineering services
+        </p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:+61424223414">0424 223 414</a><br>
+          <a href="https://www.facebook.com/p/Eden-Engineering-100075737901041/" target="_blank" rel="noopener">Facebook</a><br>
+          Ingleburn, NSW
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Eden Engineering &middot; Ingleburn NSW</span>
+      <span>Built strong, built to last</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+/* reveals — html.js-gated */
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+/* safety net */
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+/* hero: welding sparks + glowing steel frame */
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+
+  var sparks = [];
+  for (var i = 0; i < 70; i++){
+    sparks.push({
+      x: Math.random(), y: Math.random(),
+      vx: -0.5 - Math.random(), vy: -0.3 + Math.random() * 0.6,
+      life: Math.random(), sp: 0.3 + Math.random() * 0.7
+    });
+  }
+
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 20;
+    py = (e.clientY / window.innerHeight - 0.5) * 10;
+  }, {passive: true});
+
+  function frame(t){
+    if (!W || !H){ resize(); return; }
+    var time = (t || 0) * 0.001;
+    ctx.clearRect(0, 0, W, H);
+
+    /* dark workshop base */
+    var bg = ctx.createLinearGradient(0, 0, 0, H);
+    bg.addColorStop(0, '#0B0B0B');
+    bg.addColorStop(0.5, '#16150F');
+    bg.addColorStop(1, '#0D0D0D');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, W, H);
+
+    /* steel frame truss silhouette */
+    ctx.strokeStyle = 'rgba(120,120,120,0.14)';
+    ctx.lineWidth = 3;
+    var fy = H * 0.30;
+    ctx.beginPath();
+    ctx.moveTo(0, fy);
+    ctx.lineTo(W, fy);
+    ctx.moveTo(0, fy + 70);
+    ctx.lineTo(W, fy + 70);
+    ctx.stroke();
+    ctx.lineWidth = 2;
+    for (var tx = -40; tx < W + 40; tx += 80){
+      ctx.beginPath();
+      ctx.moveTo(tx + px * 0.4, fy);
+      ctx.lineTo(tx + 80 + px * 0.4, fy + 70);
+      ctx.moveTo(tx + 80 + px * 0.4, fy);
+      ctx.lineTo(tx + px * 0.4, fy + 70);
+      ctx.stroke();
+    }
+
+    /* welding glow point, moving slowly */
+    var wx = W * (0.24 + 0.5 * (0.5 + 0.5 * Math.sin(time * 0.24))) + px;
+    var wy = H * 0.46 + Math.sin(time * 0.5) * 30 + py;
+    var wg = ctx.createRadialGradient(wx, wy, 2, wx, wy, 120);
+    wg.addColorStop(0, 'rgba(255,220,120,0.30)');
+    wg.addColorStop(0.35, 'rgba(255,190,60,0.12)');
+    wg.addColorStop(1, 'rgba(255,190,60,0)');
+    ctx.fillStyle = wg;
+    ctx.fillRect(wx - 160, wy - 160, 320, 320);
+    /* arc core */
+    ctx.fillStyle = 'rgba(255,245,200,0.9)';
+    ctx.beginPath();
+    ctx.arc(wx, wy, 3 + Math.abs(Math.sin(time * 9)) * 3, 0, Math.PI * 2);
+    ctx.fill();
+
+    /* sparks flying from the weld point */
+    for (var s = 0; s < sparks.length; s++){
+      var sp = sparks[s];
+      var life = (sp.life + time * sp.sp * 0.6) % 1;
+      var sx = wx + (sp.vx * life * 340) + Math.sin(time * 2 + s) * 8;
+      var sy = wy + (sp.vy * life * 260) + life * life * 140;
+      var alpha = (1 - life) * 0.85;
+      if (sx < -10 || sx > W + 10 || sy > H + 10) continue;
+      ctx.fillStyle = 'rgba(255,' + Math.round(180 + 60 * (1 - life)) + ',80,' + Math.max(0, alpha).toFixed(3) + ')';
+      var sz = 1.4 + (1 - life) * 1.6;
+      ctx.fillRect(sx, sy, sz, sz);
+    }
+
+    /* amber floor glow */
+    var g = ctx.createRadialGradient(W * 0.5 + px, H * 0.85 + py, 10, W * 0.5 + px, H * 0.85 + py, W * 0.45);
+    g.addColorStop(0, 'rgba(240,180,40,0.06)');
+    g.addColorStop(1, 'rgba(240,180,40,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  function loop(t){
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  loop(0);
+})();
+</script>
+</body>
+</html>

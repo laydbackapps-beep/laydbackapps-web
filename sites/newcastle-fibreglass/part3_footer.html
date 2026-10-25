@@ -1,0 +1,197 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Newcastle Fibreglass Repairs logo" width="56" height="56">
+          <span>
+            <span class="foot-brand-name">NFR</span><br>
+            <span class="foot-brand-sub">Newcastle Fibreglass Repairs</span>
+          </span>
+        </div>
+        <p>High-quality pool resurfacing and fibreglass repairs. Based in Charlestown NSW, servicing Newcastle and the Hunter.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p>
+          Pool resurfacing<br>
+          Fibreglass repairs<br>
+          Pool interior finishes<br>
+          Leak detection &amp; sealing<br>
+          Pool renovations
+        </p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:+61411784286">0411 784 286</a><br>
+          <a href="https://www.facebook.com/p/Newcastle-Fibreglass-repairs-61557909567426/" target="_blank" rel="noopener">Facebook</a><br>
+          Charlestown, NSW
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Newcastle Fibreglass Repairs &middot; Charlestown NSW</span>
+      <span>Transform your pool</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+/* reveals — html.js-gated */
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+/* safety net */
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+/* hero: pool water — caustic web of interlocking light lines */
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 24;
+    py = (e.clientY / window.innerHeight - 0.5) * 12;
+  }, {passive: true});
+
+  /* wave families at several angles — overlapping bright lines = caustics */
+  var families = [
+    {ang: 0.10,  freq: 0.016, amp: 14, gap: 46, phase: 0.0},
+    {ang: -0.42, freq: 0.021, amp: 18, gap: 52, phase: 1.7},
+    {ang: 0.68,  freq: 0.013, amp: 12, gap: 58, phase: 3.1},
+    {ang: -0.85, freq: 0.024, amp: 16, gap: 64, phase: 4.4},
+    {ang: 1.25,  freq: 0.018, amp: 20, gap: 70, phase: 2.2}
+  ];
+
+  function frame(t){
+    if (!W || !H){ resize(); return; }
+    var time = (t || 0) * 0.001;
+    ctx.clearRect(0, 0, W, H);
+
+    /* deep water base with depth gradient */
+    var bg = ctx.createLinearGradient(0, 0, 0, H);
+    bg.addColorStop(0, '#0B2C60');
+    bg.addColorStop(0.45, '#0E3A7E');
+    bg.addColorStop(1, '#061530');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, W, H);
+
+    /* shimmering tile hint at the bottom (pool floor) */
+    ctx.strokeStyle = 'rgba(60,160,220,0.06)';
+    ctx.lineWidth = 1;
+    for (var tx = -100; tx < W + 100; tx += 44){
+      ctx.beginPath();
+      ctx.moveTo(tx + px * 0.4, H * 0.72);
+      ctx.lineTo(tx + 90 + px * 0.4, H);
+      ctx.stroke();
+    }
+
+    /* caustic web — draw each family as a set of wavy lines, 'lighter' blend */
+    ctx.globalCompositeOperation = 'lighter';
+    for (var f = 0; f < families.length; f++){
+      var fam = families[f];
+      var ca = Math.cos(fam.ang), sa = Math.sin(fam.ang);
+      var cx0 = W / 2 + px, cy0 = H * 0.42 + py;
+
+      for (var k = -10; k <= 10; k++){
+        var off = k * fam.gap;
+        var varSeed = Math.sin(k * 12.9898 + f * 78.233) * 43758.5453;
+        var jitter = varSeed - Math.floor(varSeed);
+        var bright = (0.03 + 0.09 * jitter) * (0.55 + 0.45 * Math.sin(time * 0.6 + k * 1.3 + fam.phase + jitter * 6.28));
+        bright = Math.max(0.012, bright);
+        ctx.strokeStyle = 'rgba(90,215,255,' + bright.toFixed(3) + ')';
+        ctx.lineWidth = 1.1 + jitter * 2.6;
+        ctx.shadowColor = 'rgba(90,215,255,0.5)';
+        ctx.shadowBlur = 4 + jitter * 8;
+        ctx.beginPath();
+        var first = true;
+        for (var u = -Math.max(W, H); u <= Math.max(W, H); u += 14){
+          /* position along the family direction + perpendicular offset */
+          var wob = Math.sin(u * fam.freq + time * 0.8 + fam.phase) * fam.amp
+                  + Math.sin(u * fam.freq * 2.7 - time * 1.3 + k) * fam.amp * 0.35;
+          var wx2 = cx0 + ca * u - sa * (off + wob);
+          var wy2 = cy0 + sa * u + ca * (off + wob);
+          if (first){ ctx.moveTo(wx2, wy2); first = false; } else { ctx.lineTo(wx2, wy2); }
+        }
+        ctx.stroke();
+      }
+    }
+    ctx.shadowBlur = 0;
+    ctx.globalCompositeOperation = 'source-over';
+
+    /* a few bright highlight blooms where light hits */
+    for (var b = 0; b < 5; b++){
+      var bx = W * (0.18 + 0.17 * b) + Math.sin(time * 0.3 + b * 2.1) * 30 + px;
+      var by = H * (0.28 + 0.11 * Math.sin(b * 1.7)) + Math.cos(time * 0.25 + b) * 20 + py;
+      var pulse = 0.5 + 0.5 * Math.sin(time * 0.7 + b * 1.9);
+      var rg = ctx.createRadialGradient(bx, by, 4, bx, by, 150 + pulse * 70);
+      rg.addColorStop(0, 'rgba(120,225,255,' + (0.12 + 0.10 * pulse).toFixed(3) + ')');
+      rg.addColorStop(1, 'rgba(120,225,255,0)');
+      ctx.fillStyle = rg;
+      ctx.fillRect(bx - 260, by - 260, 520, 520);
+    }
+
+    /* gentle waterline near the top */
+    ctx.strokeStyle = 'rgba(140,230,255,0.18)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    for (var wx = 0; wx <= W; wx += 10){
+      var wy = H * 0.16 + Math.sin(wx * 0.012 + time * 1.1) * 6 + Math.sin(wx * 0.031 - time * 0.7) * 3;
+      if (wx === 0) ctx.moveTo(wx, wy); else ctx.lineTo(wx, wy);
+    }
+    ctx.stroke();
+  }
+
+  function loop(t){
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  loop(0);
+})();
+</script>
+</body>
+</html>

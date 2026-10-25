@@ -1,0 +1,255 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Westside Painting Services Adelaide logo" height="52">
+          <span>
+            <span class="foot-brand-name">WESTSIDE</span><br>
+            <span class="foot-brand-sub">Painting Services Adelaide</span>
+          </span>
+        </div>
+        <p>Westside Painting Services Adelaide — residential and commercial painting across Adelaide. Interior, exterior, repaints and new builds. Fully licensed and insured.</p>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <p>
+          <a href="tel:0498118701">0498 118 701</a><br>
+          Adelaide, South Australia<br>Interior · Exterior · Repaints · Commercial
+        </p>
+      </div>
+      <div>
+        <h4>Follow the work</h4>
+        <p class="soc-row">
+          <a class="soc-link" href="https://www.facebook.com/profile.php?id=61572455693468" target="_blank" rel="noopener">Facebook — Westside Painting Services Adelaide</a>
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Westside Painting Services Adelaide</span>
+      <span>Adelaide · SA</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 12;
+    py = (e.clientY / window.innerHeight - 0.5) * 7;
+  }, {passive: true});
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  function ease(u){ return u<0.5 ? 2*u*u : 1-Math.pow(-2*u+2,2)/2; }
+
+  /* --- the animated facade: a heritage house wall gets rolled with fresh colour.
+     A paint roller travels across the wall in bands; the colour sweeps in behind it;
+     soft paint-spray mist drifts. One slow loop. --- */
+  var mist = [];
+  function spawn(n, x, y, spread, vy0){
+    for (var i=0;i<n;i++){
+      mist.push({x:x+(Math.random()-.5)*spread, y:y+(Math.random()-.5)*6,
+                 vx:(Math.random()-.5)*30, vy:-(4+Math.random()*vy0),
+                 r:0.7+Math.random()*1.6, life:1, dec:0.45+Math.random()*0.5});
+    }
+  }
+  var lastT = 0;
+  function loop(t){
+    if (!W || !H) resize();
+    if (W && H) frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  function frame(t){
+    var dt = Math.min(0.05, (t-lastT)/1000 || 0.016); lastT = t;
+    var time = t*0.001;
+    ctx.clearRect(0,0,W,H);
+
+    /* deep slate backdrop */
+    var g = ctx.createLinearGradient(0,0,W*0.4,H);
+    g.addColorStop(0,'#2B3850'); g.addColorStop(.55,'#222D42'); g.addColorStop(1,'#141C2B');
+    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+    var rg = ctx.createRadialGradient(W*0.78,H*0.25,10,W*0.78,H*0.25,430);
+    rg.addColorStop(0,'rgba(120,160,220,0.12)'); rg.addColorStop(1,'rgba(120,160,220,0)');
+    ctx.fillStyle = rg; ctx.fillRect(0,0,W,H);
+
+    var ground = H*0.84 + py*0.4;
+    var sx = px*0.5;
+
+    /* ground line */
+    ctx.strokeStyle = 'rgba(150,180,225,0.28)';
+    ctx.lineWidth = 1.6;
+    ctx.beginPath(); ctx.moveTo(0, ground); ctx.lineTo(W, ground); ctx.stroke();
+
+    /* ---- the house facade: weatherboard wall ---- */
+    var hx = W*0.20 + sx, hw = W*0.60, hy = ground - H*0.44, hh = H*0.44;
+    /* wall base colour (old, faded) */
+    ctx.fillStyle = '#3A4558';
+    ctx.fillRect(hx, hy, hw, hh);
+    /* horizontal weatherboards */
+    var boards = 14;
+    var bh = hh / boards;
+    for (var i=0;i<boards;i++){
+      var by = hy + i*bh;
+      ctx.strokeStyle = 'rgba(20,28,43,0.55)';
+      ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.moveTo(hx, by+bh); ctx.lineTo(hx+hw, by+bh); ctx.stroke();
+      ctx.fillStyle = 'rgba(255,255,255,0.025)';
+      ctx.fillRect(hx, by, hw, 1.5);
+    }
+    /* roof */
+    ctx.beginPath();
+    ctx.moveTo(hx - W*0.04, hy);
+    ctx.lineTo(hx + hw*0.5, hy - H*0.10);
+    ctx.lineTo(hx + hw + W*0.04, hy);
+    ctx.closePath();
+    ctx.fillStyle = '#18202F'; ctx.fill();
+    ctx.strokeStyle = 'rgba(150,180,225,0.30)'; ctx.stroke();
+
+    /* window (dark, frames) */
+    var wx = hx + hw*0.10, wy = hy + hh*0.16, ww = hw*0.20, wh = hh*0.36;
+    ctx.fillStyle = '#0E1420';
+    ctx.fillRect(wx, wy, ww, wh);
+    ctx.strokeStyle = 'rgba(200,220,250,0.5)'; ctx.lineWidth = 2;
+    ctx.strokeRect(wx, wy, ww, wh);
+    ctx.beginPath(); ctx.moveTo(wx+ww/2, wy); ctx.lineTo(wx+ww/2, wy+wh); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(wx, wy+wh/2); ctx.lineTo(wx+ww, wy+wh/2); ctx.stroke();
+
+    /* door */
+    var dx2 = hx + hw*0.62, dw2 = hw*0.16, dh2 = hh*0.52;
+    ctx.fillStyle = '#1A2334';
+    ctx.fillRect(dx2, ground-dh2, dw2, dh2);
+    ctx.strokeStyle = 'rgba(200,220,250,0.4)'; ctx.strokeRect(dx2, ground-dh2, dw2, dh2);
+
+    /* ---- fresh paint sweep: bands of new colour roll across the wall, then fade --- */
+    var cycle = 16.0;
+    var ph = reduce ? 0.99 : (time % cycle)/cycle;
+    /* sweep progress 0..1 across the wall; holds at 1; fades out */
+    var sweepF;
+    if (ph < 0.60) sweepF = ease(ph/0.60);
+    else if (ph < 0.80) sweepF = 1;
+    else if (ph < 0.97) sweepF = 1 - ease((ph-0.80)/0.17);
+    else sweepF = 0;
+
+    /* new colour region: from hx to hx + hw*sweepF, in soft bands (roller texture) */
+    if (sweepF > 0.01){
+      var paintW = hw*sweepF;
+      /* base new colour */
+      ctx.fillStyle = 'rgba(226,233,244,0.92)';
+      ctx.fillRect(hx, hy, paintW, hh);
+      /* roller bands: subtle vertical streaks */
+      for (var b2=0;b2<26;b2++){
+        var bx = hx + (b2/26)*paintW;
+        ctx.fillStyle = 'rgba(180,195,220,' + (0.05 + ((b2*7)%5)*0.012) + ')';
+        ctx.fillRect(bx, hy, paintW/26*0.6, hh);
+      }
+      /* wet edge highlight at the sweep boundary */
+      ctx.strokeStyle = 'rgba(255,255,255,0.75)';
+      ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.moveTo(hx+paintW, hy); ctx.lineTo(hx+paintW, hy+hh); ctx.stroke();
+      /* window/door re-drawn over paint to keep them visible */
+      ctx.fillStyle = '#0E1420'; ctx.fillRect(wx, wy, ww, wh);
+      ctx.strokeStyle = 'rgba(40,55,80,0.9)'; ctx.lineWidth = 2; ctx.strokeRect(wx, wy, ww, wh);
+      ctx.beginPath(); ctx.moveTo(wx+ww/2, wy); ctx.lineTo(wx+ww/2, wy+wh); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(wx, wy+wh/2); ctx.lineTo(wx+ww, wy+wh/2); ctx.stroke();
+      ctx.fillStyle = '#C7D2E4'; ctx.fillRect(dx2, ground-dh2, dw2, dh2);
+      ctx.strokeStyle = 'rgba(40,55,80,0.9)'; ctx.strokeRect(dx2, ground-dh2, dw2, dh2);
+    }
+
+    /* ---- the roller tool travelling with the wet edge ---- */
+    if (sweepF > 0.02 && sweepF < 0.995){
+      var rx = hx + hw*sweepF;
+      /* handle */
+      ctx.strokeStyle = 'rgba(210,225,250,0.8)';
+      ctx.lineWidth = 2.4;
+      ctx.beginPath(); ctx.moveTo(rx, hy + hh*0.30); ctx.lineTo(rx + 26, hy + hh*0.30 - 30); ctx.stroke();
+      /* roller cylinder */
+      ctx.fillStyle = '#DCE4F2';
+      ctx.save();
+      ctx.translate(rx, hy + hh*0.30);
+      ctx.rotate(-Math.PI/2);
+      ctx.fillRect(-9, -34, 18, 68);
+      ctx.restore();
+      ctx.strokeStyle = 'rgba(30,40,60,0.6)';
+      ctx.lineWidth = 1.2;
+      ctx.strokeRect(rx-9, hy + hh*0.30 - 34, 18, 68);
+      /* drip */
+      if (Math.random() < 0.4){
+        ctx.fillStyle = 'rgba(230,238,250,0.85)';
+        ctx.beginPath(); ctx.arc(rx + (Math.random()-.5)*20, hy + hh*0.30 + 40 + Math.random()*20, 1.6, 0, Math.PI*2); ctx.fill();
+      }
+    }
+
+    /* paint mist drifting */
+    if (!reduce && sweepF > 0.05 && sweepF < 0.95 && Math.random() < 0.5) spawn(1, hx + hw*sweepF, hy + Math.random()*hh*0.8, 24, 10);
+    for (var i2=mist.length-1;i2>=0;i2--){
+      var pt = mist[i2];
+      pt.x += pt.vx*dt; pt.y += pt.vy*dt;
+      pt.life -= pt.dec*dt;
+      if (pt.life <= 0){ mist.splice(i2,1); continue; }
+      ctx.fillStyle = 'rgba(215,228,248,'+(0.5*pt.life)+')';
+      ctx.beginPath(); ctx.arc(pt.x, pt.y, pt.r, 0, Math.PI*2); ctx.fill();
+    }
+
+    /* ambient dust */
+    for (var s=0;s<34;s++){
+      var dx3 = ((s*173 + 31) % W) + Math.sin(time*0.5+s*1.7)*14 + px*0.4;
+      var dy3 = ((s*103 + 17) % Math.max(1,(ground-10))) + Math.cos(time*0.42+s*0.9)*12 + py*0.4;
+      var al = 0.04 + ((s*7)%9)*0.018;
+      ctx.fillStyle = 'rgba(160,190,230,'+al+')';
+      ctx.beginPath(); ctx.arc(dx3, dy3, 0.7 + (s%3)*0.5, 0, Math.PI*2); ctx.fill();
+    }
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  requestAnimationFrame(loop);
+})();
+
+</script>
+</body>
+</html>

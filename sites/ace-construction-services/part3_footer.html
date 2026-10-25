@@ -1,0 +1,174 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Ace Construction Services logo" height="52">
+          <span>
+            <span class="foot-brand-name">ACE</span><br>
+            <span class="foot-brand-sub">Construction Services</span>
+          </span>
+        </div>
+        <p>Ace Construction Services — owner-operated excavation, trenching, site preparation and earth moving across Perth’s northern suburbs. Sand removal, site cuts and levelling, crushed-limestone verges. Residential and commercial.</p>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <p>
+          <a href="tel:+61499887415">0499 887 415</a><br>
+          <a href="mailto:lewis@aceconstructionservices.com.au">lewis@aceconstructionservices.com.au</a><br>Perth WA — northern suburbs & surrounds<br>Excavation · Site prep · Earth moving
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Ace Construction Services</span>
+      <span>Where expertise meets execution</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 16;
+    py = (e.clientY / window.innerHeight - 0.5) * 9;
+  }, {passive: true});
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  function loop(t){
+    if (!W || !H){ resize(); return; }
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  function frame(t){
+
+    var time = t * 0.001;
+    ctx.clearRect(0,0,W,H);
+    var g = ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,'#1A1E24'); g.addColorStop(.5,'#101317'); g.addColorStop(1,'#0A0C0F');
+    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+
+    /* survey contour lines drifting */
+    for (var c0=0; c0<9; c0++){
+      var yy = H*(0.14 + c0*0.078) + Math.sin(time*0.12 + c0*1.7)*8 + py*0.35;
+      ctx.strokeStyle = 'rgba(255,255,255,' + (0.028 + (c0%3)*0.011) + ')';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      for (var x0=0; x0<=W; x0+=26){
+        var off = Math.sin(x0*0.011 + time*0.35 + c0*1.9)*10 + Math.sin(x0*0.023 + time*0.18)*5;
+        if (x0===0) ctx.moveTo(x0, yy+off); else ctx.lineTo(x0, yy+off);
+      }
+      ctx.stroke();
+    }
+
+    /* laser level beam + emitter flash */
+    var beamY = H*0.30 + Math.sin(time*0.5)*14;
+    var bgr = ctx.createLinearGradient(0, beamY, W, beamY);
+    bgr.addColorStop(0,'rgba(245,129,26,0)'); bgr.addColorStop(.5,'rgba(245,129,26,0.30)'); bgr.addColorStop(1,'rgba(245,129,26,0)');
+    ctx.fillStyle = bgr; ctx.fillRect(0, beamY-1.1, W, 2.2);
+    ctx.beginPath();
+    ctx.fillStyle = 'rgba(255,166,80,' + (0.35+0.3*Math.sin(time*2)) + ')';
+    ctx.arc(W*0.50 + Math.sin(time*0.2)*90 + px*0.3, beamY, 2.6, 0, Math.PI*2);
+    ctx.fill();
+
+    /* falling sand grains */
+    for (var s1=0; s1<40; s1++){
+      var lf = ((s1*0.041 + time*0.16*(0.35+(s1%5)*0.12)) % 1);
+      var sx2 = ((s1*173 + 20) % W) + Math.sin(time*0.8 + s1*1.9)*22 + px*(0.3+(s1%6)*0.12);
+      var sy2 = lf * (H+40) - 20 + py*(0.25+(s1%4)*0.15);
+      var sr2 = 1.2 + (s1%4)*0.9;
+      ctx.fillStyle = 'rgba(240,190,130,' + (0.10 + (s1%3)*0.05) + ')';
+      ctx.beginPath(); ctx.ellipse(sx2, sy2, sr2*1.15, sr2, 0.6 + lf*1.2, 0, Math.PI*2); ctx.fill();
+    }
+
+    /* strata bands with orange seam lines */
+    for (var b0=0; b0<4; b0++){
+      var by = H*(0.66 + b0*0.09);
+      var grd = ctx.createLinearGradient(0, by, 0, by+46);
+      var al = 0.05 + b0*0.022;
+      grd.addColorStop(0,'rgba(58,48,36,' + al + ')'); grd.addColorStop(1,'rgba(30,26,20,' + (al*0.4) + ')');
+      ctx.fillStyle = grd;
+      ctx.beginPath();
+      ctx.moveTo(0, by + Math.sin(time*0.14 + b0)*4);
+      for (var x1=30; x1<=W; x1+=30){
+        ctx.lineTo(x1, by + Math.sin(x1*0.008 + time*0.3 + b0*2.2)*7);
+      }
+      ctx.lineTo(W, by+46); ctx.lineTo(0, by+46);
+      ctx.closePath(); ctx.fill();
+      ctx.strokeStyle = 'rgba(245,129,26,' + (0.10 + b0*0.035) + ')';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      for (var x2=0; x2<=W; x2+=30){
+        var yy2 = by + Math.sin(x2*0.008 + time*0.3 + b0*2.2)*7;
+        if (x2===0) ctx.moveTo(x2, yy2); else ctx.lineTo(x2, yy2);
+      }
+      ctx.stroke();
+    }
+
+    /* bucket-sweep arcs top-right */
+    for (var a0=0; a0<3; a0++){
+      ctx.strokeStyle = 'rgba(255,255,255,' + (0.035 + a0*0.012) + ')';
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.arc(W*(0.78+a0*0.04), H*0.30, 70+a0*60, Math.PI*0.15 + Math.sin(time*0.3)*0.1, Math.PI*0.85);
+      ctx.stroke();
+    }
+
+    /* orange corner glow */
+    var sgl = ctx.createRadialGradient(W*0.14, H*0.85, 10, W*0.14, H*0.85, 330);
+    sgl.addColorStop(0,'rgba(245,129,26,0.12)'); sgl.addColorStop(1,'rgba(245,129,26,0)');
+    ctx.fillStyle = sgl; ctx.fillRect(0,0,W,H);
+
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

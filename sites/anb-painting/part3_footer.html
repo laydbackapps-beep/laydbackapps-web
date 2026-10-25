@@ -1,0 +1,126 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="AnB Painting & Renovation logo" height="52">
+          <span>
+            <span class="foot-brand-name">AnB Painting</span><br>
+            <span class="foot-brand-sub">Painting & Renovation</span>
+          </span>
+        </div>
+        <p>AnB Painting & Renovation — interior and exterior painting, renovations and rebuilds for homes and businesses across Brisbane.</p>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <p>
+          <a href="tel:tel:+61450680040">0450 680 040</a><br>
+          <a href="mailto:anb_painting@outlook.com">anb_painting@outlook.com</a><br>
+          Brisbane, QLD
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 AnB Painting & Renovation · Brisbane QLD</span>
+      <span>Free quotes</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 16;
+    py = (e.clientY / window.innerHeight - 0.5) * 9;
+  }, {passive: true});
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  function loop(t){
+    if (!W || !H){ resize(); return; }
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  function frame(t){
+
+    var time = t * 0.001;
+    ctx.clearRect(0,0,W,H);
+    var g = ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,'#0C1626'); g.addColorStop(.55,'#13243C'); g.addColorStop(1,'#0C1626');
+    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+    /* wide wall bands revealed by a sweeping roller */
+    var sweep = (Math.sin(time*0.32)*0.5+0.5);
+    var bands = ['rgba(30,58,110,0.5)','rgba(61,107,181,0.32)','rgba(158,196,238,0.16)','rgba(30,58,110,0.4)'];
+    for (var i=0;i<4;i++){
+      var y0 = H*0.16 + i*H*0.19;
+      var w = W*0.86*(0.35 + 0.65*sweep) - i*W*0.05;
+      ctx.fillStyle = bands[i];
+      ctx.fillRect(W*0.07 + px*0.4, y0 + py*0.3, Math.max(60,w), H*0.13);
+    }
+    /* roller bar travelling */
+    var rx = W*0.07 + (W*0.86)*(sweep) + px*0.4;
+    ctx.fillStyle = 'rgba(230,240,252,0.75)';
+    ctx.fillRect(rx, H*0.14, 5, H*0.62);
+    ctx.fillStyle = 'rgba(230,240,252,0.12)';
+    ctx.fillRect(rx-40, H*0.14, 40, H*0.62);
+    /* paint drips */
+    for (var d=0;d<12;d++){
+      var dx = W*0.1 + ((d*211 + time*30) % (W*0.8));
+      var dy = H*0.20 + ((d*89) % (H*0.5)) + Math.sin(time+d)*4;
+      ctx.fillStyle = 'rgba(120,160,220,0.35)';
+      ctx.beginPath(); ctx.arc(dx, dy, 2.2, 0, Math.PI*2); ctx.fill();
+    }
+
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

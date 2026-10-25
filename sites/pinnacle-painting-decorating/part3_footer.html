@@ -1,0 +1,135 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Pinnacle Painting & Decorating logo" height="52">
+          <span>
+            <span class="foot-brand-name">Pinnacle Painting</span><br>
+            <span class="foot-brand-sub">& Decorating · Newcastle</span>
+          </span>
+        </div>
+        <p>Pinnacle Painting & Decorating — residential and commercial painting, external staining, pressure washing and concrete sealing across Lake Macquarie, the Central Coast and the Hunter Valley.</p>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <p>
+          <a href="tel:+61422735430">0422 735 430</a><br>
+          <a href="mailto:pinnaclepad@gmail.com">pinnaclepad@gmail.com</a><br>Lake Macquarie · Central Coast · Hunter Valley<br>Lic 278760C · ABN 31 330 404 607
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Pinnacle Painting & Decorating</span>
+      <span>Licensed & insured · Lic 278760C</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 16;
+    py = (e.clientY / window.innerHeight - 0.5) * 9;
+  }, {passive: true});
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  function loop(t){
+    if (!W || !H){ resize(); return; }
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  function frame(t){
+
+    var time = t * 0.001;
+    ctx.clearRect(0,0,W,H);
+    var g = ctx.createLinearGradient(0,0,W,H);
+    g.addColorStop(0,'#231A10'); g.addColorStop(.5,'#1B130B'); g.addColorStop(1,'#110C07');
+    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+
+    /* angled paint swaths sweeping down-right */
+    var cols = ['rgba(249,160,38,', 'rgba(216,124,28,', 'rgba(255,190,96,', 'rgba(168,96,22,'];
+    for (var s0=0; s0<7; s0++){
+      var off = ((time*30*(0.5+(s0%3)*0.3)) % (W+H*0.7)) - H*0.35;
+      var sx = W*0.60 + s0*W*0.075 + px*(0.5+s0*0.1) - off*0.55;
+      ctx.save();
+      ctx.translate(sx, 0); ctx.rotate(-0.32);
+      var sw = 30 + (s0%4)*24;
+      var gg = ctx.createLinearGradient(0,0,sw,0);
+      gg.addColorStop(0, cols[s0%cols.length]+'0)');
+      gg.addColorStop(.5, cols[s0%cols.length]+(0.09+(s0%3)*0.04)+')');
+      gg.addColorStop(1, cols[s0%cols.length]+'0)');
+      ctx.fillStyle = gg;
+      ctx.fillRect(0, -H*0.2, sw, H*1.5);
+      ctx.restore();
+    }
+
+    /* falling paint drips */
+    for (var d0=0; d0<18; d0++){
+      var dx = (d0*173 + 40) % W + Math.sin(time*0.4+d0)*5 + px*(0.4+(d0%4)*0.14);
+      var dy = ((d0*211 + time*46*(0.6+(d0%4)*0.3)) % (H+60)) - 30;
+      var dl = 12 + (d0%5)*9;
+      ctx.fillStyle = 'rgba(249,160,38,' + (0.14+(d0%3)*0.05) + ')';
+      ctx.fillRect(dx, dy, 4, dl);
+      ctx.beginPath(); ctx.arc(dx+2, dy+dl+2, 2.4, 0, Math.PI*2); ctx.fill();
+    }
+
+    /* warm glow top-left */
+    var sg = ctx.createRadialGradient(W*0.22, H*0.30, 5, W*0.22, H*0.30, 260);
+    sg.addColorStop(0,'rgba(249,160,38,0.12)'); sg.addColorStop(1,'rgba(249,160,38,0)');
+    ctx.fillStyle = sg; ctx.fillRect(0,0,W,H);
+
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!doctype html><html lang="en-AU" data-sig="links:grow,buttons:fill,tilt:0"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Webbs Concreting — Concrete Specialists, Melbourne South East</title>
+<meta name="description" content="Webbs Concreting — retaining walls, driveways, house slabs and all aspects of concrete across Melbourne's South East. Call 0412 980 745 for a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EFE7DA;--ink:#2A211A;--accent:#A84A24;--acc-ink:#924019;--muted:#655745;--deep:#4A3220;--clay:#D9A566;--wash:#E4D5BE;--on-accent:#FBF3E4;--on-accent-head:#FDF8F0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Archivo',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+/* NAV — lockup: monogram + name + sub-line, call lockup right. No pill, no capsule. */
+.nav{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 6vw;border-bottom:2px solid var(--ink)}
+.nav .brand{display:flex;align-items:center;gap:14px;min-width:0}
+.nav .mark{flex:none;width:46px;height:46px;display:grid;place-items:center;background:var(--deep);color:var(--on-accent-head);font-family:'Fraunces',serif;font-weight:900;font-size:24px;line-height:1;letter-spacing:-.03em}
+.nav .brand-txt{display:flex;flex-direction:column;gap:4px;line-height:1;min-width:0}
+.nav .brand-name{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(20px,2.2vw,28px);letter-spacing:-.01em;white-space:nowrap}
+.nav .brand-name b{color:var(--accent);font-weight:900}
+.nav .brand-sub{font:600 10.5px/1.5 'Archivo',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.nav .tel{display:inline-flex;align-items:baseline;gap:9px;font-family:'Fraunces',serif;font-weight:700;font-size:clamp(16px,1.6vw,20px);border-bottom:3px solid var(--accent);padding:4px 2px;white-space:nowrap}
+.nav .tel .lab{font:600 11px/1.6 'Archivo',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+/* HERO — full-bleed real photo, darkened + scrim, copy on top */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--deep);display:grid;grid-template-columns:1.5fr 1fr;gap:26px 5vw;align-items:end;padding:clamp(96px,15vh,170px) 6vw clamp(48px,8vh,92px);min-height:clamp(560px,82vh,860px)}
+.lbhf{position:absolute;inset:0;z-index:0}
+.lbhf img{width:100%;height:100%;object-fit:cover;object-position:center 38%;display:block;filter:brightness(.72) contrast(1.06) saturate(1.06)}
+.lbhf-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(12,9,6,.60) 0%,rgba(12,9,6,.30) 40%,rgba(12,9,6,.48) 70%,rgba(12,9,6,.88) 100%)}
+/* LB-3D-HERO stage — perspective kept; static preview retires the old canvas scene */
+.lb3d-stage{position:absolute;inset:0;overflow:hidden;pointer-events:none;perspective:1200px;z-index:1}
+.lb3d-stage .lb3d-shape{position:absolute;border-radius:0;display:none}
+#heroCanvas{display:none}
+.hero .k,.hero h1,.hero .lede,.hero .pull{position:relative;z-index:2}
+.hero .k{grid-column:1/-1;font:600 12px/1.6 'Archivo',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--clay);margin-bottom:18px;text-shadow:0 1px 16px rgba(0,0,0,.8)}
+.hero h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(40px,6.2vw,88px);line-height:1.02;letter-spacing:-.02em;max-width:16ch;color:#FDF8F0;text-shadow:0 2px 30px rgba(0,0,0,.6)}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--clay)}
+.hero .lede{grid-column:2;max-width:58ch;font-size:clamp(15.5px,1.4vw,18px);color:#EFE3CF;text-shadow:0 1px 18px rgba(0,0,0,.8)}
+.hero .lede b{color:#FDF8F0;font-weight:600}
+.hero .pull{grid-column:2;border-left:3px solid var(--clay);padding-left:clamp(16px,1.8vw,28px);color:#EBDCC4;font-size:15px;line-height:1.7;text-shadow:0 1px 16px rgba(0,0,0,.8)}
+.hero .pull b{display:block;font:600 11px/1.6 'Archivo',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--clay);margin-bottom:10px}
+/* MORTAR RULE — full-width terracotta bar dividing hero from wall */
+.mortar{height:14px;background:var(--accent);margin:0 6vw}
+.mortar.thin{height:3px;background:var(--ink);opacity:.25}
+/* BRICK-LAY — full-width courses, staggered joints, mortar gaps. NOT cards. */
+.wall{padding:clamp(40px,6vh,72px) 6vw clamp(20px,3vh,36px)}
+.course{display:grid;gap:10px;margin-bottom:10px}
+.course.even{grid-template-columns:1.35fr 1fr}
+.course.odd{
+  display:grid;grid-template-columns:auto auto 1fr;gap:10px clamp(18px,2.5vw,40px);align-items:baseline;
+  background:var(--deep);color:var(--bg);padding:clamp(26px,3vw,40px) clamp(24px,2.6vw,40px)
+}
+.course.odd .num{font-family:'Fraunces',serif;font-weight:900;font-size:13px;letter-spacing:.22em;color:var(--clay)}
+.course.odd h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.12;letter-spacing:-.01em;color:var(--bg);white-space:nowrap}
+.course.odd p{grid-column:2/4;max-width:70ch;font-size:15px;line-height:1.65;color:#E8D9C2}
+.cell{padding:clamp(28px,3.4vw,46px) clamp(24px,2.6vw,40px);position:relative}
+.course.even .cell:first-child{background:var(--wash)}
+.course.even .cell:last-child{background:var(--accent);color:var(--on-accent)}
+.course.even .cell:last-child h2{color:var(--on-accent-head)}
+.course.even .cell:last-child p{color:var(--on-accent)}
+.course.even .cell:last-child .num{color:var(--on-accent)}
+.cell .num{font-family:'Fraunces',serif;font-weight:900;font-size:13px;letter-spacing:.22em;display:block;margin-bottom:14px;color:var(--acc-ink)}
+.cell h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.12;letter-spacing:-.01em}
+.cell p{margin-top:12px;font-size:15px;line-height:1.65;max-width:52ch;color:var(--muted)}
+/* AREAS — stamped chips, square (no pills) */
+.areas{padding:clamp(24px,4vh,44px) 6vw clamp(50px,8vh,90px)}
+.areas .k{font:600 11px/1.6 'Archivo',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.areas span{display:inline-block;font-weight:600;font-size:13.5px;background:transparent;border:2px solid var(--ink);padding:10px 18px;margin:0 10px 10px 0}
+/* CTA — dark clay slab, oversized serif line, phone as underlined display type */
+.cta{margin:0 6vw clamp(60px,9vh,110px);background:var(--deep);color:var(--bg);padding:clamp(56px,9vh,110px) clamp(28px,5vw,80px);display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:center}
+.cta h3{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(30px,4.4vw,60px);line-height:1.05;max-width:14ch;letter-spacing:-.015em}
+.cta h3 em{font-style:italic;font-weight:500;color:var(--clay)}
+.cta .tel{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(24px,3vw,40px);color:var(--bg);border-bottom:5px solid var(--accent);padding-bottom:4px}
+.cta .tel:hover{color:var(--clay)}
+.foot{color:var(--muted)}
+.foot-line{padding:0 6vw clamp(30px,5vh,50px);font:600 12px/1.8 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+/* reveals */
+.rv{opacity:0;transform:translateY(18px);transition: opacity .45s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+/* pulse (fleet telemetry heartbeat) */
+.lb-pulse{position:fixed;bottom:1.5rem;right:1.5rem;width:10px;height:10px;background:var(--accent);border-radius:50%;opacity:.5;animation:lbPulse 2s ease-in-out infinite;pointer-events:none;z-index:999}
+@keyframes lbPulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.lb-pulse{animation:none;opacity:.5}.lb3d-stage{display:none}}
+@media (max-width:820px){
+  h1,h2,h3,.h1,.hero h1,.sec-title,.k,.kicker,.kick,.eyebrow,.tag-line,.tag,.hero-kicker,.hero-sub,.lead{
+    white-space:normal!important;overflow-wrap:anywhere;word-break:break-word;max-width:100%!important}
+  .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(10px,3.1vw,13px)!important;letter-spacing:.22em!important}
+  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.05!important}
+}
+@media (max-width:760px){
+  .nav{padding:18px 5vw;gap:12px}
+  .nav .mark{width:40px;height:40px;font-size:21px}
+  .hero{grid-template-columns:1fr;gap:20px;padding:clamp(72px,12vh,110px) 5vw clamp(40px,7vh,64px);min-height:clamp(500px,88vh,760px)}
+  .hero h1{font-size:clamp(32px,9.6vw,44px)}
+  .hero .k{margin-bottom:8px}
+  .hero .lede{grid-column:auto}
+  .hero .pull{grid-column:auto}
+  .mortar{margin:0 5vw}
+  .wall{padding:clamp(30px,5vh,50px) 5vw 16px}
+  .course.even{grid-template-columns:1fr}
+  .course.odd{grid-template-columns:auto 1fr;gap:8px 18px}
+  .course.odd h2{white-space:normal}
+  .course.odd p{grid-column:2}
+  .cell{padding:26px 22px}
+  .areas{padding:20px 5vw clamp(40px,6vh,60px)}
+  .cta{margin:0 5vw clamp(44px,7vh,70px);padding:44px 26px;flex-direction:column;align-items:flex-start;gap:22px}
+  .foot-line{padding:0 5vw clamp(24px,4vh,40px)}
+}
+@media (max-width:600px){.nav .brand-sub{display:none}}
+noscript .rv{opacity:1;transform:none}
+</style><style id="lb-brand-css">
+/* ==== LB BRAND (logo-true spanning wordmark) ==== */
+.lb-brand{display:inline-flex;align-items:center;gap:clamp(9px,1vw,16px);text-decoration:none;
+ color:inherit;min-width:0;padding:0;background:none;border:0;flex:0 1 auto}
+.lb-brand__mark{flex:0 0 auto;display:block;height:clamp(34px,4.1vw,58px);width:auto;max-width:22vw}
+.lb-brand__mark img{display:block;height:100%;width:auto;max-width:22vw;object-fit:contain}
+.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:.94}
+.lb-brand__name{font-family:var(--lb-disp,Inter),sans-serif;font-weight:800;text-transform:uppercase;
+ font-size:clamp(21px,2.75vw,44px);letter-spacing:.004em;white-space:nowrap;line-height:.92;
+ color:var(--lb-name,currentColor)}
+.lb-brand__name .lb-acc{color:var(--lb-acc,currentColor)}
+.lb-brand__sub{font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;text-transform:uppercase;
+ font-size:clamp(7px,.82vw,12px);letter-spacing:.30em;white-space:nowrap;margin-top:.34em;
+ color:var(--lb-subc,currentColor);opacity:.86}
+.lb-brand__rule{display:block;height:3px;width:100%;margin-top:.5em;border-radius:2px;
+ background:linear-gradient(90deg,var(--lb-acc,currentColor),transparent)}
+@media (max-width:640px){
+ .lb-brand__mark{height:clamp(30px,8vw,40px)}
+ .lb-brand__name{font-size:clamp(18px,6.2vw,26px)}
+ .lb-brand__sub{letter-spacing:.2em;font-size:7px}
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style id="lb-motion-css">
+/* ==== LB MOTION PACK ==== */
+.lb-rb{position:relative;width:100%;overflow:hidden;background:#0c0d10}
+.lb-rb__track{position:relative;width:100%;aspect-ratio:16/7}
+.lb-rb__slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;will-change:opacity}
+.lb-rb__slide.is-on{opacity:1}
+.lb-rb__slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03);transition:transform 7s linear}
+.lb-rb__slide.is-on img{transform:scale(1.10)}
+.lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2.2vw,30px);
+ background:linear-gradient(180deg,transparent,rgba(6,7,10,.72));color:#fff;
+ font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+ font-size:clamp(9px,1vw,13px);z-index:2}
+.lb-rb__dots{position:absolute;top:50%;right:clamp(10px,1.6vw,22px);transform:translateY(-50%);
+ display:flex;flex-direction:column;gap:9px;z-index:3}
+.lb-rb__dots button{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.7);
+ background:transparent;cursor:pointer;padding:0;transition:transform .25s,background .25s}
+.lb-rb__dots button.is-on{background:#fff;transform:scale(1.35)}
+.lb-rb__nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;
+ border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(8,9,12,.35);color:#fff;
+ cursor:pointer;display:grid;place-items:center;font-size:17px;line-height:1;backdrop-filter:blur(6px);
+ transition:background .25s,transform .25s}
+.lb-rb__nav:hover{background:rgba(8,9,12,.7)}
+.lb-rb__nav--prev{left:clamp(10px,1.6vw,22px)}
+.lb-rb__nav--next{right:clamp(10px,1.6vw,22px)}
+.lb-rb__nav:active{transform:translateY(-50%) scale(.92)}
+@media (max-width:700px){.lb-rb__track{aspect-ratio:4/3}.lb-rb__nav{width:36px;height:36px}}
+
+a.btn,.btn,button.btn,.nav-cta a,.wp-block-button__link{position:relative;overflow:hidden;
+ transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,filter .22s}
+a.btn:hover,.btn:hover,button.btn:hover,.nav-cta a:hover{transform:translateY(-2px);
+ box-shadow:0 10px 24px -12px rgba(0,0,0,.55);filter:brightness(1.05)}
+a.btn:active,.btn:active,button.btn:active,.nav-cta a:active{transform:translateY(0) scale(.985)}
+a.btn::after,.btn::after,.nav-cta a::after{content:'';position:absolute;top:0;bottom:0;width:38%;
+ left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);
+ transform:skewX(-18deg);transition:left .55s ease;pointer-events:none}
+a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
+
+.lb-rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.lb-rv.is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+ .lb-rv{opacity:1!important;transform:none!important;transition:none!important}
+ .lb-rb__slide img{transform:none!important;transition:none!important}
+ a.btn::after,.btn::after,.nav-cta a::after{display:none}
+}
+
+/* marquee band (professional, reference-derived) */
+.lb-mq{position:relative;overflow:hidden;background:#0b0c10;border-top:1px solid rgba(255,255,255,.10);
+ border-bottom:1px solid rgba(255,255,255,.10)}
+.lb-mq__in{display:flex;width:max-content;animation:lb-mq 34s linear infinite}
+.lb-mq:hover .lb-mq__in{animation-play-state:paused}
+.lb-mq__in span{display:inline-flex;align-items:center;gap:clamp(18px,3vw,44px);
+ padding:clamp(11px,1.5vw,19px) clamp(14px,2vw,26px);color:#fff;font-family:var(--lb-disp,Inter),sans-serif;
+ font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:clamp(11px,1.25vw,17px);white-space:nowrap}
+.lb-mq__in span i{font-style:normal;color:var(--lb-acc,#e51924)}
+@keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
+</style>
+<style id="lb-depth-css">
+/* ==== LB DEPTH PACK — layered shadow + gradient surfaces ==== */
+:root{
+  --lb-acc: var(--acc, var(--accent, #e51924));
+  --lb-ink: var(--ink, #14161a);
+  --lb-paper: var(--paper, #ffffff);
+  --lb-e1: 0 1px 2px rgba(8,10,14,.06), 0 2px 6px rgba(8,10,14,.05);
+  --lb-e2: 0 2px 4px rgba(8,10,14,.07), 0 8px 18px -6px rgba(8,10,14,.14);
+  --lb-e3: 0 4px 10px rgba(8,10,14,.09), 0 18px 40px -12px rgba(8,10,14,.22);
+  --lb-hair: rgba(8,10,14,.10);
+}
+body{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+
+/* sections: soft accent-keyed gradient wash for depth, never a flat slab */
+section{ position:relative; }
+section::before{
+  content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+  background:
+    radial-gradient(120% 70% at 12% 0%, color-mix(in srgb, var(--lb-acc) 7%, transparent) 0%, transparent 58%),
+    radial-gradient(90% 60% at 100% 100%, color-mix(in srgb, var(--lb-acc) 5%, transparent) 0%, transparent 60%);
+}
+section > *{ position:relative; z-index:1; }
+
+/* cards / panels / figures: gradient surface + hairline + elevation, lift on hover */
+.card,.cards > *,.panel,.tile,.service,.box,.grid > article,.grid > div,figure,.gal figure,.gallery figure{
+  background:linear-gradient(180deg, color-mix(in srgb, var(--lb-paper) 100%, transparent) 0%,
+                                    color-mix(in srgb, var(--lb-ink) 3%, var(--lb-paper)) 100%);
+  border:1px solid var(--lb-hair);
+  border-radius:14px;
+  box-shadow:var(--lb-e1);
+  transition:transform .28s cubic-bezier(.2,.7,.3,1), box-shadow .28s, border-color .28s;
+}
+.card:hover,.cards > *:hover,.panel:hover,.tile:hover,.service:hover,.grid > article:hover,
+.grid > div:hover,figure:hover,.gal figure:hover,.gallery figure:hover{
+  transform:translateY(-4px); box-shadow:var(--lb-e3); border-color:color-mix(in srgb, var(--lb-acc) 34%, var(--lb-hair));
+}
+
+/* photographs: rounded, layered shadow, slight scrim so text over them stays legible */
+section img, figure img, .gal img, .gallery img, .card img{
+  border-radius:10px; box-shadow:var(--lb-e2); display:block;
+}
+figure, .gal figure, .gallery figure{ overflow:hidden; }
+figure img, .gal img{ transform:scale(1.001); transition:transform .5s cubic-bezier(.2,.7,.3,1); }
+figure:hover img, .gal figure:hover img, .gallery figure:hover img{ transform:scale(1.035); }
+
+/* buttons: gradient fill, inset highlight, layered shadow */
+a.btn,.btn,button.btn,.nav-cta a,.btn-primary{
+  background-image:linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0) 55%);
+  box-shadow:var(--lb-e1), inset 0 1px 0 rgba(255,255,255,.22);
+  border-radius:10px;
+}
+a.btn:hover,.btn:hover,button.btn:hover,.nav-cta a:hover{
+  box-shadow:var(--lb-e3), inset 0 1px 0 rgba(255,255,255,.26);
+}
+.btn-ghost{ box-shadow:var(--lb-e1); }
+
+/* nav: subtle vertical gradient + hairline for separation from the page */
+.nav,nav,.site-header,header.nav{
+  background-image:linear-gradient(180deg, color-mix(in srgb, var(--lb-paper) 96%, transparent) 0%,
+                                         color-mix(in srgb, var(--lb-ink) 3%, var(--lb-paper)) 100%);
+  box-shadow:0 1px 0 var(--lb-hair), 0 6px 20px -14px rgba(8,10,14,.28);
+}
+
+/* section heads get a hairline rule for structure (no risky text clipping) */
+.sec-head{ border-bottom:1px solid var(--lb-hair); padding-bottom:.7rem; }
+h1,h2,h3{ text-wrap:balance; }
+
+/* footer: depth anchor */
+footer{ box-shadow:0 -1px 0 var(--lb-hair), 0 -14px 40px -30px rgba(8,10,14,.5); }
+
+/* dark surfaces get stronger, softer shadows */
+@media (prefers-color-scheme: dark){ :root{ --lb-hair: rgba(255,255,255,.12); } }
+@supports not (background: color-mix(in srgb, red 5%, blue)){
+  section::before{ background:radial-gradient(120% 70% at 12% 0%, rgba(229,25,36,.06) 0%, transparent 58%); }
+}
+@media (prefers-reduced-motion: reduce){
+  .card,.cards > *,.panel,.tile,figure,.gal figure, a.btn,.btn, img{ transition:none!important; transform:none!important; }
+}
+</style>
+</head><body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
+<nav class="nav" aria-label="Primary"><a class="lb-brand" href="#top" aria-label="Webbs Concreting - Home" style="--lb-disp:Inter;--lb-sub:Inter;--lb-acc:#A84A24;"><span class="lb-brand__word"><span class="lb-brand__name">Webbs Concreting</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a><a class="tel" href="tel:+61412980745" aria-label="Call 0412 980 745"><span class="lab">Call</span>0412 980 745</a></nav>
+<section class="hero" id="top" aria-label="Webbs Concreting — concrete works in Melbourne's South East">
+<div class="lbhf" aria-hidden="true"><img src="assets/webbs-concreting-work-01.jpg" alt="" width="1200" height="1170" loading="eager" fetchpriority="high"></div>
+<div class="lbhf-scrim" aria-hidden="true"></div>
+<!-- LB-3D-HERO -->
+<canvas id="heroCanvas" width="600" height="600" aria-hidden="true"></canvas>
+<div class="lb3d-stage" aria-hidden="true">
+  <div class="lb3d-shape s1"></div>
+  <div class="lb3d-shape s2"></div>
+  <div class="lb3d-shape s3"></div>
+  <div class="lb3d-shape s4"></div>
+  <div class="lb3d-shape s5"></div>
+</div>
+  <div class="k">MELBOURNE SOUTH EAST CONCRETE SPECIALISTS</div>
+  <h1 data-ux="words">All aspects of concrete, <em>done properly.</em></h1>
+  <p class="lede">Located in Melbourne's South East, Webbs Concreting delivers all aspects of concrete work — from retaining walls and driveways to house slabs and commercial projects. Quality workmanship backed by local experience.</p>
+  <div class="pull"><b>How a job runs</b>Free quote and site check, formwork and steel set to spec, a clean pour and finish, then a walk-through before handover.</div>
+</section>
+<div class="mortar"></div>
+<section class="wall" aria-label="Services"><div class='course even'><div class='cell rv' style='--i:0'><span class='num'>01</span><h2>Retaining Walls</h2><p>Structural and landscape retaining walls — engineered, council compliant and built to hold.</p></div><div class='cell rv' style='--i:1'><span class='num'>02</span><h2>Driveways &amp; Crossovers</h2><p>Residential and commercial driveways, vehicle crossovers and hardstands — formed, reinforced and finished to standard.</p></div></div><div class='course odd rv' style='--i:2'><span class='num'>03</span><h2>House Slabs &amp; Foundations</h2><p>Waffle pod and conventional raft slabs for new homes, extensions and granny flats — engineered and certified.</p></div><div class='course even'><div class='cell rv' style='--i:3'><span class='num'>04</span><h2>Shed &amp; Garage Slabs</h2><p>Workshop floors, garage slabs and farm shed foundations — reinforced for heavy loads.</p></div><div class='cell rv' style='--i:4'><span class='num'>05</span><h2>Paths, Patios &amp; Alfresco</h2><p>Concrete paths, entertaining areas, alfresco slabs and step constructions — exposed aggregate, coloured or plain finish.</p></div></div><div class='course odd rv' style='--i:5'><span class='num'>06</span><h2>Commercial &amp; Industrial Concrete</h2><p>Warehouse floors, loading docks, hardstands and civil concrete works across Melbourne South East.</p></div></section>
+<div class="mortar thin"></div>
+<section class="areas"><div class="k">Service area</div><span>Berwick</span><span>Narre Warren</span><span>Cranbourne</span><span>Pakenham</span><span>Officer</span><span>Beaconsfield</span><span>Hallam</span><span>Doveton</span><span>Endeavour Hills</span><span>Lysterfield</span><span>Rowville</span><span>Scoresby</span><span>Knoxfield</span><span>Wantirna</span><span>Boronia</span><span>Ferntree Gully</span><span>Dandenong</span><span>Springvale</span><span>Noble Park</span><span>Keysborough</span><span>Bangholme</span><span>Carrum Downs</span><span>Skye</span><span>Sandhurst</span><span>Lyndhurst</span><span>Clyde</span><span>Cardinia</span><span>Casey</span><span>Greater Dandenong</span></section>
+<section class="cta"><h3>Ready when you are. <em>Let's build it.</em></h3><a class="tel" href="tel:+61412980745" aria-label="Call 0412 980 745">0412 980 745</a></section>
+<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img src="site/assets/work_01.jpg" alt="Webbs Concreting" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img src="site/assets/work_02.jpg" alt="Webbs Concreting" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="site/assets/work_03.jpg" alt="Webbs Concreting" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="site/assets/work_04.jpg" alt="Webbs Concreting" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="site/assets/work_05.jpg" alt="Webbs Concreting" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="site/assets/work_06.jpg" alt="Webbs Concreting" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="site/assets/work_07.jpg" alt="Webbs Concreting" loading="lazy" decoding="async"></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button><button type="button" class="" aria-label="Slide 4"></button><button type="button" class="" aria-label="Slide 5"></button><button type="button" class="" aria-label="Slide 6"></button><button type="button" class="" aria-label="Slide 7"></button></div><div class="lb-rb__cap">Webbs Concreting &mdash; recent work</div></div></section><footer class="foot"><section id="lbq" class="v3" aria-labelledby="lbq-h">
+  <style>
+#lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#c4fb24))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,#9aa6b2);--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto}
+#lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
+#lbq .lbq-f{display:grid;gap:12px}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
+#lbq input::placeholder,#lbq textarea::placeholder{color:#6B5B49;opacity:1}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:var(--on-accent,#FBF3E4);font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+/* v1 card */
+#lbq.v1 .lbq-card{background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
+#lbq.v1 .lbq-g{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+#lbq.v1 .lbq-full{grid-column:1/-1}
+@media(max-width:640px){#lbq.v1 .lbq-g{grid-template-columns:1fr}}
+/* v2 band */
+#lbq.v2{background:var(--lbq-panel);border-top:1px solid var(--lbq-line);border-bottom:1px solid var(--lbq-line)}
+#lbq.v2 .lbq-g{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+#lbq.v2 .lbq-full{grid-column:1/-1}
+#lbq.v2 .lbq-hd{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
+@media(max-width:760px){#lbq.v2 .lbq-g{grid-template-columns:1fr}#lbq.v2 .lbq-hd{display:block}}
+/* v3 split */
+#lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+#lbq.v3 .lbq-g{display:grid;gap:12px}
+#lbq.v3 .lbq-hp2{border-left:3px solid var(--lbq-accent);padding-left:16px}
+@media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
+/* v4 minimal */
+#lbq.v4 .lbq-w{max-width:620px}
+#lbq.v4 input,#lbq.v4 textarea{border:0;border-bottom:1px solid var(--lbq-line);border-radius:0;background:transparent;padding:11px 2px}
+#lbq.v4 .lbq-g{display:grid;gap:16px}
+</style>
+  <div class="lbq-w">
+      <div class="lbq-sp"><div class="lbq-hp2"><h2 id="lbq-h">Request a quote</h2>
+      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p><p class="lbq-s" style="margin-bottom:0">Prefer to talk? Call, text or email &mdash; we reply fast.</p></div><div><form id="lbq-form" novalidate data-site="user-target-webbs-concreting" data-biz="Webbs Concreting"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div></div>
+  </div>
+  <script>
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;  // honeypot — silently accept bots
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = 'var(--acc-ink)';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = 'var(--acc-ink)';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</section>
+<div class="foot-line"><span>Webbs Concreting</span><span>MELBOURNE SOUTH EAST CONCRETE SPECIALISTS</span></div>
+</footer>
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+  els.forEach(function(e,i){e.style.transitionDelay=(Math.min(i*55,330))+'ms';io.observe(e)});
+  setTimeout(function(){els.forEach(function(e){e.classList.add('on')})},2500);
+})();
+</script>
+<div class="lb-pulse" aria-hidden="true"></div>
+<script id="lb-motion-js">
+/* LB MOTION PACK v1 */
+(function(){
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sel = 'section > *, main > *, .sec-head, .cards > *, .grid > *, .faq details, .gal figure, .gallery figure';
+  var els = [].slice.call(document.querySelectorAll(sel)).filter(function(e){
+    if (e.closest && e.closest('.lb-rb')) return false;
+    if (e.tagName === 'SCRIPT' || e.tagName === 'STYLE') return false;
+    var r = e.getBoundingClientRect();
+    return r.width > 40 && r.height > 20;
+  });
+  els.forEach(function(e, i){ e.classList.add('lb-rv'); e.style.transitionDelay = ((i % 6) * 55) + 'ms'; });
+  if (rm || !('IntersectionObserver' in window)) {
+    els.forEach(function(e){ e.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(x){ if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+    els.forEach(function(e){ io.observe(e); });
+    setTimeout(function(){ els.forEach(function(e){ if (!e.classList.contains('is-in')) e.classList.add('is-in'); }); }, 2600);
+  }
+  var rb = document.querySelector('.lb-rb');
+  if (!rb) return;
+  var slides = [].slice.call(rb.querySelectorAll('.lb-rb__slide'));
+  if (slides.length < 2) return;
+  var dots = [].slice.call(rb.querySelectorAll('.lb-rb__dots button'));
+  var i = 0, timer = null, DUR = 5600;
+  function go(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function(s, k){ s.classList.toggle('is-on', k === i); });
+    dots.forEach(function(d, k){ d.classList.toggle('is-on', k === i); });
+  }
+  function play(){ if (rm) return; stop(); timer = setInterval(function(){ go(i + 1); }, DUR); }
+  function stop(){ if (timer) { clearInterval(timer); timer = null; } }
+  dots.forEach(function(d, k){ d.addEventListener('click', function(){ go(k); play(); }); });
+  var pv = rb.querySelector('.lb-rb__nav--prev'), nx = rb.querySelector('.lb-rb__nav--next');
+  if (pv) pv.addEventListener('click', function(){ go(i - 1); play(); });
+  if (nx) nx.addEventListener('click', function(){ go(i + 1); play(); });
+  rb.addEventListener('mouseenter', stop); rb.addEventListener('mouseleave', play);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(en){ en.forEach(function(x){ x.isIntersecting ? play() : stop(); }); },
+      { threshold: 0.25 }).observe(rb);
+  } else { play(); }
+  go(0);
+})();
+</script>
+</body></html>

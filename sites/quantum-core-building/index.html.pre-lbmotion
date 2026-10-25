@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantum Core Building Pty Ltd - Built on Precision. Delivered on Quality.</title>
+<meta name="description" content="Quantum Core Building Pty Ltd - Residential building, extensions, structural work, project management, renovations. Built on precision. Delivered on quality. ABN 24 700 287 878.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#100f10;
+  --bg-2:#100f10;
+  --panel:#353950;
+  --panel-2:#5f5d5a;
+  --ink:#ffffff;
+  --mut:#c0c0c0;
+  --acc:#ff7f00;
+  --acc-2:#cc4c00;
+  --acc-hi:#ff7f00;
+  --line:rgba(255,255,255,.08);
+  --line-acc:rgba(255,127,0,.4);
+  --silver:#bfbfbf;
+  --silver-dim:#868686;
+  --nav-h:64px;
+  --font-d:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-m:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+section[id],footer[id]{scroll-margin-top:calc(var(--nav-h) + 10px)}
+html:not(.js) .rv{opacity:1!important;transform:none!important}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.js .rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-d);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--acc-hi);outline-offset:3px}
+.skip{position:absolute;top:-100%;left:50%;transform:translateX(-50%);padding:.7rem 1.2rem;background:var(--acc);color:#000;font-weight:700;z-index:10000}
+.skip:focus{top:1rem}
+.nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2.5rem);background:rgba(0,0,0,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-acc);z-index:1000}
+.brand{display:flex;align-items:center;gap:.8rem;color:var(--ink);text-decoration:none}
+.brand-mark{height:48px;width:auto;object-fit:contain}
+.brand-txt{display:flex;flex-direction:column;line-height:1}
+.brand-name{font-family:'Montserrat',sans-serif;font-size:1.15rem;line-height:1;font-weight:800;letter-spacing:-.012em}
+.brand-sub{display:block;margin-top:4px;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;font-style:normal;opacity:.85}
+.brand-sub em{font-style:normal;opacity:1;color:var(--acc)}
+@media (max-width:680px){.brand-mark{height:48px;width:auto;object-fit:contain}.brand-name{font-size:1.02rem}.brand-sub{display:none} .nav{height:72px}}
+@media (max-width:420px){.brand-name{font-size:.9rem}}
+@media (max-width:680px){:root{--nav-h:72px}}
+.nav__links{display:flex;gap:clamp(1rem,2.4vw,2rem);list-style:none;margin:0;padding:0}
+.nav__links a{font-size:.78rem;letter-spacing:.13em;color:var(--mut);transition:color .2s}
+.nav__links a:hover{color:var(--acc-hi)}
+@media (max-width:680px){.nav__links{display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.5rem;font-size:.86rem;font-weight:800;letter-spacing:.07em;border:0;border-radius:6px;cursor:pointer}
+.btn--p{background:var(--acc);color:#000}
+.btn--p:hover{background:var(--acc-2)}
+.btn--o{background:transparent;color:var(--ink);border:2px solid rgba(255,255,255,.34)}
+.btn--o:hover{border-color:var(--acc-hi);color:var(--acc-hi)}/* ===== hero: real-image dark hero + scrim ===== */
+.hero{position:relative;min-height:min(92vh,860px);display:flex;align-items:center;overflow:hidden;padding:calc(var(--nav-h) + 3rem) 0 3.4rem;border-bottom:1px solid var(--line)}
+.hero-media{position:absolute;inset:-4%;z-index:0}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block;filter:brightness(.5) saturate(.85) blur(9px);transform:scale(1.05)}
+.hero-grid{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.85),rgba(0,0,0,.15));mask-image:linear-gradient(180deg,rgba(0,0,0,.85),rgba(0,0,0,.15))}
+.hero-scrim{position:absolute;inset:0;z-index:1;background:radial-gradient(120% 90% at 16% 26%,rgba(255,127,0,.14) 0%,rgba(255,127,0,0) 52%),linear-gradient(180deg,rgba(16,15,16,.82) 0%,rgba(16,15,16,.5) 45%,rgba(16,15,16,.92) 100%)}
+.hero-copy{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:0 clamp(1rem,4vw,2.6rem);pointer-events:none}
+.hero-copy a,.hero-copy .btn{pointer-events:auto}
+.hero-copy .k{margin:0 0 .7rem;font-family:var(--font-m);font-size:.78rem;letter-spacing:.24em;color:var(--acc-hi)}
+.hero-copy .h1{margin:0 0 1rem;font-size:clamp(2.4rem,6vw,4.6rem);font-weight:900;line-height:1.02;letter-spacing:-.03em;color:var(--ink);text-shadow:0 2px 24px rgba(0,0,0,.55)}
+.hero-copy .h1 em{color:var(--acc-hi);font-style:normal}
+.hero-copy .d{margin:0 0 1.9rem;font-size:clamp(1rem,1.45vw,1.18rem);color:var(--mut);max-width:52ch}
+.hero-copy .cta{display:flex;flex-wrap:wrap;gap:1rem}
+@media (max-width:680px){.hero{min-height:72vh;padding-bottom:2.6rem}.hero-copy .h1{font-size:clamp(2.05rem,9.5vw,3rem)}}
+/* ===== sections ===== */
+.sec{max-width:1180px;margin:0 auto;padding:clamp(4rem,8.5vw,7rem) clamp(1rem,4vw,2.6rem);position:relative}
+.sec--panel{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec--panel>.inner{max-width:1180px;margin:0 auto;padding:clamp(4rem,8.5vw,7rem) clamp(1rem,4vw,2.6rem)}
+.kick{font-family:var(--font-m);font-size:.76rem;text-transform:uppercase;letter-spacing:.22em;color:var(--acc-hi);margin:0 0 .5rem}
+.h2{margin:0 0 .9rem;font-size:clamp(1.7rem,3.6vw,2.65rem);font-weight:900;letter-spacing:-.015em}
+.lead{color:var(--mut);font-size:clamp(1rem,1.3vw,1.14rem);max-width:60ch}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:1.4rem;margin-top:2.6rem}
+.svc__it{border:1px solid var(--line);border-radius:10px;padding:1.35rem 1.25rem;background:var(--panel);transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .35s,background .35s}
+.svc__it:hover{transform:translateY(-4px);border-color:var(--line-acc);background:var(--panel-2)}
+.svc__n{font-family:var(--font-m);font-size:.8rem;color:#ff9433;letter-spacing:.14em}
+.svc__h{margin:.4rem 0 .35rem;font-size:1.06rem;font-weight:800}
+.svc__p{margin:.2rem 0 0;font-size:.92rem;color:var(--mut);line-height:1.5}
+.about{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:start;margin-top:2.4rem}
+.about__art{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:1.4rem}
+.about__art canvas{width:100%;height:300px;display:block}
+.about__cap{font-family:var(--font-m);font-size:.72rem;color:var(--mut);margin:.6rem 0 0;letter-spacing:.06em}
+.about__lis{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.about__lis li{display:flex;gap:.75rem;align-items:flex-start;font-size:.98rem;color:var(--ink)}
+.about__lis li::before{content:"";width:10px;height:10px;background:var(--acc);border-radius:2px;margin-top:.38rem;flex:none}
+@media (max-width:800px){.about{grid-template-columns:1fr}}
+.areas{margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:.6rem}
+.areas span{border:1px solid var(--line);border-radius:99px;padding:.45rem 1rem;font-size:.86rem;background:var(--panel);color:var(--ink)}
+.foot{margin:0;padding:2.7rem clamp(1rem,4vw,2.6rem);border-top:1px solid var(--line-acc);background:var(--bg-2)}
+.foot h3{margin:0 0 .4rem;font-size:1rem;font-weight:800}
+.foot p{margin:0;font-size:.88rem;color:var(--mut)}
+.foot a{color:var(--acc-hi)}
+/* Pulse snippet (required) */
+.lb-pulse{position:fixed;bottom:1.5rem;right:1.5rem;width:12px;height:12px;background:var(--acc);border-radius:50%;opacity:.6;animation:lbPulse 2s ease-in-out infinite;pointer-events:none;z-index:999}
+@keyframes lbPulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
+</style>
+<style>/* LB-3D-HERO — hidden 3D hero layer (marker kept for QA) */
+#heroCanvas{display:none;perspective:800px}
+</style>
+<style id="lb-brand-css">
+/* ==== LB BRAND (logo-true spanning wordmark) ==== */
+.lb-brand{display:inline-flex;align-items:center;gap:clamp(9px,1vw,16px);text-decoration:none;
+ color:inherit;min-width:0;padding:0;background:none;border:0;flex:0 1 auto}
+.lb-brand__mark{flex:0 0 auto;display:block;height:clamp(34px,4.1vw,58px);width:auto;max-width:22vw}
+.lb-brand__mark img{display:block;height:100%;width:auto;max-width:22vw;object-fit:contain}
+.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:.94}
+.lb-brand__name{font-family:var(--lb-disp,Inter),sans-serif;font-weight:700;text-transform:uppercase;
+ font-size:clamp(21px,2.75vw,44px);letter-spacing:.004em;white-space:nowrap;line-height:.92;
+ color:var(--lb-name,currentColor)}
+.lb-brand__name .lb-acc{color:var(--lb-acc,currentColor)}
+.lb-brand__sub{font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;text-transform:uppercase;
+ font-size:clamp(7px,.82vw,12px);letter-spacing:.30em;white-space:nowrap;margin-top:.34em;
+ color:var(--lb-subc,currentColor);opacity:.86}
+.lb-brand__rule{display:block;height:3px;width:100%;margin-top:.5em;border-radius:2px;
+ background:linear-gradient(90deg,var(--lb-acc,currentColor),transparent)}
+@media (max-width:640px){
+ .lb-brand__mark{height:clamp(30px,8vw,40px)}
+ .lb-brand__name{font-size:clamp(18px,6.2vw,26px)}
+ .lb-brand__sub{letter-spacing:.2em;font-size:7px}
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<a class="skip" href="#services">Skip to content</a>
+
+<nav class="nav" role="navigation" aria-label="Primary">
+  <a class="lb-brand" href="#top" aria-label="QUANTUM - Home" style="--lb-disp:Roboto Slab;--lb-sub:Inter;--lb-acc:#fc840c;"><span class="lb-brand__mark"><img src="assets/lb-mark_quantum-core-building.png" alt="" aria-hidden="true" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">QUANTUM</span><span class="lb-brand__sub"><span class="lb-acc">CORE</span> BUILDING &middot; BUILT ON PRECISION. DELIVERED ON QUALITY</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
+  <ul class="nav__links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#capabilities">Capabilities</a></li>
+    <li><a href="#lbq">Contact</a></li>
+  </ul>
+</nav>
+
+<header id="top">
+<div class="hero">
+  <!-- LB-3D-HERO -->
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-media" aria-hidden="true">
+    <img src="images/hero-core-building.jpg" alt="" width="1080" height="969" loading="eager" decoding="async">
+  </div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-copy" id="heroCopy">
+    <p class="k">Quantum Core Building Pty Ltd</p>
+    <h1 class="h1">Built on <em>precision.</em><br>Delivered on <em>quality.</em></h1>
+    <p class="d">Residential building, extensions, structural work, project management and renovations - every element aligned to exacting standards.</p>
+    <div class="cta">
+      <a class="btn btn--p" href="#lbq">Request a quote</a>
+    </div>
+  </div>
+</div>
+</header><section class="sec" id="services" aria-labelledby="s-t">
+  <p class="kick" aria-hidden="true">What we do</p>
+  <h2 class="h2" id="s-t">Residential building - precision at every stage</h2>
+  <div class="svc">
+    <article class="svc__it rv"><p class="svc__n">01</p><h3 class="svc__h">Residential building</h3><p class="svc__p">New homes constructed to exacting tolerances - from slab to final fix.</p></article>
+    <article class="svc__it rv"><p class="svc__n">02</p><h3 class="svc__h">Extensions</h3><p class="svc__p">Seamless additions that respect the original structure and exceed the brief.</p></article>
+    <article class="svc__it rv"><p class="svc__n">03</p><h3 class="svc__h">Structural work</h3><p class="svc__p">Load-bearing alterations, steel and timber framing, engineered solutions.</p></article>
+    <article class="svc__it rv"><p class="svc__n">04</p><h3 class="svc__h">Project management</h3><p class="svc__p">End-to-end coordination - trades, certifications, program and budget control.</p></article>
+    <article class="svc__it rv"><p class="svc__n">05</p><h3 class="svc__h">Renovations</h3><p class="svc__p">Whole-house and part renovations delivered to the same standard as new work.</p></article>
+  </div>
+</section>
+
+<section class="sec sec--panel" id="approach" aria-labelledby="a-t">
+  <div class="inner">
+  <p class="kick" aria-hidden="true">Approach</p>
+  <h2 class="h2" id="a-t">Precision.<br>Quality.<br>No compromise.</h2>
+  <div class="about">
+    <div class="about__art rv">
+      <canvas id="detailCanvas" width="560" height="300" aria-hidden="true"></canvas>
+      <p class="about__cap">// LASER GRID ALIGNMENT - structural grid to 1mm tolerance</p>
+    </div>
+    <ul class="about__lis">
+      <li class="rv">Laser-level set-out on every job - walls, openings and services located to 1mm before a cut is made.</li>
+      <li class="rv">Digital coordination: 3D model clash detection resolves structure, services and finishes before site start.</li>
+      <li class="rv">Hold-point inspections baked into the programme - independent verification at each critical stage.</li>
+      <li class="rv">Single-point accountability - one project lead, one schedule, one quality standard from ground-up to handover.</li>
+    </ul>
+  </div>
+  </div>
+</section>
+
+<section class="sec" id="capabilities" aria-labelledby="c-t">
+  <p class="kick" aria-hidden="true">Capabilities</p>
+  <h2 class="h2" id="c-t">Technical scope - what we control in-house</h2>
+  <div class="svc">
+    <article class="svc__it rv"><p class="svc__n">Concrete & formwork</p><h3 class="svc__h">Slabs, footings, suspended floors</h3><p class="svc__p">Engineered formwork, post-tension coordination, finish-grade tolerances.</p></article>
+    <article class="svc__it rv"><p class="svc__n">Steel fabrication</p><h3 class="svc__h">Portal frames, beams, connections</h3><p class="svc__p">CNC-detailed, workshop-fabricated, site-bolted to survey grid.</p></article>
+    <article class="svc__it rv"><p class="svc__n">Timber framing</p><h3 class="svc__h">Wall, floor and roof systems</h3><p class="svc__p">Machine-graded timber, pre-cut panels, laser-laid plates and studs.</p></article>
+    <article class="svc__it rv"><p class="svc__n">Envelope & finishes</p><h3 class="svc__h">Cladding, glazing, internal linings</h3><p class="svc__p">Weather-tight detailing, thermal bridging control, Level 5 finish option.</p></article>
+    <article class="svc__it rv"><p class="svc__n">Services integration</p><h3 class="svc__h">Hydraulic, electrical, mechanical</h3><p class="svc__p">Coordinated risers, slab penetrations pre-planned, commissioning verified.</p></article>
+    <article class="svc__it rv"><p class="svc__n">Certification</p><h3 class="svc__h">BCA, NCC, Australian Standards</h3><p class="svc__p">Private certifier liaison, mandatory inspections, occupation certificate pathway.</p></article>
+  </div>
+</section>
+
+<footer class="foot">
+  <div>
+    <h3>Quantum Core Building Pty Ltd</h3>
+    <p>Residential building, extensions, structural work, project management, renovations.<br>ABN 24 700 287 878</p>
+  </div>
+  <p aria-hidden="true">&copy; <span id="year"></span> Quantum Core Building Pty Ltd. All rights reserved.</p>
+</footer>
+
+<section id="lbq" class="v3" aria-labelledby="lbq-h">
+  <style>
+#lbq{--lbq-accent:var(--acc);--lbq-ink:var(--ink);--lbq-muted:var(--mut);--lbq-bg:var(--bg-2);--lbq-panel:var(--panel);--lbq-line:var(--line);padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto}
+#lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
+#lbq .lbq-f{display:grid;gap:12px}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#000;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+/* v3 split */
+#lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+#lbq.v3 .lbq-g{display:grid;gap:12px}
+#lbq.v3 .lbq-hp2{border-top:3px solid var(--lbq-accent);padding-left:16px}
+@media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
+  </style>
+  <div class="lbq-w">
+      <div class="lbq-sp"><div class="lbq-hp2"><h2 id="lbq-h">Request a quote</h2>
+      <p class="lbq-s">Tell us a few details and we'll get back to you with a free, no-obligation quote.</p></div><div><form id="lbq-form" novalidate data-site="quantum-core-building" data-biz="Quantum Core Building Pty Ltd"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-svc">Service</label><select id="lbq-svc" name="service"><option value="">Select service</option><option>Residential building</option><option>Extensions</option><option>Structural work</option><option>Project management</option><option>Renovations</option><option>Other</option></select></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Scope, location, time frame…" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div></div>
+  </div>
+  <script>
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending…';
+      st.style.color = '';
+      base(function(B){
+        var url = B + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks - your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send - please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</section>
+<script>
+document.documentElement.classList.add('js');
+</script>
+<script>
+/* ===== detail canvas (approach section) - static laser-grid alignment art ===== */
+(function(){
+  var c=document.getElementById('detailCanvas');if(!c)return;
+  var x=c.getContext('2d'),w=c.width,h=c.height;
+  x.clearRect(0,0,w,h);
+  x.lineCap='round';
+  x.strokeStyle='rgba(255,127,0,0.06)';x.lineWidth=1;
+  for(var gx=0;gx<=w;gx+=30){x.beginPath();x.moveTo(gx,0);x.lineTo(gx,h);x.stroke();}
+  for(var gy=0;gy<=h;gy+=30){x.beginPath();x.moveTo(0,gy);x.lineTo(w,gy);x.stroke();}
+  x.strokeStyle='#ff7f00';x.lineWidth=2;
+  x.beginPath();x.moveTo(w*0.1,h*0.1);x.lineTo(w*0.9,h*0.1);x.stroke();
+  x.beginPath();x.moveTo(w*0.1,h*0.9);x.lineTo(w*0.9,h*0.9);x.stroke();
+  x.beginPath();x.moveTo(w*0.1,h*0.1);x.lineTo(w*0.1,h*0.9);x.stroke();
+  x.beginPath();x.moveTo(w*0.5,h*0.1);x.lineTo(w*0.5,h*0.9);x.stroke();
+  x.beginPath();x.moveTo(w*0.9,h*0.1);x.lineTo(w*0.9,h*0.9);x.stroke();
+  x.fillStyle='#ff7f00';
+  [[0.1,0.1],[0.5,0.1],[0.9,0.1],[0.1,0.9],[0.5,0.9],[0.9,0.9]].forEach(function(p){
+    x.beginPath();x.arc(p[0]*w,p[1]*h,4,0,6.283);x.fill();
+    x.strokeStyle='#ff7f00';x.lineWidth=1.5;
+    x.beginPath();x.arc(p[0]*w,p[1]*h,10,0,6.283);x.stroke();
+  });
+  x.strokeStyle='rgba(255,255,255,0.4)';x.lineWidth=1;x.setLineDash([8,4]);
+  x.beginPath();x.moveTo(w*0.1,h*0.05);x.lineTo(w*0.9,h*0.05);x.stroke();
+  x.setLineDash([]);
+  x.fillStyle='#bfbfbf';x.font='11px ui-monospace,Menlo,Consolas,monospace';x.textAlign='center';
+  x.fillText('18.000m',w*0.5,h*0.035);
+  x.save();x.translate(w*0.05,h*0.5);x.rotate(-Math.PI/2);x.textAlign='center';
+  x.fillText('10.000m',0,0);x.restore();
+  x.fillStyle='#ff7f00';x.font='bold 10px ui-monospace,Menlo,Consolas,monospace';x.textAlign='left';
+  x.fillText('\u00b11mm TOL',w*0.55,h*0.5);
+})();
+
+/* ===== reveals + year - content visible with or without JS ===== */
+(function(){
+  var rvs=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});
+    },{rootMargin:'0px 0px -8% 0px',threshold:0.08});
+    rvs.forEach(function(el){obs.observe(el);});
+  } else {
+    rvs.forEach(function(el){el.classList.add('on');});
+  }
+  setTimeout(function(){document.querySelectorAll('.rv:not(.on)').forEach(function(el){el.classList.add('on');});},1200);
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+<div class="lb-pulse" aria-hidden="true"></div>
+<!-- lb:pulse -->
+<script src="https://laydback-hq.tail5b3740.ts.net:8443/pulse/js" data-project="quantum-core-building" defer></script>
+</body>
+</html>

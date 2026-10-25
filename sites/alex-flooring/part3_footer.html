@@ -1,0 +1,176 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Alex Flooring logo" width="56" height="56">
+          <span>
+            <span class="foot-brand-name">ALEX</span><br>
+            <span class="foot-brand-sub">Flooring</span>
+          </span>
+        </div>
+        <p>Professional floor installation — timber, hybrid, laminate and vinyl. Newcastle and the Hunter.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p>
+          Timber flooring<br>
+          Hybrid flooring<br>
+          Laminate<br>
+          Vinyl &amp; LVP<br>
+          Subfloor prep
+        </p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>
+          <a href="https://www.facebook.com/p/Alex-flooring-61589246314579/" target="_blank" rel="noopener">Facebook</a><br>
+          Newcastle, NSW<br>
+          Quotes by message
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Alex Flooring &middot; Newcastle NSW</span>
+      <span>Floors laid right</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+/* reveals — html.js-gated */
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+/* safety net */
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+/* hero: planks laying themselves row by row + warm sheen sweep */
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+
+  var ROWS = 9;
+  var planks = [];
+  for (var r = 0; r < ROWS; r++){
+    var row = [];
+    var x = -0.12 - Math.random() * 0.1;
+    while (x < 1.1){
+      var len = 0.16 + Math.random() * 0.2;
+      row.push({ x: x, len: len, tone: Math.random() });
+      x += len + 0.008;
+    }
+    planks.push(row);
+  }
+
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 24;
+    py = (e.clientY / window.innerHeight - 0.5) * 12;
+  }, {passive: true});
+
+  function frame(t){
+    if (!W || !H){ resize(); return; }
+    var time = (t || 0) * 0.001;
+    ctx.clearRect(0, 0, W, H);
+
+    var rowH = H * 0.09;
+    var y0 = H * 0.10 + py * 0.5;
+
+    for (var r = 0; r < planks.length; r++){
+      var y = y0 + r * (rowH + 6);
+      var row = planks[r];
+      for (var p = 0; p < row.length; p++){
+        var pl = row[p];
+        /* reveal: planks appear over time, row by row — the floor "laying itself" */
+        var revealAt = (r * 0.9 + p * 0.35) % 7;
+        var age = (time * 0.55 - revealAt + 14) % 14;
+        var appear = Math.min(1, Math.max(0, age * 2.2));
+        if (appear <= 0) continue;
+
+        var tone = pl.tone;
+        var base = 40 + tone * 26;
+        var w = pl.len * W * appear;
+        var x = pl.x * W + px * (0.4 + r * 0.05);
+
+        ctx.fillStyle = 'rgb(' + Math.round(base + 78) + ',' + Math.round(base + 40) + ',' + Math.round(base + 2) + ')';
+        ctx.fillRect(x, y, w, rowH * 0.92);
+
+        /* plank gap shadow */
+        ctx.fillStyle = 'rgba(12,8,4,0.55)';
+        ctx.fillRect(x, y + rowH * 0.92, w, 5);
+
+        /* subtle grain streak */
+        ctx.fillStyle = 'rgba(120,74,30,' + (0.10 + tone * 0.12).toFixed(2) + ')';
+        ctx.fillRect(x + w * 0.12, y + rowH * 0.3, w * 0.5, 2);
+      }
+    }
+
+    /* warm sheen sweeping down (the polish going on) */
+    var sweepY = ((time * 0.07) % 1.4 - 0.2) * H;
+    var sg = ctx.createLinearGradient(0, sweepY - H * 0.14, 0, sweepY + H * 0.14);
+    sg.addColorStop(0, 'rgba(255,220,160,0)');
+    sg.addColorStop(0.5, 'rgba(255,220,160,0.10)');
+    sg.addColorStop(1, 'rgba(255,220,160,0)');
+    ctx.fillStyle = sg;
+    ctx.fillRect(0, sweepY - H * 0.14, W, H * 0.28);
+
+    /* warm glow */
+    var g = ctx.createRadialGradient(W*0.72 + px, H*0.4 + py, 10, W*0.72 + px, H*0.4 + py, W*0.5);
+    g.addColorStop(0, 'rgba(217,168,103,0.10)');
+    g.addColorStop(1, 'rgba(217,168,103,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  function loop(t){
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  loop(0);
+})();
+</script>
+</body>
+</html>

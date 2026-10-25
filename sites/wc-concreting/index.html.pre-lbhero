@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WC Concreting - Driveways, Slabs, Paths & Patios | Newcastle & Central Coast</title>
+<meta name="description" content="WC Concreting - residential driveways, house slabs, paths, patios, exposed aggregate and decorative finishes. Newcastle & Central Coast NSW. Call 0408 071 393.">
+<meta property="og:title" content="WC Concreting - Newcastle & Central Coast">
+<meta property="og:description" content="Driveways, slabs, paths, patios, exposed aggregate & decorative concreting. Newcastle & Central Coast NSW.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo.jpg">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton:wght@400;700;900&family=Inter:wght@400;500;700;900&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d0d;
+  --bg-2: #141414;
+  --panel: #1a1a1a;
+  --panel-2: #222222;
+  --ink: #fdfdfd;
+  --ink-2: #d0d5db;
+  --ink-3: #5d656c;
+  --acc: #0b6194;
+  --acc-2: #005e94;
+  --acc-3: #004d7a;
+  --line: rgba(13,97,148,.15);
+  --line-acc: rgba(11,97,148,.4);
+  --nav-h: 72px;
+  --font-d: 'Anton', 'Arial Narrow', sans-serif;
+  --font-m: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --acc-ink: #6fb9e7;
+  --fluid: clamp(42px, 7.4vw, 104px);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; }
+body { font-family: var(--font-m); background: var(--bg); color: var(--ink); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: var(--font-d); text-transform: uppercase; }
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--acc); color: #fff; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+/* Reveal system */
+html:not(.js) .rv { opacity: 1 !important; transform: none !important; }
+.js .rv { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+.js .rv.on { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  .js .rv { opacity: 1; transform: none; transition: none; }
+  .lb-pulse { animation: none; opacity: .5; }
+}
+
+.skip { position: absolute; top: -100%; left: 50%; transform: translateX(-50%); padding: .7rem 1.2rem; background: var(--acc); color: #fff; font-weight: 800; z-index: 10000; }
+.skip:focus { top: 1rem; }
+
+/* Navigation */
+.nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1rem, 3vw, 2.5rem); background: rgba(13,13,13,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); z-index: 1000; }
+.brand { display: flex; align-items: center; gap: .7rem; color: var(--ink); text-decoration: none; }
+.brand__logo { height: 32px; width: auto; display: block; border-radius: 5px; }
+.brand-txt { display: flex; flex-direction: column; line-height: 1; min-width: 0; }
+.brand-name { font-family: 'Montserrat', var(--font-m); font-size: 1.15rem; line-height: 1; font-weight: 800; letter-spacing: -.02em; }
+.brand-sub { display: block; margin-top: 3px; font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; font-style: normal; color: var(--ink-2); }
+.brand-sub em { font-style: normal; color: var(--acc-ink); }
+@media (max-width: 760px) { .brand__logo { height: 24px; } }
+@media (max-width: 600px) { .brand-sub { display: none; } }
+.nav__links { display: flex; gap: clamp(1rem, 2.4vw, 2rem); list-style: none; margin: 0; padding: 0; }
+.nav__links a { font-size: .78rem; text-transform: uppercase; letter-spacing: .13em; color: var(--ink-2); transition: color .2s; }
+.nav__links a:hover { color: var(--acc-ink); }
+.nav__cta a { display: inline-flex; align-items: center; gap: .45rem; padding: .58rem 1.15rem; font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; background: var(--acc); color: #fff; border-radius: 6px; }
+.nav__cta a:hover { background: var(--acc-2); }
+@media (max-width: 760px) { .nav__links { display: none; } .nav__cta a { padding: .5rem .9rem; font-size: .75rem; } }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .9rem 1.7rem; font-size: .9rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; border: 0; border-radius: 6px; cursor: pointer; transition: transform .15s ease, filter .15s ease; }
+.btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+.btn--primary { background: var(--acc); color: #fff; }
+.btn--ghost { background: transparent; color: var(--ink); border: 2px solid rgba(250,250,250,.3); }
+.btn--ghost:hover { border-color: var(--acc-ink); color: var(--acc-ink); }
+
+/* Section base */
+.sec { max-width: 1280px; margin: 0 auto; padding: clamp(4rem, 8vw, 7rem) clamp(1rem, 4vw, 2.5rem); position: relative; }
+.sec--panel { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.kick { font-family: var(--font-m); font-size: .76rem; text-transform: uppercase; letter-spacing: .22em; color: var(--acc-ink); margin: 0 0 .5rem; }
+.h2 { margin: 0 0 .9rem; font-size: clamp(1.8rem, 3.8vw, 3rem); font-weight: 900; letter-spacing: -.015em; line-height: 1.05; }
+.lead { color: var(--ink-2); font-size: clamp(1rem, 1.3vw, 1.14rem); max-width: 60ch; }
+
+/* Services grid */
+.svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 2.6rem; }
+.svc { border: 1px solid var(--line); border-radius: 12px; padding: 1.5rem 1.4rem; background: var(--panel); transition: transform .3s cubic-bezier(.16,1,.3,1), border-color .3s, background .3s; position: relative; overflow: hidden; }
+.svc:hover { transform: translateY(-4px); border-color: var(--line-acc); background: var(--panel-2); }
+.svc::after { content: ""; position: absolute; top: 0; left: 0; width: 48px; height: 3px; background: var(--acc); transition: width .3s ease; }
+.svc:hover::after { width: 100%; }
+.svc__num { font-family: var(--font-m); font-size: .7rem; color: var(--acc-ink); letter-spacing: .14em; font-weight: 700; }
+.svc__title { margin: .4rem 0 .35rem; font-size: 1.1rem; font-weight: 800; }
+.svc__desc { margin: .2rem 0 0; font-size: .92rem; color: var(--ink-2); line-height: 1.5; }
+
+/* Finishes strip */
+.finish-strip { margin-top: 3rem; }
+.finish-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.5rem; }
+.finish-head::before { content: ""; width: 40px; height: 3px; background: var(--acc); flex: none; align-self: center; }
+.finish-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.finish { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 1.25rem 1.15rem; text-align: center; transition: border-color .2s, transform .2s; }
+.finish:hover { border-color: var(--line-acc); transform: translateY(-2px); }
+.finish__icon { width: 56px; height: 56px; margin: 0 auto .75rem; display: flex; align-items: center; justify-content: center; background: rgba(13,97,148,.18); border-radius: 50%; color: var(--acc-ink); }
+.finish__title { font-family: var(--font-d); font-size: .95rem; font-weight: 800; margin-bottom: .3rem; }
+.finish__desc { font-size: .82rem; color: var(--ink-2); }
+
+/* Area strip */
+.area-strip { margin-top: 2.5rem; }
+.area-tags { display: flex; flex-wrap: wrap; gap: .6rem; }
+.area-tags span { border: 1px solid var(--line); border-radius: 99px; padding: .45rem 1rem; font-size: .86rem; background: var(--panel); color: var(--ink); transition: border-color .2s, color .2s; }
+.area-tags span:hover { border-color: var(--acc-ink); color: var(--acc-ink); }
+
+/* Quote form section */
+#lbq { --lbq-accent: var(--acc); --lbq-ink: var(--ink); --lbq-muted: var(--ink-2); --lbq-bg: var(--bg); --lbq-panel: var(--panel); --lbq-line: var(--line); padding: 72px 20px; background: var(--lbq-bg); color: var(--lbq-ink); }
+#lbq * { box-sizing: border-box; }
+#lbq .lbq-w { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; }
+@media (max-width: 900px) { #lbq .lbq-w { grid-template-columns: 1fr; } }
+#lbq h2 { font-family: var(--font-d); font-size: clamp(1.6rem, 3.4vw, 2.3rem); margin: 0 0 10px; letter-spacing: -.02em; }
+#lbq p.lbq-s { margin: 0 0 22px; color: var(--lbq-muted); max-width: 52ch; }
+#lbq .lbq-info { display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--lbq-line); padding-top: 22px; }
+#lbq .lbq-info div { display: flex; gap: 10px; align-items: baseline; }
+#lbq .lbq-info b { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--acc-ink); min-width: 64px; }
+#lbq .lbq-info a { font-weight: 800; text-decoration: none; }
+#lbq .lbq-f { display: grid; gap: 12px; background: var(--lbq-panel); border: 1px solid var(--lbq-line); border-radius: 14px; padding: 26px; }
+#lbq .lbq-g { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+#lbq .lbq-full { grid-column: 1 / -1; }
+@media (max-width: 640px) { #lbq .lbq-g { grid-template-columns: 1fr; } }
+#lbq label { display: block; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--lbq-muted); margin-bottom: 5px; }
+#lbq input, #lbq textarea, #lbq select { width: 100%; padding: 12px 14px; border: 1px solid var(--lbq-line); border-radius: 8px; background: var(--bg); color: var(--ink); font: inherit; font-size: .95rem; }
+#lbq input::placeholder, #lbq textarea::placeholder { color: #97a0a8; }
+#lbq textarea { min-height: 96px; resize: vertical; }
+#lbq input:focus, #lbq textarea:focus, #lbq select:focus { outline: 2px solid var(--lbq-accent); outline-offset: 1px; border-color: transparent; }
+#lbq button { margin-top: 6px; padding: 13px 22px; border: 0; border-radius: 8px; background: var(--lbq-accent); color: #fff; font: inherit; font-weight: 800; font-size: .95rem; cursor: pointer; letter-spacing: .02em; }
+#lbq button:disabled { opacity: .6; cursor: wait; }
+#lbq .lbq-st { margin: 10px 0 0; font-size: .9rem; color: var(--lbq-muted); min-height: 1.2em; }
+#lbq .lbq-cons { display: flex; gap: 9px; align-items: center; margin-top: 12px; font-size: .82rem; color: var(--lbq-muted); text-transform: none; letter-spacing: 0; }
+#lbq .lbq-cons input { width: auto; }
+#lbq .lbq-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Footer */
+.foot { margin: 0; padding: 3rem clamp(1rem, 4vw, 2.5rem); border-top: 1px solid var(--line-acc); background: var(--bg-2); }
+.foot-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; }
+@media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+.foot h3 { font-size: 1rem; font-weight: 800; margin: 0 0 .6rem; }
+.foot p { margin: 0; font-size: .88rem; color: var(--ink-2); }
+.foot a { color: var(--acc-ink); }
+.foot-grid > div > a { display: block; font-size: .9rem; margin: 0 0 .5rem; }
+.foot a:hover { text-decoration: underline; }
+.foot-brand { display: flex; align-items: center; gap: 12px; }
+.foot-brand-txt { display: flex; flex-direction: column; gap: 3px; line-height: 1.1; }
+.foot-brand-txt b { font-family: 'Montserrat', var(--font-m); font-weight: 800; font-size: 1.05rem; letter-spacing: -.01em; color: var(--ink); }
+.foot-brand-txt i { font-style: normal; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--acc-ink); }
+.foot-brand img { height: 52px; width: auto; object-fit: contain; border-radius: 6px; }
+.foot-bar { max-width: 1280px; margin: 2.5rem auto 0; padding: 1.2rem clamp(1rem, 4vw, 2.5rem); border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: .75rem; color: var(--ink-2); font-family: var(--font-m); }
+
+
+/* pulse (fleet telemetry heartbeat) */
+.lb-pulse { position: fixed; bottom: 1.5rem; right: 1.5rem; width: 10px; height: 10px; background: var(--acc); border-radius: 50%; opacity: .5; animation: lbPulse 2s ease-in-out infinite; pointer-events: none; z-index: 999; }
+@keyframes lbPulse { 0%,100% { opacity: .3; transform: scale(1); } 50% { opacity: 1; transform: scale(1.2); } }
+
+/* Hero - real photo (see LB-3D-HERO layer) */
+#sceneWrap { position: relative; }
+#sceneSticky { position: relative; height: 100vh; min-height: 640px; overflow: hidden; perspective: 1000px; display: flex; align-items: flex-end; }
+.hero-photo{position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,rgba(10,11,12,.95) 0%,rgba(10,11,12,.7) 50%,rgba(10,11,12,.3) 100%)}
+/* hero-photo uses gradient instead of stretched photo */
+.hero-scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(13,13,13,.72) 0%, rgba(13,13,13,.3) 30%, rgba(13,13,13,.52) 58%, rgba(13,13,13,.94) 100%); }
+#heroCanvas { display: none; }
+.hero-copy { position: relative; z-index: 3; width: 100%; max-width: 900px; padding: 0 clamp(20px, 5vw, 84px) clamp(56px, 11vh, 128px); }
+.hero-copy .kick { font-family: var(--font-m); font-size: .76rem; letter-spacing: .22em; text-transform: uppercase; color: var(--acc-ink); margin-bottom: 14px; text-shadow: 0 1px 12px rgba(0,0,0,.85); }
+.hero-copy .h1 { font-family: var(--font-d); font-size: var(--fluid); line-height: 1; text-transform: uppercase; color: #fff; margin: 0 0 20px; text-shadow: 0 2px 26px rgba(0,0,0,.55); }
+.hero-copy .h1 em { font-style: normal; color: #fff; }
+.hero-copy .lead { color: #e7eaee; max-width: 56ch; line-height: 1.6; margin: 0 0 24px; text-shadow: 0 1px 16px rgba(0,0,0,.65); }
+.hero-copy .cta { display: flex; gap: .8rem; flex-wrap: wrap; }
+@media (max-width: 860px) {
+  #sceneSticky { height: 100vh; min-height: 560px; }
+  .hero-copy { padding: 88px 20px 44px; }
+  .hero-photo img { object-position: center 58%; }
+}
+</style>
+<style id="lb-brand-css">
+/* ==== LB BRAND (logo-true spanning wordmark) ==== */
+.lb-brand{display:inline-flex;align-items:center;gap:clamp(9px,1vw,16px);text-decoration:none;
+ color:inherit;min-width:0;padding:0;background:none;border:0;flex:0 1 auto}
+.lb-brand__mark{flex:0 0 auto;display:block;height:clamp(34px,4.1vw,58px);width:auto;max-width:22vw}
+.lb-brand__mark img{display:block;height:100%;width:auto;max-width:22vw;object-fit:contain}
+.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:.94}
+.lb-brand__name{font-family:var(--lb-disp,Inter),sans-serif;font-weight:500;text-transform:uppercase;
+ font-size:clamp(21px,2.75vw,44px);letter-spacing:.004em;white-space:nowrap;line-height:.92;
+ color:var(--lb-name,currentColor)}
+.lb-brand__name .lb-acc{color:var(--lb-acc,currentColor)}
+.lb-brand__sub{font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;text-transform:uppercase;
+ font-size:clamp(7px,.82vw,12px);letter-spacing:.30em;white-space:nowrap;margin-top:.34em;
+ color:var(--lb-subc,currentColor);opacity:.86}
+.lb-brand__rule{display:block;height:3px;width:100%;margin-top:.5em;border-radius:2px;
+ background:linear-gradient(90deg,var(--lb-acc,currentColor),transparent)}
+@media (max-width:640px){
+ .lb-brand__mark{height:clamp(30px,8vw,40px)}
+ .lb-brand__name{font-size:clamp(18px,6.2vw,26px)}
+ .lb-brand__sub{letter-spacing:.2em;font-size:7px}
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style id="lb-motion-css">
+/* ==== LB MOTION PACK ==== */
+.lb-rb{position:relative;width:100%;overflow:hidden;background:#0c0d10}
+.lb-rb__track{position:relative;width:100%;aspect-ratio:16/7}
+.lb-rb__slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;will-change:opacity}
+.lb-rb__slide.is-on{opacity:1}
+.lb-rb__slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03);transition:transform 7s linear}
+.lb-rb__slide.is-on img{transform:scale(1.10)}
+.lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2.2vw,30px);
+ background:linear-gradient(180deg,transparent,rgba(6,7,10,.72));color:#fff;
+ font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+ font-size:clamp(9px,1vw,13px);z-index:2}
+.lb-rb__dots{position:absolute;top:50%;right:clamp(10px,1.6vw,22px);transform:translateY(-50%);
+ display:flex;flex-direction:column;gap:9px;z-index:3}
+.lb-rb__dots button{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.7);
+ background:transparent;cursor:pointer;padding:0;transition:transform .25s,background .25s}
+.lb-rb__dots button.is-on{background:#fff;transform:scale(1.35)}
+.lb-rb__nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;
+ border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(8,9,12,.35);color:#fff;
+ cursor:pointer;display:grid;place-items:center;font-size:17px;line-height:1;backdrop-filter:blur(6px);
+ transition:background .25s,transform .25s}
+.lb-rb__nav:hover{background:rgba(8,9,12,.7)}
+.lb-rb__nav--prev{left:clamp(10px,1.6vw,22px)}
+.lb-rb__nav--next{right:clamp(10px,1.6vw,22px)}
+.lb-rb__nav:active{transform:translateY(-50%) scale(.92)}
+@media (max-width:700px){.lb-rb__track{aspect-ratio:4/3}.lb-rb__nav{width:36px;height:36px}}
+
+a.btn,.btn,button.btn,.nav-cta a,.wp-block-button__link{position:relative;overflow:hidden;
+ transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,filter .22s}
+a.btn:hover,.btn:hover,button.btn:hover,.nav-cta a:hover{transform:translateY(-2px);
+ box-shadow:0 10px 24px -12px rgba(0,0,0,.55);filter:brightness(1.05)}
+a.btn:active,.btn:active,button.btn:active,.nav-cta a:active{transform:translateY(0) scale(.985)}
+a.btn::after,.btn::after,.nav-cta a::after{content:'';position:absolute;top:0;bottom:0;width:38%;
+ left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);
+ transform:skewX(-18deg);transition:left .55s ease;pointer-events:none}
+a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
+
+.lb-rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.lb-rv.is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+ .lb-rv{opacity:1!important;transform:none!important;transition:none!important}
+ .lb-rb__slide img{transform:none!important;transition:none!important}
+ a.btn::after,.btn::after,.nav-cta a::after{display:none}
+}
+
+/* marquee band (professional, reference-derived) */
+.lb-mq{position:relative;overflow:hidden;background:#0b0c10;border-top:1px solid rgba(255,255,255,.10);
+ border-bottom:1px solid rgba(255,255,255,.10)}
+.lb-mq__in{display:flex;width:max-content;animation:lb-mq 34s linear infinite}
+.lb-mq:hover .lb-mq__in{animation-play-state:paused}
+.lb-mq__in span{display:inline-flex;align-items:center;gap:clamp(18px,3vw,44px);
+ padding:clamp(11px,1.5vw,19px) clamp(14px,2vw,26px);color:#fff;font-family:var(--lb-disp,Inter),sans-serif;
+ font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:clamp(11px,1.25vw,17px);white-space:nowrap}
+.lb-mq__in span i{font-style:normal;color:var(--lb-acc,#e51924)}
+@keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
+</style>
+<style id="lb-depth-css">
+/* ==== LB DEPTH PACK — layered shadow + gradient surfaces ==== */
+:root{
+  --lb-acc: var(--acc, var(--accent, #e51924));
+  --lb-ink: var(--ink, #14161a);
+  --lb-paper: var(--paper, #ffffff);
+  --lb-e1: 0 1px 2px rgba(8,10,14,.06), 0 2px 6px rgba(8,10,14,.05);
+  --lb-e2: 0 2px 4px rgba(8,10,14,.07), 0 8px 18px -6px rgba(8,10,14,.14);
+  --lb-e3: 0 4px 10px rgba(8,10,14,.09), 0 18px 40px -12px rgba(8,10,14,.22);
+  --lb-hair: rgba(8,10,14,.10);
+}
+body{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+
+/* sections: soft accent-keyed gradient wash for depth, never a flat slab */
+section{ position:relative; }
+section::before{
+  content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+  background:
+    radial-gradient(120% 70% at 12% 0%, color-mix(in srgb, var(--lb-acc) 7%, transparent) 0%, transparent 58%),
+    radial-gradient(90% 60% at 100% 100%, color-mix(in srgb, var(--lb-acc) 5%, transparent) 0%, transparent 60%);
+}
+section > *{ position:relative; z-index:1; }
+
+/* cards / panels / figures: gradient surface + hairline + elevation, lift on hover */
+.card,.cards > *,.panel,.tile,.service,.box,.grid > article,.grid > div,figure,.gal figure,.gallery figure{
+  background:linear-gradient(180deg, color-mix(in srgb, var(--lb-paper) 100%, transparent) 0%,
+                                    color-mix(in srgb, var(--lb-ink) 3%, var(--lb-paper)) 100%);
+  border:1px solid var(--lb-hair);
+  border-radius:14px;
+  box-shadow:var(--lb-e1);
+  transition:transform .28s cubic-bezier(.2,.7,.3,1), box-shadow .28s, border-color .28s;
+}
+.card:hover,.cards > *:hover,.panel:hover,.tile:hover,.service:hover,.grid > article:hover,
+.grid > div:hover,figure:hover,.gal figure:hover,.gallery figure:hover{
+  transform:translateY(-4px); box-shadow:var(--lb-e3); border-color:color-mix(in srgb, var(--lb-acc) 34%, var(--lb-hair));
+}
+
+/* photographs: rounded, layered shadow, slight scrim so text over them stays legible */
+section img, figure img, .gal img, .gallery img, .card img{
+  border-radius:10px; box-shadow:var(--lb-e2); display:block;
+}
+figure, .gal figure, .gallery figure{ overflow:hidden; }
+figure img, .gal img{ transform:scale(1.001); transition:transform .5s cubic-bezier(.2,.7,.3,1); }
+figure:hover img, .gal figure:hover img, .gallery figure:hover img{ transform:scale(1.035); }
+
+/* buttons: gradient fill, inset highlight, layered shadow */
+a.btn,.btn,button.btn,.nav-cta a,.btn-primary{
+  background-image:linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0) 55%);
+  box-shadow:var(--lb-e1), inset 0 1px 0 rgba(255,255,255,.22);
+  border-radius:10px;
+}
+a.btn:hover,.btn:hover,button.btn:hover,.nav-cta a:hover{
+  box-shadow:var(--lb-e3), inset 0 1px 0 rgba(255,255,255,.26);
+}
+.btn-ghost{ box-shadow:var(--lb-e1); }
+
+/* nav: subtle vertical gradient + hairline for separation from the page */
+.nav,nav,.site-header,header.nav{
+  background-image:linear-gradient(180deg, color-mix(in srgb, var(--lb-paper) 96%, transparent) 0%,
+                                         color-mix(in srgb, var(--lb-ink) 3%, var(--lb-paper)) 100%);
+  box-shadow:0 1px 0 var(--lb-hair), 0 6px 20px -14px rgba(8,10,14,.28);
+}
+
+/* section heads get a hairline rule for structure (no risky text clipping) */
+.sec-head{ border-bottom:1px solid var(--lb-hair); padding-bottom:.7rem; }
+h1,h2,h3{ text-wrap:balance; }
+
+/* footer: depth anchor */
+footer{ box-shadow:0 -1px 0 var(--lb-hair), 0 -14px 40px -30px rgba(8,10,14,.5); }
+
+/* dark surfaces get stronger, softer shadows */
+@media (prefers-color-scheme: dark){ :root{ --lb-hair: rgba(255,255,255,.12); } }
+@supports not (background: color-mix(in srgb, red 5%, blue)){
+  section::before{ background:radial-gradient(120% 70% at 12% 0%, rgba(229,25,36,.06) 0%, transparent 58%); }
+}
+@media (prefers-reduced-motion: reduce){
+  .card,.cards > *,.panel,.tile,figure,.gal figure, a.btn,.btn, img{ transition:none!important; transform:none!important; }
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.className+=' js';</script>
+<a class="skip" href="#services">Skip to content</a>
+
+<nav class="nav" role="navigation" aria-label="Primary">
+  <a class="lb-brand" href="#top" aria-label="WC CONCRETING - Home" style="--lb-disp:Montserrat;--lb-sub:Inter;--lb-acc:#0c549c;"><span class="lb-brand__word"><span class="lb-brand__name">WC CONCRETING</span><span class="lb-brand__sub">0408 071 393</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
+  <ul class="nav__links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#finishes">Finishes</a></li>
+    <li><a href="#area">Area</a></li>
+    <li><a href="#lbq">Quote</a></li>
+  </ul>
+  <div class="nav__cta"><a href="tel:+61408071393" aria-label="Call 0408 071 393">Call 0408 071 393</a></div>
+</nav>
+
+<header id="top">
+  <div id="sceneWrap" aria-label="WC Concreting - exposed aggregate driveway finish">
+    <div id="sceneSticky">
+      <div class="hero-photo"></div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <!-- LB-3D-HERO: hidden motion layer (3D scene retired for static preview) -->
+      <canvas id="heroCanvas" width="600" height="600" aria-hidden="true"></canvas>
+      
+
+      <div class="hero-copy" id="heroCopy">
+        <p class="kick">Newcastle & Central Coast</p>
+        <h1 class="h1">Concrete <em>poured.</em><br>Finished <em>properly.</em></h1>
+        <p class="lead">Driveways, house slabs, paths, patios, exposed aggregate & decorative finishes - formed, poured, screeded and broomed to a standard that lasts.</p>
+        <div class="cta">
+          <a class="btn btn--primary" href="#lbq">Get a free quote</a>
+          <a class="btn btn--ghost" href="tel:+61408071393" aria-label="Call 0408 071 393">Call 0408 071 393</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header><section class="sec" id="services" aria-labelledby="s-t">
+  <p class="kick" aria-hidden="true">What we do</p>
+  <h2 class="h2" id="s-t">Concrete for every part of the home</h2>
+  <p class="lead rv">From the drive you arrive on to the patio you entertain on - every slab gets the same prep, reinforcement and finish discipline.</p>
+  <div class="svc-grid">
+    <article class="svc rv"><p class="svc__num">01</p><h3 class="svc__title">Driveways</h3><p class="svc__desc">Formed and reinforced driveways - plain, coloured or exposed aggregate - built to take the weight and the weather.</p></article>
+    <article class="svc rv"><p class="svc__num">02</p><h3 class="svc__title">House Slabs</h3><p class="svc__desc">Waffle pod and conventional raft slabs to engineer's spec - vapour barrier, reinforcement, Termimesh and inspection ready.</p></article>
+    <article class="svc rv"><p class="svc__num">03</p><h3 class="svc__title">Paths & Walkways</h3><p class="svc__desc">Front entries, side access and garden paths - formed to fall, broom or exposed finish, cut joints where needed.</p></article>
+    <article class="svc rv"><p class="svc__num">04</p><h3 class="svc__title">Patios & Alfresco</h3><p class="svc__desc">Entertainment slabs at the right level - flush to internal floors, soaked for pavers or left as a finished surface.</p></article>
+    <article class="svc rv"><p class="svc__num">05</p><h3 class="svc__title">Exposed Aggregate</h3><p class="svc__desc">Seeded and washed finishes in a range of stone - non-slip, hard-wearing and the classic Australian driveway look.</p></article>
+    <article class="svc rv"><p class="svc__num">06</p><h3 class="svc__title">Decorative Finishes</h3><p class="svc__desc">Coloured oxides, stencil patterns, saw-cut geometry and trowel textures - detail work that lifts a plain slab.</p></article>
+  </div>
+</section>
+
+<section class="sec sec--panel" id="finishes" aria-labelledby="f-t">
+  <div class="inner">
+    <p class="kick" aria-hidden="true">Finishes</p>
+    <h2 class="h2" id="f-t">The surface you see and feel</h2>
+    <p class="lead rv">Finish isn't cosmetic - it's grip, drainage, wear resistance and how the slab ages. We match the finish to the job.</p>
+    <div class="finish-strip">
+      <div class="finish-head"><h3 style="font-family:var(--font-d);font-size:clamp(1.2rem,2.8vw,1.7rem);font-weight:900">Choose your finish</h3></div>
+      <div class="finish-grid">
+        <div class="finish rv">
+          <div class="finish__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M2 12h20"/><path d="M2 16h20"/></svg></div>
+          <div class="finish__title">Broom Finish</div>
+          <div class="finish__desc">Standard non-slip texture - consistent strokes, even fall, clean edges.</div>
+        </div>
+        <div class="finish rv">
+          <div class="finish__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <div class="finish__title">Exposed Aggregate</div>
+          <div class="finish__desc">Seeded stone washed to reveal texture - tough, timeless, high traction.</div>
+        </div>
+        <div class="finish rv">
+          <div class="finish__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg></div>
+          <div class="finish__title">Saw-Cut Pattern</div>
+          <div class="finish__desc">Control joints cut to a grid or geometric layout - planned cracking, clean lines.</div>
+        </div>
+        <div class="finish rv">
+          <div class="finish__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M3 12h18"/><path d="M12 3l4 4"/><path d="M12 3l-4 4"/></svg></div>
+          <div class="finish__title">Coloured Oxide</div>
+          <div class="finish__desc">Integral colour through the mix - no surface coating to peel or wear through.</div>
+        </div>
+        <div class="finish rv">
+          <div class="finish__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/><path d="M6 15l6 6 6-6"/></svg></div>
+          <div class="finish__title">Stencil / Stamp</div>
+          <div class="finish__desc">Patterned texture - pavers, tile, slate or custom - sealed for longevity.</div>
+        </div>
+        <div class="finish rv">
+          <div class="finish__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M8 8h8"/><path d="M8 16h8"/></svg></div>
+          <div class="finish__title">Steel Trowel</div>
+          <div class="finish__desc">Smooth, dense internal slabs - ready for tiles, vinyl or polished overlay.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="area" aria-labelledby="ar-t">
+  <p class="kick" aria-hidden="true">Service area</p>
+  <h2 class="h2" id="ar-t">Newcastle & Central Coast</h2>
+  <p class="lead rv">Based in Newcastle and working across the wider region for residential and light commercial concreting.</p>
+  <div class="area-strip">
+    <div class="area-tags" aria-label="Service areas">
+      <span class="rv">Newcastle</span><span class="rv">Lake Macquarie</span><span class="rv">Maitland</span><span class="rv">Port Stephens</span><span class="rv">Cessnock</span><span class="rv">Central Coast</span><span class="rv">Gosford</span><span class="rv">Wyong</span><span class="rv">The Entrance</span><span class="rv">Toukley</span>
+    </div>
+  </div>
+</section>
+
+<span id="quote" style="position:absolute;top:-90px" aria-hidden="true"></span>
+<section id="lbq" aria-labelledby="lbq-h">
+  <div class="lbq-w">
+    <div>
+      <h2 id="lbq-h">Get a free quote</h2>
+      <p class="lbq-s">Tell us about the job and we'll come back with a firm price - no surprises, no obligation.</p>
+      <div class="lbq-info">
+        <div><b>Call</b><a href="tel:+61408071393">0408 071 393</a></div>
+        <div><b>Email</b><a href="mailto:wc.concreting@hotmail.com">wc.concreting@hotmail.com</a></div>
+        <div><b>Area</b><span>Newcastle & Central Coast, NSW</span></div>
+        <div><b>Facebook</b><a href="https://facebook.com/people/WC-Concreting/61593409611976" rel="noopener" target="_blank">WC Concreting</a></div>
+      </div>
+    </div>
+    <form id="lbq-form" novalidate data-site="wc-concreting" data-biz="WC Concreting">
+      <div class="lbq-f">
+        <div class="lbq-g">
+          <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+          <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
+          <div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
+          <div class="lbq-full"><label for="lbq-svc">Service</label>
+            <select id="lbq-svc" name="service">
+              <option>Driveway</option>
+              <option>House slab</option>
+              <option>Path / walkway</option>
+              <option>Patio / alfresco</option>
+              <option>Exposed aggregate</option>
+              <option>Decorative finish</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, finish, access, timing…" required></textarea></div>
+        </div>
+        <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
+        <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <button type="submit">Send quote request</button>
+        <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+  <script>
+  (function(){
+    var EP = null;
+    function base(cb){
+      if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+      var done = false;
+      var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+      fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+        .then(function(r){ return r.text(); })
+        .then(function(txt){
+          var b = (txt||'').trim().replace(/\/+$/, '');
+          if (done) return;
+          done = true; clearTimeout(t);
+          cb(/^https:\/\/[a-z0-9.\-]+(:?\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+        })
+        .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+    }
+    function init(){
+      var f = document.getElementById('lbq-form');
+      if (!f) return;
+      var st = document.getElementById('lbq-st');
+      var btn = f.querySelector('button[type=submit]');
+      f.addEventListener('submit', function(e){
+        e.preventDefault();
+        var d = {};
+        new FormData(f).forEach(function(v,k){ d[k]=v; });
+        if (d.website) return;
+        if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+          st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+          st.style.color = 'var(--acc-ink)';
+          return;
+        }
+        btn.disabled = true;
+        st.textContent = 'Sending\u2026';
+        st.style.color = '';
+        base(function(B){
+          var url = B + '/functions/v1/quote-request';
+          fetch(url, {
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body: JSON.stringify({
+              site_id: f.dataset.site || '',
+              business_name: f.dataset.biz || '',
+              name: d.name, phone: d.phone, email: d.email,
+              service: d.service || '', message: d.message,
+              consent: !!d.consent
+            })
+          })
+          .then(function(r){ return r.json().catch(function(){ return {}; }); })
+          .then(function(x){
+            if (x && x.success) {
+              f.reset();
+              st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+              st.style.color = 'var(--lbq-accent)';
+            } else {
+              throw new Error((x && x.error) || 'Could not send');
+            }
+          })
+          .catch(function(err){
+            st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+            st.style.color = 'var(--acc-ink)';
+          })
+          .finally(function(){ btn.disabled = false; });
+        });
+      });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+  })();
+  </script>
+</section><section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img src="site/assets/wc-gal1.jpg" alt="WC Concreting" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img src="site/assets/wc-gal2.jpg" alt="WC Concreting" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="site/assets/wc-hero-new2.jpg" alt="WC Concreting" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="site/assets/wc-hero.jpg" alt="WC Concreting" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="site/assets/wc-hero-new.jpg" alt="WC Concreting" loading="lazy" decoding="async"></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button><button type="button" class="" aria-label="Slide 4"></button><button type="button" class="" aria-label="Slide 5"></button></div><div class="lb-rb__cap">WC Concreting &mdash; recent work</div></div></section><footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand"><img src="assets/logo.jpg" alt=""><span class="foot-brand-txt"><b>WC Concreting</b><i>Driveways · Slabs · Patios</i></span></div>
+      <p style="margin-top:16px;font-size:13.5px;max-width:300px;color:var(--ink-2);">Concreting - Newcastle & Central Coast NSW.<br>Driveways, slabs, paths, patios, exposed aggregate & decorative finishes.</p>
+    </div>
+    <div><h3>Services</h3><a href="#services">Driveways</a><a href="#services">House slabs</a><a href="#services">Paths & walkways</a><a href="#services">Patios</a><a href="#finishes">Finishes</a><a href="#lbq">Get a quote</a></div>
+    <div><h3>Company</h3><a href="#finishes">Our finishes</a><a href="#area">Service area</a><a href="#lbq">Free quote</a></div>
+    <div><h3>Contact</h3><a href="tel:+61408071393">0408 071 393</a><a href="mailto:wc.concreting@hotmail.com">wc.concreting@hotmail.com</a><a href="https://facebook.com/people/WC-Concreting/61593409611976" rel="noopener" target="_blank">Facebook</a><a href="#lbq">Request quote</a></div>
+  </div>
+  <div class="foot-bar mono">
+      <span>&copy; <span id="year"></span> WC CONCRETING</span>
+      <span><a href="tel:+61408071393">0408 071 393</a> &middot; <a href="mailto:wc.concreting@hotmail.com">wc.concreting@hotmail.com</a></span>
+    </div>
+</footer>
+
+
+<script>
+/* ---- page glue (reveal + nav) preserved through the scene retrofit ---- */
+(function(){
+  var rvs=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}});},{rootMargin:'0px 0px -12% 0px',threshold:0.08});
+    rvs.forEach(function(el){io.observe(el);});
+  } else { rvs.forEach(function(el){el.classList.add('on');}); }
+  setTimeout(function(){document.querySelectorAll('.rv:not(.on)').forEach(function(el){el.classList.add('on');});},1200);
+  var b=document.getElementById('burger'), n=document.getElementById('navlinks');
+  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+    n.addEventListener('click',function(e){if(e.target.tagName==='A')n.classList.remove('open');});}
+  var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+})();
+</script>
+<div class="lb-pulse" aria-hidden="true"></div>
+<!-- lb:pulse -->
+<script src="https://laydback-hq.tail5b3740.ts.net:8443/pulse/js" data-project="wc-concreting" defer></script>
+<script id="lb-motion-js">
+/* LB MOTION PACK v1 */
+(function(){
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sel = 'section > *, main > *, .sec-head, .cards > *, .grid > *, .faq details, .gal figure, .gallery figure';
+  var els = [].slice.call(document.querySelectorAll(sel)).filter(function(e){
+    if (e.closest && e.closest('.lb-rb')) return false;
+    if (e.tagName === 'SCRIPT' || e.tagName === 'STYLE') return false;
+    var r = e.getBoundingClientRect();
+    return r.width > 40 && r.height > 20;
+  });
+  els.forEach(function(e, i){ e.classList.add('lb-rv'); e.style.transitionDelay = ((i % 6) * 55) + 'ms'; });
+  if (rm || !('IntersectionObserver' in window)) {
+    els.forEach(function(e){ e.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(x){ if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+    els.forEach(function(e){ io.observe(e); });
+    setTimeout(function(){ els.forEach(function(e){ if (!e.classList.contains('is-in')) e.classList.add('is-in'); }); }, 2600);
+  }
+  var rb = document.querySelector('.lb-rb');
+  if (!rb) return;
+  var slides = [].slice.call(rb.querySelectorAll('.lb-rb__slide'));
+  if (slides.length < 2) return;
+  var dots = [].slice.call(rb.querySelectorAll('.lb-rb__dots button'));
+  var i = 0, timer = null, DUR = 5600;
+  function go(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function(s, k){ s.classList.toggle('is-on', k === i); });
+    dots.forEach(function(d, k){ d.classList.toggle('is-on', k === i); });
+  }
+  function play(){ if (rm) return; stop(); timer = setInterval(function(){ go(i + 1); }, DUR); }
+  function stop(){ if (timer) { clearInterval(timer); timer = null; } }
+  dots.forEach(function(d, k){ d.addEventListener('click', function(){ go(k); play(); }); });
+  var pv = rb.querySelector('.lb-rb__nav--prev'), nx = rb.querySelector('.lb-rb__nav--next');
+  if (pv) pv.addEventListener('click', function(){ go(i - 1); play(); });
+  if (nx) nx.addEventListener('click', function(){ go(i + 1); play(); });
+  rb.addEventListener('mouseenter', stop); rb.addEventListener('mouseleave', play);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(en){ en.forEach(function(x){ x.isIntersecting ? play() : stop(); }); },
+      { threshold: 0.25 }).observe(rb);
+  } else { play(); }
+  go(0);
+})();
+</script>
+</body>
+</html>

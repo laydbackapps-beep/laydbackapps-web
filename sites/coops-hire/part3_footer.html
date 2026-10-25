@@ -1,0 +1,130 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Coops Hire logo" height="52">
+          <span>
+            <span class="foot-brand-name">Coops Hire</span><br>
+            <span class="foot-brand-sub">ASV RT-40 Dry Hire</span>
+          </span>
+        </div>
+        <p>Coops Hire — ASV RT-40 posi track dry hire, servicing Newcastle, Port Stephens, Maitland and the Hunter. Pick up available from Salt Ash, or delivery arranged.</p>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <p>
+          <a href="tel:tel:+61407202854">0407 202 854</a><br>
+          <a href="mailto:Scottcoopshire@gmail.com">Scottcoopshire@gmail.com</a><br>
+          Pick up: Salt Ash, NSW
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Coops Hire · Hunter NSW</span>
+      <span>Dry hire specialists</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 16;
+    py = (e.clientY / window.innerHeight - 0.5) * 9;
+  }, {passive: true});
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  function loop(t){
+    if (!W || !H){ resize(); return; }
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  function frame(t){
+
+    var time = t * 0.001;
+    ctx.clearRect(0,0,W,H);
+    var g = ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,'#15170F'); g.addColorStop(.55,'#1C1F13'); g.addColorStop(1,'#15170F');
+    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+    /* two tread bands tracking across the dirt */
+    var bands = [0.30, 0.62];
+    for (var b=0;b<2;b++){
+      var yy = H*bands[b];
+      ctx.fillStyle = 'rgba(40,36,20,0.85)';
+      ctx.fillRect(0, yy, W, 34);
+      var off = (time*120) % 34;
+      for (var i=-1;i<W/34+2;i++){
+        var xx = i*34 + off;
+        ctx.fillStyle = 'rgba(230,190,60,0.30)';
+        ctx.fillRect(xx, yy+4, 16, 9);
+        ctx.fillStyle = 'rgba(230,190,60,0.16)';
+        ctx.fillRect(xx+17, yy+20, 16, 9);
+      }
+    }
+    /* dust motes */
+    for (var k=0;k<26;k++){
+      var dx = (k*163 + time*60) % W;
+      var dy = H*0.3 + ((k*71 + time*20) % (H*0.55));
+      ctx.fillStyle = 'rgba(220,200,140,0.12)';
+      ctx.beginPath(); ctx.arc(dx, dy, 1.8 + (k%3), 0, Math.PI*2); ctx.fill();
+    }
+    /* warning glow */
+    var wg = ctx.createRadialGradient(W*0.82, H*0.24, 4, W*0.82, H*0.24, 170);
+    wg.addColorStop(0,'rgba(232,178,28,0.15)'); wg.addColorStop(1,'rgba(232,178,28,0)');
+    ctx.fillStyle = wg; ctx.fillRect(0,0,W,H);
+
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

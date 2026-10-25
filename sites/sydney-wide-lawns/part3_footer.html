@@ -1,0 +1,159 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Sydney Wide Lawns logo" height="52">
+          <span>
+            <span class="foot-brand-name">SYDNEY WIDE</span><br>
+            <span class="foot-brand-sub">Lawns</span>
+          </span>
+        </div>
+        <p>Sydney Wide Lawns — lawn mowing, whipper snipping, edging, weeding, weed spraying and yard clean-ups across Sydney. Cleaner lawns, healthier spaces.</p>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <p>
+          <a href="tel:+61410437088">0410 437 088</a><br>
+          Servicing Sydney-wide<br>Mowing · Edging · Weeding · Clean-ups
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Sydney Wide Lawns</span>
+      <span>Cleaner lawns · Healthier spaces</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 16;
+    py = (e.clientY / window.innerHeight - 0.5) * 9;
+  }, {passive: true});
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  function loop(t){
+    if (!W || !H){ resize(); return; }
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  function frame(t){
+
+    var time = t * 0.001;
+    ctx.clearRect(0,0,W,H);
+    var g = ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,'#F7FAF3'); g.addColorStop(.55,'#F1F7EC'); g.addColorStop(1,'#E8F1E2');
+    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+
+    /* mow-stripe bands drifting slowly (fresh-cut pattern) */
+    var sw = 92;
+    for (var m=0; m<10; m++){
+      var mx = ((m*sw*1.9 + time*10) % (W + sw*2)) - sw;
+      var tilt = 0.22;
+      ctx.save();
+      ctx.translate(mx, 0); ctx.rotate(tilt*0.18);
+      ctx.fillStyle = 'rgba(154,206,100,' + (0.045 + (m%2)*0.03) + ')';
+      ctx.fillRect(0, -H*0.2, sw*0.52, H*1.5);
+      ctx.restore();
+    }
+
+    /* light sweep */
+    var lg = ctx.createLinearGradient(0,0,W,H);
+    lg.addColorStop(0,'rgba(255,255,255,0)');
+    lg.addColorStop(0.5,'rgba(255,255,255,0.5)');
+    lg.addColorStop(1,'rgba(255,255,255,0)');
+    ctx.save();
+    var lx = ((time*22) % (W*1.6)) - W*0.3;
+    ctx.translate(lx, 0); ctx.rotate(0.35);
+    ctx.fillStyle = lg; ctx.fillRect(-W*0.2, -H, W*0.5, H*3);
+    ctx.restore();
+
+    /* grass blade clusters along the bottom */
+    for (var c=0; c<46; c++){
+      var bx = ((c*173 + 30) % W) + Math.sin(time*0.5 + c*1.4)*7 + px*0.2;
+      var by = H - 6 - ((c*29)%46);
+      var sway = Math.sin(time*0.9 + c*0.9)*6;
+      ctx.strokeStyle = 'rgba(96,150,48,' + (0.10 + (c%4)*0.028) + ')';
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.moveTo(bx, H);
+      ctx.quadraticCurveTo(bx + sway*0.4, by + 12, bx + sway, by);
+      ctx.stroke();
+    }
+
+    /* drifting clippings */
+    for (var k=0; k<26; k++){
+      var lf = ((k*0.061 + time*0.09*(0.4+(k%3)*0.16)) % 1);
+      var kx = ((k*211 + 60) % W) + Math.sin(time*0.4 + k*1.7)*14 + px*0.25;
+      var ky = lf * (H+30) - 15 + py*0.25;
+      ctx.save();
+      ctx.translate(kx, ky); ctx.rotate(lf*4 + k);
+      ctx.fillStyle = 'rgba(122,178,66,' + (0.10 + (k%3)*0.04) + ')';
+      ctx.fillRect(0, 0, 7, 2.4);
+      ctx.restore();
+    }
+
+    /* green glow accents */
+    var gg = ctx.createRadialGradient(W*0.88, H*0.2, 8, W*0.88, H*0.2, 280);
+    gg.addColorStop(0,'rgba(134,196,74,0.10)'); gg.addColorStop(1,'rgba(134,196,74,0)');
+    ctx.fillStyle = gg; ctx.fillRect(0,0,W,H);
+    var gg2 = ctx.createRadialGradient(W*0.06, H*0.85, 8, W*0.06, H*0.85, 260);
+    gg2.addColorStop(0,'rgba(96,160,44,0.08)'); gg2.addColorStop(1,'rgba(96,160,44,0)');
+    ctx.fillStyle = gg2; ctx.fillRect(0,0,W,H);
+
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

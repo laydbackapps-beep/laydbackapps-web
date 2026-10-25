@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gowling Plasterboard Linings - Plasterboard Installation & Finishing | South Australia, Mallee & Riverland</title>
+<meta name="description" content="Gowling Plasterboard Linings - 20 years experience in plasterboard installation, flushing & finishing. New builds, renovations, patch ups & repairs, ceilings. Servicing South Australia, Mallee & Riverland including VIC/NSW. Call 0407 013 770.">
+<meta property="og:title" content="Gowling Plasterboard Linings - South Australia">
+<meta property="og:description" content="Plasterboard installation, flushing & finishing - new builds, renovations, patch ups & ceilings. 20 years experience. South Australia, Mallee & Riverland.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo.jpg">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton:wght@400;700;800;900&family=Barlow:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F0F8F2;
+  --bg-2: #E6F2E9;
+  --ink: #2A6A37;
+  --ink-2: #4A5D52;
+  --acc: #2E703B;
+  --acc-2: #245C31;
+  --acc-hi: #4ADE4A;
+  --line: rgba(42,106,55,.12);
+  --line-acc: rgba(46,112,59,.35);
+  --panel: #fff;
+  --panel-2: #faf9f6;
+  --nav-h: 88px;
+  --font-d: 'Anton', 'Arial Narrow', sans-serif;
+  --font-m: 'Barlow', sans-serif;
+  --fluid: clamp(40px, 8vw, 110px);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+section[id], footer[id] { scroll-margin-top: calc(var(--nav-h) + 10px); }
+html:not(.js) .rv { opacity: 1 !important; transform: none !important; }
+.js .rv { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+.js .rv.on { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-m);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--acc-hi); outline-offset: 3px; }
+.skip {
+  position: absolute; top: -100%; left: 50%; transform: translateX(-50%);
+  padding: .7rem 1.2rem; background: var(--acc); color: #fff;
+  font-weight: 700; z-index: 10000;
+}
+.skip:focus { top: 1rem; }
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(1rem, 3vw, 2.5rem);
+  background: rgba(250,250,250,.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  z-index: 1000;
+}
+.brand { display: flex; align-items: center; gap: .8rem; color: var(--ink); text-decoration: none; }
+.brand-mark{height:48px;width:auto;object-fit:contain}
+.brand-txt { display: flex; flex-direction: column; line-height: 1; }
+.brand-name { font-family: 'Manrope', var(--font-m), sans-serif; font-size: 1.16rem; line-height: 1; font-weight: 700; letter-spacing: .01em; color: var(--ink); }
+.brand-sub { display: block; margin-top: 3px; font-family: 'Manrope', var(--font-m), sans-serif; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); font-weight: 700; font-style: normal; }
+.brand-sub em { font-style: normal; color: var(--acc); }
+.nav__links {
+  display: flex; gap: clamp(1rem, 2.4vw, 2rem);
+  list-style: none; margin: 0; padding: 0;
+}
+.nav__links a {
+  font-size: .78rem; text-transform:none;
+  letter-spacing: .13em; color: var(--ink-2);
+  transition: color .2s;
+}
+.nav__links a:hover { color: var(--acc); }
+.nav__cta a {
+  display: inline-flex; align-items: center; gap: .45rem;
+  padding: .58rem 1.15rem; font-size: .8rem; font-weight: 800;
+  text-transform:none; letter-spacing: .07em;
+  background: var(--acc); color: #fff; border-radius: 6px;
+}
+.nav__cta a:hover { background: var(--acc-2); }
+@media (max-width: 680px) { .nav__links { display: none; } }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .8rem 1.5rem; font-size: .86rem; font-weight: 800;
+  text-transform:none; letter-spacing: .07em;
+  border: 0; border-radius: 6px; cursor: pointer;
+}
+.btn--p { background: var(--acc); color: #fff; }
+.btn--p:hover { background: var(--acc-2); }
+.btn--o { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); }
+.btn--o:hover { border-color: var(--acc-hi); color: var(--acc-hi); }
+/* ===== Hero - real photo, darkened + scrim (de-scroll 2026-10-14: scroll scene removed; #heroCanvas kept as hidden LB-3D-HERO marker, no scroll choreography) ===== */
+#sceneWrap { position: relative; background: #0c1e12; }
+#sceneSticky { position: relative; overflow: visible; height: auto; min-height: clamp(560px, 100svh, 980px); }
+#heroCanvas { display: none !important; perspective: 800px; }
+.lbhf { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+.lbhf img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; filter: brightness(.74) saturate(.95) contrast(1.05); }
+.lbhf-scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(100deg, rgba(6,16,10,.86) 0%, rgba(6,16,10,.52) 48%, rgba(6,16,10,.26) 100%), linear-gradient(180deg, rgba(6,16,10,.72) 0%, rgba(8,22,13,.40) 44%, rgba(5,14,9,.90) 100%); }
+.hero-copy {
+  position: relative; z-index: 3;
+  max-width: 64ch;
+  padding: calc(var(--nav-h) + 8vh) clamp(1rem, 6vw, 7rem) clamp(56px, 10vh, 120px);
+}
+.hero-copy .k {
+  margin: 0 0 .7rem;
+  font-family: var(--font-m); font-size: .78rem;
+  letter-spacing: .16em; color: #A7E3B4;
+}
+.hero-copy .h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.4rem, 6vw, 4.9rem);
+  font-weight: 900; line-height: 1.01; letter-spacing: -.03em; color: #fff;
+  font-family: var(--font-d);
+  text-shadow: 0 2px 18px rgba(4,12,7,.55);
+}
+.hero-copy .h1 em { color: #A7E3B4; font-style: normal; }
+.hero-copy .d {
+  margin: 0 0 1.9rem;
+  font-size: clamp(1rem, 1.45vw, 1.18rem);
+  color: rgba(255,255,255,.94); max-width: 52ch;
+  text-shadow: 0 1px 10px rgba(4,12,7,.5);
+}
+.hero-copy .cta { display: flex; flex-wrap: wrap; gap: 1rem; }
+@media (max-width: 900px) { .brand-mark{height:48px;width:auto;object-fit:contain} }
+@media (max-width: 680px) {
+  #sceneSticky { min-height: 92svh; }
+  .lbhf img { object-position: center 42%; }
+  .brand-mark{height:48px;width:auto;object-fit:contain}
+  .brand-name { font-size: 1.02rem; }
+  .brand-sub { display: none; }
+  .nav__cta a { font-size: .72rem; padding: .5rem .8rem; }
+}
+/* ===== Sections ===== */
+.sec {
+  max-width: 1180px; margin: 0 auto;
+  padding: clamp(4rem, 8.5vw, 7rem) clamp(1rem, 4vw, 2.6rem);
+  position: relative;
+}
+.sec--panel { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.sec--panel > .inner { max-width: 1180px; margin: 0 auto; padding: clamp(4rem, 8.5vw, 7rem) clamp(1rem, 4vw, 2.6rem); }
+.kick {
+  font-family: var(--font-m); font-size: .76rem;
+  letter-spacing: .16em; color: var(--acc);
+  margin: 0 0 .5rem;
+}
+.h2 {
+  margin: 0 0 .9rem;
+  font-size: clamp(1.7rem, 3.6vw, 2.65rem);
+  font-weight: 900; letter-spacing: -.015em;
+  font-family: var(--font-d);
+}
+.lead { color: var(--ink-2); font-size: clamp(1rem, 1.3vw, 1.14rem); max-width: 60ch; }
+.svc { display: grid; grid-template-columns: repeat(auto-fit, minmax(248px, 1fr)); gap: 1.4rem; margin-top: 2.6rem; }
+.svc__it {
+  border: 1px solid var(--line); border-radius: 10px;
+  padding: 1.35rem 1.25rem; background: var(--panel);
+  transition: transform .35s cubic-bezier(.16,1,.3,1), border-color .35s, background .35s;
+}
+.svc__it:hover { transform: translateY(-4px); border-color: var(--line-acc); background: var(--panel-2); }
+.svc__n { font-family: var(--font-m); font-size: .76rem; color: var(--acc); letter-spacing: .12em; }
+.svc__h { margin: .4rem 0 .35rem; font-size: 1.06rem; font-weight: 800; font-family: var(--font-d); }
+.svc__p { margin: .2rem 0 0; font-size: .92rem; color: var(--ink-2); line-height: 1.5; }
+.about { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(1.6rem, 4vw, 3.4rem); align-items: start; margin-top: 2.4rem; }
+.about__art { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 1.4rem; }
+.about__art img { width: 100%; height: auto; display: block; border-radius: 8px; }
+.about__cap { font-family: var(--font-m); font-size: .76rem; color: var(--ink-2); margin: .6rem 0 0; letter-spacing: .05em; }
+.about__lis { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.about__lis li { display: flex; gap: .75rem; align-items: flex-start; font-size: .98rem; color: var(--ink); }
+.about__lis li::before { content: ""; width: 10px; height: 10px; background: var(--acc); border-radius: 2px; margin-top: .38rem; flex: none; }
+@media (max-width: 800px) { .about { grid-template-columns: 1fr; } }
+.areas { margin-top: 2.4rem; display: flex; flex-wrap: wrap; gap: .6rem; }
+.areas span { border: 1px solid var(--line); border-radius: 99px; padding: .45rem 1rem; font-size: .86rem; background: var(--panel); color: var(--ink); }
+.foot { margin: 0; padding: 2.7rem clamp(1rem, 4vw, 2.6rem); border-top: 1px solid var(--line-acc); background: var(--bg-2); }
+.foot h3 { margin: 0 0 .4rem; font-size: 1rem; font-weight: 800; font-family: var(--font-d); }
+.foot p { margin: 0; font-size: .88rem; color: var(--ink-2); }
+.foot a { color: var(--acc); }
+/* pulse (required) */
+.lb-pulse { position: fixed; bottom: 1.5rem; right: 1.5rem; width: 12px; height: 12px; background: var(--acc); border-radius: 50%; opacity: .6; animation: lbPulse 2s ease-in-out infinite; pointer-events: none; z-index: 999; }
+@keyframes lbPulse { 0%,100% { opacity: .3; transform: scale(1); } 50% { opacity: 1; transform: scale(1.2); } }
+@media (prefers-reduced-motion: reduce) { .lb-pulse { animation: none; opacity: .5; } }
+</style>
+</head><body><script>document.documentElement.classList.add('js');</script>
+
+<a class="skip" href="#services">Skip to content</a>
+
+<nav class="nav" role="navigation" aria-label="Primary">
+  <a class="brand" href="#top" aria-label="Gowling Plasterboard Linings - Home">
+    <img class="brand-mark" src="assets/logo-mark_gowling-plasterboard.png" alt="" aria-hidden="true" loading="eager">
+    <span class="brand-txt"><b class="brand-name">Gowling</b><i class="brand-sub"><em>Plasterboard</em> Linings</i></span>
+  </a>
+  <ul class="nav__links">
+    <li><a href="#services">What We Do</a></li>
+    <li><a href="#finish">How We Finish</a></li>
+    <li><a href="#areas">Service Area</a></li>
+    <li><a href="#lbq">Quote</a></li>
+  </ul>
+  <div class="nav__cta"><a href="tel:+61407013770" aria-label="Call 0407 013 770">Call 0407 013 770</a></div>
+</nav>
+
+<header id="top">
+<div id="sceneWrap">
+  <div id="sceneSticky">
+    <div class="lbhf" aria-hidden="true"><img src="assets/hero-plasterboard.jpg" alt="" width="886" height="1180" fetchpriority="high" decoding="async"></div>
+    <div class="lbhf-scrim" aria-hidden="true"></div>
+    <!-- LB-3D-HERO -->
+    <canvas id="heroCanvas" aria-hidden="true" style="display:none"></canvas>
+
+    <div class="hero-copy" id="heroCopy">
+      <p class="k">South Australia · Mallee & Riverland · VIC/NSW</p>
+      <h1 class="h1">Plasterboard installed.<br>Finished clean - on time.</h1>
+      <p class="d">20 years' experience in plasterboard installation, hand-tool flushing and finishing. New builds, renovations, patch-ups and repairs, ceilings. Servicing South Australia, Mallee & Riverland including VIC/NSW border regions.</p>
+      <div class="cta">
+        <a class="btn btn--p" href="#lbq">Get a free quote</a>
+        <a class="btn btn--o" href="tel:+61407013770" aria-label="Call 0407 013 770">Call 0407 013 770</a>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+<section class="sec" id="services" aria-labelledby="s-t">
+  <p class="kick" aria-hidden="true">What we do</p>
+  <h2 class="h2" id="s-t">Plasterboard, start to finish</h2>
+  <div class="svc">
+    <article class="svc__it rv"><p class="svc__n">01</p><h3 class="svc__h">Plasterboard Installation & Fixing</h3><p class="svc__p">Walls and ceilings - square, level, screwed to spec. Residential and commercial.</p></article>
+    <article class="svc__it rv"><p class="svc__n">02</p><h3 class="svc__h">Flushing & Finishing</h3><p class="svc__p">Hand-tool flushing - joints taped, compound run, sanded to a smooth skimmed face.</p></article>
+    <article class="svc__it rv"><p class="svc__n">03</p><h3 class="svc__h">New Builds</h3><p class="svc__p">Full house and commercial fit-outs - on program, ready for paint.</p></article>
+    <article class="svc__it rv"><p class="svc__n">04</p><h3 class="svc__h">Renovations</h3><p class="svc__p">Strip-out, re-sheet, re-flush - matched to existing levels and cornices.</p></article>
+    <article class="svc__it rv"><p class="svc__n">05</p><h3 class="svc__h">Patch Ups & Repairs</h3><p class="svc__p">Holes, cracks, water damage, movement joints - invisible repairs.</p></article>
+    <article class="svc__it rv"><p class="svc__n">06</p><h3 class="svc__h">Ceilings</h3><p class="svc__p">Suspended, raked, coffered or flat - fixed and flushed to a paint-ready finish.</p></article>
+  </div>
+</section>
+
+<section class="sec sec--panel" id="finish" aria-labelledby="f-t">
+  <div class="inner">
+  <p class="kick" aria-hidden="true">How we finish</p>
+  <h2 class="h2" id="f-t">Hand-tool flushing,<br>joint by joint</h2>
+  <div class="about">
+    <div class="about__art rv">
+      <img src="assets/work-1.jpg" alt="Ceiling plasterboard sheets fixed and screw-set, ready for hand-tool flushing" width="1180" height="886">
+      <p class="about__cap">// ON THE TOOLS - ceiling sheets fixed square, joints ready for tape and flush</p>
+    </div>
+    <ul class="about__lis">
+      <li class="rv">Every joint gets paper tape bedded in compound - no mesh shortcuts, no visible ridges.</li>
+      <li class="rv">Three-coat flush: bed, fill, finish - each coat feathered wider, sanded between coats.</li>
+      <li class="rv">Hand tools only - broad knives and trowels, not spray texture. The finish reads flat under critical light.</li>
+      <li class="rv">Cornice snapped clean across the top - mitred returns, stopped ends, no gaps.</li>
+      <li class="rv">20 years on the tools - residential and commercial plasterboard, installed and finished.</li>
+    </ul>
+  </div>
+  </div>
+</section>
+
+<section class="sec" id="areas" aria-labelledby="ar-t">
+  <p class="kick" aria-hidden="true">Service area</p>
+  <h2 class="h2" id="ar-t">South Australia, Mallee & Riverland incl. VIC/NSW</h2>
+  <p class="lead">Based in South Australia and working across the Mallee and Riverland regions, crossing into Victoria and New South Wales for residential and commercial projects.</p>
+  <div class="areas" aria-label="Service areas">
+    <span class="rv">South Australia</span>
+    <span class="rv">Mallee</span>
+    <span class="rv">Riverland</span>
+    <span class="rv">Victoria (border)</span>
+    <span class="rv">NSW (border)</span>
+  </div>
+</section>
+
+<footer class="foot">
+  <div>
+    <h3>Gowling Plasterboard Linings</h3>
+    <p>Plasterboard installation & finishing - South Australia, Mallee & Riverland.<br>Phone <a href="tel:+61407013770">0407 013 770</a></p>
+  </div>
+  <p aria-hidden="true">&copy; <span id="year"></span> Gowling Plasterboard Linings. All rights reserved.</p>
+</footer>
+
+<section id="lbq" class="v3" aria-labelledby="lbq-h">
+  <style>
+#lbq{--lbq-accent:var(--acc);--lbq-ink:var(--ink);--lbq-muted:var(--ink-2);--lbq-bg:var(--bg-2);--lbq-panel:var(--panel);--lbq-line:var(--line);padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto}
+#lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em;font-family:var(--font-d)}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
+#lbq .lbq-f{display:grid;gap:12px}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:none;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#fff;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+/* v3 split */
+#lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+#lbq.v3 .lbq-g{display:grid;gap:12px}
+#lbq.v3 .lbq-hp2{padding-left:16px}
+@media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
+  </style>
+  <div class="lbq-w">
+      <div class="lbq-sp"><div class="lbq-hp2"><h2 id="lbq-h">Request a quote</h2>
+      <p class="lbq-s">Tell us a few details and we'll get back to you with a free, no-obligation quote.</p><p class="lbq-s" style="margin-bottom:0">Prefer to talk? Call, text or email - we reply fast.</p></div><div><form id="lbq-form" novalidate data-site="gowling-plasterboard" data-biz="Gowling Plasterboard Linings"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Plasterboard type, rooms, timeline, access…" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div></div>
+  </div>
+  <script>
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;  // honeypot - silently accept bots
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</section><script>(function(){
+  var obs=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});
+  },{rootMargin:'0px 0px -8% 0px',threshold:0.08});
+  document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
+  setTimeout(function(){document.querySelectorAll('.rv:not(.on)').forEach(function(el){el.classList.add('on');});},1200);
+})();
+var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+</script>
+<div class="lb-pulse" aria-hidden="true"></div>
+</body>
+</html>
