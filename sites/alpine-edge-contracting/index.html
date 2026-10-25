@@ -287,6 +287,8 @@ footer{border-top:1px solid var(--line);padding-block:var(--sp-5) var(--sp-3);fo
 </style>
 
 
+
+
 <style id="lb-logo-hero">
 /* Client logo across the header: the real artwork, isolated and readable. */
 .lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;
@@ -305,7 +307,9 @@ footer{border-top:1px solid var(--line);padding-block:var(--sp-5) var(--sp-3);fo
 .lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
   clip:rect(0 0 0 0)!important;white-space:nowrap!important}
 @media (max-width:720px){.lb-brand .lb-mark{height:42px!important}.lb-brand .lb-word{height:20px!important}}
-
+.lb-bar{background-color:#f8b008!important}
+.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#101014!important}
+.lb-bar .cta,.lb-bar a.cta{color:#101014!important}
 </style>
 </head>
 <body>
@@ -314,7 +318,7 @@ footer{border-top:1px solid var(--line);padding-block:var(--sp-5) var(--sp-3);fo
 
 <header class="site-head">
   <div class="wrap bar">
-    <a class="lb-brand" href="#top" aria-label="Alpine Edge Contracting home"><img class="lb-mark" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="name lb-brand__name">Alpine Edge Contracting home</span></a><nav class="nav" aria-label="Main">
+    <a class="lb-brand" href="#top" aria-label="Alpine Edge Contracting home"><img class="lb-mark" src="assets/logo-isolated-mark.png" alt="" loading="eager" decoding="async"><span class="name lb-brand__name">Alpine Edge Contracting home</span></a><nav class="nav" aria-label="Main">
       <a class="nav-link" href="#services">Services</a>
       <a class="nav-link" href="#work">Work</a>
       <a class="nav-link" href="#about">About</a>
@@ -584,5 +588,6 @@ footer{border-top:1px solid var(--line);padding-block:var(--sp-5) var(--sp-3);fo
   document.getElementById('yr').textContent = new Date().getFullYear();
 })();
 </script>
+<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#f8b008","important");})();</script>
 </body>
 </html>
