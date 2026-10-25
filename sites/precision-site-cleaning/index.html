@@ -41,18 +41,18 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   background:var(--bg);color:var(--body);
-  font-family:var(--text);font-size:var(--fs-m);line-height:1.62;
+  font-family:var(--text);font-size:var(--fs-m);line-height:1.362;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 img{display:block;max-width:100%}
 a{color:inherit}
-h1,h2,h3,h4{font-family:var(--disp);color:var(--ink);font-weight:700;line-height:1.08;letter-spacing:-.015em;text-wrap:balance}
+h1,h2,h3,h4{font-family:var(--disp);color:var(--ink);font-weight:700;line-height:1.38;letter-spacing:-.015em;text-wrap:balance}
 .wrap{width:min(var(--wrap),100% - var(--gut)*2);margin-inline:auto}
 .rule{border-top:1px solid var(--line)}
 
 .label{
   font-family:var(--disp);font-weight:600;font-size:var(--fs-label);
-  text-transform:uppercase;letter-spacing:.14em;color:var(--acc);
+  text-transform:uppercase;letter-spacing:0.05em;color:var(--acc);
   display:flex;align-items:center;gap:10px;
 }
 .label::before{content:"";width:26px;height:1px;background:var(--acc);flex:none}
@@ -86,8 +86,8 @@ h1,h2,h3,h4{font-family:var(--disp);color:var(--ink);font-weight:700;line-height
   color:var(--ink);white-space:nowrap;letter-spacing:-.01em;
 }
 .brand small{
-  display:block;font-family:var(--text);font-weight:500;font-size:10.5px;
-  color:var(--dim);white-space:nowrap;margin-top:4px;letter-spacing:.02em;
+  display:block;font-family:var(--text);font-weight:500;font-size:13px;
+  color:var(--dim);white-space:nowrap;margin-top:4px;letter-spacing:0.02em;
 }
 .nav{display:flex;align-items:center;gap:26px;margin-left:auto}
 .nav a{font-size:var(--fs-s);font-weight:500;color:var(--body);text-decoration:none;white-space:nowrap}
@@ -121,7 +121,7 @@ h1,h2,h3,h4{font-family:var(--disp);color:var(--ink);font-weight:700;line-height
   .nav{
     position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
     background:#0B1A22;border-bottom:1px solid var(--line);
-    padding:6px var(--gut) 18px;display:none;margin-left:0;
+    padding:6px 32px 18px;display:none;margin-left:0;
   }
   .nav.open{display:flex}
   .nav a{padding:13px 0;border-bottom:1px solid var(--line);font-size:var(--fs-m)}
@@ -135,7 +135,7 @@ h1,h2,h3,h4{font-family:var(--disp);color:var(--ink);font-weight:700;line-height
   content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(90deg,rgba(7,20,27,.93) 0%,rgba(7,20,27,.72) 40%,rgba(7,20,27,.1) 66%,rgba(7,20,27,.34) 100%);
 }
-.hero-in{position:relative;z-index:2;padding-block:clamp(56px,10vw,110px) clamp(44px,7vw,80px)}
+.hero-in{position:relative;z-index:2;padding-block:56px 44px}
 .hero-copy{max-width:640px}
 .hero h1{font-size:var(--fs-h1);margin-top:18px;letter-spacing:-.02em}
 .hero h1 em{font-style:normal;color:var(--acc-2)}
@@ -151,7 +151,7 @@ h1,h2,h3,h4{font-family:var(--disp);color:var(--ink);font-weight:700;line-height
 }
 
 /* ---------- sections ---------- */
-section{padding-block:var(--sec)}
+section{padding-block:32px}
 .sec-head{display:grid;gap:14px;max-width:640px}
 .sec-head h2{font-size:var(--fs-h2)}
 .sec-head p{font-size:var(--fs-m);color:var(--body);max-width:54ch}
@@ -161,7 +161,7 @@ section{padding-block:var(--sec)}
 .svc-lead{
   background:linear-gradient(160deg,#0F2933,#0B1A22 70%);
   border:1px solid var(--line-2);border-radius:14px;
-  padding:clamp(26px,3vw,42px);display:flex;flex-direction:column;justify-content:space-between;gap:26px;
+  padding:26px;display:flex;flex-direction:column;justify-content:space-between;gap:26px;
 }
 .svc-lead .n{font-family:var(--disp);font-size:13px;font-weight:700;color:var(--acc)}
 .svc-lead h3{font-size:var(--fs-l);margin-top:12px;max-width:18ch}
@@ -208,12 +208,12 @@ section{padding-block:var(--sec)}
 .areas li span{font-family:var(--text);font-weight:400;font-size:var(--fs-s);color:var(--dim);text-align:right}
 .book-note{margin-top:22px;font-size:var(--fs-s);color:var(--body);max-width:36ch}
 
-form{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:clamp(24px,3vw,34px)}
+form{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
 form h3{font-size:var(--fs-l);font-weight:600}
 form .hint{margin-top:8px;font-size:var(--fs-s);color:var(--dim)}
 .fields{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
 .f-full{grid-column:1/-1}
-.fields label{display:block;font-size:12.5px;color:var(--dim);margin-bottom:7px;font-weight:600}
+.fields label{display:block;font-size:13px;color:var(--dim);margin-bottom:7px;font-weight:600}
 .fields input,.fields textarea{
   width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--line-2);
   background:rgba(255,255,255,.04);color:var(--ink);font:inherit;font-size:var(--fs-s);
@@ -231,14 +231,14 @@ form .btn{width:100%;justify-content:center;margin-top:18px}
 .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .foot-brand img{height:40px;width:auto;border-radius:7px;background:#0B1A22;border:1px solid var(--line-2);padding:2px}
 .foot-brand span{font-family:var(--disp);font-weight:700;font-size:18px;color:var(--ink)}
-.site-foot p,.site-foot a{font-size:var(--fs-s);color:var(--body);text-decoration:none;line-height:1.7}
+.site-foot p,.site-foot a{font-size:var(--fs-s);color:var(--body);text-decoration:none;line-height:1.37}
 .site-foot a:hover{color:var(--acc)}
 .site-foot h4{font-size:13px;font-family:var(--text);font-weight:600;color:var(--dim);margin-bottom:12px}
 .foot-bot{
   margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
-  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--dim);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--dim);
 }
-.foot-bot a{font-size:12.5px;color:var(--dim)}
+.foot-bot a{font-size:13px;color:var(--dim)}
 @media(max-width:780px){.foot-in{grid-template-columns:1fr;gap:26px}}
 
 /* reveal */
@@ -251,25 +251,25 @@ form .btn{width:100%;justify-content:center;margin-top:18px}
 }
 </style>
 
-<!--LB-RV--><style id="lb-rv">.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
+<!--LB-RV--><style>.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
 
-<!--LB-HEROCOPY--><style id="lb-herocopy">[class*=hero-copy],[class*=hero__copy],[class*=hero].container>div:first-child{position:relative!important;z-index:6!important;max-width:min(780px,90vw)!important}[class*=hero-copy] h1,[class*=hero] h1{max-width:20ch!important}[class*=hero] canvas{pointer-events:none!important}[class*=hero-copy] p{max-width:56ch!important}</style><!--/LB-HEROCOPY-->
+<!--LB-HEROCOPY--><style>[class*=hero-copy],[class*=hero__copy],[class*=hero].container>div:first-child{position:relative!important;z-index:6!important;max-width:min(780px,90vw)!important}[class*=hero-copy] h1,[class*=hero] h1{max-width:20ch!important}[class*=hero] canvas{pointer-events:none!important}[class*=hero-copy] p{max-width:56ch!important}</style><!--/LB-HEROCOPY-->
 
-<!--LB-HEROCOPY2--><style id="lb-herocopy2">[class*=hero] canvas,canvas.lb-hero-canvas,[id*=scene] canvas{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{position:relative!important;z-index:3!important;width:min(780px,90vw)!important;max-width:none!important;flex:1 1 auto!important}[class*=hero-copy] h1{width:100%!important;max-width:none!important}</style><!--/LB-HEROCOPY2-->
+<!--LB-HEROCOPY2--><style>[class*=hero] canvas,canvas.lb-hero-canvas,[id*=scene] canvas{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{position:relative!important;z-index:3!important;width:min(780px,90vw)!important;max-width:none!important;flex:1 1 auto!important}[class*=hero-copy] h1{width:100%!important;max-width:none!important}</style><!--/LB-HEROCOPY2-->
 
-<!--LB-CANVASZ--><style id="lb-canvasz">[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
+<!--LB-CANVASZ--><style>[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
 
-<!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
+<!--LB-H1W--><style>[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.38!important}</style><!--/LB-H1W-->
 
-<!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.28)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
+<!--LB-HEROFIX2--><style>[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.28)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
 
-<!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
+<!--LB-RM--><style>@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
 
-<!--LB-HEROGRID--><style id="lb-herogrid">[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
+<!--LB-HEROGRID--><style>[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
 <style>.lb-logo{height:48px;width:auto;max-width:min(320px,42vw);object-fit:contain}
 header .lb-logo,nav .lb-logo{height:48px}
 @media(max-width:720px){.lb-logo,header .lb-logo,nav .lb-logo{height:38px}}
-</style><style id="lb-no-upscale">img{max-width:100%;height:auto}[style*="background-image"]{background-size:cover;background-position:center}</style></head>
+</style><style>img{max-width:100%;height:auto}[style*="background-image"]{background-size:cover;background-position:center}</style></head>
 <body>
 
 <header class="site-head">
@@ -321,7 +321,7 @@ header .lb-logo,nav .lb-logo{height:48px}
     <div class="svc">
       <article class="svc-lead rv">
         <div>
-          <p class="n">01</p>
+          
           <h3>Car detailing</h3>
           <p>Inside and out, using paint-safe products and a proper wash method, so the finish holds up after we leave.</p>
         </div>
@@ -329,22 +329,22 @@ header .lb-logo,nav .lb-logo{height:48px}
       </article>
       <div class="svc-rows rv">
         <div class="svc-row">
-          <p class="n">02</p>
+          
           <h3>Residential pressure cleaning</h3>
           <p>Driveways, paths, patios and house exteriors, stripped of mould, dirt and built-up grime.</p>
         </div>
         <div class="svc-row">
-          <p class="n">03</p>
+          
           <h3>Commercial cleaning</h3>
           <p>Offices, shopfronts and common areas, on a schedule that suits your trading hours.</p>
         </div>
         <div class="svc-row">
-          <p class="n">04</p>
+          
           <h3>Gutter clearing</h3>
           <p>Gutters cleared and flushed before the next storm finds them.</p>
         </div>
         <div class="svc-row">
-          <p class="n">05</p>
+          
           <h3>Decals &amp; wrap removal</h3>
           <p>Signage taken off cleanly, with the adhesive gone and the paint underneath intact.</p>
         </div>
@@ -362,17 +362,17 @@ header .lb-logo,nav .lb-logo{height:48px}
     </div>
     <div class="stages">
       <div class="stage rv">
-        <p class="n">1</p>
+        
         <h3>Send the details</h3>
         <p>Call or send the form with the address, the surface and roughly how big the job is. Photos help.</p>
       </div>
       <div class="stage rv">
-        <p class="n">2</p>
+        
         <h3>Get a time</h3>
         <p>We come back with a price and a window that works around you, including after hours for commercial.</p>
       </div>
       <div class="stage rv">
-        <p class="n">3</p>
+        
         <h3>We clean, you check</h3>
         <p>The team arrives with everything needed and walks the job with you before packing up.</p>
       </div>
