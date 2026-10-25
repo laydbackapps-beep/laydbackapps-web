@@ -330,6 +330,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 
 <!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
 
+
 <style id="lb-logo-hero">
 /* Client logo across the header: the real artwork, isolated and readable. */
 .lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;
@@ -338,7 +339,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 .lb-brand .lb-mark{display:block!important;height:clamp(64px,7.4vw,100px)!important;width:auto!important;
   max-width:none!important;max-height:none!important;object-fit:contain!important;background:none!important;
   border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
-.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(64vw,780px)!important;
+.lb-brand .lb-word{display:block!important;height:58px!important;width:auto!important;max-width:min(64vw,780px)!important;
   max-height:none!important;object-fit:contain!important;object-position:left center!important;
   background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
 .lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
@@ -348,7 +349,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 .lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
   clip:rect(0 0 0 0)!important;white-space:nowrap!important}
 .lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
-@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:20px!important}}
+@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:45px!important}}
 .lb-bar{background-color:#f8f8f8!important}
 .lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#101014!important}
 .lb-bar .cta,.lb-bar a.cta{color:#101014!important}
@@ -357,7 +358,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 <body>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav"><div class="nav-in">
-  <a class="lb-brand lb-brand--lockup lb-brand--square" style="--lb-name:#101014" href="#top" aria-label="Pacific Car Care — Home"><img class="lb-mark" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">Pacific Car Care — Home</span></a><div class="nav-links" id="navlinks"><a href="#services">Packages</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="#work">Work</a><a href="#quote">Book</a></div>
+  <a class="lb-brand" style="--lb-name:#101014" href="#top" aria-label="Pacific Car Care — Home"><img class="lb-mark" src="assets/logo-isolated-mark.png" alt="" loading="eager" decoding="async"><img class="lb-word" src="assets/logo-isolated-word.png" alt="" loading="eager" decoding="async"><span class="lb-sr">Pacific Car Care — Home</span></a><div class="nav-links" id="navlinks"><a href="#services">Packages</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="#work">Work</a><a href="#quote">Book</a></div>
   <div class="nav-cta"><span class="mono nav-p">0405 733 769</span><a href="#quote" class="btn btn-primary btn-sm">Get a free quote</a></div>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div></nav>
@@ -659,6 +660,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
   window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(function(){ size(); paint(); }, 120); });
 })();
 </script>
-<footer style="padding:28px 18px;font-size:13px;opacity:.75"><a href="/privacy" style="color:inherit">Privacy</a> · <a href="/terms" style="color:inherit">Terms</a></footer><script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#f8f8f8","important");})();</script>
+<footer style="padding:28px 18px;font-size:13px;opacity:.75"><a href="/privacy" style="color:inherit">Privacy</a> · <a href="/terms" style="color:inherit">Terms</a></footer>
+<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#f8f8f8","important");})();</script>
 </body>
 </html>

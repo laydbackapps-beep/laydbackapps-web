@@ -397,6 +397,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
+
 <style id="lb-logo-hero">
 /* Client logo across the header: the real artwork, isolated and readable. */
 .lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;
@@ -405,7 +406,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 .lb-brand .lb-mark{display:block!important;height:clamp(64px,7.4vw,100px)!important;width:auto!important;
   max-width:none!important;max-height:none!important;object-fit:contain!important;background:none!important;
   border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
-.lb-brand .lb-word{display:block!important;height:74px!important;width:auto!important;max-width:min(64vw,780px)!important;
+.lb-brand .lb-word{display:block!important;height:58px!important;width:auto!important;max-width:min(64vw,780px)!important;
   max-height:none!important;object-fit:contain!important;object-position:left center!important;
   background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
 .lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
@@ -415,7 +416,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 .lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
   clip:rect(0 0 0 0)!important;white-space:nowrap!important}
 .lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
-@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:59px!important}}
+@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:45px!important}}
 .lb-bar{background-color:#303030!important}
 .lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#f7f7f4!important}
 .lb-bar .cta,.lb-bar a.cta{color:#ffffff!important}
@@ -424,7 +425,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 <body>
 <nav class="nav">
   <div class="nav-in">
-    <a class="lb-brand" style="--lb-name:#ffffff" href="#top" aria-label="Conn Building - Home"><img class="lb-word" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">Conn Building</span></a><div class="nav-links" id="nav-links">
+    <a class="lb-brand" style="--lb-name:#ffffff" href="#top" aria-label="Conn Building - Home"><img class="lb-mark" src="assets/logo-isolated-mark.png" alt="" loading="eager" decoding="async"><img class="lb-word" src="assets/logo-isolated-word.png" alt="" loading="eager" decoding="async"><span class="lb-sr">Conn Building</span></a><div class="nav-links" id="nav-links">
       <a href="#services">Services</a>
       <a href="#work">Our Work</a>
       <a href="#process">Process</a>
@@ -867,6 +868,7 @@ header a[href^="tel"],.site-header a[href^="tel"]{
   .lb-brand__word{font-size:.92em !important}
 }
 </style>
+
 <script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#303030","important");})();</script>
 </body>
 </html>
