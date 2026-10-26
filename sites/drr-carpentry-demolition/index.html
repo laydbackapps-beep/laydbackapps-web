@@ -290,6 +290,7 @@ body footer.footer span.lb-legal a:nth-of-type(2){color:#ffffff !important}
 
 
 
+
 <style id="lb-logo-hero">
 /* Client logo across the header: the real artwork, isolated and readable. */
 .lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;
@@ -309,7 +310,9 @@ body footer.footer span.lb-legal a:nth-of-type(2){color:#ffffff !important}
   clip:rect(0 0 0 0)!important;white-space:nowrap!important}
 .lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
 @media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:45px!important}}
-
+.lb-bar{background-color:#000000!important}
+.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#f7f7f4!important}
+.lb-bar .cta,.lb-bar a.cta{color:#ffffff!important}
 </style>
 </head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
@@ -447,8 +450,7 @@ body footer.footer span.lb-legal a:nth-of-type(2){color:#ffffff !important}
 <section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><!-- foreign-photo:gal_1.jpg --></div><div class="lb-rb__slide"><!-- foreign-photo:gal_3.jpg --></div><div class="lb-rb__slide"><!-- foreign-photo:gal_2.jpg --></div><div class="lb-rb__slide"><!-- foreign-photo:hero.jpg --></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button><button type="button" class="" aria-label="Slide 4"></button></div><div class="lb-rb__cap">D•R•R carpentry and demolition &mdash; recent work</div></div></section><footer class="footer" role="contentinfo">
   <div class="footer-inner">
     <div class="footer-brand rv rv-delay-1">
-      <a href="./" class="logo" aria-label="D•R•R carpentry and demolition home">D•R•R <span>CARPENTRY</span></a>
-      <p>Carpentry, framing, decks, renovations and demolition across the Sunshine Coast and hinterland.</p>
+      <a class="lb-brand" style="--lb-name:#ffffff" href="#top" aria-label="D•R•R carpentry and demolition home"><img class="lb-mark" src="assets/logo-isolated-mark.png" alt="" loading="eager" decoding="async"><img class="lb-word" src="assets/logo-isolated-word.png" alt="" loading="eager" decoding="async"><span class="lb-sr">D•R•R carpentry and demolition home</span></a><p>Carpentry, framing, decks, renovations and demolition across the Sunshine Coast and hinterland.</p>
     </div>
     <nav class="footer-col rv rv-delay-2" aria-label="Services">
       <h4>Services</h4>
@@ -752,5 +754,6 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
 
 </style>
 <script src="assets/hero-scene.js" defer></script>
+<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#000000","important");})();</script>
 </body>
 </html>
