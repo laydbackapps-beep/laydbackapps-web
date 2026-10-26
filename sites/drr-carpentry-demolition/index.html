@@ -51,7 +51,7 @@ nav.tabs a{font-size:14.5px;color:var(--muted);text-decoration:none;padding:4px 
 
 /* hero */
 .hero{position:relative;perspective:1100px;background:#000;color:#fff;border-bottom:1px solid var(--line)}
-.hero .shot{position:absolute;inset:0;background:radial-gradient(120% 90% at 14% 0%,rgba(224,86,111,.22),transparent 62%),repeating-linear-gradient(115deg,rgba(224,86,111,.09) 0 2px,transparent 2px 17px),linear-gradient(162deg,#151013 0%,#0b0b0c 58%,#130e11 100%)}
+.hero .shot{position:absolute;inset:0;background:radial-gradient(120% 90% at 14% 0%,rgba(107,23,41,0.2),transparent 62%),repeating-linear-gradient(115deg,rgba(107,23,41,0.08) 0 2px,transparent 2px 17px),linear-gradient(162deg,#151013 0%,#0b0b0c 58%,#130e11 100%),}
 .hero .scrim{position:absolute;inset:0;background:linear-gradient(96deg,rgba(8,8,9,.90) 0%,rgba(8,8,9,.78) 40%,rgba(8,8,9,.46) 70%,rgba(8,8,9,.24) 100%)}
 .hero .wrap{position:relative;z-index:3;padding-top:clamp(42px,6vw,86px);padding-bottom:clamp(40px,5.6vw,78px)}
 .kicker{color:#fff;font-size:14.5px;font-weight:700;margin:0 0 14px;opacity:.95;letter-spacing:0}
@@ -186,13 +186,20 @@ footer a{color:var(--ink)}
 
   <section id="site" style="background:var(--bg2)">
     <div class="wrap">
-      <h2 class="rv">On site</h2>
-      <p class="lead rv">Photos of a job like this &mdash; how a strip-out and demolition looks while it is happening.</p>
-      <div class="strip">
-        <figure class="rv"><span class="tag">A job like this</span><img src="assets/demo-stripout.jpg" alt="Interior stripped back to the framing with debris on the floor"><figcaption>Room stripped back to the studs before the rebuild.</figcaption></figure>
-        <figure class="rv"><span class="tag">A job like this</span><img src="assets/demo-breakout.jpg" alt="Concrete and masonry being broken out at the base of a wall"><figcaption>Masonry and slab broken out at the wall base.</figcaption></figure>
-        <figure class="rv"><span class="tag">A job like this</span><img src="assets/demo-structure.jpg" alt="Structure broken out with saws on site"><figcaption>Structure down and cut back to level.</figcaption></figure>
+      <h2 class="rv">What the work actually is</h2>
+      <p class="lead rv">No borrowed photos on this page &mdash; the scope below is what a strip-out, breakout and structural demo involve, start to finish.</p>
+      <div class="scope">
+        <article><b>Strip-outs</b><p>Interiors taken back to the framing — linings, joinery, floors and ceilings out, rubbish gone.</p></article>
+        <article><b>Structural demo</b><p>Load-bearing walls, extensions and outbuildings brought down with the frame left safe and propped.</p></article>
+        <article><b>Concrete break-out</b><p>Slabs, footings and paths cut and broken out, steel separated, rubble carted.</p></article>
+        <article><b>Making good</b><p>Frames, trims and linings reinstated so the next trade has something straight to work to.</p></article>
       </div>
+      <style id="drr-scope">
+      .scope{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:8px}
+      .scope article{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:12px;padding:22px}
+      .scope b{display:block;font-size:17px;margin-bottom:8px;color:var(--ink)}
+      .scope p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+      </style>
     </div>
   </section>
 
