@@ -135,15 +135,27 @@ footer a{color:var(--ink)}
 .brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style><style id="lb-brand-split">
+/* the logo's own artwork, pieces separated and sized to the bar instead of one shrunken lockup */
+.bar{--bar-h:104px}
+.wrap.bar-in{min-height:var(--bar-h)!important;align-items:center!important}
+.brand{display:flex!important;align-items:center!important;gap:14px!important;text-decoration:none!important}
+.brand .brand-bull{height:clamp(46px,4.6vw,66px)!important;width:auto!important;display:block!important}
+.brand .brand-words{display:block!important}
+.brand .brand-words img{height:clamp(30px,3vw,44px)!important;width:auto!important;display:block!important}
+.brand .vh{display:none!important}
+@media(max-width:820px){
+  .brand .brand-bull{height:40px!important}
+  .brand .brand-words img{height:26px!important}
+}
 </style></head>
 <body>
 <script>document.documentElement.classList.add('js')</script>
 
 <header class="bar">
   <div class="wrap bar-in">
-    <a class="brand" href="#top" aria-label="Elevate Concrete"><img src="assets/logo.png" alt="Elevate Concrete"><span class="vh">Elevate Concrete</span></a>
-    <nav class="tabs" aria-label="Primary"><a class="brand-monogram" href="#top" aria-label="Elevate Concrete"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-      <a href="#scope">Scope</a>
+    <a class="brand" href="#top" aria-label="Elevate Concrete — concrete construction"><img class="brand-bull" src="assets/brand-bull.png" alt="" width="365" height="364"><span class="brand-words"><img src="assets/brand-word.png" alt="Elevate Concrete" width="612" height="177"></span></a>
+    <nav class="tabs" aria-label="Primary"><a href="#scope">Scope</a>
       <a href="#pour">Pour day</a>
       <a href="#work">Work</a>
       <a href="#faq">FAQ</a>
