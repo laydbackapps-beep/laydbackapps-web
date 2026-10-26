@@ -153,6 +153,17 @@ footer a:hover{color:var(--acc)}
 .lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#101014!important}
 .lb-bar .cta,.lb-bar a.cta{color:#101014!important}
 </style>
+
+<style id="lb-fit-fix">
+/* the logo never protrudes: it is sized inside the bar, and the bar takes the logo's own plate colour
+   so there is no white box sitting on a dark band */
+header, header.site, .site-header, .nav, nav.bar{background:#ffffff!important}
+header a:not(.cta), header nav a, header .nav a, header .phone, header .tel{color:#0f1720!important}
+.lb-brand img, .lb-brand .lb-mark, .lb-brand .lb-word{height:clamp(34px,3.8vw,56px)!important;width:auto!important;
+  max-height:56px!important;object-fit:contain!important;display:block!important}
+.lb-brand{display:inline-flex!important;align-items:center!important;gap:14px!important;padding:0!important;max-height:56px!important}
+@media (max-width:720px){.lb-brand img,.lb-brand .lb-mark,.lb-brand .lb-word{height:36px!important;max-height:36px!important}}
+</style>
 </head>
 <body>
 <header class="top">
