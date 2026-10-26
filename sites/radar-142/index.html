@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Allards Auto Detailing, Car Detailing &amp; Graphene Paint Protection | West Gosford</title>
-<meta name="description" content="Allards Auto Detailing — full interior and exterior detailing, paint enhancement and long-life graphene protection at our West Gosford workshop. Cars, 4WDs, boats and motorhomes. Call 0405 733 769."/>0405 733 769."&gt;
+<meta content="Allards Auto Detailing — full interior and exterior detailing, paint enhancement and long-life graphene protection at our West Gosford workshop. Cars, 4WDs, boats and motorhomes. Call 0405 733 769." name="description"/>0405 733 769."&gt;
 <meta content="Allards Auto Detailing — West Gosford, Central Coast" property="og:title"/>
 <meta content="Detailing, paint correction &amp; graphene protection — cars, boats &amp; motorhomes, West Gosford." property="og:description"/>
 <meta content="website" property="og:type"/>
@@ -335,15 +335,10 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-
-
-
-
 <style id="lb-header-clean">
 /* ONE header rule. Brand = the client's own lockup, sized for an 80px bar. */
 .nav-in{height:80px;gap:clamp(14px,2vw,28px)}
@@ -372,15 +367,32 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 }
 @media(max-width:640px){.svc-grid{grid-template-columns:1fr}}
 </style>
-</head>
+<style id="lb-allards-hdr">
+/* header exactly as specified: car mark + ALLARDS wordmark left, menu button right, items in the menu */
+.burger{display:block !important}
+.nav-cta{display:none !important}
+.nav-links{display:none !important}
+.nav-links.open{display:flex !important;position:fixed !important;top:81px;left:0;right:0;z-index:70;
+  background:#0a0b0d;flex-direction:column;align-items:stretch;gap:.9rem;padding:1.1rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.14)}
+.nav-links.open a{width:100%;text-align:left;font-size:16px;padding:.45rem 0;color:#e8eaee}
+.nav-bar{display:flex;align-items:center;gap:18px}
+@media(max-width:900px){.nav-links.open{top:59px}}
+</style><style id="lb-allards-brand">
+nav .lb-brand{display:flex !important;align-items:center;gap:clamp(14px,2vw,26px) !important}
+nav .lb-brand img.lb-mark{height:clamp(48px,5vw,64px) !important;width:auto !important;display:block !important}
+nav .lb-brand img.lb-word{height:clamp(30px,3.2vw,44px) !important;width:auto !important;display:block !important}
+@media(max-width:900px){
+ nav .lb-brand img.lb-mark{height:42px !important}
+ nav .lb-brand img.lb-word{height:26px !important}
+}
+</style></head>
 <body>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav"><div class="nav-in">
-<a aria-label="Allards Auto Detailing" class="lb-brand" href="#top"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-flat-mark.png"/><span class="lb-sr">Allards Auto Detailing</span></a><div class="nav-links" id="navlinks"><a href="#services">Packages</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="#work">Work</a><a href="#quote">Book</a></div>
+<a aria-label="Allards Auto Detailing" class="lb-brand" href="#top"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-flat-mark.png"/><span class="lb-sr">Allards Auto Detailing</span><img alt="" class="lb-word" src="assets/logo-word.png"/></a><div class="nav-links" id="navlinks"><a href="#services">Packages</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="#work">Work</a><a href="#quote">Book</a><a href="#quote">Get a quote</a><a href="tel:0405733769">0405 733 769</a></div>
 <div class="nav-cta"><span class="mono nav-p"><a href="tel:0405733769" style="color:inherit;text-decoration:none">0405 733 769</a></span><a class="btn btn-primary btn-sm" href="#quote">Get a quote</a></div>
 <button aria-expanded="false" aria-label="Menu" class="burger" id="burger"><span></span><span></span><span></span></button>
 </div></nav>
-
 <header class="hero hex-veil" id="top">
 <!-- LB-3D-HERO -->
 <div aria-hidden="true" class="hero-slides">
@@ -974,8 +986,6 @@ if (hg) {
   if (!reduce) raf = requestAnimationFrame(loop); 
 })();
 </script>
-
-
 <style>/* ==== TASTE PASS (anti-slop, from impeccable findings) ==== */
 .lb-mq__in,.svc-row,tiny numbered label "01" beside h2 "Detailing that shows up in the reflections." (4 on page),tiny numbered label "02" beside h2 "Booked in, detailed, protected." (4 on page),tiny numbered label "03" beside h2 "Asked on every detail." (4 on page),tiny numbered label "04" beside h2 "Why Central Coast cars come to Allards." (4 on page){display:none !important}
 Zero-offset box-shadow glow (#a32020){box-shadow:none !important;text-shadow:none !important}
@@ -994,8 +1004,6 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
   scroll-margin-top:24px}
 
 </style>
-
-
 <script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#000008","important");})();</script>
 </body>
 </html>
