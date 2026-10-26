@@ -1,49 +1,601 @@
-<!doctype html><html lang="en-AU"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><title>JEC Project Group — Sydney</title>
-<meta name="description" content="JEC Project Group: Renovations, framing and repairs set out square and sequenced so no trade blocks another."><style>:root{--bg:#0f1216;--ink:#f3f4f6;--dim:#a9b0ba;--line:#242b34;--panel:#161b21;--acc:#c67227}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
-.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(18px,4.5vw,56px)}
-a{color:inherit}
-header.site{border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30;background:var(--bg)}
-.bar{display:flex;align-items:center;gap:18px;padding:12px 0;flex-wrap:wrap}
-.lb-brand img{height:clamp(42px,4.6vw,60px);width:auto;display:block}
-nav.main{display:flex;gap:clamp(12px,1.6vw,24px);margin-left:auto;flex-wrap:wrap}
-nav.main a{text-decoration:none;font-size:15px;color:var(--dim)}
-.tel{text-decoration:none;font-weight:800;border-bottom:2px solid var(--acc);white-space:nowrap}
-section{padding:clamp(44px,6vw,84px) 0;border-top:1px solid var(--line)}
-h1{margin:0 0 18px;font-size:clamp(36px,6vw,82px);line-height:.96;letter-spacing:-.04em;font-weight:800}
-h1 i{font-style:normal;color:var(--acc)}
-h2{margin:0 0 24px;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.02em;font-weight:800}
-p{color:var(--dim)}
-.cta{display:inline-block;background:var(--acc);color:#111;padding:14px 26px;text-decoration:none;font-weight:800}
-form{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,3vw,30px)}
-label{display:block;font-size:13.5px;color:var(--dim);margin:0 0 6px}
-input,textarea{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:11px;font:inherit;font-size:15px;margin-bottom:14px}
-button{width:100%;background:var(--ink);color:var(--bg);border:0;padding:14px;font:inherit;font-weight:800;cursor:pointer}
-footer{border-top:1px solid var(--line);padding:28px 0;font-size:14px;color:var(--dim)}
-@media(max-width:720px){.lb-brand img{height:40px}nav.main{order:3;width:100%;margin-left:0}}
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JEC Project Group — Construction &amp; Project Management, Sydney</title>
+<meta name="description" content="JEC Project Group builds commercial fitouts, residential projects, renovations and managed construction across Sydney. Licence 339272C. Call 0405 543 822.">
+<meta property="og:title" content="JEC Project Group — Construction &amp; Project Management, Sydney">
+<meta property="og:description" content="Commercial fitouts, residential projects, renovations and project management across Sydney.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero-construction7.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#111c27; --paper:#f6f4f1; --panel:#ffffff;
+  --acc:#c9762e; --acc-dk:#a75f1f; --acc-hi:#e2a05a;
+  --mut:#55636f; --line:rgba(17,28,39,.14); --line-2:rgba(17,28,39,.28);
+  --on-dark:rgba(255,255,255,.72);
+  --t-hero:clamp(2.35rem,5.6vw,4.6rem);
+  --t-h2:clamp(1.65rem,3.1vw,2.5rem);
+  --t-body:1.0625rem; --t-small:.875rem; --t-micro:.75rem;
+  --gutter:clamp(1.15rem,4vw,3.5rem);
+  --sec:clamp(4.5rem,9vw,8rem);
+  --max:1180px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 var(--t-body)/1.6 Archivo,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p,ul,ol,figure,dl,dd{margin:0}
+ul,ol{padding:0;list-style:none}
+h1,h2,h3{letter-spacing:-.022em;line-height:1.08;font-weight:800;text-wrap:balance}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--acc-dk);color:#fff;padding:.8rem 1.2rem;font-weight:700}
+.skip:focus{left:1rem;top:1rem}
+.kick{font-size:var(--t-micro);font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--acc-dk)}
+.lead{font-size:1.075rem;color:var(--mut);max-width:46ch}
 
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(20px,4vw,56px);align-items:end;padding:clamp(48px,7vw,96px) 0}
-@media(max-width:900px){.hero{grid-template-columns:1fr}}
-.hero .side{border-top:1px solid var(--line);padding-top:16px;display:grid;gap:10px;font-size:15px;color:var(--dim)}
-.hero .side b{display:block;color:var(--ink);font-size:15.5px}
-.rows{display:grid;gap:0;border-top:1px solid var(--line)}
-.rows div{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
-@media(max-width:720px){.rows div{grid-template-columns:1fr;gap:4px}}
-.rows b{font-size:16.5px}.rows span{color:var(--dim);font-size:15.5px}
-.areas span{display:inline-block;border:1px solid var(--line);padding:7px 13px;margin:0 8px 8px 0;font-size:14px;color:var(--dim)}
-</style></head>
-<body class="dark"><header class="site"><div class="wrap bar"><a class="lb-brand" href="#top" aria-label="JEC Project Group"><img src="assets/logo-cut.png" alt="JEC Project Group"></a><nav class="main"><a href="#Services">Services</a><a href="#About">About</a><a href="#Areas">Areas</a><a href="#Quote">Quote</a></nav><a class="tel" href="tel:0405543822">0405 543 822</a></div></header><main id="top"><section class="hero"><div><h1>Renovations that<br><i>finish on time.</i></h1><p>Renovations, framing and repairs set out square and sequenced so no trade blocks another.</p></div><div class="side"><div><b>Trade</b>Building</div><div><b>Area</b>Sydney</div><div><b>Phone</b><a class="tel" href="tel:0405543822">0405 543 822</a></div></div></section><section id="Services"><div class="wrap"><h2>Services</h2><div class="rows"><div><b>Framing & structures</b><span>Quoted from the site, with the prep and finish agreed before work starts.</span></div><div><b>Decks & carports</b><span>Quoted from the site, with the prep and finish agreed before work starts.</span></div><div><b>Property repairs</b><span>Quoted from the site, with the prep and finish agreed before work starts.</span></div><div><b>Fit-out & finishing</b><span>Quoted from the site, with the prep and finish agreed before work starts.</span></div><div><b>Maintenance</b><span>Quoted from the site, with the prep and finish agreed before work starts.</span></div><div><b>Renovations</b><span>Quoted from the site, with the prep and finish agreed before work starts.</span></div></div></div></section><section id="About"><div class="wrap"><h2>JEC Project Group</h2><p>Working across Sydney — one crew quotes the job and does the work, so what is agreed on the phone is what happens on site.</p></div></section><section id="Quote"><div class="wrap"><form id="quote-form" data-site="jec-project-group"><label for="n">Name</label>
-<input id="n" name="name" required placeholder="Your name"><label for="p">Phone</label>
-<input id="p" name="phone" required inputmode="tel" placeholder="04xx xxx xxx">
-<label for="s">Suburb</label><input id="s" name="suburb" placeholder="Your suburb">
-<label for="m">What needs doing?</label><textarea id="m" name="message" rows="3"></textarea>
-<button type="submit">Send request</button></form></div></section><section id="Areas"><div class="wrap"><h2>Areas</h2><div class="areas"><span>Newcastle</span><span>Lake Macquarie</span><span>Maitland</span><span>Cameron Park</span><span>Warners Bay</span><span>Belmont</span><span>Charlestown</span><span>Swansea</span><span>Morisset</span><span>Toronto</span><span>Cessnock</span><span>Raymond Terrace</span><span>Port Stephens</span><span>Gosford</span><span>Central Coast</span></div></div></section></main><footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span>JEC Project Group</span><a class="tel" href="tel:0405543822">0405 543 822</a></div></footer>
-<script>document.getElementById('quote-form').addEventListener('submit',function(e){e.preventDefault();
-var f=e.currentTarget,b=f.querySelector('button');b.textContent='Sending…';b.disabled=true;
-fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',
-headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
-body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,message:f.message.value})})
-.then(function(){b.textContent='Thanks — we will call you back';})
-.catch(function(){b.textContent='Call '+(window.__ph||'');b.disabled=false;});});</script></body></html>
+/* ---------- header ---------- */
+.hdr{position:sticky;top:0;z-index:100;background:var(--ink);border-bottom:1px solid rgba(255,255,255,.1)}
+.hdr__in{max-width:var(--max);margin:0 auto;padding:.75rem var(--gutter);display:flex;align-items:center;gap:1.25rem;min-height:74px}
+.brand{display:flex;align-items:center;gap:.7rem;flex:0 1 auto;min-width:0;color:#fff}
+.brand img{width:38px;height:38px;flex:none;border-radius:9px;display:block}
+.brand b{font-size:1.06rem;font-weight:800;letter-spacing:-.015em;white-space:nowrap;line-height:1.15;display:block;overflow:hidden;text-overflow:ellipsis}
+.brand small{display:block;font-size:var(--t-micro);color:rgba(255,255,255,.6);letter-spacing:0;white-space:nowrap}
+.hdr nav{display:flex;gap:1.5rem;margin-left:auto}
+.hdr nav a{font-size:var(--t-small);font-weight:600;color:rgba(255,255,255,.84);padding:.35rem 0;border-bottom:1px solid transparent}
+.hdr nav a:hover{color:#fff;border-bottom-color:var(--acc)}
+.tel{display:inline-flex;align-items:center;gap:.5rem;background:var(--acc);color:#fff;font-weight:800;font-size:var(--t-small);padding:.68rem 1rem;border-radius:6px;white-space:nowrap;flex:none;transition:background .2s var(--ease)}
+.tel:0405543822"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(100deg,rgba(8,15,24,.93) 0%,rgba(8,15,24,.82) 34%,rgba(8,15,24,.34) 62%,rgba(8,15,24,.55) 100%)}
+.hero__in{position:relative;z-index:2;width:100%;max-width:var(--max);margin:0 auto;padding:clamp(5rem,14vh,9rem) var(--gutter) clamp(2.4rem,6vh,4rem)}
+.hero .kick{color:var(--acc-hi)}
+.hero h1{font-size:var(--t-hero);max-width:16ch;margin:.9rem 0 0;font-weight:900;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;display:block;color:var(--acc-hi)}
+.hero p{max-width:44ch;margin:1.1rem 0 0;color:var(--on-dark);font-size:1.06rem}
+.hero__cta{margin-top:1.9rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.4rem}
+.hero .tel{padding:.95rem 1.35rem;font-size:1rem}
+.hero__alt{font-size:var(--t-small);font-weight:600;color:rgba(255,255,255,.85);border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:.15rem}
+.hero__alt:hover{color:#fff;border-bottom-color:var(--acc)}
+.hero__meta{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-size:var(--t-small);color:rgba(255,255,255,.62)}
+.hero__meta span{display:inline-flex;align-items:center;gap:.45rem}
+.hero__meta span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--acc);flex:none}
+
+/* ---------- sections ---------- */
+.sec{padding:var(--sec) 0}
+.sec--tight{padding-top:calc(var(--sec) * .7)}
+.sec--dark{background:var(--ink);color:#fff}
+.sec--dark .lead{color:rgba(255,255,255,.7)}
+.sec--dark .kick{color:var(--acc-hi)}
+.split{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.split .head{position:sticky;top:calc(74px + 2rem)}
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:2.2rem}}
+.head h2{font-size:var(--t-h2);margin:.8rem 0 1rem}
+.head .lead{font-size:1rem}
+.mini{margin-top:1.8rem;padding-top:1.2rem;border-top:1px solid var(--line)}
+.mini p{font-size:.95rem;color:var(--mut);max-width:26ch}
+.mini p b{display:block;color:var(--ink);font-size:1rem;margin-bottom:.15rem}
+.mini a{display:inline-block;margin-top:.7rem;font-weight:800;font-size:1.05rem;border-bottom:2px solid var(--acc)}
+.mini a:hover{color:var(--acc-dk)}
+@media (max-width:900px){.split .head{position:static}}
+
+/* services index */
+.svc{border-top:1px solid var(--line-2)}
+.svc li{border-bottom:1px solid var(--line);position:relative;transition:padding-left .3s var(--ease)}
+.svc .row{display:grid;grid-template-columns:2.6rem 1fr;gap:0 1rem;padding:1.5rem 0 .4rem;align-items:start}
+.svc li::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--acc);transform:scaleY(0);transform-origin:top;transition:transform .35s var(--ease)}
+.svc li:hover::before{transform:scaleY(1)}
+.svc li:hover{padding-left:1rem}
+.svc .n{font-size:var(--t-small);font-weight:700;color:var(--acc-dk);padding-top:.3rem;font-variant-numeric:tabular-nums}
+.svc h3{font-size:1.22rem;margin:0 0 .35rem}
+.svc p{color:var(--mut);font-size:.98rem;max-width:56ch}
+.svc .tag{grid-column:1/-1;margin:.45rem 0 1.3rem 3.6rem;font-size:var(--t-micro);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mut)}
+
+/* stages rail */
+.rail{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2.4vw,2.2rem);margin-top:clamp(2.2rem,5vw,3.4rem);position:relative}
+.rail::before{content:"";position:absolute;left:0;right:0;top:5px;height:1px;background:rgba(255,255,255,.18)}
+.rail li{position:relative;padding-top:1.9rem}
+.rail li::before{content:"";position:absolute;top:0;left:0;width:11px;height:11px;border-radius:50%;background:var(--ink);border:2px solid var(--acc)}
+.rail .n{font-size:var(--t-micro);font-weight:800;color:var(--acc-hi);letter-spacing:.08em}
+.rail h3{font-size:1.05rem;margin:.45rem 0 .5rem;color:#fff}
+.rail p{font-size:.93rem;color:rgba(255,255,255,.65)}
+@media (max-width:780px){.rail{grid-template-columns:1fr 1fr;gap:1.6rem 1.4rem}}
+@media (max-width:430px){.rail{grid-template-columns:1fr}.rail::before{display:none}}
+.railnote{margin-top:clamp(2rem,4vw,3rem);padding-top:1.1rem;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;gap:.5rem 2rem;font-size:var(--t-small);color:rgba(255,255,255,.55)}
+.railnote p{display:flex;align-items:center;gap:.5rem}
+.railnote p::before{content:"";width:4px;height:4px;background:var(--acc);border-radius:50%}
+
+/* approach */
+.approach{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.approach figure{overflow:hidden;border-radius:4px}
+.approach figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
+figcaption{margin-top:.7rem;font-size:var(--t-micro);color:var(--mut);letter-spacing:.04em}
+.points{margin-top:1.8rem;border-top:1px solid var(--line)}
+.points li{padding:1.15rem 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1.4rem 1fr;gap:.9rem}
+.points b{display:block;font-weight:800;font-size:1rem;margin-bottom:.2rem}
+.points p{font-size:.97rem;color:var(--mut)}
+.points .tick{width:1.35rem;height:1.35rem;border:1px solid var(--acc);border-radius:50%;display:grid;place-items:center;color:var(--acc-dk);font-size:.7rem;font-weight:800;margin-top:.1rem}
+@media (max-width:900px){.approach{grid-template-columns:1fr}.approach figure img{aspect-ratio:16/10}}
+
+/* work grid */
+.work{display:grid;grid-template-columns:repeat(6,1fr);gap:.7rem}
+.work figure{overflow:hidden;border-radius:4px;background:#dcd7d0}
+.work img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;transition:transform .7s var(--ease)}
+.work figure:hover img{transform:scale(1.04)}
+.work .big{grid-column:span 4;grid-row:span 2}
+.work .std{grid-column:span 2}
+.work .big img{aspect-ratio:16/10}
+@media (max-width:700px){.work{grid-template-columns:1fr 1fr;gap:.55rem}.work .big{grid-column:span 2;grid-row:auto}.work img,.work .big img{aspect-ratio:4/3}}
+
+/* quote */
+.quote{background:var(--paper);border-top:1px solid var(--line)}
+.quote__in{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.quote a.big-tel{display:inline-block;font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin:.3rem 0 1.4rem;border-bottom:2px solid var(--acc)}
+.quote a.big-tel:0405543822'js')</script>
+<a class="skip" href="#services">Skip to content</a>
+
+</style>
+
+<!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
+
+
+
+
+
+<style id="lb-logo-hero">
+/* Client logo across the header: the real artwork, isolated and readable. */
+.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;padding:0!important;max-height:96px!important;
+  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
+  padding:0!important;box-shadow:none!important}
+.lb-brand .lb-mark{display:block!important;height:clamp(44px,4.8vw,66px)!important;width:auto!important;
+  max-width:none!important;max-height:66px!important;object-fit:contain!important;background:none!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
+.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(38vw,520px)!important;
+  max-height:none!important;object-fit:contain!important;object-position:left center!important;
+  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
+  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
+.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
+.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
+.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
+  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
+.lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
+@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:20px!important}}
+.lb-bar{background-color:#c87028!important}
+.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#f7f7f4!important}
+.lb-bar .cta,.lb-bar a.cta{color:#ffffff!important}
+</style>
+
+<style id="lb-mobile-base">
+html,body{max-width:100%;overflow-x:hidden}
+img,video,canvas,svg,iframe{max-width:100%}
+img,video{height:auto}
+header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
+header,.site-header,.nav{max-width:100%}
+.lb-brand{min-width:0;max-width:100%;overflow:hidden}
+.lb-brand img{max-height:64px;width:auto}
+nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
+h1{overflow-wrap:anywhere}
+@media (max-width:820px){
+  .lb-brand img{max-height:38px}
+  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
+  h2{font-size:clamp(20px,6vw,30px)!important}
+  section{padding-left:16px!important;padding-right:16px!important}
+  .wrap,.container{max-width:100%!important}
+}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="hdr__in">
+    <a class="lb-brand lb-brand--lockup lb-brand--square" style="--lb-name:#ffffff" href="#top" aria-label="JEC Project Group — home"><img class="lb-mark" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">JEC Project Group — home</span></a><nav aria-label="Sections">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#approach">Approach</a>
+      <a href="#work">Work</a>
+    </nav>
+    <a class="tel" href="tel:0405543822">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2.1Z"/></svg>
+      0405 543 822
+    </a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero__in">
+    <p class="kick">Sydney &middot; commercial &amp; residential</p>
+    <h1>Built to the drawing. <em>Managed to the day.</em></h1>
+    <p>Fitouts, renovations and new work delivered by the people holding the tools — set-out, structure and finish, in that order, with nothing left to chance.</p>
+    <div class="hero__cta">
+      <a class="tel" href="tel:0405543822">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2.1Z"/></svg>
+        Call Josh &mdash; 0405 543 822
+      </a>
+      <a class="hero__alt" href="#services">What we build</a>
+    </div>
+    <div class="hero__meta">
+      <span>NSW builder licence 339272C</span>
+      <span>ABN 22 126 491 969</span>
+      <span>Owner on site</span>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="sec" id="services">
+  <div class="wrap split">
+    <div class="head rv">
+      <p class="kick">Services</p>
+      <h2>Four kinds of work, one standard of build</h2>
+      <p class="lead">We take on work where the detail matters and the programme has to hold — and we price it properly before anyone lifts a tool.</p>
+      <div class="mini">
+        <p><b>Not sure which one?</b> Describe the job and we will tell you straight.</p>
+        <a href="tel:0405543822">0405 543 822</a>
+      </div>
+    </div>
+    <ol class="svc rv">
+      <li><div class="row"><span class="n">01</span><div><h3>Commercial fitouts</h3><p>Offices, retail and hospitality stripped and rebuilt — services coordinated, compliance covered, finishes to drawing.</p></div></div><p class="tag">Sydney metro</p></li>
+      <li><div class="row"><span class="n">02</span><div><h3>Residential projects</h3><p>New homes and major additions run by the builder, not a phone. Structure, envelope and finish in sequence.</p></div></div><p class="tag">Architectural &amp; custom</p></li>
+      <li><div class="row"><span class="n">03</span><div><h3>Renovations</h3><p>Kitchens, bathrooms and whole-house reworks, with the existing fabric opened carefully and made good.</p></div></div><p class="tag">Occupied homes</p></li>
+      <li><div class="row"><span class="n">04</span><div><h3>Project management</h3><p>Programme, procurement and quality control for owners who need one accountable head on the job.</p></div></div><p class="tag">Owner-side</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec sec--dark" id="process">
+  <div class="wrap">
+    <div class="head rv" style="max-width:52ch">
+      <p class="kick">The build, in four checkpoints</p>
+      <h2>Every stage signed off before the next trade starts</h2>
+      <p class="lead">Same sequence on a fitout and on a house. Nothing gets sheeted over until it has been checked.</p>
+    </div>
+    <ol class="rail rv">
+      <li><p class="n">01</p><h3>Set-out</h3><p>Survey, levels and layout lines locked in before a member is cut.</p></li>
+      <li><p class="n">02</p><h3>Frame</h3><p>Structure squared, plumbed and fixed to spec, then inspected.</p></li>
+      <li><p class="n">03</p><h3>Clad</h3><p>Roof and walls sealed and flashed — weathertight before interiors.</p></li>
+      <li><p class="n">04</p><h3>Complete</h3><p>Defects closed, site cleaned, handover with the paperwork in order.</p></li>
+    </ol>
+    <div class="railnote rv">
+      <p>Programme issued at set-out</p><p>Every inspection logged</p><p>Defect list closed before handover</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="approach">
+  <div class="wrap approach">
+    <figure class="rv">
+      <img src="assets/hero-construction4.jpg" alt="JEC Project Group site with structural framing under way" loading="lazy" width="1200" height="857">
+      <figcaption>On site, mid-programme — frame checked before sheeting.</figcaption>
+    </figure>
+    <div class="rv">
+      <p class="kick">Approach</p>
+      <h2>Precision is cheaper than rework</h2>
+      <p class="lead" style="margin-top:1rem">The same tolerance on a commercial fitout as on a family renovation. That is the whole method.</p>
+      <ul class="points">
+        <li><span class="tick" aria-hidden="true">&#10003;</span><div><b>Scope before price</b><p>You know what is being built, in what material, and what it takes — before work starts.</p></div></li>
+        <li><span class="tick" aria-hidden="true">&#10003;</span><div><b>Site kept clean</b><p>Protection down, waste managed, the space left ready for the next trade and safe to walk through.</p></div></li>
+        <li><span class="tick" aria-hidden="true">&#10003;</span><div><b>One accountable head</b><p>The owner-operator is on the tools and answerable for the finish, not a supervisor three jobs away.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--tight" id="work">
+  <div class="wrap">
+    <div class="head rv" style="display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:flex-end;justify-content:space-between;margin-bottom:1.8rem">
+      <div>
+        <p class="kick">On site</p>
+        <h2>Recent work</h2>
+      </div>
+      <p class="lead" style="max-width:34ch;font-size:.97rem">Framing, fitout and finish across current JEC jobs.</p>
+    </div>
+    <div class="work rv">
+      <figure class="big"><img src="assets/work_01.jpg" alt="Framing in progress on a JEC Project Group job" loading="eager"></figure>
+      <figure class="std"><img src="assets/work_02.jpg" alt="Structural works on site" loading="eager"></figure>
+      <figure class="std"><img src="assets/work_03.jpg" alt="Interior of a JEC Project Group build" loading="eager"></figure>
+      <figure class="std"><img src="assets/work_04.jpg" alt="Completed surface detail" loading="eager"></figure>
+      <figure class="std"><img src="assets/work_05.jpg" alt="Site detail during construction" loading="eager"></figure>
+      <figure class="std"><img src="assets/work_06.jpg" alt="Trade work underway" loading="eager"></figure>
+      <figure class="std"><img src="assets/work_07.jpg" alt="Finished room by JEC Project Group" loading="eager"></figure>
+      <figure class="std"><img src="assets/work_08.jpg" alt="Exterior works on a JEC Project Group job" loading="eager"></figure>
+      <figure class="big"><img src="assets/hero-construction7.jpg" alt="JEC Project Group site at working height" loading="eager"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec quote" id="quote">
+  <div class="wrap quote__in">
+    <div class="rv">
+      <p class="kick">Free quote</p>
+      <h2>Talk to the builder</h2>
+      <a class="big-tel" href="tel:0405543822">0405 543 822</a>
+      <p class="lead" style="max-width:38ch">Ring through the job in a couple of minutes, or send the details and we will come back with a firm price.</p>
+      <dl class="facts">
+        <div><dt>Email</dt><dd><a href="mailto:josh@jecprojectgroup.com">josh@jecprojectgroup.com</a></dd></div>
+        <div><dt>Area</dt><dd>Sydney and surrounds, NSW</dd></div>
+        <div><dt>Licence</dt><dd>339272C</dd></div>
+        <div><dt>ABN</dt><dd>22 126 491 969</dd></div>
+      </dl>
+    </div>
+    <form id="quoteForm" novalidate data-site="jec-project-group" data-biz="JEC Project Group">
+      <div class="f-grid">
+        <div><label for="q-name">Name</label><input id="q-name" name="name" autocomplete="name" required></div>
+        <div><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="f-full"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email"></div>
+        <div class="f-full"><label for="q-service">Service</label>
+          <select id="q-service" name="service">
+            <option>Commercial fitout</option><option>Residential project</option><option>Renovation</option><option>Project management</option><option>Other</option>
+          </select>
+        </div>
+        <div class="f-full"><label for="q-msg">The job</label><textarea id="q-msg" name="message" placeholder="Type of work, suburb, rough timing" required></textarea></div>
+      </div>
+      <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <label class="cons"><input type="checkbox" name="consent" value="1" checked> Contact me about this request.</label>
+      <button type="submit">Send request</button>
+      <p class="st" id="q-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <div>
+      <h2>JEC Project Group</h2>
+      <p>Commercial fitouts, residential projects, renovations and project management across Sydney.</p>
+      <p style="margin-top:.6rem">Licence 339272C &middot; ABN 22 126 491 969</p>
+    </div>
+    <div>
+      <h2>Contact</h2>
+      <ul>
+        <li><a href="tel:0405543822">0405 543 822</a></li>
+        <li><a href="mailto:josh@jecprojectgroup.com">josh@jecprojectgroup.com</a></li>
+        <li><a href="#quote">Request a quote</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Sections</h2>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#work">Work</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot__base">
+    <p>&copy; <span id="year">2026</span> JEC Project Group. All rights reserved.</p>
+    <p><a href="privacy.html">Privacy</a> &nbsp; <a href="terms.html">Terms</a></p>
+  </div>
+</footer>
+
+<script src="assets/heroCanvas.js"></script>
+<script>
+/* Hero scene — a fitout mid-build: set-out lines, stud wall, scaffold, sawbench,
+   timber stack and tools. Everything is world-space geometry pushed through the
+   shared pinhole projection, so depth, occlusion and fog come out of the maths. */
+(function(){
+  var cv = document.getElementById('heroCanvas');
+  if (!cv || !window.Projection) return;
+  var P = Projection;
+  var S = P.create(cv, {focal:1.12, horizon:.56, camY:1.52, fogNear:9, fogFar:46, fogCol:'#16222f'});
+  var ACC = '#c9762e', STEEL = '#8b98a6', TIMBER = '#8a6135', TIMBER_HI = '#a87c46';
+
+  var faces = [], parts = [];
+  function face(pts, tone, n, t0){ faces.push({pts:pts, tone:tone, n:n||[0,1,0], t0:t0||0}); }
+  function member(a, b, w, d, tone, t0, dur){ parts.push({a:a, b:b, w:w, d:d, tone:tone, t0:t0, dur:dur||.3}); }
+
+  /* --- ground + set-out lines --- */
+  face([[-20,0,1.2],[20,0,1.2],[20,0,44],[-20,0,44]], '#22303c', [0,1,0]);
+  for (var gz=2.4; gz<30; gz+=2.2){
+    face([[-9,0.004,gz],[-.4,0.004,gz],[-.4,0.004,gz+.045],[-9,0.004,gz+.045]], ACC, [0,1,0], .1);
+    face([[2.4,0.004,gz],[11,0.004,gz],[11,0.004,gz+.045],[2.4,0.004,gz+.045]], ACC, [0,1,0], .16);
+  }
+  /* --- stud wall under construction --- */
+  member([-4.9,.06,7.4],[-.9,.06,7.4],.1,.05,TIMBER_HI,.35,.5);
+  for (var i=0;i<=10;i++){
+    var x = -4.8 + i*.39;
+    member([x,.12,7.4],[x,2.38,7.4],.09,.045,TIMBER,.55+i*.06,.28);
+  }
+  member([-4.9,1.25,7.39],[2.0,1.25,7.39],.08,.04,TIMBER_HI,1.3,.4);
+  member([-4.9,2.42,7.4],[2.0,2.42,7.4],.1,.05,TIMBER,1.42,.4);
+  member([-4.95,.1,7.4],[-2.6,2.4,7.4],.07,.04,TIMBER_HI,1.55,.35);
+
+  /* --- opening further back --- */
+  member([-.5,.1,14.4],[-.5,2.3,14.4],.11,.06,TIMBER,.7,.3);
+  member([1.5,.1,14.4],[1.5,2.3,14.4],.11,.06,TIMBER,.75,.3);
+  member([-.6,2.34,14.4],[1.6,2.34,14.4],.14,.06,TIMBER_HI,.85,.3);
+  face([[-.4,.12,14.45],[1.4,.12,14.45],[1.4,2.28,14.45],[-.4,2.28,14.45]], '#0e1a25', [0,0,-1], .9);
+
+  /* --- scaffold bays receding --- */
+  [9.5,13.4,17.2,21].forEach(function(sz, k){
+    var tall = 3.2 - k*.16;
+    member([4.0,.05,sz],[4.0,tall,sz],.075,.075,STEEL,1.0+k*.1,.3);
+    member([5.5,.05,sz],[5.5,tall,sz],.075,.075,STEEL,1.05+k*.1,.3);
+    [1.05,2.05,3.05].forEach(function(ly, j){
+      if (ly > tall) return;
+      member([3.95,ly,sz],[5.55,ly,sz],.055,.055,STEEL,1.15+k*.1+j*.05,.3);
+    });
+    member([4.0,.05,sz],[5.5,1.6,sz],.045,.045,STEEL,1.4+k*.1,.3);
+    if (k < 3) face([[3.9,2.08,sz],[5.6,2.08,sz],[5.6,2.08,sz+3.7],[3.9,2.08,sz+3.7]], '#6b6f6b', [0,1,0], 1.6+k*.1);
+  });
+
+  /* --- foreground sawbench, timber, tools --- */
+  var bx = 3.1, bz = 3.5;
+  member([bx-.6,.02,bz],[bx-.34,.76,bz],.06,.06,TIMBER_HI,1.75,.26);
+  member([bx+.6,.02,bz],[bx+.34,.76,bz],.06,.06,TIMBER_HI,1.78,.26);
+  member([bx-.75,.82,bz],[bx+.75,.82,bz],.34,.09,TIMBER,1.84,.3);
+  member([bx-.7,.9,bz],[bx+.7,.9,bz],.28,.3,TIMBER_HI,1.94,.3);
+  member([bx-.7,1.12,bz],[bx+.7,1.12,bz],.24,.28,TIMBER,2.02,.3);
+  (function(){
+    var sx = bx-.28, sy = 1.24;
+    face([[sx-.18,sy,bz-.06],[sx+.18,sy,bz-.06],[sx+.18,sy+.15,bz-.06],[sx-.18,sy+.15,bz-.06]], '#5c6773', [0,0,-1], 2.1);
+    face([[sx-.18,sy,bz+.06],[sx+.18,sy,bz+.06],[sx+.18,sy+.15,bz+.06],[sx-.18,sy+.15,bz+.06]], '#7e8a96', [0,0,1], 2.1);
+    face([[sx-.18,sy+.15,bz-.06],[sx+.18,sy+.15,bz-.06],[sx+.18,sy+.15,bz+.06],[sx-.18,sy+.15,bz+.06]], '#9aa5af', [0,1,0], 2.12);
+    var disc = [], r=.135;
+    for (var d=0; d<16; d++){ var a=d/16*6.283; disc.push([sx+.02+Math.cos(a)*r, sy+.09+Math.sin(a)*r, bz-.065]); }
+    face(disc, '#b9c2c9', [0,0,-1], 2.16);
+  })();
+  (function(){
+    var hx = bx+.34, hy = 1.26, ring = [];
+    for (var d=0; d<12; d++){ var a=d/12*6.283; ring.push([hx+Math.cos(a)*.13, hy, bz+Math.sin(a)*.1]); }
+    face(ring, '#d9dee2', [0,1,0], 2.22);
+    face([[hx-.09,hy,bz-.01],[hx+.09,hy,bz-.01],[hx,hy+.12,bz-.01]], '#eef1f3', [0,0,-1], 2.24);
+  })();
+  member([bx-1.0,.03,bz-.3],[bx-.62,1.0,bz-.3],.075,.05,'#d7b23f',2.2,.3);
+  [[-.2,1.9],[-.16,1.75],[-.24,1.6]].forEach(function(o, k){
+    member([bx-1.5,o[0]+.06,bz+1.2],[bx-1.5+.9,o[0]+.06,bz+1.1],.14,.16,TIMBER_HI,2.3+k*.06,.25);
+  });
+  member([1.2,.02,2.1],[2.0,.02,2.35],.05,.05,'#c9cdd1',2.4,.22);
+
+  var LIGHT = (function(){ var l=[-.5,.74,-.44], m=Math.hypot(l[0],l[1],l[2]); return [l[0]/m,l[1]/m,l[2]/m]; })();
+  function shade(t, lit){ return lit>=1 ? P.mix(t,'#ffffff',(lit-1)*.5) : P.mix(t,'#0a121b',(1-lit)*.72); }
+
+  function memberFaces(m, k){
+    var b=[m.a[0]+(m.b[0]-m.a[0])*k, m.a[1]+(m.b[1]-m.a[1])*k, m.a[2]+(m.b[2]-m.a[2])*k];
+    var dx=b[0]-m.a[0], dy=b[1]-m.a[1], len=Math.hypot(dx,dy)||1;
+    var ux=dx/len, uy=dy/len, nx=-uy*m.w/2, ny=ux*m.w/2, dz=m.d/2, z=m.a[2];
+    var a0=[m.a[0]-nx,m.a[1]-ny], a1=[m.a[0]+nx,m.a[1]+ny], b0=[b[0]-nx,b[1]-ny], b1=[b[0]+nx,b[1]+ny];
+    return [
+      [[a0[0],a0[1],z+dz],[b0[0],b0[1],z+dz],[b1[0],b1[1],z+dz],[a1[0],a1[1],z+dz],[ux,uy,dz]],
+      [[a1[0],a1[1],z-dz],[b1[0],b1[1],z-dz],[b0[0],b0[1],z-dz],[a0[0],a0[1],z-dz],[-ux,-uy,-dz]],
+      [[a0[0],a0[1],z-dz],[b0[0],b0[1],z-dz],[b0[0],b0[1],z+dz],[a0[0],a0[1],z+dz],[-ux,-uy,0]],
+      [[a1[0],a1[1],z-dz],[b1[0],b1[1],z-dz],[b1[0],b1[1],z+dz],[a1[0],a1[1],z+dz],[ux,uy,0]]
+    ];
+  }
+
+  function paint(t){
+    var ctx = S.ctx;
+    var sky = ctx.createLinearGradient(0,0,0,S.H);
+    sky.addColorStop(0,'#0a121c'); sky.addColorStop(.48,'#132030'); sky.addColorStop(1,'#1b2a37');
+    ctx.fillStyle = sky; ctx.fillRect(0,0,S.W,S.H);
+
+    var glow = ctx.createLinearGradient(0,S.horizon-S.H*.34,0,S.horizon+S.H*.14);
+    glow.addColorStop(0,'rgba(201,118,46,0)'); glow.addColorStop(.7,'rgba(201,118,46,.20)'); glow.addColorStop(1,'rgba(201,118,46,.02)');
+    ctx.fillStyle = glow; ctx.fillRect(0,S.horizon-S.H*.34,S.W,S.H*.48);
+
+    var lit = [], j, q, p, sum, mapped;
+    function push(pts, tone, n, t0){
+      if (t < t0) return;
+      mapped=[]; sum=0;
+      for (q=0;q<pts.length;q++){ p=S.project(pts[q][0],pts[q][1],pts[q][2]); if(!p) return; mapped.push(p); sum+=p[2]; }
+      lit.push({pts:mapped, tone:tone, n:n, dz:sum/mapped.length});
+    }
+    for (j=0;j<faces.length;j++) push(faces[j].pts, faces[j].tone, faces[j].n, faces[j].t0);
+    for (j=0;j<parts.length;j++){
+      var mm=parts[j], kk=(t-mm.t0)/mm.dur;
+      if (kk<=0) continue;
+      kk = kk>=1 ? 1 : 1-Math.pow(1-kk,3);
+      var fs = memberFaces(mm,kk);
+      for (q=0;q<fs.length;q++) push(fs[q].slice(0,-1), mm.tone, fs[q][fs[q].length-1], 0);
+    }
+    for (j=0;j<lit.length;j++){
+      var it=lit[j], nx=it.n[0], ny=it.n[1], nz=it.n[2], nm=Math.hypot(nx,ny,nz)||1;
+      var d=(nx/nm)*LIGHT[0]+(ny/nm)*LIGHT[1]+(nz/nm)*LIGHT[2];
+      it.fill = P.mix(shade(it.tone, .55+.6*Math.max(0,d)), '#16222f', S.fog(it.dz)*.62);
+    }
+    lit.sort(function(a,b){ return b.dz-a.dz; });
+    for (j=0;j<lit.length;j++){
+      var f=lit[j].pts; ctx.beginPath(); ctx.moveTo(f[0][0],f[0][1]);
+      for (q=1;q<f.length;q++) ctx.lineTo(f[q][0],f[q][1]);
+      ctx.closePath(); ctx.fillStyle=lit[j].fill; ctx.fill();
+    }
+
+    for (j=0;j<34;j++){
+      var mx=((j*37)%100)/100, mz=.16+((j*53)%100)/100;
+      var px=mx*S.W + Math.sin(t*.5+j)*8, py=S.horizon - ((j*29)%100)/100*S.H*.55 - 12;
+      ctx.fillStyle='rgba(226,160,90,'+(.10+.16*mz)+')';
+      ctx.beginPath(); ctx.arc(px,py,.9+mz*1.4,0,6.283); ctx.fill();
+    }
+    var vg=ctx.createRadialGradient(S.W*.5,S.H*.55,S.H*.3,S.W*.5,S.H*.55,S.W*.85);
+    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,'rgba(4,9,15,.55)');
+    ctx.fillStyle=vg; ctx.fillRect(0,0,S.W,S.H);
+  }
+
+  if (P.reduced()){
+    S.resize(); paint(3.2);
+    window.addEventListener('resize', function(){ S.resize(); paint(3.2); });
+  } else {
+    S.frame(function(t){
+      S.camY = 1.52 + Math.sin(t*.28)*.03;
+      S.camX = Math.sin(t*.13)*.16;
+      S.yaw = Math.sin(t*.11)*.035;
+      paint(Math.min(t, 4.2));
+    });
+  }
+})();
+</script>
+<script>
+/* reveal + year + quote form */
+(function(){
+  var rvs = [].slice.call(document.querySelectorAll('.rv'));
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -10% 0px', threshold:.08});
+    rvs.forEach(function(el){ io.observe(el); });
+  } else { rvs.forEach(function(el){ el.classList.add('on'); }); }
+  setTimeout(function(){ rvs.forEach(function(el){ el.classList.add('on'); }); }, 700);
+
+  var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+
+  var f = document.getElementById('quoteForm'); if (!f) return;
+  var st = document.getElementById('q-status'), btn = f.querySelector('button[type=submit]');
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var FB = 'https://grocery-periodically-everyone-wine.trycloudflare.com', done = false;
+    var t = setTimeout(function(){ if(!done){ done=true; cb(FB); } }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/,'');
+        if (done) return; done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : FB);
+      })
+      .catch(function(){ if(!done){ done=true; clearTimeout(t); cb(FB); } });
+  }
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d = {}; new FormData(f).forEach(function(v,k){ d[k]=v; });
+    if (d.website) return;
+    if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()){
+      st.textContent = 'Add your name, a phone or email, and a few words about the job.';
+      st.style.color = '#b3261e'; return;
+    }
+    btn.disabled = true; st.style.color = ''; st.textContent = 'Sending&hellip;';
+    base(function(B){
+      fetch(B + '/functions/v1/quote-request', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({site_id:f.dataset.site, business_name:f.dataset.biz, name:d.name,
+          phone:d.phone, email:d.email, service:d.service||'', message:d.message, consent:!!d.consent})
+      })
+      .then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(x){
+        if (x && x.success){ f.reset(); st.style.color = '#3a6b3f';
+          st.textContent = "Thanks — that's in. We'll be in touch shortly."; }
+        else throw new Error((x && x.error) || 'Could not send');
+      })
+      .catch(function(err){
+        st.style.color = '#b3261e';
+        st.textContent = (err && err.message) ? err.message : 'Could not send — please call 0405 543 822.';
+      })
+      .finally(function(){ btn.disabled = false; });
+    });
+  });
+})();
+</script>
+
+
+
+
+
+<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#c87028","important");})();</script>
+</body>
+</html>

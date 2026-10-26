@@ -1,48 +1,825 @@
-<!doctype html><html lang="en-AU"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><title>Xtreme Fencing and Earthworx — Medowie</title>
-<meta name="description" content="Xtreme Fencing and Earthworx: Renovations, framing and repairs set out square and sequenced so no trade blocks another."><style>:root{--bg:#f6f4f1;--ink:#171614;--dim:#5c5952;--line:#dad5cd;--panel:#ffffff;--acc:#c46a2e}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
-.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(18px,4.5vw,56px)}
-a{color:inherit}
-header.site{border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30;background:var(--bg)}
-.bar{display:flex;align-items:center;gap:18px;padding:12px 0;flex-wrap:wrap}
-.lb-brand img{height:clamp(42px,4.6vw,60px);width:auto;display:block}
-nav.main{display:flex;gap:clamp(12px,1.6vw,24px);margin-left:auto;flex-wrap:wrap}
-nav.main a{text-decoration:none;font-size:15px;color:var(--dim)}
-.tel{text-decoration:none;font-weight:800;border-bottom:2px solid var(--acc);white-space:nowrap}
-section{padding:clamp(44px,6vw,84px) 0;border-top:1px solid var(--line)}
-h1{margin:0 0 18px;font-size:clamp(36px,6vw,82px);line-height:.96;letter-spacing:-.04em;font-weight:800}
-h1 i{font-style:normal;color:var(--acc)}
-h2{margin:0 0 24px;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.02em;font-weight:800}
-p{color:var(--dim)}
-.cta{display:inline-block;background:var(--acc);color:#111;padding:14px 26px;text-decoration:none;font-weight:800}
-form{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,3vw,30px)}
-label{display:block;font-size:13.5px;color:var(--dim);margin:0 0 6px}
-input,textarea{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:11px;font:inherit;font-size:15px;margin-bottom:14px}
-button{width:100%;background:var(--ink);color:var(--bg);border:0;padding:14px;font:inherit;font-weight:800;cursor:pointer}
-footer{border-top:1px solid var(--line);padding:28px 0;font-size:14px;color:var(--dim)}
-@media(max-width:720px){.lb-brand img{height:40px}nav.main{order:3;width:100%;margin-left:0}}
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xtreme Fencing and Earthworx - Fencing, gates & earthworks. Port Stephens NSW</title>
+<meta name="description" content="Fencing and earthworks across Williamtown, Medowie and Port Stephens NSW. Colorbond, pool, decorative and brick fencing, gates and bobcat excavation. Call 0422 400 813.">
+<meta property="og:title" content="Xtreme Fencing and Earthworx - Port Stephens NSW">
+<meta property="og:description" content="Fencing, gates & earthworks">
+<meta property="og:image" content="images/work-1400.jpg">
+<link rel="icon" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #eae7e0; --paper2: #e0ddd3; --ink: #15181a; --ink2: #4a4f52;
+  --acc: #3f6257; --acc2: #345046; --line: #8b9490; --chip: #e0ddd3;
+  --acc-text: #eae7e0;
+  --acc-on-dark: #8fc8b5;  /* lighter teal for text on dark backgrounds */
+  --text: #eae7e0;           /* light text for dark backgrounds (quote form) */
+  --lbq-ink: #eae7e0;       /* override quote form ink to light color */
+  --fluid: clamp(44px, 9vw, 118px);
+  --disp: 'Barlow Condensed', 'Arial Narrow', sans-serif; --body-font: 'Barlow', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; }
+body { font-family: 'Barlow', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; }
+h1 { }
+.mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; }
+a { color: inherit; }
+::selection { background: var(--acc); color: #eae7e0; }
+.sa-progress { position: fixed; top: 0; left: 0; height: 4px; width: 100%; z-index: 99; transform-origin: 0 50%; transform: scaleX(0); background: var(--acc); }
+.nav { position: sticky; top: 0; z-index: 50; background: rgba(234,231,224,0.92); backdrop-filter: blur(12px); }
+.nav .wrap { max-width: 1360px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; gap: 28px; }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.brand .mark { display: inline-flex; color: var(--acc); }
+.brand .mark img { height: 42px; width: 42px; display: block; }
+.nav-toggle { display: none; width: 40px; height: 34px; padding: 6px 4px; background: none; border: 1px solid var(--line); border-radius: 2px; cursor: pointer; }
+.nav-toggle span { display: block; height: 2px; background: var(--ink); margin: 4px 0; transition: transform .15s, opacity .15s; }
+.nav.open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+.nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.brand .brand-name { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: .02em; line-height: 1; }
+.brand .brand-sub { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: .2em; color: var(--acc); font-weight: 500; }
+.nav-links { display: flex; gap: 26px; margin-left: auto; }
+.nav-links a { text-decoration: none; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; font-weight: 500; letter-spacing: .1em; color: var(--ink2); transition: color .15s; }
+.nav-links a:hover { color: var(--acc); }
+.nav-cta { white-space: nowrap; }
+.btn { display: inline-block; padding: 14px 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 13.5px; font-weight: 800; letter-spacing: .05em; text-decoration: none; border-radius: 2px; transition: transform .12s, background .15s, color .15s; }
+.btn-acc { background: var(--acc); color: #eae7e0; }
+.btn-acc:hover { background: var(--acc2); transform: translateY(-2px); }
+.btn-ghost { border: 1.5px solid var(--ink); color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+.btn-sm { padding: 10px 20px; font-size: 12.5px; }
+@media (max-width: 980px) {
+  .nav-toggle { display: block; }
+  .nav .wrap { position: relative; gap: 14px; }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; margin: 0; padding: 4px 40px 14px; background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); box-shadow: 0 18px 24px -22px rgba(0,0,0,.6); }
+  .nav.open .nav-links { display: flex; }
+  .nav-links a { padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 13px; letter-spacing: .12em; }
+  .nav-links a:last-child { border-bottom: 0; }
+  .nav .wrap { justify-content: space-between; }
+}
+@media (max-width: 640px) {
+  .hc3-photo { display: none; }
+  .brand-sub { display: none; }
+  .nav-phone { display: none; }
+  .nav .wrap { padding: 12px 20px; }
+  .brand .mark img { height: 34px; width: 34px; }
+  .brand .brand-name { font-size: 18px; }
+  .nav-cta .btn-sm { padding: 9px 15px; font-size: 12px; }
+}
 
-.hero{background:var(--ink);color:var(--bg);border-top:0;padding:clamp(48px,7vw,96px) 0}
-.hero h1,.hero p{color:var(--bg)}.hero p{color:color-mix(in srgb,var(--bg) 75%,transparent)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0;border-top:1px solid var(--line)}
-.cards div{padding:24px 0;border-bottom:1px solid var(--line)}
-@media(min-width:880px){.cards div{padding:26px 26px 26px 0}.cards div:nth-child(2n){padding-left:26px;border-left:1px solid var(--line)}}
-.cards h3{margin:0 0 6px;font-size:17.5px}.cards p{margin:0;font-size:15px}
-.areas span{display:inline-block;border:1px solid var(--line);padding:7px 13px;margin:0 8px 8px 0;font-size:14px;color:var(--dim)}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,4vw,54px)}@media(max-width:880px){.split{grid-template-columns:1fr}}
-</style></head>
-<body class="light"><header class="site"><div class="wrap bar"><a class="lb-brand" href="#top" aria-label="Xtreme Fencing and Earthworx"><img src="assets/logo.png" alt="Xtreme Fencing and Earthworx"></a><nav class="main"><a href="#Services">Services</a><a href="#About">About</a><a href="#Areas">Areas</a><a href="#Quote">Quote</a></nav><a class="tel" href="tel:0422400813">0422 400 813</a></div></header><main id="top"><section class="hero"><div class="wrap"><h1>Detail you notice.<br><i>Structure you do not.</i></h1><p>Renovations, framing and repairs set out square and sequenced so no trade blocks another.</p></div></section><section id="Services"><div class="wrap"><h2>Services</h2><div class="cards"><div><h3>Maintenance</h3><p>Handled as part of the larger job, with the levels and drainage worked out up front.</p></div><div><h3>Renovations</h3><p>Handled as part of the larger job, with the levels and drainage worked out up front.</p></div><div><h3>Framing & structures</h3><p>Handled as part of the larger job, with the levels and drainage worked out up front.</p></div><div><h3>Decks & carports</h3><p>Handled as part of the larger job, with the levels and drainage worked out up front.</p></div><div><h3>Property repairs</h3><p>Handled as part of the larger job, with the levels and drainage worked out up front.</p></div><div><h3>Fit-out & finishing</h3><p>Handled as part of the larger job, with the levels and drainage worked out up front.</p></div></div></div></section><section id="About"><div class="wrap split"><div><h2>Xtreme Fencing and Earthworx</h2><p>Local work across Medowie, quoted on site and scheduled around the weather.</p></div><div><form id="quote-form" data-site="yp_-0669a563-172"><label for="n">Name</label>
-<input id="n" name="name" required placeholder="Your name"><label for="p">Phone</label>
-<input id="p" name="phone" required inputmode="tel" placeholder="04xx xxx xxx">
-<label for="s">Suburb</label><input id="s" name="suburb" placeholder="Your suburb">
-<label for="m">What needs doing?</label><textarea id="m" name="message" rows="3"></textarea>
-<button type="submit">Send request</button></form></div></div></section><section id="Areas"><div class="wrap"><h2>Where we work</h2><div class="areas"><span>Newcastle</span><span>Lake Macquarie</span><span>Maitland</span><span>Cameron Park</span><span>Warners Bay</span><span>Belmont</span><span>Charlestown</span><span>Swansea</span><span>Morisset</span><span>Toronto</span><span>Cessnock</span><span>Raymond Terrace</span><span>Port Stephens</span><span>Gosford</span><span>Central Coast</span></div></div></section></main><footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span>Xtreme Fencing and Earthworx</span><a class="tel" href="tel:0422400813">0422 400 813</a></div></footer>
-<script>document.getElementById('quote-form').addEventListener('submit',function(e){e.preventDefault();
-var f=e.currentTarget,b=f.querySelector('button');b.textContent='Sending…';b.disabled=true;
-fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',
-headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
-body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,message:f.message.value})})
-.then(function(){b.textContent='Thanks — we will call you back';})
-.catch(function(){b.textContent='Call '+(window.__ph||'');b.disabled=false;});});</script></body></html>
+/* Reveal */
+
+.rv { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.rv.in { opacity: 1; transform: none; }
+.rv.d1 { transition-delay: 80ms; } .rv.d2 { transition-delay: 160ms; } .rv.d3 { transition-delay: 240ms; }
+@media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+
+footer { border-top: 1px solid var(--line); padding: 70px 0 0; }
+footer .wrap { max-width: 1360px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+footer h4 { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; font-weight: 500; letter-spacing: .2em; color: var(--acc); margin-bottom: 16px; }
+footer a { display: block; text-decoration: none; color: var(--ink2); font-family: 'Barlow', sans-serif; font-size: 14.5px; padding: 5px 0; }
+footer a:hover { color: var(--acc); }
+.footer-brand { display: flex; align-items: center; gap: 14px; }
+.footer-brand .mark { display: inline-flex; color: var(--acc); }
+.footer-brand .mark img { height: 44px; width: 44px; display: block; }
+.footer-bar { max-width: 1360px; margin: 50px auto 0; padding: 22px 40px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; color: var(--ink2); }
+@media (max-width: 900px) { footer .wrap { grid-template-columns: 1fr 1fr; } }
+
+
+section { padding: 100px 0; }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+.sec-idx { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; color: var(--acc); letter-spacing: .15em; }
+.sec-head { display: flex; gap: 30px; align-items: flex-start; margin-bottom: 50px; }
+.sec-head h2 { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: clamp(28px, 3.8vw, 52px); font-weight: 800; letter-spacing: -.01em; line-height: 1.02; }
+.lead { color: var(--ink2); margin-top: 10px; max-width: 560px; font-size: 16px; line-height: 1.6; }
+
+/* Strain line - the continuous wire run down the left gutter */
+body { position: relative; }
+.strain-line {
+  position: fixed;
+  left: 32px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  pointer-events: none;
+  z-index: 10;
+}
+.strain-line::before,
+.strain-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--line);
+}
+.strain-line::before { left: -1px; }
+.strain-line::after { left: 2px; }
+.strain-line .strainer-post {
+  position: absolute;
+  left: -12px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--acc);
+  border-radius: 2px;
+  background: var(--paper);
+  transform: translateX(-50%);
+}
+.strain-line .station-label {
+  position: absolute;
+  left: 26px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  color: var(--acc);
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+  background: var(--paper);
+  padding: 6px 1px;
+}
+.ground-works ~ .strain-line .station-label { color: var(--acc); }
+@media (max-width: 1360px) { .strain-line { display: none; } }
+
+/* Dark band for ground works section */
+.ground-works { background: #171b1a; color: var(--paper); }
+.ground-works .sec-idx, .ground-works .sp-list .li::before { color: var(--acc-on-dark); }
+.ground-works .sec-head h2 { color: var(--paper); }
+.ground-works .lead { color: #b8bdb8; }
+.ground-works .sp-img img { border: 2px solid var(--line); }
+.ground-works .sp-copy h2 .acc { color: var(--acc-on-dark); }
+.ground-works .sp-list .li { color: var(--paper); }
+.ground-works .sp-list .li::before { color: var(--acc); }
+
+/* Service grid - horizontal runs */
+.svc-row { 
+  display: grid; 
+  grid-template-columns: 140px 1fr; 
+  gap: 40px; 
+  align-items: start; 
+  padding: 28px 0; 
+  border-top: 1px solid var(--line); 
+}
+.svc-row:last-child { border-bottom: 1px solid var(--line); }
+.svc-n { 
+  font-family: 'JetBrains Mono', ui-monospace, monospace; 
+  font-size: 13px; 
+  font-weight: 500; 
+  color: var(--acc); 
+  letter-spacing: .1em;
+}
+.svc-body h3 { 
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; 
+  font-size: 22px; 
+  font-weight: 800; 
+  letter-spacing: -.01em; 
+  
+  line-height: 1.1; 
+}
+.svc-body p { color: var(--ink2); margin-top: 8px; max-width: 680px; font-size: 15px; line-height: 1.6; }
+
+/* Process - three station plates */
+.process .wrap { display: grid; grid-template-columns: 140px 1fr; gap: 40px; }
+.process .stn { display: grid; grid-template-columns: 140px 1fr; gap: 40px; padding: 24px 0; border-top: 1px solid var(--line); align-items: start; }
+.stn-n { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; font-weight: 500; color: var(--acc); letter-spacing: .1em; }
+.stn h3 { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -.01em; line-height: 1.1; }
+.stn p { color: var(--ink2); margin-top: 8px; font-size: 15px; line-height: 1.6; }
+
+/* Trust strip - coverage */
+.trust .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+.tr-i { display: flex; flex-direction: column; gap: 8px; padding: 20px; border: 1px solid var(--line); background: var(--paper2); }
+.tr-t { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; font-weight: 500; color: var(--acc2); letter-spacing: .1em; }
+.tr-i b { display: block; margin-bottom: 3px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: -.01em; }
+.tr-i span { font-size: 13.5px; color: var(--ink2); line-height: 1.5; }
+
+/* Quote section - contact info only, NO form (injected #lbq is the only form) */
+.quote .wrap { display: grid; grid-template-columns: 140px 1fr; gap: 60px; align-items: start; }
+.quote h2 { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: clamp(28px, 3.8vw, 52px); font-weight: 800; letter-spacing: -.01em; line-height: 1.02; }
+.q-lines { margin-top: 34px; display: flex; flex-direction: column; }
+.q-line { display: grid; grid-template-columns: 140px 1fr; gap: 18px; padding: 18px 0; border-top: 1px solid var(--line); align-items: baseline; }
+.q-line b { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; font-weight: 500; letter-spacing: .15em; color: var(--acc); }
+.q-line a { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 19px; font-weight: 800; letter-spacing: -.01em; text-decoration: none; }
+.q-line span { display: block; color: var(--ink2); font-size: 13px; margin-top: 2px; }
+
+/* Nav adjustments for strain-line */
+.nav .brand .brand-name { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: .02em; }
+.nav .brand .brand-sub { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: .2em; color: var(--acc); font-weight: 500; }
+.nav-links a { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; font-weight: 500; letter-spacing: .1em; }
+.btn { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; }
+
+/* Footer */
+footer h4 { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; font-weight: 500; letter-spacing: .2em; color: var(--acc); }
+footer a { font-family: 'Barlow', sans-serif; font-size: 14px; }
+.footer-bar { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; }
+
+@media (max-width: 900px) { 
+  .quote .wrap { grid-template-columns: 1fr; } 
+  .svc-row, .process .wrap, .process .stn { grid-template-columns: 1fr; gap: 16px; }
+  .svc-n, .stn-n { display: none; }
+  .q-line { grid-template-columns: 1fr; gap: 8px; }
+  .trust .wrap { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+/* one label voice + one display voice (all-caps consolidation) */
+.brand-name, .brand-sub, .nav-links a, .btn, .sec-idx, footer h4,
+.svc-n, .stn-n, .tr-t, .q-line b, .strain-line .station-label, #lbq label { text-transform: uppercase; }
+h1, h2, h3 { text-transform: uppercase; }
+</style>
+
+<noscript><style>.rv{opacity:1!important;transform:none!important;transition:none!important}</style></noscript>
+
+<!--LB-HERO-HEIGHT--><style id="lb-heroh">[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.34),rgba(0,0,0,.12) 45%,rgba(0,0,0,.42))}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
+
+<!--LB-RV--><style id="lb-rv">.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
+
+<!--LB-CANVASZ--><style id="lb-canvasz">[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
+
+<!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
+
+<!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.28))}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
+
+
+
+
+
+
+
+
+<style id="lb-mobile-base">
+html,body{max-width:100%;overflow-x:hidden}
+img,video,canvas,svg,iframe{max-width:100%}
+img,video{height:auto}
+header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
+header,.site-header,.nav{max-width:100%}
+.lb-brand{min-width:0;max-width:100%;overflow:hidden}
+.lb-brand img{max-height:64px;width:auto}
+nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
+h1{overflow-wrap:anywhere}
+@media (max-width:820px){
+  .lb-brand img{max-height:38px}
+  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
+  h2{font-size:clamp(20px,6vw,30px)!important}
+  section{padding-left:16px!important;padding-right:16px!important}
+  .wrap,.container{max-width:100%!important}
+}
+</style>
+<style id="lb-logo-hero">
+/* Client logo across the header: the real artwork, isolated and readable. */
+.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;padding:0!important;max-height:96px!important;
+  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
+  padding:0!important;box-shadow:none!important}
+.lb-brand .lb-mark{display:block!important;height:clamp(44px,4.8vw,66px)!important;width:auto!important;
+  max-width:none!important;max-height:66px!important;object-fit:contain!important;background:none!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
+.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(38vw,520px)!important;
+  max-height:none!important;object-fit:contain!important;object-position:left center!important;
+  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
+  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
+.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
+.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
+.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
+  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
+.lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
+@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:20px!important}}
+.lb-bar{background-color:#000000!important}
+.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#f7f7f4!important}
+.lb-bar .cta,.lb-bar a.cta{color:#ffffff!important}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="lb-brand lb-brand--lockup lb-brand--square" style="--lb-name:#ffffff" href="#top" aria-label="yp_-0669a563-172"><img class="lb-mark" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">yp_-0669a563-172</span></a><button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <div class="nav-links" id="navLinks"><a href="#services">Services</a><a href="#ground-works">Ground works</a><a href="#process">Process</a><a href="#coverage">Coverage</a></div>
+  <div class="nav-cta"><a href="tel:+61422400813" class="btn btn-ghost btn-sm nav-phone">0422 400 813</a><a href="#quote" class="btn btn-acc btn-sm">Get a quote</a></div>
+</div></nav>
+
+<!-- Strain line - the continuous wire run -->
+<div class="strain-line" aria-hidden="true">
+  <div class="strainer-post" style="top: 15vh;"></div>
+  <div class="station-label" style="top: 15vh;">STN 01 / FENCE RUN</div>
+  <div class="strainer-post" style="top: 38vh;"></div>
+  <div class="station-label" style="top: 38vh;">STN 02 / GROUND WORKS</div>
+  <div class="strainer-post" style="top: 58vh;"></div>
+  <div class="station-label" style="top: 58vh;">STN 03 / STRAIN STANDARD</div>
+  <div class="strainer-post" style="top: 78vh;"></div>
+  <div class="station-label" style="top: 78vh;">STN 04 / COVERAGE</div>
+</div>
+
+<header class="hero-center" id="top" style="position: relative; min-height: 86vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; background: var(--ink);">
+<!-- LB-3D-HERO -->
+<style>
+/* 3D hero layer - floating geometric depth */
+.lb3d-stage { position: absolute; inset: 0; overflow: hidden; pointer-events: none; perspective: 1200px; z-index: 1; }
+.lb3d-stage .lb3d-shape { position: absolute; border-radius: 0; animation: lb3dFloat 12s ease-in-out infinite; transform-style: preserve-3d; backface-visibility: hidden; }
+.lb3d-shape.s1 { width: 60px; height: 60px; background: var(--acc, #c4fb24); opacity: .08; top: 12%; left: 8%; animation: lb3dFloat1 14s ease-in-out infinite; transform: rotateY(15deg) translateZ(40px); }
+.lb3d-shape.s2 { width: 90px; height: 90px; border: 2px solid var(--acc, #c4fb24); opacity: .06; top: 60%; right: 12%; border-radius: 50%; animation: lb3dFloat2 18s ease-in-out infinite; transform: rotateY(-25deg) translateZ(80px); }
+.lb3d-shape.s3 { width: 40px; height: 40px; background: var(--acc, #c4fb24); opacity: .05; bottom: 20%; left: 55%; animation: lb3dFloat3 10s ease-in-out infinite; transform: rotateY(45deg) translateZ(20px); }
+.lb3d-shape.s4 { width: 120px; height: 2px; background: var(--acc, #c4fb24); opacity: .07; top: 30%; right: 30%; animation: lb3dFloat4 22s ease-in-out infinite; transform: translateZ(60px) rotateY(20deg); }
+.lb3d-shape.s5 { width: 50px; height: 50px; border: 1.5px solid var(--acc, #c4fb24); opacity: .05; top: 75%; left: 20%; transform: rotate(45deg) translateZ(100px); animation: lb3dFloat5 16s ease-in-out infinite; }
+@keyframes lb3dFloat1 { 0%,100% { transform: translateY(0) rotateY(15deg) translateZ(40px); } 50% { transform: translateY(-30px) rotateY(180deg) translateZ(80px); } }
+@keyframes lb3dFloat2 { 0%,100% { transform: translateY(0) rotateY(-25deg) translateZ(80px); } 50% { transform: translateY(24px) rotateY(25deg) translateZ(40px); } }
+@keyframes lb3dFloat3 { 0%,100% { transform: translateY(0) rotateY(45deg) translateZ(20px); } 50% { transform: translateY(-18px) rotateY(-45deg) translateZ(60px); } }
+@keyframes lb3dFloat4 { 0%,100% { transform: translateX(0) translateZ(60px) rotateY(20deg); } 50% { transform: translateX(-40px) translateZ(100px) rotateY(-20deg); } }
+@keyframes lb3dFloat5 { 0%,100% { transform: rotate(45deg) translateZ(100px) translateY(0); } 50% { transform: rotate(225deg) translateZ(60px) translateY(-20px); } }
+@media (prefers-reduced-motion:reduce){.lb3d-stage{display:none}}
+</style>
+
+  <!-- ORIGINAL canvas hero - drawOnce, sync paint, reduced-motion static frame, alpha-coverage > 0.2 -->
+  <canvas id="strain-hero-canvas" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 1;"></canvas>
+  <div class="hc3-glow" style="position: absolute; width: 900px; height: 900px; border-radius: 50%; background: radial-gradient(ellipse at center, var(--acc) 0%, transparent 62%); opacity: .28; filter: blur(60px);"></div>
+  <div class="hc3-orbit o1" style="position: absolute; border: 1px solid rgba(255,255,255,.14); border-radius: 50%; width: 520px; height: 520px;"><span class="dot" style="position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; border-radius: 50%; background: var(--acc);"></span></div>
+  <div class="hc3-orbit o2" style="position: absolute; border: 1px solid rgba(255,255,255,.14); border-radius: 50%; width: 760px; height: 760px;"><span class="dot" style="position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; border-radius: 50%; background: var(--acc);"></span></div>
+  <div class="hc3-inner" style="position: relative; z-index: 2; padding: 40px; max-width: 980px;">
+    <div class="hc3-kick rv" style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: .24em; color: var(--acc-on-dark); margin-bottom: 20px;">Fencing - Williamtown, Port Stephens NSW</div>
+    <h1 class="hc3-title rv" style="color: #fff; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: clamp(48px, 7.4vw, 108px); line-height: .97; font-weight: 800; letter-spacing: -.03em;">Fenced <span style="color: var(--acc-on-dark);">right, first</span><br>time.</h1>
+    <p class="hc3-sub rv d2" style="color: rgba(255,255,255,.78); font-size: 17.5px; max-width: 560px; margin: 26px auto 0;">Fencing and earthworks across Williamtown, Medowie and Port Stephens. Straight lines, solid posts, gates that swing true - quoted firm before we start.</p>
+    <div class="hc3-ctas rv d3" style="display: flex; gap: 14px; justify-content: center; margin-top: 34px; flex-wrap: wrap;"><a href="#quote" class="btn btn-acc">Get a free quote</a><a href="tel:+61422400813" class="btn btn-ghost" style="border-color:#fff;color:#fff;">Call 0422 400 813</a></div>
+  </div>
+  <img class="hc3-photo" src="images/hero-work.jpg" width="1300" height="806" alt="Colorbond fence line installed by Xtreme Fencing" loading="eager" style="position: absolute; bottom: 34px; right: 34px; width: 300px; height: 220px; object-fit: cover; border: 2px solid rgba(234,231,224,.6); border-radius: 2px; box-shadow: 0 18px 40px -24px rgba(0,0,0,.9);">
+</header>
+
+<section id="services"><div class="wrap">
+  <div class="sec-head"><div class="sec-idx rv">01</div><div><h2 class="rv d1">What we run.</h2><p class="lead rv d2">Set-out, strain, tie-off - one crew owns the whole run so nothing gets lost between trades.</p></div></div>
+  <div class="svc-row rv"><span class="svc-n">01</span><div class="svc-body"><h3>Colorbond fencing</h3><p>Neat, strong boundary fencing that shrugs off weather and looks sharp from both sides.</p></div></div>
+  <div class="svc-row rv d1"><span class="svc-n">02</span><div class="svc-body"><h3>Pool fencing</h3><p>Pool-compliant barriers in aluminium slat or glass-look screening, powder-coated to suit the house.</p></div></div>
+  <div class="svc-row rv d2"><span class="svc-n">03</span><div class="svc-body"><h3>Decorative and brick fencing</h3><p>Decorative screening and brick fence runs that hold a street frontage together.</p></div></div>
+  <div class="svc-row rv d3"><span class="svc-n">04</span><div class="svc-body"><h3>Timber post and rail</h3><p>Treated pine or hardwood, built to stay straight through seasons.</p></div></div>
+  <div class="svc-row rv"><span class="svc-n">05</span><div class="svc-body"><h3>Gates and access</h3><p>Swing, slide and pedestrian gates hung square, with hardware that lasts.</p></div></div>
+  <div class="svc-row rv d1"><span class="svc-n">06</span><div class="svc-body"><h3>Fence repairs & replacement</h3><p>Leaning posts, damaged panels, storm damage - assessed and fixed properly.</p></div></div>
+</div></section>
+
+<section class="ground-works split" id="ground-works"><div class="wrap">
+  <div class="sp-img rv"><img src="images/work-1400.jpg" width="1100" height="1953" alt="Fence line and cleared ground behind a finished Colorbond run" loading="lazy"></div>
+  <div class="sp-copy">
+    <div class="sec-idx rv">02</div>
+    <h2 class="rv d1" style="margin-top:14px;">Ground <span class="acc">works</span></h2>
+    <p class="rv d2">Bobcat excavation on the same crew and the same standard - driveways, footpaths and site prep cut clean, trimmed out and ready.</p>
+    <div class="sp-list">
+      <div class="li rv d1">Bobcat excavation and site cut</div>
+      <div class="li rv d2">Driveways and footpaths</div>
+      <div class="li rv d3">Post holes, trenching and spoil removal</div>
+      <div class="li rv d4">Ground trimmed out for the fence line</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="process" id="process"><div class="wrap">
+  <div class="sec-head"><div class="sec-idx rv">03</div><div><h2 class="rv d1">How a fence runs.</h2><p class="lead rv d2">Simple, start to finish.</p></div></div>
+  <div class="stn rv"><span class="stn-n">01</span><div><h3>Tell us the run</h3><p>Length, height, material - a rough measure helps. We reply fast.</p></div></div>
+  <div class="stn rv d1"><span class="stn-n">02</span><div><h3>Firm quote</h3><p>Measured, priced, written down. Before any posts go in.</p></div></div>
+  <div class="stn rv d2"><span class="stn-n">03</span><div><h3>Build</h3><p>Set out, post holes, panels - clean lines, square corners.</p></div></div>
+  <div class="stn rv d3"><span class="stn-n">04</span><div><h3>Clean up</h3><p>Old fencing removed, site left tidy.</p></div></div>
+</div></section>
+
+<section class="trust" id="coverage"><div class="wrap">
+  <div class="tr-i rv"><div class="tr-t">TRADE</div><div><b>Fence contractor</b><span>Colorbond, pool, decorative and brick fencing</span></div></div>
+  <div class="tr-i rv d1"><div class="tr-t">PLANT</div><div><b>Bobcat on crew</b><span>Driveways, footpaths and site cut</span></div></div>
+  <div class="tr-i rv d2"><div class="tr-t">AREA</div><div><b>Local</b><span>Williamtown and Medowie NSW 2318</span></div></div>
+  <div class="tr-i rv d3"><div class="tr-t">STANDARD</div><div><b>One crew</b><span>Set-out to tie-off, no handballing</span></div></div>
+</div></section>
+
+<section class="quote" id="quote"><div class="wrap">
+  <div>
+    <h2 class="rv">Get a firm price for your fence.</h2>
+    <div class="q-lines">
+      <div class="q-line rv d1"><b>Phone</b><div><a href="tel:+61422400813">0422 400 813</a><span>Call for a time</span></div></div>
+      <div class="q-line rv d2"><b>Email</b><div><a href="mailto:justin@xtremefencing.net.au">justin@xtremefencing.net.au</a><span>Quotes & enquiries</span></div></div>
+      <div class="q-line rv d3"><b>Area</b><div><span style="font-size:19px;font-weight:800;">Williamtown, Port Stephens NSW 2318</span><span>Region-wide service</span></div></div>
+    </div>
+  </div>
+  <!-- NO FORM HERE - the injected #lbq (before footer) is the ONLY form -->
+</div></section>
+
+<div class="footer-bar mono">
+  <span>&copy; 2026 XTREME FENCING AND EARTHWORX &middot; ABN 62 637 036 511</span>
+  <a href="mailto:justin@xtremefencing.net.au">justin@xtremefencing.net.au</a>
+</div>
+<footer><div class="wrap">
+  <div>
+    <div class="footer-brand"><span class="mark" aria-hidden="true"><img src="assets/logo.svg" alt=""></span><span class="b-txt"><span class="brand-name">XTREME FENCING</span><br><span class="brand-sub" style="font-size:10px;letter-spacing:.22em;color:var(--acc);font-weight:700;">Fence contractor · Earthworks</span></span></div>
+    <p style="margin-top:16px;font-size:13.5px;max-width:300px;color:var(--ink2);">Fencing and earthworks, Williamtown NSW. Set-out to tie-off, one crew.<br>ABN 62 637 036 511</p>
+  </div>
+  <div><h4>Services</h4><a href="#services">Colorbond fencing</a><a href="#services">Pool fencing</a><a href="#services">Decorative & brick</a><a href="#services">Timber post & rail</a><a href="#services">Gates & access</a><a href="#ground-works">Bobcat work</a><a href="#quote">Get a quote</a></div>
+  <div><h4>Company</h4><a href="#services">What we run</a><a href="#ground-works">Ground works</a><a href="#process">How a fence runs</a><a href="#coverage">Coverage</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+  <div><h4>Contact</h4><a href="tel:+61422400813">0422 400 813</a><a href="mailto:justin@xtremefencing.net.au">justin@xtremefencing.net.au</a><a href="https://www.facebook.com/xtremefencingandearthworx" target="_blank" rel="noopener">Facebook</a><a href="#quote">Free quote</a></div>
+</div>
+<section id="lbq" class="v4" aria-labelledby="lbq-h">
+  <style>
+#lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#c4fb24))));--lbq-ink:var(--text,#eae7e0);--lbq-muted:var(--muted,#9aa8b3);--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto}
+#lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
+#lbq .lbq-f{display:grid;gap:12px}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#0b0e12;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+/* v1 card */
+#lbq.v1 .lbq-card{background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
+#lbq.v1 .lbq-g{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+#lbq.v1 .lbq-full{grid-column:1/-1}
+@media(max-width:640px){#lbq.v1 .lbq-g{grid-template-columns:1fr}}
+/* v2 band */
+#lbq.v2{background:var(--lbq-panel);border-top:1px solid var(--lbq-line);border-bottom:1px solid var(--lbq-line)}
+#lbq.v2 .lbq-g{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+#lbq.v2 .lbq-full{grid-column:1/-1}
+#lbq.v2 .lbq-hd{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
+@media(max-width:760px){#lbq.v2 .lbq-g{grid-template-columns:1fr}#lbq.v2 .lbq-hd{display:block}}
+/* v3 split */
+#lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+#lbq.v3 .lbq-g{display:grid;gap:12px}
+#lbq.v3 .lbq-hp2{border:1px solid var(--lbq-line);border-right:0;padding-left:16px}
+@media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
+/* v4 minimal */
+#lbq.v4 .lbq-w{max-width:620px}
+#lbq.v4 input,#lbq.v4 textarea{border:0;border-bottom:1px solid var(--lbq-line);border-radius:0;background:transparent;padding:11px 2px}
+#lbq.v4 .lbq-g{display:grid;gap:16px}
+</style>
+  <div class="lbq-w">
+      <h2 id="lbq-h">Request a quote</h2>
+      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p><form id="lbq-form" novalidate data-site="yp_-0669a563-172" data-biz="Xtreme Fencing and Earthworx"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form>
+  </div>
+  <script>
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;  // honeypot - silently accept bots
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</section>
+</footer>
+
+<script>
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: .1 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+const pb = document.getElementById('sa-progress');
+if (pb) {
+  const upd = () => {
+    const h = document.documentElement;
+    const p = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
+    pb.style.transform = 'scaleX(' + p + ')';
+  };
+  document.addEventListener('scroll', upd, { passive: true });
+  upd();
+}
+
+/* Strain-line hero canvas - drawOnce, sync paint, reduced-motion static frame, alpha-coverage > 0.2 */
+(function() {
+  const canvas = document.getElementById('strain-hero-canvas');
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  let rafId = null;
+  let painted = false;
+  
+  function resize() {
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = canvas.clientWidth * dpr;
+    canvas.height = canvas.clientHeight * dpr;
+    ctx.scale(dpr, dpr);
+  }
+  
+  function drawOnce() {
+    if (painted) return;
+    painted = true;
+    
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    ctx.clearRect(0, 0, w, h);
+    
+    // Draw strain line receding in perspective
+    // Strainer posts at descending scale into vanishing point
+    const vpX = w * 0.5;
+    const vpY = h * 0.35;
+    const numPosts = 6;
+    const numWires = 4;
+    
+    // Draw wires first (behind posts)
+    ctx.strokeStyle = '#8b9490';
+    ctx.lineWidth = 1;
+    ctx.lineCap = 'round';
+    
+    for (let wi = 0; wi < numWires; wi++) {
+      ctx.beginPath();
+      const wireOffset = (wi - (numWires - 1) / 2) * 8;
+      for (let pi = 0; pi < numPosts; pi++) {
+        const t = pi / (numPosts - 1);
+        const x = vpX + (w * 0.45 - vpX) * t + wireOffset;
+        const y = h * 0.85 - (h * 0.5) * t;
+        if (pi === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    
+    // Chain-link diamond lattice in foreground
+    ctx.strokeStyle = 'rgba(139,148,144,0.3)';
+    ctx.lineWidth = 0.5;
+    const diamondSize = 24;
+    const cols = Math.ceil(w / diamondSize) + 2;
+    const rows = Math.ceil(h / diamondSize) + 2;
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        const cx = col * diamondSize + (row % 2) * (diamondSize / 2);
+        const cy = row * diamondSize * 0.866;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy - diamondSize * 0.433);
+        ctx.lineTo(cx + diamondSize * 0.5, cy);
+        ctx.lineTo(cx, cy + diamondSize * 0.433);
+        ctx.lineTo(cx - diamondSize * 0.5, cy);
+        ctx.closePath();
+        ctx.stroke();
+      }
+    }
+    
+    // Strainer posts (foreground, larger)
+    ctx.fillStyle = '#eae7e0';
+    ctx.strokeStyle = '#3f6257';
+    ctx.lineWidth = 2;
+    for (let pi = 0; pi < numPosts; pi++) {
+      const t = pi / (numPosts - 1);
+      const scale = 1 - t * 0.7;
+      const x = vpX + (w * 0.45 - vpX) * t;
+      const y = h * 0.85 - (h * 0.5) * t;
+      const postW = 18 * scale;
+      const postH = 60 * scale;
+      
+      // Post shadow
+      ctx.fillStyle = 'rgba(0,0,0,0.15)';
+      ctx.fillRect(x + 2, y - postH + 2, postW, postH);
+      
+      // Post
+      ctx.fillStyle = '#eae7e0';
+      ctx.fillRect(x - postW/2, y - postH, postW, postH);
+      ctx.strokeRect(x - postW/2, y - postH, postW, postH);
+      
+      // Post cap
+      ctx.fillStyle = '#3f6257';
+      ctx.fillRect(x - postW/2 - 2, y - postH - 4, postW + 4, 4);
+    }
+    
+    // Bottom ink gradient ground
+    const grad = ctx.createLinearGradient(0, h * 0.75, 0, h);
+    grad.addColorStop(0, 'rgba(21,24,26,0)');
+    grad.addColorStop(1, 'rgba(21,24,26,0.85)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, h * 0.75, w, h * 0.25);
+  }
+  
+  function schedulePaint() {
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(() => {
+      const start = performance.now();
+      drawOnce();
+      const elapsed = performance.now() - start;
+      if (elapsed >= 32 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        console.log('Strain hero: frame took ' + elapsed.toFixed(1) + 'ms, skipping animation');
+      }
+    });
+  }
+  
+  // Reduced motion: draw static frame and cancel
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function handleReducedMotion(e) {
+    if (e.matches) {
+      if (rafId) cancelAnimationFrame(rafId);
+      drawOnce();
+    } else {
+      schedulePaint();
+    }
+  }
+  prefersReduced.addEventListener('change', handleReducedMotion);
+  
+  // Initial paint
+  resize();
+  window.addEventListener('resize', resize);
+  
+  // Alpha coverage ink check
+  function checkAlphaCoverage() {
+    const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let inkPixels = 0;
+    let totalPixels = 0;
+    for (let i = 3; i < imgData.data.length; i += 4) {
+      if (imgData.data[i] > 51) { // alpha > 0.2 (51/255)
+        inkPixels++;
+      }
+      totalPixels++;
+    }
+    const coverage = inkPixels / totalPixels;
+    console.log('Strain hero alpha coverage:', coverage.toFixed(4));
+    return coverage > 0.2;
+  }
+  
+  // Run initial paint and check
+  setTimeout(() => {
+    drawOnce();
+    checkAlphaCoverage();
+  }, 0);
+  
+  // Pointer parallax for strain posts and wires
+  let mouseX = 0.5, mouseY = 0.5;
+  document.addEventListener('pointermove', (e) => {
+    mouseX = e.clientX / window.innerWidth;
+    mouseY = e.clientY / window.innerHeight;
+  }, { passive: true });
+  
+  function animateParallax() {
+    if (prefersReduced.matches) return;
+    if (!painted) return;
+    
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    ctx.clearRect(0, 0, w, h);
+    
+    const vpX = w * 0.5 + (mouseX - 0.5) * 40;
+    const vpY = h * 0.35 + (mouseY - 0.5) * 20;
+    const numPosts = 6;
+    const numWires = 4;
+    
+    // Wires with damped sine vibration
+    ctx.strokeStyle = '#8b9490';
+    ctx.lineWidth = 1;
+    const time = performance.now() * 0.001;
+    
+    for (let wi = 0; wi < numWires; wi++) {
+      ctx.beginPath();
+      const wireOffset = (wi - (numWires - 1) / 2) * 8;
+      for (let pi = 0; pi < numPosts; pi++) {
+        const t = pi / (numPosts - 1);
+        const vib = Math.sin(time * 2.5 + pi * 0.8) * 1.5 * Math.exp(-t * 0.5);
+        const x = vpX + (w * 0.45 - vpX) * t + wireOffset + vib;
+        const y = h * 0.85 - (h * 0.5) * t;
+        if (pi === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    
+    // Chain-link lattice
+    ctx.strokeStyle = 'rgba(139,148,144,0.3)';
+    ctx.lineWidth = 0.5;
+    const diamondSize = 24;
+    const cols = Math.ceil(w / diamondSize) + 2;
+    const rows = Math.ceil(h / diamondSize) + 2;
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        const cx = col * diamondSize + (row % 2) * (diamondSize / 2) + (mouseX - 0.5) * 10;
+        const cy = row * diamondSize * 0.866 + (mouseY - 0.5) * 5;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy - diamondSize * 0.433);
+        ctx.lineTo(cx + diamondSize * 0.5, cy);
+        ctx.lineTo(cx, cy + diamondSize * 0.433);
+        ctx.lineTo(cx - diamondSize * 0.5, cy);
+        ctx.closePath();
+        ctx.stroke();
+      }
+    }
+    
+    // Posts
+    ctx.fillStyle = '#eae7e0';
+    ctx.strokeStyle = '#3f6257';
+    ctx.lineWidth = 2;
+    for (let pi = 0; pi < numPosts; pi++) {
+      const t = pi / (numPosts - 1);
+      const scale = 1 - t * 0.7;
+      const x = vpX + (w * 0.45 - vpX) * t;
+      const y = h * 0.85 - (h * 0.5) * t;
+      const postW = 18 * scale;
+      const postH = 60 * scale;
+      
+      ctx.fillStyle = 'rgba(0,0,0,0.15)';
+      ctx.fillRect(x + 2, y - postH + 2, postW, postH);
+      
+      ctx.fillStyle = '#eae7e0';
+      ctx.fillRect(x - postW/2, y - postH, postW, postH);
+      ctx.strokeRect(x - postW/2, y - postH, postW, postH);
+      
+      ctx.fillStyle = '#3f6257';
+      ctx.fillRect(x - postW/2 - 2, y - postH - 4, postW + 4, 4);
+    }
+    
+    // Ground gradient
+    const grad = ctx.createLinearGradient(0, h * 0.75, 0, h);
+    grad.addColorStop(0, 'rgba(21,24,26,0)');
+    grad.addColorStop(1, 'rgba(21,24,26,0.85)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, h * 0.75, w, h * 0.25);
+    
+    rafId = requestAnimationFrame(animateParallax);
+  }
+  
+  // Start animation loop after initial paint
+  setTimeout(() => {
+    if (!prefersReduced.matches) {
+      animateParallax();
+    }
+  }, 100);
+})();
+
+// JS safety net - reveal all .rv elements after 1100ms (per reveal fallback law)
+setTimeout(() => {
+  document.querySelectorAll('.rv').forEach(el => el.classList.add('in'));
+}, 1100);
+</script>
+<script>
+(function(){
+  var n=document.querySelector('.nav'), t=document.getElementById('navToggle');
+  if(!t) return;
+  t.addEventListener('click', function(){
+    var open=n.classList.toggle('open'); t.setAttribute('aria-expanded', open?'true':'false');
+    t.setAttribute('aria-label', open?'Close menu':'Open menu');
+  });
+  document.querySelectorAll('#navLinks a').forEach(function(a){
+    a.addEventListener('click', function(){ n.classList.remove('open'); t.setAttribute('aria-expanded','false'); });
+  });
+})();
+</script>
+
+
+
+<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#000000","important");})();</script>
+</body>
+</html>
