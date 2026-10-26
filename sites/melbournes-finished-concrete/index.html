@@ -137,7 +137,7 @@ html.js .rv{opacity:0;transform:translateY(20px)}
   .hero-media img{object-position:56% 50%}
 }
 </style>
-<style id="lb-navlogo">nav{display:flex!important;align-items:center!important;gap:clamp(10px,2vw,22px)!important}nav img{height:44px!important;width:auto!important;display:block!important}@media(max-width:860px){nav img{height:36px!important}}</style><style id="lb-skin">/* skin 2 — condensed uppercase, full-bleed hero, numbered services */
+<style id="lb-skin">/* skin 2 — condensed uppercase, full-bleed hero, numbered services */
  .hero h1, header h1{text-transform:uppercase!important;letter-spacing:-.01em!important;font-weight:800!important;line-height:.95!important}
  h2{text-transform:uppercase!important;letter-spacing:.06em!important;font-size:clamp(18px,2vw,24px)!important;font-weight:700!important}
  .hero,header.hero{min-height:72vh!important}
@@ -152,12 +152,23 @@ html.js .rv{opacity:0;transform:translateY(20px)}
  section,.hero,header{overflow-x:clip!important}
  img,video,svg{max-width:100%!important;height:auto}
  h1,h2{overflow-wrap:anywhere!important}
-}</style></head>
+}</style><style id="lb-hdr-centre">
+/* brand is the logo alone — centre it, and give the nav room either side */
+header{position:relative!important;display:flex!important;align-items:center!important;gap:clamp(10px,1.8vw,26px)!important}
+header .lockup{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;margin:0!important;z-index:3}
+header .lockup img{height:clamp(38px,3.4vw,54px)!important;width:auto!important;display:block!important}
+header > a:not(.lockup){margin-left:auto}
+header > a:not(.lockup) ~ a{margin-left:0}
+@media(max-width:980px){
+  header .lockup{position:static!important;transform:none!important;margin-right:auto!important}
+  header .lockup img{height:38px!important}
+}
+</style></head>
 <body>
 <header class="site-head">
 <div class="wrap bar">
 <a aria-label="Melbourne's Finished Concrete &amp; Landscaping" class="lockup" href="#top"><img alt="Melbourne's Finished Concrete &amp; Landscaping" height="334" src="assets/logo.png" width="468"/></a>
-<nav aria-label="Site" class="main"><a href="#top" style="display:flex;align-items:center;flex-shrink:0"><img alt="Melbourne's Finished Concrete &amp; Landscaping" src="assets/logo.png" style="height:44px;width:auto;display:block;margin-right:14px"/></a>
+<nav aria-label="Site" class="main">
 <a href="#Services">Services</a>
 <a href="#Gallery">Work</a>
 <a href="#Spec">Method</a>

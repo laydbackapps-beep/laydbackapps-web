@@ -272,7 +272,7 @@ html.js .rv{opacity:0;transform:translateY(16px)}
 }
 @media(max-width:720px){nav.main{order:3;width:100%;margin-left:0;gap:16px}}
 </style>
-<style id="lb-navlogo">nav{display:flex!important;align-items:center!important;gap:clamp(10px,2vw,22px)!important}nav img{height:44px!important;width:auto!important;display:block!important}@media(max-width:860px){nav img{height:36px!important}}</style><style id="lb-skin">/* skin 1 — editorial serif, hairline rules, left hero */
+<style id="lb-skin">/* skin 1 — editorial serif, hairline rules, left hero */
  .hero h1, header h1{font-family:Georgia,'Times New Roman',serif!important;letter-spacing:-.02em!important;font-weight:600!important;text-transform:none!important}
  h2{font-family:Georgia,'Times New Roman',serif!important;letter-spacing:-.015em!important;text-transform:none!important;font-weight:600!important}
  h2{border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.35em}
@@ -285,7 +285,13 @@ html.js .rv{opacity:0;transform:translateY(16px)}
  section,.hero,header{overflow-x:clip!important}
  img,video,svg{max-width:100%!important;height:auto}
  h1,h2{overflow-wrap:anywhere!important}
-}</style></head>
+}</style><style id="lb-hdr-centre">
+/* brand is the logo alone — centre it over the nav rather than parking it on one edge */
+div.wrap{display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;gap:10px clamp(12px,1.8vw,26px)!important;position:relative!important;text-align:center!important}
+div.wrap .lb-brand{flex:0 0 100%!important;display:flex!important;justify-content:center!important;margin:0 auto!important;width:100%!important}
+div.wrap .lb-brand img{height:clamp(40px,3.6vw,58px)!important;width:auto!important;display:block!important;margin:0 auto!important}
+@media(max-width:520px){ div.wrap .lb-brand img{height:40px!important} }
+</style></head>
 <body>
 <noscript><style>html.js .rv{opacity:1;transform:none}</style></noscript>
 <header class="site">
@@ -293,7 +299,7 @@ html.js .rv{opacity:0;transform:translateY(16px)}
 <a aria-label="Sydney Spraycrete Professionals — home" class="lb-brand" href="#top">
 <img alt="Sydney Spraycrete Professionals" height="1089" src="assets/logo.png" width="1179"/>
 </a>
-<nav aria-label="Sections" class="main"><a href="#top" style="display:flex;align-items:center;flex-shrink:0"><img alt="Sydney Spraycrete Professionals" src="assets/logo.png" style="height:44px;width:auto;display:block;margin-right:14px"/></a>
+<nav aria-label="Sections" class="main">
 <a href="#Services">Services</a>
 <a href="#Finish">Finishes</a>
 <a href="#Work">Work</a>

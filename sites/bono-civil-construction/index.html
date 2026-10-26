@@ -113,7 +113,7 @@ a:hover{text-decoration:underline}
 }
 @media (max-width:600px){.gal-grid{grid-template-columns:1fr}}
 </style>
-<style id="lb-navlogo">nav{display:flex!important;align-items:center!important;gap:clamp(10px,2vw,22px)!important}nav img{height:44px!important;width:auto!important;display:block!important}@media(max-width:860px){nav img{height:36px!important}}</style><style id="lb-skin">/* skin 1 — editorial serif, hairline rules, left hero */
+<style id="lb-skin">/* skin 1 — editorial serif, hairline rules, left hero */
  .hero h1, header h1{font-family:Georgia,'Times New Roman',serif!important;letter-spacing:-.02em!important;font-weight:600!important;text-transform:none!important}
  h2{font-family:Georgia,'Times New Roman',serif!important;letter-spacing:-.015em!important;text-transform:none!important;font-weight:600!important}
  h2{border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.35em}
@@ -126,13 +126,19 @@ a:hover{text-decoration:underline}
  section,.hero,header{overflow-x:clip!important}
  img,video,svg{max-width:100%!important;height:auto}
  h1,h2{overflow-wrap:anywhere!important}
-}</style></head>
+}</style><style id="lb-hdr-centre">
+/* brand is the logo alone — centre it over the nav rather than parking it on one edge */
+div.hdr-in{display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;gap:10px clamp(12px,1.8vw,26px)!important;position:relative!important;text-align:center!important}
+div.hdr-in .brand{flex:0 0 100%!important;display:flex!important;justify-content:center!important;margin:0 auto!important;width:100%!important}
+div.hdr-in .brand img{height:clamp(40px,3.6vw,58px)!important;width:auto!important;display:block!important;margin:0 auto!important}
+@media(max-width:520px){ div.hdr-in .brand img{height:40px!important} }
+</style></head>
 <body>
 <a class="skip" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
 <header class="hdr">
 <div class="hdr-in">
 <a aria-label="Bono Civil Construction home" class="brand" href="#top"><img alt="Bono Civil Construction logo" decoding="async" loading="eager" src="assets/logo.png"/></a>
-<nav aria-label="Main" class="nav"><a href="#top" style="display:flex;align-items:center;flex-shrink:0"><img alt="Bono Civil Construction" src="assets/logo.png" style="height:44px;width:auto;display:block;margin-right:14px"/></a>
+<nav aria-label="Main" class="nav">
 <a href="#services">Services</a>
 <a href="#work">Work</a>
 <a href="#about">About</a>

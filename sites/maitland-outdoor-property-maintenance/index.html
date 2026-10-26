@@ -63,6 +63,17 @@ button:hover{background:var(--acc)}
 footer{background:var(--ink);color:rgba(243,245,238,.7);padding:clamp(26px,4vw,44px) clamp(16px,3vw,32px)}
 footer .in{max-width:1180px;margin:0 auto;display:flex;gap:14px 26px;flex-wrap:wrap;align-items:center;justify-content:space-between;font-size:13.5px}
 footer img{height:42px;width:auto}
+</style><style id="lb-hdr-centre">
+/* brand is the logo alone — centre it, and give the nav room either side */
+header{position:relative!important;display:flex!important;align-items:center!important;gap:clamp(10px,1.8vw,26px)!important}
+header .header > a{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;margin:0!important;z-index:3}
+header .header > a img{height:clamp(38px,3.4vw,54px)!important;width:auto!important;display:block!important}
+header > a:not(.header > a){margin-left:auto}
+header > a:not(.header > a) ~ a{margin-left:0}
+@media(max-width:980px){
+  header .header > a{position:static!important;transform:none!important;margin-right:auto!important}
+  header .header > a img{height:38px!important}
+}
 </style></head>
 <body>
 

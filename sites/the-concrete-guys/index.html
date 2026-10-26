@@ -154,7 +154,7 @@ footer.site a:hover{border-bottom-color:var(--hat)}
   .cellgrid > div{border-right:0}
 }
 </style>
-<style id="lb-navlogo">nav{display:flex!important;align-items:center!important;gap:clamp(10px,2vw,22px)!important}nav img{height:44px!important;width:auto!important;display:block!important}@media(max-width:860px){nav img{height:36px!important}}</style><style id="lb-skin">/* skin 1 — editorial serif, hairline rules, left hero */
+<style id="lb-skin">/* skin 1 — editorial serif, hairline rules, left hero */
  .hero h1, header h1{font-family:Georgia,'Times New Roman',serif!important;letter-spacing:-.02em!important;font-weight:600!important;text-transform:none!important}
  h2{font-family:Georgia,'Times New Roman',serif!important;letter-spacing:-.015em!important;text-transform:none!important;font-weight:600!important}
  h2{border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.35em}
@@ -167,12 +167,23 @@ footer.site a:hover{border-bottom-color:var(--hat)}
  section,.hero,header{overflow-x:clip!important}
  img,video,svg{max-width:100%!important;height:auto}
  h1,h2{overflow-wrap:anywhere!important}
-}</style></head>
+}</style><style id="lb-hdr-centre">
+/* brand is the logo alone — centre it, and give the nav room either side */
+header{position:relative!important;display:flex!important;align-items:center!important;gap:clamp(10px,1.8vw,26px)!important}
+header .lockup{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;margin:0!important;z-index:3}
+header .lockup img{height:clamp(38px,3.4vw,54px)!important;width:auto!important;display:block!important}
+header > a:not(.lockup){margin-left:auto}
+header > a:not(.lockup) ~ a{margin-left:0}
+@media(max-width:980px){
+  header .lockup{position:static!important;transform:none!important;margin-right:auto!important}
+  header .lockup img{height:38px!important}
+}
+</style></head>
 <body>
 <header class="site">
 <div class="wrap bar">
 <a aria-label="The Concrete Guys — home" class="lockup" href="#top"><img alt="The Concrete Guys" src="assets/logo.png"/></a>
-<nav aria-label="Sections" class="main"><a href="#top" style="display:flex;align-items:center;flex-shrink:0"><img alt="The Concrete Guys" src="assets/logo.png" style="height:44px;width:auto;display:block;margin-right:14px"/></a>
+<nav aria-label="Sections" class="main">
 <a href="#services">Concrete work</a>
 <a href="#process">How a pour runs</a>
 <a href="#work">The job</a>
