@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en-AU">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Platinum Painters Plus</title>
-<meta name="description" content="Platinum Painters Plus - Professional painting services Australia-wide."/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<meta content="Platinum Painters Plus - Professional painting services Australia-wide." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="assets/favicon.png" rel="icon" sizes="64x64" type="image/png"/>
 <style>
 :root{
   --ink:#0e0f12;
@@ -195,10 +196,10 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
  .lb-brand__sub{letter-spacing:.2em;font-size:7px}
 }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
@@ -206,169 +207,179 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-</head>
+<style id="lb-logo-only">
+/* the header carries the logo artwork, never a typed name */
+nav .lb-brand__word,nav .nav-b,header .lb-brand__word,header .nav-b{display:none!important}
+nav .lb-brand img,header .lb-brand img{height:clamp(38px,4vw,52px)!important;width:auto!important;display:block!important}
+nav .nav-links,header .nav-links{display:flex!important;gap:clamp(12px,1.8vw,24px)!important;margin-left:auto!important;align-items:center!important}
+nav .nav-links a,header .nav-links a{text-decoration:none!important}
+nav .burger,header .burger{display:none!important}
+@media(max-width:860px){
+  nav .nav-links,header .nav-links{display:none!important}
+  nav .nav-links.open,header .nav-links.open{display:flex!important;position:absolute;right:0;top:calc(100% + 8px);
+    flex-direction:column;background:#101113;border:1px solid rgba(255,255,255,.14);padding:14px;
+    width:min(86vw,320px);z-index:70;margin:0!important}
+  nav .burger,header .burger{display:flex!important;margin-left:auto}
+}
+</style></head>
 <body>
-<header class="site-header" role="banner"><canvas class="lb-hero-canvas" aria-hidden="true"></canvas>
-  <div class="container">
-    <a class="lb-brand" href="#top" aria-label="Platinum Painters Plus - Home" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#384860;--lb-subc:#384860;--lb-acc:#384860;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.png" alt="" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">Platinum Painters Plus</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
-    <nav role="navigation" aria-label="Primary">
-      <a href="#services">Services</a>
-      <a href="#process">Approach</a>
-      <a href="#contact" class="btn cta">Get a Quote</a>
-    </nav>
-  </div>
+<header class="site-header" role="banner"><canvas aria-hidden="true" class="lb-hero-canvas"></canvas>
+<div class="container">
+<a aria-label="Platinum Painters Plus - Home" class="lb-brand" href="#top" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#384860;--lb-subc:#384860;--lb-acc:#384860;"><span aria-hidden="true" class="lb-brand__mark"><img alt="" decoding="async" loading="eager" src="assets/logo.png"/></span><span class="lb-brand__word"><span class="lb-brand__name">Platinum Painters Plus</span><span aria-hidden="true" class="lb-brand__rule"></span></span></a>
+<nav aria-label="Primary" role="navigation">
+<a href="#services">Services</a>
+<a href="#process">Approach</a>
+<a class="btn cta" href="#contact">Get a Quote</a>
+</nav>
+</div>
 </header>
-
 <main id="main" role="main">
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="container">
-      <h1 id="hero-title" class="rv" style="--i:0">Platinum Painters Plus</h1>
-      <p class="lead rv" style="--i:1">Professional painting services Australia-wide. Clean lines, lasting finish.</p>
-      <div class="cta-group">
-        <a href="#contact" class="btn rv" style="--i:2">Request a Quote</a>
-        <a href="#services" class="btn rv" style="--i:3">View Services</a>
-      </div>
-      <canvas id="hero-canvas" class="rv" style="--i:4" aria-label="Cut-in edge detail: wall corner with taped line, brush stroke, roller texture, and drip sheet"></canvas>
-    </div>
-  </section>
-
-  <section id="services" class="section" aria-labelledby="services-title">
-    <div class="container">
-      <header class="section-header">
-        <h2 id="services-title" class="rv" style="--i:0">Services</h2>
-        <p class="rv" style="--i:1">What we do - interior, exterior, and specialty finishes.</p>
-      </header>
-      <div class="service-grid" role="list">
-        <article class="service-card rv" style="--i:0" role="listitem">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          <h3>Interior Painting</h3>
-          <p>Walls, ceilings, trim, and cabinetry. Precision cut-in edges and smooth finishes.</p>
-        </article>
-        <article class="service-card rv" style="--i:1" role="listitem">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-          <h3>Exterior Painting</h3>
-          <p>Weatherproof coatings, surface preparation, and durable colour for facades.</p>
-        </article>
-        <article class="service-card rv" style="--i:2" role="listitem">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          <h3>Specialty Finishes</h3>
-          <p>Feature walls, textured effects, and custom colour matching.</p>
-        </article>
-        <article class="service-card rv" style="--i:3" role="listitem">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <h3>Surface Preparation</h3>
-          <p>Sanding, patching, priming, and tape lines for a flawless base.</p>
-        </article>
-        <article class="service-card rv" style="--i:4" role="listitem">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <h3>Commercial Projects</h3>
-          <p>Offices, retail, and strata - scheduled to minimise disruption.</p>
-        </article>
-        <article class="service-card rv" style="--i:5" role="listitem">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <h3>Colour Consultation</h3>
-          <p>Schemes tailored to light, architecture, and intent.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="process" class="section process-band" aria-labelledby="process-title">
-    <div class="container">
-      <header class="section-header">
-        <h2 id="process-title" class="rv" style="--i:0">Approach</h2>
-        <p class="rv" style="--i:1">How we work - from first look to final walk-through.</p>
-      </header>
-      <div class="container" style="display:contents">
-        <article class="process-step rv" style="--i:0">
-          <div class="num">1</div>
-          <h3>Assess</h3>
-          <p>On-site review of surfaces, light, and scope. Clear scope, no surprises.</p>
-        </article>
-        <article class="process-step rv" style="--i:1">
-          <div class="num">2</div>
-          <h3>Prepare</h3>
-          <p>Mask, tape, patch, prime. The finish lives in the prep.</p>
-        </article>
-        <article class="process-step rv" style="--i:2">
-          <div class="num">3</div>
-          <h3>Execute</h3>
-          <p>Cut-in by brush, roll for body. Clean edges, even film, consistent sheen.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+<section aria-labelledby="hero-title" class="hero">
+<div class="container">
+<h1 class="rv" id="hero-title" style="--i:0">Platinum Painters Plus</h1>
+<p class="lead rv" style="--i:1">Professional painting services Australia-wide. Clean lines, lasting finish.</p>
+<div class="cta-group">
+<a class="btn rv" href="#contact" style="--i:2">Request a Quote</a>
+<a class="btn rv" href="#services" style="--i:3">View Services</a>
+</div>
+<canvas aria-label="Cut-in edge detail: wall corner with taped line, brush stroke, roller texture, and drip sheet" class="rv" id="hero-canvas" style="--i:4"></canvas>
+</div>
+</section>
+<section aria-labelledby="services-title" class="section" id="services">
+<div class="container">
+<header class="section-header">
+<h2 class="rv" id="services-title" style="--i:0">Services</h2>
+<p class="rv" style="--i:1">What we do - interior, exterior, and specialty finishes.</p>
+</header>
+<div class="service-grid" role="list">
+<article class="service-card rv" role="listitem" style="--i:0">
+<svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+<h3>Interior Painting</h3>
+<p>Walls, ceilings, trim, and cabinetry. Precision cut-in edges and smooth finishes.</p>
+</article>
+<article class="service-card rv" role="listitem" style="--i:1">
+<svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" x2="12" y1="22.08" y2="12"></line></svg>
+<h3>Exterior Painting</h3>
+<p>Weatherproof coatings, surface preparation, and durable colour for facades.</p>
+</article>
+<article class="service-card rv" role="listitem" style="--i:2">
+<svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+<h3>Specialty Finishes</h3>
+<p>Feature walls, textured effects, and custom colour matching.</p>
+</article>
+<article class="service-card rv" role="listitem" style="--i:3">
+<svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+<h3>Surface Preparation</h3>
+<p>Sanding, patching, priming, and tape lines for a flawless base.</p>
+</article>
+<article class="service-card rv" role="listitem" style="--i:4">
+<svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+<h3>Commercial Projects</h3>
+<p>Offices, retail, and strata - scheduled to minimise disruption.</p>
+</article>
+<article class="service-card rv" role="listitem" style="--i:5">
+<svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+<h3>Colour Consultation</h3>
+<p>Schemes tailored to light, architecture, and intent.</p>
+</article>
+</div>
+</div>
+</section>
+<section aria-labelledby="process-title" class="section process-band" id="process">
+<div class="container">
+<header class="section-header">
+<h2 class="rv" id="process-title" style="--i:0">Approach</h2>
+<p class="rv" style="--i:1">How we work - from first look to final walk-through.</p>
+</header>
+<div class="container" style="display:contents">
+<article class="process-step rv" style="--i:0">
+<div class="num">1</div>
+<h3>Assess</h3>
+<p>On-site review of surfaces, light, and scope. Clear scope, no surprises.</p>
+</article>
+<article class="process-step rv" style="--i:1">
+<div class="num">2</div>
+<h3>Prepare</h3>
+<p>Mask, tape, patch, prime. The finish lives in the prep.</p>
+</article>
+<article class="process-step rv" style="--i:2">
+<div class="num">3</div>
+<h3>Execute</h3>
+<p>Cut-in by brush, roll for body. Clean edges, even film, consistent sheen.</p>
+</article>
+</div>
+</div>
+</section>
 </main>
-
-<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on" style="background:linear-gradient(120deg,#0b0c10 0%,#e51924 165%)"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp,Inter),sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">Platinum Painters Plus</span></div><div class="lb-rb__slide" style="background:linear-gradient(120deg,#0b0c10 0%,#e51924 165%)"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp,Inter),sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">Servicing your area</span></div><div class="lb-rb__slide" style="background:linear-gradient(120deg,#0b0c10 0%,#e51924 165%)"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp,Inter),sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">Free quotes &mdash; call today</span></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button></div><div class="lb-rb__cap">Platinum Painters Plus &mdash; recent work</div></div></section><footer class="site-footer" role="contentinfo" id="contact">
-  <div class="container grid">
-    <div class="brand">
-      <div class="logo" aria-hidden="true">
-        <svg viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48" role="img" aria-label="Platinum Painters Plus logo">
-          <title>Platinum Painters Plus</title>
-          <defs>
-            <pattern id="rollerNap" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
-              <circle cx="4" cy="4" r="1.5" fill="#3c4a60" opacity="0.4"/>
-              <circle cx="4" cy="4" r="1" fill="#3c4a60" opacity="0.6"/>
-            </pattern>
-          </defs>
-          <path d="M64 48 L64 208 L128 176 L128 16 Z" fill="#3c4a60"/>
-          <path d="M128 16 L128 176 L192 208 L192 48 Z" fill="#3c4a60" fill-opacity="0.6"/>
-          <path d="M128 16 L128 192" stroke="#3c4a60" stroke-width="2" stroke-dasharray="8,4" fill="none" stroke-linecap="round"/>
-          <path d="M168 136 L192 152 L192 164 L168 148 Z" fill="#15171b"/>
-          <path d="M168 128 L192 152 L188 156 L164 132 Z" fill="#24262c"/>
-          <path d="M164 132 L188 156 L184 160 L160 136 Z" fill="#0e0f12"/>
-          <path d="M128 16 L128 192" stroke="#3c4a60" stroke-width="3" fill="none" stroke-linecap="round"/>
-          <rect x="136" y="72" width="48" height="40" fill="url(#rollerNap)"/>
-          <path d="M64 208 L192 224 L192 240 L64 224 Z" fill="#0e0f12"/>
-          <path d="M64 208 L192 224 L192 216 L64 200 Z" fill="#3c4a60" fill-opacity="0.4"/>
-        </svg>
-      </div>
-      <p>Platinum Painters Plus</p>
-      <p class="mono" style="margin-top:0.25rem">Painting - Australia-wide</p>
-      <div class="socials" role="list" aria-label="Social links" style="margin-top:var(--space-sm)">
-        <a href="https://www.instagram.com/platinumpaintersplus_ptyltd?cplk=NWttejlhZzA0aGRj" target="_blank" rel="noopener noreferrer" aria-label="Instagram" role="listitem">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-        <a href="https://www.instagram.com/platinumpaintersplus_ptyltd?cplk=NWttejlhZzA0aGRj" target="_blank" rel="noopener noreferrer" aria-label="Instagram" role="listitem">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-        <a href="https://www.instagram.com/platinumpaintersplus_ptyltd" target="_blank" rel="noopener noreferrer" aria-label="Instagram" role="listitem">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-      </div>
-    </div>
-    <nav aria-label="Services">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#services">Interior Painting</a></li>
-        <li><a href="#services">Exterior Painting</a></li>
-        <li><a href="#services">Specialty Finishes</a></li>
-        <li><a href="#services">Surface Preparation</a></li>
-        <li><a href="#services">Commercial Projects</a></li>
-        <li><a href="#services">Colour Consultation</a></li>
-      </ul>
-    </nav>
-    <nav aria-label="Company">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="#process">Approach</a></li>
-        <li><a href="#contact">Get a Quote</a></li>
-      </ul>
-    </nav>
-    <nav aria-label="Legal">
-      <h4>Legal</h4>
-      <ul>
-        <li><a href="#privacy">Privacy Policy</a></li>
-        <li><a href="#terms">Terms of Service</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="legal">
-    <p><a href="#privacy" id="privacy">Privacy</a> · <a href="#terms" id="terms">Terms</a> · © <span class="mono" id="year"></span> Platinum Painters Plus</p>
-  </div>
-<section id="lbq" class="v2" aria-labelledby="lbq-h">
-  <style>
+<section aria-label="Recent work and services" class="lb-rb"><div class="lb-rb__track"><div class="lb-rb__slide is-on" style="background:linear-gradient(120deg,#0b0c10 0%,#e51924 165%)"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp,Inter),sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">Platinum Painters Plus</span></div><div class="lb-rb__slide" style="background:linear-gradient(120deg,#0b0c10 0%,#e51924 165%)"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp,Inter),sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">Servicing your area</span></div><div class="lb-rb__slide" style="background:linear-gradient(120deg,#0b0c10 0%,#e51924 165%)"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp,Inter),sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">Free quotes — call today</span></div><button aria-label="Previous" class="lb-rb__nav lb-rb__nav--prev" type="button">‹</button><button aria-label="Next" class="lb-rb__nav lb-rb__nav--next" type="button">›</button><div class="lb-rb__dots"><button aria-label="Slide 1" class="is-on" type="button"></button><button aria-label="Slide 2" class="" type="button"></button><button aria-label="Slide 3" class="" type="button"></button></div><div class="lb-rb__cap">Platinum Painters Plus — recent work</div></div></section><footer class="site-footer" id="contact" role="contentinfo">
+<div class="container grid">
+<div class="brand">
+<div aria-hidden="true" class="logo">
+<svg aria-label="Platinum Painters Plus logo" fill="none" height="48" role="img" viewbox="0 0 256 256" width="48" xmlns="http://www.w3.org/2000/svg">
+<title>Platinum Painters Plus</title>
+<defs>
+<pattern height="8" id="rollerNap" patternunits="userSpaceOnUse" width="8" x="0" y="0">
+<circle cx="4" cy="4" fill="#3c4a60" opacity="0.4" r="1.5"></circle>
+<circle cx="4" cy="4" fill="#3c4a60" opacity="0.6" r="1"></circle>
+</pattern>
+</defs>
+<path d="M64 48 L64 208 L128 176 L128 16 Z" fill="#3c4a60"></path>
+<path d="M128 16 L128 176 L192 208 L192 48 Z" fill="#3c4a60" fill-opacity="0.6"></path>
+<path d="M128 16 L128 192" fill="none" stroke="#3c4a60" stroke-dasharray="8,4" stroke-linecap="round" stroke-width="2"></path>
+<path d="M168 136 L192 152 L192 164 L168 148 Z" fill="#15171b"></path>
+<path d="M168 128 L192 152 L188 156 L164 132 Z" fill="#24262c"></path>
+<path d="M164 132 L188 156 L184 160 L160 136 Z" fill="#0e0f12"></path>
+<path d="M128 16 L128 192" fill="none" stroke="#3c4a60" stroke-linecap="round" stroke-width="3"></path>
+<rect fill="url(#rollerNap)" height="40" width="48" x="136" y="72"></rect>
+<path d="M64 208 L192 224 L192 240 L64 224 Z" fill="#0e0f12"></path>
+<path d="M64 208 L192 224 L192 216 L64 200 Z" fill="#3c4a60" fill-opacity="0.4"></path>
+</svg>
+</div>
+<p>Platinum Painters Plus</p>
+<p class="mono" style="margin-top:0.25rem">Painting - Australia-wide</p>
+<div aria-label="Social links" class="socials" role="list" style="margin-top:var(--space-sm)">
+<a aria-label="Instagram" href="https://www.instagram.com/platinumpaintersplus_ptyltd?cplk=NWttejlhZzA0aGRj" rel="noopener noreferrer" role="listitem" target="_blank">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+</a>
+<a aria-label="Instagram" href="https://www.instagram.com/platinumpaintersplus_ptyltd?cplk=NWttejlhZzA0aGRj" rel="noopener noreferrer" role="listitem" target="_blank">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+</a>
+<a aria-label="Instagram" href="https://www.instagram.com/platinumpaintersplus_ptyltd" rel="noopener noreferrer" role="listitem" target="_blank">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+</a>
+</div>
+</div>
+<nav aria-label="Services">
+<h4>Services</h4>
+<ul>
+<li><a href="#services">Interior Painting</a></li>
+<li><a href="#services">Exterior Painting</a></li>
+<li><a href="#services">Specialty Finishes</a></li>
+<li><a href="#services">Surface Preparation</a></li>
+<li><a href="#services">Commercial Projects</a></li>
+<li><a href="#services">Colour Consultation</a></li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h4>Company</h4>
+<ul>
+<li><a href="#process">Approach</a></li>
+<li><a href="#contact">Get a Quote</a></li>
+</ul>
+</nav>
+<nav aria-label="Legal">
+<h4>Legal</h4>
+<ul>
+<li><a href="#privacy">Privacy Policy</a></li>
+<li><a href="#terms">Terms of Service</a></li>
+</ul>
+</nav>
+</div>
+<div class="legal">
+<p><a href="#privacy" id="privacy">Privacy</a> · <a href="#terms" id="terms">Terms</a> · © <span class="mono" id="year"></span> Platinum Painters Plus</p>
+</div>
+<section aria-labelledby="lbq-h" class="v2" id="lbq">
+<style>
 #lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#c4fb24))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,#9aa6b2);--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
 #lbq *{box-sizing:border-box}
 #lbq .lbq-w{max-width:1060px;margin:0 auto}
@@ -406,11 +417,11 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 #lbq.v4 input,#lbq.v4 textarea{border:0;border-bottom:1px solid var(--lbq-line);border-radius:0;background:transparent;padding:11px 2px}
 #lbq.v4 .lbq-g{display:grid;gap:16px}
 </style>
-  <div class="lbq-w">
-      <div class="lbq-hd"><div><h2 id="lbq-h">Request a quote</h2>
-      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p></div></div><form id="lbq-form" novalidate data-site="platinum-painters-plus" data-biz="Platinum Painters Plus"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form>
-  </div>
-  <script>
+<div class="lbq-w">
+<div class="lbq-hd"><div><h2 id="lbq-h">Request a quote</h2>
+<p class="lbq-s">Tell us a few details and we'll get back to you with a free, no-obligation quote.</p></div></div><form data-biz="Platinum Painters Plus" data-site="platinum-painters-plus" id="lbq-form" novalidate=""><div class="lbq-g"><div><label for="lbq-n">Name</label><input autocomplete="name" id="lbq-n" name="name" required=""/></div><div><label for="lbq-p">Phone</label><input autocomplete="tel" id="lbq-p" name="phone" type="tel"/></div><div><label for="lbq-e">Email</label><input autocomplete="email" id="lbq-e" name="email" type="email"/></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame…" required=""></textarea></div></div><label class="lbq-cons"><input checked="" name="consent" type="checkbox" value="1"/> I agree to be contacted about this request.</label><div aria-hidden="true" class="lbq-hp"><label>Website<input autocomplete="off" name="website" tabindex="-1"/></label></div><button type="submit">Send quote request</button><p aria-live="polite" class="lbq-st" id="lbq-st" role="status"></p></form>
+</div>
+<script>
 (function(){
   var EP = null;
   function base(cb){
@@ -482,7 +493,6 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 </script>
 </section>
 </footer>
-
 <!-- lb: old box-hero engine removed -->
 <script id="lb-motion-js">
 /* LB MOTION PACK v1 */
@@ -652,7 +662,6 @@ header,.site-header,.page-header,.header-inner,nav.nav,.nav-inner,
 #sigSplash,#splash,.sp{animation:lbKillSplash .001s 2.5s forwards !important}
 @keyframes lbKillSplash{to{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}}
 </style>
-
 <style>/* ==== TASTE PASS (anti-slop, from impeccable findings) ==== */
 .lb-mq__in{display:none !important}
 
@@ -679,7 +688,6 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
   .lb-brand__word{font-size:.92em !important}
 }
 </style>
-
 <style>/* ==== LB HEADER POLISH 2 ==== */
 header nav a:not(.btn):not([class*="btn"]):not([class*="cta"]),
 .site-header nav a:not(.btn):not([class*="btn"]),

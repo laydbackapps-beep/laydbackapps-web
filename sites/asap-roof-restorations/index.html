@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en-AU">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ASAP Roof Restorations</title>
-<meta name="description" content="ASAP Roof Restorations — Roof restoration in Perth WA. Tiled roof repairs, re-bedding, re-pointing, ridge capping, and roof painting.">
-<link rel="icon" href="assets/favicon.png" type="image/png">
+<meta content="ASAP Roof Restorations — Roof restoration in Perth WA. Tiled roof repairs, re-bedding, re-pointing, ridge capping, and roof painting." name="description"/>
+<link href="assets/favicon.png" rel="icon" type="image/png"/>
 <style>
 :root{
   --ink:#101418;
@@ -255,174 +256,175 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
 <style id="lb-repair-polish">/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style><style id="lb-repair-tel">.lb-tel{white-space:nowrap;align-self:center;text-decoration:none;flex:0 0 auto}</style><!--LB-EMPTY--><style id="lb-empty">[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
-
 <!--LB-HERO-HEIGHT--><style id="lb-heroh">[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.26)}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
-
 <!--LB-RV--><style id="lb-rv">.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
-
 <!--LB-CANVASZ--><style id="lb-canvasz">[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
-
 <!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
-
 <!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.28)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
-
 <!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
-
 <!--LB-HEROGRID--><style id="lb-herogrid">[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
-</head>
+<style id="lb-logo-only">
+/* the header carries the logo artwork, never a typed name */
+nav .lb-brand__word,nav .nav-b,header .lb-brand__word,header .nav-b{display:none!important}
+nav .lb-brand img,header .lb-brand img{height:clamp(38px,4vw,52px)!important;width:auto!important;display:block!important}
+nav .nav-links,header .nav-links{display:flex!important;gap:clamp(12px,1.8vw,24px)!important;margin-left:auto!important;align-items:center!important}
+nav .nav-links a,header .nav-links a{text-decoration:none!important}
+nav .burger,header .burger{display:none!important}
+@media(max-width:860px){
+  nav .nav-links,header .nav-links{display:none!important}
+  nav .nav-links.open,header .nav-links.open{display:flex!important;position:absolute;right:0;top:calc(100% + 8px);
+    flex-direction:column;background:#101113;border:1px solid rgba(255,255,255,.14);padding:14px;
+    width:min(86vw,320px);z-index:70;margin:0!important}
+  nav .burger,header .burger{display:flex!important;margin-left:auto}
+}
+</style></head>
 <body>
 <header class="header" role="banner">
-  <div class="container header__inner">
-    <a class="lb-brand" href="#top" aria-label="Cheap Cheap Roof Restoration - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#14161a;--lb-subc:#14161a;--lb-acc:#b84830;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.png" alt="" class="lb-logo" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">Cheap Cheap <span class="lb-acc">Roof Restoration</span></span><span class="lb-brand__sub">Perth Metro · WA</span></span></a>
-    <div class="header__end">
-      <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#quote">Contact</a>
-      </nav>
-      <a class="lb-tel" href="tel:+61405235790">0405 235 790</a>
-    </div>
-  </div>
+<div class="container header__inner">
+<a aria-label="Cheap Cheap Roof Restoration - Home" class="lb-brand" href="#top" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#14161a;--lb-subc:#14161a;--lb-acc:#b84830;"><span aria-hidden="true" class="lb-brand__mark"><img alt="" class="lb-logo" decoding="async" loading="eager" src="assets/logo.png"/></span><span class="lb-brand__word"><span class="lb-brand__name">Cheap Cheap <span class="lb-acc">Roof Restoration</span></span><span class="lb-brand__sub">Perth Metro · WA</span></span></a>
+<div class="header__end">
+<nav aria-label="Main navigation" class="nav" role="navigation">
+<a href="#services">Services</a>
+<a href="#process">Process</a>
+<a href="#quote">Contact</a>
+</nav>
+<a class="lb-tel" href="tel:+61405235790">0405 235 790</a>
+</div>
+</div>
 </header>
-
 <main id="main" role="main">
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="container hero__inner">
-      <div class="hero__copy">
-        <span class="hero__badge rv">Tiled roofs &middot; Perth metro</span>
-        <h1 id="hero-title" class="rv">Perth Roof<br>Restoration</h1>
-        <p class="hero__lead rv">Cheap Cheap Roof Restoration, trading as ASAP &mdash; cracked tile repairs, re-bedding, ridge capping and roof painting. Free quotes, no obligation.</p>
-        <a href="#quote" class="hero__cta rv">Request a Quote</a>
-      </div>
-      <div class="hero__canvas-wrap rv" aria-hidden="true">
-        <canvas class="hero__canvas" id="heroCanvas"></canvas>
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="services section" aria-labelledby="services-title">
-    <div class="container">
-      <header class="section__header" style="margin-bottom:var(--space)">
-        <h2 id="services-title" class="rv">Services</h2>
-      </header>
-      <article class="service rv">
-        <svg class="service__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        <div class="service__content">
-          <h3>Tiled Roof Repairs</h3>
-          <p>Cracked, slipped, or broken tile replacement. Valley and flashing repairs to stop leaks at the source.</p>
-        </div>
-      </article>
-      <article class="service rv">
-        <svg class="service__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-        <div class="service__content">
-          <h3>Re-bedding & Re-pointing</h3>
-          <p>Ridge caps re-bedded in fresh mortar and re-pointed with flexible compound for a watertight seal.</p>
-        </div>
-      </article>
-      <article class="service rv">
-        <svg class="service__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        <div class="service__content">
-          <h3>Ridge Capping</h3>
-          <p>New ridge cap installation and existing cap restoration using colour-matched mortar and flexible pointing.</p>
-        </div>
-      </article>
-      <article class="service rv">
-        <svg class="service__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 16V4"/><path d="M17 16V4"/><path d="M5 20h14"/><path d="M3 16h18"/><path d="M12 4v12"/></svg>
-        <div class="service__content">
-          <h3>Roof Painting</h3>
-          <p>High-build membrane coatings formulated for Australian conditions — UV resistant, heat reflective, 10-year durability.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="process" class="process section" aria-labelledby="process-title">
-    <div class="container">
-      <header class="process__header">
-        <span class="hero__badge rv" style="margin-bottom:0.75rem;color:var(--mist)">Our Approach</span>
-        <h2 id="process-title" class="rv">How We Work</h2>
-      </header>
-      <div class="process__steps">
-        <article class="process__step rv">
-          <span class="process__num">01</span>
-          <h3>Inspect</h3>
-          <p>Full roof assessment with moisture mapping and tile condition report. Photos and findings shared same day.</p>
-        </article>
-        <article class="process__step rv">
-          <span class="process__num">02</span>
-          <h3>Plan</h3>
-          <p>Scope and method statement tailored to your roof profile. Fixed-price quote with no hidden variations.</p>
-        </article>
-        <article class="process__step rv">
-          <span class="process__num">03</span>
-          <h3>Restore</h3>
-          <p>Works scheduled to suit you. Site protected, daily clean-up, final inspection with handover photos.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="locality section" aria-labelledby="contact-title">
-    <div class="container locality__inner">
-      <div class="locality__heading">
-        <h2 id="contact-title" class="rv">Perth WA</h2>
-        <p class="locality__text rv">Servicing the Perth metro area · free quotes, no obligation</p>
-      </div>
-      <div class="locality__side">
-        <a class="locality__tel" href="tel:+61405235790">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-          <span>0405 235 790</span>
-        </a>
-        <div class="locality__socials" role="list" aria-label="Social links">
-          <a href="https://www.facebook.com/p/Cheap-Cheap-Roof-Restoration-100078591889072/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" role="listitem">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/share/19QEzzmBvC" target="_blank" rel="noopener noreferrer" aria-label="Facebook post" role="listitem">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M4 5l8 7 8-7"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<section class="lb-rb" aria-label="Services and recent work">
-  <div class="lb-rb__track">
-    <div class="lb-rb__slide is-on" style="background:#0b0c10">
-      <div class="lb-rb__body">
-        <span class="lb-rb__kick">01 &mdash; Re-bedding</span>
-        <strong class="lb-rb__head">Ridge caps that stay put</strong>
-        <p class="lb-rb__note">Old mortar cut out, caps re-bedded and pointed with flexible compound so the ridge line holds through Perth summers.</p>
-      </div>
-    </div>
-    <div class="lb-rb__slide" style="background:#0b0c10">
-      <div class="lb-rb__body">
-        <span class="lb-rb__kick">02 &mdash; Ridge capping</span>
-        <strong class="lb-rb__head">Colour matched, watertight</strong>
-        <p class="lb-rb__note">New ridge cap installation and restoration, matched to your existing tile colour and bedding line.</p>
-      </div>
-    </div>
-    <div class="lb-rb__slide" style="background:#0b0c10">
-      <div class="lb-rb__body">
-        <span class="lb-rb__kick">03 &mdash; Roof painting</span>
-        <strong class="lb-rb__head">High build membrane coatings</strong>
-        <p class="lb-rb__note">UV resistant, heat reflective systems built for Australian conditions &mdash; with a ten year durability expectation.</p>
-      </div>
-    </div>
-    <button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button>
-    <button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button>
-    <div class="lb-rb__dots">
-      <button type="button" class="is-on" aria-label="Slide 1"></button>
-      <button type="button" class="" aria-label="Slide 2"></button>
-      <button type="button" class="" aria-label="Slide 3"></button>
-    </div>
-    <div class="lb-rb__cap">Cheap Cheap Roof Restoration &mdash; Perth WA</div>
-  </div>
+<section aria-labelledby="hero-title" class="hero">
+<div class="container hero__inner">
+<div class="hero__copy">
+<span class="hero__badge rv">Tiled roofs · Perth metro</span>
+<h1 class="rv" id="hero-title">Perth Roof<br/>Restoration</h1>
+<p class="hero__lead rv">Cheap Cheap Roof Restoration, trading as ASAP — cracked tile repairs, re-bedding, ridge capping and roof painting. Free quotes, no obligation.</p>
+<a class="hero__cta rv" href="#quote">Request a Quote</a>
+</div>
+<div aria-hidden="true" class="hero__canvas-wrap rv">
+<canvas class="hero__canvas" id="heroCanvas"></canvas>
+</div>
+</div>
 </section>
-
-<a id="quote" class="anchor-target" aria-hidden="true"></a>
-<section id="lbq" class="v1" aria-labelledby="lbq-h">
-  <style>
+<section aria-labelledby="services-title" class="services section" id="services">
+<div class="container">
+<header class="section__header" style="margin-bottom:var(--space)">
+<h2 class="rv" id="services-title">Services</h2>
+</header>
+<article class="service rv">
+<svg aria-hidden="true" class="service__icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+<div class="service__content">
+<h3>Tiled Roof Repairs</h3>
+<p>Cracked, slipped, or broken tile replacement. Valley and flashing repairs to stop leaks at the source.</p>
+</div>
+</article>
+<article class="service rv">
+<svg aria-hidden="true" class="service__icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+<div class="service__content">
+<h3>Re-bedding &amp; Re-pointing</h3>
+<p>Ridge caps re-bedded in fresh mortar and re-pointed with flexible compound for a watertight seal.</p>
+</div>
+</article>
+<article class="service rv">
+<svg aria-hidden="true" class="service__icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+<div class="service__content">
+<h3>Ridge Capping</h3>
+<p>New ridge cap installation and existing cap restoration using colour-matched mortar and flexible pointing.</p>
+</div>
+</article>
+<article class="service rv">
+<svg aria-hidden="true" class="service__icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M7 16V4"></path><path d="M17 16V4"></path><path d="M5 20h14"></path><path d="M3 16h18"></path><path d="M12 4v12"></path></svg>
+<div class="service__content">
+<h3>Roof Painting</h3>
+<p>High-build membrane coatings formulated for Australian conditions — UV resistant, heat reflective, 10-year durability.</p>
+</div>
+</article>
+</div>
+</section>
+<section aria-labelledby="process-title" class="process section" id="process">
+<div class="container">
+<header class="process__header">
+<span class="hero__badge rv" style="margin-bottom:0.75rem;color:var(--mist)">Our Approach</span>
+<h2 class="rv" id="process-title">How We Work</h2>
+</header>
+<div class="process__steps">
+<article class="process__step rv">
+<span class="process__num">01</span>
+<h3>Inspect</h3>
+<p>Full roof assessment with moisture mapping and tile condition report. Photos and findings shared same day.</p>
+</article>
+<article class="process__step rv">
+<span class="process__num">02</span>
+<h3>Plan</h3>
+<p>Scope and method statement tailored to your roof profile. Fixed-price quote with no hidden variations.</p>
+</article>
+<article class="process__step rv">
+<span class="process__num">03</span>
+<h3>Restore</h3>
+<p>Works scheduled to suit you. Site protected, daily clean-up, final inspection with handover photos.</p>
+</article>
+</div>
+</div>
+</section>
+<section aria-labelledby="contact-title" class="locality section" id="contact">
+<div class="container locality__inner">
+<div class="locality__heading">
+<h2 class="rv" id="contact-title">Perth WA</h2>
+<p class="locality__text rv">Servicing the Perth metro area · free quotes, no obligation</p>
+</div>
+<div class="locality__side">
+<a class="locality__tel" href="tel:+61405235790">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg>
+<span>0405 235 790</span>
+</a>
+<div aria-label="Social links" class="locality__socials" role="list">
+<a aria-label="Facebook" href="https://www.facebook.com/p/Cheap-Cheap-Roof-Restoration-100078591889072/" rel="noopener noreferrer" role="listitem" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="20" viewbox="0 0 24 24" width="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+</a>
+<a aria-label="Facebook post" href="https://www.facebook.com/share/19QEzzmBvC" rel="noopener noreferrer" role="listitem" target="_blank">
+<svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="20"><path d="M4 5h16v14H4z"></path><path d="M4 5l8 7 8-7"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<section aria-label="Services and recent work" class="lb-rb">
+<div class="lb-rb__track">
+<div class="lb-rb__slide is-on" style="background:#0b0c10">
+<div class="lb-rb__body">
+<span class="lb-rb__kick">01 — Re-bedding</span>
+<strong class="lb-rb__head">Ridge caps that stay put</strong>
+<p class="lb-rb__note">Old mortar cut out, caps re-bedded and pointed with flexible compound so the ridge line holds through Perth summers.</p>
+</div>
+</div>
+<div class="lb-rb__slide" style="background:#0b0c10">
+<div class="lb-rb__body">
+<span class="lb-rb__kick">02 — Ridge capping</span>
+<strong class="lb-rb__head">Colour matched, watertight</strong>
+<p class="lb-rb__note">New ridge cap installation and restoration, matched to your existing tile colour and bedding line.</p>
+</div>
+</div>
+<div class="lb-rb__slide" style="background:#0b0c10">
+<div class="lb-rb__body">
+<span class="lb-rb__kick">03 — Roof painting</span>
+<strong class="lb-rb__head">High build membrane coatings</strong>
+<p class="lb-rb__note">UV resistant, heat reflective systems built for Australian conditions — with a ten year durability expectation.</p>
+</div>
+</div>
+<button aria-label="Previous" class="lb-rb__nav lb-rb__nav--prev" type="button">‹</button>
+<button aria-label="Next" class="lb-rb__nav lb-rb__nav--next" type="button">›</button>
+<div class="lb-rb__dots">
+<button aria-label="Slide 1" class="is-on" type="button"></button>
+<button aria-label="Slide 2" class="" type="button"></button>
+<button aria-label="Slide 3" class="" type="button"></button>
+</div>
+<div class="lb-rb__cap">Cheap Cheap Roof Restoration — Perth WA</div>
+</div>
+</section>
+<a aria-hidden="true" class="anchor-target" id="quote"></a>
+<section aria-labelledby="lbq-h" class="v1" id="lbq">
+<style>
 #lbq{--lbq-accent:var(--accent);--lbq-ink:var(--mist);--lbq-muted:#aab3bb;--lbq-bg:var(--ground);--lbq-panel:rgba(255,255,255,.045);--lbq-line:var(--hairline);padding:clamp(48px,6vw,76px) var(--space-sm);background:var(--lbq-bg);color:var(--lbq-ink);border-top:1px solid var(--hairline)}
 #lbq *{box-sizing:border-box}
 #lbq .lbq-w{max-width:1060px;margin:0 auto}
@@ -460,25 +462,25 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 #lbq.v4 input,#lbq.v4 textarea{border:0;border-bottom:1px solid var(--lbq-line);border-radius:0;background:transparent;padding:11px 2px}
 #lbq.v4 .lbq-g{display:grid;gap:16px}
 </style>
-  <div class="lbq-w">
-      <h2 id="lbq-h">Request a quote</h2>
-      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p>
-      <div class="lbq-card">
-        <form id="lbq-form" novalidate data-site="asap-roof-restorations" data-biz="Cheap Cheap Roof Restoration">
-          <div class="lbq-g">
-            <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
-            <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
-            <div class="lbq-full"><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
-            <div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div>
-          </div>
-          <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
-          <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
-          <button type="submit">Send quote request</button>
-          <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-  </div>
-  <script>
+<div class="lbq-w">
+<h2 id="lbq-h">Request a quote</h2>
+<p class="lbq-s">Tell us a few details and we'll get back to you with a free, no-obligation quote.</p>
+<div class="lbq-card">
+<form data-biz="Cheap Cheap Roof Restoration" data-site="asap-roof-restorations" id="lbq-form" novalidate="">
+<div class="lbq-g">
+<div><label for="lbq-n">Name</label><input autocomplete="name" id="lbq-n" name="name" required=""/></div>
+<div><label for="lbq-p">Phone</label><input autocomplete="tel" id="lbq-p" name="phone" type="tel"/></div>
+<div class="lbq-full"><label for="lbq-e">Email</label><input autocomplete="email" id="lbq-e" name="email" type="email"/></div>
+<div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame…" required=""></textarea></div>
+</div>
+<label class="lbq-cons"><input checked="" name="consent" type="checkbox" value="1"/> I agree to be contacted about this request.</label>
+<div aria-hidden="true" class="lbq-hp"><label>Website<input autocomplete="off" name="website" tabindex="-1"/></label></div>
+<button type="submit">Send quote request</button>
+<p aria-live="polite" class="lbq-st" id="lbq-st" role="status"></p>
+</form>
+</div>
+</div>
+<script>
 (function(){
   var EP = null;
   function base(cb){
@@ -549,38 +551,34 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 })();
 </script>
 </section>
-
-<section id="privacy" class="section section--tight" aria-labelledby="privacy-title">
-  <div class="container">
-    <h3 id="privacy-title">Privacy</h3>
-    <p>We collect only the information you provide via the quote form: name, contact details, property address, and roof details. This data is used solely to prepare and deliver your quote. We do not sell or share your information with third parties except as required to provide the service you requested. Form submissions are transmitted securely and stored for the duration of the quote process. You may request deletion at any time by contacting us.</p>
-  </div>
+<section aria-labelledby="privacy-title" class="section section--tight" id="privacy">
+<div class="container">
+<h3 id="privacy-title">Privacy</h3>
+<p>We collect only the information you provide via the quote form: name, contact details, property address, and roof details. This data is used solely to prepare and deliver your quote. We do not sell or share your information with third parties except as required to provide the service you requested. Form submissions are transmitted securely and stored for the duration of the quote process. You may request deletion at any time by contacting us.</p>
+</div>
 </section>
-
-<section id="terms" class="section section--tight" aria-labelledby="terms-title">
-  <div class="container">
-    <h3 id="terms-title">Terms</h3>
-    <p>The quote provided is an estimate based on the information supplied and a visual inspection where conducted. Final pricing may vary if additional defects are discovered during works. All works are performed to applicable Australian Standards and manufacturer specifications. Payment terms are outlined in the formal quote. These terms are governed by the laws of Western Australia.</p>
-  </div>
+<section aria-labelledby="terms-title" class="section section--tight" id="terms">
+<div class="container">
+<h3 id="terms-title">Terms</h3>
+<p>The quote provided is an estimate based on the information supplied and a visual inspection where conducted. Final pricing may vary if additional defects are discovered during works. All works are performed to applicable Australian Standards and manufacturer specifications. Payment terms are outlined in the formal quote. These terms are governed by the laws of Western Australia.</p>
+</div>
 </section>
-
 <footer class="footer" role="contentinfo">
-  <div class="container footer__inner">
-    <div class="footer__brand">
-      <img src="assets/logo.png" alt="" width="32" height="28" loading="lazy" decoding="async">
-      <span>Cheap Cheap Roof Restoration</span>
-    </div>
-    <div class="footer__meta">
-      <p class="footer__copy">&copy; 2026 Cheap Cheap Roof Restoration &middot; Perth WA</p>
-      <div class="footer__legal">
-        <a href="tel:+61405235790">0405 235 790</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms</a>
-      </div>
-    </div>
-  </div>
+<div class="container footer__inner">
+<div class="footer__brand">
+<img alt="" decoding="async" height="28" loading="lazy" src="assets/logo.png" width="32"/>
+<span>Cheap Cheap Roof Restoration</span>
+</div>
+<div class="footer__meta">
+<p class="footer__copy">© 2026 Cheap Cheap Roof Restoration · Perth WA</p>
+<div class="footer__legal">
+<a href="tel:+61405235790">0405 235 790</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="terms.html">Terms</a>
+</div>
+</div>
+</div>
 </footer>
-
 <!-- lb: old box-hero engine removed -->
 <script id="lb-motion-js">
 /* LB MOTION PACK v1 */
@@ -750,8 +748,6 @@ header,.site-header,.page-header,.header-inner,nav.nav,.nav-inner,
 #sigSplash,#splash,.sp{animation:lbKillSplash .001s 2.5s forwards !important}
 @keyframes lbKillSplash{to{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}}
 </style>
-
-
 <style>/* ==== LB HEADER TRUTH ==== */
 .header__inner{height:clamp(66px,7vw,80px)!important}
 .lb-brand{gap:clamp(9px,1vw,14px) !important;min-height:0 !important;
@@ -773,7 +769,6 @@ header,.site-header,.page-header,.header-inner,nav.nav,.nav-inner,
   .lb-brand__sub{display:none!important}
 }
 </style>
-
 <style>/* ==== LB HEADER POLISH 2 ==== */
 header nav a:not(.btn):not([class*="btn"]):not([class*="cta"]),
 .site-header nav a:not(.btn):not([class*="btn"]),
