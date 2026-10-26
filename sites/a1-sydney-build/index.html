@@ -1,529 +1,375 @@
 <!DOCTYPE html>
-
 <html lang="en-AU">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>A1 Sydney Build - Tiling &amp; Renovations | Sydney NSW</title>
-<meta content="A1 Sydney Build - floor &amp; wall tiling, bathroom &amp; kitchen renovations, waterproofing, screeding &amp; levelling. Sydney NSW." name="description"/>
-<meta content="A1 Sydney Build - Tiling &amp; Renovations, Sydney" property="og:title"/>
-<meta content="Floor &amp; wall tiling, bathroom &amp; kitchen renovations, waterproofing, screeding &amp; levelling across Sydney." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="assets/og.png" property="og:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>A1 Sydney Build | Tiling &amp; Renovations — Sydney NSW</title>
+<meta name="description" content="A1 Sydney Build — floor and wall tiling, bathroom and kitchen renovations, tiling across Sydney NSW. Call 0402 888 870."/>
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32"/>
+<link rel="apple-touch-icon" href="assets/logo.png"/>
+<meta name="theme-color" content="#f5f7f9"/>
+<script>document.documentElement.className += ' js';</script>
 <style>
-:root {
-  --bg: #faf9f6;
-  --bg-2: #f3f1ed;
-  --ink: #1a1815;
-  --ink-2: #5a5650;
-  --acc: #3a5a7a;
-  --acc-2: #2d4760;
-  --acc-hi: #4a7a9e;
-  --line: rgba(26,24,21,.12);
-  --chip: #ebe8e3;
-  --panel: #ffffff;
-  --shadow: rgba(26,24,21,.08);
-  --fluid: clamp(40px, 8vw, 100px);
-  --disp: 'Syne', 'Helvetica Neue', Arial, sans-serif;
-  --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-html,body{overflow-x:hidden}
-body{font-family:var(--disp);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:var(--disp);font-weight:700}
-h1{text-transform:uppercase;letter-spacing:-.02em}
-.mono{font-family:var(--mono)}
-a{color:inherit;text-decoration:none}
-::selection{background:var(--acc);color:#fff}
-html.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
-html.js .rv.on{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  html.js .rv{opacity:1;transform:none;transition:none}
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-}
-.skip{position:absolute;top:-100%;left:50%;transform:translateX(-50%);padding:.7rem 1.2rem;background:var(--acc);color:#fff;font-weight:700;z-index:10000;border-radius:0 0 6px 6px}
-.skip:focus{top:0}
-.nav{position:fixed;inset:0 0 auto 0;z-index:60;background:rgba(250,249,246,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav-in{display:flex;align-items:center;gap:1.5rem;height:72px;max-width:1320px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
-.brand{display:flex;align-items:center;gap:.8rem;color:var(--ink);text-decoration:none}
-.brand-name{font-size:clamp(1.1rem,2.2vw,1.3rem);font-weight:700;letter-spacing:-.01em}
-.brand-sub{font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--acc);font-weight:600}
-.nav-links{display:flex;gap:1.2rem;margin-left:auto;align-items:center}
-.nav-links a{color:var(--ink-2);font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
-.nav-links a:hover{color:var(--acc)}
-.nav-cta{display:flex;gap:.7rem;align-items:center}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.4rem;border-radius:6px;font-weight:700;font-size:.88rem;letter-spacing:.02em;transition:transform .15s ease,filter .15s ease}
-.btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
-.btn-primary{background:var(--acc);color:#fff}
-.btn-ghost{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
-.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:6px;padding:.4rem .6rem;cursor:pointer}
-.burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0;transition:.3s}
-.burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-.burger.open span:nth-child(2){opacity:0}
-.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-@media(max-width:880px){
-  .nav-links{position:fixed;inset:72px 0 auto 0;background:rgba(250,249,246,.94);flex-direction:column;padding:1.2rem;gap:1rem;transform:translateY(-140%);transition:transform .35s ease;border-bottom:1px solid var(--line)}
-  .nav-links.open{transform:none}
-  .nav-links a{width:100%;text-align:center;padding:.5rem 0}
-  .nav-cta{display:none}
-  .burger{display:block}
-}
-.hero{position:relative;min-height:95vh;overflow:hidden;padding-top:72px}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02) 0%,rgba(0,0,0,.06) 50%,var(--bg) 100%);pointer-events:none}
-.hero-in{position:relative;z-index:2;padding:12vh clamp(1rem,4vw,2.5rem) 4rem;width:100%;max-width:1320px;margin:0 auto;text-align:left}
-.hero-kicker{display:inline-flex;align-items:center;gap:.6rem;color:var(--acc);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;margin-bottom:1rem}
-.hero-kicker::before{content:"";width:32px;height:2px;background:var(--acc)}
-.hero h1{font-size:clamp(2.2rem,5.2vw,4.2rem);line-height:1.02;color:var(--ink);max-width:24ch;letter-spacing:-.02em}
-.hero h1 .acc{color:var(--acc)}
-.hero h1 .thin{display:block;font-weight:400;font-size:clamp(1rem,1.8vw,1.3rem);color:var(--ink-2);text-transform:none;letter-spacing:0;margin-top:6px}
-.hero-sub{margin-top:1rem;color:var(--ink-2);font-size:clamp(.95rem,1.4vw,1.08rem);max-width:56ch;line-height:1.65}
-.hero-cta{display:flex;gap:.8rem;margin-top:1.6rem;flex-wrap:wrap}
-.hero-strip{margin-top:2.2rem;display:flex;gap:2rem;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:1.2rem}
-.hero-strip p{color:var(--ink-2);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
-.hero-strip strong{display:block;color:var(--ink);font-size:.95rem;margin-top:.15rem;font-weight:700}
-section{padding:5.5rem 0}
-.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
-.sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:2.8rem}
-.sec-head::before{content:"";width:36px;height:3px;background:var(--acc);flex:none;align-self:center}
-.sec-idx{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--acc);font-weight:600;margin-bottom:1rem}
-.sec-kicker{font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--acc);font-weight:600}
-.sec-title{font-size:clamp(1.7rem,3.4vw,2.7rem);font-weight:700;line-height:1.1;margin-top:.3rem;max-width:30ch;letter-spacing:-.015em}
-.lead{color:var(--ink-2);max-width:60ch;margin-top:.9rem;font-size:clamp(1rem,1.3vw,1.1rem)}.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.1rem}
-.svc{background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:1.5rem 1.4rem;position:relative;overflow:hidden;transition:border-color .2s ease,transform .2s ease}
-.svc:hover{border-color:var(--acc);transform:translateY(-3px)}
-.svc::after{content:"";position:absolute;top:0;left:0;width:36px;height:3px;background:var(--acc);transition:width .3s ease}
-.svc:hover::after{width:100%}
-.svc-n{font-size:.72rem;font-weight:700;color:var(--acc);letter-spacing:.1em;margin-bottom:.35rem}
-.svc h3{font-size:1.05rem;margin-bottom:.3rem;font-weight:700}
-.svc p{color:var(--ink-2);font-size:.9rem;line-height:1.55}
-.renov-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.1rem}
-.renov{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1.5rem 1.4rem;position:relative}
-.renov::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--acc)}
-.renov h3{font-size:1.05rem;margin-bottom:.3rem;font-weight:700}
-.renov p{color:var(--ink-2);font-size:.9rem;line-height:1.55}
-.renov ul{margin-top:.8rem;padding-left:1.2rem;color:var(--ink-2);font-size:.88rem;line-height:1.7}
-.renov li{margin:.3rem 0}
-.room-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
-.room{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1.4rem 1.3rem;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
-.room:hover{transform:translateY(-2px);border-color:var(--acc);box-shadow:0 8px 24px var(--shadow)}
-.room-n{font-size:.65rem;font-weight:700;color:var(--acc);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.4rem}
-.room h3{font-size:1rem;margin-bottom:.35rem;font-weight:700}
-.room p{color:var(--ink-2);font-size:.88rem;line-height:1.55}
-.sydney-band{background:var(--bg-2);border-block:1px solid var(--line)}
-.sydney-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-.sydney-item{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1.4rem 1.3rem;text-align:center;transition:transform .2s ease,border-color .2s ease}
-.sydney-item:hover{transform:translateY(-2px);border-color:var(--acc)}
-.sydney-icon{width:48px;height:48px;margin:0 auto .8rem;background:var(--chip);border-radius:8px;display:flex;align-items:center;justify-content:center}
-.sydney-icon svg{width:24px;height:24px;stroke:var(--acc)}
-.sydney-item h3{font-size:.95rem;margin-bottom:.25rem;font-weight:700}
-.sydney-item p{color:var(--ink-2);font-size:.85rem;line-height:1.5}
-.faq-wrap{max-width:800px}
-details.faq{border-top:1px solid var(--line);padding:20px 0}
-details.faq:last-of-type{border-bottom:1px solid var(--line)}
-details.faq summary{font-size:1.05rem;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--ink)}
-details.faq summary::after{content:"+";font-size:1.5rem;color:var(--acc);font-weight:400;transition:transform .2s}
-details.faq[open] summary::after{transform:rotate(45deg)}
-details.faq .faq-a{color:var(--ink-2);padding:12px 0 4px;max-width:65ch;line-height:1.6}
-.stat-band{background:var(--ink);color:#fff}
-.stat-band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
-.stat{padding-top:1.5rem;border-top:3px solid var(--acc-hi)}
-.stat b{font-size:clamp(2.2rem,4vw,3.2rem);font-weight:700;letter-spacing:-.03em;display:block;line-height:1;color:var(--acc-hi)}
-.stat span{font-size:.75rem;color:var(--ink-2);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-top:.5rem;display:block}
-@media(max-width:900px){.stat-band .wrap{grid-template-columns:repeat(2,1fr)}}
-footer{border-top:1px solid var(--line);padding:60px 0 0;background:var(--bg)}
-footer .wrap{max-width:1320px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem);display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
-footer h4{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:14px;font-weight:600}
-footer a{display:block;text-decoration:none;color:var(--ink-2);font-size:.88rem;padding:4px 0;transition:color .2s}
-footer a:hover{color:var(--acc)}
-.fbrand{display:flex;align-items:center;gap:1rem}
-.fbrand-name{font-size:1rem;font-weight:700;letter-spacing:-.01em}
-.fbrand-sub{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);font-weight:600}
-.footer-bar{max-width:1320px;margin:40px auto 0;padding:20px clamp(1rem,4vw,2.5rem);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.72rem;color:var(--ink-2);font-family:var(--mono)}
-@media(max-width:900px){footer .wrap{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){footer .wrap{grid-template-columns:1fr}}
-</style>
-<style>#heroCanvas{perspective:800px}</style>
-<style id="lb-brand-css">
-/* ==== LB BRAND (logo-true spanning wordmark) ==== */
-.lb-brand{display:inline-flex;align-items:center;gap:clamp(9px,1vw,16px);text-decoration:none;
- color:inherit;min-width:0;padding:0;background:none;border:0;flex:0 1 auto}
-.lb-brand__mark{flex:0 0 auto;display:block;height:clamp(34px,4.1vw,58px);width:auto;max-width:22vw}
-.lb-brand__mark img{display:block;height:100%;width:auto;max-width:22vw;object-fit:contain}
-.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:.94}
-.lb-brand__name{font-family:var(--lb-disp,Inter),sans-serif;font-weight:800;text-transform:uppercase;
- font-size:clamp(21px,2.75vw,44px);letter-spacing:.004em;white-space:nowrap;line-height:.92;
- color:var(--lb-name,currentColor)}
-.lb-brand__name .lb-acc{color:var(--lb-acc,currentColor)}
-.lb-brand__sub{font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;text-transform:uppercase;
- font-size:clamp(7px,.82vw,12px);letter-spacing:.30em;white-space:nowrap;margin-top:.34em;
- color:var(--lb-subc,currentColor);opacity:.86}
-.lb-brand__rule{display:block;height:3px;width:100%;margin-top:.5em;border-radius:2px;
- background:linear-gradient(90deg,var(--lb-acc,currentColor),transparent)}
-@media (max-width:640px){
- .lb-brand__mark{height:clamp(30px,8vw,40px)}
- .lb-brand__name{font-size:clamp(18px,6.2vw,26px)}
- .lb-brand__sub{letter-spacing:.2em;font-size:7px}
-}
-</style>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<style id="lb-motion-css">
-/* ==== LB MOTION PACK ==== */
-.lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
-/* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
-   content. Unrevealed .rv wrappers left whole headers at opacity:0 (invisible logo). */
-header, .site-header, .page-header, nav.nav, .nav .rv, nav.rv, .header-inner, .nav-inner,
-header .rv, .site-header .rv, .nav-inner .rv{
-  opacity:1 !important; visibility:visible !important; transform:none !important;
-}
-.lb-rb{position:relative;width:100%;max-width:100%;overflow:hidden;background:#0c0d10}
-.lb-mq{max-width:100%;overflow:hidden}
-.lb-rb__track{position:relative;width:100%;aspect-ratio:16/7}
-.lb-rb__slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;will-change:opacity}
-.lb-rb__slide.is-on{opacity:1}
-.lb-rb__slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03);transition:transform 7s linear}
-.lb-rb__slide.is-on img{transform:scale(1.10)}
-.lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2.2vw,30px);
- background:linear-gradient(180deg,transparent,rgba(6,7,10,.72));color:#fff;
- font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
- font-size:clamp(9px,1vw,13px);z-index:2}
-.lb-rb__dots{position:absolute;top:50%;right:clamp(10px,1.6vw,22px);transform:translateY(-50%);
- display:flex;flex-direction:column;gap:9px;z-index:3}
-.lb-rb__dots button{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.7);
- background:transparent;cursor:pointer;padding:0;transition:transform .25s,background .25s}
-.lb-rb__dots button.is-on{background:#fff;transform:scale(1.35)}
-.lb-rb__nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;
- border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(8,9,12,.35);color:#fff;
- cursor:pointer;display:grid;place-items:center;font-size:17px;line-height:1;backdrop-filter:blur(6px);
- transition:background .25s,transform .25s}
-.lb-rb__nav:hover{background:rgba(8,9,12,.7)}
-.lb-rb__nav--prev{left:clamp(10px,1.6vw,22px)}
-.lb-rb__nav--next{right:clamp(10px,1.6vw,22px)}
-.lb-rb__nav:active{transform:translateY(-50%) scale(.92)}
-@media (max-width:700px){.lb-rb__track{aspect-ratio:4/3}.lb-rb__nav{width:36px;height:36px}}
-
-a.btn,.btn,button.btn,.nav-cta a,.wp-block-button__link{position:relative;overflow:hidden;
- transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,filter .22s}
-a.btn:hover,.btn:hover,button.btn:hover,.nav-cta a:hover{transform:translateY(-2px);
- box-shadow:0 10px 24px -12px rgba(0,0,0,.55);filter:brightness(1.05)}
-a.btn:active,.btn:active,button.btn:active,.nav-cta a:active{transform:translateY(0) scale(.985)}
-a.btn::after,.btn::after,.nav-cta a::after{content:'';position:absolute;top:0;bottom:0;width:38%;
- left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);
- transform:skewX(-18deg);transition:left .55s ease;pointer-events:none}
-a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
-
-.lb-rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
-.lb-rv.is-in{opacity:1;transform:none}
-@media (prefers-reduced-motion: reduce){
- .lb-rv{opacity:1!important;transform:none!important;transition:none!important}
- .lb-rb__slide img{transform:none!important;transition:none!important}
- a.btn::after,.btn::after,.nav-cta a::after{display:none}
-}
-
-/* marquee band (professional, reference-derived) */
-.lb-mq{position:relative;overflow:hidden;background:#0b0c10;border-top:1px solid rgba(255,255,255,.10);
- border-bottom:1px solid rgba(255,255,255,.10)}
-.lb-mq__in{display:flex;width:max-content;animation:lb-mq 34s linear infinite}
-.lb-mq:hover .lb-mq__in{animation-play-state:paused}
-.lb-mq__in span{display:inline-flex;align-items:center;gap:clamp(18px,3vw,44px);
- padding:clamp(11px,1.5vw,19px) clamp(14px,2vw,26px);color:#fff;font-family:var(--lb-disp,Inter),sans-serif;
- font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:clamp(11px,1.25vw,17px);white-space:nowrap}
-.lb-mq__in span i{font-style:normal;color:var(--lb-acc,#e51924)}
-@keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
-</style>
-<style id="lb-depth-css">
-/* ==== LB DEPTH PACK — layered shadow + gradient surfaces ==== */
 :root{
-  --lb-acc: var(--acc, var(--accent, #e51924));
-  --lb-ink: var(--ink, #14161a);
-  --lb-paper: var(--paper, #ffffff);
-  --lb-e1: 0 1px 2px rgba(8,10,14,.06), 0 2px 6px rgba(8,10,14,.05);
-  --lb-e2: 0 2px 4px rgba(8,10,14,.07), 0 8px 18px -6px rgba(8,10,14,.14);
-  --lb-e3: 0 4px 10px rgba(8,10,14,.09), 0 18px 40px -12px rgba(8,10,14,.22);
-  --lb-hair: rgba(8,10,14,.10);
+  --paper:#f5f7f9; --panel:#ffffff; --ink:#141a21; --dim:#5b6672;
+  --navy:#3b5484; --navy2:#2c4370; --line:#e1e6ec; --tile:#e4eaf1;
+  --sans:"Liberation Sans",Arial,Helvetica,system-ui,sans-serif;
+  --disp:"Archivo","Liberation Sans",Arial,Helvetica,sans-serif;
+  --mono:"DejaVu Sans Mono","Liberation Mono",Menlo,Consolas,monospace;
 }
-body{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16.5px/1.62 var(--sans);overflow-x:hidden;max-width:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(1220px,100%);margin-inline:auto;padding-inline:clamp(18px,4vw,56px)}
+h1,h2,h3{margin:0;font-family:var(--disp);font-weight:800;letter-spacing:-.02em;line-height:1.04}
+p{margin:0}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
 
-/* sections: soft accent-keyed gradient wash for depth, never a flat slab */
-section{ position:relative; }
-section::before{
-  content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
-  background:
-    radial-gradient(120% 70% at 12% 0%, color-mix(in srgb, var(--lb-acc) 7%, transparent) 0%, transparent 58%),
-    radial-gradient(90% 60% at 100% 100%, color-mix(in srgb, var(--lb-acc) 5%, transparent) 0%, transparent 60%);
-}
-section > *{ position:relative; z-index:1; }
+/* header */
+.hdr{position:sticky;top:0;z-index:80;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(20,26,33,.03)}
+.hdr-in{display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px;padding:11px 0}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;flex:0 1 auto;min-width:0}
+.brand img{height:50px;width:auto;flex:0 0 auto}
+.brand-name{font-family:var(--disp);font-size:20px;font-weight:800;letter-spacing:-.015em;line-height:1.05}
+.brand-name small{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;color:var(--dim);text-transform:uppercase;margin-top:4px;font-weight:400}
+.nav{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px 22px;align-items:center}
+.nav a{text-decoration:none;font-size:14.5px;color:var(--dim);padding:4px 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--navy2)}
+.call{display:inline-flex;align-items:center;gap:9px;background:var(--navy);color:#fff;text-decoration:none;
+  padding:12px 18px;font-weight:700;font-size:15px;white-space:nowrap;border-radius:2px}
+.call span{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
+.call:hover{background:var(--navy2)}
 
-/* cards / panels / figures: gradient surface + hairline + elevation, lift on hover */
-.card,.cards > *,.panel,.tile,.service,.box,.grid > article,.grid > div,figure,.gal figure,.gallery figure{
-  background:linear-gradient(180deg, color-mix(in srgb, var(--lb-paper) 100%, transparent) 0%,
-                                    color-mix(in srgb, var(--lb-ink) 3%, var(--lb-paper)) 100%);
-  border:1px solid var(--lb-hair);
-  border-radius:14px;
-  box-shadow:var(--lb-e1);
-  transition:transform .28s cubic-bezier(.2,.7,.3,1), box-shadow .28s, border-color .28s;
-}
-.card:hover,.cards > *:hover,.panel:hover,.tile:hover,.service:hover,.grid > article:hover,
-.grid > div:hover,figure:hover,.gal figure:hover,.gallery figure:hover{
-  transform:translateY(-4px); box-shadow:var(--lb-e3); border-color:color-mix(in srgb, var(--lb-acc) 34%, var(--lb-hair));
-}
+/* hero */
+.hero{padding:clamp(30px,3.8vw,56px) 0 clamp(32px,4.2vw,60px);background:var(--panel);border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(24px,4vw,58px);align-items:center}
+.hero h1{font-size:clamp(2.15rem,5.4vw,4.05rem)}
+.hero h1 em{font-style:normal;color:var(--navy)}
+.lede{color:var(--dim);font-size:clamp(1rem,1.4vw,1.14rem);margin:22px 0 26px;max-width:48ch}
+.hero-acts{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:14px 22px;
+  font-weight:700;font-size:15px;background:var(--navy);color:#fff;border:1px solid var(--navy);border-radius:2px}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn:hover{background:var(--navy2);border-color:var(--navy2)}
+.tilefield{border:1px solid var(--line);background:var(--paper);padding:clamp(14px,2vw,26px);border-radius:3px}
+.tilefield svg{width:100%;height:auto;display:block}
+.tilefield figcaption{display:flex;justify-content:space-between;gap:12px;padding-top:12px;color:var(--dim)}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:clamp(26px,3.4vw,46px);border-top:1px solid var(--line)}
+.strip div{padding:16px 18px 4px 0;border-bottom:1px solid var(--line)}
+.strip div+div{border-left:1px solid var(--line);padding-left:18px}
+.strip b{display:block;font-size:14.5px;font-weight:700}
+.strip span{color:var(--dim);font-size:13.5px}
 
-/* photographs: rounded, layered shadow, slight scrim so text over them stays legible */
-section img, figure img, .gal img, .gallery img, .card img{
-  border-radius:10px; box-shadow:var(--lb-e2); display:block;
-}
-figure, .gal figure, .gallery figure{ overflow:hidden; }
-figure img, .gal img{ transform:scale(1.001); transition:transform .5s cubic-bezier(.2,.7,.3,1); }
-figure:hover img, .gal figure:hover img, .gallery figure:hover img{ transform:scale(1.035); }
+/* sections */
+section{padding:clamp(44px,5.2vw,76px) 0;border-bottom:1px solid var(--line)}
+section.alt{background:var(--panel)}
+.sec-head{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(18px,3vw,48px);align-items:end;margin-bottom:clamp(26px,3.4vw,44px)}
+.sec-head h2{font-size:clamp(1.6rem,3.2vw,2.5rem)}
+.sec-head p{color:var(--dim);max-width:56ch}
+.tiles3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tilecard{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--navy);padding:22px}
+.tilecard .n{font-family:var(--mono);font-size:.72rem;color:var(--dim);letter-spacing:.16em}
+.tilecard h3{font-size:1.1rem;margin:11px 0 8px}
+.tilecard p{color:var(--dim);font-size:14.5px}
+.rooms{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(24px,4vw,56px)}
+.room{display:grid;grid-template-columns:104px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.room .mono{color:var(--navy);padding-top:4px}
+.room b{font-size:16px;display:block;margin-bottom:5px}
+.room p{color:var(--dim);font-size:14.5px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.steps>div{background:var(--panel);border:1px solid var(--line);padding:20px;border-radius:2px}
+.steps .n{font-family:var(--disp);font-weight:800;font-size:1.5rem;color:var(--navy)}
+.steps h3{font-size:1.05rem;margin:10px 0 8px}
+.steps p{color:var(--dim);font-size:14.5px}
+.area{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3.4vw,50px);align-items:center}
+.area .box{background:var(--navy);color:#fff;padding:clamp(24px,3vw,38px);border-radius:3px}
+.area .box h2{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:12px}
+.area .box p{color:rgba(255,255,255,.78)}
+.area ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.area li{border-bottom:1px solid var(--line);padding:14px 0;display:flex;justify-content:space-between;gap:16px;font-size:15px}
+.area li span{color:var(--dim)}
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.faq summary{cursor:pointer;font-weight:700;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";color:var(--navy);font-weight:800}
+.faq details[open] summary:after{content:"–"}
+.faq p{color:var(--dim);margin-top:10px;max-width:74ch;font-size:15px}
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,58px);align-items:start}
+.contact h2{font-size:clamp(1.6rem,3.2vw,2.4rem);margin-bottom:14px}
+.telbig{display:inline-flex;text-decoration:none;font-family:var(--disp);font-weight:800;
+  font-size:clamp(1.6rem,3.2vw,2.3rem);letter-spacing:-.02em;color:var(--navy);margin:6px 0 4px}
+.telbig:hover{color:var(--navy2)}
+.contact dl{margin:24px 0 0;border-top:1px solid var(--line)}
+.contact dl>div{border-bottom:1px solid var(--line);padding:12px 0}
+.contact dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.contact dd{margin:4px 0 0;font-size:14.5px;color:var(--dim)}
+form{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--navy);padding:clamp(20px,2.6vw,30px)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.fgrid .full{grid-column:1/-1}
+label{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:7px}
+input,textarea{width:100%;border:1px solid var(--line);background:#fbfcfd;padding:12px;font:inherit;font-size:15px;margin-bottom:16px;color:var(--ink);border-radius:2px}
+input:focus,textarea:focus{outline:2px solid var(--navy);outline-offset:1px}
+form button{width:100%;background:var(--navy);color:#fff;border:0;padding:15px;font:inherit;font-weight:700;cursor:pointer;border-radius:2px}
+form button:hover{background:var(--navy2)}
+.st{font-size:14px;color:var(--dim);margin-top:12px;min-height:1.2em}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
-/* buttons: gradient fill, inset highlight, layered shadow */
-a.btn,.btn,button.btn,.nav-cta a,.btn-primary{
-  background-image:linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0) 55%);
-  box-shadow:var(--lb-e1), inset 0 1px 0 rgba(255,255,255,.22);
-  border-radius:10px;
-}
-a.btn:hover,.btn:hover,button.btn:hover,.nav-cta a:hover{
-  box-shadow:var(--lb-e3), inset 0 1px 0 rgba(255,255,255,.26);
-}
-.btn-ghost{ box-shadow:var(--lb-e1); }
+footer{background:var(--ink);color:#fff;padding:clamp(32px,3.8vw,52px) 0 clamp(24px,3vw,34px)}
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:clamp(20px,3vw,44px)}
+footer h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);margin:0 0 12px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:9px;font-size:14.5px;color:rgba(255,255,255,.72)}
+footer a{text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+.fname{font-family:var(--disp);font-weight:800;font-size:1.35rem}
+.foot-bot{margin-top:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,.18);display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;color:rgba(255,255,255,.6);font-size:13.5px}
 
-/* nav: subtle vertical gradient + hairline for separation from the page */
-.nav,nav,.site-header,header.nav{
-  background-image:linear-gradient(180deg, color-mix(in srgb, var(--lb-paper) 96%, transparent) 0%,
-                                         color-mix(in srgb, var(--lb-ink) 3%, var(--lb-paper)) 100%);
-  box-shadow:0 1px 0 var(--lb-hair), 0 6px 20px -14px rgba(8,10,14,.28);
+@media(max-width:1000px){
+  .hero-grid{grid-template-columns:1fr}
+  .sec-head{grid-template-columns:1fr;align-items:start}
+  .tiles3{grid-template-columns:1fr 1fr}
+  .rooms{grid-template-columns:1fr}
+  .area{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr}
 }
-
-/* section heads get a hairline rule for structure (no risky text clipping) */
-.sec-head{ border-bottom:1px solid var(--lb-hair); padding-bottom:.7rem; }
-h1,h2,h3{ text-wrap:balance; }
-
-/* footer: depth anchor */
-footer{ box-shadow:0 -1px 0 var(--lb-hair), 0 -14px 40px -30px rgba(8,10,14,.5); }
-
-/* dark surfaces get stronger, softer shadows */
-@media (prefers-color-scheme: dark){ :root{ --lb-hair: rgba(255,255,255,.12); } }
-@supports not (background: color-mix(in srgb, red 5%, blue)){
-  section::before{ background:radial-gradient(120% 70% at 12% 0%, rgba(229,25,36,.06) 0%, transparent 58%); }
+@media(max-width:820px){
+  .steps{grid-template-columns:1fr 1fr}
+  .foot{grid-template-columns:1fr 1fr}
+  .strip{grid-template-columns:1fr 1fr}
+  .strip div+div{border-left:0;padding-left:0}
 }
-@media (prefers-reduced-motion: reduce){
-  .card,.cards > *,.panel,.tile,figure,.gal figure, a.btn,.btn, img{ transition:none!important; transform:none!important; }
+@media(max-width:760px){
+  .brand img{height:40px}
+  .brand-name{font-size:16px}
+  .nav{order:3;width:100%;margin-left:0;gap:2px 16px}
+  .nav a{font-size:13.5px}
+  .call{padding:9px 13px;font-size:13px;margin-left:auto;border-radius:2px}
+  .call span{display:none}
+  .hero h1{font-size:clamp(1.9rem,9.2vw,2.7rem)}
+  .tiles3{grid-template-columns:1fr}
+  .room{grid-template-columns:1fr;gap:6px}
+  .fgrid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
 }
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
-<style id="lb-hero-css">
-canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
-  position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
-}
-</style>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
-   Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
-   and does NOT hide the hero canvas (that is the intended 3D hero). */
-.site-header,.header{z-index:50}
-.container.nav,.nav,.nav-in{z-index:5}
-.lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
-</style>
-<style id="lb-markimg">.lb-brand__mark{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;margin-right:.6rem}.lb-brand__mark img{display:block;height:clamp(34px,3.4vw,44px);width:auto;border-radius:8px}</style>
-<style id="lb-mobile-base">
-html,body{max-width:100%;overflow-x:hidden}
-img,video,canvas,svg,iframe{max-width:100%}
-img,video{height:auto}
-header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
-header,.site-header,.nav{max-width:100%}
-.lb-brand{min-width:0;max-width:100%;overflow:hidden}
-.lb-brand img{max-height:64px;width:auto}
-nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
-h1{overflow-wrap:anywhere}
-@media (max-width:820px){
-  .lb-brand img{max-height:38px}
-  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
-  h2{font-size:clamp(20px,6vw,30px)!important}
-  section{padding-left:16px!important;padding-right:16px!important}
-  .wrap,.container{max-width:100%!important}
-}
-</style>
-<style id="lb-logo-hero">
-/* Client logo across the header: the real artwork, isolated and readable. */
-.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;padding:0!important;max-height:96px!important;
-  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
-  padding:0!important;box-shadow:none!important}
-.lb-brand .lb-mark{display:block!important;height:clamp(44px,4.8vw,66px)!important;width:auto!important;
-  max-width:none!important;max-height:66px!important;object-fit:contain!important;background:none!important;
-  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
-.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(38vw,520px)!important;
-  max-height:none!important;object-fit:contain!important;object-position:left center!important;
-  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
-.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
-  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
-.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
-.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
-.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
-  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
-.lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
-@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:20px!important}}
-.lb-bar{background-color:#385878!important}
-.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#f7f7f4!important}
-.lb-bar .cta,.lb-bar a.cta{color:#ffffff!important}
-</style>
-<style id="lb-brand-palette">:root{--acc:#3b5484;--accent:#3b5484;--lbq-accent:#3b5484;--lb-acc:#3b5484;--brand:#3b5484;--brand-color:#3b5484;--primary:#3b5484;--lime:#3b5484;--color-lime:#3b5484;--gold:#3b5484;--acc-strong:#3b5484;--acc2:#314e6c;--acc-hi:#314e6c;--accent-2:#314e6c;--brand-2:#314e6c;}</style></head>
+</head>
 <body>
-<script>document.documentElement.className+=' js';</script>
-<a class="skip" href="#services">Skip to content</a>
-<nav class="nav"><div class="nav-in">
-<a aria-label="A1 Sydney Build - Home" class="lb-brand lb-brand--lockup lb-brand--square" href="#top" style="--lb-name:#ffffff"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-cut.png"/><span class="lb-sr">A1 Sydney Build</span></a><div class="nav-links" id="navlinks"><a href="#services">Services</a><a href="#renovations">Renovations</a><a href="#rooms">Room by Room</a><a href="#sydney">Sydney</a><a href="#lbq">Quote</a></div>
-<div class="nav-cta"><a class="btn btn-primary btn-sm" href="#lbq">Get a quote</a></div>
-<button aria-expanded="false" aria-label="Menu" class="burger" id="burger"><span></span><span></span><span></span></button>
-</div></nav>
-<header class="hero" id="top">
-<div class="hero-shade"></div>
-<div class="hero-in">
-<p class="hero-kicker">Tiling &amp; renovations - Sydney NSW</p>
-<h1>Tiling in Sydney<br/>quoted on site.</h1>
-<p class="hero-sub">A1 Sydney Build PTY LTD - floor &amp; wall tiling, bathroom &amp; kitchen renovations, waterproofing, screeding &amp; levelling across Sydney. ABN 33 672 885 657.</p>
-<div class="hero-cta">
-<a class="btn btn-primary" href="#lbq">Get a free quote</a>
-</div>
-<div class="hero-strip">
-<p><strong>Floor &amp; wall</strong>Porcelain, ceramic, stone</p>
-<p><strong>Wet areas</strong>Waterproofing certified</p>
-<p><strong>Sydney metro</strong>Inner west to northern beaches</p>
-</div>
-</div>
-<a class="lb-tel" href="tel:0402888870" style="margin-left:auto;font-weight:800;text-decoration:none;color:inherit;white-space:nowrap;font-size:15px;padding:8px 0">0402888870</a></header>
-<section id="services"><div class="wrap">
-<div class="sec-head"><span class="sec-idx">01</span><div><h2 class="sec-title">Tiling services.</h2><p class="lead">If you are in Sydney and need bathrooms, A1 Sydney Build quotes it on site and tells you what the prep actually involves before you commit.</p></div></div>
-<div class="svc-grid">
-<div class="svc rv"><span class="svc-n">01</span><h3>bathrooms</h3><p>There is no call centre behind A1 Sydney Build — you deal with the same people from the quote to the clean-up.</p></div>
-<div class="svc rv"><span class="svc-n">02</span><h3>floors</h3><p>A1 Sydney Build turns up when agreed, does the tiling work work to the quoted scope, and keeps the site tidy while it happens.</p></div>
-<div class="svc rv"><span class="svc-n">03</span><h3>waterproofing</h3><p>The job is walked with you at the end. Anything that needs attention is dealt with before the invoice, not after.</p></div>
-<div class="svc rv"><span class="svc-n">04</span><h3>splashbacks</h3><p>Edges, clean-up and the small finishes that decide whether a tiling work job looks professional are done before A1 Sydney Build leaves site.</p></div>
-<div class="svc rv"><span class="svc-n">05</span><h3>regrouting</h3><p>Quoted on site — Not over the phone from a photo — the price comes from seeing the job.</p></div>
-<div class="svc rv"><span class="svc-n">06</span><h3>Repairs &amp; regrouting</h3><p>One point of contact — The same person answers the phone and runs the work.</p></div>
-</div>
-</div></section>
-<section id="renovations"><div class="wrap">
-<div class="sec-head"><span class="sec-idx">02</span><div><h2 class="sec-title">Renovations.</h2><p class="lead">Local to Sydney — Travel time is short, which is why small jobs are worth doing.</p></div></div>
-<div class="renov-grid">
-<div class="renov rv">
-<h3>Bathroom renovations</h3>
-<p>Workmanship backed — If something is not right, A1 Sydney Build comes back.</p>
-<ul>
-<li>Hobless showers &amp; linear drains</li>
-<li>Wall-hung vanities &amp; in-wall cisterns</li>
-<li>Heated towel rails &amp; under-tile heating</li>
-<li>Frameless screens &amp; niche detailing</li>
-</ul>
-</div>
-<div class="renov rv">
-<h3>Kitchen renovations</h3>
-<p>Kitchen strip-out to fit-off - splashback tiling, floor prep &amp; tiling, benchtop coordination, joinery liaison, appliance integration.</p>
-<ul>
-<li>Stone, glass &amp; tile splashbacks</li>
-<li>Large-format floor tiling to kickboards</li>
-<li>Subfloor prep for timber, hybrid &amp; tile</li>
-<li>Plumbing &amp; electrical coordination</li>
-</ul>
-</div>
-</div>
-</div></section>
-<section id="rooms"><div class="wrap">
-<div class="sec-head"><span class="sec-idx">03</span><div><h2 class="sec-title">What we do - room by room.</h2><p class="lead">The same substrate discipline and tile craft applied across every wet area and tiled floor in the home.</p></div></div>
-<div class="room-grid">
-<div class="room rv"><span class="room-n">01</span><h3>Main bathroom</h3><p>Floor-to-ceiling tiling, hobless shower, niche, bench, vanity splash - waterproofed, laid flat, epoxy grout option.</p></div>
-<div class="room rv"><span class="room-n">02</span><h3>Ensuite</h3><p>Compact wet-area efficiency - large-format walls, minimal grout lines, linear drain, wall-hung vanity tiling.</p></div>
-<div class="room rv"><span class="room-n">03</span><h3>Powder room</h3><p>Feature wall tiling, floor continuity, vanity splash - high impact in a small footprint.</p></div>
-<div class="room rv"><span class="room-n">04</span><h3>Kitchen</h3><p>Splashback tiling to rangehood, floor tiling to kickboards, benchtop upstand coordination.</p></div>
-<div class="room rv"><span class="room-n">05</span><h3>Laundry</h3><p>Floor &amp; skirt tiling, trough splash, waterproofing to floor waste - practical, hard-wearing finishes.</p></div>
-<div class="room rv"><span class="room-n">06</span><h3>Balcony &amp; alfresco</h3><p>External-rated porcelain, fall-correct screeds, balcony waterproofing membranes, expansion joints.</p></div>
-</div>
-</div></section>
-<section class="sydney-band" id="sydney"><div class="wrap">
-<div class="sec-head"><span class="sec-idx">04</span><div><h2 class="sec-title">Sydney - where we work.</h2><p class="lead">Based in Sydney and working across the metro - inner west, north shore, northern beaches, eastern suburbs, CBD fringe and south-west corridors.</p></div></div>
-<div class="sydney-grid">
-<div class="sydney-item rv"><div class="sydney-icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div><h3>Inner West</h3><p>Leichhardt, Marrickville, Balmain, Annandale, Petersham, Dulwich Hill</p></div>
-<div class="sydney-item rv"><div class="sydney-icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div><h3>North Shore</h3><p>Chatswood, North Sydney, Lane Cove, Willoughby, Mosman, Neutral Bay</p></div>
-<div class="sydney-item rv"><div class="sydney-icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div><h3>Northern Beaches</h3><p>Manly, Dee Why, Mona Vale, Avalon, Brookvale, Narrabeen</p></div>
-<div class="sydney-item rv"><div class="sydney-icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div><h3>Eastern Suburbs</h3><p>Bondi, Coogee, Randwick, Kensington, Double Bay, Paddington</p></div>
-<div class="sydney-item rv"><div class="sydney-icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div><h3>CBD &amp; Fringe</h3><p>Pyrmont, Ultimo, Surry Hills, Redfern, Alexandria, Zetland</p></div>
-<div class="sydney-item rv"><div class="sydney-icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div><h3>South West</h3><p>Liverpool, Campbelltown, Camden, Oran Park, Gregory Hills</p></div>
-</div>
-</div></section>
-<section id="faq"><div class="wrap faq-wrap">
-<div class="sec-head"><span class="sec-idx">05</span><div><h2 class="sec-title">Questions we hear.</h2></div></div>
-<details class="faq rv"><summary>Do you handle waterproofing certification?</summary><div class="faq-a">Yes - internal wet-area membranes to AS 3740. Certificate provided on completion for bathrooms, laundries, balconies and planter boxes.</div></details>
-<details class="faq rv"><summary>Can you match existing tiles for a repair?</summary><div class="faq-a">We source closest-match tiles where possible. If an exact match is unavailable we discuss options - feature band, contrast border, or full re-tile of the affected plane.</div></details>
-<details class="faq rv"><summary>What tile formats do you work with?</summary><div class="faq-a">Porcelain, ceramic, natural stone, large-format (up to 1200x2400), mosaic sheets, terrazzo-look and textured external-rated porcelain.</div></details>
-<details class="faq rv"><summary>Do you coordinate other trades for renovations?</summary><div class="faq-a">Yes - we manage plumbing, electrical, carpentry and joinery coordination for bathroom and kitchen renovations so the program runs in sequence.</div></details>
-<details class="faq rv"><summary>How long does a bathroom renovation take?</summary><div class="faq-a">Typically 2–3 weeks from strip-out to final clean for a standard main bathroom. Complex layouts, custom joins or supply lead times can extend this - we confirm the program in the quote.</div></details>
-<details class="faq rv"><summary>Do you provide written quotes?</summary><div class="faq-a">Always - a detailed scope and firm price before any work starts. No day-rate surprises.</div></details>
-</div></section>
-<section class="stat-band" id="stats"><div class="wrap">
-<div class="stat rv d1"><b>5</b><span>Core services</span></div>
-<div class="stat rv d2"><b>2</b><span>Renovation types</span></div>
-<div class="stat rv d3"><b>6</b><span>Room categories</span></div>
-<div class="stat rv d4"><b>6</b><span>Sydney zones</span></div>
-</div></section><span aria-hidden="true" id="lbq" style="position:absolute;top:-90px"></span>
-<section aria-labelledby="lbq-h" id="lbq">
-<style>
-#lbq{--lbq-accent:var(--acc);--lbq-ink:var(--ink);--lbq-muted:var(--ink-2);--lbq-bg:var(--bg-2);--lbq-panel:var(--panel);--lbq-line:var(--line);padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
-#lbq *{box-sizing:border-box}
-#lbq .lbq-w{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
-@media(max-width:900px){#lbq .lbq-w{grid-template-columns:1fr}}
-#lbq h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0 0 10px;letter-spacing:-.02em;font-family:var(--disp)}
-#lbq p.lbq-s{margin:0 0 22px;color:var(--lbq-muted);max-width:52ch}
-#lbq .lbq-info{display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--lbq-line);padding-top:22px}
-#lbq .lbq-info div{display:flex;gap:10px;align-items:baseline}
-#lbq .lbq-info b{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lbq-accent);min-width:64px}
-#lbq .lbq-info a{font-weight:800;text-decoration:none}
-#lbq .lbq-f{display:grid;gap:12px;background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
-#lbq label{display:block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
-#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-size:.95rem}
-#lbq textarea{min-height:96px;resize:vertical}
-#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
-#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#fff;font:inherit;font-weight:800;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
-#lbq button:disabled{opacity:.6;cursor:wait}
-#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
-#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
-#lbq .lbq-cons input{width:auto}
-#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-</style>
-<div class="lbq-w">
-<div>
-<h2 id="lbq-h">Get a free quote</h2>
-<p class="lbq-s">Tell us about the job and we'll come back with a firm price - no surprises, no obligation.</p>
-<div class="lbq-info">
-<div><b>Area</b><span>Sydney metro NSW</span></div>
-<div><b>ABN</b><span>33 672 885 657</span></div>
-</div>
-</div>
-<form data-biz="A1 Sydney Build" data-site="a1-sydney-build" id="lbq-form" novalidate="">
-<div class="lbq-f">
-<div class="lbq-g">
-<div><label for="lbq-n">Name</label><input autocomplete="name" id="lbq-n" name="name" required=""/></div>
-<div><label for="lbq-p">Phone</label><input autocomplete="tel" id="lbq-p" name="phone" type="tel"/></div>
-<div><label for="lbq-e">Email</label><input autocomplete="email" id="lbq-e" name="email" type="email"/></div>
-<div class="lbq-full"><label for="lbq-svc">Service</label>
-<select id="lbq-svc" name="service"><option>Floor &amp; wall tiling</option><option>Bathroom renovation</option><option>Kitchen renovation</option><option>Waterproofing</option><option>Screeding &amp; levelling</option><option>Repairs &amp; regrouting</option><option>Other</option></select>
-</div>
-<div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Room, tile type, approx m², timing…" required=""></textarea></div>
-</div>
-<label class="lbq-cons"><input checked="" name="consent" type="checkbox" value="1"/> I agree to be contacted about this request.</label>
-<div aria-hidden="true" class="lbq-hp"><label>Website<input autocomplete="off" name="website" tabindex="-1"/></label></div>
-<button type="submit">Send quote request</button>
-<p aria-live="polite" class="lbq-st" id="lbq-st" role="status"></p>
-</div>
-</form>
-</div>
+<header class="hdr" id="top">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top" aria-label="A1 Sydney Build">
+      <img src="assets/logo.png" alt="A1 Sydney Build logo" width="512" height="512"/>
+      <span class="brand-name">A1 Sydney Build<small>Tiling &amp; renovations</small></span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#tiling">Tiling</a>
+      <a href="#rooms">Renovations</a>
+      <a href="#how">How we work</a>
+      <a href="#faq">Questions</a>
+      <a href="#quote">Quote</a>
+    </nav>
+    <a class="call" href="tel:0402888870"><span>Call</span>0402 888 870</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+                <h1>Tiling and renovations, <em>set out square.</em></h1>
+        <p class="lede">Floor and wall tiling, bathroom and kitchen renovations, waterproofed wet areas and
+          levelling, quoted on site so the setting out, the fall and the finish are settled before a tile is cut.</p>
+        <div class="hero-acts">
+          <a class="btn" href="tel:0402888870">Call 0402 888 870</a>
+          <a class="btn ghost" href="#tiling">What we do</a>
+        </div>
+        <div class="strip">
+          <div><b>Tiling &amp; renovations</b><span>Sydney, NSW</span></div>
+          <div><b>Wall tiling</b><span>Kitchen, bathroom, laundry</span></div>
+          <div><b>Wet areas</b><span>Screed, level and tile</span></div>
+          <div><b>Renovations</b><span>Strip out and re-tile</span></div>
+        </div>
+      </div>
+      <figure class="tilefield">
+        <svg viewBox="0 0 320 300" role="presentation" focusable="false" aria-hidden="true">
+          <defs>
+            <g id="t"><rect width="34" height="34" rx="1.5" fill="#e4eaf1"/></g>
+          </defs>
+          <g>
+            <use href="#t" x="0" y="0"/><use href="#t" x="38" y="0"/><use href="#t" x="76" y="0"/><use href="#t" x="114" y="0"/><use href="#t" x="152" y="0"/><use href="#t" x="190" y="0"/><use href="#t" x="0" y="38"/><use href="#t" x="38" y="38"/><use href="#t" x="76" y="38"/><use href="#t" x="114" y="38"/><use href="#t" x="152" y="38"/><use href="#t" x="190" y="38"/>
+            <use href="#t" x="0" y="76"/><use href="#t" x="38" y="76"/><use href="#t" x="76" y="76"/><use href="#t" x="114" y="76"/><use href="#t" x="152" y="76"/><use href="#t" x="190" y="76"/><use href="#t" x="0" y="114"/><use href="#t" x="38" y="114"/><use href="#t" x="76" y="114"/><use href="#t" x="114" y="114"/><use href="#t" x="152" y="114"/><use href="#t" x="190" y="114"/>
+            <use href="#t" x="0" y="152"/><use href="#t" x="38" y="152"/><use href="#t" x="76" y="152"/><use href="#t" x="114" y="152"/><use href="#t" x="152" y="152"/><use href="#t" x="190" y="152"/><use href="#t" x="0" y="190"/><use href="#t" x="38" y="190"/><use href="#t" x="76" y="190"/><use href="#t" x="114" y="190"/><use href="#t" x="152" y="190"/><use href="#t" x="190" y="190"/>
+          </g>
+          <g fill="#3b5484">
+            <rect x="38" y="0" width="34" height="34" rx="1.5"/><rect x="152" y="38" width="34" height="34" rx="1.5"/>
+            <rect x="114" y="76" width="34" height="34" rx="1.5"/><rect x="76" y="114" width="34" height="34" rx="1.5"/>
+            <rect x="38" y="152" width="34" height="34" rx="1.5"/><rect x="0" y="190" width="34" height="34" rx="1.5"/>
+            <rect x="190" y="114" width="34" height="34" rx="1.5"/><rect x="152" y="190" width="34" height="34" rx="1.5"/>
+          </g>
+          <g fill="none" stroke="#c8d3e0" stroke-width="1">
+            <rect x="228" y="0" width="90" height="38" rx="1.5"/><rect x="228" y="42" width="90" height="38" rx="1.5"/>
+            <rect x="228" y="84" width="90" height="38" rx="1.5"/><rect x="228" y="126" width="90" height="38" rx="1.5"/>
+            <rect x="228" y="168" width="90" height="38" rx="1.5"/>
+          </g>
+          <g fill="#3b5484" font-family="DejaVu Sans Mono, monospace" font-size="9" letter-spacing="1.2">
+            <text x="230" y="24">FLOOR</text><text x="230" y="66">WALL</text><text x="230" y="108">WET</text>
+            <text x="230" y="150">SCREED</text><text x="230" y="192">FIT-OFF</text>
+          </g>
+        </svg>
+        <figcaption><span class="mono">Setting out</span><span class="mono">Sydney, NSW</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="tiling">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Tiling.</h2>
+      <p>Floors and walls, inside and out, laid off a screeded, checked surface so the lines run square and the
+        junctions sit where they should.</p>
+    </div>
+    <div class="tiles3">
+      <article class="tilecard"><span class="n">01</span><h3>Floor tiling</h3><p>Porcelain, ceramic and stone laid over a levelled, primed substrate.</p></article>
+      <article class="tilecard"><span class="n">02</span><h3>Wall tiling</h3><p>Kitchen splashbacks, bathroom walls and full-height tiling set out from the room's centre lines.</p></article>
+      <article class="tilecard"><span class="n">03</span><h3>Bathroom &amp; wet areas</h3><p>Wet area floors and walls, with falls graded to the waste, then tiled.</p></article>
+      <article class="tilecard"><span class="n">04</span><h3>Outdoor &amp; balcony tiling</h3><p>Paving and tiling to balconies, patios and entries, laid to drain away from the building.</p></article>
+      <article class="tilecard"><span class="n">05</span><h3>Screeding &amp; levelling</h3><p>Floor levelling and screed work so the tile goes down flat, no hollow spots.</p></article>
+      <article class="tilecard"><span class="n">06</span><h3>Tile removal</h3><p>Old tiles and adhesive stripped and the substrate checked before anything new goes down.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="rooms">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Renovations, room by room.</h2>
+      <p>Where tiling and renovation meet: strip out, prep, set out, tile and finish.</p>
+    </div>
+    <div class="rooms">
+      <div class="room"><span class="mono">Bathroom</span><div><b>Full bathroom tiling</b><p>Strip out, screed, wet area prep, floor and wall tiling, and the trims and cuts around the fit-off.</p></div></div>
+      <div class="room"><span class="mono">Kitchen</span><div><b>Splashbacks &amp; floors</b><p>Kitchen splashback tiling and floor tiling, set out around joinery and windows.</p></div></div>
+      <div class="room"><span class="mono">Laundry</span><div><b>Wet area tiling</b><p>Laundry floors and walls, graded to the waste and sealed where the work meets other rooms.</p></div></div>
+      <div class="room"><span class="mono">Living areas</span><div><b>Floor tiling throughout</b><p>Large-format floor tiling through living and hall areas, run off a single set-out line.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>How the work runs.</h2>
+      <p>Four steps, in order, on every job.</p>
+    </div>
+    <div class="steps">
+      <div><span class="n">01</span><h3>Measure on site</h3><p>The room is measured and the setting out is worked out: where the lines land, and where the cuts go.</p></div>
+      <div><span class="n">02</span><h3>Strip &amp; prepare</h3><p>Old finishes out, substrate checked, screed and levelling done where the floor needs it.</p></div>
+      <div><span class="n">03</span><h3>Set out &amp; tile</h3><p>Lines marked, tiles laid from the centre out, spaced and levelled as they go.</p></div>
+      <div><span class="n">04</span><h3>Grout &amp; finish</h3><p>Grouted, silicone to the junctions, floor cleaned down and the site left tidy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="sydney">
+  <div class="wrap area">
+    <div class="box">
+      <h2>Tiling across Sydney.</h2>
+      <p>A1 Sydney Build works across Sydney, NSW: bathrooms, kitchens, laundries and floor areas, for homes
+        and rental properties.</p>
+    </div>
+    <ul>
+      <li><span>Trade</span><b>Tiling &amp; renovations</b></li>
+      <li><span>City</span><b>Sydney, NSW</b></li>
+      <li><span>Scope</span><b>Floors, walls, wet areas, renovations</b></li>
+      <li><span>Contact</span><b><a href="tel:0402888870">0402 888 870</a></b></li>
+    </ul>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Questions.</h2>
+      <p>What comes up most before a tiling job starts.</p>
+    </div>
+    <div class="faq">
+      <details open><summary>What areas do you cover?</summary><p>Sydney, NSW: bathrooms, kitchens, laundries and floor areas across the city and the surrounding suburbs.</p></details>
+      <details><summary>Do you do both floor and wall tiling?</summary><p>Yes. Floor and wall tiling, plus bathroom and kitchen renovations that include the strip out and the prep.</p></details>
+      <details><summary>What helps get an accurate quote?</summary><p>Photos of the area, roughly how many square metres it is, and what is on the floor or wall now. The quote is then worked out on site.</p></details>
+      <details><summary>Do you remove the old tiles first?</summary><p>Old tiles are stripped as part of the renovation, then the substrate is checked and levelled before the new tiling starts.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="wrap contact">
+    <div>
+      <h2>Get a quote.</h2>
+      <p style="color:var(--dim);max-width:44ch">Send through the room, the rough area in square metres and a
+        photo or two, or call and we will sort it out on site.</p>
+      <a class="telbig" href="tel:0402888870">0402 888 870</a>
+      <dl>
+        <div><dt>Trade</dt><dd>Tiling &amp; renovations</dd></div>
+        <div><dt>Based in</dt><dd>Sydney, NSW</dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/a1sydneybuild/" rel="noopener">@a1sydneybuild</a></dd></div>
+      </dl>
+    </div>
+    <form data-biz="A1 Sydney Build" data-site="a1-sydney-build" id="lbq-form" novalidate>
+      <div class="fgrid">
+        <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required/></div>
+        <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"/></div>
+        <div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"/></div>
+        <div><label for="lbq-s">Suburb</label><input id="lbq-s" name="suburb" autocomplete="address-level2"/></div>
+        <div class="full"><label for="lbq-m">What needs tiling?</label><textarea id="lbq-m" name="message" rows="4" placeholder="Bathroom floor and walls, about 18 sqm…" required></textarea></div>
+      </div>
+      <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"/></label></div>
+      <button type="submit">Send request</button>
+      <p class="st" id="lbq-st" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <p class="fname">A1 Sydney Build</p>
+        <p style="color:rgba(255,255,255,.72);font-size:14.5px;margin-top:12px;max-width:34ch">Tiling and renovations across Sydney, NSW: floors, walls, wet areas and full room re-tiles.</p>
+      </div>
+      <div>
+        <h4>Tiling</h4>
+        <ul>
+          <li><a href="#tiling">Floor tiling</a></li>
+          <li><a href="#tiling">Wall tiling</a></li>
+          <li><a href="#tiling">Bathroom &amp; wet areas</a></li>
+          <li><a href="#rooms">Renovations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0402888870">0402 888 870</a></li>
+          <li><a href="https://www.instagram.com/a1sydneybuild/" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="yr">2026</span> A1 Sydney Build</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
 <script>
+document.getElementById('yr').textContent = new Date().getFullYear();
 (function(){
-  var EP = null;
   function base(cb){
     if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
     var done = false;
@@ -538,295 +384,42 @@ h1{overflow-wrap:anywhere}
       })
       .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
   }
-  function init(){
-    var f = document.getElementById('lbq-form');
-    if (!f) return;
-    var st = document.getElementById('lbq-st');
-    var btn = f.querySelector('button[type=submit]');
-    f.addEventListener('submit', function(e){
-      e.preventDefault();
-      var d = {};
-      new FormData(f).forEach(function(v,k){ d[k]=v; });
-      if (d.website) return;
-      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
-        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
-        st.style.color = '#ff9d8a';
-        return;
-      }
-      btn.disabled = true;
-      st.textContent = 'Sending…';
-      st.style.color = '';
-      base(function(B){
-        var url = B + '/functions/v1/quote-request';
-        fetch(url, {
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body: JSON.stringify({
-            site_id: f.dataset.site || '',
-            business_name: f.dataset.biz || '',
-            name: d.name, phone: d.phone, email: d.email,
-            service: d.service || '', message: d.message,
-            consent: !!d.consent
-          })
+  var f = document.getElementById('lbq-form');
+  if (!f) return;
+  var st = document.getElementById('lbq-st');
+  var btn = f.querySelector('button[type=submit]');
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d = {};
+    new FormData(f).forEach(function(v,k){ d[k]=v; });
+    if (d.website) return;
+    if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+      st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+      return;
+    }
+    btn.disabled = true;
+    st.textContent = 'Sending…';
+    base(function(B){
+      fetch(B + '/functions/v1/quote-request', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          site_id: f.dataset.site || '', business_name: f.dataset.biz || '',
+          name: d.name, phone: d.phone, email: d.email, suburb: d.suburb || '',
+          message: d.message, consent: true
         })
-        .then(function(r){ return r.json().catch(function(){ return {}; }); })
-        .then(function(x){
-          if (x && x.success) {
-            f.reset();
-            st.textContent = "Thanks - your request is in. We'll be in touch shortly.";
-            st.style.color = 'var(--lbq-accent)';
-          } else {
-            throw new Error((x && x.error) || 'Could not send');
-          }
-        })
-        .catch(function(err){
-          st.textContent = (err && err.message) ? err.message : 'Could not send - please try again or call.';
-          st.style.color = '#ff9d8a';
-        })
-        .finally(function(){ btn.disabled = false; });
+      })
+      .then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(x){
+        if (x && x.success) { f.reset(); st.textContent = "Thanks, your request is in. We'll be in touch."; }
+        else { throw new Error((x && x.error) || 'Could not send'); }
+      })
+      .catch(function(){
+        st.textContent = 'Could not send. Please call 0402 888 870.';
+        btn.disabled = false;
       });
     });
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
-</script>
-</section>
-<section aria-label="Recent work and services" class="lb-rb"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img alt="A1 Sydney Build - Tiling &amp; Renovations" decoding="async" loading="eager" src="assets/work_01.jpg"/></div><div class="lb-rb__slide"><img alt="A1 Sydney Build - Tiling &amp; Renovations" decoding="async" loading="lazy" src="assets/work_02.jpg"/></div><div class="lb-rb__slide"><img alt="A1 Sydney Build - Tiling &amp; Renovations" decoding="async" loading="lazy" src="assets/work_03.jpg"/></div><div class="lb-rb__slide"><img alt="A1 Sydney Build - Tiling &amp; Renovations" decoding="async" loading="lazy" src="assets/work_04.jpg"/></div><div class="lb-rb__slide"><img alt="A1 Sydney Build - Tiling &amp; Renovations" decoding="async" loading="lazy" src="assets/work_05.jpg"/></div><div class="lb-rb__slide"><img alt="A1 Sydney Build - Tiling &amp; Renovations" decoding="async" loading="lazy" src="assets/work_06.jpg"/></div><div class="lb-rb__slide"><img alt="A1 Sydney Build - Tiling &amp; Renovations" decoding="async" loading="lazy" src="assets/work_07.jpg"/></div><div class="lb-rb__slide"><img alt="A1 Sydney Build - Tiling &amp; Renovations" decoding="async" loading="lazy" src="assets/work_08.jpg"/></div><button aria-label="Previous" class="lb-rb__nav lb-rb__nav--prev" type="button">‹</button><button aria-label="Next" class="lb-rb__nav lb-rb__nav--next" type="button">›</button><div class="lb-rb__dots"><button aria-label="Slide 1" class="is-on" type="button"></button><button aria-label="Slide 2" class="" type="button"></button><button aria-label="Slide 3" class="" type="button"></button><button aria-label="Slide 4" class="" type="button"></button><button aria-label="Slide 5" class="" type="button"></button><button aria-label="Slide 6" class="" type="button"></button><button aria-label="Slide 7" class="" type="button"></button><button aria-label="Slide 8" class="" type="button"></button></div><div class="lb-rb__cap">A1 Sydney Build — recent work</div></div></section><footer><div class="wrap">
-<div>
-<div class="fbrand"><span class="b-txt"><span class="fbrand-name">A1 Sydney Build</span><br/><span class="fbrand-sub">Tiling · Renovations · Waterproofing</span></span></div>
-<p style="margin-top:16px;font-size:.85rem;max-width:300px;color:var(--ink-2);">Floor &amp; wall tiling · Bathroom &amp; kitchen renovations · Waterproofing · Screeding &amp; levelling - Sydney NSW.</p>
-</div>
-<div><h4>Services</h4><a href="#services">Floor &amp; wall tiling</a><a href="#services">Bathroom renovations</a><a href="#services">Kitchen renovations</a><a href="#services">Waterproofing</a><a href="#services">Screeding &amp; levelling</a></div>
-<div><h4>Company</h4><a href="#renovations">Renovations</a><a href="#rooms">Room by room</a><a href="#sydney">Sydney areas</a><a href="#faq">FAQ</a></div>
-<div><h4>Contact</h4><a href="#lbq">Request a quote</a><span style="color:var(--ink-2);padding:4px 0;display:block;font-size:.88rem">ABN 33 672 885 657</span></div>
-</div>
-<div class="footer-bar mono">
-<span>© <span id="year"></span> A1 SYDNEY BUILD PTY LTD · </span>
-<a href="#lbq">Get a quote</a>
-</div>
-</footer>
-<script>
-/* ---- page glue (reveal + nav) preserved through the scene retrofit ---- */
-(function(){var rvs=[].slice.call(document.querySelectorAll('.rv'));
-if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(en){
-if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}});},{rootMargin:'0px 0px -12% 0px',threshold:0.08});
-rvs.forEach(function(el){io.observe(el);});}else{rvs.forEach(function(el){el.classList.add('on');});}
-setTimeout(function(){document.querySelectorAll('.rv:not(.on)').forEach(function(el){el.classList.add('on');});},1200);
-var b=document.getElementById('burger'),n=document.getElementById('navlinks');
-if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
-n.addEventListener('click',function(e){if(e.target.tagName==='A')n.classList.remove('open');});}
-var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();})();
-</script>
-<!-- LB-3D-HERO -->
-<canvas aria-hidden="true" id="heroCanvas"></canvas>
-<script id="lb-motion-js">
-/* LB MOTION PACK v1 */
-(function(){
-  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var sel = 'section > *, main > *, .sec-head, .cards > *, .grid > *, .faq details, .gal figure, .gallery figure';
-  var els = [].slice.call(document.querySelectorAll(sel)).filter(function(e){
-    if (e.closest && e.closest('.lb-rb')) return false;
-    if (e.tagName === 'SCRIPT' || e.tagName === 'STYLE') return false;
-    var r = e.getBoundingClientRect();
-    return r.width > 40 && r.height > 20;
   });
-  els.forEach(function(e, i){ e.classList.add('lb-rv'); e.style.transitionDelay = ((i % 6) * 55) + 'ms'; });
-  if (rm || !('IntersectionObserver' in window)) {
-    els.forEach(function(e){ e.classList.add('is-in'); });
-  } else {
-    var io = new IntersectionObserver(function(en){
-      en.forEach(function(x){ if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } });
-    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
-    els.forEach(function(e){ io.observe(e); });
-    setTimeout(function(){ els.forEach(function(e){ if (!e.classList.contains('is-in')) e.classList.add('is-in'); }); }, 2600);
-  }
-  var rb = document.querySelector('.lb-rb');
-  if (!rb) return;
-  var slides = [].slice.call(rb.querySelectorAll('.lb-rb__slide'));
-  if (slides.length < 2) return;
-  var dots = [].slice.call(rb.querySelectorAll('.lb-rb__dots button'));
-  var i = 0, timer = null, DUR = 5600;
-  function go(n){
-    i = (n + slides.length) % slides.length;
-    slides.forEach(function(s, k){ s.classList.toggle('is-on', k === i); });
-    dots.forEach(function(d, k){ d.classList.toggle('is-on', k === i); });
-  }
-  function play(){ if (rm) return; stop(); timer = setInterval(function(){ go(i + 1); }, DUR); }
-  function stop(){ if (timer) { clearInterval(timer); timer = null; } }
-  dots.forEach(function(d, k){ d.addEventListener('click', function(){ go(k); play(); }); });
-  var pv = rb.querySelector('.lb-rb__nav--prev'), nx = rb.querySelector('.lb-rb__nav--next');
-  if (pv) pv.addEventListener('click', function(){ go(i - 1); play(); });
-  if (nx) nx.addEventListener('click', function(){ go(i + 1); play(); });
-  rb.addEventListener('mouseenter', stop); rb.addEventListener('mouseleave', play);
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function(en){ en.forEach(function(x){ x.isIntersecting ? play() : stop(); }); },
-      { threshold: 0.25 }).observe(rb);
-  } else { play(); }
-  go(0);
 })();
 </script>
-<script id="lb-hero-js">
-/* LB HERO v2 - depth field (aurora + perspective grid + parallax motes). No literal objects. */
-(function(){
-  var cv = document.querySelector('#heroCanvas, .hero-canvas, .lb3d-canvas, .hero-canvas-bg, canvas[data-hero], header canvas, .hero canvas');
-  if (!cv) return;
-  var ctx = cv.getContext('2d'); if (!ctx) return;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var W = 0, H = 0, dpr = 1, t = 0, raf = null, visible = true;
-  function accent(){
-    var v = getComputedStyle(document.documentElement).getPropertyValue('--acc')
-         || getComputedStyle(document.documentElement).getPropertyValue('--accent');
-    v = (v || '').trim(); return /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(v) ? v : '#e51924';
-  }
-  function hex2rgb(h){ h = h.replace('#',''); if (h.length === 3) h = h[0]+h[0]+h[1]+h[1]+h[2]+h[2];
-    return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)]; }
-  var ACC = hex2rgb(accent());
-  function dark(){ var b = getComputedStyle(document.body).backgroundColor || '';
-    var m = b.match(/(\d+),\s*(\d+),\s*(\d+)/); if (!m) return true;
-    return (0.299*m[1] + 0.587*m[2] + 0.114*m[3]) < 128; }
-
-  function size(){
-    var r = cv.getBoundingClientRect();
-    dpr = Math.min(2, window.devicePixelRatio || 1);
-    W = Math.max(320, r.width || cv.clientWidth || window.innerWidth);
-    H = Math.max(240, r.height || cv.clientHeight || window.innerHeight);
-    cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr);
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-  }
-
-  // deterministic depth motes
-  var N = 46, motes = [];
-  var seed = 20261019;
-  function rnd(){ seed = (seed*1103515245 + 12345) % 2147483648; return seed/2147483648; }
-  for (var i=0;i<N;i++) motes.push({x:rnd(), y:rnd(), z:0.25+rnd()*0.75, s:0.6+rnd()*1.9, p:rnd()*6.283});
-
-  function draw(){
-    var isDark = dark();
-    var base = isDark ? [10,11,14] : [248,249,251];
-    var ink  = isDark ? [255,255,255] : [12,14,18];
-    var g = ctx.createLinearGradient(0,0,0,H);
-    g.addColorStop(0, 'rgb('+base.join(',')+')');
-    g.addColorStop(0.62, 'rgb('+Math.round(base[0]*1.06+2)+','+Math.round(base[1]*1.06+2)+','+Math.round(base[2]*1.09+2)+')');
-    g.addColorStop(1, 'rgb('+base.join(',')+')');
-    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
-
-    // aurora: two slow, wide ribbons of the brand colour
-    for (var k=0;k<2;k++){
-      var cx = W*(0.30 + 0.34*k + 0.05*Math.sin(t*0.00013 + k*2.1));
-      var cy = H*(0.34 + 0.16*k + 0.05*Math.cos(t*0.00017 + k*1.3));
-      var rad = Math.max(W,H)*(0.46 + 0.13*k);
-      var rg = ctx.createRadialGradient(cx,cy,0,cx,cy,rad);
-      var a = (isDark ? 0.20 : 0.13) * (0.72 + 0.28*Math.sin(t*0.0003 + k));
-      rg.addColorStop(0,'rgba('+ACC.join(',')+','+a.toFixed(3)+')');
-      rg.addColorStop(0.55,'rgba('+ACC.join(',')+','+(a*0.32).toFixed(3)+')');
-      rg.addColorStop(1,'rgba('+ACC.join(',')+',0)');
-      ctx.fillStyle = rg; ctx.fillRect(0,0,W,H);
-    }
-
-    // perspective floor: clean architectural depth, not blocks
-    var hz = H*0.70, vpx = W*0.5;
-    ctx.lineWidth = 1;
-    for (var j=-9;j<=9;j++){
-      var fx = vpx + j*(W/9)*1.5;
-      var al = (isDark?0.16:0.13) * (1 - Math.min(1, Math.abs(j)/11));
-      ctx.strokeStyle = 'rgba('+ACC.join(',')+','+al.toFixed(3)+')';
-      ctx.beginPath(); ctx.moveTo(vpx + j*(W/9)*0.16, hz); ctx.lineTo(fx, H+2); ctx.stroke();
-    }
-    for (var r=1;r<=9;r++){
-      var y = hz + Math.pow(r/9, 2.15)*(H-hz+4);
-      ctx.strokeStyle = 'rgba('+ACC.join(',')+','+((isDark?0.13:0.10)*(1-r/11)).toFixed(3)+')';
-      ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
-    }
-    var hg = ctx.createLinearGradient(0,hz-70,0,hz+70);
-    hg.addColorStop(0,'rgba('+ACC.join(',')+',0)');
-    hg.addColorStop(0.5,'rgba('+ACC.join(',')+','+(isDark?0.16:0.11)+')');
-    hg.addColorStop(1,'rgba('+ACC.join(',')+',0)');
-    ctx.fillStyle = hg; ctx.fillRect(0,hz-70,W,140);
-
-    // depth motes: size + opacity track z, slow parallax drift
-    for (var q=0;q<motes.length;q++){
-      var m = motes[q];
-      var y = ((m.y + t*0.0000075*m.z) % 1);
-      var x = m.x + 0.016*Math.sin(t*0.00022*m.z + m.p);
-      var px = x*W, py = y*H;
-      var a2 = (isDark?0.42:0.30) * m.z * (0.55 + 0.45*Math.sin(t*0.0011 + m.p));
-      if (a2 <= 0) continue;
-      ctx.fillStyle = 'rgba('+ink.join(',')+','+a2.toFixed(3)+')';
-      ctx.beginPath(); ctx.arc(px, py, m.s*(0.6+m.z*0.9), 0, 6.283); ctx.fill();
-    }
-
-    // vignette to seat the copy
-    var vg = ctx.createRadialGradient(W*0.5,H*0.52,Math.min(W,H)*0.30,W*0.5,H*0.52,Math.max(W,H)*0.80);
-    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1, isDark?'rgba(0,0,0,0.42)':'rgba(0,0,0,0.14)');
-    ctx.fillStyle = vg; ctx.fillRect(0,0,W,H);
-  }
-
-  function loop(ts){ if (ts) t = ts; if (visible) draw(); raf = requestAnimationFrame(loop); }
-  size(); draw();
-  window.addEventListener('resize', function(){ size(); draw(); });
-  if (!reduce && 'IntersectionObserver' in window){
-    new IntersectionObserver(function(e){ visible = e[0].isIntersecting; }, {threshold:0.02}).observe(cv);
-  }
-  document.addEventListener('visibilitychange', function(){ visible = !document.hidden && document.visibilityState === 'visible'; });
-  if (!reduce) raf = requestAnimationFrame(loop); 
-})();
-</script>
-<style>
-/* ==== LB HEADER TRUTH: fail-safe visibility (never ship an invisible header) ==== */
-header,.site-header,.page-header,.header-inner,nav.nav,.nav-inner,
-.lb-brand,.lb-brand *,.lb-brand__mark,.lb-brand__word{
-  opacity:1 !important;visibility:visible !important}
-.lb-rv,.rv,[data-rv]{animation:lbForceIn .001s 2.5s forwards !important}
-@keyframes lbForceIn{to{opacity:1 !important;transform:none !important}}
-#sigSplash,#splash,.sp{animation:lbKillSplash .001s 2.5s forwards !important}
-@keyframes lbKillSplash{to{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}}
-</style>
-<style>/* ==== TASTE PASS (anti-slop, from impeccable findings) ==== */
-.lb-mq__in,.renov::before,48x48px icon tile above h3 "Eastern Suburbs,48x48px icon tile above h3 "Inner West,48x48px icon tile above h3 "North Shore,48x48px icon tile above h3 "Northern Beaches,48x48px icon tile above h3 "South West,tiny numbered label "01" beside h2 "Tiling services." (17 on page),tiny numbered label "01" beside h3 "Main bathroom" (17 on page),tiny numbered label "02" beside h2 "Renovations." (17 on page),tiny numbered label "02" beside h3 "Bathroom tiling" (17 on page),tiny numbered label "02" beside h3 "Ensuite" (17 on page),tiny numbered label "03" beside h2 "What we do,tiny numbered label "03" beside h3 "Kitchen tiling" (17 on page),tiny numbered label "03" beside h3 "Powder room" (17 on page),tiny numbered label "04" beside h2 "Sydney,tiny numbered label "04" beside h3 "Kitchen" (17 on page),tiny numbered label "04" beside h3 "Waterproofing" (17 on page),tiny numbered label "05" beside h2 "Questions we hear." (17 on page),tiny numbered label "05" beside h3 "Laundry" (17 on page){display:none !important}
-10.4px functional text "01" (below 11px floor){font-size:max(1em,15px) !important}
-10.4px functional text "02" (below 11px floor){font-size:max(1em,15px) !important}
-10.4px functional text "03" (below 11px floor){font-size:max(1em,15px) !important}
-10.4px functional text "04" (below 11px floor){font-size:max(1em,15px) !important}
-10.4px functional text "05" (below 11px floor){font-size:max(1em,15px) !important}
-10.4px functional text "06" (below 11px floor){font-size:max(1em,15px) !important}
-7px functional text "Tiling" (below 11px floor){font-size:max(1em,15px) !important}
-
-:root{--lb-disp:"Archivo",system-ui,sans-serif;--lb-sub:"Archivo",system-ui,sans-serif}
-body,h1,h2,h3,h4,h5,h6,p,li,span,a,button,input,blockquote{
-  font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
-small,.small,.meta,.caption,.eyebrow,.kicker{font-size:max(0.82em,13px)}
-p,li{line-height:1.55}
-section,header,footer,.wrap,.container,.inner,[class*="section"]{
-  scroll-margin-top:24px}
-
-</style>
-<style>/* ==== LB HEADER TRUTH ==== */
-.lb-brand{gap:clamp(8px,1vw,14px) !important;min-height:clamp(44px,5vw,64px) !important;
-  align-items:center !important;flex-wrap:nowrap !important}
-.lb-brand__mark{flex:0 0 auto !important;display:flex !important;align-items:center !important;
-  height:clamp(36px,4vw,52px) !important;width:auto !important;max-width:30vw !important}
-.lb-brand__mark img{display:block !important;height:100% !important;width:auto !important;
-  max-width:100% !important;object-fit:contain !important}
-.lb-brand__word{display:flex !important;flex-direction:column !important;justify-content:center !important;
-  min-width:0 !important;overflow:visible !important}
-@media(max-width:700px){
-  .lb-brand__mark{height:32px !important;max-width:40vw !important}
-  .lb-brand__word{font-size:.92em !important}
-}
-</style>
-<style>/* ==== LB HEADER POLISH 2 ==== */
-header nav a:not(.btn):not([class*="btn"]):not([class*="cta"]),
-.site-header nav a:not(.btn):not([class*="btn"]),
-.header-inner nav a:not(.btn):not([class*="btn"]),
-nav.nav a:not(.btn):not([class*="btn"]),
-.nav-inner a:not(.btn):not([class*="btn"]),
-header a[href^="tel"],.site-header a[href^="tel"]{
-  color:var(--lb-name,currentColor) !important;
-  opacity:1 !important;
-}
-.lb-brand__sub:empty{display:none !important}
-</style>
-<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#385878","important");})();</script>
 </body>
 </html>
