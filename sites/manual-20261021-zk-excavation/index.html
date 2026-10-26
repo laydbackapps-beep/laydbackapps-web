@@ -53,7 +53,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-siz
 .hero{padding:clamp(36px,6vw,72px) 0}
 .hero .card{display:grid;grid-template-columns:1fr 1fr;background:var(--panel);border:1px solid var(--line)}
 .hero .txt{padding:clamp(24px,4vw,44px)}
-.hero .shot{background:url('assets/photo_1.jpg') center/cover no-repeat;min-height:320px}
+.hero .shot{background:radial-gradient(120% 90% at 14% 0%,rgba(180,83,9,0.2),transparent 62%),repeating-linear-gradient(115deg,rgba(180,83,9,0.08) 0 2px,transparent 2px 17px),linear-gradient(162deg,#151013 0%,#0b0b0c 58%,#130e11 100%)') center/cover no-repeat;min-height:320px}
 .hero p{color:#d3d9e0;margin:0 0 20px}
 @media(max-width:900px){.hero .card{grid-template-columns:1fr}.hero .shot{min-height:220px;order:-1}}
 </style>
@@ -113,7 +113,7 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
 <script>
 document.getElementById('burger').addEventListener('click',function(){var l=document.getElementById('navlinks');
   var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o);});
-document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button');
+document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button;
   b.textContent='Sending…';b.disabled=true;
   fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
     body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})

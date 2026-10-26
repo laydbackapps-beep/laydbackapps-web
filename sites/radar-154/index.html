@@ -307,7 +307,7 @@ h1{overflow-wrap:anywhere}
 <main id="main">
 <section aria-label="Rolled paint coat across a wall" class="hero">
 <canvas aria-hidden="true" id="heroCanvas"></canvas>
-<div aria-hidden="true" class="hero-bg" style="background-image: url('assets/hero.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+<div aria-hidden="true" class="hero-bg" style="background-image: radial-gradient(120% 90% at 14% 0%,rgba(38,38,84,0.2),transparent 62%),repeating-linear-gradient(115deg,rgba(38,38,84,0.08) 0 2px,transparent 2px 17px),linear-gradient(162deg,#151013 0%,#0b0b0c 58%,#130e11 100%)'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
 <div aria-hidden="true" class="hero-scrim"></div>
 <div aria-hidden="true" class="lbwm">PAINT</div>
 <div id="sceneWrap">
@@ -651,7 +651,7 @@ html,body{overflow-x:hidden}
   function play(){ if (rm) return; stop(); timer = setInterval(function(){ go(i + 1); }, DUR); }
   function stop(){ if (timer) { clearInterval(timer); timer = null; } }
   dots.forEach(function(d, k){ d.addEventListener('click', function(){ go(k); play(); }); });
-  var pv = rb.querySelector('.lb-rb__nav--prev'), nx = rb.querySelector('.lb-rb__nav--next');
+  var pv = rb.querySelector('.lb-rb__nav--prev'), nx = rb.querySelector('.lb-rb__nav--next;
   if (pv) pv.addEventListener('click', function(){ go(i - 1); play(); });
   if (nx) nx.addEventListener('click', function(){ go(i + 1); play(); });
   rb.addEventListener('mouseenter', stop); rb.addEventListener('mouseleave', play);

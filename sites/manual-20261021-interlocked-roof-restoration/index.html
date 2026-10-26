@@ -51,7 +51,7 @@ button{grid-column:1/-1;background:var(--acc);color:#111;border:0;padding:14px;f
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media(max-width:900px){nav .links{display:none}nav .links.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#15181e;padding:14px;border-bottom:1px solid var(--line)}.burger{display:block}.svc,.gal,.why,form{grid-template-columns:1fr}}
 .hero{position:relative;min-height:min(72vh,600px);display:flex;align-items:flex-end;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('assets/photo_1.jpg') center 45%/cover no-repeat}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(120% 90% at 14% 0%,rgba(180,83,9,0.2),transparent 62%),repeating-linear-gradient(115deg,rgba(180,83,9,0.08) 0 2px,transparent 2px 17px),linear-gradient(162deg,#151013 0%,#0b0b0c 58%,#130e11 100%)') center 45%/cover no-repeat}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,16,.72),rgba(10,12,16,.5) 45%,rgba(10,12,16,.95))}
 .hero-in{position:relative;z-index:2;padding:clamp(44px,7vw,88px) 0 clamp(34px,5vw,58px);width:100%}
 .hero p{max-width:52ch;color:#d3d9e0;margin:0 0 22px}
@@ -107,7 +107,7 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
 <script>
 document.getElementById('burger').addEventListener('click',function(){var l=document.getElementById('navlinks');
   var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o);});
-document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button');
+document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button;
   b.textContent='Sending…';b.disabled=true;
   fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
     body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})

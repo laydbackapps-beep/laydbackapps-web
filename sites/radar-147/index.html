@@ -61,7 +61,7 @@ html.js .drop.in { opacity: 1; transform: none; }
 @media (max-width: 1150px) { .nav-in { gap: 1rem; } .nav-links { gap: 1rem; } }
 @media (max-width: 1100px) { .nav .brand-name { font-size: 1.04rem !important; } .nav-links a { font-size: .86rem; } }
 @media (max-width: 640px) { .nav .brand img { height: 30px !important; } .nav .brand-name { font-size: 1rem !important; white-space: normal !important; text-wrap: balance; } }
-.hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; padding-top: 80px; background: #0c1004 url('assets/gal_7.jpg') center 58% / cover no-repeat; perspective: 1200px; }
+.hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; padding-top: 80px; background: #0c1004 radial-gradient(120% 90% at 14% 0%,rgba(80,102,28,0.2),transparent 62%),repeating-linear-gradient(115deg,rgba(80,102,28,0.08) 0 2px,transparent 2px 17px),linear-gradient(162deg,#151013 0%,#0b0b0c 58%,#130e11 100%)') center 58% / cover no-repeat; perspective: 1200px; }
 .hero canvas { display: none; }
 .hero-shade { position: absolute; inset: 0; background: radial-gradient(120% 90% at 20% 42%, rgba(6,9,2,.52) 0%, rgba(6,9,2,.16) 56%, rgba(6,9,2,0) 100%), linear-gradient(180deg, rgba(8,11,3,.86) 0%, rgba(8,11,3,.5) 46%, rgba(8,11,3,.88) 100%); pointer-events: none; }
 .hero .hv-motif { position: absolute; left: 0; right: 0; bottom: 0; height: 12px; opacity: .92; z-index: 3; }
@@ -412,7 +412,7 @@ var hg = document.querySelector('.hgal');
 if (hg) {
   var step = function(){ return Math.min(hg.clientWidth * 0.8, 600); };
   var prev = document.getElementById('hgPrev');
-  var next = document.getElementById('hgNext');
+  var next = document.getElementById('hgNext;
   if (prev) prev.addEventListener('click', function(){ hg.scrollBy({ left: -step(), behavior: 'smooth' }); });
   if (next) next.addEventListener('click', function(){ hg.scrollBy({ left: step(), behavior: 'smooth' }); });
 }

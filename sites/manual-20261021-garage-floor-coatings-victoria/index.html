@@ -325,7 +325,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 
 <main id="main">
   <section class="hero" aria-label="Garage floor coatings scene">
-    <div class="hero-bg" aria-hidden="true" style="background-image: url('assets/gal_1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+    <div class="hero-bg" aria-hidden="true" style="background-image: radial-gradient(120% 90% at 14% 0%,rgba(37,174,89,0.2),transparent 62%),repeating-linear-gradient(115deg,rgba(37,174,89,0.08) 0 2px,transparent 2px 17px),linear-gradient(162deg,#151013 0%,#0b0b0c 58%,#130e11 100%)'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="lbwm" aria-hidden="true">EPOXY</div>
     <div id="sceneWrap">
@@ -877,7 +877,7 @@ html,body{overflow-x:hidden}
 
     // vignette to seat the copy
     var vg = ctx.createRadialGradient(W*0.5,H*0.52,Math.min(W,H)*0.30,W*0.5,H*0.52,Math.max(W,H)*0.80);
-    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1, isDark?'rgba(0,0,0,0.42)':'rgba(0,0,0,0.14)');
+    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1, isDark?'rgba(0,0,0,0.42)':'rgba(0,0,0,0.14);
     ctx.fillStyle = vg; ctx.fillRect(0,0,W,H);
   }
 
