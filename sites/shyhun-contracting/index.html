@@ -1,268 +1,161 @@
-<!DOCTYPE html>
-
-<html lang="en-AU">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Shyhun Contracting Services — Laidley Heights</title>
-<meta content="Building &amp; construction — Shyhun Contracting Services, Laidley Heights." name="description"/>
-<link href="favicon-32.png" rel="icon" sizes="32x32"/>
-<meta content="#0b0b0c" name="theme-color"/>
+<!doctype html>
+<html lang="en-AU"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shyhun Contracting Services | Renovations, framing &amp; repairs, Laidley Heights</title>
+<meta name="description" content="Shyhun Contracting Services — renovations, framing, repairs and fit-outs around Laidley Heights and the Lockyer Valley. Call 0423 771 074.">
 <style>
-:root{
-  --lb-name:#ffffff; --lb-acc:#fdab06; --lb-subc:rgba(255,255,255,.72);
-  --ink:#ffffff; --muted:rgba(255,255,255,.70); --line:rgba(255,255,255,.14); --panel:rgba(255,255,255,.045);
-  --bg:#0b0b0c; --bg2:#121214; --accent:#fdab06;
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  line-height:1.6;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.08;margin:0}
-p{margin:0}
-.container{width:min(1140px,92vw);margin-inline:auto}
-header.site{position:sticky;top:0;z-index:60;background:rgba(11,11,12,.94);border-bottom:1px solid var(--line)}
-/* A header must never be hidden by a reveal/scroll state. */
-header.site{opacity:1!important;visibility:visible!important;transform:none!important}
-.bar{display:flex;align-items:center;gap:clamp(14px,3vw,48px);padding:12px 0}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:0 1 auto;min-width:0}
-.brand img{height:64px;width:auto;max-width:min(340px,46vw);object-fit:contain}
-.brand .name{font-weight:800;letter-spacing:-.01em;font-size:clamp(15px,1.6vw,21px);color:#ffffff;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.brand .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-nav.main{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,2vw,28px);flex-wrap:wrap}
-nav.main a{color:#ffffff;text-decoration:none;font-size:.95rem;opacity:.86;white-space:nowrap}
-nav.main a:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;
-  text-decoration:none;font-weight:700;font-size:.95rem;background:var(--accent);color:#0b0b0c;border:1px solid var(--accent)}
-nav.main a.btn,header .btn{background:var(--accent)!important;color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important}
-.btn.ghost{background:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff!important;
-  border:1px solid rgba(255,255,255,.5)!important}
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#0e0f11}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.34)}
-.hero .inner{position:relative;z-index:3;padding:clamp(38px,6vh,78px) 0 clamp(34px,4.5vh,58px);max-width:min(780px,92vw)}
-.kicker{display:inline-block;font-size:.82rem;font-weight:700;letter-spacing:.13em;color:#d6d8db;margin-bottom:14px}
-.hero h1{font-size:clamp(1.95rem,4vw,3.1rem);margin-bottom:14px}
-.hero h1 em{font-style:normal;color:#cfd2d6}
-.hero .lede{color:var(--muted);font-size:clamp(1rem,1.5vw,1.14rem);max-width:54ch;margin-bottom:22px}
-.hero .acts{display:flex;flex-wrap:wrap;gap:14px}
-.hero .facts{display:flex;flex-wrap:wrap;gap:9px 24px;list-style:none;padding:0;margin:20px 0 0;color:rgba(255,255,255,.82);font-size:.95rem}
-.hero .facts li::before{content:"";display:inline-block;width:6px;height:6px;margin-right:9px;background:var(--accent);vertical-align:middle;border-radius:50%}
-section{padding:clamp(56px,8vh,96px) 0;border-bottom:1px solid var(--line)}
-section.alt{background:var(--bg2)}
-.head{max-width:60ch;margin-bottom:clamp(26px,4vh,44px)}
-.head h2{font-size:clamp(1.55rem,3vw,2.3rem);margin-bottom:10px}
-.head p{color:var(--muted)}
-.grid{display:grid;gap:18px}
-.g3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:900px){.g3{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.g3{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
-.card h3{font-size:1.08rem;margin-bottom:8px}
-.card p{color:var(--muted);font-size:.95rem}
-.swatch{width:38px;height:5px;background:var(--accent);border-radius:3px;margin-bottom:16px}
-.about{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1.15fr .85fr;align-items:start}
-@media(max-width:880px){.about{grid-template-columns:1fr}}
-.about p{color:var(--muted);margin-bottom:14px}
-.about h2{margin-bottom:16px}
-.about ul{list-style:none;padding:0;margin:0}
-.about li{padding:11px 0;border-bottom:1px solid var(--line);color:rgba(255,255,255,.86);font-size:.97rem}
-.about li span{color:var(--muted)}
-.contactwrap{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1fr 1fr;align-items:start}
-@media(max-width:820px){.contactwrap{grid-template-columns:1fr}}
-.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.links a{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border:1px solid var(--line);
-  border-radius:10px;text-decoration:none;color:rgba(255,255,255,.9);font-size:.93rem}
-.links a:hover{border-color:var(--accent)}
-form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
-label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:6px}
-input,textarea{width:100%;padding:12px 14px;border-radius:9px;border:1px solid var(--line);background:#0e0f11;color:#fff;font:inherit;margin-bottom:14px}
-input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
-form .btn{width:100%}
-.note{color:var(--muted);font-size:.85rem;margin-top:12px}
-footer{padding:48px 0 34px;background:#08090a}
-.foot{display:grid;gap:clamp(22px,3vw,44px);grid-template-columns:1.4fr 1fr 1fr}
-@media(max-width:820px){.foot{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.foot{grid-template-columns:1fr}}
-footer h4{font-size:.82rem;letter-spacing:.1em;color:var(--muted);margin:0 0 14px;font-weight:700}
-footer ul{list-style:none;padding:0;margin:0}
-footer li{margin-bottom:9px}
-footer a{color:rgba(255,255,255,.86);text-decoration:none;font-size:.94rem}
-footer a:hover{text-decoration:underline}
-.footbottom{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;
-  gap:14px;justify-content:space-between;color:var(--muted);font-size:.85rem}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-.brand .name{font-weight:800;letter-spacing:-.01em;font-size:clamp(13px,1.35vw,18px);color:#ffffff;line-height:1.18;max-width:min(330px,34vw);white-space:normal}
-.hero .lede,.hero p{color:rgba(255,255,255,.94)!important}
-.hero .inner{position:relative}
-.hero .inner::before{content:"";position:absolute;inset:-10% -8%;z-index:-1;background:radial-gradient(120% 92% at 22% 42%,rgba(0,0,0,.62),rgba(0,0,0,0) 72%)}
-.about p{max-width:62ch}
-</style>
-<style id="lb-mobile-base">
-html,body{max-width:100%;overflow-x:hidden}
-img,video,canvas,svg,iframe{max-width:100%}
-img,video{height:auto}
-header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
-header,.site-header,.nav{max-width:100%}
-.lb-brand{min-width:0;max-width:100%;overflow:hidden}
-.lb-brand img{max-height:64px;width:auto}
-nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
-h1{overflow-wrap:anywhere}
-@media (max-width:820px){
-  .lb-brand img{max-height:38px}
-  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
-  h2{font-size:clamp(20px,6vw,30px)!important}
-  section{padding-left:16px!important;padding-right:16px!important}
-  .wrap,.container{max-width:100%!important}
-}
-</style>
-<style id="lb-logo-hero">
-/* Client logo across the header: the real artwork, isolated and readable. */
-.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;padding:0!important;max-height:96px!important;
-  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
-  padding:0!important;box-shadow:none!important}
-.lb-brand .lb-mark{display:block!important;height:clamp(44px,4.8vw,66px)!important;width:auto!important;
-  max-width:none!important;max-height:66px!important;object-fit:contain!important;background:none!important;
-  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
-.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(38vw,520px)!important;
-  max-height:none!important;object-fit:contain!important;object-position:left center!important;
-  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
-.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
-  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
-.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
-.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
-.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
-  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
-.lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
-@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:20px!important}}
-.lb-bar{background-color:#f3c570!important}
-.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#101014!important}
-.lb-bar .cta,.lb-bar a.cta{color:#101014!important}
-</style>
-<style id="lb-brand-palette">:root{--acc:#bd8109;--accent:#bd8109;--lbq-accent:#bd8109;--lb-acc:#bd8109;--brand:#bd8109;--brand-color:#bd8109;--primary:#bd8109;--lime:#bd8109;--color-lime:#bd8109;--gold:#bd8109;--acc-strong:#bd8109;--acc2:#a78747;--acc-hi:#a78747;--accent-2:#a78747;--brand-2:#a78747;}</style></head>
+:root{--amber:#f1a513;--amber-2:#d78d08;--olive:#23261a;--olive-2:#2e3322;--cream:#fbf6ea;--ink:#1b1d14;--dim:#6c6a5c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:17px/1.62 "Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(18px,4.5vw,54px)}
+a{color:inherit}
+
+header.site{position:sticky;top:0;z-index:50;background:var(--amber);border-bottom:1px solid rgba(0,0,0,.18)}
+.bar{display:flex;align-items:center;gap:clamp(12px,2vw,26px);padding:8px 0;flex-wrap:wrap}
+.lb-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.lb-brand img{height:clamp(50px,5.4vw,70px);width:auto;display:block}
+.lb-name{font-size:14px;font-weight:800;letter-spacing:.02em;line-height:1.15;color:#241d08}
+.lb-name span{display:block;font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-top:3px;color:#4a3a09}
+nav.main{display:flex;gap:clamp(14px,1.8vw,26px);margin-left:auto;flex-wrap:wrap}
+nav.main a{text-decoration:none;font-size:14.5px;font-weight:600;color:#33280a}
+nav.main a:hover{color:#000}
+.call{background:var(--olive);color:var(--cream);text-decoration:none;font-weight:800;font-size:15px;padding:11px 18px;white-space:nowrap}
+
+/* hero: type-led, structure drawn in CSS — no borrowed photography */
+.hero{background:var(--olive);color:var(--cream);position:relative;overflow:hidden;padding:clamp(56px,8vw,112px) 0 clamp(44px,6vw,84px)}
+.hero:before{content:"";position:absolute;inset:0;
+background-image:repeating-linear-gradient(115deg,rgba(241,165,19,.10) 0 2px,transparent 2px 34px),
+repeating-linear-gradient(65deg,rgba(241,165,19,.05) 0 1px,transparent 1px 26px);opacity:.9}
+.hero .inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,64px);align-items:end}
+@media(max-width:920px){.hero .inner{grid-template-columns:1fr}}
+.hero .kick{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);font-weight:800;margin:0 0 20px}
+.hero h1{margin:0 0 20px;font-size:clamp(40px,6.8vw,96px);line-height:.92;letter-spacing:-.045em;font-weight:800;max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p{margin:0;max-width:50ch;color:#ded8c6;font-size:clamp(16px,1.5vw,18.5px)}
+.hero .facts{border-left:2px solid var(--amber);padding-left:18px;font-size:14.5px;color:#cfc9b6;display:grid;gap:10px}
+.hero .facts b{display:block;color:#fff;font-size:15px}
+
+section{padding:clamp(52px,7vw,96px) 0}
+section.dark{background:var(--olive-2);color:var(--cream)}
+h2{margin:0 0 10px;font-size:clamp(24px,3vw,38px);letter-spacing:-.025em;font-weight:800}
+.sub{margin:0 0 clamp(26px,3.4vw,44px);color:var(--dim);max-width:66ch}
+section.dark .sub{color:#bfb9a6}
+
+/* services: numbered ruled rows, split two columns */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(28px,5vw,72px)}
+@media(max-width:860px){.svc{grid-template-columns:1fr}}
+.svc article{padding:20px 0;border-top:1px solid rgba(27,29,20,.16);display:grid;grid-template-columns:36px 1fr;gap:14px}
+.svc article:nth-child(-n+2){border-top:2px solid var(--amber)}
+.svc .n{font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--amber-2);padding-top:4px}
+.svc h3{margin:0 0 4px;font-size:18px}
+.svc p{margin:0;color:var(--dim);font-size:15.5px}
+
+/* process: horizontal steps on dark */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2.6vw,34px)}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+.steps div{border-top:2px solid var(--amber);padding-top:16px}
+.steps .s{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:800;margin-bottom:9px}
+.steps h3{margin:0 0 7px;font-size:17px}
+.steps p{margin:0;color:#c3bda9;font-size:15px}
+
+/* quote */
+.quote{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,70px);align-items:start}
+@media(max-width:900px){.quote{grid-template-columns:1fr}}
+.big{display:inline-block;font-size:clamp(26px,3.4vw,40px);font-weight:800;text-decoration:none;letter-spacing:-.02em;border-bottom:3px solid var(--amber);padding-bottom:4px;margin:12px 0 18px}
+form{background:#fff;border:1px solid rgba(27,29,20,.14);padding:clamp(22px,3vw,32px)}
+label{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0 0 6px}
+input,textarea{width:100%;border:1px solid rgba(27,29,20,.18);background:#fdfbf6;padding:12px;font:inherit;font-size:15px;margin-bottom:15px}
+button{width:100%;background:var(--olive);color:var(--cream);border:0;padding:15px;font:inherit;font-weight:800;cursor:pointer}
+button:hover{background:var(--amber);color:#241d08}
+.areas{display:flex;flex-wrap:wrap;gap:8px}
+.areas span{border:1px solid rgba(251,246,234,.28);padding:8px 14px;font-size:14px;color:#ded8c6}
+footer{background:#191b12;color:#a7a293;padding:28px 0;font-size:14px}
+footer .row{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:760px){.lb-name{display:none}nav.main{order:3;width:100%;margin-left:0}}
+</style></head>
 <body>
-<header class="site">
-<div class="container bar">
-<a aria-label="Shyhun Contracting Services" class="lb-brand lb-brand--lockup" href="#top" style="--lb-name:#101014"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-cut.png"/><span class="lb-sr">Shyhun Contracting Services</span></a><nav aria-label="Shyhun Contracting Services" class="main">
-<a href="#services">Services</a>
-<a href="#process">Our process</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-<a class="btn" href="#contact">Get a quote</a>
-</nav>
-</div>
-<a class="btn" href="tel:0423771074" style="font-weight:800;text-decoration:none;color:inherit;white-space:nowrap;display:inline-flex;align-items:center">Call 0423771074</a></header>
-<main>
-<section aria-label="Shyhun Contracting Services" class="hero" id="top">
-<canvas aria-hidden="true" id="heroCanvas"></canvas>
-<div aria-hidden="true" class="veil"></div>
-<div class="container inner">
-<h1>Shyhun Contracting Services:<br/>contracting done properly.</h1>
-<p class="lede">Most of the contracting calls Shyhun Contracting Services gets start the same way: something has failed, or something new has to be built properly. Either way it is priced after looking at Laidley Heights job itself.</p>
-<div class="acts"><a class="btn ghost" href="#services">See what we do</a></div>
-<ul class="facts"><li>Renovations</li><li>Framing</li><li>Repairs</li><li>Fit-out</li></ul>
-</div>
-</section>
-<section id="services">
-<div class="container">
-<div class="head"><h2>What we do</h2><p>Shyhun Contracting Services is owner-run, which is why the person who quotes your contracting job is the person who turns up to do it.</p></div>
-<div class="grid g3"><article class="card"><div class="swatch"></div><h3>the work you need quoted</h3><p>What is there, what it needs, what it will take.</p></article><article class="card"><div class="swatch"></div><h3>Sequence it</h3><p>Trades lined up so nobody blocks anybody.</p></article><article class="card"><div class="swatch"></div><h3>Hand it over</h3><p>Cleaned, snagged and signed off.</p></article><article class="card"><div class="swatch"></div><h3>Maintenance</h3><p>The site is looked at properly — access, what is already there, and what the finish has to do — before Shyhun Contracting Services puts a number on it.</p></article><article class="card"><div class="swatch"></div><h3>Renovations</h3><p>You get the scope in writing: what is included, what is not, and when it can start. No allowances that quietly grow.</p></article><article class="card"><div class="swatch"></div><h3>Framing</h3><p>Shyhun Contracting Services turns up when agreed, does the contracting work to the quoted scope, and keeps the site tidy while it happens.</p></article></div>
-</div>
-</section>
-<section class="alt" id="process">
-<div class="container">
-<div class="head"><h2>How a job runs</h2><p>From the first look to the final clean up.</p></div>
-<div class="grid g3"><article class="card"><h3>Scope the job</h3><p>What is there now, what it needs and what it will take.</p></article><article class="card"><h3>Build it</h3><p>Work sequenced so other trades are not blocked.</p></article><article class="card"><h3>Hand it over</h3><p>Site cleaned and defects sorted.</p></article></div>
-</div>
-</section>
-<section id="about">
-<div class="container about">
-<div><h2>About Shyhun Contracting Services</h2><p>Quoted on site — Not over the phone from a photo — the price comes from seeing the job.</p><p>One point of contact — The same person answers the phone and runs the work.</p></div>
-<ul><li>Local work <span>· Laidley Heights</span></li><li>Free quotes <span>· call to arrange a look</span></li><li>Fully insured <span>· work done to standard</span></li><li>Call 0423771074 <span>· to book a quote</span></li></ul>
-</div>
-</section>
-<section class="alt" id="contact">
-<div class="container contactwrap">
-<div>
-<h2>Get a quote</h2>
-<p style="color:var(--muted);margin:10px 0 22px">Local to Laidley Heights — Travel time is short, which is why small jobs are worth doing.</p>
-<a class="telbig" href="tel:0423771074">0423771074</a><p style="color:var(--muted);margin-top:10px">Laidley Heights</p>
-<div class="links"><a href="https://www.facebook.com/share/1LdSAZsAqN/" rel="noopener">Facebook</a></div>
-</div>
-<form data-biz="Shyhun Contracting Services" data-site="shyhun-contracting" id="lbq-form" novalidate="">
-<label for="lbq-n">Name</label>
-<input autocomplete="name" id="lbq-n" name="name" required=""/>
-<label for="lbq-p">Phone</label>
-<input autocomplete="tel" id="lbq-p" name="phone" required="" type="tel"/>
-<label for="lbq-m">What do you need done?</label>
-<textarea id="lbq-m" name="message" rows="4"></textarea>
-<button class="btn" type="submit">Request a quote</button>
-<p class="note" id="lbq-note">Or call 0423771074 — we’ll get straight back to you.</p>
-</form>
-</div>
-</section>
+<header class="site"><div class="wrap bar">
+  <a class="lb-brand" href="#top" aria-label="Shyhun Contracting Services">
+    <img src="assets/logo.png" alt="Shyhun Contracting Services">
+    <span class="lb-name">Shyhun Contracting Services<span>Renovations · Framing · Repairs</span></span>
+  </a>
+  <nav class="main">
+    <a href="#services">Services</a><a href="#process">Process</a>
+    <a href="#about">About</a><a href="#area">Areas</a>
+  </nav>
+  <a class="call" href="tel:0423771074">0423 771 074</a>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap inner">
+  <div>
+    <p class="kick">Laidley Heights · Lockyer Valley · Contracting</p>
+    <h1>Built square.<br>Finished<br><em>properly.</em></h1>
+    <p>Renovations, framing, repairs and fit-outs for homes and small commercial sites across the Lockyer
+    Valley — set out from the plan, sequenced so the trades do not stand on each other.</p>
+  </div>
+  <div class="facts">
+    <div><b>Renovations &amp; extensions</b>Strip-out through to final trim</div>
+    <div><b>Framing &amp; structural</b>Set out square, built to the detail</div>
+    <div><b>Repairs &amp; maintenance</b>The jobs that keep a building sound</div>
+  </div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <h2>What we take on</h2>
+  <p class="sub">Contracting work where the sequence matters as much as the finish — because the next trade
+  inherits whatever the last one left.</p>
+  <div class="svc"><article><span class="n">01</span><div><h3>Renovations &amp; extensions</h3><p>Strip-out, framing, lining and finish, run in sequence so the job keeps moving.</p></div></article><article><span class="n">02</span><div><h3>Framing &amp; structural work</h3><p>Set out from the plan and checked square before anything is sheeted.</p></div></article><article><span class="n">03</span><div><h3>Repairs &amp; maintenance</h3><p>Rotten framing, failed lintels, damaged linings — assessed before they are quoted.</p></div></article><article><span class="n">04</span><div><h3>Fit-outs</h3><p>Shop and office fit-outs built around the tenancy and the trades that follow.</p></div></article><article><span class="n">05</span><div><h3>Decks, pergolas &amp; carports</h3><p>Sized to the span, fixed with the right hardware and finished to suit the house.</p></div></article><article><span class="n">06</span><div><h3>Make-good &amp; handover work</h3><p>The list at the end of a job, closed out properly.</p></div></article></div>
+</div></section>
+
+<section id="process" class="dark"><div class="wrap">
+  <h2>How a job runs</h2>
+  <p class="sub">Quoted from the site, run to the scope, checked before handover.</p>
+  <div class="steps"><div><div class="s">Step 01</div><h3>Walk the job</h3><p>Access, existing structure and the plan are checked on site before a price.</p></div><div><div class="s">Step 02</div><h3>Agree the scope</h3><p>Written scope with what is included and what is not, and a start date.</p></div><div><div class="s">Step 03</div><h3>Build it</h3><p>Sequenced trades, site kept secure and weatherproof at the end of each week.</p></div><div><div class="s">Step 04</div><h3>Check it over</h3><p>Walked with you before handover, with the snag list closed out.</p></div></div>
+</div></section>
+
+<section id="about"><div class="wrap quote">
+  <div>
+    <h2>Who you are dealing with</h2>
+    <p style="color:var(--dim);margin:0 0 16px;max-width:46ch">Shyhun Contracting Services is owner-run. The
+    person who quotes the job is on site for it, which is why the scope and the finish match what was agreed.</p>
+    <p style="color:var(--dim);margin:0 0 18px;max-width:46ch">Work is priced from a site visit with a written
+    scope, and variations are agreed before they happen rather than appearing on the invoice.</p>
+    <a class="big" href="tel:0423771074">0423 771 074</a>
+  </div>
+  <form id="quote-form" data-site="shyhun-contracting">
+    <label for="n">Name</label><input id="n" name="name" required placeholder="Your name">
+    <label for="p">Phone</label><input id="p" name="phone" required inputmode="tel" placeholder="04xx xxx xxx">
+    <label for="s">Suburb</label><input id="s" name="suburb" placeholder="e.g. Gatton">
+    <label for="m">The job</label><textarea id="m" name="message" rows="3" placeholder="Renovation, framing, repairs…"></textarea>
+    <button type="submit">Send request</button>
+  </form>
+</div></section>
+
+<section id="area" class="dark"><div class="wrap">
+  <h2>Where we work</h2>
+  <p class="sub">Laidley Heights and the Lockyer Valley.</p>
+  <div class="areas"><span>Laidley</span><span>Laidley Heights</span><span>Gatton</span><span>Ipswich</span><span>Rosewood</span><span>Toowoomba</span><span>Boonah</span><span>Forest Hill</span><span>Plainland</span><span>Hatton Vale</span></div>
+</div></section>
 </main>
-<footer>
-<div class="container">
-<div class="foot">
-<div><h4>SHYHUN CONTRACTING SERVICES</h4><p style="color:var(--muted);max-width:34ch">Building &amp; construction across Laidley Heights.</p></div>
-<div><h4>SERVICES</h4><ul><li><a href="#services">Renovations</a></li><li><a href="#services">Framing &amp; structures</a></li><li><a href="#services">Decks &amp; carports</a></li><li><a href="#services">Property repairs</a></li></ul></div>
-<div><h4>CONTACT</h4><ul><li><a href="https://www.facebook.com/share/1LdSAZsAqN/" rel="noopener">Facebook</a></li></ul></div>
-</div>
-<div class="footbottom">
-<span>© <span id="yr">2026</span> Shyhun Contracting Services. All rights reserved.</span>
-<span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
-</div>
-</div>
-</footer>
+
+<footer><div class="wrap row">
+  <span>Shyhun Contracting Services · Laidley Heights QLD</span>
+  <span><a href="tel:0423771074" style="color:#fff;text-decoration:none;font-weight:700">0423 771 074</a></span>
+</div></footer>
+
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-(function(){
-  var c=document.getElementById('heroCanvas'); if(!c) return;
-  var ctx=c.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2), w=0,h=0,t=0,raf=null;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function size(){var r=c.getBoundingClientRect(); w=Math.max(320,r.width|0); h=Math.max(320,r.height|0);
-    c.width=w*dpr; c.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);}
-  function draw(){
-    var g=ctx.createLinearGradient(0,0,0,h);
-    g.addColorStop(0,'#141518'); g.addColorStop(.55,'#0e0f11'); g.addColorStop(1,'#090a0b');
-    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
-    var y0=h*0.52;
-    ctx.beginPath(); ctx.moveTo(0,y0); ctx.lineTo(w,y0); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
-
-    // deck boards in perspective with a joist grid and a low raking light
-    var gg=ctx.createLinearGradient(0,y0,0,h);
-    gg.addColorStop(0,'#6b5844'); gg.addColorStop(.5,'#4d3f31'); gg.addColorStop(1,'#2f2720');
-    ctx.fillStyle=gg; ctx.fill();
-    for(var b=0;b<18;b++){
-      var t=b/18, yb=y0+(h-y0)*t*t, yb2=y0+(h-y0)*Math.min(1,((b+1)/18)*((b+1)/18));
-      ctx.strokeStyle='rgba(0,0,0,'+(0.16+t*0.12)+')'; ctx.lineWidth=1+t*1.4;
-      ctx.beginPath(); ctx.moveTo(0,yb); ctx.lineTo(w,yb); ctx.stroke();
-      if(b%2===0){ ctx.strokeStyle='rgba(255,255,255,.045)'; ctx.beginPath(); ctx.moveTo(0,yb2-1); ctx.lineTo(w,yb2-1); ctx.stroke(); }
-    }
-    ctx.strokeStyle='rgba(255,255,255,.10)'; ctx.lineWidth=2;
-    for(var k=-3;k<=3;k++){ ctx.beginPath(); ctx.moveTo(w*.5+k*w*.06,y0); ctx.lineTo(w*.5+k*w*.30,h); ctx.stroke(); }
-    var lg=ctx.createLinearGradient(0,0,w,h);
-    lg.addColorStop(0,'rgba(0,123,255,.20)'); lg.addColorStop(.55,'rgba(0,123,255,0)');
-    ctx.fillStyle=lg; ctx.fillRect(0,0,w,h);
-
-  }
-  function loop(){ t+=0.004; draw(); raf=requestAnimationFrame(loop); }
-  size(); draw(); if(!reduce){ loop(); }
-  window.addEventListener('resize', function(){ size(); draw(); }, {passive:true});
-  window.addEventListener('pagehide', function(){ if(raf) cancelAnimationFrame(raf); });
-})();
-(function(){
-  var f=document.getElementById('lbq-form'); if(!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('lbq-note').textContent = "Thanks. This preview form isn\u2019t wired to a mailbox yet \u2014 call 0423771074 or message us on Facebook.";
-  });
-})();
+document.getElementById('quote-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.currentTarget, b = f.querySelector('button');
+  b.textContent = 'Sending…'; b.disabled = true;
+  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests', {
+    method: 'POST', headers: { 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+    body: JSON.stringify({ site: f.dataset.site, name: f.name.value, phone: f.phone.value,
+      suburb: f.suburb.value, message: f.message.value })
+  }).then(function () { b.textContent = 'Thanks — we will be in touch'; })
+    .catch(function () { b.textContent = 'Call 0423 771 074'; b.disabled = false; });
+});
 </script>
-<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#f3c570","important");})();</script>
-</body>
-</html>
+</body></html>
