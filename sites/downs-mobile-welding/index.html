@@ -1,116 +1,515 @@
 <!doctype html>
-<html lang="en-AU"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Downs Mobile Welding — Mobile welding</title>
-<meta name="description" content="Downs Mobile Welding. Quoted from the site, done by the same people who quoted it. Call 0437 555 410.">
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>Downs Mobile Welding — mobile welding, repairs &amp; steel fabrication | Bendigo VIC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Downs Mobile Welding brings the welder to the job. Mobile welding, on-site repairs, gates and trailers, and steel fabrication across Bendigo and Central Victoria.">
+<meta name="theme-color" content="#12151a">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/logo-mark.png">
+<meta property="og:title" content="Downs Mobile Welding — mobile welding, on-site repairs, gates &amp; trailers, fabrication">
+<meta property="og:description" content="Mobile welding and steel fabrication across Bendigo and Central Victoria. We come to the job.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0d0f13;--panel:#15181e;--paper:#f4f2ee;--dim:#9aa3ad;--line:rgba(255,255,255,.13);--acc:#4389cd}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:#f2f4f7;font:17px/1.6 "Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
-.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
-a{color:inherit}
-nav{position:sticky;top:0;z-index:40;background:rgba(13,15,19,.95);border-bottom:2px solid var(--acc);backdrop-filter:blur(8px)}
-.nav-in{display:flex;align-items:center;gap:clamp(12px,2vw,26px);height:78px}
-.brand img{height:46px;width:auto;display:block}
-nav .links{display:flex;gap:clamp(12px,1.8vw,24px);margin-left:auto}
-nav .links a{text-decoration:none;font-size:15px;color:var(--dim)}
-nav .links a:hover{color:#fff}
-.tel{font-weight:800;text-decoration:none;color:#111;background:var(--acc);padding:10px 16px;white-space:nowrap}
-.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:#fff;padding:8px 10px;font-size:18px}
-section{padding:clamp(42px,6vw,76px) 0;border-top:1px solid var(--line)}
-h2{margin:0 0 10px;font-size:clamp(22px,2.8vw,34px);letter-spacing:-.02em}
-.lead{color:var(--dim);margin:0 0 24px;max-width:62ch}
-.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--acc);margin-bottom:14px}
-.kicker::before{content:"";width:32px;height:2px;background:var(--acc)}
-h1{margin:0 0 16px;font-size:clamp(32px,5vw,58px);line-height:1.02;letter-spacing:-.035em}
-h1 em{font-style:normal;color:var(--acc)}
-.cta{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:#111;text-decoration:none;font-weight:800;padding:14px 22px}
-.cta.ghost{background:transparent;border:1px solid var(--line);color:#fff;font-weight:600;margin-left:8px}
-.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-.svc article{background:var(--ink);padding:22px 20px}
-.svc h3{margin:0 0 6px;font-size:16.5px}
-.svc p{margin:0;color:var(--dim);font-size:14.5px}
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.gal figure{margin:0}.gal img{width:100%;height:240px;object-fit:cover;display:block}
-.gal figcaption{font-size:12.5px;color:var(--dim);padding:8px 2px 0}
-.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.why article{border-left:2px solid var(--acc);padding-left:14px}
-.why h3{margin:0 0 6px;font-size:16px}
-.why p{margin:0;color:var(--dim);font-size:14.5px}
-.areas{display:flex;flex-wrap:wrap;gap:8px}
-.areas span{border:1px solid var(--line);padding:7px 13px;font-size:14px;color:var(--dim)}
-details.faq{border-bottom:1px solid var(--line);padding:14px 0}
-details.faq summary{cursor:pointer;font-weight:700;font-size:16px}
-details.faq .a{color:var(--dim);padding-top:8px;font-size:15px}
-form{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,3vw,30px);display:grid;grid-template-columns:1fr 1fr;gap:12px}
-form .full{grid-column:1/-1}
-label{display:block;font-size:13px;color:var(--dim);margin-bottom:5px}
-input,textarea,select{width:100%;background:#0b0d11;border:1px solid var(--line);color:#fff;padding:11px;font:inherit;font-size:15px}
-button{grid-column:1/-1;background:var(--acc);color:#111;border:0;padding:14px;font:inherit;font-weight:800;cursor:pointer}
-footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:900px){nav .links{display:none}nav .links.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#15181e;padding:14px;border-bottom:1px solid var(--line)}.burger{display:block}.svc,.gal,.why,form{grid-template-columns:1fr}}
-.hero{padding:clamp(52px,8vw,110px) 0 clamp(30px,4vw,50px);border-bottom:1px solid var(--line)}
-.hero .rule{height:8px;background:var(--acc);width:96px;margin:0 0 22px}
-.hero p{color:#cbd2da;margin:0 0 22px;max-width:58ch;font-size:clamp(16px,1.6vw,19px)}
-.hero .band{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;color:var(--dim);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase}
+:root{
+  --bg:#12151a;
+  --bg2:#171b20;
+  --panel:#1b2026;
+  --ink:#eef0f2;
+  --muted:#a1a8b0;
+  --dim:#7d848c;
+  --tan:#a08068;
+  --tan-lo:#86674f;
+  --char:#3a3d42;
+  --line:rgba(160,128,104,.26);
+  --line-soft:rgba(255,255,255,.09);
+  --disp:"Barlow Condensed",system-ui,sans-serif;
+  --body:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --pad:clamp(20px,5vw,72px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.005em;line-height:1.02;margin:0}
+p{margin:0}
+.disp{font-family:var(--disp);text-transform:uppercase}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:40;background:#12151a;border-bottom:1px solid var(--line-soft)}
+.bar{max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:clamp(12px,2vw,32px);padding:11px var(--pad)}
+.brand{display:flex;align-items:center;gap:13px;min-width:0}
+.brand__chip{flex:0 0 auto;width:46px;height:46px;border-radius:7px;background:#a08068;padding:4px;display:grid;place-items:center}
+.brand__chip img{width:100%;height:100%;object-fit:contain}
+.brand__name{font-family:var(--disp);font-weight:700;font-size:clamp(19px,2.6vw,27px);line-height:1;letter-spacing:.03em;text-transform:uppercase;color:#eef0f2;white-space:nowrap}
+.brand__tag{display:block;font-family:var(--body);font-weight:500;font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:var(--tan);margin-top:5px}
+.bar nav{display:flex;align-items:center;gap:clamp(14px,2.2vw,30px)}
+.bar nav a{font-size:14.5px;font-weight:500;color:#cfd4d9;border-bottom:1px solid transparent;padding-bottom:2px}
+.bar nav a:hover{color:#fff;border-bottom-color:var(--tan)}
+.call{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--tan);color:var(--ink);background:rgba(160,128,104,.12);padding:11px 17px;border-radius:5px;font-weight:600;font-size:14.5px;font-variant-numeric:tabular-nums}
+.call:hover{background:var(--tan);color:#1a140f}
+@media(max-width:900px){ .bar nav .m-hide{display:none} }
+@media(max-width:560px){
+  .brand__tag{display:none}
+  .brand__chip{width:40px;height:40px}
+  .call{padding:9px 12px;font-size:13.5px}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:stretch;overflow:hidden;background:#0d1013;border-bottom:1px solid var(--line-soft)}
+#heroCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+.hero__veil{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(100deg,rgba(13,16,19,.93) 0%,rgba(13,16,19,.80) 34%,rgba(13,16,19,.30) 62%,rgba(13,16,19,.52) 100%)}
+.hero__in{position:relative;z-index:2;width:100%;max-width:1440px;margin:0 auto;padding:clamp(48px,8vh,104px) var(--pad) 0;display:flex;flex-direction:column;justify-content:flex-start}
+.hero__label{display:inline-flex;align-items:center;gap:11px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--tan);font-weight:600}
+.hero__label::before{content:"";width:34px;height:1px;background:var(--tan);display:block}
+.hero h1{font-size:clamp(40px,7vw,86px);margin:22px 0 0;max-width:15ch;color:#fff}
+.hero h1 span{display:block;color:var(--tan)}
+.hero__sub{margin-top:20px;max-width:44ch;font-size:clamp(16px,1.55vw,19px);color:#d3d8dd}
+.hero__cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 26px;border-radius:5px;font-weight:600;font-size:15.5px;border:1px solid transparent;transition:transform .18s ease,background .18s ease,color .18s ease}
+.btn--pri{background:var(--tan);color:#1a140f}
+.btn--pri:hover{background:#b5907a;transform:translateY(-1px)}
+.btn--ghost{border-color:rgba(255,255,255,.3);color:#fff}
+.btn--ghost:hover{border-color:var(--tan);color:var(--tan)}
+.hero__strip{margin-top:auto;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:0}
+.hero__strip div{padding:18px 0 20px;border-right:1px solid var(--line-soft);padding-right:18px}
+.hero__strip div:last-child{border-right:0}
+.hero__strip b{display:block;font-family:var(--disp);text-transform:uppercase;font-size:17px;letter-spacing:.06em;color:#fff;font-weight:600}
+.hero__strip span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+@media(max-width:860px){
+  .hero{min-height:0}
+  .hero__strip{grid-template-columns:1fr 1fr;margin-top:34px}
+  .hero__strip div{padding:14px 12px 14px 0;border-bottom:1px solid var(--line-soft)}
+  .hero__strip div:nth-child(2n){border-right:0}
+  .hero__sub{max-width:100%}
+}
+@media(max-width:520px){ .hero__strip{grid-template-columns:1fr} .hero__strip div{border-right:0} }
+
+/* ---------- section furniture ---------- */
+section{scroll-margin-top:76px}
+.wrap{max-width:1440px;margin:0 auto;padding:clamp(56px,8vw,104px) var(--pad)}
+.head{display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,1fr);gap:clamp(18px,4vw,60px);align-items:end;border-bottom:1px solid var(--line-soft);padding-bottom:26px}
+.head .k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--tan);font-weight:600}
+.head h2{font-size:clamp(30px,4.4vw,54px);margin-top:12px}
+.head p{color:var(--muted);font-size:16.5px;max-width:56ch}
+@media(max-width:840px){ .head{grid-template-columns:1fr;align-items:start} }
+
+/* ---------- ledger of services ---------- */
+.ledger{margin-top:0}
+.row{display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1.05fr);gap:clamp(16px,3vw,44px);padding:clamp(26px,3.4vw,44px) 0;border-bottom:1px solid var(--line-soft);align-items:start}
+.row:last-child{border-bottom:0}
+.row .num{font-family:var(--disp);font-size:clamp(22px,2.6vw,32px);color:var(--tan);letter-spacing:.06em;padding-top:2px}
+.row h3{font-size:clamp(23px,2.6vw,32px);color:#fff}
+.row p{color:var(--muted);font-size:16.5px}
+.row ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.row li{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#c8cfd6;border:1px solid var(--line);border-radius:3px;padding:5px 10px}
+@media(max-width:840px){ .row{grid-template-columns:52px minmax(0,1fr);gap:14px} .row p,.row ul{grid-column:2} }
+
+/* ---------- process ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line-soft);margin-top:0}
+.steps article{padding:clamp(28px,3.6vw,46px) clamp(18px,2.4vw,38px) clamp(28px,3.6vw,46px) 0;border-right:1px solid var(--line-soft)}
+.steps article:last-child{border-right:0}
+.steps .s{font-family:var(--disp);font-size:15px;letter-spacing:.24em;color:var(--tan);text-transform:uppercase}
+.steps h3{font-size:clamp(21px,2.3vw,28px);margin:14px 0 12px;color:#fff}
+.steps p{color:var(--muted);font-size:16px}
+@media(max-width:840px){ .steps{grid-template-columns:1fr} .steps article{border-right:0;border-bottom:1px solid var(--line-soft);padding-right:0} }
+
+/* ---------- about ---------- */
+.about{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(26px,5vw,72px);align-items:start}
+.about h2{font-size:clamp(30px,4.2vw,50px);margin-bottom:20px}
+.about p{color:var(--muted);margin-bottom:16px;max-width:58ch}
+.about p b{color:var(--ink);font-weight:600}
+.brandcard{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:clamp(22px,2.6vw,34px)}
+.brandcard .plate{background:#f4f1ec;border-radius:5px;padding:20px;display:grid;place-items:center}
+.brandcard .plate img{width:min(230px,70%);height:auto}
+.brandcard h3{font-size:21px;margin:20px 0 8px;color:#fff}
+.brandcard p{color:var(--muted);font-size:15px;margin:0}
+.brandcard dl{margin:20px 0 0;display:grid;grid-template-columns:auto 1fr;gap:7px 16px;font-size:15px}
+.brandcard dt{color:var(--dim);text-transform:uppercase;font-size:12px;letter-spacing:.14em;padding-top:3px}
+.brandcard dd{margin:0;color:var(--ink)}
+.brandcard dd a{border-bottom:1px solid var(--line)}
+.brandcard dd a:hover{color:var(--tan);border-bottom-color:var(--tan)}
+@media(max-width:900px){ .about{grid-template-columns:1fr} }
+
+/* ---------- quote form ---------- */
+.quote{background:var(--bg2);border-top:1px solid var(--line-soft)}
+.quote__grid{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1fr);gap:clamp(26px,5vw,72px);align-items:start}
+.quote h2{font-size:clamp(28px,4vw,46px)}
+.quote .lede{color:var(--muted);margin-top:16px;max-width:40ch}
+.quote .direct{margin-top:26px;border-top:1px solid var(--line-soft);padding-top:22px}
+.quote .direct a{font-family:var(--disp);font-size:clamp(24px,3vw,34px);letter-spacing:.03em;color:var(--tan);display:inline-block}
+.quote .direct a:hover{color:#fff}
+.quote .direct span{display:block;color:var(--dim);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+form{background:var(--panel);border:1px solid var(--line-soft);border-radius:8px;padding:clamp(20px,2.6vw,32px)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fgrid .wide{grid-column:1/-1}
+label{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:7px}
+input,textarea,select{width:100%;padding:13px 14px;background:#12161a;border:1px solid var(--line-soft);border-radius:5px;color:var(--ink);font:inherit;font-size:15.5px}
+textarea{min-height:118px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--tan);outline-offset:1px;border-color:transparent}
+.cons{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:14px;color:var(--muted);text-transform:none;letter-spacing:0}
+.cons input{width:auto;margin-top:3px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+form button{margin-top:18px;width:100%;background:var(--tan);color:#1a140f;border:0;border-radius:5px;padding:16px 22px;font:inherit;font-weight:600;font-size:16px;cursor:pointer}
+form button:hover{background:#b5907a}
+form button:disabled{opacity:.6;cursor:wait}
+.st{margin-top:12px;font-size:14.5px;color:var(--muted);min-height:1.2em}
+@media(max-width:900px){ .quote__grid{grid-template-columns:1fr} }
+@media(max-width:620px){ .fgrid{grid-template-columns:1fr} }
+
+/* ---------- footer ---------- */
+footer{background:#0d1013;border-top:1px solid var(--line)}
+.fgrid2{max-width:1440px;margin:0 auto;padding:clamp(44px,5vw,68px) var(--pad) 30px;display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px)}
+footer h4{font-family:var(--disp);font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--tan);margin:0 0 16px;font-weight:600}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:10px;color:var(--muted);font-size:15px}
+footer li a:hover{color:#fff}
+.fbrand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.fbrand .chip{width:40px;height:40px;border-radius:6px;background:#a08068;padding:3px}
+.fbrand b{font-family:var(--disp);text-transform:uppercase;font-size:20px;letter-spacing:.04em;color:#fff}
+footer .fcol p{color:var(--muted);font-size:15px;max-width:34ch}
+.fbot{max-width:1440px;margin:0 auto;padding:20px var(--pad) 34px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;color:var(--dim);font-size:14px}
+.fbot a:hover{color:var(--tan)}
+@media(max-width:900px){ .fgrid2{grid-template-columns:1fr 1fr} }
+@media(max-width:560px){ .fgrid2{grid-template-columns:1fr} }
+
+/* ---------- reveal + motion ---------- */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .rv{opacity:1!important;transform:none!important}
+}
 </style>
-<style id="lb-skin">/* skin 2 — condensed uppercase, full-bleed hero, numbered services */
- .hero h1, header h1{text-transform:uppercase!important;letter-spacing:-.01em!important;font-weight:800!important;line-height:.95!important}
- h2{text-transform:uppercase!important;letter-spacing:.06em!important;font-size:clamp(18px,2vw,24px)!important;font-weight:700!important}
- .hero,header.hero{min-height:72vh!important}
- [class*=grid]{gap:1px!important;background:rgba(255,255,255,.12)!important}
- [class*=card]{border-radius:0!important;background:var(--ground,#0d0f13)!important;padding:clamp(20px,3vw,34px)!important}
- [class*=card]:before{content:counter(lbc);counter-increment:lbc;display:block;font:700 11px/1 ui-monospace,monospace;letter-spacing:.2em;opacity:.55;margin-bottom:10px}
- [class*=grid]{counter-reset:lbc}
- </style><style id="lb-skin-guard">@media(max-width:900px){
- .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
- [class*=card]{transform:none!important;margin-bottom:12px!important}
- [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
- section,.hero,header{overflow-x:clip!important}
- img,video,svg{max-width:100%!important;height:auto}
- h1,h2{overflow-wrap:anywhere!important}
-}</style><style id="lb-hdr-centre">
-/* brand is the logo alone — centre it over the nav rather than parking it on one edge */
-div.wrap{display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;gap:10px clamp(12px,1.8vw,26px)!important;position:relative!important;text-align:center!important}
-div.wrap .brand{flex:0 0 100%!important;display:flex!important;justify-content:center!important;margin:0 auto!important;width:100%!important}
-div.wrap .brand img{height:clamp(40px,3.6vw,58px)!important;width:auto!important;display:block!important;margin:0 auto!important}
-@media(max-width:520px){ div.wrap .brand img{height:40px!important} }
-</style></head><body>
-<nav><div class="wrap nav-in">
-  <a class="brand" href="#top" aria-label="Downs Mobile Welding"><img src="assets/logo-cut.png" alt="Downs Mobile Welding"></a>
-  <div class="links" id="navlinks"><a href="#services">Services</a><a href="#why">Process</a><a href="#faq">FAQ</a></div>
-  <a class="tel" href="tel:0437555410">0437 555 410</a>
-  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
-</div></nav>
-<header class="hero"><div class="wrap"><div class="rule"></div><span class="kicker">Trade services</span><h1>Done properly, <em>the first time.</em></h1><p>Quoted from the site, done by the same people who quoted it.</p><a class="cta" href="tel:0437555410">Call 0437 555 410</a><a class="cta ghost" href="#quote">Get a quote</a></div></header>
-<main>
-<section id="services"><div class="wrap"><h2>What we do</h2><p class="lead">Local work done properly: repairs and the repairs and maintenance that go with it.</p><div class="svc"><article><h3>Small jobs</h3><p>The jobs nobody else wants to turn up for. Priced after it has been looked at.</p></article><article><h3>Quotes</h3><p>Priced from the site, not over the phone. Same people, start to finish.</p></article><article><h3>Clean-up</h3><p>Site left tidy, waste taken away. Quoted on site.</p></article><article><h3>Repairs</h3><p>Diagnosed and fixed properly rather than patched. Explained before it starts.</p></article><article><h3>Installations</h3><p>Supplied and fitted to standard. Done by the crew that quoted it.</p></article><article><h3>Maintenance</h3><p>Regular upkeep on a schedule that suits. Priced after it has been looked at.</p></article></div></div></section>
+</head>
+<body>
 
-<section id="about"><div class="wrap"><h2>Who you are dealing with</h2><p class="lead">Downs Mobile Welding is a local the local area business. The work is repairs, plus the maintenance and repairs that go with it — priced after the site is looked at, not before.</p></div></section>
-<section id="why"><div class="wrap"><h2>How it runs</h2><div class="why"><article><h3>Look</h3><p>The job is looked at before it is priced.</p></article><article><h3>Quote</h3><p>Price and scope agreed up front.</p></article><article><h3>Do</h3><p>Work done and site cleaned.</p></article></div></div></section>
+<header role="banner">
+  <div class="bar">
+    <a class="brand" href="#top" aria-label="Downs Mobile Welding — home" style="--lb-name:#eef0f2">
+      <span class="brand__chip"><img src="assets/logo-mark.png" alt="Downs Mobile Welding logo" width="512" height="512" loading="eager" decoding="async"></span>
+      <span>
+        <span class="brand__name">Downs Mobile Welding</span>
+        <span class="brand__tag">Bendigo &amp; Central Victoria</span>
+      </span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#work">What we weld</a>
+      <a href="#how" class="m-hide">How it runs</a>
+      <a href="#about" class="m-hide">About</a>
+      <a href="#quote" class="m-hide">Contact</a>
+      <a class="call" href="tel:0427370805">0427 370 805</a>
+    </nav>
+  </div>
+</header>
 
-<section id="faq"><div class="wrap"><h2>Questions</h2><details class="faq"><summary>Are you insured?</summary><div class="a">Yes, public liability cover is in place.</div></details><details class="faq"><summary>How far ahead are you booked?</summary><div class="a">It varies with the season — ask when you call.</div></details><details class="faq"><summary>How do I get a price?</summary><div class="a">Send the details or call — the job is quoted after it is looked at.</div></details></div></div></section>
-<section id="quote"><div class="wrap"><h2>Get a quote</h2><p class="lead">Tell us what is needed and where. If it is urgent, call.</p>
-<form id="lbq-form" data-site="downs-mobile-welding">
-<div><label for="n">Name</label><input id="n" name="name" required></div>
-<div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel"></div>
-<div class="full"><label for="a">Address or suburb</label><input id="a" name="suburb"></div>
-<div class="full"><label for="s">What is the job?</label><select id="s" name="service"><option>Repairs</option><option>Installations</option><option>Maintenance</option><option>Small jobs</option><option>Quotes</option><option>Clean-up</option><option>Something else</option></select></div>
-<div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="3"></textarea></div>
-<button type="submit">Send request</button>
-</form></div></section>
+<main id="top">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__in">
+      <p class="hero__label">Mobile welding &amp; on-site repair</p>
+      <h1 id="hero-h">We bring the welder <span>to the job.</span></h1>
+      <p class="hero__sub">On-site repairs, gates and trailers, and steel fabrication — welded where the work is standing, so it does not have to be pulled apart and carted.</p>
+      <div class="hero__cta">
+        <a class="btn btn--pri" href="#quote">Request a quote</a>
+        <a class="btn btn--ghost" href="tel:0427370805">Call 0427 370 805</a>
+      </div>
+      <div class="hero__strip">
+        <div><b>Mobile welding</b><span>A welding plant on wheels, rigged for site work.</span></div>
+        <div><b>On-site repairs</b><span>Cracks, breaks and worn steel put right where it stands.</span></div>
+        <div><b>Gates &amp; trailers</b><span>Frames, hinges, ramps, brackets and body repairs.</span></div>
+        <div><b>Fabrication</b><span>Steel cut, welded and built to your measurements.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="k">What we take on</p>
+          <h2 id="work-h">Mobile welding, repairs, gates, fabrication</h2>
+        </div>
+        <p>Four kinds of job come up again and again: something steel has broken, something steel needs building, or something on wheels needs to hold together. All of it gets welded on your site.</p>
+      </div>
+
+      <div class="ledger">
+        <article class="row rv">
+          <div class="num">01</div>
+          <div>
+            <h3>Mobile welding</h3>
+            <p>The welding gear comes to you — your yard, shed, block, farm or roadside. That means no removal, no freight and no waiting on a workshop booking: the job is welded where it sits, in the position it actually works in.</p>
+          </div>
+          <ul>
+            <li>Yard &amp; shed work</li>
+            <li>Farm &amp; rural sites</li>
+            <li>Roadside &amp; paddock repairs</li>
+          </ul>
+        </article>
+
+        <article class="row rv">
+          <div class="num">02</div>
+          <div>
+            <h3>On-site repairs</h3>
+            <p>Cracked frames, torn brackets, snapped hinges, a gate that no longer swings, a trailer that has taken a knock. We look at the damage, cut back to sound steel, prep it and weld it properly rather than running a bead over rust.</p>
+          </div>
+          <ul>
+            <li>Cracked &amp; torn steel</li>
+            <li>Broken hinges &amp; mounts</li>
+            <li>Trailer body repairs</li>
+          </ul>
+        </article>
+
+        <article class="row rv">
+          <div class="num">03</div>
+          <div>
+            <h3>Gates &amp; trailers</h3>
+            <p>Gate and gate frames built to suit the opening, plus repairs and strengthening on trailer bodies, drawbars, ramps and tie-down points — cut, welded and fitted to suit what you are actually carrying.</p>
+          </div>
+          <ul>
+            <li>Gate frames &amp; hinges</li>
+            <li>Drawbars &amp; ramps</li>
+            <li>Tie-down points</li>
+          </ul>
+        </article>
+
+        <article class="row rv">
+          <div class="num">04</div>
+          <div>
+            <h3>Fabrication</h3>
+            <p>Steel made to your measurements: frames, brackets, stands, benches, jigs and one-off pieces to finish a repair or fit out a shed. You give the dimensions and the job it has to do, and it gets built to that.</p>
+          </div>
+          <ul>
+            <li>Frames &amp; brackets</li>
+            <li>Stands &amp; benches</li>
+            <li>One-off parts</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="k">How a job runs</p>
+          <h2 id="how-h">Three steps, start to finished weld</h2>
+        </div>
+        <p>Most of the information needed for a quote is a couple of photos, a rough size and where the job is.</p>
+      </div>
+      <div class="steps">
+        <article class="rv">
+          <p class="s">Step 01</p>
+          <h3>Tell us what you have</h3>
+          <p>Send a photo or two, the size or measurements, and the location. If you are not sure what is wrong, describe what it is doing — a gate dragging, a trailer flexing, a frame that has opened up.</p>
+        </article>
+        <article class="rv">
+          <p class="s">Step 02</p>
+          <h3>We come to the site</h3>
+          <p>The welding gear arrives with the steel, consumables and power arrangement that job needs, and the repair is assessed on the ground before anything is cut.</p>
+        </article>
+        <article class="rv">
+          <p class="s">Step 03</p>
+          <h3>Welded, ground, explained</h3>
+          <p>Welding, grinding and clean-up done where the gate, trailer or frame already is — then a straight explanation of what was wrong and what was done about it.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="about">
+        <div class="rv">
+          <p class="k" style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--tan);font-weight:600">About</p>
+          <h2 id="about-h">Steel work that comes to the site</h2>
+          <p><b>Downs Mobile Welding</b> is a mobile welding business working across Bendigo and Central Victoria. It exists because a lot of steel never needs to leave the property to be fixed — it needs a welder who will turn up to it.</p>
+          <p>That covers the everyday jobs: a gate frame that has pulled out of square, a trailer that needs plating, a bracket nobody stocks, a machine that is too heavy to move and too expensive to be off the job. If it is steel and it is on your place, it can usually be dealt with on site.</p>
+          <p>Jobs are quoted on what the work actually needs — the steel, the site and the access — and you get a clear picture of the repair before it starts.</p>
+        </div>
+        <div class="brandcard rv">
+          <div class="plate"><img src="assets/logo.png" alt="Downs Mobile Welding" width="600" height="600" loading="lazy" decoding="async"></div>
+          <h3>Downs Mobile Welding</h3>
+          <p>Mobile welding, on-site repairs, gates and trailers, and steel fabrication.</p>
+          <dl>
+            <dt>Phone</dt><dd><a href="tel:0427370805">0427 370 805</a></dd>
+            <dt>Email</dt><dd><a href="mailto:Blayne@brcivil.com.au">Blayne@brcivil.com.au</a></dd>
+            <dt>Area</dt><dd>Bendigo &amp; Central Victoria</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote" id="quote" aria-labelledby="quote-h">
+    <div class="wrap">
+      <div class="quote__grid">
+        <div class="rv">
+          <p class="k" style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--tan);font-weight:600">Get a quote</p>
+          <h2 id="quote-h">Send the job through</h2>
+          <p class="lede">Tell us what needs welding and where it is. Photos and rough measurements help most — they are usually enough to price the job without a site visit.</p>
+          <div class="direct">
+            <span>Phone or text</span>
+            <a href="tel:0427370805">0427 370 805</a>
+          </div>
+        </div>
+
+        <form id="lbq-form" novalidate data-site="downs-mobile-welding" data-biz="Downs Mobile Welding">
+          <div class="fgrid">
+            <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+            <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
+            <div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
+            <div><label for="lbq-s">Job type</label>
+              <select id="lbq-s" name="service">
+                <option value="">Choose one</option>
+                <option>Mobile welding</option>
+                <option>On-site repair</option>
+                <option>Gate or trailer</option>
+                <option>Fabrication</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="wide"><label for="lbq-m">What needs welding?</label>
+              <textarea id="lbq-m" name="message" placeholder="What it is, roughly what size, and where the job is…" required></textarea>
+            </div>
+          </div>
+          <label class="cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this enquiry.</label>
+          <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+          <button type="submit">Send welding enquiry</button>
+          <p class="st" id="lbq-st" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;width:100%">
-  <span>Downs Mobile Welding</span><a href="tel:0437555410" style="color:#fff;font-weight:800">0437 555 410</a>
-</div></footer>
+
+<footer role="contentinfo">
+  <div class="fgrid2">
+    <div class="fcol">
+      <div class="fbrand">
+        <span class="chip"><img src="assets/logo-mark.png" alt="" width="512" height="512" loading="lazy" decoding="async"></span>
+        <b>Downs Mobile Welding</b>
+      </div>
+      <p>Mobile welding, on-site repairs, gates and trailers, and steel fabrication across Bendigo and Central Victoria.</p>
+    </div>
+    <div>
+      <h4>Work</h4>
+      <ul>
+        <li><a href="#work">Mobile welding</a></li>
+        <li><a href="#work">On-site repairs</a></li>
+        <li><a href="#work">Gates &amp; trailers</a></li>
+        <li><a href="#work">Fabrication</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:0427370805">0427 370 805</a></li>
+        <li><a href="mailto:Blayne@brcivil.com.au">Blayne@brcivil.com.au</a></li>
+        <li>Bendigo VIC</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <ul>
+        <li><a href="#quote">Request a quote</a></li>
+        <li><a href="privacy.html">Privacy policy</a></li>
+        <li><a href="terms.html">Terms of use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <p>&copy; <span id="yr">2026</span> Downs Mobile Welding. All rights reserved.</p>
+    <p>Mobile welding &amp; steel fabrication — Bendigo, Central Victoria.</p>
+  </div>
+</footer>
+
+<script src="assets/heroCanvas.js"></script>
 <script>
-document.getElementById('burger').addEventListener('click',function(){var l=document.getElementById('navlinks');
-  var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o);});
-document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button');
-  b.textContent='Sending…';b.disabled=true;
-  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
-    body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})
-  .then(function(){b.textContent='Thanks — we will be in touch';})
-  .catch(function(){b.textContent='Could not send — try again';b.disabled=false;});});
+/* hero: a steel joint mid-run — arc flash, sparks, mask silhouette in the foreground */
+(function(){
+  var cv = document.getElementById('heroCanvas');
+  if (!cv || !window.Projection || !Projection.sceneWelding) return;
+  var S = Projection.create(cv, { focal: 1.35, horizon: 0.52, camY: 1.16, fogNear: 9, fogFar: 26, fogCol: '#101216' });
+  var scene = Projection.sceneWelding(S, { fogCol: '#101216' });
+  S.frame(function (t) { scene.render(t); });
+  window.addEventListener('resize', function(){ S.resize(); });
+})();
 </script>
-</body></html>
+<script>
+(function(){
+  var els = [].slice.call(document.querySelectorAll('.rv'));
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (rm || !('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('in'); }); }
+  else {
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(x){ if (x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    els.forEach(function(e){ io.observe(e); });
+    setTimeout(function(){ els.forEach(function(e){ e.classList.add('in'); }); }, 1600);
+  }
+  var y = document.getElementById('yr'); if (y) y.textContent = String(new Date().getFullYear());
+})();
+</script>
+<script>
+(function(){
+  var EP = 'https://grocery-periodically-everyone-wine.trycloudflare.com';
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb(EP);} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return; done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : EP);
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb(EP);} });
+  }
+  var f = document.getElementById('lbq-form');
+  if (!f) return;
+  var st = document.getElementById('lbq-st'), btn = f.querySelector('button[type=submit]');
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d = {}; new FormData(f).forEach(function(v,k){ d[k]=v; });
+    if (d.website) return;
+    if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+      st.textContent = 'Please add your name, a phone or email, and a few words about the welding job.';
+      st.style.color = '#e8a98f'; return;
+    }
+    btn.disabled = true; st.textContent = 'Sending…'; st.style.color = '';
+    base(function(B){
+      fetch(B + '/functions/v1/quote-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ site_id: f.dataset.site || '', business_name: f.dataset.biz || '',
+          name: d.name, phone: d.phone, email: d.email, service: d.service || '',
+          message: d.message, consent: !!d.consent })
+      })
+      .then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(x){
+        if (x && x.success) { f.reset(); st.textContent = 'Thanks — your enquiry is in. We will be in touch shortly.'; st.style.color = '#a08068'; }
+        else throw new Error((x && x.error) || 'Could not send');
+      })
+      .catch(function(err){
+        st.textContent = (err && err.message) ? err.message : 'Could not send — please try again or call 0427 370 805.';
+        st.style.color = '#e8a98f';
+      })
+      .finally(function(){ btn.disabled = false; });
+    });
+  });
+})();
+</script>
+</body>
+</html>

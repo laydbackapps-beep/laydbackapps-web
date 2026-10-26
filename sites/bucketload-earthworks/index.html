@@ -1,117 +1,370 @@
-<!DOCTYPE html>
-
-<html lang="en-AU"><head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Bucketload Earthworks — Earthworks | Melton VIC</title>
-<meta content="Bucketload Earthworks. Quoted from the site, done by the same people who quoted it. Call 0405 018 819." name="description"/>
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bucketload Earthworks — Site Cleans, Excavation &amp; Site Prep, Melton VIC</title>
+<meta name="description" content="Bucketload Earthworks, Melton VIC. Site cleans, excavation, site prep, earthmoving, driveway prep and spoil removal. Quotes are priced from the site — call 0405 018 819.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap">
+<link rel="icon" href="assets/favicon.png">
 <style>
-:root{--ink:#0d0f13;--panel:#15181e;--paper:#f4f2ee;--dim:#9aa3ad;--line:rgba(255,255,255,.13);--acc:#eb4400}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:#f2f4f7;font:17px/1.6 "Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
-.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
+:root{
+  --bg:#08090d; --bar:#000; --panel:#0e1218; --panel-2:#12161d;
+  --ink:#f4f6f8; --dim:#a3adb9; --line:#20252d;
+  --lb-acc:#f94907; --acc:#f94907; --accent:#f94907; --brand:#f94907; --primary:#f94907;
+  --acc-tint:#ff9350; --acc-deep:#b8330a;
+  --gut:clamp(18px,4.6vw,54px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.62 "Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+img{max-width:100%;display:block}
 a{color:inherit}
-nav{position:sticky;top:0;z-index:40;background:rgba(13,15,19,.95);border-bottom:2px solid var(--acc);backdrop-filter:blur(8px)}
-.nav-in{display:flex;align-items:center;gap:clamp(12px,2vw,26px);height:78px}
-.brand img{height:46px;width:auto;display:block}
-nav .links{display:flex;gap:clamp(12px,1.8vw,24px);margin-left:auto}
-nav .links a{text-decoration:none;font-size:15px;color:var(--dim)}
-nav .links a:hover{color:#fff}
-.tel{font-weight:800;text-decoration:none;color:#111;background:var(--acc);padding:10px 16px;white-space:nowrap}
-.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:#fff;padding:8px 10px;font-size:18px}
-section{padding:clamp(42px,6vw,76px) 0;border-top:1px solid var(--line)}
-h2{margin:0 0 10px;font-size:clamp(22px,2.8vw,34px);letter-spacing:-.02em}
-.lead{color:var(--dim);margin:0 0 24px;max-width:62ch}
-.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--acc);margin-bottom:14px}
-.kicker::before{content:"";width:32px;height:2px;background:var(--acc)}
-h1{margin:0 0 16px;font-size:clamp(32px,5vw,58px);line-height:1.02;letter-spacing:-.035em}
-h1 em{font-style:normal;color:var(--acc)}
-.cta{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:#111;text-decoration:none;font-weight:800;padding:14px 22px}
-.cta.ghost{background:transparent;border:1px solid var(--line);color:#fff;font-weight:600;margin-left:8px}
-.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-.svc article{background:var(--ink);padding:22px 20px}
-.svc h3{margin:0 0 6px;font-size:16.5px}
-.svc p{margin:0;color:var(--dim);font-size:14.5px}
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.gal figure{margin:0}.gal img{width:100%;height:240px;object-fit:cover;display:block}
-.gal figcaption{font-size:12.5px;color:var(--dim);padding:8px 2px 0}
-.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.why article{border-left:2px solid var(--acc);padding-left:14px}
-.why h3{margin:0 0 6px;font-size:16px}
-.why p{margin:0;color:var(--dim);font-size:14.5px}
-.areas{display:flex;flex-wrap:wrap;gap:8px}
-.areas span{border:1px solid var(--line);padding:7px 13px;font-size:14px;color:var(--dim)}
-details.faq{border-bottom:1px solid var(--line);padding:14px 0}
-details.faq summary{cursor:pointer;font-weight:700;font-size:16px}
-details.faq .a{color:var(--dim);padding-top:8px;font-size:15px}
-form{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,3vw,30px);display:grid;grid-template-columns:1fr 1fr;gap:12px}
-form .full{grid-column:1/-1}
-label{display:block;font-size:13px;color:var(--dim);margin-bottom:5px}
-input,textarea,select{width:100%;background:#0b0d11;border:1px solid var(--line);color:#fff;padding:11px;font:inherit;font-size:15px}
-button{grid-column:1/-1;background:var(--acc);color:#111;border:0;padding:14px;font:inherit;font-weight:800;cursor:pointer}
-footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:900px){nav .links{display:none}nav .links.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#15181e;padding:14px;border-bottom:1px solid var(--line)}.burger{display:block}.svc,.gal,.why,form{grid-template-columns:1fr}}
-.hero{padding:clamp(52px,8vw,110px) 0 clamp(30px,4vw,50px);border-bottom:1px solid var(--line)}
-.hero .rule{height:8px;background:var(--acc);width:96px;margin:0 0 22px}
-.hero p{color:#cbd2da;margin:0 0 22px;max-width:58ch;font-size:clamp(16px,1.6vw,19px)}
-.hero .band{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;color:var(--dim);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding-inline:var(--gut)}
+.vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+h1,h2,h3{font-family:"Barlow Condensed","Barlow",system-ui,sans-serif;margin:0;line-height:1.03;letter-spacing:-.005em;font-weight:700}
+p{margin:0}
+.sub{color:var(--dim);font-size:17px;max-width:62ch}
+
+/* header — logo artwork only in the bar */
+.hdr{position:sticky;top:0;z-index:40;background:var(--bar);border-bottom:1px solid var(--line)}
+.hdr-in{display:flex;align-items:center;gap:clamp(12px,2vw,26px);padding:11px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;text-decoration:none;min-width:0;flex:0 1 auto}
+.brand img{height:clamp(38px,4.6vw,64px);width:auto;max-width:min(54vw,320px)}
+.hdr nav.h-nav{display:flex;gap:clamp(13px,1.8vw,24px);margin-left:auto;flex-wrap:wrap}
+.hdr nav.h-nav a{font-size:15px;font-weight:500;color:var(--dim);text-decoration:none;padding:5px 0;border-bottom:2px solid transparent}
+.hdr nav.h-nav a:hover{color:var(--ink);border-bottom-color:var(--acc)}
+.tel{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;letter-spacing:.01em;text-decoration:none;border:1px solid rgba(249,73,7,.55);padding:9px 14px;white-space:nowrap;color:var(--ink)}
+.tel:hover{background:var(--acc-deep);border-color:var(--acc-deep);color:#fff}
+
+/* hero — real site photo, full bleed, scrim matched to a bright exposure */
+.hero{position:relative;isolation:isolate;perspective:1200px;display:flex;align-items:flex-end;min-height:clamp(540px,76vh,720px);padding:clamp(110px,15vh,160px) 0 clamp(34px,5vh,58px);overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2;background-image:url("assets/gal_1.jpg");background-position:center 48%;background-size:cover;background-repeat:no-repeat}
+.hero-scrim{position:absolute;inset:0;z-index:-1;background:linear-gradient(101deg,rgba(5,6,8,.90) 0%,rgba(5,6,8,.72) 36%,rgba(5,6,8,.38) 66%,rgba(5,6,8,.22) 100%)}
+#heroCanvas{display:none}
+.kicker{display:inline-block;font-size:15px;font-weight:600;letter-spacing:.01em;color:#fff;border-left:3px solid var(--acc);padding-left:11px;margin-bottom:18px;text-shadow:0 1px 12px rgba(0,0,0,.55)}
+.hero h1{font-size:clamp(42px,6.6vw,86px);font-weight:800;max-width:19ch;text-shadow:0 2px 26px rgba(0,0,0,.5)}
+.hero h1 em{font-style:normal;color:var(--acc-tint)}
+.lede{color:#e2e6ea;font-size:clamp(16.5px,1.5vw,19.5px);max-width:54ch;margin-top:18px;text-shadow:0 1px 14px rgba(0,0,0,.55)}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--acc-deep);color:#fff;font-weight:700;font-size:16.5px;text-decoration:none;padding:15px 26px;border:1px solid var(--acc-deep);white-space:nowrap}
+.btn:hover{background:var(--acc);border-color:var(--acc);color:#180800}
+.btn-ghost{background:rgba(9,10,13,.55);border-color:rgba(255,255,255,.42);color:#fff}
+.btn-ghost:hover{background:#fff;border-color:#fff;color:#0c0d10}
+.spec{list-style:none;margin:34px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid rgba(255,255,255,.24);background:rgba(8,9,11,.44);max-width:760px}
+.spec li{padding:14px 18px;border-left:1px solid rgba(255,255,255,.16)}
+.spec li:first-child{border-left:0}
+.spec b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:700;line-height:1.15}
+.spec span{display:block;font-size:13.5px;color:#c9d0d8;margin-top:3px}
+
+/* bands */
+.band{padding:clamp(56px,7vw,96px) 0;border-top:1px solid var(--line)}
+.band h2{font-size:clamp(28px,3.4vw,46px);font-weight:800;max-width:22ch}
+.band .sub{margin-top:14px}
+.strata{height:3px;width:72px;background:var(--acc);margin-top:26px}
+
+/* scope — numbered rows, not cards */
+.scope{list-style:none;margin:38px 0 0;padding:0;border-top:1px solid var(--line)}
+.scope li{display:grid;grid-template-columns:76px minmax(0,1fr) minmax(0,1.5fr);gap:clamp(16px,3vw,34px);padding:24px 0;border-bottom:1px solid var(--line);align-items:start}
+.scope .n{font-family:"Barlow Condensed",sans-serif;font-size:15px;font-weight:700;letter-spacing:.1em;color:var(--acc);padding-top:6px}
+.scope h3{font-size:clamp(21px,2.1vw,27px);font-weight:700}
+.scope p{color:var(--dim);font-size:16.5px}
+
+/* programme rail — one long cut line with ticks */
+.steps{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0}
+.steps li{position:relative;padding:26px 20px 0 0}
+.steps li::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--line)}
+.steps li::after{content:"";position:absolute;top:-4px;left:0;width:10px;height:10px;background:var(--acc);border-radius:0}
+.steps b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:700;letter-spacing:.12em;color:var(--acc)}
+.steps h3{font-size:clamp(18px,1.8vw,23px);margin-top:7px}
+.steps p{color:var(--dim);font-size:15.5px;margin-top:7px}
+
+/* works gallery */
+.works{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);margin-top:38px}
+.works figure{margin:0}
+.works img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line)}
+.works figcaption{font-size:14.5px;color:var(--dim);margin-top:10px;padding-left:12px;border-left:2px solid var(--acc)}
+
+/* faq — two columns */
+.faq{margin:38px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(26px,4vw,54px)}
+.faq div{padding:20px 0;border-top:1px solid var(--line)}
+.faq dt{font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:700;line-height:1.2}
+.faq dd{margin:8px 0 0;color:var(--dim);font-size:16px}
+
+/* quote */
+.quote{background:var(--panel)}
+.q-in{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,4vw,58px);align-items:start}
+.q-copy h2{font-size:clamp(28px,3.2vw,42px);font-weight:800}
+.q-copy p{color:var(--dim);margin-top:14px;max-width:40ch}
+.tel-lg{display:inline-block;margin-top:20px;font-family:"Barlow Condensed",sans-serif;font-size:30px;font-weight:700;color:var(--acc-tint);text-decoration:none;border-bottom:2px solid var(--acc)}
+form{background:var(--panel-2);border:1px solid var(--line);padding:clamp(20px,2.6vw,32px)}
+.f2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
+label{display:block;font-size:13.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin:0 0 6px}
+input,textarea,select{width:100%;background:#0a0c10;color:var(--ink);border:1px solid var(--line);padding:12px 13px;font:inherit;font-size:16px;margin-bottom:15px}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--acc);outline-offset:1px;border-color:var(--acc)}
+textarea{resize:vertical;min-height:104px}
+.cons{display:flex;align-items:flex-start;gap:10px;font-size:15px;text-transform:none;letter-spacing:0;color:var(--dim);margin:2px 0 16px}
+.cons input{width:18px;height:18px;margin:1px 0 0;flex:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+button{width:100%;background:var(--acc-deep);color:#fff;border:1px solid var(--acc-deep);padding:15px;font:inherit;font-weight:700;font-size:16.5px;cursor:pointer}
+button:hover{background:var(--acc);border-color:var(--acc);color:#180800}
+.st{margin-top:12px;font-size:15.5px;min-height:20px;color:var(--acc-tint)}
+
+/* footer */
+.foot{border-top:1px solid var(--line);padding:44px 0 30px;background:var(--bar)}
+.f-in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,3vw,38px)}
+.f-in b{font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:700;display:block;margin-bottom:8px}
+.f-in p{color:var(--dim);font-size:15px;max-width:30ch}
+.f-in a{color:var(--dim);text-decoration:none;font-size:15px;display:block;padding:3px 0}
+.f-in a:hover{color:var(--acc-tint)}
+.f-tel{font-family:"Barlow Condensed",sans-serif;font-size:26px!important;font-weight:700;color:var(--acc-tint)!important;padding:0 0 6px!important}
+.fine{grid-column:1/-1;border-top:1px solid var(--line);margin-top:26px;padding-top:18px;color:var(--dim);font-size:13.5px}
+
+@media(max-width:980px){
+  .hero{min-height:clamp(520px,80vh,660px)}
+  .q-in{grid-template-columns:minmax(0,1fr)}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}
+  .steps li{padding-bottom:22px}
+  .works{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .f-in{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:820px){
+  body{font-size:16.5px}
+  .hdr nav.h-nav{order:3;flex-basis:100%;margin-left:0;gap:16px}
+  .hdr nav.h-nav a{font-size:15.5px}
+  .brand img{height:clamp(38px,10vw,54px);max-width:min(52vw,230px)}
+  .tel{margin-left:auto;font-size:15.5px;padding:8px 12px}
+  .scope li{grid-template-columns:52px minmax(0,1fr);gap:0 16px}
+  .scope li p{grid-column:2}
+  .faq{grid-template-columns:minmax(0,1fr)}
+  .f2{grid-template-columns:minmax(0,1fr)}
+  .spec{grid-template-columns:minmax(0,1fr)}
+  .spec li{border-left:0;border-top:1px solid rgba(255,255,255,.16)}
+  .spec li:first-child{border-top:0}
+  .works{grid-template-columns:minmax(0,1fr)}
+  .hero h1{font-size:clamp(38px,11vw,54px);max-width:15ch}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1!important;transform:none!important}
+}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
 </style>
-<style id="lb-skin">/* skin 2 — condensed uppercase, full-bleed hero, numbered services */
- .hero h1, header h1{text-transform:uppercase!important;letter-spacing:-.01em!important;font-weight:800!important;line-height:.95!important}
- h2{text-transform:uppercase!important;letter-spacing:.06em!important;font-size:clamp(18px,2vw,24px)!important;font-weight:700!important}
- .hero,header.hero{min-height:72vh!important}
- [class*=grid]{gap:1px!important;background:rgba(255,255,255,.12)!important}
- [class*=card]{border-radius:0!important;background:var(--ground,#0d0f13)!important;padding:clamp(20px,3vw,34px)!important}
- [class*=card]:before{content:counter(lbc);counter-increment:lbc;display:block;font:700 11px/1 ui-monospace,monospace;letter-spacing:.2em;opacity:.55;margin-bottom:10px}
- [class*=grid]{counter-reset:lbc}
- </style><style id="lb-skin-guard">@media(max-width:900px){
- .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
- [class*=card]{transform:none!important;margin-bottom:12px!important}
- [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
- section,.hero,header{overflow-x:clip!important}
- img,video,svg{max-width:100%!important;height:auto}
- h1,h2{overflow-wrap:anywhere!important}
-}</style><style id="lb-hdr-centre">
-/* brand is the logo alone — centre it over the nav rather than parking it on one edge */
-div.wrap{display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;gap:10px clamp(12px,1.8vw,26px)!important;position:relative!important;text-align:center!important}
-div.wrap .brand{flex:0 0 100%!important;display:flex!important;justify-content:center!important;margin:0 auto!important;width:100%!important}
-div.wrap .brand img{height:clamp(40px,3.6vw,58px)!important;width:auto!important;display:block!important;margin:0 auto!important}
-@media(max-width:520px){ div.wrap .brand img{height:40px!important} }
-</style></head><body>
-<nav><div class="wrap nav-in">
-<a aria-label="Bucketload Earthworks" class="brand" href="#top"><img alt="Bucketload Earthworks" src="assets/logo-cut.png"/></a>
-<div class="links" id="navlinks"><a href="#services">Services</a><a href="#work">Work</a><a href="#why">Process</a><a href="#areas">Areas</a><a href="#faq">FAQ</a></div>
-<a class="tel" href="tel:0405018819">0405 018 819</a>
-<button aria-expanded="false" aria-label="Menu" class="burger" id="burger">☰</button>
-</div></nav>
-<header class="hero"><div class="wrap"><div class="rule"></div><span class="kicker">Trade services</span><h1>Done properly, <em>the first time.</em></h1><p>Quoted from the site, done by the same people who quoted it.</p><a class="cta" href="tel:0405018819">Call 0405 018 819</a><a class="cta ghost" href="#quote">Get a quote</a></div></header>
-<main>
-<section id="services"><div class="wrap"><h2>What we do</h2><p class="lead">From repairs through to the finish, the scope is agreed up front so there are no surprises.</p><div class="svc"><article><h3>Repairs</h3><p>Diagnosed and fixed properly rather than patched. Done by the crew that quoted it.</p></article><article><h3>Installations</h3><p>Supplied and fitted to standard. Priced after it has been looked at.</p></article><article><h3>Maintenance</h3><p>Regular upkeep on a schedule that suits. Same people, start to finish.</p></article><article><h3>Small jobs</h3><p>The jobs nobody else wants to turn up for. Quoted on site.</p></article><article><h3>Quotes</h3><p>Priced from the site, not over the phone. Explained before it starts.</p></article><article><h3>Clean-up</h3><p>Site left tidy, waste taken away. Done by the crew that quoted it.</p></article></div></div></section>
-<section id="work"><div class="wrap"><h2>Recent work</h2><p class="lead">A job like this.</p><div class="gal"><figure><img alt="Bucketload Earthworks" src="assets/photo_2.jpg"/><figcaption>Recent work</figcaption></figure><figure><img alt="Bucketload Earthworks" src="assets/photo_3.jpg"/><figcaption>On site</figcaption></figure><figure><img alt="Bucketload Earthworks" src="assets/photo_4.jpg"/><figcaption>Finished detail</figcaption></figure></div></div></section>
-<section id="about"><div class="wrap"><h2>Who you are dealing with</h2><p class="lead">Bucketload Earthworks does earthworks across Melton VIC: excavation, site prep, retaining and cartage.</p></div></section>
-<section id="why"><div class="wrap"><h2>How it runs</h2><div class="why"><article><h3>Look</h3><p>The job is looked at before it is priced.</p></article><article><h3>Quote</h3><p>Price and scope agreed up front.</p></article><article><h3>Do</h3><p>Work done and site cleaned.</p></article></div></div></section>
-<section id="areas"><div class="wrap"><h2>Where we work</h2><p class="lead">Melton VIC and the surrounding area.</p><div class="areas"><span>Melton VIC</span><span>Melton VIC surrounds</span></div></div></section>
-<section id="faq"><div class="wrap"><h2>Questions</h2><details class="faq"><summary>How do I get a price?</summary><div class="a">Send the details or call — the job is quoted after it is looked at.</div></details><details class="faq"><summary>Are you insured?</summary><div class="a">Yes, public liability cover is in place.</div></details><details class="faq"><summary>How far ahead are you booked?</summary><div class="a">It varies with the season — ask when you call.</div></details></div></section>
-<section id="quote"><div class="wrap"><h2>Get a quote</h2><p class="lead">Tell us what is needed and where. If it is urgent, call.</p>
-<form data-site="bucketload-earthworks" id="lbq-form">
-<div><label for="n">Name</label><input id="n" name="name" required=""/></div>
-<div><label for="p">Phone</label><input id="p" inputmode="tel" name="phone" required=""/></div>
-<div class="full"><label for="a">Suburb</label><input id="a" name="suburb"/></div>
-<div class="full"><label for="s">What is the job?</label><select id="s" name="service"><option>Repairs</option><option>Installations</option><option>Maintenance</option><option>Small jobs</option><option>Quotes</option><option>Clean-up</option><option>Something else</option></select></div>
-<div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="3"></textarea></div>
-<button type="submit">Send request</button>
-</form></div></section>
-</main>
-<footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;width:100%">
-<span>Bucketload Earthworks — Melton VIC</span><a href="tel:0405018819" style="color:#fff;font-weight:800">0405 018 819</a>
-</div></footer>
-<script>
-document.getElementById('burger').addEventListener('click',function(){var l=document.getElementById('navlinks');
-  var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o);});
-document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button');
-  b.textContent='Sending…';b.disabled=true;
-  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
-    body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})
-  .then(function(){b.textContent='Thanks — we will be in touch';})
-  .catch(function(){b.textContent='Could not send — try again';b.disabled=false;});});
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top" aria-label="Bucketload Earthworks">
+      <img src="assets/logo-wide.png" alt="Bucketload Earthworks — full buckets, clean finishes">
+      <span class="vh">Bucketload Earthworks</span>
+    </a>
+    <nav class="h-nav" aria-label="Main">
+      <a href="#scope">Services</a>
+      <a href="#programme">How a site runs</a>
+      <a href="#works">On site</a>
+      <a href="#faq">FAQ</a>
+      <a href="#lbq">Quote</a>
+    </nav>
+    <a class="tel" href="tel:+61405018819">0405 018 819</a>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="hero-bg" role="img" aria-label="A compact loader working bare ground in front of a house under construction"></div>
+    <div class="hero-scrim"></div>
+    <!-- LB-3D-HERO -->
+    <canvas id="heroCanvas" width="4" height="4" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <p class="kicker">Earthworks &middot; Melton VIC</p>
+      <h1>Sites cleaned out.<br><em>Ground brought to level.</em></h1>
+      <p class="lede">Site cleans, excavation, site prep and earthmoving. Spoil is loaded out, the levels are cut to the finished mark and the block is left tidy for the next trade.</p>
+      <div class="cta-row">
+        <a class="btn" href="#lbq">Request a quote</a>
+        <a class="btn btn-ghost" href="tel:+61405018819">Call 0405 018 819</a>
+      </div>
+      <ul class="spec">
+        <li><b>Melton VIC</b><span>Earthworks on residential blocks</span></li>
+        <li><b>Site cleans</b><span>Cleared, loaded and carted</span></li>
+        <li><b>Quotes</b><span>Priced from the site, not the phone</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" id="scope">
+    <div class="wrap">
+      <h2 class="rv">What we take on</h2>
+      <p class="sub rv">Six jobs that make up most of the week on a residential or small commercial site.</p>
+      <div class="strata rv"></div>
+      <ol class="scope">
+        <li class="rv"><span class="n">01</span><h3>Site cleans</h3><p>Offcuts, packaging, rubble and leftover material cleared off the block, loaded out and the ground swept down so the next trade has a clean surface to work on.</p></li>
+        <li class="rv"><span class="n">02</span><h3>Excavation</h3><p>Cut to the set-out level, with the machine working to the mark rather than the eye, and the spoil stacked or loaded as the job needs it.</p></li>
+        <li class="rv"><span class="n">03</span><h3>Site prep</h3><p>Ground stripped, stripped-back areas trimmed and the block brought to a consistent working level before footings or slab set-out.</p></li>
+        <li class="rv"><span class="n">04</span><h3>Earthmoving</h3><p>Bulk movement of soil and fill around the block — cut, carry and place, with tracks and skid steer gear matched to what the access will allow.</p></li>
+        <li class="rv"><span class="n">05</span><h3>Driveway prep</h3><p>The driveway line excavated and graded to the fall you want, ready for the base and the finish course to go on top.</p></li>
+        <li class="rv"><span class="n">06</span><h3>Spoil removal</h3><p>Excess soil and rubble loaded into trucks and taken off site, or left where you want it for backfill and raised pads.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" id="programme">
+    <div class="wrap">
+      <h2 class="rv">How a site runs</h2>
+      <p class="sub rv">The order the work happens in, from first cut to the block being handed back.</p>
+      <ol class="steps">
+        <li class="rv"><b>STEP 1</b><h3>Strip and clear</h3><p>Topsoil and rubbish off the working area, with anything worth keeping stacked clear.</p></li>
+        <li class="rv"><b>STEP 2</b><h3>Excavate</h3><p>Cut down to the set-out level, machine working to the mark as the levels come up.</p></li>
+        <li class="rv"><b>STEP 3</b><h3>Cart the spoil</h3><p>Loaded out by truck, or placed where you want fill kept on the block.</p></li>
+        <li class="rv"><b>STEP 4</b><h3>Level and prep</h3><p>Ground brought to a consistent working level, driveway line graded to fall.</p></li>
+        <li class="rv"><b>STEP 5</b><h3>Hand back tidy</h3><p>Block swept, access left clear and the site ready for the next stage.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" id="works">
+    <div class="wrap">
+      <h2 class="rv">On site</h2>
+      <p class="sub rv">Ground under construction, machines working and a block left level and clean.</p>
+      <div class="works">
+        <figure class="rv"><img src="assets/hero.jpg" alt="A residential block stripped back to bare ground with a house under construction behind it"><figcaption>A block stripped back to bare ground, ready for the next stage.</figcaption></figure>
+        <figure class="rv"><img src="assets/gal_2.jpg" alt="An orange compact track loader standing on grass beside a tipped bucket"><figcaption>The track loader that does the tight-access cut and carry work.</figcaption></figure>
+        <figure class="rv"><img src="assets/gal_3.jpg" alt="A finished house standing behind a patch of freshly turned dark earth"><figcaption>Ground turned over and graded back down, house left standing clean.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="faq">
+    <div class="wrap">
+      <h2 class="rv">Questions we get</h2>
+      <dl class="faq">
+        <div class="rv"><dt>What does a site clean actually include?</dt><dd>Clearing the block of offcuts, packaging, rubble and leftover material, loading it out, and sweeping the working area down so the next trade has a clean surface.</dd></div>
+        <div class="rv"><dt>Do you take the spoil away?</dt><dd>Yes. Excavated spoil is loaded into trucks and removed, unless you would rather keep it on site for backfill or a raised pad — either way it is decided before the machine starts.</dd></div>
+        <div class="rv"><dt>Can you cut levels for a slab or a driveway?</dt><dd>Excavation and driveway prep are both worked to a set-out level. Give us the finished mark and we work back from it so the base goes down at the right depth.</dd></div>
+        <div class="rv"><dt>What access does the machine need?</dt><dd>It depends on the block. Tell us what the entry and the working area are like and we will say up front which gear fits — a skid steer gets into places a bigger machine cannot.</dd></div>
+        <div class="rv"><dt>How quickly can you get to a site?</dt><dd>Send the address and what needs doing and we will come back with the first day we can be on it. Quotes are priced from the site rather than over the phone.</dd></div>
+        <div class="rv"><dt>What do you need from me to quote?</dt><dd>The address, roughly what the job involves — clean, cut, cart or prep — and any levels or plans you already have. That is usually enough to arrange a time to look.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band quote" id="lbq">
+    <div class="wrap q-in">
+      <div class="q-copy rv">
+        <h2>Request a quote</h2>
+        <p>Send the address and what needs doing and we will come back with a time to look at the site and price it properly.</p>
+        <a class="tel-lg" href="tel:+61405018819">0405 018 819</a>
+        <p style="font-size:14.5px;margin-top:10px">Earthworks across Melton VIC and the surrounding blocks.</p>
+      </div>
+      <form id="lbq-form" class="rv" novalidate data-site="bucketload-earthworks" data-biz="Bucketload Earthworks" action="https://laydback-hq.tail5b3740.ts.net/functions/v1/quote-request" method="post">
+        <div class="f2">
+          <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+          <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel" required></div>
+        </div>
+        <div class="f2">
+          <div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
+          <div><label for="lbq-s">Suburb</label><input id="lbq-s" name="suburb" autocomplete="address-level2"></div>
+        </div>
+        <label for="lbq-sv">What is the job?</label>
+        <select id="lbq-sv" name="service">
+          <option>Site clean</option>
+          <option>Excavation</option>
+          <option>Site prep</option>
+          <option>Earthmoving</option>
+          <option>Driveway prep</option>
+          <option>Spoil removal</option>
+          <option>Not sure yet</option>
+        </select>
+        <label for="lbq-m">The job</label>
+        <textarea id="lbq-m" name="message" placeholder="Address or block, what needs doing and roughly when you need it done." required></textarea>
+        <label class="cons" for="lbq-c"><input type="checkbox" id="lbq-c" name="consent" value="1" checked> I am happy to be contacted about this request.</label>
+        <div class="hp" aria-hidden="true"><label for="lbq-w">Website</label><input id="lbq-w" name="website" tabindex="-1" autocomplete="off"></div>
+        <button type="submit">Send quote request</button>
+        <p class="st" id="lbq-st" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <script>
+(function(){
+  function base(cb){
+    var done=false;
+    var t=setTimeout(function(){ if(!done){ done=true; cb('https://laydback-hq.tail5b3740.ts.net'); } },2000);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_='+Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b=(txt||'').trim().replace(/\/+$/,'');
+        if(done) return;
+        done=true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b)?b:'https://laydback-hq.tail5b3740.ts.net');
+      })
+      .catch(function(){ if(!done){ done=true; clearTimeout(t); cb('https://laydback-hq.tail5b3740.ts.net'); } });
+  }
+  function init(){
+    var f=document.getElementById('lbq-form');
+    if(!f) return;
+    var st=document.getElementById('lbq-st');
+    var btn=f.querySelector('button[type=submit]');
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var d={};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if(d.website) return;
+      if(!d.name || (!d.phone && !d.email) || !(d.message||'').trim()){
+        st.textContent='Please add your name, a phone or email, and a few words about the job.';
+        return;
+      }
+      btn.disabled=true;
+      st.textContent='Sending\u2026';
+      base(function(B){
+        fetch(B+'/functions/v1/quote-request',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({
+            site_id:f.dataset.site||'', business_name:f.dataset.biz||'',
+            name:d.name, phone:d.phone, email:d.email, suburb:d.suburb||'',
+            service:d.service||'', message:d.message, consent:!!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if(x && x.success){ f.reset(); st.textContent='Thanks \u2014 your request is in. We will be in touch shortly.'; }
+          else { throw new Error((x && x.error)||'Could not send'); }
+        })
+        .catch(function(err){ st.textContent=(err && err.message)?err.message:'Could not send \u2014 please try again or call 0405 018 819.'; })
+        .finally(function(){ btn.disabled=false; });
+      });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
 </script>
-</body></html>
+  </section>
+</main>
+<footer class="foot">
+  <div class="wrap f-in">
+    <div><b>Bucketload Earthworks</b><p>Site cleans, excavation, site prep, earthmoving, driveway prep and spoil removal. Melton VIC.</p></div>
+    <div><a class="f-tel" href="tel:+61405018819">0405 018 819</a><p>Quotes are priced from the site.</p></div>
+    <nav class="f-in-nav" aria-label="Footer">
+      <a href="#scope">Services</a>
+      <a href="#programme">How a site runs</a>
+      <a href="#works">On site</a>
+      <a href="#lbq">Request a quote</a>
+    </nav>
+    <div><b>Where</b><p>Melton VIC and the surrounding blocks.</p></div>
+    <p class="fine">&copy; 2026 Bucketload Earthworks &middot; <a href="privacy.html" style="display:inline;color:inherit">Privacy</a> &middot; <a href="terms.html" style="display:inline;color:inherit">Terms</a></p>
+  </div>
+</footer>
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){ Array.prototype.forEach.call(els,function(e){ e.classList.add('on'); }); return; }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('on'); io.unobserve(x.target); } });
+  },{rootMargin:'0px 0px -8% 0px',threshold:.06});
+  Array.prototype.forEach.call(els,function(e){ io.observe(e); });
+})();
+setTimeout(function(){ document.querySelectorAll('.rv').forEach(function(e){ e.classList.add('on'); }); },1100);
+</script>
+</body>
+</html>

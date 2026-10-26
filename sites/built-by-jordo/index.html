@@ -1,119 +1,314 @@
-<!DOCTYPE html>
-
-<html lang="en-AU"><head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Built By Jordo — Carpentry | Gold Coast QLD</title>
-<meta content="Built By Jordo. Framing and fix-out done in the right order so the finish sits right. Call 0481 676 362." name="description"/>
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Built By Jordo | Carpentry | Gold Coast QLD</title>
+<meta name="description" content="Built By Jordo is a Gold Coast carpenter doing framing, decks, pergolas, fit-outs, repairs and renovations. Call 0481 676 362 for a quote.">
+<link rel="icon" href="favicon-32.png">
 <style>
-:root{--ink:#0d0f13;--panel:#15181e;--paper:#f4f2ee;--dim:#9aa3ad;--line:rgba(255,255,255,.13);--acc:#0172eb}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:#f2f4f7;font:17px/1.6 "Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
-.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
+:root{
+  --bar:#000000;
+  --bg:#07080a;
+  --bg2:#0b0d10;
+  --panel:#101319;
+  --ink:#f2f5f8;
+  --muted:#a6afba;
+  --line:#20262e;
+  --acc:#4d9dff;      /* lighter tint of the logo's blue */
+  --acc-deep:#003165; /* deep shade of the same hue - CTA fill */
+  --acc-mid:#016de2;  /* the logo's own blue, for rules and markers */
+  --on-acc:#ffffff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;overflow-x:hidden}
+.wrap{width:100%;max-width:1220px;margin:0 auto;padding:0 clamp(16px,4.2vw,52px)}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.022em}
+h1{font-size:clamp(31px,5.4vw,70px);line-height:1.04}
+h2{font-size:clamp(22px,2.9vw,38px);line-height:1.12}
+h3{font-size:17.5px;font-weight:650}
+p{margin:0 0 1em}
 a{color:inherit}
-nav{position:sticky;top:0;z-index:40;background:rgba(13,15,19,.95);border-bottom:2px solid var(--acc);backdrop-filter:blur(8px)}
-.nav-in{display:flex;align-items:center;gap:clamp(12px,2vw,26px);height:78px}
-.brand img{height:46px;width:auto;display:block}
-nav .links{display:flex;gap:clamp(12px,1.8vw,24px);margin-left:auto}
-nav .links a{text-decoration:none;font-size:15px;color:var(--dim)}
-nav .links a:hover{color:#fff}
-.tel{font-weight:800;text-decoration:none;color:#111;background:var(--acc);padding:10px 16px;white-space:nowrap}
-.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:#fff;padding:8px 10px;font-size:18px}
-section{padding:clamp(42px,6vw,76px) 0;border-top:1px solid var(--line)}
-h2{margin:0 0 10px;font-size:clamp(22px,2.8vw,34px);letter-spacing:-.02em}
-.lead{color:var(--dim);margin:0 0 24px;max-width:62ch}
-.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--acc);margin-bottom:14px}
-.kicker::before{content:"";width:32px;height:2px;background:var(--acc)}
-h1{margin:0 0 16px;font-size:clamp(32px,5vw,58px);line-height:1.02;letter-spacing:-.035em}
-h1 em{font-style:normal;color:var(--acc)}
-.cta{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:#111;text-decoration:none;font-weight:800;padding:14px 22px}
-.cta.ghost{background:transparent;border:1px solid var(--line);color:#fff;font-weight:600;margin-left:8px}
-.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-.svc article{background:var(--ink);padding:22px 20px}
-.svc h3{margin:0 0 6px;font-size:16.5px}
-.svc p{margin:0;color:var(--dim);font-size:14.5px}
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.gal figure{margin:0}.gal img{width:100%;height:240px;object-fit:cover;display:block}
-.gal figcaption{font-size:12.5px;color:var(--dim);padding:8px 2px 0}
-.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.why article{border-left:2px solid var(--acc);padding-left:14px}
-.why h3{margin:0 0 6px;font-size:16px}
-.why p{margin:0;color:var(--dim);font-size:14.5px}
-.areas{display:flex;flex-wrap:wrap;gap:8px}
-.areas span{border:1px solid var(--line);padding:7px 13px;font-size:14px;color:var(--dim)}
-details.faq{border-bottom:1px solid var(--line);padding:14px 0}
-details.faq summary{cursor:pointer;font-weight:700;font-size:16px}
-details.faq .a{color:var(--dim);padding-top:8px;font-size:15px}
-form{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,3vw,30px);display:grid;grid-template-columns:1fr 1fr;gap:12px}
-form .full{grid-column:1/-1}
-label{display:block;font-size:13px;color:var(--dim);margin-bottom:5px}
-input,textarea,select{width:100%;background:#0b0d11;border:1px solid var(--line);color:#fff;padding:11px;font:inherit;font-size:15px}
-button{grid-column:1/-1;background:var(--acc);color:#111;border:0;padding:14px;font:inherit;font-weight:800;cursor:pointer}
-footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:900px){nav .links{display:none}nav .links.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#15181e;padding:14px;border-bottom:1px solid var(--line)}.burger{display:block}.svc,.gal,.why,form{grid-template-columns:1fr}}
-.hero{padding:clamp(52px,8vw,110px) 0 clamp(30px,4vw,50px);border-bottom:1px solid var(--line)}
-.hero .rule{height:8px;background:var(--acc);width:96px;margin:0 0 22px}
-.hero p{color:#cbd2da;margin:0 0 22px;max-width:58ch;font-size:clamp(16px,1.6vw,19px)}
-.hero .band{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;color:var(--dim);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase}
+.tel{white-space:nowrap;font-weight:700;text-decoration:none}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.rv{opacity:1;transition:opacity .5s ease,transform .5s ease}
+html.js .rv{opacity:0;transform:translateY(16px)}
+html.js .rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1!important;transform:none!important}
+}
+
+/* bar: the client's own badge lockup, nothing typed */
+.bar{background:var(--bar);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+.bar-in{display:flex;align-items:center;gap:clamp(12px,2vw,26px);flex-wrap:wrap;padding:9px 0}
+.brand{display:flex;align-items:center;min-width:0;text-decoration:none}
+.brand img{height:clamp(50px,6.4vw,86px);width:auto;display:block}
+nav.tabs{display:flex;gap:clamp(11px,1.6vw,22px);margin-left:auto;flex-wrap:wrap}
+nav.tabs a{font-size:14.5px;color:var(--muted);text-decoration:none;padding:4px 0}
+.bar .tel{font-size:15px;color:var(--ink);border-bottom:2px solid var(--acc-mid)}
+
+/* hero */
+.hero{position:relative;perspective:1150px;background:#000;color:#fff;overflow:hidden}
+.hero .shot{position:absolute;inset:0;background:url(assets/hero.jpg) center 40%/cover no-repeat}
+.hero .scrim{position:absolute;inset:0;background:linear-gradient(100deg,rgba(5,6,8,.92) 0%,rgba(5,6,8,.82) 36%,rgba(5,6,8,.52) 64%,rgba(5,6,8,.28) 100%)}
+.hero .wrap{position:relative;z-index:3;padding-top:clamp(44px,6.4vw,90px);padding-bottom:clamp(40px,5.8vw,80px)}
+.kicker{color:#fff;font-size:15px;font-weight:600;margin:0 0 15px;opacity:.95}
+.hero h1{max-width:20ch}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero .sub{max-width:60ch;margin-top:17px;color:#dee4ea;font-size:clamp(16px,1.5vw,18.5px)}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-block;padding:15px 26px;text-decoration:none;font-weight:700;font-size:15.5px;border-radius:6px}
+.btn-fill{background:var(--acc-deep);color:var(--on-acc)}
+.btn-ghost{border:1px solid rgba(255,255,255,.5);color:#fff}
+.bullets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,3vw,40px);margin-top:clamp(26px,3.6vw,42px);border-top:1px solid rgba(255,255,255,.3);padding-top:16px}
+.bullets b{display:block;font-size:14.5px;color:#fff;font-weight:700;margin-bottom:3px}
+.bullets span{font-size:14.5px;color:#cbd3db}
+#heroCanvas{display:none}
+
+section{padding:clamp(48px,6.4vw,92px) 0;border-top:1px solid var(--line)}
+.lead{max-width:62ch;color:var(--muted)}
+
+/* service cards */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.8vw,20px);margin-top:28px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px}
+.card h3{margin-bottom:9px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+.card i{display:block;width:26px;height:2px;background:var(--acc-mid);margin-bottom:14px;font-style:normal}
+
+/* photos */
+.shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.8vw,20px);margin-top:26px}
+.shots figure{margin:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
+.shots img{display:block;width:100%;height:auto}
+.shots figcaption{padding:12px 15px;font-size:14px;color:var(--muted)}
+.shots figcaption b{color:var(--ink);font-weight:650}
+
+/* three-step band */
+.band{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,3vw,40px);margin-top:26px}
+.band .b{border-top:3px solid var(--acc-mid);padding-top:16px}
+.band .b b{display:block;font-size:clamp(26px,3vw,40px);font-weight:800;color:var(--acc);line-height:1}
+.band .b h3{margin:12px 0 8px}
+.band .b p{margin:0;color:var(--muted);font-size:15.5px}
+
+/* area + faq */
+.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.areas span{border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14.5px;color:var(--muted);background:var(--panel)}
+.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,4vw,56px);margin-top:24px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line);padding:17px 0}
+.faq summary{cursor:pointer;font-size:17px;font-weight:650}
+.faq p{margin:11px 0 0;color:var(--muted);font-size:15.5px}
+
+/* quote */
+#lbq{background:var(--bg2)}
+#lbq .card2{margin-top:8px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:clamp(20px,3.4vw,38px)}
+#lbq .cols{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,4vw,50px)}
+#lbq label{display:block;font-size:14px;color:var(--muted);margin:0 0 6px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 13px;background:#0a0c0f;border:1px solid var(--line);border-radius:6px;color:inherit;font:inherit;font-size:15px;margin-bottom:14px}
+#lbq textarea{min-height:104px;resize:vertical}
+#lbq button{width:100%;padding:15px;background:var(--acc-deep);color:#fff;border:0;border-radius:6px;font:inherit;font-weight:700;font-size:15.5px;cursor:pointer}
+#lbq .st{margin:12px 0 0;font-size:14.5px;color:var(--muted);min-height:1.3em}
+#lbq .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#lbq button[disabled]{opacity:.65;cursor:wait}
+
+footer{border-top:1px solid var(--line);padding:30px 0;font-size:14.5px;color:var(--muted)}
+footer .fin{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+footer a{color:var(--ink)}
+
+@media (max-width:980px){
+  .cards{grid-template-columns:1fr 1fr}
+  .band{grid-template-columns:1fr}
+  .faq{grid-template-columns:1fr}
+  #lbq .cols{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  nav.tabs{order:3;width:100%;margin-left:0;gap:14px}
+  .brand img{height:clamp(44px,11.5vw,60px)}
+  .cards,.shots,.bullets{grid-template-columns:1fr}
+}
 </style>
-<style id="lb-skin">/* skin 3 — split hero, soft corners, offset cards */
- .hero-in,.hero-inner{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,.9fr)!important;gap:clamp(24px,4vw,56px)!important;align-items:center!important}
- @media(max-width:900px){.hero-in,.hero-inner{grid-template-columns:1fr!important}}
- [class*=card]{border-radius:18px!important;box-shadow:0 18px 40px -28px rgba(0,0,0,.9)!important}
- [class*=card]:nth-child(2n){transform:translateY(14px)}
- h2{letter-spacing:-.03em!important;font-weight:800!important}
- </style><style id="lb-skin-guard">@media(max-width:900px){
- .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
- [class*=card]{transform:none!important;margin-bottom:12px!important}
- [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
- section,.hero,header{overflow-x:clip!important}
- img,video,svg{max-width:100%!important;height:auto}
- h1,h2{overflow-wrap:anywhere!important}
-}</style><style id="lb-hdr-centre">
-/* brand is the logo alone — centre it over the nav rather than parking it on one edge */
-div.wrap{display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;gap:10px clamp(12px,1.8vw,26px)!important;position:relative!important;text-align:center!important}
-div.wrap .brand{flex:0 0 100%!important;display:flex!important;justify-content:center!important;margin:0 auto!important;width:100%!important}
-div.wrap .brand img{height:clamp(40px,3.6vw,58px)!important;width:auto!important;display:block!important;margin:0 auto!important}
-@media(max-width:520px){ div.wrap .brand img{height:40px!important} }
-</style><style id="lb-nav-contrast">/* nav links measured below 4.5:1 against this bar */
-nav {background:rgba(10,13,18,.92)!important;backdrop-filter:blur(8px)}
-nav a, nav a:visited, .nav-in a, .nav-links a, .nav a {color:#ffffff!important;opacity:1!important}
-nav a:hover {color:#ffffff!important;opacity:.85!important}
-</style></head><body>
-<nav><div class="wrap nav-in">
-<a aria-label="Built By Jordo" class="brand" href="#top"><img alt="Built By Jordo" src="assets/logo-cut.png"/></a>
-<div class="links" id="navlinks"><a href="#services">Services</a><a href="#work">Work</a><a href="#why">Process</a><a href="#areas">Areas</a><a href="#faq">FAQ</a></div>
-<a class="tel" href="tel:0481676362">0481 676 362</a>
-<button aria-expanded="false" aria-label="Menu" class="burger" id="burger">☰</button>
-</div></nav>
-<header class="hero"><div class="wrap"><div class="rule"></div><span class="kicker">Carpentry</span><h1>Structure first, <em>detail after.</em></h1><p>Framing and fix-out done in the right order so the finish sits right.</p><a class="cta" href="tel:0481676362">Call 0481 676 362</a><a class="cta ghost" href="#quote">Get a quote</a></div></header>
-<main>
-<section id="services"><div class="wrap"><h2>What we do</h2><p class="lead">From framing &amp; extensions through to the finish, the scope is agreed up front so there are no surprises.</p><div class="svc"><article><h3>Renovations</h3><p>Strip-out through to fit-off, coordinated with the other trades. Done by the crew that quoted it.</p></article><article><h3>Doors &amp; windows</h3><p>Hung, packed and flashed properly. Priced after it has been looked at.</p></article><article><h3>Fit-out &amp; joinery</h3><p>Built-in and custom joinery installed square. Same people, start to finish.</p></article><article><h3>Repairs &amp; maintenance</h3><p>Rot, damage and failed fixings sorted. Quoted on site.</p></article><article><h3>Framing &amp; extensions</h3><p>Set out, plumbed and braced to the plan. Explained before it starts.</p></article><article><h3>Decks &amp; pergolas</h3><p>Bearers, joists and decking fixed with the right fixings and fall. Done by the crew that quoted it.</p></article></div></div></section>
-<section id="work"><div class="wrap"><h2>Recent work</h2><p class="lead">A job like this.</p><div class="gal"><figure><img alt="Built By Jordo" src="assets/photo_2.jpg"/><figcaption>Recent work</figcaption></figure><figure><img alt="Built By Jordo" src="assets/photo_3.jpg"/><figcaption>On site</figcaption></figure><figure><img alt="Built By Jordo" src="assets/photo_4.jpg"/><figcaption>Finished detail</figcaption></figure></div></div></section>
-<section id="about"><div class="wrap"><h2>Who you are dealing with</h2><p class="lead">Built By Jordo does carpentry and maintenance across Gold Coast QLD: frames, decks, doors and repairs.</p></div></section>
-<section id="why"><div class="wrap"><h2>How it runs</h2><div class="why"><article><h3>Plan</h3><p>Drawings and site checked before quoting.</p></article><article><h3>Build</h3><p>Set out, frame and lock up, inspected where required.</p></article><article><h3>Finish</h3><p>Fit-off, snag and clean.</p></article></div></div></section>
-<section id="areas"><div class="wrap"><h2>Where we work</h2><p class="lead">Gold Coast QLD and the surrounding area.</p><div class="areas"><span>Gold Coast QLD</span><span>Gold Coast QLD surrounds</span></div></div></section>
-<section id="faq"><div class="wrap"><h2>Questions</h2><details class="faq"><summary>Do you work from plans?</summary><div class="a">Yes — engineered and architectural drawings are both worked from.</div></details><details class="faq"><summary>Are you licensed and insured?</summary><div class="a">Yes, licensed for the work and covered by public liability.</div></details><details class="faq"><summary>Can you coordinate other trades?</summary><div class="a">Yes, on renovations the trades are sequenced so nothing is undone.</div></details></div></section>
-<section id="quote"><div class="wrap"><h2>Get a quote</h2><p class="lead">Tell us what is needed and where. If it is urgent, call.</p>
-<form data-site="built-by-jordo" id="lbq-form">
-<div><label for="n">Name</label><input id="n" name="name" required=""/></div>
-<div><label for="p">Phone</label><input id="p" inputmode="tel" name="phone" required=""/></div>
-<div class="full"><label for="a">Suburb</label><input id="a" name="suburb"/></div>
-<div class="full"><label for="s">What is the job?</label><select id="s" name="service"><option>Framing &amp; extensions</option><option>Decks &amp; pergolas</option><option>Renovations</option><option>Doors &amp; windows</option><option>Fit-out &amp; joinery</option><option>Repairs &amp; maintenance</option><option>Something else</option></select></div>
-<div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="3"></textarea></div>
-<button type="submit">Send request</button>
-</form></div></section>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="brand" href="#top" aria-label="Built By Jordo"><img src="assets/logo.png" alt="Built By Jordo"><span class="vh">Built By Jordo</span></a>
+    <nav class="tabs" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#how">How I work</a>
+      <a href="#area">Area</a>
+      <a href="#lbq">Quote</a>
+    </nav>
+    <a class="tel" href="tel:+61481676362">0481 676 362</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="shot" role="img" aria-label="Bright interior fit-out with new linings and flooring"></div>
+    <div class="scrim"></div><!-- LB-3D-HERO --><canvas id="heroCanvas" width="1600" height="900" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <p class="kicker rv">Carpentry &middot; Gold Coast QLD</p>
+      <h1 class="rv">Framing, decks and fit-outs <em>that line up.</em></h1>
+      <p class="sub rv">Built By Jordo is a carpenter working the Gold Coast: new builds and renovations, decks and pergolas, internal linings and the finishing work that turns a frame into a room. One set of hands from the first bearer to the last architrave.</p>
+      <div class="cta-row rv">
+        <a class="btn btn-fill" href="#lbq">Get a quote</a>
+        <a class="btn btn-ghost" href="tel:+61481676362">Call 0481 676 362</a>
+      </div>
+      <div class="bullets rv">
+        <div><b>Set out square</b><span>Strings and levels checked before the first member goes on</span></div>
+        <div><b>Timber fixed properly</b><span>Bearers, joists and framing tied down to plan</span></div>
+        <div><b>Finished work</b><span>Doors, trims and linings lined up and left clean</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h2 class="rv">What I build</h2>
+      <p class="lead rv">Structural and finishing carpentry, on houses that are being built, extended or fixed up.</p>
+      <div class="cards">
+        <div class="card rv"><i></i><h3>Framing</h3><p>Wall and roof framing set out from the plan, stood and braced square so the sheeting and trims have something straight to land on.</p></div>
+        <div class="card rv"><i></i><h3>Decks</h3><p>Bearers and joists fixed back to the house or on their own posts, decking laid with even gaps and the edges trimmed off clean.</p></div>
+        <div class="card rv"><i></i><h3>Pergolas</h3><p>Posts, beams and rafters set out to the span, brackets and fixings rated for the job, open or lined ready for a roof.</p></div>
+        <div class="card rv"><i></i><h3>Fit-outs</h3><p>Internal linings, doors and hardware, skirting, architraves and shelving, worked around the other trades so nothing gets spoiled.</p></div>
+        <div class="card rv"><i></i><h3>Repairs</h3><p>Water-damaged framing, rotten decking and bearers, failed door and window openings, cut out and rebuilt to match what is there.</p></div>
+        <div class="card rv"><i></i><h3>Renovations</h3><p>Walls taken out or moved, openings formed, new rooms framed and finished through to the trims and the final clean-up.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="background:var(--bg2)">
+    <div class="wrap">
+      <h2 class="rv">Recent work</h2>
+      <p class="lead rv">Photos of a job like this &mdash; the sort of carpentry Built By Jordo works on across the Gold Coast.</p>
+      <div class="shots">
+        <figure class="rv"><img src="assets/hero.jpg" alt="Bright finished hallway with new linings, doors and timber flooring"><figcaption><b>A job like this</b> &mdash; interior linings, doors and flooring finished.</figcaption></figure>
+        <figure class="rv"><img src="assets/framing.jpg" alt="Roof framing with rafters and battens in place against the sky"><figcaption><b>A job like this</b> &mdash; roof framing stood and braced.</figcaption></figure>
+        <figure class="rv"><img src="assets/joinery.jpg" alt="Kitchen cabinetry with a timber slat island and stone bench"><figcaption><b>A job like this</b> &mdash; cabinetry and timber island fitted.</figcaption></figure>
+        <figure class="rv"><img src="assets/deck.jpg" alt="Finished timber deck with rails looking out over neighbouring houses"><figcaption><b>A job like this</b> &mdash; external decking and handrail.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2 class="rv">How I work</h2>
+      <div class="band">
+        <div class="b rv"><b>01</b><h3>Measure, then price</h3><p>The job gets looked at on site and priced from what is actually there. You hear about anything that changes before it is done, not after.</p></div>
+        <div class="b rv"><b>02</b><h3>Set out and build</h3><p>Set-out strings, levels and spans are checked first, then the work goes in square, plumb and fixed to the plan.</p></div>
+        <div class="b rv"><b>03</b><h3>Finish and clean</h3><p>Trims, hardware and the final fix ups are done on the same visit, and the offcuts and dust leave with me.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="area">
+    <div class="wrap">
+      <h2 class="rv">Service area</h2>
+      <p class="lead rv">Gold Coast QLD and the surrounding areas.</p>
+      <div class="areas">
+        <span>Gold Coast QLD</span><span>Surrounding areas</span>
+      </div>
+      <div class="faq" style="margin-top:34px">
+        <details class="rv"><summary>Do you work on new builds or just renovations?</summary><p>Both. Framing on new work and fit-outs, and renovations where walls move and rooms get rebuilt through to the finishing.</p></details>
+        <details class="rv"><summary>Can you build a deck off an existing house?</summary><p>Yes. The deck is set out off the existing floor level, with the bearers fixed back to the framing or taken down to posts, whichever suits the height.</p></details>
+        <details class="rv"><summary>Do you supply material or work from mine?</summary><p>Either. Timber and hardware can be quoted in with the job, or I can build from material you have already arranged.</p></details>
+        <details class="rv"><summary>How do you handle other trades on the job?</summary><p>The carpentry is sequenced around them. What gets fixed when is worked out before the job starts so nothing is closed up ahead of the electrician or the plumber.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="lbq" aria-labelledby="lbq-h">
+    <div class="wrap">
+      <h2 id="lbq-h" class="rv">Get a quote</h2>
+      <div class="card2">
+        <div class="cols">
+          <div class="rv">
+            <p style="color:var(--muted)">Send the details through and Built By Jordo will come back with a price. If it is quicker, call <a class="tel" href="tel:+61481676362">0481 676 362</a>.</p>
+          </div>
+          <form id="lbq-form" data-site="built-by-jordo" novalidate>
+            <label for="lbq-n">Name</label>
+            <input id="lbq-n" name="name" autocomplete="name" required>
+            <label for="lbq-p">Phone</label>
+            <input id="lbq-p" name="phone" type="tel" autocomplete="tel" required>
+            <label for="lbq-s">Suburb</label>
+            <input id="lbq-s" name="suburb" autocomplete="address-level2">
+            <label for="lbq-sv">What do you need built?</label>
+            <select id="lbq-sv" name="service">
+              <option>Framing</option>
+              <option>Deck</option>
+              <option>Pergola</option>
+              <option>Fit-out or linings</option>
+              <option>Repair</option>
+              <option>Renovation</option>
+            </select>
+            <label for="lbq-m">Job details</label>
+            <textarea id="lbq-m" name="message" placeholder="What is being built, and roughly when you need it done"></textarea>
+            <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+            <button type="submit">Send quote request</button>
+            <p class="st" id="lbq-st" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var B='https://laydback-hq.tail5b3740.ts.net';
+      var f=document.getElementById('lbq-form');
+      if(!f) return;
+      var st=document.getElementById('lbq-st'), btn=f.querySelector('button[type=submit]');
+      f.addEventListener('submit',function(e){
+        e.preventDefault();
+        var d={}; new FormData(f).forEach(function(v,k){d[k]=v;});
+        if(d.website) return;
+        if(!d.name || !d.phone || !(d.message||'').trim()){
+          st.textContent='Please add your name, a phone number and a few words about the job.';
+          return;
+        }
+        btn.disabled=true; st.textContent='Sending\u2026';
+        fetch(B+'/functions/v1/quote-request',{
+          method:'POST',headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({site_id:f.dataset.site,business_name:'Built By Jordo',name:d.name,phone:d.phone,suburb:d.suburb,service:d.service,message:d.message})
+        }).then(function(r){return r.json().catch(function(){return{};});})
+          .then(function(x){
+            if(x && x.success){f.reset();st.textContent="Thanks \u2014 the request is in and Built By Jordo will be in touch.";}
+            else{throw new Error((x&&x.error)||'Could not send');}
+          })
+          .catch(function(err){st.textContent=(err&&err.message)?err.message:'Could not send \u2014 please call 0481 676 362.';})
+          .finally(function(){btn.disabled=false;});
+      });
+    })();
+    </script>
+  </section>
+
 </main>
-<footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;width:100%">
-<span>Built By Jordo — Gold Coast QLD</span><a href="tel:0481676362" style="color:#fff;font-weight:800">0481 676 362</a>
-</div></footer>
+
+<footer>
+  <div class="wrap fin">
+    <span>Built By Jordo &middot; Carpentry &middot; Gold Coast QLD</span>
+    <span><a class="tel" href="tel:+61481676362">0481 676 362</a></span>
+    <span><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span>
+  </div>
+</footer>
+
 <script>
-document.getElementById('burger').addEventListener('click',function(){var l=document.getElementById('navlinks');
-  var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o);});
-document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button');
-  b.textContent='Sending…';b.disabled=true;
-  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
-    body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})
-  .then(function(){b.textContent='Thanks — we will be in touch';})
-  .catch(function(){b.textContent='Could not send — try again';b.disabled=false;});});
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -10% 0px',threshold:.08});
+    els.forEach(function(e){ io.observe(e); });
+  } else {
+    els.forEach(function(e){ e.classList.add('on'); });
+  }
+  setTimeout(function(){
+    document.querySelectorAll('.rv:not(.on)').forEach(function(e){ e.classList.add('on'); });
+  },1200);
+})();
 </script>
-</body></html>
+</body>
+</html>

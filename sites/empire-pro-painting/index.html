@@ -1,119 +1,385 @@
 <!doctype html>
-<html lang="en-AU"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Empire Pro Painting — Painting</title>
-<meta name="description" content="Empire Pro Painting. Interiors, exteriors, ceilings and trim — the masking and sanding is the job, the paint is the last coat. Call 0400 250 074.">
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Empire Pro Painting — Interior &amp; Exterior Repaints, Feature Walls</title>
+<meta name="description" content="Empire Pro Painting takes on interior repaints, exterior repaints, feature walls, trim and doors, ceilings, and the prep and repair that makes a finish last. Quotes are priced from the site — call 0400 250 074.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="assets/favicon.png">
 <style>
-:root{--ink:#0d0f13;--panel:#15181e;--paper:#f4f2ee;--dim:#9aa3ad;--line:rgba(255,255,255,.13);--acc:#001696}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:#f2f4f7;font:17px/1.6 "Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
-.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
+:root{
+  --bg:#08070c; --bar:#000; --panel:#12101a; --panel-2:#181521;
+  --ink:#f6f4f8; --dim:#a9a3b6; --line:#2a2439;
+  --lb-acc:#d7179d; --acc:#d7179d; --accent:#d7179d; --brand:#d7179d; --primary:#d7179d;
+  --brand-2:#1664d8;
+  --acc-tint:#ff5ecb; --acc-deep:#7a0e58;
+  --gut:clamp(18px,4.6vw,54px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.62 "Outfit",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+img{max-width:100%;display:block}
 a{color:inherit}
-nav{position:sticky;top:0;z-index:40;background:rgba(13,15,19,.95);border-bottom:2px solid var(--acc);backdrop-filter:blur(8px)}
-.nav-in{display:flex;align-items:center;gap:clamp(12px,2vw,26px);height:78px}
-.brand img{height:46px;width:auto;display:block}
-nav .links{display:flex;gap:clamp(12px,1.8vw,24px);margin-left:auto}
-nav .links a{text-decoration:none;font-size:15px;color:var(--dim)}
-nav .links a:hover{color:#fff}
-.tel{font-weight:800;text-decoration:none;color:#111;background:var(--acc);padding:10px 16px;white-space:nowrap}
-.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:#fff;padding:8px 10px;font-size:18px}
-section{padding:clamp(42px,6vw,76px) 0;border-top:1px solid var(--line)}
-h2{margin:0 0 10px;font-size:clamp(22px,2.8vw,34px);letter-spacing:-.02em}
-.lead{color:var(--dim);margin:0 0 24px;max-width:62ch}
-.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--acc);margin-bottom:14px}
-.kicker::before{content:"";width:32px;height:2px;background:var(--acc)}
-h1{margin:0 0 16px;font-size:clamp(32px,5vw,58px);line-height:1.02;letter-spacing:-.035em}
-h1 em{font-style:normal;color:var(--acc)}
-.cta{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:#111;text-decoration:none;font-weight:800;padding:14px 22px}
-.cta.ghost{background:transparent;border:1px solid var(--line);color:#fff;font-weight:600;margin-left:8px}
-.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-.svc article{background:var(--ink);padding:22px 20px}
-.svc h3{margin:0 0 6px;font-size:16.5px}
-.svc p{margin:0;color:var(--dim);font-size:14.5px}
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.gal figure{margin:0}.gal img{width:100%;height:240px;object-fit:cover;display:block}
-.gal figcaption{font-size:12.5px;color:var(--dim);padding:8px 2px 0}
-.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.why article{border-left:2px solid var(--acc);padding-left:14px}
-.why h3{margin:0 0 6px;font-size:16px}
-.why p{margin:0;color:var(--dim);font-size:14.5px}
-.areas{display:flex;flex-wrap:wrap;gap:8px}
-.areas span{border:1px solid var(--line);padding:7px 13px;font-size:14px;color:var(--dim)}
-details.faq{border-bottom:1px solid var(--line);padding:14px 0}
-details.faq summary{cursor:pointer;font-weight:700;font-size:16px}
-details.faq .a{color:var(--dim);padding-top:8px;font-size:15px}
-form{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,3vw,30px);display:grid;grid-template-columns:1fr 1fr;gap:12px}
-form .full{grid-column:1/-1}
-label{display:block;font-size:13px;color:var(--dim);margin-bottom:5px}
-input,textarea,select{width:100%;background:#0b0d11;border:1px solid var(--line);color:#fff;padding:11px;font:inherit;font-size:15px}
-button{grid-column:1/-1;background:var(--acc);color:#111;border:0;padding:14px;font:inherit;font-weight:800;cursor:pointer}
-footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:900px){nav .links{display:none}nav .links.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#15181e;padding:14px;border-bottom:1px solid var(--line)}.burger{display:block}.svc,.gal,.why,form{grid-template-columns:1fr}}
-.hero{padding:clamp(44px,7vw,92px) 0 clamp(26px,4vw,44px)}
-.hero .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:clamp(22px,4vw,40px)}
-.hero .shots img{width:100%;height:clamp(120px,16vw,190px);object-fit:cover;display:block}
-.hero p{color:#cfd6de;margin:0 0 22px;max-width:56ch}
-@media(max-width:760px){.hero .shots{grid-template-columns:1fr 1fr}}
-</style>
-<style id="lb-skin">/* skin 5 — narrow measure, drop cap, quiet */
- .hero p,.hero-copy p,section>p{max-width:34em!important;line-height:1.7!important}
- section>p:first-of-type:first-letter{float:left;font-size:3.1em;line-height:.9;padding:.06em .12em 0 0;font-weight:700}
- h1{letter-spacing:-.03em!important;font-weight:650!important}
- h2{font-weight:650!important;letter-spacing:-.01em!important}
- [class*=card]{border-radius:4px!important;border-left:2px solid var(--acc,#c4fb24)!important;background:rgba(255,255,255,.03)!important}
- </style><style id="lb-skin-guard">@media(max-width:900px){
- .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
- [class*=card]{transform:none!important;margin-bottom:12px!important}
- [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
- section,.hero,header{overflow-x:clip!important}
- img,video,svg{max-width:100%!important;height:auto}
- h1,h2{overflow-wrap:anywhere!important}
-}</style><style id="lb-hdr-centre">
-/* brand is the logo alone — centre it over the nav rather than parking it on one edge */
-div.wrap{display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;gap:10px clamp(12px,1.8vw,26px)!important;position:relative!important;text-align:center!important}
-div.wrap .brand{flex:0 0 100%!important;display:flex!important;justify-content:center!important;margin:0 auto!important;width:100%!important}
-div.wrap .brand img{height:clamp(40px,3.6vw,58px)!important;width:auto!important;display:block!important;margin:0 auto!important}
-@media(max-width:520px){ div.wrap .brand img{height:40px!important} }
-</style><style id="lb-nav-contrast">/* nav links measured below 4.5:1 against this bar */
-nav {background:rgba(10,13,18,.92)!important;backdrop-filter:blur(8px)}
-nav a, nav a:visited, .nav-in a, .nav-links a, .nav a {color:#ffffff!important;opacity:1!important}
-nav a:hover {color:#ffffff!important;opacity:.85!important}
-</style></head><body>
-<nav><div class="wrap nav-in">
-  <a class="brand" href="#top" aria-label="Empire Pro Painting"><img src="assets/logo-cut.png" alt="Empire Pro Painting"></a>
-  <div class="links" id="navlinks"><a href="#services">Services</a><a href="#work">Work</a><a href="#why">Process</a><a href="#faq">FAQ</a></div>
-  <a class="tel" href="tel:0400250074">0400 250 074</a>
-  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
-</div></nav>
-<header class="hero wrap"><span class="kicker">Interior & exterior</span><h1>Prepped properly, <em>cut in clean.</em></h1><p>Interiors, exteriors, ceilings and trim — the masking and sanding is the job, the paint is the last coat.</p><a class="cta" href="tel:0400250074">Call 0400 250 074</a><a class="cta ghost" href="#quote">Get a quote</a><div class="shots"><img src="assets/photo_1.jpg" alt="Empire Pro Painting"><img src="assets/photo_2.jpg" alt="Empire Pro Painting"><img src="assets/photo_3.jpg" alt="Empire Pro Painting"></div></header>
-<main>
-<section id="services"><div class="wrap"><h2>What we do</h2><p class="lead">The job is walked, explained and priced before anything starts.</p><div class="svc"><article><h3>Feature walls</h3><p>Colour matched to your sample, one wall or a room, with a clean edge. Same people, start to finish.</p></article><article><h3>Ceilings</h3><p>Patch and repaint, stain-blocked where water has marked. Quoted on site.</p></article><article><h3>Rental turnovers</h3><p>Fast repaints between tenants to a set date. Explained before it starts.</p></article><article><h3>Interior repaints</h3><p>Walls and ceilings in low-sheen or wash-and-wear, cut in by hand. Done by the crew that quoted it.</p></article><article><h3>Exterior painting</h3><p>Weatherboards, render, eaves and fascia washed, filled and primed before topcoats. Priced after it has been looked at.</p></article><article><h3>Doors & trim</h3><p>Doors off and sprayed or brushed, frames and skirting sanded and recoated. Same people, start to finish.</p></article></div></div></section>
-<section id="work"><div class="wrap"><h2>Recent work</h2><p class="lead">A job like this.</p><div class="gal"><figure><img src="assets/photo_2.jpg" alt="Empire Pro Painting"><figcaption>Recent work</figcaption></figure><figure><img src="assets/photo_3.jpg" alt="Empire Pro Painting"><figcaption>On site</figcaption></figure><figure><img src="assets/photo_4.jpg" alt="Empire Pro Painting"><figcaption>Finished detail</figcaption></figure></div></div></section>
-<section id="about"><div class="wrap"><h2>Who you are dealing with</h2><p class="lead">Empire Pro Painting keeps its work in the local area and the surrounding suburbs: interior repaints, repairs and the smaller jobs that are easy to put off.</p></div></section>
-<section id="why"><div class="wrap"><h2>How it runs</h2><div class="why"><article><h3>Look</h3><p>Surfaces decide the prep — the job is looked at before a price is given.</p></article><article><h3>Prep</h3><p>Filling, sanding, masking and priming before any topcoat goes on.</p></article><article><h3>Paint & clean</h3><p>Two coats, furniture back, floors clean and no tape left behind.</p></article></div></div></section>
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding-inline:var(--gut)}
+.vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.05;letter-spacing:-.015em}
+p{margin:0}
+.sub{color:var(--dim);font-size:17px;max-width:62ch}
 
-<section id="faq"><div class="wrap"><h2>Questions</h2><details class="faq"><summary>How long does a room take?</summary><div class="a">A standard bedroom is usually a day of prep and a day of painting.</div></details><details class="faq"><summary>Do you supply the paint?</summary><div class="a">Either — it can be included in the quote or supplied by you.</div></details><details class="faq"><summary>Do I need to move furniture?</summary><div class="a">Small items off the walls help; larger furniture is moved to the middle and covered.</div></details></div></div></section>
-<section id="quote"><div class="wrap"><h2>Get a quote</h2><p class="lead">Tell us what is needed and where. If it is urgent, call.</p>
-<form id="lbq-form" data-site="empire-pro-painting">
-<div><label for="n">Name</label><input id="n" name="name" required></div>
-<div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel"></div>
-<div class="full"><label for="a">Address or suburb</label><input id="a" name="suburb"></div>
-<div class="full"><label for="s">What is the job?</label><select id="s" name="service"><option>Interior repaints</option><option>Exterior painting</option><option>Doors & trim</option><option>Feature walls</option><option>Ceilings</option><option>Rental turnovers</option><option>Something else</option></select></div>
-<div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="3"></textarea></div>
-<button type="submit">Send request</button>
-</form></div></section>
-</main>
-<footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;width:100%">
-  <span>Empire Pro Painting</span><a href="tel:0400250074" style="color:#fff;font-weight:800">0400 250 074</a>
-</div></footer>
-<script>
-document.getElementById('burger').addEventListener('click',function(){var l=document.getElementById('navlinks');
-  var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o);});
-document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button');
-  b.textContent='Sending…';b.disabled=true;
-  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
-    body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})
-  .then(function(){b.textContent='Thanks — we will be in touch';})
-  .catch(function(){b.textContent='Could not send — try again';b.disabled=false;});});
+/* bar — logo artwork only */
+.paint-bar{position:sticky;top:0;z-index:40;background:var(--bar);border-bottom:1px solid var(--line)}
+.pb-in{display:flex;align-items:center;gap:clamp(12px,2vw,26px);padding:12px 0;flex-wrap:wrap}
+.mark{display:flex;align-items:center;text-decoration:none;min-width:0;flex:0 1 auto}
+.mark img{height:clamp(54px,6.4vw,86px);width:auto;max-width:min(42vw,190px)}
+.paint-bar nav.p-nav{display:flex;gap:clamp(13px,1.9vw,26px);margin-left:auto;flex-wrap:wrap}
+.paint-bar nav.p-nav a{font-size:15px;font-weight:500;color:var(--dim);text-decoration:none;padding:5px 0;border-bottom:2px solid transparent}
+.paint-bar nav.p-nav a:hover{color:var(--ink);border-bottom-color:var(--acc)}
+.call{display:inline-flex;align-items:center;font-weight:700;font-size:16px;text-decoration:none;color:#fff;background:var(--acc-deep);border:1px solid var(--acc-deep);padding:9px 15px;white-space:nowrap}
+.call:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+
+/* hero */
+.hero{position:relative;isolation:isolate;perspective:1000px;display:flex;align-items:flex-end;min-height:clamp(540px,76vh,700px);padding:clamp(96px,13vh,150px) 0 clamp(38px,5vh,62px);overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2;background-image:url("assets/hero.jpg");background-position:center 42%;background-size:cover;background-repeat:no-repeat}
+.hero-scrim{position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(8,7,12,.90) 0%,rgba(8,7,12,.74) 34%,rgba(8,7,12,.42) 68%,rgba(8,7,12,.24) 100%)}
+#heroCanvas{display:none}
+.kicker{display:inline-block;font-size:15px;font-weight:600;color:#fff;border-left:3px solid var(--acc);padding-left:11px;margin-bottom:18px;text-shadow:0 1px 12px rgba(0,0,0,.55)}
+.hero h1{font-size:clamp(40px,6.3vw,84px);max-width:20ch;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+.hero h1 em{font-style:normal;color:var(--acc-tint)}
+.lede{color:#e6e0e9;font-size:clamp(16.5px,1.5vw,19.5px);max-width:53ch;margin-top:18px;text-shadow:0 1px 14px rgba(0,0,0,.55)}
+.row{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--acc-deep);color:#fff;border:1px solid var(--acc-deep);font-weight:700;font-size:16.5px;text-decoration:none;padding:15px 26px;white-space:nowrap}
+.btn:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn-alt{background:rgba(10,9,14,.55);border-color:rgba(255,255,255,.42);color:#fff}
+.btn-alt:hover{background:#fff;border-color:#fff;color:#0b0a10}
+.strip{list-style:none;margin:34px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid rgba(255,255,255,.22);background:rgba(10,9,14,.46);max-width:740px}
+.strip li{padding:14px 18px;border-left:1px solid rgba(255,255,255,.14)}
+.strip li:first-child{border-left:0}
+.strip b{display:block;font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--acc-tint)}
+.strip span{display:block;font-size:16px;margin-top:4px}
+
+.band{padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(56px,7vw,96px);border-top:1px solid var(--line)}
+.band h2{font-size:clamp(28px,3.4vw,46px);max-width:22ch}
+.band .sub{margin-top:14px}
+
+/* surfaces — a paint deck of rows, each with its own colour chip */
+.deck{list-style:none;margin:42px 0 0;padding:0}
+.deck li{display:grid;grid-template-columns:60px minmax(0,.85fr) minmax(0,1.5fr);gap:clamp(16px,2.6vw,34px);padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
+.chip{width:46px;height:46px;display:grid;place-items:center;font-weight:800;font-size:17px;color:#fff;letter-spacing:.02em}
+.deck h3{font-size:clamp(21px,2.1vw,28px);padding-top:6px}
+.deck p{color:var(--dim);font-size:16.5px;padding-top:8px}
+
+/* inside / out — two panels, one rule across the top of each */
+.panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,3.6vw,56px);margin-top:42px}
+.panel{border-top:3px solid var(--acc);padding-top:22px}
+.panel:nth-child(2){border-top-color:var(--brand-2)}
+.panel h3{font-size:clamp(22px,2.4vw,31px)}
+.panel ul{list-style:none;margin:18px 0 0;padding:0}
+.panel li{padding:10px 0 10px 22px;position:relative;color:var(--dim);font-size:16.5px;border-top:1px solid var(--line)}
+.panel li::before{content:"";position:absolute;left:0;top:19px;width:9px;height:9px;background:var(--acc)}
+.panel:nth-child(2) li::before{background:var(--brand-2)}
+
+/* works — mosaic, wide and tall cells */
+.works{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,24px);margin-top:40px}
+.works figure{margin:0;display:flex;flex-direction:column;height:100%}
+.works img{width:100%;height:100%;min-height:230px;object-fit:cover;border:1px solid var(--line)}
+.works figure:first-child{grid-column:span 2}
+.works figcaption{font-size:14.5px;color:var(--dim);margin-top:10px;padding-left:11px;border-left:2px solid var(--acc)}
+
+/* faq */
+.faq{margin:38px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(26px,4vw,54px)}
+.faq>div{padding:20px 0;border-top:1px solid var(--line)}
+.faq dt{font-weight:700;font-size:19px;line-height:1.34}
+.faq dd{margin:8px 0 0;color:var(--dim);font-size:16px}
+
+/* quote */
+.quote{background:var(--panel)}
+.q-in{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,4vw,58px);align-items:start}
+.q-copy p{color:var(--dim);margin-top:14px;max-width:40ch}
+.tel-lg{display:inline-block;margin-top:20px;font-size:32px;font-weight:800;color:var(--acc-tint);text-decoration:none;border-bottom:2px solid var(--acc)}
+form{background:var(--panel-2);border:1px solid var(--line);padding:clamp(20px,2.6vw,32px)}
+.f2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
+label{display:block;font-size:13.5px;font-weight:600;letter-spacing:.03em;color:var(--dim);margin:0 0 6px}
+input,textarea,select{width:100%;background:#0a0910;color:var(--ink);border:1px solid var(--line);padding:12px 13px;font:inherit;font-size:16px;margin-bottom:15px}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--acc);outline-offset:1px;border-color:var(--acc)}
+textarea{resize:vertical;min-height:104px}
+.cons{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:var(--dim);margin:2px 0 16px}
+.cons input{width:18px;height:18px;margin:1px 0 0;flex:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+button{width:100%;background:var(--acc-deep);color:#fff;border:1px solid var(--acc-deep);padding:15px;font:inherit;font-weight:700;font-size:16.5px;cursor:pointer}
+button:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+.st{margin-top:12px;font-size:15.5px;min-height:20px;color:var(--acc-tint)}
+
+/* footer */
+.foot{border-top:1px solid var(--line);background:var(--bar);padding:44px 0 30px}
+.f-in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,3vw,38px)}
+.f-in b{display:block;font-size:17px;font-weight:700;margin-bottom:8px}
+.f-in p{color:var(--dim);font-size:15px;max-width:30ch}
+.f-in a{color:var(--dim);text-decoration:none;font-size:15px;display:block;padding:3px 0}
+.f-in a:hover{color:var(--acc-tint)}
+.f-tel{font-size:25px!important;font-weight:800;color:var(--acc-tint)!important;padding:0 0 6px!important}
+.fine{grid-column:1/-1;border-top:1px solid var(--line);margin-top:26px;padding-top:18px;color:var(--dim);font-size:13.5px}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .q-in{grid-template-columns:minmax(0,1fr)}
+  .f-in{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .works{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .deck li{grid-template-columns:52px minmax(0,1fr)}
+  .deck p{grid-column:2}
+}
+@media(max-width:820px){
+  body{font-size:16.5px}
+  .paint-bar nav.p-nav{order:3;flex-basis:100%;margin-left:0;gap:16px}
+  .paint-bar nav.p-nav a{font-size:15.5px}
+  .mark img{height:clamp(46px,12vw,64px);max-width:min(52vw,170px)}
+  .call{margin-left:auto;font-size:15.5px;padding:8px 12px}
+  .strip{grid-template-columns:minmax(0,1fr)}
+  .strip li{border-left:0;border-top:1px solid rgba(255,255,255,.14)}
+  .strip li:first-child{border-top:0}
+  .panels{grid-template-columns:minmax(0,1fr)}
+  .faq{grid-template-columns:minmax(0,1fr)}
+  .f2{grid-template-columns:minmax(0,1fr)}
+  .works{grid-template-columns:minmax(0,1fr)}
+  .works figure:first-child{grid-column:span 1}
+  .hero h1{font-size:clamp(36px,10.4vw,52px);max-width:15ch}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1!important;transform:none!important}
+}
+</style>
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<header class="paint-bar">
+  <div class="wrap pb-in">
+    <a class="mark" href="#top" aria-label="Empire Pro Painting">
+      <img src="assets/logo.png" alt="Empire Pro Painting">
+      <span class="vh">Empire Pro Painting</span>
+    </a>
+    <nav class="p-nav" aria-label="Main">
+      <a href="#surfaces">What we paint</a>
+      <a href="#inside-out">Inside &amp; out</a>
+      <a href="#works">Recent jobs</a>
+      <a href="#faq">FAQ</a>
+      <a href="#lbq">Quote</a>
+    </nav>
+    <a class="call" href="tel:+61400250074">0400 250 074</a>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="hero-bg" role="img" aria-label="A house facade with freshly painted light walls and crisp dark trim"></div>
+    <div class="hero-scrim"></div>
+    <!-- LB-3D-HERO -->
+    <canvas id="heroCanvas" width="4" height="4" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <p class="kicker">Interior &amp; exterior painting</p>
+      <h1>Repainted properly.<br><em>Right down to the trim.</em></h1>
+      <p class="lede">Interior repaints, exterior repaints, feature walls, trim and doors, ceilings — and the filling, sanding and priming that has to happen first if the finish is going to last.</p>
+      <div class="row">
+        <a class="btn" href="#lbq">Request a quote</a>
+        <a class="btn btn-alt" href="tel:+61400250074">Call 0400 250 074</a>
+      </div>
+      <ul class="strip">
+        <li><b>INTERIOR</b><span>Rooms, feature walls, ceilings</span></li>
+        <li><b>EXTERIOR</b><span>Render, boards, trim and doors</span></li>
+        <li><b>QUOTES</b><span>Priced from the site</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" id="surfaces">
+    <div class="wrap">
+      <h2 class="rv">What gets repainted</h2>
+      <p class="sub rv">Six jobs that make up the work. A single room and a whole house are quoted the same way — off the surfaces, not the clock.</p>
+      <ol class="deck">
+        <li class="rv"><span class="chip" style="background:#d7179d">A</span><h3>Interior repaints</h3><p>Walls and ceilings through a room or the whole house, cut in by hand around the trim so the edge along the cornice and the skirting is a clean line rather than a taped guess.</p></li>
+        <li class="rv"><span class="chip" style="background:#1664d8">B</span><h3>Exterior repaints</h3><p>Render, bagged walls, weatherboards, eaves and fascia. Outside work is scheduled around the weather, because a coat that gets rained on before it cures has to come back off.</p></li>
+        <li class="rv"><span class="chip" style="background:#a7138f">C</span><h3>Feature walls</h3><p>One wall taken to a different colour or finish to break up a room, measured and masked so the neighbouring walls stay untouched.</p></li>
+        <li class="rv"><span class="chip" style="background:#142b95">D</span><h3>Trim and doors</h3><p>Skirtings, architraves, cornices, door faces and frames sanded back, primed where the old coat has failed and finished so the brush marks do not show in the light.</p></li>
+        <li class="rv"><span class="chip" style="background:#97106a">E</span><h3>Ceilings</h3><p>Ceilings and cornices rolled out in a flat finish, with stains and patch marks sealed first so they do not creep back through the topcoat.</p></li>
+        <li class="rv"><span class="chip" style="background:#4e0934">F</span><h3>Prep and repair</h3><p>The part nobody sees: filling, sanding, sealing and spot priming. Peeling and flaking areas are scraped back before anything goes over them.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" id="inside-out">
+    <div class="wrap">
+      <h2 class="rv">Inside and out</h2>
+      <p class="sub rv">The two halves of the job get treated differently, so they are quoted separately.</p>
+      <div class="panels">
+        <div class="panel rv">
+          <h3>Interior repaints</h3>
+          <p class="sub" style="margin-top:12px">Rooms are emptied and masked before a brush comes out, and the finish goes on in the order that keeps the lines sharp.</p>
+          <ul>
+            <li>Walls, ceilings and cornices</li>
+            <li>Feature walls in a second colour</li>
+            <li>Skirtings, architraves and door faces</li>
+            <li>Filling, sanding and stain sealing before topcoat</li>
+          </ul>
+        </div>
+        <div class="panel rv">
+          <h3>Exterior repaints</h3>
+          <p class="sub" style="margin-top:12px">Outside, the prep decides the outcome — bare and chalky surfaces are dealt with before any finish coat goes on.</p>
+          <ul>
+            <li>Rendered and bagged walls</li>
+            <li>Weatherboards cladding and trims</li>
+            <li>Eaves, fascia and window frames</li>
+            <li>Peeling and flaking areas scraped back first</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="works">
+    <div class="wrap">
+      <h2 class="rv">Recent jobs</h2>
+      <p class="sub rv">Prep in progress, a cleaned-up exterior, a finished facade and an interior brought back to white.</p>
+      <div class="works">
+        <figure class="rv"><img src="assets/work.jpg" alt="A room stripped back for painting with floors sheeted and linings exposed"><figcaption>Prep before the finish coats — floors sheeted, surfaces exposed and made good.</figcaption></figure>
+        <figure class="rv"><img src="assets/g_2.jpg" alt="A large clean white rendered wall behind a paved courtyard"><figcaption>A rendered wall repainted and left flat and even across the run.</figcaption></figure>
+        <figure class="rv"><img src="assets/g_1.jpg" alt="A house facade with light painted upper walls and dark trim behind a white picket fence"><figcaption>Upper walls repainted with the trim kept crisp against the lighter finish.</figcaption></figure>
+        <figure class="rv"><img src="assets/g_3.jpg" alt="An interior bedroom with freshly painted white walls and grey carpet"><figcaption>An interior taken back to white, walls and ceiling done together.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="faq">
+    <div class="wrap">
+      <h2 class="rv">Questions we get</h2>
+      <dl class="faq">
+        <div class="rv"><dt>Can you do one room, or does it have to be the whole house?</dt><dd>One room is fine. A single room, a feature wall or a whole interior repaint are priced the same way — off the surfaces, the height and how much prep they need.</dd></div>
+        <div class="rv"><dt>How much prep is involved?</dt><dd>As much as the surface needs. Filling, sanding and spot priming happen before any paint goes on, because a coating rolled over a bad patch shows through the finish.</dd></div>
+        <div class="rv"><dt>Do you do exterior repaints as well as inside?</dt><dd>Both. Exterior repaints cover render, bagged walls, weatherboards, eaves, fascia and frames, and they are scheduled around the weather so nothing gets rained on before it cures.</dd></div>
+        <div class="rv"><dt>Do you paint trim, doors and ceilings?</dt><dd>Yes — trim, doors and ceilings are normal parts of a repaint, and they are usually quoted in the same number so there is no surprise when the job starts.</dd></div>
+        <div class="rv"><dt>How do you protect the rest of the house?</dt><dd>Floors, furniture and fittings are sheeted and masked before work starts, and the room is handed back cleared of drop sheets and tape when the finish is dry.</dd></div>
+        <div class="rv"><dt>How do you quote?</dt><dd>From the site. The colour, the condition of the surfaces and how much repair is needed are all things you can only judge standing in the room, so the first step is a time to look.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band quote" id="lbq">
+    <div class="wrap q-in">
+      <div class="q-copy rv">
+        <h2>Request a quote</h2>
+        <p>Send through what needs repainting — inside, outside or both — and we will come back with a time to look at the surfaces and price it properly.</p>
+        <a class="tel-lg" href="tel:+61400250074">0400 250 074</a>
+        <p style="font-size:14.5px;margin-top:10px">Interior and exterior repaints, quoted from the site.</p>
+      </div>
+      <form id="lbq-form" class="rv" novalidate data-site="empire-pro-painting" data-biz="Empire Pro Painting" action="https://laydback-hq.tail5b3740.ts.net/functions/v1/quote-request" method="post">
+        <div class="f2">
+          <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+          <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel" required></div>
+        </div>
+        <div class="f2">
+          <div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
+          <div><label for="lbq-s">Suburb</label><input id="lbq-s" name="suburb" autocomplete="address-level2"></div>
+        </div>
+        <label for="lbq-sv">What needs painting?</label>
+        <select id="lbq-sv" name="service">
+          <option>Interior repaint</option>
+          <option>Exterior repaint</option>
+          <option>Feature wall</option>
+          <option>Trim and doors</option>
+          <option>Ceilings</option>
+          <option>Prep and repair</option>
+          <option>Not sure yet</option>
+        </select>
+        <label for="lbq-m">The job</label>
+        <textarea id="lbq-m" name="message" placeholder="Which rooms or surfaces, roughly the size, and when you would like it done." required></textarea>
+        <label class="cons" for="lbq-c"><input type="checkbox" id="lbq-c" name="consent" value="1" checked> I am happy to be contacted about this request.</label>
+        <div class="hp" aria-hidden="true"><label for="lbq-w">Website</label><input id="lbq-w" name="website" tabindex="-1" autocomplete="off"></div>
+        <button type="submit">Send quote request</button>
+        <p class="st" id="lbq-st" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <script>
+(function(){
+  function base(cb){
+    var done=false;
+    var t=setTimeout(function(){ if(!done){ done=true; cb('https://laydback-hq.tail5b3740.ts.net'); } },2000);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_='+Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b=(txt||'').trim().replace(/\/+$/,'');
+        if(done) return;
+        done=true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b)?b:'https://laydback-hq.tail5b3740.ts.net');
+      })
+      .catch(function(){ if(!done){ done=true; clearTimeout(t); cb('https://laydback-hq.tail5b3740.ts.net'); } });
+  }
+  function init(){
+    var f=document.getElementById('lbq-form');
+    if(!f) return;
+    var st=document.getElementById('lbq-st');
+    var btn=f.querySelector('button[type=submit]');
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var d={};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if(d.website) return;
+      if(!d.name || (!d.phone && !d.email) || !(d.message||'').trim()){
+        st.textContent='Please add your name, a phone or email, and a few words about the job.';
+        return;
+      }
+      btn.disabled=true;
+      st.textContent='Sending\u2026';
+      base(function(B){
+        fetch(B+'/functions/v1/quote-request',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({
+            site_id:f.dataset.site||'', business_name:f.dataset.biz||'',
+            name:d.name, phone:d.phone, email:d.email, suburb:d.suburb||'',
+            service:d.service||'', message:d.message, consent:!!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if(x && x.success){ f.reset(); st.textContent='Thanks \u2014 your request is in. We will be in touch shortly.'; }
+          else { throw new Error((x && x.error)||'Could not send'); }
+        })
+        .catch(function(err){ st.textContent=(err && err.message)?err.message:'Could not send \u2014 please try again or call 0400 250 074.'; })
+        .finally(function(){ btn.disabled=false; });
+      });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
 </script>
-</body></html>
+  </section>
+</main>
+<footer class="foot">
+  <div class="wrap f-in">
+    <div><b>Empire Pro Painting</b><p>Interior repaints, exterior repaints, feature walls, trim and doors, ceilings, prep and repair.</p></div>
+    <div><a class="f-tel" href="tel:+61400250074">0400 250 074</a><p>Quotes are priced from the site.</p></div>
+    <nav class="f-in-nav" aria-label="Footer">
+      <a href="#surfaces">What we paint</a>
+      <a href="#inside-out">Inside &amp; out</a>
+      <a href="#works">Recent jobs</a>
+      <a href="#lbq">Request a quote</a>
+    </nav>
+    <div><b>How it runs</b><p>Surfaces prepped and made good first, then the finish coats go on.</p></div>
+    <p class="fine">&copy; 2026 Empire Pro Painting &middot; <a href="privacy.html" style="display:inline;color:inherit">Privacy</a> &middot; <a href="terms.html" style="display:inline;color:inherit">Terms</a></p>
+  </div>
+</footer>
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){ Array.prototype.forEach.call(els,function(e){ e.classList.add('on'); }); return; }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('on'); io.unobserve(x.target); } });
+  },{rootMargin:'0px 0px -8% 0px',threshold:.06});
+  Array.prototype.forEach.call(els,function(e){ io.observe(e); });
+})();
+setTimeout(function(){ document.querySelectorAll('.rv').forEach(function(e){ e.classList.add('on'); }); },1100);
+</script>
+</body>
+</html>
