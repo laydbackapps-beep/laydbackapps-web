@@ -142,6 +142,21 @@ div.wrap{display:flex!important;flex-wrap:wrap!important;align-items:center!impo
 div.wrap .lb-brand{flex:0 0 100%!important;display:flex!important;justify-content:center!important;margin:0 auto!important;width:100%!important}
 div.wrap .lb-brand img{height:clamp(40px,3.6vw,58px)!important;width:auto!important;display:block!important;margin:0 auto!important}
 @media(max-width:520px){ div.wrap .lb-brand img{height:40px!important} }
+</style><style id="lb-hero-contained">
+/* the source photo is 1600px wide; full-bleed it had to be blown up past 1:1 on any normal screen,
+   so it is now a contained panel that is only ever scaled down */
+.hero{display:grid!important;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)!important;
+      align-items:stretch!important;background:var(--ground,#0d0f11)!important;overflow:hidden}
+.hero .wrap{grid-column:1!important;order:1!important;position:relative;z-index:2;padding-block:clamp(40px,6vw,84px)}
+.hero img.hb{position:relative!important;inset:auto!important;grid-column:2!important;order:2!important;
+      width:100%!important;height:100%!important;min-height:clamp(320px,54vh,620px);max-height:760px;
+      object-fit:cover!important;object-position:62% 45%!important;z-index:1!important}
+.hero .scrim{display:none!important}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr!important}
+  .hero img.hb{grid-column:1!important;order:2!important;min-height:0;height:clamp(200px,38vh,320px)!important}
+  .hero .wrap{grid-column:1!important;order:1!important}
+}
 </style></head>
 <body>
 <header class="site">
@@ -160,7 +175,7 @@ div.wrap .lb-brand img{height:clamp(40px,3.6vw,58px)!important;width:auto!import
 </header>
 <main id="top">
 <section class="hero">
-<img alt="Cleared earthworks site: bare cut ground, a new timber fence line and machinery working the block" class="hb" height="987" src="assets/hero-wide.jpg" width="1600"/>
+<img alt="Cleared earthworks site: bare cut ground, a new timber fence line and machinery working the block" class="hb" height="1200" src="assets/hero-sharp.jpg" width="901"/>
 <div aria-hidden="true" class="scrim"></div>
 <div class="wrap">
 <p class="eyebrow rv">Earthworks &amp; contracting — Ipswich QLD</p>
@@ -239,9 +254,9 @@ div.wrap .lb-brand img{height:clamp(40px,3.6vw,58px)!important;width:auto!import
 <p class="kicker rv">Off the truck</p>
 <h2 class="rv">A job like this</h2>
 <div class="shots">
-<figure class="rv"><img alt="A job like this: post-and-rail timber fencing run on a cleared block, posts set in concrete" height="988" src="assets/work-2.jpg" width="1600"/><figcaption>A job like this — a post-and-rail fence line run out on a cleared block, posts set and footings poured.</figcaption></figure>
-<figure class="rv"><img alt="A job like this: heavy timber built on site to size on a graded yard" height="1201" src="assets/work-1.jpg" width="1600"/><figcaption>A job like this — heavy timber built on site to size, on ground already graded and level.</figcaption></figure>
-<figure class="rv"><img alt="A job like this: timber work finished off on a graded yard" height="1201" src="assets/work-3.jpg" width="1600"/><figcaption>A job like this — timber work finished and squared off on a yard that has already been shaped.</figcaption></figure>
+<figure class="rv"><img alt="A job like this: post-and-rail timber fencing run on a cleared block, posts set in concrete" height="988" src="assets/work-2.jpg" width="901"/><figcaption>A job like this — a post-and-rail fence line run out on a cleared block, posts set and footings poured.</figcaption></figure>
+<figure class="rv"><img alt="A job like this: heavy timber built on site to size on a graded yard" height="1201" src="assets/work-1.jpg" width="901"/><figcaption>A job like this — heavy timber built on site to size, on ground already graded and level.</figcaption></figure>
+<figure class="rv"><img alt="A job like this: timber work finished off on a graded yard" height="1201" src="assets/work-3.jpg" width="901"/><figcaption>A job like this — timber work finished and squared off on a yard that has already been shaped.</figcaption></figure>
 </div>
 </div>
 </section>
