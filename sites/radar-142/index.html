@@ -410,6 +410,13 @@ nav.main a,.nav a{white-space:nowrap}
  .hero{height:58vh!important;max-height:58vh!important}}
 footer,footer p,footer a,.ftr,.ftr a,.ftr p{font-size:15px!important;line-height:1.7!important}
 </style>
+
+<style id="lb-hero-size">
+/* the photo reel stays, but the band is smaller so the shots are not stretched across a 92vh wall */
+html body .hero.hex-veil{min-height:0!important;height:min(72vh,620px)!important;max-height:min(72vh,620px)!important;overflow:hidden!important}
+html body .hero .hero-slides img{object-fit:cover!important;object-position:center 40%!important}
+@media (max-width:720px){html body .hero.hex-veil{height:56vh!important;max-height:56vh!important}}
+</style>
 </head>
 <body>
 <script>document.documentElement.className+=' js';</script>
