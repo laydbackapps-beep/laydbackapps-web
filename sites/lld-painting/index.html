@@ -117,6 +117,7 @@ a:hover{text-decoration:underline}
 
 
 
+
 <style id="lb-logo-hero">
 /* Client logo across the header: the real artwork, isolated and readable. */
 .lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;
@@ -136,14 +137,16 @@ a:hover{text-decoration:underline}
   clip:rect(0 0 0 0)!important;white-space:nowrap!important}
 .lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
 @media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:34px!important}}
-
+.lb-bar{background-color:#d9d5e6!important}
+.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#101014!important}
+.lb-bar .cta,.lb-bar a.cta{color:#101014!important}
 </style>
 </head>
 <body>
 <a class="skip" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
 <header class="hdr">
   <div class="hdr-in">
-    <a class="lb-brand" style="--lb-name:#ffffff" href="#top" aria-label="LLD Painting home"><img class="lb-mark" src="assets/logo-isolated-mark.png" alt="" loading="eager" decoding="async"><img class="lb-word" src="assets/logo-isolated-word.png" alt="" loading="eager" decoding="async"><span class="lb-sr">LLD Painting home</span></a><nav class="nav" aria-label="Main">
+    <a class="lb-brand" style="--lb-name:#101014" href="#top" aria-label="LLD Painting home"><img class="lb-mark" src="assets/logo-isolated-mark.png" alt="" loading="eager" decoding="async"><img class="lb-word" src="assets/logo-isolated-word.png" alt="" loading="eager" decoding="async"><span class="lb-sr">LLD Painting home</span></a><nav class="nav" aria-label="Main">
       <a href="#services">Services</a>
       <a href="#work">Work</a>
       <a href="#about">About</a>
@@ -431,5 +434,6 @@ a:hover{text-decoration:underline}
   setTimeout(all, 1100);
 })();
 </script>
+<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#d9d5e6","important");})();</script>
 </body>
 </html>

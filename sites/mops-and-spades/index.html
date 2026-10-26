@@ -207,6 +207,7 @@ html.js .rv.in{opacity:1;transform:none}
 
 
 
+
 <style id="lb-logo-hero">
 /* Client logo across the header: the real artwork, isolated and readable. */
 .lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;
@@ -215,7 +216,7 @@ html.js .rv.in{opacity:1;transform:none}
 .lb-brand .lb-mark{display:block!important;height:clamp(64px,7.4vw,100px)!important;width:auto!important;
   max-width:none!important;max-height:none!important;object-fit:contain!important;background:none!important;
   border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
-.lb-brand .lb-word{display:block!important;height:44px!important;width:auto!important;max-width:min(38vw,520px)!important;
+.lb-brand .lb-word{display:block!important;height:74px!important;width:auto!important;max-width:min(38vw,520px)!important;
   max-height:none!important;object-fit:contain!important;object-position:left center!important;
   background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
 .lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
@@ -225,8 +226,10 @@ html.js .rv.in{opacity:1;transform:none}
 .lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
   clip:rect(0 0 0 0)!important;white-space:nowrap!important}
 .lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
-@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:34px!important}}
-
+@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:59px!important}}
+.lb-bar{background-color:#fdfdfd!important}
+.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#101014!important}
+.lb-bar .cta,.lb-bar a.cta{color:#101014!important}
 </style>
 </head>
 <body>
@@ -234,7 +237,7 @@ html.js .rv.in{opacity:1;transform:none}
 
 <header class="bar">
   <div class="wrap bar-in">
-    <a class="lb-brand" style="--lb-name:#ffffff" href="#top" aria-label="mops-and-spades"><img class="lb-mark" src="assets/logo-isolated-mark.png" alt="" loading="eager" decoding="async"><img class="lb-word" src="assets/logo-isolated-word.png" alt="" loading="eager" decoding="async"><span class="lb-sr">mops-and-spades</span></a><nav class="nav" id="nav">
+    <a class="lb-brand" style="--lb-name:#101014" href="#top" aria-label="mops-and-spades"><img class="lb-word" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">mops-and-spades</span></a><nav class="nav" id="nav">
       <a class="lnk" href="#services">Services</a>
       <a class="lnk" href="#how">How it works</a>
       <a class="lnk" href="#why">Why us</a>
@@ -771,5 +774,6 @@ html.js .rv.in{opacity:1;transform:none}
   else init();
 })();
 </script>
+<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#fdfdfd","important");})();</script>
 </body>
 </html>
