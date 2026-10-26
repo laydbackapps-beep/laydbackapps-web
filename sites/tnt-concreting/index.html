@@ -1,368 +1,97 @@
-<!DOCTYPE html>
-<html lang="en-AU">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TNT Concreting | Concreting — Bellbird NSW</title>
-<meta name="description" content="TNT Concreting, Bellbird NSW — driveways, crossovers, house and shed slabs, paths, footings and retaining walls. Call 0401 174 385."/>
-<link rel="icon" href="favicon-32.png" sizes="32x32"/>
-<link rel="apple-touch-icon" href="assets/logo.png"/>
-<meta name="theme-color" content="#0c0d0e"/>
-<script>document.documentElement.className += ' js';</script>
+<!doctype html>
+<html lang="en-AU"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TNT Concreting — Concreting | Bellbird NSW</title>
+<meta name="description" content="TNT Concreting. Footings, driveways and paths poured to the detail, cut and cured before anyone builds on them. Call 0401 174 385.">
 <style>
-:root{
-  --white:#ffffff; --paper:#f4f4f2; --ink:#0c0d0e; --grey:#5f6366; --line:#dcdcda;
-  --disp:"Archivo Black","Arial Black","Liberation Sans",Impact,sans-serif;
-  --sans:"Liberation Sans",Arial,Helvetica,system-ui,sans-serif;
-  --mono:"DejaVu Sans Mono","Liberation Mono",Menlo,Consolas,monospace;
-  --cut:clamp(16px,3.2vw,54px);
-}
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--white);color:var(--ink);font:16.5px/1.6 var(--sans);overflow-x:hidden;max-width:100%}
-img{max-width:100%;display:block}
+:root{--ink:#0d0f13;--panel:#15181e;--paper:#f4f2ee;--dim:#9aa3ad;--line:rgba(255,255,255,.13);--acc:#b45309}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:#f2f4f7;font:17px/1.6 "Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
 a{color:inherit}
-.wrap{width:min(1240px,100%);margin-inline:auto;padding-inline:clamp(18px,4vw,56px)}
-h1,h2,h3{margin:0;font-family:var(--disp);font-weight:900;text-transform:uppercase;line-height:.92;letter-spacing:-.022em}
-p{margin:0}
-.mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}
-
-/* header */
-.hdr{position:sticky;top:0;z-index:90;background:var(--ink);color:#fff}
-.hdr-in{display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px;padding:10px 0}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:0 1 auto;min-width:0}
-.brand img{height:52px;width:auto;flex:0 0 auto}
-.brand-name{font-family:var(--disp);font-size:23px;letter-spacing:-.01em;text-transform:uppercase;line-height:1}
-.brand-name small{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:rgba(255,255,255,.62);margin-top:4px}
-.nav{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px 22px;align-items:center}
-.nav a{text-decoration:none;font-size:14px;color:rgba(255,255,255,.76);text-transform:uppercase;letter-spacing:.08em;padding:4px 0;border-bottom:2px solid transparent}
-.nav a:hover{color:#fff;border-bottom-color:#fff}
-.call{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--ink);text-decoration:none;
-  padding:12px 18px;font-weight:700;font-size:15px;white-space:nowrap}
-.call span{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;opacity:.62}
-.call:hover{background:#d9d9d6}
-
-/* hero */
-.hero{position:relative;overflow:hidden;background:var(--white);padding:clamp(30px,4vw,60px) 0 clamp(34px,4.6vw,66px)}
-.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(20px,3vw,50px);align-items:start}
-.hero h1{font-size:clamp(2.5rem,7.4vw,6rem)}
-.hero h1 em{font-style:normal;-webkit-text-stroke:2px var(--ink);color:transparent}
-.hero-sub{color:var(--grey);font-size:clamp(1rem,1.4vw,1.16rem);margin:24px 0 28px;max-width:52ch}
-.hero-acts{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:15px 24px;
-  font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.05em;border:2px solid var(--ink);background:var(--ink);color:#fff}
-.btn.ghost{background:transparent;color:var(--ink)}
-.btn.ghost:hover{background:var(--ink);color:#fff}
-.btn:hover{background:#000}
-.burst{position:relative;min-height:220px;display:flex;align-items:flex-start;justify-content:flex-end}
-.burst svg{width:min(100%,420px);height:auto}
-.spec-row{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:clamp(26px,3.4vw,44px);
-  border-top:2px solid var(--ink);padding-top:14px;color:var(--grey)}
-
-/* diagonal bands */
-.band{background:var(--ink);color:#fff;margin-top:calc(var(--cut) * 1.2);
-  clip-path:polygon(0 var(--cut),100% 0,100% calc(100% - var(--cut)),0 100%);
-  padding:calc(var(--cut) * 2.1) 0 calc(var(--cut) * 2.1)}
-.band-in{width:min(1240px,100%);margin-inline:auto;padding-inline:clamp(18px,4vw,56px)}
-.band h2{font-size:clamp(2rem,4.6vw,3.5rem);margin-bottom:14px}
-.band .lead{color:rgba(255,255,255,.7);max-width:56ch}
-.pour{list-style:none;margin:clamp(26px,3.4vw,42px) 0 0;padding:0}
-.pour li{display:grid;grid-template-columns:74px 1fr auto;gap:clamp(12px,2.4vw,34px);align-items:baseline;
-  padding:clamp(16px,2vw,24px) 0;border-bottom:1px solid rgba(255,255,255,.2)}
-.pour li:first-child{border-top:1px solid rgba(255,255,255,.2)}
-.pour .n{font-family:var(--disp);font-size:clamp(1.3rem,2.4vw,2rem);color:rgba(255,255,255,.58);letter-spacing:-.02em}
-.pour b{font-family:var(--disp);text-transform:uppercase;font-size:clamp(1.05rem,2.1vw,1.6rem);letter-spacing:-.01em;display:block}
-.pour em{font-style:normal;color:rgba(255,255,255,.68);font-size:14.5px;display:block;margin-top:5px;max-width:52ch}
-.pour .tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:rgba(255,255,255,.68);text-transform:uppercase}
-
-/* staircase steps */
-.steps{padding:clamp(50px,6vw,88px) 0}
-.steps-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,48px);align-items:end;margin-bottom:clamp(28px,3.6vw,48px)}
-.steps-head h2{font-size:clamp(1.9rem,4.2vw,3.1rem)}
-.steps-head p{color:var(--grey);max-width:54ch}
-.stair{display:grid;gap:clamp(14px,2vw,22px)}
-.stair>div{border-top:5px solid var(--ink);padding:18px 0 6px;background:var(--paper)}
-.stair>div:nth-child(1){margin-right:min(45%,520px)}
-.stair>div:nth-child(2){margin-left:min(12%,130px);margin-right:min(33%,380px)}
-.stair>div:nth-child(3){margin-left:min(24%,270px);margin-right:min(21%,240px)}
-.stair>div:nth-child(4){margin-left:min(36%,420px)}
-.stair .n{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;color:var(--grey)}
-.stair h3{font-size:clamp(1.1rem,2vw,1.5rem);margin:9px 0 8px}
-.stair p{color:var(--grey);font-size:14.5px}
-
-.where{padding:clamp(34px,4vw,60px) 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
-.where-in{display:flex;flex-wrap:wrap;gap:14px 40px;align-items:baseline;justify-content:space-between}
-.where h2{font-size:clamp(1.7rem,3.6vw,2.7rem)}
-.where p{color:var(--grey)}
-
-.contact{padding:clamp(44px,5.4vw,80px) 0}
-.contact-in{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,58px);align-items:start}
-.contact h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:16px}
-.telbig{display:inline-flex;align-items:center;gap:14px;text-decoration:none;border:3px solid var(--ink);padding:16px 22px;margin-top:6px}
-.telbig b{font-family:var(--disp);font-size:clamp(1.5rem,3.2vw,2.3rem);letter-spacing:-.01em}
-.telbig:hover{background:var(--ink);color:#fff}
-.contact dl{margin:26px 0 0;border-top:1px solid var(--line)}
-.contact dl>div{border-bottom:1px solid var(--line);padding:12px 0}
-.contact dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
-.contact dd{margin:4px 0 0;font-size:14.5px;color:var(--grey)}
-form{background:var(--paper);border-top:5px solid var(--ink);padding:clamp(20px,2.6vw,30px)}
-.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
-.fgrid .full{grid-column:1/-1}
-label{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin-bottom:7px}
-input,textarea{width:100%;border:1px solid var(--line);background:#fff;padding:12px;font:inherit;font-size:15px;margin-bottom:16px;color:var(--ink)}
-input:focus,textarea:focus{outline:3px solid var(--ink);outline-offset:1px}
-form button{width:100%;background:var(--ink);color:#fff;border:0;padding:16px;font:inherit;font-weight:700;
-  text-transform:uppercase;letter-spacing:.06em;cursor:pointer}
-form button:hover{background:#000}
-.st{font-size:14px;color:var(--grey);margin-top:12px;min-height:1.2em}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-
-footer{background:var(--ink);color:#fff;margin-top:var(--cut);
-  clip-path:polygon(0 var(--cut),100% 0,100% 100%,0 100%);padding:calc(var(--cut) * 1.9) 0 clamp(30px,3.6vw,48px)}
-.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:clamp(20px,3vw,44px)}
-footer h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);margin:0 0 12px}
-footer ul{list-style:none;margin:0;padding:0}
-footer li{margin-bottom:9px;font-size:14.5px;color:rgba(255,255,255,.72)}
-footer a{text-decoration:none}
-footer a:hover{color:#fff;text-decoration:underline}
-.fname{font-family:var(--disp);text-transform:uppercase;font-size:1.7rem;letter-spacing:-.01em}
-.foot-bot{margin-top:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,.2);display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;color:rgba(255,255,255,.6);font-size:13.5px}
-
-@media(max-width:1000px){
-  .hero-in{grid-template-columns:1fr}
-  .burst{order:-1;min-height:150px;justify-content:flex-start}
-  .steps-head{grid-template-columns:1fr;align-items:start}
-  .contact-in{grid-template-columns:1fr}
-  .pour li{grid-template-columns:52px 1fr}
-  .pour .tag{display:none}
-}
-@media(max-width:820px){
-  .stair>div:nth-child(n){margin:0}
-  .foot{grid-template-columns:1fr 1fr}
-}
-@media(max-width:760px){
-  .brand img{height:38px}
-  .brand-name{font-size:17px}
-  .brand-name small{font-size:.7rem}
-  .nav{order:3;width:100%;margin-left:0;gap:2px 16px}
-  .nav a{font-size:13px;letter-spacing:.05em}
-  .call{padding:9px 13px;font-size:13px;margin-left:auto}
-  .call span{display:none}
-  .hero h1{font-size:clamp(2rem,10.5vw,3rem)}
-  .hero h1 em{-webkit-text-stroke:1.5px var(--ink)}
-  .fgrid{grid-template-columns:1fr}
-  .foot{grid-template-columns:1fr}
-}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+nav{position:sticky;top:0;z-index:40;background:rgba(13,15,19,.95);border-bottom:2px solid var(--acc);backdrop-filter:blur(8px)}
+.nav-in{display:flex;align-items:center;gap:clamp(12px,2vw,26px);height:78px}
+.brand img{height:46px;width:auto;display:block}
+nav .links{display:flex;gap:clamp(12px,1.8vw,24px);margin-left:auto}
+nav .links a{text-decoration:none;font-size:15px;color:var(--dim)}
+nav .links a:hover{color:#fff}
+.tel{font-weight:800;text-decoration:none;color:#111;background:var(--acc);padding:10px 16px;white-space:nowrap}
+.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:#fff;padding:8px 10px;font-size:18px}
+section{padding:clamp(42px,6vw,76px) 0;border-top:1px solid var(--line)}
+h2{margin:0 0 10px;font-size:clamp(22px,2.8vw,34px);letter-spacing:-.02em}
+.lead{color:var(--dim);margin:0 0 24px;max-width:62ch}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--acc);margin-bottom:14px}
+.kicker::before{content:"";width:32px;height:2px;background:var(--acc)}
+h1{margin:0 0 16px;font-size:clamp(32px,5vw,58px);line-height:1.02;letter-spacing:-.035em}
+h1 em{font-style:normal;color:var(--acc)}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:#111;text-decoration:none;font-weight:800;padding:14px 22px}
+.cta.ghost{background:transparent;border:1px solid var(--line);color:#fff;font-weight:600;margin-left:8px}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+.svc article{background:var(--ink);padding:22px 20px}
+.svc h3{margin:0 0 6px;font-size:16.5px}
+.svc p{margin:0;color:var(--dim);font-size:14.5px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gal figure{margin:0}.gal img{width:100%;height:240px;object-fit:cover;display:block}
+.gal figcaption{font-size:12.5px;color:var(--dim);padding:8px 2px 0}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.why article{border-left:2px solid var(--acc);padding-left:14px}
+.why h3{margin:0 0 6px;font-size:16px}
+.why p{margin:0;color:var(--dim);font-size:14.5px}
+.areas{display:flex;flex-wrap:wrap;gap:8px}
+.areas span{border:1px solid var(--line);padding:7px 13px;font-size:14px;color:var(--dim)}
+details.faq{border-bottom:1px solid var(--line);padding:14px 0}
+details.faq summary{cursor:pointer;font-weight:700;font-size:16px}
+details.faq .a{color:var(--dim);padding-top:8px;font-size:15px}
+form{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,3vw,30px);display:grid;grid-template-columns:1fr 1fr;gap:12px}
+form .full{grid-column:1/-1}
+label{display:block;font-size:13px;color:var(--dim);margin-bottom:5px}
+input,textarea,select{width:100%;background:#0b0d11;border:1px solid var(--line);color:#fff;padding:11px;font:inherit;font-size:15px}
+button{grid-column:1/-1;background:var(--acc);color:#111;border:0;padding:14px;font:inherit;font-weight:800;cursor:pointer}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){nav .links{display:none}nav .links.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#15181e;padding:14px;border-bottom:1px solid var(--line)}.burger{display:block}.svc,.gal,.why,form{grid-template-columns:1fr}}
+.hero{padding:clamp(36px,6vw,72px) 0}
+.hero .card{display:grid;grid-template-columns:1fr 1fr;background:var(--panel);border:1px solid var(--line)}
+.hero .txt{padding:clamp(24px,4vw,44px)}
+.hero .shot{background:url('assets/photo_1.jpg') center/cover no-repeat;min-height:320px}
+.hero p{color:#d3d9e0;margin:0 0 20px}
+@media(max-width:900px){.hero .card{grid-template-columns:1fr}.hero .shot{min-height:220px;order:-1}}
 </style>
-</head>
-<body>
-<header class="hdr" id="top">
-  <div class="wrap hdr-in">
-    <a class="brand" href="#top" aria-label="TNT Concreting">
-      <img src="assets/logo-cut.png" alt="TNT Concreting logo" width="1670" height="929"/>
-      <span class="brand-name">TNT Concreting<small>Bellbird NSW</small></span>
-    </a>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#pour">What we pour</a>
-      <a href="#steps">How it runs</a>
-      <a href="#where">Where</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="call" href="tel:0401174385"><span>Call</span>0401 174 385</a>
-  </div>
-</header>
-
+</head><body>
+<nav><div class="wrap nav-in">
+  <a class="brand" href="#top" aria-label="TNT Concreting"><img src="assets/logo-cut.png" alt="TNT Concreting"></a>
+  <div class="links" id="navlinks"><a href="#services">Services</a><a href="#work">Work</a><a href="#why">Process</a><a href="#areas">Areas</a><a href="#faq">FAQ</a></div>
+  <a class="tel" href="tel:0401174385">0401 174 385</a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+</div></nav>
+<header class="hero wrap"><div class="card"><div class="txt"><span class="kicker">Slabs & driveways</span><h1>The slab decides <em>the rest of the job.</em></h1><p>Footings, driveways and paths poured to the detail, cut and cured before anyone builds on them.</p><a class="cta" href="tel:0401174385">Call 0401 174 385</a><a class="cta ghost" href="#quote">Get a quote</a></div><div class="shot"></div></div></header>
 <main>
-<section class="hero">
-  <div class="wrap hero-in">
-    <div>
-            <h1>Driveways, slabs <em>&amp; paths</em>, poured in Bellbird.</h1>
-      <p class="hero-sub">TNT Concreting pours driveways and crossovers, house and shed slabs, paths, footings
-        and retaining walls. Set out on site, formed, poured and finished before we leave.</p>
-      <div class="hero-acts">
-        <a class="btn" href="tel:0401174385">Call 0401 174 385</a>
-        <a class="btn ghost" href="#pour">What we pour</a>
-      </div>
-    </div>
-    <div class="burst" aria-hidden="true">
-      <svg viewBox="0 0 400 300" role="presentation" focusable="false">
-        <g stroke="#0c0d0e" stroke-width="2" fill="none">
-          <line x1="200" y1="150" x2="200" y2="6"/><line x1="200" y1="150" x2="342" y2="64"/>
-          <line x1="200" y1="150" x2="366" y2="150"/><line x1="200" y1="150" x2="342" y2="236"/>
-          <line x1="200" y1="150" x2="200" y2="294"/><line x1="200" y1="150" x2="58" y2="236"/>
-          <line x1="200" y1="150" x2="34" y2="150"/><line x1="200" y1="150" x2="58" y2="64"/>
-          <line x1="200" y1="150" x2="281" y2="22"/><line x1="200" y1="150" x2="352" y2="107"/>
-          <line x1="200" y1="150" x2="352" y2="193"/><line x1="200" y1="150" x2="281" y2="278"/>
-          <line x1="200" y1="150" x2="119" y2="278"/><line x1="200" y1="150" x2="48" y2="193"/>
-          <line x1="200" y1="150" x2="48" y2="107"/><line x1="200" y1="150" x2="119" y2="22"/>
-        </g>
-        <circle cx="200" cy="150" r="34" fill="#0c0d0e"/>
-        <circle cx="200" cy="150" r="58" fill="none" stroke="#0c0d0e" stroke-width="2"/>
-        <circle cx="200" cy="150" r="86" fill="none" stroke="#0c0d0e" stroke-width="1" stroke-dasharray="7 9"/>
-      </svg>
-    </div>
-  </div>
-  <div class="wrap spec-row mono">
-    <span>Bellbird NSW</span><span>Set out</span><span>Formwork &amp; steel</span><span>Poured</span><span>Finished &amp; cut</span>
-  </div>
-</section>
-
-<section class="band" id="pour">
-  <div class="band-in">
-    <h2>What we pour.</h2>
-    <p class="lead">House and shed slabs through to the driveway out the front, quoted off the site
-      rather than off a photo.</p>
-    <ul class="pour">
-      <li><span class="n">01</span><span><b>Driveways &amp; crossovers</b><em>Formed and poured with the fall running to the street, broom or aggregate finish.</em></span><span class="tag">Slab</span></li>
-      <li><span class="n">02</span><span><b>House &amp; shed slabs</b><em>Set out to the plan, steel placed on chairs, poured and saw-cut.</em></span><span class="tag">Slab</span></li>
-      <li><span class="n">03</span><span><b>Paths &amp; footpaths</b><em>Poured to the fall, edged and finished to match the rest of the work.</em></span><span class="tag">Path</span></li>
-      <li><span class="n">04</span><span><b>Exposed aggregate</b><em>Washed back evenly across the slab so the finish is consistent front to back.</em></span><span class="tag">Finish</span></li>
-      <li><span class="n">05</span><span><b>Footings &amp; formwork</b><em>Pads, pier holes and edge form for extensions and outbuildings.</em></span><span class="tag">Structure</span></li>
-      <li><span class="n">06</span><span><b>Retaining walls</b><em>Concrete sleeper and block retaining, set on a sound base with drainage behind.</em></span><span class="tag">Wall</span></li>
-    </ul>
-  </div>
-</section>
-
-<section class="steps" id="steps">
-  <div class="wrap">
-    <div class="steps-head">
-      <h2>From the first look to the final cut.</h2>
-      <p>Every pour is worked back from the levels on site. Nothing gets set out until access, fall and drainage
-        have been sorted.</p>
-    </div>
-    <div class="stair">
-      <div><span class="n">Step 01</span><h3>Look at the site</h3><p>Access, fall and what is already in the ground. The quote comes off standing on it.</p></div>
-      <div><span class="n">Step 02</span><h3>Set out &amp; prepare</h3><p>Levels taken, area boxed out and trimmed, base compacted ready for formwork.</p></div>
-      <div><span class="n">Step 03</span><h3>Steel &amp; pour</h3><p>Form up, steel placed, concrete poured and screeded to the levels set out.</p></div>
-      <div><span class="n">Step 04</span><h3>Finish &amp; cut</h3><p>Troweled, broomed or washed back, then cut, cleaned down and left tidy.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="where" id="where">
-  <div class="wrap where-in">
-    <h2>Bellbird, NSW.</h2>
-    <p>Working out of Bellbird. Call to check timing on your job.</p>
-    <a class="btn" href="tel:0401174385">0401 174 385</a>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="wrap contact-in">
-    <div>
-      <h2>Get a price.</h2>
-      <p style="color:var(--grey);max-width:44ch">Tell us what needs pouring and roughly the size; the price
-        comes off the site.</p>
-      <a class="telbig" href="tel:0401174385"><b>0401 174 385</b></a>
-      <dl>
-        <div><dt>Trade</dt><dd>Concreting</dd></div>
-        <div><dt>Based in</dt><dd>Bellbird NSW</dd></div>
-        <div><dt>Facebook</dt><dd><a href="https://www.facebook.com/tntconcreting" rel="noopener">TNT Concreting</a></dd></div>
-        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/tntconcreting" rel="noopener">@tntconcreting</a></dd></div>
-      </dl>
-    </div>
-    <form data-biz="TNT Concreting" data-site="tnt-concreting" id="lbq-form" novalidate>
-      <div class="fgrid">
-        <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required/></div>
-        <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"/></div>
-        <div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"/></div>
-        <div><label for="lbq-s">Suburb</label><input id="lbq-s" name="suburb" autocomplete="address-level2"/></div>
-        <div class="full"><label for="lbq-m">What needs pouring?</label><textarea id="lbq-m" name="message" rows="4" placeholder="e.g. double driveway, exposed aggregate, about 45 sqm" required></textarea></div>
-      </div>
-      <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"/></label></div>
-      <button type="submit">Request a quote</button>
-      <p class="st" id="lbq-st" role="status" aria-live="polite"></p>
-    </form>
-  </div>
-</section>
+<section id="services"><div class="wrap"><h2>What we do</h2><p class="lead">Local work done properly: driveways & crossovers and the repairs and maintenance that go with it.</p><div class="svc"><article><h3>Retaining & edging</h3><p>Concrete sleepers and edging that hold the level behind them. Priced after it has been looked at.</p></article><article><h3>Driveways & crossovers</h3><p>Poured with the fall running to the street, broom or aggregate finish to match the house. Same people, start to finish.</p></article><article><h3>Slabs & shed floors</h3><p>Set out to the detail, steel on chairs, poured and saw-cut in the same week. Quoted on site.</p></article><article><h3>Exposed aggregate</h3><p>Washed back evenly across the slab so the finish reads the same front to back. Explained before it starts.</p></article><article><h3>Paths & paving</h3><p>Poured and paved paths on a compacted base, edged so they stay level. Done by the crew that quoted it.</p></article><article><h3>Footings & pier holes</h3><p>Bored and formed to the plan, inspected before the pour. Priced after it has been looked at.</p></article></div></div></section>
+<section id="work"><div class="wrap"><h2>Recent work</h2><p class="lead">A job like this.</p><div class="gal"><figure><img src="assets/photo_2.jpg" alt="TNT Concreting"><figcaption>Recent work</figcaption></figure><figure><img src="assets/photo_3.jpg" alt="TNT Concreting"><figcaption>On site</figcaption></figure><figure><img src="assets/photo_4.jpg" alt="TNT Concreting"><figcaption>Finished detail</figcaption></figure></div></div></section>
+<section id="about"><div class="wrap"><h2>Who you are dealing with</h2><p class="lead">TNT Concreting is a local Bellbird NSW business. The work is driveways & crossovers, plus the maintenance and repairs that go with it — priced after the site is looked at, not before.</p></div></section>
+<section id="why"><div class="wrap"><h2>How it runs</h2><div class="why"><article><h3>Set out</h3><p>Levels, fall and access decided on site before anything is ordered.</p></article><article><h3>Prep</h3><p>Formwork, steel and a compacted base — the part nobody sees and everything depends on.</p></article><article><h3>Pour & finish</h3><p>Poured, screeded, finished and cut, then left to cure under cover where it can be.</p></article></div></div></section>
+<section id="areas"><div class="wrap"><h2>Where we work</h2><p class="lead">Bellbird NSW and the surrounding area.</p><div class="areas"><span>Bellbird NSW</span><span>Bellbird NSW surrounds</span></div></div></section>
+<section id="faq"><div class="wrap"><h2>Questions</h2><details class="faq"><summary>Do you take the spoil away?</summary><div class="a">Yes, excavation spoil is either spread where it is useful or carted off.</div></details><details class="faq"><summary>Can you match my existing concrete?</summary><div class="a">Colour and finish are matched as closely as the existing pour allows — it is checked before quoting.</div></details><details class="faq"><summary>How long before I can drive on it?</summary><div class="a">Foot traffic after 24 hours, cars usually after seven days — it depends on the mix and the weather.</div></details></div></div></section>
+<section id="quote"><div class="wrap"><h2>Get a quote</h2><p class="lead">Tell us what is needed and where. If it is urgent, call.</p>
+<form id="lbq-form" data-site="tnt-concreting">
+<div><label for="n">Name</label><input id="n" name="name" required></div>
+<div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel"></div>
+<div class="full"><label for="a">Suburb</label><input id="a" name="suburb"></div>
+<div class="full"><label for="s">What is the job?</label><select id="s" name="service"><option>Driveways & crossovers</option><option>Slabs & shed floors</option><option>Exposed aggregate</option><option>Paths & paving</option><option>Footings & pier holes</option><option>Retaining & edging</option><option>Something else</option></select></div>
+<div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="3"></textarea></div>
+<button type="submit">Send request</button>
+</form></div></section>
 </main>
-
-<footer>
-  <div class="wrap">
-    <div class="foot">
-      <div>
-        <p class="fname">TNT Concreting</p>
-        <p style="color:rgba(255,255,255,.72);font-size:14.5px;margin-top:12px;max-width:34ch">Concreting out of Bellbird NSW: driveways, slabs, paths, footings and retaining walls.</p>
-      </div>
-      <div>
-        <h4>Concreting</h4>
-        <ul>
-          <li><a href="#pour">Driveways &amp; crossovers</a></li>
-          <li><a href="#pour">House &amp; shed slabs</a></li>
-          <li><a href="#pour">Paths &amp; footpaths</a></li>
-          <li><a href="#pour">Retaining walls</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:0401174385">0401 174 385</a></li>
-          <li><a href="https://www.facebook.com/tntconcreting" rel="noopener">Facebook</a></li>
-          <li><a href="https://www.instagram.com/tntconcreting" rel="noopener">Instagram</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bot">
-      <span>© <span id="yr">2026</span> TNT Concreting</span>
-      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
-    </div>
-  </div>
-</footer>
-
+<footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;width:100%">
+  <span>TNT Concreting — Bellbird NSW</span><a href="tel:0401174385" style="color:#fff;font-weight:800">0401 174 385</a>
+</div></footer>
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-(function(){
-  function base(cb){
-    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
-    var done = false;
-    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
-    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
-      .then(function(r){ return r.text(); })
-      .then(function(txt){
-        var b = (txt||'').trim().replace(/\/+$/, '');
-        if (done) return;
-        done = true; clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
-      })
-      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
-  }
-  var f = document.getElementById('lbq-form');
-  if (!f) return;
-  var st = document.getElementById('lbq-st');
-  var btn = f.querySelector('button[type=submit]');
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    var d = {};
-    new FormData(f).forEach(function(v,k){ d[k]=v; });
-    if (d.website) return;
-    if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
-      st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
-      return;
-    }
-    btn.disabled = true;
-    st.textContent = 'Sending…';
-    base(function(B){
-      fetch(B + '/functions/v1/quote-request', {
-        method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({
-          site_id: f.dataset.site || '', business_name: f.dataset.biz || '',
-          name: d.name, phone: d.phone, email: d.email, suburb: d.suburb || '',
-          message: d.message, consent: true
-        })
-      })
-      .then(function(r){ return r.json().catch(function(){ return {}; }); })
-      .then(function(x){
-        if (x && x.success) { f.reset(); st.textContent = "Thanks, your request is in. We'll be in touch."; }
-        else { throw new Error((x && x.error) || 'Could not send'); }
-      })
-      .catch(function(){
-        st.textContent = 'Could not send. Please call 0401 174 385.';
-        btn.disabled = false;
-      });
-    });
-  });
-})();
+document.getElementById('burger').addEventListener('click',function(){var l=document.getElementById('navlinks');
+  var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o);});
+document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button');
+  b.textContent='Sending…';b.disabled=true;
+  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
+    body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})
+  .then(function(){b.textContent='Thanks — we will be in touch';})
+  .catch(function(){b.textContent='Could not send — try again';b.disabled=false;});});
 </script>
-</body>
-</html>
+</body></html>

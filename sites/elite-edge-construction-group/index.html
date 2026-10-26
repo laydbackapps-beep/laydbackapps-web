@@ -1,267 +1,95 @@
-<!DOCTYPE html>
-
-<html lang="en-AU">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Elite Edge Construction Group — Melbourne VIC</title>
-<meta content="Construction &amp; renovations — Elite Edge Construction Group, Melbourne VIC." name="description"/>
-<link href="favicon-32.png" rel="icon" sizes="32x32"/>
-<meta content="#0b0b0c" name="theme-color"/>
+<!doctype html>
+<html lang="en-AU"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elite Edge Construction Group — Construction & Renovations | Melbourne</title>
+<meta name="description" content="Elite Edge Construction Group. Framing, decks, renovations and fit-outs — set out true and finished properly.">
 <style>
-:root{
-  --lb-name:#ffffff; --lb-acc:#00d8f0; --lb-subc:rgba(255,255,255,.72);
-  --ink:#ffffff; --muted:rgba(255,255,255,.70); --line:rgba(255,255,255,.14); --panel:rgba(255,255,255,.045);
-  --bg:#0b0b0c; --bg2:#121214; --accent:#00d8f0;
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:system-ui,-apple-system,"Segoe UI",Archivo,"Helvetica Neue",Arial,sans-serif;
-  line-height:1.36;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.38;margin:0}
-p{margin:0}
-.container{width:min(1140px,92vw);margin-inline:auto}
-header.site{position:sticky;top:0;z-index:60;background:rgba(11,11,12,.94);border-bottom:1px solid var(--line)}
-/* A header must never be hidden by a reveal/scroll state. */
-header.site{opacity:1!important;visibility:visible!important;transform:none!important}
-.bar{display:flex;align-items:center;gap:clamp(14px,3vw,48px);padding:12px 0}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:0 1 auto;min-width:0}
-.brand img{height:64px;width:auto;max-width:min(340px,46vw);object-fit:contain}
-.brand .name{font-weight:800;letter-spacing:-.01em;font-size:clamp(13px,1.35vw,18px);color:#ffffff;line-height:1.318;max-width:min(330px,34vw);white-space:normal}
-.brand .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-nav.main{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,2vw,28px);flex-wrap:wrap}
-nav.main a{color:#ffffff;text-decoration:none;font-size:0.95rem;opacity:.86;white-space:nowrap}
-nav.main a:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;
-  text-decoration:none;font-weight:700;font-size:0.95rem;background:var(--accent);color:#0b0b0c;border:1px solid var(--accent)}
-nav.main a.btn,header .btn{background:var(--accent)!important;color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important}
-.btn.ghost{background:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff!important;
-  border:1px solid rgba(255,255,255,.5)!important}
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#0e0f11}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.34)}
-.hero .inner{position:relative;z-index:3;padding:32px 32px 32px;max-width:min(780px,92vw)}
-.kicker{display:inline-block;font-size:0.82rem;font-weight:700;letter-spacing:0.05em;color:#d6d8db;margin-bottom:14px}
-.hero h1{font-size:clamp(2.3rem,4.6vw,3.7rem);margin-bottom:14px}
-.hero h1 em{font-style:normal;color:#cfd2d6}
-.hero .lede{color:var(--muted);font-size:clamp(1rem,1.5vw,1.14rem);max-width:54ch;margin-bottom:22px}
-.hero .acts{display:flex;flex-wrap:wrap;gap:14px}
-.hero .facts{display:flex;flex-wrap:wrap;gap:9px 24px;list-style:none;padding:0;margin:20px 0 0;color:rgba(255,255,255,.82);font-size:0.95rem}
-.hero .facts li::before{content:"";display:inline-block;width:6px;height:6px;margin-right:9px;background:var(--accent);vertical-align:middle;border-radius:50%}
-section{padding:32px 32px;border-bottom:1px solid var(--line)}
-section.alt{background:var(--bg2)}
-.head{max-width:60ch;margin-bottom:clamp(26px,4vh,44px)}
-.head h2{font-size:clamp(1.55rem,3vw,2.3rem);margin-bottom:10px}
-.head p{color:var(--muted)}
-.grid{display:grid;gap:18px}
-.g3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:900px){.g3{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.g3{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
-.card h3{font-size:1.08rem;margin-bottom:8px}
-.card p{color:var(--muted);font-size:0.95rem}
-.swatch{width:38px;height:5px;background:var(--accent);border-radius:3px;margin-bottom:16px}
-.about{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1.15fr .85fr;align-items:start}
-@media(max-width:880px){.about{grid-template-columns:1fr}}
-.about p{color:var(--muted);margin-bottom:14px}
-.about h2{margin-bottom:16px}
-.about ul{list-style:none;padding:0;margin:0}
-.about li{padding:11px 0;border-bottom:1px solid var(--line);color:rgba(255,255,255,.86);font-size:0.97rem}
-.about li span{color:var(--muted)}
-.contactwrap{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1fr 1fr;align-items:start}
-@media(max-width:820px){.contactwrap{grid-template-columns:1fr}}
-.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.links a{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border:1px solid var(--line);
-  border-radius:10px;text-decoration:none;color:rgba(255,255,255,.9);font-size:0.93rem}
-.links a:hover{border-color:var(--accent-ink,var(--accent))}
-form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
-label{display:block;font-size:0.85rem;color:var(--muted);margin-bottom:6px}
-input,textarea{width:100%;padding:12px 14px;border-radius:9px;border:1px solid var(--line);background:#0e0f11;color:#fff;font:inherit;margin-bottom:14px}
-input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
-form .btn{width:100%}
-.note{color:var(--muted);font-size:0.85rem;margin-top:12px}
-footer{padding:48px 0 34px;background:#08090a}
-.foot{display:grid;gap:clamp(22px,3vw,44px);grid-template-columns:1.4fr 1fr 1fr}
-@media(max-width:820px){.foot{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.foot{grid-template-columns:1fr}}
-footer h4{font-size:0.82rem;letter-spacing:0.05em;color:var(--muted);margin:0 0 14px;font-weight:700}
-footer ul{list-style:none;padding:0;margin:0}
-footer li{margin-bottom:9px}
-footer a{color:rgba(255,255,255,.86);text-decoration:none;font-size:0.94rem}
-footer a:hover{text-decoration:underline}
-.footbottom{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;
-  gap:14px;justify-content:space-between;color:var(--muted);font-size:0.85rem}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-.telbig{display:inline-block;color:var(--ink);font-weight:800;font-size:1.6rem;line-height:1.32;text-decoration:none;letter-spacing:-.01em;margin-top:14px}
-#contact a[href^="mailto:"]{color:var(--ink);font-weight:600}
-@media (max-width:980px){.bar{flex-wrap:wrap;row-gap:8px}.brand{flex:1 1 auto;min-width:0}.brand .name{font-size:14px;max-width:none}nav.main{flex:1 1 100%;flex-wrap:wrap;gap:10px 16px;justify-content:flex-start}nav.main a{font-size:13px}}
-.about p{max-width:62ch}
-section > .container > p{max-width:66ch}
+:root{--ink:#0d0f13;--panel:#15181e;--paper:#f4f2ee;--dim:#9aa3ad;--line:rgba(255,255,255,.13);--acc:#01d6fd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:#f2f4f7;font:17px/1.6 "Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:40;background:rgba(13,15,19,.95);border-bottom:2px solid var(--acc);backdrop-filter:blur(8px)}
+.nav-in{display:flex;align-items:center;gap:clamp(12px,2vw,26px);height:78px}
+.brand img{height:46px;width:auto;display:block}
+nav .links{display:flex;gap:clamp(12px,1.8vw,24px);margin-left:auto}
+nav .links a{text-decoration:none;font-size:15px;color:var(--dim)}
+nav .links a:hover{color:#fff}
+.tel{font-weight:800;text-decoration:none;color:#111;background:var(--acc);padding:10px 16px;white-space:nowrap}
+.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:#fff;padding:8px 10px;font-size:18px}
+section{padding:clamp(42px,6vw,76px) 0;border-top:1px solid var(--line)}
+h2{margin:0 0 10px;font-size:clamp(22px,2.8vw,34px);letter-spacing:-.02em}
+.lead{color:var(--dim);margin:0 0 24px;max-width:62ch}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--acc);margin-bottom:14px}
+.kicker::before{content:"";width:32px;height:2px;background:var(--acc)}
+h1{margin:0 0 16px;font-size:clamp(32px,5vw,58px);line-height:1.02;letter-spacing:-.035em}
+h1 em{font-style:normal;color:var(--acc)}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:#111;text-decoration:none;font-weight:800;padding:14px 22px}
+.cta.ghost{background:transparent;border:1px solid var(--line);color:#fff;font-weight:600;margin-left:8px}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+.svc article{background:var(--ink);padding:22px 20px}
+.svc h3{margin:0 0 6px;font-size:16.5px}
+.svc p{margin:0;color:var(--dim);font-size:14.5px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gal figure{margin:0}.gal img{width:100%;height:240px;object-fit:cover;display:block}
+.gal figcaption{font-size:12.5px;color:var(--dim);padding:8px 2px 0}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.why article{border-left:2px solid var(--acc);padding-left:14px}
+.why h3{margin:0 0 6px;font-size:16px}
+.why p{margin:0;color:var(--dim);font-size:14.5px}
+.areas{display:flex;flex-wrap:wrap;gap:8px}
+.areas span{border:1px solid var(--line);padding:7px 13px;font-size:14px;color:var(--dim)}
+details.faq{border-bottom:1px solid var(--line);padding:14px 0}
+details.faq summary{cursor:pointer;font-weight:700;font-size:16px}
+details.faq .a{color:var(--dim);padding-top:8px;font-size:15px}
+form{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,3vw,30px);display:grid;grid-template-columns:1fr 1fr;gap:12px}
+form .full{grid-column:1/-1}
+label{display:block;font-size:13px;color:var(--dim);margin-bottom:5px}
+input,textarea,select{width:100%;background:#0b0d11;border:1px solid var(--line);color:#fff;padding:11px;font:inherit;font-size:15px}
+button{grid-column:1/-1;background:var(--acc);color:#111;border:0;padding:14px;font:inherit;font-weight:800;cursor:pointer}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){nav .links{display:none}nav .links.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#15181e;padding:14px;border-bottom:1px solid var(--line)}.burger{display:block}.svc,.gal,.why,form{grid-template-columns:1fr}}
+.hero{padding:clamp(52px,8vw,110px) 0 clamp(30px,4vw,50px);border-bottom:1px solid var(--line)}
+.hero .rule{height:8px;background:var(--acc);width:96px;margin:0 0 22px}
+.hero p{color:#cbd2da;margin:0 0 22px;max-width:58ch;font-size:clamp(16px,1.6vw,19px)}
+.hero .band{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;color:var(--dim);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase}
 </style>
-<style id="lb-mobile-base">
-html,body{max-width:100%;overflow-x:hidden}
-img,video,canvas,svg,iframe{max-width:100%}
-img,video{height:auto}
-header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
-header,.site-header,.nav{max-width:100%}
-.lb-brand{min-width:0;max-width:100%;overflow:hidden}
-.lb-brand img{max-height:64px;width:auto}
-nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
-h1{overflow-wrap:anywhere}
-@media (max-width:820px){
-  .lb-brand img{max-height:38px}
-  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
-  h2{font-size:clamp(20px,6vw,30px)!important}
-  section{padding-left:16px!important;padding-right:16px!important}
-  .wrap,.container{max-width:100%!important}
-}
-</style>
-<style id="lb-logo-hero">
-/* Client logo across the header: the real artwork, isolated and readable. */
-.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;padding:0!important;max-height:96px!important;
-  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
-  padding:0!important;box-shadow:none!important}
-.lb-brand .lb-mark{display:block!important;height:clamp(44px,4.8vw,66px)!important;width:auto!important;
-  max-width:none!important;max-height:66px!important;object-fit:contain!important;background:none!important;
-  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
-.lb-brand .lb-word{display:block!important;height:74px!important;width:auto!important;max-width:min(38vw,520px)!important;
-  max-height:none!important;object-fit:contain!important;object-position:left center!important;
-  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
-.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
-  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
-.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
-.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
-.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
-  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
-.lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
-@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:59px!important}}
-.lb-bar{background-color:#010101!important}
-.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#f7f7f4!important}
-.lb-bar .cta,.lb-bar a.cta{color:#ffffff!important}
-</style>
-<style id="lb-brand-palette">:root{--acc:#3c54e4;--accent:#3c54e4;--lbq-accent:#3c54e4;--lb-acc:#3c54e4;--brand:#3c54e4;--brand-color:#3c54e4;--primary:#3c54e4;--lime:#3c54e4;--color-lime:#3c54e4;--gold:#3c54e4;--acc-strong:#3c54e4;--acc2:#121238;--acc-hi:#121238;--accent-2:#121238;--brand-2:#121238;}</style></head>
-<body>
-<header class="site">
-<div class="container bar">
-<a aria-label="Elite Edge Construction Group" class="lb-brand" href="#top" style="--lb-name:#ffffff"><img alt="" class="lb-word" decoding="async" loading="eager" src="assets/logo-cut.png"/><span class="lb-sr">Elite Edge Construction Group</span></a><nav aria-label="Main" class="main">
-<a href="#services">Services</a>
-<a href="#process">Our process</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-<a class="btn" href="#contact">Get a quote</a>
-</nav>
-</div>
-</header>
+</head><body>
+<nav><div class="wrap nav-in">
+  <a class="brand" href="#top" aria-label="Elite Edge Construction Group"><img src="assets/logo-cut.png" alt="Elite Edge Construction Group"></a>
+  <div class="links" id="navlinks"><a href="#services">Services</a><a href="#work">Work</a><a href="#why">Process</a><a href="#areas">Areas</a><a href="#faq">FAQ</a></div>
+  
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+</div></nav>
+<header class="hero"><div class="wrap"><div class="rule"></div><span class="kicker">Building & carpentry</span><h1>Built square, <em>finished clean.</em></h1><p>Framing, decks, renovations and fit-outs — set out true and finished properly.</p><a class="cta ghost" href="#quote">Get a quote</a></div></header>
 <main>
-<section aria-label="Construction &amp; renovations" class="hero" id="top">
-<canvas aria-hidden="true" id="heroCanvas"></canvas>
-<div aria-hidden="true" class="veil"></div>
-<div class="container inner">
-<h1>Precision built.<br/><em>Elite results.</em></h1>
-<p class="lede">Renovations, roofing and home improvement across Melbourne's west — planned properly, built straight and finished to the standard the name claims.</p>
-<div class="acts"><a class="btn" href="#contact">Get a quote</a><a class="btn ghost" href="#services">See what we do</a></div>
-<ul class="facts"><li>Renovations</li><li>Roofing</li><li>Extensions</li><li>Home improvement</li></ul>
-</div>
-</section>
-<section id="services">
-<div class="container">
-<div class="head"><h2>What we do</h2><p>Construction &amp; renovations work for homes and businesses across Melbourne VIC.</p></div>
-<div class="grid g3"><article class="card"><div class="swatch"></div><h3>Renovations</h3><p>Kitchens, bathrooms and full-home renovations run from demolition through to finish.</p></article><article class="card"><div class="swatch"></div><h3>Roofing</h3><p>Roof repairs, replacements and flashing done to keep the water out.</p></article><article class="card"><div class="swatch"></div><h3>Extensions &amp; additions</h3><p>Extra rooms and extensions framed and finished to match the house.</p></article><article class="card"><div class="swatch"></div><h3>Structural work</h3><p>Load-bearing changes done with the right engineering behind them.</p></article><article class="card"><div class="swatch"></div><h3>Home improvement</h3><p>The smaller building jobs that make a house work better.</p></article><article class="card"><div class="swatch"></div><h3>Project management</h3><p>Trades sequenced and supervised so the job moves without you chasing it.</p></article></div>
-</div>
-</section>
-<section class="alt" id="process">
-<div class="container">
-<div class="head"><h2>How a job runs</h2><p>From the first look to the final clean up.</p></div>
-<div class="grid g3"><article class="card"><h3>Scope it</h3><p>What you want changed, what it will involve and what it will cost.</p></article><article class="card"><h3>Build it</h3><p>Trades scheduled in order, with the site kept safe and tidy.</p></article><article class="card"><h3>Finish it</h3><p>Snag list cleared and the work handed over.</p></article></div>
-</div>
-</section>
-<section id="about">
-<div class="container about">
-<div><h2>About Elite Edge Construction Group</h2><p>Elite Edge Construction Group is a Victorian building company working on renovations, roofing and home improvement.</p><p>The name is the standard: the work is set out properly, built to the drawings and finished rather than almost-finished.</p></div>
-<ul><li>Registered Victorian company <span>· ABN 27 685 937 544</span></li><li>Renovations and roofing <span>· the core of the work</span></li><li>Melbourne west <span>· Calder Park, Delahey, Hillside, Sydenham</span></li><li>Quote first <span>· scope and price agreed before work starts</span></li></ul>
-</div>
-</section>
-<section class="alt" id="contact">
-<div class="container contactwrap">
-<div>
-<h2>Get a quote</h2>
-<p style="color:var(--muted);margin:10px 0 22px">Tell us what you need and roughly the size of the job, and we'll get back to you with a price.</p>
-<p style="color:var(--muted)">Message us and we’ll get straight back to you.</p><p style="color:var(--muted);margin-top:10px">Melbourne VIC</p>
-<div class="links"><a href="https://www.facebook.com/share/194fq9g778/" rel="noopener">Elite Edge Construction Group on Facebook</a></div>
-</div>
-<form data-biz="Elite Edge Construction Group" data-site="elite-edge-construction-group" id="lbq-form" novalidate="">
-<label for="lbq-n">Name</label>
-<input autocomplete="name" id="lbq-n" name="name" required=""/>
-<label for="lbq-p">Phone</label>
-<input autocomplete="tel" id="lbq-p" name="phone" required="" type="tel"/>
-<label for="lbq-m">What do you need done?</label>
-<textarea id="lbq-m" name="message" rows="4"></textarea>
-<button class="btn" type="submit">Request a quote</button>
-<p class="note" id="lbq-note">Send it through and we’ll be in touch.</p>
-</form>
-</div>
-</section>
+<section id="services"><div class="wrap"><h2>What we do</h2><p class="lead">From framing & extensions through to the finish, the scope is agreed up front so there are no surprises.</p><div class="svc"><article><h3>Doors & windows</h3><p>Hung, packed and flashed properly. Done by the crew that quoted it.</p></article><article><h3>Fit-out & joinery</h3><p>Built-in and custom joinery installed square. Priced after it has been looked at.</p></article><article><h3>Repairs & maintenance</h3><p>Rot, damage and failed fixings sorted. Same people, start to finish.</p></article><article><h3>Framing & extensions</h3><p>Set out, plumbed and braced to the plan. Quoted on site.</p></article><article><h3>Decks & pergolas</h3><p>Bearers, joists and decking fixed with the right fixings and fall. Explained before it starts.</p></article><article><h3>Renovations</h3><p>Strip-out through to fit-off, coordinated with the other trades. Done by the crew that quoted it.</p></article></div></div></section>
+<section id="work"><div class="wrap"><h2>Recent work</h2><p class="lead">A job like this.</p><div class="gal"><figure><img src="assets/photo_2.jpg" alt="Elite Edge Construction Group"><figcaption>Recent work</figcaption></figure><figure><img src="assets/photo_3.jpg" alt="Elite Edge Construction Group"><figcaption>On site</figcaption></figure><figure><img src="assets/photo_4.jpg" alt="Elite Edge Construction Group"><figcaption>Finished detail</figcaption></figure></div></div></section>
+<section id="about"><div class="wrap"><h2>Who you are dealing with</h2><p class="lead">Elite Edge Construction Group keeps its work in Melbourne and the surrounding suburbs: framing & extensions, repairs and the smaller jobs that are easy to put off.</p></div></section>
+<section id="why"><div class="wrap"><h2>How it runs</h2><div class="why"><article><h3>Plan</h3><p>Drawings and site checked before quoting.</p></article><article><h3>Build</h3><p>Set out, frame and lock up, inspected where required.</p></article><article><h3>Finish</h3><p>Fit-off, snag and clean.</p></article></div></div></section>
+<section id="areas"><div class="wrap"><h2>Where we work</h2><p class="lead">Melbourne and the surrounding area.</p><div class="areas"><span>Melbourne</span><span>Melbourne surrounds</span></div></div></section>
+<section id="faq"><div class="wrap"><h2>Questions</h2><details class="faq"><summary>Are you licensed and insured?</summary><div class="a">Yes, licensed for the work and covered by public liability.</div></details><details class="faq"><summary>Can you coordinate other trades?</summary><div class="a">Yes, on renovations the trades are sequenced so nothing is undone.</div></details><details class="faq"><summary>Do you work from plans?</summary><div class="a">Yes — engineered and architectural drawings are both worked from.</div></details></div></div></section>
+<section id="quote"><div class="wrap"><h2>Get a quote</h2><p class="lead">Tell us what is needed and where. If it is urgent, call.</p>
+<form id="lbq-form" data-site="elite-edge-construction-group">
+<div><label for="n">Name</label><input id="n" name="name" required></div>
+<div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel"></div>
+<div class="full"><label for="a">Suburb</label><input id="a" name="suburb"></div>
+<div class="full"><label for="s">What is the job?</label><select id="s" name="service"><option>Framing & extensions</option><option>Decks & pergolas</option><option>Renovations</option><option>Doors & windows</option><option>Fit-out & joinery</option><option>Repairs & maintenance</option><option>Something else</option></select></div>
+<div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="3"></textarea></div>
+<button type="submit">Send request</button>
+</form></div></section>
 </main>
-<footer>
-<div class="container">
-<div class="foot">
-<div><h4>ELITE EDGE CONSTRUCTION GROUP</h4><p style="color:var(--muted);max-width:34ch">Construction &amp; renovations across Melbourne VIC.</p></div>
-<div><h4>SERVICES</h4><ul><li><a href="#services">Renovations</a></li><li><a href="#services">Roofing</a></li><li><a href="#services">Extensions &amp; additions</a></li><li><a href="#services">Structural work</a></li></ul></div>
-<div><h4>CONTACT</h4><ul><li><a href="https://www.facebook.com/share/194fq9g778/" rel="noopener">Elite Edge Construction Group on Facebook</a></li></ul></div>
-</div>
-<div class="footbottom">
-<span>© <span id="yr">2026</span> Elite Edge Construction Group. All rights reserved.</span>
-<span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
-</div>
-</div>
-</footer>
+<footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;width:100%">
+  <span>Elite Edge Construction Group — Melbourne</span>
+</div></footer>
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-(function(){
-  var c=document.getElementById('heroCanvas'); if(!c) return;
-  var ctx=c.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2), w=0,h=0,t=0,raf=null;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function size(){var r=c.getBoundingClientRect(); w=Math.max(320,r.width|0); h=Math.max(320,r.height|0);
-    c.width=w*dpr; c.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);}
-  function draw(){
-    var g=ctx.createLinearGradient(0,0,0,h);
-    g.addColorStop(0,'#141518'); g.addColorStop(.55,'#0e0f11'); g.addColorStop(1,'#090a0b');
-    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
-    var y0=h*0.52;
-    ctx.beginPath(); ctx.moveTo(0,y0); ctx.lineTo(w,y0); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
-
-    // deck boards in perspective with a joist grid and a low raking light
-    var gg=ctx.createLinearGradient(0,y0,0,h);
-    gg.addColorStop(0,'#6b5844'); gg.addColorStop(.5,'#4d3f31'); gg.addColorStop(1,'#2f2720');
-    ctx.fillStyle=gg; ctx.fill();
-    for(var b=0;b<18;b++){
-      var t=b/18, yb=y0+(h-y0)*t*t, yb2=y0+(h-y0)*Math.min(1,((b+1)/18)*((b+1)/18));
-      ctx.strokeStyle='rgba(0,0,0,'+(0.16+t*0.12)+')'; ctx.lineWidth=1+t*1.4;
-      ctx.beginPath(); ctx.moveTo(0,yb); ctx.lineTo(w,yb); ctx.stroke();
-      if(b%2===0){ ctx.strokeStyle='rgba(255,255,255,.045)'; ctx.beginPath(); ctx.moveTo(0,yb2-1); ctx.lineTo(w,yb2-1); ctx.stroke(); }
-    }
-    ctx.strokeStyle='rgba(255,255,255,.10)'; ctx.lineWidth=2;
-    for(var k=-3;k<=3;k++){ ctx.beginPath(); ctx.moveTo(w*.5+k*w*.06,y0); ctx.lineTo(w*.5+k*w*.30,h); ctx.stroke(); }
-    var lg=ctx.createLinearGradient(0,0,w,h);
-    lg.addColorStop(0,'rgba(0,123,255,.20)'); lg.addColorStop(.55,'rgba(0,123,255,0)');
-    ctx.fillStyle=lg; ctx.fillRect(0,0,w,h);
-
-  }
-  function loop(){ t+=0.004; draw(); raf=requestAnimationFrame(loop); }
-  size(); draw(); if(!reduce){ loop(); }
-  window.addEventListener('resize', function(){ size(); draw(); }, {passive:true});
-  window.addEventListener('pagehide', function(){ if(raf) cancelAnimationFrame(raf); });
-})();
-(function(){
-  var f=document.getElementById('lbq-form'); if(!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('lbq-note').textContent = "Thanks. This preview form isn\u2019t wired to a mailbox yet \u2014 message us on Facebook and we\u2019ll get straight back to you.";
-  });
-})();
+document.getElementById('burger').addEventListener('click',function(){var l=document.getElementById('navlinks');
+  var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o);});
+document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button');
+  b.textContent='Sending…';b.disabled=true;
+  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
+    body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})
+  .then(function(){b.textContent='Thanks — we will be in touch';})
+  .catch(function(){b.textContent='Could not send — try again';b.disabled=false;});});
 </script>
-<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#010101","important");})();</script>
-</body>
-</html>
+</body></html>
