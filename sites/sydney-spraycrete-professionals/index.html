@@ -1,411 +1,612 @@
-<!DOCTYPE html>
-
-<html lang="en-AU">
+<!doctype html>
+<html lang="en-AU" class="js">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Sydney Spraycrete Professionals | Spray-on Concrete Resurfacing in Sydney</title>
-<meta content="Spray-on concrete resurfacing across all Sydney suburbs. Driveways, paths, patios, pool surrounds, garage floors and courtyards restored over the concrete already there. 20 years experience, all Dulux materials supplied." name="description"/>
-<meta content="#F5F7F9" name="theme-color"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sydney Spraycrete Professionals | Spraycrete &amp; Concrete Resurfacing Sydney NSW</title>
+<meta name="description" content="Sydney Spraycrete Professionals — spray-on concrete resurfacing, stencilled patterns, exposed aggregate, driveway restoration, pool surrounds and non-slip finishes across Sydney NSW. Call 0411 068 286.">
+<meta name="theme-color" content="#0F315B">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<meta property="og:title" content="Sydney Spraycrete Professionals | Spraycrete &amp; Concrete Resurfacing">
+<meta property="og:description" content="Spray-on resurfacing over the concrete you already have. Sydney NSW. 0411 068 286.">
+<meta property="og:type" content="website">
+<!-- BRAND PALETTE — extracted from this site's own logo (assets/logo.png, PIL quantize):
+     #0F315B deep navy (dominant brand), #F89818 amber (accent). No generic trade colour used. -->
 <style>
 :root{
-  --lb-name:#07101F;
-  --font:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --bg:#EEF2F6; --bg2:#E4EAF0; --panel:#F7F9FB;
-  --ink:#0C1524; --muted:#4E5A6B; --line:#D3DAE2;
-  --acc:#1389D4; --acc-ink:#FFFFFF;
-  --bar:#F5F7F9; --bar-ink:#07101F; --bar-line:#DCE2E8;
-  --hero-bg:#07101F; --hero-ink:#FFFFFF; --hero-muted:rgba(233,240,248,.76);
-  --hero-line:rgba(255,255,255,.34);
-  --pad:clamp(56px,8vh,96px);
+  --ink:#0B1A2E;
+  --brand:#0F315B;
+  --brand-2:#143C6E;
+  --navy-deep:#071628;
+  --acc:#F89818;
+  --accent:#F89818;
+  --acc-ink:#B26A00;      /* same amber, darkened for small text on white (WCAG) */
+  --primary:#0F315B;
+  --paper:#F2F0EB;
+  --panel:#FFFFFF;
+  --dim:#4C5566;
+  --line:rgba(11,26,46,.16);
+  --line-dark:rgba(255,255,255,.16);
+  --max:1280px;
 }
-*,*::before,*::after{box-sizing:border-box}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
-  line-height:1.362;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:17px/1.62 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
 a{color:inherit}
-h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.39;margin:0}
-p{margin:0}
-.container{width:min(1140px,92vw);margin-inline:auto}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4.4vw,60px)}
+.mono{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:12px;
+  letter-spacing:.16em;text-transform:uppercase}
+.eyebrow{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:11.5px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:0 0 14px}
 
-header.top{position:sticky;top:0;z-index:60;background:var(--bar);color:var(--bar-ink);
-  border-bottom:1px solid var(--bar-line)}
-.bar{height:64px;display:flex;align-items:center;justify-content:space-between;
-  gap:clamp(14px,3vw,44px)}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--bar-ink);
-  min-width:0;flex:0 1 auto}
-.brand .mark{height:56px;width:auto;max-width:min(400px,46vw);object-fit:contain;flex:none}
-.bname{font-size:clamp(1rem,1.5vw,1.22rem);font-weight:700;letter-spacing:-.01em;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-nav.main{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,2vw,26px)}
-nav.main a{color:var(--bar-ink);text-decoration:none;font-size:0.95rem;opacity:.84;
-  white-space:nowrap;transition:opacity .18s ease}
-nav.main a:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;
-  border-radius:9px;text-decoration:none;font-weight:700;font-size:0.95rem;
-  background:var(--acc);color:#191919;border:1px solid var(--acc)}
-.btn.ghost{background:transparent;color:#191919;border:1px solid var(--hero-line)}
-nav.main a.btn{opacity:1}
-@media(max-width:1000px){.brand .mark{height:52px}.bar{height:62px}}
-@media(max-width:820px){nav.main a.opt{display:none}}
+/* ---- spray-grain overlays (reads as sprayed texture, not flat template) ---- */
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;opacity:.55;
+  background-image:
+    radial-gradient(rgba(11,26,46,.10) 1px, transparent 1.3px),
+    radial-gradient(rgba(11,26,46,.07) 1px, transparent 1.3px);
+  background-size:7px 7px, 13px 13px;background-position:0 0, 5px 4px}
+.grain-lite::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;opacity:.5;
+  background-image:
+    radial-gradient(rgba(255,255,255,.10) 1px, transparent 1.3px),
+    radial-gradient(rgba(255,255,255,.06) 1px, transparent 1.3px);
+  background-size:8px 8px, 15px 15px;background-position:0 0, 6px 5px}
 
-.hero{position:relative;overflow:hidden;background:var(--hero-bg);color:#fcfcfc;
-  border-bottom:1px solid var(--line)}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(96deg,rgba(3,8,16,.88) 0%,rgba(3,8,16,.58) 42%,rgba(3,8,16,.10) 100%)}
-.hero .inner{position:relative;z-index:3;padding:32px 32px 32px;
-  max-width:min(740px,92vw)}
-.kicker{display:inline-block;font-size:0.84rem;font-weight:600;letter-spacing:0.05em;
-  color:var(--hero-muted);margin-bottom:16px}
-.hero h1{font-size:clamp(2.1rem,4.5vw,3.5rem);margin-bottom:18px}
-.hero h1 em{font-style:normal;color:#F39A20}
-.hero .lede{color:var(--hero-muted);font-size:clamp(1.02rem,1.6vw,1.2rem);max-width:56ch;
-  margin-bottom:28px}
-.acts{display:flex;flex-wrap:wrap;gap:14px}
-.facts{display:flex;flex-wrap:wrap;gap:10px 26px;max-width:62ch;list-style:none;padding:0;
-  margin:28px 0 0;color:var(--hero-muted);font-size:0.95rem}
-.facts li::before{content:"";display:inline-block;width:6px;height:6px;margin-right:10px;
-  background:var(--acc);vertical-align:middle;border-radius:50%;color:#191919}
+/* ---- stencil band (pattern strip) ---- */
+.band{height:12px;background-image:repeating-linear-gradient(45deg,var(--acc) 0 7px,var(--brand) 7px 15px)}
+.band.soft{opacity:.9}
 
-section{padding:32px 32px;border-bottom:1px solid var(--line)}
-section.alt{background:var(--bg2)}
-.head{max-width:62ch;margin-bottom:clamp(24px,4vh,44px)}
-.head h2{font-size:clamp(1.55rem,3vw,2.3rem);margin-bottom:12px}
-.head p{color:var(--muted)}
-.grid{display:grid;gap:18px}
-.g3{grid-template-columns:repeat(3,1fr)}
-.g2{grid-template-columns:repeat(2,1fr)}
-@media(max-width:900px){.g3{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.g3,.g2{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px}
-.card h3{font-size:1.08rem;margin-bottom:9px}
-.card p{color:var(--muted);font-size:0.95rem}
-.swatch{width:40px;height:4px;background:var(--acc);border-radius:3px;margin-bottom:16px;color:#191919}
-.split{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1.12fr .88fr;align-items:start}
-@media(max-width:880px){.split{grid-template-columns:1fr}}
-.split p{color:var(--muted);margin-bottom:14px}
-.tick{list-style:none;padding:0;margin:0}
-.tick li{padding:12px 0;border-bottom:1px solid var(--line);font-size:0.97rem}
-.tick li span{color:var(--muted)}
-.contactwrap{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1fr 1fr;align-items:start}
-@media(max-width:820px){.contactwrap{grid-template-columns:1fr}}
-.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.links a{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border:1px solid var(--line);
-  border-radius:10px;text-decoration:none;color:var(--ink);font-size:0.93rem;
-  transition:border-color .18s ease}
-.links a:hover{border-color:var(--acc)}
-form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px}
-label{display:block;font-size:0.85rem;color:var(--muted);margin-bottom:6px}
-input,textarea{width:100%;padding:12px 14px;border-radius:9px;border:1px solid var(--line);
-  background:var(--bg);color:var(--ink);font:inherit;margin-bottom:14px}
-input:focus,textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
-form .btn{width:100%}
-.note{color:var(--muted);font-size:0.85rem;margin-top:12px}
-footer{padding:48px 0 34px;background:var(--bg2)}
-.foot{display:grid;gap:clamp(22px,3vw,44px);grid-template-columns:1.4fr 1fr 1fr}
-@media(max-width:820px){.foot{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.foot{grid-template-columns:1fr}}
-footer h4{font-size:0.82rem;letter-spacing:0.05em;color:var(--muted);margin:0 0 14px;font-weight:700}
-footer ul{list-style:none;padding:0;margin:0}
-footer li{margin-bottom:9px}
-footer a{color:var(--ink);text-decoration:none;font-size:0.94rem}
-footer a:hover{color:var(--acc)}
-.footbottom{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);display:flex;
-  flex-wrap:wrap;gap:14px;justify-content:space-between;color:var(--muted);font-size:0.85rem}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style>
-<style id="lb-fit-fix">
-/* the logo never protrudes: it is sized inside the bar, and the bar takes the logo's own plate colour
-   so there is no white box sitting on a dark band */
-header, header.site, .site-header, .nav, nav.bar{background:#ffffff!important}
-header a:not(.cta), header nav a, header .nav a, header .phone, header .tel{color:#0f1720!important}
-.lb-brand img, .lb-brand .lb-mark, .lb-brand .lb-word{height:clamp(34px,3.8vw,56px)!important;width:auto!important;
-  max-height:56px!important;object-fit:contain!important;display:block!important}
-.lb-brand{display:inline-flex!important;align-items:center!important;gap:14px!important;padding:0!important;max-height:56px!important}
-@media (max-width:720px){.lb-brand img,.lb-brand .lb-mark,.lb-brand .lb-word{height:36px!important;max-height:36px!important}}
-</style>
-<style id="lb-mobile-base">
-html,body{max-width:100%;overflow-x:hidden}
-img,video,canvas,svg,iframe{max-width:100%}
-img,video{height:auto}
-header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
-header,.site-header,.nav{max-width:100%}
-.lb-brand{min-width:0;max-width:100%;overflow:hidden}
-.lb-brand img{max-height:64px;width:auto}
-nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
-h1{overflow-wrap:anywhere}
-@media (max-width:820px){
-  .lb-brand img{max-height:38px}
-  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
-  h2{font-size:clamp(20px,6vw,30px)!important}
-  section{padding-left:16px!important;padding-right:16px!important}
-  .wrap,.container{max-width:100%!important}
+/* ---- header lockup ---- */
+header.site{position:sticky;top:0;z-index:40;background:rgba(242,240,235,.94);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:clamp(12px,2vw,26px);padding:11px 0;flex-wrap:wrap}
+.lb-brand{display:flex;align-items:center;text-decoration:none;flex:0 0 auto}
+.lb-brand img{height:clamp(40px,4.4vw,54px);width:auto}
+nav.main{display:flex;gap:clamp(11px,1.7vw,26px);margin-left:auto;flex-wrap:wrap;align-items:center}
+nav.main a{text-decoration:none;font-size:14.5px;color:var(--dim);padding:4px 0;border-bottom:2px solid transparent}
+nav.main a:hover{color:var(--ink);border-bottom-color:var(--acc)}
+.tel{text-decoration:none;font-weight:800;white-space:nowrap;
+  border:1px solid var(--brand);background:var(--brand);color:#fff;
+  padding:9px 16px;font-size:15px;letter-spacing:.01em}
+.tel:hover{background:var(--ink)}
+
+/* ---- hero ---- */
+.hero{position:relative;isolation:isolate;background:var(--navy-deep);color:#fff;
+  min-height:min(84vh,820px);display:flex;align-items:flex-end;overflow:hidden}
+#heroCanvas{display:none}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 64%;z-index:0}
+.hero-scrim{position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(180deg, rgba(7,22,40,.46) 0%, rgba(7,22,40,.26) 36%, rgba(7,22,40,.66) 80%, rgba(7,22,40,.88) 100%),
+    linear-gradient(96deg, rgba(7,22,40,.62) 0%, rgba(7,22,40,.22) 56%, rgba(7,22,40,.06) 100%)}
+.hero-inner{position:relative;z-index:3;width:100%;perspective:1200px;
+  padding:clamp(64px,9vw,112px) 0 clamp(22px,3.4vw,38px)}
+.hero .eyebrow{color:var(--acc)}
+.hero h1{margin:0 0 20px;font-size:clamp(36px,6.6vw,88px);line-height:.95;letter-spacing:-.035em;font-weight:850;
+  color:#fff;max-width:24ch;text-shadow:0 2px 26px rgba(0,0,0,.42)}
+.hero h1 em{font-style:normal;color:var(--acc);display:block}
+.hero .lede{max-width:56ch;font-size:clamp(16px,1.6vw,19.5px);color:rgba(255,255,255,.88);margin:0 0 30px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-block;background:var(--acc);color:#0B1A2E;text-decoration:none;font-weight:800;
+  padding:16px 28px;font-size:15.5px;letter-spacing:.01em}
+.btn:hover{background:#fff}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+.btn.ghost:hover{border-color:var(--acc);color:var(--acc);background:transparent}
+.spec{position:relative;z-index:3;border-top:1px solid var(--line-dark);background:rgba(7,22,40,.86)}
+.spec .row{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.spec .cell{padding:18px clamp(14px,2.4vw,34px) 20px;border-right:1px solid var(--line-dark)}
+.spec .cell:last-child{border-right:0}
+.spec .k{display:block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--acc);margin-bottom:7px}
+.spec .v{display:block;font-size:clamp(14px,1.5vw,16.5px);color:#fff;font-weight:600}
+.spec a{color:#fff;text-decoration:none;border-bottom:2px solid var(--acc)}
+@media(max-width:760px){.spec .row{grid-template-columns:1fr}.spec .cell{border-right:0;border-bottom:1px solid var(--line-dark)}}
+
+/* ---- generic section rhythm ---- */
+section{position:relative}
+.pad{padding:clamp(52px,7vw,104px) 0}
+.dark{background:var(--brand);color:#fff}
+.dark h2,.dark h3{color:#fff}
+.dark p{color:rgba(255,255,255,.84)}
+.dark .eyebrow{color:var(--acc)}
+h2{margin:0 0 16px;font-size:clamp(25px,3.5vw,46px);line-height:1.02;letter-spacing:-.03em;font-weight:840;max-width:24ch}
+h3{margin:0 0 8px;font-size:19px;letter-spacing:-.01em;font-weight:780}
+p{margin:0 0 14px;color:var(--dim);max-width:74ch}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;margin-bottom:clamp(26px,4vw,48px)}
+.hr-thin{height:1px;background:var(--line);border:0;margin:0}
+.dark .hr-thin{background:var(--line-dark)}
+
+/* ---- services ---- */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.svc article{padding:clamp(22px,2.6vw,34px) clamp(18px,2.4vw,30px);border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line);background:var(--panel)}
+.svc article:nth-child(3n){border-right:0}
+.svc .n{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:.2em;color:var(--acc-ink);
+  display:block;margin-bottom:12px}
+.svc p{margin:0;font-size:15.5px}
+@media(max-width:980px){.svc{grid-template-columns:repeat(2,1fr)}.svc article:nth-child(3n){border-right:1px solid var(--line)}
+  .svc article:nth-child(2n){border-right:0}}
+@media(max-width:640px){.svc{grid-template-columns:1fr}.svc article{border-right:0}}
+
+/* ---- worn vs resurfaced contrast ---- */
+.contrast{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,30px);margin:0 0 clamp(28px,4vw,44px)}
+.panel{position:relative;overflow:hidden;border:1px solid var(--line-dark);min-height:230px;
+  display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(18px,2.4vw,28px)}
+.panel .tag{position:relative;z-index:3;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:9px}
+.panel .txt{position:relative;z-index:3;font-size:15.5px;color:#fff;font-weight:600;max-width:34ch}
+.worn{background:
+    linear-gradient(0deg, rgba(18,19,17,.66) 0%, rgba(18,19,17,.14) 66%),
+    linear-gradient(115deg, rgba(0,0,0,.30) 0 1px, transparent 1px 100%),
+    linear-gradient(74deg, rgba(0,0,0,.22) 0 1px, transparent 1px 100%),
+    linear-gradient(168deg, rgba(0,0,0,.18) 0 1px, transparent 1px 100%),
+    linear-gradient(180deg,#9A9B96,#7C7E7A)}
+.worn .tag{color:#fff}
+.worn .txt{color:#fff}
+.worn::after{content:"";position:absolute;inset:0;z-index:2;opacity:.5;
+  background-image:radial-gradient(rgba(20,22,20,.18) 1px, transparent 1.4px),
+                   radial-gradient(rgba(255,255,255,.16) 1px, transparent 1.4px);
+  background-size:6px 6px,17px 17px}
+.fresh{background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.13) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.13) 0 1px, transparent 1px 44px),
+    linear-gradient(160deg,var(--brand-2),#0A2240)}
+.fresh .tag{color:var(--acc)}
+.fresh::after{content:"";position:absolute;inset:0;z-index:2;opacity:.6;
+  background-image:radial-gradient(rgba(248,152,24,.5) 1px, transparent 1.5px),
+                   radial-gradient(rgba(255,255,255,.14) 1px, transparent 1.5px);
+  background-size:9px 9px,15px 15px}
+@media(max-width:700px){.contrast{grid-template-columns:1fr}}
+
+/* ---- stencil pattern swatches ---- */
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,20px)}
+.sw{border:1px solid var(--line-dark);overflow:hidden;background:var(--navy-deep)}
+.sw .tile{height:112px;position:relative}
+.sw .cap{position:relative;z-index:3;padding:12px 14px 14px;font-size:13.5px;color:#fff;font-weight:650;
+  background:rgba(7,22,40,.72);border-top:1px solid var(--line-dark)}
+.p-flag{background:
+  repeating-linear-gradient(0deg,rgba(255,255,255,.4) 0 2px,transparent 2px 30px),
+  repeating-linear-gradient(90deg,rgba(255,255,255,.4) 0 2px,transparent 2px 42px),
+  linear-gradient(160deg,#143C6E,#0A2240)}
+.p-brick{background:
+  repeating-linear-gradient(0deg,rgba(255,255,255,.4) 0 2px,transparent 2px 24px),
+  repeating-linear-gradient(90deg,rgba(255,255,255,.36) 0 2px,transparent 2px 46px),
+  linear-gradient(200deg,#1B4C82,#0F315B)}
+.p-slate{background:
+  repeating-linear-gradient(45deg,rgba(255,255,255,.3) 0 1.5px,transparent 1.5px 34px),
+  repeating-linear-gradient(-45deg,rgba(255,255,255,.3) 0 1.5px,transparent 1.5px 34px),
+  linear-gradient(180deg,#132F52,#0B1F38)}
+.p-agg{background:linear-gradient(180deg,#123257,#0A1E36)}
+.p-agg::after,.p-flag::after,.p-brick::after,.p-slate::after{content:"";position:absolute;inset:0;z-index:2;opacity:.75;
+  background-image:radial-gradient(rgba(248,152,24,.55) 1.2px, transparent 1.6px),
+                   radial-gradient(rgba(255,255,255,.2) 1.2px, transparent 1.6px);
+  background-size:8px 8px,14px 14px}
+@media(max-width:860px){.swatches{grid-template-columns:repeat(2,1fr)}}
+
+/* ---- work gallery ---- */
+.work{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2.2vw,26px)}
+.work figure{margin:0;background:var(--panel);border:1px solid var(--line)}
+.work img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.work figcaption{padding:13px 16px 15px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--dim)}
+.work figcaption b{color:var(--ink);font-weight:700}
+@media(max-width:860px){.work{grid-template-columns:1fr}}
+
+/* ---- process ---- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);counter-reset:s}
+.steps div{padding:clamp(20px,2.4vw,30px) clamp(16px,2vw,26px);border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line)}
+.steps div:last-child{border-right:0}
+.steps b{display:block;font-size:17px;margin-bottom:7px}
+.steps span{font-size:15px;color:var(--dim)}
+.steps .n{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:.2em;color:var(--acc-ink);
+  display:block;margin-bottom:12px}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}.steps div:nth-child(2n){border-right:0}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}.steps div{border-right:0}}
+
+/* ---- chips ---- */
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin:6px 0 0;padding:0;list-style:none}
+.chips li{border:1px solid var(--line);background:var(--panel);padding:8px 13px;font-size:14px;color:var(--dim)}
+
+/* ---- faq ---- */
+.faq{border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line);background:var(--panel)}
+summary{cursor:pointer;padding:19px clamp(16px,2vw,24px);font-weight:750;font-size:17.5px;letter-spacing:-.01em;
+  list-style:none;display:flex;gap:16px;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--acc-ink);font-weight:700}
+details[open] summary::before{content:"\2013"}
+details p{margin:0;padding:0 clamp(16px,2vw,24px) 22px;font-size:15.5px}
+
+/* ---- quote ---- */
+#lbq{background:var(--navy-deep);color:#fff}
+.qgrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(22px,4vw,58px);align-items:start}
+.qgrid h2{color:#fff}
+.qgrid p{color:rgba(255,255,255,.82)}
+.qside{border-top:2px solid var(--acc);padding-top:18px}
+.qside div{display:grid;gap:3px;padding:13px 0;border-bottom:1px solid var(--line-dark)}
+.qside .k{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:var(--acc)}
+.qside .v{font-size:16px}
+.qside a{color:#fff;text-decoration:none;border-bottom:2px solid var(--acc)}
+form{background:rgba(255,255,255,.045);border:1px solid var(--line-dark);padding:clamp(20px,2.8vw,32px)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+label{display:block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.17em;
+  text-transform:uppercase;color:rgba(255,255,255,.72);margin:0 0 7px}
+input,textarea,select{width:100%;border:1px solid var(--line-dark);background:rgba(0,0,0,.28);color:#fff;
+  padding:12px;font:inherit;font-size:15.5px;margin-bottom:16px;border-radius:0}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.42)}
+select option{color:#0B1A2E}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+button{width:100%;background:var(--acc);color:#0B1A2E;border:0;padding:16px;font:inherit;font-weight:800;
+  font-size:16px;cursor:pointer}
+button:hover{background:#fff}
+button[disabled]{opacity:.75;cursor:default}
+.formnote{margin:12px 0 0;font-size:13.5px;color:rgba(255,255,255,.72)}
+@media(max-width:880px){.qgrid{grid-template-columns:1fr}.f2{grid-template-columns:1fr}}
+
+/* ---- footer ---- */
+footer{background:var(--ink);color:rgba(255,255,255,.78);padding:clamp(34px,5vw,54px) 0 26px;font-size:14.5px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(20px,3vw,44px)}
+footer h4{margin:0 0 12px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--acc);font-weight:600}
+footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28)}
+footer a:hover{border-bottom-color:var(--acc);color:var(--acc)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.fbrand{display:flex;gap:14px;align-items:center;margin-bottom:14px}
+.fbrand img{height:50px;width:auto;background:rgba(255,255,255,.08);padding:6px}
+.fbase{margin-top:30px;padding-top:16px;border-top:1px solid var(--line-dark);display:flex;gap:16px;
+  justify-content:space-between;flex-wrap:wrap;font-size:13.5px}
+@media(max-width:820px){.fgrid{grid-template-columns:1fr}}
+
+/* ---- motion ---- */
+html.js .rv{opacity:0;transform:translateY(16px)}
+.rv.on{opacity:1;transform:none}
+.rv{transition:opacity .62s ease,transform .62s cubic-bezier(.2,.7,.2,1)}
+@media(prefers-reduced-motion:reduce){
+  html.js .rv{opacity:1;transform:none}
+  .rv{transition:none}
+  html{scroll-behavior:auto}
 }
+@media(max-width:720px){nav.main{order:3;width:100%;margin-left:0;gap:16px}}
 </style>
-<style id="lb-logo-hero">
-/* Client logo across the header: the real artwork, isolated and readable. */
-.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;padding:0!important;max-height:96px!important;
-  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
-  padding:0!important;box-shadow:none!important}
-.lb-brand .lb-mark{display:block!important;height:clamp(44px,4.8vw,66px)!important;width:auto!important;
-  max-width:none!important;max-height:66px!important;object-fit:contain!important;background:none!important;
-  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
-.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(38vw,520px)!important;
-  max-height:none!important;object-fit:contain!important;object-position:left center!important;
-  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
-.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
-  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
-.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
-.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
-.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
-  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
-.lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
-@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:20px!important}}
-.lb-bar{background-color:#ffffff!important}
-.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#101014!important}
-.lb-bar .cta,.lb-bar a.cta{color:#101014!important}
-</style>
-<style id="lb-brand-palette">:root{--acc:#0c84cc;--accent:#0c84cc;--lbq-accent:#0c84cc;--lb-acc:#0c84cc;--brand:#0c84cc;--brand-color:#0c84cc;--primary:#0c84cc;--lime:#0c84cc;--color-lime:#0c84cc;--gold:#0c84cc;--acc-strong:#0c84cc;--acc2:#121238;--acc-hi:#121238;--accent-2:#121238;--brand-2:#121238;}</style></head>
+</head>
 <body>
-<header class="top">
-<div class="container bar">
-<a aria-label="sydney-spraycrete-professionals" class="lb-brand lb-brand--lockup" href="#top" style="--lb-name:#101014"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-cut.png"/><span class="lb-sr">sydney-spraycrete-professionals</span></a><nav aria-label="Main" class="main">
-<a class="opt" href="#services">Services</a>
-<a class="opt" href="#method">How it is done</a>
-<a class="opt" href="#about">About</a>
-<a href="#contact">Contact</a>
-<a class="btn" href="https://www.facebook.com/share/1FCmRk5eoP/" rel="noopener">Message us</a>
-</nav>
-</div>
-<a class="lb-tel" href="tel:0411068286" style="margin-left:auto;font-weight:800;text-decoration:none;color:inherit;white-space:nowrap;font-size:15px;padding:8px 0">0411068286</a></header>
-<main>
-<section aria-label="Spray-on concrete resurfacing in Sydney" class="hero" id="top">
-<canvas aria-hidden="true" id="heroCanvas"></canvas>
-<div aria-hidden="true" class="veil"></div>
-<div class="container inner">
-<span class="kicker">All Sydney suburbs · 20 years experience</span>
-<h1>Concreting in Sydney NSW<br/>quoted on site.</h1>
-<p class="lede">Most of the concrete work calls Sydney Spraycrete Professionals gets start the same way: something has failed, or something new has to be built properly. Either way it is priced after looking at Sydney NSW job itself.</p>
-<div class="acts">
-<a class="btn" href="https://www.facebook.com/share/1FCmRk5eoP/" rel="noopener">Message us on Facebook</a>
-<a class="btn ghost" href="#services">What we resurface</a>
-</div>
-<ul class="facts">
-<li>No demolition</li>
-<li>All Sydney suburbs</li>
-<li>All Dulux materials supplied</li>
-<li>20 years experience</li>
-</ul>
-</div>
-</section>
-<section id="services">
-<div class="container">
-<div class="head">
-<h2>What we resurface</h2>
-<p>The business has been built on repeat work and referrals around Sydney NSW, which only happens when the finish is right.</p>
-</div>
-<div class="grid g3" style="display:none">
-<article class="card">
-<div class="swatch"></div>
-<h3>driveways</h3>
-<p>Sydney Spraycrete Professionals turns up when agreed, does the concrete work work to the quoted scope, and keeps the site tidy while it happens.</p>
-</article>
-<article class="card">
-<div class="swatch"></div>
-<h3>slabs</h3>
-<p>The job is walked with you at the end. Anything that needs attention is dealt with before the invoice, not after.</p>
-</article>
-<article class="card">
-<div class="swatch"></div>
-<h3>exposed aggregate</h3>
-<p>Edges, clean-up and the small finishes that decide whether a concrete work job looks professional are done before Sydney Spraycrete Professionals leaves site.</p>
-</article>
-<article class="card">
-<div class="swatch"></div>
-<h3>footings</h3>
-<p>Quoted on site — Not over the phone from a photo — the price comes from seeing the job.</p>
-</article>
-<article class="card">
-<div class="swatch"></div>
-<h3>paths</h3>
-<p>One point of contact — The same person answers the phone and runs the work.</p>
-</article>
-<article class="card">
-<div class="swatch"></div>
-<h3>retaining walls</h3>
-<p>Local to Sydney NSW — Travel time is short, which is why small jobs are worth doing.</p>
-</article>
-</div>
-</div>
-</section>
-<section class="alt" id="method">
-<div class="container">
-<div class="head">
-<h2>Resurfacing, not replacing</h2>
-<p>Workmanship backed — If something is not right, Sydney Spraycrete Professionals comes back.</p>
-</div>
-<div class="grid g3" style="display:none">
-<article class="card">
-<div class="swatch"></div>
-<h3>No demolition</h3>
-<p>No breaking out, no skips, no formwork and no curing a new slab. Your driveway or patio is back in use in the same week it is sprayed.</p>
-</article>
-<article class="card">
-<div class="swatch"></div>
-<h3>Prepared properly</h3>
-<p>How long a resurfaced slab lasts is settled before the spray gun comes out. Every job is cleaned, ground back and primed first.</p>
-</article>
-<article class="card">
-<div class="swatch"></div>
-<h3>Dulux materials</h3>
-<p>All Dulux materials supplied, so the colour you pick is a specified product rather than something mixed on the day.</p>
-</article>
-</div>
-</div>
-</section>
-<section id="about">
-<div class="container split">
-<div>
-<h2>Sydney-wide, driveway to courtyard</h2>
-<p>Sydney Spraycrete Professionals resurfaces existing concrete across all Sydney suburbs, from a single driveway through to pool surrounds and full courtyards.</p>
-<p>The work is spray-on concrete resurfacing: restoring tired concrete rather than pouring new slabs. Twenty years of experience, and all Dulux materials supplied.</p>
-</div>
-<ul class="tick">
-<li>Driveways <span>· sprayed and sealed</span></li>
-<li>Paths and walkways <span>· slip-resistant</span></li>
-<li>Patios and alfrescos <span>· colour and texture</span></li>
-<li>Pool surrounds <span>· sealed finish</span></li>
-<li>Garage floors <span>· hard-wearing</span></li>
-<li>Courtyards <span>· tight access</span></li>
-</ul>
-</div>
-</section>
-<section class="alt" id="contact">
-<div class="container contactwrap">
-<div>
-<h2>Send us the job</h2>
-<p style="color:var(--muted);margin:10px 0 22px">Tell us what needs resurfacing and roughly how big it is. Messages through our Facebook page come straight to us and we will come back with a price.</p>
-<p style="color:var(--muted)">Sydney NSW · servicing all Sydney suburbs</p>
-<div class="links">
-<a href="https://www.facebook.com/share/1FCmRk5eoP/" rel="noopener">Sydney Spraycrete Professionals on Facebook</a>
-</div>
-</div>
-<form data-biz="Sydney Spraycrete Professionals" data-site="sydney-spraycrete-professionals" id="lbq-form" novalidate="">
-<label for="lbq-n">Name</label>
-<input autocomplete="name" id="lbq-n" name="name" required=""/>
-<label for="lbq-s">Suburb</label>
-<input id="lbq-s" name="suburb"/>
-<label for="lbq-m">What needs resurfacing?</label>
-<textarea id="lbq-m" name="message" placeholder="Front driveway about 45 square metres, faded and worn, would like it sprayed before summer." rows="4"></textarea>
-<button class="btn" type="submit">Send the details</button>
-<p class="note" id="lbq-note">Prefer to talk it through? Message us on Facebook.</p>
-</form>
-</div>
-</section>
+<noscript><style>html.js .rv{opacity:1;transform:none}</style></noscript>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="lb-brand" href="#top" aria-label="Sydney Spraycrete Professionals — home">
+      <img src="assets/logo.png" alt="Sydney Spraycrete Professionals" width="1179" height="1089">
+    </a>
+    <nav class="main" aria-label="Sections">
+      <a href="#Services">Services</a>
+      <a href="#Finish">Finishes</a>
+      <a href="#Work">Work</a>
+      <a href="#Faq">FAQ</a>
+      <a href="#quote">Quote</a>
+    </nav>
+    <a class="tel" href="tel:+61411068286">0411 068 286</a>
+  </div>
+  <div class="band soft" aria-hidden="true"></div>
+</header>
+
+<main id="top">
+
+  <section class="hero grain" aria-labelledby="hero-h">
+    <img class="hero-img" src="assets/hero-resurfaced.jpg" width="1120" height="1400" alt="Spray-applied resurfacing finished along a driveway — a job like this" fetchpriority="high">
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <!-- LB-3D-HERO -->
+    <canvas id="heroCanvas" width="1280" height="720" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <div class="wrap">
+        <p class="eyebrow">Spraycrete &amp; concrete resurfacing · Sydney NSW</p>
+        <h1 id="hero-h">Resurface the concrete.<em>Don't replace it.</em></h1>
+        <p class="lede">Spray-on resurfacing, stencilled pattern work, exposed aggregate and non-slip finishes — sprayed over the concrete already in your yard.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#quote">Request a quote</a>
+          <a class="btn ghost" href="tel:+61411068286">Call 0411 068 286</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="spec grain-lite">
+    <div class="wrap">
+      <div class="row">
+        <div class="cell"><span class="k">Trade</span><span class="v">Spraycrete &amp; concrete resurfacing</span></div>
+        <div class="cell"><span class="k">Service area</span><span class="v">Sydney NSW</span></div>
+        <div class="cell"><span class="k">Phone</span><span class="v"><a href="tel:+61411068286">0411 068 286</a></span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="Services" class="pad grain" aria-labelledby="svc-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">What we spray</p>
+        <h2 id="svc-h">Six ways to put a new surface on old concrete</h2>
+        <p>Spraycrete work is sprayed, patterned and sealed — so the finish, the colour and the grip are built into the top coat instead of sitting on the surface as paint.</p>
+      </div>
+      <div class="svc rv">
+        <article><span class="n">01</span><h3>Spray-on resurfacing</h3><p>A new textured wearing coat sprayed over sound existing concrete. No demolition, no skip, no broken-up driveway sitting there for a week.</p></article>
+        <article><span class="n">02</span><h3>Stencil &amp; pattern finishes</h3><p>Flagstone, brick and slate layouts stencilled into the surface, with borders and banding worked around the house and the edges.</p></article>
+        <article><span class="n">03</span><h3>Exposed aggregate</h3><p>Aggregate seeded into the top and washed back, leaving a gritty stone surface that stands up to tyres, gates and sun.</p></article>
+        <article><span class="n">04</span><h3>Driveway restoration</h3><p>Faded, chalky and oil-marked driveways brought back to a sealed, even colour without lifting the slab.</p></article>
+        <article><span class="n">05</span><h3>Pool surrounds &amp; coping</h3><p>Grip-positive finishes across the pool surround and walk-on edges — a cooler surface underfoot than bare grey concrete.</p></article>
+        <article><span class="n">06</span><h3>Non-slip finishes</h3><p>Textured spray coats for ramps, steps, entries, garages and any wet area where the surface has to be walked on with grip.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="Finish" class="pad dark grain-lite" aria-labelledby="fin-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Worn out vs resurfaced</p>
+        <h2 id="fin-h">The old slab stays. The surface on top of it changes.</h2>
+        <p>Resurfacing strips nothing out: the existing concrete is cleaned and prepped, then a new sprayed, textured and sealed coat goes down over it. What you get back is a surface with colour, pattern and grip — not a patched slab with a story.</p>
+      </div>
+
+      <div class="contrast rv">
+        <div class="panel worn">
+          <span class="tag">Worn</span>
+          <span class="txt">Faded grey, chalky underfoot, hairline cracking, oil marks that never come out.</span>
+        </div>
+        <div class="panel fresh">
+          <span class="tag">Resurfaced</span>
+          <span class="txt">A bonded spray coat with the colour, the stencil pattern and the non-slip texture sprayed in.</span>
+        </div>
+      </div>
+
+      <p class="eyebrow rv">Stencil &amp; pattern options</p>
+      <div class="swatches rv">
+        <div class="sw"><div class="tile p-flag"></div><div class="cap">Flagstone stencil</div></div>
+        <div class="sw"><div class="tile p-brick"></div><div class="cap">Brick stencil</div></div>
+        <div class="sw"><div class="tile p-slate"></div><div class="cap">Slate random</div></div>
+        <div class="sw"><div class="tile p-agg"></div><div class="cap">Exposed aggregate</div></div>
+      </div>
+      <p style="margin-top:20px;max-width:70ch">Pattern tiles above are drawn finishes offered in the spray range — the layout, the colour and the grip level for your job are set out with you before anything is sprayed.</p>
+    </div>
+  </section>
+
+  <section id="Work" class="pad grain" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Surfaces</p>
+        <h2 id="work-h">Resurfacing that looks like this</h2>
+        <p>Textured coats, patterned bands and aggregate finishes sprayed over existing concrete driveways, paths and surrounds.</p>
+      </div>
+      <div class="work rv">
+        <figure>
+          <img src="assets/hero-resurfaced.jpg" width="1120" height="1400" alt="Dark charcoal resurfaced driveway alongside a house, edge masked off — a job like this" loading="lazy">
+          <figcaption><b>a job like this</b> — sprayed charcoal coat, driveway</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/job-aggregate.jpg" width="1400" height="1050" alt="Curved exposed aggregate driveway leading to a garage — a job like this" loading="lazy">
+          <figcaption><b>a job like this</b> — exposed aggregate driveway</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/job-pattern.jpg" width="1179" height="1054" alt="Close textured patterned surface with a repeated stencil impression — a job like this" loading="lazy">
+          <figcaption><b>a job like this</b> — patterned textured surface</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/job-speckle.jpg" width="1080" height="569" alt="Speckled textured concrete surface with control joints — a job like this" loading="lazy">
+          <figcaption><b>a job like this</b> — speckled textured finish</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="Process" class="pad grain" aria-labelledby="proc-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">How it goes</p>
+        <h2 id="proc-h">Four steps from a photo of your driveway to a sprayed surface</h2>
+        <div class="band" aria-hidden="true" style="max-width:220px;margin-top:6px"></div>
+      </div>
+      <div class="steps rv">
+        <div><span class="n">Step 01</span><b>Call the number</b><span>Ring 0411 068 286 and tell us what the surface is now and where the job is.</span></div>
+        <div><span class="n">Step 02</span><b>Send photos</b><span>Text through the driveway, path or surround — cracks, stains, edges and all.</span></div>
+        <div><span class="n">Step 03</span><b>Get the number</b><span>The price and the finish options for your job, so you know the figure before anything is sprayed.</span></div>
+        <div><span class="n">Step 04</span><b>The spray goes down</b><span>Prep, spray, pattern and seal, then the site is left swept and walkable.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Areas" class="pad grain" aria-labelledby="area-h">
+    <div class="wrap">
+      <div class="sec-head rv" style="margin-bottom:22px">
+        <p class="eyebrow">Where we work</p>
+        <h2 id="area-h">Sydney NSW</h2>
+        <p>Sydney Spraycrete Professionals sprays resurfacing jobs across Sydney NSW. Tell us the suburb and the surface when you call, and we'll confirm the job.</p>
+      </div>
+      <p class="eyebrow rv">Surfaces we resurface</p>
+      <ul class="chips rv">
+        <li>Driveways &amp; crossovers</li>
+        <li>Paths &amp; front entries</li>
+        <li>Pool surrounds</li>
+        <li>Courtyards &amp; patios</li>
+        <li>Steps &amp; ramps</li>
+        <li>Garage floors</li>
+        <li>Pergola &amp; shed slabs</li>
+        <li>Faded &amp; cracked slabs</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="Faq" class="pad grain" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Questions</p>
+        <h2 id="faq-h">Spraycrete, answered</h2>
+      </div>
+      <div class="faq rv">
+        <details open>
+          <summary>What actually is spraycrete?</summary>
+          <p>Spraycrete is a sprayed concrete resurfacing system. The existing concrete is cleaned and prepped, then a new textured wearing coat — carrying the colour, the pattern and the non-slip grit — is sprayed over the top and sealed.</p>
+        </details>
+        <details>
+          <summary>Can it go over the concrete I already have?</summary>
+          <p>Resurfacing is made for existing concrete: driveways, paths, courtyards, pool surrounds and garage floors. Where the slab has failed or moved, that gets raised on the call and sorted out before any spraying is booked.</p>
+        </details>
+        <details>
+          <summary>Does the old surface have to be jackhammered out?</summary>
+          <p>No. The whole point of resurfacing is that the slab stays where it is — no demolition, no skip, no driveway missing for a fortnight.</p>
+        </details>
+        <details>
+          <summary>Will the new surface be slippery when it's wet?</summary>
+          <p>Non-slip textured finishes are part of the range, and they're what goes on ramps, steps, entries and the walk-on edges around a pool.</p>
+        </details>
+        <details>
+          <summary>How do I get a price?</summary>
+          <p>Call <a href="tel:+61411068286">0411 068 286</a> or send the form below with your name, number and suburb. Photos of the surface help us come back with the right figure first time.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <span id="quote" aria-hidden="true"></span>
+  <section id="lbq" class="pad grain-lite" aria-labelledby="lbq-h">
+    <div class="wrap">
+      <div class="qgrid">
+        <div class="rv">
+          <p class="eyebrow">Request a quote</p>
+          <h2 id="lbq-h">Tell us about the surface</h2>
+          <p>Send your details and we'll come back to you about the job — the finish, the pattern and the price.</p>
+          <div class="qside">
+            <div><span class="k">Phone</span><span class="v"><a href="tel:+61411068286">0411 068 286</a></span></div>
+            <div><span class="k">Business</span><span class="v">Sydney Spraycrete Professionals</span></div>
+            <div><span class="k">Trade</span><span class="v">Spraycrete &amp; concrete resurfacing</span></div>
+            <div><span class="k">Area</span><span class="v">Sydney NSW</span></div>
+          </div>
+        </div>
+        <form id="lb-quote" class="rv" data-site="sydney-spraycrete-professionals" novalidate>
+          <div class="f2">
+            <div>
+              <label for="qn">Your name</label>
+              <input id="qn" name="name" type="text" autocomplete="name" required placeholder="Name">
+            </div>
+            <div>
+              <label for="qp">Phone</label>
+              <input id="qp" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="04xx xxx xxx">
+            </div>
+          </div>
+          <div class="f2">
+            <div>
+              <label for="qs">Suburb</label>
+              <input id="qs" name="suburb" type="text" autocomplete="address-level2" placeholder="Your suburb">
+            </div>
+            <div>
+              <label for="qr">Surface</label>
+              <select id="qr" name="surface">
+                <option>Driveway</option>
+                <option>Path or entry</option>
+                <option>Pool surround</option>
+                <option>Courtyard or patio</option>
+                <option>Steps or ramp</option>
+                <option>Garage floor</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+          </div>
+          <label for="qm">What needs doing?</label>
+          <textarea id="qm" name="message" rows="4" placeholder="Faded driveway, cracks near the gate, want a stencil pattern…"></textarea>
+          <button type="submit">Send request</button>
+          <p class="formnote">Prefer to talk it through? Call <a href="tel:+61411068286" style="color:#fff">0411 068 286</a>.</p>
+        </form>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var f=document.getElementById('lb-quote');
+      if(!f) return;
+      f.addEventListener('submit',function(e){
+        e.preventDefault();
+        var b=f.querySelector('button[type=submit]'), old=b.textContent;
+        b.textContent='Sending...'; b.disabled=true;
+        var payload={
+          site:f.getAttribute('data-site'),
+          name:(f.querySelector('#qn').value||'').trim(),
+          phone:(f.querySelector('#qp').value||'').trim(),
+          suburb:(f.querySelector('#qs').value||'').trim(),
+          surface:(f.querySelector('#qr').value||'').trim(),
+          message:(f.querySelector('#qm').value||'').trim()
+        };
+        if(!payload.name||!payload.phone){
+          b.textContent='Add your name and number'; b.disabled=false;
+          setTimeout(function(){b.textContent=old;},2200);
+          return;
+        }
+        fetch('https://laydback-hq.tail5b3740.ts.net/functions/v1/quote-request',{
+          method:'POST',
+          headers:{'Content-Type':'application/json','Prefer':'return=minimal'},
+          body:JSON.stringify(payload)
+        }).then(function(r){
+          if(!r.ok) throw new Error('bad status');
+          f.reset();
+          b.textContent='Thanks — we will call you back';
+        }).catch(function(){
+          b.textContent='Call 0411 068 286';
+          b.disabled=false;
+        });
+      });
+    })();
+    </script>
+  </section>
+
 </main>
-<footer>
-<div class="container">
-<div class="foot">
-<div>
-<h4>SYDNEY SPRAYCRETE PROFESSIONALS</h4>
-<p style="color:var(--muted);max-width:36ch">Spray-on concrete resurfacing across all Sydney suburbs. 20 years experience, all Dulux materials supplied.</p>
-</div>
-<div>
-<h4>SERVICES</h4>
-<ul>
-<li><a href="#services">Driveways</a></li>
-<li><a href="#services">Paths and walkways</a></li>
-<li><a href="#services">Patios and alfrescos</a></li>
-<li><a href="#services">Pool surrounds</a></li>
-<li><a href="#services">Garage floors</a></li>
-<li><a href="#services">Courtyards</a></li>
-</ul>
-</div>
-<div>
-<h4>CONTACT</h4>
-<ul>
-<li><a href="https://www.facebook.com/share/1FCmRk5eoP/" rel="noopener">Facebook page</a></li>
-<li>Sydney NSW</li>
-<li>All Sydney suburbs</li>
-<li><a href="#contact">Request a quote</a></li>
-</ul>
-</div>
-</div>
-<div class="footbottom">
-<span>© <span id="yr">2026</span> Sydney Spraycrete Professionals. All rights reserved.</span>
-<span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
-</div>
-</div>
+
+<footer class="grain-lite">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fbrand">
+          <img src="assets/logo-mark.png" alt="Sydney Spraycrete Professionals logo" width="900" height="621">
+        </div>
+        <strong style="color:#fff">Sydney Spraycrete Professionals</strong>
+        <p style="margin:8px 0 0;color:rgba(255,255,255,.74)">Spraycrete &amp; concrete resurfacing — sprayed top coats, stencil patterns, exposed aggregate and non-slip finishes across Sydney NSW.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+61411068286">0411 068 286</a></li>
+          <li>Sydney NSW</li>
+          <li><a href="#quote">Request a quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>On this site</h4>
+        <ul>
+          <li><a href="#Services">Services</a></li>
+          <li><a href="#Finish">Finishes</a></li>
+          <li><a href="#Work">Work</a></li>
+          <li><a href="#Faq">FAQ</a></li>
+          <li><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbase">
+      <span>Sydney Spraycrete Professionals · Spraycrete &amp; concrete resurfacing · Sydney NSW</span>
+      <span><a href="tel:+61411068286">0411 068 286</a></span>
+    </div>
+  </div>
 </footer>
-<script src="assets/heroCanvas.js"></script>
+
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-
-/* 3D hero: concrete driveway, house and garage, orange kerb line */
 (function(){
-  var cv = document.getElementById('heroCanvas');
-  if (!cv || !window.Projection) return;
-  var S = Projection.create(cv, {focal:1.36, horizon:0.56, camY:1.55, camX:-1.1,
-    fogNear:14, fogFar:62, fogCol:'#0A1424'});
-  var red = Projection.reduced();
-  function quad(x1,x2,z1,z2,y,col,alpha){ S.poly([[x1,y,z1],[x2,y,z1],[x2,y,z2],[x1,y,z2]],col,alpha,(z1+z2)/2); }
-  function vquad(x,y1,y2,z1,z2,col,alpha){ S.poly([[x,y1,z1],[x,y2,z1],[x,y2,z2],[x,y1,z2]],col,alpha,(z1+z2)/2); }
-  function hquad(x1,x2,z,y1,y2,col,alpha){ S.poly([[x1,y2,z],[x2,y2,z],[x2,y1,z],[x1,y1,z]],col,alpha,z); }
-  function speck(n,x1,x2,z1,z2,y,col,size){
-    var ctx = S.ctx, i, px, pz, p;
-    ctx.fillStyle = col;
-    for (i=0;i<n;i++){
-      px = x1 + ((i*37.13) % ((x2-x1)*100))/100;
-      pz = z1 + ((i*53.77) % ((z2-z1)*100))/100;
-      p = S.project(px,y,pz);
-      if (p) ctx.fillRect(p[0],p[1],size,size);
-    }
-  }
-  S.frame(function(t){
-    S.camX = -1.1 + (red ? 0 : Math.sin(t*0.085)*0.26);
-    S.yaw  = red ? 0 : Math.sin(t*0.11)*0.015;
-    quad(-18,18,1.0,48,0,'#2A3A4A');
-    quad(-18,-4.9,1.0,32,0.02,'#1E2C3A');
-    quad(-4.9,4.9,1.0,34,0.06,'#97A3AE');
-    var z, i;
-    for (i=0;i<8;i++){
-      z = 3 + i*4;
-      S.line([-4.9,0.10,z],[4.9,0.10,z],'#4A5763',1.6);
-    }
-    S.line([-4.9,0.10,1.0],[-4.9,0.10,34],'#4A5763',1.6);
-    S.line([4.9,0.12,1.0],[4.9,0.12,34],'#F39A20',2.6);
-    S.line([-4.9,0.13,1.0],[-4.9,0.13,34],'#D8E0E7',2.2);
-    vquad(5.2,0,3.4,1.0,28,'#24313F');
-    vquad(5.16,2.6,2.74,1.0,28,'#0E1A26');
-    vquad(5.16,0,2.6,3.6,10.0,'#C4CCD3');
-    vquad(5.14,1.24,1.36,3.6,10.0,'#8E979E');
-    vquad(5.14,2.44,2.56,3.6,10.0,'#8E979E');
-    vquad(5.16,0,1.5,11.4,16.4,'#16222E');
-    vquad(5.14,0.2,1.4,11.6,12.0,'#9FB0BE');
-    S.post(-5.9,7,0.26,1.05,'#C4CCD3','#8E979E');
-    speck(140,-4.9,4.9,1.0,34,0.09,'rgba(255,255,255,.07)',1.6);
-  });
-  if ('ResizeObserver' in window){
-    new ResizeObserver(function(){ S.resize(); S.dirty = true; }).observe(cv);
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}
+      });
+    },{rootMargin:'0px 0px -6% 0px',threshold:.05});
+    els.forEach(function(el){io.observe(el);});
   } else {
-    window.addEventListener('resize', function(){ S.resize(); S.dirty = true; }, {passive:true});
+    els.forEach(function(el){el.classList.add('on');});
   }
-})();
-
-/* preview form: no mailbox wired yet, send people to Facebook */
-(function(){
-  var f = document.getElementById('lbq-form'); if (!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('lbq-note').textContent =
-      'Thanks. This preview form is not wired to a mailbox yet. Message us on Facebook and we will get straight back to you.';
-  });
+  setTimeout(function(){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('on');});},1100);
 })();
 </script>
-<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#ffffff","important");})();</script>
 </body>
 </html>

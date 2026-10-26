@@ -1,260 +1,496 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en-AU">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>The Concrete Guys — Perth WA</title>
-<meta content="Perth concrete specialists — The Concrete Guys, Perth WA." name="description"/>
-<link href="favicon-32.png" rel="icon" sizes="32x32"/>
-<meta content="#0b0b0c" name="theme-color"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Concrete Guys — Concrete Construction, Perth WA</title>
+<meta name="description" content="The Concrete Guys do concrete construction in Perth WA — driveways and crossovers, house and shed slabs, footpaths, pads and exposed aggregate. Levels, formwork and finish checked before the pour. Call 0481 221 003.">
+<meta name="theme-color" content="#141312">
+<meta property="og:title" content="The Concrete Guys — Concrete Construction, Perth WA">
+<meta property="og:description" content="Driveways, crossovers, slabs, footpaths and exposed aggregate across the Perth metro. Quoted from the site. Call 0481 221 003.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;900&family=Public+Sans:wght@400;500;600&display=swap">
+<script>document.documentElement.classList.add('js');</script>
 <style>
 :root{
-  --lb-name:#ffffff; --lb-acc:#ffd900; --lb-subc:rgba(255,255,255,.72);
-  --ink:#ffffff; --muted:rgba(255,255,255,.70); --line:rgba(255,255,255,.14); --panel:rgba(255,255,255,.045);
-  --bg:#0b0b0c; --bg2:#141414; --accent:#ffd900;
+  --bg:#e8e8e5; --bg-2:#eeeeeb; --panel:#f7f7f4;
+  --ink:#141312; --ink-2:#4a4842; --dim:#5a5750;
+  --line:#c6c6c1; --line-2:#b2b2ad;
+  --acc:#d8201c; --accent:#d8201c; --brand:#d8201c; --primary:#f3d200; --hat:#f3d200;
+  --font-d:"Archivo",system-ui,sans-serif; --font-b:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:system-ui,-apple-system,"Segoe UI",Archivo,"Helvetica Neue",Arial,sans-serif;
-  line-height:1.36;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background-color:var(--bg);color:var(--ink);font:16.5px/1.65 var(--font-b);
+  background-image:
+    radial-gradient(rgba(20,19,18,.055) 1px, transparent 1.6px),
+    radial-gradient(rgba(20,19,18,.035) 1px, transparent 1.8px),
+    radial-gradient(rgba(255,255,255,.55) 1px, transparent 1.7px);
+  background-size:11px 11px, 27px 27px, 41px 41px;
+  background-position:0 0, 6px 9px, 17px 3px;
+}
 img{max-width:100%;display:block}
-h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.38;margin:0}
-p{margin:0}
-.container{width:min(1140px,92vw);margin-inline:auto}
-header.site{position:sticky;top:0;z-index:60;background:rgba(11,11,12,.94);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:clamp(14px,3vw,48px);padding:12px 0}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:0 1 auto;min-width:0}
-.brand img{height:64px;width:auto;max-width:min(300px,42vw);object-fit:contain}
-.brand .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-nav.main{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,2vw,28px);flex-wrap:wrap}
-nav.main a{color:#fff;text-decoration:none;font-size:0.95rem;opacity:.86;white-space:nowrap}
-nav.main a:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;
-  text-decoration:none;font-weight:700;font-size:0.95rem;background:var(--accent);color:#0b0b0c;border:1px solid var(--accent)}
-nav.main a.btn,header .btn{background:var(--accent)!important;color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important}
-.btn.ghost{background:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff!important;
-  border:1px solid rgba(255,255,255,.5)!important}
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#101012}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.46)}
-.hero .inner{position:relative;z-index:3;padding:32px 32px 32px;max-width:min(780px,92vw)}
-.kicker{display:inline-block;font-size:0.82rem;font-weight:700;letter-spacing:0.05em;color:#d6d8db;margin-bottom:14px}
-.hero h1{font-size:clamp(1.95rem,4vw,3.1rem);margin-bottom:14px}
-.hero h1 em{font-style:normal;color:#cfd2d6}
-.hero .lede{color:var(--muted);font-size:clamp(1rem,1.5vw,1.14rem);max-width:54ch;margin-bottom:22px}
-.hero .acts{display:flex;flex-wrap:wrap;gap:14px}
-.hero .facts{display:flex;flex-wrap:wrap;gap:9px 24px;list-style:none;padding:0;margin:20px 0 0;color:rgba(255,255,255,.82);font-size:0.95rem}
-.hero .facts li::before{content:"";display:inline-block;width:6px;height:6px;margin-right:9px;background:var(--accent);vertical-align:middle;border-radius:50%}
-section{padding:32px 32px;border-bottom:1px solid var(--line)}
-section.alt{background:var(--bg2)}
-.head{max-width:60ch;margin-bottom:clamp(26px,4vh,44px)}
-.head h2{font-size:clamp(1.55rem,3vw,2.3rem);margin-bottom:10px}
-.head p{color:var(--muted)}
-.grid{display:grid;gap:18px}
-.g3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:900px){.g3{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.g3{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
-.card h3{font-size:1.08rem;margin-bottom:8px}
-.card p{color:var(--muted);font-size:0.95rem}
-.swatch{width:38px;height:5px;background:var(--accent);border-radius:3px;margin-bottom:16px}
-.about{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1.15fr .85fr;align-items:start}
-@media(max-width:880px){.about{grid-template-columns:1fr}}
-.about p{color:var(--muted);margin-bottom:14px}
-.about h2{margin-bottom:16px}
-.about ul{list-style:none;padding:0;margin:0}
-.about li{padding:11px 0;border-bottom:1px solid var(--line);color:rgba(255,255,255,.86);font-size:0.97rem}
-.about li span{color:var(--muted)}
-.contactwrap{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1fr 1fr;align-items:start}
-@media(max-width:820px){.contactwrap{grid-template-columns:1fr}}
-.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.links a{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border:1px solid var(--line);
-  border-radius:10px;text-decoration:none;color:rgba(255,255,255,.9);font-size:0.93rem}
-.links a:hover{border-color:var(--accent-ink,var(--accent))}
-form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
-label{display:block;font-size:0.85rem;color:var(--muted);margin-bottom:6px}
-input,textarea{width:100%;padding:12px 14px;border-radius:9px;border:1px solid var(--line);background:#0e0f11;color:#fff;font:inherit;margin-bottom:14px}
-input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
-form .btn{width:100%}
-.note{color:var(--muted);font-size:0.85rem;margin-top:12px}
-footer{padding:48px 0 34px;background:#08090a}
-.foot{display:grid;gap:clamp(22px,3vw,44px);grid-template-columns:1.4fr 1fr 1fr}
-@media(max-width:820px){.foot{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.foot{grid-template-columns:1fr}}
-footer h4{font-size:0.82rem;letter-spacing:0.05em;color:var(--muted);margin:0 0 14px;font-weight:700}
-footer ul{list-style:none;padding:0;margin:0}
-footer li{margin-bottom:9px}
-footer a{color:rgba(255,255,255,.86);text-decoration:none;font-size:0.94rem}
-footer a:hover{text-decoration:underline}
-.footbottom{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;
-  gap:14px;justify-content:space-between;color:var(--muted);font-size:0.85rem}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style>
-<style id="lb-mobile-base">
-html,body{max-width:100%;overflow-x:hidden}
-img,video,canvas,svg,iframe{max-width:100%}
-img,video{height:auto}
-header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
-header,.site-header,.nav{max-width:100%}
-.lb-brand{min-width:0;max-width:100%;overflow:hidden}
-.lb-brand img{max-height:64px;width:auto}
-nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
-h1{overflow-wrap:anywhere}
-@media (max-width:820px){
-  .lb-brand img{max-height:38px}
-  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
-  h2{font-size:clamp(20px,6vw,30px)!important}
-  section{padding-left:16px!important;padding-right:16px!important}
-  .wrap,.container{max-width:100%!important}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-d);letter-spacing:-.025em}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(18px,4.2vw,54px);width:100%}
+
+/* ---------- header ---------- */
+header.site{position:sticky;top:0;z-index:40;background:rgba(232,232,229,.94);backdrop-filter:saturate(140%) blur(6px);border-bottom:2px solid #1b1a18}
+header.site:after{content:"";display:block;height:2px;background:var(--hat);margin-top:-2px}
+.bar{display:flex;align-items:center;gap:clamp(12px,2vw,26px);padding:10px 0;flex-wrap:wrap}
+.lockup{display:flex;align-items:center;background:#fff;border:1px solid var(--line);box-shadow:0 1px 0 rgba(20,19,18,.10);padding:5px 9px;text-decoration:none}
+.lockup img{height:clamp(44px,4.6vw,58px);width:auto}
+nav.main{display:flex;gap:clamp(11px,1.5vw,22px);margin-left:auto;flex-wrap:wrap;align-items:center}
+nav.main a{text-decoration:none;font-size:15px;font-weight:500;color:var(--ink-2);padding:4px 2px;border-bottom:2px solid transparent}
+nav.main a:hover{border-bottom-color:var(--line-2);color:var(--ink)}
+.tel{text-decoration:none;font-family:var(--font-d);font-weight:700;font-size:clamp(16px,1.6vw,19px);letter-spacing:-.01em;border-bottom:3px solid var(--hat);white-space:nowrap}
+
+/* ---------- shared ---------- */
+section.sl{border-top:2px solid #1b1a18;padding:clamp(46px,5.6vw,86px) 0;position:relative}
+section.sl:before{content:"";position:absolute;inset:0 0 auto;height:1px;background:rgba(255,255,255,.65)}
+.kick{display:flex;align-items:center;gap:10px;margin:0 0 14px;font:600 12.5px/1 var(--font-b);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.kick i{width:12px;height:12px;background:var(--hat);border:1px solid rgba(20,19,18,.55);flex:0 0 auto}
+h2.h{font-size:clamp(27px,3.5vw,46px);line-height:1.03;margin:0 0 16px;font-weight:900;max-width:24ch}
+.lede{max-width:62ch;color:var(--ink-2);margin:0 0 34px}
+.mesh{background-image:repeating-linear-gradient(45deg,rgba(20,19,18,.07) 0 1px,transparent 1px 15px),repeating-linear-gradient(-45deg,rgba(20,19,18,.07) 0 1px,transparent 1px 15px)}
+.cellgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(290px,100%),1fr));gap:0;border:1px solid var(--line-2);background:var(--panel)}
+.cellgrid > div{padding:clamp(20px,2.4vw,30px);border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.cellgrid h3{margin:0 0 8px;font-size:18.5px;font-weight:700}
+.cellgrid p{margin:0;font-size:15.3px;color:var(--ink-2)}
+.num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;background:var(--hat);border:1px solid rgba(20,19,18,.55);font:900 14px/1 var(--font-d);margin-bottom:12px}
+.btn{display:inline-block;padding:15px 26px;text-decoration:none;font:700 16px/1 var(--font-d);letter-spacing:-.01em;border:2px solid transparent}
+.btn--p{background:var(--hat);color:#141312;border-color:#141312}
+.btn--p:hover{background:#fff}
+.btn--g{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn--g:hover{border-color:#fff;background:rgba(255,255,255,.12)}
+.btn--r{background:var(--acc);color:#fff;border-color:var(--acc)}
+.btn--r:hover{background:#b81a16}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;display:flex;align-items:flex-end;min-height:clamp(520px,74vh,780px);perspective:1200px;background:#141312;border-top:0;padding:0}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 52%}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(178deg,rgba(12,11,10,.80) 0%,rgba(12,11,10,.52) 36%,rgba(12,11,10,.72) 76%,rgba(12,11,10,.92) 100%),radial-gradient(120% 92% at 10% 80%,rgba(12,11,10,.72) 0%,rgba(12,11,10,0) 60%)}
+#heroCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:none;z-index:0}
+.hero-in{position:relative;z-index:2;padding-top:clamp(64px,9vw,120px);padding-bottom:clamp(38px,5vw,64px);color:#fff}
+.hero .kick{color:rgba(255,255,255,.82)}
+.hero .kick i{background:var(--hat)}
+.hero h1{font-size:clamp(40px,8vw,88px);line-height:.94;font-weight:900;margin:0 0 20px;max-width:17ch;text-shadow:0 2px 26px rgba(0,0,0,.5)}
+.hero h1 em{font-style:normal;color:var(--hat)}
+.hero .lede{color:#fff;max-width:56ch;margin-bottom:26px;text-shadow:0 2px 16px rgba(0,0,0,.62)}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 26px}
+.hero-facts{list-style:none;display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0}
+.hero-facts li{font-size:13.6px;color:#fff;border:1px solid rgba(255,255,255,.55);background:rgba(12,11,10,.62);padding:6px 12px}
+
+/* ---------- checks ---------- */
+.checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(215px,100%),1fr));gap:0;border:1px solid var(--line-2);background:var(--panel);margin-top:30px}
+.checks div{padding:18px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.checks b{display:block;font:700 15.5px/1.35 var(--font-d)}
+.checks span{display:block;font-size:14.4px;color:var(--ink-2);margin-top:4px}
+
+/* ---------- work / gallery ---------- */
+.split{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(24px,4vw,58px);align-items:start}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(215px,100%),1fr));gap:14px}
+figure.shot{margin:0;border:1px solid var(--line-2);background:var(--panel);padding:8px}
+figure.shot img{width:100%;height:clamp(190px,26vw,290px);object-fit:cover}
+figure.shot figcaption{padding:9px 2px 2px;font-size:13.4px;color:var(--ink-2);display:flex;align-items:center;gap:8px}
+figure.shot figcaption:before{content:"";width:9px;height:9px;background:var(--acc);flex:0 0 auto}
+
+/* ---------- faq ---------- */
+.faq{display:grid;gap:0;border:1px solid var(--line-2);background:var(--panel)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;padding:19px clamp(16px,2.2vw,26px);font:700 17px/1.35 var(--font-d);list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font:700 20px/1 var(--font-d);color:var(--acc);flex:0 0 auto}
+.faq details[open] summary:after{content:"–"}
+.faq p{margin:0;padding:0 clamp(16px,2.2vw,26px) 22px;color:var(--ink-2);max-width:78ch;font-size:15.6px}
+
+/* ---------- areas ---------- */
+.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.areas span{border:1px solid var(--line-2);background:var(--panel);padding:7px 13px;font-size:14px;color:var(--ink-2)}
+
+/* ---------- anchor / lbq ---------- */
+#quote.anchor{display:block;position:relative;top:-84px;visibility:hidden}
+#lbq{--lbq-accent:var(--acc);--lbq-ink:var(--ink);--lbq-muted:var(--ink-2);--lbq-bg:var(--bg-2);--lbq-panel:var(--panel);--lbq-line:var(--line);border-top:2px solid #1b1a18}
+#lbq .lbq-hp2{border-left:4px solid var(--hat);padding-left:16px}
+#lbq .lbq-tel{display:inline-block;margin-top:7px}
+
+/* ---------- footer ---------- */
+footer.site{border-top:2px solid #1b1a18;background:#141312;color:#e8e5e0;padding:clamp(34px,4vw,56px) 0 26px}
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:clamp(20px,3vw,42px)}
+footer.site h4{margin:0 0 12px;font:700 12.5px/1 var(--font-b);letter-spacing:.1em;text-transform:uppercase;color:#a8a49c}
+footer.site a{color:#e8e5e0;text-decoration:none;border-bottom:1px solid rgba(232,229,224,.35)}
+footer.site a:hover{border-bottom-color:var(--hat)}
+.flogo{background:#fff;padding:6px 9px;display:inline-block;margin-bottom:16px}
+.flogo img{height:52px;width:auto}
+.fbase{margin-top:30px;padding-top:18px;border-top:1px solid rgba(232,229,224,.22);font-size:13.4px;color:#a8a49c;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+.fcol p{margin:0 0 8px;font-size:14.6px;color:#cfcbc4}
+.tel-f{font-family:var(--font-d);font-weight:700;font-size:19px;border-bottom:3px solid var(--hat);text-decoration:none}
+
+/* ---------- motion ---------- */
+.js .rv{opacity:0;transform:translateY(18px)}
+.rv.on{opacity:1;transform:none}
+.rv{transition:opacity .62s cubic-bezier(.2,.7,.25,1),transform .62s cubic-bezier(.2,.7,.25,1)}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none}
+  .rv{transition:none}
+}
+
+@media(max-width:980px){
+  .split{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .lockup img{height:42px}
+  nav.main{order:3;width:100%;margin-left:0;gap:14px}
+  nav.main a{font-size:14.4px}
+  .hero{align-items:flex-end;min-height:78vh}
+  .foot{grid-template-columns:1fr}
+  .cellgrid > div{border-right:0}
 }
 </style>
-<style id="lb-logo-hero">
-/* Client logo across the header: the real artwork, isolated and readable. */
-.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;padding:0!important;max-height:96px!important;
-  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
-  padding:0!important;box-shadow:none!important}
-.lb-brand .lb-mark{display:block!important;height:clamp(44px,4.8vw,66px)!important;width:auto!important;
-  max-width:none!important;max-height:66px!important;object-fit:contain!important;background:none!important;
-  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
-.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(38vw,520px)!important;
-  max-height:none!important;object-fit:contain!important;object-position:left center!important;
-  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
-.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
-  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
-.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
-.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
-.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
-  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
-.lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
-@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:20px!important}}
-.lb-bar{background-color:#000000!important}
-.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#f7f7f4!important}
-.lb-bar .cta,.lb-bar a.cta{color:#ffffff!important}
-</style>
-<style id="lb-brand-palette">:root{--acc:#af8e08;--accent:#af8e08;--lbq-accent:#af8e08;--lb-acc:#af8e08;--brand:#af8e08;--brand-color:#af8e08;--primary:#af8e08;--lime:#af8e08;--color-lime:#af8e08;--gold:#af8e08;--acc-strong:#af8e08;--acc2:#c57d58;--acc-hi:#c57d58;--accent-2:#c57d58;--brand-2:#c57d58;}</style></head>
+</head>
 <body>
 <header class="site">
-<div class="container bar">
-<a aria-label="The Concrete Guys" class="lb-brand lb-brand--lockup lb-brand--square" href="#top" style="--lb-name:#ffffff"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-cut.png"/><span class="lb-sr">The Concrete Guys</span></a><nav aria-label="Main" class="main">
-<a href="#services">Services</a>
-<a href="#process">Our process</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-<a class="btn" href="#contact">Get a quote</a>
-</nav>
-</div>
+  <div class="wrap bar">
+    <a class="lockup" href="#top" aria-label="The Concrete Guys — home"><img src="assets/logo.png" alt="The Concrete Guys"></a>
+    <nav class="main" aria-label="Sections">
+      <a href="#services">Concrete work</a>
+      <a href="#process">How a pour runs</a>
+      <a href="#work">The job</a>
+      <a href="#faq">FAQ</a>
+      <a href="#quote">Quote</a>
+    </nav>
+    <a class="tel" href="tel:+61481221003">0481 221 003</a>
+  </div>
 </header>
-<main>
-<section aria-label="Perth concrete specialists" class="hero" id="top">
-<canvas aria-hidden="true" id="heroCanvas"></canvas>
-<div aria-hidden="true" class="veil"></div>
-<div class="container inner">
-<span class="kicker">Perth concrete specialists</span>
-<h1>Concrete for the whole job.<br/><em>Commercial to architectural.</em></h1>
-<p class="lede">Exposed aggregate, honed and polished concrete for driveways, slabs and commercial projects across Perth.</p>
-<div class="acts"><a class="btn" href="#contact">Get a quote</a><a class="btn ghost" href="#services">See what we do</a></div>
-<ul class="facts"><li>Residential</li><li>Commercial</li><li>Civil</li><li>Architectural</li></ul>
-</div>
-</section>
-<section id="services">
-<div class="container">
-<div class="head"><h2>What we do</h2><p>Perth concrete specialists work for homes and businesses across Perth WA.</p></div>
-<div class="grid g3" style="display:none"><article class="card"><div class="swatch"></div><h3>Exposed aggregate</h3><p>Driveways, paths and surrounds in exposed aggregate, laid and finished properly.</p></article><article class="card"><div class="swatch"></div><h3>Honed &amp; polished</h3><p>Honed and polished concrete floors and surfaces for homes and commercial spaces.</p></article><article class="card"><div class="swatch"></div><h3>Driveways &amp; crossovers</h3><p>New driveways and crossovers formed, poured and finished.</p></article><article class="card"><div class="swatch"></div><h3>Slabs</h3><p>House, shed and extension slabs set out and poured to your plans.</p></article><article class="card"><div class="swatch"></div><h3>Commercial works</h3><p>Concrete for commercial and civil projects, delivered to programme.</p></article><article class="card"><div class="swatch"></div><h3>Architectural concrete</h3><p>Feature finishes where the concrete is the look, not just the base.</p></article></div>
-</div>
-</section>
-<section class="alt" id="process">
-<div class="container">
-<div class="head"><h2>How a job runs</h2><p>From the first look to the final clean up.</p></div>
-<div class="grid g3" style="display:none"><article class="card"><h3>Scope and quote</h3><p>Tell us the job — residential, commercial or civil — and you get a clear price.</p></article><article class="card"><h3>Set out and prepare</h3><p>Levels checked, base compacted, formwork and steel in place before the pour.</p></article><article class="card"><h3>Pour and finish</h3><p>Placed, finished to your chosen surface, then cleaned up and left ready.</p></article></div>
-</div>
-</section>
-<section id="about">
-<div class="container about">
-<div><h2>About The Concrete Guys</h2><p>The Concrete Guys are Perth concrete specialists working across residential, commercial, civil and architectural concrete.</p><p>The range covers exposed aggregate, honed and polished finishes through to structural slabs and civil works — one crew that can carry a job from preparation to the finished surface.</p></div>
-<ul><li>Exposed aggregate and honed finishes <span>· both offered on the same crew</span></li><li>Residential through to civil <span>· driveways and slabs to commercial works</span></li><li>Architectural concrete <span>· where the finish is the feature</span></li><li>Perth-wide <span>· working across the metropolitan area</span></li></ul>
-</div>
-</section>
-<section class="alt" id="contact">
-<div class="container contactwrap">
-<div>
-<h2>Get a quote</h2>
-<p style="color:var(--muted);margin:10px 0 22px">Tell us what you need and roughly the size of the job, and we'll get back to you with a price.</p>
-<p style="color:var(--muted)">Message us and we’ll get straight back to you.</p><p style="color:var(--muted);margin-top:10px">Perth WA</p>
-<div class="links"><a href="https://www.facebook.com/share/14nhDoqtNZP/" rel="noopener">The Concrete Guys on Facebook</a></div>
-</div>
-<form data-biz="The Concrete Guys" data-site="the-concrete-guys" id="lbq-form" novalidate="">
-<label for="lbq-n">Name</label>
-<input autocomplete="name" id="lbq-n" name="name" required=""/>
-<label for="lbq-p">Phone</label>
-<input autocomplete="tel" id="lbq-p" name="phone" required="" type="tel"/>
-<label for="lbq-m">What do you need done?</label>
-<textarea id="lbq-m" name="message" rows="4"></textarea>
-<button class="btn" type="submit">Request a quote</button>
-<p class="note" id="lbq-note">Send it through and we’ll be in touch.</p>
-</form>
-</div>
-</section>
-</main>
-<footer>
-<div class="container">
-<div class="foot">
-<div><h4>THE CONCRETE GUYS</h4><p style="color:var(--muted);max-width:34ch">Perth concrete specialists across Perth WA.</p></div>
-<div><h4>SERVICES</h4><ul><li><a href="#services">Exposed aggregate</a></li><li><a href="#services">Honed &amp; polished</a></li><li><a href="#services">Driveways &amp; crossovers</a></li><li><a href="#services">Slabs</a></li></ul></div>
-<div><h4>CONTACT</h4><ul><li><a href="https://www.facebook.com/share/14nhDoqtNZP/" rel="noopener">The Concrete Guys on Facebook</a></li></ul></div>
-</div>
-<div class="footbottom">
-<span>© <span id="yr">2026</span> The Concrete Guys. All rights reserved.</span>
-<span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
-</div>
-</div>
-</footer>
-<script>
-document.getElementById('yr').textContent = new Date().getFullYear();
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-h">
+    <!-- LB-3D-HERO -->
+    <canvas id="heroCanvas" width="8" height="8" aria-hidden="true"></canvas>
+    <img class="hero-photo" src="assets/job-stamped.jpg" alt="Finished concrete slab with control joints cut across it, washed back and curing">
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="wrap hero-in">
+      <p class="kick rv"><i></i>Concrete construction &middot; Perth WA</p>
+      <h1 id="hero-h" class="rv">Slabs, driveways and paths &mdash; <em>poured right</em>.</h1>
+      <p class="lede rv">The Concrete Guys quote concrete work off the ground: levels and falls picked up on the setout, formwork checked square, steel placed and tied, joints cut where the slab wants to move, and the finish agreed before the truck backs in.</p>
+      <p class="hero-cta rv"><a class="btn btn--p" href="#quote">Request a quote</a><a class="btn btn--g" href="tel:+61481221003">Call 0481 221 003</a></p>
+      <ul class="hero-facts rv">
+        <li>Driveways &amp; crossovers</li>
+        <li>House &amp; shed slabs</li>
+        <li>Footpaths &amp; paths</li>
+        <li>Exposed aggregate</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sl" id="services" aria-labelledby="services-h">
+    <div class="wrap">
+      <p class="kick rv"><i></i>Concrete work</p>
+      <h2 class="h rv" id="services-h">What we pour</h2>
+      <p class="lede rv">Residential and light commercial concrete across the Perth metro. Every job starts the same way &mdash; the ground is looked at, the levels are set, and the slab is built to suit what it is carrying.</p>
+      <div class="cellgrid rv">
+        <div>
+          <h3>Driveways &amp; crossovers</h3>
+          <p>Base dug out and compacted, fall running away from the house, joints saw-cut and the surface finished to the look you want &mdash; plain, broom or aggregate.</p>
+        </div>
+        <div>
+          <h3>House &amp; shed slabs</h3>
+          <p>Setout and levels to your plans, steel placed and tied at the right cover, pour scheduled around the weather so the slab goes down in one run.</p>
+        </div>
+        <div>
+          <h3>Footpaths &amp; paths</h3>
+          <p>Path slabs and walkways formed to the layout, with a non-slip finish and joints set on the line so the run stays straight.</p>
+        </div>
+        <div>
+          <h3>Exposed aggregate</h3>
+          <p>Aggregate chosen up front, washed back evenly once the concrete has picked up, then sealed after it has cured.</p>
+        </div>
+        <div>
+          <h3>Crossover slabs</h3>
+          <p>Setout taken from the kerb to the property line, formed and finished so the crossover sits level with the road and sheds water.</p>
+        </div>
+        <div>
+          <h3>Pads, patios &amp; extensions</h3>
+          <p>From a small equipment pad to a full extension slab &mdash; formed, poured and saw-cut to suit the layout and the access you have.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sl" id="process" aria-labelledby="process-h">
+    <div class="wrap">
+      <p class="kick rv"><i></i>How a pour runs</p>
+      <h2 class="h rv" id="process-h">Ground work first, then the concrete</h2>
+      <p class="lede rv">Most of a good slab is decided before the truck arrives. This is the order it happens in.</p>
+      <div class="cellgrid rv">
+        <div>
+          <span class="num">01</span>
+          <h3>Setout &amp; levels</h3>
+          <p>Levels and falls taken on the ground, setout marked and checked square before anything is cut or dug.</p>
+        </div>
+        <div>
+          <span class="num">02</span>
+          <h3>Excavate &amp; compact</h3>
+          <p>Base dug to depth and compacted in layers, so the slab has something solid to sit on instead of soft fill.</p>
+        </div>
+        <div>
+          <span class="num">03</span>
+          <h3>Formwork &amp; steel</h3>
+          <p>Formwork set to the setout and braced, mesh or bar placed and tied, cover checked before the pour.</p>
+        </div>
+        <div>
+          <span class="num">04</span>
+          <h3>Pour &amp; screed</h3>
+          <p>Truck in, concrete placed and spread in one run where access allows, then screeded back to the levels.</p>
+        </div>
+        <div>
+          <span class="num">05</span>
+          <h3>Finish &amp; joints</h3>
+          <p>Finish worked in while the concrete is still green, joints cut on the setout, then the slab is left to cure.</p>
+        </div>
+        <div>
+          <span class="num">06</span>
+          <h3>Clean up</h3>
+          <p>Site swept and offcuts taken away when we leave &mdash; you are not left with the mixer wash or the formwork.</p>
+        </div>
+      </div>
+      <div class="checks mesh rv" aria-label="Checked before the truck arrives">
+        <div><b>Levels &amp; falls</b><span>Read off the setout, so water runs where it should.</span></div>
+        <div><b>Formwork square</b><span>Checked for line and level before any concrete goes in.</span></div>
+        <div><b>Steel tied at cover</b><span>Placed and tied at the depth the slab needs.</span></div>
+        <div><b>Finish agreed</b><span>Broom, plain, aggregate or sawn &mdash; settled before the pour.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sl" id="work" aria-labelledby="work-h">
+    <div class="wrap split">
+      <div>
+        <p class="kick rv"><i></i>The job</p>
+        <h2 class="h rv" id="work-h">Concrete poured to sit flat and stay put</h2>
+        <p class="rv">A slab is only as good as what is under it and how the joints are set. We work to the setout, keep the falls running away from the building, and put the joints where the slab will move &mdash; so you get a surface that drains, does not pond, and does not crack through the middle of the panel.</p>
+        <p class="rv">Sizes range from a single path to a full driveway and shed slab. If you have plans, a setout or just a photo of the area, send it through and we will take it from there.</p>
+        <p class="rv"><a class="btn btn--r" href="#quote">Get a price on your job</a></p>
+      </div>
+      <div class="gal rv">
+        <figure class="shot">
+          <img src="assets/job-stamped.jpg" alt="Finished exposed aggregate concrete slab with control joints cut across the surface">
+          <figcaption>A job like this</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/hero-driveway.jpg" alt="Finished concrete driveway and edge poured up to the house" style="object-position:50% 88%">
+          <figcaption>A job like this</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/job-slab.jpg" alt="Exposed aggregate concrete pool deck and surround with control joints cut into the slabs" style="object-position:50% 72%">
+          <figcaption>A job like this</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/work_03.jpg" alt="Curved exposed aggregate concrete driveway formed and finished on site">
+          <figcaption>A job like this</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <span id="quote" class="anchor" aria-hidden="true"></span>
+  <section id="lbq" class="v3" aria-labelledby="lbq-h">
+  <style>
+#lbq{--lbq-accent:var(--acc);--lbq-ink:var(--ink);--lbq-muted:var(--ink-2);--lbq-bg:var(--bg-2);--lbq-panel:var(--panel);--lbq-line:var(--line);padding:clamp(46px,5.6vw,86px) 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto}
+#lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em;font-family:var(--font-d);font-weight:900}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
+#lbq .lbq-f{display:grid;gap:12px}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.05em;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:2px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:14px 24px;border:2px solid #141312;border-radius:2px;background:var(--hat,#f3d200);color:#141312;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+#lbq.v3 .lbq-g{display:grid;gap:12px}
+#lbq.v3 .lbq-hp2{padding-left:16px}
+@media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
+  </style>
+  <div class="lbq-w">
+      <div class="lbq-sp"><div class="lbq-hp2"><h2 id="lbq-h">Request a quote</h2>
+      <p class="lbq-s">Tell us a few details and we&#39;ll come back to you with a price for the concrete work &mdash; no obligation.</p><p class="lbq-s" style="margin-bottom:0">Prefer to talk it through? Call or text <a class="tel lbq-tel" href="tel:+61481221003">0481 221 003</a> &mdash; Perth WA.</p></div><div><form id="lbq-form" novalidate data-site="the-concrete-guys" data-biz="The Concrete Guys"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div><label for="lbq-sv">What needs pouring?</label><select id="lbq-sv" name="service"><option value="">Choose one (optional)</option><option>Driveway or crossover</option><option>House or shed slab</option><option>Footpath or path</option><option>Exposed aggregate</option><option>Pad, patio or extension</option><option>Something else</option></select></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, suburb, access, when you need it&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div></div>
+  </div>
+  <script>
 (function(){
-  var c=document.getElementById('heroCanvas'); if(!c) return;
-  var ctx=c.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2), w=0,h=0,t=0,raf=null;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function size(){var r=c.getBoundingClientRect(); w=Math.max(320,r.width|0); h=Math.max(320,r.height|0);
-    c.width=w*dpr; c.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);}
-  function draw(){
-    var g=ctx.createLinearGradient(0,0,0,h);
-    g.addColorStop(0,'#141518'); g.addColorStop(.55,'#0e0f11'); g.addColorStop(1,'#090a0b');
-    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
-    var y0=h*0.52;
-    ctx.beginPath(); ctx.moveTo(0,y0); ctx.lineTo(w,y0); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
-
-    // exposed aggregate: stone speckle over a slab, joints, low warm key light
-    var gg=ctx.createLinearGradient(0,y0,0,h);
-    gg.addColorStop(0,'#5a5d61'); gg.addColorStop(.5,'#3d4044'); gg.addColorStop(1,'#24262a');
-    ctx.fillStyle=gg; ctx.fill();
-    for(var s=0;s<900;s++){
-      var sx=(s*37.13)%w, sy=y0+((s*53.7)%(h-y0)), r=1+(s%3);
-      var tone = s%4===0 ? '255,217,0' : (s%7===0 ? '227,27,35' : '220,222,226');
-      ctx.fillStyle='rgba('+tone+',.16)';
-      ctx.beginPath(); ctx.arc(sx,sy,r,0,6.283); ctx.fill();
-    }
-    ctx.strokeStyle='rgba(0,0,0,.22)'; ctx.lineWidth=1.5;
-    for(var k=1;k<=2;k++){var yy=y0+(h-y0)*(k/3.2); ctx.beginPath(); ctx.moveTo(0,yy); ctx.lineTo(w,yy); ctx.stroke();}
-    var lg=ctx.createRadialGradient(w*.2,h*.08,10,w*.2,h*.08,w*.6);
-    lg.addColorStop(0,'rgba(255,255,255,.12)'); lg.addColorStop(1,'rgba(255,255,255,0)');
-    ctx.fillStyle=lg; ctx.fillRect(0,0,w,h);
-
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
   }
-  function loop(){ t+=0.004; draw(); raf=requestAnimationFrame(loop); }
-  size(); draw(); if(!reduce){ loop(); }
-  window.addEventListener('resize', function(){ size(); draw(); }, {passive:true});
-  window.addEventListener('pagehide', function(){ if(raf) cancelAnimationFrame(raf); });
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;  /* honeypot - silently accept bots */
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#b8201c';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks - your request is in. We'll be in touch shortly.";
+            st.style.color = '#b8201c';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(){
+          st.textContent = 'Could not send - call or text us on 0481 221 003.';
+          st.style.color = '#b8201c';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
 })();
+  </script>
+</section>
+
+  <section class="sl" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <p class="kick rv"><i></i>Questions</p>
+      <h2 class="h rv" id="faq-h">Before you get a price</h2>
+      <div class="faq rv">
+        <details open>
+          <summary>How do you price a concrete job?</summary>
+          <p>From the site. Size, thickness, access for the truck, how much digging and how much steel, the finish, and where the joints need to go all move the number. Give us a call or send the form and we will work out what the job actually needs.</p>
+        </details>
+        <details>
+          <summary>What do you need from me to quote?</summary>
+          <p>A rough size of the area and what it is for &mdash; a driveway, a shed slab, a path. Plans, a setout or a photo of the area helps us get it right first time.</p>
+        </details>
+        <details>
+          <summary>Do you do exposed aggregate and sawn finishes?</summary>
+          <p>Yes. Aggregate is picked before the pour and washed back evenly once the concrete has picked up, then sealed after curing. Broom, plain and sawn finishes are all done.</p>
+        </details>
+        <details>
+          <summary>How far out are you booked?</summary>
+          <p>It moves with the weather and the schedule. Once a quote is accepted we book the job in and confirm the date with you &mdash; concrete does not go down in the wrong conditions.</p>
+        </details>
+        <details>
+          <summary>Where do you work?</summary>
+          <p>Perth and the surrounding metro suburbs. Call or text 0481 221 003 with your suburb and we will confirm from there.</p>
+        </details>
+        <details>
+          <summary>Do you take away the old concrete?</summary>
+          <p>Removal and make-good can be included in the job so the area is ready for the new slab. Tell us what is there now when you send the details.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sl" id="areas" aria-labelledby="areas-h">
+    <div class="wrap">
+      <p class="kick rv"><i></i>Areas</p>
+      <h2 class="h rv" id="areas-h">Concrete work across the Perth metro</h2>
+      <p class="lede rv">Based in Perth WA and working the suburbs around it. If your area is not listed, call and ask &mdash; there is a good chance we cover it.</p>
+      <div class="areas rv">
+        <span>Perth CBD</span><span>Joondalup</span><span>Wanneroo</span><span>Wangara</span><span>Balcatta</span><span>Morley</span><span>Midland</span><span>Bassendean</span><span>Malaga</span><span>Clarkson</span><span>Butler</span><span>Ellenbrook</span><span>Canning Vale</span><span>Southern River</span><span>Gosnells</span><span>Armadale</span><span>Byford</span><span>Aubin Grove</span><span>Cockburn</span><span>Bibra Lake</span><span>Rockingham</span><span>Baldivis</span><span>Kalamunda</span><span>Forrestfield</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div class="fcol">
+        <div class="flogo"><img src="assets/logo.png" alt="The Concrete Guys"></div>
+        <p>The Concrete Guys &mdash; concrete construction: driveways and crossovers, house and shed slabs, footpaths, pads and exposed aggregate.</p>
+        <p>Perth WA</p>
+      </div>
+      <div class="fcol">
+        <h4>Talk to us</h4>
+        <p><a class="tel-f" href="tel:+61481221003">0481 221 003</a></p>
+        <p>Call or text for a price on the concrete work you need.</p>
+        <p><a href="#quote">Request a quote online</a></p>
+      </div>
+      <div class="fcol">
+        <h4>The work</h4>
+        <p><a href="#services">Concrete work</a></p>
+        <p><a href="#process">How a pour runs</a></p>
+        <p><a href="#faq">FAQ</a></p>
+        <p><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
+      </div>
+    </div>
+    <div class="fbase">
+      <span>&copy; The Concrete Guys &mdash; Perth WA</span>
+      <span>Concrete construction &middot; driveways &middot; slabs &middot; footpaths &middot; exposed aggregate</span>
+    </div>
+  </div>
+</footer>
+
+<script>
 (function(){
-  var f=document.getElementById('lbq-form'); if(!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('lbq-note').textContent = "Thanks. This preview form isn\u2019t wired to a mailbox yet \u2014 message us on Facebook and we\u2019ll get straight back to you.";
-  });
+  var els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)) {
+    for (var i=0;i<els.length;i++) els[i].classList.add('on');
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('on'); io.unobserve(en.target); }
+    });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.06});
+  for (var j=0;j<els.length;j++) io.observe(els[j]);
+  setTimeout(function(){
+    var all = document.querySelectorAll('.rv');
+    for (var k=0;k<all.length;k++) all[k].classList.add('on');
+  }, 1400);
 })();
 </script>
-<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#000000","important");})();</script>
 </body>
 </html>

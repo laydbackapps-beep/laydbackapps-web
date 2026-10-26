@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en-AU" data-sig="links:grow,buttons:lift,tilt:0,ba:1,marquee:1">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.className+=' js';</script>
-<title>AnB Painting & Renovation — Brisbane Painter & Renovator</title>
+<title>AnB Painting & Renovation, Brisbane Painter & Renovator</title>
 <meta name="description" content="AnB Painting & Renovation — interior and exterior painting, renovations and rebuilds for homes and businesses across Brisbane. Call 0450 680 040.">
 <meta property="og:title" content="AnB Painting & Renovation">
 <meta property="og:description" content="Painting, renovations and rebuilds across Brisbane — interior, exterior, commercial. Call 0450 680 040.">
@@ -21,7 +21,7 @@
   --ink:#182338;
   --muted:#5C6B82;
   --line:#D3DEEA;
-  --accent:#2B5FA8;
+  --accent:#182838;
   --accent2:#7FB2E5;
   --dark:#0C1626;
   --dark2:#0C1626;
@@ -44,7 +44,7 @@ html.js .drop.in{opacity:1;transform:none}
   *{animation-duration:.001s !important;transition-duration:.001s !important}
 }
 
-.nav{position:fixed;inset:0 0 auto 0;z-index:60;background:rgba(12,22,38,.97);backdrop-filter:blur(10px);border-bottom:2px solid var(--accent)}
+.nav{position:fixed;inset:0 0 auto 0;z-index:60;background:rgba(12,22,38,.97);-webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);border-bottom:2px solid var(--accent)}
 .nav-in{display:flex;align-items:center;gap:1.4rem;height:80px}
 .brand{display:flex;align-items:center;gap:.9rem;color:#fff;text-decoration:none}
 .brand img{height:48px;width:auto;border-radius:6px;background:#fff;padding:4px}
@@ -155,17 +155,117 @@ footer{background:#0C1626;border-top:2px solid rgba(255,255,255,.16);color:#9CB0
 .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:1.5rem;margin-top:3rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.79rem;color:#7A8FAD}
 section#lbq{--lbq-bg:#F4F7FA;--lbq-ink:#182338;--lbq-muted:#5C6B82;--lbq-panel:#FFFFFF;--lbq-line:#D3DEEA;--lbq-accent:#2B5FA8}
 </style>
+<style id="lb-motion-css">
+/* ==== LB MOTION PACK ==== */
+.lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
+/* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
+   content. Unrevealed .rv wrappers left whole headers at opacity:0 (invisible logo). */
+header, .site-header, .page-header, nav.nav, .nav .rv, nav.rv, .header-inner, .nav-inner,
+header .rv, .site-header .rv, .nav-inner .rv{
+  opacity:1 !important; visibility:visible !important; transform:none !important;
+}
+.lb-rb{position:relative;width:100%;max-width:100%;overflow:hidden;background:#0c0d10}
+.lb-mq{max-width:100%;overflow:hidden}
+.lb-rb__track{position:relative;width:100%;aspect-ratio:16/7}
+.lb-rb__slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;will-change:opacity}
+.lb-rb__slide.is-on{opacity:1}
+.lb-rb__slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03);transition:transform 7s linear}
+.lb-rb__slide.is-on img{transform:scale(1.10)}
+.lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2.2vw,30px);
+ background:linear-gradient(180deg,transparent,rgba(6,7,10,.72));color:#fff;
+ font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+ font-size:clamp(9px,1vw,13px);z-index:2}
+.lb-rb__dots{position:absolute;top:50%;right:clamp(10px,1.6vw,22px);transform:translateY(-50%);
+ display:flex;flex-direction:column;gap:9px;z-index:3}
+.lb-rb__dots button{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.7);
+ background:transparent;cursor:pointer;padding:0;transition:transform .25s,background .25s}
+.lb-rb__dots button.is-on{background:#fff;transform:scale(1.35)}
+.lb-rb__nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;
+ border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(8,9,12,.35);color:#fff;
+ cursor:pointer;display:grid;place-items:center;font-size:17px;line-height:1;backdrop-filter:blur(6px);
+ transition:background .25s,transform .25s}
+.lb-rb__nav:hover{background:rgba(8,9,12,.7)}
+.lb-rb__nav--prev{left:clamp(10px,1.6vw,22px)}
+.lb-rb__nav--next{right:clamp(10px,1.6vw,22px)}
+.lb-rb__nav:active{transform:translateY(-50%) scale(.92)}
+@media (max-width:700px){.lb-rb__track{aspect-ratio:4/3}.lb-rb__nav{width:36px;height:36px}}
+
+a.btn,.btn,button.btn,.nav-cta a,.wp-block-button__link{position:relative;overflow:hidden;
+ transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,filter .22s}
+a.btn:hover,.btn:hover,button.btn:hover,.nav-cta a:hover{transform:translateY(-2px);
+ box-shadow:0 10px 24px -12px rgba(0,0,0,.55);filter:brightness(1.05)}
+a.btn:active,.btn:active,button.btn:active,.nav-cta a:active{transform:translateY(0) scale(.985)}
+a.btn::after,.btn::after,.nav-cta a::after{content:'';position:absolute;top:0;bottom:0;width:38%;
+ left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);
+ transform:skewX(-18deg);transition:left .55s ease;pointer-events:none}
+a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
+
+.lb-rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.lb-rv.is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+ .lb-rv{opacity:1!important;transform:none!important;transition:none!important}
+ .lb-rb__slide img{transform:none!important;transition:none!important}
+ a.btn::after,.btn::after,.nav-cta a::after{display:none}
+}
+
+/* marquee band (professional, reference-derived) */
+.lb-mq{position:relative;overflow:hidden;background:#0b0c10;border-top:1px solid rgba(255,255,255,.10);
+ border-bottom:1px solid rgba(255,255,255,.10)}
+.lb-mq__in{display:flex;width:max-content;animation:lb-mq 34s linear infinite}
+.lb-mq:hover .lb-mq__in{animation-play-state:paused}
+.lb-mq__in span{display:inline-flex;align-items:center;gap:clamp(18px,3vw,44px);
+ padding:clamp(11px,1.5vw,19px) clamp(14px,2vw,26px);color:#fff;font-family:var(--lb-disp,Inter),sans-serif;
+ font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:clamp(11px,1.25vw,17px);white-space:nowrap}
+.lb-mq__in span i{font-style:normal;color:var(--lb-acc,#e51924)}
+@keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
+</style>
+<style id="lb-hero-css">
+canvas.lb-hero-canvas{position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0; pointer-events:none}
+canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
+  position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
+}
+</style>
+<style id="lb-brand-css">
+/* ==== LB BRAND (logo-true spanning wordmark) ==== */
+.lb-brandwrap{display:block;padding:14px 18px;background:inherit}
+.lb-brandwrap .lb-brand{display:inline-flex}
+.lb-brand{display:inline-flex;align-items:center;gap:clamp(9px,1vw,16px);text-decoration:none;
+ color:inherit;min-width:0;padding:0;background:none;border:0;flex:0 1 auto}
+.lb-brand__mark{flex:0 0 auto;display:block;height:clamp(34px,4.1vw,58px);width:auto;max-width:22vw}
+.lb-brand__mark img{display:block;height:100%;width:auto;max-width:22vw;object-fit:contain}
+.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:.94}
+.lb-brand__name{font-family:var(--lb-disp,Inter),sans-serif;font-weight:800;text-transform:uppercase;
+ font-size:clamp(21px,2.75vw,44px);letter-spacing:.004em;white-space:nowrap;line-height:.92;
+ color:var(--lb-name,currentColor)}
+.lb-brand__name .lb-acc{color:var(--lb-acc,currentColor)}
+.lb-brand__sub{font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;text-transform:uppercase;
+ font-size:clamp(7px,.82vw,12px);letter-spacing:.30em;white-space:nowrap;margin-top:.34em;
+ color:var(--lb-subc,currentColor);opacity:.86}
+.lb-brand__rule{display:block;height:3px;width:100%;margin-top:.5em;border-radius:2px;
+ background:linear-gradient(90deg,var(--lb-acc,currentColor),transparent)}
+@media (max-width:640px){
+ .lb-brand__mark{height:clamp(30px,8vw,40px)}
+ .lb-brand__name{font-size:clamp(18px,6.2vw,26px)}
+ .lb-brand__sub{letter-spacing:.2em;font-size:7px}
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
+   Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
+   and does NOT hide the hero canvas (that is the intended 3D hero). */
+.site-header,.header{z-index:50}
+.container.nav,.nav,.nav-in{z-index:5}
+.lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
+</style>
 </head>
-<body>
+<body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <nav class="nav" aria-label="Main">
   <div class="wrap nav-in">
-    <a class="brand" href="#top" aria-label="AnB Painting & Renovation home">
-      <img src="assets/logo.png" alt="AnB Painting & Renovation logo" height="48">
-      <span>
-        <span class="brand-name">AnB Painting</span><br>
-        <span class="brand-sub">Painting & Renovation</span>
-      </span>
-    </a>
+    <a class="lb-brand" href="#top" aria-label="AnB Painting & Renovation - Home" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#f5f5f0;--lb-subc:#f5f5f0;--lb-acc:#182838;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.png" alt="" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">AnB Painting & Renovation</span><span class="lb-brand__sub"><span class="lb-acc">Painting</span> & Renovation</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
     <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
       <span></span><span></span><span></span>
     </button>
@@ -184,7 +284,7 @@ section#lbq{--lbq-bg:#F4F7FA;--lbq-ink:#182338;--lbq-muted:#5C6B82;--lbq-panel:#
   <div class="wrap hero-in">
     <p class="hero-kicker">Brisbane · Painting & Renovation</p>
     <h1 data-ux="words">Painting and renovation, <em>done right the first time.</em></h1>
-    <p class="hero-sub">Interior and exterior painting, rebuilds and repaints for homes and businesses — careful prep, clean lines and a finish that lasts.</p>
+    <p class="hero-sub">Interior and exterior painting, rebuilds and repaints for homes and businesses, careful prep, clean lines and a finish that lasts.</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="tel:+61450680040">Call 0450 680 040</a>
       <a class="btn btn-ghost" href="#quote">Get a quote</a>
@@ -210,7 +310,7 @@ section#lbq{--lbq-bg:#F4F7FA;--lbq-ink:#182338;--lbq-muted:#5C6B82;--lbq-panel:#
       <article class="svc drop">
         <div class="svc-ico"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="14" height="6" rx="2"/><path d="M18 8h2v5h-9v3"/><rect x="9" y="16" width="4" height="5" rx="1"/></svg></div>
         <h3>Interior painting</h3>
-        <p>Clean, careful interior work — walls, ceilings, trims and doors.</p>
+        <p>Clean, careful interior work, walls, ceilings, trims and doors.</p>
       </article>
       <article class="svc drop">
         <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M4 20c3 0 4-2 4-4l8-8 3 3-8 8c-1 2-4 1-7 1z"/><path d="M16 8l3-3"/></svg></div>
@@ -230,12 +330,12 @@ section#lbq{--lbq-bg:#F4F7FA;--lbq-ink:#182338;--lbq-muted:#5C6B82;--lbq-panel:#
       <article class="svc drop">
         <div class="svc-ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/><path d="M8 8h2M14 8h2M8 12h2M14 12h2M8 16h8"/></svg></div>
         <h3>Commercial</h3>
-        <p>Painting and maintenance for shops, offices and strata — planned around your operation.</p>
+        <p>Painting and maintenance for shops, offices and strata, planned around your operation.</p>
       </article>
       <article class="svc drop">
         <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <h3>Careful prep</h3>
-        <p>Proper prep and masking — the difference that makes a finish last.</p>
+        <p>Proper prep and masking, the difference that makes a finish last.</p>
       </article>
     </div>
   </div>
@@ -251,10 +351,10 @@ section#lbq{--lbq-bg:#F4F7FA;--lbq-ink:#182338;--lbq-muted:#5C6B82;--lbq-panel:#
       </div>
     </div>
     <div class="steps">
-      <div class="step drop"><p class="step-n">01</p><h3>Talk it through</h3><p>Tell us what needs painting or fixing — we will walk the job with you.</p></div>
+      <div class="step drop"><p class="step-n">01</p><h3>Talk it through</h3><p>Tell us what needs painting or fixing, we will walk the job with you.</p></div>
       <div class="step drop"><p class="step-n">02</p><h3>Quote & plan</h3><p>A clear quote and a schedule that works around you.</p></div>
       <div class="step drop"><p class="step-n">03</p><h3>Prep & paint</h3><p>Careful prep, quality paints and clean, sharp lines.</p></div>
-      <div class="step drop"><p class="step-n">04</p><h3>Final check</h3><p>We walk the finished job together — and fix anything that is not right.</p></div>
+      <div class="step drop"><p class="step-n">04</p><h3>Final check</h3><p>We walk the finished job together, and fix anything that is not right.</p></div>
     </div>
   </div>
 </section>
@@ -268,7 +368,7 @@ section#lbq{--lbq-bg:#F4F7FA;--lbq-ink:#182338;--lbq-muted:#5C6B82;--lbq-panel:#
         <div class="why-list" style="margin-top:1.6rem">
           <div class="why-item">
             <span class="why-tick"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
-            <div><h3>Residential & commercial</h3><p>Homes, units, shops and offices — the same care on every job.</p></div>
+            <div><h3>Residential & commercial</h3><p>Homes, units, shops and offices, the same care on every job.</p></div>
           </div>
           <div class="why-item">
             <span class="why-tick"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
@@ -286,7 +386,7 @@ section#lbq{--lbq-bg:#F4F7FA;--lbq-ink:#182338;--lbq-muted:#5C6B82;--lbq-panel:#
       </div>
       <div class="why-visual drop">
         <img src="assets/work.jpg" alt="AnB Painting & Renovation">
-        <p>AnB Painting & Renovation — Brisbane.</p>
+        <p>AnB Painting & Renovation, Brisbane.</p>
       </div>
     </div>
   </div>
@@ -309,7 +409,7 @@ section#lbq{--lbq-bg:#F4F7FA;--lbq-ink:#182338;--lbq-muted:#5C6B82;--lbq-panel:#
   </div>
 </section>
 
-<footer class="foot">
+<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img src="assets/work.jpg" alt="AnB Painting & Renovation" loading="eager" decoding="async"></div><div class="lb-rb__slide" style="background:linear-gradient(120deg,#0b0c10 0%,#e51924 165%)"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp,Inter),sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">AnB Painting & Renovation</span></div><div class="lb-rb__slide" style="background:linear-gradient(120deg,#0b0c10 0%,#e51924 165%)"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp,Inter),sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">Painting & Renovation</span></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button></div><div class="lb-rb__cap">AnB Painting & Renovation &mdash; recent work</div></div></section><footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
       <div>
@@ -320,7 +420,7 @@ section#lbq{--lbq-bg:#F4F7FA;--lbq-ink:#182338;--lbq-muted:#5C6B82;--lbq-panel:#
             <span class="foot-brand-sub">Painting & Renovation</span>
           </span>
         </div>
-        <p>AnB Painting & Renovation — interior and exterior painting, renovations and rebuilds for homes and businesses across Brisbane.</p>
+        <p>AnB Painting & Renovation, interior and exterior painting, renovations and rebuilds for homes and businesses across Brisbane.</p>
       </div>
       <div>
         <h4>Get in touch</h4>
@@ -374,6 +474,15 @@ section#lbq{--lbq-bg:#F4F7FA;--lbq-ink:#182338;--lbq-muted:#5C6B82;--lbq-panel:#
 #lbq.v4 .lbq-w{max-width:620px}
 #lbq.v4 input,#lbq.v4 textarea{border:0;border-bottom:1px solid var(--lbq-line);border-radius:0;background:transparent;padding:11px 2px}
 #lbq.v4 .lbq-g{display:grid;gap:16px}
+
+/* mobile overflow guard 2026-10-14 */
+html,body{overflow-x:hidden}
+@media (max-width:820px){
+  h1,h2,h3,.h1,.hero h1,.sec-title,.k,.kicker,.kick,.eyebrow,.tag-line,.tag,.hero-kicker,.hero-sub,.lead{
+    white-space:normal!important;overflow-wrap:anywhere;word-break:break-word;max-width:100%!important}
+  .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(10px,3.1vw,13px)!important;letter-spacing:.22em!important}
+  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.05!important}
+}
 </style>
   <div class="lbq-w">
       <div class="lbq-hd"><div><h2 id="lbq-h">Request a quote</h2>
@@ -405,7 +514,7 @@ section#lbq{--lbq-bg:#F4F7FA;--lbq-ink:#182338;--lbq-muted:#5C6B82;--lbq-panel:#
       e.preventDefault();
       var d = {};
       new FormData(f).forEach(function(v,k){ d[k]=v; });
-      if (d.website) return;  // honeypot — silently accept bots
+      if (d.website) return;  // honeypot, silently accept bots
       if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
         st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
         st.style.color = '#ff9d8a';
@@ -452,113 +561,19 @@ section#lbq{--lbq-bg:#F4F7FA;--lbq-ink:#182338;--lbq-muted:#5C6B82;--lbq-panel:#
 </section>
 </footer>
 
+<!-- lb: old box-hero engine removed -->
 <script>
-(function(){
-  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
-  if (b && n){
-    b.addEventListener('click', function(){
-      var open = n.classList.toggle('open');
-      b.classList.toggle('open', open);
-      b.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    n.addEventListener('click', function(e){
-      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
-    });
-  }
-})();
-
-(function(){
-  var els = document.querySelectorAll('.drop');
-  if ('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
-    els.forEach(function(el){ io.observe(el); });
-  } else {
-    els.forEach(function(el){ el.classList.add('in'); });
-  }
-})();
-
-setTimeout(function(){
-  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
-}, 1100);
-
-
-(function(){
-  var c = document.getElementById('heroCanvas');
-  if (!c || !c.getContext) return;
-  var ctx = c.getContext('2d');
-  var DPR = Math.min(window.devicePixelRatio || 1, 2);
-  var W = 0, H = 0;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var px = 0, py = 0;
-  window.addEventListener('pointermove', function(e){
-    px = (e.clientX / window.innerWidth - 0.5) * 16;
-    py = (e.clientY / window.innerHeight - 0.5) * 9;
-  }, {passive: true});
-  function resize(){
-    W = c.clientWidth || c.offsetWidth;
-    H = c.clientHeight || c.offsetHeight;
-    if (!W || !H) return;
-    c.width = Math.round(W * DPR);
-    c.height = Math.round(H * DPR);
-    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-  }
-  function loop(t){
-    if (!W || !H){ resize(); return; }
-    frame(t || 0);
-    if (!reduce) requestAnimationFrame(loop);
-  }
-  function frame(t){
-
-    var time = t * 0.001;
-    ctx.clearRect(0,0,W,H);
-    var g = ctx.createLinearGradient(0,0,0,H);
-    g.addColorStop(0,'#0C1626'); g.addColorStop(.55,'#13243C'); g.addColorStop(1,'#0C1626');
-    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
-    /* wide wall bands revealed by a sweeping roller */
-    var sweep = (Math.sin(time*0.32)*0.5+0.5);
-    var bands = ['rgba(30,58,110,0.5)','rgba(61,107,181,0.32)','rgba(158,196,238,0.16)','rgba(30,58,110,0.4)'];
-    for (var i=0;i<4;i++){
-      var y0 = H*0.16 + i*H*0.19;
-      var w = W*0.86*(0.35 + 0.65*sweep) - i*W*0.05;
-      ctx.fillStyle = bands[i];
-      ctx.fillRect(W*0.07 + px*0.4, y0 + py*0.3, Math.max(60,w), H*0.13);
-    }
-    /* roller bar travelling */
-    var rx = W*0.07 + (W*0.86)*(sweep) + px*0.4;
-    ctx.fillStyle = 'rgba(230,240,252,0.75)';
-    ctx.fillRect(rx, H*0.14, 5, H*0.62);
-    ctx.fillStyle = 'rgba(230,240,252,0.12)';
-    ctx.fillRect(rx-40, H*0.14, 40, H*0.62);
-    /* paint drips */
-    for (var d=0;d<12;d++){
-      var dx = W*0.1 + ((d*211 + time*30) % (W*0.8));
-      var dy = H*0.20 + ((d*89) % (H*0.5)) + Math.sin(time+d)*4;
-      ctx.fillStyle = 'rgba(120,160,220,0.35)';
-      ctx.beginPath(); ctx.arc(dx, dy, 2.2, 0, Math.PI*2); ctx.fill();
-    }
-
-  }
-  resize();
-  window.addEventListener('resize', resize);
-  requestAnimationFrame(loop);
-})();
-</script>
-<script>
-/* LAYDBACK UX KIT v1 — our own; see pipeline/orders/ux_kit.js */
-/* ux_kit.js — LAYDBACK UX KIT v1 (own implementation, zero dependencies, MIT-clean).
+/* LAYDBACK UX KIT v1, our own; see pipeline/orders/ux_kit.js */
+/* ux_kit.js, LAYDBACK UX KIT v1 (own implementation, zero dependencies, MIT-clean).
  * Our vanilla take on the techniques shown in the 2026-10-12 "vibe coding" reel:
  *   Motion-style springs + drag feel, Kokonut-style scroll text / dynamic text,
  *   spotlight cards, magnetic buttons, animated counters, marquee, scroll progress, parallax.
- * Everything is hand-rolled — no copied library code, no CDN, no build step.
+ * Everything is hand-rolled, no copied library code, no CDN, no build step.
  *
  * Usage: inline this whole file inside the page's <script> block, then mark up elements:
- *   data-ux="words"        headline that reveals word-by-word on scroll   (add data-ux-words='["a","b"]' if JS text swap wanted — usually not; it just splits existing text)
+ *   data-ux="words"        headline that reveals word-by-word on scroll   (add data-ux-words='["a","b"]' if JS text swap wanted, usually not; it just splits existing text)
  *   data-ux="dynamic"      rotates through words:  <span data-ux="dynamic" data-words="Concreting|Render|Tiling"></span>
- *   data-ux="count"        counts up to value:     <b data-ux="count" data-to="30" data-suffix="+">0</b>   (FACTS ONLY — never invent)
+ *   data-ux="count"        counts up to value:     <b data-ux="count" data-to="30" data-suffix="+">0</b>   (FACTS ONLY, never invent)
  *   data-ux="spotlight"    radial glow under the cursor on this card
  *   data-ux="magnetic"     button that leans toward the cursor
  *   data-ux="tilt"         card that tilts in 3D toward the cursor
@@ -820,5 +835,448 @@ setTimeout(function(){
 })(window);
 
 </script>
+
+<script>
+/* signature pack v1.5, Webflow-reference patterns, our own implementation */
+/* ============================================================
+   LAYDBACK SIGNATURE PACK v1 (2026-10-13)
+   Vanilla re-implementations of patterns studied in the Webflow
+   reference library (pre-load animation / 20 link-hover / button
+   hover / before-after / marquee / tilt). No external code or
+   assets copied, patterns re-built on our own stack.
+   Config: <html data-sig="splash:ring,links:sweep,buttons:fill,tilt:1,marquee:1,ba:1">
+   Every feature is optional, palette-aware (CSS vars), mobile-safe
+   and respects prefers-reduced-motion.
+   ============================================================ */
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var cfg = {};
+  (root.getAttribute('data-sig') || '').split(',').forEach(function (kv) {
+    var p = kv.split(':'); if (p[0]) cfg[p[0].trim()] = (p[1] || '1').trim();
+  });
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var acc = function () {
+    var v = getComputedStyle(root).getPropertyValue('--acc') || getComputedStyle(root).getPropertyValue('--accent');
+    return (v || '#c4fb24').trim();
+  };
+
+  /* ---------- SIG-1 · splash / loader variants ---------- */
+  function splash() {
+    var v = cfg.splash; if (!v) return;
+    function firstSeg(t) {
+      t = (t || '').replace(/\s+/g, ' ').trim();
+      var parts = t.split(/\s*[|\u2014\u2013\u00b7\u2022]\s*/);
+      var seg = parts.find(function (x) { return x.length >= 3; }) || t;
+      return seg.slice(0, 34).trim();
+    }
+    function nameOf() {
+      var exact = document.querySelector('.brand-name, .comp-name');
+      if (exact) {
+        var t0 = firstSeg(exact.textContent);
+        if (t0.length >= 3) return t0;
+      }
+      var og = document.querySelector('meta[property="og:title"]');
+      if (og && og.content) { var t1 = firstSeg(og.content); if (t1.length >= 3) return t1; }
+      return firstSeg(document.title);
+    }
+    var name = nameOf() || 'Welcome';
+    var logoEl = document.querySelector('.brand-mark, .brand img, .fbrand img, header img');
+    var logo = logoEl ? (logoEl.getAttribute('src') || '') : '';
+    var sp = document.createElement('div');
+    sp.id = 'sigSplash';
+    sp.setAttribute('aria-hidden', 'true');
+    var logoHtml = logo ? '<img class="sp-logo" src="' + logo + '" alt="">' : '';
+    var inner = '';
+    if (v === 'fade') {
+      inner = '<div class="sp-c">' + logoHtml + '<span class="sp-w">' + name + '</span></div>';
+    } else if (v === 'ring') {
+      inner = '<div class="sp-c">' + logoHtml + '<span class="sp-w">' + name + '</span><div class="sp-bar"><i></i></div></div>';
+    } else if (v === 'curtain') {
+      inner = '<div class="sp-panel sp-l"></div><div class="sp-panel sp-r"></div><div class="sp-c"><span class="sp-w">' + name + '</span></div>';
+    } else if (v === 'bar') {
+      inner = '<div class="sp-c">' + logoHtml + '<span class="sp-w">' + name + '</span><div class="sp-bar"><i></i></div></div>';
+    } else if (v === 'letterbox') {
+      inner = '<div class="sp-panel sp-t"></div><div class="sp-panel sp-b"></div><div class="sp-c"><span class="sp-w">' + name + '</span></div>';
+    } else if (v === 'type') {
+      inner = '<div class="sp-c"><span class="sp-w sp-type"></span></div>';
+    } else { inner = '<div class="sp-c"><span class="sp-w">' + name + '</span></div>'; }
+    sp.innerHTML = inner;
+    if (v === 'type') {
+      var el = sp.querySelector('.sp-type'); var i = 0;
+      (function typ() { if (i <= name.length) { el.textContent = name.slice(0, i++); setTimeout(typ, 45); } })();
+    }
+    var css = document.createElement('style');
+    css.textContent = '#sigSplash{animation:sigSplashAutoOut .45s ease 2.0s forwards}@keyframes sigSplashAutoOut{to{opacity:0;visibility:hidden;pointer-events:none}} #sigSplash{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#0e1014;color:#f4f5f7;pointer-events:none}' +
+      '#sigSplash .sp-c{position:relative;z-index:2;text-align:center}' +
+      '#sigSplash .sp-logo{display:block;margin:0 auto 16px;max-height:72px;max-width:180px;width:auto;object-fit:contain}' +
+      '#sigSplash .sp-w{display:block;font-family:var(--disp,var(--font-display,inherit));font-weight:900;letter-spacing:.1em;text-transform:uppercase;font-size:clamp(22px,5vw,38px);opacity:0;transition:opacity .5s ease}' +
+      '#sigSplash.on .sp-w{opacity:1}' +
+      '#sigSplash .sp-ring{position:absolute;left:50%;top:50%;width:150px;height:150px;transform:translate(-50%,-54%);fill:none;stroke:var(--acc,var(--accent,#c4fb24));stroke-width:2;stroke-dasharray:340;stroke-dashoffset:340;transition:stroke-dashoffset 1.1s ease}' +
+      '#sigSplash.on .sp-ring{stroke-dashoffset:0}' +
+      '#sigSplash .sp-bar{width:190px;height:2px;background:rgba(128,128,128,.3);margin:16px auto 0;overflow:hidden}' +
+      '#sigSplash .sp-bar i{display:block;height:100%;width:0;background:var(--acc,var(--accent,#c4fb24));animation:spBar 1.15s ease forwards}' +
+      '@keyframes spBar{to{width:100%}}' +
+      '#sigSplash .sp-panel{position:absolute;background:#0e1014;z-index:1}' +
+      '#sigSplash .sp-l{inset:0 50% 0 0}#sigSplash .sp-r{inset:0 0 0 50%}' +
+      '#sigSplash .sp-t{inset:0 0 50% 0}#sigSplash .sp-b{inset:50% 0 0 0}' +
+      '#sigSplash.out .sp-panel{transition:transform .7s cubic-bezier(.7,0,.3,1)}' +
+      '#sigSplash.out .sp-l{transform:translateX(-101%)}#sigSplash.out .sp-r{transform:translateX(101%)}' +
+      '#sigSplash.out .sp-t{transform:translateY(-101%)}#sigSplash.out .sp-b{transform:translateY(101%)}' +
+      (v === 'curtain' || v === 'letterbox'
+        ? '#sigSplash{background:transparent}' +
+          '#sigSplash.out .sp-c{opacity:0;transition:opacity .35s ease}' +
+          '#sigSplash.out .sp-panel{transition:transform .7s cubic-bezier(.7,0,.3,1)}' +
+          '#sigSplash.out{opacity:0;transition:opacity .45s ease .45s;pointer-events:none}'
+        : '#sigSplash.out{opacity:0;transition:opacity .8s ease .1s}');
+    document.head.appendChild(css);
+    document.body.appendChild(sp);
+    requestAnimationFrame(function () { requestAnimationFrame(function () { sp.classList.add('on'); }); });
+    var HOLD = reduce ? 250 : 650;
+    setTimeout(function () {
+      sp.classList.add('out');
+      setTimeout(function () { sp.remove(); }, 1000);
+    }, HOLD);
+  }
+
+  /* ---------- SIG-2 · hover polish (links + buttons) ---------- */
+  function hoverPolish() {
+    var linkVar = cfg.links, btnVar = cfg.buttons;
+    if (!linkVar && !btnVar) return;
+    var css = document.createElement('style');
+    if (linkVar === 'sweep') {
+      css.textContent += '.nav-links a,footer a,a:not(.btn):not(.pb-btn):not(.brand){position:relative}' +
+        '.nav-links a::after,footer a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1.5px;background:var(--acc,var(--accent,#c4fb24));transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.5,0,.2,1)}' +
+        '.nav-links a:hover::after,footer a:hover::after{transform:scaleX(1)}';
+    } else if (linkVar === 'grow') {
+      css.textContent += '.nav-links a,footer a{transition:color .2s ease,letter-spacing .3s ease}' +
+        '.nav-links a:hover,footer a:hover{color:var(--acc,var(--accent,#c4fb24));letter-spacing:.06em}';
+    } else if (linkVar === 'bg') {
+      css.textContent += '.nav-links a,footer a{background-image:linear-gradient(transparent 62%,color-mix(in srgb,var(--acc,var(--accent,#c4fb24)) 32%,transparent) 62%);background-size:0% 100%;background-repeat:no-repeat;transition:background-size .32s ease}' +
+        '.nav-links a:hover,footer a:hover{background-size:100% 100%}';
+    }
+    if (btnVar === 'lift') {
+      css.textContent += '.btn,.pb-btn,.nav-cta a{transition:transform .22s cubic-bezier(.4,0,.2,1),box-shadow .22s ease}' +
+        '.btn:hover,.pb-btn:hover,.nav-cta a:hover{transform:translateY(-2px);box-shadow:0 10px 24px -12px rgba(0,0,0,.55)}';
+    } else if (btnVar === 'fill') {
+      css.textContent += '.btn,.pb-btn,.nav-cta a{position:relative;overflow:hidden;z-index:0}' +
+        '.btn::before,.pb-btn::before,.nav-cta a::before{content:"";position:absolute;inset:0;background:var(--acc,var(--accent,#c4fb24));transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.6,0,.2,1);z-index:-1;opacity:.18}' +
+        '.btn:hover::before,.pb-btn:hover::before,.nav-cta a:hover::before{transform:scaleX(1)}';
+    } else if (btnVar === 'arrow') {
+      css.textContent += '.btn .ar,.pb-btn .ar{display:inline-block;transform:translateX(0);transition:transform .25s ease}' +
+        '.btn:hover .ar,.pb-btn:hover .ar{transform:translateX(5px)}';
+    }
+    document.head.appendChild(css);
+  }
+
+  /* ---------- SIG-3 · card tilt (desktop pointers only) ---------- */
+  function tilt() {
+    if (!cfg.tilt || reduce) return;
+    if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    document.querySelectorAll('.card,.svc-row,.hg-item,.tile').forEach(function (el) {
+      var r = null;
+      el.addEventListener('pointermove', function (e) {
+        r = r || el.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        el.style.transform = 'perspective(700px) rotateX(' + (-y * 4).toFixed(2) + 'deg) rotateY(' + (x * 5).toFixed(2) + 'deg) translateZ(0)';
+      });
+      el.addEventListener('pointerleave', function () { el.style.transform = ''; });
+    });
+  }
+
+  /* ---------- SIG-4 · marquee photo strip ---------- */
+  function marquee() {
+    if (!cfg.marquee || reduce) return;
+    var host = document.querySelector(cfg.marquee === '1' ? '#work, #services' : cfg.marquee);
+    if (!host) return;
+    var imgs = [];
+    document.querySelectorAll('img').forEach(function (im) {
+      var s = im.getAttribute('src') || im.getAttribute('data-src') || '';
+      if (s && /gal_|work|photo|project|job|card|slide/i.test(s) && s.indexOf('logo') < 0 && imgs.length < 8) imgs.push(s);
+    });
+    if (imgs.length < 3) {
+      document.querySelectorAll('img[data-src]').forEach(function (im) {
+        var s = im.getAttribute('data-src') || '';
+        if (s && s.indexOf('logo') < 0 && imgs.length < 8) imgs.push(s);
+      });
+    }
+    if (imgs.length < 3) return;
+    var strip = document.createElement('div');
+    strip.className = 'sigMarquee';
+    var row = imgs.concat(imgs).map(function (s) { return '<img src="' + s + '" alt="" loading="lazy">'; }).join('');
+    strip.innerHTML = '<div class="sigMarquee-in">' + row + '</div>';
+    var css = document.createElement('style');
+    css.textContent = '.sigMarquee{overflow:hidden;margin:34px 0;border-top:1px solid var(--line,rgba(128,128,128,.2));border-bottom:1px solid var(--line,rgba(128,128,128,.2));padding:10px 0}' +
+      '.sigMarquee-in{display:flex;gap:12px;width:max-content;animation:sigMq 42s linear infinite}' +
+      '.sigMarquee img{height:120px;width:auto;object-fit:cover;filter:saturate(.92)}' +
+      '@keyframes sigMq{to{transform:translateX(-50%)}}';
+    document.head.appendChild(css);
+    host.insertAdjacentElement('afterend', strip);
+  }
+
+  /* ---------- SIG-5 · before/after slider ---------- */
+  function beforeAfter() {
+    if (!cfg.ba) return;
+    var hosts = cfg.ba === '1' ? ['#work', '#recent', '#projects', '#gallery', '.hgal'] : [cfg.ba];
+    var wrap = null;
+    for (var i = 0; i < hosts.length && !wrap; i++) {
+      var c = document.querySelector(hosts[i]);
+      if (c && c.querySelectorAll('img').length >= 2) wrap = c;
+    }
+    if (!wrap) {
+      // last resort: first section containing 2+ non-logo images
+      var secs = document.querySelectorAll('section');
+      for (var j = 0; j < secs.length && !wrap; j++) {
+        var ims = [].filter.call(secs[j].querySelectorAll('img'), function (im) { return !/logo/i.test(im.getAttribute('src') || ''); });
+        if (ims.length >= 2) wrap = secs[j];
+      }
+    }
+    if (!wrap) return;
+    var srcOf = function (im) { return im.getAttribute('src') || im.getAttribute('data-src') || ''; };
+    var figs = [].filter.call(wrap.querySelectorAll('img'), function (im) { var s = srcOf(im); return s && !/logo/i.test(s); });
+    if (figs.length < 2) return;
+    var a = srcOf(figs[0]), b = srcOf(figs[1]);
+    var el = document.createElement('div');
+    el.className = 'sigBA';
+    el.innerHTML = '<img class="sigBA-a" src="' + a + '" alt="' + (figs[0].alt || 'Before') + '" loading="lazy">' +
+      '<div class="sigBA-top"><img src="' + b + '" alt="' + (figs[1].alt || 'After') + '" loading="lazy"></div>' +
+      '<input type="range" min="0" max="100" value="55" aria-label="Drag to compare before and after">' +
+      '<span class="sigBA-lab sigBA-l1">Before</span><span class="sigBA-lab sigBA-l2">After</span>';
+    var css = document.createElement('style');
+    css.textContent = '.sigBA{position:relative;margin:30px auto 0;max-width:860px;overflow:hidden;border:1px solid var(--line,rgba(128,128,128,.25))}' +
+      '.sigBA img{display:block;width:100%;height:auto}' +
+      '.sigBA .sigBA-top{position:absolute;inset:0;width:55%;overflow:hidden}' +
+      '.sigBA .sigBA-top img{width:calc(100% / .55)}' +
+      '.sigBA input{position:absolute;left:0;right:0;bottom:12px;width:86%;margin:0 auto;display:block;accent-color:var(--acc,var(--accent,#c4fb24))}' +
+      '.sigBA-lab{position:absolute;top:10px;font:700 10px/1 ui-monospace,monospace;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.5);padding:5px 8px}' +
+      '.sigBA-l1{left:10px}.sigBA-l2{right:10px}';
+    document.head.appendChild(css);
+    wrap.appendChild(el);
+    var inTop = el.querySelector('.sigBA-top'), range = el.querySelector('input');
+    range.addEventListener('input', function () { inTop.style.width = range.value + '%'; inTop.querySelector('img').style.width = (100 / (range.value / 100)) + '%'; });
+  }
+
+  function boot() {
+    try { splash(); } catch (e) {}
+    try { hoverPolish(); } catch (e) {}
+    try { tilt(); } catch (e) {}
+    try { marquee(); } catch (e) {}
+    try { beforeAfter(); } catch (e) {}
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
+})();
+
+</script>
+<script id="lb-motion-js">
+/* LB MOTION PACK v1 */
+(function(){
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sel = 'section > *, main > *, .sec-head, .cards > *, .grid > *, .faq details, .gal figure, .gallery figure';
+  var els = [].slice.call(document.querySelectorAll(sel)).filter(function(e){
+    if (e.closest && e.closest('.lb-rb')) return false;
+    if (e.tagName === 'SCRIPT' || e.tagName === 'STYLE') return false;
+    var r = e.getBoundingClientRect();
+    return r.width > 40 && r.height > 20;
+  });
+  els.forEach(function(e, i){ e.classList.add('lb-rv'); e.style.transitionDelay = ((i % 6) * 55) + 'ms'; });
+  if (rm || !('IntersectionObserver' in window)) {
+    els.forEach(function(e){ e.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(x){ if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+    els.forEach(function(e){ io.observe(e); });
+    setTimeout(function(){ els.forEach(function(e){ if (!e.classList.contains('is-in')) e.classList.add('is-in'); }); }, 2600);
+  }
+  var rb = document.querySelector('.lb-rb');
+  if (!rb) return;
+  var slides = [].slice.call(rb.querySelectorAll('.lb-rb__slide'));
+  if (slides.length < 2) return;
+  var dots = [].slice.call(rb.querySelectorAll('.lb-rb__dots button'));
+  var i = 0, timer = null, DUR = 5600;
+  function go(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function(s, k){ s.classList.toggle('is-on', k === i); });
+    dots.forEach(function(d, k){ d.classList.toggle('is-on', k === i); });
+  }
+  function play(){ if (rm) return; stop(); timer = setInterval(function(){ go(i + 1); }, DUR); }
+  function stop(){ if (timer) { clearInterval(timer); timer = null; } }
+  dots.forEach(function(d, k){ d.addEventListener('click', function(){ go(k); play(); }); });
+  var pv = rb.querySelector('.lb-rb__nav--prev'), nx = rb.querySelector('.lb-rb__nav--next');
+  if (pv) pv.addEventListener('click', function(){ go(i - 1); play(); });
+  if (nx) nx.addEventListener('click', function(){ go(i + 1); play(); });
+  rb.addEventListener('mouseenter', stop); rb.addEventListener('mouseleave', play);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(en){ en.forEach(function(x){ x.isIntersecting ? play() : stop(); }); },
+      { threshold: 0.25 }).observe(rb);
+  } else { play(); }
+  go(0);
+})();
+</script>
+<script id="lb-hero-js">
+/* LB HERO v2 - depth field (aurora + perspective grid + parallax motes). No literal objects. */
+(function(){
+  var cv = document.querySelector('.lb-hero-canvas, #heroCanvas, .hero-canvas, .lb3d-canvas, .hero-canvas-bg, canvas[data-hero]');
+  if (!cv) return;
+  var ctx = cv.getContext('2d'); if (!ctx) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W = 0, H = 0, dpr = 1, t = 0, raf = null, visible = true;
+  function accent(){
+    var v = getComputedStyle(document.documentElement).getPropertyValue('--acc')
+         || getComputedStyle(document.documentElement).getPropertyValue('--accent');
+    v = (v || '').trim(); return /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(v) ? v : '#e51924';
+  }
+  function hex2rgb(h){ h = h.replace('#',''); if (h.length === 3) h = h[0]+h[0]+h[1]+h[1]+h[2]+h[2];
+    return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)]; }
+  var ACC = hex2rgb(accent());
+  function dark(){ var b = getComputedStyle(document.body).backgroundColor || '';
+    var m = b.match(/(\d+),\s*(\d+),\s*(\d+)/); if (!m) return true;
+    return (0.299*m[1] + 0.587*m[2] + 0.114*m[3]) < 128; }
+
+  function size(){
+    var r = cv.getBoundingClientRect();
+    dpr = Math.min(2, window.devicePixelRatio || 1);
+    W = Math.max(320, r.width || cv.clientWidth || window.innerWidth);
+    H = Math.max(240, r.height || cv.clientHeight || window.innerHeight);
+    cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+
+  // deterministic depth motes
+  var N = 46, motes = [];
+  var seed = 20261019;
+  function rnd(){ seed = (seed*1103515245 + 12345) % 2147483648; return seed/2147483648; }
+  for (var i=0;i<N;i++) motes.push({x:rnd(), y:rnd(), z:0.25+rnd()*0.75, s:0.6+rnd()*1.9, p:rnd()*6.283});
+
+  function draw(){
+    var isDark = dark();
+    var base = isDark ? [10,11,14] : [248,249,251];
+    var ink  = isDark ? [255,255,255] : [12,14,18];
+    var g = ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0, 'rgb('+base.join(',')+')');
+    g.addColorStop(0.62, 'rgb('+Math.round(base[0]*1.06+2)+','+Math.round(base[1]*1.06+2)+','+Math.round(base[2]*1.09+2)+')');
+    g.addColorStop(1, 'rgb('+base.join(',')+')');
+    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+
+    // aurora: two slow, wide ribbons of the brand colour
+    for (var k=0;k<2;k++){
+      var cx = W*(0.30 + 0.34*k + 0.05*Math.sin(t*0.00013 + k*2.1));
+      var cy = H*(0.34 + 0.16*k + 0.05*Math.cos(t*0.00017 + k*1.3));
+      var rad = Math.max(W,H)*(0.46 + 0.13*k);
+      var rg = ctx.createRadialGradient(cx,cy,0,cx,cy,rad);
+      var a = (isDark ? 0.20 : 0.13) * (0.72 + 0.28*Math.sin(t*0.0003 + k));
+      rg.addColorStop(0,'rgba('+ACC.join(',')+','+a.toFixed(3)+')');
+      rg.addColorStop(0.55,'rgba('+ACC.join(',')+','+(a*0.32).toFixed(3)+')');
+      rg.addColorStop(1,'rgba('+ACC.join(',')+',0)');
+      ctx.fillStyle = rg; ctx.fillRect(0,0,W,H);
+    }
+
+    // perspective floor: clean architectural depth, not blocks
+    var hz = H*0.70, vpx = W*0.5;
+    ctx.lineWidth = 1;
+    for (var j=-9;j<=9;j++){
+      var fx = vpx + j*(W/9)*1.5;
+      var al = (isDark?0.16:0.13) * (1 - Math.min(1, Math.abs(j)/11));
+      ctx.strokeStyle = 'rgba('+ACC.join(',')+','+al.toFixed(3)+')';
+      ctx.beginPath(); ctx.moveTo(vpx + j*(W/9)*0.16, hz); ctx.lineTo(fx, H+2); ctx.stroke();
+    }
+    for (var r=1;r<=9;r++){
+      var y = hz + Math.pow(r/9, 2.15)*(H-hz+4);
+      ctx.strokeStyle = 'rgba('+ACC.join(',')+','+((isDark?0.13:0.10)*(1-r/11)).toFixed(3)+')';
+      ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
+    }
+    var hg = ctx.createLinearGradient(0,hz-70,0,hz+70);
+    hg.addColorStop(0,'rgba('+ACC.join(',')+',0)');
+    hg.addColorStop(0.5,'rgba('+ACC.join(',')+','+(isDark?0.16:0.11)+')');
+    hg.addColorStop(1,'rgba('+ACC.join(',')+',0)');
+    ctx.fillStyle = hg; ctx.fillRect(0,hz-70,W,140);
+
+    // depth motes: size + opacity track z, slow parallax drift
+    for (var q=0;q<motes.length;q++){
+      var m = motes[q];
+      var y = ((m.y + t*0.0000075*m.z) % 1);
+      var x = m.x + 0.016*Math.sin(t*0.00022*m.z + m.p);
+      var px = x*W, py = y*H;
+      var a2 = (isDark?0.42:0.30) * m.z * (0.55 + 0.45*Math.sin(t*0.0011 + m.p));
+      if (a2 <= 0) continue;
+      ctx.fillStyle = 'rgba('+ink.join(',')+','+a2.toFixed(3)+')';
+      ctx.beginPath(); ctx.arc(px, py, m.s*(0.6+m.z*0.9), 0, 6.283); ctx.fill();
+    }
+
+    // vignette to seat the copy
+    var vg = ctx.createRadialGradient(W*0.5,H*0.52,Math.min(W,H)*0.30,W*0.5,H*0.52,Math.max(W,H)*0.80);
+    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1, isDark?'rgba(0,0,0,0.42)':'rgba(0,0,0,0.14)');
+    ctx.fillStyle = vg; ctx.fillRect(0,0,W,H);
+  }
+
+  function loop(ts){ if (ts) t = ts; if (visible) draw(); raf = requestAnimationFrame(loop); }
+  size(); draw();
+  window.addEventListener('resize', function(){ size(); draw(); });
+  if (!reduce && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(e){ visible = e[0].isIntersecting; }, {threshold:0.02}).observe(cv);
+  }
+  document.addEventListener('visibilitychange', function(){ visible = !document.hidden && document.visibilityState === 'visible'; });
+  if (!reduce) raf = requestAnimationFrame(loop); 
+})();
+</script>
+<style>
+/* ==== LB BRAND: logo-only mode (the asset already carries the company words) ==== */
+.lb-brand--logoonly .lb-brand__word{display:none !important}
+.lb-brand--logoonly .lb-brand__mark{height:clamp(38px,4.6vw,64px) !important;max-width:38vw !important}
+.lb-brand--logoonly .lb-brand__mark img{height:100% !important;width:auto !important;max-width:38vw !important}
+</style>
+<style>
+/* ==== LB HEADER TRUTH: fail-safe visibility (never ship an invisible header) ==== */
+header,.site-header,.page-header,.header-inner,nav.nav,.nav-inner,
+.lb-brand,.lb-brand *,.lb-brand__mark,.lb-brand__word{
+  opacity:1 !important;visibility:visible !important}
+.lb-rv,.rv,[data-rv]{animation:lbForceIn .001s 2.5s forwards !important}
+@keyframes lbForceIn{to{opacity:1 !important;transform:none !important}}
+#sigSplash,#splash,.sp{animation:lbKillSplash .001s 2.5s forwards !important}
+@keyframes lbKillSplash{to{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}}
+</style>
+
+
+<style>/* ==== TASTE PASS (anti-slop, from impeccable findings) ==== */
+.lb-mq__in,44x44px icon tile above h3 "Careful prep,44x44px icon tile above h3 "Commercial,44x44px icon tile above h3 "Exterior painting,44x44px icon tile above h3 "Interior painting,44x44px icon tile above h3 "Residential repaints{display:none !important}
+Colored box-shadow glow (#14283c) on dark page{box-shadow:none !important;text-shadow:none !important}
+7px functional text "Painting" (below 11px floor){font-size:max(1em,15px) !important}
+
+:root{--lb-disp:"Archivo",system-ui,sans-serif;--lb-sub:"Archivo",system-ui,sans-serif}
+body,h1,h2,h3,h4,h5,h6,p,li,span,a,button,input,blockquote{
+  font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
+small,.small,.meta,.caption,.eyebrow,.kicker{font-size:max(0.82em,13px)}
+p,li{line-height:1.55}
+section,header,footer,.wrap,.container,.inner,[class*="section"]{
+  scroll-margin-top:24px}
+
+</style>
+<style>/* ==== LB HEADER TRUTH ==== */
+.lb-brand{gap:clamp(8px,1vw,14px) !important;min-height:clamp(44px,5vw,64px) !important;
+  align-items:center !important;flex-wrap:nowrap !important}
+.lb-brand__mark{flex:0 0 auto !important;display:flex !important;align-items:center !important;
+  height:clamp(36px,4vw,52px) !important;width:auto !important;max-width:30vw !important}
+.lb-brand__mark img{display:block !important;height:100% !important;width:auto !important;
+  max-width:100% !important;object-fit:contain !important}
+.lb-brand__word{display:flex !important;flex-direction:column !important;justify-content:center !important;
+  min-width:0 !important;overflow:visible !important}
+@media(max-width:700px){
+  .lb-brand__mark{height:32px !important;max-width:40vw !important}
+  .lb-brand__word{font-size:.92em !important}
+}
+</style>
+
+<style>/* ==== LB HEADER POLISH 2 ==== */
+header nav a:not(.btn):not([class*="btn"]):not([class*="cta"]),
+.site-header nav a:not(.btn):not([class*="btn"]),
+.header-inner nav a:not(.btn):not([class*="btn"]),
+nav.nav a:not(.btn):not([class*="btn"]),
+.nav-inner a:not(.btn):not([class*="btn"]),
+header a[href^="tel"],.site-header a[href^="tel"]{
+  color:var(--lb-name,currentColor) !important;
+  opacity:1 !important;
+}
+.lb-brand__sub:empty{display:none !important}
+</style>
 </body>
 </html>
