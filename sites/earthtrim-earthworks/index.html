@@ -279,17 +279,24 @@ h1{overflow-wrap:anywhere}
 .brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style><style id="lb-cta-merge">
+/* the number belongs inside the quote button, not parked beside it */
+.bar .bar-cta{display:inline-flex!important;flex-direction:column!important;align-items:center!important;
+  justify-content:center!important;line-height:1.05!important;gap:2px!important;padding:11px 20px!important;
+  text-decoration:none!important;white-space:nowrap!important}
+.bar .bar-cta span{font-size:13.5px!important;letter-spacing:.02em!important;opacity:.95!important}
+.bar .bar-cta b{font-size:15.5px!important;letter-spacing:.01em!important;font-weight:800!important}
+@media(max-width:520px){.bar .bar-cta{padding:10px 16px!important}.bar .bar-cta span{display:none!important}}
 </style></head>
 <body>
 <header class="bar" id="top">
 <div class="bar-in">
 <a aria-label="Earthtrim Earthworks — home" class="lb-brand" href="#top" style="--lb-name:#ffffff"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-cut.png"/><img alt="" class="lb-word" decoding="async" loading="eager" src="assets/logo-isolated-word.png"/><span class="lb-sr">Earthtrim Earthworks — home</span></a><span aria-hidden="true" class="bar-rule"></span>
-<nav aria-label="Main" class="bar-nav"><a class="brand-monogram" href="#top" aria-label="Earthtrim Earthworks"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-<a href="#capability">Capability</a>
+<nav aria-label="Main" class="bar-nav"><a href="#capability">Capability</a>
 <a href="#work">Work</a>
 <a href="#how">How a job runs</a>
 <a href="#area">Service area</a>
-<a class="bar-cta" href="#quote">Get a quote</a>
+<a class="bar-cta" href="tel:0467361050"><span>Get a quote</span><b>0467 361 050</b></a>
 </nav>
 <button aria-controls="panel" aria-expanded="false" aria-label="Menu" class="burger" type="button">
 <span></span><span></span><span></span>
@@ -302,7 +309,7 @@ h1{overflow-wrap:anywhere}
 <a href="#area">Service area</a>
 <a href="#quote">Get a quote</a>
 </nav>
-<a class="lb-tel" href="tel:0467361050" style="margin-left:auto;font-weight:800;text-decoration:none;color:inherit;white-space:nowrap;font-size:15px;padding:8px 0">0467361050</a></header>
+</header>
 <section aria-label="Earthtrim Earthworks — Maitland earthworks" class="hero">
 <canvas aria-hidden="true" id="heroCanvas"></canvas>
 <div aria-hidden="true" class="hero-scrim"></div>
@@ -1081,16 +1088,66 @@ h1{overflow-wrap:anywhere}
 })();
 </script>
 <script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#0b0b0c","important");})();</script>
-<section id="lbq" style="padding:clamp(42px,6vw,76px) 0;border-top:1px solid rgba(255,255,255,.12)">
-<div class="wrap"><h2>Get a quote</h2><p class="lead">Tell us what needs doing and where.</p>
-<form data-site="earthtrim-earthworks" id="lbq-form" novalidate="">
-<div><label>Name</label><input name="name" required=""/></div>
-<div><label>Phone</label><input inputmode="tel" name="phone" required=""/></div>
-<div><label>Suburb</label><input name="suburb"/></div>
-<div><label>What is the job?</label><input name="service"/></div>
-<div><label>Details</label><textarea name="message" rows="3"></textarea></div>
-<button type="submit">Send request</button>
-</form></div></section>
+<section id="lbq" class="lbq">
+<div class="wrap lbq-in">
+  <div class="lbq-copy">
+    <p class="lbq-kicker">Get a quote</p>
+    <h2>Tell us what needs doing</h2>
+    <p class="lbq-lead">Give us the suburb, roughly what the job is and the best number to reach you. Photos help — send them through after we reply.</p>
+    <ul class="lbq-points">
+      <li><b>Quoted after a look</b> — site conditions decide the number, not a rate card.</li>
+      <li><b>One point of contact</b> — the same person answers the phone and runs the job.</li>
+      <li><b>Written scope</b> — what is included, what is not, before anything starts.</li>
+    </ul>
+    <a class="lbq-call" href="tel:0467361050">Prefer to talk? <b>0467 361 050</b></a>
+  </div>
+  <form class="lbq-form" data-site="earthtrim-earthworks" id="lbq-form" novalidate="">
+    <div class="lbq-row">
+      <div class="lbq-field"><label for="lbq-name">Name</label><input id="lbq-name" name="name" autocomplete="name" required=""/></div>
+      <div class="lbq-field"><label for="lbq-phone">Phone</label><input id="lbq-phone" name="phone" inputmode="tel" autocomplete="tel" required=""/></div>
+    </div>
+    <div class="lbq-field"><label for="lbq-suburb">Suburb</label><input id="lbq-suburb" name="suburb" autocomplete="address-level2"/></div>
+    <div class="lbq-field"><label for="lbq-job">What is the job?</label>
+      <select id="lbq-job" name="service">
+        <option>Earthworks</option><option>Excavation</option><option>Site cut &amp; prep</option>
+        <option>Driveway</option><option>Drainage</option><option>Something else</option>
+      </select></div>
+    <div class="lbq-field"><label for="lbq-msg">Details</label>
+      <textarea id="lbq-msg" name="message" rows="4" placeholder="Access, slope, what you need the ground to do…"></textarea></div>
+    <button type="submit">Send quote request</button>
+    <p class="lbq-note">No obligation — we only use your details to answer this enquiry.</p>
+  </form>
+</div></section>
+<style id="lbq-css">
+.lbq{background:var(--bg-2);border-top:1px solid rgba(255,255,255,.10);padding:clamp(56px,7vw,104px) 0}
+.lbq-in{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(26px,4vw,64px);align-items:start}
+@media(max-width:900px){.lbq-in{grid-template-columns:1fr}}
+.lbq-kicker{font:700 12px/1 ui-sans-serif,system-ui;letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
+.lbq h2{font-size:clamp(26px,3.2vw,40px);line-height:1.12;margin:12px 0 0}
+.lbq-lead{color:var(--muted);margin-top:14px;max-width:46ch}
+.lbq-points{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
+.lbq-points li{color:var(--muted);font-size:15.5px;line-height:1.55;padding-left:20px;position:relative}
+.lbq-points li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--acc)}
+.lbq-points b{color:var(--ink)}
+.lbq-call{display:inline-block;margin-top:26px;color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:3px}
+.lbq-call b{color:var(--acc)}
+.lbq-form{background:var(--bg-3);border:1px solid rgba(255,255,255,.12);border-radius:16px;
+  padding:clamp(22px,3vw,32px);display:grid;gap:16px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.lbq-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:560px){.lbq-row{grid-template-columns:1fr}}
+.lbq-field{display:grid;gap:8px}
+.lbq-field label{font:650 13.5px/1 ui-sans-serif,system-ui;letter-spacing:.02em;color:var(--ink-2)}
+.lbq-field input,.lbq-field select,.lbq-field textarea{width:100%;background:var(--bg);border:1px solid rgba(255,255,255,.16);
+  border-radius:10px;padding:13px 14px;color:var(--ink);font:inherit;font-size:15.5px;transition:border-color .15s,box-shadow .15s}
+.lbq-field input:focus,.lbq-field select:focus,.lbq-field textarea:focus{outline:0;border-color:var(--acc);
+  box-shadow:0 0 0 3px rgba(246,181,27,.18)}
+.lbq-field textarea{resize:vertical;min-height:104px}
+.lbq-form button{background:var(--acc);color:#171208;border:0;border-radius:999px;padding:16px 24px;
+  font:800 16px/1 ui-sans-serif,system-ui;cursor:pointer;transition:transform .12s,filter .12s}
+.lbq-form button:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.lbq-form button:disabled{opacity:.65;cursor:default;transform:none}
+.lbq-note{color:#8e887c;font-size:12.5px;margin:0}
+</style>
 <script>
 document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button');
 b.textContent='Sending…';b.disabled=true;
