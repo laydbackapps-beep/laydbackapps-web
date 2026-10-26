@@ -335,6 +335,25 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
+
+<style id="lb-mobile-base">
+html,body{max-width:100%;overflow-x:hidden}
+img,video,canvas,svg,iframe{max-width:100%}
+img,video{height:auto}
+header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
+header,.site-header,.nav{max-width:100%}
+.lb-brand{min-width:0;max-width:100%;overflow:hidden}
+.lb-brand img{max-height:64px;width:auto}
+nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
+h1{overflow-wrap:anywhere}
+@media (max-width:820px){
+  .lb-brand img{max-height:38px}
+  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
+  h2{font-size:clamp(20px,6vw,30px)!important}
+  section{padding-left:16px!important;padding-right:16px!important}
+  .wrap,.container{max-width:100%!important}
+}
+</style>
 </head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <nav class="nav" aria-label="Main">

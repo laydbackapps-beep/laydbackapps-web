@@ -381,13 +381,14 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 
 
 
+
 <style id="lb-logo-hero">
 /* Client logo across the header: the real artwork, isolated and readable. */
-.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;
+.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;padding:0!important;max-height:96px!important;
   text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
   padding:0!important;box-shadow:none!important}
-.lb-brand .lb-mark{display:block!important;height:clamp(64px,7.4vw,100px)!important;width:auto!important;
-  max-width:none!important;max-height:none!important;object-fit:contain!important;background:none!important;
+.lb-brand .lb-mark{display:block!important;height:clamp(44px,4.8vw,66px)!important;width:auto!important;
+  max-width:none!important;max-height:66px!important;object-fit:contain!important;background:none!important;
   border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
 .lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(38vw,520px)!important;
   max-height:none!important;object-fit:contain!important;object-position:left center!important;
@@ -403,6 +404,25 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 .lb-bar{background-color:#25262b!important}
 .lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#f7f7f4!important}
 .lb-bar .cta,.lb-bar a.cta{color:#ffffff!important}
+</style>
+
+<style id="lb-mobile-base">
+html,body{max-width:100%;overflow-x:hidden}
+img,video,canvas,svg,iframe{max-width:100%}
+img,video{height:auto}
+header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
+header,.site-header,.nav{max-width:100%}
+.lb-brand{min-width:0;max-width:100%;overflow:hidden}
+.lb-brand img{max-height:64px;width:auto}
+nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
+h1{overflow-wrap:anywhere}
+@media (max-width:820px){
+  .lb-brand img{max-height:38px}
+  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
+  h2{font-size:clamp(20px,6vw,30px)!important}
+  section{padding-left:16px!important;padding-right:16px!important}
+  .wrap,.container{max-width:100%!important}
+}
 </style>
 </head>
 <body>
@@ -852,6 +872,7 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
   scroll-margin-top:24px}
 
 </style>
+
 
 
 

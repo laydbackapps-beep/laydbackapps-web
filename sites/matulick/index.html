@@ -151,6 +151,25 @@ footer{background:#0A0A0C;border-top:1px solid rgba(240,176,48,.28);color:#A9A39
 /* quote-form band tuned to this palette */
 section#lbq{--lbq-bg:#F4EDE0;--lbq-ink:#232323;--lbq-muted:#5F5B54;--lbq-panel:#FFFFFF;--lbq-line:#E8E0D2;--lbq-accent:#8A6210}
 </style>
+
+<style id="lb-mobile-base">
+html,body{max-width:100%;overflow-x:hidden}
+img,video,canvas,svg,iframe{max-width:100%}
+img,video{height:auto}
+header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
+header,.site-header,.nav{max-width:100%}
+.lb-brand{min-width:0;max-width:100%;overflow:hidden}
+.lb-brand img{max-height:64px;width:auto}
+nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
+h1{overflow-wrap:anywhere}
+@media (max-width:820px){
+  .lb-brand img{max-height:38px}
+  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
+  h2{font-size:clamp(20px,6vw,30px)!important}
+  section{padding-left:16px!important;padding-right:16px!important}
+  .wrap,.container{max-width:100%!important}
+}
+</style>
 </head>
 <body>
 <nav class="nav" aria-label="Main">

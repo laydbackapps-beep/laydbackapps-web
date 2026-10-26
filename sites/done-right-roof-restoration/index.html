@@ -314,13 +314,14 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 
 
 
+
 <style id="lb-logo-hero">
 /* Client logo across the header: the real artwork, isolated and readable. */
-.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;
+.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;padding:0!important;max-height:96px!important;
   text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
   padding:0!important;box-shadow:none!important}
-.lb-brand .lb-mark{display:block!important;height:clamp(64px,7.4vw,100px)!important;width:auto!important;
-  max-width:none!important;max-height:none!important;object-fit:contain!important;background:none!important;
+.lb-brand .lb-mark{display:block!important;height:clamp(44px,4.8vw,66px)!important;width:auto!important;
+  max-width:none!important;max-height:66px!important;object-fit:contain!important;background:none!important;
   border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
 .lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(38vw,520px)!important;
   max-height:none!important;object-fit:contain!important;object-position:left center!important;
@@ -333,7 +334,28 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
   clip:rect(0 0 0 0)!important;white-space:nowrap!important}
 .lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
 @media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:20px!important}}
+.lb-bar{background-color:#e0d8d8!important}
+.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#101014!important}
+.lb-bar .cta,.lb-bar a.cta{color:#101014!important}
+</style>
 
+<style id="lb-mobile-base">
+html,body{max-width:100%;overflow-x:hidden}
+img,video,canvas,svg,iframe{max-width:100%}
+img,video{height:auto}
+header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
+header,.site-header,.nav{max-width:100%}
+.lb-brand{min-width:0;max-width:100%;overflow:hidden}
+.lb-brand img{max-height:64px;width:auto}
+nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
+h1{overflow-wrap:anywhere}
+@media (max-width:820px){
+  .lb-brand img{max-height:38px}
+  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
+  h2{font-size:clamp(20px,6vw,30px)!important}
+  section{padding-left:16px!important;padding-right:16px!important}
+  .wrap,.container{max-width:100%!important}
+}
 </style>
 </head>
 <body>
@@ -341,7 +363,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 <a class="skip" href="#services">Skip to content</a>
 
 <nav class="nav" aria-label="Main">
-<a class="lb-brand lb-brand--lockup lb-brand--square" style="--lb-name:#ffffff" href="#top" aria-label="Done Right - Home"><img class="lb-mark" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">Done Right</span></a><a class="nav__b" href="#top" aria-label="Done Right Roof and Restoration home">
+<a class="lb-brand lb-brand--lockup lb-brand--square" style="--lb-name:#101014" href="#top" aria-label="Done Right - Home"><img class="lb-mark" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">Done Right</span></a><a class="nav__b" href="#top" aria-label="Done Right Roof and Restoration home">
     <img src="assets/logo.png" alt="Done Right Roof &amp; Restoration logo">
     <span><span class="nb-t">Done Right Roof</span><span class="nb-s">Repairs · Restoration · Gutters</span></span>
   </a>
@@ -757,5 +779,6 @@ var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear(
   if (!reduce) raf = requestAnimationFrame(loop); 
 })();
 </script>
+<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#e0d8d8","important");})();</script>
 </body>
 </html>
