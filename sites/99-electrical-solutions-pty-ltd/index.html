@@ -1,415 +1,47 @@
-<!DOCTYPE html>
-<html lang="en-AU" class="no-js">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>99 Electrical Solutions Pty Ltd | Electrical, Solar, EV Chargers & Air Conditioning — Melbourne</title>
-<meta name="description" content="99 Electrical Solutions Pty Ltd — electrical, solar, battery, EV chargers, air conditioning and CCTV across Melbourne. Powering a smarter tomorrow. Call 0470 475 695.">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/logo.png">
-<style>
-:root{
-  --ink:#0B0C0D; --ground:#131416; --panel:#1A1B1E; --line:#2A2C30;
-  --paper:#F4F3F0; --muted:#ABA9A2; --acc:#C8964B; --acc-deep:#9A7038;
-  --acc-ink:#14161A; --acc-lite:#C8964B; --max:1160px; --gut:clamp(1.1rem,4vw,2.5rem);
-  --lb-acc:#C8964B; --lb-name:#F4F3F0;
-}
-@font-face{font-family:"Antonio";src:url("assets/fonts/antonio-600.woff2") format("woff2");font-weight:600;font-display:swap}
-@font-face{font-family:"Antonio";src:url("assets/fonts/antonio-400.woff2") format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Manrope";src:url("assets/fonts/manrope-400.woff2") format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Manrope";src:url("assets/fonts/manrope-500.woff2") format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Manrope";src:url("assets/fonts/manrope-700.woff2") format("woff2");font-weight:700;font-display:swap}
-*,*:before,*:after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-.js .rv{opacity:0;transform:translateY(20px)}
-.js .rv.on{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
-@media (prefers-reduced-motion:reduce){
-  .js .rv{opacity:1!important;transform:none!important;transition:none!important}
-  html{scroll-behavior:auto}
-}
-body{margin:0;background:var(--ground);color:var(--paper);font-family:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;font-size:clamp(1rem,1.05vw,1.0625rem);line-height:1.65;-webkit-font-smoothing:antialiased}
-img{max-width:100%;height:auto;display:block}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
-h1,h2,h3{font-family:"Antonio","Arial Narrow",Arial,sans-serif;font-weight:600;margin:0;line-height:1.06;letter-spacing:-.01em;text-transform:none}
-h1{font-size:clamp(2.15rem,5.4vw,4.35rem)}
-h2{font-size:clamp(1.7rem,3.4vw,2.65rem)}
-h3{font-size:clamp(1.15rem,1.7vw,1.4rem)}
-p{margin:0 0 1em}
-.acc{color:var(--acc);font-style:normal}
-/* ---------- header ---------- */
-.hd{position:sticky;top:0;z-index:40;background:rgba(9,10,12,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.09)}
-.hd-in{display:flex;align-items:center;gap:clamp(.7rem,2vw,1.4rem);max-width:var(--max);margin:0 auto;padding:.6rem var(--gut);min-height:70px}
-.brand{display:flex;align-items:center;gap:.7rem;flex:0 1 auto;min-width:0}
-.brand img{height:clamp(34px,3.4vw,46px);width:auto;max-width:34vw;border-radius:8px;flex:0 0 auto}
-.brand-txt{display:flex;flex-direction:column;min-width:0}
-.brand-name{font-family:"Antonio","Arial Narrow",Arial,sans-serif;font-weight:600;font-size:clamp(1.05rem,1.7vw,1.4rem);letter-spacing:.02em;line-height:1.05;color:var(--paper);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.brand-sub{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acc-lite,var(--acc));line-height:1.3}
-.nav{margin-left:auto;display:flex;align-items:center;gap:clamp(.7rem,1.7vw,1.5rem)}
-.nav a{font-size:.9rem;font-weight:500;color:var(--paper);opacity:.86;white-space:nowrap}
-.nav a:hover{color:var(--acc);opacity:1}
-.hd-call{flex:0 0 auto;background:var(--acc);color:var(--acc-ink);font-weight:700;font-size:.9rem;padding:.62rem 1.05rem;border-radius:9px;white-space:nowrap}
-.hd-call:hover{background:var(--paper);color:var(--ink)}
-.hd-burger{display:none}
-@media (max-width:880px){
-  .nav{display:none}
-  .brand-sub{letter-spacing:.14em}
-  .brand-name{font-size:1rem}
-}
-/* ---------- hero ---------- */
-.hero{position:relative;isolation:isolate;perspective:1200px;overflow:hidden;min-height:min(calc(100vh - 71px),940px);display:flex;align-items:center;background:var(--ink)}
-.hero--nophoto{background:radial-gradient(115% 85% at 76% 6%,var(--hero-glow,rgba(255,255,255,.06)),transparent 62%),linear-gradient(158deg,#232833,#12151C)}
-.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
-.hero-scrim{position:absolute;inset:0;background:linear-gradient(96deg,rgba(6,7,9,.93) 0%,rgba(6,7,9,.85) 30%,rgba(6,7,9,.44) 60%,rgba(6,7,9,.13) 100%)}
-.hero-scrim:after{content:"";position:absolute;left:0;right:0;bottom:0;height:20%;background:linear-gradient(180deg,rgba(7,8,10,0),rgba(7,8,10,.42))}
-.hero-in{position:relative;z-index:3;width:100%;max-width:var(--max);margin:0 auto;padding:clamp(3rem,7vw,5rem) var(--gut)}
-.hero-copy{max-width:39rem}
-.hero h1{color:#fff;text-wrap:balance}
-.hero-lede{font-size:clamp(1.06rem,1.4vw,1.22rem);color:#fff;max-width:36rem;margin-top:1.1rem}
-.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.9rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem 1.55rem;border-radius:10px;font-weight:700;font-size:.98rem;border:2px solid transparent;white-space:nowrap;cursor:pointer;font-family:inherit}
-.btn-acc{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
-.btn-acc:hover{background:#fff;color:var(--ink);border-color:#fff}
-.btn-ghost{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.5)}
-.btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
-.hero-tags{list-style:none;display:flex;flex-wrap:wrap;gap:.45rem 1.3rem;margin:2rem 0 0;padding:0;font-size:.95rem;color:rgba(255,255,255,.94)}
-.hero-tags li{padding-left:1rem;position:relative}
-.hero-tags li:before{content:"";position:absolute;left:0;top:.5em;width:.42rem;height:.42rem;background:var(--acc);border-radius:50%}
-.hero-credit{margin:1.7rem 0 0;padding-left:.85rem;border-left:3px solid var(--acc);font-size:.8rem;letter-spacing:.01em;color:rgba(255,255,255,.8);max-width:34ch}
-.hero-canvas{display:none}
-.hero-mark{position:absolute;top:50%;right:-6%;transform:translateY(-50%);z-index:1;pointer-events:none;opacity:.28;width:min(58vw,780px);height:auto}
-@media (max-width:880px){
-  .hero{min-height:min(calc(100svh - 61px),820px)}
-  .hero-scrim{background:linear-gradient(178deg,rgba(6,7,9,.62) 0%,rgba(6,7,9,.76) 44%,rgba(6,7,9,.88) 100%)}
-  .hero-scrim:after{height:14%}
-  .hero-in{padding:clamp(2.2rem,8vw,3.2rem) var(--gut)}
-  .hero-copy{max-width:none}
-  .hero-mark{width:74vw;right:-16%;opacity:.16}
-  .hd-in{min-height:61px}
-}
-/* ---------- generic sections ---------- */
-.sec{padding:clamp(3.2rem,7vw,5.6rem) 0}
-.sec--alt{background:var(--ink)}
-.sec-hd{max-width:44rem;margin-bottom:clamp(1.8rem,3.6vw,2.8rem)}
-.sec-kick{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc-lite,var(--acc));margin:0 0 .7rem;font-weight:700}
-.sec-hd p{color:var(--muted);margin:.9rem 0 0}
-.grid{display:grid;gap:clamp(.9rem,1.8vw,1.35rem)}
-.g3{grid-template-columns:repeat(3,1fr)}
-.g2{grid-template-columns:repeat(2,1fr)}
-@media (max-width:960px){.g3{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:660px){.g3,.g2{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:clamp(1.6rem,2.8vw,2.05rem)}
-.card h3{margin-bottom:.55rem}
-.card p{margin:0;color:var(--muted);font-size:.96rem}
-.card .bar{width:2.1rem;height:3px;background:var(--acc);border-radius:2px;margin-bottom:1rem}
-.step{display:flex;gap:1.05rem;align-items:flex-start}
-.step-n{flex:0 0 auto;font-family:"Antonio",Arial,sans-serif;font-size:1.6rem;line-height:1;color:var(--acc-lite,var(--acc));min-width:2rem}
-.step h3{margin-bottom:.35rem}
-.step p{color:var(--muted);margin:0;font-size:.96rem}
-/* work gallery */
-.work-grid{display:grid;gap:clamp(.7rem,1.5vw,1.1rem);grid-template-columns:repeat(3,1fr)}
-@media (max-width:860px){.work-grid{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.work-grid{grid-template-columns:1fr}}
-figure.shot{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-figure.shot img{aspect-ratio:4/3;width:100%;object-fit:cover}
-figure.shot figcaption{padding:.85rem 1rem 1rem;font-size:.83rem;color:var(--muted)}
-/* detail band (no-photo sites) */
-.band{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-@media (max-width:760px){.band{grid-template-columns:1fr}}
-.band div{background:var(--panel);padding:clamp(1.3rem,2.6vw,1.9rem)}
-.band strong{display:block;font-family:"Antonio",Arial,sans-serif;font-size:1.2rem;margin-bottom:.4rem;color:var(--paper)}
-.band span{color:var(--muted);font-size:.96rem}
-/* area strip */
-.area-strip{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0;margin:1.4rem 0 0}
-.area-strip li{border:1px solid var(--line);border-radius:999px;padding:.45rem 1rem;font-size:.88rem;color:var(--paper);background:var(--panel)}
-/* footer */
-.ft{background:var(--ink);border-top:1px solid var(--line);padding:clamp(2.6rem,5vw,3.6rem) 0 1.6rem}
-.ft-in{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(1.4rem,3vw,2.6rem)}
-@media (max-width:760px){.ft-in{grid-template-columns:1fr}}
-.ft h3{font-size:1.05rem;margin-bottom:.9rem}
-.ft p,.ft li{color:var(--muted);font-size:.93rem}
-.ft ul{list-style:none;padding:0;margin:0}
-.ft li{margin-bottom:.45rem}
-.ft a:hover{color:var(--acc-lite,var(--acc))}
-.ft-bot{margin-top:2.2rem;padding-top:1.3rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.7rem 1.4rem;justify-content:space-between;color:var(--muted);font-size:.83rem}
-.ft-bot a{text-decoration:underline}
-#lbq{--lbq-accent:var(--acc);--lbq-ink:var(--paper);--lbq-muted:var(--muted);--lbq-bg:var(--ink);--lbq-panel:rgba(255,255,255,.05);--lbq-line:var(--line);padding:clamp(3rem,7vw,5.6rem) 0;background:var(--lbq-bg);color:var(--lbq-ink);position:relative}
-#lbq *{box-sizing:border-box}
-#lbq .lbq-w{max-width:1060px;margin:0 auto;padding:0 var(--gut)}
-#lbq h2{font-size:clamp(1.7rem,3.4vw,2.65rem);margin:0 0 10px}
-#lbq p.lbq-s{margin:0 0 18px;color:var(--lbq-muted);max-width:56ch}
-#lbq .lbq-f{display:grid;gap:12px}
-#lbq label{display:block;font-size:.82rem;letter-spacing:.03em;color:var(--lbq-muted);margin-bottom:5px}
-#lbq input,#lbq textarea{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:9px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
-#lbq textarea{min-height:104px;resize:vertical}
-#lbq input:focus,#lbq textarea:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
-#lbq button{margin-top:6px;padding:14px 24px;border:0;border-radius:9px;background:var(--lbq-accent);color:var(--acc-ink);font:inherit;font-weight:700;font-size:.96rem;cursor:pointer;letter-spacing:.01em}
-#lbq button:disabled{opacity:.6;cursor:wait}
-#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
-#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.83rem;color:var(--lbq-muted)}
-#lbq .lbq-cons input{width:auto}
-#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-#lbq .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.4rem,3vw,2.6rem);align-items:start}
-#lbq .lbq-g{display:grid;gap:12px;grid-template-columns:1fr 1fr}
-#lbq .lbq-full{grid-column:1/-1}
-#lbq .lbq-aside{border:1px solid var(--lbq-accent);border-radius:14px;padding:1.4rem 1.5rem;background:var(--lbq-panel)}
-@media(max-width:780px){#lbq .lbq-sp,#lbq .lbq-g{grid-template-columns:1fr}}</style>
-<script>document.documentElement.className='js';</script>
+<!doctype html><html lang="en-AU"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>99 Electrical solutions PTY LTD — Melbourne</title>
+<meta name="description" content="99 Electrical solutions PTY LTD: From demolition to final trim, one crew carries the job rather than handing it around."><style>:root{--bg:#0f1216;--ink:#f3f4f6;--dim:#a9b0ba;--line:#242b34;--panel:#161b21;--acc:#c6954a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(18px,4.5vw,56px)}
+a{color:inherit}
+header.site{border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30;background:var(--bg)}
+.bar{display:flex;align-items:center;gap:18px;padding:12px 0;flex-wrap:wrap}
+.lb-brand img{height:clamp(42px,4.6vw,60px);width:auto;display:block}
+nav.main{display:flex;gap:clamp(12px,1.6vw,24px);margin-left:auto;flex-wrap:wrap}
+nav.main a{text-decoration:none;font-size:15px;color:var(--dim)}
+.tel{text-decoration:none;font-weight:800;border-bottom:2px solid var(--acc);white-space:nowrap}
+section{padding:clamp(44px,6vw,84px) 0;border-top:1px solid var(--line)}
+h1{margin:0 0 18px;font-size:clamp(36px,6vw,82px);line-height:.96;letter-spacing:-.04em;font-weight:800}
+h1 i{font-style:normal;color:var(--acc)}
+h2{margin:0 0 24px;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.02em;font-weight:800}
+p{color:var(--dim)}
+.cta{display:inline-block;background:var(--acc);color:#111;padding:14px 26px;text-decoration:none;font-weight:800}
+form{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,3vw,30px)}
+label{display:block;font-size:13.5px;color:var(--dim);margin:0 0 6px}
+input,textarea{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:11px;font:inherit;font-size:15px;margin-bottom:14px}
+button{width:100%;background:var(--ink);color:var(--bg);border:0;padding:14px;font:inherit;font-weight:800;cursor:pointer}
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:14px;color:var(--dim)}
+@media(max-width:720px){.lb-brand img{height:40px}nav.main{order:3;width:100%;margin-left:0}}
 
-
-
-
-
-
-
-
-<style id="lb-logo-hero">
-/* Client logo across the header: the real artwork, isolated and readable. */
-.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;padding:0!important;max-height:96px!important;
-  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
-  padding:0!important;box-shadow:none!important}
-.lb-brand .lb-mark{display:block!important;height:clamp(44px,4.8vw,66px)!important;width:auto!important;
-  max-width:none!important;max-height:66px!important;object-fit:contain!important;background:none!important;
-  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
-.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(38vw,520px)!important;
-  max-height:none!important;object-fit:contain!important;object-position:left center!important;
-  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
-.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
-  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
-.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
-.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
-.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
-  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
-.lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
-@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:20px!important}}
-.lb-bar{background-color:#c09048!important}
-.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#101014!important}
-.lb-bar .cta,.lb-bar a.cta{color:#101014!important}
-</style>
-
-<style id="lb-mobile-base">
-html,body{max-width:100%;overflow-x:hidden}
-img,video,canvas,svg,iframe{max-width:100%}
-img,video{height:auto}
-header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
-header,.site-header,.nav{max-width:100%}
-.lb-brand{min-width:0;max-width:100%;overflow:hidden}
-.lb-brand img{max-height:64px;width:auto}
-nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
-h1{overflow-wrap:anywhere}
-@media (max-width:820px){
-  .lb-brand img{max-height:38px}
-  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
-  h2{font-size:clamp(20px,6vw,30px)!important}
-  section{padding-left:16px!important;padding-right:16px!important}
-  .wrap,.container{max-width:100%!important}
-}
-</style>
-</head>
-<body>
-<header class="hd">
-  <div class="hd-in">
-    <a class="lb-brand lb-brand--lockup" style="--lb-name:#101014" href="#top" aria-label="99 Electrical Solutions — home"><img class="lb-mark" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">99 Electrical Solutions — home</span></a><nav class="nav" aria-label="Main">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#process">How we work</a>
-      <a href="#quote">Get a quote</a>
-    </nav>
-    <a class="hd-call" href="tel:+61470475695">0470 475 695</a>
-  </div>
-</header>
-
-<section class="hero" id="top" aria-labelledby="hero-h">
-  <img class="hero-img" src="assets/hero.jpg" alt="A job like this: a white switchboard with a full set of circuit breakers" width="1600" height="900" fetchpriority="high" decoding="async">
-  <div class="hero-scrim" aria-hidden="true"></div>
-  <div class="hero-in">
-    <div class="hero-copy">
-      <h1 id="hero-h">Electrical, <em class="acc">solar</em>, EV charging and air conditioning</h1>
-      <p class="hero-lede">Reliable electrical solutions, tailored to your needs: electrical work, solar and battery, EV chargers and air conditioning across Melbourne, done by one crew.</p>
-      <div class="hero-cta"><a class="btn btn-acc" href="tel:+61470475695">Call 0470 475 695</a><a class="btn btn-ghost" href="#quote">Request a quote</a></div>
-      <ul class="hero-tags"><li>Electrical</li><li>Solar &amp; battery</li><li>EV chargers</li><li>Air conditioning</li></ul>
-      <p class="hero-credit">A job like this: a switchboard fitted out and labelled.</p>
-    </div>
-  </div>
-  <canvas id="heroCanvas" class="hero-canvas" width="16" height="16" aria-hidden="true" style="display:none"></canvas>
-  <!-- LB-3D-HERO -->
-</section>
-
-<section class="sec" id="services" aria-labelledby="svc-h">
-  <div class="wrap">
-    <div class="sec-hd rv">
-      <p class="sec-kick">What we do</p>
-      <h2 id="svc-h">One crew for power, solar and comfort</h2>
-      <p>Electrical work, renewables and air conditioning handled together — so the switchboard, the solar and the air conditioner are all sorted properly.</p>
-    </div>
-    <div class="grid g3"><div class="card rv"><div class="bar"></div><h3>Electrical</h3><p>Residential and commercial electrical — powerpoints, lighting, switchboards and fault finding.</p></div><div class="card rv"><div class="bar"></div><h3>Solar</h3><p>Solar systems installed and wired in properly, sized to what the house or business actually uses.</p></div><div class="card rv"><div class="bar"></div><h3>Battery storage</h3><p>Batteries installed alongside solar, so the power you generate is there when you need it.</p></div><div class="card rv"><div class="bar"></div><h3>EV chargers</h3><p>Electric vehicle chargers supplied and installed at home or at the workplace.</p></div><div class="card rv"><div class="bar"></div><h3>Air conditioning</h3><p>Split systems installed, wired and commissioned, cool in summer, warm in winter.</p></div><div class="card rv"><div class="bar"></div><h3>CCTV</h3><p>Cameras and cabling installed and set up, so you can see what is going on when you are not there.</p></div></div>
-  </div>
-</section>
-
-<section class="sec sec--alt" id="work" aria-labelledby="work-h">
-  <div class="wrap">
-    <div class="sec-hd rv">
-      <p class="sec-kick">Installs</p>
-      <h2 id="work-h">Installed, wired and commissioned</h2>
-      <p>Air conditioning, electrical fit-off and the wiring behind it, representative of the work we take on.</p>
-    </div>
-    <div class="work-grid"><figure class="shot rv"><img src="assets/work-1.jpg" alt="A job like this: solar installed across a roof." loading="lazy" decoding="async"><figcaption>A job like this: solar panels installed across a roof.</figcaption></figure><figure class="shot rv"><img src="assets/work-2.jpg" alt="A job like this: an outdoor air conditioning unit." loading="lazy" decoding="async"><figcaption>A job like this: an outdoor air conditioning condenser fitted.</figcaption></figure><figure class="shot rv"><img src="assets/work-3.jpg" alt="A job like this: switchboard wiring and testing." loading="lazy" decoding="async"><figcaption>A job like this: a switchboard opened up for wiring and testing.</figcaption></figure></div>
-  </div>
-</section>
-
-<section class="sec" id="process" aria-labelledby="proc-h">
-  <div class="wrap">
-    <div class="sec-hd rv">
-      <p class="sec-kick">How we work</p>
-      <h2 id="proc-h">How the job runs</h2>
-      <p>One point of contact from the first call to switch-on.</p>
-    </div>
-    <div class="grid g2"><div class="step rv"><span class="step-n">01</span><div><h3>Get in touch</h3><p>Call or send through what you need — electrical, solar, EV charger or air conditioning.</p></div></div><div class="step rv"><span class="step-n">02</span><div><h3>Scope and quote</h3><p>We work out what is required, including anything the switchboard needs first.</p></div></div><div class="step rv"><span class="step-n">03</span><div><h3>Install</h3><p>The work is carried out and the system wired in, with the site left clean.</p></div></div><div class="step rv"><span class="step-n">04</span><div><h3>Commission and hand over</h3><p>Everything is tested and switched on, and you are shown how it runs.</p></div></div></div>
-  </div>
-</section>
-
-<section class="sec sec--alt" id="area" aria-labelledby="area-h">
-  <div class="wrap">
-    <div class="sec-hd rv">
-      <p class="sec-kick">Where we work</p>
-      <h2 id="area-h">Melbourne wide</h2>
-      <p>Working across Melbourne: Hallam and the surrounding suburbs, out to the wider metro area.</p>
-    </div>
-    <ul class="area-strip rv"><li>Melbourne</li><li>Hallam</li><li>South-east suburbs</li><li>Residential &amp; commercial</li></ul>
-  </div>
-</section>
-
-<span id="quote" aria-hidden="true"></span>
-<section id="lbq" aria-labelledby="lbq-h">
-  <div class="lbq-w">
-    <div class="lbq-sp">
-      <div class="lbq-aside">
-        <h2 id="lbq-h">Request a quote</h2>
-        <p class="lbq-s">Tell us about the job and we'll get back to you. Prefer to talk? Call 0470 475 695.</p>
-        <p class="lbq-s" style="margin-bottom:0"><a href="tel:+61470475695" style="color:var(--acc-lite);font-weight:700">0470 475 695</a><br>Melbourne, VIC</p>
-      </div>
-      <div><form id="lbq-form" novalidate data-site="99-electrical-solutions-pty-ltd" data-biz="99 Electrical Solutions"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Electrical, solar, EV charger or air conditioning…" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div>
-    </div>
-  </div>
-  <script>
-(function(){
-  var EP = null;
-  function base(cb){
-    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
-    var done = false;
-    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
-    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
-      .then(function(r){ return r.text(); })
-      .then(function(txt){
-        var b = (txt||'').trim().replace(/\/+$/, '');
-        if (done) return;
-        done = true; clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
-      })
-      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
-  }
-  function init(){
-    var f = document.getElementById('lbq-form');
-    if (!f) return;
-    var st = document.getElementById('lbq-st');
-    var btn = f.querySelector('button[type=submit]');
-    f.addEventListener('submit', function(e){
-      e.preventDefault();
-      var d = {};
-      new FormData(f).forEach(function(v,k){ d[k]=v; });
-      if (d.website) return;
-      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
-        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
-        st.style.color = '#ff9d8a';
-        return;
-      }
-      btn.disabled = true;
-      st.textContent = 'Sending\u2026';
-      st.style.color = '';
-      base(function(B){
-        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
-        fetch(url, {
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body: JSON.stringify({
-            site_id: f.dataset.site || '',
-            business_name: f.dataset.biz || '',
-            name: d.name, phone: d.phone, email: d.email,
-            service: d.service || '', message: d.message,
-            consent: !!d.consent
-          })
-        })
-        .then(function(r){ return r.json().catch(function(){ return {}; }); })
-        .then(function(x){
-          if (x && x.success) {
-            f.reset();
-            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
-            st.style.color = 'var(--lbq-accent)';
-          } else {
-            throw new Error((x && x.error) || 'Could not send');
-          }
-        })
-        .catch(function(err){
-          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
-          st.style.color = '#ff9d8a';
-        })
-        .finally(function(){ btn.disabled = false; });
-      });
-    });
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
-</script>
-</section>
-
-<footer class="ft">
-  <div class="wrap">
-    <div class="ft-in">
-      <div>
-        <h3>99 Electrical Solutions</h3>
-        <p>Electrical, solar, battery, EV chargers, air conditioning and CCTV — powering a smarter tomorrow across Melbourne.</p>
-        <p>Powering a smarter tomorrow.</p>
-      </div>
-      <div>
-        <h3>Services</h3>
-        <ul><li>Electrical</li><li>Solar</li><li>Battery storage</li><li>EV chargers</li><li>Air conditioning</li><li>CCTV</li></ul>
-      </div>
-      <div>
-        <h3>Contact</h3>
-        <ul><li><a href="tel:+61470475695">0470 475 695</a></li><li>Melbourne, VIC</li></ul>
-      </div>
-    </div>
-    <div class="ft-bot">
-      <span>&copy; 2026 99 Electrical Solutions. Melbourne, VIC.</span>
-      <span><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span>
-    </div>
-  </div>
-</footer>
-<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
-<script>
-(function(){
-  var els = document.querySelectorAll('.rv');
-  function all(){ for (var i=0;i<els.length;i++) els[i].classList.add('on'); }
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(en){
-      en.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    for (var i=0;i<els.length;i++) io.observe(els[i]);
-  } else {
-    all();
-  }
-  setTimeout(function(){ document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('on'); }); }, 1200);
-})();
-</script>
-
-
-
-
-
-
-
-
-<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#c09048","important");})();</script>
-</body>
-</html>
+.hero{padding:clamp(46px,6vw,92px) 0}
+.hero p{max-width:54ch}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.tiles div{background:var(--bg);padding:22px}
+.tiles h3{margin:0 0 6px;font-size:17px}.tiles p{margin:0;font-size:15px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,4vw,54px)}@media(max-width:880px){.two{grid-template-columns:1fr}}
+.areas span{display:inline-block;border:1px solid var(--line);padding:7px 13px;margin:0 8px 8px 0;font-size:14px;color:var(--dim)}
+</style></head>
+<body class="dark"><header class="site"><div class="wrap bar"><a class="lb-brand" href="#top" aria-label="99 Electrical solutions PTY LTD"><img src="assets/logo-cut.png" alt="99 Electrical solutions PTY LTD"></a><nav class="main"><a href="#Services">Services</a><a href="#About">About</a><a href="#Areas">Areas</a><a href="#Quote">Quote</a></nav><a class="tel" href="tel:0470475695">0470 475 695</a></div></header><main id="top"><section class="hero"><div class="wrap"><h1>Detail you notice.<br><i>Structure you do not.</i></h1><p>From demolition to final trim, one crew carries the job rather than handing it around.</p></div></section><section id="Services"><div class="wrap"><h2>Services</h2><div class="tiles"><div><h3>Maintenance</h3><p>Done properly, with the preparation that makes it last.</p></div><div><h3>Renovations</h3><p>Done properly, with the preparation that makes it last.</p></div><div><h3>Framing & structures</h3><p>Done properly, with the preparation that makes it last.</p></div><div><h3>Decks & carports</h3><p>Done properly, with the preparation that makes it last.</p></div><div><h3>Property repairs</h3><p>Done properly, with the preparation that makes it last.</p></div><div><h3>Fit-out & finishing</h3><p>Done properly, with the preparation that makes it last.</p></div></div></div></section><section id="About"><div class="wrap two"><div><h2>99 Electrical solutions PTY LTD</h2><p>Melbourne work, quoted from the site and scheduled around the weather.</p></div><div><form id="quote-form" data-site="99-electrical-solutions-pty-ltd"><label for="n">Name</label>
+<input id="n" name="name" required placeholder="Your name"><label for="p">Phone</label>
+<input id="p" name="phone" required inputmode="tel" placeholder="04xx xxx xxx">
+<label for="s">Suburb</label><input id="s" name="suburb" placeholder="Your suburb">
+<label for="m">What needs doing?</label><textarea id="m" name="message" rows="3"></textarea>
+<button type="submit">Send request</button></form></div></div></section><section id="Areas"><div class="wrap"><h2>Areas</h2><div class="areas"><span>Newcastle</span><span>Lake Macquarie</span><span>Maitland</span><span>Cameron Park</span><span>Warners Bay</span><span>Belmont</span><span>Charlestown</span><span>Swansea</span><span>Morisset</span><span>Toronto</span><span>Cessnock</span><span>Raymond Terrace</span><span>Port Stephens</span><span>Gosford</span><span>Central Coast</span></div></div></section></main><footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span>99 Electrical solutions PTY LTD</span><a class="tel" href="tel:0470475695">0470 475 695</a></div></footer>
+<script>document.getElementById('quote-form').addEventListener('submit',function(e){e.preventDefault();
+var f=e.currentTarget,b=f.querySelector('button');b.textContent='Sending…';b.disabled=true;
+fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',
+headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
+body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,message:f.message.value})})
+.then(function(){b.textContent='Thanks — we will call you back';})
+.catch(function(){b.textContent='Call '+(window.__ph||'');b.disabled=false;});});</script></body></html>
