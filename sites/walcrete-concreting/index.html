@@ -55,7 +55,21 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-siz
 .hero p{color:#cfd6de;margin:0 0 22px;max-width:56ch}
 @media(max-width:760px){.hero .shots{grid-template-columns:1fr 1fr}}
 </style>
-</head><body>
+<style id="lb-skin">/* skin 4 — big numerals, alternating rows, strong rules */
+ h1{font-size:clamp(40px,7vw,86px)!important;letter-spacing:-.045em!important}
+ h2{display:flex!important;align-items:baseline!important;gap:.6em!important;letter-spacing:-.02em!important}
+ h2:before{content:counter(lbs,decimal-leading-zero);counter-increment:lbs;font:800 clamp(12px,1.4vw,15px)/1 ui-monospace,monospace;opacity:.5;letter-spacing:.1em}
+ section{counter-increment:lbs}
+ [class*=card]:nth-child(2n){background:rgba(255,255,255,.045)!important}
+ section+section{border-top:1px solid rgba(255,255,255,.12)}
+ </style><style id="lb-skin-guard">@media(max-width:900px){
+ .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
+ [class*=card]{transform:none!important;margin-bottom:12px!important}
+ [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
+ section,.hero,header{overflow-x:clip!important}
+ img,video,svg{max-width:100%!important;height:auto}
+ h1,h2{overflow-wrap:anywhere!important}
+}</style></head><body>
 <nav><div class="wrap nav-in">
   <a class="brand" href="#top" aria-label="Walcrete Concreting"><img src="assets/logo-cut.png" alt="Walcrete Concreting"></a>
   <div class="links" id="navlinks"><a href="#services">Services</a><a href="#why">Process</a><a href="#faq">FAQ</a></div>

@@ -329,7 +329,20 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-<style id="lb-hero-noUpscale">header.hero,.hero{height:auto!important;min-height:0!important;max-height:1764px!important}.hero-bg,header.hero .hero-bg{background-size:cover!important;background-position:center 45%!important}</style><style>.lb-brand img.lb-mono{height:46px;width:auto;display:block;margin-right:12px}.lb-brand{display:flex;align-items:center}</style></head>
+<style id="lb-hero-noUpscale">header.hero,.hero{height:auto!important;min-height:0!important;max-height:1764px!important}.hero-bg,header.hero .hero-bg{background-size:cover!important;background-position:center 45%!important}</style><style>.lb-brand img.lb-mono{height:46px;width:auto;display:block;margin-right:12px}.lb-brand{display:flex;align-items:center}</style><style id="lb-skin">/* skin 3 — split hero, soft corners, offset cards */
+ .hero-in,.hero-inner{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,.9fr)!important;gap:clamp(24px,4vw,56px)!important;align-items:center!important}
+ @media(max-width:900px){.hero-in,.hero-inner{grid-template-columns:1fr!important}}
+ [class*=card]{border-radius:18px!important;box-shadow:0 18px 40px -28px rgba(0,0,0,.9)!important}
+ [class*=card]:nth-child(2n){transform:translateY(14px)}
+ h2{letter-spacing:-.03em!important;font-weight:800!important}
+ </style><style id="lb-skin-guard">@media(max-width:900px){
+ .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
+ [class*=card]{transform:none!important;margin-bottom:12px!important}
+ [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
+ section,.hero,header{overflow-x:clip!important}
+ img,video,svg{max-width:100%!important;height:auto}
+ h1,h2{overflow-wrap:anywhere!important}
+}</style></head>
 <body class="hero-full">
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav"><div class="nav-in">

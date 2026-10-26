@@ -54,7 +54,20 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-siz
 .hero p{color:#cbd2da;margin:0 0 22px;max-width:58ch;font-size:clamp(16px,1.6vw,19px)}
 .hero .band{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;color:var(--dim);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase}
 </style>
-</head><body>
+<style id="lb-skin">/* skin 6 — technical: mono labels, grid lines, tight tracking */
+ h1{letter-spacing:-.05em!important;font-weight:800!important}
+ h2{font-family:ui-monospace,SFMono-Regular,Menlo,monospace!important;font-size:clamp(13px,1.5vw,16px)!important;text-transform:uppercase!important;letter-spacing:.16em!important;font-weight:600!important}
+ section{border-top:1px solid rgba(255,255,255,.09)}
+ [class*=card]{border-radius:2px!important;border:1px solid rgba(255,255,255,.10)!important;background:rgba(255,255,255,.02)!important;box-shadow:none!important}
+ [class*=grid]{gap:10px!important}
+ </style><style id="lb-skin-guard">@media(max-width:900px){
+ .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
+ [class*=card]{transform:none!important;margin-bottom:12px!important}
+ [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
+ section,.hero,header{overflow-x:clip!important}
+ img,video,svg{max-width:100%!important;height:auto}
+ h1,h2{overflow-wrap:anywhere!important}
+}</style></head><body>
 <nav><div class="wrap nav-in">
   <a class="brand" href="#top" aria-label="Lake Mac Lawn Care"><img src="assets/logo-cut.png" alt="Lake Mac Lawn Care"></a>
   <div class="links" id="navlinks"><a href="#services">Services</a><a href="#why">Process</a><a href="#areas">Areas</a><a href="#faq">FAQ</a></div>

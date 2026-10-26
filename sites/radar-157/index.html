@@ -283,7 +283,22 @@ nav .burger,header .burger{display:none!important}
     width:min(86vw,320px);z-index:70;margin:0!important}
   nav .burger,header .burger{display:flex!important;margin-left:auto}
 }
-</style><style id="lb-hdr-vision">nav img{height:64px!important;width:auto!important;display:block!important}</style></head>
+</style><style id="lb-hdr-vision">nav img{height:64px!important;width:auto!important;display:block!important}</style><style id="lb-skin">/* skin 2 — condensed uppercase, full-bleed hero, numbered services */
+ .hero h1, header h1{text-transform:uppercase!important;letter-spacing:-.01em!important;font-weight:800!important;line-height:.95!important}
+ h2{text-transform:uppercase!important;letter-spacing:.06em!important;font-size:clamp(18px,2vw,24px)!important;font-weight:700!important}
+ .hero,header.hero{min-height:72vh!important}
+ [class*=grid]{gap:1px!important;background:rgba(255,255,255,.12)!important}
+ [class*=card]{border-radius:0!important;background:var(--ground,#0d0f13)!important;padding:clamp(20px,3vw,34px)!important}
+ [class*=card]:before{content:counter(lbc);counter-increment:lbc;display:block;font:700 11px/1 ui-monospace,monospace;letter-spacing:.2em;opacity:.55;margin-bottom:10px}
+ [class*=grid]{counter-reset:lbc}
+ </style><style id="lb-skin-guard">@media(max-width:900px){
+ .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
+ [class*=card]{transform:none!important;margin-bottom:12px!important}
+ [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
+ section,.hero,header{overflow-x:clip!important}
+ img,video,svg{max-width:100%!important;height:auto}
+ h1,h2{overflow-wrap:anywhere!important}
+}</style></head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav"><div class="nav-in">

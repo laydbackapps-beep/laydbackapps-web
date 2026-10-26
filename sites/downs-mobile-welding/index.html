@@ -54,7 +54,21 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-siz
 .hero p{color:#cbd2da;margin:0 0 22px;max-width:58ch;font-size:clamp(16px,1.6vw,19px)}
 .hero .band{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;color:var(--dim);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase}
 </style>
-</head><body>
+<style id="lb-skin">/* skin 4 — big numerals, alternating rows, strong rules */
+ h1{font-size:clamp(40px,7vw,86px)!important;letter-spacing:-.045em!important}
+ h2{display:flex!important;align-items:baseline!important;gap:.6em!important;letter-spacing:-.02em!important}
+ h2:before{content:counter(lbs,decimal-leading-zero);counter-increment:lbs;font:800 clamp(12px,1.4vw,15px)/1 ui-monospace,monospace;opacity:.5;letter-spacing:.1em}
+ section{counter-increment:lbs}
+ [class*=card]:nth-child(2n){background:rgba(255,255,255,.045)!important}
+ section+section{border-top:1px solid rgba(255,255,255,.12)}
+ </style><style id="lb-skin-guard">@media(max-width:900px){
+ .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
+ [class*=card]{transform:none!important;margin-bottom:12px!important}
+ [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
+ section,.hero,header{overflow-x:clip!important}
+ img,video,svg{max-width:100%!important;height:auto}
+ h1,h2{overflow-wrap:anywhere!important}
+}</style></head><body>
 <nav><div class="wrap nav-in">
   <a class="brand" href="#top" aria-label="Downs Mobile Welding"><img src="assets/logo-cut.png" alt="Downs Mobile Welding"></a>
   <div class="links" id="navlinks"><a href="#services">Services</a><a href="#why">Process</a><a href="#faq">FAQ</a></div>

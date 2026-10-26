@@ -197,7 +197,20 @@ html.js .rv.in{opacity:1;transform:none}
 <!--LB-CANVASZ--><style id="lb-canvasz">[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
 <!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
 <!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.28))}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
-<style>:root{--acc:#498500;--accent:#498500}</style><style id="lb-navlogo">nav{display:flex!important;align-items:center!important;gap:clamp(10px,2vw,22px)!important}nav img{height:44px!important;width:auto!important;display:block!important}@media(max-width:860px){nav img{height:36px!important}}</style></head>
+<style>:root{--acc:#498500;--accent:#498500}</style><style id="lb-navlogo">nav{display:flex!important;align-items:center!important;gap:clamp(10px,2vw,22px)!important}nav img{height:44px!important;width:auto!important;display:block!important}@media(max-width:860px){nav img{height:36px!important}}</style><style id="lb-skin">/* skin 6 — technical: mono labels, grid lines, tight tracking */
+ h1{letter-spacing:-.05em!important;font-weight:800!important}
+ h2{font-family:ui-monospace,SFMono-Regular,Menlo,monospace!important;font-size:clamp(13px,1.5vw,16px)!important;text-transform:uppercase!important;letter-spacing:.16em!important;font-weight:600!important}
+ section{border-top:1px solid rgba(255,255,255,.09)}
+ [class*=card]{border-radius:2px!important;border:1px solid rgba(255,255,255,.10)!important;background:rgba(255,255,255,.02)!important;box-shadow:none!important}
+ [class*=grid]{gap:10px!important}
+ </style><style id="lb-skin-guard">@media(max-width:900px){
+ .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
+ [class*=card]{transform:none!important;margin-bottom:12px!important}
+ [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
+ section,.hero,header{overflow-x:clip!important}
+ img,video,svg{max-width:100%!important;height:auto}
+ h1,h2{overflow-wrap:anywhere!important}
+}</style></head>
 <body>
 <script>document.documentElement.className+=' js';</script>
 <header class="bar">

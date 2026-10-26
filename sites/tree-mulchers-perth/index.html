@@ -457,7 +457,21 @@ nav .burger,header .burger{display:none!important}
     width:min(86vw,320px);z-index:70;margin:0!important}
   nav .burger,header .burger{display:flex!important;margin-left:auto}
 }
-</style></head>
+</style><style id="lb-skin">/* skin 4 — big numerals, alternating rows, strong rules */
+ h1{font-size:clamp(40px,7vw,86px)!important;letter-spacing:-.045em!important}
+ h2{display:flex!important;align-items:baseline!important;gap:.6em!important;letter-spacing:-.02em!important}
+ h2:before{content:counter(lbs,decimal-leading-zero);counter-increment:lbs;font:800 clamp(12px,1.4vw,15px)/1 ui-monospace,monospace;opacity:.5;letter-spacing:.1em}
+ section{counter-increment:lbs}
+ [class*=card]:nth-child(2n){background:rgba(255,255,255,.045)!important}
+ section+section{border-top:1px solid rgba(255,255,255,.12)}
+ </style><style id="lb-skin-guard">@media(max-width:900px){
+ .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
+ [class*=card]{transform:none!important;margin-bottom:12px!important}
+ [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
+ section,.hero,header{overflow-x:clip!important}
+ img,video,svg{max-width:100%!important;height:auto}
+ h1,h2{overflow-wrap:anywhere!important}
+}</style></head>
 <body>
 <script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
 <nav class="nav"><div class="nav-in">

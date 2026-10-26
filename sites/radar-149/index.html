@@ -151,7 +151,21 @@ footer a:hover { color: var(--acc); }
 @media (max-width: 900px) { footer .wrap { grid-template-columns: 1fr 1fr; } }
 .hv-motif{background-image:repeating-linear-gradient(90deg, var(--acc) 0 10px, transparent 10px 22px);}.hero-kicker::before{background:var(--acc)}.brand img,.fbrand img{border:1px solid var(--line);background:#fff;padding:4px;border-radius:8px}
 </style>
-<noscript><style>.rv,.drop,.hg-item,.sld-item,[data-ux]{opacity:1!important;transform:none!important;visibility:visible!important}#sigSplash{display:none!important}.sld-item{position:static!important;margin-top:14px}</style></noscript></head>
+<noscript><style>.rv,.drop,.hg-item,.sld-item,[data-ux]{opacity:1!important;transform:none!important;visibility:visible!important}#sigSplash{display:none!important}.sld-item{position:static!important;margin-top:14px}</style></noscript><style id="lb-skin">/* skin 4 — big numerals, alternating rows, strong rules */
+ h1{font-size:clamp(40px,7vw,86px)!important;letter-spacing:-.045em!important}
+ h2{display:flex!important;align-items:baseline!important;gap:.6em!important;letter-spacing:-.02em!important}
+ h2:before{content:counter(lbs,decimal-leading-zero);counter-increment:lbs;font:800 clamp(12px,1.4vw,15px)/1 ui-monospace,monospace;opacity:.5;letter-spacing:.1em}
+ section{counter-increment:lbs}
+ [class*=card]:nth-child(2n){background:rgba(255,255,255,.045)!important}
+ section+section{border-top:1px solid rgba(255,255,255,.12)}
+ </style><style id="lb-skin-guard">@media(max-width:900px){
+ .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
+ [class*=card]{transform:none!important;margin-bottom:12px!important}
+ [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
+ section,.hero,header{overflow-x:clip!important}
+ img,video,svg{max-width:100%!important;height:auto}
+ h1,h2{overflow-wrap:anywhere!important}
+}</style></head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav"><div class="nav-in">
