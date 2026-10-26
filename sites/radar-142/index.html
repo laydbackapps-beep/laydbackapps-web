@@ -391,10 +391,29 @@ nav.main,.nav{flex-wrap:wrap!important;row-gap:6px!important;margin-left:auto!im
 nav.main a,.nav a{white-space:nowrap}
 footer,footer p,footer a,.ftr,.ftr a,.ftr p{font-size:15px!important;line-height:1.7!important}
 </style>
+
+<style id="lb-allards-final">
+.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(16px,1.8vw,26px)!important;
+ text-decoration:none!important;background:none!important;border:0!important;padding:0!important;flex:0 0 auto!important}
+.lb-brand .lb-mark{height:clamp(44px,4.6vw,66px)!important;width:auto!important;max-width:none!important;object-fit:contain!important;display:block}
+.lb-brand .lb-word{height:clamp(46px,4.9vw,70px)!important;width:auto!important;max-width:none!important;object-fit:contain!important;display:block}
+.lb-brand .name,.lb-brand .lb-brand__name{display:none!important}
+.lb-sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+header .bar,.bar{flex-wrap:wrap!important;row-gap:8px!important}
+nav.main,.nav{flex-wrap:wrap!important;row-gap:6px!important;margin-left:auto!important}
+nav.main a,.nav a{white-space:nowrap}
+/* hero photo band: smaller so the photos are shown closer to their own resolution instead of a huge stretched crop */
+.hero{height:min(76vh,640px)!important;max-height:min(76vh,640px)!important;min-height:0!important;overflow:hidden!important}
+.hero-in{padding-top:clamp(24px,5vh,56px)!important;padding-bottom:clamp(20px,4vh,44px)!important}
+.hero-slides img{object-position:center 38%!important;transform:none!important;filter:none!important}
+@media (max-width:720px){.lb-brand .lb-mark{height:38px!important}.lb-brand .lb-word{height:40px!important}
+ .hero{height:58vh!important;max-height:58vh!important}}
+footer,footer p,footer a,.ftr,.ftr a,.ftr p{font-size:15px!important;line-height:1.7!important}
+</style>
 </head>
 <body>
 <script>document.documentElement.className+=' js';</script>
-<nav class="nav"><a href="/" class="lb-brand" aria-label="Allards Auto Detailing, Car Detailing & Graphene Paint Protection"><img src="assets/logo-flat-mark.png" alt="" class="lb-mark" loading="eager" decoding="async"><img src="assets/logo-word.png" alt="" class="lb-word" loading="eager" decoding="async"><span class="lb-sr">Allards Auto Detailing, Car Detailing & Graphene Paint Protection</span></a><div class="nav-in">
+<nav class="nav"><a class="lb-brand" href="#top" aria-label="Allards Auto Detailing"><img class="lb-mark" src="assets/hdr-car.png" alt="" loading="eager" decoding="async"><img class="lb-word" src="assets/hdr-word.png" alt="" loading="eager" decoding="async"><span class="lb-sr">Allards Auto Detailing</span></a><div class="nav-in">
   
   <div class="nav-links" id="navlinks"><a href="#services">Packages</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="#work">Work</a><a href="#quote">Book</a></div>
   <div class="nav-cta"><a class="mono nav-p lb-tel" href="tel:0405733769">0405 733 769</a><a href="#quote" class="btn btn-primary btn-sm">Get a quote</a></div>
