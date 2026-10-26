@@ -1,269 +1,162 @@
-<!DOCTYPE html>
-
-<html lang="en-AU">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Slades Plumbing &amp; Maintenance — Ballarat VIC</title>
-<meta content="Plumbing &amp; maintenance — Slades Plumbing &amp; Maintenance, Ballarat VIC." name="description"/>
-<link href="favicon-32.png" rel="icon" sizes="32x32"/>
-<meta content="#0b0b0c" name="theme-color"/>
+<!doctype html>
+<html lang="en-AU"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slades Plumbing &amp; Maintenance — Plumber, Ballarat</title>
+<meta name="description" content="Slades Plumbing &amp; Maintenance, Ballarat. Leaks, blocked drains, tap and toilet repairs, hot water and bathroom work. Call 0413 221 393.">
 <style>
-:root{
-  --lb-name:#ffffff; --lb-acc:#6084cc; --lb-subc:rgba(255,255,255,.72);
-  --ink:#ffffff; --muted:rgba(255,255,255,.70); --line:rgba(255,255,255,.14); --panel:rgba(255,255,255,.045);
-  --bg:#0b0b0c; --bg2:#121214; --accent:#6084cc;
+:root{--navy:#0d1b33;--navy2:#122544;--ink:#eef2f8;--dim:#9fb0c8;--line:rgba(255,255,255,.12);--acc:#3f7fd0;--acc2:#f0c419}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy);color:var(--ink);font:17px/1.6 "Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:40;background:rgba(13,27,51,.94);border-bottom:2px solid var(--acc);backdrop-filter:blur(8px)}
+.nav-in{display:flex;align-items:center;gap:clamp(12px,2vw,26px);height:78px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:46px;width:auto;display:block}
+nav .links{display:flex;gap:clamp(12px,1.8vw,24px);margin-left:auto}
+nav .links a{text-decoration:none;font-size:15px;color:var(--dim)}
+nav .links a:hover{color:#fff}
+.tel{font-weight:800;text-decoration:none;color:#fff;border-bottom:2px solid var(--acc2);padding-bottom:2px;white-space:nowrap}
+.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:#fff;padding:8px 10px;font-size:18px}
+header.hero{position:relative;min-height:min(78vh,660px);display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('assets/hero.jpg') center 40%/cover no-repeat}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,18,34,.72) 0%,rgba(9,18,34,.55) 45%,rgba(9,18,34,.94) 100%)}
+.hero-in{position:relative;z-index:2;padding:clamp(40px,7vw,90px) 0 clamp(34px,5vw,60px);width:100%}
+h1{margin:0 0 18px;font-size:clamp(32px,5.2vw,64px);line-height:1.02;letter-spacing:-.035em;max-width:17ch}
+h1 em{font-style:normal;color:var(--acc2)}
+.hero p{max-width:52ch;color:#cfd9e6;margin:0 0 22px;font-size:clamp(15.5px,1.5vw,18px)}
+.cta{display:inline-flex;gap:10px;align-items:center;background:var(--acc);color:#fff;text-decoration:none;font-weight:800;padding:14px 22px;border-radius:2px}
+.cta:hover{background:#4f8fdd}
+.cta.ghost{background:transparent;border:1px solid var(--line);font-weight:600}
+section{padding:clamp(44px,6vw,80px) 0;border-top:1px solid var(--line)}
+h2{margin:0 0 10px;font-size:clamp(22px,2.8vw,34px);letter-spacing:-.02em}
+.lead{color:var(--dim);margin:0 0 26px;max-width:62ch}
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line)}
+.svc article{background:var(--navy);padding:22px 20px}
+.svc h3{margin:0 0 6px;font-size:17px}
+.svc p{margin:0;color:var(--dim);font-size:15px}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.why article{border-left:2px solid var(--acc);padding:4px 0 4px 14px}
+.why h3{margin:0 0 6px;font-size:16px}
+.why p{margin:0;color:var(--dim);font-size:14.5px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gal figure{margin:0;position:relative;overflow:hidden;background:var(--navy2)}
+.gal img{width:100%;height:230px;object-fit:cover;display:block}
+.gal figcaption{font-size:12.5px;color:var(--dim);padding:8px 2px 0}
+.areas{display:flex;flex-wrap:wrap;gap:8px}
+.areas span{border:1px solid var(--line);padding:7px 13px;font-size:14px;color:var(--dim)}
+details.faq{border-bottom:1px solid var(--line);padding:14px 0}
+details.faq summary{cursor:pointer;font-weight:700;font-size:16px}
+details.faq .a{color:var(--dim);padding-top:8px;font-size:15px}
+form{background:var(--navy2);border:1px solid var(--line);padding:clamp(20px,3vw,30px);display:grid;grid-template-columns:1fr 1fr;gap:12px}
+form .full{grid-column:1/-1}
+label{display:block;font-size:13px;color:var(--dim);margin-bottom:5px}
+input,textarea,select{width:100%;background:#0a1526;border:1px solid var(--line);color:#fff;padding:11px;font:inherit;font-size:15px}
+button{grid-column:1/-1;background:var(--acc);color:#fff;border:0;padding:14px;font:inherit;font-weight:800;cursor:pointer}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){
+  nav .links{display:none}nav .links.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#0b1729;padding:14px;border-bottom:1px solid var(--line)}
+  .burger{display:block}.svc,.why,.gal{grid-template-columns:1fr}form{grid-template-columns:1fr}
 }
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:system-ui,-apple-system,"Segoe UI",Archivo,"Helvetica Neue",Arial,sans-serif;
-  line-height:1.36;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.38;margin:0}
-p{margin:0}
-.container{width:min(1140px,92vw);margin-inline:auto}
-header.site{position:sticky;top:0;z-index:60;background:rgba(11,11,12,.94);border-bottom:1px solid var(--line)}
-/* A header must never be hidden by a reveal/scroll state. */
-header.site{opacity:1!important;visibility:visible!important;transform:none!important}
-.bar{display:flex;align-items:center;gap:clamp(14px,3vw,48px);padding:12px 0}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:0 1 auto;min-width:0}
-.brand img{height:64px;width:auto;max-width:min(340px,46vw);object-fit:contain}
-.brand .name{font-weight:800;letter-spacing:-.01em;font-size:clamp(13px,1.35vw,18px);color:#ffffff;line-height:1.318;max-width:min(330px,34vw);white-space:normal}
-.brand .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-nav.main{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,2vw,28px);flex-wrap:wrap}
-nav.main a{color:#ffffff;text-decoration:none;font-size:0.95rem;opacity:.86;white-space:nowrap}
-nav.main a:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;
-  text-decoration:none;font-weight:700;font-size:0.95rem;background:var(--accent);color:#0b0b0c;border:1px solid var(--accent)}
-nav.main a.btn,header .btn{background:var(--accent)!important;color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important}
-.btn.ghost{background:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff!important;
-  border:1px solid rgba(255,255,255,.5)!important}
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#0e0f11}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.34)}
-.hero .inner{position:relative;z-index:3;padding:32px 32px 32px;max-width:min(780px,92vw)}
-.kicker{display:inline-block;font-size:0.82rem;font-weight:700;letter-spacing:0.05em;color:#d6d8db;margin-bottom:14px}
-.hero h1{font-size:clamp(2.3rem,4.6vw,3.7rem);margin-bottom:14px}
-.hero h1 em{font-style:normal;color:#cfd2d6}
-.hero .lede{color:var(--muted);font-size:clamp(1rem,1.5vw,1.14rem);max-width:54ch;margin-bottom:22px}
-.hero .acts{display:flex;flex-wrap:wrap;gap:14px}
-.hero .facts{display:flex;flex-wrap:wrap;gap:9px 24px;list-style:none;padding:0;margin:20px 0 0;color:rgba(255,255,255,.82);font-size:0.95rem}
-.hero .facts li::before{content:"";display:inline-block;width:6px;height:6px;margin-right:9px;background:var(--accent);vertical-align:middle;border-radius:50%}
-section{padding:32px 32px;border-bottom:1px solid var(--line)}
-section.alt{background:var(--bg2)}
-.head{max-width:60ch;margin-bottom:clamp(26px,4vh,44px)}
-.head h2{font-size:clamp(1.55rem,3vw,2.3rem);margin-bottom:10px}
-.head p{color:var(--muted)}
-.grid{display:grid;gap:18px}
-.g3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:900px){.g3{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.g3{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
-.card h3{font-size:1.08rem;margin-bottom:8px}
-.card p{color:var(--muted);font-size:0.95rem}
-.swatch{width:38px;height:5px;background:var(--accent);border-radius:3px;margin-bottom:16px}
-.about{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1.15fr .85fr;align-items:start}
-@media(max-width:880px){.about{grid-template-columns:1fr}}
-.about p{color:var(--muted);margin-bottom:14px}
-.about h2{margin-bottom:16px}
-.about ul{list-style:none;padding:0;margin:0}
-.about li{padding:11px 0;border-bottom:1px solid var(--line);color:rgba(255,255,255,.86);font-size:0.97rem}
-.about li span{color:var(--muted)}
-.contactwrap{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1fr 1fr;align-items:start}
-@media(max-width:820px){.contactwrap{grid-template-columns:1fr}}
-.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.links a{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border:1px solid var(--line);
-  border-radius:10px;text-decoration:none;color:rgba(255,255,255,.9);font-size:0.93rem}
-.links a:hover{border-color:var(--accent-ink,var(--accent))}
-form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
-label{display:block;font-size:0.85rem;color:var(--muted);margin-bottom:6px}
-input,textarea{width:100%;padding:12px 14px;border-radius:9px;border:1px solid var(--line);background:#0e0f11;color:#fff;font:inherit;margin-bottom:14px}
-input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
-form .btn{width:100%}
-.note{color:var(--muted);font-size:0.85rem;margin-top:12px}
-footer{padding:48px 0 34px;background:#08090a}
-.foot{display:grid;gap:clamp(22px,3vw,44px);grid-template-columns:1.4fr 1fr 1fr}
-@media(max-width:820px){.foot{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.foot{grid-template-columns:1fr}}
-footer h4{font-size:0.82rem;letter-spacing:0.05em;color:var(--muted);margin:0 0 14px;font-weight:700}
-footer ul{list-style:none;padding:0;margin:0}
-footer li{margin-bottom:9px}
-footer a{color:rgba(255,255,255,.86);text-decoration:none;font-size:0.94rem}
-footer a:hover{text-decoration:underline}
-.footbottom{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;
-  gap:14px;justify-content:space-between;color:var(--muted);font-size:0.85rem}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-.telbig{display:inline-block;color:var(--ink);font-weight:800;font-size:1.6rem;line-height:1.32;text-decoration:none;letter-spacing:-.01em;margin-top:14px}
-#contact a[href^="mailto:"]{color:var(--ink);font-weight:600}
-@media (max-width:980px){.bar{flex-wrap:wrap;row-gap:8px}.brand{flex:1 1 auto;min-width:0}.brand .name{font-size:14px;max-width:none}nav.main{flex:1 1 100%;flex-wrap:wrap;gap:10px 16px;justify-content:flex-start}nav.main a{font-size:13px}}
-.about p{max-width:62ch}
-section > .container > p{max-width:66ch}
-.hero .lede,.hero p{color:rgba(255,255,255,.94)!important}
-.hero .inner{position:relative}
-.hero .inner::before{content:"";position:absolute;inset:-10% -8%;z-index:-1;background:radial-gradient(120% 92% at 22% 42%,rgba(0,0,0,.62),rgba(0,0,0,0) 72%)}
-</style>
-<style id="lb-mobile-base">
-html,body{max-width:100%;overflow-x:hidden}
-img,video,canvas,svg,iframe{max-width:100%}
-img,video{height:auto}
-header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
-header,.site-header,.nav{max-width:100%}
-.lb-brand{min-width:0;max-width:100%;overflow:hidden}
-.lb-brand img{max-height:64px;width:auto}
-nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
-h1{overflow-wrap:anywhere}
-@media (max-width:820px){
-  .lb-brand img{max-height:38px}
-  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
-  h2{font-size:clamp(20px,6vw,30px)!important}
-  section{padding-left:16px!important;padding-right:16px!important}
-  .wrap,.container{max-width:100%!important}
-}
-</style>
-<style id="lb-logo-hero">
-/* Client logo across the header: the real artwork, isolated and readable. */
-.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;padding:0!important;max-height:96px!important;
-  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
-  padding:0!important;box-shadow:none!important}
-.lb-brand .lb-mark{display:block!important;height:clamp(44px,4.8vw,66px)!important;width:auto!important;
-  max-width:none!important;max-height:66px!important;object-fit:contain!important;background:none!important;
-  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
-.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(38vw,520px)!important;
-  max-height:none!important;object-fit:contain!important;object-position:left center!important;
-  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
-.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
-  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
-.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
-.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
-.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
-  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
-.lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
-@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:20px!important}}
-.lb-bar{background-color:#d0d0d0!important}
-.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#101014!important}
-.lb-bar .cta,.lb-bar a.cta{color:#101014!important}
-</style>
-<style id="lb-brand-palette">:root{--acc:#243c6c;--accent:#243c6c;--lbq-accent:#243c6c;--lb-acc:#243c6c;--brand:#243c6c;--brand-color:#243c6c;--primary:#243c6c;--lime:#243c6c;--color-lime:#243c6c;--gold:#243c6c;--acc-strong:#243c6c;--acc2:#5c78cc;--acc-hi:#5c78cc;--accent-2:#5c78cc;--brand-2:#5c78cc;}</style></head>
+</style></head>
 <body>
-<header class="site">
-<div class="container bar">
-<a aria-label="Slades Plumbing &amp; Maintenance" class="lb-brand lb-brand--lockup lb-brand--square" href="#top" style="--lb-name:#101014"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-cut.png"/><span class="lb-sr">Slades Plumbing &amp; Maintenance</span></a><nav aria-label="Main" class="main">
-<a href="#services">Services</a>
-<a href="#process">Our process</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-<a class="btn" href="#contact">Get a quote</a>
-</nav>
-</div>
-<a class="lb-tel" href="tel:0413221393" style="margin-left:auto;font-weight:800;text-decoration:none;color:inherit;white-space:nowrap;font-size:15px;padding:8px 0">+61413221393</a></header>
+<nav><div class="wrap nav-in">
+  <a class="brand" href="#top" aria-label="Slades Plumbing and Maintenance"><img src="assets/logo-cut.png" alt="Slades Plumbing & Maintenance"></a>
+  <div class="links" id="navlinks">
+    <a href="#services">Services</a><a href="#work">Work</a><a href="#why">Why us</a><a href="#areas">Areas</a><a href="#faq">FAQ</a>
+  </div>
+  <a class="tel" href="tel:0413221393">0413 221 393</a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+</div></nav>
+
+<header class="hero" id="top"><div class="hero-bg"></div><div class="wrap hero-in">
+  <h1>Ballarat plumbing, <em>sorted properly.</em></h1>
+  <p>Leaks, blocked drains, taps, toilets, hot water and bathroom work — diagnosed, priced and fixed by a
+  plumber who turns up when he says he will.</p>
+  <a class="cta" href="tel:0413221393">Call 0413 221 393</a>
+  <a class="cta ghost" href="#quote" style="margin-left:8px">Send a job</a>
+</div></header>
+
 <main>
-<section aria-label="Plumbing &amp; maintenance" class="hero" id="top">
-<canvas aria-hidden="true" id="heroCanvas"></canvas>
-<div aria-hidden="true" class="veil"></div>
-<div class="container inner">
-<h1>Slades Plumbing &amp; Maintenance<br/>— plumbing.</h1>
-<p class="lede">Slades Plumbing &amp; Maintenance has built its round in Ballarat on plumbing work work that holds up — stormwater done with the preparation the job needs, not the minimum that gets it out the door.</p>
-<div class="acts"><a class="btn" href="#contact">Get a quote</a><a class="btn ghost" href="#services">See what we do</a></div>
-<ul class="facts"><li>Repairs</li><li>Hot water</li><li>Taps &amp; toilets</li><li>Maintenance</li></ul>
-</div>
-</section>
-<section id="services">
-<div class="container">
-<div class="head"><h2>What we do</h2><p>Slades Plumbing &amp; Maintenance is owner-run, which is why the person who quotes your plumbing work job is the person who turns up to do it.</p></div>
-<div class="grid g3"><article class="card"><div class="swatch"></div><h3>stormwater</h3><p>Slades Plumbing &amp; Maintenance turns up when agreed, does the plumbing work work to the quoted scope, and keeps the site tidy while it happens.</p></article><article class="card"><div class="swatch"></div><h3>blocked drains</h3><p>The job is walked with you at the end. Anything that needs attention is dealt with before the invoice, not after.</p></article><article class="card"><div class="swatch"></div><h3>leak repairs</h3><p>Edges, clean-up and the small finishes that decide whether a plumbing work job looks professional are done before Slades Plumbing &amp; Maintenance leaves site.</p></article><article class="card"><div class="swatch"></div><h3>hot water</h3><p>Quoted on site — Not over the phone from a photo — the price comes from seeing the job.</p></article><article class="card"><div class="swatch"></div><h3>rough-ins</h3><p>Rough-ins and fit-off for renovations.</p></article><article class="card"><div class="swatch"></div><h3>General maintenance</h3><p>One point of contact — The same person answers the phone and runs the work.</p></article></div>
-</div>
-</section>
-<section class="alt" id="process">
-<div class="container">
-<div class="head"><h2>How a job runs</h2><p>From the first look to the final clean up.</p></div>
-<div class="grid g3"><article class="card"><h3>Call it in</h3><p>Local to Ballarat — Travel time is short, which is why small jobs are worth doing.</p></article><article class="card"><h3>Find the cause</h3><p>Workmanship backed — If something is not right, Slades Plumbing &amp; Maintenance comes back.</p></article><article class="card"><h3>Fix and test</h3><p>The repair is done, tested and the area left clean.</p></article></div>
-</div>
-</section>
-<section id="about">
-<div class="container about">
-<div><h2>About Slades Plumbing &amp; Maintenance</h2><p>Slades Plumbing &amp; Maintenance works around Ballarat and the surrounding towns on plumbing repairs and maintenance.</p><p>Plumbing faults are usually a symptom of something else — the job is to find that, fix it once and not be back next month.</p></div>
-<ul><li>Ballarat &amp; surrounds <span>· local plumbing and maintenance</span></li><li>Repairs and replacements <span>· leaks, taps, hot water</span></li><li>Renovation plumbing <span>· rough-in and fit-off</span></li><li>Homes and rentals <span>· maintenance kept on top of</span></li></ul>
-</div>
-</section>
-<section class="alt" id="contact">
-<div class="container contactwrap">
-<div>
-<h2>Get a quote</h2>
-<p style="color:var(--muted);margin:10px 0 22px">Tell us what you need and roughly the size of the job, and we'll get back to you with a price.</p>
-<p style="color:var(--muted)">Message us and we’ll get straight back to you.</p><p style="color:var(--muted);margin-top:10px">Ballarat VIC</p>
-<div class="links"><a href="https://www.instagram.com/slades.plumbing" rel="noopener">Slades Plumbing &amp; Maintenance on Instagram</a></div>
-</div>
-<form data-biz="Slades Plumbing &amp; Maintenance" data-site="slades-plumbing-maintenance" id="lbq-form" novalidate="">
-<label for="lbq-n">Name</label>
-<input autocomplete="name" id="lbq-n" name="name" required=""/>
-<label for="lbq-p">Phone</label>
-<input autocomplete="tel" id="lbq-p" name="phone" required="" type="tel"/>
-<label for="lbq-m">What do you need done?</label>
-<textarea id="lbq-m" name="message" rows="4"></textarea>
-<button class="btn" type="submit">Request a quote</button>
-<p class="note" id="lbq-note">Send it through and we’ll be in touch.</p>
-</form>
-</div>
-</section>
+<section id="services"><div class="wrap">
+  <h2>What we take on</h2>
+  <p class="lead">Everyday repairs through to planned work. If it carries water, drains it or heats it, it is our job.</p>
+  <div class="svc">
+    <article><h3>Leaks &amp; burst pipes</h3><p>Traced, isolated and repaired — including under-sink and behind-wall pipework.</p></article>
+    <article><h3>Blocked drains</h3><p>Drain machine and jetter work, plus a camera to find what caused it so it does not come back.</p></article>
+    <article><h3>Taps, toilets &amp; cisterns</h3><p>Washers, cartridges, full tap replacement, cistern and inlet valve repairs.</p></article>
+    <article><h3>Hot water</h3><p>Repairs and replacement across electric, gas and heat-pump units.</p></article>
+    <article><h3>Bathroom &amp; kitchen work</h3><p>Vanity, sink and appliance installs, rough-in and fit-off for renovations.</p></article>
+    <article><h3>Maintenance</h3><p>Rental and property upkeep — the small jobs kept small before they turn into ceilings.</p></article>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <h2>Recent work</h2>
+  <p class="lead">A look at the kind of work that comes through — bathroom fit-offs and valve work.</p>
+  <div class="gal">
+    <figure><img src="assets/work_01.jpg" alt="Bathroom fit-off"><figcaption>Bathroom fit-off</figcaption></figure>
+    <figure><img src="assets/work_02.jpg" alt="Bathroom renovation"><figcaption>Renovation rough-in</figcaption></figure>
+    <figure><img src="assets/work_03.jpg" alt="Valve work"><figcaption>Valve and pipework</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="why"><div class="wrap">
+  <h2>How we work</h2>
+  <div class="why">
+    <article><h3>Turn up, or call</h3><p>You get a time window and a call if it moves. No sitting around a house all day.</p></article>
+    <article><h3>Priced before it starts</h3><p>The job is explained and the price agreed before tools come out.</p></article>
+    <article><h3>Left clean</h3><p>Drop sheets down, offcuts and old parts taken away, the room left as it was found.</p></article>
+  </div>
+</div></section>
+
+<section id="areas"><div class="wrap">
+  <h2>Where we work</h2>
+  <p class="lead">Ballarat and the surrounding towns.</p>
+  <div class="areas">
+    <span>Ballarat Central</span><span>Ballarat East</span><span>Wendouree</span><span>Sebastopol</span><span>Delacombe</span>
+    <span>Alfredton</span><span>Mount Clear</span><span>Buninyong</span><span>Brown Hill</span><span>Golden Point</span>
+    <span>Lake Wendouree</span><span>Canadian</span>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>Questions</h2>
+  <details class="faq"><summary>Do you charge a call-out fee?</summary><div class="a">The attendance and the first part of the job are quoted up front, so you know the number before work starts.</div></details>
+  <details class="faq"><summary>Can you get to a burst pipe today?</summary><div class="a">Bursts and major leaks are prioritised — call rather than message, and shut the water off at the meter if you can.</div></details>
+  <details class="faq"><summary>Do you do rental and property maintenance?</summary><div class="a">Yes. Small repairs, compliance items and turnover work for landlords and agents.</div></details>
+  <details class="faq"><summary>Do you work outside Ballarat?</summary><div class="a">The surrounding towns are covered. Further out, call and ask — it depends on the job.</div></details>
+</div></section>
+
+<section id="quote"><div class="wrap">
+  <h2>Send a job through</h2>
+  <p class="lead">Tell us what is happening and where. For anything urgent, call instead.</p>
+  <form id="lbq-form" data-site="slades-plumbing-maintenance">
+    <div><label for="n">Name</label><input id="n" name="name" required></div>
+    <div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel"></div>
+    <div class="full"><label for="a">Address or suburb</label><input id="a" name="suburb"></div>
+    <div class="full"><label for="s">What needs doing?</label><select id="s" name="service">
+      <option>Leak or burst pipe</option><option>Blocked drain</option><option>Tap, toilet or cistern</option>
+      <option>Hot water</option><option>Bathroom or kitchen work</option><option>Maintenance</option><option>Something else</option>
+    </select></div>
+    <div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="3"></textarea></div>
+    <button type="submit">Send request</button>
+  </form>
+</div></section>
 </main>
-<footer>
-<div class="container">
-<div class="foot">
-<div><h4>SLADES PLUMBING &amp; MAINTENANCE</h4><p style="color:var(--muted);max-width:34ch">Plumbing &amp; maintenance across Ballarat VIC.</p></div>
-<div><h4>SERVICES</h4><ul><li><a href="#services">Leaks &amp; repairs</a></li><li><a href="#services">Hot water</a></li><li><a href="#services">Taps, toilets &amp; cisterns</a></li><li><a href="#services">Blocked drains</a></li></ul></div>
-<div><h4>CONTACT</h4><ul><li><a href="https://www.instagram.com/slades.plumbing" rel="noopener">Slades Plumbing &amp; Maintenance on Instagram</a></li></ul></div>
-</div>
-<div class="footbottom">
-<span>© <span id="yr">2026</span> Slades Plumbing &amp; Maintenance. All rights reserved.</span>
-<span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
-</div>
-</div>
-</footer>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;width:100%">
+  <span>Slades Plumbing &amp; Maintenance — Ballarat</span><a class="tel" href="tel:0413221393">0413 221 393</a>
+</div></footer>
+
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-(function(){
-  var c=document.getElementById('heroCanvas'); if(!c) return;
-  var ctx=c.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2), w=0,h=0,t=0,raf=null;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function size(){var r=c.getBoundingClientRect(); w=Math.max(320,r.width|0); h=Math.max(320,r.height|0);
-    c.width=w*dpr; c.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);}
-  function draw(){
-    var g=ctx.createLinearGradient(0,0,0,h);
-    g.addColorStop(0,'#141518'); g.addColorStop(.55,'#0e0f11'); g.addColorStop(1,'#090a0b');
-    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
-    var y0=h*0.52;
-    ctx.beginPath(); ctx.moveTo(0,y0); ctx.lineTo(w,y0); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
-
-    // sprayed coating over an existing slab: even texture pass, fine overspray, hard edge
-    var gg=ctx.createLinearGradient(0,y0,0,h);
-    gg.addColorStop(0,'#8f9398'); gg.addColorStop(.45,'#6d7176'); gg.addColorStop(1,'#4a4d51');
-    ctx.fillStyle=gg; ctx.fill();
-    for(var s=0;s<2600;s++){
-      var sx=(s*67.31)%w, sy=y0+((s*29.77)%(h-y0));
-      ctx.fillStyle='rgba(255,255,255,'+(0.012+((s%5)*0.008))+')';
-      ctx.fillRect(sx,sy,1.6,1.6);
-    }
-    ctx.strokeStyle='rgba(0,0,0,.35)'; ctx.lineWidth=2;
-    ctx.beginPath(); ctx.moveTo(w*.30,y0); ctx.lineTo(w*.30,h); ctx.stroke();
-    var lg=ctx.createRadialGradient(w*.78,h*.10,12,w*.78,h*.10,w*.62);
-    lg.addColorStop(0,'rgba(255,255,255,.16)'); lg.addColorStop(1,'rgba(255,255,255,0)');
-    ctx.fillStyle=lg; ctx.fillRect(0,0,w,h);
-
-  }
-  function loop(){ t+=0.004; draw(); raf=requestAnimationFrame(loop); }
-  size(); draw(); if(!reduce){ loop(); }
-  window.addEventListener('resize', function(){ size(); draw(); }, {passive:true});
-  window.addEventListener('pagehide', function(){ if(raf) cancelAnimationFrame(raf); });
-})();
-(function(){
-  var f=document.getElementById('lbq-form'); if(!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('lbq-note').textContent = "Thanks. This preview form isn\u2019t wired to a mailbox yet \u2014 message us on Facebook and we\u2019ll get straight back to you.";
-  });
-})();
+document.getElementById('burger').addEventListener('click',function(){var l=document.getElementById('navlinks');
+  var o=l.classList.toggle('open'); this.setAttribute('aria-expanded',o);});
+document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button');
+  b.textContent='Sending…';b.disabled=true;
+  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
+    body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})
+  .then(function(){b.textContent='Thanks — we will call you back';})
+  .catch(function(){b.textContent='Call 0413 221 393';b.disabled=false;});});
 </script>
-<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#d0d0d0","important");})();</script>
-</body>
-</html>
+</body></html>
