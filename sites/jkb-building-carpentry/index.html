@@ -305,7 +305,26 @@ nav .burger,header .burger{display:none!important}
  section,.hero,header{overflow-x:clip!important}
  img,video,svg{max-width:100%!important;height:auto}
  h1,h2{overflow-wrap:anywhere!important}
-}</style></head>
+}</style><style id="lb-hero-normal">
+/* the scroll-scene made the header 9600px tall: five screens of nothing before any content */
+#sceneWrap{height:auto!important;min-height:clamp(440px,72vh,660px)!important}
+#sceneSticky{position:relative!important;height:auto!important;min-height:clamp(440px,72vh,660px)!important;inset:auto!important}
+#buildCanvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+#heroCopy{opacity:1!important;transform:none!important;position:relative!important;z-index:3}
+.hud,.scroll-hint{display:none!important}
+header{min-height:0!important;max-height:none!important}
+</style><style id="lb-hero-art">
+/* the canvas only ever drew during the scroll sequence, so on load it was a black rectangle */
+#buildCanvas{display:none!important}
+#sceneSticky::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(10,11,12,.86),rgba(10,11,12,.94)),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 2px,transparent 2px 132px),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 2px,transparent 2px 168px)}
+#sceneSticky::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;z-index:2;
+  background:linear-gradient(90deg,var(--acc,#c8a15a),transparent 65%)}
+#heroCopy{position:relative;z-index:3;max-width:min(58ch,760px)}
+</style></head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <a class="skip" href="#services">Skip to content</a>
 <nav aria-label="Primary" class="nav" role="navigation">
