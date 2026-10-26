@@ -31,7 +31,7 @@ h1,h2,h3{font-family:var(--disp);letter-spacing:-.02em;line-height:1.38;margin:0
 .skip{position:absolute;left:-9999px}
 /* ---------------- trade pattern geometry ---------------- */
 
-.hero__bg{background-image:url("assets/hero.jpg")}
+.hero__bg{background-image:url("assets/hero-tree.jpg")}
 .sec--alt{background:#0b1210}
 .divider{height:46px;background:#0b1210;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .card{border-top:3px solid var(--acc)}
@@ -272,6 +272,18 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
   .bar .brand__mark{height:40px!important}
   .bar .brand__word{height:26px!important}
 }
+</style><style id="lb-polish">
+/* services: a real grid, not a hidden one — six cards with a number, a plain heading and one useful sentence */
+.svc-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))!important;gap:16px!important;margin-top:8px}
+.svc-grid .card{background:rgba(255,255,255,.035)!important;border:1px solid rgba(255,255,255,.11)!important;
+  border-top:3px solid var(--acc)!important;border-radius:14px!important;padding:24px 22px!important;display:grid;
+  gap:9px!important;align-content:start!important}
+.svc-grid .card__num{font:800 12px/1 ui-sans-serif,system-ui;letter-spacing:.16em;color:var(--acc-ink)}
+.svc-grid .card h3{font:750 19px/1.25 var(--disp);letter-spacing:-.01em;margin:0;text-transform:none}
+.svc-grid .card p{color:var(--muted);font-size:15.2px;line-height:1.55;margin:0}
+/* gallery intro reads as a gallery, not a quote page */
+#gallery .sec__hd p{max-width:64ch}
+.section__kicker{display:none}
 </style></head>
 <body id="top">
 <a class="skip" href="#lbq">Skip to quote form</a>
@@ -309,7 +321,14 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
 <section aria-labelledby="svc-h" class="sec" id="services">
 <div class="wrap">
 <div class="sec__hd"><h2 id="svc-h">Tree work we take on</h2><p>You get the scope in writing: what is included, what is not, and when it can start. No allowances that quietly grow.</p></div>
-<div class="grid g3" style="display:none"><article class="card rv rv-d0"><h3>pruning</h3><p>Tidy Timber Co turns up when agreed, does the tree work work to the quoted scope, and keeps the site tidy while it happens.</p></article><article class="card rv rv-d1"><h3>stump grinding</h3><p>Quoted on site — Not over the phone from a photo — the price comes from seeing the job.</p></article><article class="card rv rv-d2"><h3>mulching</h3><p>One point of contact — The same person answers the phone and runs the work.</p></article><article class="card rv rv-d0"><h3>land clearing</h3><p>Local to the local area — Travel time is short, which is why small jobs are worth doing.</p></article><article class="card rv rv-d1"><h3>removals</h3><p>Workmanship backed — If something is not right, Tidy Timber Co comes back.</p></article><article class="card rv rv-d2"><h3>Storm damage &amp; clean-up</h3><p>Damaged, split or leaning trees made safe, hung limbs lowered and the site left tidy.</p></article></div>
+<div class="grid g3 svc-grid">
+<article class="card rv rv-d0"><span class="card__num">01</span><h3>Pruning & shaping</h3><p>Deadwood lifted out and the canopy opened up — clearance over the shed, the driveway and the power line restored, with cuts the tree can close over.</p></article>
+<article class="card rv rv-d1"><span class="card__num">02</span><h3>Deadwooding</h3><p>Standing dead limbs taken out from the top down, so nothing is left hanging over the yard waiting to drop on its own.</p></article>
+<article class="card rv rv-d2"><span class="card__num">03</span><h3>Sectional felling</h3><p>Trees with a fence, a roof or a line under them, rigged and lowered in sections instead of felled through the middle of the property.</p></article>
+<article class="card rv rv-d0"><span class="card__num">04</span><h3>Crane work</h3><p>Big trunks and tight-access trees lifted out in one pick — faster, and far less damage to everything underneath.</p></article>
+<article class="card rv rv-d1"><span class="card__num">05</span><h3>Stump grinding</h3><p>Stumps ground below grade and arisings cleared, so the ground can be mown, paved or built over.</p></article>
+<article class="card rv rv-d2"><span class="card__num">06</span><h3>Land clearing</h3><p>Scrub, regrowth and overgrown boundaries cleared back to something usable, with the debris mulched or carted.</p></article>
+</div>
 </div>
 </section>
 <section aria-labelledby="proc-h" class="sec sec--alt" id="process">
