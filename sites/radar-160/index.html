@@ -380,12 +380,14 @@ nav .burger,header .burger{display:none!important}
     width:min(86vw,320px);z-index:70;margin:0!important}
   nav .burger,header .burger{display:flex!important;margin-left:auto}
 }
-</style><style id="lb-skin">/* skin 3 — split hero, soft corners, offset cards */
- .hero-in,.hero-inner{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,.9fr)!important;gap:clamp(24px,4vw,56px)!important;align-items:center!important}
- @media(max-width:900px){.hero-in,.hero-inner{grid-template-columns:1fr!important}}
- [class*=card]{border-radius:18px!important;box-shadow:0 18px 40px -28px rgba(0,0,0,.9)!important}
- [class*=card]:nth-child(2n){transform:translateY(14px)}
- h2{letter-spacing:-.03em!important;font-weight:800!important}
+</style><style id="lb-skin">/* skin 2 — condensed uppercase, full-bleed hero, numbered services */
+ .hero h1, header h1{text-transform:uppercase!important;letter-spacing:-.01em!important;font-weight:800!important;line-height:.95!important}
+ h2{text-transform:uppercase!important;letter-spacing:.06em!important;font-size:clamp(18px,2vw,24px)!important;font-weight:700!important}
+ .hero,header.hero{min-height:72vh!important}
+ [class*=grid]{gap:1px!important;background:rgba(255,255,255,.12)!important}
+ [class*=card]{border-radius:0!important;background:var(--ground,#0d0f13)!important;padding:clamp(20px,3vw,34px)!important}
+ [class*=card]:before{content:counter(lbc);counter-increment:lbc;display:block;font:700 11px/1 ui-monospace,monospace;letter-spacing:.2em;opacity:.55;margin-bottom:10px}
+ [class*=grid]{counter-reset:lbc}
  </style><style id="lb-skin-guard">@media(max-width:900px){
  .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
  [class*=card]{transform:none!important;margin-bottom:12px!important}
