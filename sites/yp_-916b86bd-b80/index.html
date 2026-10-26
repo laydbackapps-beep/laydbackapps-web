@@ -49,42 +49,7 @@ p{margin:0}
 .nav-links a{color:var(--fg);opacity:.9}
 .nav-links a:hover{opacity:1;color:var(--acc)}
 .nav-tel{flex:none;font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.04em;border:1px solid var(--line2);padding:11px 18px;white-space:nowrap;transition:background .25s,color .25s,border-color .25s;color:var(--fg);background:var(--panel)}
-.nav-tel:hover{background:var(--acc);color:var(--acc-text);border-color:var(--acc)}
-.nav-cta{display:none}
-.burger{display:none;background:none;border:1px solid var(--line2);color:var(--fg);padding:9px 11px;cursor:pointer;margin-left:auto}
-.burger span{display:block;width:20px;height:1.5px;background:currentColor;margin:4px 0;transition:.3s}
-.burger.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
-.burger.open span:nth-child(2){opacity:0}
-.burger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
-@media(max-width:960px){
-  .nav-links{position:fixed;inset:76px 0 auto 0;background:var(--panel);flex-direction:column;padding:1.3rem;gap:.4rem;transform:translateY(-150%);transition:transform .35s ease;border-bottom:1px solid var(--line);font-size:15px}
-  .nav-links.open{transform:none}
-  .nav-links a{padding:.7rem 0;border-bottom:1px solid var(--line);color:var(--fg)}
-  .nav-tel{display:block}
-  .nav-cta{display:block;font-family:var(--disp);font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:var(--acc);color:var(--acc-text);padding:12px 18px;white-space:nowrap;text-align:center}
-  .burger{display:block}
-}
-
-/* ---- hero ---- */
-.hero{position:relative;min-height:clamp(660px,100svh,1020px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
-.hero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,rgba(10,11,12,.95) 0%,rgba(10,11,12,.7) 50%,rgba(10,11,12,.3) 100%)}
-.hero-scrim{position:absolute;inset:0;z-index:-2;background:linear-gradient(to top,rgba(10,11,12,.7) 0%,rgba(10,11,12,.36) 30%,rgba(10,11,12,.15) 54%,rgba(10,11,12,.05) 78%,transparent 100%)}
-.hero-3d{position:absolute;inset:96px 0 auto;height:54%;z-index:-1;perspective:900px;perspective-origin:60% 40%;pointer-events:none;overflow:hidden;display:none}
-.hero-3d .plane{position:absolute;left:-8%;right:-8%;bottom:-16%;height:78%;transform-origin:50% 100%;transform:rotateX(63deg);transition:transform .7s cubic-bezier(.16,.84,.28,1);background-image:repeating-linear-gradient(90deg,rgba(45,106,79,.10) 0 1px,transparent 1px 62px),repeating-linear-gradient(0deg,rgba(45,106,79,.07) 0 1px,transparent 1px 62px);-webkit-mask-image:radial-gradient(ellipse 76% 66% at 50% 76%,#000 8%,transparent 74%);mask-image:radial-gradient(ellipse 76% 66% at 50% 76%,#000 8%,transparent 74%)}
-#heroCanvas{display:none;position:absolute;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none}
-.hero-in{position:relative;z-index:3;padding-bottom:clamp(46px,7vh,88px);width:100%;max-width:min(1360px,94vw);padding-inline:var(--gut)}
-.hero-copy{position:relative;z-index:3}
-.hero .eyebrow{color:var(--acc);background:rgba(250,249,247,.95);padding:4px 12px;border-radius:100px;display:inline-flex;box-shadow:0 1px 4px rgba(10,11,12,.1);font-size:10.5px}
-.hero h1{font-size:clamp(40px,7.2vw,108px);line-height:.95;letter-spacing:-.03em;text-transform:uppercase;font-weight:900;margin-top:18px;max-width:14ch;color:#fff;text-shadow:0 2px 24px rgba(10,11,12,.6),0 0 0 1px rgba(10,11,12,.2)}
-.hero h1 .acc{color:var(--hero-acc);text-shadow:0 2px 12px rgba(10,11,12,.6),0 0 0 1px rgba(10,11,12,.3)}
-.hero h1 .thin{display:block;font-family:var(--body);font-weight:600;font-size:clamp(15px,2vw,22px);letter-spacing:0;text-transform:none;color:#f4f2ec;margin-top:16px;max-width:34ch;line-height:1.45;text-shadow:0 1px 12px rgba(10,11,12,.5)}
-.hero-sub{margin-top:20px;color:#f4f2ec;font-size:clamp(.98rem,1.5vw,1.14rem);max-width:56ch;text-shadow:0 1px 12px rgba(10,11,12,.5);background:rgba(10,11,12,.25);padding:12px 16px;border-radius:8px;display:inline-block;backdrop-filter:blur(2px)}
-.hero-cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:15px 26px;text-decoration:none;font-family:var(--disp);font-weight:800;font-size:13px;letter-spacing:.09em;text-transform:uppercase;transition:transform .15s,filter .15s,background .2s,border-color .2s}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--acc);color:var(--acc-text);box-shadow:0 8px 24px rgba(45,106,79,.28)}
-.hero-strip{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,28px);border-top:1px solid rgba(255,255,255,.25);padding-top:20px}
-.hero-strip p{color:#fff;font-family:"JetBrains Mono",monospace;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;background:rgba(10,11,12,.4);padding:12px 16px;border-radius:6px;text-align:center;min-height:64px;display:flex;flex-direction:column;justify-content:center}
+.nav-tel:12911201540315545203554596076001341503511570180013061218660100102000135101112950101112750101112310002101112701011123630101112155410111205781003960541900604038816785010063716842819045106791001162045106790701162766650760008747666507600087401100100346788100136094325024924795412100014101112110514072108950390018140224101112600011011122102121011126000110111231600152220421634145011210111252042981511456011210111251011122512168212265152680013091515222082445106792834311632812552552552520"JetBrains Mono",monospace;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;background:rgba(10,11,12,.4);padding:12px 16px;border-radius:6px;text-align:center;min-height:64px;display:flex;flex-direction:column;justify-content:center}
 .hero-strip strong{display:block;color:#fff;font-family:var(--disp);font-size:1.12rem;margin-top:6px;font-weight:800;text-transform:uppercase;letter-spacing:.01em}
 .hero-visual{display:none}
 @media(min-width:980px){
@@ -298,7 +263,7 @@ html.js .drop.in{opacity:1;transform:none}
 <nav class="nav" id="nav"><div class="wrap nav-in">
   <a class="brand" href="#top"><img class="brand-logo" src="assets/logo-mark_yp_-916b86bd-b80.png" alt="Bell Painting logo"><span class="brand-t">Bell Painting<small>Interior & exterior &mdash; Central Coast, NSW</small></span></a>
   <div class="nav-links" id="navlinks"><a href="#services">Services</a><a href="#process">Process</a><a href="#work">Work</a><a href="#faq">FAQ</a></div>
-        <a class="nav-tel" href="tel:+61419223581">0419 223 581</a>
+        <a class="nav-tel" href="tel:0419223581">0419 223 581</a>
         <a class="nav-cta" href="#quote">QUOTE</a>
         <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div></nav>
@@ -405,7 +370,7 @@ html,body{overflow-x:hidden}
     <h2 id="lbq-h">Get a free quote</h2>
     <p class="lbq-s">Tell us about the job and we&rsquo;ll come back with a firm price &mdash; no surprises, no obligation.</p>
     <div class="lbq-info">
-          <div><b>Call</b><a href="tel:+61419223581">0419 223 581</a></div>
+          <div><b>Call</b><a href="tel:0419223581">0419 223 581</a></div>
           <div><b>Area</b><span>Central Coast, NSW</span></div>
         </div>
   </div>
@@ -505,7 +470,7 @@ html,body{overflow-x:hidden}
     <p style="margin-top:16px;font-size:13.5px;max-width:320px;color:var(--dim);">Interior and exterior painting, residential and commercial &mdash; the Central Coast, NSW.</p>
   </div>
   <div><h4>Services</h4><a href="#services">Interior painting</a><a href="#services">Exterior painting</a><a href="#services">Full repaints</a><a href="#services">Commercial</a></div><div><h4>Company</h4><a href="#process">Process</a><a href="#work">Work</a><a href="#faq">FAQ</a><a href="#quote">Free quote</a></div>
-  <div><h4>Contact</h4><a href="tel:+61419223581">0419 223 581</a><a href="#quote">Free quote</a></div>
+  <div><h4>Contact</h4><a href="tel:0419223581">0419 223 581</a><a href="#quote">Free quote</a></div>
 </div>
 <div class="fbar"><span>&copy; 2026 BELL PAINTING &middot; Central Coast, NSW</span><span></span></div>
 </footer>
