@@ -242,11 +242,41 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
 {display:none!important}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+</style><style id="lb-bar-final">
+/* the bar carries the client's own logo artwork — the chainsaw-on-stump mark and its wordmark, sized to the
+   bar so both read at a glance. Nothing typed, nothing doubled, nothing shrunk into a plate. */
+.bar{background:rgba(15,21,18,.97)!important;border-bottom:1px solid var(--line)!important;position:sticky;top:0;z-index:60}
+.bar .bar__in{display:flex!important;align-items:center!important;gap:clamp(14px,2.4vw,34px)!important;
+  min-height:100px!important;padding-top:12px!important;padding-bottom:12px!important;flex-wrap:wrap!important}
+.bar .brand{display:flex!important;align-items:center!important;gap:16px!important;text-decoration:none!important;flex-wrap:nowrap!important}
+.bar .brand__mark{height:clamp(46px,4.4vw,64px)!important;width:auto!important;display:block!important}
+.bar .brand__word{height:clamp(30px,2.9vw,42px)!important;width:auto!important;display:block!important}
+.bar{display:block!important;padding:0!important}
+.bar .nav{margin-left:auto!important;display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;gap:clamp(12px,1.8vw,26px)!important;font-size:15.5px!important;position:static!important}
+.bar .nav a{display:inline-block!important;white-space:nowrap!important}
+.bar .nav a{color:#eef2f6!important;opacity:.94!important;text-decoration:none!important;padding:7px 2px!important;border-bottom:2px solid transparent!important}
+.bar .nav a:hover{opacity:1!important;border-bottom-color:var(--acc)!important}
+.bar .nav a.btn{background:var(--acc)!important;color:#08120c!important;font-weight:800!important;
+  padding:13px 20px!important;border-radius:999px!important;border-bottom:0!important;white-space:nowrap!important}
+.bar .nav a.btn:hover{background:#5aa072!important}
+.bar .lb-brand,.bar .lb-mark,.bar .lb-brand__word,.bar .lb-brand__name{display:none!important}
+@media(max-width:1000px){
+  .bar .bar__in{min-height:0!important;row-gap:12px!important}
+  .bar .brand{width:100%!important;justify-content:center!important;gap:12px!important}
+  .bar .nav{margin-left:0!important;width:100%!important;justify-content:center!important;flex-wrap:wrap!important;
+    gap:10px 16px!important;font-size:14.5px!important}
+}
+@media(max-width:520px){
+  .bar .brand__mark{height:40px!important}
+  .bar .brand__word{height:26px!important}
+}
 </style></head>
 <body id="top">
 <a class="skip" href="#lbq">Skip to quote form</a>
-<header class="bar"><a aria-label="Tidy Timber Co." class="lb-brand lb-brand--lockup lb-brand--square" href="#top" style="--lb-name:#101014"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-onbar.png"/><span class="lb-sr">Tidy Timber Co.</span></a><div class="bar__in">
-<nav aria-label="Main" class="nav"><a href="#top" style="display:flex;align-items:center;flex-shrink:0"><img alt="Tidy Timber Co." src="assets/logo-header.png" style="height:44px;width:auto;display:block;margin-right:14px"/></a><a href="#gallery">Our work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#faq">FAQ</a><a class="btn" href="#quote">Request a quote</a></nav>
+<header class="bar"><div class="wrap bar__in">
+<a aria-label="Tidy Timber Co. — tree and land services" class="brand" href="#top"><img alt="" class="brand__mark" decoding="async" height="276" loading="eager" src="assets/brand-mark-img.png" width="861"/><img alt="Tidy Timber Co. — Tree &amp; Land Services" class="brand__word" decoding="async" height="325" loading="eager" src="assets/brand-word-img.png" width="937"/></a>
+<nav aria-label="Main" class="nav"><a href="#gallery">Our work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#faq">FAQ</a><a class="btn" href="tel:+61450314475">0450 314 475</a></nav>
 </div>
 </header>
 <section aria-labelledby="h1" class="hero">
