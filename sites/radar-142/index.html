@@ -382,6 +382,13 @@ html body .hero .hero-slides img{object-fit:cover!important;object-position:cent
   .hero .hero-in{padding:22px 20px 28px!important}
   .hero .hero-copy{max-width:100%!important}
 }
+</style>
+<style id="lb-hero-photo">
+/* let the photography show: the hex veil was sitting over the slides at 55% and flattening them */
+.hero.hex-veil::after{opacity:.10!important}
+.hero-hex,.hex-veil .hero-hex{opacity:.10!important}
+.hero-shade{background:linear-gradient(90deg,rgba(6,7,9,.86) 0%,rgba(6,7,9,.55) 46%,rgba(6,7,9,.18) 100%)!important;opacity:1!important}
+.hero-slides img{object-fit:cover!important;object-position:center 42%!important}
 </style><style id="lb-header-clean">
 .nav{position:fixed;inset:0 0 auto 0;z-index:60}
 .nav-in{display:flex;align-items:center;gap:clamp(14px,2vw,28px);height:84px;max-width:1360px;margin:0 auto;padding:0 40px}
@@ -414,13 +421,7 @@ html body .hero .hero-slides img{object-fit:cover!important;object-position:cent
 }
 @media(max-width:640px){.svc-grid{grid-template-columns:1fr}}
 </style>
-<style id="lb-hero-photo">
-/* let the photography show: the hex veil was sitting over the slides at 55% and flattening them */
-.hero.hex-veil::after{opacity:.10!important}
-.hero-hex,.hex-veil .hero-hex{opacity:.10!important}
-.hero-shade{background:linear-gradient(90deg,rgba(6,7,9,.86) 0%,rgba(6,7,9,.55) 46%,rgba(6,7,9,.18) 100%)!important;opacity:1!important}
-.hero-slides img{object-fit:cover!important;object-position:center 42%!important}
-</style></head>
+</head>
 <body>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav"><div class="nav-in">
