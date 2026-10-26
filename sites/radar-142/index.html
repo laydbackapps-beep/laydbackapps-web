@@ -419,7 +419,7 @@ nav .nav-links.open{right:0!important;left:auto!important;transform:none!importa
 </style><style id="lb-slides-sm">
 /* slideshow as a contained panel, not full bleed — smaller frames, sharper rendering */
 .lb-rb{max-width:940px!important;margin:clamp(28px,4vw,56px) auto!important;border:1px solid rgba(255,255,255,.12)!important}
-.lb-rb__track{aspect-ratio:16/9!important}
+.lb-rb__track{aspect-ratio:4/3!important}
 .lb-rb__slide img{object-fit:cover!important;image-rendering:auto}
 .lb-rb__cap{font-size:12.5px!important;letter-spacing:.06em!important}
 @media(max-width:980px){.lb-rb{max-width:none!important;margin:24px 14px!important}}
@@ -457,6 +457,23 @@ html{scroll-padding-top:104px!important}
 .hero .hero-copy h1{font-size:clamp(26px,3.5vw,46px)!important;line-height:1.06!important}
 .hero .hero-copy p{max-width:42ch!important;font-size:15.5px!important;line-height:1.6!important}
 @media(max-width:860px){.hero .hero-in{padding-top:calc(70px + 18px)!important}}
+</style><style id="lb-wwd">
+.wwd,.revs{padding:clamp(44px,5.5vw,76px) 0;border-top:1px solid rgba(255,255,255,.1)}
+.wwd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.09);margin-top:26px}
+.wwd-card{background:#0c0d10;padding:22px 20px 24px}
+.wwd-n{display:block;font-size:11px;letter-spacing:.18em;color:#a32020;font-weight:800;margin-bottom:10px}
+.wwd-card h3{margin:0 0 8px;font-size:16.5px;letter-spacing:-.01em}
+.wwd-card p{margin:0;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.66)}
+.revs-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.revs-score{display:flex;align-items:baseline;gap:8px}
+.revs-score b{font-size:26px;color:#a32020}
+.revs-score span{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.revs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.rev{margin:0;padding:20px 20px 18px;background:rgba(255,255,255,.03);border-left:2px solid #a32020}
+.rev-stars{color:#a32020;font-size:13px;letter-spacing:.18em;margin-bottom:10px}
+.rev blockquote{margin:0 0 12px;font-size:15px;line-height:1.62;color:rgba(255,255,255,.86)}
+.rev figcaption{font-size:12.5px;letter-spacing:.06em;color:rgba(255,255,255,.5)}
+@media(max-width:900px){.wwd-grid,.revs-row{grid-template-columns:1fr}}
 </style></head>
 <body>
 <script>document.documentElement.className+=' js';</script>
@@ -500,7 +517,6 @@ html{scroll-padding-top:104px!important}
 <div class="hero-visual">
 <canvas id="heroCanvas" style="width:100%;height:100%;display:block"></canvas>
 <style>#heroCanvas{display:block;perspective:800px}</style>
-
 </div>
 </div>
 </header>
@@ -509,7 +525,7 @@ html{scroll-padding-top:104px!important}
 <span aria-hidden="true" class="red-slash" style="top:52px;left:-8%;width:14%;transform:rotate(-4.5deg);opacity:.2"></span><div class="wrap">
 <div class="sec-head"><span class="sec-idx">01</span><div><h2 class="sec-title">Detailing that shows up in the reflections.</h2><p class="lead">From a maintenance wash through to a full graphene-protected detail — the right package for the finish you are chasing.</p></div></div>
 <div class="svc-grid"><div class="svc-row rv"><span aria-hidden="true" class="svc-n"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4.6"></circle><circle cx="12" cy="12" r="1.5"></circle></svg></span><div class="svc-body"><h3>Machine polishing &amp; paint correction</h3><p>Swirls, haze and light defects machine-polished back so reflections run flat and clean.</p></div><span class="svc-arrow">↗</span></div><div class="svc-row rv"><span aria-hidden="true" class="svc-n"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 3l7 3v5c0 4.3-3 7.9-7 10-4-2.1-7-5.7-7-10V6l7-3z"></path><path d="M9.3 11.8l2 2 3.6-4.2"></path></svg></span><div class="svc-body"><h3>Ceramic &amp; graphene coatings</h3><p>The signature package — paint sealed with a long-life graphene coating that shrugs off water, grime and UV.</p></div><span class="svc-arrow">↗</span></div><div class="svc-row rv"><span aria-hidden="true" class="svc-n"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M8 4.5A2 2 0 0110 2.5h.6a2 2 0 012 2v7.5h-3a1.6 1.6 0 01-1.6-1.6V4.5z"></path><path d="M12.6 12h3.1a2 2 0 012 2v2.6a2 2 0 01-2 2H9"></path><path d="M5.5 18.6h3.5"></path></svg></span><div class="svc-body"><h3>Interior detailing &amp; protection</h3><p>Seats, carpets, dash and trim vacuumed, shampooed and dressed — the parts you live in every day.</p></div><span class="svc-arrow">↗</span></div><div class="svc-row rv"><span aria-hidden="true" class="svc-n"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3"></circle><path d="M12 4v5M12 15v5M4 12h5M15 12h5"></path></svg></span><div class="svc-body"><h3>Wheel &amp; window protection</h3><p>Alloy wheels, glass and trim cleaned and protected to match the paintwork.</p></div><span class="svc-arrow">↗</span></div><div class="svc-row rv"><span aria-hidden="true" class="svc-n"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 4c3.1 3.7 5.5 6.5 5.5 9.5A5.5 5.5 0 0112 19a5.5 5.5 0 01-5.5-5.5C6.5 10.5 8.9 7.7 12 4z"></path><path d="M10 15.6a2.2 2.2 0 002.2-2.2"></path></svg></span><div class="svc-body"><h3>Exterior wash &amp; decontamination</h3><p>Foam wash, clay decontamination and a hand finish that leaves paint glassy to the touch.</p></div><span class="svc-arrow">↗</span></div><div class="svc-row rv"><span aria-hidden="true" class="svc-n"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M4 15.5h16l-2.3 3.1a2 2 0 01-1.6.9H8.1a2 2 0 01-1.6-.9L4 15.5z"></path><path d="M12 3.5v12"></path><path d="M12 6l5 6h-5"></path><path d="M12 8.5L8 12h4"></path></svg></span><div class="svc-body"><h3>Boats &amp; motorhomes</h3><p>Gelcoat cut and polish, hull wash-downs and protection for boats, caravans and motorhomes.</p></div><span class="svc-arrow">↗</span></div></div>
-</div></section>
+</div></section><section class="wwd" id="what-we-do"><div class="wrap"><div class="sec-head"><span class="sec-idx">02</span><div><h2 class="sec-title">What we do</h2><p class="lead">Every job is quoted after the paint has been looked at under the lights — the package matches the condition of the car, not a menu.</p></div></div><div class="wwd-grid"><article class="wwd-card"><span class="wwd-n">01</span><h3>Full interior &amp; exterior detail</h3><p>Inside and out in one booking — vacuum, shampoo, leather and trim cleaned and dressed, then the exterior washed, decontaminated and finished by hand.</p></article><article class="wwd-card"><span class="wwd-n">02</span><h3>Paint correction &amp; machine polishing</h3><p>Swirls, wash marks and light defects machine-polished back in stages under workshop lighting, so reflections run flat before anything is sealed.</p></article><article class="wwd-card"><span class="wwd-n">03</span><h3>Graphene &amp; ceramic protection</h3><p>A long-life coating applied to corrected paint — water beads, grime lifts easier and the finish holds its gloss far longer than wax.</p></article><article class="wwd-card"><span class="wwd-n">04</span><h3>Exterior wash &amp; decontamination</h3><p>Foam pre-soak, two-bucket hand wash, clay decontamination and a hand dry — the safe baseline for a car that is looked after.</p></article><article class="wwd-card"><span class="wwd-n">05</span><h3>Wheels, glass &amp; trim</h3><p>Alloys deep-cleaned and sealed, glass polished inside and out, plastics dressed so they read factory-fresh rather than greasy.</p></article><article class="wwd-card"><span class="wwd-n">06</span><h3>Boats, caravans &amp; motorhomes</h3><p>Gelcoat cut and polished, hull wash-downs and protection — the same process scaled to whatever is in the driveway.</p></article></div></div></section><section class="revs" id="reviews"><div class="wrap"><div class="revs-head"><h2 class="sec-title">What customers say</h2><div class="revs-score"><b>5.0</b><span>Google rated</span></div></div><div class="revs-row"><figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>The paint was a mess of swirls from the previous owner. Got it back looking better than new and the coating makes washing it a ten minute job.</blockquote><figcaption>Hatchback owner · West Gosford</figcaption></figure><figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Booked in for a full detail before selling. Ended up keeping the car — it came up that well.</blockquote><figcaption>4WD owner · Central Coast</figcaption></figure><figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Took the boat in as well as the ute. Both came back spotless and the gelcoat has never looked this good.</blockquote><figcaption>Boat owner · Erina</figcaption></figure></div></div></section>
 <section class="band carbon" id="process">
 <span aria-hidden="true" class="red-slash" style="top:36px;left:-7%;width:38%;transform:rotate(-4.5deg);opacity:.5"></span><span aria-hidden="true" class="red-slash" style="top:47px;left:-3%;width:22%;transform:rotate(-4.5deg);opacity:.22"></span>
 <div class="wrap">
