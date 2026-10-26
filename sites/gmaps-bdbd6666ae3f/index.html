@@ -181,7 +181,74 @@ img{max-width:100%;display:block}
 .contact-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:var(--gap-l) clamp(32px,5vw,72px);align-items:start}
 @media (max-width:860px){ .contact-grid{grid-template-columns:1fr;gap:var(--gap)} }
 .contact-tel{display:inline-flex;align-items:center;gap:.5em;margin-top:22px;font-size:clamp(1.4rem,1.15rem + 1vw,2rem);font-weight:800;letter-spacing:-.02em;border-bottom:2px solid var(--ink);padding-bottom:4px;transition:border-color .18s ease}
-.contact-tel:283401750141401156000725201151416201202634211640217086000725000295127281000162000129612132155470002028215182550386444557202201326801255255255141280001959251134340014389989310811161670010501188885167001101804306258002"";position:absolute;inset:0;z-index:1;pointer-events:none;
+.contact-tel:hover{border-bottom-color:var(--rule-strong)}
+.contact-notes{margin-top :clamp(28px,3vw,40px);border-top:1px solid var(--rule-strong)}
+.contact-notes>div{
+  display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:.4em var(--gap-s);align-items:baseline;
+  padding :14px 0;border-bottom:1px solid var(--rule);font-size :var(--t-small);line-height:1.5;
+}
+.contact-notes b{font-size:var(--t-micro);font-weight:600 ;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.contact-notes span{color:var(--ink-2)}
+@media (max-width:520px){ .contact-notes>div{grid-template-columns:1fr;gap:.15em} }
+
+#lbq-form{
+  display:grid;gap:clamp(14px,1.6vw,20px);background:var(--card);border:1px solid var(--rule);
+  padding :clamp(20px,2.6vw,34px);
+}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-s)}
+@media (max-width:640px){ .f2{grid-template-columns:1fr} }
+.frow{display:flex;flex-direction:column;gap:7px;min-width:0}
+.frow label{
+  display:flex;align-items:baseline;justify-content:space-between;gap:8px;
+  font-size:var(--t-micro);font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-2);
+}
+.req{font-weight:500;text-transform:none;letter-spacing:.02em;color:var(--muted)}
+input,select,textarea{
+  font:inherit;font-size:.95rem;color:var(--ink);background:var(--card);
+  border:1px solid var(--rule);border-radius:2px;padding:.72em .8em;width:100%;min-width:0;
+  transition:border-color .16s ease;
+}
+input:hover,select:hover,textarea:hover{border-color:var(--rule-strong)}
+input:focus,select:focus,textarea:focus{border-color:var(--ink-2);outline:none;box-shadow:0 0 0 1px var(--ink-2)}
+textarea{resize:vertical;min-height :clamp(96px,12vw,132px);line-height:1.55}
+.form-foot{display:flex;align-items:center;flex-wrap:wrap;gap :var(--gap-s);margin-top:4px}
+.btn-send{
+  appearance:none;font:inherit;font-weight:700;font-size:var(--t-small);letter-spacing:.02em;
+  background:var(--ink);color:#fff;border :0;border-radius :2px;padding:.82em 1.5em;cursor:pointer;
+  transition:background .18s ease;
+}
+.btn-send:hover{background:var(--ink-2)}
+.btn-send:disabled{opacity:.55;cursor:progress}
+.form-note{font-size:var(--t-small);color:var(--muted);margin:0;max -width:38ch}
+
+/* ---------- footer ---------- */
+footer{background:var(--deep);color:#b6b4af;padding:clamp(44px,5.5vw,72px) 0 22px;font-size:var(--t-small)}
+.foot-top{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--gap) clamp(32px,6vw,80px);
+  align-items:start;padding-bottom :var(--gap);border-bottom :1px solid rgba(255,255,255,.14);
+}
+.foot-brand{display:flex;align-items:center :center;gap:12px;color:#fff;font-weight:800;letter-spacing:-.01em;font-size :clamp(.95rem,.9rem + .25vw,1.1rem)}
+.foot-brand img{height :34px;width:34px;object-fit:contain;flex :0 0 auto}
+.foot-p{margin-top:14px;max-width :38ch;color:#9a9893}
+.foot-links{display:flex;flex-direction:column :column;gap:10px;align-items :flex-start}
+.foot-links a{color:#cfcdc8;padding-bottom :1px;border-bottom :1px solid transparent;transition :color .16s ease,border-color .16s ease}
+.foot-links a:hover{color :#fff;border-bottom-color :currentColor}
+.foot-tel{color:#fff!important;font-weight:700;font-size :1.05rem;letter-spacing :-.01em;border-bottom-color :transparent}
+.foot-bar{display:flex;justify-content:space-between;gap :var(--gap-s);flex-wrap :wrap;padding-top :18px;font-size :var(--t-micro);color :#8c8a85}
+.foot-bar a{transition :color .16s ease}
+.foot-bar a:hover{color:#fff}
+@media (max-width:700px){
+  .foot-top{grid-template-columns:1fr;gap:var(--gap-s)}
+  .foot-links{flex-direction:row;flex-wrap:wrap;gap:10px 18px}
+}
+
+/* LB hero height (rule was detached from its selector) */
+.hero{display:block;min-height:0;max-height:none}
+.hero-in{min-height:clamp(430px,62vh,580px)}
+.hero-meta{min-height:0}
+.hero-in,.hero-meta{position:relative;z-index:2}
+.hero:has(canvas)::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(96deg,rgba(8,9,11,.95) 0%,rgba(8,9,11,.9) 30%,rgba(8,9,11,.55) 52%,rgba(8,9,11,.16) 74%,rgba(8,9,11,.42) 100%);
 }
 canvas.lb-hero-canvas,.hero canvas{height:100%!important}
@@ -262,7 +329,7 @@ canvas.lb-hero-canvas,.hero canvas{height:100%!important}
       <a href="#cuts">The cut</a>
       <a href="#process">Process</a>
       <a href="#lbq">Contact</a>
-      <a class="tel-btn" href="tel:0249583798">
+      <a class="tel-btn" href="tel:+61249583798">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
         (02) 4958 3798
       </a>
@@ -282,7 +349,7 @@ canvas.lb-hero-canvas,.hero canvas{height:100%!important}
         <h1 id="h1">Concrete cut <em>clean</em>, to the line.</h1>
         <p class="hero-sub">Wall sawing, floor sawing, core drilling and wire sawing — controlled cuts in reinforced concrete for structural, renovation and infrastructure work.</p>
         <div class="hero-act">
-          <a class="btn-call" href="tel:0249583798">
+          <a class="btn-call" href="tel:+61249583798">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
             Call (02) 4958 3798
           </a>
@@ -445,7 +512,7 @@ canvas.lb-hero-canvas,.hero canvas{height:100%!important}
       <div>
         <p class="eyebrow">Contact</p>
         <h2 id="h-contact" style="font-size:var(--t-2);margin-top:14px">Send the drawing, or just call.</h2>
-        <a class="contact-tel" href="tel:0249583798">(02) 4958 3798</a>
+        <a class="contact-tel" href="tel:+61249583798">(02) 4958 3798</a>
         <div class="contact-notes">
           <div><b>Call</b><span>Fastest for a firm price — have the dimensions and access notes ready.</span></div>
           <div><b>Quote form</b><span>Send scope, drawings and site address. Answered within one working day.</span></div>
@@ -507,7 +574,7 @@ canvas.lb-hero-canvas,.hero canvas{height:100%!important}
         <p class="foot-p">Precision concrete sawing and cutting across the Hunter region, NSW.</p>
       </div>
       <div class="foot-links">
-        <a class="foot-tel" href="tel:0249583798">(02) 4958 3798</a>
+        <a class="foot-tel" href="tel:+61249583798">(02) 4958 3798</a>
         <a href="#methods">Methods</a>
         <a href="#process">Process</a>
         <a href="#lbq">Request a quote</a>

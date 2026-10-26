@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RTPainters</title>
 <meta name="description" content="Interior and exterior painting, repaints and renovation for homes and businesses across Brisbane. Preparation first, clean lines, tidy sites. Call 0450 680 040.">
-<meta property="og:title" content="RTPainters">
+<meta property="og:title" content="AnB Painting &amp; Renovation">
 <meta property="og:description" content="Painting and renovation across Brisbane. Prep first, paint properly. Call 0450 680 040.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -59,7 +59,7 @@ a{color:inherit}
 .nav-links a{font-size:.95rem;font-weight:500;text-decoration:none;color:#C6D0DA;padding-block:.35rem;border-bottom:1px solid transparent}
 .nav-links a:hover{color:#F7F5F0;border-bottom-color:#7C93A8}
 .nav-tel{display:inline-flex;align-items:center;gap:.5rem;background:#F7F5F0;color:#0B1A2E !important;font-weight:700;padding:.6rem 1.05rem !important;border-radius:2px;border-bottom:0 !important;white-space:nowrap}
-.nav-tel:"";width:34px;height:2px;background:var(--paint);flex:none}
+.nav-tel::before{content:"";width:34px;height:2px;background:var(--paint);flex:none}
 .burger{display:none;margin-left:auto;background:none;border:1px solid #3A4E64;border-radius:2px;padding:.5rem .62rem;cursor:pointer}
 .burger span{display:block;width:20px;height:2px;background:#F7F5F0;margin:0}
 .burger span+span{margin-top:4px}
@@ -174,7 +174,43 @@ section{padding-block:var(--pad)}
 .quote .sec-kicker{color:#9DBBD6}
 .quote .sec-h2{color:#F7F5F0}
 .big-tel{display:inline-block;font-family:var(--disp);font-weight:600;font-size:clamp(1.7rem,3.4vw,2.5rem);letter-spacing:-.02em;color:#F7F5F0;text-decoration:none;margin-top:1.6rem;border-bottom:2px solid #3E6382;padding-bottom:.15rem}
-.big-tel:963141795601363827509501212356115221711954087000496310002338124259275097687827938179381181568896314161615793899991175001202700989151826699812582010129631243843215013062072248913464220121066001275079600963939838478700147507545939637503112438428125827899875082011211"lb-hdrfix">header{position:relative!important;overflow:visible}</style>
+.big-tel:hover{border-bottom-color:#9DBBD6}
+.quote-lines{display:flex;flex-wrap:wrap;gap:.3rem 1.4rem;margin-top:1.7rem;font-size:.95rem;color:var(--onDarkMut)}
+.quote-lines a{color:#C6D0DA;text-decoration:none;border-bottom:1px solid #3E6382}
+.quote-lines a:hover{color:#F7F5F0}
+.quote-grid form{display:grid;gap:.95rem;background:#0B1A2E;border:1px solid #2A3F56;padding:clamp(1.15rem,2.2vw,1.7rem);align-content:start}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:.95rem}
+.field{display:grid;gap:.4rem;min-width:0}
+.field label{font-size:.8rem;font-weight:700;letter-spacing:.04em;color:#A9B6C3}
+.field input,.field textarea{width:100%;background:#0F2338;border:1px solid #2C4259;border-radius:2px;color:#F7F5F0;font:inherit;font-size:.97rem;padding:.68rem .78rem}
+.field input:focus,.field textarea:focus{outline:2px solid #7C93A8;outline-offset:1px;border-color:#7C93A8}
+.field textarea{min-height:118px;resize:vertical;line-height:1.5}
+.consent{display:flex;align-items:flex-start;gap:.6rem;font-size:.88rem;color:#A9B6C3;line-height:1.4}
+.consent input{width:16px;height:16px;margin-top:.15rem;flex:none;accent-color:#7C93A8}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.quote-grid form button{justify-self:start;background:#F7F5F0;color:#0B1A2E;border:0;border-radius:2px;font:inherit;font-weight:700;font-size:.98rem;padding:.9rem 1.5rem;cursor:pointer;transition:background .18s ease}
+.quote-grid form button:hover{background:#E2DFD6}
+.quote-grid form button:disabled{opacity:.6;cursor:default}
+#lbq-st{font-size:.9rem;color:#9DAAB8;min-height:1.25em}
+@media(max-width:820px){.f-row{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+footer{background:#0B1A2E;color:#A9B6C3;border-top:1px solid #24384F;padding-block:3.2rem 1.5rem}
+.foot{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.62fr) minmax(0,.72fr);gap:2.4rem}
+.foot-brand{display:flex;align-items:center;gap:.8rem;margin-bottom:.9rem}
+.foot-brand img{border:1px solid #3A4E64;border-radius:2px;padding:2px;background:#0B1A2E;flex:none}
+.foot-brand>span{display:flex;flex-direction:column;line-height:1.06}
+.foot-brand b{font-family:var(--disp);font-weight:600;font-size:1.2rem;color:#F7F5F0}
+.foot-brand span span{font-size:.79rem;font-weight:600;color:#A9B6C3}
+.foot p{font-size:.93rem;color:#9DAAB8;max-width:38ch}
+.foot h4{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#F7F5F0;margin-bottom:.75rem}
+.foot ul{list-style:none;display:grid;gap:.45rem;font-size:.93rem}
+.foot a{text-decoration:none;color:#A9B6C3}
+.foot a:hover{color:#F7F5F0;text-decoration:underline;text-underline-offset:3px}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;border-top:1px solid #24384F;margin-top:2.8rem;padding-top:1.25rem;font-size:.82rem;color:#7F8D9B}
+.foot-bottom a{text-decoration:none;color:#9DAAB8}
+.foot-bottom a:hover{color:#F7F5F0}
+@media(max-width:820px){.foot{grid-template-columns:1fr 1fr;gap:2rem}.foot>div:first-child{grid-column:1/-1}}</style><!--/LB-HDRFIX--><style id="lb-hdrfix">header{position:relative!important;overflow:visible}</style>
 
 <!--LB-EMPTY--><style id="lb-empty">[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
 
@@ -223,7 +259,7 @@ section{padding-block:var(--pad)}
     <a class="lb-brand" href="#top">
       <img src="assets/logo.png" alt="" class="lb-logo" loading="eager" decoding="async">
       <span class="lb-brand__word">
-        <span class="lb-brand__name">RTPainters</span>
+        <span class="lb-brand__name">AnB Painting</span>
         <span class="lb-brand__sub">& Renovation</span>
       </span>
     </a>
@@ -234,7 +270,7 @@ section{padding-block:var(--pad)}
       <a href="#services">Services</a>
       <a href="#process">How we work</a>
       <a href="#why">Why AnB</a>
-      <span>Call</span>0450 680 040
+      <a class="nav-tel" href="tel:+61450680040"><span>Call</span>0450 680 040</a>
     </div>
   </div>
 </nav>
@@ -247,10 +283,10 @@ section{padding-block:var(--pad)}
       <h1>Prep first. <em>Paint properly.</em></h1>
       <p class="hero-sub">Interior and exterior painting, repaints and renovation for homes and businesses. One small crew, start to finish.</p>
       <div class="hero-cta">
-        
+        <a class="btn" href="tel:+61450680040">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></svg>
           0450 680 040
-        
+        </a>
         <a class="link-quiet" href="#quote">Send the job details</a>
       </div>
       <div class="hero-facts">
@@ -338,8 +374,8 @@ section{padding-block:var(--pad)}
 <section class="proof" id="why">
   <div class="wrap proof-grid">
     <figure class="shot rv">
-      <img src="assets/work.jpg" alt="RTPainters at work on a Brisbane job" width="2200" height="1581" loading="lazy" decoding="async">
-      <figcaption>RTPainters, Brisbane.</figcaption>
+      <img src="assets/work.jpg" alt="AnB Painting &amp; Renovation at work on a Brisbane job" width="2200" height="1581" loading="lazy" decoding="async">
+      <figcaption>AnB Painting &amp; Renovation, Brisbane.</figcaption>
     </figure>
     <div>
       <div class="rv">
@@ -363,13 +399,13 @@ section{padding-block:var(--pad)}
       <p class="sec-kicker">Get a quote</p>
       <h2 class="sec-h2">Tell us about the job.</h2>
       <p class="sec-sub">Call if it is easier, or send the details through and we will come back with a time to look at it. Quotes are free and there is no obligation.</p>
-      0450 680 040
+      <a class="big-tel" href="tel:+61450680040">0450 680 040</a>
       <div class="quote-lines">
         <a href="mailto:anb_painting@outlook.com">anb_painting@outlook.com</a>
         <span>Servicing Brisbane and the surrounding suburbs.</span>
       </div>
     </div>
-    <form id="lbq-form" novalidate data-site="rtpainters" data-biz="RTPainters">
+    <form id="lbq-form" novalidate data-site="rtpainters" data-biz="AnB Painting &amp; Renovation">
       <div class="f-row">
         <div class="field"><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
         <div class="field"><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
@@ -390,8 +426,8 @@ section{padding-block:var(--pad)}
     <div class="foot">
       <div>
         <div class="foot-brand">
-          <img src="assets/logo.png" alt="RTPainters logo" width="44" height="44" loading="lazy">
-          <span><b>RTPainters</b><span>& Renovation</span></span>
+          <img src="assets/logo.png" alt="AnB Painting &amp; Renovation logo" width="44" height="44" loading="lazy">
+          <span><b>AnB Painting</b><span>& Renovation</span></span>
         </div>
         <p>Interior and exterior painting, repaints and renovation for homes and businesses across Brisbane.</p>
       </div>
@@ -407,14 +443,14 @@ section{padding-block:var(--pad)}
       <div>
         <h4>Contact</h4>
         <ul>
-          <li>0450 680 040</li>
+          <li><a href="tel:+61450680040">0450 680 040</a></li>
           <li><a href="mailto:anb_painting@outlook.com">Email us</a></li>
           <li>Brisbane, QLD</li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 RTPainters</span>
+      <span>© 2026 AnB Painting &amp; Renovation</span>
       <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
     </div>
   </div>

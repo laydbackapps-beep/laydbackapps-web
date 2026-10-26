@@ -1,274 +1,458 @@
-<!DOCTYPE html>
-
-<html lang="en-AU">
+<!doctype html>
+<html lang="en-AU" class="js">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Melbourne's Finished Concrete &amp; Landscaping — Melbourne VIC</title>
-<meta content="Concrete &amp; landscaping — Melbourne's Finished Concrete &amp; Landscaping, Melbourne VIC." name="description"/>
-<link href="favicon-32.png" rel="icon" sizes="32x32"/>
-<meta content="#0b0b0c" name="theme-color"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Melbourne's Finished Concrete &amp; Landscaping | Concrete &amp; Landscaping Melbourne VIC</title>
+<meta name="description" content="Melbourne's Finished Concrete &amp; Landscaping: exposed aggregate, driveways, slabs, pool surrounds and paving, plus turf and garden works. Commercial and domestic concreting and landscaping across Melbourne VIC. Call 0451 993 098.">
+<meta name="theme-color" content="#111110">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --lb-name:#ffffff; --lb-acc:#fcd800; --lb-subc:rgba(255,255,255,.72);
-  --ink:#ffffff; --muted:rgba(255,255,255,.70); --line:rgba(255,255,255,.14); --panel:rgba(255,255,255,.045);
-  --bg:#0b0b0c; --bg2:#121214; --accent:#fcd800;
+  --bg:#111110; --panel:#1a1917; --panel-2:#232119;
+  --ink:#f4f2ec; --dim:#a9a49a; --dim-2:#918b7e;
+  --line:#33302a; --line-2:#454139;
+  /* palette extracted from the MFC logo (assets/logo.png, PIL quantize) */
+  --acc:#FADC0D; --accent:#FADC0D; --brand:#FADC0D; --primary:#FADC0D;
+  --agg:#8d8879; --foliage:#6f7a54;
+  --max:1220px;
 }
-*,*::before,*::after{box-sizing:border-box}
+*{box-sizing:border-box}
+html,body{overflow-x:hidden}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:system-ui,-apple-system,"Segoe UI",Archivo,"Helvetica Neue",Arial,sans-serif;
-  line-height:1.36;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.62 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:400}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(16px,4.4vw,52px)}
 img{max-width:100%;display:block}
-h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.38;margin:0}
-p{margin:0}
-.container{width:min(1140px,92vw);margin-inline:auto}
-header.site{position:sticky;top:0;z-index:60;background:rgba(11,11,12,.94);border-bottom:1px solid var(--line)}
-/* A header must never be hidden by a reveal/scroll state. */
-header.site{opacity:1!important;visibility:visible!important;transform:none!important}
-.bar{display:flex;align-items:center;gap:clamp(10px,2vw,30px);padding:12px 0}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:0 1 auto;min-width:0}
-.brand img{height:64px;width:auto;max-width:min(340px,46vw);object-fit:contain}
-.brand .name{font-weight:800;letter-spacing:-.01em;font-size:clamp(13px,1.35vw,18px);color:#ffffff;line-height:1.18;max-width:min(330px,34vw);white-space:normal}
-.brand .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-nav.main{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,2vw,28px);flex-wrap:wrap}
-nav.main a{color:#ffffff;text-decoration:none;font-size:0.95rem;opacity:.86;white-space:nowrap}
-nav.main a:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;
-  text-decoration:none;font-weight:700;font-size:0.95rem;background:var(--accent);color:#0b0b0c;border:1px solid var(--accent)}
-nav.main a.btn,header .btn{background:var(--accent)!important;color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important}
-.btn.ghost{background:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff!important;
-  border:1px solid rgba(255,255,255,.5)!important}
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#0e0f11}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.16)}
-.hero .inner{position:relative;z-index:3;padding:32px 32px 32px;max-width:min(780px,92vw)}
-.kicker{display:inline-block;font-size:0.82rem;font-weight:700;letter-spacing:0.05em;color:#d6d8db;margin-bottom:14px}
-.hero h1{font-size:clamp(2.3rem,4.6vw,3.7rem);margin-bottom:14px}
-.hero h1 em{font-style:normal;color:#cfd2d6}
-.hero .lede{color:var(--muted);font-size:clamp(1rem,1.5vw,1.14rem);max-width:54ch;margin-bottom:22px}
-.hero .acts{display:flex;flex-wrap:wrap;gap:14px}
-.hero .facts{display:flex;flex-wrap:wrap;gap:9px 24px;list-style:none;padding:0;margin:20px 0 0;color:rgba(255,255,255,.82);font-size:0.95rem}
-.hero .facts li::before{content:"";display:inline-block;width:6px;height:6px;margin-right:9px;background:var(--accent);vertical-align:middle;border-radius:50%}
-section{padding:32px 32px;border-bottom:1px solid var(--line)}
-section.alt{background:var(--bg2)}
-.head{max-width:60ch;margin-bottom:clamp(26px,4vh,44px)}
-.head h2{font-size:clamp(1.55rem,3vw,2.3rem);margin-bottom:10px}
-.head p{color:var(--muted)}
-.grid{display:grid;gap:18px}
-.g3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:900px){.g3{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.g3{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
-.card h3{font-size:1.08rem;margin-bottom:8px}
-.card p{color:var(--muted);font-size:0.95rem}
-.swatch{width:38px;height:5px;background:var(--accent);border-radius:3px;margin-bottom:16px}
-.about{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1.15fr .85fr;align-items:start}
-@media(max-width:880px){.about{grid-template-columns:1fr}}
-.about p{color:var(--muted);margin-bottom:14px}
-.about h2{margin-bottom:16px}
-.about ul{list-style:none;padding:0;margin:0}
-.about li{padding:11px 0;border-bottom:1px solid var(--line);color:rgba(255,255,255,.86);font-size:0.97rem}
-.about li span{color:var(--muted)}
-.telbig{display:inline-block;color:var(--ink);font-weight:800;font-size:1.6rem;line-height:1.2;text-decoration:none;letter-spacing:-.01em;margin-top:14px}
-.telbig:hover{color:var(--accent)}
-#contact a[href^="mailto:"]{color:var(--ink);font-weight:600}
-.contactwrap{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1fr 1fr;align-items:start}
-@media(max-width:820px){.contactwrap{grid-template-columns:1fr}}
-.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.links a{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border:1px solid var(--line);
-  border-radius:10px;text-decoration:none;color:rgba(255,255,255,.9);font-size:0.93rem}
-.links a:hover{border-color:var(--accent-ink,var(--accent))}
-form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
-label{display:block;font-size:0.85rem;color:var(--muted);margin-bottom:6px}
-input,textarea{width:100%;padding:12px 14px;border-radius:9px;border:1px solid var(--line);background:#0e0f11;color:#fff;font:inherit;margin-bottom:14px}
-input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
-form .btn{width:100%}
-.note{color:var(--muted);font-size:0.85rem;margin-top:12px}
-footer{padding:48px 0 34px;background:#08090a}
-.foot{display:grid;gap:clamp(22px,3vw,44px);grid-template-columns:1.4fr 1fr 1fr}
-@media(max-width:820px){.foot{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.foot{grid-template-columns:1fr}}
-footer h4{font-size:0.82rem;letter-spacing:0.05em;color:var(--muted);margin:0 0 14px;font-weight:700}
-footer ul{list-style:none;padding:0;margin:0}
-footer li{margin-bottom:9px}
-footer a{color:rgba(255,255,255,.86);text-decoration:none;font-size:0.94rem}
-footer a:hover{text-decoration:underline}
-.footbottom{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;
-  gap:14px;justify-content:space-between;color:var(--muted);font-size:0.85rem}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:"Barlow Condensed",Inter,system-ui,sans-serif;font-weight:700;letter-spacing:-.012em;line-height:1.02;margin:0}
+h1{font-size:clamp(42px,7.6vw,104px);text-transform:uppercase}
+h2{font-size:clamp(26px,3.9vw,48px);text-transform:uppercase;margin-bottom:18px}
+h3{font-size:clamp(18px,2vw,23px);text-transform:uppercase;letter-spacing:0}
+p{margin:0 0 14px;color:var(--dim)}
+.eyebrow{font-size:clamp(11px,1.15vw,13px);letter-spacing:.2em;text-transform:uppercase;color:var(--acc);font-weight:600;margin:0 0 16px}
+.btn{display:inline-block;background:var(--acc);color:#14130c;font-weight:700;padding:15px 30px;letter-spacing:.02em;border:2px solid var(--acc)}
+.btn:hover{background:transparent;color:var(--acc)}
+.tel-link{display:inline-block;font-weight:700;font-size:clamp(18px,2vw,22px);border-bottom:2px solid var(--acc);padding-bottom:2px}
 
-/* under 980px the bar has no room for logo + full name + nav: give the nav its own row */
-@media (max-width:980px){
-  .bar{flex-wrap:wrap;row-gap:8px}
-  .brand{flex:1 1 auto;min-width:0}
-  .brand .name{font-size:14px;max-width:none}
-  nav.main{flex:1 1 100%;flex-wrap:wrap;gap:10px 16px;justify-content:flex-start}
-  nav.main a{font-size:13px}
+/* header */
+.site-head{position:sticky;top:0;z-index:60;background:rgba(17,17,16,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:clamp(12px,2vw,28px);padding:10px 0;flex-wrap:wrap}
+.lockup img{height:clamp(46px,4.6vw,58px);width:auto;border-left:3px solid var(--acc);padding-left:10px}
+nav.main{display:flex;gap:clamp(13px,1.7vw,26px);margin-left:auto;flex-wrap:wrap}
+nav.main a{font-size:14.5px;color:var(--dim);letter-spacing:.04em;text-transform:uppercase;padding:4px 0;border-bottom:1px solid transparent}
+nav.main a:hover{color:var(--ink);border-bottom-color:var(--acc)}
+.head-call{display:flex;align-items:center;gap:9px;background:var(--acc);color:#14130c;font-weight:700;padding:10px 16px;font-size:15px;letter-spacing:.02em}
+.head-call small{display:block;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.72;font-weight:600}
+
+section{padding:clamp(52px,6.6vw,96px) 0;border-top:1px solid var(--line)}
+.sec-head{max-width:64ch;margin-bottom:clamp(26px,3.4vw,44px)}
+
+/* hero — real photo, scrim matched to exposure */
+.hero{position:relative;padding:0;border-top:0;isolation:isolate;perspective:1400px}
+.hero-media{position:absolute;inset:0;overflow:hidden}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}
+/* hero band mean luma 127/255 — dark scrim held at .60-.84 so the white headline stays far above 4.5:1 */
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,11,.60) 0%,rgba(12,12,11,.72) 52%,rgba(12,12,11,.84) 100%)}
+#heroCanvas{display:none}
+.hero-body{position:relative;z-index:2;padding:clamp(74px,11vw,164px) 0 clamp(40px,5.2vw,74px)}
+.hero-body h1{color:#fff;text-shadow:0 2px 26px rgba(0,0,0,.5);max-width:18ch}
+.hero-body h1 em{font-style:normal;color:var(--acc)}
+.hero-body .lead{color:#e7e3da;max-width:52ch;font-size:clamp(16px,1.45vw,19.5px);margin-top:20px}
+.hero-cta{display:flex;align-items:center;gap:clamp(16px,2.4vw,30px);flex-wrap:wrap;margin-top:30px}
+.hero-specs{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.2);background:rgba(12,12,11,.72)}
+.hero-specs div{padding:18px clamp(12px,2vw,26px);border-right:1px solid rgba(255,255,255,.13)}
+.hero-specs div:last-child{border-right:0}
+.hero-specs b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:clamp(15px,1.5vw,19px);text-transform:uppercase;color:#fff;letter-spacing:.02em}
+.hero-specs span{font-size:13.5px;color:#c3bfb6}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.svc-grid article{background:var(--panel);padding:clamp(20px,2.5vw,32px)}
+.svc-grid .num{font-family:"Barlow Condensed",sans-serif;font-size:13px;letter-spacing:.2em;color:var(--acc);display:block;margin-bottom:12px}
+.svc-grid p{margin:10px 0 0;font-size:15.5px}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.8vw,24px)}
+.gal figure{margin:0;background:var(--panel);border:1px solid var(--line)}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.gal figcaption{padding:13px 16px;font-size:14px;color:var(--dim);border-top:1px solid var(--line)}
+.gal figcaption b{color:var(--acc);font-weight:600;letter-spacing:.03em}
+
+/* spec: slab structure + planting */
+.spec-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3.2vw,54px)}
+.spec-2 ul{list-style:none;padding:0;margin:0}
+.spec-2 li{position:relative;padding:13px 0 13px 30px;border-bottom:1px solid var(--line);color:var(--dim);font-size:15.5px}
+.spec-2 li:before{content:"";position:absolute;left:0;top:22px;width:16px;height:2px;background:var(--acc)}
+.tag{display:inline-block;font-size:12px;letter-spacing:.19em;text-transform:uppercase;color:var(--dim-2);border:1px solid var(--line-2);padding:5px 11px;margin-bottom:16px}
+.spec-2 h3{margin-bottom:4px}
+.spec-2 .sub{margin-bottom:14px;font-size:15px}
+
+/* faq */
+.faq details{border:1px solid var(--line);background:var(--panel);margin-bottom:10px}
+.faq summary{cursor:pointer;padding:17px clamp(16px,2vw,24px);font-weight:600;font-size:clamp(15.5px,1.6vw,18px);list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";color:var(--acc);font-size:20px;line-height:1}
+.faq details[open] summary:after{content:"\2212"}
+.faq details p{margin:0;padding:0 clamp(16px,2vw,24px) 20px;max-width:78ch}
+
+/* footer */
+footer{border-top:1px solid var(--line);background:var(--panel);padding:clamp(34px,4.6vw,60px) 0 28px}
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:clamp(20px,3vw,46px)}
+.foot h4{font-family:"Barlow Condensed",sans-serif;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin:0 0 12px}
+.foot p,.foot li{font-size:15px;color:var(--dim)}
+.foot ul{list-style:none;padding:0;margin:0}
+.foot li{margin-bottom:7px}
+.foot .base{margin-top:32px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13.5px;color:var(--dim-2)}
+
+/* reveals */
+html.js .rv{opacity:0;transform:translateY(20px)}
+.rv{transition:opacity .7s ease,transform .7s ease}
+.rv.on,html.js .rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js .rv{opacity:1;transform:none}
+  .rv{transition:none}
+}
+
+@media(max-width:1000px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-specs{grid-template-columns:repeat(2,1fr)}
+  .hero-specs div:nth-child(2){border-right:0}
+  .hero-specs div:nth-child(1),.hero-specs div:nth-child(2){border-bottom:1px solid rgba(255,255,255,.13)}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:820px){
+  h1{font-size:clamp(34px,11vw,58px)}
+  .hero-body h1{max-width:100%}
+  nav.main{order:3;width:100%;margin-left:0;gap:16px}
+}
+@media(max-width:680px){
+  .svc-grid,.gal,.spec-2,.foot{grid-template-columns:1fr}
+  .head-call{margin-left:auto}
+  .hero-media img{object-position:56% 50%}
 }
 </style>
-<style id="lb-logo-hero">
-/* Client logo across the header: the real artwork, isolated and readable. */
-.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;padding:0!important;max-height:96px!important;
-  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
-  padding:0!important;box-shadow:none!important}
-.lb-brand .lb-mark{display:block!important;height:clamp(44px,4.8vw,66px)!important;width:auto!important;
-  max-width:none!important;max-height:66px!important;object-fit:contain!important;background:none!important;
-  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
-.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(38vw,520px)!important;
-  max-height:none!important;object-fit:contain!important;object-position:left center!important;
-  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
-.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
-  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
-.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
-.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
-.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
-  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
-.lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
-@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:20px!important}}
-.lb-bar{background-color:#000000!important}
-.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#f7f7f4!important}
-.lb-bar .cta,.lb-bar a.cta{color:#ffffff!important}
-</style>
-<style id="lb-mobile-base">
-html,body{max-width:100%;overflow-x:hidden}
-img,video,canvas,svg,iframe{max-width:100%}
-img,video{height:auto}
-header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
-header,.site-header,.nav{max-width:100%}
-.lb-brand{min-width:0;max-width:100%;overflow:hidden}
-.lb-brand img{max-height:64px;width:auto}
-nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
-h1{overflow-wrap:anywhere}
-@media (max-width:820px){
-  .lb-brand img{max-height:38px}
-  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
-  h2{font-size:clamp(20px,6vw,30px)!important}
-  section{padding-left:16px!important;padding-right:16px!important}
-  .wrap,.container{max-width:100%!important}
-}
-</style>
-<style id="lb-brand-palette">:root{--acc:#a09008;--accent:#a09008;--lbq-accent:#a09008;--lb-acc:#a09008;--brand:#a09008;--brand-color:#a09008;--primary:#a09008;--lime:#a09008;--color-lime:#a09008;--gold:#a09008;--acc-strong:#a09008;--acc2:#383819;--acc-hi:#383819;--accent-2:#383819;--brand-2:#383819;}</style></head>
+</head>
 <body>
-<header class="site">
-<div class="container bar">
-<a aria-label="Melbourne's Finished Concrete &amp; Landscaping" class="lb-brand lb-brand--lockup" href="#top" style="--lb-name:#ffffff"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-cut.png"/><span class="lb-sr">Melbourne's Finished Concrete &amp; Landscaping</span></a><nav aria-label="Main" class="main">
-<a href="#services">Services</a>
-<a href="#process">Our process</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-<a class="btn" href="#contact">Get a quote</a>
-</nav>
-</div>
-<a class="lb-tel" href="tel:0451993098" style="margin-left:auto;font-weight:800;text-decoration:none;color:inherit;white-space:nowrap;font-size:15px;padding:8px 0">0451993098</a></header>
-<main>
-<section aria-label="Concrete &amp; landscaping" class="hero" id="top">
-<canvas aria-hidden="true" id="heroCanvas"></canvas>
-<div aria-hidden="true" class="veil"></div>
-<div class="container inner">
-<h1>Concreting,<br/>start to finish.</h1>
-<p class="lede">Melbourne's Finished Concrete &amp; Landscaping is a concrete work business working across Melbourne. Footings and the rest of the list below are quoted from the site, not from a price list.</p>
-<div class="acts"><a class="btn" href="#contact">Get a quote</a><a class="btn ghost" href="#services">See what we do</a></div>
-<ul class="facts"><li>Driveways</li><li>Exposed aggregate</li><li>Slabs &amp; paths</li><li>Landscaping</li></ul>
-</div>
+
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="lockup" href="#top" aria-label="Melbourne's Finished Concrete &amp; Landscaping"><img src="assets/logo.png" alt="Melbourne's Finished Concrete &amp; Landscaping" width="468" height="334"></a>
+    <nav class="main" aria-label="Site">
+      <a href="#Services">Services</a>
+      <a href="#Gallery">Work</a>
+      <a href="#Spec">Method</a>
+      <a href="#Faq">FAQ</a>
+      <a href="#quote">Quote</a>
+    </nav>
+    <a class="head-call" href="tel:+61451993098"><small>Call</small>0451 993 098</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" aria-label="Finished concrete driveway with landscaping in Melbourne">
+  <!-- LB-3D-HERO -->
+  <div class="hero-media"><img src="assets/hero-driveway.jpg" alt="Finished concrete driveway curving to a house, with garden beds, mature trees and lawn on either side" fetchpriority="high"></div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <canvas id="heroCanvas" width="1600" height="900" aria-hidden="true" tabindex="-1"></canvas>
+  <div class="wrap hero-body">
+    <p class="eyebrow">Concrete and landscaping / commercial and domestic</p>
+    <h1>Poured once.<br><em>Finished right.</em></h1>
+    <p class="lead">Melbourne's Finished Concrete &amp; Landscaping lays the slab, cuts the joints true and finishes the grounds around it: exposed aggregate, driveways, pool surrounds and paving, then turf, planting and garden beds set out to the concrete line.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#quote">Request a quote</a>
+      <a class="tel-link" href="tel:+61451993098">0451 993 098</a>
+    </div>
+  </div>
+  <div class="hero-specs">
+    <div><b>Levels off the ground</b><span>Fall set away from the building before anything is formed</span></div>
+    <div><b>Joints cut true</b><span>Control joints on a square layout so the slab cracks where we tell it</span></div>
+    <div><b>Finish agreed up front</b><span>Broom, exposed aggregate or sealed, settled before the pour</span></div>
+    <div><b>Grounds finished with it</b><span>Turf, planting and beds worked back to the slab edge</span></div>
+  </div>
 </section>
-<section id="services">
-<div class="container">
-<div class="head"><h2>What we do</h2><p>Melbourne's Finished Concrete &amp; Landscaping is owner-run, which is why the person who quotes your concrete work job is the person who turns up to do it.</p></div>
-<div class="grid g3"><article class="card"><div class="swatch"></div><h3>footings</h3><p>The site is looked at properly — access, what is already there, and what the finish has to do — before Melbourne's Finished Concrete &amp; Landscaping puts a number on it.</p></article><article class="card"><div class="swatch"></div><h3>paths</h3><p>You get the scope in writing: what is included, what is not, and when it can start. No allowances that quietly grow.</p></article><article class="card"><div class="swatch"></div><h3>retaining walls</h3><p>Melbourne's Finished Concrete &amp; Landscaping turns up when agreed, does the concrete work work to the quoted scope, and keeps the site tidy while it happens.</p></article><article class="card"><div class="swatch"></div><h3>driveways</h3><p>Quoted on site — Not over the phone from a photo — the price comes from seeing the job.</p></article><article class="card"><div class="swatch"></div><h3>slabs</h3><p>One point of contact — The same person answers the phone and runs the work.</p></article><article class="card"><div class="swatch"></div><h3>exposed aggregate</h3><p>Local to Melbourne — Travel time is short, which is why small jobs are worth doing.</p></article></div>
-</div>
+
+<section id="Services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">What we do</p>
+      <h2>Concrete and ground works</h2>
+      <p>One crew for the hard surfaces and the ground around them. Commercial and domestic work, quoted from the site in Melbourne.</p>
+    </div>
+    <div class="svc-grid rv">
+      <article><span class="num">01</span><h3>Exposed aggregate</h3><p>Aggregate seeded and washed back to an even depth, then sealed. A test panel goes down first so you see the finish before the whole slab is poured.</p></article>
+      <article><span class="num">02</span><h3>Driveways &amp; crossovers</h3><p>Fall set away from the garage, control joints kept square, edges tooled clean. Council crossover requirements checked before we start.</p></article>
+      <article><span class="num">03</span><h3>House &amp; shed slabs</h3><p>Formwork set and checked square and level, reinforcement and vapour barrier placed under the pour, thickness built to your building or shed spec.</p></article>
+      <article><span class="num">04</span><h3>Pool surrounds</h3><p>Coping laid true to the waterline and the deck finished with a texture that grips underfoot, with drainage falling away from the pool.</p></article>
+      <article><span class="num">05</span><h3>Paving &amp; paths</h3><p>Pavers laid on a compacted, screeded bed and cut tight to the house line and garden beds, joints sanded off once it is set.</p></article>
+      <article><span class="num">06</span><h3>Turf &amp; garden works</h3><p>Soil turned and prepped, turf laid to the paving line, planting and mulch set out around the finished concrete so the two read as one job.</p></article>
+    </div>
+  </div>
 </section>
-<section class="alt" id="process">
-<div class="container">
-<div class="head"><h2>How a job runs</h2><p>From the first look to the final clean up.</p></div>
-<div class="grid g3"><article class="card"><h3>Walk the site</h3><p>Workmanship backed — If something is not right, Melbourne's Finished Concrete &amp; Landscaping comes back.</p></article><article class="card"><h3>Set out and prepare</h3><p>The area is stripped, formed and set up so the pour lands where it should.</p></article><article class="card"><h3>Pour and finish</h3><p>Concrete is placed, finished to the chosen texture and left clean.</p></article></div>
-</div>
+
+<section id="Gallery">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Finished work</p>
+      <h2>Slabs, driveways, decks and grounds</h2>
+      <p>Concrete poured and finished, then the turf, beds and planting brought back to the edge of it.</p>
+    </div>
+    <div class="gal rv">
+      <figure><img src="assets/hero-driveway.jpg" alt="Concrete driveway finished to a house with trees and garden beds alongside"><figcaption><b>A job like this:</b> driveway poured, jointed and finished, with the verge and garden beds kept clear of the slab line.</figcaption></figure>
+      <figure><img src="assets/job-exposed-aggregate.jpg" alt="Exposed aggregate concrete surface with control joints cut across it"><figcaption><b>A job like this:</b> exposed aggregate washed back to an even depth with control joints cut square across the panel.</figcaption></figure>
+      <figure><img src="assets/job-pool-surround.jpg" alt="Exposed aggregate pool deck and coping around a pool, finished under a pergola"><figcaption><b>A job like this:</b> pool deck and coping laid true to the waterline and textured for grip underfoot.</figcaption></figure>
+      <figure><img src="assets/job-patio-planting.jpg" alt="Concrete patio slab with a timber bench and plants growing along the fence line"><figcaption><b>A job like this:</b> patio slab with the lawn and planting brought back tight to the concrete edge.</figcaption></figure>
+    </div>
+  </div>
 </section>
-<section id="about">
-<div class="container about">
-<div><h2>About Melbourne's Finished Concrete &amp; Landscaping</h2><p>Melbourne's Finished Concrete &amp; Landscaping takes on commercial and domestic construction work across Melbourne — concreting first, with the landscaping that surrounds it.</p><p>The job is quoted from the site, not from a photo: levels, access and the finish you want all change what a slab costs, so we look before we price.</p></div>
-<ul><li>Commercial and domestic <span>· both sides of the work, quoted the same way</span></li><li>Concrete and landscaping <span>· one crew for the slab and the finish around it</span></li><li>Access and levels checked <span>· priced against the actual site</span></li><li>Left clean <span>· the finished area is ready to use</span></li></ul>
-</div>
+
+<section id="Spec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">How it is built</p>
+      <h2>The slab, and the ground around it</h2>
+      <p>Concrete is only half the job. The other half is what happens at the edge of it.</p>
+    </div>
+    <div class="spec-2">
+      <div class="rv">
+        <span class="tag">Concrete / slab structure</span>
+        <h3>Set out, formed, poured</h3>
+        <p class="sub">The structure decisions happen before the truck backs in.</p>
+        <ul>
+          <li>Ground trimmed and compacted, levels taken on site and fall set at roughly 1:100 away from the building.</li>
+          <li>Formwork set and checked square, with edges tooled so the slab reads as a straight panel from the street.</li>
+          <li>Control joints cut at roughly three-metre centres, laid out so the shrinkage cracks land in the joint, not across the panel.</li>
+          <li>Reinforcement and vapour barrier placed under the pour where the job calls for it, held on chairs off the sub-base.</li>
+          <li>Finish agreed before the pour: broomed, exposed aggregate washed back, or sealed.</li>
+        </ul>
+      </div>
+      <div class="rv">
+        <span class="tag">Landscaping / bed and foliage</span>
+        <h3>Turf, beds and planting</h3>
+        <p class="sub">The grounds are finished to the concrete, not left shy of it.</p>
+        <ul>
+          <li>Garden beds cut tight to the slab edge, soil level kept just under the concrete so nothing spills over the joint.</li>
+          <li>Turf laid to the paving line with the roots kept off the slab, so no cutting into a control joint later.</li>
+          <li>Planting set out after the pour, nothing walked over curing concrete, root barriers at the beds nearest the slab.</li>
+          <li>Drainage falls to the garden bed rather than back against the house or under the slab.</li>
+          <li>Mulch, edging and the final tidy done last, once the concrete has cured and the ground is settled.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="alt" id="contact">
-<div class="container contactwrap">
-<div>
-<h2>Get a quote</h2>
-<p style="color:var(--muted);margin:10px 0 22px">Tell us what you need and roughly the size of the job, and we'll get back to you with a price.</p>
-<p style="color:var(--muted)">Message us and we’ll get straight back to you.</p><p style="color:var(--muted);margin-top:10px">Melbourne VIC</p>
-<div class="links"><a href="https://www.facebook.com/MelbournesFinishedConcrete" rel="noopener">Melbourne's Finished Concrete on Facebook</a></div>
-</div>
-<form data-biz="Melbourne's Finished Concrete &amp; Landscaping" data-site="melbournes-finished-concrete" id="lbq-form" novalidate="">
-<label for="lbq-n">Name</label>
-<input autocomplete="name" id="lbq-n" name="name" required=""/>
-<label for="lbq-p">Phone</label>
-<input autocomplete="tel" id="lbq-p" name="phone" required="" type="tel"/>
-<label for="lbq-m">What do you need done?</label>
-<textarea id="lbq-m" name="message" rows="4"></textarea>
-<button class="btn" type="submit">Request a quote</button>
-<p class="note" id="lbq-note">Send it through and we’ll be in touch.</p>
-</form>
-</div>
+
+<section id="Faq">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Questions</p>
+      <h2>Before we quote</h2>
+    </div>
+    <div class="faq rv">
+      <details open><summary>Do you take on commercial and domestic work?</summary><p>Both. Melbourne's Finished Concrete &amp; Landscaping runs commercial and domestic concrete and landscaping work &mdash; driveways, slabs, exposed aggregate, paving and pool surrounds, plus the turf and garden works that finish around them.</p></details>
+      <details><summary>How is the quote worked out?</summary><p>From the site. Levels are taken on the ground, access and drainage checked, and the finish agreed with you before anything is priced. You get one figure for the concrete and the ground works together.</p></details>
+      <details><summary>Can you do the concrete and the landscaping as one job?</summary><p>Yes, and it is the better way to do it. The slab goes in first, then turf, planting and garden beds are set out against the finished edge, so the levels and the paving line line up instead of being worked around later.</p></details>
+      <details><summary>What areas do you cover?</summary><p>Melbourne VIC and surrounding suburbs. If you are further out, call 0451 993 098 and we will tell you straight away whether it is work we can get to.</p></details>
+      <details><summary>How soon can you pour?</summary><p>It depends on the ground, the access and the weather. Concrete is poured in the right conditions, not on the first free morning &mdash; we book the day around the forecast and confirm it with you beforehand.</p></details>
+    </div>
+  </div>
 </section>
-</main>
-<footer>
-<div class="container">
-<div class="foot">
-<div><h4>MELBOURNE'S FINISHED CONCRETE &amp; LANDSCAPING</h4><p style="color:var(--muted);max-width:34ch">Concrete &amp; landscaping across Melbourne VIC.</p></div>
-<div><h4>SERVICES</h4><ul><li><a href="#services">Driveways</a></li><li><a href="#services">Paths &amp; slabs</a></li><li><a href="#services">Exposed aggregate</a></li><li><a href="#services">Commercial work</a></li></ul></div>
-<div><h4>CONTACT</h4><ul><li><a href="https://www.facebook.com/MelbournesFinishedConcrete" rel="noopener">Melbourne's Finished Concrete on Facebook</a></li></ul></div>
+
+<span id="quote"></span>
+<section id="lbq" aria-labelledby="lbq-h">
+<style>
+#lbq{--lbq-acc:var(--acc,#FADC0D);--lbq-ink:var(--ink,#f4f2ec);--lbq-mut:var(--dim,#a9a49a);--lbq-bg:var(--bg,#111110);--lbq-panel:var(--panel,#1a1917);--lbq-line:var(--line,#33302a);background:var(--lbq-bg);color:var(--lbq-ink);padding:clamp(52px,6.6vw,96px) clamp(16px,4.4vw,52px);border-top:1px solid var(--lbq-line)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1120px;margin:0 auto}
+#lbq .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,52px);align-items:start}
+#lbq .lbq-hd{border-left:3px solid var(--lbq-acc);padding-left:clamp(14px,2vw,20px)}
+#lbq h2{color:var(--lbq-ink);font-size:clamp(26px,3.6vw,44px);margin:0 0 12px}
+#lbq p{color:var(--lbq-mut)}
+#lbq .lbq-f{display:grid;gap:12px}
+#lbq label{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--lbq-mut);margin-bottom:6px;font-weight:600}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:13px 14px;border:1px solid var(--lbq-line);background:var(--lbq-panel);color:var(--lbq-ink);font:inherit;font-size:15px}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-acc);outline-offset:1px;border-color:transparent}
+#lbq textarea{min-height:104px;resize:vertical}
+#lbq .lbq-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#lbq button{margin-top:6px;padding:15px 24px;border:2px solid var(--lbq-acc);background:var(--lbq-acc);color:#14130c;font:inherit;font-weight:700;font-size:16px;letter-spacing:.02em;cursor:pointer}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:12px 0 0;font-size:14.5px;color:var(--lbq-mut);min-height:1.3em}
+#lbq .lbq-cons{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:13px;color:var(--lbq-mut);text-transform:none;letter-spacing:0;font-weight:400}
+#lbq .lbq-cons input{width:auto;margin-top:3px}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media(max-width:820px){#lbq .lbq-sp{grid-template-columns:1fr}}
+@media(max-width:560px){#lbq .lbq-2{grid-template-columns:1fr}}
+</style>
+<div class="lbq-w">
+  <div class="lbq-sp">
+    <div class="lbq-hd">
+      <p class="eyebrow">Request a quote</p>
+      <h2 id="lbq-h">Tell us what needs pouring</h2>
+      <p>Name and phone is all we need to call you back. Add the suburb and a line about the job and we will come back with a figure.</p>
+      <p>Prefer to talk it through? Call <a href="tel:+61451993098" style="color:var(--lbq-acc);font-weight:700">0451 993 098</a>.</p>
+    </div>
+    <form id="lbq-form" class="lbq-f" novalidate data-site="melbournes-finished-concrete" data-biz="Melbourne's Finished Concrete &amp; Landscaping" action="https://api.laydbackapps.com.au/functions/v1/quote-request" method="POST">
+      <div class="lbq-2">
+        <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+        <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel" required></div>
+      </div>
+      <div class="lbq-2">
+        <div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
+        <div><label for="lbq-s">Suburb</label><input id="lbq-s" name="suburb" autocomplete="address-level2"></div>
+      </div>
+      <div>
+        <label for="lbq-sv">What is the job</label>
+        <select id="lbq-sv" name="service">
+          <option value="">Select the closest match</option>
+          <option value="Exposed aggregate">Exposed aggregate</option>
+          <option value="Driveways &amp; crossovers">Driveways &amp; crossovers</option>
+          <option value="House or shed slab">House or shed slab</option>
+          <option value="Pool surrounds">Pool surrounds</option>
+          <option value="Paving &amp; paths">Paving &amp; paths</option>
+          <option value="Turf &amp; garden works">Turf &amp; garden works</option>
+          <option value="Concrete and landscaping together">Concrete and landscaping together</option>
+        </select>
+      </div>
+      <div><label for="lbq-m">Details</label><textarea id="lbq-m" name="message" placeholder="Size, access, levels, time frame"></textarea></div>
+      <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this quote request.</label>
+      <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit">Send quote request</button>
+      <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
+    </form>
+  </div>
 </div>
-<div class="footbottom">
-<span>© <span id="yr">2026</span> Melbourne's Finished Concrete &amp; Landscaping. All rights reserved.</span>
-<span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
-</div>
-</div>
-</footer>
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
 (function(){
-  var c=document.getElementById('heroCanvas'); if(!c) return;
-  var ctx=c.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2), w=0,h=0,t=0,raf=null;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function size(){var r=c.getBoundingClientRect(); w=Math.max(320,r.width|0); h=Math.max(320,r.height|0);
-    c.width=w*dpr; c.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);}
-  function draw(){
-    var g=ctx.createLinearGradient(0,0,0,h);
-    g.addColorStop(0,'#141518'); g.addColorStop(.55,'#0e0f11'); g.addColorStop(1,'#090a0b');
-    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
-    var y0=h*0.52;
-    ctx.beginPath(); ctx.moveTo(0,y0); ctx.lineTo(w,y0); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
-
-    // exposed aggregate: stone speckle over a slab, joints, low warm key light
-    var gg=ctx.createLinearGradient(0,y0,0,h);
-    gg.addColorStop(0,'#5a5d61'); gg.addColorStop(.5,'#3d4044'); gg.addColorStop(1,'#24262a');
-    ctx.fillStyle=gg; ctx.fill();
-    for(var s=0;s<900;s++){
-      var sx=(s*37.13)%w, sy=y0+((s*53.7)%(h-y0)), r=1+(s%3);
-      var tone = s%4===0 ? '255,217,0' : (s%7===0 ? '227,27,35' : '220,222,226');
-      ctx.fillStyle='rgba('+tone+',.16)';
-      ctx.beginPath(); ctx.arc(sx,sy,r,0,6.283); ctx.fill();
-    }
-    ctx.strokeStyle='rgba(0,0,0,.22)'; ctx.lineWidth=1.5;
-    for(var k=1;k<=2;k++){var yy=y0+(h-y0)*(k/3.2); ctx.beginPath(); ctx.moveTo(0,yy); ctx.lineTo(w,yy); ctx.stroke();}
-    var lg=ctx.createRadialGradient(w*.2,h*.08,10,w*.2,h*.08,w*.6);
-    lg.addColorStop(0,'rgba(255,255,255,.12)'); lg.addColorStop(1,'rgba(255,255,255,0)');
-    ctx.fillStyle=lg; ctx.fillRect(0,0,w,h);
-
+  var EP = '/functions/v1/quote-request';
+  var FALLBACK = 'https://api.laydbackapps.com.au';
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){ done=true; cb(FALLBACK); } }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt || '').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : FALLBACK);
+      })
+      .catch(function(){ if(!done){ done = true; clearTimeout(t); cb(FALLBACK); } });
   }
-  function loop(){ t+=0.004; draw(); raf=requestAnimationFrame(loop); }
-  size(); draw(); if(!reduce){ loop(); }
-  window.addEventListener('resize', function(){ size(); draw(); }, {passive:true});
-  window.addEventListener('pagehide', function(){ if(raf) cancelAnimationFrame(raf); });
-})();
-(function(){
-  var f=document.getElementById('lbq-form'); if(!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('lbq-note').textContent = "Thanks. This preview form isn\u2019t wired to a mailbox yet \u2014 message us on Facebook and we\u2019ll get straight back to you.";
-  });
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k] = v; });
+      if (d.website) return;
+      if (!d.name || (!d.phone && !d.email)) {
+        st.textContent = 'Please add your name and a phone number or email.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending...';
+      st.style.color = '';
+      base(function(B){
+        fetch(B + EP, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            suburb: d.suburb || '', service: d.service || '',
+            message: d.message || '', consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks - your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-acc)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send - please call 0451 993 098.';
+          st.style.color = '#ff9d8a';
+        })
+        ['finally'](function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
 })();
 </script>
-<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#000000","important");})();</script>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h4>Melbourne's Finished Concrete &amp; Landscaping</h4>
+        <p>Commercial and domestic concrete and landscaping across Melbourne VIC. Slabs, driveways, exposed aggregate, pool surrounds and paving, with turf and garden works finished around them.</p>
+        <p><a href="tel:+61451993098" style="color:var(--acc);font-weight:700;font-size:19px">0451 993 098</a></p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#Services">Exposed aggregate</a></li>
+          <li><a href="#Services">Driveways &amp; crossovers</a></li>
+          <li><a href="#Services">House &amp; shed slabs</a></li>
+          <li><a href="#Services">Pool surrounds</a></li>
+          <li><a href="#Services">Paving &amp; paths</a></li>
+          <li><a href="#Services">Turf &amp; garden works</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Phone: <a href="tel:+61451993098">0451 993 098</a></li>
+          <li>Melbourne VIC, commercial and domestic</li>
+          <li>Quotes taken from the site</li>
+          <li><a href="#quote">Request a quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <span>Melbourne's Finished Concrete &amp; Landscaping, concrete and landscaping, Melbourne VIC</span>
+      <span>0451 993 098</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els = [].slice.call(document.querySelectorAll('.rv'));
+  function showAll(){ els.forEach(function(e){ e.classList.add('on'); }); }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { en.target.classList.add('on'); io.unobserve(en.target); }
+      });
+    }, {rootMargin:'0px 0px -10% 0px', threshold:0.08});
+    els.forEach(function(e){ io.observe(e); });
+  } else {
+    showAll();
+  }
+  setTimeout(function(){ els.forEach(function(e){ e.classList.add('on'); }); }, 1200);
+})();
+</script>
+
 </body>
 </html>

@@ -65,7 +65,46 @@ p{margin:0 0 1em}
 .hdr__cta{margin-left:6px}
 .hdr__tel{display:inline-flex;align-items:center;gap:7px;color:#fff;font-weight:700;font-size:.95rem;
   text-decoration:none;white-space:nowrap;padding:8px 4px;border-bottom:1px solid transparent}
-.hdr__tel:800100064034009511246109127891526780015980110625525525552552552551211189100011840841184084010010046118408411001028689501028688830102868605810286880100300110070088206288206212155843519122030561135112621234002200830125525525522900960025910"";width:7px;height:7px;border-radius:50%;background:var(--hero-acc)}
+.hdr__tel:hover{border-bottom-color:var(--acc)}
+.hdr__tel b{color:var(--acc-lt);font-weight:800}
+@media(max-width:1000px){.nav{display:none}}
+@media(max-width:640px){
+  .hdr__tel{display:none}
+  .brand__mark{height:34px;flex:0 0 auto}
+  .brand__word b{font-size:.95rem;line-height:1.12;white-space:normal;overflow:visible;
+    text-overflow:clip;max-width:46vw}
+  .brand__word i{display:none}
+  .hdr__in{gap:10px}
+  .hdr__cta{padding:9px 12px;font-size:.78rem;margin-left:auto}
+}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--acc);color:var(--acc-ink);
+  padding:15px 26px;border-radius:7px;font-weight:800;text-decoration:none;border:1.5px solid var(--acc);
+  font-size:.98rem;letter-spacing:.01em}
+.btn:hover{filter:brightness(1.06)}
+.btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn--ghost:hover{background:rgba(255,255,255,.12)}
+.btn--sm{padding:11px 18px;font-size:.9rem}
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--ground);color:#fff;isolation:isolate;
+  perspective:1000px;padding:118px 40px 84px}
+.hero__bg{position:absolute;inset:-118px -40px -84px;z-index:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center 46%}
+.hero__scrim{position:absolute;inset:-118px -40px -84px;z-index:1;background:linear-gradient(100deg,rgba(10,28,68,.95) 0%,rgba(10,28,68,.88) 30%,rgba(10,28,68,.60) 58%,rgba(10,28,68,.80) 100%)}
+.hero__in{position:relative;z-index:3;margin:0 auto;padding:0;max-width:1100px}
+@media(max-width:700px){
+  .hero{padding:88px 20px 62px}
+  .hero__bg,.hero__scrim{inset:-88px -20px -62px}
+  .hero__in{max-width:none}
+}
+.hero h1{font-size:clamp(2.15rem,5.8vw,4.35rem);max-width:19ch;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--hero-acc)}
+.hero__lede{margin:22px 0 30px;max-width:56ch;font-size:clamp(1rem,1.35vw,1.12rem);color:#e6ebf2}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero__facts{list-style:none;margin:34px 0 0;padding:22px 0 0;display:flex;flex-wrap:wrap;gap:8px 30px;
+  border-top:1px solid rgba(255,255,255,.22);max-width:900px}
+.hero__facts li{font-size:.9rem;font-weight:600;color:#f2f5f9;display:flex;gap:10px;align-items:center}
+.hero__facts li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--hero-acc)}
 .lb3d-canvas{display:none}
 /* sections */
 .sec{padding:104px 40px}
@@ -125,7 +164,7 @@ p{margin:0 0 1em}
 <a href="#work">The finish</a>
 <a href="#area">FAQ</a>
 </nav>
-<a class="hdr__tel" href="tel:0451701522"><b>Call</b> 0451 701 522</a>
+<a class="hdr__tel" href="tel:+61427370805"><b>Call</b> 0427 370 805</a>
 <a class="btn btn--sm hdr__cta" href="#quote">Get a quote</a>
 </div></header>
 <main id="main">
@@ -138,7 +177,7 @@ p{margin:0 0 1em}
 <h1 id="hero-h">Moving out? We&rsquo;ll make it <em>agent-ready.</em></h1>
 <p class="hero__lede">End-of-lease and bond cleaning for renters and property managers across Brisbane and the Gold Coast. The clean works from a room-by-room inspection checklist, with our own Fair Work-paid cleaners and eco-friendly products.</p>
 <div class="hero__cta"><a class="btn" href="#quote">Get an instant quote</a><a class="btn btn--ghost" href="#services">See what&rsquo;s included</a></div>
-<ul class="hero__facts"><li>Brisbane &middot; Gold Coast &middot; QLD</li><li>From $450 + GST</li><li><a href="tel:0451701522">Call 0451 701 522</a></li><li>Room-by-room inspection checklist</li><li>Back within 72 hours if anything is missed</li></ul>
+<ul class="hero__facts"><li>Brisbane &middot; Gold Coast &middot; QLD</li><li>From $450 + GST</li><li><a href="tel:+61427370805">Call 0427 370 805</a></li><li>Room-by-room inspection checklist</li><li>Back within 72 hours if anything is missed</li></ul>
 </div></section>
 <section class="sec" id="services" aria-labelledby="services-h"><div class="wrap">
 <div class="sec__head rv"><h2 id="services-h">What a bond clean covers</h2><p>Everything an agent opens a cupboard to check. The clean runs from a written room-by-room checklist, and the same checklist goes out with the invoice.</p></div>
@@ -212,7 +251,7 @@ p{margin:0 0 1em}
   <div>
     <h2 id="lbq-h">Get a free quote</h2>
     <p class="lbq-s">Tell us the address, the size and the move-out date and we&rsquo;ll come back with a firm bond-clean price.</p>
-    <div class="lbq-info"><div><b>Area</b><span>Brisbane &amp; the Gold Coast</span></div><div><b>Phone</b><a href="tel:0451701522">0451 701 522</a></div><div><b>Social</b><a href="https://www.instagram.com/evefacilityservice" rel="noopener">@evefacilityservice</a></div></div>
+    <div class="lbq-info"><div><b>Area</b><span>Brisbane &amp; the Gold Coast</span></div><div><b>Phone</b><a href="tel:+61427370805">0427 370 805</a></div><div><b>Social</b><a href="https://www.instagram.com/evefacilityservice" rel="noopener">@evefacilityservice</a></div></div>
   </div>
   <form id="lbq-form" novalidate data-site="manual-20261021-eve-facility-service" data-biz="Eve Facility Service">
     <div class="lbq-f">

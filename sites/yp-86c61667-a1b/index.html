@@ -32,7 +32,26 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .navlinks a{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--grey);transition:color .2s}
 .navlinks a:hover{color:var(--red)}
 .navtel{font-family:var(--display);font-size:14px;color:#fff;background:var(--red-deep);padding:9px 16px;border-radius:2px;letter-spacing:.04em}
-.navtel:11000161102310010051045202554403612840160044658498011164201214034828151692'\2022';color:var(--red);margin-left:48px}
+.navtel:hover{background:var(--red-deep)}
+/* HERO — photo mosaic grid + type block */
+.hero{padding:110px 0 0}
+.hero-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:10px}
+.hero-grid .main{grid-row:span 2}
+.hero-grid a, .hero-grid .cell{position:relative;overflow:hidden;border-radius:3px;display:block}
+.hero-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.hero-grid .cell:hover img{transform:scale(1.04)}
+.hero-grid .main img{height:520px}
+.hero-grid .side img{height:255px}
+.hero-type{padding:44px 0 36px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:end}
+.hero-type h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,6.5vw,84px);line-height:.98;letter-spacing:-.01em;text-transform:uppercase;color:var(--ink)}
+.hero-type h1 em{font-style:normal;color:var(--red)}
+.hero-type .right p{font-size:16px;color:var(--grey);max-width:420px}
+.hero-type .right .mono{margin-bottom:12px;display:block}
+/* marquee */
+.marquee{background:var(--ink);color:#fff;overflow:hidden;padding:14px 0;border-top:3px solid var(--red)}
+.marquee .track{display:flex;gap:48px;white-space:nowrap;animation:mq 28s linear infinite;width:max-content}
+.marquee span{font-family:var(--display);font-size:15px;letter-spacing:.16em;text-transform:uppercase;opacity:.92}
+.marquee span::after{content:'\2022';color:var(--red);margin-left:48px}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.marquee .track{animation:none}}
 /* services — bold blocks */

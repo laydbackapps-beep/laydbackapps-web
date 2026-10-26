@@ -81,7 +81,24 @@ img{max-width:100%;height:auto;display:block}
 .btn--primary{background:var(--deep);color:#fff}
 .btn--primary:hover{background:#1f442c}
 .btn--tel{color:var(--deep);font-weight:500}
-.btn--tel:1002404811600128284440224012414801323466507111600088'Tenor Sans',system-ui,sans-serif;font-size:clamp(18px,2.4vw,24px);color:var(--deep);flex:1}
+.btn--tel:hover{text-decoration:underline}
+
+/* --- ORCHARD ROWS (services) --- */
+.rows{padding:100px 24px;background:var(--field)}
+.rows__inner{max-width:var(--max);margin:0 auto}
+.rows__header{margin-bottom:48px}
+.rows__label{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--blossom);margin-bottom:8px}
+.rows__title{font-size:clamp(28px,4vw,44px);letter-spacing:-.02em}
+.rows__list{list-style:none}
+.row{display:flex;align-items:center;padding:24px 0;border-bottom:1px solid var(--hair);gap:24px}
+.row:first-child{border-top:1px solid var(--hair)}
+.row__marker{display:flex;flex-direction:column;align-items:center;width:48px;flex-shrink:0}
+.row__stem{width:1px;height:32px;background:var(--hair)}
+.row__dots{display:flex;flex-direction:column;gap:3px;margin-top:4px}
+.row__dot{width:6px;height:6px;border-radius:50%;background:var(--deep);opacity:.7}
+.row__dot--blossom{background:var(--blossom);opacity:1}
+.row__num{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:8px;white-space:nowrap}
+.row__name{font-family:'Tenor Sans',system-ui,sans-serif;font-size:clamp(18px,2.4vw,24px);color:var(--deep);flex:1}
 .row__rule{flex:1;height:1px;background:var(--hair);margin-left:24px;max-width:100%;overflow:hidden}
 @media (max-width:600px){
   .row{flex-direction:column;align-items:flex-start;gap:12px;padding:20px 0}
@@ -140,7 +157,19 @@ img{max-width:100%;height:auto;display:block}
 .footer__location{font-size:14px;font-weight:300;color:rgba(255,255,255,.7)}
 .footer__contact{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
 .footer__tel{font-size:14px;font-weight:500;color:#fff}
-.footer__tel:164040502552552551220201230025525525551003600061160008"";width:10px;height:10px;background:currentColor;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M12 2C8 5 4 10 4 14c0 3.5 2 6.5 5 8 3-1.5 5-4.5 5-8 0-4-4-9-8-9z'/%3E%3C/svg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M12 2C8 5 4 10 4 14c0 3.5 2 6.5 5 8 3-1.5 5-4.5 5-8 0-4-4-9-8-9z'/%3E%3C/svg%3E") center/contain no-repeat}
+.footer__tel:hover{color:var(--blossom)}
+.footer__social{display:flex;gap:16px}
+.footer__social-link{display:flex;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);align-items:center;justify-content:center;color:#fff;transition:background .2s}
+.footer__social-link:hover{background:var(--blossom)}
+.footer__social svg{width:20px;height:20px}
+.footer__copy{font-size:12px;font-weight:300;color:rgba(255,255,255,.5);width:100%;order:3}
+@media (min-width:600px){
+  .footer__copy{width:auto;order:0}
+}
+
+/* --- LEAF TAG --- */
+.leaf-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.leaf-tag::before{content:"";width:10px;height:10px;background:currentColor;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M12 2C8 5 4 10 4 14c0 3.5 2 6.5 5 8 3-1.5 5-4.5 5-8 0-4-4-9-8-9z'/%3E%3C/svg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M12 2C8 5 4 10 4 14c0 3.5 2 6.5 5 8 3-1.5 5-4.5 5-8 0-4-4-9-8-9z'/%3E%3C/svg%3E") center/contain no-repeat}
 
 /* --- ORCHARD ROW BACKGROUNDS (CSS-generated dot rows) --- */
 .rows,.season,.statement,.quote{position:relative;overflow:hidden}
@@ -199,7 +228,7 @@ img{max-width:100%;height:auto;display:block}
     <li><a class="nav__link" href="#season">Season</a></li>
     <li><a class="nav__link" href="#quote">Contact</a></li>
   </ul>
-  <a class="nav__tel" href="tel:0412430325">0412 430 325</a>
+  <a class="nav__tel" href="tel:+61412430325">0412 430 325</a>
 </nav>
 
 <section class="hero rv" aria-labelledby="hero-title">
@@ -210,7 +239,7 @@ img{max-width:100%;height:auto;display:block}
     <p class="hero__sub">Landscape work across Newcastle — gardens, turf, paving and care.</p>
     <div class="hero__cta">
       <a class="btn btn--primary" href="#quote">Plan your garden</a>
-      <a class="btn btn--tel" href="tel:0412430325">0412 430 325</a>
+      <a class="btn btn--tel" href="tel:+61412430325">0412 430 325</a>
     </div>
   </div>
 </section>
@@ -355,7 +384,7 @@ img{max-width:100%;height:auto;display:block}
       <span class="footer__location">Floraville · Newcastle region, NSW</span>
     </div>
     <div class="footer__contact">
-      <a class="footer__tel" href="tel:0412430325">0412 430 325</a>
+      <a class="footer__tel" href="tel:+61412430325">0412 430 325</a>
       <div class="footer__social">
         <a class="footer__social-link" href="https://www.instagram.com/newcastlelandscapes" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>

@@ -134,7 +134,16 @@ a:focus-visible{outline:2px solid var(--hivis);outline-offset:2px;border-radius:
   color:var(--chalk);font-family:'Host Grotesk',sans-serif;font-weight:500;font-size:.95rem;
   padding:14px 8px;
 }
-.btn-tel:018024110'Fira Code',monospace;font-weight:400;font-size:.7rem;letter-spacing:.15em;
+.btn-tel:hover,.btn-tel:focus{color:var(--hivis)}
+
+/* SCOPE TAGS (01) */
+.scope{
+  padding:80px 24px;background:var(--panel);
+  border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+}
+.section-inner{max-width:var(--max);margin:0 auto}
+.section-tag{
+  font-family:'Fira Code',monospace;font-weight:400;font-size:.7rem;letter-spacing:.15em;
   text-transform:uppercase;color:var(--hivis);margin:0 0 12px;
 }
 .section-title{
@@ -263,7 +272,34 @@ a:focus-visible{outline:2px solid var(--hivis);outline-offset:2px;border-radius:
 .footer-location{color:var(--muted);font-size:.9rem}
 .footer-contact{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
 .footer-tel{font-family:'Host Grotesk',sans-serif;font-weight:500;font-size:.95rem;color:var(--chalk)}
-.footer-tel:68561012210082424156001658635415"#main" class="skip-link">Skip to main content</a>
+.footer-tel:hover,.footer-tel:focus{color:var(--hivis)}
+.footer-ig{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.85rem;color:var(--muted);padding:6px 10px;border:1px solid var(--hair);border-radius:var(--radius);
+  transition:color .2s,border-color .2s;
+}
+.footer-ig:hover,.footer-ig:focus{color:var(--hivis);border-color:var(--hivis)}
+.footer-copy{width:100%;color:var(--muted);font-size:.8rem;margin-top:24px;padding-top:24px;border-top:1px solid var(--hair)}
+@media (max-width:560px){
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}
+
+/* STRINGS SVG BACKGROUND (global subtle lines) */
+.strings-bg{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.6;
+}
+.string-line{
+  stroke:var(--hivis);stroke-width:.5;stroke-dasharray:8 6;fill:none;opacity:.35;
+}
+.string-peg{
+  fill:var(--hivis);
+}
+.chalk-mark{
+  stroke:var(--chalk);stroke-width:.4;stroke-linecap:round;opacity:.15;
+}
+</style>
+</head>
+<body><a href="#main" class="skip-link">Skip to main content</a>
 <nav class="nav" role="navigation" aria-label="Main">
   <div class="nav-wordmark">
     <span class="nav-peg" aria-hidden="true"></span>
@@ -285,7 +321,7 @@ a:focus-visible{outline:2px solid var(--hivis);outline-offset:2px;border-radius:
       <p class="hero-sub rv">Property development across the Hunter region.</p>
       <div class="hero-cta">
         <a href="#quote" class="btn btn-primary rv">Start a project</a>
-        <a href="tel:0414474151" class="btn-tel rv">0414474151</a>
+        <a href="tel:+61414474151" class="btn-tel rv">0414474151</a>
       </div>
     </div>
   </section>
@@ -369,7 +405,7 @@ a:focus-visible{outline:2px solid var(--hivis);outline-offset:2px;border-radius:
       <p class="footer-location">Hunter region, NSW</p>
     </div>
     <div class="footer-contact">
-      <a href="tel:0414474151" class="footer-tel">0414474151</a>
+      <a href="tel:+61414474151" class="footer-tel">0414474151</a>
       <a href="https://www.instagram.com/savidevelopments" class="footer-ig" target="_blank" rel="noopener">Instagram</a>
     </div>
     <p class="footer-copy">© 2026 Savi Developments Pty Ltd</p>

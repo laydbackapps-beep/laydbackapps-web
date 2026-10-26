@@ -46,7 +46,43 @@ p{margin:0}
 .nav-links{display:flex;gap:clamp(12px,1.7vw,28px);margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
 .nav-links a:hover{color:#fff}
 .nav-tel{flex:none;font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.05em;border:1px solid var(--line2);padding:10px 16px;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
-.nav-tel:8001250611181291120154031554520355459607600101112971341503511470166010010200013510111295010111275010111231000289109508910842489104046891005709111322100014230232230061123023223004511587612858761280000240006088000024000608839605419006040388167850100637168428190226228226160116202262282261101162766650760008747666507600087434678810013609421140721089503900181602300005501400051160015222038716341452049898151145601160006122651526800130915152221525525525555000342035212552552551820910"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase}
+.nav-tel:hover{background:var(--acc);color:var(--acc-text);border-color:var(--acc)}
+.nav-cta{flex:none;font-family:var(--disp);font-weight:800;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--acc);color:var(--acc-text);padding:11px 18px;white-space:nowrap}
+.burger{display:none;background:none;border:1px solid var(--line2);color:#fff;padding:9px 11px;cursor:pointer;margin-left:auto}
+.burger span{display:block;width:20px;height:1.5px;background:currentColor;margin:4px 0;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+@media(max-width:960px){
+  .nav-links{position:fixed;inset:76px 0 auto 0;background:rgba(10,11,12,.97);flex-direction:column;padding:1.3rem;gap:.4rem;transform:translateY(-150%);transition:transform .35s ease;border-bottom:1px solid var(--line);font-size:14px}
+  .nav-links.open{transform:none}
+  .nav-links a{padding:.7rem 0;border-bottom:1px solid var(--line)}
+  .nav-tel,.nav-cta{display:none}
+  .burger{display:block}
+}
+
+/* ---- hero ---- */
+.hero{position:relative;min-height:clamp(660px,100svh,1020px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,rgba(10,11,12,.95) 0%,rgba(10,11,12,.7) 50%,rgba(10,11,12,.3) 100%)}
+.hero-scrim{position:absolute;inset:0;z-index:-2;background:linear-gradient(to top,rgba(8,9,10,.95) 0%,rgba(8,9,10,.84) 24%,rgba(8,9,10,.40) 46%,rgba(8,9,10,.05) 70%,rgba(9,11,13,.22) 100%)}
+.hero-grid{position:absolute;inset:0;z-index:-1;opacity:.4;pointer-events:none;background-image:linear-gradient(to right,rgba(230,232,230,.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(230,232,230,.045) 1px,transparent 1px);background-size:clamp(58px,7.6vw,128px) clamp(58px,7.6vw,128px);-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 24%,#000 60%,transparent 88%);mask-image:linear-gradient(to bottom,transparent 0,#000 24%,#000 60%,transparent 88%)}
+.hero-3d{position:absolute;inset:96px 0 auto;height:54%;z-index:-1;perspective:900px;perspective-origin:60% 40%;pointer-events:none;overflow:hidden}
+.hero-3d .plane{position:absolute;left:-8%;right:-8%;bottom:-16%;height:78%;transform-origin:50% 100%;transform:rotateX(63deg);transition:transform .7s cubic-bezier(.16,.84,.28,1);background-image:repeating-linear-gradient(90deg,rgba(226,228,226,.16) 0 1px,transparent 1px 62px),repeating-linear-gradient(0deg,rgba(226,228,226,.11) 0 1px,transparent 1px 62px);-webkit-mask-image:radial-gradient(ellipse 76% 66% at 50% 76%,#000 8%,transparent 74%);mask-image:radial-gradient(ellipse 76% 66% at 50% 76%,#000 8%,transparent 74%)}
+#heroCanvas{display:none}
+.hero-in{position:relative;z-index:3;padding-bottom:clamp(46px,7vh,88px);width:100%;max-width:min(1360px,94vw)}
+.hero .eyebrow{color:#dfe2e1}
+.hero h1{font-size:clamp(40px,7.2vw,108px);line-height:.95;letter-spacing:-.03em;text-transform:uppercase;font-weight:900;margin-top:18px;max-width:16ch;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.55),0 1px 4px rgba(0,0,0,.5)}
+.hero h1 .acc{color:var(--hero-acc)}
+.hero h1 .thin{display:block;font-family:var(--body);font-weight:600;font-size:clamp(15px,2vw,22px);letter-spacing:0;text-transform:none;color:#d3d8d7;margin-top:16px;max-width:34ch;line-height:1.45}
+.hero-sub{margin-top:20px;color:#e4e9e8;font-size:clamp(.98rem,1.5vw,1.14rem);max-width:56ch;text-shadow:0 1px 16px rgba(0,0,0,.6)}
+.hero-cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:15px 26px;text-decoration:none;font-family:var(--disp);font-weight:800;font-size:13px;letter-spacing:.09em;text-transform:uppercase;transition:transform .15s,filter .15s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--acc);color:var(--acc-text)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:#fff;color:#0c0d0e;border-color:#fff}
+.hero-strip{margin-top:34px;display:flex;gap:clamp(20px,3vw,52px);flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.18);padding-top:20px}
+.hero-strip p{color:#9aa1a0;font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase}
 .hero-strip strong{display:block;color:#fff;font-family:var(--disp);font-size:1.12rem;margin-top:5px;font-weight:800;text-transform:uppercase;letter-spacing:.01em}
 .hero-cardwrap{display:none}
 @media(max-width:760px){
@@ -155,7 +191,7 @@ html.js .drop.in{opacity:1;transform:none}
 <nav class="nav" id="nav"><div class="wrap nav-in">
   <a class="brand" href="#top"><img class="brand-logo" src="assets/logo.png" alt="McKinnon Concrete logo"><span class="brand-t">McKinnon Concrete<small>High-end concreting &mdash; Coffs Coast, NSW</small></span></a>
   <div class="nav-links" id="navlinks"><a href="#services">Services</a><a href="#process">Process</a><a href="#work">Work</a><a href="#faq">FAQ</a><a href="#quote">Quote</a></div>
-  <a class="nav-tel" href="tel:0427236325">0427 236 325</a>
+  <a class="nav-tel" href="tel:+61427236325">0427 236 325</a>
   <a class="nav-cta" href="#quote">Get a quote</a>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div></nav>
@@ -172,7 +208,7 @@ html.js .drop.in{opacity:1;transform:none}
     <h1>High-end concrete,<br><span class="acc">poured right.</span></h1>
     <p class="hero-sub">Exposed aggregate, polished concrete floors, retaining walls, driveways and slabs across Coffs Harbour and the Coffs Coast &mdash; 17+ years on the tools and a finish that speaks for itself.</p>
     <div class="fresh"><span>Exposed aggregate</span><span>Polished concrete</span><span>Retaining walls</span><span>Driveways</span></div>
-    <div class="hero-cta"><a class="btn btn-primary" href="#quote">Get a free quote</a><a class="btn btn-ghost" href="tel:0427236325">Call 0427 236 325</a></div>
+    <div class="hero-cta"><a class="btn btn-primary" href="#quote">Get a free quote</a><a class="btn btn-ghost" href="tel:+61427236325">Call 0427 236 325</a></div>
     <div class="hero-strip"><p>Exposed aggregate<strong>Polished floors</strong></p><p>Retaining walls<strong>Driveways &amp; slabs</strong></p><p>17+ years<strong>On the tools</strong></p></div>
   </div>
 </header>
@@ -244,7 +280,7 @@ html,body{overflow-x:hidden}
     <h2 id="lbq-h">Get a free quote</h2>
     <p class="lbq-s">Tell us about the job and we&rsquo;ll come back with a firm price &mdash; no surprises, no obligation.</p>
     <div class="lbq-info">
-      <div><b>Call</b><a href="tel:0427236325">0427 236 325</a></div>
+      <div><b>Call</b><a href="tel:+61427236325">0427 236 325</a></div>
       
       <div><b>Area</b><span>Coffs Harbour &amp; the Coffs Coast, NSW</span></div>
     </div>
@@ -345,7 +381,7 @@ html,body{overflow-x:hidden}
     <p style="margin-top:16px;font-size:13.5px;max-width:320px;color:var(--dim);">Exposed aggregate, polished concrete, retaining walls, driveways and slabs &mdash; Coffs Harbour and the Coffs Coast, NSW.</p>
   </div>
   <div><h4>Services</h4><a href="#services">Exposed aggregate</a><a href="#services">Polished floors</a><a href="#services">Retaining walls</a><a href="#services">Driveways &amp; slabs</a></div><div><h4>Company</h4><a href="#process">How we pour</a><a href="#work">Work</a><a href="#faq">FAQ</a><a href="#quote">Free quote</a></div>
-  <div><h4>Contact</h4><a href="tel:0427236325">0427 236 325</a><a href="#quote">Free quote</a></div>
+  <div><h4>Contact</h4><a href="tel:+61427236325">0427 236 325</a><a href="#quote">Free quote</a></div>
 </div>
 <div class="fbar"><span>&copy; 2026 MCKINNON CONCRETE &middot; Coffs Harbour &amp; the Coffs Coast, NSW</span><span></span></div>
 </footer>

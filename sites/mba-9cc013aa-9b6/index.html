@@ -81,7 +81,17 @@ img{max-width:100%;display:block}
   color:var(--birch);background:var(--steel);padding:9px 15px;border-radius:3px;
   white-space:nowrap;flex-shrink:0;
 }
-.nav-tel:2454226546162915324'Archivo',sans-serif;font-weight:700;font-size:.74rem;
+.nav-tel:hover{background:var(--steel-deep)}
+
+/* ---------- pegboard rail / board ---------- */
+.board{padding-block:clamp(2.4rem,5vw,4.2rem) clamp(2.6rem,5vw,4.6rem)}
+.rail-head{
+  display:flex;align-items:baseline;gap:16px;
+  border-bottom:2px solid var(--char);
+  padding-bottom:9px;margin-bottom:clamp(1.5rem,3vw,2.4rem);
+}
+.rail-tag{
+  font-family:'Archivo',sans-serif;font-weight:700;font-size:.74rem;
   letter-spacing:.19em;text-transform:uppercase;color:var(--steel);
   border-left:3px solid var(--steel);padding-left:9px;flex-shrink:0;
 }
@@ -231,7 +241,54 @@ h1 em{font-style:normal;color:var(--steel);display:block}
   color:var(--steel);margin-top:1.1rem;white-space:nowrap;
   border-bottom:3px solid rgba(51,86,107,.28);padding-bottom:.14em;
 }
-.big-tel:115954616524423923010171822222214288009801822442392306802124423923041007624423923050201462621107214321428100011113201680972311015151759261100101001001"nav">
+.big-tel:hover{color:var(--steel-deep);border-bottom-color:var(--steel-deep)}
+.contact-note{margin-top:1.15rem;font-size:.95rem;color:var(--muted);max-width:46ch;line-height:1.65}
+
+/* ---------- footer ---------- */
+.foot{
+  background-color:var(--char);
+  background-image:radial-gradient(rgba(244,239,230,.10) 1.7px, transparent 1.8px);
+  background-size:22px 22px;
+  color:var(--birch);padding-block:2.2rem;
+}
+.foot-in{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:baseline;justify-content:space-between}
+.foot-brand{font-weight:800;font-size:.98rem;letter-spacing:-.01em}
+.foot-meta{font-size:.82rem;color:rgba(244,239,230,.68);letter-spacing:.02em}
+.foot-meta a{color:var(--birch);text-decoration:none;border-bottom:1px solid rgba(244,239,230,.4)}
+.foot-note{width:100%;font-size:.76rem;color:rgba(244,239,230,.5);letter-spacing:.02em}
+
+/* ---------- reveals ---------- */
+.drop{opacity:0;transform:translateY(14px);transition:opacity .62s ease, transform .62s ease}
+.drop.on{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr}
+  .sec-split{grid-template-columns:1fr;gap:1rem}
+  .contact-grid{grid-template-columns:1fr}
+  .hang-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:680px){
+  body{font-size:.97rem}
+  .nav-links{display:none}
+  .hang-2,.hang-3{grid-template-columns:1fr}
+  .hang .card:nth-child(n){--offset:10px}
+  .card::after{width:15px;height:15px}
+  .big-tel{font-size:clamp(1.75rem,9vw,2.6rem)}
+  h1{max-width:100%}
+  .foot-in{flex-direction:column;gap:10px}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .drop{opacity:1;transform:none;transition:none}
+  *{animation-duration:.001ms !important;transition-duration:.001ms !important}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
   <div class="wrap nav-in">
     <a class="brand" href="#top">
       <span class="mark" aria-hidden="true"></span>

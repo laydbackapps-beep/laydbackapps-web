@@ -76,7 +76,13 @@ img{max-width:100%;height:auto;display:block}
 }
 .btn:hover{background:#a0d635;color:var(--ink);text-decoration:none}
 .btn--tel{background:transparent;color:var(--ink);border:1px solid var(--hairline)}
-.btn--tel:'';position:absolute;top:50%;transform:translateY(-50%);
+.btn--tel:hover{background:var(--panel);border-color:var(--ink);text-decoration:none}
+/* Cut line divider */
+.cut{
+  position:relative;height:2px;background:var(--ink);margin:0;
+}
+.cut::before,.cut::after{
+  content:'';position:absolute;top:50%;transform:translateY(-50%);
   width:12px;height:2px;background:var(--field);
 }
 .cut::before{left:calc(50% - 18px)}
@@ -200,7 +206,7 @@ img{max-width:100%;height:auto;display:block}
     <a href="#jointseq">Sequence</a>
     <a href="#quote">Contact</a>
   </div>
-  <a class="nav__tel" href="tel:0421448177">0421448177</a>
+  <a class="nav__tel" href="tel:+61421448177">0421448177</a>
 </nav>
 <header class="hero rv">
   <canvas class="hero__canvas" aria-hidden="true"></canvas>
@@ -210,7 +216,7 @@ img{max-width:100%;height:auto;display:block}
     <p class="hero__sub">Concrete work for homes and projects across the Hunter region — driveways, slabs, footings and finishes.</p>
     <div class="hero__cta">
       <a class="btn" href="#quote">Request a quote</a>
-      <a class="btn btn--tel" href="tel:0421448177">0421448177</a>
+      <a class="btn btn--tel" href="tel:+61421448177">0421448177</a>
     </div>
   </div>
 </header>
@@ -305,7 +311,7 @@ img{max-width:100%;height:auto;display:block}
     <p class="footer__legal">DWA Concrete Constructions Pty Ltd</p>
     <p class="footer__region">Hunter region, NSW</p>
     <div class="footer__contact">
-      <a href="tel:0421448177">0421448177</a>
+      <a href="tel:+61421448177">0421448177</a>
       <a href="https://www.instagram.com/dwa_concrete_constructions" target="_blank" rel="noopener">Instagram</a>
     </div>
     <p class="footer__copy">© 2026 DWA Concrete Constructions Pty Ltd</p>

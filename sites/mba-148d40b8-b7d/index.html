@@ -67,7 +67,73 @@ a{color:inherit}
   padding:9px 16px;
   transition:background .2s,color .2s;
 }
-.mast-tel:007051965688281122234500120052668810202512003452174414131500163022215600100100000251252253911220121496164050505064201180"";position:absolute;top:14px;bottom:14px;left:50%;width:1px;
+.mast-tel:hover{background:var(--accent-deep);color:#fff}
+/* ---------- hero ---------- */
+.hero{padding:0}
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+  border-bottom:1px solid var(--hair);
+}
+.hero-copy{
+  padding:96px 56px 88px 28px;
+  border-right:1px solid var(--hair);
+}
+.hero-tag{
+  font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:34px;
+}
+.hero-tag b{color:var(--accent-deep);font-weight:500}
+h1{
+  font-family:var(--display);
+  font-weight:200;
+  font-size:clamp(52px,6.6vw,88px);
+  line-height:1.02;
+  letter-spacing:-.025em;
+  color:var(--ink);
+  text-wrap:balance;
+}
+h1 .thin{color:var(--accent);font-weight:200}
+.hero-sub{
+  margin-top:34px;max-width:52ch;color:var(--dim);font-size:17px;
+}
+.hero-ctas{margin-top:44px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{
+  display:inline-block;text-decoration:none;
+  font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;
+  padding:16px 30px;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.btn-solid{background:var(--ink);color:#fff}
+.btn-solid:hover{background:var(--accent-deep)}
+.btn-line{border:1px solid var(--hair-strong);color:var(--ink)}
+.btn-line:hover{border-color:var(--accent-deep);color:var(--accent-deep)}
+.hero-media{
+  position:relative;min-height:560px;
+}
+.hero-media img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+}
+.hero-media .media-note{
+  position:absolute;left:0;bottom:0;right:0;
+  background:rgba(251,252,253,.9);
+  border-top:1px solid var(--hair);
+  padding:12px 20px;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
+}
+/* ---------- bay index (sticky right edge) ---------- */
+@media (min-width:961px){
+  body{padding-right:64px}
+  .bayindex{
+    position:fixed;right:0;top:50%;transform:translateY(-50%);
+    z-index:50;width:64px;
+    display:flex;flex-direction:column;align-items:center;gap:20px;
+    border-left:1px solid var(--hair);
+    background:var(--ground);
+    padding:18px 0;
+  }
+  .bayindex::before{
+    content:"";position:absolute;top:14px;bottom:14px;left:50%;width:1px;
     margin-left:-.5px;background:var(--hair-strong);
   }
 }

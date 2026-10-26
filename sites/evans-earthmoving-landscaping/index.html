@@ -1,274 +1,407 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en-AU">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Evans Earthmoving &amp; Landscaping — Dalwood NSW</title>
-<meta content="Earthmoving &amp; landscaping — Evans Earthmoving &amp; Landscaping, Dalwood NSW." name="description"/>
-<link href="favicon-32.png" rel="icon" sizes="32x32"/>
-<meta content="#0b0b0c" name="theme-color"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evans Earthmoving &amp; Landscaping | Earthmoving &amp; Landscaping | Dalwood NSW</title>
+<meta name="description" content="Evans Earthmoving &amp; Landscaping, Dalwood NSW 2335. Site cuts, cut and fill, driveway construction, dam and trench work, land clearing, retaining walls, turf and garden works. Family owned. NSW licence 463778C.">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
 <style>
 :root{
-  --lb-name:#ffffff; --lb-acc:#e6e6e6; --lb-subc:rgba(255,255,255,.72);
-  --ink:#ffffff; --muted:rgba(255,255,255,.70); --line:rgba(255,255,255,.14); --panel:rgba(255,255,255,.045);
-  --bg:#0b0b0c; --bg2:#121214; --accent:#e6e6e6;
+  /* Palette derived from the client's own logo asset (assets/logo.png).
+     That artwork is 100% monochrome (0 pixels carry chroma>12), so the tone run
+     comes from its own ink plus the warm cast of its own neutral ramp
+     (#F6F5F2 #C1C0BE #9F9E9D #81807E #5E5E5D #41403E #0E0E0E — every step r>=g>=b, hue ~42-45deg).
+     --acc is that native hue taken to usable saturation; no generic trade colour is used. */
+  --paper:#F6F5F2; --deep:#100F0D; --ink:#14120F; --dim:#5B5751; --line:#DAD5CC;
+  --gravel:#C9C5BE; --quarry:#1C1A16;
+  --acc:#BD8C2B; --accent:#BD8C2B; --acc-text:#8A6410; --brand:#14120F; --primary:#14120F; --acc-ink:#191307;
+  --lb-name:#14120F;
 }
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:system-ui,-apple-system,"Segoe UI",Archivo,"Helvetica Neue",Arial,sans-serif;
-  line-height:1.36;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.38;margin:0}
-p{margin:0}
-.container{width:min(1140px,92vw);margin-inline:auto}
-header.site{position:sticky;top:0;z-index:60;background:rgba(11,11,12,.94);border-bottom:1px solid var(--line)}
-/* A header must never be hidden by a reveal/scroll state. */
-header.site{opacity:1!important;visibility:visible!important;transform:none!important}
-.bar{display:flex;align-items:center;gap:clamp(10px,2vw,30px);padding:12px 0}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:0 1 auto;min-width:0}
-.brand img{height:64px;width:auto;max-width:min(340px,46vw);object-fit:contain}
-.brand .name{font-weight:800;letter-spacing:-.01em;font-size:clamp(13px,1.35vw,18px);color:#ffffff;line-height:1.18;max-width:min(330px,34vw);white-space:normal}
-.brand .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-nav.main{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,2vw,28px);flex-wrap:wrap}
-nav.main a{color:#ffffff;text-decoration:none;font-size:0.95rem;opacity:.86;white-space:nowrap}
-nav.main a:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;
-  text-decoration:none;font-weight:700;font-size:0.95rem;background:var(--accent);color:#0b0b0c;border:1px solid var(--accent)}
-nav.main a.btn,header .btn{background:var(--accent)!important;color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important}
-.btn.ghost{background:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff!important;
-  border:1px solid rgba(255,255,255,.5)!important}
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#0e0f11}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.16)}
-.hero .inner{position:relative;z-index:3;padding:32px 32px 32px;max-width:min(780px,92vw)}
-.kicker{display:inline-block;font-size:0.82rem;font-weight:700;letter-spacing:0.05em;color:#d6d8db;margin-bottom:14px}
-.hero h1{font-size:clamp(2.3rem,4.6vw,3.7rem);margin-bottom:14px}
-.hero h1 em{font-style:normal;color:#cfd2d6}
-.hero .lede{color:var(--muted);font-size:clamp(1rem,1.5vw,1.14rem);max-width:54ch;margin-bottom:22px}
-.hero .acts{display:flex;flex-wrap:wrap;gap:14px}
-.hero .facts{display:flex;flex-wrap:wrap;gap:9px 24px;list-style:none;padding:0;margin:20px 0 0;color:rgba(255,255,255,.82);font-size:0.95rem}
-.hero .facts li::before{content:"";display:inline-block;width:6px;height:6px;margin-right:9px;background:var(--accent);vertical-align:middle;border-radius:50%}
-section{padding:32px 32px;border-bottom:1px solid var(--line)}
-section.alt{background:var(--bg2)}
-.head{max-width:60ch;margin-bottom:clamp(26px,4vh,44px)}
-.head h2{font-size:clamp(1.55rem,3vw,2.3rem);margin-bottom:10px}
-.head p{color:var(--muted)}
-.grid{display:grid;gap:18px}
-.g3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:900px){.g3{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.g3{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
-.card h3{font-size:1.08rem;margin-bottom:8px}
-.card p{color:var(--muted);font-size:0.95rem}
-.swatch{width:38px;height:5px;background:var(--accent);border-radius:3px;margin-bottom:16px}
-.about{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1.15fr .85fr;align-items:start}
-@media(max-width:880px){.about{grid-template-columns:1fr}}
-.about p{color:var(--muted);margin-bottom:14px}
-.about h2{margin-bottom:16px}
-.about ul{list-style:none;padding:0;margin:0}
-.about li{padding:11px 0;border-bottom:1px solid var(--line);color:rgba(255,255,255,.86);font-size:0.97rem}
-.about li span{color:var(--muted)}
-.telbig{display:inline-block;color:var(--ink);font-weight:800;font-size:1.6rem;line-height:1.2;text-decoration:none;letter-spacing:-.01em;margin-top:14px}
-.telbig:hover{color:var(--accent)}
-#contact a[href^="mailto:"]{color:var(--ink);font-weight:600}
-.contactwrap{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1fr 1fr;align-items:start}
-@media(max-width:820px){.contactwrap{grid-template-columns:1fr}}
-.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.links a{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border:1px solid var(--line);
-  border-radius:10px;text-decoration:none;color:rgba(255,255,255,.9);font-size:0.93rem}
-.links a:hover{border-color:var(--accent-ink,var(--accent))}
-form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
-label{display:block;font-size:0.85rem;color:var(--muted);margin-bottom:6px}
-input,textarea{width:100%;padding:12px 14px;border-radius:9px;border:1px solid var(--line);background:#0e0f11;color:#fff;font:inherit;margin-bottom:14px}
-input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
-form .btn{width:100%}
-.note{color:var(--muted);font-size:0.85rem;margin-top:12px}
-footer{padding:48px 0 34px;background:#08090a}
-.foot{display:grid;gap:clamp(22px,3vw,44px);grid-template-columns:1.4fr 1fr 1fr}
-@media(max-width:820px){.foot{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.foot{grid-template-columns:1fr}}
-footer h4{font-size:0.82rem;letter-spacing:0.05em;color:var(--muted);margin:0 0 14px;font-weight:700}
-footer ul{list-style:none;padding:0;margin:0}
-footer li{margin-bottom:9px}
-footer a{color:rgba(255,255,255,.86);text-decoration:none;font-size:0.94rem}
-footer a:hover{text-decoration:underline}
-.footbottom{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;
-  gap:14px;justify-content:space-between;color:var(--muted);font-size:0.85rem}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-
-/* under 980px the bar has no room for logo + full name + nav: give the nav its own row */
-@media (max-width:980px){
-  .bar{flex-wrap:wrap;row-gap:8px}
-  .brand{flex:1 1 auto;min-width:0}
-  .brand .name{font-size:14px;max-width:none}
-  nav.main{flex:1 1 100%;flex-wrap:wrap;gap:10px 16px;justify-content:flex-start}
-  nav.main a{font-size:13px}
-}
-</style>
-<style id="lb-logo-hero">
-/* Client logo across the header: the real artwork, isolated and readable. */
-.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;padding:0!important;max-height:96px!important;
-  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
-  padding:0!important;box-shadow:none!important}
-.lb-brand .lb-mark{display:block!important;height:clamp(44px,4.8vw,66px)!important;width:auto!important;
-  max-width:none!important;max-height:66px!important;object-fit:contain!important;background:none!important;
-  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
-.lb-brand .lb-word{display:block!important;height:32px!important;width:auto!important;max-width:min(38vw,520px)!important;
-  max-height:none!important;object-fit:contain!important;object-position:left center!important;
-  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
-.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
-  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
-.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
-.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
-.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
-  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
-.lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
-@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:24px!important}}
-.lb-bar{background-color:#f8f7f3!important}
-.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#101014!important}
-.lb-bar .cta,.lb-bar a.cta{color:#101014!important}
-</style>
-<style id="lb-mobile-base">
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
 html,body{max-width:100%;overflow-x:hidden}
-img,video,canvas,svg,iframe{max-width:100%}
-img,video{height:auto}
-header .bar,header .container,header .nav-inner,.bar,.nav-inner{flex-wrap:wrap;row-gap:8px;min-width:0}
-header,.site-header,.nav{max-width:100%}
-.lb-brand{min-width:0;max-width:100%;overflow:hidden}
-.lb-brand img{max-height:64px;width:auto}
-nav,nav ul,.nav-links{flex-wrap:wrap;row-gap:6px}
-h1{overflow-wrap:anywhere}
-@media (max-width:820px){
-  .lb-brand img{max-height:38px}
-  h1{font-size:clamp(26px,8.2vw,44px)!important;line-height:1.08!important}
-  h2{font-size:clamp(20px,6vw,30px)!important}
-  section{padding-left:16px!important;padding-right:16px!important}
-  .wrap,.container{max-width:100%!important}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.62 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(18px,4.6vw,58px)}
+h1,h2,h3{letter-spacing:-.025em;line-height:1.06;font-weight:800;margin:0}
+h2{font-size:clamp(25px,3.2vw,40px);margin:0 0 14px}
+h3{font-size:19px;margin:0 0 8px}
+p{margin:0 0 14px;color:var(--dim)}
+.eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin:0 0 16px;padding:0}
+section{padding:clamp(54px,7.5vw,96px) 0;border-top:1px solid var(--line)}
+.shead{max-width:62ch;margin:0 0 clamp(26px,4vw,44px)}
+
+/* ---------- header bar: the client's own logo artwork, never a typed substitute ---------- */
+header.bar{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar-in{display:flex;align-items:center;gap:clamp(12px,2vw,26px);padding:11px 0;flex-wrap:wrap}
+.lb-brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.lb-brand img{height:clamp(42px,4.4vw,54px);width:auto;flex:none}
+.lb-brand .lb-brand__name{font-weight:800;font-size:clamp(15px,1.6vw,19px);letter-spacing:-.02em;color:var(--lb-name);white-space:nowrap}
+.lb-brand .lb-brand__sub{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:600}
+nav.main{display:flex;gap:clamp(12px,1.8vw,26px);margin-left:auto;flex-wrap:wrap;align-items:center}
+nav.main a{text-decoration:none;font-size:15px;color:var(--dim)}
+nav.main a:hover{color:var(--ink)}
+.tel-btn{text-decoration:none;font-weight:800;white-space:nowrap;background:var(--ink);color:var(--paper);padding:11px 16px;font-size:15px;border:1px solid var(--ink)}
+@media(max-width:820px){nav.main{order:3;width:100%;margin-left:0;gap:16px}nav.main a{font-size:14px}}
+
+/* ---------- hero: real full-bleed photo, scrim matched to its exposure, big white headline ---------- */
+.hero{position:relative;isolation:isolate;perspective:1200px;border-top:0;padding:0;
+  background:var(--deep);color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;background-image:url("assets/hero.jpg");background-size:cover;background-position:center 42%;
+  filter:brightness(.84) saturate(.92)}
+/* scrim matched to assets/hero.jpg exposure (mean luma 141/255 = bright frame, p90 203):
+   heavier than a dark frame needs, so the 3rem white headline clears AA on the sky. */
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:
+  linear-gradient(180deg,rgba(12,11,9,.74) 0%,rgba(12,11,9,.56) 32%,rgba(12,11,9,.62) 64%,rgba(12,11,9,.88) 100%)}
+#heroCanvas{position:absolute;inset:0;z-index:0;width:100%;height:100%;opacity:0;pointer-events:none}
+/* LB-3D-HERO */
+.hero-copy{position:relative;z-index:3;padding:clamp(76px,13vw,168px) 0 clamp(58px,9vw,112px);max-width:940px}
+.hero h1{font-size:clamp(37px,7.2vw,88px);color:#fff;margin:0 0 20px;width:100%;text-shadow:0 2px 26px rgba(0,0,0,.45)}
+.hero h1 .hl{color:#FFFFFF;display:inline-block;border-bottom:clamp(5px,0.9vw,10px) solid var(--acc);padding-bottom:6px}
+.hero .lede{color:#EFEDE8;font-size:clamp(17px,2vw,21px);max-width:58ch;margin:0 0 28px;text-shadow:0 1px 14px rgba(0,0,0,.5)}
+.hero .eyebrow{color:#E8E3D8;padding:0}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.cta{display:inline-block;background:var(--acc);color:var(--acc-ink);padding:15px 28px;text-decoration:none;font-weight:800;font-size:16px;border:1px solid var(--acc)}
+.cta.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.62)}
+.hero-strip{position:relative;z-index:3;border-top:1px solid rgba(255,255,255,.2);display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.hero-strip div{padding:22px clamp(14px,2vw,26px) 24px;border-left:1px solid rgba(255,255,255,.2)}
+.hero-strip div:first-child{border-left:0}
+.hero-strip b{display:block;font-size:14px;letter-spacing:.02em;color:#fff}
+.hero-strip span{font-size:13.5px;color:#D8D3C8}
+@media(max-width:760px){.hero-strip{grid-template-columns:1fr}.hero-strip div{border-left:0;border-top:1px solid rgba(255,255,255,.18)}.hero-strip div:first-child{border-top:0}}
+
+/* ---------- services ---------- */
+.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.svc article{padding:32px 30px 32px 0;border-bottom:1px solid var(--line)}
+.svc article:nth-child(2n){padding:32px 0 32px 30px;border-left:1px solid var(--line)}
+.svc .num{font-size:12px;letter-spacing:.18em;color:var(--acc-text);font-weight:800;display:block;margin-bottom:10px}
+.svc p{margin:0;font-size:15.5px;max-width:52ch}
+@media(max-width:820px){.svc{grid-template-columns:1fr}.svc article,.svc article:nth-child(2n){padding:22px 0;border-left:0}}
+
+/* ---------- work ---------- */
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:clamp(16px,2.4vw,30px)}
+figure{margin:0;background:#fff;border:1px solid var(--line)}
+figure img{width:100%;height:clamp(210px,26vw,308px);object-fit:cover}
+figcaption{padding:13px 16px;font-size:14px;color:var(--dim);border-top:1px solid var(--line)}
+figcaption b{color:var(--ink);display:block;font-size:15px;margin-bottom:2px}
+
+/* ---------- about / details ---------- */
+.split{display:grid;grid-template-columns:1.25fr .95fr;gap:clamp(24px,4.6vw,60px);align-items:start}
+.facts{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.facts li{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.facts b{color:var(--dim);font-weight:600;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;padding-top:2px}
+@media(max-width:880px){.split{grid-template-columns:1fr}.facts li{grid-template-columns:120px 1fr}}
+
+/* ---------- quote ---------- */
+#quote{display:block;scroll-margin-top:90px}
+.lbq-wrap{background:var(--quarry);color:#F2EFE9;border-top:0}
+.lbq-wrap h2,.lbq-wrap h3{color:#fff}
+.lbq-wrap p{color:#C6C1B6}
+.lbq-hd{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,4vw,54px);align-items:start}
+.lbq-card{background:#211E19;border:1px solid #3A352C;padding:clamp(20px,3vw,30px)}
+.lbq-g{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.lbq-full{grid-column:1/-1}
+#lbq label{display:block;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:#B9B3A6;margin:0 0 6px;font-weight:600}
+#lbq input,#lbq textarea{width:100%;padding:12px 13px;border:1px solid #4A4438;background:#15130F;color:#F5F2EC;font:inherit;font-size:15px}
+#lbq textarea{min-height:104px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
+#lbq button{width:100%;margin-top:16px;padding:15px;border:0;background:var(--acc);color:var(--acc-ink);font:inherit;font-weight:800;font-size:16px;cursor:pointer}
+#lbq button:disabled{opacity:.62;cursor:wait}
+#lbq .lbq-note{font-size:13px;color:#B9B3A6;margin:10px 0 0;grid-column:1/-1}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#lbq .lbq-st{margin:12px 0 0;font-size:14.5px;color:#E7E2D7;min-height:1.3em;grid-column:1/-1}
+.lbq-side ul{margin:0;padding:0;list-style:none}
+.lbq-side li{padding:14px 0;border-bottom:1px solid #3A352C;font-size:15.5px;color:#C6C1B6}
+@media(max-width:880px){.lbq-hd{grid-template-columns:1fr}.lbq-g{grid-template-columns:1fr}}
+
+/* ---------- faq ---------- */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq summary{cursor:pointer;font-weight:700;font-size:17.5px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--acc-text);font-weight:800}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:12px 0 0;max-width:74ch;font-size:15.5px}
+
+/* ---------- footer ---------- */
+footer{background:var(--deep);color:#CFCABF;border-top:1px solid #33302A}
+.foot{display:grid;grid-template-columns:1.3fr .85fr .85fr;gap:clamp(22px,4vw,48px);padding:clamp(38px,5.5vw,66px) 0 26px}
+footer h3{color:#fff;font-size:15px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 12px}
+footer a{color:#F0EDE7}
+footer p{margin:0 0 8px;color:#B6B1A6;font-size:14.5px}
+.foot-logo{width:clamp(180px,22vw,240px);height:auto;background:transparent}
+.foot-bar{border-top:1px solid #33302A;padding:16px 0 26px;display:flex;gap:14px;justify-content:space-between;flex-wrap:wrap;font-size:13.5px;color:#948F84}
+@media(max-width:820px){.foot{grid-template-columns:1fr}}
+
+/* ---------- reveal ---------- */
+html.js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+html.js .rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js .rv{opacity:1!important;transform:none!important;transition:none!important}
+  .hero-bg{transition:none!important}
 }
 </style>
-<style id="lb-brand-palette">:root{--acc:#545426;--accent:#545426;--lbq-accent:#545426;--lb-acc:#545426;--brand:#545426;--brand-color:#545426;--primary:#545426;--lime:#545426;--color-lime:#545426;--gold:#545426;--acc-strong:#545426;--acc2:#6c6c31;--acc-hi:#6c6c31;--accent-2:#6c6c31;--brand-2:#6c6c31;}</style></head>
+</head>
 <body>
-<header class="site">
-<div class="container bar">
-<a aria-label="Evans Earthmoving &amp; Landscaping" class="lb-brand" href="#top" style="--lb-name:#101014"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-onbar.png"/><img alt="" class="lb-word" decoding="async" loading="eager" src="assets/logo-isolated-word.png"/><span class="lb-sr">Evans Earthmoving &amp; Landscaping</span></a><nav aria-label="Main" class="main">
-<a href="#services">Services</a>
-<a href="#process">Our process</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-<a class="btn" href="#contact">Get a quote</a>
-</nav>
-</div>
-<a class="lb-tel" href="tel:0411863721" style="margin-left:auto;font-weight:800;text-decoration:none;color:inherit;white-space:nowrap;font-size:15px;padding:8px 0">0411863721</a></header>
-<main>
-<section aria-label="Earthmoving &amp; landscaping" class="hero" id="top">
-<canvas aria-hidden="true" id="heroCanvas"></canvas>
-<div aria-hidden="true" class="veil"></div>
-<div class="container inner">
-<h1>Evans Earthmoving &amp; Landscaping:<br/>landscaping done properly.</h1>
-<p class="lede">If you are in Dalwood and need paving, Evans Earthmoving &amp; Landscaping quotes it on site and tells you what the prep actually involves before you commit.</p>
-<div class="acts"><a class="btn" href="#contact">Get a quote</a><a class="btn ghost" href="#services">See what we do</a></div>
-<ul class="facts"><li>Excavation</li><li>Site prep</li><li>Retaining walls</li><li>Turf &amp; gardens</li></ul>
-</div>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="lb-brand" href="#top" aria-label="Evans Earthmoving and Landscaping">
+      <img src="assets/logomark.png" alt="Evans Earthmoving &amp; Landscaping excavator mark">
+      <span class="lb-brand__name">Evans Earthmoving &amp; Landscaping<span class="lb-brand__sub">Dalwood NSW 2335</span></span>
+    </a>
+    <nav class="main">
+      <a href="#services">Services</a>
+      <a href="#work">Our work</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#quote">Get a quote</a>
+    </nav>
+    <a class="tel-btn" href="tel:+61411863721">Call 0411 863 721</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <!-- LB-3D-HERO -->
+  <div class="wrap hero-copy">
+    <p class="eyebrow">Dalwood NSW 2335 &middot; Family owned and operated</p>
+    <h1>Cut, filled, drained<br><span class="hl">and finished.</span></h1>
+    <p class="lede">Earthmoving and landscaping from the one crew: the site cut and the levels come first, then the retaining, the drainage, the turf and the garden works go in on top of a base that is actually right.</p>
+    <div class="hero-cta">
+      <a class="cta" href="#quote">Get a free quote</a>
+      <a class="cta ghost" href="tel:+61411863721">Call 0411 863 721</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="hero-strip">
+      <div><b>Site cuts and cut-and-fill</b><span>Levels set for the pad, the driveway and the drainage.</span></div>
+      <div><b>Machines and operators</b><span>Excavation, trenching, dam and land clearing work.</span></div>
+      <div><b>Turf and garden works</b><span>The landscaping that finishes the job off properly.</span></div>
+    </div>
+  </div>
 </section>
+
 <section id="services">
-<div class="container">
-<div class="head"><h2>What we do</h2><p>There is no call centre behind Evans Earthmoving &amp; Landscaping — you deal with the same people from the quote to the clean-up.</p></div>
-<div class="grid g3"><article class="card"><div class="swatch"></div><h3>paving</h3><p>Edges, clean-up and the small finishes that decide whether a garden work job looks professional are done before Evans Earthmoving &amp; Landscaping leaves site.</p></article><article class="card"><div class="swatch"></div><h3>planting</h3><p>The site is looked at properly — access, what is already there, and what the finish has to do — before Evans Earthmoving &amp; Landscaping puts a number on it.</p></article><article class="card"><div class="swatch"></div><h3>hedging</h3><p>You get the scope in writing: what is included, what is not, and when it can start. No allowances that quietly grow.</p></article><article class="card"><div class="swatch"></div><h3>garden clean-ups</h3><p>Quoted on site — Not over the phone from a photo — the price comes from seeing the job.</p></article><article class="card"><div class="swatch"></div><h3>turf</h3><p>One point of contact — The same person answers the phone and runs the work.</p></article><article class="card"><div class="swatch"></div><h3>retaining</h3><p>Local to Dalwood — Travel time is short, which is why small jobs are worth doing.</p></article></div>
-</div>
+  <div class="wrap">
+    <div class="shead rv">
+      <p class="eyebrow">What we do</p>
+      <h2>Earthmoving and landscaping, start to finish</h2>
+      <p>One crew on the machine and on the garden. That is why the levels, the drainage and the finish all match up when the job is handed over.</p>
+    </div>
+    <div class="svc">
+      <article class="rv"><span class="num">01</span><h3>Site cuts and cut-and-fill</h3><p>Stripping, cutting and filling a site to the level it needs to be. Get the base right and the driveway, the slab prep and the drainage all sit where they should.</p></article>
+      <article class="rv"><span class="num">02</span><h3>Driveway construction</h3><p>Gravel and compacted driveway build-ups, shaped and drained so the water runs off the surface and away from the shed, the house and the gate.</p></article>
+      <article class="rv"><span class="num">03</span><h3>Dam and trench work</h3><p>Dam work and trenching for water, power and drainage runs, dug to the depth and fall the job needs and cleaned up behind the machine.</p></article>
+      <article class="rv"><span class="num">04</span><h3>Land clearing</h3><p>Clearing scrub, regrowth and rubbish timber off a block so the site is opened up and ready for the next stage of the build.</p></article>
+      <article class="rv"><span class="num">05</span><h3>Retaining walls</h3><p>Retaining walls built off a properly cut and compacted batter, with the drainage behind them handled, so the wall keeps holding the levels it was built for.</p></article>
+      <article class="rv"><span class="num">06</span><h3>Turf and garden works</h3><p>Turf laying, soil prep, garden beds and planting to finish a site off. Landscaping done by the same crew that moved the dirt.</p></article>
+    </div>
+  </div>
 </section>
-<section class="alt" id="process">
-<div class="container">
-<div class="head"><h2>How a job runs</h2><p>From the first look to the final clean up.</p></div>
-<div class="grid g3"><article class="card"><h3>Look at the block</h3><p>Workmanship backed — If something is not right, Evans Earthmoving &amp; Landscaping comes back.</p></article><article class="card"><h3>Move the ground</h3><p>Machine work first, then the levels and drainage are set.</p></article><article class="card"><h3>Finish the landscape</h3><p>Turf, garden and hard surfaces go in once the ground is right.</p></article></div>
-</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="shead rv">
+      <p class="eyebrow">Our work</p>
+      <h2>Machine work and the garden that follows it</h2>
+      <p>Earthmoving, drainage and landscaping on blocks around Dalwood and the surrounding district.</p>
+    </div>
+    <div class="work">
+      <figure class="rv">
+        <img src="assets/hero.jpg" alt="Excavator cutting and levelling a site">
+        <figcaption><b>Site cut and levelling</b>a job like this</figcaption>
+      </figure>
+      <figure class="rv">
+        <img src="assets/work-site.jpg" alt="Earthmoving machine working a cleared block">
+        <figcaption><b>Clearing and cut-and-fill</b>a job like this</figcaption>
+      </figure>
+      <figure class="rv">
+        <img src="assets/work-landscape.jpg" alt="Excavator working on a landscaped garden site">
+        <figcaption><b>Landscaping and garden works</b>a job like this</figcaption>
+      </figure>
+      <figure class="rv">
+        <img src="assets/work-turf.jpg" alt="Finished turf and garden area after landscaping works">
+        <figcaption><b>Turf and finishing works</b>a job like this</figcaption>
+      </figure>
+    </div>
+  </div>
 </section>
+
 <section id="about">
-<div class="container about">
-<div><h2>About Evans Earthmoving &amp; Landscaping</h2><p>Evans Earthmoving &amp; Landscaping is a family-run earthmoving and landscaping business at Dalwood in the Hunter, working residential and commercial sites.</p><p>Earthmoving and landscaping sit in the same crew here, which means the levels set by the machine are the levels the turf and paving are laid on.</p></div>
-<ul><li>Licenced landscaper <span>· 463778C</span></li><li>Family-owned <span>· Dalwood, NSW 2335</span></li><li>Earthmoving and landscaping <span>· one crew, one program</span></li><li>Residential and commercial <span>· sites of both kinds</span></li></ul>
-</div>
+  <div class="wrap split">
+    <div class="rv">
+      <p class="eyebrow">About us</p>
+      <h2>A family business that runs both sides of the job</h2>
+      <p>Evans Earthmoving &amp; Landscaping is a family owned and operated business based at Dalwood in the Hunter. We take on the earthmoving and the landscaping as one job, so the site cut, the cut-and-fill, the drainage and the finished garden are all worked out together instead of being handed between trades.</p>
+      <p>Every job starts with a look at the block: how it falls, where the water has to go, and what the finished surface needs to be. From there it is machines for the dirt, then turf and garden works for the finish.</p>
+      <p>The phone is answered by the people who do the work, so you get a straight answer on what the job needs and what it will take.</p>
+    </div>
+    <div class="rv">
+      <ul class="facts">
+        <li><b>Business</b><span>Evans Earthmoving &amp; Landscaping</span></li>
+        <li><b>Trade</b><span>Earthmoving and landscaping</span></li>
+        <li><b>Based in</b><span>Dalwood NSW 2335</span></li>
+        <li><b>Ownership</b><span>Family owned and operated</span></li>
+        <li><b>Licence</b><span>NSW licence 463778C</span></li>
+        <li><b>Phone</b><span><a href="tel:+61411863721">0411 863 721</a></span></li>
+        <li><b>Services</b><span>Site cuts, driveways, dam and trench work, land clearing, retaining walls, turf and garden works</span></li>
+      </ul>
+    </div>
+  </div>
 </section>
-<section class="alt" id="contact">
-<div class="container contactwrap">
-<div>
-<h2>Get a quote</h2>
-<p style="color:var(--muted);margin:10px 0 22px">Tell us what you need and roughly the size of the job, and we'll get back to you with a price.</p>
-<p style="color:var(--muted)">Message us and we’ll get straight back to you.</p><p style="color:var(--muted);margin-top:10px">Dalwood NSW</p>
-<div class="links"><a href="https://www.facebook.com/people/Evans-Earthmoving-Landscaping/1000637056" rel="noopener">Evans Earthmoving &amp; Landscaping on Facebook</a></div>
-</div>
-<form data-biz="Evans Earthmoving &amp; Landscaping" data-site="evans-earthmoving-landscaping" id="lbq-form" novalidate="">
-<label for="lbq-n">Name</label>
-<input autocomplete="name" id="lbq-n" name="name" required=""/>
-<label for="lbq-p">Phone</label>
-<input autocomplete="tel" id="lbq-p" name="phone" required="" type="tel"/>
-<label for="lbq-m">What do you need done?</label>
-<textarea id="lbq-m" name="message" rows="4"></textarea>
-<button class="btn" type="submit">Request a quote</button>
-<p class="note" id="lbq-note">Send it through and we’ll be in touch.</p>
-</form>
-</div>
+
+<span id="quote"></span>
+<section id="lbq" aria-labelledby="lbq-h">
+  <style>
+    #lbq{--lbq-bg:var(--quarry,#1C1A16);--lbq-ink:#F2EFE9;--lbq-muted:#C6C1B6;--lbq-line:#3A352C;--lbq-accent:var(--acc,#BD8C2B);
+      background:var(--lbq-bg);color:var(--lbq-ink);padding:clamp(50px,7vw,92px) 0;border-top:0}
+    #lbq *{box-sizing:border-box}
+    #lbq .lbq-w{width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(18px,4.6vw,58px)}
+    #lbq h2{color:#fff;font-size:clamp(25px,3.2vw,40px);line-height:1.06;margin:0 0 14px}
+    #lbq .lbq-eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--lbq-muted);margin:0 0 14px}
+    #lbq p{color:var(--lbq-muted)}
+    #lbq .lbq-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(22px,4vw,54px);align-items:start}
+    #lbq .lbq-card{background:#211E19;border:1px solid var(--lbq-line);padding:clamp(20px,3vw,30px)}
+    #lbq .lbq-f{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    #lbq .lbq-full{grid-column:1/-1}
+    @media(max-width:880px){#lbq .lbq-grid{grid-template-columns:1fr}#lbq .lbq-f{grid-template-columns:1fr}}
+  </style>
+  <div class="lbq-w">
+    <p class="lbq-eyebrow">Request a quote</p>
+    <h2 id="lbq-h">Tell us about the block</h2>
+    <div class="lbq-grid">
+      <div>
+        <p>Send through what the job is and we will call you back to talk it through and work out a price. If it is easier, ring 0411 863 721 and we will sort it out over the phone.</p>
+        <ul>
+          <li>Site cuts, cut-and-fill and levelling</li>
+          <li>Driveways, dam and trench work</li>
+          <li>Land clearing and retaining walls</li>
+          <li>Turf and garden works</li>
+        </ul>
+      </div>
+      <div class="lbq-card">
+        <form id="lbq-form" data-site="evans-earthmoving-landscaping" data-biz="Evans Earthmoving &amp; Landscaping" novalidate>
+          <div class="lbq-f">
+            <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+            <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="lbq-full"><label for="lbq-s">Suburb or property</label><input id="lbq-s" name="suburb" autocomplete="address-level2"></div>
+            <div class="lbq-full"><label for="lbq-m">What needs doing?</label><textarea id="lbq-m" name="message" placeholder="Site cut, driveway, dam, clearing, retaining or turf work"></textarea></div>
+            <div class="lbq-hp" aria-hidden="true"><label for="lbq-hp">Website</label><input id="lbq-hp" name="website" tabindex="-1" autocomplete="off"></div>
+            <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
+            <button type="submit">Send quote request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var EP = 'https://api.laydbackapps.com.au/functions/v1/quote-request';
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type="submit"]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (f.querySelector('[name="website"]').value) { return; }
+      var name = f.querySelector('[name="name"]').value.trim();
+      var phone = f.querySelector('[name="phone"]').value.trim();
+      if (!name || !phone) { st.textContent = 'Please add your name and a phone number.'; return; }
+      btn.disabled = true; btn.textContent = 'Sending\u2026'; st.textContent = '';
+      fetch(EP, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+        body: JSON.stringify({
+          site: f.dataset.site,
+          business: f.dataset.biz,
+          name: name,
+          phone: phone,
+          suburb: f.querySelector('[name="suburb"]').value.trim(),
+          message: f.querySelector('[name="message"]').value.trim(),
+          page: 'index.html'
+        })
+      }).then(function(r){
+        if (!r.ok) { throw new Error('bad status'); }
+        st.textContent = 'Thanks \u2014 that is through. We will call you back on ' + phone + '.';
+        f.reset(); btn.textContent = 'Sent';
+      }).catch(function(){
+        st.textContent = 'That did not go through. Please call 0411 863 721 and we will take the details down.';
+        btn.disabled = false; btn.textContent = 'Send quote request';
+      });
+    });
+  })();
+  </script>
 </section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="shead rv">
+      <p class="eyebrow">Questions</p>
+      <h2>Common questions</h2>
+    </div>
+    <div class="rv">
+      <details><summary>Do you do the earthmoving and the landscaping, or just one of them?</summary><p>Both. Site cuts, driveways, dam and trench work, land clearing and retaining walls are the earthmoving side; turf and garden works finish the job off. Working across both means the levels we cut are the levels the landscaping is built on.</p></details>
+      <details><summary>Where do you work out of?</summary><p>We are based at Dalwood NSW 2335 and take on work on properties in the surrounding district.</p></details>
+      <details><summary>Are you licensed?</summary><p>Yes. NSW licence 463778C.</p></details>
+      <details><summary>How do I get a price?</summary><p>Ring <a href="tel:+61411863721">0411 863 721</a> or send the quote form on this page. Tell us the block, what you want done and roughly when, and we will come back to you with a price.</p></details>
+      <details><summary>Do you take on clearing and cut-and-fill before a build?</summary><p>Yes. Clearing scrub and regrowth, stripping and cutting the site and building the levels up where they need to be is the sort of work we do to get a block ready for the next stage.</p></details>
+    </div>
+  </div>
+</section>
+
 </main>
+
 <footer>
-<div class="container">
-<div class="foot">
-<div><h4>EVANS EARTHMOVING &amp; LANDSCAPING</h4><p style="color:var(--muted);max-width:34ch">Earthmoving &amp; landscaping across Dalwood NSW.</p></div>
-<div><h4>SERVICES</h4><ul><li><a href="#services">Excavation &amp; earthworks</a></li><li><a href="#services">Site preparation</a></li><li><a href="#services">Retaining walls</a></li><li><a href="#services">Turf &amp; garden prep</a></li></ul></div>
-<div><h4>CONTACT</h4><ul><li><a href="https://www.facebook.com/people/Evans-Earthmoving-Landscaping/1000637056" rel="noopener">Evans Earthmoving &amp; Landscaping on Facebook</a></li></ul></div>
-</div>
-<div class="footbottom">
-<span>© <span id="yr">2026</span> Evans Earthmoving &amp; Landscaping. All rights reserved.</span>
-<span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
-</div>
-</div>
+  <div class="wrap foot">
+    <div>
+      <img class="foot-logo" src="assets/logo.png" alt="Evans Earthmoving &amp; Landscaping logo">
+      <p style="margin-top:14px;max-width:40ch">Family owned earthmoving and landscaping, based at Dalwood in the Hunter.</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p><a href="tel:+61411863721">0411 863 721</a></p>
+      <p>Dalwood NSW 2335</p>
+      <p>NSW licence 463778C</p>
+      <p><a href="#quote">Request a quote</a></p>
+    </div>
+    <div>
+      <h3>Services</h3>
+      <p>Site cuts and cut-and-fill</p>
+      <p>Driveway construction</p>
+      <p>Dam and trench work</p>
+      <p>Land clearing, retaining walls</p>
+      <p>Turf and garden works</p>
+    </div>
+  </div>
+  <div class="wrap foot-bar">
+    <span>Evans Earthmoving &amp; Landscaping &mdash; Dalwood NSW 2335</span>
+    <span>0411 863 721</span>
+  </div>
 </footer>
+
+<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
 (function(){
-  var c=document.getElementById('heroCanvas'); if(!c) return;
-  var ctx=c.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2), w=0,h=0,t=0,raf=null;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function size(){var r=c.getBoundingClientRect(); w=Math.max(320,r.width|0); h=Math.max(320,r.height|0);
-    c.width=w*dpr; c.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);}
-  function draw(){
-    var g=ctx.createLinearGradient(0,0,0,h);
-    g.addColorStop(0,'#141518'); g.addColorStop(.55,'#0e0f11'); g.addColorStop(1,'#090a0b');
-    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
-    var y0=h*0.52;
-    ctx.beginPath(); ctx.moveTo(0,y0); ctx.lineTo(w,y0); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
-
-    // exposed aggregate: stone speckle over a slab, joints, low warm key light
-    var gg=ctx.createLinearGradient(0,y0,0,h);
-    gg.addColorStop(0,'#5a5d61'); gg.addColorStop(.5,'#3d4044'); gg.addColorStop(1,'#24262a');
-    ctx.fillStyle=gg; ctx.fill();
-    for(var s=0;s<900;s++){
-      var sx=(s*37.13)%w, sy=y0+((s*53.7)%(h-y0)), r=1+(s%3);
-      var tone = s%4===0 ? '255,217,0' : (s%7===0 ? '227,27,35' : '220,222,226');
-      ctx.fillStyle='rgba('+tone+',.16)';
-      ctx.beginPath(); ctx.arc(sx,sy,r,0,6.283); ctx.fill();
-    }
-    ctx.strokeStyle='rgba(0,0,0,.22)'; ctx.lineWidth=1.5;
-    for(var k=1;k<=2;k++){var yy=y0+(h-y0)*(k/3.2); ctx.beginPath(); ctx.moveTo(0,yy); ctx.lineTo(w,yy); ctx.stroke();}
-    var lg=ctx.createRadialGradient(w*.2,h*.08,10,w*.2,h*.08,w*.6);
-    lg.addColorStop(0,'rgba(255,255,255,.12)'); lg.addColorStop(1,'rgba(255,255,255,0)');
-    ctx.fillStyle=lg; ctx.fillRect(0,0,w,h);
-
+  document.documentElement.classList.add('js');
+  var els = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { en.target.classList.add('on'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('on'); });
   }
-  function loop(){ t+=0.004; draw(); raf=requestAnimationFrame(loop); }
-  size(); draw(); if(!reduce){ loop(); }
-  window.addEventListener('resize', function(){ size(); draw(); }, {passive:true});
-  window.addEventListener('pagehide', function(){ if(raf) cancelAnimationFrame(raf); });
-})();
-(function(){
-  var f=document.getElementById('lbq-form'); if(!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('lbq-note').textContent = "Thanks. This preview form isn\u2019t wired to a mailbox yet \u2014 message us on Facebook and we\u2019ll get straight back to you.";
-  });
+  setTimeout(function(){ document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('on'); }); }, 1100);
 })();
 </script>
-<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#f8f7f3","important");})();</script>
 </body>
 </html>

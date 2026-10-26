@@ -50,7 +50,13 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(232,226,212,.94);ba
 .navlinks a{font-size:.86rem;font-weight:500;text-decoration:none;color:var(--slate);opacity:.88}
 .navlinks a:hover{color:var(--terra-deep);opacity:1}
 .nav-tel{white-space:nowrap;flex-shrink:0;font-weight:600;font-size:.9rem;text-decoration:none;color:var(--slate);border:1.5px solid var(--masonry);border-radius:999px;padding:8px 16px;transition:border-color .2s}
-.nav-tel:860801215054796"";position:absolute;left:0;right:0;bottom:0;height:1px;
+.nav-tel:hover{border-color:var(--terra-deep);color:var(--terra-deep)}
+@media (max-width:860px){.navlinks{display:none}}
+
+/* ---------- hero : centered axial arch ---------- */
+.hero{position:relative;overflow:hidden;text-align:center;padding-block:clamp(80px,12vw,150px) clamp(54px,7vw,96px)}
+.hero::before{ /* springing line = section boundary */
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
   background:linear-gradient(90deg,transparent,rgba(139,133,120,.55) 18%,rgba(139,133,120,.55) 82%,transparent);
 }
 .arch{position:relative;width:min(480px,78vw);aspect-ratio:2/1;margin:0 auto clamp(30px,4vw,44px)}

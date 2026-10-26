@@ -61,7 +61,25 @@ a{color:inherit}
   text-decoration:none;font-weight:600;font-size:.98rem;white-space:nowrap;
   border:1.5px solid var(--ink);padding:.42rem .9rem;
 }
-.head-tel:2760180078726403962264"Newsreader",Georgia,serif;font-style:italic;
+.head-tel:hover{background:var(--ink);color:var(--bg)}
+.head-rule{height:2px;background:var(--rust)}
+@media(max-width:760px){
+  .top-nav a:not(.head-tel){display:none}
+}
+
+/* ---------- hero: sky band + stepped terraces ---------- */
+.hero{
+  background:linear-gradient(180deg,var(--sky-top) 0%,var(--sky-low) 78%);
+  overflow:hidden;
+}
+.hero-in{
+  min-height:min(72vh,640px);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding-top:clamp(3rem,9vh,6rem);
+  padding-bottom:clamp(2.2rem,6vh,4rem);
+}
+.kicker{
+  font-family:"Newsreader",Georgia,serif;font-style:italic;
   font-size:1.12rem;color:var(--muted);margin-bottom:.9rem;
 }
 .kicker b{color:var(--rust-text);font-weight:500}

@@ -199,7 +199,86 @@ header{position:sticky;top:0;z-index:60;background:var(--mist);border-bottom:1px
   letter-spacing:-.03em;color:#f8f6f2;display:inline-block;white-space:nowrap;
   border-bottom:2px solid rgba(248,246,242,.35);padding-bottom:.15rem;transition:border-color .18s ease;
 }
-.contact-tel:248246242990807802011254115600812501210089115131616013255875145150135110015009999115560019516031826213993755601025434117421219145553937555314507255380178117543255986232832100329375381250960088879937556188621175124824624216183525135812588877618862171776011110016561190218032701001100113"skip" href="#main">Skip to content</a>
+.contact-tel:hover{border-bottom-color:rgba(248,246,242,.9)}
+
+/* ---------- quote form (inside #lbq) ---------- */
+#quote{position:absolute;top:-90px}
+#lbq{position:relative;scroll-margin-top:80px}
+.form-wrap{max-width:780px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+.field{display:grid;gap:.4rem;margin-bottom:1.15rem}
+.field label{font-family:var(--disp);font-weight:600;font-size:.8125rem;letter-spacing:.01em;color:var(--muted-2)}
+.field input,.field textarea{
+  width:100%;padding:.8rem .9rem;font-family:var(--text);font-size:1rem;line-height:1.5;
+  color:var(--ink);background:var(--paper);border:1px solid var(--hairline);border-radius:3px;
+  transition:border-color .16s ease,background .16s ease;
+}
+.field input:focus,.field textarea:focus{outline:0;border-color:var(--ink);background:#fff}
+.field textarea{min-height:132px;resize:vertical}
+.consent{display:flex;align-items:flex-start;gap:.55rem;font-size:.875rem;line-height:1.45;color:var(--muted);margin:.15rem 0 1.35rem}
+.consent input{width:1rem;height:1rem;flex:0 0 auto;margin:.15rem 0 0;accent-color:var(--ink)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#lbq-form button[type=submit]{
+  display:inline-flex;align-items:center;gap:.55rem;
+  background:var(--ink);color:#fff;font-family:var(--text);font-weight:600;font-size:1rem;
+  padding:.95rem 1.6rem;border:0;border-radius:3px;cursor:pointer;transition:background .18s ease;
+}
+#lbq-form button[type=submit]:hover{background:var(--ink-2)}
+#lbq-form button[type=submit][disabled]{opacity:.62;cursor:default}
+.form-st{min-height:1.3rem;margin-top:.9rem;font-size:.9375rem}
+@media (max-width:560px){.two{grid-template-columns:1fr;gap:0}}
+
+/* ---------- legal ---------- */
+.legal{padding-block:clamp(2.5rem,4vw,3.4rem);border-top:1px solid var(--hairline)}
+.legal#privacy{border-top:1px solid var(--ink)}
+.legal .wrap > *{max-width:74ch}
+.legal h2{font-size:clamp(1.2rem,1.9vw,1.45rem);margin-bottom:.55rem}
+.legal h3{font-size:.9375rem}
+.legal p{color:var(--muted);margin-bottom:.55rem}
+.legal p + h3{margin-top:1.4rem}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:#b5b0a7;padding-block:clamp(2.5rem,5vw,3.8rem) 0}
+.foot-grid{display:grid;grid-template-columns:1.7fr .8fr 1fr;gap:clamp(1.75rem,4vw,3.25rem);align-items:start;padding-bottom:.5rem}
+.foot-brand .lb-brand{display:inline-flex;margin-bottom:.9rem}
+.foot-brand .lb-brand__name{color:#f8f6f2}
+.foot-brand .lb-brand__mark{background:var(--paper);border-radius:3px;padding:.28rem;height:32px}
+.foot-brand .lb-brand__mark img{height:100%;width:auto}
+.foot-brand p{max-width:32ch;font-size:.9375rem}
+.foot-col h3{font-size:.8125rem;letter-spacing:.09em;font-weight:600;color:#8d887f;margin-bottom:.9rem}
+.foot-col a,.foot-col p{display:block;font-size:.9375rem;margin-bottom:.5rem;color:#cbc6bd}
+.foot-col a{transition:color .18s ease;width:fit-content}
+.foot-col a:hover{color:#f8f6f2}
+.foot-bottom{
+  display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.75rem;
+  border-top:1px solid rgba(248,246,242,.16);
+  margin-top:clamp(1.8rem,3.5vw,2.5rem);padding-block:1.35rem;
+  font-size:.8125rem;color:#8d887f;
+}
+.foot-social{display:flex;align-items:center;gap:.7rem;margin-left:auto}
+.foot-social a{color:#cbc6bd;transition:color .18s ease}
+.foot-social a:hover{color:#f8f6f2}
+.foot-social svg{width:17px;height:17px}
+@media (max-width:760px){
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-brand{grid-column:1 / -1}
+  .foot-social{margin-left:0}
+}
+
+/* ---------- reveals (JS-gated: visible without JS) ---------- */
+html.js .rv{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+.rv-d1{transition-delay:90ms}.rv-d2{transition-delay:180ms}.rv-d3{transition-delay:270ms}
+@media (prefers-reduced-motion: reduce){
+  html.js .rv{opacity:1!important;transform:none!important;transition:none!important}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+</style>
+<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+<!-- LB-3D-HERO -->
+<a class="skip" href="#main">Skip to content</a>
 <header>
   <div class="header-inner">
     <a class="lb-brand" href="#top" aria-label="Altaycon home">
@@ -212,7 +291,7 @@ header{position:sticky;top:0;z-index:60;background:var(--mist);border-bottom:1px
       <a href="#approach">Approach</a>
       <a href="#lbq">Quote</a>
     </nav>
-    <a class="tel-btn" href="tel:0452658485">
+    <a class="tel-btn" href="tel:+61452658485">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
       0452 658 485
     </a>
@@ -230,7 +309,7 @@ header{position:sticky;top:0;z-index:60;background:var(--mist);border-bottom:1px
           <h1>Structural works, slabs and footings.</h1>
           <p class="hero-sub">Altaycon builds across Greenvale and Melbourne's north: structural and civil works, slabs and footings, framing, fit-out and project delivery for residential and commercial sites.</p>
           <div class="hero-cta">
-            <a class="btn" href="tel:0452658485">
+            <a class="btn" href="tel:+61452658485">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
               0452 658 485
             </a>
@@ -337,7 +416,7 @@ header{position:sticky;top:0;z-index:60;background:var(--mist);border-bottom:1px
         <h2>Work across Greenvale and Melbourne's north.</h2>
         <p>Call with the job and the site address, and we will come out and look at it.</p>
       </div>
-      <a class="contact-tel" href="tel:0452658485">0452 658 485</a>
+      <a class="contact-tel" href="tel:+61452658485">0452 658 485</a>
     </div>
   </section>
 
@@ -465,7 +544,7 @@ header{position:sticky;top:0;z-index:60;background:var(--mist);border-bottom:1px
       </div>
       <div class="foot-col">
         <h3>Contact</h3>
-        <a href="tel:0452658485">0452 658 485</a>
+        <a href="tel:+61452658485">0452 658 485</a>
         <p>Greenvale VIC</p>
       </div>
     </div>
