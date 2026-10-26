@@ -214,12 +214,34 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 <!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
 
 <!--LB-HEROGRID--><style id="lb-herogrid">[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
+<style id="lb-logo-hero">
+/* Client logo across the header: the real artwork, isolated and readable. */
+.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;
+  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
+  padding:0!important;box-shadow:none!important}
+.lb-brand .lb-mark{display:block!important;height:clamp(64px,7.4vw,100px)!important;width:auto!important;
+  max-width:none!important;max-height:none!important;object-fit:contain!important;background:none!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
+.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(64vw,780px)!important;
+  max-height:none!important;object-fit:contain!important;object-position:left center!important;
+  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
+  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
+.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
+.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
+.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
+  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
+.lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
+@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:20px!important}}
+.lb-bar{background-color:#000000!important}
+.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#f7f7f4!important}
+.lb-bar .cta,.lb-bar a.cta{color:#ffffff!important}
+</style>
 </head>
 <body id="top">
 <header class="header" role="banner">
   <div class="container header__inner">
-    <a class="lb-brand" href="#top" aria-label="Cheap Cheap Roof Restoration — Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#14161a;--lb-subc:#5c574f;--lb-acc:#b2452f;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo-mark.png" alt="Cheap Cheap Roof Restoration logo" class="lb-logo" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">Cheap Cheap <span class="lb-acc">Roof Restoration</span></span><span class="lb-brand__sub">Cinder Tiling &amp; Waterproofing</span></span></a>
-    <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a class="lb-brand lb-brand--lockup lb-brand--square" style="--lb-name:#ffffff" href="#top" aria-label="Cheap Cheap Roof Restoration — Home"><img class="lb-mark" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">Cheap Cheap Roof Restoration — Home</span></a><nav class="nav" role="navigation" aria-label="Main navigation">
       <div class="nav__links">
         <a class="nav__link" href="#services">Services</a>
         <a class="nav__link" href="#process">Process</a>
@@ -499,11 +521,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 
 <footer class="footer" role="contentinfo">
   <div class="container footer__inner">
-    <a class="footer__brand" href="#top" aria-label="Cheap Cheap Roof Restoration - top of page">
-      <img src="assets/logo-mark.png" alt="" width="36" height="36" aria-hidden="true">
-      <span>Cheap Cheap Roof Restoration <em class="footer__sub">Cinder Tiling &amp; Waterproofing</em></span>
-    </a>
-    <p class="footer__copy">Central Coast · NSW · <a href="tel:+61413108740">0413 108 740</a></p>
+    <a class="lb-brand lb-brand--lockup lb-brand--square" style="--lb-name:#ffffff" href="#top" aria-label="Cheap Cheap Roof Restoration - top of page"><img class="lb-mark" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">Cheap Cheap Roof Restoration - top of page</span></a><p class="footer__copy">Central Coast · NSW · <a href="tel:+61413108740">0413 108 740</a></p>
     <div class="footer__legal">
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
@@ -809,5 +827,6 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
   scroll-margin-top:24px}
 
 </style>
+<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#000000","important");})();</script>
 </body>
 </html>

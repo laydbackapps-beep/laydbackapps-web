@@ -240,12 +240,34 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 <!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
 
 <!--LB-HEROGRID--><style id="lb-herogrid">[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
+<style id="lb-logo-hero">
+/* Client logo across the header: the real artwork, isolated and readable. */
+.lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;
+  text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
+  padding:0!important;box-shadow:none!important}
+.lb-brand .lb-mark{display:block!important;height:clamp(64px,7.4vw,100px)!important;width:auto!important;
+  max-width:none!important;max-height:none!important;object-fit:contain!important;background:none!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
+.lb-brand .lb-word{display:block!important;height:26px!important;width:auto!important;max-width:min(64vw,780px)!important;
+  max-height:none!important;object-fit:contain!important;object-position:left center!important;
+  background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.lb-brand .name,.lb-brand .lb-brand__name{font-size:clamp(15px,1.35vw,20px)!important;font-weight:700!important;
+  letter-spacing:-.01em!important;line-height:1.15!important;white-space:normal!important}
+.lb-brand .lb-brand__mark{height:clamp(64px,7.4vw,100px)!important;max-width:none!important}
+.lb-brand .lb-brand__mark img,.lb-brand img{height:100%!important;width:auto!important;max-width:none!important}
+.lb-sr,.lb-brand .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
+  clip:rect(0 0 0 0)!important;white-space:nowrap!important}
+.lb-brand--square .lb-mark{height:clamp(76px,8.6vw,118px)!important}
+@media (max-width:720px){.lb-brand .lb-mark{height:46px!important}.lb-brand .lb-word{height:20px!important}}
+.lb-bar{background-color:#f8f8f8!important}
+.lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#101014!important}
+.lb-bar .cta,.lb-bar a.cta{color:#101014!important}
+</style>
 </head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <header class="header" role="banner">
   <div class="header-inner">
-    <a class="lb-brand" href="#top" aria-label="BR CIVIL - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#f5f5f0;--lb-subc:#aab3c2;--lb-acc:#a3adf0;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.jpg" alt="BR CIVIL logo" class="lb-logo" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">BR <span class="lb-acc">CIVIL</span></span><span class="lb-brand__sub"><span class="lb-acc">Bendigo</span> VIC</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
-    <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a class="lb-brand lb-brand--lockup lb-brand--square" style="--lb-name:#101014" href="#top" aria-label="BR CIVIL - Home"><img class="lb-mark" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">BR CIVIL</span></a><nav class="nav" role="navigation" aria-label="Main navigation">
       <a href="#services">Services</a>
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
@@ -504,8 +526,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 <section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img src="assets/proj_2.jpg" alt="BR CIVIL civil works" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img src="assets/proj_3.jpg" alt="BR CIVIL civil works" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/proj_1.jpg" alt="BR CIVIL civil works" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/hero.jpg" alt="BR CIVIL civil works" loading="lazy" decoding="async"></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button><button type="button" class="" aria-label="Slide 4"></button></div><div class="lb-rb__cap">BR CIVIL &mdash; recent work</div></div></section><footer class="footer" role="contentinfo">
   <div class="footer-inner">
     <div class="footer-brand rv rv-delay-1">
-      <a href="./" class="logo" aria-label="BR CIVIL home">BR <span>CIVIL</span></a>
-      <p>Civil construction, excavation, drainage, concrete works and subdivision infrastructure across Bendigo and Central Victoria.</p>
+      <a class="lb-brand lb-brand--lockup lb-brand--square" style="--lb-name:#101014" href="#top" aria-label="BR CIVIL home"><img class="lb-mark" src="assets/logo-isolated.png" alt="" loading="eager" decoding="async"><span class="lb-sr">BR CIVIL</span></a><p>Civil construction, excavation, drainage, concrete works and subdivision infrastructure across Bendigo and Central Victoria.</p>
     </div>
     <nav class="footer-col rv rv-delay-2" aria-label="Services">
       <h4>Services</h4>
@@ -807,5 +828,6 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
   scroll-margin-top:24px}
 
 </style>
+<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#f8f8f8","important");})();</script>
 </body>
 </html>
