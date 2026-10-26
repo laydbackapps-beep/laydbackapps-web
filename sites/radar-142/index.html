@@ -399,6 +399,23 @@ nav .nav-links.open a{padding:15px 22px;text-align:center;font-size:15px;font-we
 nav .nav-links.open a + a{margin-top:8px}
 nav .nav-links.open a:last-child{background:rgba(176,48,48,.14);border-color:rgba(176,48,48,.5);color:#fff;text-transform:none}
 @media(max-width:860px){nav .nav-links.open{width:min(92vw,340px);padding:12px}}
+</style><style id="lb-hdr-right">
+/* button and panel hard against the right edge of the page */
+nav .nav-in{max-width:none!important;padding-right:12px!important}
+nav .burger{margin-left:auto!important}
+nav .nav-links.open{right:0!important;left:auto!important;transform:none!important}
+/* hero copy as a narrow stacked column so the open menu never sits over it */
+.hero .hero-in{max-width:none!important;margin:0!important;padding-left:clamp(20px,4vw,56px)!important;
+  display:block!important;padding-right:min(420px,38vw)!important}
+.hero .hero-copy{max-width:min(46ch,560px)!important;display:flex!important;flex-direction:column!important;
+  align-items:flex-start!important;gap:14px!important;text-align:left!important}
+.hero .hero-copy h1{font-size:clamp(30px,4.2vw,58px)!important;line-height:1.03!important;letter-spacing:-.03em!important;margin:0!important}
+.hero .hero-copy p{max-width:44ch!important;margin:0!important;line-height:1.65!important}
+.hero .hero-copy .btn,.hero .hero-copy a.btn{margin-top:6px!important}
+@media(max-width:860px){
+  .hero .hero-in{padding-right:20px!important}
+  .hero .hero-copy{max-width:100%!important}
+}
 </style></head>
 <body>
 <script>document.documentElement.className+=' js';</script>
