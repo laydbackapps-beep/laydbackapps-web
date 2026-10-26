@@ -345,7 +345,12 @@ nav .burger,header .burger{display:none!important}
     width:min(86vw,320px);z-index:70;margin:0!important}
   nav .burger,header .burger{display:flex!important;margin-left:auto}
 }
-</style><style>.lb-tel{color:inherit}</style></head>
+</style><style>.lb-tel{color:inherit}</style><style id="lb-hero-photo">
+.hero .hero-photo{position:absolute;inset:0;z-index:0;background:url('assets/work_01.jpg') center 45%/cover no-repeat}
+.hero canvas{opacity:.35!important}
+.hero-shade{background:linear-gradient(180deg,rgba(8,9,11,.72),rgba(8,9,11,.55) 45%,rgba(8,9,11,.94))!important}
+.hero > *:not(.hero-photo):not(canvas):not(.hero-shade){position:relative;z-index:3}
+</style></head>
 <body>
 <script>document.documentElement.className+=' js';</script>
 <a class="skip" href="#services">Skip to content</a>
@@ -355,7 +360,7 @@ nav .burger,header .burger{display:none!important}
 <div class="nav-cta"><a class="btn btn-primary btn-sm" href="#lbq">Get a quote</a></div>
 <button aria-expanded="false" aria-label="Menu" class="burger" id="burger"><span></span><span></span><span></span></button>
 </div><a class="lb-tel" href="tel:0402888870" style="font-weight:800;white-space:nowrap;text-decoration:none;padding:10px 14px;border-radius:2px;background:rgba(255,255,255,.1)">0402 888 870</a></nav>
-<header class="hero" id="top">
+<header class="hero" id="top"><div aria-hidden="true" class="hero-photo"></div>
 <div class="hero-shade"></div>
 <div class="hero-in">
 <p class="hero-kicker">Tiling &amp; renovations - Sydney NSW</p>
