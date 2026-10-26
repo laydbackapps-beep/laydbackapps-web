@@ -310,7 +310,13 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-</head>
+<style id="lb-bar-noname">
+/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
+{display:none!important}
+.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
+.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+</style></head>
 <body>
 
 <a class="skip" href="#services">Skip to content</a>
@@ -319,7 +325,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 <a class="lb-brand" href="#top" aria-label="Done Right - Home" style="--lb-disp:Roboto Slab;--lb-sub:Inter;--lb-acc:#3c5484;--lb-name:#3c5484;--lb-subc:#3c5484;"><span class="lb-brand__word"><span class="lb-brand__name">Done <span class="lb-acc">Right</span></span><span class="lb-brand__sub"><span class="lb-acc">Roof</span> & Restoration &middot; —Done Right The First Time—</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
   <a class="nav__b" href="#top" aria-label="Done Right Roof and Restoration home">
     <img src="assets/logo.png" alt="Done Right Roof &amp; Restoration logo">
-    <span><span class="nb-t">Done Right Roof</span><span class="nb-s">Repairs · Restoration · Gutters</span></span>
+    <span><span class="nb-s">Repairs · Restoration · Gutters</span></span>
   </a>
   <ul class="nav__links">
     <li><a href="#services">Services</a></li>

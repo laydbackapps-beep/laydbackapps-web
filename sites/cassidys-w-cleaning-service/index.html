@@ -217,7 +217,27 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-</head>
+<style id="lb-hdr-centre">
+/* the brand here is the logo alone: centre it in the bar instead of parking it on one edge */
+header{position:relative!important;display:flex!important;align-items:center!important;gap:clamp(10px,1.8vw,26px)!important}
+.footer__logo{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;margin:0!important;z-index:2}
+.footer__logo img{height:clamp(38px,3.4vw,54px)!important;width:auto!important;display:block!important}
+header > a:not(.footer__logo){margin-left:auto}
+header > a:not(.footer__logo) ~ a{margin-left:0}
+@media(max-width:900px){
+  .footer__logo{position:static!important;transform:none!important;margin-right:auto!important}
+  .footer__logo img{height:38px!important}
+}
+</style><style id="lb-bar-grow">
+nav{height:auto!important;min-height:0!important}
+nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
+</style><style id="lb-bar-noname">
+/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
+{display:none!important}
+.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
+.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+</style></head>
 <body>
 <header class="rv" role="banner"><canvas class="lb-hero-canvas" aria-hidden="true"></canvas>
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 0;gap:1rem;flex-wrap:wrap">

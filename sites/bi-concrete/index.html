@@ -69,7 +69,11 @@ header{position:fixed;inset:0 0 auto 0;height:var(--nav);z-index:100;background:
 <!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.42)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
 
 <!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
-</head>
+<style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body>
 
 <header>
@@ -78,7 +82,7 @@ header{position:fixed;inset:0 0 auto 0;height:var(--nav);z-index:100;background:
       <img src="assets/logo.svg" alt="" class="lb-logo" loading="eager" decoding="async">
       <span class="brand-name">B.I Concrete Constructions</span>
     </a>
-    <nav class="hdr-nav" aria-label="Sections">
+    <nav class="hdr-nav" aria-label="Sections"><a class="brand-monogram" href="#top" aria-label="B.I Concrete Constructions Pty Ltd"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#work">Work</a>

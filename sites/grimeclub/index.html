@@ -139,7 +139,18 @@ footer ul{list-style:none;display:grid;gap:.45rem;font-size:.93rem}
   .f-grid{grid-template-columns:1fr}
 }
 </style>
-</head>
+<style id="lb-hero-noscale">
+/* hero-work.jpg is 1200x1600. Full-bleed at 1920 it was enlarged; it is held at its own pixel size here so
+   nothing is interpolated, and the bar's own ground fills either side. */
+img[src$="hero-work.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
+{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
+  transform:none!important;width:100%!important;max-width:1200px!important;height:auto!important;max-height:none!important;
+  object-fit:contain!important;display:block!important;margin:0 auto!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body>
 <!-- LB-3D-HERO -->
 <div class="lb3d" aria-hidden="true"><canvas id="heroCanvas" width="1200" height="700"></canvas></div>
@@ -151,7 +162,7 @@ footer ul{list-style:none;display:grid;gap:.45rem;font-size:.93rem}
       <img src="assets/logo-avatar.png" alt="Grime Club spray bottle mark" width="32" height="32">
       <span class="brand-name">Grime Club<span class="brand-sub">Newcastle &amp; Lake Macquarie</span></span>
     </a>
-    <nav class="nav" aria-label="Main">
+    <nav class="nav" aria-label="Main"><a class="brand-monogram" href="#top" aria-label="Grime Club"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
       <a href="#deep">Deep clean</a>
       <a href="#regular">Regular clean</a>
       <a href="#moveout">Move-out clean</a>

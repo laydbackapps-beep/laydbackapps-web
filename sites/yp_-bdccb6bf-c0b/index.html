@@ -185,7 +185,21 @@ canvas{display:block}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
 </style>
-</head>
+<style id="lb-hdr-centre">
+/* the brand here is the logo alone: centre it in the bar instead of parking it on one edge */
+nav{position:relative!important;display:flex!important;align-items:center!important;gap:clamp(10px,1.8vw,26px)!important}
+.nav-brand{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;margin:0!important;z-index:2}
+.nav-brand img{height:clamp(38px,3.4vw,54px)!important;width:auto!important;display:block!important}
+nav > a:not(.nav-brand){margin-left:auto}
+nav > a:not(.nav-brand) ~ a{margin-left:0}
+@media(max-width:900px){
+  .nav-brand{position:static!important;transform:none!important;margin-right:auto!important}
+  .nav-brand img{height:38px!important}
+}
+</style><style id="lb-bar-grow">
+nav{height:auto!important;min-height:0!important}
+nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
+</style></head>
 <body>
 <nav class="nav rv" role="navigation" aria-label="Main navigation">
   <div class="nav-inner container">

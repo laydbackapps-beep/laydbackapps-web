@@ -155,7 +155,18 @@ figure.shot figcaption{padding:.85rem 1rem 1rem;font-size:.83rem;color:var(--mut
 #lbq .lbq-aside{border:1px solid var(--lbq-accent);border-radius:14px;padding:1.4rem 1.5rem;background:var(--lbq-panel)}
 @media(max-width:780px){#lbq .lbq-sp,#lbq .lbq-g{grid-template-columns:1fr}}</style>
 <script>document.documentElement.className='js';</script>
-</head>
+<style id="lb-hero-noscale">
+/* hero.jpg is 1600x1200. Full-bleed at 1920 it was enlarged; it is held at its own pixel size here so
+   nothing is interpolated, and the bar's own ground fills either side. */
+img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
+{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
+  transform:none!important;width:100%!important;max-width:1600px!important;height:auto!important;max-height:none!important;
+  object-fit:contain!important;display:block!important;margin:0 auto!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body>
 <header class="hd">
   <div class="hd-in">
@@ -166,7 +177,7 @@ figure.shot figcaption{padding:.85rem 1rem 1rem;font-size:.83rem;color:var(--mut
         <span class="brand-sub">Pty Ltd &middot; Melbourne</span>
       </span>
     </a>
-    <nav class="nav" aria-label="Main">
+    <nav class="nav" aria-label="Main"><a class="brand-monogram" href="#top" aria-label="99 Electrical solutions PTY LTD"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
       <a href="#services">Services</a>
       <a href="#work">Work</a>
       <a href="#process">How we work</a>

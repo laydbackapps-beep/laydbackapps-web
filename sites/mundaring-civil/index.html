@@ -240,12 +240,26 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 <!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
 
 <!--LB-HEROGRID--><style id="lb-herogrid">[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
-</head>
+<style id="lb-nav-contrast">/* nav links measured below 4.5:1 against this bar */
+nav {background:rgba(10,13,18,.92)!important;backdrop-filter:blur(8px)}
+nav a, nav a:visited, .nav-in a, .nav-links a, .nav a {color:#ffffff!important;opacity:1!important}
+nav a:hover {color:#ffffff!important;opacity:.85!important}
+</style><style id="lb-bar-noname">
+/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
+{display:none!important}
+.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
+.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <header class="header" role="banner">
   <div class="header-inner">
     <a class="lb-brand" href="#top" aria-label="BR CIVIL - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#f5f5f0;--lb-subc:#aab3c2;--lb-acc:#a3adf0;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.jpg" alt="BR CIVIL logo" class="lb-logo" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">BR <span class="lb-acc">CIVIL</span></span><span class="lb-brand__sub"><span class="lb-acc">Bendigo</span> VIC</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
-    <nav class="nav" role="navigation" aria-label="Main navigation">
+    <nav class="nav" role="navigation" aria-label="Main navigation"><a class="brand-monogram" href="#top" aria-label="Mundaring Civil"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
       <a href="#services">Services</a>
       <a href="#projects">Projects</a>
       <a href="#about">About</a>

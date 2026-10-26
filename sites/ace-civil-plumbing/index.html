@@ -184,7 +184,15 @@ footer{border-top:1px solid var(--line);padding:44px 0 34px;font-size:14px;color
 </style>
 
 <!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
-</head>
+<style id="lb-nav-contrast">/* nav links measured below 4.5:1 against this bar */
+nav {background:rgba(10,13,18,.92)!important;backdrop-filter:blur(8px)}
+nav a, nav a:visited, .nav-in a, .nav-links a, .nav a {color:#ffffff!important;opacity:1!important}
+nav a:hover {color:#ffffff!important;opacity:.85!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body>
 <a class="skip" href="#scope">Skip to content</a>
 
@@ -197,7 +205,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 34px;font-size:14px;color
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
       <i></i><i></i><i></i>
     </button>
-    <nav class="nav" id="menu" aria-label="Primary">
+    <nav class="nav" id="menu" aria-label="Primary"><a class="brand-monogram" href="#top" aria-label="Ace Civil Plumbing & Drainage Pty Ltd"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
       <a href="#scope">Services</a>
       <a href="#process">How we work</a>
       <a href="#compliance">Compliance</a>

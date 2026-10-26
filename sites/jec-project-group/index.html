@@ -143,7 +143,11 @@ figcaption{margin-top:.7rem;font-size:var(--t-micro);color:var(--mut);letter-spa
 </style>
 
 <!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
-</head>
+<style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body>
 <header class="hdr">
   <div class="hdr__in">
@@ -154,7 +158,7 @@ figcaption{margin-top:.7rem;font-size:var(--t-micro);color:var(--mut);letter-spa
         <small>Sydney &middot; construction</small>
       </span>
     </a>
-    <nav aria-label="Sections">
+    <nav aria-label="Sections"><a class="brand-monogram" href="#top" aria-label="JEC Project Group"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
       <a href="#services">Services</a>
       <a href="#process">Process</a>
       <a href="#approach">Approach</a>

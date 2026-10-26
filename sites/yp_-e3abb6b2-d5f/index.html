@@ -56,7 +56,21 @@ h3{font-size:clamp(1.125rem,1rem+.6vw,1.375rem);font-weight:600}
 .skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);padding:.75rem 1.25rem;background:var(--ink);color:var(--field);font-weight:500;z-index:1000;border-radius:0 0 4px 4px}
 .skip-link:focus{top:0}
 </style>
-</head>
+<style id="lb-hdr-centre">
+/* the brand here is the logo alone: centre it in the bar instead of parking it on one edge */
+header{position:relative!important;display:flex!important;align-items:center!important;gap:clamp(10px,1.8vw,26px)!important}
+.site-brand{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;margin:0!important;z-index:2}
+.site-brand img{height:clamp(38px,3.4vw,54px)!important;width:auto!important;display:block!important}
+header > a:not(.site-brand){margin-left:auto}
+header > a:not(.site-brand) ~ a{margin-left:0}
+@media(max-width:900px){
+  .site-brand{position:static!important;transform:none!important;margin-right:auto!important}
+  .site-brand img{height:38px!important}
+}
+</style><style id="lb-bar-grow">
+nav{height:auto!important;min-height:0!important}
+nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
+</style></head>
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
 <header class="site-header" role="banner">

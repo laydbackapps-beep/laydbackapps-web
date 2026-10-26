@@ -128,7 +128,18 @@ footer{border-top:1px solid var(--line);padding-block:44px 34px;font-size:.92rem
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1!important;transform:none!important}}
 </style>
 <noscript><style>.js .rv{opacity:1!important;transform:none!important}</style></noscript>
-</head>
+<style id="lb-hero-noscale">
+/* hero.jpg is 900x1600. Full-bleed at 1920 it was enlarged; it is held at its own pixel size here so
+   nothing is interpolated, and the bar's own ground fills either side. */
+img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
+{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
+  transform:none!important;width:100%!important;max-width:900px!important;height:auto!important;max-height:none!important;
+  object-fit:contain!important;display:block!important;margin:0 auto!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body>
 <!-- LB-3D-HERO -->
 <a class="skip" href="#top">Skip to content</a>
@@ -137,7 +148,7 @@ footer{border-top:1px solid var(--line);padding-block:44px 34px;font-size:.92rem
     <a class="brand" href="#top">
       <img src="assets/logomark.png" alt="JE Carpentry and Linings logo"><span class="brand-txt"><span class="brand-name">JE Carpentry &amp; Linings</span><span class="brand-sub">Perth &middot; WA</span></span>
     </a>
-    <nav class="nav" aria-label="Main">
+    <nav class="nav" aria-label="Main"><a class="brand-monogram" href="#top" aria-label="JE Carpentry & Linings"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
       <a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#quote">Quote</a>
     </nav>
     <a class="hdr-cta" href="#quote">Get a quote</a>

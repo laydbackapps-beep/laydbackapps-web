@@ -131,14 +131,18 @@ footer a{color:var(--ink)}
   .hero .sub{font-size:16px}
 }
 </style>
-</head>
+<style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body>
 <script>document.documentElement.classList.add('js')</script>
 
 <header class="bar">
   <div class="wrap bar-in">
     <a class="brand" href="#top" aria-label="Elevate Concrete"><img src="assets/logo.png" alt="Elevate Concrete"><span class="vh">Elevate Concrete</span></a>
-    <nav class="tabs" aria-label="Primary">
+    <nav class="tabs" aria-label="Primary"><a class="brand-monogram" href="#top" aria-label="Elevate Concrete"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
       <a href="#scope">Scope</a>
       <a href="#pour">Pour day</a>
       <a href="#work">Work</a>

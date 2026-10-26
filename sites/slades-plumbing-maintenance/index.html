@@ -78,7 +78,21 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-siz
  section,.hero,header{overflow-x:clip!important}
  img,video,svg{max-width:100%!important;height:auto}
  h1,h2{overflow-wrap:anywhere!important}
-}</style></head>
+}</style><style id="lb-hdr-centre">
+/* the brand here is the logo alone: centre it in the bar instead of parking it on one edge */
+nav{position:relative!important;display:flex!important;align-items:center!important;gap:clamp(10px,1.8vw,26px)!important}
+.brand{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;margin:0!important;z-index:2}
+.brand img{height:clamp(38px,3.4vw,54px)!important;width:auto!important;display:block!important}
+nav > a:not(.brand){margin-left:auto}
+nav > a:not(.brand) ~ a{margin-left:0}
+@media(max-width:900px){
+  .brand{position:static!important;transform:none!important;margin-right:auto!important}
+  .brand img{height:38px!important}
+}
+</style><style id="lb-bar-grow">
+nav{height:auto!important;min-height:0!important}
+nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
+</style></head>
 <body>
 <nav><div class="wrap nav-in">
   <a class="brand" href="#top" aria-label="Slades Plumbing and Maintenance"><img src="assets/logo-mark-clear.png" alt="Slades Plumbing & Maintenance"></a>

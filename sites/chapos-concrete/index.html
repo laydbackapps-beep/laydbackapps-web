@@ -111,7 +111,24 @@ p{margin:0}
 }
 
 </style>
-</head>
+<style id="lb-hero-noscale">
+/* hero-driveway.jpg is 1400x788. Full-bleed at 1920 it was enlarged; it is held at its own pixel size here so
+   nothing is interpolated, and the bar's own ground fills either side. */
+img[src$="hero-driveway.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
+{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
+  transform:none!important;width:100%!important;max-width:1400px!important;height:auto!important;max-height:none!important;
+  object-fit:contain!important;display:block!important;margin:0 auto!important}
+</style><style id="lb-bar-noname">
+/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
+{display:none!important}
+.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
+.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body>
 <a class="skip" href="#quote">Skip to quote request</a>
 <header class="hdr">
@@ -120,7 +137,7 @@ p{margin:0}
       <img class="brand__mark" src="assets/logo.jpg" alt="Chapo's Concrete logo" width="92" height="92">
       <span class="brand__txt"><span class="brand__name">Chapo's Concrete</span><span class="brand__sub">Concreting · Barossa Valley SA</span></span>
     </a>
-    <nav class="nav"><a href="#services">Services</a><a href="#pour">What we pour</a><a href="#work">Recent work</a><a href="#process">How it runs</a><a href="#areas">Service area</a><a href="#quote">Quote</a></nav>
+    <nav class="nav"><a class="brand-monogram" href="#top" aria-label="Chapo's Concrete"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a><a href="#services">Services</a><a href="#pour">What we pour</a><a href="#work">Recent work</a><a href="#process">How it runs</a><a href="#areas">Service area</a><a href="#quote">Quote</a></nav>
     <a class="btn btn--acc" href="tel:+61411141081">Call 0411 141 081</a>
   </div>
 </header>

@@ -337,7 +337,14 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 .rig__item p{font-size:.86rem;color:var(--ink-muted)}
 .lb-rb__cap{font-size:.72rem;letter-spacing:.12em!important}
 </style>
-</head>
+<style id="lb-bar-noname">
+/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
+{display:none!important}
+.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
+.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+</style><style id="lb-bar-noname-x">SPAN.lb-brand__name{display:none!important}
+</style></head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <!-- LB-3D-HERO (retained, hidden 2026-10-14): 3D hero system kept as hidden marker; visible scroll-canvas removed -->
 <canvas id="heroCanvas" class="LB-3D-HERO" aria-hidden="true" tabindex="-1" width="1440" height="760"></canvas>

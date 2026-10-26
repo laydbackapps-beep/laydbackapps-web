@@ -157,14 +157,28 @@ h3{font-family:var(--font-b);font-weight:700}
 @media(max-width:760px){#lbq .lbq-sp{grid-template-columns:1fr}#lbq .lbq-g{grid-template-columns:1fr}}
 
 </style>
-</head>
+<style id="lb-bar-grow">
+nav{height:auto!important;min-height:0!important}
+nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
+</style><style id="lb-hero-noscale">
+/* hero.jpg is 1200x675. Full-bleed at 1920 it was enlarged; it is held at its own pixel size here so
+   nothing is interpolated, and the bar's own ground fills either side. */
+img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
+{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
+  transform:none!important;width:100%!important;max-width:1200px!important;height:auto!important;max-height:none!important;
+  object-fit:contain!important;display:block!important;margin:0 auto!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body>
 <!-- LB-3D-HERO -->
 <a class="skip" href="#services">Skip to content</a>
 <header class="hdr" id="top">
   <div class="hdr-in">
     <a href="/" class="brand" aria-label="Supreme Fencing &amp; Gate Solutions"><img src="assets/logo.png" alt="Supreme Fencing &amp; Gate Solutions" class="brand-single"></a>
-    <nav class="nav" aria-label="Main">
+    <nav class="nav" aria-label="Main"><a class="brand-monogram" href="#top" aria-label="Supreme Fencing & Gate Solutions"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
       <a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#quote">Quote</a>
     </nav>
     <a class="hdr-cta" href="#quote">Request a quote</a>

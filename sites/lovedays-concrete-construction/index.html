@@ -121,7 +121,17 @@ header,.site-header,.lb-brand,.lb-brand *{opacity:1;visibility:visible}
   .call,button[type=submit]{transition:none}
 }
 </style>
-</head>
+<style id="lb-bar-noname">
+/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
+{display:none!important}
+.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
+.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body>
 
 <header class="site-header">
@@ -130,7 +140,7 @@ header,.site-header,.lb-brand,.lb-brand *{opacity:1;visibility:visible}
       <img src="assets/logo.png" alt="Loveday's Concrete Construction logo" width="44" height="44">
       <b>Loveday's Concrete Construction</b>
     </a>
-    <nav class="nav" aria-label="Main">
+    <nav class="nav" aria-label="Main"><a class="brand-monogram" href="#top" aria-label="Loveday's Concrete Construction"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
       <a href="#services">What we pour</a>
       <a href="#method">How we work</a>
       <a href="#contact">Contact</a>

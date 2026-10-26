@@ -63,28 +63,20 @@ button:hover{background:var(--acc)}
 footer{background:var(--ink);color:rgba(243,245,238,.7);padding:clamp(26px,4vw,44px) clamp(16px,3vw,32px)}
 footer .in{max-width:1180px;margin:0 auto;display:flex;gap:14px 26px;flex-wrap:wrap;align-items:center;justify-content:space-between;font-size:13.5px}
 footer img{height:42px;width:auto}
-</style><style id="lb-hdr-centre">
-/* brand is the logo alone — centre it, and give the nav room either side */
-header{position:relative!important;display:flex!important;align-items:center!important;gap:clamp(10px,1.8vw,26px)!important}
-header .header > a{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;margin:0!important;z-index:3}
-header .header > a img{height:clamp(38px,3.4vw,54px)!important;width:auto!important;display:block!important}
-header > a:not(.header > a){margin-left:auto}
-header > a:not(.header > a) ~ a{margin-left:0}
-@media(max-width:980px){
-  header .header > a{position:static!important;transform:none!important;margin-right:auto!important}
-  header .header > a img{height:38px!important}
-}
 </style><style id="lb-bar-grow">
-/* the centred brand sits on its own row, so the bar has to size to its content instead of clipping the links */
 nav{height:auto!important;min-height:0!important}
 nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
 </style></head>
 <body>
 
 <div class="strip"><div class="in">
   <a href="#top" aria-label="Maitland Outdoor & Property Maintenance"><img src="assets/logo-cut.png" alt="Maitland Outdoor & Property Maintenance"></a>
   <span class="who"><b>Maitland Outdoor & Property Maintenance</b>Grounds &amp; property care · Maitland</span>
-  <nav><a href="#what">What we do</a><a href="#when">When</a><a href="#quote">Quote</a></nav>
+  <nav><a class="brand-monogram" href="#top" aria-label="Maitland Outdoor & Property Maintenance"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a><a href="#what">What we do</a><a href="#when">When</a><a href="#quote">Quote</a></nav>
   <a class="tel" href="tel:0421655477">0421 655 477</a>
 </div></div>
 

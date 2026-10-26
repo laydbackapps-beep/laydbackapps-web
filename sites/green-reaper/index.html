@@ -207,14 +207,28 @@ section{scroll-margin-top:90px}
 }
 </style>
 <!-- LB-3D-HERO -->
-</head>
+<style id="lb-bar-grow">
+nav{height:auto!important;min-height:0!important}
+nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
+</style><style id="lb-hero-noscale">
+/* hero-treework.jpg is 1800x1200. Full-bleed at 1920 it was enlarged; it is held at its own pixel size here so
+   nothing is interpolated, and the bar's own ground fills either side. */
+img[src$="hero-treework.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
+{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
+  transform:none!important;width:100%!important;max-width:1800px!important;height:auto!important;max-height:none!important;
+  object-fit:contain!important;display:block!important;margin:0 auto!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body>
 <a class="skip" href="#top">Skip to content</a>
 
 <header class="site-bar">
   <div class="wrap bar-in">
     <a class="brand" href="#top" aria-label="Green Reaper"><img src="assets/logo-flat.png" alt="Green Reaper" width="512" height="512"></a>
-    <nav class="bar-nav" aria-label="Main">
+    <nav class="bar-nav" aria-label="Main"><a class="brand-monogram" href="#top" aria-label="Green Reaper"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
       <a href="#services">Services</a>
       <a href="#process">How it runs</a>
       <a href="#work">Work</a>

@@ -330,7 +330,18 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 
 <!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
 
-</head>
+<style id="lb-nav-contrast">/* nav links measured below 4.5:1 against this bar */
+nav {background:rgba(255,255,255,.94)!important;backdrop-filter:blur(8px)}
+nav a, nav a:visited, .nav-in a, .nav-links a, .nav a {color:#101418!important;opacity:1!important}
+nav a:hover {color:#101418!important;opacity:.85!important}
+</style><style id="lb-bar-noname">
+/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
+{display:none!important}
+.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
+.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+</style><style id="lb-bar-noname-x">SPAN.lb-brand__name,SPAN.lb-brand__word{display:none!important}
+</style></head>
 <body>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav"><div class="nav-in">

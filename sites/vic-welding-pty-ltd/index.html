@@ -240,7 +240,21 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-</head>
+<style id="lb-nav-contrast">/* nav links measured below 4.5:1 against this bar */
+nav {background:rgba(10,13,18,.92)!important;backdrop-filter:blur(8px)}
+nav a, nav a:visited, .nav-in a, .nav-links a, .nav a {color:#ffffff!important;opacity:1!important}
+nav a:hover {color:#ffffff!important;opacity:.85!important}
+</style><style id="lb-bar-noname">
+/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
+{display:none!important}
+.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
+.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body>
 <script>
 /* ===== JS CLASS + REVEAL SYSTEM + 1100ms SAFETY NET ===== */
@@ -275,7 +289,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 <header class="top"><canvas class="lb-hero-canvas" aria-hidden="true"></canvas>
   <div class="wrap">
     <a class="lb-brand" href="#top" aria-label="Vic Welding - Home" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#f07800;--lb-subc:#f07800;--lb-acc:#f07800;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.png" alt="" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">Vic Welding</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
-    <nav class="links" aria-label="Sections">
+    <nav class="links" aria-label="Sections"><a class="brand-monogram" href="#top" aria-label="Vic Welding Pty Ltd"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
       <a href="#fabrication">Fabrication</a>
       <a href="#method">Method</a>
       <a href="#where">Campbellfield</a>

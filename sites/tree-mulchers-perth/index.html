@@ -451,7 +451,21 @@ header.hero{min-height:clamp(496px,62vh,664px)!important;max-height:none!importa
 }
 .lb-rb__veil{position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,7,10,.62),rgba(6,7,10,.10))}
 </style>
-</head>
+<style id="lb-hero-noscale">
+/* hero-treework.jpg is 1800x1200. Full-bleed at 1920 it was enlarged; it is held at its own pixel size here so
+   nothing is interpolated, and the bar's own ground fills either side. */
+img[src$="hero-treework.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
+{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
+  transform:none!important;width:100%!important;max-width:1800px!important;height:auto!important;max-height:none!important;
+  object-fit:contain!important;display:block!important;margin:0 auto!important}
+</style><style id="lb-bar-noname">
+/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
+{display:none!important}
+.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
+.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+</style><style id="lb-bar-noname-x">SPAN.lb-brand__name{display:none!important}
+</style></head>
 <body>
 <script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
 <nav class="nav"><div class="nav-in">

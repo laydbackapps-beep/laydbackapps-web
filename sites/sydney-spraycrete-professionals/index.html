@@ -271,7 +271,27 @@ html.js .rv{opacity:0;transform:translateY(16px)}
 }
 @media(max-width:720px){nav.main{order:3;width:100%;margin-left:0;gap:16px}}
 </style>
-</head>
+<style id="lb-bar-grow">
+nav{height:auto!important;min-height:0!important}
+nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
+</style><style id="lb-hero-noscale">
+/* hero-resurfaced.jpg is 1120x1400. Full-bleed at 1920 it was enlarged; it is held at its own pixel size here so
+   nothing is interpolated, and the bar's own ground fills either side. */
+img[src$="hero-resurfaced.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
+{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
+  transform:none!important;width:100%!important;max-width:1120px!important;height:auto!important;max-height:none!important;
+  object-fit:contain!important;display:block!important;margin:0 auto!important}
+</style><style id="lb-bar-noname">
+/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
+{display:none!important}
+.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
+.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body>
 <noscript><style>html.js .rv{opacity:1;transform:none}</style></noscript>
 
@@ -280,7 +300,7 @@ html.js .rv{opacity:0;transform:translateY(16px)}
     <a class="lb-brand" href="#top" aria-label="Sydney Spraycrete Professionals — home">
       <img src="assets/logo.png" alt="Sydney Spraycrete Professionals" width="1179" height="1089">
     </a>
-    <nav class="main" aria-label="Sections">
+    <nav class="main" aria-label="Sections"><a class="brand-monogram" href="#top" aria-label="Sydney Spraycrete Professionals"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
       <a href="#Services">Services</a>
       <a href="#Finish">Finishes</a>
       <a href="#Work">Work</a>

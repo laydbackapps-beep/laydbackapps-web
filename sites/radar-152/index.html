@@ -328,10 +328,25 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-</head>
+<style id="lb-nav-contrast">/* nav links measured below 4.5:1 against this bar */
+nav {background:rgba(255,255,255,.94)!important;backdrop-filter:blur(8px)}
+nav a, nav a:visited, .nav-in a, .nav-links a, .nav a {color:#101418!important;opacity:1!important}
+nav a:hover {color:#101418!important;opacity:.85!important}
+</style><style id="lb-bar-noname">
+/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
+{display:none!important}
+.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
+.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+</style><style id="lb-bar-noname-x">SPAN.lb-brand__name,SPAN.lb-brand__word{display:none!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body class="hero-full">
 <script>document.documentElement.className+=' js';</script>
-<nav class="nav"><div class="nav-in">
+<nav class="nav"><a class="brand-monogram" href="#top" aria-label="Iron bark Landscapes"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a><div class="nav-in">
   <a class="lb-brand" href="#top" aria-label="IRON BARK LANDSCAPES - Home" style="--lb-disp:Roboto Slab;--lb-sub:Inter;--lb-name:#14161a;--lb-subc:#14161a;"><span class="lb-brand__word"><span class="lb-brand__name">IRON BARK LANDSCAPES</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
   <div class="nav-links" id="navlinks"><a href="#services">Services</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="#quote">Start a project</a></div>
   <div class="nav-cta"><span class="mono nav-p">0409 012 450</span><a href="#quote" class="btn btn-primary btn-sm">Get a quote</a></div>

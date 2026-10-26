@@ -252,13 +252,23 @@ footer .lb-legal a:hover{color:var(--ground)!important}
 </style>
 
 <!--LB-HEROGRID--><style id="lb-herogrid">[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
-</head>
+<style id="lb-bar-noname">
+/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
+{display:none!important}
+.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
+.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 <body>
 
 <header class="rv"><canvas class="lb-hero-canvas" aria-hidden="true"></canvas>
   <div class="header-inner">
     <a class="lb-brand" href="#top" aria-label="No Yard Too Hard (NYTH) - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#600018;--lb-subc:#600018;--lb-acc:#600018;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.png" alt="" class="lb-logo" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">No Yard Too Hard (NYTH)</span><span class="lb-brand__sub">KB Landscaping and Renovation</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
-    <nav aria-label="Primary navigation">
+    <nav aria-label="Primary navigation"><a class="brand-monogram" href="#top" aria-label="No Yard Too Hard (NYTH)"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
       <ul>
         <li><a href="#services">Services</a></li>
         <li><a href="#process">Our Approach</a></li>

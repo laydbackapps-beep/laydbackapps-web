@@ -150,7 +150,11 @@ p{margin:0 0 1em}
 </style>
 
 <!--LB-HEROGRID--><style id="lb-herogrid">[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
-</head>
+<style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style></head>
 
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -158,7 +162,7 @@ p{margin:0 0 1em}
 <a class="brand" href="#top" aria-label="Eve Facility Service — home">
 <img class="brand__mark" src="assets/logo.png" alt="Eve Facility Service logo" width="52" height="52">
 <span class="brand__word"><b>Eve Facility Service</b><i>Bond &amp; end-of-lease cleaning</i></span></a>
-<nav class="nav" aria-label="Main">
+<nav class="nav" aria-label="Main"><a class="brand-monogram" href="#top" aria-label="Eve Facility Service"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
 <a href="#services">Services</a>
 <a href="#process">How it runs</a>
 <a href="#work">The finish</a>
