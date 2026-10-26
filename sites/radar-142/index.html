@@ -418,17 +418,43 @@ html body .hero .hero-slides img{object-fit:cover!important;object-position:cent
 @media(max-width:640px){.svc-grid{grid-template-columns:1fr}}
 </style>
 <style id="lb-allards-exact">
-/* header exactly as specified: car mark + ALLARDS / AUTO DETAILING artwork on the left, menu button right */
+/* header: car mark + ALLARDS / AUTO DETAILING artwork left, menu button right */
 nav .lb-brand{display:flex!important;align-items:center;gap:clamp(14px,2vw,26px)!important}
 nav .lb-brand img.lb-mark{height:clamp(50px,5.2vw,64px)!important;width:auto!important;display:block!important}
 nav .lb-brand img.lb-word{height:clamp(32px,3.4vw,44px)!important;width:auto!important;display:block!important}
 nav .nav-links{display:none!important}
-nav .nav-links.open{display:flex!important;position:fixed;top:84px;left:0;right:0;z-index:70;background:#0a0b0d;
- flex-direction:column;gap:.85rem;padding:1.1rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.16)}
-nav .nav-links.open a{width:100%;text-align:left;font-size:16px;padding:.4rem 0;color:#e8eaee}
 nav .nav-cta{display:none!important}
 nav .burger{display:flex!important;margin-left:auto}
-@media(max-width:900px){nav .nav-links.open{top:64px}}
+
+/* dropdown: a real panel — inset from the edges, rows with their own padding and rules */
+nav .nav-links.open{
+  display:flex!important;flex-direction:column;gap:2px;
+  position:fixed;top:calc(var(--lbh, 84px) + 10px);left:50%;transform:translateX(-50%);
+  width:min(92vw,540px);z-index:70;
+  background:#0e0f11;border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 28px 64px rgba(0,0,0,.62), 0 2px 0 rgba(176,48,48,.85) inset;
+  padding:14px 14px 16px;border-radius:2px;
+}
+nav .nav-links.open a{
+  display:block;width:100%;box-sizing:border-box;
+  padding:15px 22px;margin:0;
+  text-align:center;font-size:15px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:#e9eaee;text-decoration:none;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
+  transition:background .18s ease,color .18s ease,border-color .18s ease;
+}
+nav .nav-links.open a + a{margin-top:8px}
+nav .nav-links.open a:hover{background:rgba(176,48,48,.92);border-color:rgba(176,48,48,.92);color:#fff}
+nav .nav-links.open a:last-child{
+  background:rgba(176,48,48,.14);border-color:rgba(176,48,48,.5);color:#fff;font-weight:800;letter-spacing:.06em;text-transform:none}
+nav .nav-links.open a:last-child:hover{background:rgba(176,48,48,.95)}
+nav .nav-links.open::before{
+  content:"Menu";display:block;text-align:center;font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;
+  color:#8b8f96;padding:2px 0 12px}
+@media(max-width:900px){
+  nav .nav-links.open{top:calc(var(--lbh, 64px) + 8px);width:calc(100vw - 24px);padding:12px}
+  nav .nav-links.open a{padding:13px 16px;font-size:14px}
+}
 </style></head>
 <body>
 <script>document.documentElement.className+=' js';</script>
@@ -1118,5 +1144,8 @@ header.hero{display:flex!important;flex-direction:column!important;
 #lbq .lbq-st{min-height:1.3em!important;margin-top:12px!important}
 @media (max-width:560px){#lbq .lbq-g{grid-template-columns:1fr!important}}
 </style>
-</body>
+<script>
+(function(){var n=document.querySelector('nav');function set(){if(n)document.documentElement.style.setProperty('--lbh',Math.round(n.getBoundingClientRect().height)+'px');}
+set();window.addEventListener('resize',set);})();
+</script></body>
 </html>
