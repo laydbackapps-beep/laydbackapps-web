@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en-AU"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lake Mac Lawn Care — Lawn Care & Garden Maintenance | Cardiff South</title>
-<meta name="description" content="Lake Mac Lawn Care. Retaining walls, turf and garden construction done in the right order. Call 0431 593 426.">
+<title>Lake Mac Lawn Care — Lawn Mowing &amp; Garden Maintenance | Cardiff South</title>
+<meta name="description" content="Lake Mac Lawn Care, Cardiff South. Mowing, edging, hedging and garden maintenance, with green waste taken away. Call 0431 593 426.">
 <style>
 :root{--ink:#0d0f13;--panel:#15181e;--paper:#f4f2ee;--dim:#9aa3ad;--line:rgba(255,255,255,.13);--acc:#139651}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -17,52 +17,101 @@ nav .links a{text-decoration:none;font-size:15px;color:var(--dim)}
 nav .links a:hover{color:#fff}
 .tel{font-weight:800;text-decoration:none;color:#111;background:var(--acc);padding:10px 16px;white-space:nowrap}
 .burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:#fff;padding:8px 10px;font-size:18px}
-section{padding:clamp(42px,6vw,76px) 0;border-top:1px solid var(--line)}
-h2{margin:0 0 10px;font-size:clamp(22px,2.8vw,34px);letter-spacing:-.02em}
-.lead{color:var(--dim);margin:0 0 24px;max-width:62ch}
-.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--acc);margin-bottom:14px}
-.kicker::before{content:"";width:32px;height:2px;background:var(--acc)}
-h1{margin:0 0 16px;font-size:clamp(32px,5vw,58px);line-height:1.02;letter-spacing:-.035em}
-h1 em{font-style:normal;color:var(--acc)}
+/* ---- layout: lake-mac — offset stat band hero, ruled service list, spec table, vertical steps, split quote ---- */
+section{padding:clamp(44px,5.2vw,74px) 0;border-top:1px solid var(--line)}
+section.alt{background:var(--panel)}
+.eyebrow{display:block;font:800 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin:0 0 14px}
+h2{margin:0 0 10px;font-size:clamp(22px,2.6vw,32px);font-weight:800;line-height:1.14;letter-spacing:-.02em;max-width:26ch}
+.lead{color:var(--dim);margin:0 0 26px;max-width:64ch}
 .cta{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:#111;text-decoration:none;font-weight:800;padding:14px 22px}
-.cta.ghost{background:transparent;border:1px solid var(--line);color:#fff;font-weight:600;margin-left:8px}
-.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-.svc article{background:var(--ink);padding:22px 20px}
-.svc h3{margin:0 0 6px;font-size:16.5px}
-.svc p{margin:0;color:var(--dim);font-size:14.5px}
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.gal figure{margin:0}.gal img{width:100%;height:240px;object-fit:cover;display:block}
-.gal figcaption{font-size:12.5px;color:var(--dim);padding:8px 2px 0}
-.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.why article{border-left:2px solid var(--acc);padding-left:14px}
-.why h3{margin:0 0 6px;font-size:16px}
-.why p{margin:0;color:var(--dim);font-size:14.5px}
-.areas{display:flex;flex-wrap:wrap;gap:8px}
-.areas span{border:1px solid var(--line);padding:7px 13px;font-size:14px;color:var(--dim)}
-details.faq{border-bottom:1px solid var(--line);padding:14px 0}
-details.faq summary{cursor:pointer;font-weight:700;font-size:16px}
-details.faq .a{color:var(--dim);padding-top:8px;font-size:15px}
-form{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,3vw,30px);display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cta.ghost{background:transparent;border:1px solid var(--line);color:#fff;font-weight:600}
+
+/* hero — full-width single column, stat band offset to the right */
+.hero{position:relative;padding:clamp(48px,6.2vw,90px) 0 0;border-top:0;border-bottom:1px solid var(--line);overflow-x:clip;
+ background:radial-gradient(118% 118% at 6% 0%,rgba(19,150,81,.18),rgba(19,150,81,0) 62%)}
+.hero .tag{display:inline-block;border:1px solid var(--line);padding:7px 12px;margin:0 0 20px;
+ font:700 11.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:#dfe5ec}
+.hero h1{margin:0 0 18px;font-size:clamp(33px,5.3vw,66px);font-weight:800;line-height:1;letter-spacing:-.035em;max-width:23ch}
+.hero .sub{color:#cbd2da;margin:0 0 26px;max-width:54ch;font-size:clamp(16px,1.5vw,18.5px)}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 clamp(32px,4.4vw,54px)}
+.stats{margin-left:auto;width:min(100%,730px);border-top:2px solid var(--acc);background:rgba(255,255,255,.04);
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.stats div{padding:17px clamp(12px,2vw,22px) 22px;border-right:1px solid var(--line);min-width:0}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font-size:clamp(16.5px,1.85vw,23px);font-weight:800;line-height:1.15;letter-spacing:-.02em}
+.stats span{display:block;color:var(--dim);font-size:13.5px;line-height:1.4;margin-top:7px}
+
+/* services — numbered rows with rules */
+ol.svc-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+ol.svc-list li{display:grid;grid-template-columns:clamp(42px,4.6vw,70px) minmax(0,1fr);gap:clamp(10px,2vw,26px);
+ padding:clamp(17px,2vw,25px) 0;border-bottom:1px solid var(--line)}
+ol.svc-list .n{font:800 clamp(15px,1.55vw,19px)/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--acc);letter-spacing:.06em;padding-top:5px}
+ol.svc-list h3{margin:0 0 5px;font-size:clamp(17px,1.75vw,21px)}
+ol.svc-list p{margin:0;color:var(--dim);font-size:15px;max-width:74ch}
+
+/* rounds — two-column spec table */
+.spec{width:100%;border-collapse:collapse;table-layout:fixed}
+.spec caption{text-align:left;color:var(--dim);font-size:14.5px;line-height:1.5;padding:0 0 14px;border-bottom:2px solid var(--acc);
+ caption-side:top}
+.spec th,.spec td{text-align:left;padding:14px 18px 14px 0;border-bottom:1px solid var(--line);vertical-align:top;font-size:15.5px}
+.spec th{width:38%;font-weight:700;color:#fff}
+.spec td{color:var(--dim)}
+.spec tr:last-child th,.spec tr:last-child td{border-bottom:0}
+.note{margin:24px 0 0;padding:4px 0 4px 18px;border-left:2px solid var(--acc);color:var(--dim);font-size:15px;max-width:76ch}
+
+/* process — vertical numbered steps */
+ol.steps{list-style:none;margin:0;padding:0}
+.step{display:grid;grid-template-columns:minmax(60px,112px) minmax(0,1fr);gap:clamp(12px,3vw,40px);
+ padding:clamp(16px,1.9vw,24px) 0;border-top:1px solid var(--line);align-items:start}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step .num{font:800 clamp(25px,3.4vw,44px)/.95 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--acc);opacity:.5;letter-spacing:-.02em}
+.step h3{margin:0 0 4px;font-size:clamp(16.5px,1.7vw,20px)}
+.step p{margin:0;color:var(--dim);font-size:15px;max-width:72ch}
+
+/* split blocks */
+.split{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(20px,4vw,56px);align-items:start}
+.who{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(16px,3vw,48px);align-items:start}
+.who p{color:var(--dim);font-size:16.5px;margin:0 0 14px;max-width:66ch}
+.subs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.subs li{display:flex;justify-content:space-between;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.subs li span{color:var(--dim);font-size:14px;text-align:right}
+
+/* faq — two columns */
+.faq2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(20px,3vw,40px);border-top:1px solid var(--line)}
+details.q{border-bottom:1px solid var(--line);padding:16px 0}
+details.q summary{cursor:pointer;font-weight:700;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:14px}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary:after{content:"+";color:var(--acc);font-weight:800}
+details.q[open] summary:after{content:"–"}
+details.q .a{color:var(--dim);padding-top:8px;font-size:15px}
+
+/* quote — side by side */
+.pitch p{color:var(--dim);margin:0 0 20px;max-width:46ch}
+.pitch .big{display:inline-block;font-size:clamp(21px,2.4vw,28px);font-weight:800;letter-spacing:-.02em;text-decoration:none;color:#fff;border-bottom:2px solid var(--acc);padding-bottom:3px}
+form{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,2.6vw,30px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 form .full{grid-column:1/-1}
 label{display:block;font-size:13px;color:var(--dim);margin-bottom:5px}
 input,textarea,select{width:100%;background:#0b0d11;border:1px solid var(--line);color:#fff;padding:11px;font:inherit;font-size:15px}
 button{grid-column:1/-1;background:var(--acc);color:#111;border:0;padding:14px;font:inherit;font-weight:800;cursor:pointer}
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:900px){nav .links{display:none}nav .links.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#15181e;padding:14px;border-bottom:1px solid var(--line)}.burger{display:block}.svc,.gal,.why,form{grid-template-columns:1fr}}
-.hero{padding:clamp(52px,8vw,110px) 0 clamp(30px,4vw,50px);border-bottom:1px solid var(--line)}
-.hero .rule{height:8px;background:var(--acc);width:96px;margin:0 0 22px}
-.hero p{color:#cbd2da;margin:0 0 22px;max-width:58ch;font-size:clamp(16px,1.6vw,19px)}
-.hero .band{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;color:var(--dim);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:900px){nav .links{display:none}nav .links.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#15181e;padding:14px;border-bottom:1px solid var(--line)}.burger{display:block}
+ .split,.who{grid-template-columns:1fr}.stats{width:100%}.faq2{grid-template-columns:1fr}.spec th{width:44%}}
+@media(max-width:640px){
+ .stats{grid-template-columns:1fr}
+ .stats div{border-right:0;border-bottom:1px solid var(--line)}
+ .stats div:last-child{border-bottom:0}
+ form{grid-template-columns:1fr}
+ ol.svc-list li,.step{grid-template-columns:1fr;gap:6px}
+ .step .num{font-size:24px}
+ h1,h2{overflow-wrap:anywhere}
+}
 </style>
-<style id="lb-skin">/* skin 2 — condensed uppercase, full-bleed hero, numbered services */
- .hero h1, header h1{text-transform:uppercase!important;letter-spacing:-.01em!important;font-weight:800!important;line-height:.95!important}
- h2{text-transform:uppercase!important;letter-spacing:.06em!important;font-size:clamp(18px,2vw,24px)!important;font-weight:700!important}
- .hero,header.hero{min-height:72vh!important}
- [class*=grid]{gap:1px!important;background:rgba(255,255,255,.12)!important}
- [class*=card]{border-radius:0!important;background:var(--ground,#0d0f13)!important;padding:clamp(20px,3vw,34px)!important}
- [class*=card]:before{content:counter(lbc);counter-increment:lbc;display:block;font:700 11px/1 ui-monospace,monospace;letter-spacing:.2em;opacity:.55;margin-bottom:10px}
- [class*=grid]{counter-reset:lbc}
- </style><style id="lb-skin-guard">@media(max-width:900px){
+<style id="lb-skin">/* skin 7 — offset stat band, ruled service list, spec table, vertical numbered steps, side-by-side quote */
+ .stats b,.svc-list .n,.step .num,.eyebrow{font-variant-numeric:tabular-nums}
+ .spec caption{letter-spacing:.01em}
+ ol.steps .step:nth-child(odd) .num{opacity:.85}
+ ol.svc-list li:hover{background:rgba(255,255,255,.03)}
+</style><style id="lb-skin-guard">@media(max-width:900px){
  .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
  [class*=card]{transform:none!important;margin-bottom:12px!important}
  [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
@@ -81,27 +130,81 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
 </style></head><body>
 <nav><div class="wrap nav-in">
   <a class="brand" href="#top" aria-label="Lake Mac Lawn Care"><img src="assets/logo-cut.png" alt="Lake Mac Lawn Care"></a>
-  <div class="links" id="navlinks"><a href="#services">Services</a><a href="#why">Process</a><a href="#areas">Areas</a><a href="#faq">FAQ</a></div>
+  <div class="links" id="navlinks"><a href="#services">Services</a><a href="#rounds">Rounds</a><a href="#process">Process</a><a href="#faq">FAQ</a></div>
   <a class="tel" href="tel:0431593426">0431 593 426</a>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
 </div></nav>
-<header class="hero"><div class="wrap"><div class="rule"></div><span class="kicker">Outdoor work</span><h1>Built outside, <em>not just planted.</em></h1><p>Retaining walls, turf and garden construction done in the right order.</p><a class="cta" href="tel:0431593426">Call 0431 593 426</a><a class="cta ghost" href="#quote">Get a quote</a></div></header>
+<header class="hero"><div class="wrap">
+  <span class="tag">Cardiff South, NSW</span>
+  <h1>Lawns cut and gardens kept in order.</h1>
+  <p class="sub">Lawn care and garden maintenance in Cardiff South and the streets around it. Grass, prunings and pulled weeds leave with us.</p>
+  <div class="acts"><a class="cta" href="tel:0431593426">Call 0431 593 426</a><a class="cta ghost" href="#quote">Send the details</a></div>
+  <div class="stats">
+    <div><b>Weekly or&nbsp;fortnightly</b><span>Regular rounds, same day each time</span></div>
+    <div><b>0431&nbsp;593&nbsp;426</b><span>Call or text for a price</span></div>
+    <div><b>Green waste</b><span>Clippings and prunings taken away</span></div>
+  </div>
+</div></header>
 <main>
-<section id="services"><div class="wrap"><h2>What we do</h2><p class="lead">Local work done properly: lawn mowing & upkeep and the repairs and maintenance that go with it.</p><div class="svc"><article><h3>Garden construction</h3><p>Beds, edging, mulching and planting built to a plan. Priced after it has been looked at.</p></article><article><h3>Lawn mowing & upkeep</h3><p>Cut, edged and blown clean on a regular round. Same people, start to finish.</p></article><article><h3>Hedging & pruning</h3><p>Hedges squared or shaped, growth taken away. Quoted on site.</p></article><article><h3>Turf supply & laying</h3><p>Ground cultivated and levelled, turf laid and watered in. Explained before it starts.</p></article><article><h3>Retaining walls</h3><p>Timber and block walls with drainage behind them. Done by the crew that quoted it.</p></article><article><h3>Paving & paths</h3><p>Set on a compacted base so they stay level. Priced after it has been looked at.</p></article></div></div></section>
+<section id="services"><div class="wrap"><span class="eyebrow">Services</span><h2>Mowing, edging, hedging</h2>
+<p class="lead">Mowing and the garden work that goes with it, on a regular round or as a one-off.</p>
+<ol class="svc-list">
+<li><span class="n">01</span><div><h3>Mowing &amp; edging</h3><p>Lawns cut at the right height, edges trimmed and paths and driveways blown clean after.</p></div></li>
+<li><span class="n">02</span><div><h3>Hedging &amp; pruning</h3><p>Hedges squared back to size or shaped, shrubs cut back and the cuttings taken away.</p></div></li>
+<li><span class="n">03</span><div><h3>Garden maintenance</h3><p>Beds weeded, mulch topped up, edges re-cut and the whole yard tidied up.</p></div></li>
+<li><span class="n">04</span><div><h3>Turf &amp; topsoil</h3><p>Ground levelled, fresh turf laid and watered in the same day.</p></div></li>
+<li><span class="n">05</span><div><h3>Green waste removal</h3><p>Grass, prunings and pulled weeds loaded up and taken off site.</p></div></li>
+<li><span class="n">06</span><div><h3>Garden edges &amp; small retaining</h3><p>Timber edges and low retaining set straight and level, with drainage behind them.</p></div></li>
+</ol></div></section>
 
-<section id="about"><div class="wrap"><h2>Who you are dealing with</h2><p class="lead">Lake Mac Lawn Care is a local Cardiff South business. The work is lawn mowing & upkeep, plus the maintenance and repairs that go with it — priced after the site is looked at, not before.</p></div></section>
-<section id="why"><div class="wrap"><h2>How it runs</h2><div class="why"><article><h3>Walk the yard</h3><p>Levels, access and drainage looked at before quoting.</p></article><article><h3>Build</h3><p>Hard works first — retaining, levels, drainage — then turf and planting.</p></article><article><h3>Hand over</h3><p>Watering and upkeep explained so the garden settles in.</p></article></div></div></section>
-<section id="areas"><div class="wrap"><h2>Where we work</h2><p class="lead">Cardiff South and the surrounding area.</p><div class="areas"><span>Cardiff South</span><span>Cardiff South surrounds</span></div></div></section>
-<section id="faq"><div class="wrap"><h2>Questions</h2><details class="faq"><summary>How often should the lawn be mowed?</summary><div class="a">Fortnightly in the growing season, monthly when it slows.</div></details><details class="faq"><summary>Can you work to a plan?</summary><div class="a">Yes — landscaping plans and designer drawings are both worked from.</div></details><details class="faq"><summary>Do you take green waste away?</summary><div class="a">Yes, clippings and prunings leave with the crew.</div></details></div></div></section>
-<section id="quote"><div class="wrap"><h2>Get a quote</h2><p class="lead">Tell us what is needed and where. If it is urgent, call.</p>
-<form id="lbq-form" data-site="lake-mac-lawn-care">
-<div><label for="n">Name</label><input id="n" name="name" required></div>
-<div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel"></div>
-<div class="full"><label for="a">Suburb</label><input id="a" name="suburb"></div>
-<div class="full"><label for="s">What is the job?</label><select id="s" name="service"><option>Lawn mowing & upkeep</option><option>Hedging & pruning</option><option>Turf supply & laying</option><option>Retaining walls</option><option>Paving & paths</option><option>Garden construction</option><option>Something else</option></select></div>
-<div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="3"></textarea></div>
-<button type="submit">Send request</button>
-</form></div></section>
+<section id="rounds" class="alt"><div class="wrap"><span class="eyebrow">The round</span><h2>What's included</h2>
+<table class="spec">
+<caption>Rounds run weekly or fortnightly while the lawn is growing, and monthly over winter.</caption>
+<tbody>
+<tr><th>Mowing</th><td>Cut, edges trimmed, hard surfaces blown clean</td></tr>
+<tr><th>Hedging</th><td>Squared or shaped back, cuttings cleared and removed</td></tr>
+<tr><th>Garden beds</th><td>Weeded, mulched and the edges re-cut</td></tr>
+<tr><th>Green waste</th><td>Loaded onto the trailer and gone the same visit</td></tr>
+</tbody></table>
+<p class="note">One-off jobs are fine too — an overgrown yard, a tidy-up before a sale, or a garden that has got on top of someone.</p></div></section>
+
+<section id="process"><div class="wrap"><span class="eyebrow">How it runs</span><h2>How a visit runs</h2>
+<ol class="steps">
+<li class="step"><span class="num">01</span><div><h3>Ring or send the details</h3><p>The address, and roughly how big the block is.</p></div></li>
+<li class="step"><span class="num">02</span><div><h3>The yard gets looked at</h3><p>Size, access, and how overgrown the grass and hedges have got.</p></div></li>
+<li class="step"><span class="num">03</span><div><h3>You get a price</h3><p>A set price for a one-off job, or a rate per visit for the round.</p></div></li>
+<li class="step"><span class="num">04</span><div><h3>The round starts</h3><p>Weekly or fortnightly, the same day each time, and skipped when you say so.</p></div></li>
+</ol></div></section>
+
+<section id="who" class="alt"><div class="wrap who">
+ <div><span class="eyebrow">Who you're dealing with</span><h2>Local to Cardiff South</h2></div>
+ <div><p>Lake Mac Lawn Care runs out of Cardiff South. Mowing, edging and garden maintenance on a regular round, plus one-off clean-ups when a yard has got away.</p><p>The person who looks at the yard is the one on the mower, so nothing gets lost between the quote and the work.</p></div>
+</div></section>
+
+<section id="areas"><div class="wrap split">
+ <div><span class="eyebrow">Where we work</span><h2>The area we cover</h2><p class="lead">Cardiff South and the streets around it — no long travel, so the round stays on schedule.</p></div>
+ <ul class="subs"><li>Cardiff South <span>weekly or fortnightly</span></li><li>Surrounding streets <span>ring to check the day</span></li></ul>
+</div></section>
+
+<section id="faq" class="alt"><div class="wrap"><span class="eyebrow">Questions</span><h2>Common questions</h2>
+<div class="faq2">
+<details class="q"><summary>Do you take the green waste away?</summary><div class="a">Yes. Grass, prunings and pulled weeds go with us.</div></details>
+<details class="q"><summary>How often do you come?</summary><div class="a">Weekly or fortnightly while it is growing, monthly over winter.</div></details>
+<details class="q"><summary>Can you do a one-off clean-up?</summary><div class="a">Yes — an overgrown yard, an end-of-lease tidy-up, or a garden before a sale.</div></details>
+<details class="q"><summary>What do you need to give a price?</summary><div class="a">The address and roughly how big the yard is. Ring and it can be sorted from there.</div></details>
+</div></div></section>
+
+<section id="quote"><div class="wrap split">
+ <div class="pitch"><span class="eyebrow">Get a price</span><h2>Send the address and what needs doing</h2><p>Fill the form in and you will get a call back. If it is urgent, ring the number.</p><a class="big" href="tel:0431593426">0431 593 426</a></div>
+ <form id="lbq-form" data-site="lake-mac-lawn-care">
+ <div><label for="n">Name</label><input id="n" name="name" required></div>
+ <div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel"></div>
+ <div><label for="a">Suburb</label><input id="a" name="suburb"></div>
+ <div class="full"><label for="s">What is the job?</label><select id="s" name="service"><option>Mowing &amp; edging</option><option>Hedging &amp; pruning</option><option>Garden maintenance</option><option>Turf &amp; topsoil</option><option>Green waste removal</option><option>Garden edges &amp; retaining</option><option>Something else</option></select></div>
+ <div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="3"></textarea></div>
+ <button type="submit">Send request</button>
+ </form>
+</div></section>
 </main>
 <footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;width:100%">
   <span>Lake Mac Lawn Care — Cardiff South</span><a href="tel:0431593426" style="color:#fff;font-weight:800">0431 593 426</a>
