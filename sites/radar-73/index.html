@@ -273,167 +273,39 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 #lbq{--lbq-accent:var(--acc);--lbq-ink:var(--ink);--lbq-muted:var(--ink2);--lbq-bg:var(--paper2);--lbq-panel:#fff;--lbq-line:var(--line);padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
 #lbq *{box-sizing:border-box}
 #lbq .lbq-w{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
-@media(max-width:900px){#lbq .lbq-w{grid-template-columns:1fr}}
-#lbq h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0 0 10px;letter-spacing:-.02em;font-family:var(--disp)}
-#lbq p.lbq-s{margin:0 0 22px;color:var(--lbq-muted);max-width:52ch}
-#lbq .lbq-info{display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--lbq-line);padding-top:22px}
-#lbq .lbq-info div{display:flex;gap:10px;align-items:baseline}
-#lbq .lbq-info b{font-size:.78rem;letter-spacing:.14em;text-transform:none;color:var(--lbq-accent);min-width:64px}
-#lbq .lbq-info a{font-weight:800;text-decoration:none}
-#lbq .lbq-f{display:grid;gap:12px;background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
-#lbq label{display:block;font-size:.78rem;letter-spacing:.08em;text-transform:none;color:var(--lbq-muted);margin-bottom:5px}
-#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--paper);color:var(--ink);font:inherit;font-size:.95rem}
-#lbq textarea{min-height:96px;resize:vertical}
-#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
-#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:var(--lbq-acc-text,#0b0e12);font:inherit;font-weight:800;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
-#lbq button:disabled{opacity:.6;cursor:wait}
-#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
-#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
-#lbq .lbq-cons input{width:auto}
-#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-
-/* mobile overflow guard 2026-10-14 */
-html,body{overflow-x:hidden}
-@media (max-width:820px){
-  h1,h2,h3,.h1,.hero h1,.sec-title,.k,.kicker,.kick,.eyebrow,.tag-line,.tag,.hero-kicker,.hero-sub,.lead{
-    white-space:normal!important;overflow-wrap:anywhere;word-break:break-word;max-width:100%!important}
-  .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(10px,3.1vw,13px)!important;letter-spacing:.22em!important}
-  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.05!important}
+@media(max-width:820px){
+  img.lb-word,img.word,img.brand__word{display:none!important}
+  img.lb-big.lb-big,img.lb-big.lb-big.lb-mark,img.lb-big.lb-big.lb-logo-unlock,img.lb-big.lb-big.lb-logomark{height:clamp(52px,13vw,68px)!important;max-width:72vw!important}
+  header>div,nav>div,[class*=hdr]>div,[class*=bar]>div,[class*=strip]>div{flex-wrap:wrap!important}
+  nav,[class*=nav-links],.nav-links,.links{flex-wrap:wrap!important;gap:10px!important}
+  header,nav,[class*=hdr],[class*=bar],[class*=strip]{max-width:100vw!important;overflow-x:clip!important}
 }
-
-
-/* ==== LB BRAND: logo-only mode (the asset already carries the company words) ==== */
-.lb-brand--logoonly .lb-brand__word{display:none !important}
-.lb-brand--logoonly .lb-brand__mark{height:clamp(38px,4.6vw,64px) !important;max-width:38vw !important}
-.lb-brand--logoonly .lb-brand__mark img{height:100% !important;width:auto !important;max-width:38vw !important}
-
-
-/* ==== LB HEADER TRUTH: fail-safe visibility (never ship an invisible header) ==== */
-header,.site-header,.page-header,.header-inner,nav.nav,.nav-inner,
-.lb-brand,.lb-brand *,.lb-brand__mark,.lb-brand__word{
-  opacity:1 !important;visibility:visible !important}
-.lb-rv,.rv,[data-rv]{animation:lbForceIn .001s 2.5s forwards !important}
-@keyframes lbForceIn{to{opacity:1 !important;transform:none !important}}
-#sigSplash,#splash,.sp{animation:lbKillSplash .001s 2.5s forwards !important}
-@keyframes lbKillSplash{to{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}}
-
-/* ==== TASTE PASS (anti-slop, from impeccable findings) ==== */
-.lb-mq__in,tiny numbered label "02" beside h2 "A visit to the shop." (4 on page),tiny numbered label "03" beside h2 "Good to know." (4 on page){display:none !important}
-
-:root{--lb-disp:"Archivo",system-ui,sans-serif;--lb-sub:"Archivo",system-ui,sans-serif}
-body,h1,h2,h3,h4,h5,h6,p,li,span,a,button,input,blockquote{
-  font-family:"Archivo", system-ui, -apple-system, "Segoe UI", sans-serif}
-small,.small,.meta,.caption,.eyebrow,.kicker{font-size:max(0.82em,13px)}
-p,li{line-height:1.55}
-section,header,footer,.wrap,.container,.inner,[class*="section"]{
-  scroll-margin-top:24px}
-
-
-/* ==== LB HEADER TRUTH ==== */
-.lb-brand{gap:clamp(8px,1vw,14px) !important;min-height:clamp(44px,5vw,64px) !important;
-  align-items:center !important;flex-wrap:nowrap !important}
-.lb-brand__mark{flex:0 0 auto !important;display:flex !important;align-items:center !important;
-  height:clamp(36px,4vw,52px) !important;width:auto !important;max-width:30vw !important}
-.lb-brand__mark img{display:block !important;height:100% !important;width:auto !important;
-  max-width:100% !important;object-fit:contain !important}
-.lb-brand__word{display:flex !important;flex-direction:column !important;justify-content:center !important;
-  min-width:0 !important;overflow:visible !important}
-@media(max-width:700px){
-  .lb-brand__mark{height:32px !important;max-width:40vw !important}
-  .lb-brand__word{font-size:.92em !important}
-}
-
-/* ==== LB HEADER POLISH 2 ==== */
-header nav a:not(.btn):not([class*="btn"]):not([class*="cta"]),
-.site-header nav a:not(.btn):not([class*="btn"]),
-.header-inner nav a:not(.btn):not([class*="btn"]),
-nav.nav a:not(.btn):not([class*="btn"]),
-.nav-inner a:not(.btn):not([class*="btn"]),
-header a[href^="tel"],.site-header a[href^="tel"]{
-  color:var(--lb-name,currentColor) !important;
-  opacity:1 !important;
-}
-.lb-brand__sub:empty{display:none !important}
-
-
-:is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
-img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
-
-/* ===== HEADER (rebuilt): the client's own lockup, trimmed and correctly proportioned, on one axis ===== */
-.nav{background:rgba(247,244,239,.96)!important;border-bottom:1px solid var(--line)!important}
-.nav .nav-in{display:flex!important;align-items:center!important;height:auto!important;min-height:0!important;padding:11px 40px!important;gap:clamp(14px,1.6vw,26px)!important;flex-wrap:nowrap!important;max-width:1360px!important;margin:0 auto!important}
-.nav .lb-brand{display:flex!important;align-items:center!important;gap:0!important;flex:0 0 auto!important;min-width:0!important;max-height:none!important;overflow:visible!important;text-decoration:none!important;opacity:1!important;visibility:visible!important;transform:none!important}
-.nav .lb-brand img.lb-mark{display:block!important;height:clamp(56px,5.2vw,84px)!important;width:auto!important;max-width:none!important;max-height:none!important;object-fit:contain!important;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
-.nav .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}
-.nav .nav-links{margin-left:auto!important;display:flex!important;align-items:center!important;gap:clamp(14px,1.6vw,26px)!important;position:static!important;transform:none!important;background:transparent!important;border:0!important;padding:0!important;flex-direction:row!important}
-.nav .nav-links a,.nav a:not(.btn):not([class*=btn]){color:var(--ink2)!important;font-size:15px!important;font-weight:600!important;letter-spacing:.01em!important;text-decoration:none!important;opacity:1!important;white-space:nowrap!important;padding:0!important;background:none!important;border:0!important}
-.nav .nav-links a:hover{color:var(--acc)!important}
-.nav .nav-cta{display:flex!important;align-items:center!important;gap:clamp(12px,1.4vw,22px)!important;flex:0 0 auto!important}
-.nav .nav-p{font-family:inherit!important;color:var(--ink)!important;font-weight:800!important;font-size:15px!important;letter-spacing:0!important;text-transform:none!important;white-space:nowrap!important}
-.nav .btn-primary{background:var(--acc)!important;color:var(--acc-text)!important;border-radius:6px!important;padding:.78rem 1.4rem!important;font-size:15px!important;font-weight:800!important;text-decoration:none!important;white-space:nowrap!important}
-.hero{padding-top:calc(clamp(56px,5.2vw,84px) + 26px)!important}
-@media(max-width:920px){
-  .nav .nav-in{padding:11px 20px!important;gap:.9rem!important}
-  .nav .nav-links{position:fixed!important;inset:calc(clamp(56px,5.2vw,84px) + 26px) 0 auto 0!important;background:rgba(247,244,239,.98)!important;flex-direction:column!important;padding:1.2rem!important;gap:1rem!important;border-bottom:1px solid var(--line)!important;transform:translateY(-140%)!important;margin-left:0!important}
-  .nav .nav-links.open{transform:none!important}
-  .nav .nav-links a{width:100%!important;text-align:center!important;padding:.5rem 0!important}
-  .nav .nav-cta{display:none!important}
-  .nav .burger{display:block!important}
-  .nav .lb-brand img.lb-mark{height:clamp(44px,9vw,60px)!important}
-}
-@media(max-width:640px){
-  .nav .nav-in{padding:11px 18px!important}
-}
-
-
-.rv,.drop,.hg-item,.sld-item,[data-ux]{opacity:1!important;transform:none!important;visibility:visible!important}#sigSplash{display:none!important}.sld-item{position:static!important;margin-top:14px}
-
-/* the logo artwork is pale, so the bar goes dark rather than the logo being recoloured */
-nav.nav{--ink2:#e8e4de!important;--acc:#f4f2ee!important;background:#141414!important;border-bottom:1px solid rgba(255,255,255,.14)!important}
-.nav .nav-in{min-height:86px!important;display:flex!important;align-items:center!important;gap:clamp(14px,2vw,26px)!important}
-.nav .lb-mark,.nav img{height:64px!important;width:auto!important;max-width:none!important;display:block!important}
-.nav.nav .nav-links a{color:#e8e4de!important;text-decoration:none!important;font-size:14.8px!important;opacity:1!important}
-.nav .nav-links a:hover{color:#fff!important}
-.nav-links{display:flex!important;align-items:center!important;gap:clamp(14px,1.8vw,28px)!important;margin-left:auto!important}
-.nav .nav-cta{display:flex!important;align-items:center!important;gap:12px!important;margin-left:clamp(12px,1.6vw,22px)!important}
-.nav .nav-p .p-lbl{font-weight:600!important;font-size:11px!important;letter-spacing:.1em!important;opacity:.65!important;margin-right:7px!important;text-transform:uppercase!important}
-.nav .nav-p{display:inline-flex!important;align-items:center!important;border:1px solid rgba(255,255,255,.28)!important;
-  background:transparent!important;color:#f4f2ee!important;font-weight:700!important;font-size:13.5px!important;
-  padding:10px 14px!important;border-radius:2px!important;white-space:nowrap!important}
-.nav .btn-primary{background:#f4f2ee!important;color:#141414!important;font-weight:800!important;padding:11px 18px!important;border-radius:2px!important;text-decoration:none!important}
-@media(max-width:900px){.nav .nav-links{display:none!important}}
-nav.nav .nav-links a[href]{color:#e8e4de!important}
-nav.nav .nav-links a[href]:hover{color:#ffffff!important}
-
-.hero{min-height:0!important;height:auto!important}.hero canvas,#heroCanvas{display:none!important}
-
-/* the gallery was rendering 1280px photos at 1483-1584px; cap the row so nothing is upscaled */
-.gal,.gallery,.work-grid,[class*=gal]{max-width:1280px!important;margin-inline:auto!important}
-[class*=gal] img,.gallery img{width:100%!important;height:auto!important;max-height:640px!important;object-fit:cover!important}
-
-
-/* scroller items were rendering 1280px photos at ~1483px */
-.hgal .track{display:flex!important;gap:16px!important}
-.hgal .hg-item{flex:0 0 auto!important;width:min(46vw,560px)!important;max-width:560px!important}
-.hgal .hg-item img{width:100%!important;height:auto!important;max-height:560px!important;object-fit:cover!important}
-@media(max-width:700px){.hgal .hg-item{width:78vw!important}}
-
-
-/* legacy rotating banner: 1280px photos at full width plus a 1.03 scale transform */
-.lb-rb{max-width:1280px!important;margin-inline:auto!important}
-.lb-rb__slide img{transform:none!important}
-
 </style>
 <noscript></noscript>
 
 
 
 
-</head>
+<style id="logo-big">
+/* logo blown up to fill the bar - the client's own artwork at a size people can read, not a thumbnail in the corner */
+img.lb-big.lb-big,img.lb-big.lb-big.lb-mark,img.lb-big.lb-big.lb-logo-unlock,img.lb-big.lb-big.lb-logomark{height:clamp(84px,7.6vw,104px)!important;
+  width:auto!important;max-width:none!important;max-height:none!important;object-fit:contain!important;display:block!important;flex:0 0 auto!important}
+img.lb-word{height:clamp(22px,2.1vw,30px)!important;width:auto!important;max-width:none!important;max-height:none!important;
+  object-fit:contain!important;display:block!important;margin-left:clamp(8px,1vw,14px)!important;flex:0 0 auto!important}
+a:has(> img.lb-big){display:flex!important;align-items:center!important;gap:0!important;flex:0 0 auto!important;min-width:0!important}
+header,nav,[class*=hdr],[class*=bar],[class*=strip]{min-height:0!important;height:auto!important}
+header>div,nav>div,[class*=hdr]>div,[class*=bar]>div,[class*=strip]>div{flex-wrap:nowrap!important;align-items:center!important;
+  row-gap:0!important;min-height:0!important;height:auto!important}
+nav,[class*=nav-links],.nav-links,.links{flex-wrap:nowrap!important;gap:clamp(10px,1.3vw,20px)!important;min-width:0!important}
+nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:14px!important}
+@media(max-width:1080px){img.lb-big.lb-big,img.lb-big.lb-big.lb-mark,img.lb-big.lb-big.lb-logo-unlock{height:clamp(64px,8vw,84px)!important}
+  nav a,[class*=nav-links] a,.nav-links a{font-size:13px!important}}
+@media(max-width:820px){img.lb-word{display:none!important}}
+</style></head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav"><div class="nav-in">
-  <a class="lb-brand" href="#top" aria-label="Teddy &amp; Fletch — home"><img class="lb-mark" src="assets/logo-lockup.png" alt="" loading="eager" decoding="async"><span class="lb-sr">Teddy &amp; Fletch</span></a>
+  <a class="lb-brand" href="#top" aria-label="Teddy &amp; Fletch — home"><img class="lb-mark lb-big" src="assets/logo-lockup.png" alt="" loading="eager" decoding="async"><span class="lb-sr">Teddy &amp; Fletch</span></a>
   <div class="nav-links" id="navlinks"><a href="#services">What&rsquo;s in store</a><a href="#process">Your visit</a><a href="#faq">Good to know</a></div>
   <div class="nav-cta"><span class="mono nav-p"><b class="p-lbl">Call</b>0439 391 861</span><a href="#quote" class="btn btn-primary btn-sm">Enquire</a></div>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>

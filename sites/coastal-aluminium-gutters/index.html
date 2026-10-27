@@ -124,10 +124,29 @@ footer a:hover{color:#fff}
   form{grid-template-columns:1fr}
 }
 </style>
-</head><body>
+<style id="logo-big">
+/* logo blown up to fill the bar - the client's own artwork at a size people can read, not a thumbnail in the corner */
+img.lb-big,img.lb-big.lb-mark,img.lb-big.lb-logo-unlock,img.lb-big.lb-logomark{height:clamp(84px,7.6vw,104px)!important;
+  width:auto!important;max-width:none!important;max-height:none!important;object-fit:contain!important;display:block!important;flex:0 0 auto!important}
+img.lb-word{height:clamp(22px,2.1vw,30px)!important;width:auto!important;max-width:min(34vw,340px)!important;max-height:none!important;
+  object-fit:contain!important;display:block!important;margin-left:clamp(8px,1vw,14px)!important;flex:0 0 auto!important}
+a:has(> img.lb-big){display:flex!important;align-items:center!important;gap:0!important;flex:0 0 auto!important;min-width:0!important}
+header,nav,[class*=hdr],[class*=bar],[class*=strip]{min-height:0!important;height:auto!important}
+header>div,nav>div,[class*=hdr]>div,[class*=bar]>div,[class*=strip]>div{flex-wrap:nowrap!important;align-items:center!important;
+  row-gap:0!important;min-height:0!important;height:auto!important}
+nav,[class*=nav-links],.nav-links,.links{flex-wrap:nowrap!important;gap:clamp(10px,1.3vw,20px)!important;min-width:0!important}
+nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:14px!important}
+@media(max-width:820px){
+  img.lb-word,img.word,img.brand__word{display:none!important}
+  img.lb-big.lb-big,img.lb-big.lb-big.lb-mark,img.lb-big.lb-big.lb-logo-unlock,img.lb-big.lb-big.lb-logomark{height:clamp(52px,13vw,68px)!important;max-width:72vw!important}
+  header>div,nav>div,[class*=hdr]>div,[class*=bar]>div,[class*=strip]>div{flex-wrap:wrap!important}
+  nav,[class*=nav-links],.nav-links,.links{flex-wrap:wrap!important;gap:10px!important}
+  header,nav,[class*=hdr],[class*=bar],[class*=strip]{max-width:100vw!important;overflow-x:clip!important}
+}
+</style></head><body>
 <header class="bar"><div class="wrap bar-in">
   <a class="brand" href="#top" aria-label="Coastal Aluminium Gutters">
-    <img class="mark" src="assets/coastal-mark.png" alt="" width="989" height="833">
+    <img class="mark lb-big" src="assets/coastal-mark.png" alt="" width="989" height="833">
     <img class="word" src="assets/coastal-word.png" alt="Coastal Aluminium Gutters" width="1163" height="269">
   </a>
   <nav id="nav">
@@ -153,10 +172,7 @@ footer a:hover{color:#fff}
       <a class="btn line" href="#quote">Free quote</a>
     </div>
   </div>
-  <figure>
-    <img src="assets/hero-roof.jpg" alt="Newly fitted aluminium guttering along a Central Coast roofline" width="1280" height="720">
-    <figcaption>Aluminium gutter runs, fascia covers and downpipes, fitted to the fall of the roof.</figcaption>
-  </figure>
+  <div class="imgstub"><b>Work photo</b><span>Removed rather than shown — this image also appears on another business's site.</span></div>
 </div>
 <div class="wrap">
   <div class="factstrip">
@@ -194,10 +210,8 @@ footer a:hover{color:#fff}
   <div class="work">
     <figure><img src="assets/re-roof.jpg" alt="Re-roofed section with new guttering and flashing" width="1280" height="961">
       <figcaption>Re-roof and re-gutter — sheeting, flashing and gutter line replaced together.</figcaption></figure>
-    <figure><img src="assets/roof-courses.jpg" alt="Roof courses and gutter line on a Central Coast home" width="1280" height="746">
-      <figcaption>Gutter set to the roof line with the fall running to the outlet.</figcaption></figure>
-    <figure><img src="assets/tile-work.jpg" alt="Tile roof and gutter detail after new guttering" width="1280" height="853">
-      <figcaption>Tile roof with new gutter and fascia cover, water taken clear of the wall.</figcaption></figure>
+    <div class="imgstub"><b>Work photo</b><span>Removed rather than shown — this image also appears on another business's site.</span></div>
+    <div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div>
   </div>
 </div></section>
 
@@ -215,7 +229,7 @@ footer a:hover{color:#fff}
       <li>Roofing and guttering done together so the flashing and gutter line match</li>
     </ul>
   </div>
-  <figure><img src="assets/tile-work.jpg" alt="Fitted aluminium guttering and fascia cover detail" width="1280" height="853"></figure>
+  <div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div>
 </div></section>
 
 <section id="areas" class="wash"><div class="wrap">
