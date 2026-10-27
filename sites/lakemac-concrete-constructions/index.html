@@ -341,14 +341,40 @@ h1{overflow-wrap:anywhere}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 </style><style id="lb-hdr-centre">
-.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+.brand-monogram{display:none!important}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style><style id="lb-lm-header">
+/* last word on the bar: one logo, full size, no fade mask, no competing rules */
+header.header .lb-brand .lb-mark,header .lb-brand--square .lb-mark,header .lb-mark{
+  height:clamp(70px,6.6vw,100px)!important;width:auto!important;max-width:none!important;max-height:none!important;
+  -webkit-mask-image:none!important;mask-image:none!important;background:transparent!important;
+  border:0!important;box-shadow:none!important}
+header.header{display:flex!important;align-items:center!important;gap:clamp(16px,2.4vw,34px)!important;
+  min-height:0!important;padding-block:12px!important}
+header.header .nav{margin-left:auto!important;display:flex!important;align-items:center!important;
+  gap:clamp(14px,1.9vw,28px)!important;font-size:15.5px!important}
+@media(max-width:900px){header.header .lb-mark,header .lb-brand .lb-mark{height:58px!important}}
+</style><style id="lb-lm-content">
+/* the services and projects grids were shipped with display:none — the page had headings over empty space */
+#services .grid-3,#projects .grid-3{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))!important;
+  gap:18px!important;margin-top:clamp(20px,3vw,34px)!important}
+#services .card,#projects .card{background:#f6f7f4!important;border:1px solid rgba(17,17,17,.10)!important;
+  border-radius:14px!important;padding:24px 22px!important;display:grid!important;gap:10px!important;align-content:start!important;
+  transition:transform .16s,box-shadow .16s}
+#services .card:hover,#projects .card:hover{transform:translateY(-2px);box-shadow:0 16px 40px -24px rgba(0,0,0,.45)}
+#services .card-n{font:800 11px/1 ui-monospace,monospace;letter-spacing:.16em;color:#0f7a6a}
+#services .card h3,#projects .card h3{font-size:18px;margin:0;letter-spacing:-.01em;color:#111}
+#services .card p,#projects .card p{margin:0;color:#4a5257;font-size:15px;line-height:1.55}
+#projects .card img{width:100%;height:210px;object-fit:cover;border-radius:10px;margin:0 0 4px}
+#projects .card{padding:14px!important}
+/* the duplicate carousel underneath repeated the same three photos */
+.lb-rb{display:none!important}
+@media(max-width:700px){#projects .card img{height:180px}}
 </style></head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <header class="header" role="banner"><a aria-label="Lake Mac Concrete Constructions" class="lb-brand lb-brand--lockup lb-brand--square" href="#top" style="--lb-name:#ffffff"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-cut.png"/><span class="lb-sr">Lake Mac Concrete Constructions</span></a><div class="header-inner">
-<nav aria-label="Main navigation" class="nav" role="navigation"><a class="brand-monogram" href="#top" aria-label="Lake Mac Concrete Constructions"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-<a href="#services">Services</a>
+<nav aria-label="Main navigation" class="nav" role="navigation"><a href="#services">Services</a>
 <a href="#projects">Projects</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
@@ -377,61 +403,32 @@ h1{overflow-wrap:anywhere}
 <div class="section-inner">
 <header class="section-head rv rv-delay-1">
 <h2 id="services-heading">What we do</h2>
-<p>There is no call centre behind Lake Mac Concrete Constructions — you deal with the same people from the quote to the clean-up.</p>
+<p>Slabs, driveways, footings and finishes across Lake Macquarie — priced after the site has been looked at, poured by the crew that quoted it.</p>
 </header>
-<div class="grid grid-3" style="display:none">
-<article class="card rv rv-delay-1">
-<h3>exposed aggregate</h3>
-<p>You get the scope in writing: what is included, what is not, and when it can start. No allowances that quietly grow.</p>
-</article>
-<article class="card rv rv-delay-2">
-<h3>footings</h3>
-<p>Lake Mac Concrete Constructions turns up when agreed, does the concrete work work to the quoted scope, and keeps the site tidy while it happens.</p>
-</article>
-<article class="card rv rv-delay-3">
-<h3>paths</h3>
-<p>The job is walked with you at the end. Anything that needs attention is dealt with before the invoice, not after.</p>
-</article>
-<article class="card rv rv-delay-1">
-<h3>retaining walls</h3>
-<p>Quoted on site — Not over the phone from a photo — the price comes from seeing the job.</p>
-</article>
-<article class="card rv rv-delay-2">
-<h3>driveways</h3>
-<p>One point of contact — The same person answers the phone and runs the work.</p>
-</article>
-<article class="card rv rv-delay-3">
-<h3>slabs</h3>
-<p>Local to Lake Macquarie — Travel time is short, which is why small jobs are worth doing.</p>
-</article>
+<div class="grid grid-3">
+<article class="card rv rv-delay-1"><span class="card-n">01</span><h3>Slabs &amp; footings</h3><p>Set out to the engineer's detail, formwork squared, steel tied at the right cover, then poured and screeded flat.</p></article>
+<article class="card rv rv-delay-2"><span class="card-n">02</span><h3>Driveways &amp; crossovers</h3><p>Broom or exposed aggregate, falls set to the street, with the council crossover sorted before the pour.</p></article>
+<article class="card rv rv-delay-3"><span class="card-n">03</span><h3>Exposed aggregate</h3><p>Washed back to open up the stone, with the mix and colour agreed before the truck arrives.</p></article>
+<article class="card rv rv-delay-1"><span class="card-n">04</span><h3>Paths &amp; side access</h3><p>Narrow access formed and poured to a consistent fall, edged so the line stays straight.</p></article>
+<article class="card rv rv-delay-2"><span class="card-n">05</span><h3>Retaining &amp; edging</h3><p>Footings and formed edging for sloping yards, garden beds and level changes.</p></article>
+<article class="card rv rv-delay-3"><span class="card-n">06</span><h3>Repairs &amp; resurfacing</h3><p>Cracked, spalled or sunken concrete cut out and made good — or resurfaced where the base is still sound.</p></article>
 </div>
 </div>
 </section>
 <section aria-labelledby="projects-heading" class="section" id="projects">
 <div class="section-inner">
 <header class="section-head rv rv-delay-1">
-<h2 id="projects-heading">Recent Works</h2>
-<p>Workmanship backed — If something is not right, Lake Mac Concrete Constructions comes back.</p>
+<h2 id="projects-heading">Recent works</h2>
+<p>Slabs, driveways and retaining work around Lake Macquarie — the same standard on a shed slab as on a full house pour.</p>
 </header>
-<div class="grid grid-3" style="display:none">
-<article class="card rv rv-delay-1">
-<img alt="Concrete work" src="assets/cc_2.jpg"/>
-<h3>House Slabs &amp; Footings</h3>
-<p>Set out, formwork, reinforcement and pour for new homes, extensions and sheds.</p>
-</article>
-<article class="card rv rv-delay-2">
-<img alt="Concrete work" src="assets/cc_1.jpg"/>
-<h3>Driveways &amp; Crossovers</h3>
-<p>Exposed aggregate and broom-finish driveways with council-approved crossovers.</p>
-</article>
-<article class="card rv rv-delay-3">
-<img alt="Concrete work" src="assets/cc_4.jpg"/>
-<h3>Retaining Walls &amp; Garden Edging</h3>
-<p>Footings, sleeper walls and formed edging for sloping yards and garden beds.</p>
-</article>
+<div class="grid grid-3">
+<article class="card rv rv-delay-1"><img alt="House slab and footings poured and screeded" src="assets/cc_2.jpg"/><h3>House slabs &amp; footings</h3><p>Set out, formwork, reinforcement and pour for new homes, extensions and sheds.</p></article>
+<article class="card rv rv-delay-2"><img alt="Exposed aggregate driveway and crossover" src="assets/cc_1.jpg"/><h3>Driveways &amp; crossovers</h3><p>Exposed aggregate and broom-finish driveways with council-approved crossovers.</p></article>
+<article class="card rv rv-delay-3"><img alt="Retaining wall and formed garden edging" src="assets/cc_4.jpg"/><h3>Retaining &amp; edging</h3><p>Footings, sleeper walls and formed edging for sloping yards and garden beds.</p></article>
 </div>
 </div>
 </section>
+
 <section aria-labelledby="about-heading" class="section" id="about">
 <div class="section-inner">
 <div class="about">
