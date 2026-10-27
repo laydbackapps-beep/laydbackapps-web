@@ -70,13 +70,34 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
 .brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style><style id="lb-head-logo">
+/* one logo, no monogram, sized so the name actually reads in the bar */
+.brand-monogram{display:none!important}
+.header-logo img,.head-logo img,.brand img,nav > a:first-child img,header img{height:clamp(56px,5.4vw,84px)!important;
+  width:auto!important;display:block!important;background:transparent!important;border:0!important}
+nav > a:first-child,nav > a[aria-label]{display:flex!important;align-items:center!important;flex:none!important}
+@media(max-width:900px){
+  .header-logo img,.head-logo img,.brand img,nav > a:first-child img,header img{height:52px!important}
+}
+</style><style id="lb-strip-logo">
+/* the mark carries the name; the bar sizes it so it reads, with nothing typed beside it */
+.strip .in > a{display:flex!important;align-items:center!important;flex:none!important}
+.strip .in > a img{height:clamp(58px,5vw,80px)!important;width:auto!important;display:block!important;
+  background:transparent!important;border:0!important;box-shadow:none!important}
+.strip .who{display:flex!important;flex-direction:column!important;font-size:12px!important;letter-spacing:.08em!important;
+  text-transform:uppercase!important;opacity:.8!important;line-height:1.4!important}
+.strip .who b{display:none!important}
+@media(max-width:900px){
+  .strip .in > a img{height:52px!important}
+  .strip .who{display:none!important}
+}
 </style></head>
 <body>
 
 <div class="strip"><div class="in">
-  <a href="#top" aria-label="Maitland Outdoor & Property Maintenance"><img src="assets/logo-cut.png" alt="Maitland Outdoor & Property Maintenance"></a>
-  <span class="who"><b>Maitland Outdoor & Property Maintenance</b>Grounds &amp; property care · Maitland</span>
-  <nav><a class="brand-monogram" href="#top" aria-label="Maitland Outdoor & Property Maintenance"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a><a href="#what">What we do</a><a href="#when">When</a><a href="#quote">Quote</a></nav>
+  <a href="#top" aria-label="Maitland Outdoor & Property Maintenance"><img src="assets/logo-head.png" alt="Maitland Outdoor & Property Maintenance"></a>
+  <span class="who">Grounds &amp; property care · Maitland</span>
+  <nav><a href="#what">What we do</a><a href="#when">When</a><a href="#quote">Quote</a></nav>
   <a class="tel" href="tel:0421655477">0421 655 477</a>
 </div></div>
 
@@ -138,7 +159,7 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
 </section>
 
 <footer><div class="in">
-  <img src="assets/logo-cut.png" alt="Maitland Outdoor & Property Maintenance">
+  <img src="assets/logo-head.png" alt="Maitland Outdoor & Property Maintenance">
   <span>Maitland Outdoor & Property Maintenance · Maitland · Grounds &amp; property care</span>
   <a href="tel:0421655477">0421 655 477</a>
 </div></footer>
