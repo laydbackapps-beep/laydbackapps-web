@@ -344,17 +344,6 @@ h1{overflow-wrap:anywhere}
 .brand-monogram{display:none!important}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
-</style><style id="lb-lm-header">
-/* last word on the bar: one logo, full size, no fade mask, no competing rules */
-header.header .lb-brand .lb-mark,header .lb-brand--square .lb-mark,header .lb-mark{
-  height:clamp(70px,6.6vw,100px)!important;width:auto!important;max-width:none!important;max-height:none!important;
-  -webkit-mask-image:none!important;mask-image:none!important;background:transparent!important;
-  border:0!important;box-shadow:none!important}
-header.header{display:flex!important;align-items:center!important;gap:clamp(16px,2.4vw,34px)!important;
-  min-height:0!important;padding-block:12px!important}
-header.header .nav{margin-left:auto!important;display:flex!important;align-items:center!important;
-  gap:clamp(14px,1.9vw,28px)!important;font-size:15.5px!important}
-@media(max-width:900px){header.header .lb-mark,header .lb-brand .lb-mark{height:58px!important}}
 </style><style id="lb-lm-content">
 /* the services and projects grids were shipped with display:none — the page had headings over empty space */
 #services .grid-3,#projects .grid-3{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))!important;
@@ -371,9 +360,26 @@ header.header .nav{margin-left:auto!important;display:flex!important;align-items
 /* the duplicate carousel underneath repeated the same three photos */
 .lb-rb{display:none!important}
 @media(max-width:700px){#projects .card img{height:180px}}
+</style><style id="lb-lm-centre">
+.lb-bar .lb-brand{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;
+  display:flex!important;align-items:center!important;margin:0!important;z-index:5!important}
+.lb-bar .lb-mark{height:clamp(92px,8vw,130px)!important;max-height:none!important;width:auto!important;display:block!important;
+  -webkit-mask-image:none!important;mask-image:none!important;background:transparent!important;border:0!important}
+.lb-bar > div{position:relative!important;display:flex!important;align-items:center!important;min-height:0!important;padding-block:16px!important}
+.lb-bar .nav{margin-left:auto!important;display:flex!important;align-items:center!important;gap:clamp(14px,1.8vw,26px)!important}
+.lb-bar .header-inner .nav,.lb-bar .nav{margin-left:auto!important;justify-content:flex-end!important}
+.lb-bar .header-inner{width:100%!important;justify-content:flex-end!important;padding-left:calc(50% + 86px)!important;box-sizing:border-box!important}
+@media(max-width:1100px){
+  .lb-bar{flex-wrap:wrap!important;justify-content:center!important;row-gap:10px!important;padding-block:14px!important}
+  .lb-bar .header-inner{padding-left:0!important}
+  .lb-bar > div{flex-wrap:wrap!important;justify-content:center!important;row-gap:10px!important;min-height:0!important;padding-block:0!important;width:100%!important}
+  .lb-bar .lb-brand{position:static!important;transform:none!important;width:100%!important;justify-content:center!important}
+  .lb-bar .lb-mark{height:76px!important}
+  .lb-bar .nav{margin:0 auto!important;flex-wrap:wrap!important;justify-content:center!important}
+}
 </style></head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
-<header class="header" role="banner"><a aria-label="Lake Mac Concrete Constructions" class="lb-brand lb-brand--lockup lb-brand--square" href="#top" style="--lb-name:#ffffff"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-cut.png"/><span class="lb-sr">Lake Mac Concrete Constructions</span></a><div class="header-inner">
+<header class="header" role="banner"><a aria-label="Lake Mac Concrete Constructions" class="lb-brand lb-brand--lockup lb-brand--square" href="#top" style="--lb-name:#ffffff"><img class="lb-mark lb-logo-hi" src="assets/logo-header-hi.png" alt="Lake Mac Concrete Constructions"><span class="lb-sr">Lake Mac Concrete Constructions</span></a><div class="header-inner">
 <nav aria-label="Main navigation" class="nav" role="navigation"><a href="#services">Services</a>
 <a href="#projects">Projects</a>
 <a href="#about">About</a>
