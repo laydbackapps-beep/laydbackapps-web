@@ -9,6 +9,7 @@
 <link href="favicon-32.png" rel="icon" sizes="32x32"/>
 <meta content="#0b0b0c" name="theme-color"/>
 <style>
+
 :root{
   --lb-name:#ffffff; --lb-acc:#e4e1db; --lb-subc:rgba(255,255,255,.72);
   --ink:#ffffff; --muted:rgba(255,255,255,.70); --line:rgba(255,255,255,.14); --panel:rgba(255,255,255,.045);
@@ -105,8 +106,8 @@ footer a:hover{text-decoration:underline}
 .ownwork img{display:block;width:100%;height:220px;object-fit:cover}
 .ownwork figcaption{font-size:.8rem;color:rgba(255,255,255,.82);padding:9px 12px}
 @media(max-width:640px){.ownwork img{height:180px}}
-</style>
-<style id="lb-logo-hero">
+
+
 /* Client logo across the header: the real artwork, isolated and readable. */
 .lb-brand{display:inline-flex!important;align-items:center!important;gap:clamp(12px,1.6vw,26px)!important;padding:0!important;max-height:96px!important;
   text-decoration:none!important;min-width:0!important;background:none!important;border:0!important;
@@ -128,8 +129,8 @@ footer a:hover{text-decoration:underline}
 .lb-bar{background-color:#000000!important}
 .lb-bar a:not(.lb-brand),.lb-bar .nav a,.lb-bar nav a,.lb-bar button:not(.cta){color:#f7f7f4!important}
 .lb-bar .cta,.lb-bar a.cta{color:#ffffff!important}
-</style>
-<style id="lb-mobile-base">
+
+
 html,body{max-width:100%;overflow-x:hidden}
 img,video,canvas,svg,iframe{max-width:100%}
 img,video{height:auto}
@@ -146,34 +147,40 @@ h1{overflow-wrap:anywhere}
   section{padding-left:16px!important;padding-right:16px!important}
   .wrap,.container{max-width:100%!important}
 }
-</style>
-<style id="lb-brand-palette">:root{--acc:#2f3440;--accent:#2f3440;--lbq-accent:#2f3440;--lb-acc:#2f3440;--brand:#2f3440;--brand-color:#2f3440;--primary:#2f3440;--lime:#2f3440;--color-lime:#2f3440;--gold:#2f3440;--acc-strong:#2f3440;}</style><style id="lb-skin">/* skin 1 — editorial serif, hairline rules, left hero */
+
+:root{--acc:#2f3440;--accent:#2f3440;--lbq-accent:#2f3440;--lb-acc:#2f3440;--brand:#2f3440;--brand-color:#2f3440;--primary:#2f3440;--lime:#2f3440;--color-lime:#2f3440;--gold:#2f3440;--acc-strong:#2f3440;}
+/* skin 1 — editorial serif, hairline rules, left hero */
  .hero h1, header h1{font-family:Georgia,'Times New Roman',serif!important;letter-spacing:-.02em!important;font-weight:600!important;text-transform:none!important}
  h2{font-family:Georgia,'Times New Roman',serif!important;letter-spacing:-.015em!important;text-transform:none!important;font-weight:600!important}
  h2{border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.35em}
  [class*=card],[class*=tile],[class*=item]{border-radius:0!important;border:1px solid rgba(255,255,255,.14)!important;box-shadow:none!important;background:transparent!important}
  section{padding-block:clamp(52px,8vw,104px)!important}
- </style><style id="lb-skin-guard">@media(max-width:900px){
+ 
+@media(max-width:900px){
  .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
  [class*=card]{transform:none!important;margin-bottom:12px!important}
  [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
  section,.hero,header{overflow-x:clip!important}
  img,video,svg{max-width:100%!important;height:auto}
  h1,h2{overflow-wrap:anywhere!important}
-}</style><style id="lb-nav-contrast">/* nav links measured below 4.5:1 against this bar */
+}
+/* nav links measured below 4.5:1 against this bar */
 nav {background:rgba(10,13,18,.92)!important;backdrop-filter:blur(8px)}
 nav a, nav a:visited, .nav-in a, .nav-links a, .nav a {color:#ffffff!important;opacity:1!important}
 nav a:hover {color:#ffffff!important;opacity:.85!important}
-</style><style id="lb-bar-noname">
+
+
 /* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
 .lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
 {display:none!important}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style><style id="lb-hdr-centre">
+
+
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){}
-</style><style id="kr-nav">
+
+
 /* the client's logo is the MK monogram alone — so it is centred, at a size you can actually read,
    with the links on their own row instead of being squeezed beside it */
 nav.main.nav-kr{position:sticky!important;top:0!important;z-index:60!important;display:block!important;width:100vw!important;max-width:100vw!important;margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;
@@ -198,31 +205,58 @@ nav.main.nav-kr{position:sticky!important;top:0!important;z-index:60!important;d
   .nav-kr .kr-links{gap:12px 18px!important;font-size:13.5px!important}
   .nav-kr .kr-cta{padding:9px 14px!important;font-size:13.5px!important}
 }
-</style><style id="kr-one-bar">/* the old bar duplicated the logo left-of-centre; it is removed, the centred bar stays */
+
+/* the old bar duplicated the logo left-of-centre; it is removed, the centred bar stays */
 .lb-bar > .container > .lb-brand{display:none!important}
 .lb-bar .lb-brand--lockup{display:none!important}
 .lb-bar{background:transparent!important;border:0!important;min-height:0!important;padding:0!important}
+
+/* ===== HEADER (rebuilt): one row, one font, one axis, visible CTA ===== */
+header.site{background:#0b0b0c!important;border-bottom:1px solid rgba(228,225,219,.16)!important;padding:11px 0!important;height:auto!important;min-height:0!important;overflow:visible!important}
+header.site .container.bar{display:flex!important;align-items:center!important;gap:clamp(12px,1.6vw,28px)!important;padding:0!important;height:auto!important;min-height:0!important;background:transparent!important;flex-wrap:wrap!important}
+header.site .container.bar > .lb-brand{display:flex!important;align-items:center!important;text-decoration:none!important;flex:0 0 auto!important;min-width:0!important;max-height:none!important;overflow:visible!important;position:static!important;transform:none!important}
+header.site .lb-brand .lb-mark{display:block!important;height:clamp(56px,5.2vw,84px)!important;width:auto!important;max-width:none!important;max-height:none!important;object-fit:contain!important;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
+header.site .lb-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}
+header.site nav.main{margin-left:auto!important;display:flex!important;align-items:center!important;gap:clamp(14px,1.9vw,28px)!important;flex-wrap:wrap!important;position:static!important;width:auto!important}
+header.site nav.main a{font-family:inherit!important;color:#f2efe9!important;font-size:15px!important;font-weight:600!important;opacity:1!important;white-space:nowrap!important;background:none!important;border:0!important;padding:0!important;text-decoration:none!important}
+header.site nav.main a:hover{color:#ffffff!important}
+header.site .lb-tel{font-family:inherit!important;color:#ffffff!important;font-weight:800!important;font-size:15px!important;text-decoration:none!important;white-space:nowrap!important;padding:0!important;margin:0!important;flex:0 0 auto!important;letter-spacing:.01em!important}
+header.site a.btn{background:#e4e1db!important;color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important;border:1px solid #e4e1db!important;font-weight:800!important;font-family:inherit!important;padding:13px 24px!important;border-radius:4px!important;font-size:15px!important;flex:0 0 auto!important;text-decoration:none!important}
+header.site a.btn:hover{background:#ffffff!important;border-color:#ffffff!important}
+@media(max-width:900px){
+  header.site .container.bar{gap:10px 16px!important}
+  header.site .lb-brand .lb-mark{height:clamp(44px,8vw,58px)!important}
+  header.site nav.main{margin-left:0!important;order:2!important;width:auto!important;gap:8px 16px!important}
+  header.site .lb-tel{margin-left:auto!important;order:1!important}
+  header.site a.btn{order:3!important}
+}
+
+</style>
+
+
+<style id="kellers-bar-fix">
+.site .bar{display:flex!important;align-items:center!important;gap:clamp(12px,1.6vw,22px)!important}
+.site .bar nav.main{margin-left:auto!important;display:flex!important;align-items:center!important;gap:clamp(14px,1.7vw,26px)!important}
+.site .lb-tel{display:inline-flex!important;align-items:center!important;gap:8px!important;border:1px solid rgba(228,225,219,.34)!important;
+  color:#f2efe9!important;text-decoration:none!important;font-weight:700!important;font-size:14.5px!important;
+  padding:11px 16px!important;border-radius:2px!important;white-space:nowrap!important;margin:0!important}
+.site .lb-tel-lbl{opacity:.62!important;font-weight:600!important;font-size:11.5px!important;letter-spacing:.1em!important;text-transform:uppercase!important}
+.site .bar .btn{margin:0!important;background:#e4e1db!important;color:#0b0b0c!important;font-weight:800!important;
+  padding:13px 20px!important;border-radius:2px!important;text-decoration:none!important}
 </style></head>
 <body>
 <header class="site">
 <div class="container bar">
-<a aria-label="Keller's Rendering &amp; Venetian Plastering" class="lb-brand lb-brand--lockup lb-brand--square" href="#top" style="--lb-name:#ffffff"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-onbar.png"/><span class="lb-sr">Keller's Rendering &amp; Venetian Plastering</span></a><nav class="main nav-kr" aria-label="Main">
-  <div class="kr-brand-row">
-    <a class="kr-brand" href="#top" aria-label="Keller's Rendering &amp; Venetian Plastering">
-      <img src="assets/kr-mark.png" alt="Keller's Rendering &amp; Venetian Plastering">
-    </a>
-  </div>
-  <div class="kr-links" id="krlinks">
-    <a href="#services">Services</a>
-    <a href="#process">Our process</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a class="kr-tel" href="tel:0488944397">0488 944 397</a>
-    <a class="btn kr-cta" href="#contact">Get a quote</a>
-  </div>
+<a aria-label="Keller's Rendering &amp; Venetian Plastering" class="lb-brand" href="#top"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/kr-mark.png"/><span class="lb-sr">Keller's Rendering &amp; Venetian Plastering</span></a>
+<nav class="main" aria-label="Main"><a href="#services">Services</a>
+<a href="#process">Our process</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
 </nav>
+<a class="lb-tel" href="tel:0488944397"><span class="lb-tel-lbl">Call</span>0488 944 397</a>
+<a class="btn" href="#contact">Get a quote</a>
 </div>
-<a href="tel:0488944397" style="font-weight:800;text-decoration:none;color:inherit;white-space:nowrap;display:inline-flex;align-items:center">0488 944 397</a></header>
+</header>
 <main>
 <section aria-label="Rendering &amp; Venetian plastering" class="hero" id="top">
 <canvas aria-hidden="true" id="heroCanvas"></canvas>
