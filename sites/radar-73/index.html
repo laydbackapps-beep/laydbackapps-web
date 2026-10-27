@@ -12,6 +12,7 @@
 <link rel="icon" href="assets/logo.png">
 <style>
 
+
 :root {
   --paper: #f7f4ef; --paper2: #efe9df; --ink: #060607; --ink2: #767676;
   --acc: #000000; --acc2: #383838; --line: rgba(6,6,7,.16); --chip: #efe9df;
@@ -384,13 +385,9 @@ img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:
   .nav .nav-in{padding:11px 18px!important}
 }
 
-</style>
-<noscript><style>.rv,.drop,.hg-item,.sld-item,[data-ux]{opacity:1!important;transform:none!important;visibility:visible!important}#sigSplash{display:none!important}.sld-item{position:static!important;margin-top:14px}</style></noscript>
 
+.rv,.drop,.hg-item,.sld-item,[data-ux]{opacity:1!important;transform:none!important;visibility:visible!important}#sigSplash{display:none!important}.sld-item{position:static!important;margin-top:14px}
 
-
-
-<style id="radar73-bar-fix">
 /* the logo artwork is pale, so the bar goes dark rather than the logo being recoloured */
 nav.nav{--ink2:#e8e4de!important;--acc:#f4f2ee!important;background:#141414!important;border-bottom:1px solid rgba(255,255,255,.14)!important}
 .nav .nav-in{min-height:86px!important;display:flex!important;align-items:center!important;gap:clamp(14px,2vw,26px)!important}
@@ -407,7 +404,32 @@ nav.nav{--ink2:#e8e4de!important;--acc:#f4f2ee!important;background:#141414!impo
 @media(max-width:900px){.nav .nav-links{display:none!important}}
 nav.nav .nav-links a[href]{color:#e8e4de!important}
 nav.nav .nav-links a[href]:hover{color:#ffffff!important}
-</style></head>
+
+.hero{min-height:0!important;height:auto!important}.hero canvas,#heroCanvas{display:none!important}
+
+/* the gallery was rendering 1280px photos at 1483-1584px; cap the row so nothing is upscaled */
+.gal,.gallery,.work-grid,[class*=gal]{max-width:1280px!important;margin-inline:auto!important}
+[class*=gal] img,.gallery img{width:100%!important;height:auto!important;max-height:640px!important;object-fit:cover!important}
+
+
+/* scroller items were rendering 1280px photos at ~1483px */
+.hgal .track{display:flex!important;gap:16px!important}
+.hgal .hg-item{flex:0 0 auto!important;width:min(46vw,560px)!important;max-width:560px!important}
+.hgal .hg-item img{width:100%!important;height:auto!important;max-height:560px!important;object-fit:cover!important}
+@media(max-width:700px){.hgal .hg-item{width:78vw!important}}
+
+
+/* legacy rotating banner: 1280px photos at full width plus a 1.03 scale transform */
+.lb-rb{max-width:1280px!important;margin-inline:auto!important}
+.lb-rb__slide img{transform:none!important}
+
+</style>
+<noscript></noscript>
+
+
+
+
+</head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav"><div class="nav-in">
@@ -420,7 +442,7 @@ nav.nav .nav-links a[href]:hover{color:#ffffff!important}
 <header class="hero" id="top">
 <!-- LB-3D-HERO -->
   <!-- LB-3D-HERO -->
-  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  
   <div class="hero-shade"></div>
   <div class="hero-in">
     <div class="hero-copy">
@@ -449,6 +471,17 @@ nav.nav .nav-links a[href]:hover{color:#ffffff!important}
 
 
 
+<section id="visit">
+<div class="wrap">
+  <div class="sec-head"><span class="sec-idx">06</span><div><h2 class="sec-title">Buying in person, or from the couch.</h2>
+  <p class="lead">The racks change weekly, so the shop is the catalogue — but not everyone can get to Ballarat on a Tuesday.</p></div></div>
+  <div class="body">
+    <p>If you have seen something on Instagram and want to know whether it is still in store, ring or message with the post and a size, and it will be put aside if it is here. Sizes move fast and the same piece rarely comes back in, so holding is done on request rather than assumed.</p>
+    <p>For anyone outside Ballarat, measurements are given over the message rather than guessed at: shoulder to hem, waist flat, inside leg — the numbers that actually tell you whether something will fit, not just the label size. Anything sent is packed and posted tracked, and returns are handled the same way the shop would handle them in person.</p>
+    <p>The shop itself is small on purpose. Stock is bought in short runs and in ones and twos, so what is on the rack is what exists — there is no warehouse out the back with every size in every colour. If a piece is gone, it is gone, and saying so plainly is more useful than a maybe.</p>
+  </div>
+</div>
+</section>
 <section id="services"><div class="wrap">
   <div class="sec-head"><span class="sec-idx">01</span><div><h2 class="sec-title">What&rsquo;s on the racks.</h2><p class="lead">Occasion wear and everyday staples, picked piece by piece &mdash; plus the accessories that finish the outfit.</p></div></div>
   <div class="svc-grid"><div class="svc-row rv"><span class="svc-n">01</span><div class="svc-body"><h3>Dresses &amp; occasion wear</h3><p>Something for the event &mdash; dresses and occasion pieces in a considered, wearable edit.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><span class="svc-n">02</span><div class="svc-body"><h3>Everyday staples</h3><p>The denim, knits and tees you reach for on a normal week, chosen to last and layer.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><span class="svc-n">03</span><div class="svc-body"><h3>Accessories</h3><p>Bags, jewellery and finishing touches that pull an outfit together in store.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><span class="svc-n">04</span><div class="svc-body"><h3>New arrivals weekly</h3><p>New stock lands every week &mdash; there is always something fresh on the rails.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><span class="svc-n">05</span><div class="svc-body"><h3>Styling help in store</h3><p>Tell us the occasion and we will help you put the look together, not just sell you a top.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><span class="svc-n">06</span><div class="svc-body"><h3>Hold an item</h3><p>See something you love? Call and we can hold it for you to try on.</p></div><span class="svc-arrow">&#8599;</span></div></div>

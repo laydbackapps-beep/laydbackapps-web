@@ -1,122 +1,376 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en-AU"><head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Ideal Landscapes — Landscape Construction &amp; Design | Sydney</title>
-<meta content="Ideal Landscapes. Levels and drainage sorted first, then the garden built on top of them. Call 0415 055 109." name="description"/>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ideal Landscapes — Landscape Construction &amp; Design, Sydney</title>
+<meta name="description" content="Ideal Landscapes designs and builds gardens across Sydney — paving, retaining walls, planting, turf and pool surrounds. Call 0415 055 109 for a consultation.">
+<link rel="icon" href="favicon-32.png">
 <style>
-:root{--ink:#0d0f13;--panel:#15181e;--paper:#f4f2ee;--dim:#9aa3ad;--line:rgba(255,255,255,.13);--acc:#49782e}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:#f2f4f7;font:17px/1.6 "Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
-.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
-a{color:inherit}
-nav{position:sticky;top:0;z-index:40;background:rgba(13,15,19,.95);border-bottom:2px solid var(--acc);backdrop-filter:blur(8px)}
-.nav-in{display:flex;align-items:center;gap:clamp(12px,2vw,26px);height:78px}
-.brand img{height:46px;width:auto;display:block}
-nav .links{display:flex;gap:clamp(12px,1.8vw,24px);margin-left:auto}
-nav .links a{text-decoration:none;font-size:15px;color:var(--dim)}
-nav .links a:hover{color:#fff}
-.tel{font-weight:800;text-decoration:none;color:#111;background:var(--acc);padding:10px 16px;white-space:nowrap}
-.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:#fff;padding:8px 10px;font-size:18px}
-section{padding:clamp(42px,6vw,76px) 0;border-top:1px solid var(--line)}
-h2{margin:0 0 10px;font-size:clamp(22px,2.8vw,34px);letter-spacing:-.02em}
-.lead{color:var(--dim);margin:0 0 24px;max-width:62ch}
-.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--acc);margin-bottom:14px}
-.kicker::before{content:"";width:32px;height:2px;background:var(--acc)}
-h1{margin:0 0 16px;font-size:clamp(32px,5vw,58px);line-height:1.02;letter-spacing:-.035em}
-h1 em{font-style:normal;color:var(--acc)}
-.cta{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:#111;text-decoration:none;font-weight:800;padding:14px 22px}
-.cta.ghost{background:transparent;border:1px solid var(--line);color:#fff;font-weight:600;margin-left:8px}
-.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-.svc article{background:var(--ink);padding:22px 20px}
-.svc h3{margin:0 0 6px;font-size:16.5px}
-.svc p{margin:0;color:var(--dim);font-size:14.5px}
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.gal figure{margin:0}.gal img{width:100%;height:240px;object-fit:cover;display:block}
-.gal figcaption{font-size:12.5px;color:var(--dim);padding:8px 2px 0}
-.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.why article{border-left:2px solid var(--acc);padding-left:14px}
-.why h3{margin:0 0 6px;font-size:16px}
-.why p{margin:0;color:var(--dim);font-size:14.5px}
-.areas{display:flex;flex-wrap:wrap;gap:8px}
-.areas span{border:1px solid var(--line);padding:7px 13px;font-size:14px;color:var(--dim)}
-details.faq{border-bottom:1px solid var(--line);padding:14px 0}
-details.faq summary{cursor:pointer;font-weight:700;font-size:16px}
-details.faq .a{color:var(--dim);padding-top:8px;font-size:15px}
-form{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,3vw,30px);display:grid;grid-template-columns:1fr 1fr;gap:12px}
+:root{
+  --bone:#f4f1ea; --deep:#16241a; --ink:#1b2a20; --muted:#5f6a5e;
+  --line:#dcd5c6; --card:#fffdf8; --acc:#2f6b3f; --clay:#b4552f;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bone);color:var(--ink);
+  font:17px/1.63 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+img{display:block;max-width:100%}a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,46px)}
+h1,h2,h3{margin:0;line-height:1.13;letter-spacing:-.02em}
+h1{font-size:clamp(2.1rem,5vw,3.85rem);font-weight:800}
+h2{font-size:clamp(1.5rem,2.7vw,2.15rem);font-weight:800}
+h3{font-size:clamp(1.04rem,1.3vw,1.2rem);font-weight:700}
+p{margin:0}
+.eyebrow{display:block;font-size:.72rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--clay);margin-bottom:.85rem}
+.lead{color:var(--muted);margin-top:.75rem;max-width:64ch}
+.btn{display:inline-flex;align-items:center;background:var(--acc);color:#fff;text-decoration:none;
+  font-weight:800;padding:1rem 1.7rem;border:0;cursor:pointer;font-size:1rem}
+.btn:hover{background:#245631}
+.btn.line{background:transparent;color:var(--ink);border:1px solid var(--ink);font-weight:700}
+/* bar */
+header.bar{position:sticky;top:0;z-index:40;background:var(--bone);border-bottom:1px solid var(--line)}
+.bar-in{display:flex;align-items:center;gap:clamp(12px,2vw,30px);min-height:78px;padding-block:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;text-decoration:none;flex:none}
+.brand img{height:clamp(56px,5.2vw,84px);width:auto}
+.bar nav{display:flex;align-items:center;gap:clamp(12px,1.7vw,26px);margin-left:auto;font-size:.95rem}
+.bar nav a{text-decoration:none;color:var(--muted);font-weight:600}
+.bar nav a:hover{color:var(--ink)}
+.bar .phone{background:var(--deep);color:#f6f3ec;text-decoration:none;font-weight:800;
+  padding:.72rem 1.15rem;white-space:nowrap;font-size:.95rem}
+.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);padding:.5rem .65rem;
+  padding:.5rem .65rem;font-size:1.15rem;font-family:inherit;color:var(--ink);cursor:pointer}
+/* sections */
+section{padding:clamp(50px,6vw,92px) 0;border-top:1px solid var(--line)}
+section.dark{background:var(--deep);color:#eee9df;border-top:0}
+section.dark .lead,section.dark p{color:#bcc7b8}
+section.dark .eyebrow{color:#e2a37f}
+/* hero — statement, then a full-width capability bar */
+.hero{border-top:0;padding:clamp(54px,7vw,104px) 0 0}
+.hero .inner{max-width:60ch}
+.hero p.sub{color:var(--muted);font-size:clamp(1.02rem,1.4vw,1.18rem);margin-top:1.15rem;max-width:56ch}
+.acts{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.9rem}
+.capbar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;
+  margin-top:clamp(38px,5vw,64px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.capbar div{padding:1.15rem clamp(12px,2vw,24px) 1.3rem;border-right:1px solid var(--line)}
+.capbar div:last-child{border-right:0}
+.capbar b{display:block;font-size:.95rem}
+.capbar span{display:block;color:var(--muted);font-size:.85rem;margin-top:.3rem}
+/* approach — two panels */
+.panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2.6vw,34px);
+  margin-top:clamp(26px,3.4vw,46px)}
+.panel{background:var(--card);border:1px solid var(--line);padding:clamp(22px,2.6vw,34px)}
+.panel .k{font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
+.panel h3{margin-top:.6rem;font-size:clamp(1.2rem,1.8vw,1.55rem)}
+.panel p{color:var(--muted);margin-top:.7rem;font-size:.96rem}
+.panel ul{list-style:none;margin:1.1rem 0 0;padding:0;display:grid;gap:.5rem}
+.panel li{position:relative;padding-left:1.5rem;color:var(--muted);font-size:.94rem}
+.panel li::before{content:"";position:absolute;left:0;top:.6em;width:.5rem;height:.5rem;
+  background:var(--clay);border-radius:50%}
+/* services — full-width ledger rows, big numbers */
+.ledger{margin-top:clamp(26px,3.4vw,46px);border-top:1px solid rgba(255,255,255,.22)}
+.ledger .row{display:grid;grid-template-columns:clamp(76px,8vw,132px) minmax(0,1fr) minmax(0,1.5fr);
+  gap:clamp(14px,2.4vw,40px);align-items:baseline;padding:clamp(20px,2.4vw,30px) 0;
+  border-bottom:1px solid rgba(255,255,255,.22)}
+.ledger .n{font-size:clamp(1.5rem,2.6vw,2.15rem);font-weight:800;color:#e2a37f;line-height:1;
+  font-variant-numeric:tabular-nums}
+.ledger h3{font-size:clamp(1.1rem,1.6vw,1.4rem)}
+/* scope — horizontal bands */
+.band{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:clamp(14px,2.6vw,44px);
+  padding:clamp(22px,2.6vw,34px) 0;border-bottom:1px solid var(--line);align-items:start}
+.band:first-of-type{border-top:1px solid var(--line);margin-top:clamp(24px,3vw,40px)}
+.band .lab{font-weight:800;font-size:clamp(1.05rem,1.5vw,1.3rem)}
+.band p{color:var(--muted);font-size:.97rem}
+.band ul{list-style:none;margin:.8rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem}
+.band li{border:1px solid var(--line);background:var(--card);padding:.35rem .75rem;font-size:.84rem;
+  color:var(--muted)}
+/* process — vertical timeline */
+.tl{margin-top:clamp(26px,3.4vw,44px)}
+.tl .t{display:grid;grid-template-columns:minmax(64px,110px) minmax(0,1fr);
+  gap:clamp(14px,2.4vw,38px);padding:clamp(18px,2.2vw,26px) 0;border-top:1px solid var(--line)}
+.tl .t:last-child{border-bottom:1px solid var(--line)}
+.tl .k{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);
+  padding-top:.3rem}
+.tl p{color:var(--muted);font-size:.96rem;margin-top:.35rem;max-width:74ch}
+/* faq */
+.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(20px,3vw,44px);
+  border-top:1px solid var(--line);margin-top:clamp(24px,3vw,40px)}
+details.q{border-bottom:1px solid var(--line);padding:1rem 0}
+details.q summary{cursor:pointer;font-weight:700;font-size:1rem;list-style:none;
+  display:flex;justify-content:space-between;gap:1rem}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary::after{content:"+";color:var(--acc);font-weight:800}
+details.q[open] summary::after{content:"–"}
+details.q .a{color:var(--muted);font-size:.94rem;padding-top:.5rem}
+/* quote — form left, pitch right */
+.quote{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);gap:clamp(22px,4vw,58px);
+  align-items:start}
+form{background:var(--card);border:1px solid var(--line);padding:clamp(20px,2.6vw,32px);
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem}
 form .full{grid-column:1/-1}
-label{display:block;font-size:13px;color:var(--dim);margin-bottom:5px}
-input,textarea,select{width:100%;background:#0b0d11;border:1px solid var(--line);color:#fff;padding:11px;font:inherit;font-size:15px}
-button{grid-column:1/-1;background:var(--acc);color:#111;border:0;padding:14px;font:inherit;font-weight:800;cursor:pointer}
-footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:900px){nav .links{display:none}nav .links.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#15181e;padding:14px;border-bottom:1px solid var(--line)}.burger{display:block}.svc,.gal,.why,form{grid-template-columns:1fr}}
-.hero{padding:clamp(52px,8vw,110px) 0 clamp(30px,4vw,50px);border-bottom:1px solid var(--line)}
-.hero .rule{height:8px;background:var(--acc);width:96px;margin:0 0 22px}
-.hero p{color:#cbd2da;margin:0 0 22px;max-width:58ch;font-size:clamp(16px,1.6vw,19px)}
-.hero .band{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;color:var(--dim);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase}
+label{display:block;font-size:.78rem;font-weight:700;letter-spacing:.04em;color:var(--muted);margin-bottom:.32rem}
+input,select,textarea{width:100%;padding:.75rem .8rem;border:1px solid var(--line);background:var(--bone);
+  color:var(--ink);font:inherit;font-size:.95rem}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
+form .btn{grid-column:1/-1;justify-content:center}
+aside.pitch p{color:var(--muted);margin-top:.8rem;max-width:44ch}
+aside.pitch .big{display:inline-block;margin-top:1.1rem;font-size:clamp(1.3rem,2.3vw,1.8rem);
+  font-weight:800;color:var(--acc);text-decoration:none}
+footer{border-top:1px solid var(--line);background:var(--deep);color:#bcc7b8;
+  padding:clamp(36px,4.4vw,60px) 0 1.6rem}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(20px,3vw,44px)}
+footer h4{margin:0 0 .7rem;color:#fff;font-size:.95rem}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.42rem;font-size:.92rem}
+footer a:hover{color:#fff}
+.f-bot{border-top:1px solid rgba(255,255,255,.16);margin-top:2rem;padding-top:1.1rem;font-size:.8rem;
+  display:flex;flex-wrap:wrap;gap:.6rem 1.6rem}
+@media (max-width:980px){
+  .panels,.quote,.f-grid,.faq{grid-template-columns:1fr}
+  .capbar{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .capbar div:nth-child(2){border-right:0}
+  .capbar div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .ledger .row{grid-template-columns:3.4rem minmax(0,1fr);gap:.6rem 1rem}
+  .ledger .row p{grid-column:2}
+  .band{grid-template-columns:1fr}
+  .bar nav{display:none}
+  .bar nav.open{display:flex;flex-direction:column;align-items:flex-start;flex-basis:100%;margin:0;
+    padding:.6rem 0 .9rem;border-top:1px solid var(--line)}
+  .burger{display:block;order:3}
+  .bar .phone{order:2;margin-left:auto}
+}
+@media (max-width:620px){
+  form{grid-template-columns:1fr}
+  .capbar{grid-template-columns:1fr}
+  .capbar div{border-right:0;border-bottom:1px solid var(--line)}
+  .tl .t{grid-template-columns:1fr;gap:.5rem}
+}
 </style>
-<style id="lb-skin">/* skin 4 — big numerals, alternating rows, strong rules */
- h1{font-size:clamp(40px,7vw,86px)!important;letter-spacing:-.045em!important}
- h2{display:flex!important;align-items:baseline!important;gap:.6em!important;letter-spacing:-.02em!important}
- h2:before{content:counter(lbs,decimal-leading-zero);counter-increment:lbs;font:800 clamp(12px,1.4vw,15px)/1 ui-monospace,monospace;opacity:.5;letter-spacing:.1em}
- section{counter-increment:lbs}
- [class*=card]:nth-child(2n){background:rgba(255,255,255,.045)!important}
- section+section{border-top:1px solid rgba(255,255,255,.12)}
- </style><style id="lb-skin-guard">@media(max-width:900px){
- .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
- [class*=card]{transform:none!important;margin-bottom:12px!important}
- [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
- section,.hero,header{overflow-x:clip!important}
- img,video,svg{max-width:100%!important;height:auto}
- h1,h2{overflow-wrap:anywhere!important}
-}</style><style id="lb-hdr-centre">
-/* brand is the logo alone — centre it over the nav rather than parking it on one edge */
-div.wrap{display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;gap:10px clamp(12px,1.8vw,26px)!important;position:relative!important;text-align:center!important}
-div.wrap .brand{flex:0 0 100%!important;display:flex!important;justify-content:center!important;margin:0 auto!important;width:100%!important}
-div.wrap .brand img{height:clamp(40px,3.6vw,58px)!important;width:auto!important;display:block!important;margin:0 auto!important}
-@media(max-width:520px){ div.wrap .brand img{height:40px!important} }
-</style><style id="lb-nav-contrast">/* nav links measured below 4.5:1 against this bar */
-nav {background:rgba(10,13,18,.92)!important;backdrop-filter:blur(8px)}
-nav a, nav a:visited, .nav-in a, .nav-links a, .nav a {color:#ffffff!important;opacity:1!important}
-nav a:hover {color:#ffffff!important;opacity:.85!important}
-</style><style id="lb-bar-grow">
-nav{height:auto!important;min-height:0!important}
-nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
-</style></head><body>
-<nav><div class="wrap nav-in">
-<a aria-label="Ideal Landscapes" class="brand" href="#top"><img alt="Ideal Landscapes" src="assets/logo-cut.png"/></a>
-<div class="links" id="navlinks"><a href="#services">Services</a><a href="#why">Process</a><a href="#areas">Areas</a><a href="#faq">FAQ</a></div>
-<a class="tel" href="tel:0415055109">0415 055 109</a>
-<button aria-expanded="false" aria-label="Menu" class="burger" id="burger">☰</button>
-</div></nav>
-<header class="hero"><div class="wrap"><div class="rule"></div><span class="kicker">Landscaping</span><h1>A yard that <em>holds together.</em></h1><p>Levels and drainage sorted first, then the garden built on top of them.</p><a class="cta" href="tel:0415055109">Call 0415 055 109</a><a class="cta ghost" href="#quote">Get a quote</a></div></header>
-<main>
-<section id="services"><div class="wrap"><h2>What we do</h2><p class="lead">Every garden is planned around how the block drains and how it gets used, not a package off a shelf.</p><div class="svc"><article><h3>Hedging &amp; pruning</h3><p>Hedges squared or shaped, growth taken away. Quoted on site.</p></article><article><h3>Turf supply &amp; laying</h3><p>Ground cultivated and levelled, turf laid and watered in. Explained before it starts.</p></article><article><h3>Retaining walls</h3><p>Timber and block walls with drainage behind them. Done by the crew that quoted it.</p></article><article><h3>Paving &amp; paths</h3><p>Set on a compacted base so they stay level. Priced after it has been looked at.</p></article><article><h3>Garden construction</h3><p>Beds, edging, mulching and planting built to a plan. Same people, start to finish.</p></article><article><h3>Lawn mowing &amp; upkeep</h3><p>Cut, edged and blown clean on a regular round. Quoted on site.</p></article></div></div></section>
-<section id="about"><div class="wrap"><h2>Who you are dealing with</h2><p class="lead">Ideal Landscapes is a local Sydney business. The work is lawn mowing &amp; upkeep, plus the maintenance and repairs that go with it — priced after the site is looked at, not before.</p></div></section>
-<section id="why"><div class="wrap"><h2>How it runs</h2><div class="why"><article><h3>Walk the yard</h3><p>Levels, access and drainage looked at before quoting.</p></article><article><h3>Build</h3><p>Hard works first — retaining, levels, drainage — then turf and planting.</p></article><article><h3>Hand over</h3><p>Watering and upkeep explained so the garden settles in.</p></article></div></div></section>
-<section id="areas"><div class="wrap"><h2>Where we work</h2><p class="lead">Sydney and the surrounding area.</p><div class="areas"><span>Sydney</span><span>Sydney surrounds</span></div></div></section>
-<section id="faq"><div class="wrap"><h2>Questions</h2><details class="faq"><summary>How often should the lawn be mowed?</summary><div class="a">Fortnightly in the growing season, monthly when it slows.</div></details><details class="faq"><summary>Can you work to a plan?</summary><div class="a">Yes — landscaping plans and designer drawings are both worked from.</div></details><details class="faq"><summary>Do you take green waste away?</summary><div class="a">Yes, clippings and prunings leave with the crew.</div></details></div></section>
-<section id="quote"><div class="wrap"><h2>Get a quote</h2><p class="lead">Tell us what is needed and where. If it is urgent, call.</p>
-<form data-site="ideal-landscapes" id="lbq-form">
-<div><label for="n">Name</label><input id="n" name="name" required=""/></div>
-<div><label for="p">Phone</label><input id="p" inputmode="tel" name="phone" required=""/></div>
-<div class="full"><label for="a">Suburb</label><input id="a" name="suburb"/></div>
-<div class="full"><label for="s">What is the job?</label><select id="s" name="service"><option>Lawn mowing &amp; upkeep</option><option>Hedging &amp; pruning</option><option>Turf supply &amp; laying</option><option>Retaining walls</option><option>Paving &amp; paths</option><option>Garden construction</option><option>Something else</option></select></div>
-<div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="3"></textarea></div>
-<button type="submit">Send request</button>
-</form></div></section>
-</main>
-<footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;width:100%">
-<span>Ideal Landscapes — Sydney</span><a href="tel:0415055109" style="color:#fff;font-weight:800">0415 055 109</a>
+</head><body>
+<header class="bar"><div class="wrap bar-in">
+  <a class="brand" href="#top" aria-label="Ideal Landscapes">
+    <img src="assets/ideal-logo.png" alt="Ideal Landscapes" width="444" height="426">
+  </a>
+  <nav id="nav">
+    <a href="#approach">Approach</a>
+    <a href="#services">What we build</a>
+    <a href="#scope">Scope</a>
+    <a href="#process">Process</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="phone" href="tel:0415055109">0415 055 109</a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap">
+  <div class="inner">
+    <span class="eyebrow">Landscape construction &amp; design · Sydney</span>
+    <h1>A garden drawn for the site, then built by the same crew.</h1>
+    <p class="sub">Ideal Landscapes handles the whole job across Sydney — levels and drainage worked out first,
+      the design made to suit the block, and the paving, retaining, planting and turf built in by the people who
+      drew it.</p>
+    <div class="acts">
+      <a class="btn" href="tel:0415055109">Call 0415 055 109</a>
+      <a class="btn line" href="#quote">Book a consultation</a>
+    </div>
+  </div>
+  <div class="capbar">
+    <div><b>Design first</b><span>Plan and layout made for your block</span></div>
+    <div><b>One crew</b><span>Designing and building the same job</span></div>
+    <div><b>Hard and soft</b><span>Paving, retaining, planting, turf</span></div>
+    <div><b>Sydney wide</b><span>Metro and surrounding suburbs</span></div>
+  </div>
+</div></section>
+
+<section id="approach"><div class="wrap">
+  <span class="eyebrow">Approach</span>
+  <h2>Two halves of the same job</h2>
+  <p class="lead">Most gardens go wrong where the drawing stops and the digging starts. Keeping both under one
+    roof is the whole point — the person who sets the levels is the person who laid them out.</p>
+  <div class="panels">
+    <div class="panel">
+      <span class="k">Part one</span>
+      <h3>The design</h3>
+      <p>We walk the block, work out how it drains, where the sun sits and how you actually want to use the
+        space, then put that into a layout you can see before anything is dug.</p>
+      <ul>
+        <li>Site measure, levels and drainage plan</li>
+        <li>Materials and finishes selected to the house</li>
+        <li>Planting chosen for the aspect and the soil</li>
+        <li>Staged so the budget goes where you notice it</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <span class="k">Part two</span>
+      <h3>The build</h3>
+      <p>Same crew, same drawings. Set-out, excavation, sub-base and drainage done properly underneath, because
+        that is the part nobody sees and the part that fails first.</p>
+      <ul>
+        <li>Set-out and excavation to the levels on the plan</li>
+        <li>Compacted sub-base under every paved surface</li>
+        <li>Retaining designed for the height it holds</li>
+        <li>Site cleaned down and handed over ready to use</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="services" class="dark"><div class="wrap">
+  <span class="eyebrow">What we build</span>
+  <h2>From a blank yard to a finished garden</h2>
+  <p class="lead">Take the whole build, or bring us in for the piece you're stuck on.</p>
+  <div class="ledger">
+    <div class="row"><span class="n">01</span><h3>Paving &amp; hardstand</h3>
+      <p>Sandstone, porcelain, concrete and travertine laid on a properly compacted base with the falls running
+        away from the house, not into it.</p></div>
+    <div class="row"><span class="n">02</span><h3>Retaining walls</h3>
+      <p>Concrete sleeper, sandstone block and rendered walls, engineered for the height they hold with drainage
+        and ag-line behind the face.</p></div>
+    <div class="row"><span class="n">03</span><h3>Turf &amp; lawns</h3>
+      <p>Sub-grade prepared, levelled and rolled, then turf laid tight with the edges cut in and watered in the
+        same day.</p></div>
+    <div class="row"><span class="n">04</span><h3>Planting &amp; garden beds</h3>
+      <p>Beds shaped, soil improved, plants set out by height and spread, mulched and staked where they need it.</p></div>
+    <div class="row"><span class="n">05</span><h3>Pool surrounds</h3>
+      <p>Coping, paving and garden set around the pool shell with the levels and drainage worked out so water
+        runs where it should.</p></div>
+    <div class="row"><span class="n">06</span><h3>Drainage &amp; irrigation</h3>
+      <p>Surface and sub-surface drainage, pits and charged lines, plus drip and sprinkler zones set up with a
+        controller you can actually work.</p></div>
+  </div>
+</div></section>
+
+<section id="scope"><div class="wrap">
+  <span class="eyebrow">Scope</span>
+  <h2>What a typical project covers</h2>
+  <div class="band">
+    <div class="lab">Gardens &amp; planting</div>
+    <div>
+      <p>Beds built and planted for the aspect, with soil and drainage sorted so things establish instead of
+        sulking. Straightforward gardens are usually two to four days on site.</p>
+      <ul><li>Soil improvement</li><li>Plant supply &amp; set-out</li><li>Mulch &amp; edging</li></ul>
+    </div>
+  </div>
+  <div class="band">
+    <div class="lab">Paving &amp; retaining</div>
+    <div>
+      <p>The structural half. Excavation, sub-base, falls and the wall itself — usually one to two weeks,
+        depending on access and how much spoil has to leave the site.</p>
+      <ul><li>Excavation &amp; spoil removal</li><li>Sub-base &amp; drainage</li><li>Wall &amp; paving install</li></ul>
+    </div>
+  </div>
+  <div class="band">
+    <div class="lab">Full garden build</div>
+    <div>
+      <p>Everything from a bare yard through to handover — design, levels, hard landscaping, planting and turf,
+        run as one job with one point of contact.</p>
+      <ul><li>Design &amp; drawings</li><li>All trades coordinated</li><li>Handover walkthrough</li></ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="process" class="dark"><div class="wrap">
+  <span class="eyebrow">Process</span>
+  <h2>How the job runs, start to finish</h2>
+  <div class="tl">
+    <div class="t"><span class="k">Step one</span><div><h3>Walk the block</h3>
+      <p>We come out, measure, look at the levels and the drainage, and talk through how you want to use the
+        space and what you'd like to spend.</p></div></div>
+    <div class="t"><span class="k">Step two</span><div><h3>Design and quote</h3>
+      <p>A layout with materials and planting nominated, and a figure broken into stages so you can see what
+        each part costs before committing.</p></div></div>
+    <div class="t"><span class="k">Step three</span><div><h3>Set out and build</h3>
+      <p>Levels marked, excavation and sub-base done, then the hard landscaping, planting and turf in sequence —
+        with the site kept tidy as it goes.</p></div></div>
+    <div class="t"><span class="k">Step four</span><div><h3>Handover</h3>
+      <p>We walk it with you, sort anything that needs sorting, and leave you with watering and aftercare notes
+        for the first few months.</p></div></div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <span class="eyebrow">Questions</span>
+  <h2>Before you book</h2>
+  <div class="faq">
+    <details class="q" open><summary>Do you design as well as build?</summary><div class="a">Yes — design and
+      construction are the same business, which is why the levels on the plan are the levels on the ground.</div></details>
+    <details class="q"><summary>Do you charge for a consultation?</summary><div class="a">The first site visit
+      and a rough idea of cost are free. Detailed drawings and a staged quote come after that.</div></details>
+    <details class="q"><summary>How far do you travel?</summary><div class="a">Sydney metro and the surrounding
+      suburbs. Further out is possible — ring with the address and we'll tell you straight.</div></details>
+    <details class="q"><summary>Can you work with an existing garden?</summary><div class="a">Often, yes. Some
+      gardens need a new structure underneath and some just need the paving and planting redone — we'll say which
+      one yours is.</div></details>
+    <details class="q"><summary>How long will it take?</summary><div class="a">Straightforward gardens are days,
+      paving and retaining are a week or two, and a full build runs several weeks. You get a programme with the
+      quote.</div></details>
+    <details class="q"><summary>Do you remove the spoil?</summary><div class="a">Yes — excavated material is
+      carted off site as part of the job, not left in a pile on the nature strip.</div></details>
+  </div>
+</div></section>
+
+<section id="quote"><div class="wrap quote">
+  <form id="lbq-form" data-site="ideal-landscapes">
+    <div><label for="n">Name</label><input id="n" name="name" required></div>
+    <div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel"></div>
+    <div class="full"><label for="a">Suburb</label><input id="a" name="suburb"></div>
+    <div class="full"><label for="s">What is the project?</label><select id="s" name="service">
+      <option>Paving &amp; hardstand</option><option>Retaining walls</option><option>Turf &amp; lawns</option>
+      <option>Planting &amp; garden beds</option><option>Pool surrounds</option>
+      <option>Drainage &amp; irrigation</option><option>Full garden build</option>
+      <option>Something else</option></select></div>
+    <div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="4"
+      placeholder="Rough block size, what's there now, and what you'd like it to become."></textarea></div>
+    <button class="btn" type="submit">Send request</button>
+  </form>
+  <aside class="pitch">
+    <span class="eyebrow">Get started</span>
+    <h2>Send the address and what you have in mind</h2>
+    <p>Tell us roughly the size of the block and what you want out of it. We'll come and look, and you'll get a
+      staged figure rather than one lump sum with no explanation.</p>
+    <a class="big" href="tel:0415055109">0415 055 109</a>
+    <p><a href="mailto:ideallandscapes1@gmail.com">ideallandscapes1@gmail.com</a></p>
+    <p>Or see recent builds on Instagram, <a href="https://www.instagram.com/ideallandscapes_" rel="noopener">@ideallandscapes_</a>.</p>
+  </aside>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="f-grid">
+    <div>
+      <h4>Ideal Landscapes</h4>
+      <p style="font-size:.95rem;max-width:40ch">Landscape construction and design across Sydney — paving,
+        retaining, planting, turf and pool surrounds, designed and built by the same crew.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:0415055109">0415 055 109</a></li>
+        <li><a href="mailto:ideallandscapes1@gmail.com">ideallandscapes1@gmail.com</a></li>
+        <li><a href="https://www.instagram.com/ideallandscapes_" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>What we build</h4>
+      <ul>
+        <li><a href="#services">Paving &amp; hardstand</a></li>
+        <li><a href="#services">Retaining walls</a></li>
+        <li><a href="#services">Turf &amp; lawns</a></li>
+        <li><a href="#services">Pool surrounds</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bot"><span>Ideal Landscapes — Sydney NSW</span><span>Landscape construction &amp; design</span></div>
 </div></footer>
+
 <script>
-document.getElementById('burger').addEventListener('click',function(){var l=document.getElementById('navlinks');
-  var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o);});
-document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button');
-  b.textContent='Sending…';b.disabled=true;
-  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
+var b=document.getElementById('burger'),n=document.getElementById('nav');
+b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);});
+document.getElementById('lbq-form').addEventListener('submit',function(e){
+  e.preventDefault();var f=e.currentTarget,btn=f.querySelector('button');
+  btn.textContent='Sending…';btn.disabled=true;
+  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{
+    method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
     body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})
-  .then(function(){b.textContent='Thanks — we will be in touch';})
-  .catch(function(){b.textContent='Could not send — try again';b.disabled=false;});});
+  .then(function(){btn.textContent='Thanks — we will be in touch';})
+  .catch(function(){btn.textContent='Could not send — try again';btn.disabled=false;});
+});
 </script>
 </body></html>

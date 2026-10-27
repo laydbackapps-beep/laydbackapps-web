@@ -178,7 +178,7 @@ html.js .drop.in{opacity:1;transform:none}
 <canvas id="heroCanvas" aria-hidden="true" style="display:none"></canvas>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav" id="nav"><div class="wrap nav-in">
-  <a class="brand" href="#top"><img class="brand-mark" src="assets/logo-mark.png" alt="McKinnon Concrete"><span class="brand-txt"><b class="brand-name">McKinnon</b><i class="brand-sub">Concrete</i></span></a>
+  <a class="brand" href="#top"><img class="brand-mark" src="assets/logo-mark.png" alt="McKinnon Concrete"><span class="brand-txt"><b class="brand-name lb-sr-only">McKinnon</b><i class="brand-sub">Concrete</i></span></a>
   <div class="nav-links" id="navlinks"><a href="#services">Services</a><a href="#process">Process</a><a href="#work">Work</a><a href="#faq">FAQ</a><a href="#quote">Quote</a></div>
   <a class="nav-tel" href="tel:+61427236325">0427 236 325</a>
   <a class="nav-cta" href="#quote">Get a quote</a>
@@ -441,5 +441,8 @@ resize();window.addEventListener('resize',resize);requestAnimationFrame(loop);})
 
 
 <script>/* herocopy-failsafe 2026-10-14 */setTimeout(function(){var hc=document.getElementById('heroCopy')||document.querySelector('.hero-copy');if(hc){var o=parseFloat(getComputedStyle(hc).opacity||'1');if(o<0.08){hc.style.opacity='1';}var guard=0;var t=setInterval(function(){guard++;var oo=parseFloat(getComputedStyle(hc).opacity||'1');if(oo<0.08&&guard<12){hc.style.opacity='1';}if(guard>=12){clearInterval(t);}} ,800);}},900);</script>
+<style id="lb-header-fault-fix">
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+</style>
 </body>
 </html>

@@ -10,6 +10,7 @@
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <style>
+
 :root{
   --ink:#17181c; --ink-soft:#3a3b41; --muted:#55575e;
   --paper:#fbf6f5; --blush:#f4e3e6; --card:#ffffff; --mag:#c2185b; --mag-deep:#8d1143;
@@ -142,25 +143,27 @@ footer ul{list-style:none;display:grid;gap:.45rem;font-size:.93rem}
 main section{border-bottom:1px solid rgba(194,24,91,.18)!important}
 main section h2{box-shadow:inset 0 -8px 0 rgba(194,24,91,.10)!important}
 main section ul li::before,main section ol li::marker{color:#c2185b!important}
-</style>
-<style id="lb-hero-noscale">
+
+
 /* hero-work.jpg is 1200x1600. Full-bleed at 1920 it was enlarged; it is held at its own pixel size here so
    nothing is interpolated, and the bar's own ground fills either side. */
 img[src$="hero-work.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
 {position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
   transform:none!important;width:100%!important;max-width:1200px!important;height:auto!important;max-height:none!important;
   object-fit:contain!important;display:block!important;margin:0 auto!important}
-</style><style id="lb-hdr-centre">
+
+
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){}
-</style><style id="lb-bar-fits-logo">
+
+
 /* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
 header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
   height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
 .bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
 img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
-</style>
-<style id="gc-brand-pass">
+
+
 /* the bar was showing a 32px avatar; the real lockup is a badge plus a light wordmark, so the bar goes dark and both pieces are used at size */
 .hdr{background:#17181c!important;border-bottom:3px solid #c2185b!important}
 .hdr-in{display:flex!important;align-items:center!important;gap:clamp(16px,2.2vw,30px)!important;padding-block:12px!important;min-height:0!important;height:auto!important;flex-wrap:wrap!important}
@@ -181,18 +184,28 @@ h2{position:relative}
 .eyebrow{color:#c2185b!important}
 .eyebrow::before{background:#c2185b!important}
 @media(max-width:900px){.hdr .brand-word-img{height:20px!important}}
-</style><style id="contrast-pass">
+
+
 /* the booking button and phone were sitting near-invisible on the blush panels */
 .hdr .nav .cta,.hdr .nav a[href="#quote"]{color:#fff!important;background:#c2185b!important}
 main a[href^="tel:"]{background:#c2185b!important;color:#fff!important;text-decoration:none!important}
 main a[href^="tel:"]:hover{background:#a5124d!important}
 .dark a[href^="tel:"],.hdr a[href^="tel:"]{background:#c2185b!important;color:#fff!important}
 li::marker,strong,b{color:inherit}
-</style></head>
+
+.hero{min-height:0!important;height:auto!important}.hero canvas,#heroCanvas{display:none!important}
+.rv{opacity:1!important;transform:none!important}.js .rv{opacity:1!important;transform:none!important}
+
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+
+</style>
+
+</head>
 <body>
 <!-- LB-3D-HERO -->
-<div class="lb3d" aria-hidden="true"><canvas id="heroCanvas" width="1200" height="700"></canvas></div>
-<noscript><style>.rv{opacity:1!important;transform:none!important}.js .rv{opacity:1!important;transform:none!important}</style></noscript>
+<div class="lb3d" aria-hidden="true"></div>
+<noscript></noscript>
 
 <header class="hdr">
   <div class="wrap hdr-in">
@@ -464,9 +477,6 @@ li::marker,strong,b{color:inherit}
   setTimeout(function(){ [].slice.call(d.querySelectorAll('.rv')).forEach(function(e){ e.classList.add('on'); }); },1100);
 })();
 </script>
-<style id="lb-header-fault-fix">
-.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
-img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
-</style>
+
 </body>
 </html>

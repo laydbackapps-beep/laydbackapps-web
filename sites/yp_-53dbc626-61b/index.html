@@ -189,12 +189,19 @@ ul { list-style: none; }
 </style>
 
 <noscript><style>.rv { opacity: 1 !important; transform: none !important; transition: none !important; }</style></noscript>
+<style id="lb-bar-fits-logo">
+/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
+header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
+  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
+.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
+img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
+</style>
 </head>
 <body>
 <header class="nav" role="banner">
   <div class="nav-inner wrap">
     <a href="#" class="nav-brand" aria-label="SMICK EXCAVATION home">
-      <img src="assets/logo.png" alt="SMICK EXCAVATION" width="42" height="42" style="display:block">
+      <img src="assets/logo.png" alt="SMICK EXCAVATION" width="42" height="42" style="display:block" class="lb-logo-unlock">
       <svg viewBox="0 0 256 256" fill="none" aria-hidden="true"><use href="assets/logo.svg#logo"/></svg>
       SMICK EXCAVATION
     </a>
@@ -706,5 +713,8 @@ window.addEventListener('resize', () => {
   resizeTimer = setTimeout(drawSetoutCanvas, 150);
 });
 </script>
+<style id="lb-header-fault-fix">
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+</style>
 </body>
 </html>

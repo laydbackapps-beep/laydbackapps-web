@@ -248,19 +248,24 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 </style><style id="lb-hdr-centre">
-.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+@media(max-width:900px){}
 </style><style id="lb-bar-grow">
 nav{height:auto!important;min-height:0!important}
 nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
-</style></head>
+</style><style id="lb-bar-fits-logo">
+/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
+header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
+  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
+.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
+img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
+</style>
+</head>
 <body>
 <header role="banner"><canvas class="lb-hero-canvas" aria-hidden="true"></canvas>
   <div class="container">
-    <a class="lb-brand" href="#top" aria-label="Sir Tintalot 2.0 - Home" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#f5f5f0;--lb-subc:#f5f5f0;--lb-acc:#0078f0;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.png" alt="" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">Sir Tintalot 2.0</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
-    <nav role="navigation" aria-label="Main navigation"><a class="brand-monogram" href="#top" aria-label="Sir Tintalot 2.0"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-      <ul>
+    <a class="lb-brand" href="#top" aria-label="Sir Tintalot 2.0 - Home" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#f5f5f0;--lb-subc:#f5f5f0;--lb-acc:#0078f0;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.png" alt="" loading="eager" decoding="async" class="lb-logo-unlock"></span><span class="lb-brand__word"><span class="lb-brand__name">Sir Tintalot 2.0</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
+    <nav role="navigation" aria-label="Main navigation"><ul>
         <li><a href="#services">Services</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#locality">Location</a></li>
@@ -737,6 +742,10 @@ header a[href^="tel"],.site-header a[href^="tel"]{
   opacity:1 !important;
 }
 .lb-brand__sub:empty{display:none !important}
+</style>
+<style id="lb-header-fault-fix">
+:is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
 </body>
 </html>

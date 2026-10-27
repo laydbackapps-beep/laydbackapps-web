@@ -215,7 +215,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   <div class="container topbar__inner">
     <a href="#" class="topbar__brand" aria-label="Sydney to Coast Roofing home">
       <img src="assets/logo.png" alt="" class="topbar__logo" width="64" height="64" style="width:4rem;height:4rem;display:block;">
-      <span class="topbar__name">Sydney to Coast Roofing</span>
+      <span class="topbar__name lb-sr-only">Sydney to Coast Roofing</span>
     </a>
     <div class="topbar__nav" style="display:flex;align-items:center;gap:1.5rem;">
       <a href="#services" class="topbar__link" style="font-family:var(--font-display);font-weight:600;font-size:0.9rem;color:var(--ink);text-decoration:none;">Services</a>
@@ -964,5 +964,8 @@ html,body{overflow-x:hidden}
 </style>
 </noscript>
 
+<style id="lb-header-fault-fix">
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+</style>
 </body>
 </html>

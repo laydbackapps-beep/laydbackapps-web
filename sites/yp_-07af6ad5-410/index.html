@@ -256,14 +256,21 @@ a:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
   .hero-tagline { font-size: 13px; }
 }
 </style>
+<style id="lb-bar-fits-logo">
+/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
+header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
+  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
+.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
+img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
+</style>
 </head>
 <body>
 
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner container">
     <a href="#" class="nav-brand" aria-label="John Watson Earthworks home">
-      <img src="assets/logo.png" alt="John Watson Earthworks" class="nav-logo" width="40" height="40" loading="eager">
-      <span class="nav-word">John Watson Earthworks</span>
+      <img src="assets/logo.png" alt="John Watson Earthworks" class="nav-logo lb-logo-unlock" width="40" height="40" loading="eager">
+      <span class="nav-word lb-sr-only">John Watson Earthworks</span>
     </a>
     <div class="nav-right">
       <ul class="nav-links">
@@ -577,5 +584,9 @@ html,body{overflow-x:hidden}
 <script>
 (function(){const canvas=document.getElementById('bore-log-canvas');if(!canvas)return;const ctx=canvas.getContext('2d');const w=canvas.width;const h=canvas.height;const BG='#221b14';const VERDIGRIS='#55907a';const BONE='#ece3d3';const DARK='#221b14';const colX=w*0.35;const colW=w*0.3;const colY=h*0.08;const colH=h*0.84;const rx=8;const strata=[{y0:0,y1:0.15,fill:VERDIGRIS,pattern:'soil'},{y0:0.15,y1:0.35,fill:VERDIGRIS,pattern:'clay'},{y0:0.35,y1:0.55,fill:VERDIGRIS,pattern:'gravel'},{y0:0.55,y1:0.70,fill:VERDIGRIS,pattern:'sand'},{y0:0.70,y1:1.0,fill:VERDIGRIS,pattern:'rock'}];ctx.fillStyle=BG;ctx.fillRect(0,0,w,h);ctx.fillStyle=VERDIGRIS;function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}roundRect(ctx,colX,colY,colW,colH,rx);ctx.fill();strata.forEach(s=>{const y0=colY+s.y0*colH;const y1=colY+s.y1*colH;const sh=y1-y0;ctx.save();ctx.beginPath();ctx.rect(colX,y0,colW,sh);ctx.clip();ctx.fillStyle=s.fill;ctx.fillRect(colX,y0,colW,sh);ctx.fillStyle=DARK;ctx.globalAlpha=0.6;switch(s.pattern){case'soil':for(let i=0;i<40;i++){const px=colX+8+Math.random()*(colW-16);const py=y0+8+Math.random()*(sh-16);const r=2+Math.random()*3;ctx.beginPath();ctx.arc(px,py,r,0,Math.PI*2);ctx.fill();}break;case'clay':for(let y=y0+8;y<y1;y+=10){ctx.fillRect(colX+8,y,colW-16,1.5);}break;case'gravel':for(let i=0;i<35;i++){const px=colX+10+Math.random()*(colW-20);const py=y0+10+Math.random()*(sh-20);const r=3+Math.random()*3;ctx.beginPath();ctx.arc(px,py,r,0,Math.PI*2);ctx.fill();}break;case'sand':for(let y=y0+6;y<y1;y+=8){for(let x=colX+10;x<colX+colW-10;x+=24){ctx.fillRect(x,y,16,1.5);}}break;case'rock':for(let y=y0+4;y<y1;y+=6){ctx.fillRect(colX+8,y,colW-16,1);}break;}ctx.restore();});ctx.strokeStyle=DARK;ctx.lineWidth=3;strata.slice(0,-1).forEach(s=>{const y=colY+s.y1*colH;ctx.beginPath();ctx.moveTo(colX,y);ctx.lineTo(colX+colW,y);ctx.stroke();});ctx.strokeStyle=VERDIGRIS;ctx.lineWidth=4;roundRect(ctx,colX,colY,colW,colH,rx);ctx.stroke();ctx.fillStyle=VERDIGRIS;const tickX=colX-24;[0,0.15,0.35,0.55,0.70,1.0].forEach((frac,i)=>{const y=colY+frac*colH;ctx.fillRect(tickX,y-2,16,4);ctx.font='bold 14px "Martian Mono", monospace';ctx.fillStyle=VERDIGRIS;ctx.textAlign='right';ctx.fillText((frac*2).toFixed(1),tickX-8,y+5);});ctx.fillStyle=BONE;const bucketY=colY-12;ctx.beginPath();ctx.moveTo(colX+colW*0.5,bucketY-16);ctx.lineTo(colX+colW*0.3,bucketY);ctx.lineTo(colX+colW*0.3,bucketY+24);ctx.quadraticCurveTo(colX+colW*0.3,bucketY+32,colX+colW*0.5,bucketY+32);ctx.lineTo(colX+colW*0.7,bucketY+32);ctx.quadraticCurveTo(colX+colW*0.7,bucketY+24,colX+colW*0.7,bucketY+24);ctx.lineTo(colX+colW*0.7,bucketY);ctx.closePath();ctx.fill();ctx.fillStyle=BONE;ctx.beginPath();ctx.moveTo(colX+colW*0.4,bucketY+32);ctx.lineTo(colX+colW*0.5,bucketY+40);ctx.lineTo(colX+colW*0.6,bucketY+32);ctx.closePath();ctx.fill();const monoX=colX+colW*0.5;const monoY=colY+colH*0.5;ctx.fillStyle=BONE;ctx.beginPath();ctx.rect(monoX-10,monoY-20,8,40);ctx.rect(monoX-14,monoY+20,8,12);ctx.fill();ctx.beginPath();ctx.moveTo(monoX+6,monoY+20);ctx.lineTo(monoX+16,monoY-20);ctx.lineTo(monoX+26,monoY+20);ctx.lineTo(monoX+16,monoY+4);ctx.closePath();ctx.moveTo(monoX+26,monoY+20);ctx.lineTo(monoX+36,monoY-20);ctx.lineTo(monoX+46,monoY+20);ctx.lineTo(monoX+36,monoY+4);ctx.closePath();ctx.rect(monoX+16,monoY+20,20,8);ctx.fill();ctx.fillStyle=BONE;const markX=colX+colW+16;[0.2,0.4,0.6].forEach(frac=>{const y=colY+frac*colH;roundRect(ctx,markX,y-4,20,8,3);ctx.fill();});})();
 </script>
+<style id="lb-header-fault-fix">
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+</style>
 </body>
 </html>

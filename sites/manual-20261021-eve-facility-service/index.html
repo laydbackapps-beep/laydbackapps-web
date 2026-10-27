@@ -151,19 +151,24 @@ p{margin:0 0 1em}
 
 <!--LB-HEROGRID--><style id="lb-herogrid">[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
 <style id="lb-hdr-centre">
-.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
-</style></head>
+@media(max-width:900px){}
+</style><style id="lb-bar-fits-logo">
+/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
+header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
+  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
+.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
+img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
+</style>
+</head>
 
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr" id="top"><div class="hdr__in">
 <a class="brand" href="#top" aria-label="Eve Facility Service — home">
-<img class="brand__mark" src="assets/logo.png" alt="Eve Facility Service logo" width="52" height="52">
-<span class="brand__word"><b>Eve Facility Service</b><i>Bond &amp; end-of-lease cleaning</i></span></a>
-<nav class="nav" aria-label="Main"><a class="brand-monogram" href="#top" aria-label="Eve Facility Service"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-<a href="#services">Services</a>
+<img class="brand__mark lb-logo-unlock" src="assets/logo.png" alt="Eve Facility Service logo" width="52" height="52">
+<span class="brand__word"><b class="lb-sr-only">Eve Facility Service</b><i>Bond &amp; end-of-lease cleaning</i></span></a>
+<nav class="nav" aria-label="Main"><a href="#services">Services</a>
 <a href="#process">How it runs</a>
 <a href="#work">The finish</a>
 <a href="#area">FAQ</a>
@@ -372,4 +377,8 @@ p{margin:0 0 1em}
 })();
 document.getElementById('yr').textContent = new Date().getFullYear();
 </script>
+<style id="lb-header-fault-fix">
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+</style>
 </body></html>

@@ -287,6 +287,13 @@ a:hover{text-decoration:underline}
 .mb-3{margin-bottom:var(--space-3)}
 .mb-4{margin-bottom:var(--space-4)}
 </style>
+<style id="lb-bar-fits-logo">
+/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
+header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
+  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
+.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
+img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
+</style>
 </head><body>
 <script>
 // === ENABLE JS REVEAL ===
@@ -297,8 +304,8 @@ document.documentElement.classList.add('js');
 <nav class="nav rv" role="navigation" aria-label="Main navigation">
   <div class="container nav-inner">
     <a class="nav-logo" href="#top" aria-label="Bold Civil home">
-      <img src="assets/logo.jpg" alt="" aria-hidden="true">
-      <span>Bold Civil</span>
+      <img src="assets/logo.jpg" alt="" aria-hidden="true" class="lb-logo-unlock">
+      <span class="lb-sr-only">Bold Civil</span>
     </a>
     <a class="nav-cta" href="tel:+61423933982" aria-label="Call Bold Civil">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -931,5 +938,9 @@ html,body{overflow-x:hidden}
   });
 })();
 </script>
+<style id="lb-header-fault-fix">
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+</style>
 </body>
 </html>

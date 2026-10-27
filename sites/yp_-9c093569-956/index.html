@@ -128,11 +128,18 @@ ul{list-style:none}
   .hero__content .rv{transition:none!important;opacity:1;transform:none}
 }
 </style>
+<style id="lb-bar-fits-logo">
+/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
+header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
+  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
+.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
+img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
+</style>
 </head>
 <body><nav class="nav rv" role="navigation" aria-label="Main navigation">
   <div class="nav__logo">
     <div class="nav__logo-plate">
-      <img src="assets/a-one-concreting-logo.jpg" alt="" aria-hidden="true">
+      <img src="assets/a-one-concreting-logo.jpg" alt="" aria-hidden="true" class="lb-logo-unlock">
     </div>
   </div>
   <div class="nav__links" id="navLinks">
@@ -689,5 +696,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.documentElement.classList.remove('js-gated');
 document.documentElement.classList.add('js');
 </script>
+<style id="lb-header-fault-fix">
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+</style>
 </body>
 </html>

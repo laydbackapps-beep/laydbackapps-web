@@ -286,10 +286,20 @@ footer{border-top:1px solid var(--line);padding-block:var(--sp-5) var(--sp-3);fo
 }
 </style>
 <style id="lb-hdr-centre">
-.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
-</style></head>
+@media(max-width:900px){}
+</style><style id="lb-header-fault-fix">
+.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+img.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;object-fit:contain!important}
+</style>
+<style id="lb-bar-fits-logo">
+/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
+header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
+  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
+.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
+img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
+</style>
+</head>
 <body>
 <script>document.documentElement.className+=' js';</script>
 <a class="skip" href="#main">Skip to content</a>
@@ -297,11 +307,10 @@ footer{border-top:1px solid var(--line);padding-block:var(--sp-5) var(--sp-3);fo
 <header class="site-head">
   <div class="wrap bar">
     <a class="brand" href="#top" aria-label="Alpine Edge Contracting home">
-      <img src="assets/logo-mark_alpine-edge-contracting.png" alt="" width="40" height="40" decoding="async">
-      <span class="brand-name">Alpine Edge Contracting</span>
+      <img src="assets/logo-mark_alpine-edge-contracting.png" alt="" width="40" height="40" decoding="async" class="lb-logo-unlock">
+      <span class="brand-name lb-sr-only">Alpine Edge Contracting</span>
     </a>
-    <nav class="nav" aria-label="Main"><a class="brand-monogram" href="#top" aria-label="Alpine Edge Contracting"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-      <a class="nav-link" href="#services">Services</a>
+    <nav class="nav" aria-label="Main"><a class="nav-link" href="#services">Services</a>
       <a class="nav-link" href="#work">Work</a>
       <a class="nav-link" href="#about">About</a>
       <a class="call" href="tel:+61404982193"><span class="dot" aria-hidden="true"></span><span class="lab">Call</span> 0404 982 193</a>

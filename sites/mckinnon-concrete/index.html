@@ -189,7 +189,7 @@ html.js .drop.in{opacity:1;transform:none}
 <body>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav" id="nav"><div class="wrap nav-in">
-  <a class="brand" href="#top"><img class="brand-logo" src="assets/logo.png" alt="McKinnon Concrete logo"><span class="brand-t">McKinnon Concrete<small>High-end concreting &mdash; Coffs Coast, NSW</small></span></a>
+  <a class="brand" href="#top"><img class="brand-logo" src="assets/logo.png" alt="McKinnon Concrete logo"><span class="brand-t lb-sr-only">McKinnon Concrete<small>High-end concreting &mdash; Coffs Coast, NSW</small></span></a>
   <div class="nav-links" id="navlinks"><a href="#services">Services</a><a href="#process">Process</a><a href="#work">Work</a><a href="#faq">FAQ</a><a href="#quote">Quote</a></div>
   <a class="nav-tel" href="tel:+61427236325">0427 236 325</a>
   <a class="nav-cta" href="#quote">Get a quote</a>
@@ -406,5 +406,8 @@ resize();window.addEventListener('resize',resize);requestAnimationFrame(loop);})
 (function(){var c=document.getElementById('heroCanvas');if(!c)return;var h=document.querySelector('.hero-3d');if(!h)return;var pl=h.querySelector('.plane');window.addEventListener('pointermove',function(e){var px=(e.clientX/innerWidth-.5);var py=(e.clientY/innerHeight-.5);pl.style.transform='rotateX('+(63-py*5).toFixed(2)+'deg) translateX('+(px*22).toFixed(1)+'px)';},{passive:true});})();
 (function(){var g=document.querySelector('.hgal');if(!g)return;var d=0,x0=0;g.addEventListener('pointerdown',function(e){d=1;x0=e.clientX+g.scrollLeft;});window.addEventListener('pointerup',function(){d=0;});g.addEventListener('pointermove',function(e){if(d){g.scrollLeft=x0-e.clientX;}});})();
 </script>
+<style id="lb-header-fault-fix">
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+</style>
 </body>
 </html>

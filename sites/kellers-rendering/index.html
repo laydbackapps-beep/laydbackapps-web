@@ -10,6 +10,7 @@
 <meta content="#0b0b0c" name="theme-color"/>
 <style>
 
+
 :root{
   --lb-name:#ffffff; --lb-acc:#e4e1db; --lb-subc:rgba(255,255,255,.72);
   --ink:#ffffff; --muted:rgba(255,255,255,.70); --line:rgba(255,255,255,.14); --panel:rgba(255,255,255,.045);
@@ -231,10 +232,8 @@ header.site a.btn:hover{background:#ffffff!important;border-color:#ffffff!import
   header.site a.btn{order:3!important}
 }
 
-</style>
 
 
-<style id="kellers-bar-fix">
 .site .bar{display:flex!important;align-items:center!important;gap:clamp(12px,1.6vw,22px)!important}
 .site .bar nav.main{margin-left:auto!important;display:flex!important;align-items:center!important;gap:clamp(14px,1.7vw,26px)!important}
 .site .lb-tel{display:inline-flex!important;align-items:center!important;gap:8px!important;border:1px solid rgba(228,225,219,.34)!important;
@@ -243,7 +242,12 @@ header.site a.btn:hover{background:#ffffff!important;border-color:#ffffff!import
 .site .lb-tel-lbl{opacity:.62!important;font-weight:600!important;font-size:11.5px!important;letter-spacing:.1em!important;text-transform:uppercase!important}
 .site .bar .btn{margin:0!important;background:#e4e1db!important;color:#0b0b0c!important;font-weight:800!important;
   padding:13px 20px!important;border-radius:2px!important;text-decoration:none!important}
-</style></head>
+
+.hero{min-height:0!important;height:auto!important}.hero canvas,#heroCanvas{display:none!important}
+</style>
+
+
+</head>
 <body>
 <header class="site">
 <div class="container bar">
@@ -259,13 +263,28 @@ header.site a.btn:hover{background:#ffffff!important;border-color:#ffffff!import
 </header>
 <main>
 <section aria-label="Rendering &amp; Venetian plastering" class="hero" id="top">
-<canvas aria-hidden="true" id="heroCanvas"></canvas>
+
 <div aria-hidden="true" class="veil"></div>
 <div class="container inner">
 <h1>Keller's Rendering &amp; Venetian Plastering:<br/>rendering done properly.</h1>
 <p class="lede">Work in Yarrawonga tends to come in two kinds for Keller's Rendering &amp; Venetian Plastering: the planned job and the one that has to be sorted this week. Both get looked at before a number is given.</p>
 <div class="acts"><a class="btn" href="#contact">Get a quote</a><a class="btn ghost" href="#services">See what we do</a></div>
 <ul class="facts"><li>Cement rendering</li><li>Venetian plaster</li><li>Textured finishes</li><li>Render repairs</li></ul>
+</div>
+</section>
+<section id="detail">
+<div class="container">
+  <div class="head"><h2>Cement, acrylic, or venetian</h2>
+  <p>Three different finishes that get lumped together as “rendering”. They behave differently, age differently and cost differently.</p></div>
+  <div class="grid g3">
+    <article class="card"><h3>Cement render</h3><p>Sand and cement over masonry, hard and heavy, with a texture that can be sponged, raked or bagged. It needs to be cured and painted to keep water out — left bare it will take on moisture and hairline cracking over the years.</p></article>
+    <article class="card"><h3>Acrylic render</h3><p>A polymer-based coat that flexes with the substrate instead of fighting it. Better over blueboard, foam cladding or anywhere movement is expected, and it comes pre-coloured so it does not need painting to look finished.</p></article>
+    <article class="card"><h3>Venetian plaster</h3><p>Polished lime plaster applied in layers and burnished, giving depth and movement that paint cannot copy. It is slow, it is done by hand, and the finish depends on the person applying it — which is why the crew stays small.</p></article>
+  </div>
+  <div class="body" style="margin-top:22px">
+    <p>The substrate decides which of those is right. Brick and block take cement render happily. Blueboard and foam need a system that moves with them, or the finish cracks along the joints within a season. Timber weatherboards should not be rendered at all without addressing why they are being covered up.</p>
+    <p>Weather matters too: render cured in the heat without shade or dampening will shrink too fast and crack, and render applied over a wet wall traps moisture behind it. So the schedule is set around the forecast, not around when the scaffolding is free — a slower start is cheaper than a re-do.</p>
+  </div>
 </div>
 </section>
 <section id="services">
@@ -321,64 +340,7 @@ header.site a.btn:hover{background:#ffffff!important;border-color:#ffffff!import
 </div>
 </div>
 </footer>
-<script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-(function(){
-  var c=document.getElementById('heroCanvas'); if(!c) return;
-  var ctx=c.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2), w=0,h=0,t=0,raf=null;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function size(){var r=c.getBoundingClientRect(); w=Math.max(320,r.width|0); h=Math.max(320,r.height|0);
-    c.width=w*dpr; c.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);}
-  function draw(){
-    var g=ctx.createLinearGradient(0,0,0,h);
-    g.addColorStop(0,'#141518'); g.addColorStop(.55,'#0e0f11'); g.addColorStop(1,'#090a0b');
-    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
-    var y0=h*0.52;
-    ctx.beginPath(); ctx.moveTo(0,y0); ctx.lineTo(w,y0); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
 
-    // monochrome set plaster: trowel sweeps and fine grit, black and white only
-    var gg=ctx.createLinearGradient(0,y0,0,h);
-    gg.addColorStop(0,'#26262a'); gg.addColorStop(.45,'#1a1a1d'); gg.addColorStop(1,'#101012');
-    ctx.fillStyle=gg; ctx.fill();
-    // broad trowel sweeps
-    for(var t=0;t<9;t++){
-      var yy=y0+(h-y0)*(0.07+t*0.105);
-      ctx.beginPath(); ctx.moveTo(-10,yy);
-      for(var x=0;x<=w+10;x+=14){
-        ctx.lineTo(x, yy + Math.sin((x*0.006)+t)*10 + t*2);
-      }
-      ctx.strokeStyle='rgba(255,255,255,'+(0.045+((t%3)*0.022))+')';
-      ctx.lineWidth=1.6+((t%4)*0.9); ctx.stroke();
-      ctx.strokeStyle='rgba(0,0,0,.28)'; ctx.lineWidth=1.1;
-      ctx.beginPath(); ctx.moveTo(-10,yy+2);
-      for(var x2=0;x2<=w+10;x2+=14){ ctx.lineTo(x2, yy+2 + Math.sin((x2*0.006)+t)*10 + t*2); }
-      ctx.stroke();
-    }
-    // plaster grit
-    for(var g=0;g<420;g++){
-      var gx=(g*137.5)%w, gy=y0+((g*89.3)%(h-y0));
-      ctx.fillStyle='rgba(255,255,255,'+(0.02+((g%6)*0.012))+')';
-      ctx.fillRect(gx,gy,1.6,1.6);
-    }
-    // a soft light from the upper left
-    var lg=ctx.createRadialGradient(w*.14,h*.10,10,w*.14,h*.10,w*.62);
-    lg.addColorStop(0,'rgba(255,255,255,.16)'); lg.addColorStop(1,'rgba(255,255,255,0)');
-    ctx.fillStyle=lg; ctx.fillRect(0,0,w,h);
-
-  }
-  function loop(){ t+=0.004; draw(); raf=requestAnimationFrame(loop); }
-  size(); draw(); if(!reduce){ loop(); }
-  window.addEventListener('resize', function(){ size(); draw(); }, {passive:true});
-  window.addEventListener('pagehide', function(){ if(raf) cancelAnimationFrame(raf); });
-})();
-(function(){
-  var f=document.getElementById('lbq-form'); if(!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('lbq-note').textContent = "Thanks. This preview form isn\u2019t wired to a mailbox yet \u2014 message us on Facebook and we\u2019ll get straight back to you.";
-  });
-})();
-</script>
 <script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#000000","important");})();</script>
 </body>
 </html>

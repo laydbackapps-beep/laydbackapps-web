@@ -13,6 +13,7 @@
 <!-- BRAND PALETTE — extracted from this site's own logo (assets/logo.png, PIL quantize):
      #0F315B deep navy (dominant brand), #F89818 amber (accent). No generic trade colour used. -->
 <style>
+
 :root{
   --ink:#0B1A2E;
   --brand:#0F315B;
@@ -275,34 +276,38 @@ html.js .rv{opacity:0;transform:translateY(16px)}
 #lbq input,#lbq select,#lbq textarea{color:#0b1a2e!important;background:#fff!important;border-color:rgba(11,26,46,.25)!important}
 #lbq input::placeholder,#lbq textarea::placeholder{color:#5c6779!important}
 footer a[href^="tel:"],.foot a[href^="tel:"]{color:#ffffff!important}
-</style>
-<style id="lb-bar-grow">
+
+
 nav{height:auto!important;min-height:0!important}
 nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
-</style><style id="lb-hero-noscale">
+
+
 /* hero-resurfaced.jpg is 1120x1400. Full-bleed at 1920 it was enlarged; it is held at its own pixel size here so
    nothing is interpolated, and the bar's own ground fills either side. */
 img[src$="hero-resurfaced.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
 {position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
   transform:none!important;width:100%!important;max-width:1120px!important;height:auto!important;max-height:none!important;
   object-fit:contain!important;display:block!important;margin:0 auto!important}
-</style><style id="lb-bar-noname">
+
+
 /* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
 .lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
 {display:none!important}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style><style id="lb-hdr-centre">
+
+
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){}
-</style><style id="lb-bar-fits-logo">
+
+
 /* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
 header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
   height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
 .bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
 img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
-</style>
-<style id="struct-pass">
+
+
 /* the page was padded out with near-empty full-height sections, and the header logo was a thumbnail */
 section,section.sl{padding:clamp(34px,4vw,58px) 0!important}
 header .brand img,header a img,.site-header img,.hdr img{height:clamp(56px,5vw,76px)!important;width:auto!important;max-width:none!important}
@@ -319,12 +324,22 @@ header,header.hdr,.site-header{min-height:0!important;height:auto!important}
 @media(max-width:900px){.hero{grid-template-columns:1fr!important}
   .hero>.hero-img,.hero>.hero-photo{grid-column:1!important;grid-row:2!important;height:auto!important;max-height:320px!important}
   .hero>.hero-inner,.hero>.hero-in,.hero>.wrap{grid-row:1!important}}
-</style><style id="contrast-pass">
+
+
 /* step labels were 3.7:1 on the light panel */
 span.n,.step .n,[class*=step] span{color:#6b4100!important}
-</style></head>
+
+.hero{min-height:0!important;height:auto!important}.hero canvas,#heroCanvas{display:none!important}
+html.js .rv{opacity:1;transform:none}
+
+:is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+
+</style>
+
+</head>
 <body>
-<noscript><style>html.js .rv{opacity:1;transform:none}</style></noscript>
+<noscript></noscript>
 
 <header class="site">
   <div class="wrap bar">
@@ -348,7 +363,7 @@ span.n,.step .n,[class*=step] span{color:#6b4100!important}
     <img class="hero-img" src="assets/hero-resurfaced.jpg" width="1120" height="1400" alt="Spray-applied resurfacing finished along a driveway — a job like this" fetchpriority="high">
     <div class="hero-scrim" aria-hidden="true"></div>
     <!-- LB-3D-HERO -->
-    <canvas id="heroCanvas" width="1280" height="720" aria-hidden="true"></canvas>
+    
     <div class="hero-inner">
       <div class="wrap">
         <p class="eyebrow">Spraycrete &amp; concrete resurfacing · Sydney NSW</p>
@@ -658,9 +673,6 @@ span.n,.step .n,[class*=step] span{color:#6b4100!important}
   setTimeout(function(){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('on');});},1100);
 })();
 </script>
-<style id="lb-header-fault-fix">
-:is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
-img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
-</style>
+
 </body>
 </html>

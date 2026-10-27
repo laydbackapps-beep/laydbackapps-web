@@ -11,6 +11,7 @@
 <meta content="#eaeae7" name="theme-color"/>
 <script>document.documentElement.className += ' js';</script>
 <style>
+
 :root{
   --paper:#eaeae7; --paper2:#e1e1dd; --panel:#f8f8f5;
   --ink:#16181a; --ink2:#2c3033; --dim:#5e6165;
@@ -148,21 +149,25 @@ footer a:hover{text-decoration:underline}
   .foot{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style>
-<style>:root{--acc:#003d96;--accent:#003d96}</style><style id="lb-navlogo">nav{display:flex!important;align-items:center!important;gap:clamp(10px,2vw,22px)!important}nav img{height:44px!important;width:auto!important;display:block!important}@media(max-width:860px){nav img{height:36px!important}}</style><style id="lb-skin">/* skin 1 — editorial serif, hairline rules, left hero */
+
+:root{--acc:#003d96;--accent:#003d96}
+nav{display:flex!important;align-items:center!important;gap:clamp(10px,2vw,22px)!important}nav img{height:44px!important;width:auto!important;display:block!important}@media(max-width:860px){nav img{height:36px!important}}
+/* skin 1 — editorial serif, hairline rules, left hero */
  .hero h1, header h1{font-family:Georgia,'Times New Roman',serif!important;letter-spacing:-.02em!important;font-weight:600!important;text-transform:none!important}
  h2{font-family:Georgia,'Times New Roman',serif!important;letter-spacing:-.015em!important;text-transform:none!important;font-weight:600!important}
  h2{border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.35em}
  [class*=card],[class*=tile],[class*=item]{border-radius:0!important;border:1px solid rgba(255,255,255,.14)!important;box-shadow:none!important;background:transparent!important}
  section{padding-block:clamp(52px,8vw,104px)!important}
- </style><style id="lb-skin-guard">@media(max-width:900px){
+ 
+@media(max-width:900px){
  .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
  [class*=card]{transform:none!important;margin-bottom:12px!important}
  [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
  section,.hero,header{overflow-x:clip!important}
  img,video,svg{max-width:100%!important;height:auto}
  h1,h2{overflow-wrap:anywhere!important}
-}</style><style id="lb-hdr-centre">
+}
+
 /* the brand here is the logo alone: centre it in the bar instead of parking it on one edge */
 header{position:relative!important;display:flex!important;align-items:center!important;gap:clamp(10px,1.8vw,26px)!important}
 a:first-child{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;margin:0!important;z-index:2}
@@ -173,10 +178,12 @@ header > a:not(a:first-child) ~ a{margin-left:0}
   a:first-child{position:static!important;transform:none!important;margin-right:auto!important}
   a:first-child img{height:38px!important}
 }
-</style><style id="lb-bar-grow">
+
+
 nav{height:auto!important;min-height:0!important}
 nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
-</style><style id="krb-one-logo">
+
+
 /* the bar carried two copies of the same seal — one in .brand, one inside the nav — so they sat on top of
    each other. One logo now, at a size worth reading */
 .hdr{height:auto!important;min-height:0!important;overflow:visible!important}
@@ -192,14 +199,15 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
   .hdr .brand img.lb-logo-unlock,.hdr .brand img{height:64px!important}
   .hdr nav.nav{margin-left:0!important}
 }
-</style><style id="lb-bar-fits-logo">
+
+
 /* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
 header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
   height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
 .bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
 img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
-</style>
-<style id="krb-bar-fix">
+
+
 /* light bar so the black/white stamp reads, logo up in the corner, nav and call grouped on one line */
 .hdr{background:#f5f4f1!important;border-bottom:3px solid #111!important}
 .hdr .hdr-in{display:flex!important;align-items:center!important;justify-content:flex-start!important;
@@ -215,7 +223,14 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
   padding:12px 18px!important;border-radius:2px!important;white-space:nowrap!important;font-size:14.5px!important}
 .hdr .call span{opacity:.7!important;font-weight:600!important;font-size:12px!important;letter-spacing:.08em!important;text-transform:uppercase!important}
 @media(max-width:900px){.hdr .brand img{height:64px!important}.hdr nav.nav{margin-left:0!important}}
-</style></head>
+
+
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+
+</style>
+
+</head>
 <body>
 <header class="hdr" id="top">
 <div class="wrap hdr-in">
@@ -260,6 +275,16 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 <figcaption><span class="mono">Exposed aggregate path</span><span class="mono">Detail 01</span></figcaption>
 </figure>
 </div>
+</div>
+</section>
+<section id="detail">
+<div class="wrap">
+  <div class="sec-head"><h2>Where the two trades meet</h2><p>A slab poured before the levels are set, or a garden bed built against a wall with no drainage, both fail in the same place: the join.</p></div>
+  <div class="body">
+    <p>Concrete and landscaping are usually treated as separate jobs with separate trades, and the join between them is where the problems start. A path that falls towards the house because nobody set the fall. A retaining wall with no aggie drain behind it, holding water against the fence line. A slab poured to a level that leaves the garden bed higher than the door sill.</p>
+    <p>Running both sides together means the levels, falls and drainage are worked out once, before anything is poured. The concrete is set out to meet the garden, and the garden is built to drain away from the concrete — not adjusted afterwards with a shovel and a bag of soil.</p>
+    <p>It also means one schedule. There is no waiting for a second trade to turn up before the job can be finished, and no argument about whose work caused the puddle at the bottom of the driveway.</p>
+  </div>
 </div>
 </section>
 <section id="services">
@@ -438,9 +463,6 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   });
 })();
 </script>
-<style id="lb-header-fault-fix">
-.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
-img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
-</style>
+
 </body>
 </html>

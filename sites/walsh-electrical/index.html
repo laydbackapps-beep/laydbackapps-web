@@ -213,8 +213,15 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 </style><style id="lb-bar-noname-x">SPAN.lb-brand__name{display:none!important}
-</style></head><body><a class="skip" href="#main">Skip to content</a>
-<nav><a class="lb-brand" href="#top" aria-label="Walsh Electrical - Home" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#0066CC;--lb-subc:#0066CC;--lb-acc:#0066CC;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.svg" alt=""></span><span class="lb-brand__word"><span class="lb-brand__name">Walsh Electrical</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a><div class="nav-cta"><a class="btn btn-ghost" href="#quote">Get a quote</a></div></nav><header class="hero" style="position:relative;height:100vh;min-height:600px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;background:var(--bg)">
+</style><style id="lb-bar-fits-logo">
+/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
+header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
+  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
+.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
+img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
+</style>
+</head><body><a class="skip" href="#main">Skip to content</a>
+<nav><a class="lb-brand" href="#top" aria-label="Walsh Electrical - Home" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#0066CC;--lb-subc:#0066CC;--lb-acc:#0066CC;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.svg" alt="" class="lb-logo-unlock"></span><span class="lb-brand__word"><span class="lb-brand__name">Walsh Electrical</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a><div class="nav-cta"><a class="btn btn-ghost" href="#quote">Get a quote</a></div></nav><header class="hero" style="position:relative;height:100vh;min-height:600px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;background:var(--bg)">
   <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0"></canvas>
   <div class="rv" style="position:relative;z-index:1;margin-bottom:1.5rem"><span style="font:600 .8rem/1 Montserrat,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--acc);background:rgba(0,102,204,.1);padding:.4rem 1rem;border-radius:999px">Licensed Electrician</span></div>
   <h1 class="rv" data-ux="words" style="position:relative;z-index:1;font:800 clamp(36px,6vw,72px)/1.05 Montserrat,sans-serif;margin:0 0 1rem;max-width:900px;color:var(--ink);text-shadow:none">Powering your world safely</h1>
@@ -543,5 +550,9 @@ header a[href^="tel"],.site-header a[href^="tel"]{
   opacity:1 !important;
 }
 .lb-brand__sub:empty{display:none !important}
+</style>
+<style id="lb-header-fault-fix">
+:is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
 </body></html>

@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;900&family=Public+Sans:wght@400;500;600&display=swap">
 <script>document.documentElement.classList.add('js');</script>
 <style>
+
 :root{
   --bg:#e8e8e5; --bg-2:#eeeeeb; --panel:#f7f7f4;
   --ink:#141312; --ink-2:#4a4842; --dim:#5a5750;
@@ -152,21 +153,24 @@ footer.site a:hover{border-bottom-color:var(--hat)}
   .foot{grid-template-columns:1fr}
   .cellgrid > div{border-right:0}
 }
-</style>
-<style id="lb-bar-grow">
+
+
 nav{height:auto!important;min-height:0!important}
 nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
-</style><style id="lb-hero-noscale">
+
+
 /* job-stamped.jpg is 1080x569. Full-bleed at 1920 it was enlarged; it is held at its own pixel size here so
    nothing is interpolated, and the bar's own ground fills either side. */
 img[src$="job-stamped.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
 {position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
   transform:none!important;width:100%!important;max-width:1080px!important;height:auto!important;max-height:none!important;
   object-fit:contain!important;display:block!important;margin:0 auto!important}
-</style><style id="lb-hdr-centre">
+
+
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){}
-</style><style id="struct-pass">
+
+
 /* the page was padded out with near-empty full-height sections, and the header logo was a thumbnail */
 section,section.sl{padding:clamp(34px,4vw,58px) 0!important}
 header .brand img,header a img,.site-header img,.hdr img{height:clamp(56px,5vw,76px)!important;width:auto!important;max-width:none!important}
@@ -183,7 +187,32 @@ header,header.hdr,.site-header{min-height:0!important;height:auto!important}
 @media(max-width:900px){.hero{grid-template-columns:1fr!important}
   .hero>.hero-img,.hero>.hero-photo{grid-column:1!important;grid-row:2!important;height:auto!important;max-height:320px!important}
   .hero>.hero-inner,.hero>.hero-in,.hero>.wrap{grid-row:1!important}}
-</style></head>
+
+.hero{min-height:0!important;height:auto!important}.hero canvas,#heroCanvas{display:none!important}
+
+#lbq{--lbq-accent:var(--acc);--lbq-ink:var(--ink);--lbq-muted:var(--ink-2);--lbq-bg:var(--bg-2);--lbq-panel:var(--panel);--lbq-line:var(--line);padding:clamp(46px,5.6vw,86px) 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto}
+#lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em;font-family:var(--font-d);font-weight:900}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
+#lbq .lbq-f{display:grid;gap:12px}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.05em;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:2px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:14px 24px;border:2px solid #141312;border-radius:2px;background:var(--hat,#f3d200);color:#141312;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+#lbq.v3 .lbq-g{display:grid;gap:12px}
+#lbq.v3 .lbq-hp2{padding-left:16px}
+@media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
+  
+</style>
+</head>
 <body>
 <header class="site">
   <div class="wrap bar">
@@ -201,7 +230,7 @@ header,header.hdr,.site-header{min-height:0!important;height:auto!important}
 <main id="top">
   <section class="hero" aria-labelledby="hero-h">
     <!-- LB-3D-HERO -->
-    <canvas id="heroCanvas" width="8" height="8" aria-hidden="true"></canvas>
+    
     <img class="hero-photo" src="assets/job-stamped.jpg" alt="Finished concrete slab with control joints cut across it, washed back and curing">
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="wrap hero-in">
@@ -330,28 +359,7 @@ header,header.hdr,.site-header{min-height:0!important;height:auto!important}
 
   <span id="quote" class="anchor" aria-hidden="true"></span>
   <section id="lbq" class="v3" aria-labelledby="lbq-h">
-  <style>
-#lbq{--lbq-accent:var(--acc);--lbq-ink:var(--ink);--lbq-muted:var(--ink-2);--lbq-bg:var(--bg-2);--lbq-panel:var(--panel);--lbq-line:var(--line);padding:clamp(46px,5.6vw,86px) 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
-#lbq *{box-sizing:border-box}
-#lbq .lbq-w{max-width:1060px;margin:0 auto}
-#lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em;font-family:var(--font-d);font-weight:900}
-#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
-#lbq .lbq-f{display:grid;gap:12px}
-#lbq label{display:block;font-size:.8rem;letter-spacing:.05em;color:var(--lbq-muted);margin-bottom:5px}
-#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:2px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
-#lbq textarea{min-height:96px;resize:vertical}
-#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
-#lbq button{margin-top:6px;padding:14px 24px;border:2px solid #141312;border-radius:2px;background:var(--hat,#f3d200);color:#141312;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
-#lbq button:disabled{opacity:.6;cursor:wait}
-#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
-#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
-#lbq .lbq-cons input{width:auto}
-#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-#lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
-#lbq.v3 .lbq-g{display:grid;gap:12px}
-#lbq.v3 .lbq-hp2{padding-left:16px}
-@media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
-  </style>
+  
   <div class="lbq-w">
       <div class="lbq-sp"><div class="lbq-hp2"><h2 id="lbq-h">Request a quote</h2>
       <p class="lbq-s">Tell us a few details and we&#39;ll come back to you with a price for the concrete work &mdash; no obligation.</p><p class="lbq-s" style="margin-bottom:0">Prefer to talk it through? Call or text <a class="tel lbq-tel" href="tel:+61481221003">0481 221 003</a> &mdash; Perth WA.</p></div><div><form id="lbq-form" novalidate data-site="the-concrete-guys" data-biz="The Concrete Guys"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div><label for="lbq-sv">What needs pouring?</label><select id="lbq-sv" name="service"><option value="">Choose one (optional)</option><option>Driveway or crossover</option><option>House or shed slab</option><option>Footpath or path</option><option>Exposed aggregate</option><option>Pad, patio or extension</option><option>Something else</option></select></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, suburb, access, when you need it&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div></div>

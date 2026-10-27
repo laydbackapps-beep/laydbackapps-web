@@ -10,6 +10,7 @@
 <meta content="#101a10" name="theme-color"/>
 <style>
 
+
 :root{
   --lb-name:#ffffff; --lb-acc:#a8c98a; --lb-subc:rgba(255,255,255,.72);
   --ink:#ffffff; --muted:rgba(255,255,255,.72); --line:rgba(255,255,255,.14); --panel:rgba(255,255,255,.045);
@@ -193,16 +194,19 @@ header.site nav.main a.btn,header.site a.btn{background:#3c5424!important;color:
   header.site a.btn{order:3!important}
 }
 
-</style>
 
 
-<style id="westwood-tel-fix">
 /* the number read as loose text at the end of the nav; label it and group it with the quote button */
 .site nav,header nav{display:flex!important;align-items:center!important;gap:clamp(14px,1.8vw,26px)!important}
 a[href^="tel:"]{display:inline-flex!important;align-items:center!important;gap:8px!important;white-space:nowrap!important;
   font-weight:700!important;text-decoration:none!important}
 a[href^="tel:"]::before{content:"Call";font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;font-weight:600}
-</style></head>
+
+.hero{min-height:0!important;height:auto!important}.hero canvas,#heroCanvas{display:none!important}
+</style>
+
+
+</head>
 <body>
 <header class="site">
 <div class="container bar">
@@ -218,7 +222,7 @@ a[href^="tel:"]::before{content:"Call";font-size:11px;letter-spacing:.12em;text-
 </header>
 <main>
 <section aria-label="Tree services &amp; hedging" class="hero" id="top">
-<canvas aria-hidden="true" id="heroCanvas"></canvas>
+
 <div aria-hidden="true" class="veil"></div>
 <div class="container inner">
 <span class="kicker">Tree services &amp; hedging</span>
@@ -226,6 +230,21 @@ a[href^="tel:"]::before{content:"Call";font-size:11px;letter-spacing:.12em;text-
 <p class="lede">Westwood Trees and Hedging is a tree work business working across the local area. Removals and the rest of the list below are quoted from the site, not from a price list.</p>
 <div class="acts"><a class="btn" href="#contact">Get a quote</a><a class="btn ghost" href="#services">See what we do</a></div>
 <ul class="facts"><li>Tree removal</li><li>Hedge trimming</li><li>Pruning</li><li>Stump grinding</li></ul>
+</div>
+</section>
+<section id="detail">
+<div class="container">
+  <div class="head"><h2>What decides the price</h2>
+  <p>Tree work is priced on access and risk far more than on the size of the tree, and that is worth understanding before anyone quotes.</p></div>
+  <div class="grid g3">
+    <article class="card"><h3>Access</h3><p>A tree in an open back paddock comes down in sections onto the ground. The same tree between a fence, a shed and a pool has to come down in pieces, rigged and lowered — which is slower, and it is the single biggest factor in the difference between two quotes.</p></article>
+    <article class="card"><h3>What is under it</h3><p>Power lines, gutters, pergolas, cars and garden beds all change the method. If the drop zone is clear, the work is quicker. If it is not, the tree is climbed and lowered in sections instead of felled.</p></article>
+    <article class="card"><h3>What happens to the timber</h3><p>Whether the wood is left cut for firewood, taken away, or mulched on site changes both the labour and the tip fees. It is asked up front rather than assumed, because hauling a trailer of green timber is not free.</p></article>
+  </div>
+  <div class="body" style="margin-top:22px">
+    <p>A hedge is priced on the same logic: height, how far back it is being cut, and whether the clippings are being removed. A light trim every season keeps a hedge dense; cutting hard into old wood to reduce height is a different job and can leave a hedge looking bare for a year. If a hedge has been let go, that is said before the work starts rather than discovered afterwards.</p>
+    <p>Every job gets a written scope: what is being removed or cut, how high, what is being taken away, and what the ground will look like when the crew leaves. Nothing is left as a verbal understanding, because “a bit off the top” means something different to everyone.</p>
+  </div>
 </div>
 </section>
 <section id="services">
@@ -281,62 +300,7 @@ a[href^="tel:"]::before{content:"Call";font-size:11px;letter-spacing:.12em;text-
 </div>
 </div>
 </footer>
-<script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-(function(){
-  var c=document.getElementById('heroCanvas'); if(!c) return;
-  var ctx=c.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2), w=0,h=0,t=0,raf=null;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function size(){var r=c.getBoundingClientRect(); w=Math.max(320,r.width|0); h=Math.max(320,r.height|0);
-    c.width=w*dpr; c.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);}
-  function draw(){
-    var g=ctx.createLinearGradient(0,0,0,h);
-    g.addColorStop(0,'#141518'); g.addColorStop(.55,'#0e0f11'); g.addColorStop(1,'#090a0b');
-    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
-    var y0=h*0.52;
-    ctx.beginPath(); ctx.moveTo(0,y0); ctx.lineTo(w,y0); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
 
-    // a tree line and a trimmed hedge in their green, cream light behind
-    var gg=ctx.createLinearGradient(0,y0,0,h);
-    gg.addColorStop(0,'#2b4a2b'); gg.addColorStop(.5,'#1f3620'); gg.addColorStop(1,'#152414');
-    ctx.fillStyle=gg; ctx.fill();
-    // distant tree silhouettes
-    ctx.fillStyle='rgba(12,26,12,.95)';
-    for(var i=0;i<14;i++){
-      var tx=(i*w/13)+((i%3)*w*0.012), th=h*(0.20+((i*7)%5)*0.045);
-      ctx.beginPath(); ctx.moveTo(tx,y0); ctx.lineTo(tx-w*0.018,y0);
-      ctx.lineTo(tx-w*0.009,y0-th); ctx.closePath(); ctx.fill();
-      ctx.fillRect(tx-w*0.014,y0-4,w*0.010,7);
-    }
-    // hedge block, trimmed flat on top
-    ctx.fillStyle='#2f5230';
-    ctx.fillRect(0, y0+ (h-y0)*0.22, w, (h-y0)*0.30);
-    ctx.fillStyle='rgba(255,255,255,.06)';
-    for(var b=0;b<170;b++){
-      var bx=(b*71.3)%w, by=y0+(h-y0)*0.22+((b*29.7)%((h-y0)*0.30));
-      ctx.fillRect(bx,by,2,2);
-    }
-    ctx.strokeStyle='rgba(0,0,0,.25)'; ctx.lineWidth=2;
-    ctx.beginPath(); ctx.moveTo(0, y0+(h-y0)*0.22); ctx.lineTo(w, y0+(h-y0)*0.22); ctx.stroke();
-    // cool morning light from the left
-    var lg=ctx.createRadialGradient(w*.18,h*.12,12,w*.18,h*.12,w*.7);
-    lg.addColorStop(0,'rgba(238,226,207,.20)'); lg.addColorStop(1,'rgba(238,226,207,0)');
-    ctx.fillStyle=lg; ctx.fillRect(0,0,w,h);
-
-  }
-  function loop(){ t+=0.004; draw(); raf=requestAnimationFrame(loop); }
-  size(); draw(); if(!reduce){ loop(); }
-  window.addEventListener('resize', function(){ size(); draw(); }, {passive:true});
-  window.addEventListener('pagehide', function(){ if(raf) cancelAnimationFrame(raf); });
-})();
-(function(){
-  var f=document.getElementById('lbq-form'); if(!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('lbq-note').textContent = "Thanks. This preview form isn\u2019t wired to a mailbox yet \u2014 message us on Facebook and we\u2019ll get straight back to you.";
-  });
-})();
-</script>
 <script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#ecdfce","important");})();</script>
 </body>
 </html>

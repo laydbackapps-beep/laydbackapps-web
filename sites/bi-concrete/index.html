@@ -70,20 +70,25 @@ header{position:fixed;inset:0 0 auto 0;height:var(--nav);z-index:100;background:
 
 <!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
 <style id="lb-hdr-centre">
-.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
-</style></head>
+@media(max-width:900px){}
+</style><style id="lb-bar-fits-logo">
+/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
+header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
+  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
+.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
+img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
+</style>
+</head>
 <body>
 
 <header>
   <div class="hdr">
     <a class="brand" href="#top" aria-label="B.I Concrete Constructions, back to top">
-      <img src="assets/logo.svg" alt="" class="lb-logo" loading="eager" decoding="async">
-      <span class="brand-name">B.I Concrete Constructions</span>
+      <img src="assets/logo.svg" alt="" class="lb-logo lb-logo-unlock" loading="eager" decoding="async">
+      <span class="brand-name lb-sr-only">B.I Concrete Constructions</span>
     </a>
-    <nav class="hdr-nav" aria-label="Sections"><a class="brand-monogram" href="#top" aria-label="B.I Concrete Constructions Pty Ltd"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-      <a href="#services">Services</a>
+    <nav class="hdr-nav" aria-label="Sections"><a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#contact">Contact</a>
@@ -334,5 +339,9 @@ header{position:fixed;inset:0 0 auto 0;height:var(--nav);z-index:100;background:
   else init();
 })();
 </script>
+<style id="lb-header-fault-fix">
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+</style>
 </body>
 </html>

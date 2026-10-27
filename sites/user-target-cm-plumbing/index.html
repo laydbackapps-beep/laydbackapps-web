@@ -256,13 +256,20 @@ footer{background:var(--nav);color:#E9F1F9;padding:clamp(44px,6vw,66px) 0 0;bord
 {display:none!important}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style></head>
+</style><style id="lb-bar-fits-logo">
+/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
+header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
+  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
+.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
+img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
+</style>
+</head>
 <body>
 
 <header class="site-head">
   <div class="wrap head-in">
     <a class="lb-brand" href="#top">
-      <img src="assets/logo.svg" alt="" class="lb-logo" loading="eager" decoding="async">
+      <img src="assets/logo.svg" alt="" class="lb-logo lb-logo-unlock" loading="eager" decoding="async">
       <span class="brand-txt">
         <span class="lb-brand__name">CM Plumbing</span>
         <span class="brand-sub">All Things Plumbing</span>
@@ -616,5 +623,8 @@ setTimeout(function(){[].slice.call(document.querySelectorAll('.rv')).forEach(fu
   });
 })();
 </script>
+<style id="lb-header-fault-fix">
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+</style>
 </body>
 </html>

@@ -170,12 +170,19 @@ footer{background:var(--forest-deep);border-top:1px solid rgba(168,128,58,.25);c
 /* quote-form band tuned to this palette */
 section#lbq{--lbq-bg:#FAF8F2;--lbq-ink:#20261F;--lbq-muted:#5C6657;--lbq-panel:#FFFFFF;--lbq-line:#E2DDCE;--lbq-accent:#A8803A}
 </style>
+<style id="lb-bar-fits-logo">
+/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
+header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
+  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
+.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
+img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
+</style>
 </head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <nav class="nav" aria-label="Main">
   <div class="wrap nav-in">
     <a class="brand" href="#top" aria-label="Gilbert Locksmiths and Door Systems home">
-      <img src="assets/logo-mark_gilbert-locksmiths.png" alt="Gilbert Locksmiths &amp; Door Systems logo" width="40" height="40">
+      <img src="assets/logo-mark_gilbert-locksmiths.png" alt="Gilbert Locksmiths &amp; Door Systems logo" width="40" height="40" class="lb-logo-unlock">
       <span class="brand-txt">
         <span class="brand-name">GILBERT</span>
         <span class="brand-sub">Locksmiths &amp; Door Systems</span>
@@ -606,5 +613,8 @@ setTimeout(function(){
 
 
 
+<style id="lb-header-fault-fix">
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+</style>
 </body>
 </html>

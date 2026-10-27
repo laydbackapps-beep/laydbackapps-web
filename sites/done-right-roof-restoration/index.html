@@ -316,7 +316,14 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 {display:none!important}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style></head>
+</style><style id="lb-bar-fits-logo">
+/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
+header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
+  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
+.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
+img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
+</style>
+</head>
 <body>
 
 <a class="skip" href="#services">Skip to content</a>
@@ -324,7 +331,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 <nav class="nav" aria-label="Main">
 <a class="lb-brand" href="#top" aria-label="Done Right - Home" style="--lb-disp:Roboto Slab;--lb-sub:Inter;--lb-acc:#3c5484;--lb-name:#3c5484;--lb-subc:#3c5484;"><span class="lb-brand__word"><span class="lb-brand__name">Done <span class="lb-acc">Right</span></span><span class="lb-brand__sub"><span class="lb-acc">Roof</span> & Restoration &middot; —Done Right The First Time—</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
   <a class="nav__b" href="#top" aria-label="Done Right Roof and Restoration home">
-    <img src="assets/logo.png" alt="Done Right Roof &amp; Restoration logo">
+    <img src="assets/logo.png" alt="Done Right Roof &amp; Restoration logo" class="lb-logo-unlock">
     <span><span class="nb-s">Repairs · Restoration · Gutters</span></span>
   </a>
   <ul class="nav__links">
@@ -739,5 +746,8 @@ var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear(
   if (!reduce) raf = requestAnimationFrame(loop); 
 })();
 </script>
+<style id="lb-header-fault-fix">
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+</style>
 </body>
 </html>

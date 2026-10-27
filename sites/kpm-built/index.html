@@ -95,14 +95,21 @@ a:focus-visible{outline:2px solid var(--acc-hi);outline-offset:3px}
 #sceneWrap,#sceneSticky{height:auto !important;min-height:0 !important;overflow:visible !important;}
 #sceneSticky .hero-copy,#sceneWrap .hero-copy{position:relative !important;left:auto !important;top:auto !important;right:auto !important;padding:calc(var(--nav-h,64px) + 7vh) clamp(1rem,6vw,7rem) 44px !important;max-width:64ch;pointer-events:auto;}
 </style>
+<style id="lb-bar-fits-logo">
+/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
+header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
+  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
+.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
+img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
+</style>
 </head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <script>document.documentElement.classList.add('js');</script>
 <a class="skip" href="#services">Skip to content</a>
 <nav class="nav" role="navigation" aria-label="Primary">
   <a class="nav__b" href="#top" aria-label="KPM Built — Home">
-    <img src="assets/logo.jpg" alt="" aria-hidden="true" loading="eager">
-    <span>KPM Built</span>
+    <img src="assets/logo.jpg" alt="" aria-hidden="true" loading="eager" class="lb-logo-unlock">
+    <span class="lb-sr-only">KPM Built</span>
   </a>
   <ul class="nav__links">
     <li><a href="#services">Services</a></li>
@@ -306,5 +313,9 @@ var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear(
 
 
 <script>/* herocopy-failsafe 2026-10-14 */setTimeout(function(){var hc=document.getElementById('heroCopy')||document.querySelector('.hero-copy');if(hc){var o=parseFloat(getComputedStyle(hc).opacity||'1');if(o<0.08){hc.style.opacity='1';}var guard=0;var t=setInterval(function(){guard++;var oo=parseFloat(getComputedStyle(hc).opacity||'1');if(oo<0.08&&guard<12){hc.style.opacity='1';}if(guard>=12){clearInterval(t);}} ,800);}},900);</script>
+<style id="lb-header-fault-fix">
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+</style>
 </body>
 </html>

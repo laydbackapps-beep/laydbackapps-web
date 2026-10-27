@@ -99,7 +99,7 @@ footer .f-logo img{width:26px;height:26px;border-radius:50%}
 </head>
 <body>
 <nav>
-  <a class="brand" href="#top"><img src="assets/logo.jpg" alt="Spradley Concreting logo"><span>Spradley Concreting</span></a>
+  <a class="brand" href="#top"><img src="assets/logo.jpg" alt="Spradley Concreting logo"><span class="lb-sr-only">Spradley Concreting</span></a>
   <span style="display:flex;gap:22px;align-items:center"><a href="#work" style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Recent work</a><a class="tel" href="tel:+61427717485">0427 717 485</a></span>
 </nav>
 
@@ -410,5 +410,8 @@ html,body{overflow-x:hidden}
 <script>/* reveal safety net: reveal all after load so content never sticks hidden */
 (function(){var es=[].slice.call(document.querySelectorAll('.rv'));function all(){for(var i=0;i<es.length;i++){es[i].classList.add('on');}}setTimeout(all,1100);})();
 </script>
+<style id="lb-header-fault-fix">
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+</style>
 </body>
 </html>

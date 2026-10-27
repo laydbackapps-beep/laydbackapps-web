@@ -266,16 +266,14 @@ img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 </style><style id="lb-hdr-centre">
-.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+@media(max-width:900px){}
 </style></head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
-<header class="header" role="banner" id="top"><a href="/" class="lb-brand" aria-label="BR Civil"><img src="assets/logo.jpg" alt="" class="lb-mark" loading="eager" decoding="async"><span class="lb-word lb-word--text">Cliffside Construction</span><span class="lb-sr">civil contractor</span></a>
+<header class="header" role="banner" id="top"><a href="/" class="lb-brand" aria-label="BR Civil"><img src="assets/logo.jpg" alt="" class="lb-mark" loading="eager" decoding="async"><span class="lb-word lb-word--text lb-sr-only">Cliffside Construction</span><span class="lb-sr">civil contractor</span></a>
   <div class="header-inner">
     
-    <span class="lb-socials"><a class="lb-soc" href="instagram.com/cliffsideconstruction" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a></span><nav class="nav" role="navigation" aria-label="Main navigation"><a class="brand-monogram" href="#top" aria-label="Cliffside Construction"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-      <a href="#services">Services</a>
+    <span class="lb-socials"><a class="lb-soc" href="instagram.com/cliffsideconstruction" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a></span><nav class="nav" role="navigation" aria-label="Main navigation"><a href="#services">Services</a>
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -855,5 +853,8 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
 @media(max-width:700px){.hero-inner{padding-top:96px}.hero .lbwm{font-size:clamp(56px,20vw,110px)}}
 </style>
 <script>setTimeout(function(){document.querySelectorAll('.rv,.lb-rb__slide:first-child').forEach(function(e){e.classList.add('on','is-on')})},1100);</script>
+<style id="lb-header-fault-fix">
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+</style>
 </body>
 </html>

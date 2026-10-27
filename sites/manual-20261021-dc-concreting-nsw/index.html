@@ -136,9 +136,8 @@ img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
   transform:none!important;width:100%!important;max-width:1600px!important;height:auto!important;max-height:none!important;
   object-fit:contain!important;display:block!important;margin:0 auto!important}
 </style><style id="lb-hdr-centre">
-.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+@media(max-width:900px){}
 </style></head>
 <body>
 <!-- LB-3D-HERO -->
@@ -146,10 +145,9 @@ img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
 <header class="hdr" id="top">
   <div class="hdr-in">
     <a class="brand" href="#top">
-      <img src="assets/logomark.svg" alt="DC Concreting NSW logo"><span class="brand-txt"><span class="brand-name">DC Concreting NSW</span><span class="brand-sub">Concreting &middot; NSW</span></span>
+      <img src="assets/logomark.svg" alt="DC Concreting NSW logo"><span class="brand-txt"><span class="brand-name lb-sr-only">DC Concreting NSW</span><span class="brand-sub">Concreting &middot; NSW</span></span>
     </a>
-    <nav class="nav" aria-label="Main"><a class="brand-monogram" href="#top" aria-label="DC Concreting NSW"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-      <a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#quote">Quote</a>
+    <nav class="nav" aria-label="Main"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#quote">Quote</a>
     </nav>
     <a class="hdr-cta" href="#quote">Get a quote</a>
   </div>
@@ -386,5 +384,8 @@ img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
   var y=document.getElementById('yr'); if(y) y.textContent=String(new Date().getFullYear());
 })();
 </script>
+<style id="lb-header-fault-fix">
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+</style>
 </body>
 </html>
