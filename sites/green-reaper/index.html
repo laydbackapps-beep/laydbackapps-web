@@ -221,15 +221,28 @@ img[src$="hero-treework.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
 .brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style><style id="lb-gr-head">
+.brand-monogram{display:none!important}
+.site-bar .bar-in{position:relative!important;display:flex!important;align-items:center!important;min-height:126px!important;gap:clamp(16px,2.4vw,34px)!important}
+.site-bar .brand{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;
+  display:flex!important;align-items:center!important;margin:0!important;z-index:5!important}
+.site-bar .lb-logo-hi{height:clamp(84px,7.6vw,104px)!important;width:auto!important;max-width:none!important;max-height:none!important;
+  display:block!important;background:transparent!important;border:0!important;box-shadow:none!important}
+.site-bar .bar-nav{margin-left:auto!important;display:flex!important;align-items:center!important;gap:clamp(14px,1.8vw,26px)!important}
+@media(max-width:1100px){
+  .site-bar .bar-in{flex-wrap:wrap!important;justify-content:center!important;row-gap:10px!important;padding-block:14px!important;min-height:0!important}
+  .site-bar .brand{position:static!important;transform:none!important;width:100%!important;justify-content:center!important}
+  .site-bar .lb-logo-hi{height:84px!important}
+  .site-bar .bar-nav{margin:0 auto!important;flex-wrap:wrap!important;justify-content:center!important}
+}
 </style></head>
 <body>
 <a class="skip" href="#top">Skip to content</a>
 
 <header class="site-bar">
   <div class="wrap bar-in">
-    <a class="brand" href="#top" aria-label="Green Reaper"><img src="assets/logo-flat.png" alt="Green Reaper" width="512" height="512"></a>
-    <nav class="bar-nav" aria-label="Main"><a class="brand-monogram" href="#top" aria-label="Green Reaper"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-      <a href="#services">Services</a>
+    <a class="brand" href="#top" aria-label="Green Reaper"><img class="lb-logo-hi" src="assets/logo-head.png" alt="Green Reaper"></a>
+    <nav class="bar-nav" aria-label="Main"><a href="#services">Services</a>
       <a href="#process">How it runs</a>
       <a href="#work">Work</a>
       <a href="#faq">FAQ</a>
