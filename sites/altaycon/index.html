@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+
 :root{
   --ink:#101114;
   --ink-2:#1b1d21;
@@ -273,30 +274,57 @@ html.js .rv{opacity:0;transform:translateY(16px);transition:opacity .5s ease,tra
   html.js .rv{opacity:1!important;transform:none!important;transition:none!important}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
-</style>
-<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
-<style id="lb-bar-noname">
+
+.rv{opacity:1!important;transform:none!important}
+
 /* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
 .lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
 {display:none!important}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style><style id="lb-hdr-centre">
-.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
+
+
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+@media(max-width:900px){}
+
+</style>
+<noscript></noscript>
+<style id="lbu-bar">
+/* the bar was a tiny mark plus a typed name; the client's own mark and wordmark are used instead, at size */
+header .lb-brand--lockup{display:flex!important;align-items:center!important;gap:clamp(10px,1.2vw,16px)!important;text-decoration:none!important;flex:0 0 auto!important}
+header .lbu-mark{display:block!important;height:clamp(46px,4.6vw,62px)!important;width:auto!important;max-width:none!important}
+header .lbu-word{display:block!important;height:clamp(20px,1.9vw,28px)!important;width:auto!important;max-width:none!important}
+header .lb-brand__name,header .lb-brand__word,header .lb-brand__sub,header .lb-brand__mark{display:none!important}
+header{padding-block:10px!important;background:#0f1012!important;border-bottom:2px solid #c9c9c9!important}
+header nav.nav a{color:#e6e6e6!important}
+header nav.nav a:hover{color:#fff!important}
+header .lbu-mark{filter:grayscale(1) brightness(1.6)!important}
+header .header-inner,header .hdr-in{display:flex!important;align-items:center!important;gap:clamp(14px,2vw,26px)!important;min-height:0!important;flex-wrap:wrap!important}
+header nav.nav{margin-left:auto!important;display:flex!important;align-items:center!important;gap:clamp(14px,1.8vw,26px)!important;flex-wrap:wrap!important}
+@media(max-width:900px){header .lbu-mark{height:44px!important}header .lbu-word{height:19px!important}}
+</style><style id="lbu-hero-split">
+/* the hero photo is 1280px wide and was being stretched full-bleed on a 1440 viewport; it now sits in its own column at native size */
+.hero{display:grid!important;grid-template-columns:1.05fr .95fr!important;align-items:stretch!important;
+  min-height:0!important;height:auto!important;padding:0!important;overflow:hidden!important}
+.hero>.hero-img{position:relative!important;inset:auto!important;grid-column:2!important;grid-row:1!important;
+  width:100%!important;height:100%!important;max-height:600px!important;object-fit:cover!important;object-position:60% 50%!important;z-index:0!important}
+.hero>.hero-veil,.hero>.hero-scrim{display:none!important}
+.hero>.wrap,.hero>.hero-in{grid-column:1!important;grid-row:1!important;align-self:center!important;
+  padding:clamp(26px,4vw,54px) clamp(20px,3.4vw,46px)!important;position:relative!important;z-index:2!important}
+.hero h1,.hero .hero-sub,.hero .hero-cta,.hero .hero-kicker{position:relative!important;z-index:2!important}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr!important}
+  .hero>.hero-img{grid-column:1!important;grid-row:2!important;height:auto!important;max-height:340px!important}
+  .hero>.wrap,.hero>.hero-in{grid-row:1!important}
+}
 </style></head>
 <body>
 <!-- LB-3D-HERO -->
 <a class="skip" href="#main">Skip to content</a>
 <header>
   <div class="header-inner">
-    <a class="lb-brand" href="#top" aria-label="Altaycon home">
-      <span class="lb-brand__mark"><img src="assets/logo.svg" alt="" class="lb-logo" loading="eager" decoding="async"></span>
-      <span class="lb-brand__name">Altaycon</span>
-    </a>
-    <nav class="nav" aria-label="Primary"><a class="brand-monogram" href="#top" aria-label="Altaycon"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-      <a href="#services">Services</a>
+    <a class="lb-brand lb-brand--lockup" href="#top" aria-label="Altaycon - home"><img class="lbu-mark" src="assets/logo-isolated.png" alt="" aria-hidden="true"><img class="lbu-word" src="assets/logo-word.png" alt="Altaycon"></a>
+    <nav class="nav" aria-label="Primary"><a href="#services">Services</a>
       <a href="#work">Work</a>
       <a href="#approach">Approach</a>
       <a href="#lbq">Quote</a>
@@ -312,7 +340,7 @@ html.js .rv{opacity:0;transform:translateY(16px);transition:opacity .5s ease,tra
   <section class="hero" id="top">
     <img class="hero-img" src="assets/hero.jpg" alt="Concrete being placed and worked on a construction site" width="1920" height="1080" decoding="async">
     <div class="hero-veil" aria-hidden="true"></div>
-    <canvas id="heroCanvas" class="hidden-3d" aria-hidden="true" width="8" height="8"></canvas>
+    
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-copy">
