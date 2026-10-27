@@ -291,21 +291,37 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 </style><style id="lb-bar-noname-x">SPAN.lb-brand__name{display:none!important}
+</style><style id="mc-header">
+/* the logo carries the name inside its own artwork, so it is shown whole, centred and big —
+   no second copy of the name typed beside it, no plate */
+.nav.mc-nav{position:sticky!important;top:0!important;inset:auto!important;display:block!important;z-index:60!important;
+  background:rgba(9,9,11,.97)!important;border-bottom:1px solid rgba(176,0,0,.55)!important;backdrop-filter:blur(10px)!important;padding:0!important}
+.mc-nav .mc-brand-row{display:flex!important;justify-content:center!important;align-items:center!important;padding:11px 16px 4px!important}
+.mc-nav .mc-brand{display:block!important;line-height:0!important}
+.mc-nav .mc-brand img{display:block!important;height:clamp(64px,6vw,92px)!important;width:auto!important;max-width:none!important;
+  background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important}
+.mc-nav .mc-links{display:flex!important;justify-content:center!important;align-items:center!important;flex-wrap:wrap!important;
+  gap:clamp(14px,2.2vw,30px)!important;padding:0 16px 12px!important}
+.mc-nav .mc-links a{color:#CFD2D8!important;text-decoration:none!important;font-size:.92rem!important;background:none!important}
+.mc-nav .mc-links a:hover{color:#fff!important}
+.mc-nav .mc-tel{color:#fff!important;font-weight:700!important}
+.mc-nav .mc-cta{background:var(--accent,#b00000)!important;color:#fff!important;padding:.5rem 1.1rem!important;border-radius:6px!important;font-weight:700!important}
+.mc-nav .burger{display:none!important}
+@media(max-width:820px){
+  .mc-nav .mc-brand img{height:60px!important}
+  .mc-nav .mc-links{gap:10px 16px!important;font-size:.85rem!important}
+}
 </style></head>
 <body>
-<nav class="nav" aria-label="Main">
-  <div class="wrap nav-in">
-    <a class="lb-brand" href="#top" aria-label="Mana Concrete - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#f5f5f0;--lb-subc:#f5f5f0;--lb-acc:#b00000;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo-mark_radar-170.png" alt="" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">Mana Concrete</span><span class="lb-brand__sub"><span class="lb-acc">Concrete</span> Specialists</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
-    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navlinks">
-      <a href="#services">Services</a>
-      <a href="#recent">Recent work</a>
-      <a href="#process">How we work</a>
-      <a href="#areas">Service area</a>
-      <a class="nav-cta" href="#lbq" data-ux="magnetic">Get a free quote</a>
-    </div>
+<nav class="nav mc-nav" aria-label="Main">
+  <div class="mc-brand-row">
+    <a class="mc-brand" href="#top" aria-label="Mana Concrete — home">
+      <img src="assets/logo-isolated.png" alt="Mana Concrete" width="320" height="236">
+    </a>
+  </div>
+  <div class="mc-links">
+    <a href="#services">Services</a><a href="#recent">Recent work</a><a href="#process">How we work</a><a href="#areas">Service area</a>
+    <a class="mc-tel" href="tel:0433658016">0433 658 016</a><a class="mc-cta" href="#contact">Get a free quote</a>
   </div>
 </nav>
 
