@@ -138,6 +138,10 @@ footer ul{list-style:none;display:grid;gap:.45rem;font-size:.93rem}
   .row2{grid-template-columns:1fr}
   .f-grid{grid-template-columns:1fr}
 }
+/* brand colour carried by rules, labels and CTAs rather than repainting section backgrounds */
+main section{border-bottom:1px solid rgba(194,24,91,.18)!important}
+main section h2{box-shadow:inset 0 -8px 0 rgba(194,24,91,.10)!important}
+main section ul li::before,main section ol li::marker{color:#c2185b!important}
 </style>
 <style id="lb-hero-noscale">
 /* hero-work.jpg is 1200x1600. Full-bleed at 1920 it was enlarged; it is held at its own pixel size here so
@@ -171,12 +175,19 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
   padding:12px 18px!important;border-radius:2px!important;text-decoration:none!important}
 .hdr .nav .cta:hover,.hdr .nav a[href="#quote"]:hover{background:#e02570!important;text-decoration:none!important}
 /* more of the brand pink through the page, not just in buttons */
-main section:nth-of-type(even){background:#fbf6f5!important}
-main section:nth-of-type(3n){background:#f9eef1!important}
+
+
 h2{position:relative}
 .eyebrow{color:#c2185b!important}
 .eyebrow::before{background:#c2185b!important}
 @media(max-width:900px){.hdr .brand-word-img{height:20px!important}}
+</style><style id="contrast-pass">
+/* the booking button and phone were sitting near-invisible on the blush panels */
+.hdr .nav .cta,.hdr .nav a[href="#quote"]{color:#fff!important;background:#c2185b!important}
+main a[href^="tel:"]{background:#c2185b!important;color:#fff!important;text-decoration:none!important}
+main a[href^="tel:"]:hover{background:#a5124d!important}
+.dark a[href^="tel:"],.hdr a[href^="tel:"]{background:#c2185b!important;color:#fff!important}
+li::marker,strong,b{color:inherit}
 </style></head>
 <body>
 <!-- LB-3D-HERO -->
