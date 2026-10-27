@@ -142,6 +142,17 @@ img[src$="hero-wide.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
 .brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style><style id="lb-rl-hero">
+/* the photo is shown no wider than it can resolve — a panel under the copy, not a stretched full-bleed */
+.hero{min-height:0!important;height:auto!important;display:block!important;padding:clamp(26px,3.6vw,52px) 0!important}
+.hero .scrim,.hero #heroCanvas{display:none!important}
+.hero .wrap{display:block!important;max-width:1180px!important;margin:0 auto!important;padding-top:0!important;padding-bottom:0!important}
+.hero h1{font-size:clamp(32px,4.4vw,58px)!important;line-height:1.02!important}
+.hero-fig{margin:clamp(20px,2.6vw,32px) 0 0!important;max-width:560px!important;border-radius:14px!important;overflow:hidden!important;
+  border:1px solid rgba(255,255,255,.14)!important;background:#0b0d10!important}
+.hero img.hb{position:static!important;display:block!important;width:100%!important;height:auto!important;max-width:560px!important;
+  aspect-ratio:1600/987!important;object-fit:cover!important}
+@media(max-width:700px){.hero-fig,.hero img.hb{max-width:100%!important}}
 </style></head>
 <body>
 <header class="site">
@@ -161,21 +172,18 @@ img[src$="hero-wide.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
 
 <main id="top">
   <section class="hero">
-    <img class="hb" src="assets/hero-wide.jpg" alt="Cleared earthworks site: bare cut ground, a new timber fence line and machinery working the block" width="1600" height="987">
-    <div class="scrim" aria-hidden="true"></div>
     <div class="wrap">
       <p class="eyebrow rv">Earthworks &amp; contracting — Ipswich QLD</p>
       <h1 class="rv">Cut, filled, compacted<br><i>and left draining.</i></h1>
       <p class="lead rv">Ranchline Contracting does the machine work and the hand finish: site cuts, driveways, dams and trench runs, land clearing and retaining. Quoted on site, worked to a level, handed over shaped.</p>
-      <p class="acts rv"><a class="btn" href="#quote">Request a site quote</a><a class="btn ghost" href="tel:+61428776964">Call 0428 776 964</a></p>
+      <p class="acts rv"><a class="btn" href="#quote">Request a site quote</a><a class="btn ghost" href="tel:0428776964">Call 0428 776 964</a></p>
+      <figure class="hero-fig rv"><img class="hb" src="assets/hero-wide.jpg" alt="Cleared earthworks site: bare cut ground, a new timber fence line and machinery working the block" width="1600" height="987"></figure>
       <div class="facts rv">
         <div><b>Quoted on site</b><span>Ground, access and where the water goes decide the price, so the job is looked at before it is priced.</span></div>
         <div><b>Cut, fill, compact</b><span>Material moved in layers and compacted as it goes, so finished ground holds its shape.</span></div>
         <div><b>Local to Ipswich</b><span>Ipswich QLD and the surrounding areas, scheduled around the weather.</span></div>
       </div>
     </div>
-    <canvas id="heroCanvas" aria-hidden="true"></canvas>
-    <!-- LB-3D-HERO -->
   </section>
 
   <section id="services">
