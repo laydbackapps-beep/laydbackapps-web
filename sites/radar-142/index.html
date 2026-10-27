@@ -531,7 +531,15 @@ html{scroll-padding-top:104px!important}
 .lb-rb__track{aspect-ratio:4/3!important;background:#0a0b0d!important}
 .lb-rb__slide img{object-fit:contain!important;object-position:center!important;width:100%!important;height:100%!important;transform:none!important}
 .lb-rb__slide.is-on img{transform:none!important}
-</style><style id="lb-hero-noUpscale">header.hero,.hero{height:auto!important;min-height:0!important;max-height:2469px!important}.hero-bg,header.hero .hero-bg{background-size:cover!important;background-position:center 45%!important}</style></head>
+</style><style id="lb-hero-noUpscale">header.hero,.hero{height:auto!important;min-height:0!important;max-height:2469px!important}.hero-bg,header.hero .hero-bg{background-size:cover!important;background-position:center 45%!important}</style><style id="lb-reel-aspect">
+/* the reel sits in a panel that matches the photo's own 4:3 frame, so nothing is squashed or letterboxed */
+.lb-rb{width:min(760px,92vw)!important;aspect-ratio:4/3!important;height:auto!important;max-height:none!important;
+  margin:0 auto!important;position:relative!important;overflow:hidden!important;border-radius:14px!important}
+.lb-rb__track,.lb-rb__slide{position:absolute!important;inset:0!important}
+.lb-rb__slide img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;
+  transform:none!important;transition:none!important}
+@media(max-width:900px){.lb-rb{width:min(560px,94vw)!important}}
+</style></head>
 <body>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav"><div class="nav-in">
