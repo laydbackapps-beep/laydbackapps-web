@@ -279,14 +279,32 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 .brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style><style id="lb-asap-header">
+/* one logo, centred, at a size you can actually read — the AR monogram and the typed name are gone */
+.brand-monogram{display:none!important}
+.header .header__inner{position:relative!important;display:flex!important;align-items:center!important;
+  gap:clamp(16px,2.4vw,34px)!important;min-height:118px!important}
+.header .lb-brand--centred{position:absolute!important;left:50%!important;top:50%!important;
+  transform:translate(-50%,-50%)!important;display:flex!important;align-items:center!important;margin:0!important;z-index:3!important}
+.header .lb-logo-hi{height:clamp(64px,6.4vw,92px)!important;width:auto!important;display:block!important;
+  background:transparent!important;border:0!important;box-shadow:none!important;filter:none!important}
+.header .lb-brand__word,.header .lb-brand__name,.header .lb-brand__sub,.header .lb-brand__rule,.header .lb-acc{display:none!important}
+.header .header__end{margin-left:auto!important;display:flex!important;align-items:center!important;
+  gap:clamp(14px,2vw,30px)!important}
+.header .nav{display:flex!important;align-items:center!important;gap:clamp(14px,1.8vw,26px)!important}
+@media(max-width:1100px){
+  .header .header__inner{flex-wrap:wrap!important;justify-content:center!important;row-gap:10px!important;padding-block:14px!important;min-height:0!important}
+  .header .lb-brand--centred{position:static!important;transform:none!important;width:100%!important;justify-content:center!important}
+  .header .lb-logo-hi{height:58px!important}
+  .header .header__end{margin:0 auto!important;flex-wrap:wrap!important;justify-content:center!important}
+}
 </style></head>
 <body>
 <header class="header" role="banner">
   <div class="container header__inner">
-    <a class="lb-brand" href="#top" aria-label="Cheap Cheap Roof Restoration - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#14161a;--lb-subc:#14161a;--lb-acc:#b84830;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.png" alt="" class="lb-logo" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">Cheap Cheap <span class="lb-acc">Roof Restoration</span></span><span class="lb-brand__sub">Perth Metro · WA</span></span></a>
+    <a class="lb-brand lb-brand--centred" href="#top" aria-label="ASAP Roof Restorations"><img class="lb-logo-hi" src="assets/logo-header-hi.png" alt="ASAP Roof Restorations" width="636" height="520"></a>
     <div class="header__end">
-      <nav class="nav" role="navigation" aria-label="Main navigation"><a class="brand-monogram" href="#top" aria-label="ASAP Roof Restorations"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-        <a href="#services">Services</a>
+      <nav class="nav" role="navigation" aria-label="Main navigation"><a href="#services">Services</a>
         <a href="#process">Process</a>
         <a href="#quote">Contact</a>
       </nav>
@@ -372,7 +390,52 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
     </div>
   </section>
 
-  <section id="contact" class="locality section" aria-labelledby="contact-title">
+  <style id="lb-asap-content">
+.rr{padding:clamp(52px,6.4vw,96px) 0;border-top:1px solid var(--hairline)}
+.rr .inner{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
+.rr h2{font-size:clamp(24px,3.1vw,40px);line-height:1.12;margin:0 0 10px;letter-spacing:-.02em}
+.rr .lead{color:var(--lbq-muted,#aab3bb);max-width:62ch;margin:0 0 28px}
+.rr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:16px}
+.rr-card{background:rgba(255,255,255,.035);border:1px solid var(--hairline);border-radius:12px;padding:22px;
+  border-top:3px solid var(--accent);transition:transform .16s,border-color .16s}
+.rr-card:hover{transform:translateY(-2px)}
+.rr-card h3{font-size:17px;margin:0 0 7px}
+.rr-card p{margin:0;color:var(--lbq-muted,#aab3bb);font-size:15px;line-height:1.58}
+.rr-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:2px solid var(--accent);margin-top:8px}
+.rr-steps div{padding:18px 14px 0 0}
+.rr-steps b{display:block;font:800 11px/1 ui-monospace,monospace;letter-spacing:.14em;color:var(--accent);margin-bottom:7px}
+.rr-steps h3{font-size:15.5px;margin:0 0 5px}
+.rr-steps p{margin:0;color:var(--lbq-muted,#aab3bb);font-size:14px;line-height:1.5}
+.rr-gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.rr-gal figure{margin:0;border:1px solid var(--hairline);border-radius:12px;overflow:hidden;background:#12161a}
+.rr-gal img{width:100%;height:240px;object-fit:cover;display:block}
+.rr-gal figcaption{padding:12px 14px;color:var(--lbq-muted,#aab3bb);font-size:14px}
+.rr-faq details{border-bottom:1px solid var(--hairline);padding:15px 0}
+.rr-faq summary{cursor:pointer;font-weight:700;font-size:16px;list-style:none}
+.rr-faq summary::-webkit-details-marker{display:none}
+.rr-faq p{color:var(--lbq-muted,#aab3bb);margin:10px 0 0;max-width:72ch;line-height:1.6}
+@media(max-width:900px){.rr-steps{grid-template-columns:1fr;border-top:0;border-left:2px solid var(--accent);padding-left:16px}
+  .rr-steps div{padding:0 0 18px}.rr-gal img{height:200px}}
+</style>
+<section class="rr" id="roof-work"><div class="inner">
+<h2>On the roof</h2>
+<p class="lead">Tiled roofs, capping, coating and edge work — what the job actually looks like while it is happening.</p>
+<div class="rr-gal">
+<figure><img src="assets/photo_1.jpg" alt="Restored tiled roof surface with even coating"><figcaption>Coated and sealed — an even film across the tile face, not a patchy spray job.</figcaption></figure>
+<figure><img src="assets/photo_3.jpg" alt="Aerial view of a restored roof"><figcaption>Whole roof done in one run, ridges and hips included.</figcaption></figure>
+<figure><img src="assets/photo_4.jpg" alt="Roof edge, fasteners and wall junction detail"><figcaption>Edges and junctions — where a roof actually leaks if the detail is skipped.</figcaption></figure>
+</div></div></section>
+
+<section class="rr" id="roof-faq"><div class="inner">
+<h2>Questions before you book</h2>
+<div class="rr-faq">
+<details open><summary>How long does a roof restoration take?</summary><p>Most houses are several days rather than one, because cleaning, bedding and coating each need their own conditions. You get the sequence up front.</p></details>
+<details><summary>Can you just fix the ridge caps?</summary><p>Yes, if that is all that has failed. It gets quoted as its own job rather than talked up into a full restoration.</p></details>
+<details><summary>Will pressure cleaning damage the tiles?</summary><p>Not when it is done at the right pressure for the tile type. Tiles that are already brittle are assessed first, and the coating is what protects them afterwards.</p></details>
+<details><summary>How long does the coating last?</summary><p>It depends on the product and the roof, and it is worth asking which coating is being used rather than assuming. That gets explained at quote stage.</p></details>
+<details><summary>Do you clear the gutters afterwards?</summary><p>Yes — debris from washing and bedding is cleared before the job is signed off.</p></details>
+</div></div></section>
+<section id="contact" class="locality section" aria-labelledby="contact-title">
     <div class="container locality__inner">
       <div class="locality__heading">
         <h2 id="contact-title" class="rv">Perth WA</h2>
@@ -577,7 +640,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 <footer class="footer" role="contentinfo">
   <div class="container footer__inner">
     <div class="footer__brand">
-      <img src="assets/logo.png" alt="" width="32" height="28" loading="lazy" decoding="async">
+      <img src="assets/logo-header-hi.png" alt="" width="32" height="28" loading="lazy" decoding="async">
       <span>Cheap Cheap Roof Restoration</span>
     </div>
     <div class="footer__meta">
