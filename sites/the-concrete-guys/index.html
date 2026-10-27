@@ -164,16 +164,31 @@ img[src$="job-stamped.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
   transform:none!important;width:100%!important;max-width:1080px!important;height:auto!important;max-height:none!important;
   object-fit:contain!important;display:block!important;margin:0 auto!important}
 </style><style id="lb-hdr-centre">
-.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+@media(max-width:900px){}
+</style><style id="struct-pass">
+/* the page was padded out with near-empty full-height sections, and the header logo was a thumbnail */
+section,section.sl{padding:clamp(34px,4vw,58px) 0!important}
+header .brand img,header a img,.site-header img,.hdr img{height:clamp(56px,5vw,76px)!important;width:auto!important;max-width:none!important}
+header,header.hdr,.site-header{min-height:0!important;height:auto!important}
+.hero>.hero-img,.hero>.hero-photo{max-height:560px!important}
+
+.hero{display:grid!important;grid-template-columns:1.02fr .98fr!important;min-height:0!important;height:auto!important;
+  align-items:stretch!important;padding:0!important;overflow:hidden!important}
+.hero>.hero-img,.hero>.hero-photo{position:relative!important;inset:auto!important;grid-column:2!important;grid-row:1!important;
+  width:100%!important;height:100%!important;object-fit:cover!important;z-index:0!important}
+.hero>.hero-scrim{display:none!important}
+.hero>.hero-inner,.hero>.hero-in,.hero>.wrap{grid-column:1!important;grid-row:1!important;align-self:center!important;
+  padding:clamp(26px,3.6vw,48px) clamp(20px,3.4vw,44px)!important;z-index:2!important;position:relative!important}
+@media(max-width:900px){.hero{grid-template-columns:1fr!important}
+  .hero>.hero-img,.hero>.hero-photo{grid-column:1!important;grid-row:2!important;height:auto!important;max-height:320px!important}
+  .hero>.hero-inner,.hero>.hero-in,.hero>.wrap{grid-row:1!important}}
 </style></head>
 <body>
 <header class="site">
   <div class="wrap bar">
     <a class="lockup" href="#top" aria-label="The Concrete Guys — home"><img src="assets/logo.png" alt="The Concrete Guys"></a>
-    <nav class="main" aria-label="Sections"><a class="brand-monogram" href="#top" aria-label="The Concrete Guys"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-      <a href="#services">Concrete work</a>
+    <nav class="main" aria-label="Sections"><a href="#services">Concrete work</a>
       <a href="#process">How a pour runs</a>
       <a href="#work">The job</a>
       <a href="#faq">FAQ</a>
