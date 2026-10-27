@@ -91,14 +91,41 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
 .brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style><style id="lb-radley-flavour">
+/* rail: the logo sits on the panel with nothing boxed around it */
+.rail .rail-logo{height:clamp(58px,5.2vw,76px)!important;width:auto!important;display:block!important;
+  background:transparent!important;border:0!important;box-shadow:none!important}
+.rail a{border:0!important;background:transparent!important;display:block!important}
+.rail .brand-monogram{display:none!important}
+.rail .tag{display:flex!important;align-items:center!important;gap:10px!important}
+.rail .tag:before{content:"";width:26px;height:2px;background:var(--plum2);display:block;flex:none}
+.rail nav a{transition:color .15s,padding-left .15s,border-color .15s}
+.rail nav a:hover{padding-left:6px;border-bottom-color:var(--plum2)!important;color:#fff!important}
+.rail .call{transition:filter .15s,transform .15s}
+.rail .call:hover{filter:brightness(1.12);transform:translateY(-1px)}
+/* a little flavour through the body: ruled section heads, lifted cards, a paint-edge under the hero */
+.main h2{position:relative;padding-bottom:14px}
+.main h2:after{content:"";position:absolute;left:0;bottom:0;width:64px;height:3px;
+  background:linear-gradient(90deg,var(--plum2),transparent)}
+.band{position:relative}
+.band:nth-of-type(even){background:linear-gradient(180deg,rgba(96,0,168,.05),transparent 40%)}
+.card,.tile,.job{transition:transform .18s,box-shadow .18s,border-color .18s}
+.card:hover,.tile:hover,.job:hover{transform:translateY(-2px);border-color:rgba(138,43,226,.45)!important;
+  box-shadow:0 14px 40px rgba(0,0,0,.28)}
+.hero{background:radial-gradient(120% 90% at 8% 0%,rgba(138,43,226,.12),transparent 58%),
+  radial-gradient(90% 70% at 100% 10%,rgba(96,0,168,.10),transparent 60%)}
+.hero .kicker{display:inline-flex;align-items:center;gap:10px}
+.hero .kicker:before{content:"";width:22px;height:2px;background:var(--plum2)}
+.swatches div{transition:flex .2s}
+.swatches div:hover{flex:1.25}
+@media(max-width:900px){.rail .rail-logo{height:52px!important}}
 </style></head>
 <body>
 <div class="shell">
 <aside class="rail">
-  <a href="#top" aria-label="Radley Painting & Decorating"><img src="assets/logo-cut.png" alt="Radley Painting & Decorating"></a>
+  <a href="#top" aria-label="Radley Painting & Decorating"><img class="rail-logo" src="assets/logo-rail.png" alt="Radley Painting & Decorating"></a>
   <span class="tag">Painters · Cessnock</span>
-  <nav><a class="brand-monogram" href="#top" aria-label="Radley Painting & Decorating"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-    <a href="#work">Work</a>
+  <nav><a href="#work">Work</a>
     <a href="#inside">Inside</a>
     <a href="#outside">Outside</a>
     <a href="#estimate">Estimate</a>
@@ -181,7 +208,7 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
   </section>
 
   <footer>
-    <img src="assets/logo-cut.png" alt="Radley Painting & Decorating">
+    <img class="rail-logo" src="assets/logo-rail.png" alt="Radley Painting & Decorating">
     <span>Radley Painting & Decorating · Cessnock · Interior &amp; exterior painting</span>
     <a href="tel:0476129642">0476 129 642</a>
   </footer>
