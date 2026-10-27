@@ -82,9 +82,20 @@ nav a:hover {color:#ffffff!important;opacity:.85!important}
 </style><style id="lb-bar-grow">
 nav{height:auto!important;min-height:0!important}
 nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
+</style><style id="lb-logo-head">
+/* the bar shows the client's own full lockup (badge + script name) as one image — knocked out to white for the dark bar */
+nav div.wrap.nav-in{min-height:110px!important;padding-block:14px!important;align-items:center!important;justify-content:flex-start!important;gap:clamp(14px,2.2vw,30px)!important;flex-wrap:wrap!important}
+nav div.wrap.nav-in .brand{flex:0 0 auto!important;width:auto!important;display:flex!important;align-items:center!important;justify-content:flex-start!important;margin:0!important}
+nav div.wrap.nav-in .brand img.lb-logo-hi{height:clamp(54px,5vw,76px)!important;width:auto!important;max-width:none!important;max-height:none!important;display:block!important;margin:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+nav div.wrap.nav-in .links{margin-left:auto!important}
+@media(max-width:1150px){
+  nav div.wrap.nav-in{justify-content:center!important;row-gap:10px!important}
+  nav div.wrap.nav-in .brand{flex:0 0 100%!important;justify-content:center!important}
+}
+@media(max-width:560px){ nav div.wrap.nav-in .brand img.lb-logo-hi{height:clamp(54px,15vw,64px)!important} }
 </style></head><body>
 <nav><div class="wrap nav-in">
-  <a class="brand" href="#top" aria-label="Fine Finish Painting Northern Rivers"><img src="assets/logo-cut.png" alt="Fine Finish Painting Northern Rivers"></a>
+  <a class="brand" href="#top" aria-label="Fine Finish Painting Northern Rivers"><img class="lb-logo-hi" src="assets/logo-head.png" alt="Fine Finish Painting Northern Rivers" width="609" height="152"></a>
   <div class="links" id="navlinks"><a href="#services">Services</a><a href="#why">Process</a><a href="#areas">Areas</a><a href="#faq">FAQ</a></div>
   <a class="tel" href="tel:0490713309">0490 713 309</a>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
