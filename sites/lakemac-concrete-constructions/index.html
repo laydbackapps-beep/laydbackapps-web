@@ -27,8 +27,10 @@ p{margin:0}
 
 .bar{position:sticky;top:0;z-index:50;background:rgba(8,22,26,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-t)}
 .bar__in{display:flex;align-items:center;gap:clamp(14px,2vw,28px);padding-block:9px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;flex:0 0 auto;text-decoration:none}
-.brand img{display:block;height:clamp(60px,5.6vw,76px);width:auto}
+.brand{display:flex;align-items:center;gap:clamp(10px,1.1vw,16px);flex:0 0 auto;text-decoration:none}
+.brand__mark{display:block;height:clamp(56px,5.2vw,78px);width:auto;flex:none}
+.brand__word{display:block;height:clamp(20px,1.9vw,27px);width:auto;flex:none;max-width:36vw}
+@media(max-width:560px){ .brand__word{display:none} }
 .nav{display:flex;align-items:center;gap:clamp(14px,1.9vw,26px);margin-left:auto;flex-wrap:wrap}
 .nav a{text-decoration:none;font-size:14.4px;color:#cddadd;padding:6px 0;border-bottom:1px solid transparent}
 .nav a:hover{color:#fff;border-bottom-color:var(--teal)}
@@ -42,7 +44,7 @@ p{margin:0}
   .nav a{padding:11px 0;width:100%;border-bottom:1px solid var(--line);font-size:16px}
   .nav .cta{margin-top:10px;justify-content:center;width:100%}
   .burger{display:block}
-  .brand img{height:64px}
+  .brand__mark{height:64px}
 }
 
 /* hero: photo left, copy right (reversed from the other builds) */
@@ -138,7 +140,7 @@ footer{padding:28px 0 38px;color:var(--dim);font-size:13.4px}
 </head><body>
 
 <div class="bar"><div class="wrap bar__in">
-  <a class="brand" href="#top" aria-label="Lake Mac Concrete Constructions — home"><img src="assets/logo-header-hi.png" alt="Lake Mac Concrete Constructions"></a>
+  <a class="brand" href="#top" aria-label="Lake Mac Concrete Constructions — home"><img class="brand__mark" src="assets/brand-symbol.png" alt="" width="495" height="481" aria-hidden="true"><img class="brand__word" src="assets/brand-word.png" alt="Lake Mac Concrete Constructions" width="784" height="139"></a>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
   <nav class="nav" id="nav">
     <a href="#capability">Capability</a>
