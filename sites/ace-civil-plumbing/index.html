@@ -192,6 +192,22 @@ nav a:hover {color:#ffffff!important;opacity:.85!important}
 .brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style><style id="lb-ace-head">
+.brand-monogram{display:none!important}
+.site-head .bar{min-height:104px!important;display:flex!important;align-items:center!important;gap:clamp(16px,2.4vw,34px)!important}
+.site-head .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
+.site-head .brand-mark{width:auto!important;height:auto!important;flex:none!important;display:flex!important;align-items:center!important}
+.site-head .brand .lb-logo-hi{height:clamp(54px,5vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;display:block!important;
+  background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}
+.site-head .brand-name.vh{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}
+.site-head nav,.site-head .nav{margin-left:auto!important;display:flex!important;align-items:center!important;gap:clamp(14px,1.8vw,26px)!important}
+.site-head .bar a{white-space:nowrap!important}
+@media(max-width:1000px){
+  .site-head .bar{flex-wrap:wrap!important;row-gap:10px!important;padding-block:14px!important;min-height:0!important}
+  .site-head .brand{width:100%!important;justify-content:center!important}
+  .site-head .brand .lb-logo-hi{height:52px!important}
+  .site-head nav,.site-head .nav{margin:0 auto!important;flex-wrap:wrap!important;justify-content:center!important}
+}
 </style></head>
 <body>
 <a class="skip" href="#scope">Skip to content</a>
@@ -199,14 +215,13 @@ nav a:hover {color:#ffffff!important;opacity:.85!important}
 <header class="site-head">
   <div class="bar">
     <a class="brand" href="#top" aria-label="Ace Civil Plumbing &amp; Drainage, home">
-      <span class="brand-mark"><img src="assets/logo.jpg" alt="" class="lb-logo" loading="eager" decoding="async"></span>
-      <span class="brand-name">Ace Civil Plumbing & Drainage</span>
+      <span class="brand-mark"><img class="lb-logo-hi" src="assets/logo-head.png" alt="Ace Civil Plumbing &amp; Drainage"></span>
+      <span class="brand-name vh">Ace Civil Plumbing &amp; Drainage</span>
     </a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
       <i></i><i></i><i></i>
     </button>
-    <nav class="nav" id="menu" aria-label="Primary"><a class="brand-monogram" href="#top" aria-label="Ace Civil Plumbing & Drainage Pty Ltd"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-      <a href="#scope">Services</a>
+    <nav class="nav" id="menu" aria-label="Primary"><a href="#scope">Services</a>
       <a href="#process">How we work</a>
       <a href="#compliance">Compliance</a>
       <a href="#work">Work</a>
