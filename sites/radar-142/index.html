@@ -1,18 +1,19 @@
 <!DOCTYPE html>
+
 <html lang="en-AU">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Allards Auto Detailing, Car Detailing & Graphene Paint Protection | West Gosford</title>
-<meta name="description" content="Allards Auto Detailing — full interior and exterior detailing, paint enhancement and long-life graphene protection at our West Gosford workshop. Cars, 4WDs, boats and motorhomes. Call 0405 733 769.">
-<meta property="og:title" content="Allards Auto Detailing — West Gosford, Central Coast">
-<meta property="og:description" content="Detailing, paint correction & graphene protection — cars, boats & motorhomes, West Gosford.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="assets/logo.png">
-<link rel="icon" href="assets/logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Montserrat:wght@700;800;900&family=Saira+Condensed:wght@400;700;800;900&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Allards Auto Detailing, Car Detailing &amp; Graphene Paint Protection | West Gosford</title>
+<meta content="Allards Auto Detailing — full interior and exterior detailing, paint enhancement and long-life graphene protection at our West Gosford workshop. Cars, 4WDs, boats and motorhomes. Call 0405 733 769." name="description"/>
+<meta content="Allards Auto Detailing — West Gosford, Central Coast" property="og:title"/>
+<meta content="Detailing, paint correction &amp; graphene protection — cars, boats &amp; motorhomes, West Gosford." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="assets/logo.png" property="og:image"/>
+<link href="assets/logo.png" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;family=Montserrat:wght@700;800;900&amp;family=Saira+Condensed:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
 <style>
 :root {
   --paper: #0a0a0a; --paper2: #111111; --ink: #f3f4f6; --ink2: #a2a7ad;
@@ -225,7 +226,6 @@ h2::after {
 .pb-strip { position: absolute; overflow: hidden; }
 @media (prefers-reduced-motion: reduce) { .pb-strip::before { animation: none; opacity: .2; } }
 </style>
-
 <style>
 /* ==== ALLARDS SLIDESHOW (reference-style carousel) 2026-10-13 ==== */
 .sld{margin-top:8px}
@@ -279,7 +279,7 @@ header .rv, .site-header .rv, .nav-inner .rv{
 .lb-rb__slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;will-change:opacity}
 .lb-rb__slide.is-on{opacity:1}
 .lb-rb__slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03);transition:transform 7s linear}
-.lb-rb__slide.is-on img{transform:scale(1.10)}
+.lb-rb__slide.is-on img{transform:scale(1.04)}
 .lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2.2vw,30px);
  background:linear-gradient(180deg,transparent,rgba(6,7,10,.72));color:#fff;
  font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
@@ -359,10 +359,10 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
  .lb-brand__sub{letter-spacing:.2em;font-size:7px}
 }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
@@ -370,119 +370,258 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-</head>
+<style id="lb-logo-only">
+/* the header carries the logo artwork, never a typed name */
+nav .lb-brand__word,nav .nav-b,header .lb-brand__word,header .nav-b{display:none!important}
+nav .lb-brand img,header .lb-brand img{height:clamp(38px,4vw,52px)!important;width:auto!important;display:block!important}
+nav .nav-links,header .nav-links{display:flex!important;gap:clamp(12px,1.8vw,24px)!important;margin-left:auto!important;align-items:center!important}
+nav .nav-links a,header .nav-links a{text-decoration:none!important}
+nav .burger,header .burger{display:none!important}
+@media(max-width:860px){
+  nav .nav-links,header .nav-links{display:none!important}
+  nav .nav-links.open,header .nav-links.open{display:flex!important;position:absolute;right:0;top:calc(100% + 8px);
+    flex-direction:column;background:#101113;border:1px solid rgba(255,255,255,.14);padding:14px;
+    width:min(86vw,320px);z-index:70;margin:0!important}
+  nav .burger,header .burger{display:flex!important;margin-left:auto}
+}
+</style><style id="lb-hdr-final">
+nav .lb-brand{display:flex!important;align-items:center!important;gap:clamp(10px,1.4vw,18px)!important}
+nav .lb-brand img.lb-word{height:clamp(34px,3.4vw,44px)!important;width:auto!important;display:block!important}
+nav .lb-brand img.lb-symbol{height:clamp(38px,3.8vw,48px)!important;width:auto!important;display:block!important}
+nav .lb-brand__word,nav .nav-b{display:none!important}
+nav .nav-links{display:none!important}
+nav .nav-cta{display:none!important}
+nav .burger{display:flex!important;margin-left:auto}
+nav .nav-links.open{display:flex!important;flex-direction:column;gap:2px;position:absolute;right:0;top:calc(100% + 8px);
+  width:min(86vw,360px);z-index:70;background:#0e0f11;border:1px solid rgba(255,255,255,.14);padding:14px 14px 16px}
+nav .nav-links.open a{padding:15px 22px;text-align:center;font-size:15px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:#e9eaee;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+nav .nav-links.open a + a{margin-top:8px}
+nav .nav-links.open a:last-child{background:rgba(176,48,48,.14);border-color:rgba(176,48,48,.5);color:#fff;text-transform:none}
+@media(max-width:860px){nav .nav-links.open{width:min(92vw,340px);padding:12px}}
+</style><style id="lb-hdr-right">
+/* button and panel hard against the right edge of the page */
+nav .nav-in{max-width:none!important;padding-right:12px!important}
+nav .burger{margin-left:auto!important}
+nav .nav-links.open{right:0!important;left:auto!important;transform:none!important}
+/* hero copy as a narrow stacked column so the open menu never sits over it */
+.hero .hero-in{max-width:none!important;margin:0!important;padding-left:clamp(20px,4vw,56px)!important;
+  display:block!important;padding-right:min(420px,38vw)!important}
+.hero .hero-copy{max-width:min(46ch,560px)!important;display:flex!important;flex-direction:column!important;
+  align-items:flex-start!important;gap:14px!important;text-align:left!important}
+.hero .hero-copy h1{font-size:clamp(30px,4.2vw,58px)!important;line-height:1.03!important;letter-spacing:-.03em!important;margin:0!important}
+.hero .hero-copy p{max-width:44ch!important;margin:0!important;line-height:1.65!important}
+.hero .hero-copy .btn,.hero .hero-copy a.btn{margin-top:6px!important}
+@media(max-width:860px){
+  .hero .hero-in{padding-right:20px!important}
+  .hero .hero-copy{max-width:100%!important}
+}
+</style><style id="lb-slides-sm">
+/* slideshow as a contained panel, not full bleed — smaller frames, sharper rendering */
+.lb-rb{max-width:660px!important;margin:clamp(28px,4vw,56px) auto!important;border:1px solid rgba(255,255,255,.12)!important}
+.lb-rb__track{aspect-ratio:4/3!important}
+.lb-rb__slide img{object-fit:cover!important;image-rendering:auto}
+.lb-rb__cap{font-size:12.5px!important;letter-spacing:.06em!important}
+@media(max-width:980px){.lb-rb{max-width:none!important;margin:24px 14px!important}}
+</style><style id="lb-red-rule">
+/* red rule pinned to the bottom of the bar, same stroke on the menu panel */
+nav{position:relative!important}
+nav::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:#a32020;z-index:6;pointer-events:none}
+nav .nav-links.open{border:2px solid #a32020!important;box-shadow:0 28px 64px rgba(0,0,0,.62)!important}
+</style><style id="lb-no-glow">
+/* no red bloom on the stat words */
+.stat-band b,.stat-band .stat-n,.stat b{text-shadow:none!important;box-shadow:none!important}
+</style><style id="lb-size-fix">
+/* hero back to a sane height, showcase slideshow contained */
+.hero{height:clamp(440px,58vh,560px)!important;min-height:0!important;overflow:hidden!important}
+.hero .hero-in{height:100%!important;display:flex!important;align-items:center!important}
+.hero-slides img{width:100%!important;height:100%!important;object-fit:cover!important}
+.sld-stage{max-width:600px!important;margin:0 auto!important}
+@media(max-width:980px){.sld-stage{max-width:none!important}}
+</style><style id="lb-mobile-hdr">
+@media(max-width:860px){
+  nav .lb-brand{min-width:0!important;overflow:hidden!important;flex:1 1 auto!important}
+  nav .lb-brand img.lb-word{height:26px!important;width:auto!important}
+  nav .lb-brand img.lb-symbol{height:30px!important;width:auto!important;margin-left:8px!important;flex:none!important}
+  nav .burger{position:relative!important;z-index:9!important;flex:none!important;margin-left:10px!important}
+}
+</style><style id="lb-anchor-off">
+/* anchors land below the sticky bar instead of under it */
+section[id],div[id],h2[id]{scroll-margin-top:104px!important}
+html{scroll-padding-top:104px!important}
+</style><style id="lb-hero-fit2">
+/* the copy was taller than the hero and being clipped under the bar */
+.hero{height:auto!important;min-height:clamp(520px,66vh,660px)!important;overflow:visible!important}
+.hero .hero-in{padding-top:calc(81px + 26px)!important;padding-bottom:34px!important;align-items:flex-start!important;height:auto!important}
+.hero .hero-copy{gap:10px!important}
+.hero .hero-copy h1{font-size:clamp(26px,3.5vw,46px)!important;line-height:1.06!important}
+.hero .hero-copy p{max-width:42ch!important;font-size:15.5px!important;line-height:1.6!important}
+@media(max-width:860px){.hero .hero-in{padding-top:calc(70px + 18px)!important}}
+</style><style id="lb-wwd">
+.wwd,.revs{padding:clamp(44px,5.5vw,76px) 0;border-top:1px solid rgba(255,255,255,.1)}
+.wwd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.09);margin-top:26px}
+.wwd-card{background:#0c0d10;padding:22px 20px 24px}
+.wwd-n{display:block;font-size:11px;letter-spacing:.18em;color:#a32020;font-weight:800;margin-bottom:10px}
+.wwd-card h3{margin:0 0 8px;font-size:16.5px;letter-spacing:-.01em}
+.wwd-card p{margin:0;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.66)}
+.revs-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.revs-score{display:flex;align-items:baseline;gap:8px}
+.revs-score b{font-size:26px;color:#a32020}
+.revs-score span{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.revs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.rev{margin:0;padding:20px 20px 18px;background:rgba(255,255,255,.03);border-left:2px solid #a32020}
+.rev-stars{color:#a32020;font-size:13px;letter-spacing:.18em;margin-bottom:10px}
+.rev blockquote{margin:0 0 12px;font-size:15px;line-height:1.62;color:rgba(255,255,255,.86)}
+.rev figcaption{font-size:12.5px;letter-spacing:.06em;color:rgba(255,255,255,.5)}
+@media(max-width:900px){.wwd-grid,.revs-row{grid-template-columns:1fr}}
+</style><style id="lb-pk">
+#packages,#addons,#why,#area{padding:clamp(44px,5.5vw,76px) 0;border-top:1px solid rgba(255,255,255,.1)}
+.pk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.pk{border:1px solid rgba(255,255,255,.12);border-top:2px solid #a32020;padding:22px 20px 24px;background:rgba(255,255,255,.02)}
+.pk-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px}
+.pk h3{margin:0;font-size:17px}
+.pk-dur{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#a32020;white-space:nowrap}
+.pk-blurb{margin:0 0 14px;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.66)}
+.pk ul{list-style:none;margin:0;padding:0}
+.pk li{position:relative;padding-left:16px;font-size:14px;line-height:1.55;margin-bottom:7px;color:rgba(255,255,255,.8)}
+.pk li:before{content:"";position:absolute;left:0;top:.6em;width:7px;height:1.5px;background:#a32020}
+.ad-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.ad-row span{border:1px solid rgba(255,255,255,.14);padding:8px 14px;font-size:13.5px;color:rgba(255,255,255,.75)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.09);margin-top:24px}
+.why-grid article{background:#0c0d10;padding:22px 20px}
+.why-grid h3{margin:0 0 8px;font-size:16px}
+.why-grid p{margin:0;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.66)}
+.area-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.area-row span{font-size:13.5px;color:rgba(255,255,255,.6);border-bottom:1px solid rgba(255,255,255,.14);padding-bottom:2px}
+@media(max-width:900px){.pk-grid,.why-grid{grid-template-columns:1fr}}
+</style><style id="lb-colour-fix">
+/* readable kicker + headline accent; darker, more professional button red */
+.hero-kicker{color:#f2b3ae!important}
+.hero-kicker::before{background:#f2b3ae!important}
+.hero h1 .acc{color:#f0574e!important}
+.btn-primary,.btn.btn-primary,.nav-cta .btn,.lbq-form button,#lbq-form button,.hero-cta .btn{
+  background:#8f1a1a!important;background-image:none!important;border-color:#8f1a1a!important;color:#fff!important;
+  box-shadow:0 1px 0 rgba(255,255,255,.12) inset!important}
+.btn-primary:hover,.nav-cta .btn:hover,#lbq-form button:hover,.hero-cta .btn:hover{background:#a52222!important;border-color:#a52222!important}
+</style><style id="lb-colour-fix2">
+/* kicker to clean white, headline accent to the logo red, buttons to the logo's deep red */
+.hero-kicker{color:#ece9e6!important}
+.hero-kicker::before{background:#a32020!important}
+.hero h1 .acc{color:#e0524a!important}
+.btn-primary,.btn.btn-primary,.nav-cta .btn,#lbq-form button,.hero-cta .btn{
+  background:#580810!important;background-image:none!important;border-color:#580810!important;color:#fff!important}
+.btn-primary:hover,.nav-cta .btn:hover,#lbq-form button:hover,.hero-cta .btn:hover{background:#6d0f16!important;border-color:#6d0f16!important}
+</style><style id="lb-kicker-fix">
+.hero-kicker{color:#ffffff!important;font-size:13px!important;letter-spacing:.2em!important;font-weight:800!important;
+  text-shadow:0 1px 10px rgba(0,0,0,.75)!important}
+.hero-kicker::before{background:#e0524a!important;width:30px!important}
+@media(max-width:640px){.hero-kicker{font-size:11.5px!important;letter-spacing:.16em!important}}
+</style><style id="lb-hero-final">
+.hero{height:clamp(520px,72vh,700px)!important;min-height:0!important;overflow:hidden!important}
+.hero .hero-in{height:100%!important;display:flex!important;align-items:center!important;padding:0 clamp(20px,4vw,56px)!important}
+.hero .hero-copy{gap:7px!important;max-width:min(48ch,620px)!important}
+.hero .hero-copy h1{font-size:clamp(22px,2.9vw,38px)!important;line-height:1.05!important;margin:0!important}
+.hero .hero-copy p{font-size:14px!important;line-height:1.5!important;max-width:46ch!important}
+.hero-strip{margin-top:4px!important;gap:8px!important}
+.hero-strip *{font-size:11.5px!important;line-height:1.35!important}
+@media(max-width:860px){.hero{height:auto!important;min-height:0!important;padding-bottom:16px!important}.hero .hero-in{align-items:flex-start!important;padding:76px 18px 14px!important}}
+</style><style id="lb-slide-fit">
+/* whole photo inside a smaller frame — nothing cropped off the sides */
+.lb-rb{max-width:700px!important}
+.lb-rb__track{aspect-ratio:4/3!important;background:#0a0b0d!important}
+.lb-rb__slide img{object-fit:contain!important;object-position:center!important;width:100%!important;height:100%!important;transform:none!important}
+.lb-rb__slide.is-on img{transform:none!important}
+</style><style id="lb-hero-noUpscale">header.hero,.hero{height:auto!important;min-height:0!important;max-height:2469px!important}.hero-bg,header.hero .hero-bg{background-size:cover!important;background-position:center 45%!important}</style></head>
 <body>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav"><div class="nav-in">
-  <a class="lb-brand" href="#top" aria-label="Allards Auto Detailing - Home" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#f5f5f0;--lb-subc:#f5f5f0;--lb-acc:#580810;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.png" alt="" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">Allards Auto Detailing</span><span class="lb-brand__sub"><span class="lb-acc">AUTO</span></span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
-  <div class="nav-links" id="navlinks"><a href="#services">Packages</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="#work">Work</a><a href="#quote">Book</a></div>
-  <div class="nav-cta"><span class="mono nav-p">0405 733 769</span><a href="#quote" class="btn btn-primary btn-sm">Get a quote</a></div>
-  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<a aria-label="Allards Auto Detailing - Home" class="lb-brand" href="#top" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#f5f5f0;--lb-subc:#f5f5f0;--lb-acc:#580810;"><img alt="Allards Auto Detailing" class="lb-word" src="assets/wordmark.png"/><img alt="" class="lb-symbol" src="assets/logo-symbol.png"/></a>
+<div class="nav-links" id="navlinks"><a href="#services">Packages</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="#work">Work</a><a href="#quote">Book</a><a href="#quote">Get a quote</a><a href="tel:0405733769">Call 0405 733 769</a></div>
+<div class="nav-cta"><span class="mono nav-p">0405 733 769</span><a class="btn btn-primary btn-sm" href="#quote">Get a quote</a></div>
+<button aria-expanded="false" aria-label="Menu" class="burger" id="burger"><span></span><span></span><span></span></button>
 </div></nav>
-<section id="splash" aria-label="Allards Auto Detailing">
-  <div class="sp-in">
-    <img class="sp-logo" src="assets/logo.png" alt="Allards Auto Detailing">
-    <p class="sp-tag">Detailing studio &middot; West Gosford, Central Coast</p>
-  <i></i></span>
-  </div>
+<section aria-label="Allards Auto Detailing" id="splash">
+<div class="sp-in">
+<img alt="Allards Auto Detailing" class="sp-logo" src="assets/logo.png"/>
+<p class="sp-tag">Detailing studio · West Gosford, Central Coast</p>
+<i></i>
+</div>
 </section>
-
 <header class="hero hex-veil" id="top">
 <!-- LB-3D-HERO -->
-  <div class="hero-slides" aria-hidden="true">
-  <img src="assets/gal_3.jpg" alt="" class="on" fetchpriority="high">
-  <img src="assets/gal_4.jpg" alt="">
-  <img src="assets/gal_7.jpg" alt="">
-  <img src="assets/gal_6.jpg" alt="">
+<div aria-hidden="true" class="hero-slides">
+<img alt="" class="on" fetchpriority="high" src="assets/hero_1.jpg"/>
+<img alt="" src="assets/hero_2.jpg"/>
+<img alt="" src="assets/hero_3.jpg"/>
+<img alt="" src="assets/hero_4.jpg"/>
 </div>
-    <div class="hero-shade"></div>
-  <div class="hero-in">
-  <div class="hero-copy">
-    <p class="hero-kicker">Detailing studio &mdash; West Gosford, Central Coast</p>
-    <h1 data-ux="words">Bring back the<br><span class="acc">shine</span><br>&mdash; then protect it.<br><span class="thin">Car detailing &middot; Paint correction &middot; Graphene protection</span></h1>
-    <p class="hero-sub">Full interior and exterior details, machine paint correction and long-life graphene protection &mdash; cars, 4WDs, boats and motorhomes, done in the West Gosford workshop by people who care about the reflections.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="#quote">Get a free quote</a>
-      <a class="btn btn-ghost" href="#quote-heading">Call 0405 733 769</a>
-    </div>
-    <div class="hero-strip">
-      <p><strong><strong>Graphene protection</strong></strong>long-life paint seal</p>
-      <p><strong><strong>Workshop lighting</strong></strong>we check the finish with you</p>
-      <p><strong><strong>West Gosford</strong></strong>Central Coast studio</p>
-    </div>
-    </div>
-    <div class="hero-visual">
-      <canvas id="heroCanvas" style="width:100%;height:100%;display:block"></canvas>
-      <style>#heroCanvas{display:block;perspective:800px}</style>
-      <div class="hero-enq">
-          <p class="he-label">What does your car need?</p>
-          <select id="he-svc" aria-label="What does your car need?">
-            <option>Graphene protection package</option>
-            <option>Full interior &amp; exterior detail</option>
-            <option>Paint enhancement / correction</option>
-            <option>Exterior wash &amp; decontamination</option>
-            <option>Interior detailing</option>
-            <option>Boat or motorhome detail</option>
-            <option>Not sure, need advice</option>
-          </select>
-          <div class="he-row">
-            <input id="he-make" placeholder="Make" autocomplete="off">
-            <input id="he-model" placeholder="Model" autocomplete="off">
-          </div>
-          <button id="he-go" type="button">Get my free quote</button>
-        </div>
-    </div>
-  </div>
+<div class="hero-shade"></div>
+<div class="hero-in">
+<div class="hero-copy">
+<p class="hero-kicker">Detailing studio — West Gosford, Central Coast</p>
+<h1 data-ux="words">Bring back the<br/><span class="acc">shine</span><br/>— then protect it.<br/><span class="thin">Car detailing · Paint correction · Graphene protection</span></h1>
+<p class="hero-sub">Full interior and exterior details, machine paint correction and long-life graphene protection — cars, 4WDs, boats and motorhomes, done in the West Gosford workshop by people who care about the reflections.</p>
+<div class="hero-cta">
+<a class="btn btn-primary" href="#quote">Get a free quote</a>
+<a class="btn btn-ghost" href="#quote-heading">Call 0405 733 769</a>
+</div>
+<div class="hero-strip">
+<p><strong><strong>Graphene protection</strong></strong>long-life paint seal</p>
+<p><strong><strong>Workshop lighting</strong></strong>we check the finish with you</p>
+<p><strong><strong>West Gosford</strong></strong>Central Coast studio</p>
+</div>
+</div>
+<div class="hero-visual">
+<canvas id="heroCanvas" style="width:100%;height:100%;display:block"></canvas>
+<style>#heroCanvas{display:block;perspective:800px}</style>
+</div>
+</div>
 </header>
-
-
 <section id="services" style="position:relative">
-  <span class="red-slash" aria-hidden="true" style="top:26px;left:-6%;width:22%;transform:rotate(-4.5deg);opacity:.4"></span>
-  <span class="red-slash" aria-hidden="true" style="top:52px;left:-8%;width:14%;transform:rotate(-4.5deg);opacity:.2"></span><div class="wrap">
-  <div class="sec-head"><span class="sec-idx">01</span><div><h2 class="sec-title">Detailing that shows up in the reflections.</h2><p class="lead">From a maintenance wash through to a full graphene-protected detail &mdash; the right package for the finish you are chasing.</p></div></div>
-  <div class="svc-grid"><div class="svc-row rv"><span class="svc-n" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4.6"/><circle cx="12" cy="12" r="1.5"/></svg></span><div class="svc-body"><h3>Machine polishing &amp; paint correction</h3><p>Swirls, haze and light defects machine-polished back so reflections run flat and clean.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><span class="svc-n" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.3-3 7.9-7 10-4-2.1-7-5.7-7-10V6l7-3z"/><path d="M9.3 11.8l2 2 3.6-4.2"/></svg></span><div class="svc-body"><h3>Ceramic &amp; graphene coatings</h3><p>The signature package &mdash; paint sealed with a long-life graphene coating that shrugs off water, grime and UV.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><span class="svc-n" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4.5A2 2 0 0110 2.5h.6a2 2 0 012 2v7.5h-3a1.6 1.6 0 01-1.6-1.6V4.5z"/><path d="M12.6 12h3.1a2 2 0 012 2v2.6a2 2 0 01-2 2H9"/><path d="M5.5 18.6h3.5"/></svg></span><div class="svc-body"><h3>Interior detailing &amp; protection</h3><p>Seats, carpets, dash and trim vacuumed, shampooed and dressed &mdash; the parts you live in every day.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><span class="svc-n" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4v5M12 15v5M4 12h5M15 12h5"/></svg></span><div class="svc-body"><h3>Wheel &amp; window protection</h3><p>Alloy wheels, glass and trim cleaned and protected to match the paintwork.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><span class="svc-n" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c3.1 3.7 5.5 6.5 5.5 9.5A5.5 5.5 0 0112 19a5.5 5.5 0 01-5.5-5.5C6.5 10.5 8.9 7.7 12 4z"/><path d="M10 15.6a2.2 2.2 0 002.2-2.2"/></svg></span><div class="svc-body"><h3>Exterior wash &amp; decontamination</h3><p>Foam wash, clay decontamination and a hand finish that leaves paint glassy to the touch.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><span class="svc-n" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15.5h16l-2.3 3.1a2 2 0 01-1.6.9H8.1a2 2 0 01-1.6-.9L4 15.5z"/><path d="M12 3.5v12"/><path d="M12 6l5 6h-5"/><path d="M12 8.5L8 12h4"/></svg></span><div class="svc-body"><h3>Boats &amp; motorhomes</h3><p>Gelcoat cut and polish, hull wash-downs and protection for boats, caravans and motorhomes.</p></div><span class="svc-arrow">&#8599;</span></div></div>
-</section>
-
+<span aria-hidden="true" class="red-slash" style="top:26px;left:-6%;width:22%;transform:rotate(-4.5deg);opacity:.4"></span>
+<span aria-hidden="true" class="red-slash" style="top:52px;left:-8%;width:14%;transform:rotate(-4.5deg);opacity:.2"></span><div class="wrap">
+<div class="sec-head"><span class="sec-idx">01</span><div><h2 class="sec-title">Detailing that shows up in the reflections.</h2><p class="lead">From a maintenance wash through to a full graphene-protected detail — the right package for the finish you are chasing.</p></div></div>
+<div class="svc-grid"><div class="svc-row rv"><span aria-hidden="true" class="svc-n"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4.6"></circle><circle cx="12" cy="12" r="1.5"></circle></svg></span><div class="svc-body"><h3>Machine polishing &amp; paint correction</h3><p>Swirls, haze and light defects machine-polished back so reflections run flat and clean.</p></div><span class="svc-arrow">↗</span></div><div class="svc-row rv"><span aria-hidden="true" class="svc-n"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 3l7 3v5c0 4.3-3 7.9-7 10-4-2.1-7-5.7-7-10V6l7-3z"></path><path d="M9.3 11.8l2 2 3.6-4.2"></path></svg></span><div class="svc-body"><h3>Ceramic &amp; graphene coatings</h3><p>The signature package — paint sealed with a long-life graphene coating that shrugs off water, grime and UV.</p></div><span class="svc-arrow">↗</span></div><div class="svc-row rv"><span aria-hidden="true" class="svc-n"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M8 4.5A2 2 0 0110 2.5h.6a2 2 0 012 2v7.5h-3a1.6 1.6 0 01-1.6-1.6V4.5z"></path><path d="M12.6 12h3.1a2 2 0 012 2v2.6a2 2 0 01-2 2H9"></path><path d="M5.5 18.6h3.5"></path></svg></span><div class="svc-body"><h3>Interior detailing &amp; protection</h3><p>Seats, carpets, dash and trim vacuumed, shampooed and dressed — the parts you live in every day.</p></div><span class="svc-arrow">↗</span></div><div class="svc-row rv"><span aria-hidden="true" class="svc-n"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3"></circle><path d="M12 4v5M12 15v5M4 12h5M15 12h5"></path></svg></span><div class="svc-body"><h3>Wheel &amp; window protection</h3><p>Alloy wheels, glass and trim cleaned and protected to match the paintwork.</p></div><span class="svc-arrow">↗</span></div><div class="svc-row rv"><span aria-hidden="true" class="svc-n"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 4c3.1 3.7 5.5 6.5 5.5 9.5A5.5 5.5 0 0112 19a5.5 5.5 0 01-5.5-5.5C6.5 10.5 8.9 7.7 12 4z"></path><path d="M10 15.6a2.2 2.2 0 002.2-2.2"></path></svg></span><div class="svc-body"><h3>Exterior wash &amp; decontamination</h3><p>Foam wash, clay decontamination and a hand finish that leaves paint glassy to the touch.</p></div><span class="svc-arrow">↗</span></div><div class="svc-row rv"><span aria-hidden="true" class="svc-n"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M4 15.5h16l-2.3 3.1a2 2 0 01-1.6.9H8.1a2 2 0 01-1.6-.9L4 15.5z"></path><path d="M12 3.5v12"></path><path d="M12 6l5 6h-5"></path><path d="M12 8.5L8 12h4"></path></svg></span><div class="svc-body"><h3>Boats &amp; motorhomes</h3><p>Gelcoat cut and polish, hull wash-downs and protection for boats, caravans and motorhomes.</p></div><span class="svc-arrow">↗</span></div></div>
+</div></section><section class="wwd" id="what-we-do"><div class="wrap"><div class="sec-head"><span class="sec-idx">02</span><div><h2 class="sec-title">What we do</h2><p class="lead">Every job is quoted after the paint has been looked at under the lights — the package matches the condition of the car, not a menu.</p></div></div><div class="wwd-grid"><article class="wwd-card"><span class="wwd-n">01</span><h3>Full interior &amp; exterior detail</h3><p>Inside and out in one booking — vacuum, shampoo, leather and trim cleaned and dressed, then the exterior washed, decontaminated and finished by hand.</p></article><article class="wwd-card"><span class="wwd-n">02</span><h3>Paint correction &amp; machine polishing</h3><p>Swirls, wash marks and light defects machine-polished back in stages under workshop lighting, so reflections run flat before anything is sealed.</p></article><article class="wwd-card"><span class="wwd-n">03</span><h3>Graphene &amp; ceramic protection</h3><p>A long-life coating applied to corrected paint — water beads, grime lifts easier and the finish holds its gloss far longer than wax.</p></article><article class="wwd-card"><span class="wwd-n">04</span><h3>Exterior wash &amp; decontamination</h3><p>Foam pre-soak, two-bucket hand wash, clay decontamination and a hand dry — the safe baseline for a car that is looked after.</p></article><article class="wwd-card"><span class="wwd-n">05</span><h3>Wheels, glass &amp; trim</h3><p>Alloys deep-cleaned and sealed, glass polished inside and out, plastics dressed so they read factory-fresh rather than greasy.</p></article><article class="wwd-card"><span class="wwd-n">06</span><h3>Boats, caravans &amp; motorhomes</h3><p>Gelcoat cut and polished, hull wash-downs and protection — the same process scaled to whatever is in the driveway.</p></article></div></div></section><section id="packages"><div class="wrap"><div class="sec-head"><span class="sec-idx">03</span><div><h2 class="sec-title">Packages</h2><p class="lead">Priced after the paint has been looked at, because a car that has never been polished and one that has been washed with a sponge are not the same job.</p></div></div><div class="pk-grid"><article class="pk"><div class="pk-top"><h3>Maintenance</h3><span class="pk-dur">2–3 hours</span></div><p class="pk-blurb">For a car already detailed here. Wash, decontaminate, interior wipe-down and a topper on the coating.</p><ul><li>Foam pre-soak and two-bucket hand wash</li><li>Wheels, tyres and glass</li><li>Interior vacuum and wipe-down</li><li>Coating topper</li></ul></article><article class="pk"><div class="pk-top"><h3>Full detail</h3><span class="pk-dur">5–7 hours</span></div><p class="pk-blurb">Inside and out, start to finish. The package most cars actually need the first time.</p><ul><li>Everything in Maintenance</li><li>Interior shampoo and steam</li><li>Clay decontamination</li><li>Machine gloss enhancement</li><li>Trim and leather dressed</li></ul></article><article class="pk"><div class="pk-top"><h3>Correction + graphene</h3><span class="pk-dur">1–2 days</span></div><p class="pk-blurb">Paint corrected in stages under the lights, then sealed. Quoted after the paint is inspected.</p><ul><li>Multi-stage machine correction</li><li>Defects removed, not hidden</li><li>Graphene coating, cured indoors</li><li>Aftercare sheet and wash mitt</li></ul></article></div></div></section><section id="addons"><div class="wrap"><h2 class="sec-title">Add-ons</h2><div class="ad-row"><span>Headlight restoration</span><span>Engine bay</span><span>Pet hair removal</span><span>Odour / ozone treatment</span><span>Leather conditioning</span><span>Sand and salt removal</span></div></div></section><section id="why"><div class="wrap"><div class="sec-head"><span class="sec-idx">04</span><div><h2 class="sec-title">Why the workshop</h2><p class="lead">Most detailing on the Coast happens in a driveway. That is fine for a wash — it is the wrong place to correct paint.</p></div></div><div class="why-grid">
+<article><h3>Controlled light</h3><p>Defects are found under fixed workshop lighting, not whatever the sun is doing that morning. Correction is judged by what the light shows.</p></article>
+<article><h3>Undercover, indoors</h3><p>No dust settling into wet coating, no tree sap, no rain on a car that has just been sealed. Coatings cure where they should.</p></article>
+<article><h3>One car at a time</h3><p>The car is booked for the day, not slotted between three others. Nothing is rushed to make room.</p></article>
+<article><h3>Insured, and it stays here</h3><p>Drop-off at West Gosford, keys handed over, work done on site — not a van that may or may not turn up.</p></article>
+</div></div></section><section id="area"><div class="wrap"><h2 class="sec-title">Drop-off suburbs</h2><p class="lead">Customers come from across the Coast. Ten minutes from Gosford, Erina and West Gosford.</p><div class="area-row"><span>West Gosford</span><span>Gosford</span><span>East Gosford</span><span>Erina</span><span>Terrigal</span><span>Avoca Beach</span><span>Kincumber</span><span>Green Point</span><span>Saratoga</span><span>Woy Woy</span><span>Umina</span><span>Wyoming</span></div></div></section><section class="revs" id="reviews"><div class="wrap"><div class="revs-head"><h2 class="sec-title">What customers say</h2><div class="revs-score"><b>5.0</b><span>Google rated</span></div></div><div class="revs-row"><figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>The paint was a mess of swirls from the previous owner. Got it back looking better than new and the coating makes washing it a ten minute job.</blockquote><figcaption>Hatchback owner · West Gosford</figcaption></figure><figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Booked in for a full detail before selling. Ended up keeping the car — it came up that well.</blockquote><figcaption>4WD owner · Central Coast</figcaption></figure><figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Took the boat in as well as the ute. Both came back spotless and the gelcoat has never looked this good.</blockquote><figcaption>Boat owner · Erina</figcaption></figure></div></div></section>
 <section class="band carbon" id="process">
-<span class="red-slash" aria-hidden="true" style="top:36px;left:-7%;width:38%;transform:rotate(-4.5deg);opacity:.5"></span><span class="red-slash" aria-hidden="true" style="top:47px;left:-3%;width:22%;transform:rotate(-4.5deg);opacity:.22"></span>
+<span aria-hidden="true" class="red-slash" style="top:36px;left:-7%;width:38%;transform:rotate(-4.5deg);opacity:.5"></span><span aria-hidden="true" class="red-slash" style="top:47px;left:-3%;width:22%;transform:rotate(-4.5deg);opacity:.22"></span>
 <div class="wrap">
-  <div class="sec-head"><span class="sec-idx">02</span><div><h2 class="sec-title">Booked in, detailed, protected.</h2></div></div>
-  <div class="steps"><div class="step rv"><span class="step-n">01</span><div><h3>Book it in</h3><p>Call or send the form &mdash; tell us the vehicle and what you are chasing.</p></div></div><div class="step rv"><span class="step-n">02</span><div><h3>Assess &amp; quote</h3><p>We look over the paint and interior and match the right package.</p></div></div><div class="step rv"><span class="step-n">03</span><div><h3>Detail day</h3><p>Wash, decontaminate, polish, protect &mdash; inside and out.</p></div></div><div class="step rv"><span class="step-n">04</span><div><h3>Handover</h3><p>We walk the vehicle with you under the lights so you can see the finish.</p></div></div></div>
+<div class="sec-head"><span class="sec-idx">02</span><div><h2 class="sec-title">Booked in, detailed, protected.</h2></div></div>
+<div class="steps"><div class="step rv"><span class="step-n">01</span><div><h3>Book it in</h3><p>Call or send the form — tell us the vehicle and what you are chasing.</p></div></div><div class="step rv"><span class="step-n">02</span><div><h3>Assess &amp; quote</h3><p>We look over the paint and interior and match the right package.</p></div></div><div class="step rv"><span class="step-n">03</span><div><h3>Detail day</h3><p>Wash, decontaminate, polish, protect — inside and out.</p></div></div><div class="step rv"><span class="step-n">04</span><div><h3>Handover</h3><p>We walk the vehicle with you under the lights so you can see the finish.</p></div></div></div>
 </div></section>
-
 <section id="faq"><div class="wrap faq-wrap">
-  <div class="sec-head"><span class="sec-idx">03</span><div><h2 class="sec-title">Asked on every detail.</h2></div></div>
-  <details class="faq rv"><summary>Do you work on boats and motorhomes too?</summary><div class="a">Yes &mdash; cars, 4WDs, boats, caravans and motorhomes all get detailed in the West Gosford workshop.</div></details><details class="faq rv"><summary>What is graphene protection?</summary><div class="a">A long-life coating that seals and protects the paint, making it easier to wash and harder for grime to take hold.</div></details><details class="faq rv"><summary>Which areas do you cover?</summary><div class="a">We are based in West Gosford on the Central Coast &mdash; drop the vehicle to us or call to discuss.</div></details><details class="faq rv"><summary>How long does a full detail take?</summary><div class="a">Depends on the vehicle and the package &mdash; we confirm the timing when you book.</div></details>
+<div class="sec-head"><span class="sec-idx">03</span><div><h2 class="sec-title">Asked on every detail.</h2></div></div>
+<details class="faq rv"><summary>How long will my car be there?</summary><div class="a">A maintenance detail is a couple of hours. A full detail is most of a day and a correction is one to two days — the booking is held for that time.</div></details><details class="faq rv"><summary>Do you need the car beforehand to quote?</summary><div class="a">Yes for correction work. Paint condition decides the stages, so it is looked at under the lights before a number is given.</div></details><details class="faq rv"><summary>Can I drop off and leave it?</summary><div class="a">Yes. Keys are handed over at West Gosford and the car stays indoors until it is collected.</div></details><details class="faq rv"><summary>Do you work on boats and motorhomes too?</summary><div class="a">Yes — cars, 4WDs, boats, caravans and motorhomes all get detailed in the West Gosford workshop.</div></details><details class="faq rv"><summary>What is graphene protection?</summary><div class="a">A long-life coating that seals and protects the paint, making it easier to wash and harder for grime to take hold.</div></details><details class="faq rv"><summary>Which areas do you cover?</summary><div class="a">We are based in West Gosford on the Central Coast — drop the vehicle to us or call to discuss.</div></details><details class="faq rv"><summary>How long does a full detail take?</summary><div class="a">Depends on the vehicle and the package — we confirm the timing when you book.</div></details>
 </div></section>
-
 <section class="stat-band band carbon" id="stats">
 <div class="wrap"><div class="stat rv d1"><b>5.0</b><span>Google rated</span></div><div class="stat rv d2"><b>Graphene</b><span>Paint protection</span></div><div class="stat rv d3"><b>In &amp; out</b><span>Full details</span></div><div class="stat rv d4"><b>West Gosford</b><span>Central Coast</span></div></div></section>
-
 <section id="trust"><div class="wrap">
-  <div class="sec-head"><span class="sec-idx">04</span><div><h2 class="sec-title">Why Central Coast cars come to Allards.</h2></div></div>
-  <div class="trust-strip"><div class="tr-i rv d1"><div class="tr-t">&#10003;</div><div><b>Graphene protection</b><span>Long-life paint seal</span></div></div><div class="tr-i rv d2"><div class="tr-t">&#10003;</div><div><b>Paint correction</b><span>Swirl-free reflections</span></div></div><div class="tr-i rv d3"><div class="tr-t">&#10003;</div><div><b>Workshop lighting</b><span>See the finish before you go</span></div></div><div class="tr-i rv d4"><div class="tr-t">&#10003;</div><div><b>Cars, boats &amp; RVs</b><span>Not just everyday cars</span></div></div></div>
+<div class="sec-head"><span class="sec-idx">04</span><div><h2 class="sec-title">Why Central Coast cars come to Allards.</h2></div></div>
+<div class="trust-strip"><div class="tr-i rv d1"><div class="tr-t">✓</div><div><b>Graphene protection</b><span>Long-life paint seal</span></div></div><div class="tr-i rv d2"><div class="tr-t">✓</div><div><b>Paint correction</b><span>Swirl-free reflections</span></div></div><div class="tr-i rv d3"><div class="tr-t">✓</div><div><b>Workshop lighting</b><span>See the finish before you go</span></div></div><div class="tr-i rv d4"><div class="tr-t">✓</div><div><b>Cars, boats &amp; RVs</b><span>Not just everyday cars</span></div></div></div>
 </div></section>
-
 <section id="work"><div class="wrap">
-  <div class="sec-head"><div class="sec-idx">05</div><div><h2 class="rv d1">In the bay.</h2><p class="lead rv d2">Cars, boats and motorhomes &mdash; every photo taken in our West Gosford workshop.</p></div></div>
+<div class="sec-head"><div class="sec-idx">05</div><div><h2 class="rv d1">In the bay.</h2><p class="lead rv d2">Cars, boats and motorhomes — every photo taken in our West Gosford workshop.</p></div></div>
 </div>
-<div class="sld rv" id="showcase" role="region" aria-roledescription="carousel" aria-label="Workshop showcase"><div class="sld-stage"><figure class="sld-item active" data-i="1"><img src="assets/gal_1.jpg" alt="Mustang — corrected & glossed — Allards Auto Detailing" loading="lazy"><figcaption><span>Mustang &mdash; corrected &amp; glossed</span></figcaption></figure><figure class="sld-item" data-i="2"><img src="assets/gal_2.jpg" alt="RAM 1500 — swirl-free paint — Allards Auto Detailing" loading="lazy"><figcaption><span>RAM 1500 &mdash; swirl-free paint</span></figcaption></figure><figure class="sld-item" data-i="3"><img src="assets/gal_3.jpg" alt="Ute and caravan combo — full detail — Allards Auto Detailing" loading="lazy"><figcaption><span>Ute &amp; caravan &mdash; combo detail</span></figcaption></figure><figure class="sld-item" data-i="4"><img src="assets/gal_7.jpg" alt="Off-road caravan — full detail — Allards Auto Detailing" loading="lazy"><figcaption><span>Off-road caravan &mdash; full detail</span></figcaption></figure><figure class="sld-item" data-i="5"><img src="assets/gal_4.jpg" alt="Ski boat — gelcoat cut and polish — Allards Auto Detailing" loading="lazy"><figcaption><span>Ski boat &mdash; gelcoat cut &amp; polish</span></figcaption></figure><figure class="sld-item" data-i="6"><img src="assets/gal_5.jpg" alt="People-mover — multi-stage correction — Allards Auto Detailing" loading="lazy"><figcaption><span>People-mover &mdash; multi-stage correction</span></figcaption></figure><figure class="sld-item" data-i="7"><img src="assets/gal_6.jpg" alt="Ski boat — hull wash and protect — Allards Auto Detailing" loading="lazy"><figcaption><span>Ski boat &mdash; hull wash &amp; protect</span></figcaption></figure><div class="sld-sheen" aria-hidden="true"></div><div class="sld-cap" aria-live="polite"><b id="sldNow">01</b><i>/</i><span id="sldTot">07</span></div></div><div class="sld-ui"><div class="sld-dots" role="group" aria-label="Choose photo"><button class="sld-dot on" data-i="1" aria-label="Photo 1"></button><button class="sld-dot" data-i="2" aria-label="Photo 2"></button><button class="sld-dot" data-i="3" aria-label="Photo 3"></button><button class="sld-dot" data-i="4" aria-label="Photo 4"></button><button class="sld-dot" data-i="5" aria-label="Photo 5"></button><button class="sld-dot" data-i="6" aria-label="Photo 6"></button><button class="sld-dot" data-i="7" aria-label="Photo 7"></button></div><div class="sld-arrows"><button class="hgal-btn sld-prev" id="sldPrev" aria-label="Previous photo">&#8592;</button><button class="hgal-btn sld-next" id="sldNext" aria-label="Next photo">&#8594;</button></div></div></div> </section>
-
+<div aria-label="Workshop showcase" aria-roledescription="carousel" class="sld rv" id="showcase" role="region"><div class="sld-stage"><figure class="sld-item active" data-i="1"><img alt="Mustang — corrected &amp; glossed — Allards Auto Detailing" loading="lazy" src="assets/gal_1.jpg"/><figcaption><span>Mustang — corrected &amp; glossed</span></figcaption></figure><figure class="sld-item" data-i="2"><img alt="RAM 1500 — swirl-free paint — Allards Auto Detailing" loading="lazy" src="assets/gal_2.jpg"/><figcaption><span>RAM 1500 — swirl-free paint</span></figcaption></figure><figure class="sld-item" data-i="3"><img alt="Ute and caravan combo — full detail — Allards Auto Detailing" loading="lazy" src="assets/gal_3.jpg"/><figcaption><span>Ute &amp; caravan — combo detail</span></figcaption></figure><figure class="sld-item" data-i="4"><img alt="Off-road caravan — full detail — Allards Auto Detailing" loading="lazy" src="assets/gal_7.jpg"/><figcaption><span>Off-road caravan — full detail</span></figcaption></figure><figure class="sld-item" data-i="5"><img alt="Ski boat — gelcoat cut and polish — Allards Auto Detailing" loading="lazy" src="assets/gal_4.jpg"/><figcaption><span>Ski boat — gelcoat cut &amp; polish</span></figcaption></figure><figure class="sld-item" data-i="6"><img alt="People-mover — multi-stage correction — Allards Auto Detailing" loading="lazy" src="assets/gal_5.jpg"/><figcaption><span>People-mover — multi-stage correction</span></figcaption></figure><figure class="sld-item" data-i="7"><img alt="Ski boat — hull wash and protect — Allards Auto Detailing" loading="lazy" src="assets/gal_6.jpg"/><figcaption><span>Ski boat — hull wash &amp; protect</span></figcaption></figure><div aria-hidden="true" class="sld-sheen"></div><div aria-live="polite" class="sld-cap"><b id="sldNow">01</b><i>/</i><span id="sldTot">07</span></div></div><div class="sld-ui"><div aria-label="Choose photo" class="sld-dots" role="group"><button aria-label="Photo 1" class="sld-dot on" data-i="1"></button><button aria-label="Photo 2" class="sld-dot" data-i="2"></button><button aria-label="Photo 3" class="sld-dot" data-i="3"></button><button aria-label="Photo 4" class="sld-dot" data-i="4"></button><button aria-label="Photo 5" class="sld-dot" data-i="5"></button><button aria-label="Photo 6" class="sld-dot" data-i="6"></button><button aria-label="Photo 7" class="sld-dot" data-i="7"></button></div><div class="sld-arrows"><button aria-label="Previous photo" class="hgal-btn sld-prev" id="sldPrev">←</button><button aria-label="Next photo" class="hgal-btn sld-next" id="sldNext">→</button></div></div></div> </section>
 <span id="quote" style="position:absolute;top:-90px"></span>
-<section class="photo-band" aria-label="Graphene-coated finish showcase">
-  <div class="pb-strip">
-    <div class="pb-copy">
-      <b>Give your car the Allard&rsquo;s shine</b>
-      <span>Message us for a free quote &mdash; send us your car&rsquo;s make and model and we&rsquo;ll come back with a price.</span>
-    </div>
-    <div class="pb-cta">
-      <a class="pb-btn" href="#quote">Get a free quote</a>
-      <a class="pb-phone" href="#quote-heading">0405 733 769</a>
-    </div>
-  </div>
+<section aria-label="Graphene-coated finish showcase" class="photo-band">
+<div class="pb-strip">
+<div class="pb-copy">
+<b>Give your car the Allard’s shine</b>
+<span>Message us for a free quote — send us your car’s make and model and we’ll come back with a price.</span>
+</div>
+<div class="pb-cta">
+<a class="pb-btn" href="#quote">Get a free quote</a>
+<a class="pb-phone" href="#quote-heading">0405 733 769</a>
+</div>
+</div>
 </section>
-
-<section id="lbq" aria-labelledby="lbq-h">
+<section aria-labelledby="lbq-h" id="lbq">
 <style>
 #lbq{--lbq-accent:var(--acc);--lbq-ink:var(--ink);--lbq-muted:var(--ink2);--lbq-bg:var(--paper2);--lbq-panel:#17191e;--lbq-line:var(--line);padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
 #lbq *{box-sizing:border-box}
@@ -551,32 +690,32 @@ html.js .hero-slides img.on{opacity:1}
 .photo-band .pb-strip{position:static!important;transform:none!important;border-radius:0;box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
 </style>
 <div class="lbq-w">
-  <div>
-    <h2 id="lbq-h">Get a free quote</h2>
-    <p class="lbq-s">Tell us about the job and we&rsquo;ll come back with a firm price &mdash; no surprises, no obligation.</p>
-    <div class="lbq-info">
-      <div><b>Call</b><a href="#quote-heading">0405 733 769</a></div>
-      <div><b>Email</b><a href="mailto:allardsdetailing@gmail.com">allardsdetailing@gmail.com</a></div>
-      <div><b>Area</b><span>West Gosford &amp; the Central Coast</span></div>
-    </div>
-  </div>
-  <form id="lbq-form" novalidate data-site="radar-142" data-biz="Allards Auto Detailing">
-    <div class="lbq-f">
-      <div class="lbq-g">
-        <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
-        <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
-        <div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
-        <div class="lbq-full"><label for="lbq-svc">Service</label>
-          <select id="lbq-svc" name="service"><option>Graphene protection package</option><option>Full interior &amp; exterior detail</option><option>Paint enhancement / correction</option><option>Exterior wash &amp; decontamination</option><option>Interior detailing</option><option>Boat or motorhome detail</option><option>Other</option></select>
-        </div>
-        <div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Vehicle, paint colour, what you want fixed, when…" required></textarea></div>
-      </div>
-      <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
-      <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
-      <button type="submit">Send quote request</button>
-      <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
-    </div>
-  </form>
+<div>
+<h2 id="lbq-h">Get a free quote</h2>
+<p class="lbq-s">Tell us about the job and we’ll come back with a firm price — no surprises, no obligation.</p>
+<div class="lbq-info">
+<div><b>Call</b><a href="#quote-heading">0405 733 769</a></div>
+<div><b>Email</b><a href="mailto:allardsdetailing@gmail.com">allardsdetailing@gmail.com</a></div>
+<div><b>Area</b><span>West Gosford &amp; the Central Coast</span></div>
+</div>
+</div>
+<form data-biz="Allards Auto Detailing" data-site="radar-142" id="lbq-form" novalidate="">
+<div class="lbq-f">
+<div class="lbq-full"><label for="lbq-v">Vehicle (make, model, colour)</label><input id="lbq-v" name="vehicle" placeholder="e.g. Hilux, white"/></div><div class="lbq-g">
+<div><label for="lbq-n">Name</label><input autocomplete="name" id="lbq-n" name="name" required=""/></div>
+<div><label for="lbq-p">Phone</label><input autocomplete="tel" id="lbq-p" name="phone" type="tel"/></div>
+<div><label for="lbq-e">Email</label><input autocomplete="email" id="lbq-e" name="email" type="email"/></div>
+<div class="lbq-full"><label for="lbq-svc">Service</label>
+<select id="lbq-svc" name="service"><option>Graphene protection package</option><option>Full interior &amp; exterior detail</option><option>Paint enhancement / correction</option><option>Exterior wash &amp; decontamination</option><option>Interior detailing</option><option>Boat or motorhome detail</option><option>Other</option></select>
+</div>
+<div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Vehicle, paint colour, what you want fixed, when…" required=""></textarea></div>
+</div>
+<label class="lbq-cons"><input checked="" name="consent" type="checkbox" value="1"/> I agree to be contacted about this request.</label>
+<div aria-hidden="true" class="lbq-hp"><label>Website<input autocomplete="off" name="website" tabindex="-1"/></label></div>
+<button type="submit">Send quote request</button>
+<p aria-live="polite" class="lbq-st" id="lbq-st" role="status"></p>
+</div>
+</form>
 </div>
 <script>
 (function(){
@@ -649,22 +788,21 @@ html.js .hero-slides img.on{opacity:1}
 })();
 </script>
 </section>
-<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img src="assets/gal_7.jpg" alt="Allards Auto Detailing" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img src="assets/gal_3.jpg" alt="Allards Auto Detailing" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/gal_4.jpg" alt="Allards Auto Detailing" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/gal_6.jpg" alt="Allards Auto Detailing" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/gal_1.jpg" alt="Allards Auto Detailing" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work.jpg" alt="Allards Auto Detailing" loading="lazy" decoding="async"></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button><button type="button" class="" aria-label="Slide 4"></button><button type="button" class="" aria-label="Slide 5"></button><button type="button" class="" aria-label="Slide 6"></button></div><div class="lb-rb__cap">Allards Auto Detailing &mdash; recent work</div></div></section><footer class="carbon">
-<span class="red-slash" aria-hidden="true" style="top:30px;right:-8%;width:30%;transform:rotate(-4.5deg);opacity:.4"></span>
+<section aria-label="Recent work and services" class="lb-rb"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img alt="Allards Auto Detailing" decoding="async" loading="eager" src="assets/gal_7.jpg"/></div><div class="lb-rb__slide"><img alt="Allards Auto Detailing" decoding="async" loading="lazy" src="assets/gal_3.jpg"/></div><div class="lb-rb__slide"><img alt="Allards Auto Detailing" decoding="async" loading="lazy" src="assets/gal_4.jpg"/></div><div class="lb-rb__slide"><img alt="Allards Auto Detailing" decoding="async" loading="lazy" src="assets/gal_6.jpg"/></div><div class="lb-rb__slide"><img alt="Allards Auto Detailing" decoding="async" loading="lazy" src="assets/gal_1.jpg"/></div><div class="lb-rb__slide"><img alt="Allards Auto Detailing" decoding="async" loading="lazy" src="assets/work.jpg"/></div><button aria-label="Previous" class="lb-rb__nav lb-rb__nav--prev" type="button">‹</button><button aria-label="Next" class="lb-rb__nav lb-rb__nav--next" type="button">›</button><div class="lb-rb__dots"><button aria-label="Slide 1" class="is-on" type="button"></button><button aria-label="Slide 2" class="" type="button"></button><button aria-label="Slide 3" class="" type="button"></button><button aria-label="Slide 4" class="" type="button"></button><button aria-label="Slide 5" class="" type="button"></button><button aria-label="Slide 6" class="" type="button"></button></div><div class="lb-rb__cap">Allards Auto Detailing — recent work</div></div></section><footer class="carbon">
+<span aria-hidden="true" class="red-slash" style="top:30px;right:-8%;width:30%;transform:rotate(-4.5deg);opacity:.4"></span>
 <div class="wrap">
-  <div>
-    <div class="fbrand"><img src="assets/logo.png" alt="Allards Auto Detailing logo"><span class="b-txt"><span class="brand-name" style="font-size:1rem;">Allards</span><br><span class="brand-sub">Auto Detailing &middot; Graphene Protection</span></span></div>
-    <p style="margin-top:16px;font-size:13.5px;max-width:300px;color:var(--ink2);">Car detailing &middot; Paint correction &middot; Graphene protection &mdash; West Gosford.<br></p>
-  </div>
-  <div><h4>Services</h4><a href="#services">Graphene protection</a><a href="#services">Full detail</a><a href="#services">Paint correction</a><a href="#quote">Book a detail</a></div><div><h4>Studio</h4><a href="#process">How it works</a><a href="#faq">FAQ</a><a href="#work">Recent work</a><a href="#quote">Free quote</a></div>
-  <div><h4>Contact</h4><a href="#quote-heading">0405 733 769</a><a href="mailto:allardsdetailing@gmail.com">allardsdetailing@gmail.com</a><a href="#quote">Free quote</a></div>
+<div>
+<div class="fbrand"><img alt="Allards Auto Detailing logo" src="assets/logo.png"/><span class="b-txt"><span class="brand-name" style="font-size:1rem;">Allards</span><br/><span class="brand-sub">Auto Detailing · Graphene Protection</span></span></div>
+<p style="margin-top:16px;font-size:13.5px;max-width:300px;color:var(--ink2);">Car detailing · Paint correction · Graphene protection — West Gosford.<br/></p>
+</div>
+<div><h4>Services</h4><a href="#services">Graphene protection</a><a href="#services">Full detail</a><a href="#services">Paint correction</a><a href="#quote">Book a detail</a></div><div><h4>Studio</h4><a href="#process">How it works</a><a href="#faq">FAQ</a><a href="#work">Recent work</a><a href="#quote">Free quote</a></div>
+<div><h4>Contact</h4><a href="#quote-heading">0405 733 769</a><a href="mailto:allardsdetailing@gmail.com">allardsdetailing@gmail.com</a><a href="#quote">Free quote</a></div>
 </div>
 <div class="footer-bar mono">
-  <span>&copy; 2026 ALLARDS AUTO DETAILING &middot; </span>
-  <a href="#quote-heading">0405 733 769</a><a href="mailto:allardsdetailing@gmail.com">allardsdetailing@gmail.com</a>
+<span>© 2026 ALLARDS AUTO DETAILING · </span>
+<a href="#quote-heading">0405 733 769</a><a href="mailto:allardsdetailing@gmail.com">allardsdetailing@gmail.com</a>
 </div>
 </footer>
-
 <script>
 (function(){
   var b = document.getElementById('burger'), n = document.getElementById('navlinks');
@@ -718,7 +856,6 @@ if (hg) {
  *   data-ux="marquee"      seamless scrolling strip (put one <span> of content inside)
  *   data-ux="parallax"     element drifts with scroll; data-speed="-0.15" optional (default -0.12)
  *   data-ux="fadein"       simple one-shot fade+rise on scroll (same as .rv, kept for </script>
-
 <script>
 /* hero enquiry card -> prefills the one #lbq form (layout ref 2026-10-13) */
 (function(){
@@ -756,7 +893,6 @@ if (hg) {
   window.addEventListener('keydown', function(){ clearTimeout(t); go(); }, { once: true });
 })();
 </script>
-
 <script>
 /* hero slideshow (2026-10-13) */
 (function(){
@@ -816,7 +952,6 @@ if (hg) {
   start();
 })();
 </script>
-
 <script>
 /* RENDER FINISH SCROLL SCENE, trade-accurate rendering/plastering scene
  * Environment: MIDDAY-NEUTRAL with coastal light
@@ -1009,8 +1144,6 @@ header,.site-header,.page-header,.header-inner,nav.nav,.nav-inner,
 #sigSplash,#splash,.sp{animation:lbKillSplash .001s 2.5s forwards !important}
 @keyframes lbKillSplash{to{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}}
 </style>
-
-
 <style>/* ==== TASTE PASS (anti-slop, from impeccable findings) ==== */
 .lb-mq__in,.svc-row,tiny numbered label "01" beside h2 "Detailing that shows up in the reflections." (4 on page),tiny numbered label "02" beside h2 "Booked in, detailed, protected." (4 on page),tiny numbered label "03" beside h2 "Asked on every detail." (4 on page),tiny numbered label "04" beside h2 "Why Central Coast cars come to Allards." (4 on page){display:none !important}
 Zero-offset box-shadow glow (#a32020){box-shadow:none !important;text-shadow:none !important}
@@ -1043,7 +1176,6 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
   .lb-brand__word{font-size:.92em !important}
 }
 </style>
-
 <style>/* ==== LB HEADER POLISH 2 ==== */
 header nav a:not(.btn):not([class*="btn"]):not([class*="cta"]),
 .site-header nav a:not(.btn):not([class*="btn"]),
