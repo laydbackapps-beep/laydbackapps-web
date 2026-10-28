@@ -286,7 +286,7 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav"><div class="nav-in">
-  <a class="lb-brand" href="#top" aria-label="By Design Concrete Construction - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#182058;--lb-subc:#182058;--lb-acc:#182058;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo-mark_radar-157.png" alt="" loading="eager" decoding="async" class="lb-logo-unlock"></span><span class="lb-brand__word"><span class="lb-brand__name">By Design Concrete Construction</span><span class="lb-brand__sub"><span class="lb-acc">Decorative</span> · Exposed Aggregate · Slabs</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
+  <a class="lb-brand" href="#top" aria-label="By Design Concrete Construction - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#182058;--lb-subc:#182058;--lb-acc:#182058;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo-header.png" alt="" loading="eager" decoding="async" class="lb-logo-unlock"></span><span class="lb-brand__word"><span class="lb-brand__name">By Design Concrete Construction</span><span class="lb-brand__sub"><span class="lb-acc">Decorative</span> · Exposed Aggregate · Slabs</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
   <div class="nav-links" id="navlinks"><a href="#services">Services</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="#quote">Quote</a></div>
   <div class="nav-cta"><span class="mono nav-p">0455 551 454</span><a href="#quote" class="btn btn-primary btn-sm">Get a quote</a></div>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -315,6 +315,9 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
   </div>
 </header>
 
+<div class="bd-ticker" aria-hidden="true"><div class="bd-ticker__track" id="bdTick"></div></div>
+
+
 
 
 <section id="services"><div class="wrap">
@@ -326,6 +329,32 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
   <div class="sec-head"><span class="sec-idx">02</span><div><h2 class="sec-title">Quoted square. Poured right.</h2></div></div>
   <div class="steps"><div class="step rv"><span class="step-n">01</span><div><h3>Call or message</h3><p>Tell us the job, photos and rough sizes help us quote fast.</p></div></div><div class="step rv"><span class="step-n">02</span><div><h3>Free measure &amp; quote</h3><p>We come out, check levels and access, and give you a clear price.</p></div></div><div class="step rv"><span class="step-n">03</span><div><h3>Prep &amp; set out</h3><p>Excavation, formwork, mesh and levels, all checked before a single barrow goes down.</p></div></div><div class="step rv"><span class="step-n">04</span><div><h3>Pour &amp; finish</h3><p>Poured, screeded and finished by hand, then the site is left clean.</p></div></div></div>
 </div></section>
+
+<section class="sec" id="areas" aria-labelledby="areas-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-idx">06</div>
+      <div>
+        <h2 id="areas-h">Where we work</h2>
+        <p class="lead">Concrete construction across the Central Coast, Newcastle and Sydney — driveways, slabs, exposed aggregate, decorative finishes and repairs.</p>
+      </div>
+    </div>
+    <div class="bd-chips">
+      <span>Gosford</span><span>Erina</span><span>Terrigal</span><span>Wamberal</span><span>Avoca Beach</span>
+      <span>Copacabana</span><span>Kincumber</span><span>Woy Woy</span><span>Umina Beach</span><span>Ettalong</span>
+      <span>Saratoga</span><span>Davistown</span><span>The Entrance</span><span>Long Jetty</span><span>Bateau Bay</span>
+      <span>Shelly Beach</span><span>Tuggerah</span><span>Wyong</span><span>Warnervale</span><span>Ourimbah</span>
+      <span>Toukley</span><span>Norah Head</span><span>Budgewoi</span><span>Newcastle</span><span>Merewether</span>
+      <span>Charlestown</span><span>Warners Bay</span><span>Belmont</span><span>Wallsend</span><span>Toronto</span>
+      <span>Morisset</span><span>Maitland</span><span>Cessnock</span><span>Kurri Kurri</span>
+    </div>
+    <div class="bd-band">
+      <div class="cap"><span>Service areas — rotating</span><em id="bdAreaCount">01 / 06</em></div>
+      <div class="row" id="bdAreaRow"></div>
+      <div class="prog"><i></i></div>
+    </div>
+  </div>
+</section>
 
 <section id="faq"><div class="wrap faq-wrap">
   <div class="sec-head"><span class="sec-idx">03</span><div><h2 class="sec-title">Asked on every job.</h2></div></div>
@@ -711,5 +740,117 @@ header a[href^="tel"],.site-header a[href^="tel"]{
 :is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
 img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
+<style id="bd-extras">
+/* ==== header logo cleaned up + added features, in this site's own navy/orange palette (#182058 / #a84f06 / white) ==== */
+
+/* the bar was loading a broken fragment asset (logo-mark_radar-157.png) - a black box with only the top sliver of the
+   seal and part of the word inside it - so the header read as a damaged image. Now the client's complete lockup,
+   cropped to its own edges, transparent, on the white bar. */
+.lb-brand__mark{height:auto!important;width:auto!important;max-width:none!important;display:flex!important;align-items:center!important;
+  background:none!important;padding:0!important;border-radius:0!important}
+.lb-brand__mark img,.lb-brand__mark img.lb-logo,.lb-brand__mark img.lb-logo-unlock,.lb-brand img.lb-logo,.lb-brand img.lb-logo-unlock{
+  height:clamp(56px,6vw,84px)!important;width:auto!important;max-height:none!important;max-width:min(52vw,300px)!important;
+  object-fit:contain!important;background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;display:block!important}
+.lb-brand__word,.lb-brand__name,.lb-brand__sub,.lb-brand__rule{display:none!important}
+@media(max-width:560px){.lb-brand__mark img{height:52px!important}}
+
+/* rotating service-area ticker */
+.bd-ticker{position:relative;overflow:hidden;background:#182058;
+  border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+.bd-ticker:before,.bd-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.bd-ticker:before{left:0;background:linear-gradient(90deg,#182058,transparent)}
+.bd-ticker:after{right:0;background:linear-gradient(270deg,#182058,transparent)}
+.bd-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;width:max-content;
+  animation:bdSlide 46s linear infinite;will-change:transform}
+.bd-ticker:hover .bd-ticker__track{animation-play-state:paused}
+.bd-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:#f6f7f9;
+  font-weight:700;font-size:clamp(11px,1.15vw,13.5px);letter-spacing:.16em;text-transform:uppercase}
+.bd-ticker span i{font-style:normal;color:#ffb277}
+@keyframes bdSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* service area chips + rotating band */
+.bd-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.bd-chips span{border:1px solid rgba(24,32,88,.18);background:rgba(24,32,88,.05);padding:7px 13px;
+  font-size:.86rem;color:#060607;transition:.2s}
+.bd-chips span:hover{border-color:#182058;background:rgba(24,32,88,.14)}
+.bd-band{margin-top:20px;border:1px solid rgba(255,255,255,.16);background:#262d5e;overflow:hidden;border-radius:12px}
+.bd-band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:11px 15px;
+  border-bottom:1px solid rgba(255,255,255,.16);font-weight:700;font-size:.7rem;letter-spacing:.18em;
+  text-transform:uppercase;color:#ffb277}
+.bd-band .cap em{font-style:normal;color:#d4d8de}
+.bd-band .row{position:relative;height:68px;overflow:hidden}
+.bd-band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+.bd-band .row ul.on{opacity:1;transform:none}
+.bd-band .row li{font-size:clamp(1.05rem,2.2vw,1.5rem);font-weight:800;line-height:1.12;color:#f6f7f9;text-align:center}
+.bd-band .row li small{display:block;font-weight:500;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;
+  color:#d4d8de;margin-top:8px}
+.bd-band .prog{height:2px;background:rgba(255,255,255,.16)}
+.bd-band .prog i{display:block;height:100%;width:0;background:#ffb277;animation:bdFill 4s linear infinite}
+@keyframes bdFill{from{width:0}to{width:100%}}
+
+/* work gallery: 1280x1707 portrait shots were forced into 560x380 landscape cover boxes */
+.hg-item{width:min(400px,80vw)!important}
+.hg-item img{width:100%!important;height:auto!important;aspect-ratio:1280/1707!important;object-fit:cover!important;display:block}
+@media(max-width:700px){.hg-item{width:min(320px,84vw)!important}}
+
+/* showcase photographs: all four are 1280x1707 (3:4 portrait). The rotation band was covering a 16:7 track with them
+   (upscaled 1.16x and cut to a 2.28:1 slice) and the grid tiles were forced into 560x380 landscape cover boxes. */
+.gal img,.gal figure img{width:100%!important;height:auto!important;aspect-ratio:1280/1707!important;object-fit:cover!important}
+.gal{grid-template-columns:repeat(4,minmax(0,1fr))!important;max-width:820px}
+.lb-rb__track{aspect-ratio:3/4!important;width:min(560px,78vw)!important;margin:0 auto!important;border-radius:12px;overflow:visible!important}
+.lb-rb__slide{border-radius:12px;overflow:hidden}
+.lb-rb__slide img{width:100%!important;height:100%!important;object-fit:contain!important;transform:none!important}
+.lb-rb__dots{left:50%!important;right:auto!important;top:calc(100% + 14px)!important;bottom:auto!important;
+  transform:translateX(-50%)!important;flex-direction:row!important;gap:9px!important;z-index:5!important}
+.lb-rb{padding-bottom:clamp(42px,4.4vw,60px)}
+@media(max-width:900px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:460px}}
+@media(max-width:760px){.lb-rb__track{width:min(420px,86vw)!important}}
+
+@media (prefers-reduced-motion:reduce){
+  .bd-ticker__track,.bd-band .prog i{animation:none}
+  .bd-band .row ul{transition:none}
+}
+</style>
+
+<script id="bd-extras-js">
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* service-area ticker */
+  var T=['Gosford','Erina','Terrigal','Wamberal','Avoca Beach','Copacabana','Kincumber','Woy Woy','Umina Beach',
+         'Ettalong','The Entrance','Long Jetty','Bateau Bay','Tuggerah','Wyong','Warnervale','Ourimbah','Toukley',
+         'Norah Head','Budgewoi','Newcastle','Merewether','Charlestown','Warners Bay','Belmont','Wallsend','Toronto',
+         'Morisset','Maitland','Cessnock','Kurri Kurri'];
+  var tk=document.getElementById('bdTick');
+  if (tk) tk.innerHTML = T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
+
+  /* rotating service-area band */
+  var AR=[['Central Coast','Gosford · Erina · Terrigal · Avoca Beach'],
+          ['The Entrance & the lakes','The Entrance · Long Jetty · Bateau Bay · Toukley'],
+          ['Wyong & Tuggerah','Wyong · Tuggerah · Warnervale · Ourimbah'],
+          ['Newcastle & Lake Macquarie','Newcastle · Charlestown · Warners Bay · Belmont'],
+          ['Hunter Valley','Maitland · Cessnock · Kurri Kurri · Rutherford'],
+          ['Sydney','Northern Beaches · The Hills · Sutherland · Inner West']];
+  var row=document.getElementById('bdAreaRow'), cnt=document.getElementById('bdAreaCount');
+  if (row){
+    AR.forEach(function(a,k){
+      var u=document.createElement('ul'), li=document.createElement('li');
+      if(!k) u.className='on';
+      li.innerHTML = a[0]+'<small>'+a[1]+'</small>';
+      u.appendChild(li); row.appendChild(u);
+    });
+    var rows=[].slice.call(row.children), i=0;
+    if(!reduce){
+      setInterval(function(){
+        i=(i+1)%AR.length;
+        rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
+        if(cnt) cnt.textContent = ('0'+(i+1)).slice(-2)+' / 0'+AR.length;
+      },4000);
+    }
+  }
+})();
+</script>
+
 </body>
 </html>
