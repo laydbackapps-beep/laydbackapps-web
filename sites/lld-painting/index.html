@@ -1,182 +1,319 @@
 <!doctype html>
 <html lang="en-AU"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LLD Painting — interior &amp; exterior painting, professional and reliable</title>
-<meta name="description" content="LLD Painting: interior and exterior painting, surface prep, spray finishing and repaints. Professional, reliable, quality finish. Request a quote online.">
+<title>LLD Painting — interior &amp; exterior repaints, prepared and finished properly</title>
+<meta name="description" content="LLD Painting: interior and exterior repaints, doors, trim, ceilings, fences and decks. Surfaces prepared, the right system specified, and a finish that survives the weather. Call 0451 276 801.">
+<link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-
-:root{--navy:#041a6e;--navy-2:#0a2a8f;--red:#c8161d;--green:#3f8f2a;--ink:#101426;
---paper:#f5f6f9;--line:#dde1e9;--dim:#5a6172;--max:1160px}
+:root{
+  --ink:#101418; --navy:#1b3a85; --navy-d:#122a63; --red:#d2232a; --green:#4a9b3f;
+  --paper:#ffffff; --paper-2:#f4f5f7; --rule:#dfe2e7; --dim:#5b6570; --max:1160px;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.62 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:17px/1.62 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:450;-webkit-font-smoothing:antialiased}
 img{max-width:100%}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4vw,44px)}
 a{color:inherit}
-h1,h2,h3{margin:0;letter-spacing:-.03em;line-height:1.06}
-h1{font-size:clamp(34px,5vw,66px);font-weight:900;letter-spacing:-.045em}
-h2{font-size:clamp(23px,3vw,37px);font-weight:800}
+h1,h2,h3{margin:0;line-height:1.08;letter-spacing:-.02em}
+h1{font-size:clamp(34px,5vw,60px);font-weight:800;letter-spacing:-.035em}
+h2{font-size:clamp(23px,3vw,36px);font-weight:800}
+h3{font-size:17.5px;font-weight:700}
 p{margin:0}
-.eyebrow{font:600 11.5px/1 "IBM Plex Mono",monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:12px}
-.eyebrow::before{content:"";width:32px;height:1px;background:var(--red)}
-.bar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:3px solid var(--navy)}
-.bar__in{display:flex;align-items:center;gap:clamp(14px,2vw,28px);padding-block:10px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;flex:0 0 auto;text-decoration:none}
-.brand img{display:block;height:clamp(56px,5.2vw,74px);width:auto}
-.nav{display:flex;align-items:center;gap:clamp(13px,1.8vw,26px);margin-left:auto;flex-wrap:wrap}
-.nav a{text-decoration:none;font-size:14.4px;color:#2a3348;padding:6px 0;border-bottom:2px solid transparent}
-.nav a:hover{color:var(--navy);border-bottom-color:var(--red)}
-.nav .tel{color:var(--navy);font-weight:800}
-.cta{display:inline-flex;align-items:center;background:var(--red);color:#fff;text-decoration:none;font-weight:800;font-size:14.4px;padding:12px 19px;border-radius:2px;white-space:nowrap}
-.cta:hover{background:#a80f16}
-.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:var(--navy);padding:9px 12px;font-size:18px;border-radius:2px}
-@media(max-width:980px){
-.nav{display:none;width:100%;flex-direction:column;align-items:flex-start;gap:2px;margin-left:0;padding:10px 0 4px;border-top:1px solid var(--line)}
-.nav.open{display:flex}
-.nav a{padding:11px 0;width:100%;border-bottom:1px solid var(--line);font-size:16px}
-.nav .cta{margin-top:10px;justify-content:center;width:100%}
-.burger{display:block}}
-.hero{padding:clamp(26px,4vw,56px) 0 clamp(28px,4vw,52px);background:#fff;border-bottom:1px solid var(--line)}
-.hero__in{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(24px,3.6vw,50px);align-items:center}
-.hero h1{margin:14px 0 16px}
-.hero .sub{color:#39415a;font-size:clamp(16px,1.15vw,18px);max-width:46ch;margin-bottom:24px}
-.hero .acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.ghost{display:inline-flex;align-items:center;border:1.5px solid var(--navy);color:var(--navy);text-decoration:none;font-weight:700;font-size:15px;padding:10px 17px;border-radius:2px}
-.hero figure{margin:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:#eef0f5;position:relative}
-.hero figure img{display:block;width:100%;height:auto;aspect-ratio:4/3.1;object-fit:cover}
-.hero figcaption{position:absolute;left:0;right:0;bottom:0;padding:9px 12px;background:rgba(4,26,110,.88);font:500 10.5px/1.4 "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:#e9edf6}
-@media(max-width:820px){
-  img.lb-word,img.word,img.brand__word{display:none!important}
-  img.lb-big.lb-big,img.lb-big.lb-big.lb-mark,img.lb-big.lb-big.lb-logo-unlock,img.lb-big.lb-big.lb-logomark{height:clamp(52px,13vw,68px)!important;max-width:72vw!important}
-  header>div,nav>div,[class*=hdr]>div,[class*=bar]>div,[class*=strip]>div{flex-wrap:wrap!important}
-  nav,[class*=nav-links],.nav-links,.links{flex-wrap:wrap!important;gap:10px!important}
-  header,nav,[class*=hdr],[class*=bar],[class*=strip]{max-width:100vw!important;overflow-x:clip!important}
-}
-</style>
-<style id="logo-big">
-/* logo blown up to fill the bar - the client's own artwork at a size people can read, not a thumbnail in the corner */
-img.lb-big,img.lb-big.lb-mark,img.lb-big.lb-logo-unlock,img.lb-big.lb-logomark{height:clamp(84px,7.6vw,104px)!important;
-  width:auto!important;max-width:none!important;max-height:none!important;object-fit:contain!important;display:block!important;flex:0 0 auto!important}
-img.lb-word{height:clamp(22px,2.1vw,30px)!important;width:auto!important;max-width:none!important;max-height:none!important;
-  object-fit:contain!important;display:block!important;margin-left:clamp(8px,1vw,14px)!important;flex:0 0 auto!important}
-a:has(> img.lb-big){display:flex!important;align-items:center!important;gap:0!important;flex:0 0 auto!important;min-width:0!important}
-header,nav,[class*=hdr],[class*=bar],[class*=strip]{min-height:0!important;height:auto!important}
-header>div,nav>div,[class*=hdr]>div,[class*=bar]>div,[class*=strip]>div{flex-wrap:nowrap!important;align-items:center!important;
-  row-gap:0!important;min-height:0!important;height:auto!important}
-nav,[class*=nav-links],.nav-links,.links{flex-wrap:nowrap!important;gap:clamp(10px,1.3vw,20px)!important;min-width:0!important}
-nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:14px!important}
-@media(max-width:1080px){img.lb-big,img.lb-big.lb-mark,img.lb-big.lb-logo-unlock{height:clamp(64px,8vw,84px)!important}
-  nav a,[class*=nav-links] a,.nav-links a{font-size:13px!important}}
-@media(max-width:820px){img.lb-word{display:none!important}}
-</style></head><body>
-<div class="bar"><div class="wrap bar__in">
-<a class="brand" href="#top" aria-label="LLD Painting — home"><img class="lb-big" src="assets/logo-header-tight.png" alt="LLD Painting"></a>
-<button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
-<nav class="nav" id="nav">
-<a href="#services">Painting</a><a href="#prep">Prep</a><a href="#work">Work</a><a href="#faq">FAQ</a>
-<a class="tel" href="tel:0451276801">Call 0451 276 801</a>
-<a class="cta" href="#quote">Free quote</a>
-</nav></div></div>
+.label{font:600 10.5px/1 "IBM Plex Mono",monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
 
-<header class="hero" id="top"><div class="wrap hero__in">
-<div>
-<span class="eyebrow">Professional · Reliable · Quality finish</span>
-<h1>A paint job is<br>only as good as<br>the prep under it.</h1>
-<p class="sub">Interior and exterior painting, full repaints and spray finishing. Surfaces are repaired, sanded and primed properly first — that is what keeps a finish looking right years later, not the topcoat.</p>
-<p class="acts"><a class="cta" href="#quote">Request a quote</a><a class="ghost" href="https://www.instagram.com/lld_painting/" target="_blank" rel="noopener">See recent work</a></p>
-</div>
-<figure><img src="assets/hero.jpg" alt="Painting work in progress" width="1280" height="960"><figcaption>Exterior repaint — weatherboards, trim and fence</figcaption></figure>
+/* ---------- logo-only bar ---------- */
+.masthead{position:sticky;top:0;z-index:70;background:#fff;border-bottom:1px solid var(--rule)}
+.masthead__in{display:flex;align-items:center;justify-content:center;padding:9px clamp(18px,4vw,44px)}
+.masthead img{height:88px;width:auto;display:block}
+@media(max-width:760px){.masthead img{height:72px}.masthead__in{padding:8px 18px}}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(34px,4.6vw,64px) 0 clamp(34px,4.6vw,58px);background:
+  radial-gradient(900px 420px at 88% 0%,rgba(27,58,133,.07),transparent 70%),#fff;border-bottom:1px solid var(--rule)}
+.hero__in{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(26px,3.4vw,52px);align-items:center}
+.hero h1{margin:14px 0 18px;max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--navy)}
+.hero .sub{color:#3c4650;font-size:clamp(16px,1.12vw,18.6px);max-width:48ch;margin-bottom:24px}
+.hero__acts{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:14px 22px;border-radius:3px}
+.btn:hover{background:var(--navy-d)}
+.tel-link{display:inline-flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-weight:700;font-size:15.4px}
+.tel-link span{font:600 10px/1 "IBM Plex Mono",monospace;letter-spacing:.18em;color:var(--red);text-transform:uppercase}
+
+/* the schedule card: a painter's spec sheet, not a stock photo */
+.sched{border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(16,20,24,.04)}
+.sched__head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 15px;background:var(--navy);color:#fff}
+.sched__head b{font:600 10.5px/1 "IBM Plex Mono",monospace;letter-spacing:.18em;text-transform:uppercase}
+.sched__head span{font:500 10.5px/1 "IBM Plex Mono",monospace;opacity:.8}
+.sched__row{display:grid;grid-template-columns:1.15fr .95fr 62px;gap:8px;align-items:center;padding:11px 15px;border-top:1px solid var(--rule);font-size:13.6px}
+.sched__row:nth-child(odd){background:#fbfbfc}
+.sched__row b{font-weight:700;font-size:13.6px}
+.sched__row i{font-style:normal;color:var(--dim);font-size:13px}
+.sched__row u{text-decoration:none;font:600 10.5px/1 "IBM Plex Mono",monospace;color:var(--navy);text-align:right;letter-spacing:.06em}
+.sched__foot{padding:11px 15px;border-top:1px solid var(--rule);background:var(--paper-2);color:var(--dim);font-size:12.4px}
+@media(max-width:900px){.hero__in{grid-template-columns:1fr}.sched{order:-1}}
+
+.strip{background:var(--ink);color:#e8ebee}
+.strip__in{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip div{padding:17px clamp(12px,2vw,22px);border-right:1px solid rgba(232,235,238,.16)}
+.strip div:last-child{border-right:0}
+.strip b{display:block;font:600 9.8px/1 "IBM Plex Mono",monospace;letter-spacing:.19em;color:#9aa6b4;margin-bottom:7px;text-transform:uppercase}
+.strip span{font-size:14.2px}
+@media(max-width:820px){.strip__in{grid-template-columns:1fr 1fr}.strip div{border-bottom:1px solid rgba(232,235,238,.16)}}
+
+section{padding:clamp(42px,5.2vw,76px) 0;border-bottom:1px solid var(--rule)}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:clamp(20px,2.6vw,32px)}
+.head p{color:var(--dim);max-width:56ch;font-size:15.4px;margin-top:10px;font-weight:450}
+
+.jobs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.jobs article{background:#fff;padding:21px 19px}
+.jobs b{display:block;font:600 10px/1 "IBM Plex Mono",monospace;letter-spacing:.16em;color:var(--red);text-transform:uppercase;margin-bottom:9px}
+.jobs h3{margin-bottom:7px;font-size:16.4px}
+.jobs p{color:var(--dim);font-size:14.2px;font-weight:450}
+@media(max-width:860px){.jobs{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.jobs{grid-template-columns:1fr}}
+
+table.spec{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--rule);font-size:14.2px}
+.spec th,.spec td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--rule);vertical-align:top}
+.spec thead th{font:600 10px/1 "IBM Plex Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);background:var(--paper-2)}
+.spec tbody tr:last-child td{border-bottom:0}
+.spec td:first-child{font-weight:700;width:22%}
+.spec td:nth-child(3){font:500 11px/1.7 "IBM Plex Mono",monospace;color:var(--navy);letter-spacing:.04em;white-space:nowrap}
+.spec td:nth-child(2){color:var(--dim)}
+@media(max-width:800px){.spec,thead,tbody,tr,td,th{display:block}thead{display:none}tr{border-bottom:1px solid var(--rule)}td{border:0;padding:4px 14px}td:first-child{padding-top:13px;width:auto}td:last-child{padding-bottom:13px}}
+
+.coats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.8vw,22px)}
+.coat{border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:#fff}
+.coat .bar{height:7px}
+.c1 .bar{background:#c9ced6}.c2 .bar{background:#8b95a3}.c3 .bar{background:var(--navy)}.c4 .bar{background:var(--navy-d)}
+.coat .b{padding:15px 15px 17px}
+.coat b{display:block;font:600 10px/1 "IBM Plex Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.coat h3{font-size:15.6px;margin-bottom:6px}
+.coat p{color:var(--dim);font-size:13.6px;font-weight:450}
+.coat .t{margin-top:10px;font:500 11px/1.5 "IBM Plex Mono",monospace;color:var(--navy)}
+@media(max-width:860px){.coats{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.coats{grid-template-columns:1fr}}
+
+.fails{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);background:#fff}
+.fails div{padding:18px 20px;border-bottom:1px solid var(--rule)}
+.fails div:nth-child(odd){border-right:1px solid var(--rule)}
+.fails div:nth-last-child(-n+2){border-bottom:0}
+.fails b{display:block;font-size:15.2px;margin-bottom:4px}
+.fails span{color:var(--dim);font-size:14px;font-weight:450}
+@media(max-width:760px){.fails{grid-template-columns:1fr}.fails div:nth-child(odd){border-right:0}.fails div:nth-last-child(-n+2){border-bottom:1px solid var(--rule)}.fails div:last-child{border-bottom:0}}
+
+.colour{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3vw,44px)}
+.colour p{color:#3c4650;font-size:15.6px;margin-bottom:14px;font-weight:450}
+.swatches{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.swatches i{display:block;height:64px;border-radius:2px;border:1px solid rgba(16,20,24,.08)}
+.swatches small{display:block;font:500 10px/1.4 "IBM Plex Mono",monospace;color:var(--dim);margin-top:5px;letter-spacing:.04em}
+@media(max-width:860px){.colour{grid-template-columns:1fr}}
+
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,26px)}
+.steps div{counter-increment:s;border-top:2px solid var(--navy);padding-top:15px}
+.steps div::before{content:"0" counter(s);display:block;font:600 10.5px/1 "IBM Plex Mono",monospace;letter-spacing:.18em;color:var(--red);margin-bottom:9px}
+.steps h3{font-size:16px;margin-bottom:6px}
+.steps p{color:var(--dim);font-size:14px;font-weight:450}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+details{border-bottom:1px solid var(--rule);padding:15px 0}
+summary{cursor:pointer;font-weight:700;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:500 20px/1 "IBM Plex Mono",monospace;color:var(--red)}
+details[open] summary::after{content:"–"}
+details .a{color:var(--dim);font-size:14.8px;padding:9px 34px 0 0;max-width:76ch;font-weight:450}
+
+.quote{background:var(--paper-2)}
+.quote__in{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(24px,3.4vw,48px);align-items:start}
+.quote h2{margin:12px 0 12px}
+.quote .lead{color:#3c4650;font-size:15.4px;max-width:42ch;font-weight:450}
+.contact{margin-top:20px;border-top:1px solid var(--rule);padding-top:16px;display:grid;gap:5px}
+.contact a{text-decoration:none;font-weight:700;font-size:15.6px}
+.contact a:hover{color:var(--navy)}
+.contact span{font-size:13.2px;color:var(--dim)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:#fff;border:1px solid var(--rule);border-radius:3px;padding:clamp(18px,2.4vw,26px)}
+form .full{grid-column:1/-1}
+label{display:block;font:600 10.2px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:7px}
+input,select,textarea{width:100%;background:#fdfdfe;border:1px solid #ccd2da;color:var(--ink);padding:12px;font:inherit;font-size:15px;border-radius:3px;appearance:none}
+select{background-image:linear-gradient(45deg,transparent 49%,#5b6570 50%),linear-gradient(-45deg,transparent 49%,#5b6570 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+textarea{resize:vertical;min-height:100px}
+input::placeholder,textarea::placeholder{color:#97a0aa}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(27,58,133,.12);background:#fff}
+button{grid-column:1/-1;background:var(--navy);color:#fff;border:0;padding:15px;font:inherit;font-weight:800;font-size:15.6px;cursor:pointer;border-radius:3px}
+button:hover{background:var(--navy-d)}
+button:disabled{opacity:.7;cursor:default}
+.formnote{grid-column:1/-1;color:var(--dim);font-size:12.4px}
+@media(max-width:860px){.quote__in{grid-template-columns:1fr}form{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:#c3cad2;padding:28px 0 34px;font-size:13.4px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.foot a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.foot .meta{text-align:right;line-height:1.7}
+@media(max-width:700px){.foot .meta{text-align:left}}
+</style>
+</head><body>
+
+<div class="masthead"><div class="masthead__in">
+  <img src="assets/logo-flat-mark.png" alt="LLD Painting" width="541" height="221">
+
+</div></div>
+
+<header class="hero"><div class="wrap hero__in">
+  <div>
+    <span class="label">Interior &amp; exterior painting</span>
+    <h1>The finish is decided before the <em>first coat</em>.</h1>
+    <p class="sub">Interior and exterior repaints, doors, trim, ceilings, fences and decks. The surface gets prepared, the right system gets specified for it, and the coats go on in the order that survives the weather.</p>
+    <p class="hero__acts"><a class="btn" href="#quote">Get a quote</a><a class="tel-link" href="tel:0451276801"><span>Call</span> 0451 276 801</a></p>
+  </div>
+  <aside class="sched" aria-label="Typical repaint schedule">
+    <div class="sched__head"><b>Repaint schedule</b><span>3 bed · weatherboard</span></div>
+    <div class="sched__row"><b>Weatherboards</b><i>Wash, scrape, spot prime</i><u>3 coats</u></div>
+    <div class="sched__row"><b>Eaves &amp; fascia</b><i>Sand back, prime bare timber</i><u>3 coats</u></div>
+    <div class="sched__row"><b>Windows &amp; trim</b><i>Degloss, undercoat, enamel</i><u>2 coats</u></div>
+    <div class="sched__row"><b>Walls &amp; ceilings</b><i>Fill, sand, sealer where new</i><u>2 coats</u></div>
+    <div class="sched__row"><b>Doors</b><i>Off hinges, edges and all faces</i><u>3 coats</u></div>
+    <div class="sched__foot">Every surface gets its own system — one product across the whole house is how a repaint fails in year two.</div>
+  </aside>
 </div></header>
 
-<div class="facts"><div class="wrap facts__in">
-<div><b>INTERIOR</b><span>Walls, ceilings, trim and doors.</span></div>
-<div><b>EXTERIOR</b><span>Weatherboards, render, eaves, fascia.</span></div>
-<div><b>QUOTED FIRST</b><span>Scope and price before work starts.</span></div>
+<div class="strip"><div class="wrap strip__in">
+  <div><b>Prep first</b><span>Nothing gets painted over a problem.</span></div>
+  <div><b>Right system</b><span>Product matched to the surface.</span></div>
+  <div><b>Clean edges</b><span>Cut in by hand, not taped over.</span></div>
+  <div><b>Tidy site</b><span>Drop sheets down, everything back.</span></div>
 </div></div>
 
 <main>
-<section id="services"><div class="wrap">
-<div class="head"><div><span class="eyebrow">What we paint</span><h2 style="margin-top:12px">Inside, outside, and the fiddly bits</h2></div>
-<p>Most painting problems are preparation problems wearing a topcoat. Each job is quoted on what the surface actually needs, not on a rate per square metre.</p></div>
-<div class="ledger">
-<article><span class="n">01</span><h3>Interior repaints</h3><p>Walls, ceilings, cornice, architraves and doors. Patching and sanding done first, then a uniform finish with clean cut lines.</p></article>
-<article><span class="n">02</span><h3>Exterior painting</h3><p>Weatherboards, render, eaves and fascia. Preparation and the right primer for the substrate, because exterior failures are almost always adhesion.</p></article>
-<article><span class="n">03</span><h3>Surface preparation</h3><p>Filling, sanding, patching, mould treatment and bare-timber priming — the stage that decides how the finish holds up.</p></article>
-<article><span class="n">04</span><h3>Spray finishing</h3><p>Doors, cabinetry and trim sprayed for a flat, even coat with no brush marks, masked and de-masked as part of the job.</p></article>
-<article><span class="n">05</span><h3>Repaints &amp; make-goods</h3><p>End-of-lease, pre-sale and insurance make-goods, where the deadline is fixed and the finish has to be right first time.</p></article>
-</div></div></section>
-
-<section id="prep"><div class="wrap">
-<div class="head"><div><span class="eyebrow">Where the quality comes from</span><h2 style="margin-top:12px">Two jobs that look the same, and are not</h2></div>
-<p>A cheap quote and a proper one usually differ in one place: how much time goes into the surface before the first coat.</p></div>
-<div class="split">
-<article><h3>What a rushed job does</h3>
-<p>Paint straight over the old surface, fill without sanding back, and skip the primer because it saves a day.</p>
-<ul><li>Filler that shrinks and shows as a shadow</li><li>Peeling on chalky or glossy surfaces</li><li>Brush marks and lap lines under certain light</li><li>Colour that does not cover in two coats</li></ul></article>
-<article><h3>What we do instead</h3>
-<p>Wash, scrape, fill, sand, spot-prime and then coat — with drying times respected rather than compressed.</p>
-<ul><li>Surfaces sound and dust-free before coating</li><li>Correct primer for timber, render or previously painted</li><li>Cut lines taped and inspected, not eyeballed</li><li>Colour checked in the room's own light</li></ul></article>
-</div></div></section>
-
-<section id="about"><div class="wrap">
-<div class="head"><div><span class="eyebrow">The bit that takes the time</span><h2 style="margin-top:12px">Preparation, in plain terms</h2></div></div>
-<p style="color:var(--dim);max-width:76ch;font-size:16px;margin-bottom:14px">Paint does not hide a bad surface, it magnifies it. Once a wall is coated in a low-sheen finish, every ridge of unsanded filler and every raised edge of old paint shows up in raking light — and by then the only fix is to sand it back and start again.</p>
-<p style="color:var(--dim);max-width:76ch;font-size:16px;margin-bottom:14px">So the prep is done as a stage in its own right: patched and left to cure, sanded flat, dusted down, and spot-primed where the surface is bare or porous. On exterior work that means treating mould and chalky paint before anything is applied, because a coating that cannot bond will fail no matter how good the product is.</p>
-<p style="color:var(--dim);max-width:76ch;font-size:16px">Masking and protection are part of the same stage — floors covered, fittings removed where they can be, edges taped and then checked. It is slower than cutting in by eye, and it is the reason a finished room does not have a line of paint on the skirting.</p>
+<section id="what"><div class="wrap">
+  <div class="head"><div><span class="label">01 — what gets painted</span><h2 style="margin-top:12px">Inside, outside, and the awkward parts</h2></div>
+  <p>Repaints and single rooms, on houses that are lived in while the work happens.</p></div>
+  <div class="jobs">
+    <article><b>Interior</b><h3>Walls &amp; ceilings</h3><p>Patch, fill and sand before a coat goes near it. Low sheen on walls, flat on ceilings, so the light does not pick up every ridge.</p></article>
+    <article><b>Exterior</b><h3>Weatherboard &amp; render</h3><p>Washed, scraped back where it is lifting, bare timber spot-primed, then coated in the system that surface actually needs.</p></article>
+    <article><b>Joinery</b><h3>Doors, windows &amp; trim</h3><p>Deglossed and coated in enamel. Doors come off the hinges so the top and bottom edges get painted — that is where water gets in.</p></article>
+    <article><b>Details</b><h3>Skirtings &amp; architraves</h3><p>Cut in by hand, filled at the mitres, sanded between coats. The lines are what people notice, not the colour.</p></article>
+    <article><b>Outside</b><h3>Fences &amp; decks</h3><p>Cleaned, stripped back where the old coating has failed, and coated for the timber rather than whatever is left in the tin.</p></article>
+    <article><b>Small</b><h3>Single rooms &amp; touch-ups</h3><p>One room, a hallway, a patch where something was hung. Quoted as its own job, not priced as a full house.</p></article>
+  </div>
 </div></section>
-<section id="work"><div class="wrap">
-<div class="head"><div><span class="eyebrow">Work</span><h2 style="margin-top:12px">Recent jobs</h2></div><p>Interior and exterior painting.</p></div>
-<div class="gal">
-<figure><img src="assets/g_1.jpg" alt="Interior painting completed"><figcaption>Interior</figcaption></figure>
-<figure><img src="assets/g_2.jpg" alt="Exterior painting completed"><figcaption>Exterior</figcaption></figure>
-<figure><img src="assets/g_3.jpg" alt="Painted surface detail"><figcaption>Finish</figcaption></figure>
-<figure><img src="assets/g_4.jpg" alt="Trim and detail painting"><figcaption>Trim</figcaption></figure>
-<div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div>
-<figure><img src="assets/hero.jpg" alt="Interior repaint in progress"><figcaption>Repaint</figcaption></figure>
-</div></div></section>
 
-<section id="how"><div class="wrap">
-<div class="head"><div><span class="eyebrow">How it runs</span><h2 style="margin-top:12px">From quote to handover</h2></div></div>
-<div class="areas" style="gap:12px">
-<span style="padding:14px 16px;flex:1 1 220px"><b style="display:block;font:600 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--red);margin-bottom:6px">01 · QUOTE</b>Walk the job, measure, and price what the surface needs.</span>
-<span style="padding:14px 16px;flex:1 1 220px"><b style="display:block;font:600 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--red);margin-bottom:6px">02 · PREP</b>Fill, sand, mask and prime before a drop sheet is even needed.</span>
-<span style="padding:14px 16px;flex:1 1 220px"><b style="display:block;font:600 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--red);margin-bottom:6px">03 · PAINT</b>Coat by coat with proper drying, cut lines checked as it goes.</span>
-<span style="padding:14px 16px;flex:1 1 220px"><b style="display:block;font:600 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--red);margin-bottom:6px">04 · HANDOVER</b>Walked together, touch-ups done, and the site cleaned.</span>
-</div></div></section>
+<section id="schedule"><div class="wrap">
+  <div class="head"><div><span class="label">02 — the schedule</span><h2 style="margin-top:12px">One system per surface</h2></div>
+  <p>This is the part a cheap quote skips: every surface on a house wants a different product, and putting the same one everywhere is what causes peeling two summers later.</p></div>
+  <table class="spec">
+    <thead><tr><th>Surface</th><th>Preparation and system</th><th>Coats</th></tr></thead>
+    <tbody>
+      <tr><td>Weatherboard</td><td>Wash down, scrape and sand loose coating, spot prime bare timber and knots, then acrylic exterior system.</td><td>1 prime + 2</td></tr>
+      <tr><td>Cement render</td><td>Treat efflorescence, patch cracks, alkali-resisting sealer where the render is new or chalky.</td><td>1 sealer + 2</td></tr>
+      <tr><td>Timber trim</td><td>Sand to degloss, fill nail holes and gaps, undercoat, then enamel for hardness.</td><td>1 + 2 enamel</td></tr>
+      <tr><td>Plasterboard</td><td>Patch and fill, sand level, dust off, sealer on new board and patches before colour.</td><td>1 sealer + 2</td></tr>
+      <tr><td>Doors</td><td>Off the hinges, degloss, edges sealed, both faces and all four edges coated.</td><td>1 + 2 enamel</td></tr>
+      <tr><td>Decking &amp; fences</td><td>Clean or strip back to sound timber, brighten where needed, coat while the moisture content is right.</td><td>2–3</td></tr>
+      <tr><td>Metalwork</td><td>Rust treated and spot primed with a metal primer, not a wall paint.</td><td>1 + 2</td></tr>
+    </tbody>
+  </table>
+</div></section>
+
+<section id="coats"><div class="wrap">
+  <div class="head"><div><span class="label">03 — the coats</span><h2 style="margin-top:12px">Four coats, four jobs</h2></div>
+  <p>Each one does something the next cannot. Skipping the sealer or the undercoat is the fastest way to a finish that looks fine for a year.</p></div>
+  <div class="coats">
+    <div class="coat c1"><div class="bar"></div><div class="b"><b>01</b><h3>Sealer</h3><p>Stops the surface pulling the paint in unevenly. Essential on new plaster, patch repairs and chalky render.</p><div class="t">recoat 2–4 h</div></div></div>
+    <div class="coat c2"><div class="bar"></div><div class="b"><b>02</b><h3>Primer / undercoat</h3><p>Bonds to what is underneath and blocks stains and knots so they cannot bleed through the colour.</p><div class="t">recoat 4–6 h</div></div></div>
+    <div class="coat c3"><div class="bar"></div><div class="b"><b>03</b><h3>First topcoat</h3><p>Builds the colour. Sanded lightly once dry so the second coat sits on a flat surface.</p><div class="t">recoat overnight</div></div></div>
+    <div class="coat c4"><div class="bar"></div><div class="b"><b>04</b><h3>Second topcoat</h3><p>The finish coat. Full coverage, consistent sheen, no thin patches where the light hits it side-on.</p><div class="t">cure 7 days</div></div></div>
+  </div>
+</div></section>
+
+<section id="fails"><div class="wrap">
+  <div class="head"><div><span class="label">04 — what goes wrong</span><h2 style="margin-top:12px">The four failures you can see coming</h2></div>
+  <p>None of these are paint problems. They are preparation problems that show up as paint problems.</p></div>
+  <div class="fails">
+    <div><b>Peeling on weatherboards</b><span>Paint applied over a damp or chalky surface lets go in sheets. It has to be scraped back to sound coating and spot primed, not painted over.</span></div>
+    <div><b>Blistering in patches</b><span>Moisture escaping from behind the film. Sealing the surface without finding where the water comes from just moves the blister.</span></div>
+    <div><b>Mould coming back</b><span>Mould on a ceiling or bathroom wall is a ventilation problem wearing a paint costume. Treated and coated with a mould-resistant product, or it returns by winter.</span></div>
+    <div><b>Chalking on render</b><span>Powdery render will not hold a topcoat. An alkali-resisting sealer first, otherwise the new paint dusts off within a season.</span></div>
+  </div>
+</div></section>
+
+<section id="colour"><div class="wrap">
+  <div class="head"><div><span class="label">05 — colour &amp; sheen</span><h2 style="margin-top:12px">Two decisions, made in daylight</h2></div></div>
+  <div class="colour">
+    <div>
+      <p><strong style="color:var(--ink)">Colour on a wall is not colour on a chip.</strong> A sample pot painted onto the actual wall and looked at morning, midday and under the room lights will change more than any fan deck can show you.</p>
+      <p>Light reflectance matters most on a full exterior. A very dark colour on western-facing weatherboard gets hot enough to move, and a very light one shows every mark the garden throws at it.</p>
+      <p>How many colours is a decision too — one colour for walls and trim is cheaper and reads calmer; a second colour on the trim is worth it on a facade with good lines.</p>
+    </div>
+    <div>
+      <p><strong style="color:var(--ink)">Sheen does the practical work.</strong> Flat hides imperfections on ceilings, low sheen is washable on walls, semi-gloss takes knocks on trim, and gloss is for doors and frames that should look sharp.</p>
+      <div class="swatches">
+        <div><i style="background:#f0ede6"></i><small>FLAT · ceilings</small></div>
+        <div><i style="background:#e3e0d8"></i><small>LOW SHEEN · walls</small></div>
+        <div><i style="background:#d3d0c7"></i><small>SEMI-GLOSS · trim</small></div>
+        <div><i style="background:#1b3a85"></i><small>ENAMEL · doors</small></div>
+        <div><i style="background:#d2232a"></i><small>ACCENT · front door</small></div>
+        <div><i style="background:#4a9b3f"></i><small>ACCENT · exterior</small></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="process"><div class="wrap">
+  <div class="head"><div><span class="label">06 — how the job runs</span><h2 style="margin-top:12px">From quote to handover</h2></div></div>
+  <div class="steps">
+    <div><h3>Look, then quote</h3><p>Surfaces are checked before a price is given — what is failing, what needs stripping, how much prep the job really carries.</p></div>
+    <div><h3>Prep</h3><p>Washing, scraping, sanding, filling and masking. This is the longest part of any repaint and the part that decides how it ages.</p></div>
+    <div><h3>Coats</h3><p>Sealer or primer where it is needed, then topcoats at the specified recoat times — not rushed because the next job is waiting.</p></div>
+    <div><h3>Handover</h3><p>Masking off, furniture back, a walk-through with the owner, and the leftover paint labelled by room for touch-ups later.</p></div>
+  </div>
+</div></section>
 
 <section id="faq"><div class="wrap">
-<div class="head"><div><span class="eyebrow">Questions</span><h2 style="margin-top:12px">Asked before most quotes</h2></div></div>
-<details><summary>Do you supply the paint?</summary><div class="a">Yes, and it is included in the quote at a known quality level. If you want to supply your own, that is fine — the quote is adjusted and the product is confirmed before the day.</div></details>
-<details><summary>How many coats?</summary><div class="a">Two coats over a properly primed surface is standard. A strong colour change, or a surface that has not been painted in years, can need a third — that is priced up front, not raised at the end.</div></details>
-<details><summary>Do you move furniture?</summary><div class="a">Small items are moved and covered. Large furniture is best cleared beforehand; if that is not possible, it is worked around and discussed at the quote.</div></details>
-<details><summary>Can you paint while we are living there?</summary><div class="a">Yes, room by room. The schedule is set so one space is finished and usable before the next is started.</div></details>
-<details><summary>What about weather for exterior work?</summary><div class="a">Exterior painting is scheduled around forecast rain and temperature, because coating in the wrong conditions is how a job fails early.</div></details>
+  <div class="head"><div><span class="label">07 — questions</span><h2 style="margin-top:12px">Asked before most quotes</h2></div></div>
+  <details><summary>Can we stay in the house while it is painted?</summary><div class="a">Yes for most repaints. Rooms get worked one at a time, furniture is moved to the middle and covered, and the schedule is set so there is always somewhere to sit. Exterior work does not interrupt the house at all.</div></details>
+  <details><summary>How long does a full exterior take?</summary><div class="a">A single-storey weatherboard house is usually four to seven working days depending on how much prep the boards need and, more than anything, the weather. Rain stops exterior coating and humidity slows the recoat times.</div></details>
+  <details><summary>Do you fix cracks and holes first?</summary><div class="a">Yes. Filling, patching and sanding are part of the job. Structural cracking is a different thing — if a crack is moving, it gets pointed out before anything is painted over it.</div></details>
+  <details><summary>What paint do you use?</summary><div class="a">Trade-grade products matched to the surface: acrylic exterior systems on weatherboard and render, enamel on trim and doors, washable low sheen on interior walls. The brand is whatever suits the job, not whatever is cheapest that week.</div></details>
+  <details><summary>How soon can furniture go back?</summary><div class="a">Interior walls are touch-dry in a few hours and can take light use the next day. Enamel on doors and trim needs longer to harden — usually a week before it is safe to close doors against the frames.</div></details>
+  <details><summary>Do you do small jobs?</summary><div class="a">Yes. A single room, a hallway, a front door, or the trim on one side of a house are all quoted as their own job.</div></details>
 </div></section>
 
 <section id="quote" class="quote"><div class="wrap quote__in">
-<div><span class="eyebrow">Free quote</span><h2 style="margin-top:12px">Tell us about the job</h2>
-<p>What needs painting, how many rooms or what exterior, and whether there is any repair work in it.</p>
-<p class="mono">LLD Painting<br>Professional · Reliable · Quality finish<br>Call 0451 276 801 &middot; form or Instagram</p></div>
-<form id="lbq-form" data-site="lld-painting">
-<div><label for="n">Name</label><input id="n" name="name" required autocomplete="name"></div>
-<div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel" autocomplete="tel"></div>
-<div class="full"><label for="a">Suburb</label><input id="a" name="suburb" autocomplete="address-level2"></div>
-<div class="full"><label for="s">What needs painting?</label><select id="s" name="service">
-<option>Interior repaint</option><option>Exterior painting</option><option>Spray finishing / doors</option>
-<option>End-of-lease / pre-sale</option><option>Repairs and patch work</option><option>Something else</option></select></div>
-<div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="4" placeholder="Rooms or exterior areas, condition of the surfaces, and timing."></textarea></div>
-<button type="submit">Request a quote</button>
-</form></div></section>
+  <div>
+    <span class="label">Get a quote</span>
+    <h2>Tell us about the job.</h2>
+    <p class="lead">Interior or exterior, roughly how many rooms or what area, and what state the surface is in. Photos help more than a description.</p>
+    <div class="contact">
+      <a href="tel:0451276801">0451 276 801</a>
+      <span>LLD Painting · interior &amp; exterior</span>
+    </div>
+  </div>
+  <form id="lbq-form" data-site="lld-painting">
+    <div><label for="n">Name</label><input id="n" name="name" required autocomplete="name" placeholder="Your name"></div>
+    <div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel" autocomplete="tel" placeholder="04XX XXX XXX"></div>
+    <div class="full"><label for="a">Suburb</label><input id="a" name="suburb" autocomplete="address-level2" placeholder="Suburb"></div>
+    <div class="full"><label for="s">What needs painting?</label><select id="s" name="service">
+      <option>Full exterior repaint</option><option>Interior repaint</option><option>Single room</option>
+      <option>Doors, windows &amp; trim</option><option>Fence or deck</option><option>Patch and touch-up</option>
+    </select></div>
+    <div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="4" placeholder="Rooms or area, surface type, and anything that is peeling or cracking."></textarea></div>
+    <button type="submit">Send request</button>
+    <p class="formnote">Photos of the surfaces are the most useful thing you can send.</p>
+  </form>
+</div></section>
 </main>
 
 <footer><div class="wrap foot">
-<img src="assets/logo-header-tight.png" alt="LLD Painting">
-<span>LLD Painting · <a href="https://www.instagram.com/lld_painting/" target="_blank" rel="noopener">@lld_painting</a></span>
+  <div>LLD Painting</div>
+  <div class="meta"><a href="tel:0451276801">0451 276 801</a><br>Interior &amp; exterior painting</div>
 </div></footer>
+
 <script>
-document.getElementById('burger').addEventListener('click',function(){var n=document.getElementById('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);});
 document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button');
 b.textContent='Sending…';b.disabled=true;
 fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
