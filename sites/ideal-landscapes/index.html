@@ -143,6 +143,14 @@ footer a:hover{color:#fff}
   .capbar div{border-right:0;border-bottom:1px solid var(--line)}
   .tl .t{grid-template-columns:1fr;gap:.5rem}
 }
+
+/* ---- falling leaves: depth layer behind the hero copy ---- */
+.hero{position:relative;overflow:hidden}
+.hero>.leaf-stage{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;pointer-events:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,transparent 52%,rgba(0,0,0,.55) 63%,#000 76%);
+  mask-image:linear-gradient(90deg,transparent 0%,transparent 52%,rgba(0,0,0,.55) 63%,#000 76%)}
+.hero>.wrap{position:relative;z-index:2}
+@media (prefers-reduced-motion:reduce){.hero>.leaf-stage{opacity:.55}}
 </style>
 <style id="logo-big">
 /* logo blown up to fill the bar - the client's own artwork at a size people can read, not a thumbnail in the corner */
@@ -179,7 +187,7 @@ nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:1
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
 </div></header>
 
-<section class="hero" id="top"><div class="wrap">
+<section class="hero" id="top"><canvas class="leaf-stage" id="leaf-stage" aria-hidden="true"></canvas><div class="wrap">
   <div class="inner">
     <span class="eyebrow">Landscape construction &amp; design · Sydney</span>
     <h1>A garden drawn for the site, then built by the same crew.</h1>
@@ -391,5 +399,164 @@ document.getElementById('lbq-form').addEventListener('submit',function(e){
   .then(function(){btn.textContent='Thanks — we will be in touch';})
   .catch(function(){btn.textContent='Could not send — try again';btn.disabled=false;});
 });
+</script>
+
+<script>
+/* Falling-leaf hero: depth-sorted leaves with a faked 3D tumble.
+   rAF-first frame, finite guards, paused off-screen, one static frame under reduced motion. */
+(function(){
+  var cv = document.getElementById('leaf-stage');
+  if(!cv) return;
+  var ctx = cv.getContext('2d');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W=0, H=0, dpr=1, leaves=[], raf=null, running=false, t0=0;
+
+  var PALETTE = ['#2f6b3f','#6f8f4a','#b4552f','#c9922f','#3f7d52'];
+
+  function size(){
+    var r = cv.getBoundingClientRect();
+    if(!r.width || !r.height) return false;
+    dpr = Math.min(window.devicePixelRatio||1, 2);
+    W = r.width; H = r.height;
+    cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    return true;
+  }
+
+  function makeLeaf(spread){
+    var z = 0.35 + Math.random()*0.65;            // 0.35 far … 1 near
+    return {
+      x: Math.random()*W,
+      y: spread ? Math.random()*H : -20 - Math.random()*H*0.6,
+      z: z,
+      size: 9 + z*13,
+      vy: (16 + z*30),                             // px per second, near leaves faster
+      vx: (Math.random()-0.5)*10,
+      sway: 8 + Math.random()*16,
+      swayRate: 0.5 + Math.random()*0.7,
+      phase: Math.random()*Math.PI*2,
+      rotY: Math.random()*Math.PI*2,
+      rotRate: (Math.random()*0.9 + 0.35) * (Math.random()<0.5?-1:1),
+      spin: (Math.random()-0.5)*0.7,
+      col: PALETTE[(Math.random()*PALETTE.length)|0],
+      hi: '', lo: '',
+      alpha: 0.32 + z*0.5
+    };
+  }
+
+  function tint(hex, amt){
+    var n = parseInt(hex.slice(1),16);
+    var r = Math.min(255,Math.max(0,((n>>16)&255) + amt));
+    var g = Math.min(255,Math.max(0,((n>>8)&255) + amt));
+    var b = Math.min(255,Math.max(0,(n&255) + amt));
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
+  }
+
+  function build(){
+    var n = W < 560 ? 12 : (W < 900 ? 18 : 26);
+    leaves = [];
+    for(var i=0;i<n;i++){ var L = makeLeaf(true); L.hi = tint(L.col, 34); L.lo = tint(L.col, -30); leaves.push(L); }
+  }
+
+  function leafPath(cx, cy, s, squash){
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - s*0.62);
+    ctx.bezierCurveTo(cx + s*0.62*squash, cy - s*0.34, cx + s*0.52*squash, cy + s*0.36, cx, cy + s*0.62);
+    ctx.bezierCurveTo(cx - s*0.52*squash, cy + s*0.36, cx - s*0.62*squash, cy - s*0.34, cx, cy - s*0.62);
+    ctx.closePath();
+  }
+
+  function draw(ts){
+    if(!isFinite(ts)) ts = 0;
+    var t = ts/1000;
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<leaves.length;i++){
+      var L = leaves[i];
+      var squash = Math.cos(L.rotY);                    // fakes the leaf turning in 3D
+      var ax = Math.abs(squash) * 0.85 + 0.15;
+      var x = L.x + Math.sin(t*L.swayRate + L.phase)*L.sway;
+      var y = L.y;
+      if(!isFinite(x) || !isFinite(y)) continue;
+      ctx.save();
+      ctx.translate(x,y);
+      // cast shadow: the leaf reads as a real object above the page
+      ctx.save();
+      ctx.globalAlpha = 0.10 * L.z;
+      ctx.filter = 'blur(' + (2 + L.z*3).toFixed(1) + 'px)';
+      ctx.fillStyle = '#122016';
+      leafPath(L.size*0.28, L.size*0.42, L.size*0.94, ax);
+      ctx.fill();
+      ctx.restore();
+      ctx.rotate(Math.sin(t*L.swayRate*0.8 + L.phase)*0.5 + L.spin*0.4);
+      ctx.globalAlpha = L.alpha * (0.55 + 0.45*Math.abs(squash));
+      if(L.z < 0.55) ctx.filter = 'blur(0.8px)';
+      // lit face: gradient across the blade so the leaf curves rather than sitting flat
+      var g = ctx.createLinearGradient(-L.size*ax, -L.size*0.6, L.size*ax, L.size*0.6);
+      g.addColorStop(0, L.hi);
+      g.addColorStop(0.55, L.col);
+      g.addColorStop(1, L.lo);
+      ctx.fillStyle = g;
+      leafPath(0,0,L.size,ax);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(18,32,22,.30)';
+      ctx.lineWidth = Math.max(0.6, L.size*0.045);
+      ctx.beginPath();
+      ctx.moveTo(0,-L.size*0.52);
+      ctx.lineTo(0,L.size*0.52);
+      ctx.stroke();
+      ctx.restore();
+      ctx.filter = 'none';
+    }
+  }
+
+  function step(ts){
+    if(!running) return;
+    if(!t0) t0 = ts;
+    var dt = Math.min((ts - t0)/1000, 0.05);
+    t0 = ts;
+    for(var i=0;i<leaves.length;i++){
+      var L = leaves[i];
+      L.y += L.vy*dt*(0.6 + L.z*0.7);
+      L.x += L.vx*dt;
+      L.rotY += L.rotRate*dt;
+      if(L.y - L.size > H || L.x < -80 || L.x > W+80){
+        var n = makeLeaf(false); n.hi = tint(n.col, 34); n.lo = tint(n.col, -30);
+        n.x = Math.random()*W;
+        leaves[i] = n;
+      }
+    }
+    draw(ts);
+    raf = requestAnimationFrame(step);
+  }
+
+  function start(){
+    if(running || reduce) return;
+    running = true; t0 = 0;
+    raf = requestAnimationFrame(step);
+  }
+  function stop(){
+    running = false;
+    if(raf){ cancelAnimationFrame(raf); raf = null; }
+  }
+
+  function init(){
+    if(!size()){ requestAnimationFrame(init); return; }
+    build();
+    draw(performance.now());                 // paint something immediately
+    if(reduce) return;
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {threshold:0.05});
+      io.observe(cv);
+    } else { start(); }
+  }
+
+  window.addEventListener('resize', function(){
+    if(size()){ build(); draw(performance.now()); }
+  }, {passive:true});
+
+  requestAnimationFrame(init);
+})();
 </script>
 </body></html>
