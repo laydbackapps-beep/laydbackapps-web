@@ -315,7 +315,7 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <nav class="nav" aria-label="Main">
   <div class="wrap nav-in">
-    <a class="lb-brand" href="#top" aria-label="A.D Lawns and Landscapes - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#00b058;--lb-subc:#00b058;--lb-acc:#00b058;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo-mark_radar-143.png" alt="" loading="eager" decoding="async" class="lb-logo-unlock"></span><span class="lb-brand__word"><span class="lb-brand__name">A.D Lawns and Landscapes</span><span class="lb-brand__sub"><span class="lb-acc">Lawn</span> Care & Landscaping</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
+    <a class="lb-brand" href="#top" aria-label="A.D Lawns and Landscapes - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#00b058;--lb-subc:#00b058;--lb-acc:#00b058;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo-header-2x.png" alt="" loading="eager" decoding="async" class="lb-logo-unlock"></span><span class="lb-brand__word"><span class="lb-brand__name">A.D Lawns and Landscapes</span><span class="lb-brand__sub"><span class="lb-acc">Lawn</span> Care & Landscaping</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
     <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
       <span></span><span></span><span></span>
     </button>
@@ -351,6 +351,9 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
    </div>
   </div>
 </header>
+
+<div class="ad-ticker" aria-hidden="true"><div class="ad-ticker__track" id="adTick"></div></div>
+
 
 <section class="adl-care" id="services">
   <div class="wrap">
@@ -443,6 +446,25 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
         
         <p>A.D Lawns and Landscapes, mowing and garden care.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="what-we-do" aria-labelledby="wwd-h">
+  <div class="wrap">
+    <h2 class="sec-title" id="wwd-h">What we do</h2>
+    <p class="sec-sub">Mowing, garden care and landscaping done properly, on a regular run or a one-off clean-up.</p>
+    <div class="ad-chips">
+      <span>Mowing</span><span>Edging &amp; whipper snipping</span><span>Hedging</span><span>Pruning</span>
+      <span>Mulching</span><span>Garden care</span><span>Lawn repair</span><span>Turf laying</span>
+      <span>Top dressing</span><span>Weed control</span><span>Irrigation checks</span><span>Rubbish removal</span>
+      <span>Green waste removal</span><span>Garden clean-ups</span><span>Landscaping</span><span>Retaining &amp; garden beds</span>
+      <span>Regular maintenance</span><span>One-off tidy-ups</span><span>Strata &amp; body corporate</span><span>Real estate &amp; rentals</span>
+    </div>
+    <div class="ad-band">
+      <div class="cap"><span>What we do — rotating</span><em id="adAreaCount">01 / 06</em></div>
+      <div class="row" id="adAreaRow"></div>
+      <div class="prog"><i></i></div>
     </div>
   </div>
 </section>
@@ -861,5 +883,112 @@ header a[href^="tel"],.site-header a[href^="tel"]{
 :is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
 img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
+<style id="ad-extras">
+/* ==== header logo cleaned up + added features, in this site's own green palette (#00b058 / #20321A / #F5FAEF) ==== */
+
+/* the bar was loading assets/logo-mark_radar-143.png - a broken fragment holding ONLY the top of the tree canopy,
+   no monogram, no LA WNS & LANDSCAPES, no shovel. Now the client's complete lockup, cropped to its own edges and
+   transparent, on the white bar. */
+.lb-brand__mark{height:auto!important;width:auto!important;max-width:none!important;display:flex!important;align-items:center!important;
+  background:none!important;padding:0!important;border-radius:0!important}
+.lb-brand__mark img,.lb-brand__mark img.lb-logo,.lb-brand__mark img.lb-logo-unlock,.lb-brand img.lb-logo,.lb-brand img.lb-logo-unlock{
+  height:clamp(52px,5.6vw,78px)!important;width:auto!important;max-height:none!important;max-width:min(44vw,210px)!important;
+  object-fit:contain!important;background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;display:block!important}
+.lb-brand__word,.lb-brand__name,.lb-brand__sub,.lb-brand__rule{display:none!important}
+@media(max-width:560px){.lb-brand__mark img{height:46px!important}}
+
+/* rotating services ticker */
+.ad-ticker{position:relative;overflow:hidden;background:#20321A;
+  border-top:1px solid rgba(245,250,239,.14);border-bottom:1px solid rgba(245,250,239,.14)}
+.ad-ticker:before,.ad-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.ad-ticker:before{left:0;background:linear-gradient(90deg,#20321A,transparent)}
+.ad-ticker:after{right:0;background:linear-gradient(270deg,#20321A,transparent)}
+.ad-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;width:max-content;
+  animation:adSlide 44s linear infinite;will-change:transform}
+.ad-ticker:hover .ad-ticker__track{animation-play-state:paused}
+.ad-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:#EFF6E7;
+  font-weight:700;font-size:clamp(11px,1.15vw,13.5px);letter-spacing:.16em;text-transform:uppercase}
+.ad-ticker span i{font-style:normal;color:#00b058}
+@keyframes adSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* what we do: chips + rotating band */
+.ad-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 22px}
+.ad-chips span{border:1px solid rgba(0,176,88,.3);background:rgba(0,176,88,.07);border-radius:999px;
+  padding:.45rem 1.05rem;font-size:.85rem;font-weight:600;color:var(--ink,#20321A);transition:.2s}
+.ad-chips span:hover{border-color:#00b058;background:rgba(0,176,88,.16)}
+.ad-band{margin-top:20px;border:1px solid rgba(0,176,88,.34);background:#20321A;overflow:hidden;border-radius:12px}
+.ad-band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:11px 15px;
+  border-bottom:1px solid rgba(245,250,239,.16);font-weight:700;font-size:.7rem;letter-spacing:.18em;
+  text-transform:uppercase;color:#00b058}
+.ad-band .cap em{font-style:normal;color:#C3CBBE}
+.ad-band .row{position:relative;height:68px;overflow:hidden}
+.ad-band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+.ad-band .row ul.on{opacity:1;transform:none}
+.ad-band .row li{font-size:clamp(1.05rem,2.2vw,1.5rem);font-weight:800;line-height:1.12;color:#EFF6E7;text-align:center}
+.ad-band .row li small{display:block;font-weight:500;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;
+  color:#C3CBBE;margin-top:8px}
+.ad-band .prog{height:2px;background:rgba(245,250,239,.16)}
+.ad-band .prog i{display:block;height:100%;width:0;background:#00b058;animation:adFill 4s linear infinite}
+@keyframes adFill{from{width:0}to{width:100%}}
+
+/* the "recent work" gallery was two EMPTY figures (no img) that collapsed to 2px tall - a broken-looking band.
+   They are now drawn panels at a controlled size, each clearly badged SAMPLE so nothing implies a photograph. */
+.gal-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))!important;max-width:840px;gap:1rem!important}
+.gal-grid .gal{min-height:240px!important;height:auto!important}
+.gal-grid .gal::before{content:"Sample";position:absolute;top:.7rem;left:.7rem;z-index:2;
+  font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  background:rgba(8,10,14,.72);color:#EFF6E7;padding:.28rem .5rem;border-radius:999px}
+.gal-grid .gal:nth-of-type(1){background:repeating-linear-gradient(92deg,#2E7D32 0 22px,#46954a 22px 44px)}
+.gal-grid .gal:nth-of-type(2){background:linear-gradient(180deg,#4b8f3f 0%,#2c5c2a 70%,#24491f 100%)}
+.gal-grid .gal:nth-of-type(2)::after{content:"";position:absolute;left:0;right:0;bottom:2.6rem;height:18px;
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,.16) 0 8px,transparent 8px 16px)}
+@media(max-width:700px){.gal-grid .gal{min-height:180px!important}}
+
+@media (prefers-reduced-motion:reduce){
+  .ad-ticker__track,.ad-band .prog i{animation:none}
+  .ad-band .row ul{transition:none}
+}
+</style>
+
+<script id="ad-extras-js">
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* services ticker */
+  var T=['Mowing','Edging','Whipper snipping','Hedging','Pruning','Mulching','Garden care','Lawn repair',
+         'Turf laying','Top dressing','Weed control','Irrigation checks','Rubbish removal','Green waste',
+         'Garden clean-ups','Landscaping','Retaining & garden beds','Regular maintenance','One-off tidy-ups',
+         'Strata & body corporate','Real estate & rentals'];
+  var tk=document.getElementById('adTick');
+  if (tk) tk.innerHTML = T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
+
+  /* rotating band */
+  var AR=[['Mowing & edging','Regular runs · whipper snipping · crisp edges'],
+          ['Hedges & pruning','Shaping · height control · tidy lines'],
+          ['Garden care','Mulching · weeding · seasonal feeding'],
+          ['Lawn repair','Top dressing · turf laying · bare patch repair'],
+          ['Clean-ups','Green waste · rubbish removal · one-off tidy-ups'],
+          ['Landscaping','Garden beds · retaining · planting']];
+  var row=document.getElementById('adAreaRow'), cnt=document.getElementById('adAreaCount');
+  if (row){
+    AR.forEach(function(a,k){
+      var u=document.createElement('ul'), li=document.createElement('li');
+      if(!k) u.className='on';
+      li.innerHTML = a[0]+'<small>'+a[1]+'</small>';
+      u.appendChild(li); row.appendChild(u);
+    });
+    var rows=[].slice.call(row.children), i=0;
+    if(!reduce){
+      setInterval(function(){
+        i=(i+1)%AR.length;
+        rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
+        if(cnt) cnt.textContent = ('0'+(i+1)).slice(-2)+' / 0'+AR.length;
+      },4000);
+    }
+  }
+})();
+</script>
+
 </body>
 </html>
