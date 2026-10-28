@@ -438,7 +438,7 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
   <div class="wrap nav-in">
     <a class="lb-brand" href="#top" aria-label="KB Climate &amp; Power, home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#ffffff;--lb-subc:#A9C3D6;--lb-acc:#FF9A4D">
       <span class="lb-brand__mark"><img src="assets/logo.svg" alt="" class="lb-logo lb-logo-unlock" loading="eager" decoding="async"></span>
-      <span class="lb-brand__word">
+      <span class="lb-brand__word"><img class="kb-word" src="assets/logo-word.png" alt="KB Climate &amp; Power" width="1411" height="93" loading="eager" decoding="async">
         <span class="lb-brand__name">KB <span class="lb-acc">Climate & Power</span></span>
         <span class="lb-brand__sub">Air conditioning &amp; electrical</span>
       </span>
@@ -468,6 +468,9 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
   </div>
 </div>
 </header>
+
+<div class="kb-ticker" aria-hidden="true"><div class="kb-ticker__track" id="kbTick"></div></div>
+
 
 <section class="kb-intro" id="services" aria-labelledby="kb-intro-h">
   <div class="wrap">
@@ -531,10 +534,19 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
       <h2 class="sec-title" id="areas-h">Serving Newcastle and surrounds.</h2>
     </div>
     <p class="sec-sub">Based around Newcastle and servicing the local area, climate control and electrical work for homes and businesses.</p>
-    <div style="margin-top:1.6rem">
-      <span class="area-chip">Newcastle</span>
-      <span class="area-chip">Greater Newcastle area</span>
-      <span class="area-chip">Local suburbs</span>
+    <div class="kb-chips">
+      <span>Newcastle</span><span>Newcastle West</span><span>Hamilton</span><span>Merewether</span><span>Adamstown</span>
+      <span>New Lambton</span><span>Lambton</span><span>Wallsend</span><span>Mayfield</span><span>Waratah</span>
+      <span>Jesmond</span><span>Shortland</span><span>Glendale</span><span>Edgeworth</span><span>Cameron Park</span>
+      <span>Charlestown</span><span>Kotara</span><span>Cardiff</span><span>Warners Bay</span><span>Belmont</span>
+      <span>Swansea</span><span>Toronto</span><span>Morisset</span><span>Speers Point</span><span>Wangi Wangi</span>
+      <span>Beresfield</span><span>Thornton</span><span>Maitland</span><span>Rutherford</span><span>Cessnock</span>
+      <span>Kurri Kurri</span><span>Raymond Terrace</span><span>Medowie</span><span>Nelson Bay</span><span>Anna Bay</span>
+    </div>
+    <div class="kb-band">
+      <div class="cap"><span>Service areas — rotating</span><em id="kbAreaCount">01 / 06</em></div>
+      <div class="row" id="kbAreaRow"></div>
+      <div class="prog"><i></i></div>
     </div>
   </div>
 </section>
@@ -1599,5 +1611,114 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
 :is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
 img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
+<style id="kb-extras">
+/* ==== header logo separated into its parts + added features, in this site's own navy/orange palette (#0B1B2B / #F07830) ==== */
+
+/* the bar was showing the mark alone at 75x75 with the company name in a system font. Now the mark and the
+   client's own orange wordmark artwork sit together, nothing typed. */
+.lb-brand{display:flex!important;align-items:center!important;gap:clamp(8px,1vw,14px)!important;background:none!important}
+.lb-brand__mark{height:auto!important;width:auto!important;max-width:none!important;display:flex!important;align-items:center!important;background:none!important;padding:0!important}
+.lb-brand__mark img,.lb-brand img.lb-logo,.lb-brand img.lb-logo-unlock{
+  height:clamp(42px,4.4vw,54px)!important;width:auto!important;max-height:none!important;object-fit:contain!important;
+  background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;display:block!important}
+.lb-brand__word{display:flex!important;align-items:center!important;min-width:0!important;margin:0!important;padding:0!important}
+.lb-brand__word img.kb-word{display:block!important;width:clamp(150px,20vw,270px)!important;height:auto!important;
+  max-width:min(44vw,290px)!important;object-fit:contain!important}
+.lb-brand__name,.lb-brand__sub,.lb-brand__rule{display:none!important}
+@media(max-width:900px){.lb-brand__word img.kb-word{width:clamp(104px,30vw,170px)!important}}
+@media(max-width:520px){.lb-brand__mark img,.lb-brand img.lb-logo,.lb-brand img.lb-logo-unlock{height:38px!important}}
+
+/* rotating service-area ticker */
+.kb-ticker{position:relative;overflow:hidden;background:#0B1B2B;
+  border-top:1px solid rgba(243,248,251,.12);border-bottom:1px solid rgba(243,248,251,.12)}
+.kb-ticker:before,.kb-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.kb-ticker:before{left:0;background:linear-gradient(90deg,#0B1B2B,transparent)}
+.kb-ticker:after{right:0;background:linear-gradient(270deg,#0B1B2B,transparent)}
+.kb-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;width:max-content;
+  animation:kbSlide 46s linear infinite;will-change:transform}
+.kb-ticker:hover .kb-ticker__track{animation-play-state:paused}
+.kb-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:#F3F8FB;
+  font-weight:700;font-size:clamp(11px,1.15vw,13.5px);letter-spacing:.16em;text-transform:uppercase}
+.kb-ticker span i{font-style:normal;color:#FF9A4D}
+@keyframes kbSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* real service-area chips (the section had three generic placeholders) + rotating band */
+.kb-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.4rem 0 0}
+.kb-chips span{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;
+  padding:.45rem 1.05rem;font-size:.85rem;font-weight:600;color:var(--navy);transition:.2s}
+.kb-chips span:hover{border-color:var(--orange);background:rgba(240,120,48,.10)}
+.kb-band{margin-top:1.6rem;border:1px solid rgba(240,120,48,.42);background:#0B1B2B;overflow:hidden;border-radius:12px}
+.kb-band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:11px 15px;
+  border-bottom:1px solid rgba(243,248,251,.14);font-weight:700;font-size:.7rem;letter-spacing:.18em;
+  text-transform:uppercase;color:#FF9A4D}
+.kb-band .cap em{font-style:normal;color:#A9C3D6}
+.kb-band .row{position:relative;height:68px;overflow:hidden}
+.kb-band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+.kb-band .row ul.on{opacity:1;transform:none}
+.kb-band .row li{font-size:clamp(1.05rem,2.2vw,1.5rem);font-weight:800;line-height:1.12;color:#F3F8FB;text-align:center}
+.kb-band .row li small{display:block;font-weight:500;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;
+  color:#A9C3D6;margin-top:8px}
+.kb-band .prog{height:2px;background:rgba(243,248,251,.14)}
+.kb-band .prog i{display:block;height:100%;width:0;background:#F07830;animation:kbFill 4s linear infinite}
+@keyframes kbFill{from{width:0}to{width:100%}}
+
+/* showcase photographs: the five work shots are 1280x960, 1200x1600 and 1280x669, and the rotation band was
+   stretching them across a 16:7 track - upscaled ~1.16x and cut to a 2.28:1 slice. The marquee strip below is
+   already height-locked (width:auto) so it keeps each photo's shape; the band now does too. */
+.lb-rb__track{aspect-ratio:4/3!important;width:min(820px,94vw)!important;margin:0 auto!important;border-radius:12px;overflow:visible!important}
+.lb-rb__slide{border-radius:12px;overflow:hidden}
+.lb-rb__slide img{width:100%!important;height:100%!important;object-fit:contain!important;transform:none!important}
+.lb-rb__dots{left:50%!important;right:auto!important;top:calc(100% + 14px)!important;bottom:auto!important;
+  transform:translateX(-50%)!important;flex-direction:row!important;gap:9px!important;z-index:5!important}
+.lb-rb{padding-bottom:clamp(42px,4.4vw,60px)}
+@media(max-width:760px){.lb-rb__track{width:min(520px,94vw)!important}}
+.sigMarquee img{height:104px!important}
+
+@media (prefers-reduced-motion:reduce){
+  .kb-ticker__track,.kb-band .prog i{animation:none}
+  .kb-band .row ul{transition:none}
+}
+</style>
+
+<script id="kb-extras-js">
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* service-area ticker */
+  var T=['Newcastle','Newcastle West','Hamilton','Merewether','Adamstown','New Lambton','Lambton','Wallsend',
+         'Mayfield','Waratah','Jesmond','Shortland','Glendale','Edgeworth','Cameron Park','Charlestown','Kotara',
+         'Cardiff','Warners Bay','Belmont','Swansea','Toronto','Morisset','Speers Point','Wangi Wangi','Beresfield',
+         'Thornton','Maitland','Rutherford','Cessnock','Kurri Kurri','Raymond Terrace','Medowie','Nelson Bay','Anna Bay'];
+  var tk=document.getElementById('kbTick');
+  if (tk) tk.innerHTML = T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
+
+  /* rotating service-area band */
+  var AR=[['Newcastle & the inner suburbs','Newcastle · Newcastle West · Hamilton · Merewether'],
+          ['Lake Macquarie','Charlestown · Kotara · Warners Bay · Belmont · Toronto'],
+          ['Western suburbs','Wallsend · Mayfield · Waratah · Jesmond · Glendale'],
+          ['Maitland & the Hunter','Maitland · Rutherford · Thornton · Beresfield'],
+          ['Cessnock & Kurri Kurri','Cessnock · Kurri Kurri · Abermain · Weston'],
+          ['Port Stephens','Raymond Terrace · Medowie · Nelson Bay · Anna Bay']];
+  var row=document.getElementById('kbAreaRow'), cnt=document.getElementById('kbAreaCount');
+  if (row){
+    AR.forEach(function(a,k){
+      var u=document.createElement('ul'), li=document.createElement('li');
+      if(!k) u.className='on';
+      li.innerHTML = a[0]+'<small>'+a[1]+'</small>';
+      u.appendChild(li); row.appendChild(u);
+    });
+    var rows=[].slice.call(row.children), i=0;
+    if(!reduce){
+      setInterval(function(){
+        i=(i+1)%AR.length;
+        rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
+        if(cnt) cnt.textContent = ('0'+(i+1)).slice(-2)+' / 0'+AR.length;
+      },4000);
+    }
+  }
+})();
+</script>
+
 </body>
 </html>
