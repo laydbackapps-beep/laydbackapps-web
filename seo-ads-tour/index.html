@@ -686,6 +686,33 @@ h3 {
   .shot, .slide.wide .shot, .shot-hero { max-height: min(38vh, 100%); }
   .slide { padding: 2rem 5vw; }
 }
+
+/* === TIGHT SCALE for short viewports + phones (2026-10-28, second pass) =====
+   Laptops at 1280x720 and phones at 390x844 were still overflowing the slide,
+   which reads as "cutting things off". Same content, tightened type and one
+   column on phones so every slide fits the screen it is opened on. */
+@media (max-height: 800px) {
+  .slide { padding: 1.9rem 6vw; }
+  .steps { gap: 0.5rem; }
+  .step-row h4 { font-size: 0.95rem; }
+  .step-row p { font-size: 0.85rem; }
+  .card { padding: 0.9rem 1.1rem; }
+  .card h3 { font-size: 0.98rem; }
+  .card p { font-size: 0.88rem; }
+  .checklist { font-size: 0.88rem; }
+}
+@media (max-width: 768px) {
+  .slide { padding: 1.4rem 5vw 4.5rem; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 0.5rem; }
+  .card { padding: 0.7rem 0.9rem; }
+  .card h3 { font-size: 0.92rem; }
+  .card p, .checklist { font-size: 0.82rem; }
+  .steps { gap: 0.4rem; }
+  .step-row h4 { font-size: 0.9rem; }
+  .step-row p { font-size: 0.8rem; }
+  .slide h2 { font-size: clamp(1.2rem, 5.5vw, 1.7rem); }
+  .slide h1 { font-size: clamp(1.5rem, 7vw, 2rem) !important; }
+}
 </style>
 
 </head>
