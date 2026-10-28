@@ -294,86 +294,13 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 </style><style id="lb-bar-noname-x">SPAN.lb-brand__name{display:none!important}
-</style><style id="lb-bar-fits-logo">
-/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
-header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
-  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
-.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
-img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
-</style>
-<style id="jkb-extras">
-/* ==== header logo separated into its parts + added features, in this site's own palette (bg #0b0a08 / acc #f88818 / ink #f2ebdd) ==== */
-
-/* the bar now carries the MARK part of the logo at its own shape instead of the whole square poster squeezed into a box */
-.nav .lb-brand__mark{height:auto!important;width:auto!important;max-width:none!important;display:flex!important;align-items:center!important}
-.nav .lb-brand__mark img,.nav .lb-brand__mark img.lb-logo,.nav .lb-brand__mark img.lb-logo-unlock{
-  height:clamp(38px,4.4vw,54px)!important;width:auto!important;max-width:none!important;max-height:none!important;
-  object-fit:contain!important;border-radius:0!important;border:0!important;box-shadow:none!important;display:block!important}
-.lb-brand__name,.lb-brand__sub,.lb-brand__rule{display:none!important}
-@media(max-width:520px){.nav .lb-brand__mark img{height:34px!important}}
-
-/* rotating service-area ticker */
-.jkb-ticker{position:relative;overflow:hidden;background:var(--panel,#15120e);
-  border-top:1px solid rgba(242,235,221,.10);border-bottom:1px solid rgba(242,235,221,.10)}
-.jkb-ticker:before,.jkb-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
-.jkb-ticker:before{left:0;background:linear-gradient(90deg,var(--panel,#15120e),transparent)}
-.jkb-ticker:after{right:0;background:linear-gradient(270deg,var(--panel,#15120e),transparent)}
-.jkb-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;width:max-content;
-  animation:jkbSlide 44s linear infinite;will-change:transform}
-.jkb-ticker:hover .jkb-ticker__track{animation-play-state:paused}
-.jkb-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:var(--ink,#f2ebdd);
-  font-weight:700;font-size:clamp(11px,1.2vw,14px);letter-spacing:.14em;text-transform:uppercase}
-.jkb-ticker span i{font-style:normal;color:var(--acc,#f88818)}
-@keyframes jkbSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* service area chips (added to the existing areas section) + rotating band */
-.jkb-chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 22px}
-.jkb-chips span{border:1px solid rgba(242,235,221,.18);background:rgba(242,235,221,.04);padding:7px 13px;
-  font-size:.86rem;color:var(--ink,#f2ebdd);transition:.2s}
-.jkb-chips span:hover{border-color:var(--acc,#f88818);background:rgba(248,136,24,.12)}
-.jkb-band{margin-top:22px;border:1px solid rgba(242,235,221,.16);background:var(--panel,#15120e);overflow:hidden;border-radius:12px}
-.jkb-band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:11px 15px;
-  border-bottom:1px solid rgba(242,235,221,.12);font-weight:700;font-size:.7rem;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--acc,#f88818)}
-.jkb-band .cap em{font-style:normal;color:var(--mut,#a89b8a)}
-.jkb-band .row{position:relative;height:66px;overflow:hidden}
-.jkb-band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
-.jkb-band .row ul.on{opacity:1;transform:none}
-.jkb-band .row li{font-size:clamp(1.05rem,2.2vw,1.55rem);font-weight:800;line-height:1.1;color:var(--ink,#f2ebdd);text-align:center}
-.jkb-band .row li small{display:block;font-weight:500;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--mut,#a89b8a);margin-top:8px}
-.jkb-band .prog{height:2px;background:rgba(242,235,221,.14)}
-.jkb-band .prog i{display:block;height:100%;width:0;background:var(--acc,#f88818);animation:jkbFill 4s linear infinite}
-@keyframes jkbFill{from{width:0}to{width:100%}}
-
-/* rotation band: the work photos are 1280x960 (4:3) and were being stretched across a wide banner - upscaled and cut.
-   Frame them at 4:3 and cap the width so they are shown downscaled, whole. */
-.lb-rb__track{aspect-ratio:4/3!important;width:min(940px,94vw)!important;margin:0 auto!important;
-  border-radius:12px;overflow:visible!important}
-.lb-rb__slide{border-radius:12px;overflow:hidden}
-.lb-rb__slide img{transform:none!important;transition:none!important;width:100%!important;height:100%!important;object-fit:cover!important}
-.lb-rb__dots{left:50%!important;right:auto!important;top:calc(100% + 14px)!important;bottom:auto!important;
-  transform:translateX(-50%)!important;flex-direction:row!important;gap:9px!important;z-index:5!important}
-.lb-rb{padding-bottom:clamp(42px,4.4vw,60px)}
-@media(max-width:760px){.lb-rb__track{width:min(560px,94vw)!important}}
-
-/* the footer uses the logo's information part, as artwork rather than typed text */
-.foot__art{height:clamp(88px,9vw,120px);width:auto;display:block;margin:0 0 14px}
-
-@media (prefers-reduced-motion:reduce){
-  .jkb-ticker__track,.jkb-band .prog i{animation:none}
-  .jkb-band .row ul{transition:none}
-}
-</style>
-
-</head>
+</style></head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 
 <a class="skip" href="#services">Skip to content</a>
 
 <nav class="nav" role="navigation" aria-label="Primary">
-<a class="lb-brand" href="#top" aria-label="JKB Building & Carpentry - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#f88818;--lb-subc:#f88818;--lb-acc:#f88818;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo-isolated-mark.png" alt="JKB Building &amp; Carpentry" class="lb-logo" width="700" height="372" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">JKB Building & Carpentry</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
+<a class="lb-brand" href="#top" aria-label="JKB Building & Carpentry - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#f88818;--lb-subc:#f88818;--lb-acc:#f88818;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.jpg" alt="" class="lb-logo lb-logo-unlock" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">JKB Building & Carpentry</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
   <ul class="nav__links">
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
@@ -407,9 +334,6 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 </div>
 
 </header>
-
-<div class="jkb-ticker" aria-hidden="true"><div class="jkb-ticker__track" id="jkbTick"></div></div>
-
 
 <section class="sec" id="services" aria-labelledby="s-t">
   <p class="kick" aria-hidden="true">What we do</p>
@@ -454,24 +378,10 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
   <div class="areas" aria-label="Service areas">
     <span class="rv">Newcastle</span><span class="rv">Lake Macquarie</span><span class="rv">Port Stephens</span><span class="rv">Maitland</span><span class="rv">Hunter Valley</span>
   </div>
-    <div class="jkb-chips">
-      <span>Newcastle</span><span>Merewether</span><span>Hamilton</span><span>Adamstown</span><span>Mayfield</span>
-      <span>New Lambton</span><span>Charlestown</span><span>Kotara</span><span>Wallsend</span><span>Lake Macquarie</span>
-      <span>Belmont</span><span>Swansea</span><span>Toronto</span><span>Morisset</span><span>Port Stephens</span>
-      <span>Nelson Bay</span><span>Raymond Terrace</span><span>Maitland</span><span>Rutherford</span><span>Cessnock</span>
-      <span>Kurri Kurri</span><span>Singleton</span><span>Pokolbin</span><span>Muswellbrook</span>
-    </div>
-    <div class="jkb-band">
-      <div class="cap"><span>Service areas — rotating</span><em id="jkbAreaCount">01 / 06</em></div>
-      <div class="row" id="jkbAreaRow"></div>
-      <div class="prog"><i></i></div>
-    </div>
-
 </section>
 
 <section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img src="assets/work_01.jpg" alt="JKB Building & Carpentry" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_02.jpg" alt="JKB Building & Carpentry" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_03.jpg" alt="JKB Building & Carpentry" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_04.jpg" alt="JKB Building & Carpentry" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_05.jpg" alt="JKB Building & Carpentry" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_06.jpg" alt="JKB Building & Carpentry" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_07.jpg" alt="JKB Building & Carpentry" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_08.jpg" alt="JKB Building & Carpentry" loading="lazy" decoding="async"></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button><button type="button" class="" aria-label="Slide 4"></button><button type="button" class="" aria-label="Slide 5"></button><button type="button" class="" aria-label="Slide 6"></button><button type="button" class="" aria-label="Slide 7"></button><button type="button" class="" aria-label="Slide 8"></button></div><div class="lb-rb__cap">JKB Building & Carpentry &mdash; recent work</div></div></section><footer class="foot">
   <div>
-    <img class="foot__art" src="assets/logo-isolated-word.png" alt="JKB Building &amp; Carpentry — for all your carpentry needs" width="700" height="331" loading="lazy">
     <h3>JKB Building &amp; Carpentry</h3>
     <p>Building &amp; carpentry, Newcastle NSW.<br>Phone <a href="tel:0422418382">0422 418 382</a></p>
   </div>
@@ -1096,45 +1006,7 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
 </style>
 <style id="lb-header-fault-fix">
 :is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
-img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
-<script id="jkb-extras-js">
-(function(){
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* service-area ticker */
-  var T=['Newcastle','Merewether','Hamilton','Adamstown','Mayfield','New Lambton','Charlestown','Kotara','Wallsend',
-         'Lake Macquarie','Belmont','Swansea','Toronto','Morisset','Port Stephens','Nelson Bay','Raymond Terrace',
-         'Maitland','Rutherford','Cessnock','Kurri Kurri','Singleton','Pokolbin'];
-  var tk=document.getElementById('jkbTick');
-  if (tk) tk.innerHTML = T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
-
-  /* rotating service-area band */
-  var AR=[['Newcastle & the inner suburbs','Merewether · Hamilton · Mayfield · Adamstown'],
-          ['Lake Macquarie','Charlestown · Kotara · Belmont · Swansea · Toronto'],
-          ['Port Stephens','Nelson Bay · Raymond Terrace · Anna Bay · Medowie'],
-          ['Maitland & surrounds','Maitland · Rutherford · Thornton · Bolwarra'],
-          ['Cessnock & the vineyards','Cessnock · Kurri Kurri · Pokolbin · Lovedale'],
-          ['Upper Hunter','Singleton · Muswellbrook · Scone · Aberdeen']];
-  var row=document.getElementById('jkbAreaRow'), cnt=document.getElementById('jkbAreaCount');
-  if (row){
-    AR.forEach(function(a,k){
-      var u=document.createElement('ul'), li=document.createElement('li');
-      if(!k) u.className='on';
-      li.innerHTML = a[0]+'<small>'+a[1]+'</small>';
-      u.appendChild(li); row.appendChild(u);
-    });
-    var rows=[].slice.call(row.children), i=0;
-    if(!reduce){
-      setInterval(function(){
-        i=(i+1)%AR.length;
-        rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
-        if(cnt) cnt.textContent = ('0'+(i+1)).slice(-2)+' / 0'+AR.length;
-      },4000);
-    }
-  }
-})();
-</script>
-
 </body>
 </html>

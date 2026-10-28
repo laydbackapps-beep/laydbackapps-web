@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ASAP Roof Restorations</title>
-<meta name="description" content="ASAP Roof Restorations — Roof restoration servicing the East Coast of Australia. Tiled roof repairs, re-bedding, re-pointing, ridge capping, and roof painting.">
+<meta name="description" content="ASAP Roof Restorations — Roof restoration in Newcastle NSW. Tiled roof repairs, re-bedding, re-pointing, ridge capping, and roof painting.">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <style>
 :root{
@@ -276,10 +276,12 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 </style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-@media(max-width:900px){}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
 </style><style id="lb-asap-header">
 /* one logo, centred, at a size you can actually read — the AR monogram and the typed name are gone */
+.brand-monogram{display:none!important}
 .header .header__inner{position:relative!important;display:flex!important;align-items:center!important;
   gap:clamp(16px,2.4vw,34px)!important;min-height:118px!important}
 .header .lb-brand--centred{position:absolute!important;left:50%!important;top:50%!important;
@@ -369,60 +371,7 @@ section,.rr{padding-top:clamp(40px,4.2vw,64px)!important;padding-bottom:clamp(40
 #roof-types > .inner > h2,#roof-types > .inner > p.lead{color:var(--ink,#101418)!important}
 .process__num,.hero__badge,.lb-rb__kick{color:#e0785a!important}
 .hero__badge{border-color:rgba(224,120,90,.55)!important}
-</style><style id="asap-extras">
-/* ==== added features, in this site's own palette (dark #0b0c10 / red #b84830 / mist #e4e7ea) ==== */
-/* header: no fixed height fighting the logo — it must never clip or overflow the bar */
-.header__inner{height:auto!important;min-height:0!important;padding-block:clamp(8px,1vw,16px)!important}
-
-/* rotating service-area ticker */
-.asap-ticker{position:relative;overflow:hidden;background:#0b0c10;
-  border-top:1px solid rgba(255,255,255,.10);border-bottom:1px solid rgba(255,255,255,.10)}
-.asap-ticker:before,.asap-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
-.asap-ticker:before{left:0;background:linear-gradient(90deg,#0b0c10,transparent)}
-.asap-ticker:after{right:0;background:linear-gradient(270deg,#0b0c10,transparent)}
-.asap-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;
-  width:max-content;animation:asapSlide 44s linear infinite;will-change:transform}
-.asap-ticker:hover .asap-ticker__track{animation-play-state:paused}
-.asap-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:#dfe3e6;
-  font-family:var(--lb-disp,system-ui),sans-serif;font-weight:700;font-size:clamp(11px,1.2vw,15px);
-  letter-spacing:.14em;text-transform:uppercase}
-.asap-ticker span i{font-style:normal;color:#b84830}
-@keyframes asapSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* where we work: chips + rotating service-area band */
-.ww{background:var(--mist);color:var(--ink);border-top:1px solid var(--hairline);padding:clamp(44px,5vw,76px) 0}
-.ww .inner{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
-.ww h2{font-size:clamp(24px,3.1vw,40px);line-height:1.12;margin:0 0 10px;letter-spacing:-.02em}
-.ww .lead{color:#414951;max-width:62ch;margin:0 0 22px}
-.ww__chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
-.ww__chips span{border:1px solid #cdd3d8;background:#fff;padding:7px 13px;font-size:14px;color:var(--ink);transition:.2s}
-.ww__chips span:hover{border-color:#b84830;background:rgba(184,72,48,.08)}
-.ww__band{border:1px solid var(--hairline);background:#12161a;overflow:hidden}
-.ww__band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:10px 14px;
-  border-bottom:1px solid var(--hairline);font:600 11px/1 ui-monospace,monospace;letter-spacing:.18em;
-  text-transform:uppercase;color:#e0785a}
-.ww__band .cap em{font-style:normal;color:#aab3bb}
-.ww__band .row{position:relative;height:64px;overflow:hidden}
-.ww__band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;opacity:0;transform:translateY(12px);
-  transition:opacity .7s ease,transform .7s ease}
-.ww__band .row ul.on{opacity:1;transform:none}
-.ww__band .row li{font-family:var(--lb-disp,system-ui),sans-serif;font-weight:800;
-  font-size:clamp(18px,2.4vw,28px);line-height:1.1;color:#fff;text-align:center}
-.ww__band .row li small{display:block;font:500 11px/1 ui-monospace,monospace;letter-spacing:.15em;
-  text-transform:uppercase;color:#aab3bb;margin-top:8px}
-.ww__band .prog{height:2px;background:rgba(255,255,255,.12)}
-.ww__band .prog i{display:block;height:100%;width:0;background:#b84830;animation:asapFill 4s linear infinite}
-@keyframes asapFill{from{width:0}to{width:100%}}
-
-@media (prefers-reduced-motion:reduce){
-  .asap-ticker__track,.ww__band .prog i{animation:none}
-  .ww__band .row ul{transition:none}
-}
-@media (max-width:900px){.asap-ticker:before,.asap-ticker:after{width:40px}}
-</style>
-
-</head>
+</style></head>
 <body>
 <header class="header" role="banner">
   <div class="container header__inner">
@@ -441,8 +390,8 @@ section,.rr{padding-top:clamp(40px,4.2vw,64px)!important;padding-bottom:clamp(40
   <section class="hero" aria-labelledby="hero-title">
     <div class="container hero__inner">
       <div class="hero__copy">
-        <span class="hero__badge rv">Tiled roofs &middot; Servicing the East Coast of Australia</span>
-        <h1 id="hero-title" class="rv">East Coast Roof<br>Restoration</h1>
+        <span class="hero__badge rv">Tiled roofs &middot; Newcastle &amp; the Hunter</span>
+        <h1 id="hero-title" class="rv">Newcastle Roof<br>Restoration</h1>
         <p class="hero__lead rv">Cracked tiles, crumbling ridge caps, moss and a faded coating &mdash; re-bedded, re-pointed, cleaned and re-coated by the same crew that quotes it. Free quotes, no obligation.</p>
         <ul class="hero__proof rv">
           <li>Free quote after the roof is looked at</li>
@@ -452,15 +401,11 @@ section,.rr{padding-top:clamp(40px,4.2vw,64px)!important;padding-bottom:clamp(40
         <a href="#quote" class="hero__cta rv">Request a Quote</a>
       </div>
       <figure class="hero__shot rv">
-        <img src="assets/photo_3.jpg" alt="Restored tiled roof on an East Coast home" width="1200" height="800" loading="eager">
+        <img src="assets/photo_3.jpg" alt="Restored tiled roof across a Newcastle home" width="1200" height="800" loading="eager">
         <figcaption>Ridges, hips and tile face done in one run.</figcaption>
       </figure>
     </div>
   </section>
-
-<!--ASAP-TICKER-->
-<div class="asap-ticker" aria-hidden="true"><div class="asap-ticker__track" id="asapTick"></div></div>
-
 
   <section id="services" class="services section" aria-labelledby="services-title">
     <div class="container">
@@ -554,7 +499,7 @@ section,.rr{padding-top:clamp(40px,4.2vw,64px)!important;padding-bottom:clamp(40
 <section class="rr rr--tight" id="roof-types"><div class="inner">
 <h2>Roofs we work on</h2>
 <div class="types">
-<article><b>Concrete tile</b><p>The most common roof on the East Coast — re-bed, re-point, clean and coat, with broken tiles matched.</p></article>
+<article><b>Concrete tile</b><p>The most common roof in the Hunter — re-bed, re-point, clean and coat, with broken tiles matched.</p></article>
 <article><b>Terracotta tile</b><p>Softer underfoot and easily broken: walked carefully, tiles matched from what is already on the roof.</p></article>
 <article><b>Ridges &amp; hips</b><p>Capping re-bedded and pointed in flexible compound so it moves with the roof instead of cracking out.</p></article>
 <article><b>Valleys &amp; flashings</b><p>The joints that leak first — checked and repaired before any coating goes over the top.</p></article>
@@ -600,33 +545,11 @@ section,.rr{padding-top:clamp(40px,4.2vw,64px)!important;padding-bottom:clamp(40
 <details><summary>How long does the coating last?</summary><p>It depends on the product and the roof, and it is worth asking which coating is being used rather than assuming. That gets explained at quote stage.</p></details>
 <details><summary>Do you clear the gutters afterwards?</summary><p>Yes — debris from washing and bedding is cleared before the job is signed off.</p></details>
 </div></div></section>
-<div class="asap-ticker" aria-hidden="true"><div class="asap-ticker__track" id="asapTick"></div></div>
-<!--/ASAP-TICKER-->
-
-
-<section class="ww" id="areas" aria-labelledby="areas-title">
-  <div class="inner">
-    <h2 id="areas-title">Servicing the East Coast of Australia</h2>
-    <p class="lead">Tiled roof restoration along the coast and inland — Newcastle and the Hunter, the Central Coast, Sydney, the Illawarra, and up past Port Macquarie.</p>
-    <div class="ww__chips">
-      <span>Newcastle</span><span>Lake Macquarie</span><span>Maitland</span><span>Cessnock</span>
-      <span>Central Coast</span><span>Gosford</span><span>Wyong</span><span>Sydney</span>
-      <span>Wollongong</span><span>Illawarra</span><span>Port Stephens</span><span>Forster</span>
-      <span>Taree</span><span>Port Macquarie</span><span>Coffs Harbour</span>
-    </div>
-    <div class="ww__band">
-      <div class="cap"><span>Service areas — rotating</span><em id="asapAreaCount">01 / 06</em></div>
-      <div class="row" id="asapAreaRow"></div>
-      <div class="prog"><i></i></div>
-    </div>
-  </div>
-</section>
-<!--/ASAP-AREAS-->
 <section id="contact" class="locality section" aria-labelledby="contact-title">
     <div class="container locality__inner">
       <div class="locality__heading">
-        <h2 id="contact-title" class="rv">Servicing the East Coast of Australia</h2>
-        <p class="locality__text rv">Servicing the East Coast of Australia · free quotes, no obligation</p>
+        <h2 id="contact-title" class="rv">Newcastle NSW</h2>
+        <p class="locality__text rv">Servicing Newcastle and the Hunter · free quotes, no obligation</p>
       </div>
       <div class="locality__side">
         <a class="locality__tel" href="tel:+61425470406">
@@ -652,7 +575,7 @@ section,.rr{padding-top:clamp(40px,4.2vw,64px)!important;padding-bottom:clamp(40
       <div class="lb-rb__body">
         <span class="lb-rb__kick">01 &mdash; Re-bedding</span>
         <strong class="lb-rb__head">Ridge caps that stay put</strong>
-        <p class="lb-rb__note">Old mortar cut out, caps re-bedded and pointed with flexible compound so the ridge line holds through East Coast summers.</p>
+        <p class="lb-rb__note">Old mortar cut out, caps re-bedded and pointed with flexible compound so the ridge line holds through Newcastle summers.</p>
       </div>
     </div>
     <div class="lb-rb__slide" style="background:#0b0c10">
@@ -676,7 +599,7 @@ section,.rr{padding-top:clamp(40px,4.2vw,64px)!important;padding-bottom:clamp(40
       <button type="button" class="" aria-label="Slide 2"></button>
       <button type="button" class="" aria-label="Slide 3"></button>
     </div>
-    <div class="lb-rb__cap">ASAP Roof Restorations &mdash; servicing the East Coast of Australia</div>
+    <div class="lb-rb__cap">ASAP Roof Restorations &mdash; Newcastle NSW</div>
   </div>
 </section>
 
@@ -831,7 +754,7 @@ section,.rr{padding-top:clamp(40px,4.2vw,64px)!important;padding-bottom:clamp(40
       <span>ASAP Roof Restorations</span>
     </div>
     <div class="footer__meta">
-      <p class="footer__copy">&copy; 2026 ASAP Roof Restorations &middot; servicing the East Coast of Australia</p>
+      <p class="footer__copy">&copy; 2026 ASAP Roof Restorations &middot; Newcastle NSW</p>
       <div class="footer__legal">
         <a href="tel:+61425470406">0425 470 406</a>
         <a href="privacy.html">Privacy Policy</a>
@@ -1013,7 +936,7 @@ header,.site-header,.page-header,.header-inner,nav.nav,.nav-inner,
 
 
 <style>/* ==== LB HEADER TRUTH ==== */
-/* height rule removed: it clipped the centred logo on mobile - see #asap-extras */
+.header__inner{height:clamp(66px,7vw,80px)!important}
 .lb-brand{gap:clamp(9px,1vw,14px) !important;min-height:0 !important;
   align-items:center !important;flex-wrap:nowrap !important}
 .lb-brand__mark{flex:0 0 auto !important;display:flex !important;align-items:center !important;
@@ -1061,48 +984,5 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
   scroll-margin-top:24px}
 
 </style>
-<script id="asap-extras-js">
-(function(){
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* service-area ticker */
-  var T=['Newcastle','Lake Macquarie','Maitland','Cessnock','Central Coast','Gosford','Wyong','Sydney',
-         'Wollongong','Illawarra','Port Stephens','Forster','Taree','Port Macquarie','Coffs Harbour'];
-  var tk=document.getElementById('asapTick');
-  if (tk) tk.innerHTML = T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
-
-  /* rotating service-area band */
-  var AR=[['Newcastle & Lake Macquarie','Charlestown · Kotara · Belmont · Swansea'],
-          ['Hunter Valley','Maitland · Cessnock · Kurri Kurri · Rutherford'],
-          ['Central Coast','Gosford · Wyong · Terrigal · The Entrance'],
-          ['Sydney','Northern Beaches · Hills · Sutherland · Inner West'],
-          ['Illawarra','Wollongong · Dapto · Shellharbour · Nowra'],
-          ['Mid North Coast','Forster · Taree · Port Macquarie · Coffs Harbour']];
-  var row=document.getElementById('asapAreaRow'), cnt=document.getElementById('asapAreaCount');
-  if (row){
-    AR.forEach(function(a,k){
-      var u=document.createElement('ul'), li=document.createElement('li');
-      if(!k) u.className='on';
-      li.innerHTML = a[0]+'<small>'+a[1]+'</small>';
-      u.appendChild(li); row.appendChild(u);
-    });
-    var rows=[].slice.call(row.children), i=0;
-    if(!reduce){
-      setInterval(function(){
-        i=(i+1)%AR.length;
-        rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
-        if(cnt) cnt.textContent = ('0'+(i+1)).slice(-2)+' / 0'+AR.length;
-      },4000);
-    }
-  }
-
-  /* area caption on each rotating banner slide (its own .lb-rb band, untouched otherwise) */
-  var WHERE=['Newcastle','Central Coast','Sydney'];
-  [].slice.call(document.querySelectorAll('.lb-rb__slide .lb-rb__kick')).forEach(function(k,n){
-    if (WHERE[n] && k.textContent.indexOf('·') === -1) k.textContent += ' · ' + WHERE[n];
-  });
-})();
-</script>
-
 </body>
 </html>

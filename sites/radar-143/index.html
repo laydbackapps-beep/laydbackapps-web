@@ -477,14 +477,8 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
       <p class="sec-sub">Mowing, care and finishes that keep the yard looking sharp.</p>
     </div>
     <div class="gal-grid">
-      <figure class="gal drop">
-        
-        <figcaption class="gal-cap">Freshly striped lawn</figcaption>
-      </figure>
-      <figure class="gal drop">
-        
-        <figcaption class="gal-cap">Mow and finish</figcaption>
-      </figure>
+      <figure class="gal drop"><img src="assets/gal_1.jpg" alt="Freshly mowed lawn with mowing stripes" loading="lazy" decoding="async" width="1280" height="823"><figcaption class="gal-cap">Freshly striped lawn</figcaption></figure>
+      <figure class="gal drop"><img src="assets/work.jpg" alt="Mowed lawn finished with clean stripes" loading="lazy" decoding="async" width="1280" height="823"><figcaption class="gal-cap">Mow and finish</figcaption></figure>
     </div>
     <p class="gal-note drop">Photos from recent jobs, more on request.</p>
   </div>
@@ -935,14 +929,8 @@ img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:
 /* the "recent work" gallery was two EMPTY figures (no img) that collapsed to 2px tall - a broken-looking band.
    They are now drawn panels at a controlled size, each clearly badged SAMPLE so nothing implies a photograph. */
 .gal-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))!important;max-width:840px;gap:1rem!important}
-.gal-grid .gal{min-height:240px!important;height:auto!important}
-.gal-grid .gal::before{content:"Sample";position:absolute;top:.7rem;left:.7rem;z-index:2;
-  font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-  background:rgba(8,10,14,.72);color:#EFF6E7;padding:.28rem .5rem;border-radius:999px}
-.gal-grid .gal:nth-of-type(1){background:repeating-linear-gradient(92deg,#2E7D32 0 22px,#46954a 22px 44px)}
-.gal-grid .gal:nth-of-type(2){background:linear-gradient(180deg,#4b8f3f 0%,#2c5c2a 70%,#24491f 100%)}
-.gal-grid .gal:nth-of-type(2)::after{content:"";position:absolute;left:0;right:0;bottom:2.6rem;height:18px;
-  background:repeating-linear-gradient(115deg,rgba(255,255,255,.16) 0 8px,transparent 8px 16px)}
+.gal-grid .gal{min-height:0!important;height:auto!important}
+.gal-grid .gal img{width:100%!important;height:auto!important;aspect-ratio:1280/823!important;object-fit:cover!important;display:block!important}
 @media(max-width:700px){.gal-grid .gal{min-height:180px!important}}
 
 @media (prefers-reduced-motion:reduce){
