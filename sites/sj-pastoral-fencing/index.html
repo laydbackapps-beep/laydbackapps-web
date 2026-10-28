@@ -150,7 +150,7 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 <header class="bar">
   <div class="wrap">
     <a class="brand" href="#top" style="--lb-name:#5A1314" aria-label="S&J Pastoral Fencing Contractors — home">
-      <img src="assets/logo.svg" alt="" class="lb-logo lb-logo-unlock" loading="eager" decoding="async">
+      <img src="assets/logo.svg" alt="" class="lb-logo lb-logo-unlock" loading="eager" decoding="async"><img class="sj-word" src="assets/logo-word.png" alt="S&amp;J Pastoral Fencing Contractors" width="2356" height="115" loading="eager" decoding="async">
       <span>
         <span class="nm lb-sr-only">S&J Pastoral Fencing Contractors</span>
         <span class="sub">Rural fencing · Torbanlea QLD</span>
@@ -167,6 +167,9 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
     </nav>
   </div>
 </header>
+
+<div class="sj-ticker" aria-hidden="true"><div class="sj-ticker__track" id="sjTick"></div></div>
+
 
 <main id="top">
 <section class="hero">
@@ -277,6 +280,26 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
         <h3>Fraser Coast based</h3>
         <p>Working out of Torbanlea, travelling across the Fraser Coast and rural Queensland.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="areas" aria-labelledby="areas-h">
+  <div class="wrap">
+    <h2 id="areas-h">Where we work</h2>
+    <p class="lead">Rural fencing, stockyards, gates and laneways across the Fraser Coast, Isis and Burnett districts.</p>
+    <div class="sj-chips">
+      <span>Torbanlea</span><span>Howard</span><span>Burrum Heads</span><span>Toogoom</span><span>Hervey Bay</span>
+      <span>Urangan</span><span>Point Vernon</span><span>River Heads</span><span>Maryborough</span><span>Granville</span>
+      <span>Tiaro</span><span>Bauple</span><span>Gunalda</span><span>Curra</span><span>Boonooroo</span>
+      <span>Tuan</span><span>Poona</span><span>Maroom</span><span>Childers</span><span>Cordalba</span>
+      <span>Booyal</span><span>Isis Central</span><span>Biggenden</span><span>Gin Gin</span><span>Wallaville</span>
+      <span>Bundaberg</span><span>Goomeri</span><span>Kilkivan</span><span>Gympie</span><span>Brooweena</span>
+    </div>
+    <div class="sj-band">
+      <div class="cap"><span>Service areas — rotating</span><em id="sjAreaCount">01 / 06</em></div>
+      <div class="row" id="sjAreaRow"></div>
+      <div class="prog"><i></i></div>
     </div>
   </div>
 </section>
@@ -535,5 +558,100 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 .lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
 aimg.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
+<style id="sj-extras">
+/* ==== header logo separated into its parts + added features, in this site's own maroon/bone palette (#5A1314 / #F4F1EC) ==== */
+
+/* the bar showed the SJ mark at 52x52 with the company name as screen-reader-only text, so the visible brand was
+   initials only. Now the mark and the client's own wordmark artwork sit together, nothing typed. */
+.brand{display:flex!important;align-items:center!important;gap:clamp(9px,1.1vw,16px)!important}
+.brand img.lb-logo,.brand img.lb-logo-unlock,.brand>img{
+  height:clamp(42px,4.4vw,54px)!important;width:auto!important;max-height:none!important;object-fit:contain!important;
+  background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;display:block!important}
+.brand>.sj-word{display:block!important;width:clamp(220px,29vw,430px)!important;height:auto!important;
+  max-width:min(52vw,440px)!important;object-fit:contain!important}
+.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;
+  overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:900px){.brand>.sj-word{width:clamp(170px,42vw,300px)!important}}
+@media(max-width:560px){.brand>.sj-word{display:none!important}.brand img.lb-logo,.brand>img{height:40px!important}}
+
+/* rotating service-area ticker */
+.sj-ticker{position:relative;overflow:hidden;background:#3C0C0D;
+  border-top:1px solid rgba(244,241,236,.14);border-bottom:1px solid rgba(244,241,236,.14)}
+.sj-ticker:before,.sj-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.sj-ticker:before{left:0;background:linear-gradient(90deg,#3C0C0D,transparent)}
+.sj-ticker:after{right:0;background:linear-gradient(270deg,#3C0C0D,transparent)}
+.sj-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;width:max-content;
+  animation:sjSlide 46s linear infinite;will-change:transform}
+.sj-ticker:hover .sj-ticker__track{animation-play-state:paused}
+.sj-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:#F4F1EC;
+  font-weight:700;font-size:clamp(11px,1.15vw,13.5px);letter-spacing:.16em;text-transform:uppercase}
+.sj-ticker span i{font-style:normal;color:#C79A5B}
+@keyframes sjSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* service area chips + rotating band */
+.sj-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.sj-chips span{border:1px solid var(--line,#D3CDC3);background:#fff;padding:7px 13px;font-size:.86rem;color:var(--ink,#1B1A18);transition:.2s}
+.sj-chips span:hover{border-color:var(--maroon,#5A1314);background:rgba(90,19,20,.07)}
+.sj-band{margin-top:20px;border:1px solid rgba(90,19,20,.34);background:#3C0C0D;overflow:hidden;border-radius:12px}
+.sj-band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:11px 15px;
+  border-bottom:1px solid rgba(244,241,236,.16);font-weight:700;font-size:.7rem;letter-spacing:.18em;
+  text-transform:uppercase;color:#C79A5B}
+.sj-band .cap em{font-style:normal;color:#D3CDC3}
+.sj-band .row{position:relative;height:68px;overflow:hidden}
+.sj-band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+.sj-band .row ul.on{opacity:1;transform:none}
+.sj-band .row li{font-size:clamp(1.05rem,2.2vw,1.5rem);font-weight:800;line-height:1.12;color:#F4F1EC;text-align:center}
+.sj-band .row li small{display:block;font-weight:500;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;
+  color:#D3CDC3;margin-top:8px}
+.sj-band .prog{height:2px;background:rgba(244,241,236,.16)}
+.sj-band .prog i{display:block;height:100%;width:0;background:#C79A5B;animation:sjFill 4s linear infinite}
+@keyframes sjFill{from{width:0}to{width:100%}}
+
+@media (prefers-reduced-motion:reduce){
+  .sj-ticker__track,.sj-band .prog i{animation:none}
+  .sj-band .row ul{transition:none}
+}
+</style>
+
+<script id="sj-extras-js">
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* service-area ticker */
+  var T=['Torbanlea','Howard','Burrum Heads','Toogoom','Hervey Bay','Urangan','Point Vernon','River Heads',
+         'Maryborough','Granville','Tiaro','Bauple','Gunalda','Curra','Boonooroo','Tuan','Poona','Maroom',
+         'Childers','Cordalba','Booyal','Isis Central','Biggenden','Gin Gin','Wallaville','Bundaberg','Goomeri',
+         'Kilkivan','Gympie','Brooweena'];
+  var tk=document.getElementById('sjTick');
+  if (tk) tk.innerHTML = T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
+
+  /* rotating service-area band */
+  var AR=[['Torbanlea & Howard','Torbanlea · Howard · Burrum Heads · Toogoom'],
+          ['Hervey Bay','Hervey Bay · Urangan · Point Vernon · River Heads'],
+          ['Maryborough district','Maryborough · Granville · Tiaro · Bauple'],
+          ['Fraser Coast south','Boonooroo · Tuan · Poona · Maroom'],
+          ['Childers & Isis','Childers · Cordalba · Booyal · Isis Central'],
+          ['Burnett & Wide Bay','Gin Gin · Bundaberg · Goomeri · Kilkivan']];
+  var row=document.getElementById('sjAreaRow'), cnt=document.getElementById('sjAreaCount');
+  if (row){
+    AR.forEach(function(a,k){
+      var u=document.createElement('ul'), li=document.createElement('li');
+      if(!k) u.className='on';
+      li.innerHTML = a[0]+'<small>'+a[1]+'</small>';
+      u.appendChild(li); row.appendChild(u);
+    });
+    var rows=[].slice.call(row.children), i=0;
+    if(!reduce){
+      setInterval(function(){
+        i=(i+1)%AR.length;
+        rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
+        if(cnt) cnt.textContent = ('0'+(i+1)).slice(-2)+' / 0'+AR.length;
+      },4000);
+    }
+  }
+})();
+</script>
+
 </body>
 </html>
