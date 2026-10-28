@@ -735,6 +735,12 @@ h3 {
   .slide h2 { font-size: clamp(1.1rem, 5vw, 1.5rem); }
   .nav-controls { transform: translateX(-50%) scale(0.9); }
 }
+@media (max-width: 768px) {
+  /* a six-question FAQ cannot fit one phone screen in a single column */
+  .faq .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .faq .card h3 { font-size: 0.8rem; }
+  .faq .card p { font-size: 0.7rem; line-height: 1.4; }
+}
 </style>
 
 </head>
@@ -1054,7 +1060,7 @@ h3 {
   </div>
 </section>
 
-<section class="slide" aria-label="Slide 22 of 25">
+<section class="slide faq" aria-label="Slide 22 of 25">
   <div class="bg-grid"></div>
   <div class="animate text-center max-w">
     <p style="color:#c4fb24; text-transform:uppercase; letter-spacing:0.1em; font-size:0.8rem; margin-bottom:0.4rem;">The questions everyone asks</p>
