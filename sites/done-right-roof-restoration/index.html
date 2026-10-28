@@ -323,6 +323,84 @@ header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-
 .bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
 img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
 </style>
+<style id="dr-extras">
+/* ==== added features + showcase photo sizing, in this site's own palette (ink #131a26 / blue #274980 / #2f5da8) ==== */
+
+/* rotating service-area ticker under the hero */
+.dr-ticker{position:relative;overflow:hidden;background:var(--ink);border-top:1px solid rgba(255,255,255,.10);
+  border-bottom:1px solid rgba(255,255,255,.10)}
+.dr-ticker:before,.dr-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.dr-ticker:before{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+.dr-ticker:after{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+.dr-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;width:max-content;
+  animation:drSlide 44s linear infinite;will-change:transform}
+.dr-ticker:hover .dr-ticker__track{animation-play-state:paused}
+.dr-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:#e8edf3;
+  font-family:var(--font-m,system-ui),sans-serif;font-weight:700;font-size:clamp(11px,1.2vw,14px);
+  letter-spacing:.14em;text-transform:uppercase}
+.dr-ticker span i{font-style:normal;color:#6f9ad6}
+@keyframes drSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* where we work — area chips + rotating service-area band */
+.dr-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.dr-chips span{border:1px solid var(--line);background:#fff;padding:7px 13px;font-size:.88rem;color:var(--ink);transition:.2s}
+.dr-chips span:hover{border-color:var(--acc);background:rgba(39,73,128,.07)}
+.dr-band{border:1px solid var(--line);background:var(--ink);overflow:hidden;border-radius:10px}
+.dr-band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:11px 15px;
+  border-bottom:1px solid rgba(255,255,255,.12);font-family:var(--font-m,monospace);font-weight:700;
+  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#8fb4e6}
+.dr-band .cap em{font-style:normal;color:#9aa8bb}
+.dr-band .row{position:relative;height:66px;overflow:hidden}
+.dr-band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;opacity:0;transform:translateY(12px);
+  transition:opacity .7s ease,transform .7s ease}
+.dr-band .row ul.on{opacity:1;transform:none}
+.dr-band .row li{font-size:clamp(1.1rem,2.3vw,1.7rem);font-weight:700;line-height:1.1;color:#fff;text-align:center}
+.dr-band .row li small{display:block;font-family:var(--font-m,monospace);font-weight:500;font-size:.68rem;
+  letter-spacing:.15em;text-transform:uppercase;color:#9aa8bb;margin-top:8px}
+.dr-band .prog{height:2px;background:rgba(255,255,255,.14)}
+.dr-band .prog i{display:block;height:100%;width:0;background:#6f9ad6;animation:drFill 4s linear infinite}
+@keyframes drFill{from{width:0}to{width:100%}}
+
+/* showcase photos: smaller, at the photographs' own 9:16 shape so nothing is cropped or stretched up */
+.gal{grid-template-columns:repeat(auto-fit,minmax(186px,1fr))!important;gap:16px!important;max-width:740px}
+.gal img{width:100%!important;height:auto!important;aspect-ratio:9/16;object-fit:cover;border-radius:8px}
+.gal figure{max-width:100%}
+@media(max-width:900px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:460px}}
+@media(max-width:520px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:420px;gap:12px!important}}
+
+@media (prefers-reduced-motion:reduce){
+  .dr-ticker__track,.dr-band .prog i{animation:none}
+  .dr-band .row ul{transition:none}
+}
+</style>
+
+<style id="dr-photos">
+/* ==== showcase photographs: rendered smaller, at the photographs' own shape, so nothing is cropped up or stretched ====
+   the gallery shots are 897x1200 (3:4) and the rotation shots are 899x1599 (9:16).
+   Covering a 16:7 banner with a portrait shot was upscaling it ~1.6x and cutting most of it away. */
+
+/* rotation band: portrait frame at the photo's own ratio, centred, so the picture is downscaled not blown up */
+.lb-rb{padding:clamp(20px,3vw,40px) 0}
+.lb-rb__track{aspect-ratio:9/16!important;width:min(330px,74vw)!important;margin:0 auto!important;
+  border-radius:12px;overflow:hidden;box-shadow:0 22px 50px -30px #000}
+.lb-rb__slide img{width:100%!important;height:100%!important;object-fit:cover!important;
+  transform:none!important;transition:opacity .9s ease!important}
+.lb-rb__cap{font-size:clamp(9px,1vw,12px)}
+.lb-rb__dots{right:calc(50% - min(165px,37vw) - 22px)}
+@media(max-width:760px){
+  .lb-rb__track{width:min(290px,82vw)!important}
+  .lb-rb__dots{right:auto;left:14px;top:auto;bottom:14px;transform:none;flex-direction:row}
+  .lb-rb__nav{width:36px;height:36px}
+}
+
+/* showcase gallery: smaller tiles at 3:4 (the photos' own shape) */
+.gal{grid-template-columns:repeat(auto-fit,minmax(168px,1fr))!important;gap:14px!important;max-width:600px}
+.gal img{width:100%!important;height:auto!important;aspect-ratio:3/4;object-fit:cover;border-radius:8px}
+@media(max-width:900px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:420px}}
+@media(max-width:520px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:360px;gap:10px!important}}
+</style>
+
 </head>
 <body>
 
@@ -376,6 +454,9 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 </div>
 </header>
 
+<div class="dr-ticker" aria-hidden="true"><div class="dr-ticker__track" id="drTick"></div></div>
+
+
 <section class="sec" id="services">
   <div class="sec-head rv"><span class="sec-idx">01</span><div><h2 class="sec-title">Every part of the roof, covered.</h2><p class="lead">Repairs and restorations by someone who has tiled roofs his whole career. Right materials, right method, no shortcuts.</p></div></div>
   <div class="svc-grid">
@@ -428,6 +509,28 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 </section>
 
 <span id="quote" style="position:absolute;top:-90px"></span>
+<section class="sec sec--tint" id="areas" aria-labelledby="areas-title">
+  <div class="sec-head rv">
+    <span class="sec-idx">06</span>
+    <div>
+      <h2 class="sec-title" id="areas-title">Where we work.</h2>
+      <p class="lead">Roof repairs, restorations and gutter work across the Central Coast — from the Peninsula and the beaches through to the lakes.</p>
+    </div>
+  </div>
+  <div class="dr-chips">
+    <span>Gosford</span><span>Erina</span><span>Terrigal</span><span>Wamberal</span><span>Avoca Beach</span>
+    <span>Copacabana</span><span>Kincumber</span><span>Woy Woy</span><span>Umina Beach</span><span>Ettalong</span>
+    <span>Saratoga</span><span>Davistown</span><span>The Entrance</span><span>Long Jetty</span><span>Bateau Bay</span>
+    <span>Shelly Beach</span><span>Tuggerah</span><span>Wyong</span><span>Warnervale</span><span>Ourimbah</span>
+    <span>Toukley</span><span>Norah Head</span><span>Budgewoi</span><span>Lake Munmorah</span>
+  </div>
+  <div class="dr-band">
+    <div class="cap"><span>Service areas — rotating</span><em id="drAreaCount">01 / 06</em></div>
+    <div class="row" id="drAreaRow"></div>
+    <div class="prog"><i></i></div>
+  </div>
+</section>
+
 <section id="lbq" aria-labelledby="lbq-h">
 <style>
 #lbq{--lbq-accent:var(--acc);--lbq-ink:var(--ink);--lbq-muted:var(--ink2);--lbq-bg:var(--paper2);--lbq-panel:#fff;--lbq-line:var(--line);padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
@@ -749,5 +852,43 @@ var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear(
 <style id="lb-header-fault-fix">
 img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
+<script id="dr-extras-js">
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* service-area ticker */
+  var T=['Gosford','Erina','Terrigal','Wamberal','Avoca Beach','Copacabana','Kincumber','Woy Woy','Umina Beach',
+         'Ettalong','The Entrance','Long Jetty','Bateau Bay','Tuggerah','Wyong','Warnervale','Ourimbah',
+         'Toukley','Norah Head','Budgewoi','Lake Munmorah'];
+  var tk=document.getElementById('drTick');
+  if (tk) tk.innerHTML = T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
+
+  /* rotating service-area band */
+  var AR=[['Gosford & surrounds','East Gosford · West Gosford · Springfield · Erina'],
+          ['Terrigal & the beaches','Terrigal · Wamberal · Avoca Beach · Copacabana'],
+          ['The Peninsula','Woy Woy · Umina Beach · Ettalong · Booker Bay'],
+          ['The Entrance & Bateau Bay','The Entrance · Long Jetty · Bateau Bay · Shelly Beach'],
+          ['Wyong & Tuggerah','Wyong · Tuggerah · Warnervale · Ourimbah'],
+          ['Northern lakes','Toukley · Norah Head · Budgewoi · Lake Munmorah']];
+  var row=document.getElementById('drAreaRow'), cnt=document.getElementById('drAreaCount');
+  if (row){
+    AR.forEach(function(a,k){
+      var u=document.createElement('ul'), li=document.createElement('li');
+      if(!k) u.className='on';
+      li.innerHTML = a[0]+'<small>'+a[1]+'</small>';
+      u.appendChild(li); row.appendChild(u);
+    });
+    var rows=[].slice.call(row.children), i=0;
+    if(!reduce){
+      setInterval(function(){
+        i=(i+1)%AR.length;
+        rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
+        if(cnt) cnt.textContent = ('0'+(i+1)).slice(-2)+' / 0'+AR.length;
+      },4000);
+    }
+  }
+})();
+</script>
+
 </body>
 </html>
