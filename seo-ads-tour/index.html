@@ -713,6 +713,28 @@ h3 {
   .slide h2 { font-size: clamp(1.2rem, 5.5vw, 1.7rem); }
   .slide h1 { font-size: clamp(1.5rem, 7vw, 2rem) !important; }
 }
+/* === TIGHT SCALE (third pass, 2026-10-28) ==================================
+   Remaining overflow after pass 2: 1280x720 steps/timeline slides (~15px) and
+   the six-card slides on a 390px phone. Same words, smaller boxes. */
+@media (max-height: 800px) {
+  .slide { padding: 1.6rem 6vw; }
+  .steps { gap: 0.35rem; }
+  .step-row h4 { font-size: 0.9rem; }
+  .step-row p { font-size: 0.8rem; }
+}
+@media (max-width: 768px) {
+  .slide { padding: 1.2rem 5vw 5.5rem; }
+  .grid-2, .grid-3 { gap: 0.4rem; }
+  .card { padding: 0.55rem 0.75rem; }
+  .card h3 { font-size: 0.86rem; }
+  .card p, .checklist { font-size: 0.76rem; line-height: 1.45; }
+  .steps { gap: 0.3rem; }
+  .step-row h4 { font-size: 0.85rem; }
+  .step-row p { font-size: 0.75rem; }
+  .step-num { font-size: 0.8rem; }
+  .slide h2 { font-size: clamp(1.1rem, 5vw, 1.5rem); }
+  .nav-controls { transform: translateX(-50%) scale(0.9); }
+}
 </style>
 
 </head>
