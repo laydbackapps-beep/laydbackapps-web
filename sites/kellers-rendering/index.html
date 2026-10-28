@@ -84,27 +84,44 @@ nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:1
 @media(max-width:1080px){img.lb-big.lb-big,img.lb-big.lb-big.lb-mark,img.lb-big.lb-big.lb-logo-unlock{height:clamp(64px,8vw,84px)!important}
   nav a,[class*=nav-links] a,.nav-links a{font-size:13px!important}}
 @media(max-width:820px){img.lb-word{display:none!important}}
-</style></head>
+</style><style id="kr-bar-clean">
+/* logo-only bar: no navigation, no links, the mark centred and large */
+header.site .kr-bar{display:flex;align-items:center;justify-content:center;padding:10px 0}
+header.site .kr-brand{display:flex;align-items:center;justify-content:center;text-decoration:none;border:0}
+header.site .kr-brand img{height:112px;width:auto;display:block}
+/* the company name belongs in the document, not painted across the bar */
+.lb-sr,.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;
+  margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;
+  border:0!important;opacity:0!important;pointer-events:none!important}
+@media(max-width:760px){header.site .kr-brand img{height:86px}header.site .kr-bar{padding:8px 0}}
+</style>
+<style id="kr-type">
+/* weight, not thin strokes - these faces read weak on a black ground at 400 */
+body{font-weight:450;-webkit-font-smoothing:auto;text-rendering:optimizeLegibility}
+p,li,dd,figcaption{font-weight:450}
+.hero .lede{font-weight:500;color:rgba(255,255,255,.86);font-size:clamp(17px,1.35vw,20px);max-width:60ch}
+.hero .facts li{font-weight:600;color:rgba(255,255,255,.92)}
+.hero .eyebrow{font-weight:600;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.80);margin:0 0 16px}
+.card h3{font-weight:700}
+.card p{font-weight:450;color:rgba(255,255,255,.80)}
+.hero h1{font-weight:800;letter-spacing:-.03em}
+</style>
+</head>
 <body>
-<header class="site">
-<div class="container bar">
-<a aria-label="Keller's Rendering &amp; Venetian Plastering" class="lb-brand" href="#top"><img alt="" class="lb-mark lb-big" decoding="async" loading="eager" src="assets/kr-mark.png"/><span class="lb-sr">Keller's Rendering &amp; Venetian Plastering</span></a>
-<nav class="main" aria-label="Main"><a href="#services">Services</a>
-<a href="#process">Our process</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
-<a class="lb-tel" href="tel:0488944397"><span class="lb-tel-lbl">Call</span>0488 944 397</a>
-<a class="btn" href="#contact">Get a quote</a>
-</div>
-</header>
+<header class="site"><div class="container kr-bar">
+  <div class="kr-brand">
+    <img src="assets/kr-mark.png" alt="Keller's Rendering &amp; Venetian Plastering">
+  </div>
+</div></header>
 <main>
 <section aria-label="Rendering &amp; Venetian plastering" class="hero" id="top">
 
 <div aria-hidden="true" class="veil"></div>
 <div class="container inner">
-<h1>Keller's Rendering &amp; Venetian Plastering:<br/>rendering done properly.</h1>
-<p class="lede">Work in Yarrawonga tends to come in two kinds for Keller's Rendering &amp; Venetian Plastering: the planned job and the one that has to be sorted this week. Both get looked at before a number is given.</p>
+<p class="eyebrow">Keller's Rendering &amp; Venetian Plastering</p>
+    <h1>Rendering done properly.</h1>
+<p class="lede">Work in Yarrawonga tends to come in two kinds: the planned job, and the one that has to be sorted this week. Both get looked at before a number is given.</p>
 <div class="acts"><a class="btn" href="#contact">Get a quote</a><a class="btn ghost" href="#services">See what we do</a></div>
 <ul class="facts"><li>Cement rendering</li><li>Venetian plaster</li><li>Textured finishes</li><li>Render repairs</li></ul>
 </div>
