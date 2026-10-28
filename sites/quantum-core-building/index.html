@@ -7,13 +7,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0d0c0d; --panel:#151417; --orange:#d1521a; --orange-lo:#8f3610;
+  --ink:#0d0c0d; --panel:#151417; --orange:#d1521a; --orange-lo:#8f3610; --orange-hi:#f06a2c;
   --silver:#c9c9cc; --paper:#f4f2ef; --dim:#a3a1a0; --line:rgba(244,242,239,.13); --line-o:rgba(209,82,26,.42);
   --max:1180px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:var(--paper);font:17px/1.62 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--ink);color:var(--paper);font:17px/1.62 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4vw,46px)}
 a{color:inherit}
@@ -25,7 +25,10 @@ p{margin:0}
 .eyebrow{font:600 12px/1 "IBM Plex Mono",monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:12px}
 .eyebrow::before{content:"";width:34px;height:1px;background:var(--orange)}
 
-.bar{position:sticky;top:0;z-index:50;background:rgba(13,12,13,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-o)}
+/* blueprint texture used behind the darker bands */
+.blueprint{background-image:linear-gradient(rgba(244,242,239,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(244,242,239,.045) 1px,transparent 1px);background-size:52px 52px}
+
+.bar{position:sticky;top:0;z-index:60;background:rgba(13,12,13,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-o)}
 .bar__in{display:flex;align-items:center;gap:clamp(14px,2vw,28px);padding-block:8px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;flex:0 0 auto;text-decoration:none}
 .brand img{display:block;width:auto}
@@ -34,7 +37,8 @@ p{margin:0}
 .nav a{text-decoration:none;font-size:14.5px;color:#cfcdcb;padding:6px 0;border-bottom:1px solid transparent}
 .nav a:hover{color:#fff;border-bottom-color:var(--orange)}
 .nav .tel{color:#fff;font-weight:800;border-bottom-color:var(--line-o)}
-.cta{display:inline-flex;align-items:center;gap:9px;background:var(--orange);color:#fff;text-decoration:none;font-weight:800;font-size:14.5px;padding:12px 20px;border-radius:2px;white-space:nowrap}
+.cta{display:inline-flex;align-items:center;gap:9px;background:var(--orange);color:#fff;text-decoration:none;font-weight:800;font-size:14.5px;padding:12px 20px;border-radius:2px;white-space:nowrap;transition:.22s}
+.cta:hover{background:var(--orange-hi);box-shadow:0 8px 26px rgba(209,82,26,.34)}
 .burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:var(--paper);padding:9px 12px;font-size:18px;border-radius:2px}
 @media(max-width:980px){
   .nav{display:none;width:100%;flex-direction:column;align-items:flex-start;gap:2px;margin-left:0;padding:10px 0 4px;border-top:1px solid var(--line)}
@@ -45,84 +49,160 @@ p{margin:0}
   .brand .qc-badge{height:84px}
 }
 
-.hero{padding:clamp(28px,4.2vw,58px) 0 clamp(32px,4.4vw,56px);border-bottom:1px solid var(--line)}
-.hero__in{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:clamp(26px,3.6vw,52px);align-items:center}
-.hero h1{margin:16px 0 18px}
-.hero .sub{color:#c7c5c2;font-size:clamp(16px,1.2vw,18px);max-width:46ch;margin-bottom:26px}
-.hero .acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.ghost{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-o);color:var(--paper);text-decoration:none;font-weight:700;font-size:15px;padding:12px 18px;border-radius:2px}
-.hero figure{margin:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--panel)}
-.hero figure img{display:block;width:100%;height:auto;aspect-ratio:4/3.4;object-fit:cover}
-.hero figcaption{font:500 11.5px/1.4 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding:10px 13px;border-top:1px solid var(--line)}
-@media(max-width:900px){.hero__in{grid-template-columns:1fr}.hero figure{order:-1}}
+/* ---------- rotating hero banner: service + area, cycling ---------- */
+.banner{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#0a0a0b;isolation:isolate}
+.banner__slides{position:absolute;inset:0;z-index:0}
+.banner__slide{position:absolute;inset:0;opacity:0;transition:opacity 1100ms ease;transform:scale(1.04)}
+.banner__slide img{width:100%;height:100%;object-fit:cover;filter:grayscale(.28) contrast(1.04)}
+.banner__slide.on{opacity:1;transform:scale(1);transition:opacity 1100ms ease,transform 6200ms linear}
+.banner::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(100deg,rgba(10,10,11,.97) 0%,rgba(10,10,11,.88) 42%,rgba(10,10,11,.55) 66%,rgba(209,82,26,.30) 100%)}
+.banner__rule{position:absolute;left:0;right:0;bottom:0;height:3px;z-index:3;background:linear-gradient(90deg,var(--orange),rgba(209,82,26,0))}
+.banner__in{position:relative;z-index:2;padding:clamp(46px,6.4vw,92px) 0 clamp(40px,5vw,74px);min-height:clamp(430px,52vw,620px);display:flex;flex-direction:column;justify-content:center}
+.banner h1{margin:16px 0 18px;max-width:17ch}
+.banner .sub{color:#d3d1ce;font-size:clamp(16px,1.2vw,18px);max-width:52ch;margin-bottom:28px}
+.banner .acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.ghost{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-o);color:var(--paper);text-decoration:none;font-weight:700;font-size:15px;padding:12px 18px;border-radius:2px;transition:.22s;background:rgba(13,12,13,.42)}
+.ghost:hover{border-color:var(--orange);background:rgba(209,82,26,.14)}
+/* slide caption: which service, which part of Sydney */
+.banner__cap{position:relative;z-index:2;margin-top:clamp(30px,4vw,52px);border:1px solid var(--line-o);background:rgba(13,12,13,.72);backdrop-filter:blur(6px);max-width:640px;border-radius:2px}
+.banner__cap .top{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line)}
+.banner__cap .tag{font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--orange)}
+.banner__cap .where{font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--silver);margin-left:auto}
+.banner__cap .body{padding:15px 18px 17px}
+.banner__cap .body b{display:block;font-size:clamp(17px,1.6vw,21px);font-weight:800;margin-bottom:6px}
+.banner__cap .body span{color:var(--dim);font-size:14.8px}
+.banner__nav{position:absolute;right:clamp(18px,4vw,46px);bottom:clamp(26px,3vw,42px);z-index:4;display:flex;align-items:center;gap:9px}
+.banner__nav button{width:40px;height:40px;border:1px solid var(--line-o);background:rgba(13,12,13,.78);color:var(--paper);font-size:15px;line-height:1;cursor:pointer;border-radius:2px;transition:.2s}
+.banner__nav button:hover{background:var(--orange);border-color:var(--orange)}
+.banner__dots{position:absolute;left:clamp(18px,4vw,46px);bottom:clamp(34px,3.6vw,50px);z-index:4;display:flex;gap:8px}
+.banner__dots i{width:28px;height:3px;background:rgba(244,242,239,.26);transition:.3s;cursor:pointer}
+.banner__dots i.on{background:var(--orange);width:46px}
+@media(max-width:640px){.banner__dots{display:none}.banner__nav{left:clamp(18px,4vw,46px);right:auto;bottom:20px}}
+
+/* ---------- rotating service-area ticker ---------- */
+.ticker{border-bottom:1px solid var(--line);background:#111012;overflow:hidden;position:relative}
+.ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+.ticker::before{left:0;background:linear-gradient(90deg,#111012,transparent)}
+.ticker::after{right:0;background:linear-gradient(270deg,#111012,transparent)}
+.ticker__track{display:flex;gap:34px;white-space:nowrap;padding:14px 0;animation:slide 46s linear infinite;will-change:transform}
+.ticker:hover .ticker__track{animation-play-state:paused}
+.ticker span{font:600 12.5px/1 "IBM Plex Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:#b9b7b4;display:inline-flex;align-items:center;gap:14px}
+.ticker span::after{content:"";width:6px;height:6px;background:var(--orange);transform:rotate(45deg)}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker__track{animation:none}.banner__slide{transition:none}}
 
 .facts{border-bottom:1px solid var(--line);background:#111012}
 .facts__in{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-.facts div{background:#111012;padding:20px clamp(12px,2vw,24px)}
-.facts b{display:block;font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.18em;color:var(--orange);margin-bottom:7px}
+.facts div{background:#111012;padding:24px clamp(12px,2vw,24px);position:relative;transition:.25s}
+.facts div:hover{background:#161519}
+.facts div::before{content:"";position:absolute;left:0;top:0;width:0;height:2px;background:var(--orange);transition:width .4s}
+.facts div:hover::before{width:100%}
+.facts b{display:block;font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.18em;color:var(--orange);margin-bottom:8px}
 .facts span{font-size:14.5px;color:#cbc9c6;line-height:1.45}
 @media(max-width:760px){.facts__in{grid-template-columns:1fr}}
 
-section{padding:clamp(44px,5.6vw,80px) 0;border-bottom:1px solid var(--line)}
-.head{display:flex;align-items:flex-end;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-bottom:clamp(22px,3vw,34px)}
+section{padding:clamp(46px,5.8vw,84px) 0;border-bottom:1px solid var(--line);position:relative}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,38px)}
 .head p{color:var(--dim);max-width:54ch;font-size:15.5px;margin-top:10px}
 
+/* services: rows with icons that light up on hover */
 .ledger{border-top:1px solid var(--line)}
-.ledger article{display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,1.2fr);gap:clamp(12px,2.2vw,32px);padding:20px 0;border-bottom:1px solid var(--line);align-items:start}
+.ledger article{display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,1.2fr);gap:clamp(12px,2.2vw,32px);padding:22px 0;border-bottom:1px solid var(--line);align-items:start;position:relative;transition:.25s}
+.ledger article::after{content:"";position:absolute;left:0;bottom:-1px;width:0;height:1px;background:var(--orange);transition:width .45s}
+.ledger article:hover::after{width:100%}
+.ledger article:hover{background:linear-gradient(90deg,rgba(209,82,26,.06),transparent 62%)}
 .ledger .n{font:600 12.5px/1 "IBM Plex Mono",monospace;color:var(--orange);letter-spacing:.1em;padding-top:5px}
-.ledger h3{font-size:clamp(17px,1.5vw,21px);font-weight:800}
+.ledger h3{font-size:clamp(17px,1.5vw,21px);font-weight:800;display:flex;align-items:center;gap:12px}
+.ledger h3 svg{width:22px;height:22px;flex:0 0 auto;stroke:var(--orange);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .ledger p{color:var(--dim);font-size:15px;max-width:58ch}
-@media(max-width:720px){.ledger article{grid-template-columns:40px 1fr}}
+@media(max-width:720px){.ledger article{grid-template-columns:40px 1fr}.ledger p{grid-column:2}}
 
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.steps div{background:var(--ink);padding:22px 18px}
-.steps b{display:block;font:600 11.5px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;color:var(--orange);margin-bottom:10px}
+/* process: connected timeline with hold points */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);position:relative}
+.steps div{background:var(--ink);padding:24px 18px;position:relative;transition:.25s}
+.steps div:hover{background:var(--panel)}
+.steps div::before{content:"";position:absolute;left:18px;top:16px;width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px rgba(209,82,26,.18)}
+.steps b{display:block;font:600 11.5px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;color:var(--orange);margin:22px 0 10px}
 .steps h3{font-size:16px;margin-bottom:6px}
 .steps p{font-size:14.4px;color:var(--dim)}
 @media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.steps{grid-template-columns:1fr}}
 
+/* work: gallery with slow zoom and caption reveal */
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .gal figure{margin:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;position:relative;background:var(--panel)}
-.gal img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
-.gal figcaption{font:500 11px/1.4 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#cfcdcb;padding:9px 11px;border-top:1px solid var(--line)}
+.gal .frame{overflow:hidden}
+.gal img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform 900ms cubic-bezier(.2,.7,.2,1),filter .4s;filter:grayscale(.2)}
+.gal figure:hover img{transform:scale(1.07);filter:grayscale(0)}
+.gal figcaption{font:500 11px/1.4 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#cfcdcb;padding:9px 11px;border-top:1px solid var(--line);display:flex;align-items:center;gap:9px}
+.gal figcaption::before{content:"";width:6px;height:6px;background:var(--orange);transform:rotate(45deg)}
 @media(max-width:820px){.gal{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.gal{grid-template-columns:1fr}}
 
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,44px);align-items:center}
-.split figure{margin:0;border:1px solid var(--line);border-radius:3px;overflow:hidden}
-.split img{display:block;width:100%;height:auto}
-.split ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:11px}
+.split figure{margin:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;position:relative}
+.split figure img{display:block;width:100%;height:auto;transition:transform 900ms cubic-bezier(.2,.7,.2,1)}
+.split figure:hover img{transform:scale(1.04)}
+.split figure::after{content:"";position:absolute;inset:0;border:1px solid transparent;transition:.3s;pointer-events:none}
+.split figure:hover::after{border-color:var(--line-o)}
+.split ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:11px}
 .split li{display:grid;grid-template-columns:16px 1fr;gap:12px;font-size:15px;color:#cfcdcb}
 .split li::before{content:"";width:7px;height:7px;background:var(--orange);transform:rotate(45deg);margin-top:8px}
 @media(max-width:820px){.split{grid-template-columns:1fr}}
 
+/* areas: chips + the big rotating area banner */
 .areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-.areas span{border:1px solid var(--line);padding:7px 13px;font-size:14px;color:#c3c1be;border-radius:2px}
+.areas span{border:1px solid var(--line);padding:8px 14px;font-size:14px;color:#c3c1be;border-radius:2px;transition:.22s;cursor:default}
+.areas span:hover{border-color:var(--orange);color:#fff;background:rgba(209,82,26,.12)}
+.areaband{margin-top:26px;border:1px solid var(--line-o);background:var(--panel);overflow:hidden;position:relative}
+.areaband .cap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:11px 16px;border-bottom:1px solid var(--line);font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
+.areaband .cap em{font-style:normal;color:var(--dim)}
+.areaband .row{position:relative;height:58px;overflow:hidden}
+.areaband .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity .7s ease,transform .7s ease;transform:translateY(14px)}
+.areaband .row ul.on{opacity:1;transform:translateY(0)}
+.areaband .row li{font:800 clamp(20px,2.6vw,31px)/1.1 Archivo,sans-serif;letter-spacing:-.03em}
+.areaband .row li small{display:block;font:500 11.5px/1 "IBM Plex Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-top:7px}
+.areaband .prog{height:2px;background:rgba(244,242,239,.1)}
+.areaband .prog i{display:block;height:100%;width:0;background:var(--orange);animation:fill 4s linear infinite}
+@keyframes fill{from{width:0}to{width:100%}}
+@media(prefers-reduced-motion:reduce){.areaband .prog i{animation:none;width:100%}}
 
-details{border-bottom:1px solid var(--line);padding:16px 0}
-summary{cursor:pointer;font-weight:700;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+details{border:1px solid var(--line);border-left:2px solid transparent;background:#111012;margin-bottom:8px;transition:.25s}
+details:hover{border-left-color:var(--orange);background:#131215}
+details[open]{border-left-color:var(--orange)}
+summary{cursor:pointer;font-weight:700;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:17px 19px}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";color:var(--orange);font:600 20px/1 "IBM Plex Mono",monospace}
 details[open] summary::after{content:"–"}
-details .a{color:var(--dim);font-size:15px;padding:10px 40px 0 0;max-width:72ch}
+details .a{color:var(--dim);font-size:15px;padding:0 44px 18px 19px;max-width:78ch}
 
 .quote{background:#111012}
 .quote__in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,3.4vw,48px);align-items:start}
 .quote p{color:var(--dim);font-size:15.5px;margin-top:14px;max-width:40ch}
 .quote .mono{font:500 12.5px/1.7 "IBM Plex Mono",monospace;color:var(--orange);margin-top:20px}
-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:var(--panel);border:1px solid var(--line);padding:clamp(20px,2.6vw,30px);border-radius:3px}
+.quote .badge{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--line);padding:12px 15px;margin-top:22px;background:var(--ink);border-radius:2px}
+.quote .badge span{font:600 11px/1.4 "IBM Plex Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:var(--panel);border:1px solid var(--line);padding:clamp(20px,2.6vw,30px);border-radius:3px;position:relative;overflow:hidden}
+form::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange),rgba(209,82,26,0))}
 form .full{grid-column:1/-1}
 label{display:block;font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:7px}
-input,select,textarea{width:100%;background:#0a0a0b;border:1px solid var(--line);color:var(--paper);padding:12px;font:inherit;font-size:15px;border-radius:2px}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--orange)}
-button{grid-column:1/-1;background:var(--orange);color:#fff;border:0;padding:15px;font:inherit;font-weight:800;font-size:15.5px;cursor:pointer;border-radius:2px}
+input,select,textarea{width:100%;background:#0a0a0b;border:1px solid var(--line);color:var(--paper);padding:12px;font:inherit;font-size:15px;border-radius:2px;transition:.2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(209,82,26,.14)}
+button{grid-column:1/-1;background:var(--orange);color:#fff;border:0;padding:15px;font:inherit;font-weight:800;font-size:15.5px;cursor:pointer;border-radius:2px;transition:.22s}
+button:hover{background:var(--orange-hi)}
+button:disabled{opacity:.72;cursor:default}
 @media(max-width:860px){.quote__in{grid-template-columns:1fr}form{grid-template-columns:1fr}}
 
-footer{padding:28px 0 40px;color:var(--dim);font-size:13.5px}
+footer{padding:30px 0 44px;color:var(--dim);font-size:13.5px}
 .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
 .foot img{height:56px;width:auto}
 .foot a{color:#cfcdcb;text-decoration:none;border-bottom:1px solid var(--line-o)}
+
+/* scroll reveal */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
 </style>
 </head><body>
 
@@ -140,18 +220,33 @@ footer{padding:28px 0 40px;color:var(--dim);font-size:13.5px}
   </nav>
 </div></div>
 
-<header class="hero" id="top"><div class="wrap hero__in">
-  <div>
+<header class="banner" id="top">
+  <div class="banner__slides" id="slides">
+    <div class="banner__slide on"><img src="images/hero-core-building.jpg" alt="Residential building work under way in Sydney" width="1080" height="969"></div>
+    <div class="banner__slide"><img src="images/work_01.jpg" alt="Structural alteration with new beam and propping" width="1280" height="1280"></div>
+    <div class="banner__slide"><img src="images/work_04.jpg" alt="Rear extension framing on a Sydney house" width="1280" height="1280"></div>
+    <div class="banner__slide"><img src="images/work_06.jpg" alt="Completed renovation and fit-out" width="1280" height="1280"></div>
+  </div>
+  <div class="banner__rule"></div>
+  <div class="wrap banner__in">
     <span class="eyebrow">Residential building · Sydney</span>
     <h1>Building work<br><em>in Sydney.</em></h1>
     <p class="sub">Structural alterations, extensions, renovations and fit-outs across Sydney — planned from the engineer's detail, priced in stages, and run by the same person who quoted it.</p>
     <p class="acts"><a class="cta" href="#quote">Request a quote</a><a class="ghost" href="tel:0403582865">Call 0403 582 865</a></p>
+
+    <div class="banner__cap" id="cap">
+      <div class="top"><span class="tag" id="capTag">Structural alterations</span><span class="where" id="capWhere">Inner West</span></div>
+      <div class="body"><b id="capTitle">Beams, openings and removed walls</b><span id="capText">Built to the engineer's detail, with certification running alongside the work.</span></div>
+    </div>
   </div>
-  <figure>
-    <img src="images/work_02.jpg" alt="Building crew on site inside a Sydney project under construction" width="1280" height="1280">
-    <figcaption>On site — Sydney project</figcaption>
-  </figure>
-</div></header>
+  <div class="banner__dots" id="dots"></div>
+  <div class="banner__nav">
+    <button type="button" id="prev" aria-label="Previous slide">←</button>
+    <button type="button" id="next" aria-label="Next slide">→</button>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true"><div class="ticker__track" id="tick"></div></div>
 
 <div class="facts"><div class="wrap facts__in">
   <div><b>ONE PROJECT LEAD</b><span>The person who quotes the job runs the job, start to handover.</span></div>
@@ -160,24 +255,24 @@ footer{padding:28px 0 40px;color:var(--dim);font-size:13.5px}
 </div></div>
 
 <main>
-<section id="services"><div class="wrap">
-  <div class="head">
+<section id="services" class="blueprint"><div class="wrap">
+  <div class="head rv">
     <div><span class="eyebrow">What we build</span><h2 style="margin-top:14px">Residential work, done in order</h2></div>
     <p>Most jobs on a house are decided by three things: what the structure can carry, what the certifier needs to see, and what happens to the rooms while the work is going on. All three get worked out before demolition.</p>
   </div>
   <div class="ledger">
-    <article><span class="n">01</span><h3>Structural alterations</h3><p>Beams, openings, underpinning and removed walls — built to the engineer's detail with certification as the work proceeds, not scrambled for at the end.</p></article>
-    <article><span class="n">02</span><h3>Extensions &amp; additions</h3><p>Rear and side extensions, second-storey additions and new rooms. Set-out from the survey, frame and roof tie-in sequenced so the existing house stays weatherproof.</p></article>
-    <article><span class="n">03</span><h3>Renovations &amp; fit-outs</h3><p>Kitchens, bathrooms and whole-house renovations where demolition, services, waterproofing and finishes are run as one job rather than four trades arguing about who goes first.</p></article>
-    <article><span class="n">04</span><h3>Concrete &amp; formwork</h3><p>Footings, slabs, piers and suspended work — set out, poured and stripped on a programme that the rest of the job can actually follow.</p></article>
-    <article><span class="n">05</span><h3>Framing &amp; envelope</h3><p>Timber and steel framing, roof structure, cladding and glazing installed weather-tight, so the interior trades are never working in the rain.</p></article>
+    <article class="rv"><span class="n">01</span><h3><svg viewBox="0 0 24 24"><path d="M3 6h18M3 18h18M7 6v12M17 6v12"/><path d="M4.5 4.5h15v15h-15z"/></svg>Structural alterations</h3><p>Beams, openings, underpinning and removed walls — built to the engineer's detail with certification as the work proceeds, not scrambled for at the end.</p></article>
+    <article class="rv"><span class="n">02</span><h3><svg viewBox="0 0 24 24"><path d="M3 11.5 12 6l9 5.5"/><path d="M5.5 10.6V19h13v-8.4"/><path d="M12 6v13"/><path d="M9 19v-3.4h6V19"/></svg>Extensions &amp; additions</h3><p>Rear and side extensions, second-storey additions and new rooms. Set-out from the survey, frame and roof tie-in sequenced so the existing house stays weatherproof.</p></article>
+    <article class="rv"><span class="n">03</span><h3><svg viewBox="0 0 24 24"><path d="M4 20V9.6L12 4l8 5.6V20z"/><path d="M9.6 20v-6.4h4.8V20"/><path d="M3 20h18"/></svg>Renovations &amp; fit-outs</h3><p>Kitchens, bathrooms and whole-house renovations where demolition, services, waterproofing and finishes are run as one job rather than four trades arguing about who goes first.</p></article>
+    <article class="rv"><span class="n">04</span><h3><svg viewBox="0 0 24 24"><path d="M3 17h18"/><path d="M5 17V9h14v8"/><path d="M8 9V5.5h8V9"/><path d="M9.5 20.5h5"/></svg>Concrete &amp; formwork</h3><p>Footings, slabs, piers and suspended work — set out, poured and stripped on a programme that the rest of the job can actually follow.</p></article>
+    <article class="rv"><span class="n">05</span><h3><svg viewBox="0 0 24 24"><path d="M3 20 12 4l9 16"/><path d="M7.4 13h9.2"/><path d="M9.4 20l2.6-7 2.6 7"/></svg>Framing &amp; envelope</h3><p>Timber and steel framing, roof structure, cladding and glazing installed weather-tight, so the interior trades are never working in the rain.</p></article>
   </div>
 </div></section>
 
 <section id="process"><div class="wrap">
-  <div class="head"><div><span class="eyebrow">How a job runs</span><h2 style="margin-top:14px">Four stages, priced separately</h2></div>
+  <div class="head rv"><div><span class="eyebrow">How a job runs</span><h2 style="margin-top:14px">Four stages, priced separately</h2></div>
     <p>Building work goes wrong when the sequence is decided after the quote. This is the order every job follows, and the order the price follows too.</p></div>
-  <div class="steps">
+  <div class="steps rv">
     <div><b>STAGE 01</b><h3>Scope &amp; documents</h3><p>Plans, engineer's details and the certifier's requirements read together before a number is given.</p></div>
     <div><b>STAGE 02</b><h3>Set-out &amp; demolition</h3><p>Levels set from the survey, services located, and only what the drawings say comes out.</p></div>
     <div><b>STAGE 03</b><h3>Structure &amp; envelope</h3><p>Concrete, framing, roof and cladding closed in — inspections booked at the hold points.</p></div>
@@ -185,22 +280,22 @@ footer{padding:28px 0 40px;color:var(--dim);font-size:13.5px}
   </div>
 </div></section>
 
-<section id="work"><div class="wrap">
-  <div class="head"><div><span class="eyebrow">Recent work</span><h2 style="margin-top:14px">Sydney projects</h2></div>
+<section id="work" class="blueprint"><div class="wrap">
+  <div class="head rv"><div><span class="eyebrow">Recent work</span><h2 style="margin-top:14px">Sydney projects</h2></div>
     <p>Structural alterations, extensions and fit-outs — photographed on site as the work progressed.</p></div>
   <div class="gal">
-    <figure><img src="images/work_01.jpg" alt="Structural alteration in progress"><figcaption>Structural alteration</figcaption></figure>
-    <figure><img src="images/work_02.jpg" alt="Extension frame and roof tie-in"><figcaption>Extension — framing</figcaption></figure>
-    <figure><img src="images/work_03.jpg" alt="Concrete and formwork stage"><figcaption>Slab &amp; formwork</figcaption></figure>
-    <figure><img src="images/work_04.jpg" alt="Renovation in progress"><figcaption>Renovation</figcaption></figure>
-    <figure><img src="images/work_05.jpg" alt="Interior fit-out"><figcaption>Interior fit-out</figcaption></figure>
-    <figure><img src="images/work_06.jpg" alt="Completed work"><figcaption>Completed work</figcaption></figure>
+    <figure class="rv"><span class="frame"><img src="images/work_01.jpg" alt="Structural alteration in progress" loading="lazy"></span><figcaption>Structural alteration</figcaption></figure>
+    <figure class="rv"><span class="frame"><img src="images/work_02.jpg" alt="Extension frame and roof tie-in" loading="lazy"></span><figcaption>Extension — framing</figcaption></figure>
+    <figure class="rv"><span class="frame"><img src="images/work_03.jpg" alt="Concrete and formwork stage" loading="lazy"></span><figcaption>Slab &amp; formwork</figcaption></figure>
+    <figure class="rv"><span class="frame"><img src="images/work_04.jpg" alt="Renovation in progress" loading="lazy"></span><figcaption>Renovation</figcaption></figure>
+    <figure class="rv"><span class="frame"><img src="images/work_05.jpg" alt="Interior fit-out" loading="lazy"></span><figcaption>Interior fit-out</figcaption></figure>
+    <figure class="rv"><span class="frame"><img src="images/work_06.jpg" alt="Completed work" loading="lazy"></span><figcaption>Completed work</figcaption></figure>
   </div>
 </div></section>
 
 <section id="quote-notes"><div class="wrap split">
-  <figure><img src="images/work_07.jpg" alt="Completed Sydney residential project" width="1280" height="1280"></figure>
-  <div>
+  <figure class="rv"><img src="images/work_07.jpg" alt="Completed Sydney residential project" width="640" height="1136" loading="lazy"></figure>
+  <div class="rv">
     <span class="eyebrow">What the quote covers</span>
     <h2 style="margin-top:14px">No gaps between the numbers</h2>
     <p style="color:var(--dim);margin-top:12px;font-size:15.5px">A building quote is only useful if it says what is excluded. Ours lists the scope, the provisional items and what is expected from you — access, power, and decisions that hold the programme up.</p>
@@ -213,33 +308,41 @@ footer{padding:28px 0 40px;color:var(--dim);font-size:13.5px}
   </div>
 </div></section>
 
-<section id="areas"><div class="wrap">
-  <div class="head"><div><span class="eyebrow">Where we work</span><h2 style="margin-top:14px">Across Sydney</h2></div>
+<section id="areas" class="blueprint"><div class="wrap">
+  <div class="head rv"><div><span class="eyebrow">Where we work</span><h2 style="margin-top:14px">Across Sydney</h2></div>
     <p>Travel time is short across the metro area, which is why smaller structural jobs are worth doing properly.</p></div>
-  <div class="areas">
+  <div class="areas rv">
     <span>Inner West</span><span>Marrickville</span><span>Newtown</span><span>Leichhardt</span><span>Balmain</span>
     <span>Eastern Suburbs</span><span>Randwick</span><span>Coogee</span><span>North Shore</span><span>Chatswood</span>
     <span>Lane Cove</span><span>Sutherland Shire</span><span>Parramatta</span><span>Ryde</span>
   </div>
+  <div class="areaband rv">
+    <div class="cap"><span>Service areas — rotating</span><em id="areaCount">01 / 06</em></div>
+    <div class="row" id="areaRow"></div>
+    <div class="prog"><i></i></div>
+  </div>
 </div></section>
 
 <section id="faq"><div class="wrap">
-  <div class="head"><div><span class="eyebrow">Questions</span><h2 style="margin-top:14px">Asked before every quote</h2></div></div>
+  <div class="head rv"><div><span class="eyebrow">Questions</span><h2 style="margin-top:14px">Asked before every quote</h2></div></div>
+  <div class="rv">
   <details><summary>Do I need an engineer for a wall removal?</summary><div class="a">Usually yes. A structural engineer specifies the beam, the bearings and any temporary support. That detail is what the certifier and the builder work from — it is not something to work out on site.</div></details>
   <details><summary>Can we live in the house during the work?</summary><div class="a">Often, for part of it. Demolition and structural stages are the hard ones. The programme is set so the dustiest work happens in a block rather than dragging on for months.</div></details>
   <details><summary>How long does an extension take?</summary><div class="a">A single-storey rear extension is typically three to five months depending on approvals, weather and finishes. A second storey or a full renovation runs longer — the programme is given with the quote.</div></details>
   <details><summary>Who handles the certifier and inspections?</summary><div class="a">We coordinate the inspection schedule with your certifier and book the hold points into the programme, so framing and waterproofing are signed off before they are covered up.</div></details>
   <details><summary>Is the quote fixed?</summary><div class="a">The scope is fixed and priced by stage. Provisional items are named with an allowance, and any variation is priced and agreed before the work is done.</div></details>
+  </div>
 </div></section>
 
-<section id="quote" class="quote"><div class="wrap quote__in">
-  <div>
+<section id="quote" class="quote blueprint"><div class="wrap quote__in">
+  <div class="rv">
     <span class="eyebrow">Get a quote</span>
     <h2 style="margin-top:14px">Tell us about the job</h2>
     <p>The suburb, what you want to change, and whether you have plans or an engineer's detail yet. If not, we can tell you what is needed first.</p>
     <p class="mono">Quantum Core Building Pty Ltd<br>Sydney NSW · 0403 582 865</p>
+    <div class="badge"><span>Staged quote · one project lead</span></div>
   </div>
-  <form id="lbq-form" data-site="quantum-core-building">
+  <form id="lbq-form" data-site="quantum-core-building" class="rv">
     <div><label for="n">Name</label><input id="n" name="name" required autocomplete="name"></div>
     <div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel" autocomplete="tel"></div>
     <div class="full"><label for="a">Suburb</label><input id="a" name="suburb" autocomplete="address-level2"></div>
@@ -261,6 +364,64 @@ footer{padding:28px 0 40px;color:var(--dim);font-size:13.5px}
 <script>
 document.getElementById('burger').addEventListener('click',function(){var n=document.getElementById('nav');
   var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);});
+
+/* rotating hero banner — one slide per service, captioned with the part of Sydney it runs in */
+var SL=[
+  {tag:'Structural alterations',where:'Inner West',title:'Beams, openings and removed walls',text:'Built to the engineer\'s detail, with certification running alongside the work.'},
+  {tag:'Extensions & additions',where:'Eastern Suburbs',title:'Rear and side extensions',text:'Set out from the survey, framed and tied into the existing roof.'},
+  {tag:'Renovations & fit-outs',where:'North Shore',title:'Whole-house renovations',text:'Demolition, services, waterproofing and finishes run as one job.'},
+  {tag:'Concrete & framing',where:'Sutherland Shire',title:'Slabs, formwork and framing',text:'Poured and stripped to a programme the rest of the job can follow.'}
+];
+var slides=[].slice.call(document.querySelectorAll('.banner__slide')),
+    dots=document.getElementById('dots'),capTag=document.getElementById('capTag'),
+    capWhere=document.getElementById('capWhere'),capTitle=document.getElementById('capTitle'),
+    capText=document.getElementById('capText'),cap=document.getElementById('cap'),i=0,timer=null,
+    reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+SL.forEach(function(_,n){var b=document.createElement('i');if(!n)b.className='on';b.addEventListener('click',function(){go(n);});dots.appendChild(b);});
+function go(n){i=(n+SL.length)%SL.length;
+  slides.forEach(function(s,k){s.classList.toggle('on',k===i);});
+  [].forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===i);});
+  cap.style.transition='opacity .28s';cap.style.opacity=0;
+  setTimeout(function(){capTag.textContent=SL[i].tag;capWhere.textContent=SL[i].where;
+    capTitle.textContent=SL[i].title;capText.textContent=SL[i].text;cap.style.opacity=1;},280);
+}
+function next(){go(i+1);} function prev(){go(i-1);}
+document.getElementById('next').addEventListener('click',function(){next();restart();});
+document.getElementById('prev').addEventListener('click',function(){prev();restart();});
+function restart(){if(reduce)return;clearInterval(timer);timer=setInterval(next,6200);}
+cap.addEventListener('mouseenter',function(){clearInterval(timer);});
+cap.addEventListener('mouseleave',restart);
+restart();
+
+/* rotating service-area band */
+var AR=[['Inner West','Marrickville · Newtown · Leichhardt · Balmain'],
+        ['Eastern Suburbs','Randwick · Coogee · Bondi · Maroubra'],
+        ['North Shore','Chatswood · Lane Cove · Willoughby · Mosman'],
+        ['Sutherland Shire','Cronulla · Miranda · Caringbah · Gymea'],
+        ['Inner South','Alexandria · Mascot · Botany · Rockdale'],
+        ['Western Sydney','Parramatta · Ryde · Strathfield · Burwood']];
+var row=document.getElementById('areaRow'),ac=document.getElementById('areaCount'),ai=0;
+AR.forEach(function(a,n){var u=document.createElement('ul'),li=document.createElement('li');
+  if(!n)u.className='on';li.innerHTML=a[0]+'<small>'+a[1]+'</small>';u.appendChild(li);row.appendChild(u);});
+var rows=[].slice.call(row.children);
+if(!reduce){setInterval(function(){ai=(ai+1)%AR.length;
+  rows.forEach(function(u,k){u.classList.toggle('on',k===ai);});
+  ac.textContent=('0'+(ai+1)).slice(-2)+' / 0'+AR.length;},4000);}
+
+/* the area ticker */
+var T=['Inner West','Marrickville','Newtown','Leichhardt','Balmain','Eastern Suburbs','Randwick','Coogee','North Shore','Chatswood','Lane Cove','Sutherland Shire','Cronulla','Parramatta','Ryde','Strathfield','Alexandria','Mosman'];
+var t=document.getElementById('tick');t.innerHTML=T.concat(T).map(function(s){return '<span>'+s+'</span>';}).join('');
+
+/* scroll reveal */
+var rvs=[].slice.call(document.querySelectorAll('.rv'));
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  rvs.forEach(function(el){io.observe(el);});
+  /* safety net: nothing stays hidden if the observer never fires */
+  setTimeout(function(){rvs.forEach(function(el){if(!el.classList.contains('in')&&el.getBoundingClientRect().top<innerHeight)el.classList.add('in');});},2500);
+}else{rvs.forEach(function(el){el.classList.add('in');});}
+
+/* form */
 document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();
   var f=e.currentTarget,b=f.querySelector('button');
   b.textContent='Sending…';b.disabled=true;
