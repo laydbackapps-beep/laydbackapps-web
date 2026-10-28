@@ -879,6 +879,19 @@ h3 {
   .step-num.step-time { min-width: 4rem !important; font-size: 0.7rem !important; }
   .slide h2 { font-size: clamp(1.05rem, 5vw, 1.4rem) !important; }
 }
+
+/* Screenshots must account for the slide's own padding (4rem top+bottom = 128px):
+   a 52vh image + heading + hint overflowed 900px-tall slides once the captures
+   went to true 4K (taller crops). 44vh desktop / 40vh laptop / 34vh phone. */
+.shotbox > img.shot, .slide.wide .shotbox > img.shot { max-height: 44vh !important; }
+@media (max-height: 800px) { .shotbox > img.shot, .slide.wide .shotbox > img.shot { max-height: 38vh !important; } }
+@media (max-width: 820px) { .shotbox > img.shot, .slide.wide .shotbox > img.shot { width: 100% !important; height: auto !important; max-height: none !important; } }
+@media (max-width: 400px) {
+  .highlight-item { font-size: 0.72rem !important; padding: 0.25rem 0.5rem !important; }
+  .tagline { font-size: 0.85rem !important; }
+  .card p, .checklist { font-size: 0.72rem !important; }
+  .card h3 { font-size: 0.84rem !important; }
+}
 </style>
 
 </head>
