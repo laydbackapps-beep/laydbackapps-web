@@ -234,14 +234,93 @@ nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:1
   span.n,b.n,.step b{width:auto!important;min-width:0!important}
   section,main,div{max-width:100vw!important}
 }
-</style></head>
+</style><style id="ssp-extras">
+/* ==== header logo cleaned up + added features, in this site's own navy/orange palette (#0F315B / #F89818 / #F2F0EB) ==== */
+
+/* the bar was showing the logo's white square export on a bone bar - a white card with the badge small inside it.
+   Now the transparent lockup, trimmed to its own edges, at a readable size. */
+.lb-brand img,.lb-brand img.lb-big,.lb-brand img.lb-logo,.lb-brand img.lb-logo-unlock{
+  height:clamp(48px,5.2vw,66px)!important;width:auto!important;max-height:none!important;
+  max-width:min(60vw,330px)!important;object-fit:contain!important;border:0!important;box-shadow:none!important;background:none!important}
+.lb-brand,.lb-brand--logoonly{display:flex!important;align-items:center!important;gap:0!important;background:none!important}
+@media(max-width:560px){.lb-brand img{height:44px!important}}
+
+/* rotating service-area ticker */
+.ssp-ticker{position:relative;overflow:hidden;background:var(--navy-deep,#071628);
+  border-top:1px solid rgba(242,240,235,.14);border-bottom:1px solid rgba(242,240,235,.14)}
+.ssp-ticker:before,.ssp-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.ssp-ticker:before{left:0;background:linear-gradient(90deg,var(--navy-deep,#071628),transparent)}
+.ssp-ticker:after{right:0;background:linear-gradient(270deg,var(--navy-deep,#071628),transparent)}
+.ssp-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;width:max-content;
+  animation:sspSlide 44s linear infinite;will-change:transform}
+.ssp-ticker:hover .ssp-ticker__track{animation-play-state:paused}
+.ssp-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:#F2F0EB;
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:700;font-size:clamp(10.5px,1.15vw,13.5px);
+  letter-spacing:.16em;text-transform:uppercase}
+.ssp-ticker span i{font-style:normal;color:var(--acc,#F89818)}
+@keyframes sspSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* service area chips + rotating band */
+.ssp-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.ssp-chips span{border:1px solid var(--line,#d8d3c8);background:rgba(15,49,91,.05);padding:7px 13px;
+  font-size:.86rem;color:var(--ink,#0B1A2E);transition:.2s}
+.ssp-chips span:hover{border-color:var(--brand,#0F315B);background:rgba(15,49,91,.12)}
+.ssp-band{margin-top:20px;border:1px solid rgba(242,240,235,.18);background:var(--navy-deep,#071628);overflow:hidden}
+.ssp-band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:11px 15px;
+  border-bottom:1px solid rgba(242,240,235,.16);font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:700;
+  font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc,#F89818)}
+.ssp-band .cap em{font-style:normal;color:#9fb0c4}
+.ssp-band .row{position:relative;height:68px;overflow:hidden}
+.ssp-band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+.ssp-band .row ul.on{opacity:1;transform:none}
+.ssp-band .row li{font-size:clamp(1.05rem,2.2vw,1.5rem);font-weight:800;line-height:1.12;color:#F2F0EB;text-align:center}
+.ssp-band .row li small{display:block;font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:500;font-size:.66rem;
+  letter-spacing:.15em;text-transform:uppercase;color:#9fb0c4;margin-top:8px}
+.ssp-band .prog{height:2px;background:rgba(242,240,235,.16)}
+.ssp-band .prog i{display:block;height:100%;width:0;background:var(--acc,#F89818);animation:sspFill 4s linear infinite}
+@keyframes sspFill{from{width:0}to{width:100%}}
+
+/* the showcase rows were four plain text placeholders; they are now drawn finish samples at a controlled size,
+   in the same tile language the finishes section already uses. No photograph is invented or upscaled. */
+.work.gal-drawn{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:clamp(12px,1.6vw,20px)!important}
+.fin{border:1px solid var(--line,#d8d3c8);background:var(--panel,#fff);overflow:hidden}
+.fin .tile{height:132px!important;position:relative}
+.fin .cap{padding:11px 13px 13px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--dim,#4C5566);border-top:1px solid var(--line,#d8d3c8)}
+.fin .cap b{display:block;color:var(--ink,#0B1A2E);font-weight:700;margin-bottom:4px}
+.fin .tile.t-agg{background:
+  radial-gradient(circle at 20% 30%, rgba(255,255,255,.30) 0 2px, transparent 3px),
+  radial-gradient(circle at 62% 68%, rgba(255,255,255,.24) 0 2px, transparent 3px),
+  radial-gradient(circle at 82% 22%, rgba(0,0,0,.22) 0 2px, transparent 3px),
+  linear-gradient(180deg,#16395f,#0A1E36)}
+.fin .tile.t-speck{background:
+  radial-gradient(circle at 30% 40%, rgba(255,255,255,.5) 0 1px, transparent 2px),
+  radial-gradient(circle at 70% 60%, rgba(255,255,255,.4) 0 1px, transparent 2px),
+  linear-gradient(180deg,#F0A63C,#C9761A)}
+.fin .tile.t-tex{background:
+  repeating-linear-gradient(115deg, rgba(255,255,255,.10) 0 3px, transparent 3px 7px),
+  linear-gradient(180deg,#3E5F86,#16395f)}
+.fin .tile.t-band{background:
+  repeating-linear-gradient(45deg, var(--acc,#F89818) 0 9px, var(--brand,#0F315B) 9px 18px)}
+@media(max-width:1000px){.work.gal-drawn{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:560px){.work.gal-drawn{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+  .fin .tile{height:104px!important}}
+
+@media (prefers-reduced-motion:reduce){
+  .ssp-ticker__track,.ssp-band .prog i{animation:none}
+  .ssp-band .row ul{transition:none}
+}
+</style>
+
+</head>
 <body>
 <noscript></noscript>
 
 <header class="site">
   <div class="wrap bar">
     <a class="lb-brand" href="#top" aria-label="Sydney Spraycrete Professionals — home">
-      <img src="assets/logo.png" alt="Sydney Spraycrete Professionals" width="1179" height="1089" class="lb-logo-unlock lb-big">
+      <img src="assets/logo-header.png" alt="Sydney Spraycrete Professionals" width="876" height="597" class="lb-logo-unlock lb-logo">
     </a>
     <nav class="main" aria-label="Sections"><a href="#Services">Services</a>
       <a href="#Finish">Finishes</a>
@@ -253,6 +332,9 @@ nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:1
   </div>
   <div class="band soft" aria-hidden="true"></div>
 </header>
+
+<div class="ssp-ticker" aria-hidden="true"><div class="ssp-ticker__track" id="sspTick"></div></div>
+
 
 <main id="top">
 
@@ -338,16 +420,41 @@ nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:1
         <h2 id="work-h">Resurfacing that looks like this</h2>
         <p>Textured coats, patterned bands and aggregate finishes sprayed over existing concrete driveways, paths and surrounds.</p>
       </div>
-      <div class="work rv">
-        <div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div>
-        <div class="imgstub"><b>Aggregate</b><span>Exposed stone finish, washed back and sealed — pattern set out before the pour.</span></div>
-        <div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div>
-        <div class="imgstub"><b>Speckle</b><span>Fine speckle finish with control joints, cut and sealed after curing.</span></div>
+      <div class="work gal-drawn rv">
+        <div class="fin"><div class="tile t-agg"></div><div class="cap"><b>Aggregate</b>Exposed stone finish, washed back and sealed — pattern set out before the spray.</div></div>
+        <div class="fin"><div class="tile t-speck"></div><div class="cap"><b>Speckle</b>Fine speckle finish with control joints, cut and sealed after curing.</div></div>
+        <div class="fin"><div class="tile t-tex"></div><div class="cap"><b>Texture coat</b>Even sprayed texture over the existing slab, bonded and sealed.</div></div>
+        <div class="fin"><div class="tile t-band"></div><div class="cap"><b>Stencil band</b>Patterned border sprayed in a second colour with a crisp stencil line.</div></div>
       </div>
     </div>
   </section>
 
-  <section id="Process" class="pad grain" aria-labelledby="proc-h">
+  <section id="Areas" class="pad grain" aria-labelledby="areas-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Where we work</p>
+      <h2 id="areas-h">Sydney and the surrounding suburbs</h2>
+      <p>Driveways, paths, pool surrounds and patios resurfaced across the metro area — from the inner suburbs out to the Hills, the Shire and the Blue Mountains.</p>
+    </div>
+    <div class="ssp-chips">
+      <span>Sydney</span><span>Surry Hills</span><span>Alexandria</span><span>Mascot</span><span>Randwick</span>
+      <span>Bondi</span><span>Coogee</span><span>Maroubra</span><span>Newtown</span><span>Marrickville</span>
+      <span>Leichhardt</span><span>Balmain</span><span>Ashfield</span><span>Burwood</span><span>Strathfield</span>
+      <span>Chatswood</span><span>Lane Cove</span><span>Mosman</span><span>Manly</span><span>Dee Why</span>
+      <span>Ryde</span><span>Epping</span><span>Castle Hill</span><span>Baulkham Hills</span><span>Kellyville</span>
+      <span>Parramatta</span><span>Blacktown</span><span>Penrith</span><span>Liverpool</span><span>Bankstown</span>
+      <span>Hurstville</span><span>Kogarah</span><span>Cronulla</span><span>Sutherland</span><span>Miranda</span>
+      <span>Camden</span><span>Campbelltown</span><span>Windsor</span><span>Katoomba</span>
+    </div>
+    <div class="ssp-band">
+      <div class="cap"><span>Service areas — rotating</span><em id="sspAreaCount">01 / 07</em></div>
+      <div class="row" id="sspAreaRow"></div>
+      <div class="prog"><i></i></div>
+    </div>
+  </div>
+</section>
+
+<section id="Process" class="pad grain" aria-labelledby="proc-h">
     <div class="wrap">
       <div class="sec-head rv">
         <p class="eyebrow">How it goes</p>
@@ -556,6 +663,46 @@ nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:1
     els.forEach(function(el){el.classList.add('on');});
   }
   setTimeout(function(){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('on');});},1100);
+})();
+</script>
+
+<script id="ssp-extras-js">
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* service-area ticker */
+  var T=['Sydney','Surry Hills','Alexandria','Mascot','Randwick','Bondi','Coogee','Maroubra','Newtown','Marrickville',
+         'Leichhardt','Balmain','Ashfield','Burwood','Strathfield','Chatswood','Lane Cove','Mosman','Manly','Dee Why',
+         'Ryde','Epping','Castle Hill','Baulkham Hills','Kellyville','Parramatta','Blacktown','Penrith','Liverpool',
+         'Bankstown','Hurstville','Kogarah','Cronulla','Sutherland','Miranda','Camden','Campbelltown','Windsor','Katoomba'];
+  var tk=document.getElementById('sspTick');
+  if (tk) tk.innerHTML = T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
+
+  /* rotating service-area band */
+  var AR=[['Sydney CBD & inner','Surry Hills · Alexandria · Mascot · Zetland'],
+          ['Eastern Suburbs','Randwick · Bondi · Coogee · Maroubra'],
+          ['Inner West','Newtown · Marrickville · Leichhardt · Balmain'],
+          ['North Shore & beaches','Chatswood · Lane Cove · Mosman · Manly · Dee Why'],
+          ['The Hills & northwest','Castle Hill · Baulkham Hills · Kellyville · Epping'],
+          ['Western Sydney','Parramatta · Blacktown · Penrith · Liverpool'],
+          ['South, Shire & mountains','Hurstville · Cronulla · Sutherland · Campbelltown · Katoomba']];
+  var row=document.getElementById('sspAreaRow'), cnt=document.getElementById('sspAreaCount');
+  if (row){
+    AR.forEach(function(a,k){
+      var u=document.createElement('ul'), li=document.createElement('li');
+      if(!k) u.className='on';
+      li.innerHTML = a[0]+'<small>'+a[1]+'</small>';
+      u.appendChild(li); row.appendChild(u);
+    });
+    var rows=[].slice.call(row.children), i=0;
+    if(!reduce){
+      setInterval(function(){
+        i=(i+1)%AR.length;
+        rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
+        if(cnt) cnt.textContent = ('0'+(i+1)).slice(-2)+' / 0'+AR.length;
+      },4000);
+    }
+  }
 })();
 </script>
 
