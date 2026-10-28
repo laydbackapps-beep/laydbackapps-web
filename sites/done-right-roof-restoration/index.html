@@ -381,13 +381,15 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
    Covering a 16:7 banner with a portrait shot was upscaling it ~1.6x and cutting most of it away. */
 
 /* rotation band: portrait frame at the photo's own ratio, centred, so the picture is downscaled not blown up */
-.lb-rb{padding:clamp(20px,3vw,40px) 0}
+.lb-rb{padding:clamp(20px,3vw,40px) 0 clamp(46px,4.4vw,64px)}
 .lb-rb__track{aspect-ratio:9/16!important;width:min(330px,74vw)!important;margin:0 auto!important;
-  border-radius:12px;overflow:hidden;box-shadow:0 22px 50px -30px #000}
+  border-radius:12px;overflow:visible!important;box-shadow:0 22px 50px -30px #000}
+.lb-rb__slide{border-radius:12px;overflow:hidden}
 .lb-rb__slide img{width:100%!important;height:100%!important;object-fit:cover!important;
   transform:none!important;transition:opacity .9s ease!important}
 .lb-rb__cap{font-size:clamp(9px,1vw,12px)}
-.lb-rb__dots{right:calc(50% - min(165px,37vw) - 22px)}
+.lb-rb__dots{left:50%!important;right:auto!important;top:auto!important;top:calc(100% + 16px)!important;bottom:auto!important;
+  transform:translateX(-50%)!important;flex-direction:row!important;gap:9px!important;z-index:5!important}
 @media(max-width:760px){
   .lb-rb__track{width:min(290px,82vw)!important}
   .lb-rb__dots{right:auto;left:14px;top:auto;bottom:14px;transform:none;flex-direction:row}
