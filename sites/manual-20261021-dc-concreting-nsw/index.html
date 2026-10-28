@@ -136,8 +136,9 @@ img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
   transform:none!important;width:100%!important;max-width:1600px!important;height:auto!important;max-height:none!important;
   object-fit:contain!important;display:block!important;margin:0 auto!important}
 </style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-@media(max-width:900px){}
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
 </style></head>
 <body>
 <!-- LB-3D-HERO -->
@@ -145,17 +146,21 @@ img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
 <header class="hdr" id="top">
   <div class="hdr-in">
     <a class="brand" href="#top">
-      <img src="assets/logomark.svg" alt="DC Concreting NSW logo"><span class="brand-txt"><span class="brand-name lb-sr-only">DC Concreting NSW</span><span class="brand-sub">Concreting &middot; NSW</span></span>
+      <img src="assets/logo-header.png" alt="DC Concreting NSW" width="460" height="160" loading="eager" decoding="async"><span class="brand-txt"><span class="brand-name lb-sr-only">DC Concreting NSW</span><span class="brand-sub">Concreting &middot; NSW</span></span>
     </a>
-    <nav class="nav" aria-label="Main"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#quote">Quote</a>
+    <nav class="nav" aria-label="Main"><a class="brand-monogram" href="#top" aria-label="DC Concreting NSW"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
+      <a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#quote">Quote</a>
     </nav>
     <a class="hdr-cta" href="#quote">Get a quote</a>
   </div>
 </header>
 
+<div class="dc-ticker" aria-hidden="true"><div class="dc-ticker__track" id="dcTick"></div></div>
+
+
 <section class="hero hero-stage" id="hero">
   <canvas id="heroCanvas" aria-hidden="true"></canvas>
-  <div class="hero-bg"></div>
+  <div class="hero-bg"><img src="assets/hero.jpg" alt="Finished concrete driveway with a curved edge"></div>
   <div class="hero-scrim"></div>
   <div class="wrap hero-in">
     <h1>Concrete slabs and driveways, <em>built to last</em>.</h1>
@@ -187,9 +192,9 @@ img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
     <h2>A job like this</h2>
     <p class="lede">Finished slabs, driveways and decorative concrete of the kind we pour every week.</p>
     <div class="gal">      <figure class="sm"><img src="assets/gal_1.jpg" alt="Driveway with control joints - a job like this" loading="lazy"><figcaption>Driveway with control joints, a job like this</figcaption></figure>
-      <div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div>
-      <div class="imgstub"><b>Work photo</b><span>Removed rather than shown — this image also appears on another business's site.</span></div>
-      <div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div></div>
+      <figure class="sm"><img src="assets/gal_2.jpg" alt="Patterned driveway finish - a job like this" loading="lazy"><figcaption>Patterned driveway finish, a job like this</figcaption></figure>
+      <figure class="sm"><img src="assets/gal_3.jpg" alt="Finished slab and side path - a job like this" loading="lazy"><figcaption>Finished slab and side path, a job like this</figcaption></figure>
+      <figure class="sm"><img src="assets/gal_4.jpg" alt="Decorative slab and apron - a job like this" loading="lazy"><figcaption>Decorative slab and apron, a job like this</figcaption></figure></div>
   </div>
 </section>
 
@@ -222,6 +227,32 @@ img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
       <div class="step"><h3>Finish &amp; cure</h3><p>Broom, aggregate or pattern finish, control joints cut, site cleaned up.</p></div></div>
   </div>
 </section>
+
+<!-- DC-EXTRAS-START -->
+<section id="areas-nsw"><div class="wrap" style="max-width:1180px;margin:0 auto;padding:64px 22px">
+  <p style="color:#a79d8a;letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin:0">Across New South Wales</p>
+  <h2 style="margin:12px 0 0;color:#f4efe4">Slabs, driveways and footings, state-wide</h2>
+  <p style="color:#a79d8a;max-width:74ch;margin-top:14px">Preparation, steel, formwork, pour and finish from the one crew. We quote across the regions below and travel for the right job — if you are outside them, ask and we will tell you straight away.</p>
+  <div class="dc-chips">
+    <span>Sydney</span><span>Western Sydney</span><span>Parramatta</span><span>Blacktown</span><span>Penrith</span>
+    <span>Camden</span><span>Campbelltown</span><span>Liverpool</span><span>Sutherland</span><span>Hornsby</span>
+    <span>Central Coast</span><span>Gosford</span><span>Wyong</span><span>Newcastle</span><span>Lake Macquarie</span>
+    <span>Hunter Valley</span><span>Maitland</span><span>Cessnock</span><span>Illawarra</span><span>Wollongong</span>
+    <span>Shellharbour</span><span>Southern Highlands</span><span>Bowral</span><span>Moss Vale</span><span>Goulburn</span>
+    <span>Blue Mountains</span><span>Katoomba</span><span>Bathurst</span><span>Orange</span><span>Dubbo</span>
+    <span>Wagga Wagga</span><span>Albury</span><span>Tamworth</span><span>Coffs Harbour</span><span>Port Macquarie</span>
+    <span>Nowra</span><span>Batemans Bay</span><span>Queanbeyan</span><span>Lismore</span><span>Ballina</span>
+  </div>
+  <div class="dc-tag">
+    <span>Professional concreting services</span><span>Built to last</span><span>Free consultation, no obligation</span><span>Prep, steel, formwork, pour, finish</span>
+  </div>
+  <div class="dc-band">
+    <div class="cap"><span>Where we work — rotating</span><em id="dcAreaCount">01 / 06</em></div>
+    <div class="row" id="dcAreaRow"></div>
+    <div class="prog"><i></i></div>
+  </div>
+</div></section>
+<!-- DC-EXTRAS-END -->
 
 <section class="sec" id="contact">
   <div class="wrap rv">
@@ -387,5 +418,89 @@ img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
 <style id="lb-header-fault-fix">
 .lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
 </style>
+<style id="dc-extras">
+/* ==== the client's real brand + features, in the gold-on-black palette taken from their own card (#d2a53a / #12110f) ==== */
+
+/* the bar was carrying a generated SVG monogram (a gold rectangle with "DC" drawn in SVG), and the nav repeated it
+   with a second generated circle. Both are gone: the header now uses the client's own lockup lifted from their
+   business card artwork - DC, Concreting NSW and PROFESSIONAL CONCRETING SERVICES - keyed to transparent. */
+.brand{display:flex!important;align-items:center!important;gap:0!important}
+.brand>img,.brand img{height:clamp(46px,4.6vw,60px)!important;width:auto!important;max-width:none!important;max-height:none!important;object-fit:contain!important;display:block!important}
+.brand .brand-txt,.brand .brand-sub,.brand .brand-name,.brand .lb-sr-only{display:none!important}
+.nav .brand-monogram,.brand-monogram{display:none!important}
+
+/* the hero photograph is 1280x960 and was being stretched to 1440x1080 as a full-bleed background - a 1.125x
+   upscale. It is now capped at its native width and centred, with the scrim carrying the rest. */
+.hero-bg{display:flex!important;justify-content:center!important;align-items:center!important}
+.hero-bg img{width:100%!important;max-width:1280px!important;height:100%!important;object-fit:cover!important;object-position:center!important}
+
+/* work gallery: the two portrait shots (1050x1400, 1048x1400) were cropped into landscape boxes. Each tile now
+   keeps its own aspect at a third of native size. */
+#work .gal,.work-grid{grid-template-columns:repeat(auto-fit,minmax(230px,380px))!important;justify-content:start!important;gap:1rem!important}
+#work .gal figure img,.work-grid figure img{width:100%!important;height:auto!important;aspect-ratio:auto!important;object-fit:contain!important;display:block!important}
+
+/* rotating service-area ticker */
+.dc-ticker{position:relative;overflow:hidden;background:#191814;border-top:2px solid #d2a53a;border-bottom:1px solid rgba(244,239,228,.12)}
+.dc-ticker:before,.dc-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.dc-ticker:before{left:0;background:linear-gradient(90deg,#191814,transparent)}
+.dc-ticker:after{right:0;background:linear-gradient(270deg,#191814,transparent)}
+.dc-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;width:max-content;animation:dcSlide 48s linear infinite;will-change:transform}
+.dc-ticker:hover .dc-ticker__track{animation-play-state:paused}
+.dc-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:#f4efe4;font-weight:700;font-size:clamp(11px,1.15vw,13.5px);letter-spacing:.16em;text-transform:uppercase}
+.dc-ticker span i{font-style:normal;color:#d2a53a}
+@keyframes dcSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* areas + rotating band */
+.dc-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.dc-chips span{border:1px solid #2e2b23;background:#191814;border-radius:999px;padding:8px 15px;font-size:.86rem;color:#f4efe4;transition:.2s}
+.dc-chips span:hover{border-color:#d2a53a;color:#e7c25e}
+.dc-band{margin-top:22px;border:1px solid rgba(210,165,58,.45);background:#191814;overflow:hidden;border-radius:10px}
+.dc-band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:11px 15px;border-bottom:1px solid rgba(244,239,228,.14);
+  font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#e7c25e;font-weight:700}
+.dc-band .cap em{font-style:normal;color:#a79d8a}
+.dc-band .row{position:relative;height:68px;overflow:hidden}
+.dc-band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+.dc-band .row ul.on{opacity:1;transform:none}
+.dc-band .row li{font-size:clamp(1.05rem,2.2vw,1.5rem);font-weight:700;color:#f4efe4;text-align:center;line-height:1.12}
+.dc-band .row li small{display:block;font-weight:400;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:#a79d8a;margin-top:8px}
+.dc-band .prog{height:2px;background:rgba(244,239,228,.14)}
+.dc-band .prog i{display:block;height:100%;width:0;background:#d2a53a;animation:dcFill 4s linear infinite}
+@keyframes dcFill{from{width:0}to{width:100%}}
+.dc-tag{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.dc-tag span{border:1px solid rgba(210,165,58,.4);background:rgba(210,165,58,.08);border-radius:6px;padding:7px 13px;font-size:.84rem;color:#e7c25e;font-weight:600}
+
+@media (prefers-reduced-motion:reduce){.dc-ticker__track,.dc-band .prog i{animation:none}.dc-band .row ul{transition:none}}
+</style>
+
+<script id="dc-extras-js">
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var T=['Slabs','Driveways','Footings','Paths','Shed slabs','House slabs','Exposed aggregate','Coloured concrete',
+         'Stencil finish','Crossovers','Pads','Retaining walls','Concrete removal','Set-out & levels','Steel & formwork',
+         'Pour & finish','Saw-cut joints','Sealing'];
+  var tk=document.getElementById('dcTick');
+  if (tk) tk.innerHTML=T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
+  var AR=[['Sydney & surrounds','Sydney · Western Sydney · Parramatta · Penrith'],
+          ['South-west Sydney','Camden · Campbelltown · Liverpool · Sutherland'],
+          ['Central Coast','Gosford · Wyong · Hornsby · the northern beaches'],
+          ['Newcastle & the Hunter','Newcastle · Lake Macquarie · Maitland · Cessnock'],
+          ['Illawarra & the highlands','Wollongong · Shellharbour · Bowral · Goulburn'],
+          ['Regional New South Wales','Bathurst · Orange · Dubbo · Wagga Wagga']];
+  var row=document.getElementById('dcAreaRow'), cnt=document.getElementById('dcAreaCount');
+  if (row){
+    AR.forEach(function(a,k){
+      var u=document.createElement('ul'), li=document.createElement('li');
+      if(!k) u.className='on';
+      li.innerHTML=a[0]+'<small>'+a[1]+'</small>';
+      u.appendChild(li); row.appendChild(u);
+    });
+    var rows=[].slice.call(row.children), i=0;
+    if(!reduce){ setInterval(function(){ i=(i+1)%AR.length;
+      rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
+      if(cnt) cnt.textContent=('0'+(i+1)).slice(-2)+' / 0'+AR.length; },4000); }
+  }
+})();
+</script>
+
 </body>
 </html>
