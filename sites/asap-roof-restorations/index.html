@@ -1,603 +1,1108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-AU">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASAP Roof Restorations — Tiled Roof Restoration, East Coast of Australia</title>
-<meta name="description" content="ASAP Roof Restorations — roof restoration servicing the East Coast of Australia. Tiled roof repairs, re-bedding, re-pointing, ridge capping and roof painting. Free quotes, no obligation.">
+<title>ASAP Roof Restorations</title>
+<meta name="description" content="ASAP Roof Restorations — Roof restoration servicing the East Coast of Australia. Tiled roof repairs, re-bedding, re-pointing, ridge capping, and roof painting.">
 <link rel="icon" href="assets/favicon.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#101418;
   --ground:#191d22;
-  --panel:#12161a;
   --mist:#e4e7ea;
   --hairline:#262c33;
   --accent:#b84830;
-  --accent-hi:#e0785a;
-  --muted:#aab3bb;
-  --max:1160px;
-  --space:clamp(44px,5.4vw,78px);
-  --disp:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --bg:var(--mist);
+  --line:var(--hairline);
+  --canvas-bg:#0d1013;
+  --max-w:1120px;
+  --space:clamp(1.25rem,3.5vw,2.5rem);
+  --space-sm:clamp(0.5rem,1.5vw,1rem);
+  --radius:0;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--mist);color:var(--ink);font:17px/1.6 var(--disp);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4vw,44px)}
-h1,h2,h3{font-family:var(--disp);margin:0;line-height:1.08;letter-spacing:-.02em;font-weight:800}
-h1{font-size:clamp(2.1rem,5vw,3.5rem);text-transform:uppercase}
-h2{font-size:clamp(1.5rem,3.2vw,2.4rem);text-transform:uppercase}
-h3{font-size:clamp(1.05rem,1.6vw,1.3rem);font-weight:700;text-transform:none}
-p{margin:0 0 1rem}
-.kicker{display:inline-flex;align-items:center;gap:.6rem;font:600 .72rem/1 var(--mono);letter-spacing:.18em;
-  text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
-.kicker::before{content:"";width:24px;height:1px;background:var(--accent)}
-.lead{color:var(--muted);max-width:62ch}
-.rule{width:56px;height:3px;background:var(--accent);border:0;margin:12px 0 0}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 1.8rem;font:700 .95rem/1 var(--disp);
-  background:var(--accent);color:#fff;border:0;cursor:pointer;transition:.2s}
-.btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
-.btn.ghost{background:transparent;color:var(--mist);border:1px solid rgba(255,255,255,.34)}
-.btn.ghost:hover{border-color:var(--accent);background:rgba(184,72,48,.16)}
-.blueprint{background-image:linear-gradient(rgba(184,72,48,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(184,72,48,.06) 1px,transparent 1px);background-size:48px 48px}
-
-.header{position:sticky;top:0;z-index:100;background:rgba(25,29,34,.97);backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--hairline);color:var(--mist)}
-.header__inner{display:flex;align-items:center;gap:clamp(12px,2vw,26px);padding-block:clamp(9px,1vw,14px)}
-.brand{display:flex;align-items:center;flex:0 0 auto;line-height:0}
-.brand img{height:clamp(46px,5vw,74px);width:auto;object-fit:contain}
-.header__end{display:flex;align-items:center;gap:clamp(12px,1.8vw,24px);margin-left:auto}
-.nav{display:flex;align-items:center;gap:clamp(14px,1.8vw,26px)}
-.nav a{font-size:.92rem;font-weight:600;color:#cfd5da;padding:.4rem 0;border-bottom:1px solid transparent}
-.nav a:hover{color:#fff;border-bottom-color:var(--accent)}
-.tel{font:700 .95rem/1 var(--disp);color:#fff;white-space:nowrap;border-bottom:2px solid var(--accent);padding-bottom:3px}
-.tel:hover{color:var(--accent-hi)}
-.burger{display:none;background:none;border:1px solid var(--hairline);color:var(--mist);font-size:1.1rem;
-  padding:.5rem .65rem;cursor:pointer;font-family:inherit;line-height:1}
-@media(max-width:900px){
-  .burger{display:block;margin-left:auto;order:2}
-  .header__end{order:3;margin-left:0}
-  .nav{display:none;order:4;flex-basis:100%;flex-direction:column;align-items:flex-start;gap:0;
-    padding:.4rem 0 .6rem;border-top:1px solid var(--hairline);margin-top:.6rem}
-  .nav.open{display:flex}
-  .nav a{padding:.6rem 0;width:100%;border-bottom:1px solid var(--hairline)}
-  .header__inner{flex-wrap:wrap}
-  .brand{order:1}
-  .tel{font-size:.88rem}
+html{scroll-behavior:smooth}
+html:not(.js) .rv{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity 700ms ease,transform 700ms ease}
+.js .rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .js .rv,.js .rv.on{transition:none!important;opacity:1!important;transform:none!important}
 }
-@media(max-width:420px){.brand img{height:42px}.tel{font-size:.82rem}}
-
-.banner{position:relative;overflow:hidden;background:var(--ground);color:var(--mist)}
-.banner__slides{position:absolute;inset:0;z-index:0}
-.banner__slide{position:absolute;inset:0;opacity:0;transition:opacity 950ms ease}
-.banner__slide.is-on{opacity:1}
-.banner__slide .bg{position:absolute;inset:0;
-  background:radial-gradient(120% 95% at 10% 6%,rgba(184,72,48,.30),rgba(25,29,34,0) 58%),
-             radial-gradient(90% 85% at 94% 96%,rgba(184,72,48,.18),rgba(25,29,34,0) 62%),
-             linear-gradient(180deg,#1b2026,#15181d)}
-.banner__slide .grid{position:absolute;inset:0;
-  background-image:linear-gradient(rgba(228,231,234,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(228,231,234,.06) 1px,transparent 1px);
-  background-size:52px 52px;mask-image:linear-gradient(180deg,#000,transparent 90%)}
-.banner__inner{position:relative;z-index:2;padding:clamp(40px,5.4vw,80px) 0 clamp(46px,5.4vw,80px);
-  min-height:clamp(420px,48vw,560px);display:flex;flex-direction:column;justify-content:center}
-.banner h1{margin:.2rem 0 0;max-width:22ch;color:#fff}
-.banner .lead{margin-top:1rem}
-.bullets{list-style:none;padding:0;margin:1.2rem 0 0;display:grid;gap:.5rem;color:var(--mist)}
-.bullets li{position:relative;padding-left:22px;font-size:.97rem}
-.bullets li::before{content:"";position:absolute;left:0;top:.52rem;width:8px;height:8px;background:var(--accent)}
-.acts{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem}
-.banner__cap{position:relative;z-index:2;margin-top:clamp(26px,3.4vw,44px);max-width:640px;border:1px solid rgba(184,72,48,.5);
-  background:rgba(16,20,24,.72);backdrop-filter:blur(8px)}
-.banner__cap .top{display:flex;align-items:center;gap:1rem;padding:.75rem 1.1rem;border-bottom:1px solid var(--hairline)}
-.banner__cap .tag{font:600 .7rem/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--accent-hi)}
-.banner__cap .where{margin-left:auto;font:600 .7rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.banner__cap .body{padding:.9rem 1.1rem 1rem}
-.banner__cap .body b{display:block;font-size:clamp(1rem,1.5vw,1.2rem);font-weight:800;margin-bottom:.35rem;color:#fff}
-.banner__cap .body span{color:var(--muted);font-size:.92rem}
-.banner__dots{position:absolute;left:clamp(18px,4vw,44px);bottom:clamp(20px,2.4vw,32px);z-index:3;display:flex;gap:7px}
-.banner__dots i{width:26px;height:3px;background:rgba(255,255,255,.26);cursor:pointer;transition:.3s}
-.banner__dots i.on{background:var(--accent);width:44px}
-.banner__nav{position:absolute;right:clamp(18px,4vw,44px);bottom:clamp(16px,2vw,28px);z-index:3;display:flex;gap:8px}
-.banner__nav button{width:38px;height:38px;border:1px solid rgba(255,255,255,.32);background:rgba(16,20,24,.8);
-  color:var(--mist);cursor:pointer;font-family:inherit;font-size:.95rem;line-height:1;transition:.2s}
-.banner__nav button:hover{background:var(--accent);border-color:var(--accent);color:#fff}
-@media(max-width:620px){.banner__dots{display:none}}
-
-.ticker{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);background:#0f1317;
-  overflow:hidden;position:relative}
-.ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
-.ticker::before{left:0;background:linear-gradient(90deg,#0f1317,transparent)}
-.ticker::after{right:0;background:linear-gradient(270deg,#0f1317,transparent)}
-.ticker__track{display:flex;gap:30px;white-space:nowrap;padding:13px 0;animation:slide 44s linear infinite;will-change:transform}
-.ticker:hover .ticker__track{animation-play-state:paused}
-.ticker span{font:600 .72rem/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#b6bfc6;
-  display:inline-flex;align-items:center;gap:12px}
-.ticker span::after{content:"";width:5px;height:5px;background:var(--accent);transform:rotate(45deg)}
-@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-section{padding:var(--space) 0;border-top:1px solid var(--hairline);position:relative}
-section.light{background:var(--mist);color:var(--ink)}
-section.dark{background:var(--ground);color:var(--mist)}
-section.dark h2{color:#fff}
-section.dark .lead{color:var(--muted)}
-.head{margin-bottom:clamp(22px,3vw,34px)}
-.head h2+.rule{margin-top:14px}
-
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px}
-.service{background:var(--panel);border:1px solid var(--hairline);border-top:3px solid var(--accent);
-  padding:22px;transition:.22s}
-section.light .service{background:#fff;border-color:#dbdfe3;border-top-color:var(--accent)}
-.service:hover{transform:translateY(-3px);border-top-color:var(--accent-hi)}
-.service .ic{width:40px;height:40px;color:var(--accent);margin-bottom:.8rem}
-.service h3{margin-bottom:.4rem}
-.service p{margin:0;color:#414951;font-size:.95rem;line-height:1.58}
-section.dark .service p{color:var(--muted)}
-
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--accent);margin-top:8px}
-.steps>article{padding:22px 20px 4px 0;position:relative}
-.steps>article::before{content:"";position:absolute;left:0;top:-7px;width:12px;height:12px;border-radius:50%;
-  background:var(--accent);box-shadow:0 0 0 4px rgba(184,72,48,.18)}
-.steps .n{display:block;font:600 .72rem/1 var(--mono);letter-spacing:.16em;color:var(--accent);margin-bottom:8px}
-.steps h3{margin-bottom:.4rem}
-.steps p{margin:0;color:var(--muted);font-size:.95rem}
-@media(max-width:820px){.steps{grid-template-columns:1fr;border-top:0;border-left:2px solid var(--accent);padding-left:18px}
-  .steps>article{padding:0 0 22px}.steps>article::before{left:-25px}}
-
-.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
-.gal figure{margin:0;border:1px solid var(--hairline);background:var(--panel);overflow:hidden}
-.gal img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
-.gal figure:hover img{transform:scale(1.03)}
-.gal figcaption{padding:12px 14px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--hairline)}
-.shot{margin:0;border:1px solid var(--hairline);border-left:4px solid var(--accent);background:var(--panel)}
-.shot img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
-.shot figcaption{padding:11px 14px;color:var(--muted);font-size:.88rem}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(22px,3.6vw,52px);align-items:center}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
-
-.types{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-.types article{background:var(--panel);border:1px solid var(--hairline);border-top:3px solid var(--accent);padding:20px}
-section.light .types article{background:#fff;border-color:#dbdfe3}
-.types b{display:block;font-size:1rem;margin-bottom:.4rem;color:#fff}
-section.light .types b{color:var(--ink)}
-.types p{margin:0;color:var(--muted);font-size:.93rem}
-section.light .types p{color:#414951}
-
-.signs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:0 26px}
-.signs li{position:relative;padding:13px 0 13px 24px;border-bottom:1px solid var(--hairline);font-size:.97rem;color:var(--mist)}
-.signs li::before{content:"";position:absolute;left:0;top:1.05rem;width:8px;height:8px;background:var(--accent)}
-section.light .signs li{color:var(--ink);border-bottom-color:#dbdfe3}
-
-.checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.checks div{background:var(--panel);border:1px solid var(--hairline);border-left:3px solid var(--accent);padding:18px}
-section.light .checks div{background:#fff;border-color:#dbdfe3}
-.checks b{display:block;font-size:1rem;margin-bottom:.35rem;color:#fff}
-section.light .checks b{color:var(--ink)}
-.checks p{margin:0;color:#414951;font-size:.93rem}
-section.dark .checks p{color:var(--muted)}
-.cta-row{margin-top:22px}
-
-.areaband{margin-top:26px;border:1px solid rgba(184,72,48,.5);background:var(--panel);overflow:hidden}
-.areaband .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:.7rem 1rem;
-  border-bottom:1px solid var(--hairline);font:600 .7rem/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--accent-hi)}
-.areaband .cap em{font-style:normal;color:var(--muted)}
-.areaband .row{position:relative;height:62px;overflow:hidden}
-.areaband .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
-.areaband .row ul.on{opacity:1;transform:none}
-.areaband .row li{font:800 clamp(1.15rem,2.4vw,1.7rem)/1.1 var(--disp);letter-spacing:-.02em;color:#fff;text-align:center}
-.areaband .row li small{display:block;font:500 .68rem/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;
-  color:var(--muted);margin-top:.5rem}
-.areaband .prog{height:2px;background:rgba(255,255,255,.1)}
-.areaband .prog i{display:block;height:100%;width:0;background:var(--accent);animation:fill 4s linear infinite}
-@keyframes fill{from{width:0}to{width:100%}}
-.areas-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
-.areas-chips span{border:1px solid var(--hairline);padding:.45rem .85rem;font-size:.88rem;color:var(--mist);transition:.22s}
-section.light .areas-chips span{color:var(--ink);border-color:#dbdfe3}
-.areas-chips span:hover{border-color:var(--accent);background:rgba(184,72,48,.12)}
-
-details.q{border:1px solid var(--hairline);border-left:2px solid transparent;background:var(--panel);margin-bottom:.5rem;transition:.25s}
-details.q:hover{border-left-color:var(--accent);background:#151a1f}
-details.q[open]{border-left-color:var(--accent)}
-details.q summary{cursor:pointer;font-weight:700;font-size:1rem;list-style:none;display:flex;justify-content:space-between;
-  gap:1rem;padding:.95rem 1.1rem;color:#fff}
-summary::-webkit-details-marker{display:none}
-details.q summary::after{content:"+";color:var(--accent-hi);font-weight:800}
-details.q[open] summary::after{content:"–"}
-details.q p{color:var(--muted);font-size:.94rem;margin:0;padding:0 2.6rem 1rem 1.1rem;max-width:78ch}
-
-.quote{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(22px,3.6vw,52px);align-items:start}
-@media(max-width:880px){.quote{grid-template-columns:1fr}}
-form{background:var(--panel);border:1px solid var(--hairline);padding:clamp(20px,2.6vw,30px);position:relative;overflow:hidden}
-form::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),rgba(184,72,48,0))}
-.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.f-grid .full{grid-column:1/-1}
-label{display:block;font:600 .75rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
-input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--hairline);background:#0d1114;color:#fff;
-  font:inherit;font-size:.95rem;transition:.2s}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(184,72,48,.16)}
-textarea{min-height:104px;resize:vertical}
-form .btn{margin-top:14px;width:100%}
-.cons{display:flex;gap:.6rem;align-items:center;margin-top:12px;font-size:.85rem;color:var(--muted)}
-.cons input{width:auto}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.st{margin:.8rem 0 0;font-size:.9rem;color:var(--muted);min-height:1.2em}
-@media(max-width:620px){.f-grid{grid-template-columns:1fr}}
-
-.locality{background:var(--mist);color:var(--ink);border-top:1px solid #dbdfe3}
-.locality__inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem 2rem}
-.locality__tel{display:inline-flex;align-items:center;gap:.6rem;font:800 clamp(1.25rem,2.4vw,1.6rem)/1.2 var(--disp);color:var(--ink)}
+body{margin:0;font-family:system-ui, system-ui, sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--accent)}
+h1,h2,h3{font-family:"Antonio", system-ui, sans-serif;line-height:1.1;margin:0;font-weight:700;letter-spacing:-0.02em}
+h1{font-size:clamp(2.5rem,6vw,4.5rem);text-transform:uppercase}
+h2{font-size:clamp(1.5rem,3.5vw,2.5rem);text-transform:uppercase}
+h3{font-size:clamp(1.125rem,2vw,1.5rem);text-transform:none;font-weight:600}
+p{margin:0 0 1rem}
+.container{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--space-sm)}
+.section{padding:var(--space) 0}
+.section--tight{padding:calc(var(--space)*0.6) 0}
+.header{position:sticky;top:0;z-index:100;background:rgba(228,231,234,0.92);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--hairline)}
+.header__inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:var(--space-sm)}
+.header__end{display:flex;align-items:center;gap:clamp(.75rem,2vw,1.75rem);flex-shrink:0}
+.header .lb-tel{font-family:"Antonio",system-ui,sans-serif;font-size:.875rem;font-weight:700;letter-spacing:.06em;color:var(--ink);white-space:nowrap;border-bottom:2px solid var(--accent);padding-bottom:2px;line-height:1.2}
+.header .lb-tel:hover{color:var(--accent)}
+@media(max-width:400px){.header .lb-tel{font-size:.8125rem}}
+.logo{display:flex;align-items:center;gap:0.75rem;flex-shrink:0}
+.logo svg{width:40px;height:40px}
+.logo__text{display:none}
+@media(min-width:640px){.logo__text{display:block;font-family:"Antonio", system-ui, sans-serif;font-size:0.875rem;text-transform:none;letter-spacing:0.05em;color:var(--ink)}}
+.nav{display:none}
+@media(min-width:768px){.nav{display:flex;gap:clamp(1.5rem,3vw,2.5rem)}}
+.nav a{font-size:0.875rem;font-weight:500;color:var(--ink);position:relative}
+.nav a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform 200ms ease}
+.nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.hero{position:relative;padding:calc(var(--space)*1.6) 0;background:var(--ground);color:var(--mist);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Cpath d='M1 0h1v1H1zM3 2h1v1H3z' fill='%23262c33' opacity='0.08'/%3E%3C/svg%3E");pointer-events:none}
+.hero__inner{position:relative;display:grid;gap:clamp(1.5rem,3.2vw,2.5rem);width:100%}
+.hero__copy{display:grid;gap:.95rem;justify-items:start;align-content:center;text-align:left;min-width:0}
+.hero__badge{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;font-weight:600;text-transform:none;letter-spacing:0.1em;color:var(--mist);font-family:system-ui, monospace;margin-bottom:0.25rem}
+.hero__badge::before{content:"";width:1rem;height:1px;background:currentColor}
+.hero h1{max-width:none}
+.hero__lead{font-size:clamp(1rem,2vw,1.25rem);font-weight:400;color:var(--mist);opacity:0.85;max-width:44ch;margin:0}
+.hero__cta{display:inline-flex;align-items:center;justify-content:center;gap:0.75rem;padding:1rem 2rem;font-family:"Antonio", system-ui, sans-serif;font-size:1rem;font-weight:700;text-transform:none;letter-spacing:0.05em;color:var(--mist);background:var(--ink);border:1px solid var(--hairline);transition:background 200ms ease,border-color 200ms ease,color 200ms ease;justify-self:start;width:max-content;max-width:100%;margin-top:.35rem}
+.hero__cta:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.hero__canvas-wrap{position:relative;aspect-ratio:4/3;background:var(--canvas-bg);border:1px solid var(--hairline);width:100%;max-width:520px}
+@media(min-width:900px){
+  .hero__inner{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);column-gap:clamp(2rem,4.5vw,4rem);align-items:center}
+  .hero__canvas-wrap{grid-column:2;justify-self:end;aspect-ratio:1/1;max-width:100%;max-height:min(56vh,440px)}
+}
+.hero__canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.services{background:var(--mist)}
+.service{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1rem 1.25rem;padding:calc(var(--space)*.75) 0;border-top:1px solid var(--hairline);align-items:start}
+.service:first-child{border-top:none}
+@media(min-width:768px){.service{padding:var(--space-sm) 0}}
+.service__icon{width:40px;height:40px;color:var(--accent);flex-shrink:0;margin-top:.15rem}
+.service__content h3{margin-bottom:0.25rem}
+.service__content p{color:var(--ink);opacity:0.75;margin:0}
+.process{background:var(--ground);color:var(--mist)}
+.process__header{margin-bottom:clamp(16px,2vw,26px)!important;margin-bottom:clamp(1.5rem,3.2vw,2.5rem);display:grid;gap:.55rem;justify-items:start}
+.process__header .hero__badge{margin-bottom:0}
+.process__steps{display:grid;grid-template-columns:1fr;gap:var(--space-sm)}
+@media(min-width:768px){.process__steps{grid-template-columns:repeat(3,1fr)}}
+.process__step{padding:var(--space-sm);border:1px solid var(--hairline);background:rgba(255,255,255,0.02)}
+.process__num{font-family:system-ui, monospace;font-size:0.75rem;font-weight:600;color:var(--accent);margin-bottom:0.5rem;letter-spacing:0.05em}
+.process__step h3{margin-bottom:0.5rem;color:var(--mist)}
+.process__step p{color:var(--mist);opacity:0.7;font-size:0.9375rem}
+.locality{background:var(--mist);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+.locality__inner{display:grid;grid-template-columns:1fr;gap:1.25rem;padding:calc(var(--space)*.9) 0;align-items:center}
+@media(min-width:768px){.locality__inner{grid-template-columns:minmax(0,1fr) auto;gap:2rem}}
+.locality__heading{display:grid;gap:.5rem;justify-items:start}
+.locality__heading h2{margin:0}
+.locality__text{font-family:system-ui, monospace;font-size:0.875rem;color:var(--ink);opacity:0.75;margin:0}
+.locality__tel{display:inline-flex;align-items:center;gap:.6rem;font-family:"Antonio",system-ui,sans-serif;font-size:clamp(1.25rem,2.6vw,1.6rem);font-weight:700;letter-spacing:.04em;color:var(--ink);line-height:1.2}
 .locality__tel svg{width:20px;height:20px;color:var(--accent);flex:0 0 auto}
 .locality__tel:hover{color:var(--accent)}
-.socials{display:flex;gap:.75rem}
-.socials a{display:grid;place-items:center;width:40px;height:40px;border:1px solid #dbdfe3;border-radius:50%;color:var(--ink);transition:.2s}
-.socials a:hover{background:var(--ink);color:var(--mist);border-color:var(--ink)}
+.locality__side{display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem;justify-self:start}
+@media(min-width:768px){.locality__side{justify-self:end}}
+.locality__socials{display:flex;gap:0.75rem}
+.locality__socials a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--hairline);border-radius:50%;color:var(--ink);transition:background 200ms ease,border-color 200ms ease}
+.locality__socials a:hover{background:var(--ink);color:var(--mist);border-color:var(--ink)}
+.footer{background:var(--ground);color:var(--mist);padding:calc(var(--space)*1.1) 0;border-top:1px solid var(--hairline)}
+.footer__inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem 2rem}
+.footer__brand{display:flex;align-items:center;gap:0.75rem}
+.footer__brand svg,.footer__brand img{width:32px;height:32px;flex:0 0 auto}
+.footer__brand span{font-family:"Antonio", system-ui, sans-serif;font-size:0.9375rem;text-transform:none;letter-spacing:0.03em}
+.footer__meta{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem}
+.footer__copy{font-size:0.8125rem;opacity:0.65;font-family:system-ui, monospace;margin:0}
+.footer__legal{display:flex;flex-wrap:wrap;gap:1rem}
+.footer__legal a{font-size:0.8125rem;opacity:0.65;font-family:system-ui, monospace;transition:opacity 200ms ease;border-bottom:1px solid transparent;padding-bottom:1px}
+.footer__legal a:hover{opacity:1;color:var(--mist);border-bottom-color:var(--accent)}
+.legal__grid{display:grid;grid-template-columns:1fr;gap:clamp(1.5rem,4vw,3rem)}
+@media(min-width:768px){.legal__grid{grid-template-columns:1fr 1fr}}
+.legal__grid h3{margin-bottom:.5rem}
+.legal__grid p{font-size:.9375rem;color:var(--ink);opacity:.75;margin:0}
+</style>
+<style id="lb-motion-css">
+/* ==== LB MOTION PACK ==== */
+/* ==== HERO LAYOUT REPAIR ====
+   The [class*=hero] height pack sets display:flex on every .*hero* element, which also hit
+   .hero__inner and collapsed the two-column grid into one squeezed flex row (narrow copy,
+   tall empty CTA, blank right panel). Restore the grid explicitly. */
+.hero{min-height:clamp(430px,54vh,560px)!important;
+  max-height:none!important;padding-top:calc(var(--space)*1.35)!important;padding-bottom:calc(var(--space)*1.35)!important}
+/* the heroh pack's [class*=hero] min-height (58vh) also landed on every DESCENDANT, so the
+   badge/lead/CTA each became 522px tall and the hero grew to ~1900px with the copy below the
+   fold. Re-scope the min-height to the section only and let children size to content. */
+.hero .hero__inner,.hero .hero__copy,.hero .hero__badge,.hero .hero__lead,.hero .hero__cta,.hero .hero__canvas-wrap{
+  min-height:0!important;max-height:none!important}
+.hero .hero__canvas-wrap{max-height:min(56vh,440px)!important}
+.hero .hero__inner{display:grid!important}
+/* [class*=hero] also matches .hero__copy / .hero__lead / .hero__badge and flexed them into a
+   row (all !important, equal specificity, later in the doc). Beat it with the section scope. */
+.hero .hero__copy{display:grid!important;align-content:center;justify-items:start;gap:.95rem}
+.hero .hero__lead,.hero .hero__badge,.hero .hero__cta{align-self:start}
+.hero__cta{flex:0 0 auto}
+@media(min-width:900px){
+  .hero .hero__inner{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+    column-gap:clamp(2rem,4.5vw,4rem);row-gap:.85rem}
+}
+/* the canvas was forced to z-index:-1, i.e. behind its own panel background — it never showed */
+.hero__canvas-wrap{isolation:isolate}
+.anchor-target{display:block;height:0;scroll-margin-top:84px}
+#lbq{scroll-margin-top:84px}
+.hero__canvas-wrap .hero__canvas,.hero__canvas-wrap canvas{position:absolute!important;inset:0!important;
+  z-index:0!important;width:100%;height:100%}
+.lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
+/* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
+   content. Unrevealed .rv wrappers left whole headers at opacity:0 (invisible logo). */
+header, .site-header, .page-header, nav.nav, .nav .rv, nav.rv, .header-inner, .nav-inner,
+header .rv, .site-header .rv, .nav-inner .rv{
+  opacity:1 !important; visibility:visible !important; transform:none !important;
+}
+.lb-rb{position:relative;width:100%;max-width:100%;overflow:hidden;background:#0c0d10}
+.lb-mq{max-width:100%;overflow:hidden}
+.lb-rb__track{position:relative;width:100%;aspect-ratio:16/5.2}
+.lb-rb__slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;will-change:opacity}
+.lb-rb__slide.is-on{opacity:1}
+.lb-rb__slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03);transition:transform 7s linear}
+.lb-rb__slide.is-on img{transform:scale(1.10)}
+.lb-rb__body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:.7rem;
+ padding:clamp(18px,3vw,48px) clamp(18px,3vw,48px) clamp(46px,5vw,64px);max-width:min(760px,72%)}
 
-.legal{background:var(--mist);color:var(--ink);border-top:1px solid #dbdfe3;padding:clamp(38px,4vw,56px) 0}
-.legal__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem)}
-@media(max-width:768px){.legal__grid{grid-template-columns:1fr}}
-.legal h3{font-size:1.05rem;margin-bottom:.5rem}
-.legal p{font-size:.94rem;color:#414951;margin:0}
+.lb-rb__kick{font-family:system-ui,monospace;font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.lb-rb__head{font-family:"Antonio",system-ui,sans-serif;font-size:clamp(1.375rem,3.4vw,2.6rem);font-weight:700;line-height:1.06;letter-spacing:-.02em;text-transform:uppercase;color:#fff;max-width:20ch}
+.lb-rb__note{font-size:clamp(.875rem,1.3vw,1.0625rem);color:rgba(255,255,255,.72);max-width:46ch;margin:0}
+.lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2.2vw,30px);
+ background:rgba(6,7,10,.72);color:#fff;
+ font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;letter-spacing:.16em;text-transform:none;
+ font-size:clamp(9px,1vw,13px);z-index:2}
+.lb-rb__dots{position:absolute;top:clamp(14px,2.2vw,26px);right:clamp(14px,2.2vw,26px);
+ display:flex;flex-direction:row;gap:9px;z-index:4}
+.lb-rb__dots button{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.7);
+ background:transparent;cursor:pointer;padding:0;transition:transform .25s,background .25s}
+.lb-rb__dots button.is-on{background:#fff;transform:scale(1.35)}
+.lb-rb__nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;
+ border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(8,9,12,.35);color:#fff;
+ cursor:pointer;display:grid;place-items:center;font-size:17px;line-height:1;backdrop-filter:blur(6px);
+ transition:background .25s,transform .25s}
+.lb-rb__nav:hover{background:rgba(8,9,12,.7)}
+.lb-rb__nav--prev{left:clamp(10px,1.6vw,22px)}
+.lb-rb__nav--next{right:clamp(10px,1.6vw,22px)}
+.lb-rb__nav:active{transform:translateY(-50%) scale(.92)}
+@media (max-width:700px){.lb-rb__track{aspect-ratio:5/4}.lb-rb__nav{width:36px;height:36px}
+ .lb-rb__body{max-width:100%;padding-bottom:84px}.lb-rb__cap{letter-spacing:.1em}}
 
-footer{background:var(--ground);color:var(--mist);border-top:1px solid var(--hairline);padding:clamp(30px,3.4vw,48px) 0}
-.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem 2rem}
-.foot__brand{display:flex;align-items:center;gap:.8rem}
-.foot__brand img{height:44px;width:auto}
-.foot__meta{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;font:500 .82rem/1.6 var(--mono);color:var(--muted)}
-.foot__meta a{border-bottom:1px solid rgba(228,231,234,.28)}
-.foot__meta a:hover{color:var(--accent-hi)}
+a.btn,.btn,button.btn,.nav-cta a,.wp-block-button__link{position:relative;overflow:hidden;
+ transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,filter .22s}
+a.btn:hover,.btn:hover,button.btn:hover,.nav-cta a:hover{transform:translateY(-2px);
+ box-shadow:0 10px 24px -12px rgba(0,0,0,.55);filter:brightness(1.05)}
+a.btn:active,.btn:active,button.btn:active,.nav-cta a:active{transform:translateY(0) scale(.985)}
+a.btn::after,.btn::after,.nav-cta a::after{content:'';position:absolute;top:0;bottom:0;width:38%;
+ left:-60%;background:rgba(255,255,255,.32);
+ transform:skewX(-18deg);transition:left .55s ease;pointer-events:none}
+a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
 
-.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){
-  .ticker__track,.areaband .prog i{animation:none}
-  .banner__slide,.rv,.gal img{transition:none}
-  .rv{opacity:1;transform:none}
+.lb-rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.lb-rv.is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+ .lb-rv{opacity:1!important;transform:none!important;transition:none!important}
+ .lb-rb__slide img{transform:none!important;transition:none!important}
+ a.btn::after,.btn::after,.nav-cta a::after{display:none}
+}
+
+/* marquee band (professional, reference-derived) */
+.lb-mq{position:relative;overflow:hidden;background:#0b0c10;border-top:1px solid rgba(255,255,255,.10);
+ border-bottom:1px solid rgba(255,255,255,.10)}
+.lb-mq__in{display:flex;width:max-content;animation:none}
+.lb-mq:hover .lb-mq__in{animation-play-state:paused}
+.lb-mq__in span{display:inline-flex;align-items:center;gap:clamp(18px,3vw,44px);
+ padding:clamp(11px,1.5vw,19px) clamp(14px,2vw,26px);color:#fff;font-family:var(--lb-disp, system-ui), sans-serif;
+ font-weight:700;text-transform:none;letter-spacing:.14em;font-size:clamp(11px,1.25vw,17px);white-space:nowrap}
+.lb-mq__in span i{font-style:normal;color:var(--lb-acc,#e51924)}
+@keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
+</style>
+<style id="lb-hero-css">
+canvas.lb-hero-canvas{position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0; pointer-events:none}
+canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
+  position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
+<style id="lb-brand-css">
+/* ==== LB BRAND (logo-true spanning wordmark) ==== */
+.lb-brandwrap{display:block;padding:14px 18px;background:inherit}
+.lb-brandwrap .lb-brand{display:inline-flex}
+.lb-brand{display:inline-flex;align-items:center;gap:clamp(9px,1vw,16px);text-decoration:none;
+ color:inherit;min-width:0;padding:0;background:none;border:0;flex:0 1 auto}
+.lb-brand__mark{flex:0 0 auto;display:block;height:clamp(34px,4.1vw,58px);width:auto;max-width:22vw}
+.lb-brand__mark img{display:block;height:100%;width:auto;max-width:22vw;object-fit:contain}
+.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:.94}
+.lb-brand__name{font-family:var(--lb-disp, system-ui), sans-serif;font-weight:800;text-transform:none;
+ font-size:clamp(21px,2.75vw,44px);letter-spacing:.004em;white-space:nowrap;line-height:.92;
+ color:var(--lb-name,currentColor)}
+.lb-brand__name .lb-acc{color:var(--lb-acc,currentColor)}
+.lb-brand__sub{font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;text-transform:none;
+ font-size:clamp(7px,.82vw,12px);letter-spacing:.30em;white-space:nowrap;margin-top:.34em;
+ color:var(--lb-subc,currentColor);opacity:.86}
+.lb-brand__rule{display:block;height:3px;width:100%;margin-top:.5em;border-radius:2px;
+ background:transparent}
+@media (max-width:640px){
+ .lb-brand__mark{height:clamp(30px,8vw,40px)}
+ .lb-brand__name{font-size:clamp(18px,6.2vw,26px)}
+ .lb-brand__sub{letter-spacing:.2em;font-size:7px}
+}
+</style>
+<style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
+   Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
+   and does NOT hide the hero canvas (that is the intended 3D hero). */
+.site-header,.header{z-index:50}
+.container.nav,.nav,.nav-in{z-index:5}
+.lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
+</style>
+<style id="lb-repair-polish">/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style><style id="lb-repair-tel">.lb-tel{white-space:nowrap;align-self:center;text-decoration:none;flex:0 0 auto}</style><!--LB-EMPTY--><style id="lb-empty">[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
+
+<!--LB-HERO-HEIGHT--><style id="lb-heroh">[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.26)}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
+
+<!--LB-RV--><style id="lb-rv">.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
+
+<!--LB-CANVASZ--><style id="lb-canvasz">[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
+
+<!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
+
+<!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.28)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
+
+<!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
+
+<!--LB-HEROGRID--><style id="lb-herogrid">[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
+<style id="lb-bar-noname">
+/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
+{display:none!important}
+.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
+.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+</style><style id="lb-hdr-centre">
+.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
+@media(max-width:900px){}
+</style><style id="lb-asap-header">
+/* one logo, centred, at a size you can actually read — the AR monogram and the typed name are gone */
+.header .header__inner{position:relative!important;display:flex!important;align-items:center!important;
+  gap:clamp(16px,2.4vw,34px)!important;min-height:118px!important}
+.header .lb-brand--centred{position:absolute!important;left:50%!important;top:50%!important;
+  transform:translate(-50%,-50%)!important;display:flex!important;align-items:center!important;margin:0!important;z-index:3!important}
+.header .lb-logo-hi{height:clamp(64px,6.4vw,92px)!important;width:auto!important;display:block!important;
+  background:transparent!important;border:0!important;box-shadow:none!important;filter:none!important}
+.header .lb-brand__word,.header .lb-brand__name,.header .lb-brand__sub,.header .lb-brand__rule,.header .lb-acc{display:none!important}
+.header .header__end{margin-left:auto!important;display:flex!important;align-items:center!important;
+  gap:clamp(14px,2vw,30px)!important}
+.header .nav{display:flex!important;align-items:center!important;gap:clamp(14px,1.8vw,26px)!important}
+@media(max-width:1100px){
+  .header .header__inner{flex-wrap:wrap!important;justify-content:center!important;row-gap:10px!important;padding-block:14px!important;min-height:0!important}
+  .header .lb-brand--centred{position:static!important;transform:none!important;width:100%!important;justify-content:center!important}
+  .header .lb-logo-hi{height:58px!important}
+  .header .header__end{margin:0 auto!important;flex-wrap:wrap!important;justify-content:center!important}
+}
+</style><style id="lb-asap-density">
+:root{--accent:#b84830}
+.section{padding-top:clamp(44px,4.8vw,72px)!important;padding-bottom:clamp(44px,4.8vw,72px)!important}
+.rr{padding:clamp(44px,4.8vw,72px) 0!important}
+.rr--tight{padding:clamp(38px,4vw,60px) 0!important}
+/* the red earns its place: labels, numbers, rules, markers, buttons */
+.hero__badge,.process__num,.rr .kicker{color:#b84830!important}
+.section h2,.rr h2{position:relative;padding-bottom:12px}
+.section h2:after,.rr h2:after{content:"";position:absolute;left:0;bottom:0;width:56px;height:3px;background:#b84830}
+.rr-card{border-top:3px solid #b84830!important;background:rgba(184,72,48,.055)!important}
+.rr-card:hover{border-color:#b84830!important;background:rgba(184,72,48,.09)!important}
+.process__step{border-left:3px solid #b84830!important;padding-left:16px!important}
+.signs{list-style:none;padding:0;margin:6px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:10px 26px}
+.signs li{position:relative;padding:6px 0 6px 24px;border-bottom:1px solid rgba(255,255,255,.10);color:var(--mist,#e4e7ea);font-size:15.5px}
+.signs li:before{content:"";position:absolute;left:0;top:14px;width:8px;height:8px;background:#b84830;border-radius:1px}
+.checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:6px}
+.checks div{background:rgba(255,255,255,.035);border:1px solid var(--hairline);border-left:3px solid #b84830;border-radius:10px;padding:18px}
+.checks b{display:block;font-size:16px;margin-bottom:6px;color:#fff}
+.checks p{margin:0;color:var(--lbq-muted,#aab3bb);font-size:14.6px;line-height:1.55}
+.cta-row{margin-top:22px}
+.rr-btn{display:inline-flex;align-items:center;gap:9px;background:#b84830;color:#fff;text-decoration:none;
+  font-weight:800;padding:14px 22px;border-radius:999px;transition:filter .15s,transform .15s}
+.rr-btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+/* tighten the sparse bands */
+.locality{padding-top:clamp(34px,3.6vw,52px)!important;padding-bottom:clamp(34px,3.6vw,52px)!important}
+.rr-gal img{height:210px!important}
+@media(max-width:900px){.signs{grid-template-columns:1fr}}
+</style><style id="lb-asap-deadspace">
+/* the badge was rendering 522px tall inside the process header — that was the blank band */
+.hero__badge,.process__header .hero__badge{display:inline-flex!important;align-items:center!important;gap:8px!important;
+  height:auto!important;min-height:0!important;max-height:none!important;padding:7px 12px!important;
+  line-height:1!important;font-size:12.5px!important;letter-spacing:.14em!important;text-transform:uppercase!important}
+.process__header{display:flex!important;flex-direction:column!important;gap:10px!important;margin-bottom:22px!important;
+  height:auto!important;min-height:0!important}
+.process__header h2{margin:0!important}
+/* any inline SVG/icon inside a badge must not stretch it */
+.hero__badge svg,.hero__badge img{height:14px!important;width:auto!important;display:inline-block!important}
+/* keep section rhythm even but not cavernous */
+section,.rr{padding-top:clamp(40px,4.2vw,64px)!important;padding-bottom:clamp(40px,4.2vw,64px)!important}
+</style><style id="lb-asap-types">
+.types{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:6px}
+.types article{background:#12161a;border:1px solid var(--hairline);border-top:3px solid #b84830;border-radius:10px;padding:18px}
+.types b{display:block;font-size:16px;margin-bottom:6px;color:#fff}
+.types p{margin:0;color:var(--lbq-muted,#aab3bb);font-size:14.6px;line-height:1.55}
+</style><style id="lb-asap-hero">
+.hero{position:relative;min-height:0!important;padding:clamp(26px,3.6vw,52px) 0!important}
+.hero__inner{display:grid!important;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)!important;
+  gap:clamp(26px,4vw,56px)!important;align-items:center!important}
+.hero__canvas-wrap,.hero__canvas{display:none!important}
+.hero__proof{list-style:none;padding:0!important;margin:16px 0 0!important;display:grid;gap:8px;min-height:0!important;height:auto!important}
+.hero__proof li{position:relative;padding-left:22px;color:var(--mist,#e4e7ea);font-size:15.5px}
+.hero__proof li:before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;background:#b84830;border-radius:1px}
+.hero__shot{margin:0;border:1px solid var(--hairline);border-left:4px solid #b84830;border-radius:14px;overflow:hidden;
+  background:#12161a;box-shadow:0 26px 60px -34px #000}
+.hero__shot img{width:100%;height:auto;max-height:420px;object-fit:cover;display:block}
+.hero__shot figcaption{padding:11px 14px;color:var(--lbq-muted,#aab3bb);font-size:13.5px}
+@media(max-width:900px){.hero__inner{grid-template-columns:1fr!important}.hero__shot img{max-height:300px}}
+</style><style id="lb-contrast-fix">
+/* every line of copy has to be readable: the signs list and the inspection cards were light-on-light,
+   and the red accent was too dark to sit on the dark panels */
+#signs .signs li{color:var(--ink,#101418)!important}
+#signs .signs li{border-bottom-color:rgba(16,20,24,.16)!important}
+#signs .signs li:before{background:#a63f28!important}
+#inspect b,#inspect h3,#inspect strong{color:var(--ink,#101418)!important}
+#inspect p,#inspect li,#inspect span{color:#414951!important}
+#roof-work p.lead,#signs p.lead,#roof-faq p,#roof-types p,#services p.lead,#contact p,#privacy p,#terms p{color:#414951!important}
+#roof-faq summary{color:var(--ink,#101418)!important}
+#roof-types article{color:#f2f4f6!important}
+#roof-types article b,#roof-types article h3{color:#f7f9fa!important}
+#roof-types article p{color:#b6bec6!important}
+#roof-types > .inner > h2,#roof-types > .inner > p.lead{color:var(--ink,#101418)!important}
+.process__num,.hero__badge,.lb-rb__kick{color:#e0785a!important}
+.hero__badge{border-color:rgba(224,120,90,.55)!important}
+</style><style id="asap-extras">
+/* ==== added features, in this site's own palette (dark #0b0c10 / red #b84830 / mist #e4e7ea) ==== */
+/* header: no fixed height fighting the logo — it must never clip or overflow the bar */
+.header__inner{height:auto!important;min-height:0!important;padding-block:clamp(8px,1vw,16px)!important}
+
+/* rotating service-area ticker */
+.asap-ticker{position:relative;overflow:hidden;background:#0b0c10;
+  border-top:1px solid rgba(255,255,255,.10);border-bottom:1px solid rgba(255,255,255,.10)}
+.asap-ticker:before,.asap-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.asap-ticker:before{left:0;background:linear-gradient(90deg,#0b0c10,transparent)}
+.asap-ticker:after{right:0;background:linear-gradient(270deg,#0b0c10,transparent)}
+.asap-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;
+  width:max-content;animation:asapSlide 44s linear infinite;will-change:transform}
+.asap-ticker:hover .asap-ticker__track{animation-play-state:paused}
+.asap-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:#dfe3e6;
+  font-family:var(--lb-disp,system-ui),sans-serif;font-weight:700;font-size:clamp(11px,1.2vw,15px);
+  letter-spacing:.14em;text-transform:uppercase}
+.asap-ticker span i{font-style:normal;color:#b84830}
+@keyframes asapSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* where we work: chips + rotating service-area band */
+.ww{background:var(--mist);color:var(--ink);border-top:1px solid var(--hairline);padding:clamp(44px,5vw,76px) 0}
+.ww .inner{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
+.ww h2{font-size:clamp(24px,3.1vw,40px);line-height:1.12;margin:0 0 10px;letter-spacing:-.02em}
+.ww .lead{color:#414951;max-width:62ch;margin:0 0 22px}
+.ww__chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.ww__chips span{border:1px solid #cdd3d8;background:#fff;padding:7px 13px;font-size:14px;color:var(--ink);transition:.2s}
+.ww__chips span:hover{border-color:#b84830;background:rgba(184,72,48,.08)}
+.ww__band{border:1px solid var(--hairline);background:#12161a;overflow:hidden}
+.ww__band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:10px 14px;
+  border-bottom:1px solid var(--hairline);font:600 11px/1 ui-monospace,monospace;letter-spacing:.18em;
+  text-transform:uppercase;color:#e0785a}
+.ww__band .cap em{font-style:normal;color:#aab3bb}
+.ww__band .row{position:relative;height:64px;overflow:hidden}
+.ww__band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;opacity:0;transform:translateY(12px);
+  transition:opacity .7s ease,transform .7s ease}
+.ww__band .row ul.on{opacity:1;transform:none}
+.ww__band .row li{font-family:var(--lb-disp,system-ui),sans-serif;font-weight:800;
+  font-size:clamp(18px,2.4vw,28px);line-height:1.1;color:#fff;text-align:center}
+.ww__band .row li small{display:block;font:500 11px/1 ui-monospace,monospace;letter-spacing:.15em;
+  text-transform:uppercase;color:#aab3bb;margin-top:8px}
+.ww__band .prog{height:2px;background:rgba(255,255,255,.12)}
+.ww__band .prog i{display:block;height:100%;width:0;background:#b84830;animation:asapFill 4s linear infinite}
+@keyframes asapFill{from{width:0}to{width:100%}}
+
+@media (prefers-reduced-motion:reduce){
+  .asap-ticker__track,.ww__band .prog i{animation:none}
+  .ww__band .row ul{transition:none}
+}
+@media (max-width:900px){.asap-ticker:before,.asap-ticker:after{width:40px}}
+</style>
+
 </head>
 <body>
-
-<header class="header">
-  <div class="wrap header__inner">
-    <a class="brand" href="#top" aria-label="ASAP Roof Restorations"><img src="assets/logo-header-hi.png" alt="ASAP Roof Restorations" width="748" height="574"></a>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+<header class="header" role="banner">
+  <div class="container header__inner">
+    <a class="lb-brand lb-brand--centred" href="#top" aria-label="ASAP Roof Restorations"><img class="lb-logo-hi" src="assets/logo-header-hi.png" alt="ASAP Roof Restorations" width="636" height="520"></a>
     <div class="header__end">
-      <nav class="nav" id="nav" aria-label="Main navigation">
-        <a href="#services">Services</a>
+      <nav class="nav" role="navigation" aria-label="Main navigation"><a href="#services">Services</a>
         <a href="#process">Process</a>
-        <a href="#areas">Areas</a>
-        <a href="#faq">FAQ</a>
+        <a href="#quote">Contact</a>
       </nav>
-      <a class="tel" href="tel:+61425470406">0425 470 406</a>
+      <a class="lb-tel" href="tel:+61425470406">0425 470 406</a>
     </div>
   </div>
 </header>
 
-<section class="banner" id="top" aria-label="ASAP Roof Restorations">
-  <div class="banner__slides" id="slides">
-    <div class="banner__slide is-on"><span class="bg"></span><span class="grid"></span></div>
-    <div class="banner__slide"><span class="bg"></span><span class="grid"></span></div>
-    <div class="banner__slide"><span class="bg"></span><span class="grid"></span></div>
-    <div class="banner__slide"><span class="bg"></span><span class="grid"></span></div>
-  </div>
-  <div class="wrap banner__inner">
-    <span class="kicker">Tiled roofs · Servicing the East Coast of Australia</span>
-    <h1>East Coast Roof<br>Restoration</h1>
-    <p class="lead">Cracked tiles, crumbling ridge caps, moss and a faded coating — re-bedded, re-pointed, cleaned and re-coated by the same crew that quotes it. Free quotes, no obligation.</p>
-    <ul class="bullets">
-      <li>Free quote after the roof is looked at</li>
-      <li>Photos of the findings shared with you</li>
-      <li>Tiles matched from what is already on the roof</li>
-    </ul>
-    <div class="acts">
-      <a class="btn" href="#quote">Request a quote</a>
-      <a class="btn ghost" href="#services">See the services</a>
+<main id="main" role="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <span class="hero__badge rv">Tiled roofs &middot; Servicing the East Coast of Australia</span>
+        <h1 id="hero-title" class="rv">East Coast Roof<br>Restoration</h1>
+        <p class="hero__lead rv">Cracked tiles, crumbling ridge caps, moss and a faded coating &mdash; re-bedded, re-pointed, cleaned and re-coated by the same crew that quotes it. Free quotes, no obligation.</p>
+        <ul class="hero__proof rv">
+          <li>Free quote after the roof is looked at</li>
+          <li>Photos of the findings shared with you</li>
+          <li>Tiles matched from what is already on the roof</li>
+        </ul>
+        <a href="#quote" class="hero__cta rv">Request a Quote</a>
+      </div>
+      <figure class="hero__shot rv">
+        <img src="assets/photo_3.jpg" alt="Restored tiled roof on an East Coast home" width="1200" height="800" loading="eager">
+        <figcaption>Ridges, hips and tile face done in one run.</figcaption>
+      </figure>
     </div>
-    <div class="banner__cap" id="cap">
-      <div class="top"><span class="tag" id="capTag">Re-bedding &amp; re-pointing</span><span class="where" id="capWhere">Newcastle</span></div>
-      <div class="body"><b id="capTitle">Ridge caps that stay put</b><span id="capText">Old mortar cut out, caps re-bedded and pointed with flexible compound so the ridge line holds.</span></div>
-    </div>
-  </div>
-  <div class="banner__dots" id="dots"></div>
-  <div class="banner__nav">
-    <button type="button" id="prev" aria-label="Previous slide">‹</button>
-    <button type="button" id="next" aria-label="Next slide">›</button>
-  </div>
-</section>
+  </section>
 
-<div class="ticker" aria-hidden="true"><div class="ticker__track" id="tick"></div></div>
+<!--ASAP-TICKER-->
+<div class="asap-ticker" aria-hidden="true"><div class="asap-ticker__track" id="asapTick"></div></div>
 
-<section id="services" class="light">
-  <div class="wrap">
-    <div class="head rv"><span class="kicker">Services</span><h2>What we do on a tiled roof</h2><hr class="rule"></div>
-    <div class="services">
+
+  <section id="services" class="services section" aria-labelledby="services-title">
+    <div class="container">
+      <header class="section__header" style="margin-bottom:var(--space)">
+        <h2 id="services-title" class="rv">Services</h2>
+      </header>
       <article class="service rv">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        <h3>Tiled Roof Repairs</h3>
-        <p>Cracked, slipped, or broken tile replacement. Valley and flashing repairs to stop leaks at the source.</p>
+        <svg class="service__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <div class="service__content">
+          <h3>Tiled Roof Repairs</h3>
+          <p>Cracked, slipped, or broken tile replacement. Valley and flashing repairs to stop leaks at the source.</p>
+        </div>
       </article>
       <article class="service rv">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-        <h3>Re-bedding &amp; Re-pointing</h3>
-        <p>Ridge caps re-bedded in fresh mortar and re-pointed with flexible compound for a watertight seal.</p>
+        <svg class="service__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        <div class="service__content">
+          <h3>Re-bedding & Re-pointing</h3>
+          <p>Ridge caps re-bedded in fresh mortar and re-pointed with flexible compound for a watertight seal.</p>
+        </div>
       </article>
       <article class="service rv">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        <h3>Ridge Capping</h3>
-        <p>New ridge cap installation and existing cap restoration using colour-matched mortar and flexible pointing.</p>
+        <svg class="service__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <div class="service__content">
+          <h3>Ridge Capping</h3>
+          <p>New ridge cap installation and existing cap restoration using colour-matched mortar and flexible pointing.</p>
+        </div>
       </article>
       <article class="service rv">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 16V4"/><path d="M17 16V4"/><path d="M5 20h14"/><path d="M3 16h18"/><path d="M12 4v12"/></svg>
-        <h3>Roof Painting</h3>
-        <p>High-build membrane coatings formulated for Australian conditions — UV resistant, heat reflective, 10-year durability.</p>
+        <svg class="service__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 16V4"/><path d="M17 16V4"/><path d="M5 20h14"/><path d="M3 16h18"/><path d="M12 4v12"/></svg>
+        <div class="service__content">
+          <h3>Roof Painting</h3>
+          <p>High-build membrane coatings formulated for Australian conditions — UV resistant, heat reflective, 10-year durability.</p>
+        </div>
       </article>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="process" class="dark blueprint">
-  <div class="wrap">
-    <div class="head rv"><span class="kicker">Our approach</span><h2>How we work</h2><hr class="rule"></div>
-    <div class="steps rv">
-      <article><span class="n">01</span><h3>Inspect</h3><p>Full roof assessment with moisture mapping and tile condition report. Photos and findings shared same day.</p></article>
-      <article><span class="n">02</span><h3>Plan</h3><p>Scope and method statement tailored to your roof profile. Fixed-price quote with no hidden variations.</p></article>
-      <article><span class="n">03</span><h3>Restore</h3><p>Works scheduled to suit you. Site protected, daily clean-up, final inspection with handover photos.</p></article>
+  <section id="process" class="process section" aria-labelledby="process-title">
+    <div class="container">
+      <header class="process__header">
+        <span class="hero__badge rv" style="margin-bottom:0.75rem;color:var(--mist)">Our Approach</span>
+        <h2 id="process-title" class="rv">How We Work</h2>
+      </header>
+      <div class="process__steps">
+        <article class="process__step rv">
+          <span class="process__num">01</span>
+          <h3>Inspect</h3>
+          <p>Full roof assessment with moisture mapping and tile condition report. Photos and findings shared same day.</p>
+        </article>
+        <article class="process__step rv">
+          <span class="process__num">02</span>
+          <h3>Plan</h3>
+          <p>Scope and method statement tailored to your roof profile. Fixed-price quote with no hidden variations.</p>
+        </article>
+        <article class="process__step rv">
+          <span class="process__num">03</span>
+          <h3>Restore</h3>
+          <p>Works scheduled to suit you. Site protected, daily clean-up, final inspection with handover photos.</p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="roof-types" class="light">
-  <div class="wrap">
-    <div class="head rv"><span class="kicker">The roof</span><h2>Roofs we work on</h2><hr class="rule"></div>
-    <div class="types">
-      <article class="rv"><b>Concrete tile</b><p>The most common roof on the East Coast — re-bed, re-point, clean and coat, with broken tiles matched.</p></article>
-      <article class="rv"><b>Terracotta tile</b><p>Softer underfoot and easily broken: walked carefully, tiles matched from what is already on the roof.</p></article>
-      <article class="rv"><b>Ridges &amp; hips</b><p>Capping re-bedded and pointed in flexible compound so it moves with the roof instead of cracking out.</p></article>
-      <article class="rv"><b>Valleys &amp; flashings</b><p>The joints that leak first — checked and repaired before any coating goes over the top.</p></article>
+  <style id="lb-asap-content">
+.rr{padding:clamp(52px,6.4vw,96px) 0;border-top:1px solid var(--hairline)}
+.rr .inner{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
+.rr h2{font-size:clamp(24px,3.1vw,40px);line-height:1.12;margin:0 0 10px;letter-spacing:-.02em}
+.rr .lead{color:var(--lbq-muted,#aab3bb);max-width:62ch;margin:0 0 28px}
+.rr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:16px}
+.rr-card{background:rgba(255,255,255,.035);border:1px solid var(--hairline);border-radius:12px;padding:22px;
+  border-top:3px solid var(--accent);transition:transform .16s,border-color .16s}
+.rr-card:hover{transform:translateY(-2px)}
+.rr-card h3{font-size:17px;margin:0 0 7px}
+.rr-card p{margin:0;color:var(--lbq-muted,#aab3bb);font-size:15px;line-height:1.58}
+.rr-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:2px solid var(--accent);margin-top:8px}
+.rr-steps div{padding:18px 14px 0 0}
+.rr-steps b{display:block;font:800 11px/1 ui-monospace,monospace;letter-spacing:.14em;color:var(--accent);margin-bottom:7px}
+.rr-steps h3{font-size:15.5px;margin:0 0 5px}
+.rr-steps p{margin:0;color:var(--lbq-muted,#aab3bb);font-size:14px;line-height:1.5}
+.rr-gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.rr-gal figure{margin:0;border:1px solid var(--hairline);border-radius:12px;overflow:hidden;background:#12161a}
+.rr-gal img{width:100%;height:240px;object-fit:cover;display:block}
+.rr-gal figcaption{padding:12px 14px;color:var(--lbq-muted,#aab3bb);font-size:14px}
+.rr-faq details{border-bottom:1px solid var(--hairline);padding:15px 0}
+.rr-faq summary{cursor:pointer;font-weight:700;font-size:16px;list-style:none}
+.rr-faq summary::-webkit-details-marker{display:none}
+.rr-faq p{color:var(--lbq-muted,#aab3bb);margin:10px 0 0;max-width:72ch;line-height:1.6}
+@media(max-width:900px){.rr-steps{grid-template-columns:1fr;border-top:0;border-left:2px solid var(--accent);padding-left:16px}
+  .rr-steps div{padding:0 0 18px}.rr-gal img{height:200px}}
+</style>
+<section class="rr rr--tight" id="roof-types"><div class="inner">
+<h2>Roofs we work on</h2>
+<div class="types">
+<article><b>Concrete tile</b><p>The most common roof on the East Coast — re-bed, re-point, clean and coat, with broken tiles matched.</p></article>
+<article><b>Terracotta tile</b><p>Softer underfoot and easily broken: walked carefully, tiles matched from what is already on the roof.</p></article>
+<article><b>Ridges &amp; hips</b><p>Capping re-bedded and pointed in flexible compound so it moves with the roof instead of cracking out.</p></article>
+<article><b>Valleys &amp; flashings</b><p>The joints that leak first — checked and repaired before any coating goes over the top.</p></article>
+</div></div></section>
+<section class="rr" id="roof-work"><div class="inner">
+<h2>On the roof</h2>
+<p class="lead">Tiled roofs, capping, coating and edge work — what the job actually looks like while it is happening.</p>
+<div class="rr-gal">
+<figure><img src="assets/photo_1.jpg" alt="Restored tiled roof surface with even coating"><figcaption>Coated and sealed — an even film across the tile face, not a patchy spray job.</figcaption></figure>
+<figure><img src="assets/photo_3.jpg" alt="Aerial view of a restored roof"><figcaption>Whole roof done in one run, ridges and hips included.</figcaption></figure>
+<figure><img src="assets/photo_4.jpg" alt="Roof edge, fasteners and wall junction detail"><figcaption>Edges and junctions — where a roof actually leaks if the detail is skipped.</figcaption></figure>
+</div></div></section>
+
+<section class="rr rr--tight" id="signs"><div class="inner">
+<h2>Signs the roof is due</h2>
+<p class="lead">Roofs rarely fail in one go. These are the things worth acting on before water is already inside the ceiling.</p>
+<ul class="signs">
+<li>Ridge caps lifting or mortar crumbling in the gutter</li>
+<li>Moss, lichen or black staining across the tile face</li>
+<li>Faded or chalky colour that rubs off on your hand</li>
+<li>Cracked or slipped tiles after wind</li>
+<li>Damp patches or staining on the ceiling</li>
+<li>Granules and grit collecting in the gutters</li>
+</ul>
+</div></section>
+
+<section class="rr rr--tight" id="inspect"><div class="inner">
+<h2>What the inspection covers</h2>
+<div class="checks">
+<div><b>Bedding &amp; pointing</b><p>Ridges and hips checked for loose mortar and re-pointed where it has cracked.</p></div>
+<div><b>Tile condition</b><p>Broken, slipped and brittle tiles identified — and matched where replacements are needed.</p></div>
+<div><b>Flashing &amp; valleys</b><p>The junctions where leaks start: valleys, penetrations, wall and chimney flashings.</p></div>
+<div><b>Water paths</b><p>Where water is actually going — gutter falls, box gutters and the ceiling below.</p></div>
+</div>
+<div class="cta-row"><a class="rr-btn" href="tel:+61425470406">Book an inspection — 0425 470 406</a></div>
+</div></section>
+<section class="rr" id="roof-faq"><div class="inner">
+<h2>Questions before you book</h2>
+<div class="rr-faq">
+<details open><summary>How long does a roof restoration take?</summary><p>Most houses are several days rather than one, because cleaning, bedding and coating each need their own conditions. You get the sequence up front.</p></details>
+<details><summary>Can you just fix the ridge caps?</summary><p>Yes, if that is all that has failed. It gets quoted as its own job rather than talked up into a full restoration.</p></details>
+<details><summary>Will pressure cleaning damage the tiles?</summary><p>Not when it is done at the right pressure for the tile type. Tiles that are already brittle are assessed first, and the coating is what protects them afterwards.</p></details>
+<details><summary>How long does the coating last?</summary><p>It depends on the product and the roof, and it is worth asking which coating is being used rather than assuming. That gets explained at quote stage.</p></details>
+<details><summary>Do you clear the gutters afterwards?</summary><p>Yes — debris from washing and bedding is cleared before the job is signed off.</p></details>
+</div></div></section>
+<div class="asap-ticker" aria-hidden="true"><div class="asap-ticker__track" id="asapTick"></div></div>
+<!--/ASAP-TICKER-->
+
+
+<section class="ww" id="areas" aria-labelledby="areas-title">
+  <div class="inner">
+    <h2 id="areas-title">Servicing the East Coast of Australia</h2>
+    <p class="lead">Tiled roof restoration along the coast and inland — Newcastle and the Hunter, the Central Coast, Sydney, the Illawarra, and up past Port Macquarie.</p>
+    <div class="ww__chips">
+      <span>Newcastle</span><span>Lake Macquarie</span><span>Maitland</span><span>Cessnock</span>
+      <span>Central Coast</span><span>Gosford</span><span>Wyong</span><span>Sydney</span>
+      <span>Wollongong</span><span>Illawarra</span><span>Port Stephens</span><span>Forster</span>
+      <span>Taree</span><span>Port Macquarie</span><span>Coffs Harbour</span>
     </div>
-  </div>
-</section>
-
-<section id="roof-work" class="dark">
-  <div class="wrap">
-    <div class="head rv"><span class="kicker">On the roof</span><h2>What the job looks like</h2>
-      <hr class="rule"><p class="lead" style="margin-top:14px">Tiled roofs, capping, coating and edge work — photographed as the work happened.</p></div>
-    <div class="gal">
-      <figure class="rv"><img src="assets/photo_1.jpg" alt="Restored tiled roof surface with even coating" width="1200" height="800" loading="lazy"><figcaption>Coated and sealed — an even film across the tile face, not a patchy spray job.</figcaption></figure>
-      <figure class="rv"><img src="assets/photo_3.jpg" alt="Aerial view of a restored roof" width="1200" height="800" loading="lazy"><figcaption>Whole roof done in one run, ridges and hips included.</figcaption></figure>
-      <figure class="rv"><img src="assets/photo_4.jpg" alt="Roof edge, fasteners and wall junction detail" width="1200" height="800" loading="lazy"><figcaption>Edges and junctions — where a roof actually leaks if the detail is skipped.</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="signs" class="light">
-  <div class="wrap">
-    <div class="head rv"><span class="kicker">Before water gets in</span><h2>Signs the roof is due</h2>
-      <hr class="rule"><p class="lead" style="margin-top:14px;color:#414951">Roofs rarely fail in one go. These are the things worth acting on before water is already inside the ceiling.</p></div>
-    <ul class="signs rv">
-      <li>Ridge caps lifting or mortar crumbling in the gutter</li>
-      <li>Moss, lichen or black staining across the tile face</li>
-      <li>Faded or chalky colour that rubs off on your hand</li>
-      <li>Cracked or slipped tiles after wind</li>
-      <li>Damp patches or staining on the ceiling</li>
-      <li>Granules and grit collecting in the gutters</li>
-    </ul>
-  </div>
-</section>
-
-<section id="inspect" class="dark">
-  <div class="wrap">
-    <div class="head rv"><span class="kicker">Free quote</span><h2>What the inspection covers</h2><hr class="rule"></div>
-    <div class="checks rv">
-      <div><b>Bedding &amp; pointing</b><p>Ridges and hips checked for loose mortar and re-pointed where it has cracked.</p></div>
-      <div><b>Tile condition</b><p>Broken, slipped and brittle tiles identified — and matched where replacements are needed.</p></div>
-      <div><b>Flashing &amp; valleys</b><p>The junctions where leaks start: valleys, penetrations, wall and chimney flashings.</p></div>
-      <div><b>Water paths</b><p>Where water is actually going — gutter falls, box gutters and the ceiling below.</p></div>
-    </div>
-    <div class="cta-row rv"><a class="btn" href="#quote">Request a quote</a></div>
-  </div>
-</section>
-
-<section id="areas" class="light">
-  <div class="wrap">
-    <div class="head rv"><span class="kicker">Where we work</span><h2>Servicing the East Coast of Australia</h2>
-      <hr class="rule"><p class="lead" style="margin-top:14px;color:#414951">Tiled roof restoration along the coast and inland — Newcastle and the Hunter, the Central Coast, Sydney, the Illawarra and up past Port Macquarie.</p></div>
-    <div class="areas-chips rv" style="margin-bottom:18px">
-      <span>Newcastle</span><span>Lake Macquarie</span><span>Maitland</span><span>Cessnock</span><span>Central Coast</span>
-      <span>Gosford</span><span>Wyong</span><span>Sydney</span><span>Wollongong</span><span>Illawarra</span>
-      <span>Port Stephens</span><span>Forster</span><span>Taree</span><span>Port Macquarie</span><span>Coffs Harbour</span>
-    </div>
-    <div class="areaband rv">
-      <div class="cap"><span>Service areas — rotating</span><em id="areaCount">01 / 06</em></div>
-      <div class="row" id="areaRow"></div>
+    <div class="ww__band">
+      <div class="cap"><span>Service areas — rotating</span><em id="asapAreaCount">01 / 06</em></div>
+      <div class="row" id="asapAreaRow"></div>
       <div class="prog"><i></i></div>
     </div>
   </div>
 </section>
-
-<section id="faq" class="dark">
-  <div class="wrap">
-    <div class="head rv"><span class="kicker">Questions</span><h2>Before you book</h2><hr class="rule"></div>
-    <div class="rv">
-      <details class="q" open><summary>How long does a roof restoration take?</summary><p>Most houses are several days rather than one, because cleaning, bedding and coating each need their own conditions. You get the sequence up front.</p></details>
-      <details class="q"><summary>Can you just fix the ridge caps?</summary><p>Yes, if that is all that has failed. It gets quoted as its own job rather than talked up into a full restoration.</p></details>
-      <details class="q"><summary>Will pressure cleaning damage the tiles?</summary><p>Not when it is done at the right pressure for the tile type. Tiles that are already brittle are assessed first, and the coating is what protects them afterwards.</p></details>
-      <details class="q"><summary>How long does the coating last?</summary><p>It depends on the product and the roof, and it is worth asking which coating is being used rather than assuming. That gets explained at quote stage.</p></details>
-      <details class="q"><summary>Do you clear the gutters afterwards?</summary><p>Yes — debris from washing and bedding is cleared before the job is signed off.</p></details>
-    </div>
-  </div>
-</section>
-
-<section id="quote" class="dark blueprint">
-  <div class="wrap quote">
-    <div class="rv">
-      <span class="kicker">Request a quote</span>
-      <h2>Tell us about the roof</h2>
-      <p class="lead">A few details is all we need to come back with a free, no-obligation quote — and what the roof actually needs rather than a package.</p>
-      <p class="lead" style="margin-top:1rem">Prefer to talk it through? <a href="tel:+61425470406" style="color:var(--accent-hi);border-bottom:1px solid currentColor">0425 470 406</a></p>
-      <figure class="shot" style="margin-top:22px;max-width:520px">
-        <img src="assets/photo_3.jpg" alt="Restored tiled roof" width="1200" height="800" loading="lazy">
-        <figcaption>Ridges, hips and tile face done in one run.</figcaption>
-      </figure>
-    </div>
-    <form id="lbq-form" novalidate data-site="asap-roof-restorations" data-biz="ASAP Roof Restorations" class="rv">
-      <div class="f-grid">
-        <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
-        <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
-        <div class="full"><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
-        <div class="full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame…" required></textarea></div>
+<!--/ASAP-AREAS-->
+<section id="contact" class="locality section" aria-labelledby="contact-title">
+    <div class="container locality__inner">
+      <div class="locality__heading">
+        <h2 id="contact-title" class="rv">Servicing the East Coast of Australia</h2>
+        <p class="locality__text rv">Servicing the East Coast of Australia · free quotes, no obligation</p>
       </div>
-      <label class="cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
-      <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
-      <button class="btn" type="submit">Send quote request</button>
-      <p class="st" id="lbq-st" role="status" aria-live="polite"></p>
-    </form>
-  </div>
-</section>
-
-<section id="contact" class="locality">
-  <div class="wrap locality__inner">
-    <div>
-      <h2 style="text-transform:none;font-size:clamp(1.25rem,2.4vw,1.7rem)">Servicing the East Coast of Australia</h2>
-      <p style="margin:.5rem 0 0;color:#414951;font-size:.95rem">Free quotes, no obligation.</p>
-    </div>
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem">
-      <a class="locality__tel" href="tel:+61425470406">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-        <span>0425 470 406</span>
-      </a>
-      <div class="socials">
-        <a href="https://www.facebook.com/p/Cheap-Cheap-Roof-Restoration-100078591889072/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      <div class="locality__side">
+        <a class="locality__tel" href="tel:+61425470406">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          <span>0425 470 406</span>
         </a>
-        <a href="https://www.facebook.com/share/19QEzzmBvC" target="_blank" rel="noopener noreferrer" aria-label="Facebook post">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v14H4z"/><path d="M4 5l8 7 8-7"/></svg>
-        </a>
+        <div class="locality__socials" role="list" aria-label="Social links">
+          <a href="https://www.facebook.com/p/Cheap-Cheap-Roof-Restoration-100078591889072/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" role="listitem">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/19QEzzmBvC" target="_blank" rel="noopener noreferrer" aria-label="Facebook post" role="listitem">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M4 5l8 7 8-7"/></svg>
+          </a>
+        </div>
       </div>
     </div>
+  </section>
+</main>
+
+<section class="lb-rb" aria-label="Services and recent work">
+  <div class="lb-rb__track">
+    <div class="lb-rb__slide is-on" style="background:#0b0c10">
+      <div class="lb-rb__body">
+        <span class="lb-rb__kick">01 &mdash; Re-bedding</span>
+        <strong class="lb-rb__head">Ridge caps that stay put</strong>
+        <p class="lb-rb__note">Old mortar cut out, caps re-bedded and pointed with flexible compound so the ridge line holds through East Coast summers.</p>
+      </div>
+    </div>
+    <div class="lb-rb__slide" style="background:#0b0c10">
+      <div class="lb-rb__body">
+        <span class="lb-rb__kick">02 &mdash; Ridge capping</span>
+        <strong class="lb-rb__head">Colour matched, watertight</strong>
+        <p class="lb-rb__note">New ridge cap installation and restoration, matched to your existing tile colour and bedding line.</p>
+      </div>
+    </div>
+    <div class="lb-rb__slide" style="background:#0b0c10">
+      <div class="lb-rb__body">
+        <span class="lb-rb__kick">03 &mdash; Roof painting</span>
+        <strong class="lb-rb__head">High build membrane coatings</strong>
+        <p class="lb-rb__note">UV resistant, heat reflective systems built for Australian conditions &mdash; with a ten year durability expectation.</p>
+      </div>
+    </div>
+    <button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button>
+    <button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button>
+    <div class="lb-rb__dots">
+      <button type="button" class="is-on" aria-label="Slide 1"></button>
+      <button type="button" class="" aria-label="Slide 2"></button>
+      <button type="button" class="" aria-label="Slide 3"></button>
+    </div>
+    <div class="lb-rb__cap">ASAP Roof Restorations &mdash; servicing the East Coast of Australia</div>
   </div>
 </section>
 
-<section class="legal">
-  <div class="wrap legal__grid">
-    <div>
-      <h3 id="privacy-title">Privacy</h3>
-      <p>We collect only the information you provide via the quote form: name, contact details, property address, and roof details. This data is used solely to prepare and deliver your quote. We do not sell or share your information with third parties except as required to provide the service you requested. Form submissions are transmitted securely and stored for the duration of the quote process. You may request deletion at any time by contacting us.</p>
-    </div>
-    <div>
-      <h3 id="terms-title">Terms</h3>
-      <p>The quote provided is an estimate based on the information supplied and a visual inspection where conducted. Final pricing may vary if additional defects are discovered during works. All works are performed to applicable Australian Standards and manufacturer specifications. Payment terms are outlined in the formal quote. These terms are governed by the laws of Western Australia.</p>
-    </div>
+<a id="quote" class="anchor-target" aria-hidden="true"></a>
+<section id="lbq" class="v1" aria-labelledby="lbq-h">
+  <style>
+#lbq{--lbq-accent:var(--accent);--lbq-ink:var(--mist);--lbq-muted:#aab3bb;--lbq-bg:var(--ground);--lbq-panel:rgba(255,255,255,.045);--lbq-line:var(--hairline);padding:clamp(48px,6vw,76px) var(--space-sm);background:var(--lbq-bg);color:var(--lbq-ink);border-top:1px solid var(--hairline)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto}
+#lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
+#lbq .lbq-f{display:grid;gap:12px}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:none;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#f5f5f5;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+/* v1 card */
+#lbq.v1 .lbq-card{background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
+#lbq.v1 .lbq-g{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+#lbq.v1 .lbq-full{grid-column:1/-1}
+@media(max-width:640px){#lbq.v1 .lbq-g{grid-template-columns:1fr}}
+/* v2 band */
+#lbq.v2{background:var(--lbq-panel);border-top:1px solid var(--lbq-line);border-bottom:1px solid var(--lbq-line)}
+#lbq.v2 .lbq-g{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+#lbq.v2 .lbq-full{grid-column:1/-1}
+#lbq.v2 .lbq-hd{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
+@media(max-width:760px){#lbq.v2 .lbq-g{grid-template-columns:1fr}#lbq.v2 .lbq-hd{display:block}}
+/* v3 split */
+#lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+#lbq.v3 .lbq-g{display:grid;gap:12px}
+#lbq.v3 .lbq-hp2{border:1px solid var(--lbq-accent);padding-left:16px}
+@media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
+/* v4 minimal */
+#lbq.v4 .lbq-w{max-width:620px}
+#lbq.v4 input,#lbq.v4 textarea{border:0;border-bottom:1px solid var(--lbq-line);border-radius:0;background:transparent;padding:11px 2px}
+#lbq.v4 .lbq-g{display:grid;gap:16px}
+</style>
+  <div class="lbq-w">
+      <h2 id="lbq-h">Request a quote</h2>
+      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p>
+      <div class="lbq-card">
+        <form id="lbq-form" novalidate data-site="asap-roof-restorations" data-biz="ASAP Roof Restorations">
+          <div class="lbq-g">
+            <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+            <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="lbq-full"><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
+            <div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div>
+          </div>
+          <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
+          <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+          <button type="submit">Send quote request</button>
+          <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+  </div>
+  <script>
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;  // honeypot — silently accept bots
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</section>
+
+<section id="privacy" class="section section--tight" aria-labelledby="privacy-title">
+  <div class="container">
+    <h3 id="privacy-title">Privacy</h3>
+    <p>We collect only the information you provide via the quote form: name, contact details, property address, and roof details. This data is used solely to prepare and deliver your quote. We do not sell or share your information with third parties except as required to provide the service you requested. Form submissions are transmitted securely and stored for the duration of the quote process. You may request deletion at any time by contacting us.</p>
   </div>
 </section>
 
-<footer>
-  <div class="wrap foot">
-    <div class="foot__brand">
-      <img src="assets/logo-header-hi.png" alt="ASAP Roof Restorations" width="748" height="574" loading="lazy">
+<section id="terms" class="section section--tight" aria-labelledby="terms-title">
+  <div class="container">
+    <h3 id="terms-title">Terms</h3>
+    <p>The quote provided is an estimate based on the information supplied and a visual inspection where conducted. Final pricing may vary if additional defects are discovered during works. All works are performed to applicable Australian Standards and manufacturer specifications. Payment terms are outlined in the formal quote. These terms are governed by the laws of Western Australia.</p>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="assets/logo-header-hi.png" alt="" width="32" height="28" loading="lazy" decoding="async">
+      <span>ASAP Roof Restorations</span>
     </div>
-    <div class="foot__meta">
-      <span>© 2026 ASAP Roof Restorations · servicing the East Coast of Australia</span>
-      <a href="tel:+61425470406">0425 470 406</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms</a>
+    <div class="footer__meta">
+      <p class="footer__copy">&copy; 2026 ASAP Roof Restorations &middot; servicing the East Coast of Australia</p>
+      <div class="footer__legal">
+        <a href="tel:+61425470406">0425 470 406</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<script>
-document.getElementById('burger').addEventListener('click',function(){
-  var n=document.getElementById('nav'),o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);});
-
-var SL=[
-  {tag:'Re-bedding & re-pointing',where:'Newcastle',title:'Ridge caps that stay put',text:'Old mortar cut out, caps re-bedded and pointed with flexible compound so the ridge line holds.'},
-  {tag:'Ridge capping',where:'Central Coast',title:'Colour matched, watertight',text:'New ridge cap installation and restoration, matched to your existing tile colour and bedding line.'},
-  {tag:'Roof painting',where:'Sydney',title:'High build membrane coatings',text:'UV resistant, heat reflective systems built for Australian conditions, with a ten year durability expectation.'},
-  {tag:'Tiled roof repairs',where:'Illawarra',title:'Leaks stopped at the source',text:'Cracked and slipped tiles replaced, valleys and flashings repaired before any coating goes on.'}
-];
-var slides=[].slice.call(document.querySelectorAll('.banner__slide')),
-    dots=document.getElementById('dots'),cap=document.getElementById('cap'),
-    capTag=document.getElementById('capTag'),capWhere=document.getElementById('capWhere'),
-    capTitle=document.getElementById('capTitle'),capText=document.getElementById('capText'),
-    i=0,timer=null,reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-SL.forEach(function(_,k){var d=document.createElement('i');if(!k)d.className='on';
-  d.addEventListener('click',function(){go(k);restart();});dots.appendChild(d);});
-function go(k){i=(k+SL.length)%SL.length;
-  slides.forEach(function(s,j){s.classList.toggle('is-on',j===i);});
-  [].forEach.call(dots.children,function(d,j){d.classList.toggle('on',j===i);});
-  cap.style.transition='opacity .28s';cap.style.opacity=0;
-  setTimeout(function(){capTag.textContent=SL[i].tag;capWhere.textContent=SL[i].where;
-    capTitle.textContent=SL[i].title;capText.textContent=SL[i].text;cap.style.opacity=1;},280);}
-document.getElementById('next').addEventListener('click',function(){go(i+1);restart();});
-document.getElementById('prev').addEventListener('click',function(){go(i-1);restart();});
-function restart(){if(reduce)return;clearInterval(timer);timer=setInterval(function(){go(i+1);},6000);}
-cap.addEventListener('mouseenter',function(){clearInterval(timer);});
-cap.addEventListener('mouseleave',restart);
-restart();
-
-var AR=[['Newcastle & Lake Macquarie','Charlestown · Kotara · Belmont · Swansea'],
-        ['Hunter Valley','Maitland · Cessnock · Kurri Kurri · Rutherford'],
-        ['Central Coast','Gosford · Wyong · Terrigal · The Entrance'],
-        ['Sydney','Northern Beaches · Hills · Sutherland · Inner West'],
-        ['Illawarra','Wollongong · Dapto · Shellharbour · Nowra'],
-        ['Mid North Coast','Forster · Taree · Port Macquarie · Coffs Harbour']];
-var row=document.getElementById('areaRow'),ac=document.getElementById('areaCount'),ai=0;
-AR.forEach(function(a,k){var u=document.createElement('ul'),li=document.createElement('li');
-  if(!k)u.className='on';li.innerHTML=a[0]+'<small>'+a[1]+'</small>';u.appendChild(li);row.appendChild(u);});
-var rows=[].slice.call(row.children);
-if(!reduce){setInterval(function(){ai=(ai+1)%AR.length;
-  rows.forEach(function(u,k){u.classList.toggle('on',k===ai);});
-  ac.textContent=('0'+(ai+1)).slice(-2)+' / 0'+AR.length;},4000);}
-
-var T=['Newcastle','Lake Macquarie','Maitland','Cessnock','Central Coast','Gosford','Wyong','Sydney','Wollongong','Illawarra','Port Stephens','Forster','Taree','Port Macquarie','Coffs Harbour'];
-var t=document.getElementById('tick');
-t.innerHTML=T.concat(T).map(function(s){return '<span>'+s+'</span>';}).join('');
-
-var rvs=[].slice.call(document.querySelectorAll('.rv'));
-if('IntersectionObserver' in window){
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
-  rvs.forEach(function(el){io.observe(el);});
-  setTimeout(function(){rvs.forEach(function(el){if(!el.classList.contains('in')&&el.getBoundingClientRect().top<innerHeight)el.classList.add('in');});},2500);
-}else{rvs.forEach(function(el){el.classList.add('in');});}
-
+<!-- lb: old box-hero engine removed -->
+<script id="lb-motion-js">
+/* LB MOTION PACK v1 */
 (function(){
-  function base(cb){
-    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
-    var done=false, FB='https://grocery-periodically-everyone-wine.trycloudflare.com';
-    var t=setTimeout(function(){ if(!done){done=true;cb(FB);} },2500);
-    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_='+Date.now())
-      .then(function(r){return r.text();})
-      .then(function(txt){var b=(txt||'').trim().replace(/\/+$/,'');if(done)return;done=true;clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b)?b:FB);})
-      .catch(function(){if(!done){done=true;clearTimeout(t);cb(FB);}});
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sel = 'section > *, main > *, .sec-head, .cards > *, .grid > *, .faq details, .gal figure, .gallery figure';
+  var els = [].slice.call(document.querySelectorAll(sel)).filter(function(e){
+    if (e.closest && e.closest('.lb-rb')) return false;
+    if (e.tagName === 'SCRIPT' || e.tagName === 'STYLE') return false;
+    var r = e.getBoundingClientRect();
+    return r.width > 40 && r.height > 20;
+  });
+  els.forEach(function(e, i){ e.classList.add('lb-rv'); e.style.transitionDelay = ((i % 6) * 55) + 'ms'; });
+  if (rm || !('IntersectionObserver' in window)) {
+    els.forEach(function(e){ e.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(x){ if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+    els.forEach(function(e){ io.observe(e); });
+    setTimeout(function(){ els.forEach(function(e){ if (!e.classList.contains('is-in')) e.classList.add('is-in'); }); }, 2600);
   }
-  var f=document.getElementById('lbq-form'); if(!f) return;
-  var st=document.getElementById('lbq-st'), btn=f.querySelector('button[type=submit]');
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var d={}; new FormData(f).forEach(function(v,k){d[k]=v;});
-    if (d.website) return;
-    if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()){
-      st.textContent='Please add your name, a phone or email, and a few words about the job.';
-      st.style.color='#ff9d8a'; return;
+  var rb = document.querySelector('.lb-rb');
+  if (!rb) return;
+  var slides = [].slice.call(rb.querySelectorAll('.lb-rb__slide'));
+  if (slides.length < 2) return;
+  var dots = [].slice.call(rb.querySelectorAll('.lb-rb__dots button'));
+  var i = 0, timer = null, DUR = 5600;
+  function go(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function(s, k){ s.classList.toggle('is-on', k === i); });
+    dots.forEach(function(d, k){ d.classList.toggle('is-on', k === i); });
+  }
+  function play(){ if (rm) return; stop(); timer = setInterval(function(){ go(i + 1); }, DUR); }
+  function stop(){ if (timer) { clearInterval(timer); timer = null; } }
+  dots.forEach(function(d, k){ d.addEventListener('click', function(){ go(k); play(); }); });
+  var pv = rb.querySelector('.lb-rb__nav--prev'), nx = rb.querySelector('.lb-rb__nav--next');
+  if (pv) pv.addEventListener('click', function(){ go(i - 1); play(); });
+  if (nx) nx.addEventListener('click', function(){ go(i + 1); play(); });
+  rb.addEventListener('mouseenter', stop); rb.addEventListener('mouseleave', play);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(en){ en.forEach(function(x){ x.isIntersecting ? play() : stop(); }); },
+      { threshold: 0.25 }).observe(rb);
+  } else { play(); }
+  go(0);
+})();
+</script>
+<script id="lb-hero-js">
+/* LB HERO v2 - depth field (aurora + perspective grid + parallax motes). No literal objects. */
+(function(){
+  var cv = document.querySelector('.lb-hero-canvas, #heroCanvas, .hero-canvas, .lb3d-canvas, .hero-canvas-bg, canvas[data-hero]');
+  if (!cv) return;
+  var ctx = cv.getContext('2d'); if (!ctx) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W = 0, H = 0, dpr = 1, t = 0, raf = null, visible = true;
+  function accent(){
+    var v = getComputedStyle(document.documentElement).getPropertyValue('--acc')
+         || getComputedStyle(document.documentElement).getPropertyValue('--accent');
+    v = (v || '').trim(); return /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(v) ? v : '#e51924';
+  }
+  function hex2rgb(h){ h = h.replace('#',''); if (h.length === 3) h = h[0]+h[0]+h[1]+h[1]+h[2]+h[2];
+    return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)]; }
+  var ACC = hex2rgb(accent());
+  function dark(){ var b = getComputedStyle(document.body).backgroundColor || '';
+    var m = b.match(/(\d+),\s*(\d+),\s*(\d+)/); if (!m) return true;
+    return (0.299*m[1] + 0.587*m[2] + 0.114*m[3]) < 128; }
+
+  function size(){
+    var r = cv.getBoundingClientRect();
+    dpr = Math.min(2, window.devicePixelRatio || 1);
+    W = Math.max(320, r.width || cv.clientWidth || window.innerWidth);
+    H = Math.max(240, r.height || cv.clientHeight || window.innerHeight);
+    cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+
+  // deterministic depth motes
+  var N = 46, motes = [];
+  var seed = 20261019;
+  function rnd(){ seed = (seed*1103515245 + 12345) % 2147483648; return seed/2147483648; }
+  for (var i=0;i<N;i++) motes.push({x:rnd(), y:rnd(), z:0.25+rnd()*0.75, s:0.6+rnd()*1.9, p:rnd()*6.283});
+
+  function draw(){
+    var isDark = dark();
+    var base = isDark ? [10,11,14] : [248,249,251];
+    var ink  = isDark ? [255,255,255] : [12,14,18];
+    var g = ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0, 'rgb('+base.join(',')+')');
+    g.addColorStop(0.62, 'rgb('+Math.round(base[0]*1.06+2)+','+Math.round(base[1]*1.06+2)+','+Math.round(base[2]*1.09+2)+')');
+    g.addColorStop(1, 'rgb('+base.join(',')+')');
+    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+
+    // aurora: two slow, wide ribbons of the brand colour
+    for (var k=0;k<2;k++){
+      var cx = W*(0.30 + 0.34*k + 0.05*Math.sin(t*0.00013 + k*2.1));
+      var cy = H*(0.34 + 0.16*k + 0.05*Math.cos(t*0.00017 + k*1.3));
+      var rad = Math.max(W,H)*(0.46 + 0.13*k);
+      var rg = ctx.createRadialGradient(cx,cy,0,cx,cy,rad);
+      var a = (isDark ? 0.20 : 0.13) * (0.72 + 0.28*Math.sin(t*0.0003 + k));
+      rg.addColorStop(0,'rgba('+ACC.join(',')+','+a.toFixed(3)+')');
+      rg.addColorStop(0.55,'rgba('+ACC.join(',')+','+(a*0.32).toFixed(3)+')');
+      rg.addColorStop(1,'rgba('+ACC.join(',')+',0)');
+      ctx.fillStyle = rg; ctx.fillRect(0,0,W,H);
     }
-    btn.disabled=true; st.textContent='Sending…'; st.style.color='';
-    base(function(B){
-      fetch(B+'/functions/v1/quote-request',{method:'POST',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({site_id:f.dataset.site||'',business_name:f.dataset.biz||'',name:d.name,phone:d.phone,email:d.email,service:d.service||'',message:d.message,consent:!!d.consent})})
-      .then(function(r){return r.json().catch(function(){return {};});})
-      .then(function(x){ if(x&&x.success){f.reset();st.textContent="Thanks — your request is in. We'll be in touch shortly.";st.style.color='#e0785a';}
-        else { throw new Error((x&&x.error)||'Could not send'); } })
-      .catch(function(err){ st.textContent=(err&&err.message)?err.message:'Could not send — please try again or call.'; st.style.color='#ff9d8a'; })
-      .finally(function(){ btn.disabled=false; });
+
+    // perspective floor: clean architectural depth, not blocks
+    var hz = H*0.70, vpx = W*0.5;
+    ctx.lineWidth = 1;
+    for (var j=-9;j<=9;j++){
+      var fx = vpx + j*(W/9)*1.5;
+      var al = (isDark?0.16:0.13) * (1 - Math.min(1, Math.abs(j)/11));
+      ctx.strokeStyle = 'rgba('+ACC.join(',')+','+al.toFixed(3)+')';
+      ctx.beginPath(); ctx.moveTo(vpx + j*(W/9)*0.16, hz); ctx.lineTo(fx, H+2); ctx.stroke();
+    }
+    for (var r=1;r<=9;r++){
+      var y = hz + Math.pow(r/9, 2.15)*(H-hz+4);
+      ctx.strokeStyle = 'rgba('+ACC.join(',')+','+((isDark?0.13:0.10)*(1-r/11)).toFixed(3)+')';
+      ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
+    }
+    var hg = ctx.createLinearGradient(0,hz-70,0,hz+70);
+    hg.addColorStop(0,'rgba('+ACC.join(',')+',0)');
+    hg.addColorStop(0.5,'rgba('+ACC.join(',')+','+(isDark?0.16:0.11)+')');
+    hg.addColorStop(1,'rgba('+ACC.join(',')+',0)');
+    ctx.fillStyle = hg; ctx.fillRect(0,hz-70,W,140);
+
+    // depth motes: size + opacity track z, slow parallax drift
+    for (var q=0;q<motes.length;q++){
+      var m = motes[q];
+      var y = ((m.y + t*0.0000075*m.z) % 1);
+      var x = m.x + 0.016*Math.sin(t*0.00022*m.z + m.p);
+      var px = x*W, py = y*H;
+      var a2 = (isDark?0.42:0.30) * m.z * (0.55 + 0.45*Math.sin(t*0.0011 + m.p));
+      if (a2 <= 0) continue;
+      ctx.fillStyle = 'rgba('+ink.join(',')+','+a2.toFixed(3)+')';
+      ctx.beginPath(); ctx.arc(px, py, m.s*(0.6+m.z*0.9), 0, 6.283); ctx.fill();
+    }
+
+    // vignette to seat the copy
+    var vg = ctx.createRadialGradient(W*0.5,H*0.52,Math.min(W,H)*0.30,W*0.5,H*0.52,Math.max(W,H)*0.80);
+    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1, isDark?'rgba(0,0,0,0.42)':'rgba(0,0,0,0.14)');
+    ctx.fillStyle = vg; ctx.fillRect(0,0,W,H);
+  }
+
+  function loop(ts){ if (ts) t = ts; if (visible) draw(); raf = requestAnimationFrame(loop); }
+  size(); draw();
+  window.addEventListener('resize', function(){ size(); draw(); });
+  if (!reduce && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(e){ visible = e[0].isIntersecting; }, {threshold:0.02}).observe(cv);
+  }
+  document.addEventListener('visibilitychange', function(){ visible = !document.hidden && document.visibilityState === 'visible'; });
+  if (!reduce) raf = requestAnimationFrame(loop); 
+})();
+</script>
+<style>
+/* ==== LB BRAND: logo-only mode (the asset already carries the company words) ==== */
+.lb-brand--logoonly .lb-brand__word{display:none !important}
+.lb-brand--logoonly .lb-brand__mark{height:clamp(38px,4.6vw,64px) !important;max-width:38vw !important}
+.lb-brand--logoonly .lb-brand__mark img{height:100% !important;width:auto !important;max-width:38vw !important}
+</style>
+<style>
+/* ==== LB HEADER TRUTH: fail-safe visibility (never ship an invisible header) ==== */
+header,.site-header,.page-header,.header-inner,nav.nav,.nav-inner,
+.lb-brand,.lb-brand *,.lb-brand__mark,.lb-brand__word{
+  opacity:1 !important;visibility:visible !important}
+.lb-rv,.rv,[data-rv]{animation:lbForceIn .001s 2.5s forwards !important}
+@keyframes lbForceIn{to{opacity:1 !important;transform:none !important}}
+#sigSplash,#splash,.sp{animation:lbKillSplash .001s 2.5s forwards !important}
+@keyframes lbKillSplash{to{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}}
+</style>
+
+
+<style>/* ==== LB HEADER TRUTH ==== */
+/* height rule removed: it clipped the centred logo on mobile - see #asap-extras */
+.lb-brand{gap:clamp(9px,1vw,14px) !important;min-height:0 !important;
+  align-items:center !important;flex-wrap:nowrap !important}
+.lb-brand__mark{flex:0 0 auto !important;display:flex !important;align-items:center !important;
+  height:clamp(42px,4.6vw,60px) !important;width:auto !important;max-width:120px !important}
+.lb-brand__mark img{display:block !important;height:100% !important;width:auto !important;
+  max-width:120px !important;object-fit:contain !important}
+.lb-brand__word{display:flex !important;flex-direction:column !important;justify-content:center !important;
+  min-width:0 !important;overflow:visible !important}
+/* the logo is a stacked square mark: at header height its inner words are unreadable, so the
+   wordmark carries the company name at a size that is actually legible */
+.lb-brand__name{font-size:clamp(13px,1.15vw,16px)!important;line-height:1.1!important;
+  white-space:normal;display:flex!important;flex-direction:column!important;letter-spacing:.01em!important}
+.lb-brand__sub{font-size:9px!important;letter-spacing:.2em!important;opacity:.7!important;margin-top:.45em!important}
+@media(max-width:560px){
+  .lb-brand__mark{height:38px !important;max-width:64px !important}
+  .lb-brand__name{font-size:12px!important}
+  .lb-brand__sub{display:none!important}
+}
+</style>
+
+<style>/* ==== LB HEADER POLISH 2 ==== */
+header nav a:not(.btn):not([class*="btn"]):not([class*="cta"]),
+.site-header nav a:not(.btn):not([class*="btn"]),
+.header-inner nav a:not(.btn):not([class*="btn"]),
+nav.nav a:not(.btn):not([class*="btn"]),
+.nav-inner a:not(.btn):not([class*="btn"]),
+header a[href^="tel"],.site-header a[href^="tel"]{
+  color:var(--lb-name,currentColor) !important;
+  opacity:1 !important;
+}
+.lb-brand__sub:empty{display:none !important}
+</style>
+<style>/* ==== TASTE PASS (anti-slop, from impeccable findings) ==== */
+.lb-mq__in{display:none !important}
+letter-spacing: 0.08em on body text{letter-spacing:normal !important}
+letter-spacing: 0.10em on body text{letter-spacing:normal !important}
+letter-spacing: 0.16em on body text{letter-spacing:normal !important}
+
+:root{--lb-disp:"Archivo",system-ui,sans-serif;--lb-sub:"Archivo",system-ui,sans-serif}
+body,h1,h2,h3,h4,h5,h6,p,li,span,a,button,input,blockquote{
+  font-family:"Archivo", system-ui, -apple-system, "Segoe UI", sans-serif}
+small,.small,.meta,.caption,.eyebrow,.kicker{font-size:max(0.82em,13px)}
+p,li{line-height:1.55}
+section,header,footer,.wrap,.container,.inner,[class*="section"]{
+  scroll-margin-top:24px}
+
+</style>
+<script id="asap-extras-js">
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* service-area ticker */
+  var T=['Newcastle','Lake Macquarie','Maitland','Cessnock','Central Coast','Gosford','Wyong','Sydney',
+         'Wollongong','Illawarra','Port Stephens','Forster','Taree','Port Macquarie','Coffs Harbour'];
+  var tk=document.getElementById('asapTick');
+  if (tk) tk.innerHTML = T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
+
+  /* rotating service-area band */
+  var AR=[['Newcastle & Lake Macquarie','Charlestown · Kotara · Belmont · Swansea'],
+          ['Hunter Valley','Maitland · Cessnock · Kurri Kurri · Rutherford'],
+          ['Central Coast','Gosford · Wyong · Terrigal · The Entrance'],
+          ['Sydney','Northern Beaches · Hills · Sutherland · Inner West'],
+          ['Illawarra','Wollongong · Dapto · Shellharbour · Nowra'],
+          ['Mid North Coast','Forster · Taree · Port Macquarie · Coffs Harbour']];
+  var row=document.getElementById('asapAreaRow'), cnt=document.getElementById('asapAreaCount');
+  if (row){
+    AR.forEach(function(a,k){
+      var u=document.createElement('ul'), li=document.createElement('li');
+      if(!k) u.className='on';
+      li.innerHTML = a[0]+'<small>'+a[1]+'</small>';
+      u.appendChild(li); row.appendChild(u);
     });
+    var rows=[].slice.call(row.children), i=0;
+    if(!reduce){
+      setInterval(function(){
+        i=(i+1)%AR.length;
+        rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
+        if(cnt) cnt.textContent = ('0'+(i+1)).slice(-2)+' / 0'+AR.length;
+      },4000);
+    }
+  }
+
+  /* area caption on each rotating banner slide (its own .lb-rb band, untouched otherwise) */
+  var WHERE=['Newcastle','Central Coast','Sydney'];
+  [].slice.call(document.querySelectorAll('.lb-rb__slide .lb-rb__kick')).forEach(function(k,n){
+    if (WHERE[n] && k.textContent.indexOf('·') === -1) k.textContent += ' · ' + WHERE[n];
   });
 })();
 </script>
+
 </body>
 </html>
