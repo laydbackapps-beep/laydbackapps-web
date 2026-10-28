@@ -639,7 +639,55 @@ h3 {
     }
   }
 }
+
+/* === LAYOUT FIX (2026-10-28) =================================================
+   Bugs this fixes, all visible in the portal-tour deck:
+   1. .slide.wide carried `max-width:1460px; margin:0 auto`, but a slide is a
+      FLEX ITEM on a track that steps by translateX(-index * 100%). Capping one
+      slide's width made the track width non-uniform, so slides drifted off
+      centre as you moved through the deck. Slides must always be exactly 100%
+      wide; the readable measure belongs on their children.
+   2. .shot used max-height:64vh while a slide is only calc(100vh - 190px) tall,
+      so image + heading overflowed the slide, ran under the fixed nav and read
+      as "covering other shit / cutting things off".
+   3. Short viewports (laptop 768-800px) had no tightened scale at all.
+   ========================================================================== */
+.slide, .slide.wide {
+  min-width: 100%;
+  max-width: none;
+  margin: 0;
+}
+.slide.wide > * {
+  width: 100%;
+  max-width: 1460px;
+}
+.slide > * { min-height: 0; }
+.shot, .slide.wide .shot, .shot-hero {
+  max-height: min(50vh, 100%);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.slide::-webkit-scrollbar { width: 6px; }
+.slide::-webkit-scrollbar-thumb { background: rgba(196,251,36,0.35); border-radius: 3px; }
+.nav-controls {
+  background: rgba(15,17,21,0.92);
+  border-radius: 14px;
+  padding: 0.5rem 1rem;
+}
+@media (max-height: 800px) {
+  .slide { padding: 2.4rem 6vw; }
+  .slide h2 { font-size: clamp(1.35rem, 3.1vw, 2.1rem); }
+  .shot, .slide.wide .shot, .shot-hero { max-height: min(42vh, 100%); }
+  .card { padding: 1.1rem 1.3rem; }
+  .steps { gap: 0.6rem; }
+}
+@media (max-width: 768px) {
+  .shot, .slide.wide .shot, .shot-hero { max-height: min(38vh, 100%); }
+  .slide { padding: 2rem 5vw; }
+}
 </style>
+
 </head>
 <body>
 <div class="slides-container" id="slidesContainer">
