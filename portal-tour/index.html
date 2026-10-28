@@ -808,6 +808,15 @@ h3 {
   text-transform: uppercase; flex: 0 0 auto;
 }
 .shot-hint b { color: #c4fb24; font-weight: 700; }
+
+/* A percentage max-height does NOT resolve against a flex/auto box, so the
+   dashboard shots were rendering at full 3264px and flooding the slide. Hard cap
+   in viewport units: recognisable in-slide, click for the 4K lightbox. */
+.slide.wide .shotbox > img.shot, .shotbox > img.shot {
+  max-height: 52vh; width: auto; height: auto;
+}
+@media (max-height: 800px) { .slide.wide .shotbox > img.shot, .shotbox > img.shot { max-height: 46vh; } }
+@media (max-width: 768px) { .slide.wide .shotbox > img.shot, .shotbox > img.shot { max-height: 40vh; } }
 </style>
 
 </head>
