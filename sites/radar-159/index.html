@@ -90,11 +90,13 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
 <body>
 
 <div class="bar"><div class="wrap bar-in">
-  <a href="#top" aria-label="Ace Construction Services"><img src="assets/logo-cut.png" alt="Ace Construction Services"></a>
+  <a href="#top" aria-label="Ace Construction Services"><img src="assets/logo-header.png" alt="Ace Construction Services"></a>
   <nav class="links"><a href="#scope">Scope</a><a href="#process">Process</a><a href="#questions">Questions</a><a href="#quote">Quote</a>
   </nav>
   <a class="call" href="tel:0499887415">0499 887 415</a>
 </div></div>
+
+<div class="ace-ticker" aria-hidden="true"><div class="ace-ticker__track" id="aceTick"></div></div>
 
 <header class="hero" id="top">
   <div class="hero-photo" aria-hidden="true"></div>
@@ -145,6 +147,27 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
   </div>
 </div></section>
 
+<section class="sec" id="areas" aria-labelledby="areas-h">
+  <div class="wrap">
+    <h2 id="areas-h">Where we work</h2>
+    <p class="lead">Site cuts, footings, trenching and cartage across Perth and the surrounding suburbs.</p>
+    <div class="ace-chips">
+      <span>Perth</span><span>Northbridge</span><span>East Perth</span><span>Highgate</span><span>Subiaco</span>
+      <span>Claremont</span><span>Nedlands</span><span>Cottesloe</span><span>Scarborough</span><span>Trigg</span>
+      <span>Hillarys</span><span>Joondalup</span><span>Wanneroo</span><span>Morley</span><span>Bayswater</span>
+      <span>Midland</span><span>Ellenbrook</span><span>Malaga</span><span>Wangara</span><span>Balcatta</span>
+      <span>Osborne Park</span><span>Kewdale</span><span>Welshpool</span><span>Victoria Park</span><span>Cannington</span>
+      <span>Canning Vale</span><span>Jandakot</span><span>Armadale</span><span>Gosnells</span><span>Baldivis</span>
+      <span>Fremantle</span><span>Cockburn</span><span>Bibra Lake</span><span>Rockingham</span><span>Mandurah</span>
+    </div>
+    <div class="ace-band">
+      <div class="cap"><span>Service areas — rotating</span><em id="aceAreaCount">01 / 06</em></div>
+      <div class="row" id="aceAreaRow"></div>
+      <div class="prog"><i></i></div>
+    </div>
+  </div>
+</section>
+
 <section id="questions"><div class="wrap">
   <div class="sec-head"><h2>Questions we get asked</h2><p>The things that come up most often on Perth residential jobs.</p></div>
   <div class="faq">
@@ -172,7 +195,7 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
 </div></section>
 
 <footer><div class="wrap fin">
-  <img src="assets/logo-cut.png" alt="Ace Construction Services">
+  <img src="assets/logo-header.png" alt="Ace Construction Services">
   <span>Ace Construction Services · Excavation &amp; site preparation · Perth</span>
   <a href="tel:0499887415">0499 887 415</a>
 </div></footer>
@@ -188,4 +211,101 @@ document.getElementById('qform').addEventListener('submit',function(e){
   .catch(function(){b.textContent='Could not send — try again';b.disabled=false;});
 });
 </script>
+<style id="ace-extras">
+/* ==== header logo cleaned up + added features, in this site's own cream/blue/ink palette (#f4f1ea / #3b49bd / #0d1114) ==== */
+
+/* The logo artwork this site ships is WHITE line art (excavator arm + bars) - on the cream bar it was invisible.
+   It now sits on a deliberate dark chip so it reads instantly. */
+.bar a{display:inline-flex!important;align-items:center!important;line-height:0}
+.bar a img,.bar img{
+  height:clamp(40px,4.2vw,52px)!important;width:auto!important;max-height:none!important;max-width:min(48vw,220px)!important;
+  background:#0d1114!important;border-radius:10px!important;padding:7px!important;
+  object-fit:contain!important;border:0!important;box-shadow:none!important;display:block!important}
+@media(max-width:560px){.bar a img,.bar img{height:36px!important;padding:6px!important;border-radius:8px!important}}
+
+/* the footer was rendering the same logo file at its FULL 1070x918 - a giant mark filling the footer */
+footer img,.foot img{height:auto!important;width:auto!important;max-width:clamp(120px,14vw,170px)!important;
+  background:#0d1114!important;border-radius:12px!important;padding:12px!important;object-fit:contain!important}
+footer .wrap,footer .inner{max-width:1160px}
+
+/* rotating service-area ticker */
+.ace-ticker{position:relative;overflow:hidden;background:#0d1114;
+  border-top:1px solid rgba(244,241,234,.14);border-bottom:1px solid rgba(244,241,234,.14)}
+.ace-ticker:before,.ace-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.ace-ticker:before{left:0;background:linear-gradient(90deg,#0d1114,transparent)}
+.ace-ticker:after{right:0;background:linear-gradient(270deg,#0d1114,transparent)}
+.ace-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;width:max-content;
+  animation:aceSlide 46s linear infinite;will-change:transform}
+.ace-ticker:hover .ace-ticker__track{animation-play-state:paused}
+.ace-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:#f4f1ea;
+  font-weight:700;font-size:clamp(11px,1.15vw,13.5px);letter-spacing:.16em;text-transform:uppercase}
+.ace-ticker span i{font-style:normal;color:#3b49bd}
+@keyframes aceSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* service area chips + rotating band */
+.ace-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.ace-chips span{border:1px solid rgba(13,17,20,.18);background:rgba(59,73,189,.06);padding:7px 13px;
+  font-size:.86rem;color:#0d1114;transition:.2s}
+.ace-chips span:hover{border-color:#3b49bd;background:rgba(59,73,189,.16)}
+.ace-band{margin-top:20px;border:1px solid rgba(13,17,20,.18);background:#e9e4d8;overflow:hidden;border-radius:12px}
+.ace-band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:11px 15px;
+  border-bottom:1px solid rgba(13,17,20,.14);font-weight:700;font-size:.7rem;letter-spacing:.18em;
+  text-transform:uppercase;color:#3b49bd}
+.ace-band .cap em{font-style:normal;color:#5c5a53}
+.ace-band .row{position:relative;height:68px;overflow:hidden}
+.ace-band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+.ace-band .row ul.on{opacity:1;transform:none}
+.ace-band .row li{font-size:clamp(1.05rem,2.2vw,1.5rem);font-weight:800;line-height:1.12;color:#0d1114;text-align:center}
+.ace-band .row li small{display:block;font-weight:500;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;
+  color:#5c5a53;margin-top:8px}
+.ace-band .prog{height:2px;background:rgba(13,17,20,.14)}
+.ace-band .prog i{display:block;height:100%;width:0;background:#3b49bd;animation:aceFill 4s linear infinite}
+@keyframes aceFill{from{width:0}to{width:100%}}
+
+@media (prefers-reduced-motion:reduce){
+  .ace-ticker__track,.ace-band .prog i{animation:none}
+  .ace-band .row ul{transition:none}
+}
+</style>
+
+<script id="ace-extras-js">
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* service-area ticker */
+  var T=['Perth','Northbridge','East Perth','Highgate','Subiaco','Claremont','Nedlands','Cottesloe','Scarborough',
+         'Trigg','Hillarys','Joondalup','Wanneroo','Morley','Bayswater','Midland','Ellenbrook','Malaga','Wangara',
+         'Balcatta','Osborne Park','Kewdale','Welshpool','Victoria Park','Cannington','Canning Vale','Jandakot',
+         'Armadale','Gosnells','Baldivis','Fremantle','Cockburn','Bibra Lake','Rockingham','Mandurah'];
+  var tk=document.getElementById('aceTick');
+  if (tk) tk.innerHTML = T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
+
+  /* rotating service-area band */
+  var AR=[['Perth CBD & inner','Perth · Northbridge · East Perth · Highgate'],
+          ['Western suburbs','Subiaco · Claremont · Nedlands · Cottesloe'],
+          ['Northern suburbs','Joondalup · Morley · Bayswater · Wanneroo'],
+          ['North coast','Scarborough · Trigg · Hillarys · Ocean Reef'],
+          ['South of the river','Canning Vale · Cannington · Victoria Park · Applecross'],
+          ['South coast & Peel','Fremantle · Cockburn · Rockingham · Mandurah']];
+  var row=document.getElementById('aceAreaRow'), cnt=document.getElementById('aceAreaCount');
+  if (row){
+    AR.forEach(function(a,k){
+      var u=document.createElement('ul'), li=document.createElement('li');
+      if(!k) u.className='on';
+      li.innerHTML = a[0]+'<small>'+a[1]+'</small>';
+      u.appendChild(li); row.appendChild(u);
+    });
+    var rows=[].slice.call(row.children), i=0;
+    if(!reduce){
+      setInterval(function(){
+        i=(i+1)%AR.length;
+        rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
+        if(cnt) cnt.textContent = ('0'+(i+1)).slice(-2)+' / 0'+AR.length;
+      },4000);
+    }
+  }
+})();
+</script>
+
 </body></html>
