@@ -338,7 +338,7 @@ h1{overflow-wrap:anywhere}
 @media(max-width:900px){}
 </style></head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
-<header class="header" role="banner"><a aria-label="Corfe Plant Solutions Pty Ltd" class="lb-brand lb-brand--lockup" href="#top" style="--lb-name:#101014"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-onbar.png"/><span class="lb-sr">Corfe Plant Solutions Pty Ltd</span></a><div class="header-inner">
+<header class="header" role="banner"><a aria-label="Corfe Plant Solutions Pty Ltd" class="lb-brand lb-brand--lockup" href="#top" style="--lb-name:#101014"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-header-mark.png"/><span class="lb-sr">Corfe Plant Solutions Pty Ltd</span></a><div class="header-inner">
 <nav aria-label="Main navigation" class="nav" role="navigation"><a href="#hire">Plant</a>
 <a href="#how">How it works</a>
 <a href="#about">About</a>
@@ -347,6 +347,9 @@ h1{overflow-wrap:anywhere}
 </nav>
 </div>
 </header>
+
+<div class="corfe-ticker" aria-hidden="true"><div class="corfe-ticker__track" id="corfeTick"></div></div>
+
 <main id="main">
 <section aria-label="Plant hire, excavator on the yard" class="hero">
 <div aria-hidden="true" class="hero-bg" style="background-image:url('assets/hero.jpg')"></div>
@@ -549,6 +552,30 @@ h1{overflow-wrap:anywhere}
 </div>
 </div>
 </section>
+<section class="sec" id="areas" aria-labelledby="areas-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Where we work</span>
+      <h2 id="areas-h">Grafton, the Clarence and the Coffs Coast</h2>
+      <p class="lead">Plant hire, earthmoving and site works across the Clarence Valley and up and down the coast.</p>
+    </div>
+    <div class="corfe-chips">
+      <span>Grafton</span><span>South Grafton</span><span>Junction Hill</span><span>Waterview</span><span>Coutts Crossing</span>
+      <span>Ulmarra</span><span>Maclean</span><span>Lawrence</span><span>Copmanhurst</span><span>Glenreagh</span>
+      <span>Nymboida</span><span>Yamba</span><span>Iluka</span><span>Wooli</span><span>Minnie Water</span>
+      <span>Woolgoolga</span><span>Coffs Harbour</span><span>Sawtell</span><span>Bellingen</span><span>Dorrigo</span>
+      <span>Casino</span><span>Lismore</span><span>Ballina</span><span>Evans Head</span><span>Kyogle</span>
+      <span>Coraki</span><span>Wooloweyah</span><span>Palmer's Island</span><span>Clarenza</span><span>Carr's Creek</span>
+      <span>Tucabia</span><span>Maclean</span><span>Harwood</span><span>Tyndale</span>
+    </div>
+    <div class="corfe-band">
+      <div class="cap"><span>Service areas — rotating</span><em id="corfeAreaCount">01 / 06</em></div>
+      <div class="row" id="corfeAreaRow"></div>
+      <div class="prog"><i></i></div>
+    </div>
+  </div>
+</section>
+
 <section aria-labelledby="faq-heading" class="section" id="faq">
 <div class="section-inner">
 <header class="section-head rv rv-delay-1">
@@ -861,5 +888,115 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
 
 </style>
 <script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#e8f0f0","important");})();</script>
+<style id="corfe-extras">
+/* ==== header logo cleaned up + added features, in this site's own blue-on-dark palette (#6786e4 / #0f1115) ==== */
+
+/* the bar was loading a logo export with its own baked pale plate, which on the pale bar read as a faint ghost with no
+   brand presence. The transparent mark now sits on a deliberate dark chip - high contrast and instantly readable. */
+.header .lb-brand,.lb-brand--lockup{display:flex!important;align-items:center!important;gap:12px!important;background:none!important}
+.header .lb-mark,img.lb-mark,.lb-brand img{
+  height:clamp(44px,4.6vw,58px)!important;width:auto!important;max-height:none!important;
+  background:#0f1115!important;border-radius:10px!important;padding:8px!important;
+  object-fit:contain!important;border:0!important;box-shadow:none!important;display:block!important}
+@media(max-width:560px){.header .lb-mark,img.lb-mark{height:40px!important;padding:6px!important;border-radius:8px!important}}
+
+/* rotating service-area ticker */
+.corfe-ticker{position:relative;overflow:hidden;background:#0c0d10;
+  border-top:1px solid rgba(233,238,244,.12);border-bottom:1px solid rgba(233,238,244,.12)}
+.corfe-ticker:before,.corfe-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.corfe-ticker:before{left:0;background:linear-gradient(90deg,#0c0d10,transparent)}
+.corfe-ticker:after{right:0;background:linear-gradient(270deg,#0c0d10,transparent)}
+.corfe-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;width:max-content;
+  animation:corfeSlide 46s linear infinite;will-change:transform}
+.corfe-ticker:hover .corfe-ticker__track{animation-play-state:paused}
+.corfe-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:#e9eef4;
+  font-weight:700;font-size:clamp(11px,1.15vw,13.5px);letter-spacing:.16em;text-transform:uppercase}
+.corfe-ticker span i{font-style:normal;color:#f2c200}
+@keyframes corfeSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* service area chips + rotating band */
+.corfe-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.corfe-chips span{border:1px solid rgba(233,238,244,.18);background:rgba(103,134,228,.10);padding:7px 13px;
+  font-size:.86rem;color:#e9eef4;transition:.2s}
+.corfe-chips span:hover{border-color:#6786e4;background:rgba(103,134,228,.24)}
+.corfe-band{margin-top:20px;border:1px solid rgba(233,238,244,.16);background:#0c0d10;overflow:hidden;border-radius:12px}
+.corfe-band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:11px 15px;
+  border-bottom:1px solid rgba(233,238,244,.14);font-weight:700;font-size:.7rem;letter-spacing:.18em;
+  text-transform:uppercase;color:#6786e4}
+.corfe-band .cap em{font-style:normal;color:#9aa6b2}
+.corfe-band .row{position:relative;height:68px;overflow:hidden}
+.corfe-band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+.corfe-band .row ul.on{opacity:1;transform:none}
+.corfe-band .row li{font-size:clamp(1.05rem,2.2vw,1.5rem);font-weight:800;line-height:1.12;color:#e9eef4;text-align:center}
+.corfe-band .row li small{display:block;font-weight:500;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;
+  color:#9aa6b2;margin-top:8px}
+.corfe-band .prog{height:2px;background:rgba(233,238,244,.14)}
+.corfe-band .prog i{display:block;height:100%;width:0;background:#6786e4;animation:corfeFill 4s linear infinite}
+@keyframes corfeFill{from{width:0}to{width:100%}}
+
+/* showcase photographs: the rotation band was covering a 16:7 track with 1280px shots (upscaled 1.16x and cut down to
+   a 2.28:1 letterbox). Now a 4:3 frame capped at 920px with the whole photograph shown, and the grid tiles keep their
+   own native ratios so nothing is cropped. */
+.lb-rb__track{aspect-ratio:4/3!important;width:min(920px,94vw)!important;margin:0 auto!important;border-radius:12px;overflow:visible!important}
+.lb-rb__slide{border-radius:12px;overflow:hidden}
+.lb-rb__slide img{width:100%!important;height:100%!important;object-fit:contain!important;transform:none!important}
+.lb-rb__dots{left:50%!important;right:auto!important;top:calc(100% + 14px)!important;bottom:auto!important;
+  transform:translateX(-50%)!important;flex-direction:row!important;gap:9px!important;z-index:5!important}
+.lb-rb{padding-bottom:clamp(42px,4.4vw,60px)}
+@media(max-width:760px){.lb-rb__track{width:min(560px,94vw)!important}}
+
+/* the band slides keep contain (whole photograph), the grid tiles take their own native ratio */
+.lb-rb__slide img{width:100%!important;height:100%!important;object-fit:contain!important;transform:none!important}
+img[src*="gal_1"]:not(.lb-rb__slide img),img[src*="gal_2"]:not(.lb-rb__slide img),img[src*="gal_3"]:not(.lb-rb__slide img){height:auto!important}
+.tile img[src*="gal_1"],img[src*="gal_1"]{aspect-ratio:1280/960!important}
+img[src*="gal_2"]{aspect-ratio:1280/1024!important}
+img[src*="gal_3"]{aspect-ratio:1280/1280!important}
+.lb-rb__slide img[src*="gal_1"],.lb-rb__slide img[src*="gal_2"],.lb-rb__slide img[src*="gal_3"]{aspect-ratio:auto!important}
+
+@media (prefers-reduced-motion:reduce){
+  .corfe-ticker__track,.corfe-band .prog i{animation:none}
+  .corfe-band .row ul{transition:none}
+}
+</style>
+
+<script id="corfe-extras-js">
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* service-area ticker */
+  var T=['Grafton','South Grafton','Junction Hill','Waterview','Coutts Crossing','Ulmarra','Maclean','Lawrence',
+         'Copmanhurst','Glenreagh','Nymboida','Yamba','Iluka','Wooli','Minnie Water','Woolgoolga','Coffs Harbour',
+         'Sawtell','Bellingen','Dorrigo','Casino','Lismore','Ballina','Evans Head','Kyogle','Coraki','Harwood','Tyndale'];
+  var tk=document.getElementById('corfeTick');
+  if (tk) tk.innerHTML = T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
+
+  /* rotating service-area band */
+  var AR=[['Grafton & South Grafton','South Grafton · Junction Hill · Waterview · Clarenza'],
+          ['Clarence Valley','Ulmarra · Maclean · Lawrence · Copmanhurst'],
+          ['Yamba & the coast','Yamba · Iluka · Wooli · Minnie Water'],
+          ['Coffs Coast','Woolgoolga · Coffs Harbour · Sawtell · Bellingen'],
+          ['Hinterland','Coutts Crossing · Glenreagh · Nymboida · Dorrigo'],
+          ['Northern rivers','Casino · Lismore · Ballina · Evans Head']];
+  var row=document.getElementById('corfeAreaRow'), cnt=document.getElementById('corfeAreaCount');
+  if (row){
+    AR.forEach(function(a,k){
+      var u=document.createElement('ul'), li=document.createElement('li');
+      if(!k) u.className='on';
+      li.innerHTML = a[0]+'<small>'+a[1]+'</small>';
+      u.appendChild(li); row.appendChild(u);
+    });
+    var rows=[].slice.call(row.children), i=0;
+    if(!reduce){
+      setInterval(function(){
+        i=(i+1)%AR.length;
+        rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
+        if(cnt) cnt.textContent = ('0'+(i+1)).slice(-2)+' / 0'+AR.length;
+      },4000);
+    }
+  }
+})();
+</script>
+
 </body>
 </html>
