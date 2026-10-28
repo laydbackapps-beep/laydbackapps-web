@@ -4,200 +4,208 @@
 <title>Stone Sydney — natural stone cladding &amp; stonework, Sydney NSW</title>
 <meta name="description" content="Stone Sydney (Mohamed Stone Cladding): natural stone cladding, feature walls, front entrances, columns, fences and stonework for renovations and new builds across Sydney. 0481 216 151.">
 <link rel="icon" href="assets/favicon.png">
+<link rel="canonical" href="https://laydbackapps.com/sites/stone-sydney/">
+<meta name="theme-color" content="#141414">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* palette and geometry taken from the brand mark: black #14161a on bone #f5f5f0,
-   everything in rounded-corner tiles the same radius as the logo tile */
+/* Built to the client's own brand tile: near-black #141414, metallic gold #c5a059,
+   off-white #f5f3ee, gold circle icons, ornately tracked serif caps, and the
+   diagonal gold stripe that carries the stone photo under it. */
 :root{
-  --ink:#14161a; --ink-2:#22252a; --bone:#f5f5f0; --bone-2:#eceae3; --white:#fff;
-  --rule:#d9d6cc; --dim:#5f6063; --stone:#c8bfae; --r:22px; --max:1200px;
+  --ink:#141414; --ink-2:#1d1c1a; --gold:#c5a059; --gold-lt:#dcc38e; --gold-dk:#a3823f;
+  --cream:#f5f3ee; --cream-2:#ece8e0; --white:#fff; --body:#4a4741; --dim:#6a665e;
+  --rule:rgba(197,160,89,.38); --rule-ink:#2a2926; --track:.34em; --max:1200px;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bone);color:var(--ink);
-  font:16.5px/1.62 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:400;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--cream);color:var(--body);font:400 16.5px/1.68 var(--sans);-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4vw,44px)}
-a{color:inherit}
-h1,h2,h3{margin:0;line-height:1.08;letter-spacing:-.02em;font-family:Archivo,Inter,sans-serif}
-h1{font-size:clamp(34px,5.2vw,64px);font-weight:700;letter-spacing:-.035em}
-h2{font-size:clamp(24px,3.1vw,40px);font-weight:700}
-h3{font-size:17.5px;font-weight:600}
+.lbl{font:500 11px/1 var(--sans);letter-spacing:var(--track);text-transform:uppercase;color:var(--gold-dk)}
+.lbl--lt{color:var(--gold)}
+h1,h2,h3{margin:0;font-family:var(--serif);font-weight:500;text-transform:uppercase;letter-spacing:.1em;line-height:1.14}
+h1{font-size:clamp(34px,5.2vw,66px);color:#fff}
+h2{font-size:clamp(25px,3.2vw,42px);color:var(--ink)}
+h3{font-size:clamp(18px,1.9vw,24px);letter-spacing:.075em;color:var(--ink)}
+.rule{width:96px;height:1px;background:var(--gold);border:0;margin:24px auto}
+.rule--l{width:66px;height:1px;background:var(--gold);border:0;margin:20px 0}
 p{margin:0}
-.label{font:500 11px/1 Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
 
-/* ---------- bar: bone ground, mark tile, no typed name ---------- */
-.masthead{position:sticky;top:0;z-index:70;background:rgba(245,245,240,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
-.masthead__in{display:flex;align-items:center;gap:clamp(14px,2.2vw,30px);padding:11px clamp(18px,4vw,44px);max-width:var(--max);margin:0 auto}
-.masthead__mark{width:66px;height:66px;border-radius:16px;background:var(--ink);display:grid;place-items:center;flex:0 0 auto}
-.masthead__mark img{width:100%;height:100%;object-fit:contain;border-radius:16px}
-.masthead__tag{font:500 11.5px/1.3 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
-.nav{display:flex;align-items:center;gap:clamp(16px,2vw,28px);margin-left:auto}
-.nav a{text-decoration:none;font-size:14.6px;font-weight:500;color:#33363a;padding:6px 0;border-bottom:1px solid transparent}
-.nav a:hover{color:var(--ink);border-bottom-color:var(--ink)}
-.nav .tel{font-weight:600;color:var(--ink)}
-.nav .cta{background:var(--ink);color:var(--bone);text-decoration:none;font-weight:600;font-size:14.6px;padding:13px 20px;border-radius:10px;border-bottom:0}
-.nav .cta:hover{background:var(--ink-2)}
-.burger{display:none;margin-left:auto;background:none;border:1px solid var(--rule);border-radius:10px;padding:10px 13px;font-size:17px;line-height:1}
-@media(max-width:980px){
-  .masthead__in{flex-wrap:wrap}
-  .nav{display:none;flex:1 0 100%;width:100%;flex-direction:column;align-items:stretch;gap:0;margin-left:0;padding-top:6px;border-top:1px solid var(--rule)}
-  .nav.open{display:flex}
-  .nav a{padding:13px 0;width:100%;border-bottom:1px solid var(--rule);font-size:16px}
-  .nav .cta{margin-top:12px;text-align:center}
-  .burger{display:block}
-}
-@media(max-width:560px){.masthead__mark{width:56px;height:56px;border-radius:14px}.masthead__tag{display:none}}
+/* ---------- header: the client's own artwork only, centred, nothing typed ---------- */
+.masthead{background:var(--ink);border-bottom:1px solid var(--rule);padding:26px 0 23px}
+.masthead__in{display:flex;justify-content:center;align-items:center}
+.masthead img{width:clamp(210px,25vw,318px);height:auto}
 
-/* ---------- hero ---------- */
-.hero{padding:clamp(34px,4.6vw,64px) 0 clamp(30px,4vw,52px)}
-.hero__in{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(26px,3.4vw,52px);align-items:center}
-.hero h1{margin:16px 0 18px;max-width:15ch}
-.hero .sub{color:#3f4247;font-size:clamp(16.5px,1.15vw,18.6px);max-width:44ch;margin-bottom:26px}
-.hero__acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.btn{display:inline-flex;align-items:center;background:var(--ink);color:var(--bone);text-decoration:none;font-weight:600;font-size:15px;padding:15px 24px;border-radius:10px}
-.btn:hover{background:var(--ink-2)}
-.btn--quiet{background:transparent;color:var(--ink);border:1px solid var(--ink)}
-.btn--quiet:hover{background:var(--ink);color:var(--bone)}
-.hero__shot{position:relative;border-radius:var(--r);overflow:hidden;background:var(--bone-2);border:1px solid var(--rule)}
-.hero__shot img{width:100%;height:auto;max-height:560px;object-fit:cover}
-.hero__plate{position:absolute;left:18px;bottom:18px;background:rgba(20,22,26,.86);color:var(--bone);
-  border-radius:12px;padding:12px 16px;font-size:13.4px;line-height:1.5;max-width:74%}
-.hero__plate b{display:block;font:500 10px/1 Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:6px}
-@media(max-width:900px){.hero__in{grid-template-columns:1fr}.hero__shot{order:-1}}
+/* ---------- hero: the tile's dark top half, full width ---------- */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;padding:clamp(56px,7vw,96px) 0 clamp(64px,7.5vw,104px);text-align:center}
+.hero__in{position:relative;z-index:3;max-width:880px}
+.hero .mark{width:clamp(72px,7.6vw,102px);margin:0 auto 24px;filter:drop-shadow(0 3px 12px rgba(0,0,0,.55))}
+.hero .wordmark{display:block;margin:12px auto 0}
+.hero h1{margin:22px 0 0}
+.hero .sub{color:#d8d4ca;font-size:clamp(16px,1.4vw,18.5px);max-width:62ch;margin:20px auto 0}
+.hero__acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+.btn{display:inline-block;padding:15px 30px;font:600 11.5px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;border:1px solid var(--gold);transition:.22s}
+.btn--gold{background:var(--gold);color:#241d10}
+.btn--gold:hover{background:var(--gold-lt);border-color:var(--gold-lt)}
+.btn--out{color:var(--gold)}
+.btn--out:hover{background:rgba(197,160,89,.14)}
+/* the stripe device: a diagonal gold band with the stone photo showing beneath it */
+.hero .stripe{position:absolute;right:0;top:0;bottom:0;width:30%;z-index:2;pointer-events:none;
+  background:var(--gold);clip-path:polygon(64% 0,74% 0,42% 100%,32% 100%)}
+.hero .stripe::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(255,255,255,.28),rgba(0,0,0,.12));clip-path:inherit}
+.hero .sliver{position:absolute;right:0;top:0;bottom:0;width:34%;z-index:1;opacity:.5;
+  background:url('assets/house.jpg') center/cover no-repeat;clip-path:polygon(76% 0,100% 0,100% 100%,48% 100%)}
+@media(max-width:900px){.hero .stripe,.hero .sliver{display:none}}
 
-.facts{background:var(--ink);color:var(--bone)}
-.facts__in{display:grid;grid-template-columns:repeat(4,1fr);max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4vw,44px)}
-.facts div{padding:19px clamp(12px,2vw,22px);border-right:1px solid rgba(245,245,240,.14)}
-.facts div:last-child{border-right:0}
-.facts b{display:block;font:500 10px/1 Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:7px}
-.facts span{font-size:14.2px;color:#dedbd2}
-@media(max-width:820px){.facts__in{grid-template-columns:1fr 1fr}.facts div{border-bottom:1px solid rgba(245,245,240,.14)}}
+/* ---------- the tile's cream list: gold circle icons, black tracked caps ---------- */
+.services-strip{background:var(--cream);padding:clamp(34px,4.4vw,58px) 0 clamp(38px,4.6vw,62px)}
+.services-strip .list{display:grid;gap:22px;max-width:780px;margin:0 auto}
+.srow{display:flex;align-items:center;gap:22px}
+.srow .ic{flex:0 0 auto;width:56px;height:56px;border-radius:50%;background:var(--gold);display:grid;place-items:center}
+.srow .ic svg{width:29px;height:29px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.srow b{display:block;font:600 13.6px/1.4 var(--sans);letter-spacing:.17em;text-transform:uppercase;color:var(--ink)}
+.srow small{display:block;font:400 14.2px/1.62 var(--sans);color:var(--dim);margin-top:5px}
 
-section{padding:clamp(44px,5.4vw,80px) 0}
-.head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:clamp(22px,2.8vw,34px)}
-.head p{color:var(--dim);max-width:52ch;font-size:15.4px;margin-top:10px}
+/* ---------- sections ---------- */
+section{padding:clamp(46px,5.6vw,84px) 0}
+.head{max-width:780px;margin-bottom:clamp(24px,3vw,40px)}
+.head .rule--l{margin:18px 0}
+.head p{margin-top:16px;font-size:16.2px;color:var(--dim)}
+.dark{background:var(--ink);color:#cfcbc2}
+.dark h2{color:#fff}
+.dark h3{color:#fff}
+.dark .head p,.dark p{color:#b5b1a8}
 
-.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,20px)}
-.tile{background:var(--white);border:1px solid var(--rule);border-radius:var(--r);padding:22px 20px}
-.tile h3{margin-bottom:8px}
-.tile p{color:var(--dim);font-size:14.4px}
-.tile .k{display:block;font:500 10px/1 Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:12px}
-@media(max-width:880px){.tiles{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.tiles{grid-template-columns:1fr}}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.tile{background:var(--white);padding:30px 26px 32px}
+.tile h3{margin:14px 0 10px}
+.tile p{font-size:14.8px;color:var(--dim);line-height:1.66}
+@media(max-width:900px){.tiles{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tiles{grid-template-columns:1fr}}
 
-.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
-.split .fig{border-radius:var(--r);overflow:hidden;border:1px solid var(--rule);background:var(--bone-2)}
-.split .fig img{width:100%;height:auto}
-.split h2{margin-bottom:16px}
-.split p{color:#41444a;margin-bottom:14px;font-size:15.8px}
-.split ul{margin:14px 0 0;padding:0;list-style:none}
-.split li{padding:10px 0;border-bottom:1px solid var(--rule);font-size:15px;color:#33363a}
+.split{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(26px,4vw,58px);align-items:center}
+.split h2{margin:14px 0 16px}
+.split p{margin-bottom:14px;font-size:15.8px;color:#c6c2b9}
+.split .fig{position:relative}
+.split .fig img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.split .fig::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);pointer-events:none}
+.split ul{margin:20px 0 0;padding:0;list-style:none}
+.split li{position:relative;padding:15px 0 15px 32px;border-bottom:1px solid var(--rule-ink);font-size:15px;color:#c6c2b9}
 .split li:last-child{border-bottom:0}
-.split li b{font-weight:600;color:var(--ink)}
-@media(max-width:880px){.split{grid-template-columns:1fr}}
+.split li::before{content:"";position:absolute;left:2px;top:22px;width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+.split li b{font-weight:600;color:#fff}
+@media(max-width:900px){.split{grid-template-columns:1fr}}
 
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,26px);counter-reset:s}
-.steps div{counter-increment:s;border-top:2px solid var(--ink);padding-top:16px}
-.steps div::before{content:"0" counter(s);display:block;font:500 11px/1 Inter,sans-serif;letter-spacing:.2em;color:var(--stone);margin-bottom:10px}
-.steps h3{font-size:16.4px;margin-bottom:7px}
-.steps p{color:var(--dim);font-size:14.2px}
-@media(max-width:880px){.steps{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.2vw,30px)}
+.steps div{border-top:1px solid var(--gold);padding-top:20px}
+.steps .n{display:block;font:500 30px/1 var(--serif);color:var(--gold-dk);letter-spacing:.06em}
+.steps h3{margin:12px 0 9px;font-size:18.4px}
+.steps p{font-size:14.6px;color:var(--dim)}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
 
-details{border-bottom:1px solid var(--rule);padding:16px 0}
-summary{cursor:pointer;font-weight:600;font-size:16.2px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+details{background:var(--white);border:1px solid var(--rule);border-top:0}
+details:first-of-type{border-top:1px solid var(--rule)}
+summary{cursor:pointer;list-style:none;padding:21px 26px;font:500 17px/1.4 var(--serif);letter-spacing:.045em;color:var(--ink);display:flex;justify-content:space-between;gap:18px;align-items:center}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font:400 20px/1 Inter,sans-serif;color:var(--dim)}
+summary::after{content:"+";color:var(--gold-dk);font:400 21px/1 var(--sans)}
 details[open] summary::after{content:"–"}
-details .a{color:var(--dim);font-size:14.8px;padding:9px 34px 0 0;max-width:76ch}
+details .a{padding:0 26px 23px;font-size:15px;color:var(--dim);line-height:1.72;max-width:76ch}
 
-.quote{background:var(--bone-2)}
-.quote__in{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,3.6vw,52px);align-items:start}
-.quote h2{margin:12px 0 12px}
-.quote .lead{color:#41444a;font-size:15.6px;max-width:40ch}
-.contact{margin-top:22px;border-top:1px solid var(--rule);padding-top:18px;display:grid;gap:6px}
-.contact a{text-decoration:none;font-weight:600;font-size:17px}
-.contact a:hover{color:var(--ink-2);text-decoration:underline}
-.contact span{font-size:13.4px;color:var(--dim)}
-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--white);border:1px solid var(--rule);border-radius:var(--r);padding:clamp(20px,2.6vw,30px)}
+.quote{background:var(--ink);color:#cfcbc2;position:relative;overflow:hidden}
+.quote__in{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(26px,3.6vw,56px);align-items:start;position:relative;z-index:2}
+.quote h2{color:#fff;margin:14px 0 14px}
+.quote .lead{color:#b5b1a8;font-size:15.6px;max-width:42ch}
+.contact{margin-top:24px;border-top:1px solid var(--rule);padding-top:20px;display:grid;gap:6px}
+.contact a.big{font:500 32px/1.2 var(--serif);color:var(--gold);letter-spacing:.04em}
+.contact a.mail{color:var(--gold);font-size:15.4px}
+.contact span{font-size:13.6px;color:#8d897f}
+.quote .diag{position:absolute;right:0;bottom:-30%;width:34%;height:150%;background:var(--gold);opacity:.09;
+  clip-path:polygon(66% 0,74% 0,46% 100%,38% 100%);z-index:1;pointer-events:none}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:rgba(255,255,255,.035);border:1px solid rgba(197,160,89,.34);padding:clamp(20px,2.6vw,30px)}
 form .full{grid-column:1/-1}
-label{display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
-input,select,textarea{width:100%;background:#fdfdfc;border:1px solid var(--rule);color:var(--ink);padding:13px;font:inherit;font-size:15px;border-radius:10px;appearance:none}
-select{background-image:linear-gradient(45deg,transparent 49%,#5f6063 50%),linear-gradient(-45deg,transparent 49%,#5f6063 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
-textarea{resize:vertical;min-height:112px}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(20,22,26,.10)}
-button{grid-column:1/-1;background:var(--ink);color:var(--bone);border:0;padding:16px;font:inherit;font-weight:600;font-size:15.6px;cursor:pointer;border-radius:10px}
-button:hover{background:var(--ink-2)}
+label{display:block;font:500 10.5px/1 var(--sans);letter-spacing:.17em;text-transform:uppercase;color:#a9a59b;margin-bottom:8px}
+input,select,textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(197,160,89,.3);color:#fff;padding:13px;font:inherit;font-size:15px;border-radius:0;appearance:none}
+input::placeholder,textarea::placeholder{color:#817d74}
+select{color:#cfcbc2;background-image:linear-gradient(45deg,transparent 49%,#c5a059 50%),linear-gradient(-45deg,transparent 49%,#c5a059 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+textarea{resize:vertical;min-height:110px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+button{grid-column:1/-1;background:var(--gold);color:#241d10;border:0;padding:16px;font:600 11.5px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;cursor:pointer}
+button:hover{background:var(--gold-lt)}
 button:disabled{opacity:.7;cursor:default}
-.formnote{grid-column:1/-1;color:var(--dim);font-size:12.6px}
-@media(max-width:880px){.quote__in{grid-template-columns:1fr}form{grid-template-columns:1fr}}
+.formnote{grid-column:1/-1;color:#8d897f;font-size:12.6px}
+@media(max-width:900px){.quote__in{grid-template-columns:1fr}form{grid-template-columns:1fr}}
 
-footer{background:var(--ink);color:#c9c6bd;padding:34px 0 40px;font-size:13.6px}
-.foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.foot .fl{display:flex;align-items:center;gap:14px}
-.foot .chip{width:52px;height:52px;border-radius:14px;background:var(--bone);display:grid;place-items:center;padding:4px}
-.foot .chip img{width:100%;height:100%;object-fit:contain}
-.foot b{font-family:Archivo,Inter,sans-serif;font-size:17px;font-weight:600;color:#fff;display:block}
-.foot .meta{text-align:right;line-height:1.8}
-.foot a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28)}
-@media(max-width:700px){.foot .meta{text-align:left}}
+footer{background:#0f0f0e;border-top:1px solid var(--rule);color:#8d897f;padding:40px 0 44px;font-size:13.6px}
+.foot{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot img{width:clamp(160px,19vw,228px);margin-bottom:14px}
+.foot .meta{text-align:right;line-height:1.9}
+.foot a{color:var(--gold)}
+@media(max-width:700px){.foot{justify-content:center;text-align:center}.foot .meta{text-align:center}}
 </style>
 </head><body>
 
-<div class="masthead"><div class="masthead__in">
-  <span class="masthead__mark"><img src="assets/logo-isolated.png" alt="Stone Sydney" width="1206" height="1206"></span>
-  <span class="masthead__tag">Natural stone cladding<br>Sydney NSW</span>
-  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
-  <nav class="nav" id="nav">
-    <a href="#work">Stonework</a>
-    <a href="#stone">The stone</a>
-    <a href="#process">Process</a>
-    <a href="#faq">FAQ</a>
-    <a class="tel" href="tel:0481216151">0481 216 151</a>
-    <a class="cta" href="#quote">Get a quote</a>
-  </nav>
+<div class="masthead"><div class="wrap masthead__in">
+  <img src="assets/logo-word.png" alt="Mohamed Stone Cladding" width="962" height="115">
 </div></div>
 
-<header class="hero"><div class="wrap hero__in">
-  <div>
-    <span class="label">Stone Sydney</span>
-    <h1>Natural stone. Lasting beauty.</h1>
+<header class="hero">
+  <div class="sliver"></div><div class="stripe"></div>
+  <div class="wrap hero__in">
+    <img class="mark" src="assets/logo-isolated-mark.png" alt="" width="1126" height="1126">
+    <span class="lbl lbl--lt">Mohamed Stone Cladding</span>
+    <h1>Natural stone.<br>Lasting beauty.</h1>
+    <hr class="rule">
     <p class="sub">Stone cladding and stonework for houses, entrances, columns and feature walls — laid level, coursed straight, and pointed clean so the wall reads as one surface.</p>
-    <p class="hero__acts"><a class="btn" href="#quote">Get a quote</a><a class="btn btn--quiet" href="#work">See the stonework</a></p>
+    <p class="hero__acts"><a class="btn btn--gold" href="#quote">Get a quote</a><a class="btn btn--out" href="#work">See the stonework</a></p>
   </div>
-  <figure class="hero__shot">
-    <img src="assets/house.jpg" alt="Stone-clad house facade with dark window frames" width="1280" height="1280" loading="eager" decoding="async">
-    <figcaption class="hero__plate"><b>Recent work</b>Stone cladding to a full facade — coursed to the openings, with the returns dressed to match.</figcaption>
-  </figure>
-</div></header>
+</header>
 
-<div class="facts"><div class="facts__in">
-  <div><b>Stone</b><span>Natural stone, not a printed panel.</span></div>
-  <div><b>Layout</b><span>Set out from the corners, coursed straight.</span></div>
-  <div><b>Pointing</b><span>Finished flush and cleaned down.</span></div>
-  <div><b>Sydney</b><span>Across the metro, indoor and out.</span></div>
+<div class="services-strip"><div class="wrap">
+  <div class="list">
+    <div class="srow">
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.6V20h13v-9.4"/><path d="M14.6 4.7V7h2.5V2.7"/><path d="M10 20v-4.4h4V20"/></svg></span>
+      <span><b>Houses &amp; exterior walls</b><small>Full or part facades in natural stone, set out from the corners so the courses run true past windows, doors and downpipes.</small></span>
+    </div>
+    <div class="srow">
+      <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15"/><path d="M3 9.5h18M3 14.5h18M9 4.5v5M15 9.5v5M9 14.5v5"/></svg></span>
+      <span><b>Feature walls</b><small>Living rooms, fireplaces and entry walls. Stone carried inside needs the wall prepared flat first — the depth of the stone reads every mm of what is behind it.</small></span>
+    </div>
+    <div class="srow">
+      <span class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18"/><path d="M6 12h12"/><path d="M15.4 15.6h1.5M15.4 8.4h1.5"/><path d="M3.4 21h17.2"/></svg></span>
+      <span><b>Front entrances</b><small>Porticos, blade walls and entry piers, with the capping and returns finished so the detail looks complete from the street and from the door.</small></span>
+    </div>
+  </div>
 </div></div>
 
 <main>
 <section id="work"><div class="wrap">
-  <div class="head"><div><span class="label">What we build</span><h2 style="margin-top:12px">Stonework on houses and around them</h2></div>
-  <p>Most jobs are one wall or one entry that has to look deliberate next to everything already there.</p></div>
+  <div class="head">
+    <span class="lbl">What we build</span>
+    <hr class="rule--l">
+    <h2>Stonework on houses and around them</h2>
+    <p>Most jobs are one wall or one entry that has to look deliberate next to everything already there.</p>
+  </div>
   <div class="tiles">
-    <article class="tile"><span class="k">Facades</span><h3>Houses &amp; exterior walls</h3><p>Full or part facades in natural stone, set out from the corners so the courses run true past windows, doors and downpipes.</p></article>
-    <article class="tile"><span class="k">Interiors</span><h3>Feature walls</h3><p>Living rooms, fireplaces and entry walls. Stone carried inside needs the wall prepared flat first — the depth of the stone reads every mm of what is behind it.</p></article>
-    <article class="tile"><span class="k">Entry</span><h3>Front entrances</h3><p>Porticos, blade walls and entry piers, with the capping and returns finished so the detail looks complete from the street and from the door.</p></article>
-    <article class="tile"><span class="k">Outside</span><h3>Columns &amp; fences</h3><p>Piers, columns, garden walls and fence bases clad in stone, with the corners mitred rather than left open.</p></article>
-    <article class="tile"><span class="k">Renovation</span><h3>Renovations</h3><p>New stone against old render or brick: the junction is packed and set out so the new wall lines up with what is already there.</p></article>
-    <article class="tile"><span class="k">New build</span><h3>New builds</h3><p>Working to the builder's set-out, with the stone chosen and the coursing agreed before the first sheet goes on the wall.</p></article>
+    <article class="tile"><span class="lbl">Facades</span><h3>Houses &amp; exterior walls</h3><p>Full or part facades in natural stone, set out from the corners so the courses run true past windows, doors and downpipes.</p></article>
+    <article class="tile"><span class="lbl">Interiors</span><h3>Feature walls</h3><p>Living rooms, fireplaces and entry walls. Stone carried inside needs the wall prepared flat first — the depth of the stone reads every mm of what is behind it.</p></article>
+    <article class="tile"><span class="lbl">Entry</span><h3>Front entrances</h3><p>Porticos, blade walls and entry piers, with the capping and returns finished so the detail looks complete from the street and from the door.</p></article>
+    <article class="tile"><span class="lbl">Outside</span><h3>Columns &amp; fences</h3><p>Piers, columns, garden walls and fence bases clad in stone, with the corners mitred rather than left open.</p></article>
+    <article class="tile"><span class="lbl">Renovation</span><h3>Renovations</h3><p>New stone against old render or brick: the junction is packed and set out so the new wall lines up with what is already there.</p></article>
+    <article class="tile"><span class="lbl">New build</span><h3>New builds</h3><p>Working to the builder's set-out, with the stone chosen and the coursing agreed before the first sheet goes on the wall.</p></article>
   </div>
 </div></section>
 
-<section id="stone"><div class="wrap split">
+<section id="stone" class="dark"><div class="wrap split">
   <div>
-    <span class="label">The material</span>
-    <h2 style="margin-top:12px">The same wall looks different on every house</h2>
+    <span class="lbl lbl--lt">The material</span>
+    <hr class="rule--l">
+    <h2>The same wall looks different on every house</h2>
     <p>Natural stone is not a flat surface: the face, the depth and the tone change with the light. That is the reason to use it, and the reason it has to be set out properly — a course that runs out of level shows up far more in stone than it would in render.</p>
     <p>Stone is also heavier than it looks. The wall has to be right behind it — flat, prepared and able to carry the weight — which is the part of the job that is never visible afterwards.</p>
     <ul>
@@ -207,22 +215,30 @@ footer{background:var(--ink);color:#c9c6bd;padding:34px 0 40px;font-size:13.6px}
       <li><b>Pointing and clean.</b> Pointed flush, then washed down before handover.</li>
     </ul>
   </div>
-  <figure class="fig"><img src="assets/brand_block.jpg" alt="Stone clad wall detail" width="1280" height="1100" loading="lazy" decoding="async"></figure>
+  <figure class="fig" style="margin:0"><img src="assets/brand_block.jpg" alt="Natural stone cladding detail" width="1280" height="1100" loading="lazy" decoding="async"></figure>
 </div></section>
 
 <section id="process"><div class="wrap">
-  <div class="head"><div><span class="label">How a job runs</span><h2 style="margin-top:12px">From quote to clean-down</h2></div>
-  <p>A photo, roughly how many square metres and what is behind the wall is usually enough to price the work.</p></div>
+  <div class="head">
+    <span class="lbl">How a job runs</span>
+    <hr class="rule--l">
+    <h2>From quote to clean-down</h2>
+    <p>A photo, roughly how many square metres and what is behind the wall is usually enough to price the work.</p>
+  </div>
   <div class="steps">
-    <div><h3>Look and quote</h3><p>The wall is checked for what is under it, how the corners fall and how much cutting the openings need.</p></div>
-    <div><h3>Prep</h3><p>Surface prepared flat, set-out lines run around the wall, and the stone laid out dry so the coursing can be seen before it is fixed.</p></div>
-    <div><h3>Lay the stone</h3><p>Laid course by course, held to the line, with the corners mitred and the junctions to existing work packed and finished.</p></div>
-    <div><h3>Point and clean</h3><p>Pointing finished flush, the wall washed down, and the site left clean with the offcuts gone.</p></div>
+    <div><span class="n">01</span><h3>Look and quote</h3><p>The wall is checked for what is under it, how the corners fall and how much cutting the openings need.</p></div>
+    <div><span class="n">02</span><h3>Prep</h3><p>Surface prepared flat, set-out lines run around the wall, and the stone laid out dry so the coursing can be seen before it is fixed.</p></div>
+    <div><span class="n">03</span><h3>Lay the stone</h3><p>Laid course by course, held to the line, with the corners mitred and the junctions to existing work packed and finished.</p></div>
+    <div><span class="n">04</span><h3>Point and clean</h3><p>Pointing finished flush, the wall washed down, and the site left clean with the offcuts gone.</p></div>
   </div>
 </div></section>
 
-<section id="faq"><div class="wrap">
-  <div class="head"><div><span class="label">Questions</span><h2 style="margin-top:12px">Asked before most quotes</h2></div></div>
+<section id="faq" class="dark"><div class="wrap">
+  <div class="head">
+    <span class="lbl lbl--lt">Questions</span>
+    <hr class="rule--l">
+    <h2>Asked before most quotes</h2>
+  </div>
   <details><summary>How long does a stone wall take?</summary><div class="a">A single feature wall is usually a few days. A full facade takes longer, because the coursing has to be set out around every opening and the corners dressed — the layout is most of the job on a large wall.</div></details>
   <details><summary>Can stone go over the render or brick that is already there?</summary><div class="a">Usually yes, as long as the surface is sound and flat and the wall can carry the weight. If it is not level, that gets fixed first, because the stone face follows whatever it is sitting on.</div></details>
   <details><summary>Does it need sealing?</summary><div class="a">Interior stone generally does not. Exterior stone can be sealed to slow staining and make cleaning easier, depending on the finish — it is worth discussing against how exposed the wall is.</div></details>
@@ -230,15 +246,16 @@ footer{background:var(--ink);color:#c9c6bd;padding:34px 0 40px;font-size:13.6px}
   <details><summary>Do you work to a builder's set-out?</summary><div class="a">Yes. On new builds the coursing, the stone selection and the junctions to other finishes are agreed with the builder before the first course goes down.</div></details>
 </div></section>
 
-<section id="quote" class="quote"><div class="wrap quote__in">
+<section id="quote" class="quote"><div class="diag"></div><div class="wrap quote__in">
   <div>
-    <span class="label">Get a quote</span>
+    <span class="lbl lbl--lt">Get a quote</span>
+    <hr class="rule--l">
     <h2>Tell us about the wall.</h2>
     <p class="lead">Roughly how many square metres, what is behind it, and where the openings and corners fall. Photos of the area help most.</p>
     <div class="contact">
-      <a href="tel:0481216151">0481 216 151</a>
+      <a class="big" href="tel:0481216151">0481 216 151</a>
+      <a class="mail" href="mailto:mohammad5436@icloud.com">mohammad5436@icloud.com</a>
       <span>Stone Sydney · Mohamed Stone Cladding</span>
-      <span>mohammad5436@icloud.com</span>
       <span>Sydney, NSW</span>
     </div>
   </div>
@@ -259,15 +276,18 @@ footer{background:var(--ink);color:#c9c6bd;padding:34px 0 40px;font-size:13.6px}
 </main>
 
 <footer><div class="wrap foot">
-  <div class="fl">
-    <span class="chip"><img src="assets/logo-isolated.png" alt="Stone Sydney"></span>
-    <span><b>Stone Sydney</b><span style="font-size:13px;color:#a9a69d">Natural stone cladding · Sydney NSW</span></span>
+  <div>
+    <img src="assets/logo-word.png" alt="Mohamed Stone Cladding" width="962" height="115">
+    <p>Natural stone cladding &amp; stonework · Sydney NSW</p>
   </div>
-  <div class="meta"><a href="tel:0481216151">0481 216 151</a> · <a href="mailto:mohammad5436@icloud.com">mohammad5436@icloud.com</a></div>
+  <div class="meta">
+    <a href="tel:0481216151">0481 216 151</a><br>
+    <a href="mailto:mohammad5436@icloud.com">mohammad5436@icloud.com</a><br>
+    <span>&copy; 2026 Stone Sydney · Mohamed Stone Cladding</span>
+  </div>
 </div></footer>
 
 <script>
-document.getElementById('burger').addEventListener('click',function(){var n=document.getElementById('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);});
 document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button');
 b.textContent='Sending…';b.disabled=true;
 fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
