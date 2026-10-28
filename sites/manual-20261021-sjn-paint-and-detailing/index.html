@@ -106,6 +106,9 @@ nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:1
   </figure>
 </div></header>
 
+<div class="sjn-ticker" aria-hidden="true"><div class="sjn-ticker__track" id="sjnTick"></div></div>
+
+
 <div class="facts"><div class="wrap facts__in">
   <div><b>BATHURST</b><span>Local workshop, Central West NSW.</span></div>
   <div><b>PAINT &amp; DETAIL</b><span>Spray work and surface correction in one place.</span></div>
@@ -154,6 +157,25 @@ nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:1
   </div>
 </div></section>
 
+<!-- SJN-EXTRAS-START -->
+<section id="scope"><div class="wrap">
+  <div class="head"><div><span class="eyebrow">The work</span><h2 style="margin-top:12px">Paint work and detailing, side by side</h2></div>
+  <p>One workshop, two jobs that get confused with each other. Paint work needs a booth, a colour match and a bake; detailing needs time, the right pads and a surface that is already sound. We do both, so nothing gets pushed onto someone else.</p></div>
+  <div class="sjn-cards">
+    <article><h3>Spray painting</h3><p>Single panel repairs through to full resprays — bumper, guard, door and boot work, colour matched by code then checked against the panel in daylight, sprayed in a booth and baked.</p></article>
+    <article><h3>Panel prep &amp; repair</h3><p>Dents worked out or filled, blocked straight, primed and guide-coated. This is the stage nobody sees and the one that decides whether a repair shows at an angle in sunlight.</p></article>
+    <article><h3>Paint correction</h3><p>Machine compounding and polishing in stages to remove swirls, holograms, oxidation and wash marks — measured paint depth first so the clear coat is never cut through.</p></article>
+    <article><h3>Ceramic coating</h3><p>Panel wiped, decontaminated and levelled, then coated and cured. Gloss and bead up, and washing gets easier — protection over sound paint, never a substitute for correction.</p></article>
+    <article><h3>Interior &amp; exterior detail</h3><p>Wheels, arches and glass, tar and iron removal, trim and rubber dressed, then carpets, seats, headlining and vents cleaned through to a dry finish.</p></article>
+    <article><h3>Pre-sale &amp; insurance work</h3><p>Tidy-ups before a car goes on the market, and repair work documented with before-and-after photos for insurance or a lease hand-back.</p></article>
+  </div>
+  <div class="sjn-chips" style="margin-top:26px">
+    <span>Booth sprayed &amp; baked</span><span>Colour matched by code</span><span>Paint depth measured</span><span>Before &amp; after photos</span>
+    <span>Single panels to full resprays</span><span>Drop-off &amp; collection by arrangement</span>
+  </div>
+</div></section>
+<!-- SJN-EXTRAS-END -->
+
 <section id="work"><div class="wrap">
   <div class="head"><div><span class="eyebrow">Work</span><h2 style="margin-top:12px">Finished surfaces</h2></div>
     <p>Paint and detail work from the workshop.</p></div>
@@ -173,10 +195,19 @@ nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:1
 <section id="areas"><div class="wrap">
   <div class="head"><div><span class="eyebrow">Where we work</span><h2 style="margin-top:12px">Bathurst and the Central West</h2></div>
     <p>Vehicles come in from across the region — if you are further out, ask about drop-off and collection.</p></div>
-  <div class="areas">
-    <span>Bathurst</span><span>Kelso</span><span>Eglinton</span><span>Perthville</span><span>Blayney</span>
-    <span>Orange</span><span>Lithgow</span><span>Oberon</span><span>Cowra</span><span>Mudgee</span>
-  </div>
+  <div class="sjn-chips">
+      <span>Bathurst</span><span>Kelso</span><span>Eglinton</span><span>Perthville</span><span>Raglan</span>
+      <span>White Rock</span><span>Robin Hill</span><span>Windradyne</span><span>West Bathurst</span><span>South Bathurst</span>
+      <span>Blayney</span><span>Millthorpe</span><span>Carcoar</span><span>Orange</span><span>Lucknow</span>
+      <span>Molong</span><span>Lithgow</span><span>Wallerawang</span><span>Portland</span><span>Oberon</span>
+      <span>Cowra</span><span>Canowindra</span><span>Mudgee</span><span>Gulgong</span><span>Kandos</span>
+      <span>Rylstone</span><span>Sofala</span><span>Hill End</span><span>Yetholme</span><span>Meadow Flat</span>
+    </div>
+    <div class="sjn-band">
+      <div class="cap"><span>Where we work — rotating</span><em id="sjnAreaCount">01 / 06</em></div>
+      <div class="row" id="sjnAreaRow"></div>
+      <div class="prog"><i></i></div>
+    </div>
 </div></section>
 
 <section id="faq"><div class="wrap">
@@ -225,4 +256,88 @@ document.getElementById('lbq-form').addEventListener('submit',function(e){e.prev
   .then(function(){b.textContent='Thanks — we will be in touch';})
   .catch(function(){b.textContent='Could not send — try again';b.disabled=false;});});
 </script>
+<style id="sjn-extras">
+/* ==== header/logo + photo sizing + features, in this site's own red/dark palette (#c8101c / #0b0b0c) ==== */
+
+/* the header was rendering the 512x512 lockup at 132x132px inside a 155px bar - a heavy square that pushed the
+   whole bar down. Height-capped so the SJN shield sits in a normal bar and stays sharp. */
+.brand img,img.lb-big,img.lb-big.lb-big.lb-logo-unlock,.brand .lb-big{
+  height:clamp(46px,4.8vw,58px)!important;width:auto!important;max-height:none!important;max-width:min(40vw,120px)!important;object-fit:contain!important}
+header,nav,.bar{min-height:0!important}
+footer img,footer .brand img{height:clamp(84px,9vw,124px)!important;width:auto!important;max-width:none!important;object-fit:contain!important}
+
+/* showcase photographs: three 1280x719 shots were each rendered 992px wide and stacked, so the gallery ran 1921px
+   tall. They are now three tiles at 360px (0.28x of native - crisp, no upscale, no crop). */
+#work .gal{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(240px,340px))!important;gap:1rem!important;justify-content:start!important}
+#work .gal figure{margin:0!important;border-radius:10px;overflow:hidden;background:#141416}
+#work .gal figure img{width:100%!important;height:auto!important;aspect-ratio:16/9;object-fit:cover!important;display:block!important}
+#work .gal figcaption{padding:.7rem .85rem;font-size:.82rem;color:#9c9a97}
+
+/* rotating services ticker */
+.sjn-ticker{position:relative;overflow:hidden;background:#141416;border-top:2px solid #c8101c;border-bottom:1px solid rgba(243,241,238,.12)}
+.sjn-ticker:before,.sjn-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.sjn-ticker:before{left:0;background:linear-gradient(90deg,#141416,transparent)}
+.sjn-ticker:after{right:0;background:linear-gradient(270deg,#141416,transparent)}
+.sjn-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;width:max-content;animation:sjnSlide 46s linear infinite;will-change:transform}
+.sjn-ticker:hover .sjn-ticker__track{animation-play-state:paused}
+.sjn-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:#f3f1ee;font-weight:700;font-size:clamp(11px,1.15vw,13.5px);letter-spacing:.16em;text-transform:uppercase}
+.sjn-ticker span i{font-style:normal;color:#c8101c}
+@keyframes sjnSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* scope + what decides the price */
+.sjn-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:26px}
+.sjn-cards article{border:1px solid #26262a;border-left:3px solid #c8101c;background:#141416;padding:20px 18px;border-radius:10px}
+.sjn-cards h3{margin:0 0 8px;font-size:1.02rem;color:#f3f1ee}
+.sjn-cards p{margin:0;color:#9c9a97;font-size:.92rem;line-height:1.62}
+
+/* service-area chips + rotating band */
+.sjn-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.sjn-chips span{border:1px solid #2c2c31;background:#141416;border-radius:999px;padding:7px 14px;font-size:.85rem;color:#f3f1ee;transition:.2s}
+.sjn-chips span:hover{border-color:#c8101c;color:#ff4d5e}
+.sjn-band{margin-top:22px;border:1px solid rgba(200,16,28,.4);background:#141416;overflow:hidden;border-radius:10px}
+.sjn-band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:11px 15px;border-bottom:1px solid rgba(243,241,238,.14);
+  font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#ff4d5e;font-weight:700}
+.sjn-band .cap em{font-style:normal;color:#9c9a97}
+.sjn-band .row{position:relative;height:68px;overflow:hidden}
+.sjn-band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+.sjn-band .row ul.on{opacity:1;transform:none}
+.sjn-band .row li{font-size:clamp(1.05rem,2.2vw,1.5rem);font-weight:700;color:#f3f1ee;text-align:center;line-height:1.12}
+.sjn-band .row li small{display:block;font-weight:400;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:#9c9a97;margin-top:8px}
+.sjn-band .prog{height:2px;background:rgba(243,241,238,.14)}
+.sjn-band .prog i{display:block;height:100%;width:0;background:#c8101c;animation:sjnFill 4s linear infinite}
+@keyframes sjnFill{from{width:0}to{width:100%}}
+
+@media (prefers-reduced-motion:reduce){.sjn-ticker__track,.sjn-band .prog i{animation:none}.sjn-band .row ul{transition:none}}
+</style>
+
+<script id="sjn-extras-js">
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var T=['Spray painting','Panel prep','Dent repair','Colour matching','Clear coat','Paint correction','Machine polishing',
+         'Ceramic coating','Cut & polish','Headlight restoration','Interior detail','Wheels & glass','Tar & iron removal',
+         'Trim restoration','Pre-sale detail','Insurance work'];
+  var tk=document.getElementById('sjnTick');
+  if (tk) tk.innerHTML=T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
+  var AR=[['Bathurst & Kelso','Bathurst · Kelso · Eglinton · Perthville'],
+          ['Bathurst surrounds','Raglan · White Rock · Robin Hill · Windradyne'],
+          ['Blayney & Millthorpe','Blayney · Millthorpe · Carcoar · Lucknow'],
+          ['Orange & Molong','Orange · Molong · Canowindra · Cowra'],
+          ['Lithgow & Portland','Lithgow · Wallerawang · Portland · Yetholme'],
+          ['Mudgee & the tablelands','Mudgee · Gulgong · Kandos · Oberon']];
+  var row=document.getElementById('sjnAreaRow'), cnt=document.getElementById('sjnAreaCount');
+  if (row){
+    AR.forEach(function(a,k){
+      var u=document.createElement('ul'), li=document.createElement('li');
+      if(!k) u.className='on';
+      li.innerHTML=a[0]+'<small>'+a[1]+'</small>';
+      u.appendChild(li); row.appendChild(u);
+    });
+    var rows=[].slice.call(row.children), i=0;
+    if(!reduce){ setInterval(function(){ i=(i+1)%AR.length;
+      rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
+      if(cnt) cnt.textContent=('0'+(i+1)).slice(-2)+' / 0'+AR.length; },4000); }
+  }
+})();
+</script>
+
 </body></html>
