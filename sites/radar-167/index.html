@@ -265,7 +265,7 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav"><div class="nav-in">
-  <a class="lb-brand" href="#top" aria-label="H2O Plumbing Sydney - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#14161a;--lb-subc:#14161a;--lb-acc:#0888e8;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo-mark_radar-167.png" alt="" loading="eager" decoding="async" class="lb-logo-unlock"></span><span class="lb-brand__word"><span class="lb-brand__name">H2O Plumbing Sydney</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
+  <a class="lb-brand" href="#top" aria-label="H2O Plumbing Sydney - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#14161a;--lb-subc:#14161a;--lb-acc:#0888e8;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo-header.png" alt="" loading="eager" decoding="async" class="lb-logo-unlock"></span><span class="lb-brand__word"><span class="lb-brand__name">H2O Plumbing Sydney</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
   <div class="nav-links" id="navlinks"><a href="#services">Services</a><a href="#process">Process</a><a href="#work">Work</a><a href="#faq">FAQ</a><a href="#quote">Quote</a></div>
   <div class="nav-cta"><span class="nav-p">0403 042 209</span><a href="#quote" class="btn btn-primary btn-sm">Get a quote</a></div>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -294,6 +294,9 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
   </div>
 </header>
 
+<div class="h2o-ticker" aria-hidden="true"><div class="h2o-ticker__track" id="h2oTick"></div></div>
+
+
 
 
 <section id="services"><div class="wrap">
@@ -305,6 +308,32 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
   <div class="sec-head"><div><h2 class="sec-title">How a callout runs.</h2></div></div>
   <div class="steps"><div class="step rv"><span class="step-n">01</span><div><h3>Call us</h3><p>Tell us what is happening &mdash; we will tell you what to do before we arrive.</p></div></div><div class="step rv"><span class="step-n">02</span><div><h3>Upfront quote</h3><p>Diagnosed on site and priced before any work starts &mdash; no surprises.</p></div></div><div class="step rv"><span class="step-n">03</span><div><h3>Fixed right</h3><p>The job done with the right parts and gear, tested before we leave.</p></div></div><div class="step rv"><span class="step-n">04</span><div><h3>Tested &amp; tidied</h3><p>System tested, area cleaned and the fix explained.</p></div></div></div>
 </div></section>
+
+<section class="sec" id="areas" aria-labelledby="areas-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-idx">06</div>
+      <div>
+        <h2 id="areas-h">Where we work</h2>
+        <p class="lead">Blocked drains, hot water, leaks and pipe relining across Sydney and the surrounding suburbs — licensed plumbers, 24/7 for emergencies.</p>
+      </div>
+    </div>
+    <div class="h2o-chips">
+      <span>Sydney CBD</span><span>Surry Hills</span><span>Alexandria</span><span>Mascot</span><span>Randwick</span>
+      <span>Bondi</span><span>Coogee</span><span>Maroubra</span><span>Newtown</span><span>Marrickville</span>
+      <span>Leichhardt</span><span>Balmain</span><span>Ashfield</span><span>Burwood</span><span>Strathfield</span>
+      <span>Chatswood</span><span>Lane Cove</span><span>Mosman</span><span>Manly</span><span>Dee Why</span>
+      <span>Ryde</span><span>Epping</span><span>Castle Hill</span><span>Baulkham Hills</span><span>Parramatta</span>
+      <span>Blacktown</span><span>Penrith</span><span>Liverpool</span><span>Bankstown</span><span>Hurstville</span>
+      <span>Kogarah</span><span>Cronulla</span><span>Sutherland</span><span>Miranda</span><span>Campbelltown</span>
+    </div>
+    <div class="h2o-band">
+      <div class="cap"><span>Service areas — rotating</span><em id="h2oAreaCount">01 / 07</em></div>
+      <div class="row" id="h2oAreaRow"></div>
+      <div class="prog"><i></i></div>
+    </div>
+  </div>
+</section>
 
 <section id="faq"><div class="wrap faq-wrap">
   <div class="sec-head"><div><h2 class="sec-title">Asked on every callout.</h2></div></div>
@@ -691,5 +720,120 @@ header a[href^="tel"],.site-header a[href^="tel"]{
 :is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
 img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
+<style id="h2o-extras">
+/* ==== header logo cleaned up + added features, in this site's own blue/white palette (#0888e8 / #ffffff) ==== */
+
+/* the bar was loading assets/logo-mark_radar-167.png - a broken fragment (the top arc of the circle and the
+   water-drop wrench icon only, no H2O, no PLUMBING, no SYDNEY). Now the client's complete badge, cropped to its
+   own edges and transparent, on the white bar. */
+.lb-brand__mark{height:auto!important;width:auto!important;max-width:none!important;display:flex!important;align-items:center!important;
+  background:none!important;padding:0!important;border-radius:0!important}
+.lb-brand__mark img,.lb-brand__mark img.lb-logo,.lb-brand__mark img.lb-logo-unlock,.lb-brand img.lb-logo,.lb-brand img.lb-logo-unlock{
+  height:clamp(52px,5.6vw,76px)!important;width:auto!important;max-height:none!important;max-width:min(46vw,220px)!important;
+  object-fit:contain!important;background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;display:block!important}
+.lb-brand__word,.lb-brand__name,.lb-brand__sub,.lb-brand__rule{display:none!important}
+@media(max-width:560px){.lb-brand__mark img{height:46px!important}}
+
+/* rotating service-area ticker */
+.h2o-ticker{position:relative;overflow:hidden;background:#05436f;
+  border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+.h2o-ticker:before,.h2o-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.h2o-ticker:before{left:0;background:linear-gradient(90deg,#05436f,transparent)}
+.h2o-ticker:after{right:0;background:linear-gradient(270deg,#05436f,transparent)}
+.h2o-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;width:max-content;
+  animation:h2oSlide 46s linear infinite;will-change:transform}
+.h2o-ticker:hover .h2o-ticker__track{animation-play-state:paused}
+.h2o-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:#ffffff;
+  font-weight:700;font-size:clamp(11px,1.15vw,13.5px);letter-spacing:.16em;text-transform:uppercase}
+.h2o-ticker span i{font-style:normal;color:#7fd0ff}
+@keyframes h2oSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* service area chips + rotating band */
+.h2o-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.h2o-chips span{border:1px solid rgba(8,136,232,.24);background:rgba(8,136,232,.06);padding:7px 13px;
+  font-size:.86rem;color:#060608;transition:.2s}
+.h2o-chips span:hover{border-color:#0888e8;background:rgba(8,136,232,.16)}
+.h2o-band{margin-top:20px;border:1px solid rgba(8,136,232,.28);background:#05436f;overflow:hidden;border-radius:12px}
+.h2o-band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:11px 15px;
+  border-bottom:1px solid rgba(255,255,255,.16);font-weight:700;font-size:.7rem;letter-spacing:.18em;
+  text-transform:uppercase;color:#7fd0ff}
+.h2o-band .cap em{font-style:normal;color:#cfe9fb}
+.h2o-band .row{position:relative;height:68px;overflow:hidden}
+.h2o-band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+.h2o-band .row ul.on{opacity:1;transform:none}
+.h2o-band .row li{font-size:clamp(1.05rem,2.2vw,1.5rem);font-weight:800;line-height:1.12;color:#ffffff;text-align:center}
+.h2o-band .row li small{display:block;font-weight:500;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;
+  color:#cfe9fb;margin-top:8px}
+.h2o-band .prog{height:2px;background:rgba(255,255,255,.16)}
+.h2o-band .prog i{display:block;height:100%;width:0;background:#7fd0ff;animation:h2oFill 4s linear infinite}
+@keyframes h2oFill{from{width:0}to{width:100%}}
+
+/* showcase photographs: the work shots are 1280px wide at FIVE different ratios (0.99, 1.23, 1.03, 0.76, 0.90).
+   The gallery forced them all into one 560x380 landscape cover box and the rotation band covered a 16:7 track with
+   them - upscaled 1.2x and cut to a 2.28:1 slice. */
+.hg-item{width:min(400px,80vw)!important}
+.hg-item img{width:100%!important;height:auto!important;object-fit:cover!important;display:block}
+.hg-item img[src*="gal_1"]{aspect-ratio:1280/1289!important}
+.hg-item img[src*="gal_2"]{aspect-ratio:1280/1040!important}
+.hg-item img[src*="gal_3"]{aspect-ratio:1280/1246!important}
+.hg-item img[src*="gal_5"]{aspect-ratio:1280/1683!important}
+.hg-item img[src*="why"]{aspect-ratio:1280/1420!important}
+@media(max-width:700px){.hg-item{width:min(320px,84vw)!important}}
+
+.lb-rb__track{aspect-ratio:4/3!important;width:min(880px,94vw)!important;margin:0 auto!important;border-radius:12px;overflow:visible!important}
+.lb-rb__slide{border-radius:12px;overflow:hidden}
+.lb-rb__slide img{width:100%!important;height:100%!important;object-fit:contain!important;transform:none!important}
+.lb-rb__dots{left:50%!important;right:auto!important;top:calc(100% + 14px)!important;bottom:auto!important;
+  transform:translateX(-50%)!important;flex-direction:row!important;gap:9px!important;z-index:5!important}
+.lb-rb{padding-bottom:clamp(42px,4.4vw,60px)}
+@media(max-width:760px){.lb-rb__track{width:min(560px,94vw)!important}}
+
+@media (prefers-reduced-motion:reduce){
+  .h2o-ticker__track,.h2o-band .prog i{animation:none}
+  .h2o-band .row ul{transition:none}
+}
+</style>
+
+<script id="h2o-extras-js">
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* service-area ticker */
+  var T=['Sydney CBD','Surry Hills','Alexandria','Mascot','Randwick','Bondi','Coogee','Maroubra','Newtown',
+         'Marrickville','Leichhardt','Balmain','Ashfield','Burwood','Strathfield','Chatswood','Lane Cove','Mosman',
+         'Manly','Dee Why','Ryde','Epping','Castle Hill','Baulkham Hills','Parramatta','Blacktown','Penrith',
+         'Liverpool','Bankstown','Hurstville','Kogarah','Cronulla','Sutherland','Miranda','Campbelltown'];
+  var tk=document.getElementById('h2oTick');
+  if (tk) tk.innerHTML = T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
+
+  /* rotating service-area band */
+  var AR=[['Sydney CBD & inner','Surry Hills · Alexandria · Mascot · Zetland'],
+          ['Eastern Suburbs','Randwick · Bondi · Coogee · Maroubra'],
+          ['Inner West','Newtown · Marrickville · Leichhardt · Balmain'],
+          ['North Shore & beaches','Chatswood · Lane Cove · Mosman · Manly · Dee Why'],
+          ['The Hills & northwest','Castle Hill · Baulkham Hills · Epping · Ryde'],
+          ['Western Sydney','Parramatta · Blacktown · Penrith · Liverpool'],
+          ['South, Shire & southwest','Hurstville · Cronulla · Sutherland · Campbelltown']];
+  var row=document.getElementById('h2oAreaRow'), cnt=document.getElementById('h2oAreaCount');
+  if (row){
+    AR.forEach(function(a,k){
+      var u=document.createElement('ul'), li=document.createElement('li');
+      if(!k) u.className='on';
+      li.innerHTML = a[0]+'<small>'+a[1]+'</small>';
+      u.appendChild(li); row.appendChild(u);
+    });
+    var rows=[].slice.call(row.children), i=0;
+    if(!reduce){
+      setInterval(function(){
+        i=(i+1)%AR.length;
+        rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
+        if(cnt) cnt.textContent = ('0'+(i+1)).slice(-2)+' / 0'+AR.length;
+      },4000);
+    }
+  }
+})();
+</script>
+
 </body>
 </html>
