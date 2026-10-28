@@ -267,14 +267,81 @@ header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-
 .bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
 img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
 </style>
+<style id="tt-extras">
+/* ==== header logo cleaned up + added features, in this site's own green palette (bg #0f1512 / acc #3e7c52 / ink #eef2f6) ==== */
+
+/* one clean piece of artwork in the bar: the lockup trimmed to its edges, at a size you can read */
+.brand{gap:0!important}
+.brand .brand__mark,.brand .brand__word,.brand .brand__name,.brand .brand__sub{display:none!important}
+.brand img.tt-logo{display:block!important;height:clamp(50px,5.2vw,70px)!important;width:auto!important;
+  max-height:none!important;max-width:min(62vw,340px)!important;object-fit:contain!important}
+.bar .bar__in{padding-block:clamp(10px,1.1vw,16px)!important}
+@media(max-width:760px){.brand img.tt-logo{height:44px!important}}
+
+/* rotating service-area ticker */
+.tt-ticker{position:relative;overflow:hidden;background:#0c110f;border-top:1px solid rgba(238,242,246,.10);
+  border-bottom:1px solid rgba(238,242,246,.10)}
+.tt-ticker:before,.tt-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.tt-ticker:before{left:0;background:linear-gradient(90deg,#0c110f,transparent)}
+.tt-ticker:after{right:0;background:linear-gradient(270deg,#0c110f,transparent)}
+.tt-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;width:max-content;
+  animation:ttSlide 44s linear infinite;will-change:transform}
+.tt-ticker:hover .tt-ticker__track{animation-play-state:paused}
+.tt-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:var(--ink,#eef2f6);
+  font-weight:700;font-size:clamp(11px,1.2vw,14px);letter-spacing:.14em;text-transform:uppercase}
+.tt-ticker span i{font-style:normal;color:var(--acc,#3e7c52)}
+@keyframes ttSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* service area chips + rotating band */
+.tt-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.tt-chips span{border:1px solid var(--line,rgba(238,242,246,.16));background:rgba(255,255,255,.04);
+  padding:7px 13px;font-size:.87rem;color:var(--ink,#eef2f6);transition:.2s}
+.tt-chips span:hover{border-color:var(--acc,#3e7c52);background:rgba(62,124,82,.18)}
+.tt-band{margin-top:20px;border:1px solid rgba(238,242,246,.16);background:var(--panel,#141c17);
+  overflow:hidden;border-radius:14px}
+.tt-band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:11px 15px;
+  border-bottom:1px solid rgba(238,242,246,.12);font-weight:700;font-size:.7rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--acc-ink,#a8c4b1)}
+.tt-band .cap em{font-style:normal;color:var(--muted,#aab6c2)}
+.tt-band .row{position:relative;height:68px;overflow:hidden}
+.tt-band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+.tt-band .row ul.on{opacity:1;transform:none}
+.tt-band .row li{font-size:clamp(1.05rem,2.2vw,1.55rem);font-weight:800;line-height:1.12;
+  color:var(--ink,#eef2f6);text-align:center}
+.tt-band .row li small{display:block;font-weight:500;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted,#aab6c2);margin-top:8px}
+.tt-band .prog{height:2px;background:rgba(238,242,246,.14)}
+.tt-band .prog i{display:block;height:100%;width:0;background:var(--acc,#3e7c52);animation:ttFill 4s linear infinite}
+@keyframes ttFill{from{width:0}to{width:100%}}
+
+/* showcase photographs: smaller tiles at each photograph's own shape, so nothing is cropped up or stretched.
+   work-crane / work-dead are 900x1200 (3:4); work-felled / work-prune are ~675x1200 (9:16). */
+.gal{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;max-width:820px}
+.shot img{width:100%!important;height:auto!important;object-fit:cover}
+.shot img[src*="work-crane"],.shot img[src*="work-dead"]{aspect-ratio:3/4!important}
+.shot img[src*="work-felled"],.shot img[src*="work-prune"]{aspect-ratio:9/16!important}
+.shot{max-width:100%}
+@media(max-width:900px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:560px}}
+@media(max-width:560px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:420px;gap:12px!important}}
+
+@media (prefers-reduced-motion:reduce){
+  .tt-ticker__track,.tt-band .prog i{animation:none}
+  .tt-band .row ul{transition:none}
+}
+</style>
+
 </head>
 <body id="top">
 <a class="skip" href="#lbq">Skip to quote form</a>
 <header class="bar"><div class="wrap bar__in">
-<a aria-label="Tidy Timber Co. — tree and land services" class="brand" href="#top"><img alt="" class="brand__mark lb-logo-unlock" decoding="async" height="276" loading="eager" src="assets/brand-mark-img.png" width="861"/><img alt="Tidy Timber Co. — Tree &amp; Land Services" class="brand__word" decoding="async" height="325" loading="eager" src="assets/brand-word-img.png" width="937"/></a>
+<a aria-label="Tidy Timber Co. — tree and land services" class="brand" href="#top"><img class="tt-logo" alt="Tidy Timber Co. — Tree &amp; Land Services" src="assets/logo-header-tight.png" width="928" height="325" loading="eager" decoding="async"></a>
 <nav aria-label="Main" class="nav"><a href="#gallery">Our work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#faq">FAQ</a><a class="btn" href="tel:+61450314475">0450 314 475</a></nav>
 </div>
 </header>
+
+<div class="tt-ticker" aria-hidden="true"><div class="tt-ticker__track" id="ttTick"></div></div>
+
 <section aria-labelledby="h1" class="hero">
 <div aria-label="Crane lifting a sectioned tree trunk during a removal" class="hero__bg" role="img"></div>
 <div class="hero__scrim"></div>
@@ -297,7 +364,7 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 <section aria-labelledby="gal-h" class="sec" id="gallery">
 <div class="wrap">
 <div class="sec__hd"><h2 id="gal-h">Trees down and trees left standing</h2><p>The site is looked at properly — access, what is already there, and what the finish has to do — before Tidy Timber Co puts a number on it.</p></div>
-<div class="gal"><figure class="shot rv rv-d0"><img alt="Crane lifting a sectioned tree trunk during removal" decoding="async" height="1200" loading="lazy" src="assets/work-crane.jpg" style="max-width:900px" width="900"/><figcaption>Crane-assisted removal: sections lifted out over the top instead of dropped through the yard.</figcaption></figure><figure class="shot rv rv-d1"><img alt="Tree with dead branches still in the canopy" decoding="async" height="1200" loading="lazy" src="assets/work-dead.jpg" style="max-width:900px" width="900"/><figcaption>Deadwooding: taking out what is already dead before it comes down on its own.</figcaption></figure><figure class="shot rv rv-d2"><img alt="Chainsaw beside a freshly felled tree" decoding="async" height="1200" loading="lazy" src="assets/work-felled.jpg" style="max-width:674px" width="674"/><figcaption>Felled, sectioned and cut up, timber left in your lengths if you want the firewood.</figcaption></figure></div>
+<div class="gal"><figure class="shot rv rv-d0"><img alt="Crane lifting a sectioned tree trunk during removal" decoding="async" height="1200" loading="lazy" src="assets/work-crane.jpg" width="900"/><figcaption>Crane-assisted removal: sections lifted out over the top instead of dropped through the yard.</figcaption></figure><figure class="shot rv rv-d1"><img alt="Tree with dead branches still in the canopy" decoding="async" height="1200" loading="lazy" src="assets/work-dead.jpg" width="900"/><figcaption>Deadwooding: taking out what is already dead before it comes down on its own.</figcaption></figure><figure class="shot rv rv-d2"><img alt="Chainsaw beside a freshly felled tree" decoding="async" height="1200" loading="lazy" src="assets/work-felled.jpg" style="max-width:674px" width="674"/><figcaption>Felled, sectioned and cut up, timber left in your lengths if you want the firewood.</figcaption></figure></div>
 <p class="img-note"></p>
 </div>
 </section>
@@ -320,6 +387,27 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 <ol class="panes"><li class="pane rv rv-d0"><h3>Send a photo</h3><p>Photos of the tree and what is around it (fences, sheds, powerlines) get the quote moving fast.</p></li><li class="pane rv rv-d1"><h3>Plan the drop</h3><p>We work out access, rigging and whether a crane or a climber is the safer way to bring it down.</p></li><li class="pane rv rv-d2"><h3>Cut, clear, tidy</h3><p>Tree removed or pruned, timber cut to your lengths and the site raked and left tidy.</p></li></ol>
 </div>
 </section>
+<section aria-labelledby="area-h" class="sec" id="areas">
+  <div class="wrap">
+    <div class="sec__hd">
+      <h2 id="area-h">Where we work</h2>
+      <p>Tree work across Bendigo and the surrounding towns — removals, pruning, deadwooding, stump grinding and storm clean-up.</p>
+    </div>
+    <div class="tt-chips">
+      <span>Bendigo</span><span>Kennington</span><span>Flora Hill</span><span>White Hills</span><span>Eaglehawk</span>
+      <span>Epsom</span><span>Huntly</span><span>Junortoun</span><span>Strathfieldsaye</span><span>Axedale</span>
+      <span>Kangaroo Flat</span><span>Golden Square</span><span>Maiden Gully</span><span>Marong</span><span>Long Gully</span>
+      <span>Castlemaine</span><span>Maldon</span><span>Harcourt</span><span>Heathcote</span><span>Kyneton</span>
+      <span>Woodend</span><span>Romsey</span><span>Elmore</span><span>Bridgewater</span>
+    </div>
+    <div class="tt-band">
+      <div class="cap"><span>Service areas — rotating</span><em id="ttAreaCount">01 / 06</em></div>
+      <div class="row" id="ttAreaRow"></div>
+      <div class="prog"><i></i></div>
+    </div>
+  </div>
+</section>
+
 <section aria-labelledby="faq-h" class="sec sec--alt" id="faq">
 <div class="wrap">
 <div class="sec__hd"><h2 id="faq-h">Tree services questions</h2><p>The usual ones, before anyone gets a saw out.</p></div>
@@ -547,5 +635,43 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 <style id="lb-header-fault-fix">
 img.lb-logo-unlock.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;min-height:0!important;flex:none!important;object-fit:contain!important}
 </style>
+<script id="tt-extras-js">
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* service-area ticker */
+  var T=['Bendigo','Kennington','Flora Hill','White Hills','Eaglehawk','Epsom','Huntly','Junortoun','Strathfieldsaye',
+         'Axedale','Kangaroo Flat','Golden Square','Maiden Gully','Marong','Long Gully','Castlemaine','Maldon',
+         'Harcourt','Heathcote','Kyneton','Woodend','Romsey','Elmore','Bridgewater'];
+  var tk=document.getElementById('ttTick');
+  if (tk) tk.innerHTML = T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
+
+  /* rotating service-area band */
+  var AR=[['Bendigo & the inner suburbs','Kennington · Flora Hill · White Hills · Long Gully'],
+          ['Eaglehawk & Epsom','Eaglehawk · Epsom · Huntly · Junortoun'],
+          ['Strathfieldsaye & east','Strathfieldsaye · Axedale · Knowsley · Emu Creek'],
+          ['Kangaroo Flat & south','Kangaroo Flat · Golden Square · Maiden Gully · Marong'],
+          ['Castlemaine & the goldfields','Castlemaine · Maldon · Harcourt · Elphinstone'],
+          ['Heathcote, Kyneton & surrounds','Heathcote · Kyneton · Woodend · Romsey']];
+  var row=document.getElementById('ttAreaRow'), cnt=document.getElementById('ttAreaCount');
+  if (row){
+    AR.forEach(function(a,k){
+      var u=document.createElement('ul'), li=document.createElement('li');
+      if(!k) u.className='on';
+      li.innerHTML = a[0]+'<small>'+a[1]+'</small>';
+      u.appendChild(li); row.appendChild(u);
+    });
+    var rows=[].slice.call(row.children), i=0;
+    if(!reduce){
+      setInterval(function(){
+        i=(i+1)%AR.length;
+        rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
+        if(cnt) cnt.textContent = ('0'+(i+1)).slice(-2)+' / 0'+AR.length;
+      },4000);
+    }
+  }
+})();
+</script>
+
 </body>
 </html>
