@@ -586,6 +586,10 @@ img.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:
 
 /* mobile: the CTA row was pushing 146px of horizontal overflow off-screen */
 @media(max-width:760px){
+  /* the copy block is a flex ROW on desktop (headline | paragraph | contact details); on a phone it has to stack
+     or the CTA row starts at x=391 and drags .hero-feats off with it */
+  .hero-copy{flex-direction:column!important;flex-wrap:nowrap!important;gap:18px!important}
+  .hero-copy>*{width:100%!important;max-width:100%!important}
   .hero-cta{flex-wrap:wrap!important;gap:10px!important}
   .hero-cta .btn,.hero-cta a{max-width:100%}
   .hero-feats{flex-wrap:wrap!important}
