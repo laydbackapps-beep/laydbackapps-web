@@ -21,6 +21,26 @@ section[id],footer[id]{scroll-margin-top:calc(var(--nav-h) + 10px)}
 html:not(.js) .rv{opacity:1!important;transform:none!important}
 .js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .js .rv.on{opacity:1;transform:none}
+/* the band at the foot of this page had three text slides - the client has no photographs, so it now shows the
+   finishes as drawn panels, each badged SAMPLE, rather than the company name in white type. */
+.lb-rb{background:#141210}
+.lb-rb__track{aspect-ratio:4/3!important;width:min(998px,100%)!important;max-width:998px!important;margin:0 auto!important;overflow:hidden!important}
+.lb-rb__slide.sample{background:#6f685d}
+.lb-rb__slide.sample.agg{background-image:
+  radial-gradient(circle at 14% 24%,#9d9486 0 6px,transparent 7px),radial-gradient(circle at 36% 64%,#8b8175 0 7px,transparent 8px),
+  radial-gradient(circle at 60% 30%,#a49a8b 0 6px,transparent 7px),radial-gradient(circle at 80% 70%,#8f8578 0 8px,transparent 9px),
+  linear-gradient(135deg,#6b6459,#847c6e 55%,#6f685d)}
+.lb-rb__slide.sample.stencil{background-image:
+  repeating-linear-gradient(0deg,rgba(0,0,0,.3) 0 2px,transparent 2px 46px),
+  repeating-linear-gradient(90deg,rgba(0,0,0,.3) 0 2px,transparent 2px 92px),
+  linear-gradient(150deg,#7d7466,#948a79)}
+.lb-rb__slide.sample.polish{background-image:
+  linear-gradient(102deg,rgba(255,255,255,.5) 0 7%,transparent 7% 20%,rgba(255,255,255,.32) 20% 24%,transparent 24% 46%,rgba(255,255,255,.42) 46% 51%,transparent 51% 72%,rgba(255,255,255,.28) 72% 76%,transparent 76%),
+  linear-gradient(115deg,#5a5c60 0%,#c3c6cc 30%,#74777d 48%,#ccd0d6 66%,#5f6266 100%)}
+.lb-rb__slide.sample::before{content:"Sample";position:absolute;top:14px;left:14px;z-index:4;
+  font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;background:rgba(10,10,9,.74);color:#e8b83a;padding:.3rem .55rem;border-radius:999px}
+.lb-rb__slide.sample .cap{position:absolute;left:0;right:0;bottom:0;z-index:4;padding:14px 16px;color:#fff;font-weight:700;
+  background:linear-gradient(180deg,transparent,rgba(10,10,9,.8))}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-d);line-height:1.55;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
@@ -558,7 +578,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 </script>
 </section>
 
-<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on" style="background:#0b0c10"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp, system-ui), sans-serif;font-weight:800;text-transform:none;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">Innovative Concrete Works Pty Ltd</span></div><div class="lb-rb__slide" style="background:#0b0c10"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp, system-ui), sans-serif;font-weight:800;text-transform:none;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">Servicing your area</span></div><div class="lb-rb__slide" style="background:#0b0c10"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp, system-ui), sans-serif;font-weight:800;text-transform:none;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">Free quotes &mdash; call today</span></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button></div><div class="lb-rb__cap">Innovative Concrete Works Pty Ltd &mdash; recent work</div></div></section><footer class="foot">
+<section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on sample agg"><span class="cap">Exposed aggregate &mdash; washed, sealed</span></div><div class="lb-rb__slide sample stencil"><span class="cap">Stencil &amp; stamped patterns</span></div><div class="lb-rb__slide sample polish"><span class="cap">Coloured oxide &amp; polished finishes</span></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button></div><div class="lb-rb__cap">Innovative Concrete Works Pty Ltd &mdash; recent work</div></div></section><footer class="foot">
   <div>
     <h3>Innovative Concrete Works Pty Ltd</h3>
     <p>Concrete, driveways, slabs, patios, exposed aggregate & decorative finishes.<br>Central Coast to Newcastle & Hunter.</p>
@@ -800,13 +820,27 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
 /* finish gallery: this business had NO photographs at all, so the finishes are drawn panels, each badged SAMPLE */
 .icw-fx{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-top:2.2rem}
 .icw-fx figure{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel)}
-.icw-fx .sw{height:150px;position:relative}
+.icw-fx .sw{height:190px;position:relative}
+.icw-fx .sw.agg{background-image:
+  radial-gradient(circle at 12% 22%,#9d9486 0 5px,transparent 6px),radial-gradient(circle at 34% 62%,#8b8175 0 6px,transparent 7px),
+  radial-gradient(circle at 58% 28%,#a49a8b 0 5px,transparent 6px),radial-gradient(circle at 78% 68%,#8f8578 0 7px,transparent 8px),
+  radial-gradient(circle at 92% 34%,#9a9081 0 5px,transparent 6px),radial-gradient(circle at 22% 86%,#a89e8e 0 5px,transparent 6px),
+  radial-gradient(circle at 66% 88%,#877e72 0 6px,transparent 7px),radial-gradient(circle at 46% 12%,#948a7c 0 4px,transparent 5px),
+  linear-gradient(135deg,#6b6459,#847c6e 55%,#6f685d)}
+.icw-fx .sw.stencil{background-image:
+  repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 2px,transparent 2px 42px),
+  repeating-linear-gradient(90deg,rgba(0,0,0,.28) 0 2px,transparent 2px 84px),
+  repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 42px),
+  linear-gradient(150deg,#7d7466,#948a79)}
+.icw-fx .sw.oxide{background-image:
+  radial-gradient(ellipse at 30% 30%,rgba(255,255,255,.10),transparent 55%),
+  radial-gradient(ellipse at 72% 74%,rgba(0,0,0,.18),transparent 60%),
+  linear-gradient(120deg,#7d4a2a,#a8663a 46%,#8a4f2c)}
+.icw-fx .sw.polish{background-image:
+  linear-gradient(102deg,rgba(255,255,255,.55) 0 6%,transparent 6% 18%,rgba(255,255,255,.35) 18% 22%,transparent 22% 44%,rgba(255,255,255,.45) 44% 49%,transparent 49% 70%,rgba(255,255,255,.30) 70% 74%,transparent 74%),
+  linear-gradient(115deg,#5a5c60 0%,#c3c6cc 30%,#74777d 48%,#ccd0d6 66%,#5f6266 100%)}
 .icw-fx .sw::before{content:"Sample";position:absolute;top:.6rem;left:.6rem;z-index:2;font-family:var(--font-m,monospace);font-size:.6rem;
   letter-spacing:.16em;text-transform:uppercase;background:rgba(10,10,9,.74);color:#e8b83a;padding:.24rem .5rem;border-radius:99px}
-.icw-fx .sw.agg{background:radial-gradient(circle at 22% 28%,#8d8578 0 3px,transparent 3px),radial-gradient(circle at 62% 62%,#9a917f 0 4px,transparent 4px),radial-gradient(circle at 82% 24%,#7d766a 0 3px,transparent 3px),linear-gradient(135deg,#5d574d,#7a7266)}
-.icw-fx .sw.stencil{background:repeating-conic-gradient(from 45deg at 50% 50%,#6d6555 0 25%,#8b8271 0 50%)}
-.icw-fx .sw.oxide{background:linear-gradient(120deg,#7a4a2c,#a9673a 45%,#7a4a2c)}
-.icw-fx .sw.polish{background:linear-gradient(115deg,#4a4a4d 0%,#b9bcc2 28%,#6d7076 46%,#c9ccd2 68%,#54565a 100%)}
 .icw-fx figcaption{padding:.95rem 1.05rem;font-size:.9rem;color:var(--ink)}
 .icw-fx figcaption b{display:block;font-weight:700;margin-bottom:.2rem}
 .icw-fx figcaption span{color:var(--mut);font-size:.82rem}
@@ -854,7 +888,7 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
   var tk=document.getElementById('icwTick');
   if (tk) tk.innerHTML = T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
   var AR=[['Central Coast','Gosford · Erina · Terrigal · Avoca Beach'],
-          ['Brisbane Water','Kincumber · Woy Woy · Umina Beach · Ettalong'],
+          ['The Peninsula & bays','Kincumber · Woy Woy · Umina Beach · Ettalong'],
           ['Northern lakes','Wyong · Tuggerah · The Entrance · Bateau Bay'],
           ['Tuggerah & Budgewoi','Ourimbah · Berkeley Vale · Toukley · Budgewoi'],
           ['Newcastle & Lake Macquarie','Newcastle · Charlestown · Warners Bay · Belmont'],
