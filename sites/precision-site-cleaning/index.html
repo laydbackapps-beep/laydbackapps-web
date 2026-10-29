@@ -1,551 +1,182 @@
 <!doctype html>
 <html lang="en-AU"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Precision Site Cleaning — Builders Cleans &amp; Post-Construction Cleaning, Sydney</title>
-<meta name="description" content="Builders cleans, sparkle cleans and post-construction cleaning across Sydney and greater Sydney. Dust, stickers, sharps and site waste cleared before handover. Request a clean.">
-<link rel="icon" href="favicon-32.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Precision Site Cleaning — Builders Cleans &amp; Post-Construction Cleaning</title>
+<meta name="description" content="Precision Site Cleaning. Builders cleans, sparkle cleans, post-construction cleaning, sharps and hazardous waste removal for sites and renovations.">
 <style>
-:root{
-  --pitch:#0b1016; --pitch-2:#111823; --ink:#f1f4f8; --muted:#98a5b6; --line:rgba(255,255,255,.13);
-  --acc:#00cfe0; --acc-ink:#04222a; --hi:#7fe8f5; --line-c:rgba(0,207,224,.28); --max:1160px;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--pitch);color:var(--ink);
-  font:17px/1.62 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;overflow-x:hidden}
-img{display:block;max-width:100%}a{color:inherit}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4vw,44px)}
-h1,h2,h3{margin:0;line-height:1.14;letter-spacing:-.02em}
-h1{font-size:clamp(2.05rem,4.7vw,3.6rem);font-weight:800}
-h2{font-size:clamp(1.45rem,2.6vw,2.05rem);font-weight:800;max-width:28ch}
-h3{font-size:clamp(1.03rem,1.3vw,1.18rem);font-weight:700}
-p{margin:0}
-.eyebrow{display:flex;align-items:center;gap:.75rem;font:800 .72rem/1 "IBM Plex Mono",monospace;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--acc);margin-bottom:.85rem}
-.eyebrow::before{content:"";width:26px;height:1px;background:var(--acc)}
-.lead{color:var(--muted);margin-top:.75rem;max-width:64ch}
-.blueprint{background-image:linear-gradient(rgba(0,207,224,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,207,224,.05) 1px,transparent 1px);background-size:46px 46px}
-.btn{display:inline-flex;align-items:center;background:var(--acc);color:var(--acc-ink);text-decoration:none;
-  font-weight:800;padding:1rem 1.6rem;border:0;cursor:pointer;font-size:1rem;transition:.22s}
-.btn:hover{background:var(--hi);box-shadow:0 10px 30px rgba(0,207,224,.25)}
-.btn.line{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.32);font-weight:700}
-.btn.line:hover{border-color:var(--acc);background:rgba(0,207,224,.12);box-shadow:none}
-
-/* ---------- header: the client's own artwork, clean, sized to the bar ---------- */
-header.bar{position:sticky;top:0;z-index:50;background:rgba(11,16,22,.96);backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line-c)}
-.bar-in{display:flex;align-items:center;gap:clamp(12px,2vw,28px);padding-block:clamp(10px,1.1vw,15px);flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:clamp(10px,1vw,15px);text-decoration:none;flex:0 0 auto;line-height:0}
-.brand .lockup{height:clamp(58px,6.2vw,86px);width:auto;object-fit:contain}
-.bar nav{display:flex;align-items:center;gap:clamp(12px,1.7vw,24px);margin-left:auto;font-size:.95rem}
-.bar nav a{text-decoration:none;color:var(--muted);font-weight:600;padding:.35rem 0;border-bottom:1px solid transparent}
-.bar nav a:hover{color:#fff;border-bottom-color:var(--acc)}
-.bar .phone{background:var(--acc);color:var(--acc-ink);text-decoration:none;font-weight:800;
-  padding:.72rem 1.15rem;white-space:nowrap;font-size:.95rem;transition:.2s}
-.bar .phone:hover{background:var(--hi)}
-.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);padding:.5rem .65rem;
-  font-size:1.15rem;font-family:inherit;color:var(--ink);cursor:pointer}
-@media(max-width:980px){
-  .bar nav{display:none}
-  .bar nav.open{display:flex;flex-direction:column;align-items:flex-start;flex-basis:100%;margin:0;
-    padding:.6rem 0 .9rem;border-top:1px solid var(--line)}
-  .bar nav.open a{padding:.5rem 0}
-  .burger{display:block}
-}
-@media(max-width:560px){.brand .lockup{height:48px}}
-
-/* ---------- rotating hero banner: one slide per service ---------- */
-.banner{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-.banner__slides{position:absolute;inset:0;z-index:0}
-.banner__slide{position:absolute;inset:0;opacity:0;transition:opacity 900ms ease}
-.banner__slide.on{opacity:1}
-.banner__slide .bg{position:absolute;inset:0;
-  background:radial-gradient(120% 90% at 12% 8%,rgba(0,207,224,.20),rgba(11,16,22,0) 58%),
-             radial-gradient(90% 80% at 92% 92%,rgba(0,207,224,.13),rgba(11,16,22,0) 60%),
-             linear-gradient(180deg,#0d141c,#0b1016)}
-.banner__slide .grid{position:absolute;inset:0;
-  background-image:linear-gradient(rgba(0,207,224,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,207,224,.07) 1px,transparent 1px);
-  background-size:54px 54px;mask-image:linear-gradient(180deg,#000,transparent 88%)}
-.banner__in{position:relative;z-index:2;padding:clamp(46px,6vw,86px) 0 clamp(40px,5vw,70px);
-  min-height:clamp(420px,48vw,580px);display:flex;flex-direction:column;justify-content:center}
-.banner h1{margin:.2rem 0 0;max-width:19ch}
-.banner .sub{color:#c8d2de;font-size:clamp(1.02rem,1.4vw,1.16rem);margin-top:1.15rem;max-width:52ch}
-.acts{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.9rem}
-.banner__cap{position:relative;z-index:2;margin-top:clamp(28px,3.6vw,46px);max-width:620px;border:1px solid var(--line-c);
-  background:rgba(14,20,29,.78);backdrop-filter:blur(8px)}
-.banner__cap .top{display:flex;align-items:center;gap:1rem;padding:.75rem 1.1rem;border-bottom:1px solid var(--line)}
-.banner__cap .tag{font:600 .7rem/1 "IBM Plex Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
-.banner__cap .where{margin-left:auto;font:600 .7rem/1 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.banner__cap .body{padding:.9rem 1.1rem 1rem}
-.banner__cap .body b{display:block;font-size:clamp(1rem,1.5vw,1.2rem);font-weight:800;margin-bottom:.35rem}
-.banner__cap .body span{color:var(--muted);font-size:.92rem}
-.banner__dots{position:absolute;left:clamp(18px,4vw,44px);bottom:clamp(22px,2.6vw,34px);z-index:3;display:flex;gap:7px}
-.banner__dots i{width:26px;height:3px;background:rgba(255,255,255,.24);cursor:pointer;transition:.3s}
-.banner__dots i.on{background:var(--acc);width:44px}
-.banner__nav{position:absolute;right:clamp(18px,4vw,44px);bottom:clamp(18px,2.2vw,30px);z-index:3;display:flex;gap:8px}
-.banner__nav button{width:38px;height:38px;border:1px solid var(--line-c);background:rgba(11,16,22,.8);color:var(--ink);
-  font-size:.95rem;line-height:1;cursor:pointer;transition:.2s;font-family:inherit}
-.banner__nav button:hover{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
-@media(max-width:620px){.banner__dots{display:none}}
-
-/* ---------- service-area ticker ---------- */
-.ticker{border-bottom:1px solid var(--line);background:#0e141d;overflow:hidden;position:relative}
-.ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
-.ticker::before{left:0;background:linear-gradient(90deg,#0e141d,transparent)}
-.ticker::after{right:0;background:linear-gradient(270deg,#0e141d,transparent)}
-.ticker__track{display:flex;gap:30px;white-space:nowrap;padding:13px 0;animation:slide 44s linear infinite;will-change:transform}
-.ticker:hover .ticker__track{animation-play-state:paused}
-.ticker span{font:600 .72rem/1 "IBM Plex Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:#b3bfcd;
-  display:inline-flex;align-items:center;gap:12px}
-.ticker span::after{content:"";width:5px;height:5px;background:var(--acc);transform:rotate(45deg)}
-@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-section{padding:clamp(48px,5.6vw,84px) 0;border-top:1px solid var(--line);position:relative}
-section.alt{background:var(--pitch-2)}
-
-/* hero checklist card */
-.check{background:#0e141d;border:1px solid var(--line);border-top:3px solid var(--acc)}
-.check .head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
-  padding:.9rem 1.15rem;border-bottom:1px solid var(--line)}
-.check .head b{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
-.check .head span{font-size:.76rem;color:var(--muted)}
-.check ul{list-style:none;margin:0;padding:.35rem 0}
-.check li{display:flex;gap:.7rem;padding:.6rem 1.15rem;font-size:.92rem;color:#dbe3ec;
-  border-bottom:1px solid rgba(0,207,224,.16);transition:.2s}
-.check li:hover{background:rgba(0,207,224,.06)}
-.check li:last-child{border-bottom:0}
-.check li::before{content:"✓";color:var(--acc);font-weight:800;flex:none}
-.check .foot{padding:.85rem 1.15rem;font-size:.84rem;color:var(--muted);border-top:1px solid var(--line)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:clamp(24px,4vw,58px);align-items:center}
-
-/* stage rail with hold-point dots */
-.stagerail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,26px);
-  margin-top:clamp(26px,3.2vw,42px)}
-.stagerail .g{border-top:3px solid var(--acc);padding-top:1rem;position:relative;transition:.25s}
-.stagerail .g:hover{transform:translateY(-3px)}
-.stagerail .g::before{content:"";position:absolute;left:0;top:-7px;width:11px;height:11px;border-radius:50%;
-  background:var(--acc);box-shadow:0 0 0 4px rgba(0,207,224,.18)}
-.stagerail .g .k{font:800 .7rem/1 "IBM Plex Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-.stagerail .g h3{margin-top:.45rem;font-size:clamp(1.05rem,1.5vw,1.3rem)}
-.stagerail .g p{color:var(--muted);font-size:.9rem;margin-top:.45rem}
-
-/* services with icons */
-.svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.2vw,26px);
-  margin-top:clamp(26px,3.2vw,42px)}
-.svc article{background:#0e141d;border:1px solid var(--line-c);padding:clamp(18px,2.2vw,28px);
-  position:relative;overflow:hidden;transition:.25s}
-.svc article::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--acc);transition:width .4s}
-.svc article:hover::after{width:100%}
-.svc article:hover{background:#111c26;transform:translateY(-2px)}
-.svc .ic{width:40px;height:40px;border:1px solid var(--line-c);display:grid;place-items:center;margin-bottom:.9rem;
-  background:rgba(0,207,224,.07)}
-.svc .ic svg{width:21px;height:21px;stroke:var(--acc);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.svc h3{color:#fff}
-.svc p{color:var(--muted);font-size:.93rem;margin-top:.5rem}
-
-.tickwrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(20px,3vw,44px);
-  margin-top:clamp(24px,3vw,40px);border-top:1px solid var(--line)}
-.tickwrap div{padding:.8rem 0;border-bottom:1px solid rgba(0,207,224,.16);display:flex;gap:.7rem;font-size:.95rem;transition:.2s}
-.tickwrap div:hover{background:rgba(0,207,224,.05);padding-left:.4rem}
-.tickwrap div::before{content:"—";color:var(--acc);font-weight:800;flex:none}
-
-.about{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(22px,4vw,58px);align-items:start}
-.about p{color:var(--muted);margin-bottom:.9rem}
-
-/* rotating service-area band */
-.areaband{margin-top:26px;border:1px solid var(--line-c);background:#0e141d;overflow:hidden}
-.areaband .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:.7rem 1rem;
-  border-bottom:1px solid var(--line);font:600 .7rem/1 "IBM Plex Mono",monospace;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--acc)}
-.areaband .cap em{font-style:normal;color:var(--muted)}
-.areaband .row{position:relative;height:60px;overflow:hidden}
-.areaband .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;opacity:0;transition:opacity .7s ease,transform .7s ease;transform:translateY(12px)}
-.areaband .row ul.on{opacity:1;transform:none}
-.areaband .row li{font:800 clamp(1.15rem,2.4vw,1.75rem)/1.1 inherit;letter-spacing:-.02em;text-align:center}
-.areaband .row li small{display:block;font:500 .68rem/1 "IBM Plex Mono",monospace;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--muted);margin-top:.5rem}
-.areaband .prog{height:2px;background:rgba(255,255,255,.1)}
-.areaband .prog i{display:block;height:100%;width:0;background:var(--acc);animation:fill 4s linear infinite}
-@keyframes fill{from{width:0}to{width:100%}}
-.areas{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
-.areas span{border:1px solid var(--line);padding:.45rem .85rem;font-size:.88rem;color:#c3ceda;transition:.22s}
-.areas span:hover{border-color:var(--acc);color:#fff;background:rgba(0,207,224,.1)}
-
-details.q{border:1px solid var(--line);border-left:2px solid transparent;background:#0e141d;margin-bottom:.5rem;transition:.25s}
-details.q:hover{border-left-color:var(--acc);background:#101a24}
-details.q[open]{border-left-color:var(--acc)}
-details.q summary{cursor:pointer;font-weight:700;font-size:1rem;list-style:none;display:flex;justify-content:space-between;
-  gap:1rem;padding:.95rem 1.1rem}
-details.q summary::-webkit-details-marker{display:none}
-details.q summary::after{content:"+";color:var(--acc);font-weight:800}
-details.q[open] summary::after{content:"–"}
-details.q .a{color:var(--muted);font-size:.94rem;padding:0 2.6rem 1rem 1.1rem;max-width:78ch}
-.faq-top{margin-top:clamp(22px,2.8vw,36px)}
-
-.quote{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:clamp(22px,4vw,56px);align-items:start}
-form{background:#0e141d;border:1px solid var(--line-c);padding:clamp(20px,2.6vw,32px);
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem;position:relative;overflow:hidden}
-form::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--acc),rgba(0,207,224,0))}
+:root{--navy:#071230;--navy2:#0d1c46;--ink:#eef3fb;--dim:#9fb0cf;--line:rgba(255,255,255,.13);--acc:#0090f0;--acc2:#57c2ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy);color:var(--ink);font:17px/1.6 "Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:40;background:rgba(7,18,48,.95);border-bottom:2px solid var(--acc);backdrop-filter:blur(8px)}
+.nav-in{display:flex;align-items:center;gap:clamp(12px,2vw,26px);height:78px}
+.brand img{height:46px;width:auto;display:block}
+nav .links{display:flex;gap:clamp(12px,1.8vw,24px);margin-left:auto}
+nav .links a{text-decoration:none;font-size:15px;color:var(--dim)}
+nav .links a:hover{color:#fff}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:#04101f;text-decoration:none;font-weight:800;padding:12px 20px}
+.cta:hover{background:var(--acc2)}
+.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:#fff;padding:8px 10px;font-size:18px}
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-grid{position:absolute;inset:0;opacity:.5;
+  background-image:linear-gradient(rgba(0,144,240,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(0,144,240,.16) 1px,transparent 1px);
+  background-size:64px 64px;mask-image:linear-gradient(180deg,rgba(0,0,0,.9),transparent 78%)}
+.hero-in{position:relative;z-index:2;padding:clamp(52px,7vw,96px) 0 clamp(40px,5vw,68px);max-width:64ch}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--acc2);margin-bottom:14px}
+.kicker::before{content:"";width:32px;height:2px;background:var(--acc)}
+h1{margin:0 0 16px;font-size:clamp(32px,5vw,58px);line-height:1.02;letter-spacing:-.04em}
+h1 em{font-style:normal;color:var(--acc2)}
+.hero p{color:#c8d6ea;margin:0 0 22px;font-size:clamp(15.5px,1.5vw,18px)}
+section{padding:clamp(42px,6vw,76px) 0;border-top:1px solid var(--line)}
+h2{margin:0 0 10px;font-size:clamp(22px,2.8vw,34px);letter-spacing:-.02em}
+.lead{color:var(--dim);margin:0 0 24px;max-width:62ch}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+.svc article{background:var(--navy);padding:22px 20px}
+.svc h3{margin:0 0 6px;font-size:16.5px}
+.svc p{margin:0;color:var(--dim);font-size:14.5px}
+.steps{display:grid;gap:0;margin-top:8px}
+.step{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.step .n{font-size:12px;letter-spacing:.14em;color:var(--acc2);font-weight:800;padding-top:4px}
+.step h3{margin:0 0 4px;font-size:16.5px}
+.step p{margin:0;color:var(--dim);font-size:15px}
+details.faq{border-bottom:1px solid var(--line);padding:14px 0}
+details.faq summary{cursor:pointer;font-weight:700;font-size:16px}
+details.faq .a{color:var(--dim);padding-top:8px;font-size:15px}
+form{background:var(--navy2);border:1px solid var(--line);padding:clamp(20px,3vw,30px);display:grid;grid-template-columns:1fr 1fr;gap:12px}
 form .full{grid-column:1/-1}
-label{display:block;font-size:.78rem;font-weight:700;letter-spacing:.04em;color:var(--muted);margin-bottom:.32rem}
-input,select,textarea{width:100%;padding:.75rem .8rem;border:1px solid var(--line);background:#080c12;
-  color:#fff;font:inherit;font-size:.95rem;transition:.2s}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px rgba(0,207,224,.14)}
-select option{background:#0e141d;color:#fff}
-form .btn{grid-column:1/-1;justify-content:center}
-footer{border-top:1px solid var(--line-c);padding:clamp(34px,4.2vw,56px) 0 1.6rem;color:var(--muted)}
-.f-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:clamp(20px,3vw,44px)}
-footer h4{margin:0 0 .7rem;color:#fff;font-size:.95rem}
-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.42rem;font-size:.92rem}
-footer a{text-decoration:none}
-footer a:hover{color:var(--acc)}
-.f-bot{border-top:1px solid var(--line);margin-top:2rem;padding-top:1.1rem;font-size:.8rem;
-  display:flex;flex-wrap:wrap;gap:.6rem 1.6rem}
-
-.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){
-  .ticker__track,.areaband .prog i{animation:none}
-  .banner__slide,.rv{transition:none}
-  .rv{opacity:1;transform:none}
+label{display:block;font-size:13px;color:var(--dim);margin-bottom:5px}
+input,textarea,select{width:100%;background:#050e24;border:1px solid var(--line);color:#fff;padding:11px;font:inherit;font-size:15px}
+button{grid-column:1/-1;background:var(--acc);color:#04101f;border:0;padding:14px;font:inherit;font-weight:800;cursor:pointer}
+.note{color:var(--dim);font-size:14px;margin-top:12px}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){nav .links{display:none}nav .links.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#0a1a3f;padding:14px;border-bottom:1px solid var(--line)}.burger{display:block}.svc,form{grid-template-columns:1fr}.step{grid-template-columns:44px 1fr;gap:12px}}
+</style><style id="lb-skin">/* skin 1 — editorial serif, hairline rules, left hero */
+ .hero h1, header h1{font-family:Georgia,'Times New Roman',serif!important;letter-spacing:-.02em!important;font-weight:600!important;text-transform:none!important}
+ h2{font-family:Georgia,'Times New Roman',serif!important;letter-spacing:-.015em!important;text-transform:none!important;font-weight:600!important}
+ h2{border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.35em}
+ [class*=card],[class*=tile],[class*=item]{border-radius:0!important;border:1px solid rgba(255,255,255,.14)!important;box-shadow:none!important;background:transparent!important}
+ section{padding-block:clamp(52px,8vw,104px)!important}
+ </style><style id="lb-skin-guard">@media(max-width:900px){
+ .hero-in,.hero-inner{grid-template-columns:1fr!important;display:block!important}
+ [class*=card]{transform:none!important;margin-bottom:12px!important}
+ [class*=grid]{grid-template-columns:1fr!important;gap:12px!important;overflow-x:clip!important}
+ section,.hero,header{overflow-x:clip!important}
+ img,video,svg{max-width:100%!important;height:auto}
+ h1,h2{overflow-wrap:anywhere!important}
+}</style><style id="lb-hdr-centre">
+/* brand is the logo alone — centre it over the nav rather than parking it on one edge */
+div.wrap{display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;gap:10px clamp(12px,1.8vw,26px)!important;position:relative!important;text-align:center!important}
+div.wrap .brand{flex:0 0 100%!important;display:flex!important;justify-content:center!important;margin:0 auto!important;width:100%!important}
+div.wrap .brand img{height:clamp(40px,3.6vw,58px)!important;width:auto!important;display:block!important;margin:0 auto!important}
+@media(max-width:520px){ div.wrap .brand img{height:40px!important} }
+</style><style id="lb-bar-grow">
+nav{height:auto!important;min-height:0!important}
+nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
+</style><style id="pc-lockup">
+/* the bar carried ONE exported image at 80x86: assets/logo-cut.png is the lockup sitting on its own dark
+   vignette plate, so no matter the size it read as a small murky tile. The artwork is cut out properly now -
+   the symbol and the wordmark are separate transparent PNGs (keyed off the original, symbol cropped from the
+   mark band and the words from the text band) and they sit side by side across the bar. */
+.brand,.lb-brand{display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important}
+.brand .pc-lock,.pc-lock{display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  gap:clamp(10px,1.2vw,18px)!important;background:none!important}
+.brand img,.brand .pc-lock img,.lb-brand img{height:auto!important;width:auto!important;background:none!important;
+  border:0!important;box-shadow:none!important;border-radius:0!important;display:block!important;margin:0!important;max-width:none!important}
+.brand img.pc-sym,.pc-lock img.pc-sym{height:clamp(42px,4.4vw,56px)!important}
+.brand img.pc-txt,.pc-lock img.pc-txt{height:clamp(36px,3.9vw,50px)!important}
+@media(max-width:760px){
+  .brand img.pc-sym,.pc-lock img.pc-sym{height:40px!important}
+  .brand img.pc-txt,.pc-lock img.pc-txt{height:34px!important}
 }
-@media (max-width:980px){
-  .hero-grid,.about,.tickwrap,.quote,.f-grid{grid-template-columns:1fr}
-  .svc{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .stagerail{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media (max-width:620px){
-  .svc,.stagerail{grid-template-columns:1fr}
-  form{grid-template-columns:1fr}
+@media(max-width:430px){
+  .brand img.pc-sym,.pc-lock img.pc-sym{height:34px!important}
+  .brand img.pc-txt,.pc-lock img.pc-txt{height:28px!important}
 }
 </style>
-</head><body>
-<header class="bar"><div class="wrap bar-in">
-  <a class="brand" href="#top" aria-label="Precision Site Cleaning">
-    <img class="lockup" src="assets/logo-cut.png" alt="Precision Site Cleaning" width="841" height="900">
-  </a>
-  <nav id="nav">
-    <a href="#stages">Stages</a>
-    <a href="#services">What we clean</a>
-    <a href="#checklist">Checklist</a>
-    <a href="#areas">Areas</a>
-    <a href="#faq">FAQ</a>
-  </nav>
-  <a class="phone" href="#quote">Request a clean</a>
+</head>
+<body>
+<nav><div class="wrap nav-in">
+  <a class="brand" href="#top" aria-label="Precision Site Cleaning"><span class="pc-lock"><img class="pc-sym" src="assets/logo-symbol.png" alt="" width="433" height="366" loading="eager" decoding="async"><img class="pc-txt" src="assets/logo-text.png" alt="Precision Site Cleaning" width="738" height="139" loading="eager" decoding="async"></span></a>
+  <div class="links" id="navlinks"><a href="#services">Services</a><a href="#process">Process</a><a href="#faq">FAQ</a></div>
+  <a class="cta" href="#quote">Request a clean</a>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+</div></nav>
+
+<header class="hero" id="top"><div class="hero-grid"></div><div class="wrap hero-in">
+  <span class="kicker">Builders cleans · Post-construction</span>
+  <h1>The site handed over <em>clean, not swept.</em></h1>
+  <p>Builders cleans, sparkle cleans and post-construction work — dust off every surface, stickers off the glass,
+  rubbish and sharps gone before the owner walks in.</p>
+  <a class="cta" href="#quote">Request a clean</a>
 </div></header>
 
-<header class="banner" id="top">
-  <div class="banner__slides" id="slides">
-    <div class="banner__slide on"><span class="bg"></span><span class="grid"></span></div>
-    <div class="banner__slide"><span class="bg"></span><span class="grid"></span></div>
-    <div class="banner__slide"><span class="bg"></span><span class="grid"></span></div>
-    <div class="banner__slide"><span class="bg"></span><span class="grid"></span></div>
-  </div>
-  <div class="wrap banner__in">
-    <span class="eyebrow">Builders cleans · Post-construction · Sydney</span>
-    <h1>The site handed over clean, not swept.</h1>
-    <p class="sub">Precision Site Cleaning takes new builds, renovations and fit-outs from dust-and-offcuts
-      through to the moment the owner walks in — stickers off the glass, adhesive off the tiles, sharps off the
-      floor and the waste gone.</p>
-    <div class="acts">
-      <a class="btn" href="#quote">Request a clean</a>
-      <a class="btn line" href="#services">What we clean</a>
-    </div>
-
-    <div class="banner__cap" id="cap">
-      <div class="top"><span class="tag" id="capTag">Builders clean</span><span class="where" id="capWhere">Inner West</span></div>
-      <div class="body"><b id="capTitle">Once the trades are out</b><span id="capText">Construction dust and debris off frames, sills, floors and cabinetry.</span></div>
-    </div>
-  </div>
-  <div class="banner__dots" id="dots"></div>
-  <div class="banner__nav">
-    <button type="button" id="prev" aria-label="Previous slide">←</button>
-    <button type="button" id="next" aria-label="Next slide">→</button>
-  </div>
-</header>
-
-<div class="ticker" aria-hidden="true"><div class="ticker__track" id="tick"></div></div>
-
-<section class="hero-sec"><div class="wrap hero-grid" style="padding-top:clamp(40px,4.6vw,64px)">
-  <aside class="check rv" aria-label="Handover sign-off">
-    <div class="head"><b>Handover sign-off</b><span>Before keys</span></div>
-    <ul>
-      <li>Construction dust off frames, sills and floors</li>
-      <li>Stickers, film and adhesive removed from glass</li>
-      <li>Grout haze cut back off tiles and joins</li>
-      <li>Paint spots and silicone smears taken off</li>
-      <li>Offcuts, packaging and site waste carted out</li>
-      <li>Sharps and contaminated waste removed properly</li>
-      <li>Final walkthrough with a defects list</li>
-    </ul>
-    <p class="foot">The clean is programmed around your handover or inspection date, not the other way round.</p>
-  </aside>
-  <div class="rv">
-    <span class="eyebrow">The difference</span>
-    <h2>A clean site is what the owner sees first</h2>
-    <p class="lead">Every build ends the same way: dust on the sills, film on the glass, adhesive on the tiles and
-      offcuts in the corner. The tidy-up is judged as part of the build — it is the last thing on site and the
-      first thing anyone notices.</p>
-    <p class="lead">We clean to handover standard, work to your inspection date, and take the waste and the sharps
-      with us when we go.</p>
-  </div>
-</div></section>
-
-<section id="stages" class="alt blueprint"><div class="wrap">
-  <span class="eyebrow rv">Stages</span>
-  <h2 class="rv">Cleaned in passes, because dust settles</h2>
-  <p class="lead rv">One pass over a site never holds. Dust from the ceiling lands on the floor you just did, so
-    the work runs in the order the trade work ran.</p>
-  <div class="stagerail">
-    <div class="g rv"><span class="k">Stage one</span><h3>Rough strip-out</h3>
-      <p>Offcuts, packaging, tiling offcuts and trade rubbish cleared off the floor and out of the rooms
-        first — you can't detail a floor you can't see.</p></div>
-    <div class="g rv"><span class="k">Stage two</span><h3>Top-down dust</h3>
-      <p>Ceilings, cornices, top of frames and high ledges wiped down so everything above is clean before
-        anything below is touched.</p></div>
-    <div class="g rv"><span class="k">Stage three</span><h3>Detail</h3>
-      <p>Glass, tracks, hinges, cabinetry internals, gaskets, power points and the joins where two materials
-        meet — the parts an inspection looks at.</p></div>
-    <div class="g rv"><span class="k">Stage four</span><h3>Handover walk</h3>
-      <p>Final floors, then a walkthrough with you. Anything picked up on the walk is fixed before the site is
-        signed off.</p></div>
-  </div>
-</div></section>
-
+<main>
 <section id="services"><div class="wrap">
-  <span class="eyebrow rv">What we clean</span>
-  <h2 class="rv">The jobs we're set up for</h2>
-  <p class="lead rv">New builds, renovations, fit-outs and everything the trades leave behind.</p>
+  <h2>What we clean</h2>
+  <p class="lead">New builds, renovations and fit-outs, from first fix dust through to handover.</p>
   <div class="svc">
-    <article class="rv"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M5 20V9.5L12 4l7 5.5V20"/><path d="M9.6 20v-5.6h4.8V20"/></svg></span>
-      <h3>Builders clean</h3><p>Construction dust and debris off frames, sills, floors and cabinetry
-      once the trades are out and the site is accessible.</p></article>
-    <article class="rv"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3.2 13.9 9l5.9.1-4.8 3.4 1.8 5.8L12 14.9 7.2 18.3l1.8-5.8-4.8-3.4 5.9-.1z"/></svg></span>
-      <h3>Sparkle / handover clean</h3><p>The final detail pass before the owner or tenant takes
-      possession — glass, fixtures, joins, floors and every handle.</p></article>
-    <article class="rv"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M6 7V5h12v2"/><path d="M7 7v13h10V7"/><path d="M10 11v6M14 11v6"/></svg></span>
-      <h3>Post-construction</h3><p>Paint spots, adhesive, silicone smears and grout haze removed from
-      surfaces without marking them.</p></article>
-    <article class="rv"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3.5 20 7v6c0 4.2-3.2 6.6-8 7.5-4.8-.9-8-3.3-8-7.5V7z"/><path d="M9.4 12.2l1.9 1.9 3.4-3.6"/></svg></span>
-      <h3>Sharps &amp; hazardous</h3><p>Needles, broken glass and contaminated material collected and
-      disposed of through the correct stream — never into general waste.</p></article>
-    <article class="rv"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 15h16"/><path d="M6.5 15c0-3.6 2.4-6.5 5.5-6.5S17.5 11.4 17.5 15"/><path d="M9 19.5h6"/><path d="M8 9.5 6 6.5M16 9.5l2-3"/></svg></span>
-      <h3>Pressure washing</h3><p>Paths, driveways, slab edges and external hard surfaces cleaned down
-      of mud, mortar and site staining.</p></article>
-    <article class="rv"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 8.5 12 4l8 4.5v7L12 20l-8-4.5z"/><path d="M4 8.5 12 13l8-4.5M12 13v7"/></svg></span>
-      <h3>Rubbish removal</h3><p>Offcuts, packaging and site waste cleared so the site is empty, not
-      tidy-ish, before handover.</p></article>
+    <article><h3>Builders clean</h3><p>Construction dust off frames, sills, floors and cabinetry once the trades are out.</p></article>
+    <article><h3>Sparkle clean</h3><p>The final pass before handover — glass, fixtures, joins and floors detail-cleaned.</p></article>
+    <article><h3>Post-construction</h3><p>Paint spots, adhesive, silicone and grout haze removed from every surface.</p></article>
+    <article><h3>Sharps &amp; hazardous</h3><p>Needles, broken glass and contaminated waste collected and disposed of properly.</p></article>
+    <article><h3>Pressure washing</h3><p>Paths, driveways, slab edges and external hard surfaces cleaned down.</p></article>
+    <article><h3>Rubbish removal</h3><p>Offcuts, packaging and site waste cleared so the site is empty, not tidy-ish.</p></article>
   </div>
 </div></section>
 
-<section id="checklist" class="alt blueprint"><div class="wrap">
-  <span class="eyebrow rv">Checklist</span>
-  <h2 class="rv">Before we say it's done</h2>
-  <div class="tickwrap rv">
-    <div>Windows, tracks and sills dust-free</div>
-    <div>Stickers and protective film removed</div>
-    <div>Adhesive and silicone residue gone</div>
-    <div>Grout haze cut back off tiles</div>
-    <div>Paint splatter off glass and frames</div>
-    <div>Cabinetry inside and out wiped out</div>
-    <div>Power points, switches and vents clean</div>
-    <div>Floors vacuumed then mopped last</div>
-    <div>Ceiling dust and cobwebs removed</div>
-    <div>Bathroom fixtures and screens polished</div>
-    <div>Rubbish and offcuts off site</div>
-    <div>Sharps and hazardous waste disposed of</div>
-    <div>Paths and slab edges pressure washed</div>
-    <div>Defects pointed out and fixed</div>
-  </div>
-</div></section>
-
-<section id="areas" class="blueprint"><div class="wrap">
-  <span class="eyebrow rv">Where we work</span>
-  <h2 class="rv">Sydney and greater Sydney</h2>
-  <p class="lead rv">Sites across Sydney and the surrounding suburbs, scheduled around your programme and your inspection dates.</p>
-  <div class="areas rv">
-    <span>Sydney CBD</span><span>Surry Hills</span><span>Newtown</span><span>Marrickville</span><span>Leichhardt</span><span>Balmain</span>
-    <span>Randwick</span><span>Bondi</span><span>Coogee</span><span>Maroubra</span><span>Chatswood</span><span>Lane Cove</span>
-    <span>Mosman</span><span>Manly</span><span>Dee Why</span><span>Hurstville</span><span>Kogarah</span><span>Cronulla</span>
-    <span>Parramatta</span><span>Ryde</span><span>Castle Hill</span><span>Liverpool</span>
-  </div>
-  <div class="areaband rv">
-    <div class="cap"><span>Service areas — rotating</span><em id="areaCount">01 / 06</em></div>
-    <div class="row" id="areaRow"></div>
-    <div class="prog"><i></i></div>
-  </div>
-</div></section>
-
-<section id="about" class="alt"><div class="wrap about">
-  <div class="rv">
-    <span class="eyebrow">Who you're dealing with</span>
-    <h2>A cleaning crew that understands the build</h2>
-    <p class="lead">We're set up around construction, not domestic housework — the scheduling, the access and
-      the mess are all different.</p>
-  </div>
-  <div class="rv">
-    <p>The clean is booked around the programme. If the tiler slips a day, the clean moves — not the other way
-      around, because cleaning a wet floor is wasted money for everyone.</p>
-    <p>Machines, products and waste bags come with the crew. Site power and water need to be available, and
-      access has to be clear for the gear to get in — if it isn't, we'll tell you before the day.</p>
-    <p>We work to inspection and handover dates. If you've got a certifier or a client walk scheduled, the clean
-      is planned backwards from that date with enough time for the site to be walked and any defects sorted.</p>
-    <p>Everything hazardous leaves through the right stream and is documented. Builders don't want a sharps
-      bin turning up in general waste, and neither do we.</p>
+<section id="process"><div class="wrap">
+  <h2>How a clean runs</h2>
+  <p class="lead">Booked around the build programme, not against it.</p>
+  <div class="steps">
+    <div class="step"><span class="n">01</span><div><h3>Walk the site</h3><p>Stage of the build, access, power and water checked before a price is given.</p></div></div>
+    <div class="step"><span class="n">02</span><div><h3>Programmed</h3><p>The clean is booked for after the last trade and before handover or inspection.</p></div></div>
+    <div class="step"><span class="n">03</span><div><h3>Cleaned in passes</h3><p>Rough strip-out first, then detail — dust settles, so the last pass is the fine one.</p></div></div>
+    <div class="step"><span class="n">04</span><div><h3>Walked with you</h3><p>Defects are pointed out and fixed before the site is signed off.</p></div></div>
   </div>
 </div></section>
 
 <section id="faq"><div class="wrap">
-  <span class="eyebrow rv">Questions</span>
-  <h2 class="rv">Before you book</h2>
-  <div class="faq-top rv">
-  <details class="q" open><summary>How is a builders clean priced?</summary><div class="a">By floor area, the
-    stage of the build and how much detail is needed. It's quoted after the site has been looked at — a
-    three-bedroom at frame stage is a completely different job to the same house ready for handover.</div></details>
-  <details class="q"><summary>Do you supply the equipment and products?</summary><div class="a">Yes. Machines,
-    products and waste bags come with the crew. Site power and water need to be available, and access has to be
-    clear.</div></details>
-  <details class="q"><summary>Can you work to a handover deadline?</summary><div class="a">Yes — the clean is
-    programmed around the handover or inspection date, with the walkthrough built into the schedule before it.</div></details>
-  <details class="q"><summary>Do you remove sharps and hazardous waste?</summary><div class="a">Yes, collected
-    and disposed of through the correct stream, not into general waste.</div></details>
-  <details class="q"><summary>How many cleans does a build normally need?</summary><div class="a">Two is
-    common — a builders clean once the trades are out, then a sparkle clean just before handover. Bigger
-    projects sometimes want a third pass after the final trade.</div></details>
-  <details class="q"><summary>Can you clean part of a site only?</summary><div class="a">Yes. A single floor, a
-    bathroom run or just the external hard surfaces is fine — tell us the scope and it'll be quoted on that.</div></details>
-  </div>
+  <h2>Questions</h2>
+  <details class="faq"><summary>How is a builders clean priced?</summary><div class="a">By floor area, the stage of the build and how much detail is needed — quoted after the site is looked at.</div></details>
+  <details class="faq"><summary>Do you supply equipment and products?</summary><div class="a">Yes. Machines, products and waste bags come with the crew; site power and water need to be available.</div></details>
+  <details class="faq"><summary>Can you work to a handover deadline?</summary><div class="a">Yes — the clean is programmed around the handover or inspection date.</div></details>
+  <details class="faq"><summary>Do you remove sharps and hazardous waste?</summary><div class="a">Yes, collected and disposed of through the correct stream, not into general waste.</div></details>
 </div></section>
 
-<section id="quote"><div class="wrap quote">
-  <div class="rv">
-    <span class="eyebrow">Request a clean</span>
-    <h2>Send the address, the stage and the size</h2>
-    <p class="lead">Give us the site address, the stage of the build and roughly how big it is, and we'll come
-      back with a price and the earliest date that suits the programme.</p>
-    <p class="lead">Find us on Instagram at
-      <a href="https://www.instagram.com/precisionsitecleaning" rel="noopener" style="color:var(--acc)">@precisionsitecleaning</a>.</p>
-  </div>
-  <form id="lbq-form" data-site="precision-site-cleaning" class="rv">
+<section id="quote"><div class="wrap">
+  <h2>Request a clean</h2>
+  <p class="lead">Give us the site address, stage of the build and roughly how big it is.</p>
+  <form id="lbq-form" data-site="precision-site-cleaning">
     <div><label for="n">Name</label><input id="n" name="name" required></div>
     <div><label for="p">Phone or email</label><input id="p" name="phone" required></div>
     <div class="full"><label for="a">Site address / suburb</label><input id="a" name="suburb"></div>
     <div class="full"><label for="s">What is needed?</label><select id="s" name="service">
-      <option>Builders clean</option><option>Sparkle / handover clean</option>
-      <option>Post-construction clean</option><option>Sharps / hazardous removal</option>
-      <option>Pressure washing</option><option>Rubbish removal</option>
-      <option>Something else</option></select></div>
-    <div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="4"
-      placeholder="Stage of the build, floor area, handover date if you have one."></textarea></div>
-    <button class="btn" type="submit">Send request</button>
+      <option>Builders clean</option><option>Sparkle clean</option><option>Post-construction clean</option>
+      <option>Sharps / hazardous removal</option><option>Pressure washing</option><option>Rubbish removal</option><option>Something else</option>
+    </select></div>
+    <div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="3" placeholder="Stage of build, floors, handover date…"></textarea></div>
+    <button type="submit">Send request</button>
+    <p class="note full">We reply to requests directly — leave the best number or email to reach you on.</p>
   </form>
 </div></section>
+</main>
 
-<footer><div class="wrap">
-  <div class="f-grid">
-    <div>
-      <h4>Precision Site Cleaning</h4>
-      <p style="font-size:.95rem;max-width:40ch">Builders cleans, sparkle cleans and post-construction cleaning
-        for new builds, renovations and fit-outs across Sydney and greater Sydney.</p>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="#quote">Request a clean</a></li>
-        <li><a href="https://www.instagram.com/precisionsitecleaning" rel="noopener">Instagram</a></li>
-        <li>Working across Sydney NSW</li>
-      </ul>
-    </div>
-    <div>
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#services">Builders clean</a></li>
-        <li><a href="#services">Sparkle / handover clean</a></li>
-        <li><a href="#services">Post-construction</a></li>
-        <li><a href="#services">Sharps &amp; hazardous</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="f-bot">
-    <span>Precision Site Cleaning — Sydney NSW</span>
-    <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
-  </div>
+<footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;width:100%">
+  <span>Precision Site Cleaning</span><span>Builders &amp; post-construction cleaning</span>
 </div></footer>
 
 <script>
-var b=document.getElementById('burger'),n=document.getElementById('nav');
-b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);});
-
-/* rotating hero banner — one slide per service, captioned with the area it runs in */
-var SL=[
-  {tag:'Builders clean',where:'Inner West',title:'Once the trades are out',text:'Construction dust and debris off frames, sills, floors and cabinetry.'},
-  {tag:'Sparkle / handover',where:'Eastern Suburbs',title:'The final detail pass',text:'Glass, fixtures, joins, floors and every handle before the owner walks in.'},
-  {tag:'Post-construction',where:'North Shore',title:'Stickers, adhesive, grout haze',text:'Taken off glass, tiles and joins without marking the surface.'},
-  {tag:'Sharps & waste',where:'Sutherland Shire',title:'Gone the right way',text:'Sharps, broken glass and contaminated waste collected and disposed of properly.'}
-];
-var slides=[].slice.call(document.querySelectorAll('.banner__slide')),
-    dots=document.getElementById('dots'),cap=document.getElementById('cap'),
-    capTag=document.getElementById('capTag'),capWhere=document.getElementById('capWhere'),
-    capTitle=document.getElementById('capTitle'),capText=document.getElementById('capText'),
-    i=0,timer=null,reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-SL.forEach(function(_,k){var d=document.createElement('i');if(!k)d.className='on';
-  d.addEventListener('click',function(){go(k);restart();});dots.appendChild(d);});
-function go(k){i=(k+SL.length)%SL.length;
-  slides.forEach(function(s,j){s.classList.toggle('on',j===i);});
-  [].forEach.call(dots.children,function(d,j){d.classList.toggle('on',j===i);});
-  cap.style.transition='opacity .28s';cap.style.opacity=0;
-  setTimeout(function(){capTag.textContent=SL[i].tag;capWhere.textContent=SL[i].where;
-    capTitle.textContent=SL[i].title;capText.textContent=SL[i].text;cap.style.opacity=1;},280);}
-document.getElementById('next').addEventListener('click',function(){go(i+1);restart();});
-document.getElementById('prev').addEventListener('click',function(){go(i-1);restart();});
-function restart(){if(reduce)return;clearInterval(timer);timer=setInterval(function(){go(i+1);},5800);}
-cap.addEventListener('mouseenter',function(){clearInterval(timer);});
-cap.addEventListener('mouseleave',restart);
-restart();
-
-/* rotating service-area band */
-var AR=[['Sydney CBD & inner','Surry Hills · Pyrmont · Ultimo · Alexandria'],
-        ['Inner West','Newtown · Marrickville · Leichhardt · Balmain'],
-        ['Eastern Suburbs','Randwick · Bondi · Coogee · Maroubra'],
-        ['North Shore','Chatswood · Lane Cove · Mosman · Willoughby'],
-        ['Northern Beaches','Manly · Dee Why · Brookvale · Mona Vale'],
-        ['South & Sutherland','Hurstville · Kogarah · Cronulla · Miranda'],
-        ['West & the Hills','Parramatta · Ryde · Castle Hill · Kellyville']];
-var row=document.getElementById('areaRow'),ac=document.getElementById('areaCount'),ai=0;
-AR.forEach(function(a,k){var u=document.createElement('ul'),li=document.createElement('li');
-  if(!k)u.className='on';li.innerHTML=a[0]+'<small>'+a[1]+'</small>';u.appendChild(li);row.appendChild(u);});
-var rows=[].slice.call(row.children);
-if(!reduce){setInterval(function(){ai=(ai+1)%AR.length;
-  rows.forEach(function(u,k){u.classList.toggle('on',k===ai);});
-  ac.textContent=('0'+(ai+1)).slice(-2)+' / 0'+AR.length;},4000);}
-
-/* the area ticker */
-var T=['Sydney','Surry Hills','Newtown','Marrickville','Leichhardt','Balmain','Randwick','Bondi','Coogee','Chatswood','Lane Cove','Mosman','Manly','Dee Why','Hurstville','Cronulla','Parramatta','Ryde','Castle Hill','Liverpool'];
-var t=document.getElementById('tick');
-t.innerHTML=T.concat(T).map(function(s){return '<span>'+s+'</span>';}).join('');
-
-/* scroll reveal with a safety net */
-var rvs=[].slice.call(document.querySelectorAll('.rv'));
-if('IntersectionObserver' in window){
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
-  rvs.forEach(function(el){io.observe(el);});
-  setTimeout(function(){rvs.forEach(function(el){if(!el.classList.contains('in')&&el.getBoundingClientRect().top<innerHeight)el.classList.add('in');});},2500);
-}else{rvs.forEach(function(el){el.classList.add('in');});}
-
-document.getElementById('lbq-form').addEventListener('submit',function(e){
-  e.preventDefault();var f=e.currentTarget,btn=f.querySelector('button');
-  btn.textContent='Sending…';btn.disabled=true;
-  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{
-    method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
+document.getElementById('burger').addEventListener('click',function(){var l=document.getElementById('navlinks');
+  var o=l.classList.toggle('open'); this.setAttribute('aria-expanded',o);});
+document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();var f=e.currentTarget,b=f.querySelector('button');
+  b.textContent='Sending…';b.disabled=true;
+  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
     body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})
-  .then(function(){btn.textContent='Thanks — we will be in touch';})
-  .catch(function(){btn.textContent='Could not send — try again';btn.disabled=false;});
-});
+  .then(function(){b.textContent='Thanks — we will reply shortly';})
+  .catch(function(){b.textContent='Could not send — try again';b.disabled=false;});});
 </script>
+<style id="lb-header-fault-fix">
+img.lb-logo-unlock.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;min-height:0!important;flex:none!important;object-fit:contain!important}
+</style>
 </body></html>
