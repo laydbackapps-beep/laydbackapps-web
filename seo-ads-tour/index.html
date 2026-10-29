@@ -901,6 +901,17 @@ h3 {
   }
   #slideCounter { font-size: 1rem !important; min-width: 4.6rem !important; }
 }
+@media (max-width: 820px) {
+  /* COVER OVERLAP FIX (2026-10-29): #slide-cover .logo is absolutely pinned to
+     the top-left corner and the kicker/tagline are absolutely positioned too, so
+     on a phone the wordmark sat ON TOP of the kicker text ("Lay'd Back Apps"
+     over "THE DASHBOARD YOUR TRADE BUSINESS RUNS ON"). On phones everything on
+     the cover returns to normal flow and stacks. */
+  #slide-cover .logo { position: static !important; top: auto !important; left: auto !important;
+    margin: 0 auto 0.35rem !important; text-align: center !important; }
+  #slide-cover .tagline { position: static !important; }
+  #slide-cover > div { padding-top: 0.4rem !important; }
+}
 </style>
 
 </head>
