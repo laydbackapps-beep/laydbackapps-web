@@ -25,6 +25,8 @@ html:not(.js) .rv{opacity:1!important;transform:none!important}
 /* the hero's location kicker sits over the pool photograph and washed out against the water - a shadow only, no
    change to the hero canvas or its layout. */
 .hero__k,.hero .lead,.hero__cap{text-shadow:0 1px 8px rgba(0,18,48,.85),0 0 22px rgba(0,18,48,.55)}
+/* the kicker still read weakly over bright water, so it carries a small scrim of its own */
+.hero__k{display:inline-block!important;background:rgba(6,26,60,.62)!important;padding:.28rem .62rem!important;border-radius:6px!important;backdrop-filter:blur(2px)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-d);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
