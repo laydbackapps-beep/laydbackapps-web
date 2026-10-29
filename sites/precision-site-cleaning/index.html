@@ -83,15 +83,17 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
   gap:clamp(10px,1.2vw,18px)!important;background:none!important}
 .brand img,.brand .pc-lock img,.lb-brand img{height:auto!important;width:auto!important;background:none!important;
   border:0!important;box-shadow:none!important;border-radius:0!important;display:block!important;margin:0!important;max-width:none!important}
-.brand img.pc-sym,.pc-lock img.pc-sym{height:clamp(42px,4.4vw,56px)!important}
-.brand img.pc-txt,.pc-lock img.pc-txt{height:clamp(36px,3.9vw,50px)!important}
+/* sized so that even on a 3x display the wordmark is sampled at or below its own 738px native width -
+   the crispness fault was the raster source being asked for more pixels than it has. */
+div.wrap .brand img.pc-sym,div.wrap .brand .pc-lock img.pc-sym,.brand img.pc-sym{height:clamp(40px,4.0vw,52px)!important}
+div.wrap .brand img.pc-txt,div.wrap .brand .pc-lock img.pc-txt,.brand img.pc-txt{height:clamp(32px,3.2vw,46px)!important}
 @media(max-width:760px){
-  .brand img.pc-sym,.pc-lock img.pc-sym{height:40px!important}
-  .brand img.pc-txt,.pc-lock img.pc-txt{height:34px!important}
+  div.wrap .brand img.pc-sym,.brand img.pc-sym{height:40px!important}
+  div.wrap .brand img.pc-txt,.brand img.pc-txt{height:30px!important}
 }
 @media(max-width:430px){
-  .brand img.pc-sym,.pc-lock img.pc-sym{height:34px!important}
-  .brand img.pc-txt,.pc-lock img.pc-txt{height:28px!important}
+  div.wrap .brand img.pc-sym,.brand img.pc-sym{height:34px!important}
+  div.wrap .brand img.pc-txt,.brand img.pc-txt{height:26px!important}
 }
 </style>
 </head>
