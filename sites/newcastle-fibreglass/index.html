@@ -22,6 +22,9 @@ section[id],header[id]{scroll-margin-top:calc(var(--nav-h) + 12px)}
 html:not(.js) .rv{opacity:1!important;transform:none!important}
 .js .rv{opacity:0;transform:translateY(22px);transition: opacity .45s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
 .js .rv.on{opacity:1;transform:none}
+/* the hero's location kicker sits over the pool photograph and washed out against the water - a shadow only, no
+   change to the hero canvas or its layout. */
+.hero__k,.hero .lead,.hero__cap{text-shadow:0 1px 8px rgba(0,18,48,.85),0 0 22px rgba(0,18,48,.55)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-d);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
@@ -240,19 +243,12 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 </style><style id="lb-bar-noname-x">SPAN.lb-brand__name{display:none!important}
-</style><style id="lb-bar-fits-logo">
-/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
-header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
-  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
-.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
-img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
-</style>
-</head>
+</style></head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 
 <a class="skip" href="#services">Skip to content</a>
 <nav class="nav" role="navigation" aria-label="Primary">
-  <a class="lb-brand" href="#top" aria-label="Newcastle Fibreglass Repairs - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#f5f5f0;--lb-subc:#f5f5f0;--lb-acc:#1020d8;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.png" alt="" class="lb-logo lb-logo-unlock" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">Newcastle Fibreglass Repairs</span><span class="lb-brand__sub"><span class="lb-acc">Pool</span></span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
+  <a class="lb-brand" href="#top" aria-label="Newcastle Fibreglass Repairs - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#f5f5f0;--lb-subc:#f5f5f0;--lb-acc:#1020d8;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo-cut.png" alt="" class="lb-logo lb-logo-unlock" loading="eager" decoding="async" width="431" height="431"></span><span class="lb-brand__word"><span class="lb-brand__name">Newcastle Fibreglass Repairs</span><span class="lb-brand__sub"><span class="lb-acc">Pool</span></span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
   <ul class="nav__links">
     <li><a href="#services">Services</a></li>
     <li><a href="#process">Process</a></li>
@@ -284,6 +280,9 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
     </div>
   </div>
 </header>
+
+<div class="nf-ticker" aria-hidden="true"><div class="nf-ticker__track" id="nfTick"></div></div>
+
 <span id="quote" style="position:absolute;top:-90px"></span>
 
 <section class="sec sec--light" id="services" aria-labelledby="s-t">
@@ -316,9 +315,12 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
   <h2 class="h2" id="ar-t">Newcastle &amp; the Hunter</h2>
   <p class="lead">Based in Charlestown and servicing the surrounding region.</p>
   <div class="areas" aria-label="Service areas">
-    <span>Charlestown</span><span>Newcastle</span><span>Lake Macquarie</span><span>Port Stephens</span><span>Hunter Valley</span>
+    <span>Charlestown</span><span>Kahibah</span><span>Whitebridge</span><span>Dudley</span><span>Newcastle</span><span>Newcastle West</span><span>Hamilton</span><span>Merewether</span><span>Adamstown</span><span>New Lambton</span><span>Lambton</span><span>Wallsend</span><span>Mayfield</span><span>Waratah</span><span>Jesmond</span><span>Shortland</span><span>Glendale</span><span>Edgeworth</span><span>Cameron Park</span><span>Kotara</span><span>Cardiff</span><span>Warners Bay</span><span>Speers Point</span><span>Redhead</span><span>Belmont</span><span>Swansea</span><span>Toronto</span><span>Morisset</span><span>Cooranbong</span><span>Wangi Wangi</span><span>Beresfield</span><span>Thornton</span><span>Maitland</span><span>Rutherford</span><span>Cessnock</span><span>Kurri Kurri</span><span>Raymond Terrace</span><span>Medowie</span><span>Nelson Bay</span><span>Port Stephens</span>
   </div>
+<div class="nf-band"><div class="cap"><span>Where we work — rotating</span><em id="nfAreaCount">01 / 06</em></div><div class="row" id="nfAreaRow"></div><div class="prog"><i></i></div></div>
 </section>
+
+
 
 <section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img src="assets/pool-hero.jpg" alt="Newcastle Fibreglass Repairs" loading="eager" decoding="async"></div><div class="lb-rb__slide" style="background:#0b0c10"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp, system-ui), sans-serif;font-weight:800;text-transform:none;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">Newcastle Fibreglass Repairs</span></div><div class="lb-rb__slide" style="background:#0b0c10"><span style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:6%;color:#fff;font-family:var(--lb-disp, system-ui), sans-serif;font-weight:800;text-transform:none;font-size:clamp(19px,3.4vw,46px);letter-spacing:.02em;line-height:1.05">Pool</span></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button></div><div class="lb-rb__cap">Newcastle Fibreglass Repairs &mdash; recent work</div></div></section><footer class="foot">
   <div>
@@ -689,7 +691,91 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
 </style>
 <style id="lb-header-fault-fix">
 :is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
-img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
+<style id="nf-extras">
+/* ==== header logo cleaned up + honest photo sizing + features, in the site's own blue palette (#0e3a7e / #1020d8) ==== */
+
+/* the bar was loading assets/logo.png - the mark baked onto a WHITE SQUARE (RGB, no alpha), which reads as a pasted
+   box on the navy bar. The transparent version of the same mark now sits on a deliberate light chip so the vivid
+   blue NFB monogram actually reads against navy. Nothing typed. */
+.lb-brand{display:flex!important;align-items:center!important;gap:clamp(8px,1vw,13px)!important}
+.lb-brand__mark{display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  background:#f5f5f0!important;border-radius:10px!important;padding:clamp(4px,.45vw,6px)!important;line-height:0!important}
+.lb-brand__mark img{height:clamp(38px,3.7vw,48px)!important;width:auto!important;border-radius:0!important;display:block!important;background:none!important}
+.lb-brand__name,.lb-brand__sub,.lb-brand__rule{display:none!important}
+
+/* the pool photograph is 1280x1280 (square) and the rotation band was forcing it across a 16:7 frame with a Ken
+   Burns zoom: 1584x693, a 1.24x upscale and a hard 2.29:1 slice out of a square shot. The band is now a 4:3 frame
+   capped at 1040px with the photograph CONTAINED, so it shows whole at 780x780 - below native, no crop. */
+.lb-rb__track{aspect-ratio:4/3!important;max-width:1040px!important;margin:0 auto!important;width:100%!important}
+.lb-rb__slide img{object-fit:contain!important;transform:none!important}
+.lb-rb__slide.is-on img{transform:none!important}
+.hero img,.hero-photo,.hero__media img{max-width:1280px!important}
+
+/* the page's own service-area list, styled as chips */
+.areas{display:flex!important;flex-wrap:wrap!important;gap:.55rem!important}
+.areas>span{border:1px solid rgba(255,255,255,.26)!important;border-radius:99px!important;padding:.45rem 1rem!important;
+  font-size:.86rem!important;background:rgba(255,255,255,.08)!important;color:var(--ink,#fff)!important;transition:.2s}
+.areas>span:hover{border-color:#8fe0fb!important;background:rgba(143,224,251,.16)!important}
+
+/* rotating services ticker */
+.nf-ticker{position:relative;overflow:hidden;background:#0b2c60;border-top:2px solid #8fe0fb;border-bottom:1px solid rgba(255,255,255,.14)}
+.nf-ticker:before,.nf-ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.nf-ticker:before{left:0;background:linear-gradient(90deg,#0b2c60,transparent)}
+.nf-ticker:after{right:0;background:linear-gradient(270deg,#0b2c60,transparent)}
+.nf-ticker__track{display:flex;gap:clamp(20px,3vw,40px);white-space:nowrap;padding:13px 0;width:max-content;animation:nfSlide 46s linear infinite;will-change:transform}
+.nf-ticker:hover .nf-ticker__track{animation-play-state:paused}
+.nf-ticker span{display:inline-flex;align-items:center;gap:clamp(14px,2vw,26px);color:#fff;font-weight:700;font-size:clamp(11px,1.15vw,13.5px);letter-spacing:.16em;text-transform:uppercase}
+.nf-ticker span i{font-style:normal;color:#8fe0fb}
+@keyframes nfSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* rotating area band */
+.nf-band{margin-top:2rem;border:1px solid rgba(143,224,251,.42);background:#0b2c60;border-radius:10px;overflow:hidden}
+.nf-band .cap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:11px 15px;border-bottom:1px solid rgba(255,255,255,.16);
+  font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#8fe0fb;font-weight:700}
+.nf-band .cap em{font-style:normal;color:#c3d4ec}
+.nf-band .row{position:relative;height:68px;overflow:hidden}
+.nf-band .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+.nf-band .row ul.on{opacity:1;transform:none}
+.nf-band .row li{font-size:clamp(1.05rem,2.2vw,1.5rem);font-weight:700;color:#fff;text-align:center;line-height:1.12}
+.nf-band .row li small{display:block;font-weight:400;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:#c3d4ec;margin-top:8px}
+.nf-band .prog{height:2px;background:rgba(255,255,255,.16)}
+.nf-band .prog i{display:block;height:100%;width:0;background:#8fe0fb;animation:nfFill 4s linear infinite}
+@keyframes nfFill{from{width:0}to{width:100%}}
+
+@media (prefers-reduced-motion:reduce){.nf-ticker__track,.nf-band .prog i{animation:none}.nf-band .row ul{transition:none}}
+</style>
+
+<script id="nf-extras-js">
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var T=['Pool resurfacing','Fibreglass repairs','Gelcoat repairs','Crack repairs','Leak repairs','Pool renovations',
+         'Waterline tiling','Coping & edging','Pool painting','Tile replacement','Filtration checks','Skimmer boxes',
+         'Pool lights','Liner replacement','Concrete pool repairs','Vinyl pool repairs','Pre-sale inspections','Quotes'];
+  var tk=document.getElementById('nfTick');
+  if (tk) tk.innerHTML=T.concat(T).map(function(s){return '<span>'+s+'<i>&#9670;</i></span>';}).join('');
+  var AR=[['Charlestown & the inner suburbs','Charlestown · Kahibah · Whitebridge · Dudley'],
+          ['Newcastle & the beaches','Newcastle · Newcastle West · Hamilton · Merewether'],
+          ['Western suburbs','Wallsend · Mayfield · Waratah · Jesmond'],
+          ['Lake Macquarie north','Warners Bay · Cardiff · Speers Point · Redhead'],
+          ['Lake Macquarie south','Belmont · Swansea · Morisset · Toronto'],
+          ['Hunter & Port Stephens','Maitland · Cessnock · Raymond Terrace · Nelson Bay']];
+  var row=document.getElementById('nfAreaRow'), cnt=document.getElementById('nfAreaCount');
+  if (row){
+    AR.forEach(function(a,k){
+      var u=document.createElement('ul'), li=document.createElement('li');
+      if(!k) u.className='on';
+      li.innerHTML=a[0]+'<small>'+a[1]+'</small>';
+      u.appendChild(li); row.appendChild(u);
+    });
+    var rows=[].slice.call(row.children), i=0;
+    if(!reduce){ setInterval(function(){ i=(i+1)%AR.length;
+      rows.forEach(function(u,k){ u.classList.toggle('on', k===i); });
+      if(cnt) cnt.textContent=('0'+(i+1)).slice(-2)+' / 0'+AR.length; },4000); }
+  }
+})();
+</script>
+
 </body>
 </html>
