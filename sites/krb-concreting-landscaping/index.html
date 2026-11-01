@@ -163,16 +163,11 @@ footer a:hover{text-decoration:underline}
  img,video,svg{max-width:100%!important;height:auto}
  h1,h2{overflow-wrap:anywhere!important}
 }</style><style id="lb-hdr-centre">
-/* the brand here is the logo alone: centre it in the bar instead of parking it on one edge */
-header{position:relative!important;display:flex!important;align-items:center!important;gap:clamp(10px,1.8vw,26px)!important}
-a:first-child{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;margin:0!important;z-index:2}
-a:first-child img{height:clamp(38px,3.4vw,54px)!important;width:auto!important;display:block!important}
-header > a:not(a:first-child){margin-left:auto}
-header > a:not(a:first-child) ~ a{margin-left:0}
-@media(max-width:900px){
-  a:first-child{position:static!important;transform:none!important;margin-right:auto!important}
-  a:first-child img{height:38px!important}
-}
+/* REMOVED 2026-10-29: this block centred the brand using a BARE `a:first-child` selector, which is global.
+   It absolutely positioned every first-child anchor at 50%/50% of its nearest positioned ancestor, so the
+   hero "Call" button floated mid-page as a black box, the first nav link ("Services") left the nav bar, and
+   every first-child footer link stacked on top of the others. The brand is already centred by the scoped
+   `.hdr .hdr-in .brand` rule in #krb-extras, which is why this block is now empty. */
 </style><style id="lb-bar-grow">
 nav{height:auto!important;min-height:0!important}
 nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
@@ -192,7 +187,20 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
   .hdr .brand img.lb-logo-unlock,.hdr .brand img{height:64px!important}
   .hdr nav.nav{margin-left:0!important}
 }
-</style></head>
+</style><meta name="description" content="KRB Concreting & Landscaping - Concreting & landscaping,  None">
+<!-- lb-seo:start -->
+<link rel="canonical" href="https://laydbackapps.com/sites/krb-concreting-landscaping/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:url" content="https://laydbackapps.com/sites/krb-concreting-landscaping/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KRB Concreting & Landscaping">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://laydbackapps.com/sites/krb-concreting-landscaping/assets/logo-clear.png">
+<meta name="twitter:image" content="https://laydbackapps.com/sites/krb-concreting-landscaping/assets/logo-clear.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://laydbackapps.com/sites/krb-concreting-landscaping/#business", "name": "KRB Concreting & Landscaping", "description": "KRB Concreting & Landscaping - Concreting & landscaping,  None", "url": "https://laydbackapps.com/sites/krb-concreting-landscaping/", "telephone": "0422858263", "image": "https://laydbackapps.com/sites/krb-concreting-landscaping/assets/logo-clear.png", "knowsAbout": ["Concreting & landscaping"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "@id": "https://laydbackapps.com/sites/krb-concreting-landscaping/#service", "name": "Concreting & landscaping", "provider": {"@id": "https://laydbackapps.com/sites/krb-concreting-landscaping/#business"}}</script>
+<!-- lb-seo:end -->
+</head>
 <body>
 <header class="hdr" id="top">
 <div class="wrap hdr-in">
@@ -494,6 +502,19 @@ img.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:
 @keyframes krbFill{from{width:0}to{width:100%}}
 
 @media (prefers-reduced-motion:reduce){.krb-ticker__track,.krb-band .prog i{animation:none}.krb-band .row ul{transition:none}}
+
+/* ==== header logo: contained inside the bar ====
+   The bar settles at 72px on desktop (12px padding-block + the 47px call button); the logo was resolving to
+   clamp(68px,6.4vw,96px) = 92px and, being centred with translate(-50%,-50%), hung 10px out of the top and
+   bottom of the bar. Capped below the bar's inner height so it sits inside at every width. */
+.hdr .hdr-in .brand img.lb-logo-unlock.lb-logo-unlock,
+.hdr .hdr-in .brand img{
+  height:clamp(36px,3.3vw,48px)!important;max-height:48px!important;width:auto!important;
+  max-width:none!important;object-fit:contain!important;display:block!important}
+@media(max-width:760px){
+  .hdr .hdr-in .brand img.lb-logo-unlock.lb-logo-unlock,
+  .hdr .hdr-in .brand img{height:40px!important;max-height:40px!important}
+}
 </style>
 
 <script id="krb-extras-js">
