@@ -872,15 +872,15 @@ html{overflow-x:hidden}
 (function(){
   if (window.__LAYDBACK_API_BASE) return;
   var done=false;
-  var t=setTimeout(function(){ if(!done){done=true;window.__LAYDBACK_API_BASE='https://beverly-appliance-perfume-evans.trycloudflare.com';} },2500);
+  var t=setTimeout(function(){ if(!done){done=true;window.__LAYDBACK_API_BASE='https://laydback-hq.tail5b3740.ts.net';} },2500);
   fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt'+'?_='+Date.now())
     .then(function(r){return r.text();})
     .then(function(txt){
       var b=(txt||'').trim().replace(/\/+$/,'');
       if(done)return; done=true; clearTimeout(t);
-      window.__LAYDBACK_API_BASE=/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b)?b:'https://beverly-appliance-perfume-evans.trycloudflare.com';
+      window.__LAYDBACK_API_BASE=/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b)?b:'https://laydback-hq.tail5b3740.ts.net';
     })
-    .catch(function(){ if(!done){done=true;clearTimeout(t);window.__LAYDBACK_API_BASE='https://beverly-appliance-perfume-evans.trycloudflare.com';} });
+    .catch(function(){ if(!done){done=true;clearTimeout(t);window.__LAYDBACK_API_BASE='https://laydback-hq.tail5b3740.ts.net';} });
 })();
 
 document.documentElement.classList.add('js');
@@ -938,7 +938,7 @@ document.documentElement.classList.add('js');
   // Lay'd Back quote-request (patched 2026-09-30): resolves the API base at
   // runtime (gist pointer + fallback) so tunnel rotation heals automatically.
   var LB_POINTER = 'https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt';
-  var LB_FALLBACK = 'https://beverly-appliance-perfume-evans.trycloudflare.com';
+  var LB_FALLBACK = 'https://laydback-hq.tail5b3740.ts.net';
   function lbBase(){
     return new Promise(function(res){
       if (window.__LAYDBACK_API_BASE) return res(window.__LAYDBACK_API_BASE);
