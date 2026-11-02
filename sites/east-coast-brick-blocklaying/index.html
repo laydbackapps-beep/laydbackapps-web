@@ -103,9 +103,11 @@ html.js .rv.on{opacity:1;transform:none}
 .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .hero-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:1rem 1.1rem;background-color:#141412;background-image:linear-gradient(0deg,rgba(20,20,18,.94),rgba(20,20,18,.72) 60%,rgba(20,20,18,.18));color:#ffffff;font-size:.82rem;font-weight:600}
 @media(max-width:920px){
-  .hero-in{grid-template-columns:1fr;gap:1.7rem}
+  .hero-in{display:flex;flex-direction:column;grid-template-columns:1fr;gap:1.3rem}
+  .hero-visual{order:-1;gap:12px}
+  .hero-photo{order:-1;max-width:none;aspect-ratio:16/9;max-height:32vh}
   .hero h1{max-width:none}
-  .hero-photo{max-width:none}
+  .scene{aspect-ratio:16/6}
 }
 
 section{padding:clamp(3.4rem,6vw,5.4rem) 0}
