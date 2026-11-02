@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stoneline Concreting — Concreters in Lake Macquarie &amp; the Hunter</title>
+<meta name="description" content="Stoneline Concreting — concrete driveways, paths, patios, slabs, footings and council crossovers across Lake Macquarie and the Hunter, NSW. Exposed aggregate, broom, swirl and colour finishes.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<meta property="og:title" content="Stoneline Concreting — Concreters in Lake Macquarie &amp; the Hunter">
+<meta property="og:description" content="Driveways, paths, patios, slabs and council crossovers. Exposed aggregate, broom, swirl and colour finishes across Lake Macquarie and the Hunter, NSW.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo-mark-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f4f2ee;
+    --card: #ffffff;
+    --ink: #232323;
+    --ink-2: #57514a;
+    --ink-3: #837b71;
+    --line: #e3ded4;
+    --line-2: #d3ccbf;
+    --acc: #a9872c;
+    --gold: #c2a04c;
+    --dark: #22201d;
+    --wrap: 1180px;
+    --r: 6px;
+    --shadow: 0 1px 2px rgba(35,32,29,.06), 0 14px 34px -18px rgba(35,32,29,.32);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .brand__word, .eyebrow, .btn, .chip, .svc__n, .step__n {
+    font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+  }
+  h1, h2, h3 { margin: 0; letter-spacing: -0.02em; line-height: 1.05; font-weight: 700; }
+  p { margin: 0; }
+  img { display: block; max-width: 100%; height: auto; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: 12.5px;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--acc); }
+  .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--gold); display: inline-block; }
+
+  .nav { position: sticky; top: 0; z-index: 30; background: rgba(244,242,238,.88);
+    backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--line); }
+  .nav__in { display: flex; align-items: center; gap: 26px; height: 86px; }
+  .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
+  .brand__mark { height: 42px; width: 42px; flex: none; }
+  .brand__word { height: 31px; width: 118px; flex: none; }
+  .nav__links { display: flex; gap: 26px; margin-left: auto; }
+  .nav__links a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--ink-2); padding: 6px 0; }
+  .nav__links a:hover { color: var(--ink); }
+  .btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; cursor: pointer;
+    font-weight: 600; font-size: 15px; border-radius: var(--r); padding: 12px 20px; border: 1.5px solid transparent;
+    transition: transform .15s ease, background .15s ease, color .15s ease; }
+  .btn--solid { background: var(--dark); color: #fff; }
+  .btn--solid:hover { background: #000; transform: translateY(-1px); }
+  .btn--ghost { border-color: var(--line-2); color: var(--ink); }
+  .btn--ghost:hover { border-color: var(--ink); }
+  .btn--gold { background: var(--gold); color: #241f10; }
+  .btn--gold:hover { background: #b2913c; transform: translateY(-1px); }
+  .nav__cta { margin-left: 6px; padding: 11px 18px; }
+
+  .hero { position: relative; padding: 74px 0 82px; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 46px 46px; opacity: .5; mask-image: linear-gradient(180deg, #000, transparent 72%); }
+  .hero__in { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr .9fr; gap: 44px; align-items: center; }
+  .hero h1 { font-size: clamp(36px, 4.8vw, 60px); margin: 20px 0 18px; }
+  .hero p.lead { color: var(--ink-2); font-size: 18.5px; max-width: 36ch; }
+  .hero__cta { display: flex; gap: 12px; margin: 28px 0 30px; flex-wrap: wrap; }
+  .chips { display: flex; flex-wrap: wrap; gap: 9px; }
+  .chip { font-size: 13px; font-weight: 600; color: var(--ink-2); background: #fff; border: 1px solid var(--line);
+    border-radius: 999px; padding: 7px 13px; }
+  .chip b { color: var(--acc); font-weight: 700; }
+  .hero__card figure { margin: 0; max-width: 100%; margin-left: auto; background: #fff; border: 1px solid var(--line);
+    border-radius: 10px; padding: 12px 12px 0; box-shadow: var(--shadow); }
+  .hero__card img { border-radius: 5px; width: 100%; }
+  .hero__card figcaption { font-size: 13px; color: var(--ink-3); padding: 12px 4px 14px; display: flex; align-items: center; gap: 8px; }
+  .hero__card figcaption::before { content: ""; width: 18px; height: 2px; background: var(--gold); }
+
+  section { scroll-margin-top: 96px; }
+  .band { padding: 84px 0; }
+  .band--tint { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .head { max-width: 680px; margin-bottom: 42px; }
+  .head h2 { font-size: clamp(28px, 3.4vw, 40px); margin: 16px 0 12px; }
+  .head p { color: var(--ink-2); }
+
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .svc { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 26px 24px 28px; }
+  .svc__n { display: inline-block; font-weight: 700; font-size: 13px; letter-spacing: .12em; color: var(--acc); margin-bottom: 14px; }
+  .svc h3 { font-size: 19px; margin-bottom: 9px; }
+  .svc p { color: var(--ink-2); font-size: 15.5px; }
+
+  .process { background: var(--dark); color: #f2eee6; }
+  .process .eyebrow { color: var(--gold); }
+  .process h2 { color: #fff; }
+  .process .head p { color: #b6ada0; }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+  .steps li { border-top: 2px solid #423c33; padding-top: 18px; }
+  .step__n { display: block; font-weight: 700; font-size: 14px; color: var(--gold); letter-spacing: .1em; margin-bottom: 12px; }
+  .steps h3 { font-size: 17px; margin-bottom: 8px; color: #fff; }
+  .steps p { color: #b6ada0; font-size: 14.5px; }
+
+  .wrap--narrow { max-width: 940px; }
+  .work-grid { columns: 2; column-gap: 22px; }
+  .work__item { margin: 0 0 22px; break-inside: avoid; }
+  .work__item img { width: 100%; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+  .work__item figcaption { font-size: 13.5px; color: var(--ink-3); margin-top: 10px; }
+
+  .faq { max-width: 820px; }
+  .faq__item { border-bottom: 1px solid var(--line); }
+  .faq__item summary { list-style: none; cursor: pointer; padding: 20px 34px 20px 0; position: relative;
+    font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 18px; }
+  .faq__item summary::-webkit-details-marker { display: none; }
+  .faq__item summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+    color: var(--acc); font-weight: 700; font-size: 22px; }
+  .faq__item[open] summary::after { content: "–"; }
+  .faq__item p { color: var(--ink-2); padding: 0 34px 22px 0; margin-top: -6px; }
+
+  .contact { background: #fff; border-top: 1px solid var(--line); }
+  .contact__card { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center;
+    border: 1px solid var(--line); border-radius: 14px; padding: 44px 46px; background: var(--paper); }
+  .contact h2 { font-size: clamp(28px, 3.4vw, 40px); margin: 16px 0 14px; }
+  .contact p { color: var(--ink-2); }
+  .contact__meta { display: grid; gap: 16px; margin-top: 26px; }
+  .contact__meta div { display: flex; gap: 12px; align-items: flex-start; }
+  .contact__meta .k { font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 12.5px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--ink-3); min-width: 110px; padding-top: 3px; }
+  .contact__meta .v { font-weight: 500; }
+  .contact__meta a { color: var(--acc); text-decoration: none; border-bottom: 1.5px solid rgba(169,135,44,.35); }
+  .contact__cta { display: flex; flex-direction: column; gap: 14px; }
+  .contact__cta .btn { justify-content: center; font-size: 16px; padding: 15px 22px; }
+  .contact__cta small { color: var(--ink-3); text-align: center; }
+
+  footer { padding: 40px 0 52px; }
+  .foot { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
+  .foot__brand { display: flex; align-items: center; gap: 13px; }
+  .foot__mark { height: 36px; width: 36px; }
+  .foot__name { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 16px; }
+  .foot__meta { color: var(--ink-3); font-size: 14px; text-align: right; }
+  .foot__rule { border-top: 1px solid var(--line); margin: 26px 0 22px; }
+
+  @media (max-width: 980px) {
+    .hero__in { grid-template-columns: 1fr; gap: 40px; }
+    .hero__card figure { margin: 0 auto; }
+    .svc-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+    .contact__card { grid-template-columns: 1fr; padding: 34px 28px; gap: 30px; }
+    .nav__links { display: none; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 20px; }
+    .band { padding: 62px 0; }
+    .svc-grid, .steps { grid-template-columns: 1fr; }
+    .work-grid { columns: 1; }
+    .hero h1 { font-size: 33px; }
+    .brand__word { height: 26px; width: 100px; }
+    .nav__cta { padding: 10px 14px; font-size: 14px; }
+    .foot__meta { text-align: left; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="#top" aria-label="Stoneline Concreting — home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="brand__mark" aria-hidden="true">
+  <title>Stoneline Concreting</title>
+  <rect x="14" y="14" width="228" height="228" rx="46" fill="#2b2b2b"/>
+  <path d="M82 153 C82 103 102 82 128 82 C154 82 174 103 174 153 Z" fill="#c2a04c"/><rect x="62" y="149" width="132" height="18" rx="9" fill="#c2a04c"/><path d="M71 167 h114 a9 9 0 0 1 -9 9 H80 a9 9 0 0 1 -9 -9 z" fill="#1c1c1c" opacity="0.38"/>
+</svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 409 112" class="brand__word" aria-hidden="true">
+  <title>Stoneline Concreting</title>
+  <g fill="#232323"><path d="M1227 1446V1130Q1104 1185 987.0 1213.0Q870 1241 766 1241Q628 1241 562.0 1203.0Q496 1165 496 1085Q496 1025 540.5 991.5Q585 958 702 934L866 901Q1115 851 1220.0 749.0Q1325 647 1325 459Q1325 212 1178.5 91.5Q1032 -29 731 -29Q589 -29 446.0 -2.0Q303 25 160 78V403Q303 327 436.5 288.5Q570 250 694 250Q820 250 887.0 292.0Q954 334 954 412Q954 482 908.5 520.0Q863 558 727 588L578 621Q354 669 250.5 774.0Q147 879 147 1057Q147 1280 291.0 1400.0Q435 1520 705 1520Q828 1520 958.0 1501.5Q1088 1483 1227 1446Z" transform="translate(4.000,54.000) scale(0.030273,-0.030273)"/><path d="M10 1493H1386V1202H891V0H506V1202H10Z" transform="translate(49.893,54.000) scale(0.030273,-0.030273)"/><path d="M870 1241Q694 1241 597.0 1111.0Q500 981 500 745Q500 510 597.0 380.0Q694 250 870 250Q1047 250 1144.0 380.0Q1241 510 1241 745Q1241 981 1144.0 1111.0Q1047 1241 870 1241ZM870 1520Q1230 1520 1434.0 1314.0Q1638 1108 1638 745Q1638 383 1434.0 177.0Q1230 -29 870 -29Q511 -29 306.5 177.0Q102 383 102 745Q102 1108 306.5 1314.0Q511 1520 870 1520Z" transform="translate(93.425,54.000) scale(0.030273,-0.030273)"/><path d="M188 1493H618L1161 469V1493H1526V0H1096L553 1024V0H188Z" transform="translate(147.371,54.000) scale(0.030273,-0.030273)"/><path d="M188 1493H1227V1202H573V924H1188V633H573V291H1249V0H188Z" transform="translate(200.500,54.000) scale(0.030273,-0.030273)"/><path d="M188 1493H573V291H1249V0H188Z" transform="translate(244.093,54.000) scale(0.030273,-0.030273)"/><path d="M188 1493H573V0H188Z" transform="translate(284.839,54.000) scale(0.030273,-0.030273)"/><path d="M188 1493H618L1161 469V1493H1526V0H1096L553 1024V0H188Z" transform="translate(309.148,54.000) scale(0.030273,-0.030273)"/><path d="M188 1493H1227V1202H573V924H1188V633H573V291H1249V0H188Z" transform="translate(362.276,54.000) scale(0.030273,-0.030273)"/></g>
+  <g fill="#9a7b2e"><path d="M1319 1378V1165Q1217 1260 1101.5 1307.0Q986 1354 856 1354Q600 1354 464.0 1197.5Q328 1041 328 745Q328 450 464.0 293.5Q600 137 856 137Q986 137 1101.5 184.0Q1217 231 1319 326V115Q1213 43 1094.5 7.0Q976 -29 844 -29Q505 -29 310.0 178.5Q115 386 115 745Q115 1105 310.0 1312.5Q505 1520 844 1520Q978 1520 1096.5 1484.5Q1215 1449 1319 1378Z" transform="translate(4.000,98.000) scale(0.016602,-0.016602)"/><path d="M807 1356Q587 1356 457.5 1192.0Q328 1028 328 745Q328 463 457.5 299.0Q587 135 807 135Q1027 135 1155.5 299.0Q1284 463 1284 745Q1284 1028 1155.5 1192.0Q1027 1356 807 1356ZM807 1520Q1121 1520 1309.0 1309.5Q1497 1099 1497 745Q1497 392 1309.0 181.5Q1121 -29 807 -29Q492 -29 303.5 181.0Q115 391 115 745Q115 1099 303.5 1309.5Q492 1520 807 1520Z" transform="translate(37.940,98.000) scale(0.016602,-0.016602)"/><path d="M201 1493H473L1135 244V1493H1331V0H1059L397 1249V0H201Z" transform="translate(74.902,98.000) scale(0.016602,-0.016602)"/><path d="M1319 1378V1165Q1217 1260 1101.5 1307.0Q986 1354 856 1354Q600 1354 464.0 1197.5Q328 1041 328 745Q328 450 464.0 293.5Q600 137 856 137Q986 137 1101.5 184.0Q1217 231 1319 326V115Q1213 43 1094.5 7.0Q976 -29 844 -29Q505 -29 310.0 178.5Q115 386 115 745Q115 1105 310.0 1312.5Q505 1520 844 1520Q978 1520 1096.5 1484.5Q1215 1449 1319 1378Z" transform="translate(110.536,98.000) scale(0.016602,-0.016602)"/><path d="M909 700Q974 678 1035.5 606.0Q1097 534 1159 408L1364 0H1147L956 383Q882 533 812.5 582.0Q743 631 623 631H403V0H201V1493H657Q913 1493 1039.0 1386.0Q1165 1279 1165 1063Q1165 922 1099.5 829.0Q1034 736 909 700ZM403 1327V797H657Q803 797 877.5 864.5Q952 932 952 1063Q952 1194 877.5 1260.5Q803 1327 657 1327Z" transform="translate(144.476,98.000) scale(0.016602,-0.016602)"/><path d="M201 1493H1145V1323H403V881H1114V711H403V170H1163V0H201Z" transform="translate(178.300,98.000) scale(0.016602,-0.016602)"/><path d="M-6 1493H1257V1323H727V0H524V1323H-6Z" transform="translate(209.982,98.000) scale(0.016602,-0.016602)"/><path d="M201 1493H403V0H201Z" transform="translate(240.951,98.000) scale(0.016602,-0.016602)"/><path d="M201 1493H473L1135 244V1493H1331V0H1059L397 1249V0H201Z" transform="translate(261.178,98.000) scale(0.016602,-0.016602)"/><path d="M1219 213V614H889V780H1419V139Q1302 56 1161.0 13.5Q1020 -29 860 -29Q510 -29 312.5 175.5Q115 380 115 745Q115 1111 312.5 1315.5Q510 1520 860 1520Q1006 1520 1137.5 1484.0Q1269 1448 1380 1378V1163Q1268 1258 1142.0 1306.0Q1016 1354 877 1354Q603 1354 465.5 1201.0Q328 1048 328 745Q328 443 465.5 290.0Q603 137 877 137Q984 137 1068.0 155.5Q1152 174 1219 213Z" transform="translate(296.812,98.000) scale(0.016602,-0.016602)"/></g>
+</svg>
+      </a>
+      <nav class="nav__links" aria-label="Sections">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#work">Our work</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn--gold nav__cta" href="https://www.instagram.com/stonelineconcreting/" target="_blank" rel="noopener">Free quote</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero__in">
+        <div>
+          <span class="eyebrow">Concreting · Lake Macquarie &amp; the Hunter</span>
+          <h1>Concrete driveways, paths and slabs, poured and finished properly.</h1>
+          <p class="lead">Form, pour and finish for driveways, paths, patios, slabs and council crossovers across Lake Macquarie and the Hunter — exposed aggregate, broom, swirl and colour finishes.</p>
+          <div class="hero__cta">
+            <a class="btn btn--solid" href="https://www.instagram.com/stonelineconcreting/" target="_blank" rel="noopener">Get a free quote</a>
+            <a class="btn btn--ghost" href="#services">See services</a>
+          </div>
+          <div class="chips">
+            <span class="chip"><b>Driveways</b> · paths · patios</span>
+            <span class="chip">Slabs &amp; footings</span>
+            <span class="chip">Exposed aggregate &amp; broom</span>
+            <span class="chip">Council crossovers</span>
+          </div>
+        </div>
+        <div class="hero__card">
+          <figure>
+            <img src="assets/p3.jpg" alt="Exposed aggregate concrete driveway extension alongside a new build" width="640" height="480">
+            <figcaption>Exposed aggregate driveway extension, Lake Macquarie</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="band band--tint">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">What we do</span>
+          <h2>Concrete work, set out and poured on site</h2>
+          <p>From set-out and formwork through to the finish on the surface — driveways, paths, patios, slabs and crossovers.</p>
+        </div>
+        <div class="svc-grid">
+        <article class="svc">
+          <span class="svc__n">01</span>
+          <h3>Concrete driveways</h3>
+          <p>New driveways and extensions formed, poured and finished on site — including swirl and broom finishes with dummy joints matched to existing concrete.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">02</span>
+          <h3>Paths & patios</h3>
+          <p>Garden paths, alfresco areas and patio slabs set out, reinforced and poured to suit the levels of the block.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">03</span>
+          <h3>Slabs & footings</h3>
+          <p>Shed, extension and house slabs, plus post footings and pads poured and set.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">04</span>
+          <h3>Exposed aggregate & finishes</h3>
+          <p>Exposed aggregate, broom, swirl and colour finishes, with control and dummy joints cut to suit the slab.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">05</span>
+          <h3>Council crossovers</h3>
+          <p>Driveway crossovers formed to council requirements and poured, then inspected and passed.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">06</span>
+          <h3>Formwork, reo & set-out</h3>
+          <p>Set-out, excavation, timber formwork and reinforcing mesh prepared ahead of the pour.</p>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="band process">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">How it runs</span>
+          <h2>From set-out to a finished slab</h2>
+          <p>The five stages of a Stoneline pour, start to finish.</p>
+        </div>
+        <ol class="steps">
+          <li><span class="step__n">01</span><div><h3>Get in touch</h3><p>Send a DM with the address and a couple of photos for a free quote.</p></div></li>
+          <li><span class="step__n">02</span><div><h3>Set-out & excavation</h3><p>Levels set, the area cut to grade and the sub-base prepared.</p></div></li>
+          <li><span class="step__n">03</span><div><h3>Formwork & reo</h3><p>Formwork built to the shape and fall, then reinforcing mesh placed and tied.</p></div></li>
+          <li><span class="step__n">04</span><div><h3>Pour & screed</h3><p>Concrete poured, spread and screeded to level in one run.</p></div></li>
+          <li><span class="step__n">05</span><div><h3>Finish & joints</h3><p>Broom, swirl, colour or exposed aggregate finish applied, joints cut and the slab cured.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="work" class="band">
+      <div class="wrap wrap--narrow">
+        <div class="head">
+          <span class="eyebrow">Recent work</span>
+          <h2>On the tools</h2>
+          <p>Recent pours across Lake Macquarie and the Hunter.</p>
+        </div>
+        <div class="work-grid">
+        <figure class="work__item">
+          <img src="assets/p9.jpg" alt="Stone-look slab, finished beside the water." width="480" height="640" decoding="async">
+          <figcaption>Stone-look slab, finished beside the water.</figcaption>
+        </figure>
+        <figure class="work__item">
+          <img src="assets/p11.jpg" alt="Slab poured with control joints beside a retaining wall." width="480" height="640" decoding="async">
+          <figcaption>Slab poured with control joints beside a retaining wall.</figcaption>
+        </figure>
+        <figure class="work__item">
+          <img src="assets/p10.jpg" alt="Reo mesh and formwork set out for a slab." width="640" height="480" decoding="async">
+          <figcaption>Reo mesh and formwork set out for a slab.</figcaption>
+        </figure>
+        <figure class="work__item">
+          <img src="assets/p4.jpg" alt="Site cut and levelling, ready for the pour." width="480" height="640" decoding="async">
+          <figcaption>Site cut and levelling, ready for the pour.</figcaption>
+        </figure>
+        <figure class="work__item">
+          <img src="assets/p7.jpg" alt="Posts set in poured concrete footings beside a house." width="640" height="479" decoding="async">
+          <figcaption>Posts set in poured concrete footings beside a house.</figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="band band--tint">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">Questions</span>
+          <h2>Before you book a pour</h2>
+        </div>
+        <div class="faq">
+        <details class="faq__item"><summary>What areas do you work in?</summary><p>Lake Macquarie and the wider Hunter, NSW — recent jobs have been in Blacksmiths, Cardiff, Valentine and Paxton.</p></details>
+        <details class="faq__item"><summary>What concrete work do you take on?</summary><p>Driveways, paths, patios, slabs, footings and council crossovers — new work and extensions to existing concrete.</p></details>
+        <details class="faq__item"><summary>Can you match existing concrete?</summary><p>Yes. Finishes such as swirl and broom can be matched to the existing slab, with dummy joints set out to line up.</p></details>
+        <details class="faq__item"><summary>What finishes can you do?</summary><p>Exposed aggregate, broom, swirl and colour finishes, with control joints cut to suit the slab.</p></details>
+        <details class="faq__item"><summary>How do I get a quote?</summary><p>Message through Instagram with the address and a photo or two of the area for a free quote.</p></details>
+        <details class="faq__item"><summary>Do you do council crossovers?</summary><p>Yes — crossovers are formed to council requirements and poured, ready for inspection.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="band contact">
+      <div class="wrap">
+        <div class="contact__card">
+          <div>
+            <span class="eyebrow">Get in touch</span>
+            <h2>Message for a free quote</h2>
+            <p>Quotes are done over Instagram. Send a message with the address and a photo or two of the area and you'll get a price back.</p>
+            <div class="contact__meta">
+              <div><span class="k">Service area</span><span class="v">Lake Macquarie &amp; the Hunter, NSW</span></div>
+              <div><span class="k">Enquiries</span><span class="v"><a href="https://www.instagram.com/stonelineconcreting/" target="_blank" rel="noopener">DM @stonelineconcreting</a></span></div>
+              <div><span class="k">Work</span><span class="v">Driveways · paths · slabs · crossovers</span></div>
+            </div>
+          </div>
+          <div class="contact__cta">
+            <a class="btn btn--gold" href="https://www.instagram.com/stonelineconcreting/" target="_blank" rel="noopener">Message on Instagram</a>
+            <a class="btn btn--ghost" href="https://www.instagram.com/stonelineconcreting/" target="_blank" rel="noopener">See more work</a>
+            <small>Quotes via direct message</small>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot__rule"></div>
+      <div class="foot">
+        <div class="foot__brand">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="foot__mark" aria-hidden="true">
+  <title>Stoneline Concreting</title>
+  <rect x="14" y="14" width="228" height="228" rx="46" fill="#2b2b2b"/>
+  <path d="M82 153 C82 103 102 82 128 82 C154 82 174 103 174 153 Z" fill="#c2a04c"/><rect x="62" y="149" width="132" height="18" rx="9" fill="#c2a04c"/><path d="M71 167 h114 a9 9 0 0 1 -9 9 H80 a9 9 0 0 1 -9 -9 z" fill="#1c1c1c" opacity="0.38"/>
+</svg>
+          <div>
+            <div class="foot__name">Stoneline Concreting</div>
+            <div class="foot__meta">Lake Macquarie &amp; the Hunter, NSW</div>
+          </div>
+        </div>
+        <div class="foot__meta">Concreters · Lake Macquarie &amp; the Hunter, NSW<br>© 2026 Stoneline Concreting</div>
+      </div>
+    </div>
+  </footer>
+<style id="fix-contact-grid">
+/* the contact block has a min-content floor wider than a 320px viewport (the <dt> auto column plus
+   unbroken values), so its pane started at x=49 and ran past the edge. minmax(0,1fr) + min-width:0
+   lets the column actually shrink, and long values wrap. */
+@media(max-width:420px){
+  .contact-grid,.contact__grid,.contact .grid{grid-template-columns:minmax(0,1fr)!important}
+  .contact-grid>*,.contact__grid>*,.contact .grid>*{min-width:0!important;max-width:100%!important}
+  .contact__meta,.contact__meta div,.info-card dl{min-width:0!important;max-width:100%!important}
+  .contact__meta *,.info-card dd,.info-card dt{overflow-wrap:anywhere!important}
+}
+</style>
+<style id="fix-img-cap">
+/* these JPEGs were being drawn wider than their own pixels at intermediate widths (a small photo stretched into a full-width panel = the "blown up" look). Cap each at native. */
+img[src$="p3.jpg"]{max-width:640px;height:auto}
+</style>
+</body>
+</html>
