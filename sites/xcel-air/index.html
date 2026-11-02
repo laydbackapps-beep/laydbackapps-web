@@ -1,282 +1,506 @@
-<!DOCTYPE html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Xcel Air — Air conditioning, Lake Macquarie &amp; Newcastle NSW</title><meta name="description" content="Air conditioning installation, repairs and servicing across Lake Macquarie and Newcastle NSW. Split systems and ducted units."><link rel="icon" href="favicon-32.png" sizes="32x32"><meta name="theme-color" content="#080c12">
-<meta property="og:title" content="Xcel Air — Air conditioning, Lake Macquarie &amp; Newcastle"><meta property="og:description" content="Installation, repairs and servicing of split systems and ducted air conditioning."><meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xcel Air — Air Conditioning Installation, Repairs &amp; Servicing | Lake Macquarie &amp; Newcastle NSW</title>
+<meta name="description" content="Xcel Air installs, repairs and services split system and ducted air conditioning across Lake Macquarie and Newcastle, NSW. Send us the details for a quote.">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<meta name="theme-color" content="#eef5fb">
 <style>
 :root{
-  --bg:#080c12; --bg2:#0b111a; --panel:#0e1723; --panel2:#101c2b;
-  --ink:#eaf2fb; --muted:#a9bccf; --line:rgba(234,242,251,.16);
-  --accent:#1a86f0; --accent-soft:#5fb4ff;
+  --paper:#eef5fb; --paper2:#e3eef9; --white:#ffffff;
+  --ink:#0a1e33; --body:#22415e; --muted:#3f5b78;
+  --blue:#0078c0; --blued:#0a5c93; --cyan:#18c0d8; --cyand:#0e93a8;
+  --line:rgba(10,30,51,.12); --line2:rgba(10,30,51,.22);
+  --navy:#08243c;
+  /* tokens the injected quote widget reads (keeps #lbq light, no fallback lime) */
+  --accent:#18c0d8; --brand:#18c0d8; --lime:#18c0d8; --color-lime:#18c0d8;
+  --bg:#eef5fb; --bg-0:#eef5fb; --panel:#ffffff;
+  --text:#0a1e33; --text-muted:#3f5b78; --border:rgba(10,30,51,.12);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'Sora',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--body);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.62;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-h1,h2,h3{font-weight:700;letter-spacing:-.025em;line-height:1.06;margin:0}
+h1,h2,h3{color:var(--ink);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin:0}
 p{margin:0}
-a{color:inherit}
-.wrap{width:min(1180px,92vw);margin-inline:auto}
-.mono{font-family:'DM Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;font-size:.74rem}
+.wrap{width:min(1160px,92vw);margin-inline:auto}
+section{padding:clamp(52px,7vh,92px) 0;border-bottom:1px solid var(--line)}
+.sec-alt{background:linear-gradient(180deg,#f4f9fd,#e5f0fa)}
+.head{max-width:62ch;margin-bottom:clamp(26px,4vh,44px)}
+.head h2{font-size:clamp(1.6rem,3.1vw,2.4rem);margin-bottom:12px}
+.head p{color:var(--muted)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.76rem;font-weight:800;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--blued);margin-bottom:14px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--cyan);border-radius:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;
+  border-radius:11px;text-decoration:none;font-weight:800;font-size:.95rem;line-height:1;
+  background:var(--cyan);color:#04252f;border:1px solid var(--cyan);
+  box-shadow:0 8px 20px rgba(24,192,216,.26)}
+.btn:hover{background:var(--cyand);border-color:var(--cyand)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line2);box-shadow:none}
+.btn.ghost:hover{border-color:var(--blue);color:var(--blued);background:transparent}
 
-/* reveal */
-.rv{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
-.rv.on{opacity:1;transform:none}
-
-/* header */
-header.site{position:sticky;top:0;z-index:60;background:rgba(8,12,18,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:clamp(12px,3vw,44px);padding:12px 0}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;min-width:0}
-.brand img{height:52px;width:auto;max-width:min(320px,44vw);object-fit:contain}
-.brand .name{font-weight:700;font-size:clamp(15px,1.5vw,20px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-nav.main{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,2vw,28px)}
-nav.main a{text-decoration:none;font-size:.94rem;color:var(--muted)}
-nav.main a:hover{color:var(--ink)}
-nav.main a.btn.primary:hover{color:#04101d}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 22px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.95rem;border:1px solid transparent;transition:transform .18s ease,background .18s ease}
-.btn.primary{background:var(--accent);color:#04101d}
-.btn.primary:hover{background:var(--accent-soft)}
-.btn.ghost{border-color:var(--line);color:var(--ink)}
-.btn.ghost:hover{border-color:var(--accent-soft)}
-.navtog{display:none;align-items:center;justify-content:center;width:46px;height:46px;flex:none;background:none;border:1px solid var(--line);border-radius:10px;cursor:pointer;padding:0;color:var(--ink)}
+/* ---- header ---- */
+header.site{position:sticky;top:0;z-index:60;background:rgba(247,251,254,.93);
+  -webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:clamp(12px,2.4vw,32px);padding:11px 0;position:relative}
+.brand{display:flex;align-items:center;gap:11px;flex:0 1 auto;min-width:0;text-decoration:none;
+  background:none;border:0;padding:0}
+.brand img{height:clamp(28px,3.2vw,34px);width:auto;border-radius:7px;
+  box-shadow:0 2px 9px rgba(10,38,66,.18)}
+.brand .bname{font-weight:800;letter-spacing:-.015em;font-size:clamp(15px,1.6vw,19px);
+  color:var(--ink);white-space:nowrap}
+nav.main{margin-left:auto;display:flex;align-items:center;gap:clamp(10px,1.7vw,24px);flex-wrap:wrap}
+nav.main a{color:var(--ink);text-decoration:none;font-size:.95rem;font-weight:600;opacity:.86;white-space:nowrap}
+nav.main a:hover{opacity:1;color:var(--blued)}
+nav.main a.btn{background:var(--cyan)!important;border-color:var(--cyan)!important;
+  color:#04252f!important;-webkit-text-fill-color:#04252f!important;opacity:1;padding:12px 20px}
+nav.main a.btn:hover{background:var(--cyand)!important;border-color:var(--cyand)!important}
+.navtog{display:none;align-items:center;justify-content:center;width:46px;height:46px;flex:none;
+  background:#fff;border:1px solid var(--line2);border-radius:11px;cursor:pointer;padding:0;color:var(--ink)}
 .navtog span{display:block;width:20px;height:2px;background:currentColor;position:relative}
-.navtog span:before,.navtog span:after{content:"";position:absolute;left:0;width:20px;height:2px;background:currentColor}
-.navtog span:before{top:-6px}.navtog span:after{top:6px}
+.navtog span::before,.navtog span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:currentColor}
+.navtog span::before{top:-6px}.navtog span::after{top:6px}
 
-/* hero */
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:linear-gradient(160deg,#0a121c,#070a0f 60%)}
-#heroCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,12,18,.86) 0%,rgba(8,12,18,.52) 55%,rgba(8,12,18,.22) 100%)}
-.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(28px,5vw,64px);align-items:center;padding:clamp(56px,9vh,104px) 0 clamp(96px,16vh,168px)}
-.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--accent-soft);margin-bottom:22px}
-.kicker:before{content:"";width:26px;height:1px;background:var(--accent-soft)}
-h1{font-size:clamp(2.5rem,5.6vw,4.4rem);max-width:14ch}
-h1 u{text-decoration:none;color:var(--accent-soft)}
-.lede{margin-top:20px;max-width:44ch;color:var(--muted);font-size:1.06rem}
-.hero-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.ticks{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px;padding:0;margin:32px 0 0;border-top:1px solid var(--line);padding-top:18px}
-.ticks li{color:var(--muted);font-size:.84rem;display:flex;align-items:center;gap:7px}
-.ticks li:before{content:"";width:5px;height:5px;background:var(--accent);border-radius:50%}
-.art{position:relative;aspect-ratio:4/4.4;border:1px solid var(--line);border-radius:16px;min-height:300px}
-.strip{list-style:none;position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:0;margin:0 auto 0;border-top:1px solid var(--line)}
-.strip li{padding:18px 20px 34px 0;border-right:1px solid var(--line)}
-.strip li:last-child{border-right:0;padding-right:0}
-.strip b{display:block;font-weight:600;font-size:.92rem}
-.strip span{color:var(--muted);font-size:.84rem}
+/* ---- hero ---- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+  background:linear-gradient(160deg,#fbfdff 0%,#eef6fc 44%,#dcebf8 100%)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(100deg,rgba(255,255,255,.74) 0%,rgba(255,255,255,.36) 46%,rgba(255,255,255,0) 78%)}
+.hero .wrap{position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(22px,4vw,54px);
+  align-items:center;perspective:1200px;padding:clamp(34px,6vh,72px) 0 clamp(32px,5vh,62px)}
+@media(max-width:920px){.hero-grid{grid-template-columns:1fr;gap:22px;padding:clamp(28px,5vh,54px) 0}}
+.hero h1{font-size:clamp(2rem,4.1vw,3.2rem);margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--blued)}
+.lede{color:var(--muted);font-size:clamp(1rem,1.4vw,1.15rem);max-width:52ch;margin-bottom:24px}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:24px 0 0}
+.facts li{font-size:.87rem;font-weight:700;color:var(--ink);background:#fff;
+  border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.heroart{width:100%;height:auto;display:block;filter:drop-shadow(0 22px 44px rgba(9,44,76,.16))}
 
-/* sections */
-section{padding:clamp(60px,9vh,104px) 0}
-.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(28px,5vh,52px)}
-.sec-head h2{font-size:clamp(1.8rem,3.4vw,2.7rem)}
-.sec-head p{color:var(--muted);max-width:46ch;font-size:.98rem}
+/* ---- cards ---- */
+.grid{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:960px){.g3{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.g3{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;
+  box-shadow:0 2px 10px rgba(10,38,66,.05)}
+.card h3{font-size:1.08rem;margin:14px 0 8px}
+.card p{color:var(--muted);font-size:.94rem}
+.ic{width:42px;height:42px;color:var(--blue)}
+.ic svg{width:100%;height:100%;display:block}
 
-/* services split */
-.split{display:grid;grid-template-columns:minmax(180px,260px) 1fr;gap:clamp(24px,5vw,64px);align-items:start}
-.index{position:sticky;top:96px;list-style:none;padding:0;margin:0}
-.index li{border-top:1px solid var(--line)}
-.index li:last-child{border-bottom:1px solid var(--line)}
-.index a{display:flex;gap:14px;padding:14px 0;text-decoration:none;color:var(--muted);font-size:.92rem}
-.index a b{font-family:'DM Mono',monospace;color:var(--accent-soft);font-weight:400}
-.index a:hover{color:var(--ink)}
-.panels article{border-top:1px solid var(--line);padding:26px 0}
-.panels article:first-child{border-top:0;padding-top:0}
-.panels h3{font-size:1.35rem;margin-bottom:10px}
-.panels p{color:var(--muted);max-width:56ch}
-.panels .spec{margin-top:14px;color:var(--accent-soft)}
+/* ---- scene cards ---- */
+.scenes{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:860px){.scenes{grid-template-columns:1fr}}
+.scene{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  box-shadow:0 10px 30px rgba(10,38,66,.08);margin:0}
+.scene svg{width:100%;height:auto;display:block}
+.scene .cap{padding:16px 22px 22px}
+.scene .cap h3{font-size:1.06rem;margin-bottom:6px}
+.scene .cap p{color:var(--muted);font-size:.93rem}
 
-/* process */
-.rail-bg{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,48px);position:relative;margin-top:8px}
-.steps:before{content:"";position:absolute;top:19px;left:0;right:0;height:1px;background:var(--line)}
-.step{position:relative;padding-top:52px}
-.step b{position:absolute;top:0;left:0;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--bg);border:1px solid var(--accent);color:var(--accent-soft);font-family:'DM Mono',monospace;font-size:.86rem}
-.step h3{font-size:1.12rem;margin-bottom:8px}
+/* ---- process ---- */
+.steps{counter-reset:s;display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;
+  box-shadow:0 2px 10px rgba(10,38,66,.05)}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-size:.78rem;font-weight:800;
+  letter-spacing:.14em;color:var(--blued);display:block;margin-bottom:12px}
+.step h3{font-size:1.06rem;margin-bottom:8px}
 .step p{color:var(--muted);font-size:.94rem}
 
-/* about */
-.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,64px)}
-.facts{list-style:none;padding:0;margin:0}
-.facts li{border-top:1px solid var(--line);padding:14px 0;font-size:.92rem;color:var(--muted)}
-.facts li b{display:block;color:var(--ink);font-weight:600;font-size:.98rem;margin-bottom:3px}
-.about-grid h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:18px}
-.about-grid p{color:var(--muted);margin-bottom:14px;max-width:60ch}
+/* ---- about ---- */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,52px);align-items:start}
+@media(max-width:880px){.about{grid-template-columns:1fr}}
+.about p{color:var(--muted);margin-bottom:14px}
+.about ul{list-style:none;padding:0;margin:0;background:#fff;border:1px solid var(--line);
+  border-radius:16px;overflow:hidden;box-shadow:0 2px 10px rgba(10,38,66,.05)}
+.about li{padding:14px 18px;border-bottom:1px solid var(--line);color:var(--ink);
+  font-weight:700;font-size:.95rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.about li:last-child{border-bottom:0}
+.about li span{color:var(--muted);font-weight:500}
 
-/* contact */
-.contact{background:linear-gradient(180deg,#0a141f,#080c12);border-top:1px solid var(--line)}
-.contact .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,5vw,64px);align-items:start}
-.contact h2{font-size:clamp(2rem,4.2vw,3.2rem);max-width:18ch}
-.contact p{color:var(--muted);margin-top:16px;max-width:42ch}
-.contact .area{margin-top:22px;color:var(--accent-soft)}
-.sidelinks{display:grid;gap:10px}
-.sidelinks a{border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-decoration:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
-.sidelinks a:hover{border-color:var(--accent-soft)}
-.sidelinks span{color:var(--muted);font-size:.86rem}
+/* ---- contact ---- */
+.contactwrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,52px);align-items:start}
+@media(max-width:820px){.contactwrap{grid-template-columns:1fr}}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.links a{display:inline-flex;align-items:center;gap:9px;padding:12px 18px;border:1px solid var(--line2);
+  border-radius:11px;text-decoration:none;color:var(--ink);font-size:.93rem;font-weight:700;background:#fff}
+.links a:hover{border-color:var(--blue);color:var(--blued)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;
+  box-shadow:0 2px 10px rgba(10,38,66,.05)}
+.panel h3{font-size:1.02rem;margin-bottom:10px}
+.panel p{color:var(--muted);font-size:.94rem}
 
-/* footer */
-footer{padding:52px 0 30px;background:#05080d;border-top:1px solid var(--line);color:var(--muted)}
-.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(24px,4vw,48px);padding-bottom:30px}
-.foot h3{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-family:'DM Mono',monospace;margin-bottom:12px}
-.foot ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:.92rem}
-.foot a{text-decoration:none;color:var(--muted)}
-.foot a:hover{color:var(--ink)}
-.footbottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:18px;font-size:.84rem}
-.footbottom a{text-decoration:none}
-
-@media(max-width:900px){
-  .hero-grid,.about-grid,.contact .wrap{grid-template-columns:1fr}
-  .split{grid-template-columns:1fr}
-  .index{position:static;display:flex;flex-wrap:wrap;gap:0 22px;border-bottom:1px solid var(--line)}
-  .index li{border:0}
-  .steps{grid-template-columns:1fr;gap:26px}
-  .steps:before{display:none}
-  .foot{grid-template-columns:1fr 1fr}
-}
-@media(max-width:820px){
-  .bar{flex-wrap:nowrap}
-  .navtog{display:flex;margin-left:auto}
-  nav.main{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;background:#0b111a;border:1px solid var(--line);border-radius:12px;padding:10px;z-index:70}
+/* ---- footer ---- */
+footer{background:var(--navy);color:#c9dcec;padding:52px 0 30px}
+.foot{display:grid;gap:clamp(22px,3vw,44px);grid-template-columns:1.4fr 1fr 1fr}
+@media(max-width:820px){.foot{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.foot{grid-template-columns:1fr}}
+footer h4{font-size:.78rem;letter-spacing:.12em;color:#8fb4d2;margin:0 0 14px;font-weight:800}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:9px}
+footer a{color:#eaf4fb;text-decoration:none;font-size:.94rem}
+footer a:hover{text-decoration:underline}
+footer p{color:#a9c6de;font-size:.94rem;max-width:36ch}
+.footbottom{margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);
+  display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;color:#a9c6de;font-size:.85rem}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+<style>
+/* __LBRV__ scroll reveal */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.rv{opacity:1!important;transform:none!important;transition:none!important}}
+</style><noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+/* __LBNAV__ mobile navigation */
+@media(max-width:860px){
+  .navtog{display:flex}
+  .brand img{height:24px}
+  .brand .bname{font-size:15px}
+  nav.main{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;
+    align-items:stretch;gap:2px;background:#f7fbfe;border:1px solid var(--line);border-radius:14px;
+    padding:10px;box-shadow:0 26px 60px rgba(9,32,56,.22);z-index:60;margin:0}
   nav.main.open{display:flex}
-  nav.main a{padding:14px;font-size:1rem;border-radius:8px}
-  nav.main a.btn{margin-top:6px;text-align:center}
-  .strip{grid-template-columns:1fr 1fr}
-  .art{order:2;aspect-ratio:16/10;min-height:0}
-  .strip li{padding:14px 14px 22px 0}
-  .strip li:nth-child(2){border-right:0}
+  nav.main a{padding:14px;border-radius:10px;font-size:17px}
+  nav.main a.btn{margin-top:6px;text-align:center;justify-content:center}
 }
-@media(max-width:560px){
-  .foot{grid-template-columns:1fr}
-  .hero-acts .btn{flex:1 1 100%}
-}
-@media(prefers-reduced-motion:reduce){
-  .rv{opacity:1!important;transform:none!important;transition:none!important}
-  html{scroll-behavior:auto}
-}
-</style><noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript></head>
+</style>
+</head>
 <body>
 <header class="site">
   <div class="wrap bar">
-    <a class="brand" href="./" aria-label="Xcel Air">
-      <img src="assets/logo.png" alt="" loading="eager" decoding="async">
-      <span class="name">Xcel Air</span>
+    <a class="brand" href="#top" aria-label="Xcel Air — climate you control, home">
+      <img src="assets/logo.png" alt="Xcel Air" width="836" height="304" decoding="async">
+      <span class="bname">Xcel Air</span>
     </a>
-    <button class="navtog" aria-expanded="false" aria-controls="mainnav" aria-label="Menu"><span></span></button><nav id="mainnav" class="main" aria-label="Main">
+    <nav id="mainnav" class="main" aria-label="Main">
       <a href="#services">Services</a>
-      <a href="#process">Process</a>
+      <a href="#systems">Systems</a>
+      <a href="#process">How we work</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <a class="btn primary" href="#contact">Get a quote</a>
+      <a class="btn" href="#lbq">Get a quote</a>
     </nav>
+    <button class="navtog" type="button" aria-expanded="false" aria-controls="mainnav" aria-label="Menu"><span></span></button>
   </div>
 </header>
 <main>
-  <section class="hero" id="top" aria-label="Air conditioning, Lake Macquarie and Newcastle">
+
+  <!-- LB-3D-HERO -->
+  <section class="rv hero" id="top" aria-label="Air conditioning">
     <canvas id="heroCanvas" aria-hidden="true"></canvas>
     <div class="veil" aria-hidden="true"></div>
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <span class="kicker mono">Air conditioning</span>
-        <h1>Cool air, <u>handled properly.</u></h1>
-        <p class="lede">Installation, repairs and servicing of split systems and ducted units around Lake Macquarie and Newcastle.</p>
-        <div class="hero-acts">
-          <a class="btn primary" href="#contact">Get a quote</a>
-          <a class="btn ghost" href="#services">See what we do</a>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Air conditioning &middot; Lake Macquarie &amp; Newcastle</span>
+          <h1>Split systems &amp; <em>ducted air conditioning</em></h1>
+          <p class="lede">Xcel Air installs, repairs and services air conditioning across Lake Macquarie, Newcastle and the surrounding suburbs &mdash; from a single wall-mounted split head to a full ducted system.</p>
+          <div class="acts">
+            <a class="btn" href="#lbq">Get a quote</a>
+            <a class="btn ghost" href="#systems">See the systems</a>
+          </div>
+          <ul class="facts">
+            <li>Installation</li><li>Repairs</li><li>Servicing</li>
+            <li>Split systems</li><li>Ducted</li><li>Swansea &amp; surrounds</li>
+          </ul>
         </div>
-        <ul class="ticks"><li>Split systems</li><li>Ducted</li><li>Repairs</li><li>Servicing</li><li>Lake Macquarie</li></ul>
+        <div class="hero-art">
+          <svg class="heroart" viewBox="0 0 640 520" role="img" aria-label="Wall-mounted split system head and a ceiling duct run with cool airflow across a room" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="hWall" x1="0" y1="0" x2=".7" y2="1">
+                <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d6e8f6"/>
+              </linearGradient>
+              <linearGradient id="hUnit" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#eef7fd"/><stop offset="1" stop-color="#c6dcee"/>
+              </linearGradient>
+              <linearGradient id="hDuct" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f7fbff"/><stop offset="1" stop-color="#c2daec"/>
+              </linearGradient>
+              <linearGradient id="hAir" x1="0" y1="0" x2="1" y2=".5">
+                <stop offset="0" stop-color="#18c0d8" stop-opacity=".72"/>
+                <stop offset="1" stop-color="#0078c0" stop-opacity="0"/>
+              </linearGradient>
+              <radialGradient id="hGlow" cx=".36" cy=".6" r=".62">
+                <stop offset="0" stop-color="#18c0d8" stop-opacity=".22"/>
+                <stop offset="1" stop-color="#18c0d8" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect x="16" y="26" width="608" height="470" rx="26" fill="url(#hWall)" stroke="#cfe0ee"/>
+            <g stroke="#bcd6ea" stroke-width="1" opacity=".5">
+              <path d="M16 150h608M16 274h608M16 398h608"/>
+              <path d="M170 26v470M324 26v470M478 26v470"/>
+            </g>
+            <path d="M60 132 520 106 520 124 60 150Z" fill="url(#hDuct)" stroke="#a9c9e0" stroke-width="1.4"/>
+            <path d="M60 150 520 124 520 174 60 200Z" fill="#cfe3f2" stroke="#a9c9e0" stroke-width="1.4"/>
+            <g stroke="#8fb6d2" stroke-width="2" opacity=".75">
+              <path d="M120 146v46M180 143v46M240 140v46M300 136v46M360 133v46M420 130v46"/>
+            </g>
+            <ellipse cx="330" cy="392" rx="300" ry="126" fill="url(#hGlow)"/>
+            <rect x="64" y="250" width="330" height="90" rx="17" fill="url(#hUnit)" stroke="#a9c9e0" stroke-width="1.6"/>
+            <rect x="80" y="262" width="298" height="10" rx="5" fill="#ffffff" opacity=".92"/>
+            <rect x="76" y="316" width="306" height="18" rx="7" fill="#0f2b45"/>
+            <g fill="#6f9dbd">
+              <rect x="90" y="320" width="16" height="10" rx="2"/><rect x="120" y="320" width="16" height="10" rx="2"/>
+              <rect x="150" y="320" width="16" height="10" rx="2"/><rect x="180" y="320" width="16" height="10" rx="2"/>
+              <rect x="210" y="320" width="16" height="10" rx="2"/><rect x="240" y="320" width="16" height="10" rx="2"/>
+              <rect x="270" y="320" width="16" height="10" rx="2"/><rect x="300" y="320" width="16" height="10" rx="2"/>
+              <rect x="330" y="320" width="16" height="10" rx="2"/>
+            </g>
+            <rect x="346" y="272" width="3" height="20" rx="1.5" fill="#cfe3f2"/>
+            <circle cx="366" cy="282" r="4" fill="#18c0d8"/>
+            <g fill="none" stroke-linecap="round">
+              <path d="M120 344C220 392 350 404 560 430" stroke="url(#hAir)" stroke-width="16"/>
+              <path d="M140 360C250 414 380 424 590 452" stroke="url(#hAir)" stroke-width="11" opacity=".8"/>
+              <path d="M160 374C270 432 400 442 606 470" stroke="url(#hAir)" stroke-width="7" opacity=".6"/>
+            </g>
+            <g transform="translate(470,196)">
+              <rect x="0" y="0" width="86" height="60" rx="11" fill="#ffffff" stroke="#aac9df" stroke-width="1.5"/>
+              <rect x="10" y="10" width="66" height="25" rx="7" fill="#0f2b45"/>
+              <g stroke="#18c0d8" stroke-width="2.4" stroke-linecap="round" transform="translate(43,22.5)">
+                <path d="M0 -8V8M-6.9 -4 6.9 4M-6.9 4 6.9 -4"/>
+              </g>
+              <circle cx="25" cy="48" r="5" fill="#eaf3fb" stroke="#aac9df"/>
+              <circle cx="61" cy="48" r="5" fill="#eaf3fb" stroke="#aac9df"/>
+            </g>
+            <g fill="#9fdcf0" opacity=".85">
+              <circle cx="452" cy="304" r="5"/><circle cx="500" cy="338" r="3.6"/>
+              <circle cx="548" cy="290" r="4.4"/><circle cx="586" cy="360" r="3"/>
+            </g>
+          </svg>
+        </div>
       </div>
-      <div class="art" id="artFrame" aria-hidden="true"></div>
     </div>
-    <ul class="strip wrap">
-      <li><b>Split systems</b><span>Wall hung and multi head</span></li>
-      <li><b>Ducted</b><span>Zoning and replacement</span></li>
-      <li><b>Servicing</b><span>Filters, coils, test</span></li>
-      <li><b>Repairs</b><span>Cooling, heating, drainage</span></li>
-    </ul>
   </section>
 
-  <section id="services">
+  <section class="rv" id="services">
     <div class="wrap">
-      <div class="sec-head">
-        <h2>What we work on</h2>
-        <p>Air conditioning work for homes and businesses across Lake Macquarie and Newcastle NSW.</p>
+      <div class="head">
+        <span class="eyebrow">What we do</span>
+        <h2>Air conditioning work, start to finish</h2>
+        <p>Installation, repairs and servicing for homes and businesses across Lake Macquarie and Newcastle.</p>
       </div>
-      <div class="split">
-        <ul class="index">
-          <li><a href="#s-install"><b>01</b> Installation</a></li>
-          <li><a href="#s-repairs"><b>02</b> Repairs</a></li>
-          <li><a href="#s-service"><b>03</b> Servicing</a></li>
-          <li><a href="#s-split"><b>04</b> Split systems</a></li>
-          <li><a href="#s-ducted"><b>05</b> Ducted systems</a></li>
-        </ul>
-        <div class="panels">
-          <article id="s-install"><h3>Installation</h3><p>A new split system or ducted air conditioning installed, positioned and commissioned properly.</p><p class="spec mono">New installs, indoor and outdoor units</p></article>
-          <article id="s-repairs"><h3>Repairs</h3><p>Systems that have stopped cooling, heating or draining looked at and fixed.</p><p class="spec mono">Diagnosis first, then the fix</p></article>
-          <article id="s-service"><h3>Servicing</h3><p>Filters cleaned, coils checked and the system tested so it runs efficiently.</p><p class="spec mono">Regular servicing, both seasons</p></article>
-          <article id="s-split"><h3>Split systems</h3><p>Wall mounted and multi head split systems supplied and installed.</p><p class="spec mono">Single room to multi head</p></article>
-          <article id="s-ducted"><h3>Ducted systems</h3><p>Ducted air conditioning looked after, from zoning issues through to full replacement.</p><p class="spec mono">Zoning through to replacement</p></article>
-        </div>
+      <div class="grid g3">
+        <article class="card">
+          <div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="26" height="11" rx="3"/><path d="M7.5 13.5h19"/><path d="M20 24v10M15.5 29.5 20 34l4.5-4.5"/></svg></div>
+          <h3>Installation</h3>
+          <p>A new split system or ducted system positioned, mounted and commissioned properly &mdash; sized for the rooms it has to cool.</p>
+        </article>
+        <article class="card">
+          <div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="5"/><path d="M20 4v4M20 32v4M4 20h4M32 20h4M9 9l3 3M28 28l3 3M31 9l-3 3M12 28l-3 3"/></svg></div>
+          <h3>Repairs</h3>
+          <p>Units that have stopped cooling, blowing warm or leaking water &mdash; diagnosed and repaired, not just re-gassed and hoped for.</p>
+        </article>
+        <article class="card">
+          <div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="28" height="24" rx="3"/><path d="M13 8v24M20 8v24M27 8v24"/></svg></div>
+          <h3>Servicing</h3>
+          <p>Filters cleaned, coils checked, drains cleared and the system run through so it works efficiently season after season.</p>
+        </article>
+        <article class="card">
+          <div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="30" height="10" rx="3"/><path d="M10 18c1 5 3.5 8.5 6 11M18 18c1 5 3.5 8.5 6 11M26 18c1 4 3 7.5 5 9.5"/></svg></div>
+          <h3>Split systems</h3>
+          <p>Wall-mounted and multi-head split systems supplied and installed &mdash; one room, or several off a single outdoor unit.</p>
+        </article>
+        <article class="card">
+          <div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="32" height="8" rx="2"/><path d="M10 15v4M20 15v4M30 15v4"/><circle cx="10" cy="24" r="3.4"/><circle cx="20" cy="24" r="3.4"/><circle cx="30" cy="24" r="3.4"/></svg></div>
+          <h3>Ducted systems</h3>
+          <p>Ducted air conditioning looked after end to end, from airflow and zoning problems through to a full system replacement.</p>
+        </article>
+        <article class="card">
+          <div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5a15 15 0 1 1-10.6 4.4"/><path d="M5 5v5.4h5.4"/><path d="M14 20.5l4.2 4.2 8-9"/></svg></div>
+          <h3>Maintenance</h3>
+          <p>Ongoing servicing to keep the system running through a Lake Macquarie summer and a cold, damp Newcastle winter.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section id="process" class="rail-bg">
+  <section class="rv sec-alt" id="systems">
     <div class="wrap">
-      <div class="sec-head">
-        <h2>How a job runs</h2>
-        <p>From the first call through to a system that runs.</p>
+      <div class="head">
+        <span class="eyebrow">Systems &amp; parts</span>
+        <h2>The gear we work on every week</h2>
+        <p>Indoor heads, ducted runs, outdoor condensers and the filters and coils inside them.</p>
+      </div>
+      <div class="scenes">
+
+        <figure class="scene">
+          <svg viewBox="0 0 420 250" role="img" aria-label="Wall-mounted split system indoor head blowing cool air" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="saUnit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c6dcee"/></linearGradient></defs>
+            <rect width="420" height="250" fill="#eaf4fc"/>
+            <path d="M0 196h420" stroke="#cfe0ee" stroke-width="2"/>
+            <g stroke="#cfe0ee" stroke-width="1"><path d="M0 66h420M0 132h420M120 0v196M280 0v196"/></g>
+            <rect x="46" y="62" width="252" height="66" rx="14" fill="url(#saUnit)" stroke="#a9c9e0" stroke-width="1.5"/>
+            <rect x="58" y="74" width="228" height="9" rx="4.5" fill="#fff" opacity=".92"/>
+            <rect x="54" y="110" width="236" height="14" rx="6" fill="#0f2b45"/>
+            <g fill="#6f9dbd"><rect x="66" y="113" width="14" height="8" rx="2"/><rect x="92" y="113" width="14" height="8" rx="2"/><rect x="118" y="113" width="14" height="8" rx="2"/><rect x="144" y="113" width="14" height="8" rx="2"/><rect x="170" y="113" width="14" height="8" rx="2"/><rect x="196" y="113" width="14" height="8" rx="2"/><rect x="222" y="113" width="14" height="8" rx="2"/><rect x="248" y="113" width="14" height="8" rx="2"/></g>
+            <circle cx="278" cy="80" r="3.4" fill="#18c0d8"/>
+            <g fill="none" stroke-linecap="round">
+              <path d="M108 134C160 176 232 186 336 198" stroke="#18c0d8" stroke-width="12" opacity=".5"/>
+              <path d="M120 146C182 196 262 204 374 216" stroke="#0078c0" stroke-width="7" opacity=".32"/>
+            </g>
+            <g fill="#9fdcf0" opacity=".85"><circle cx="352" cy="76" r="4"/><circle cx="386" cy="104" r="3"/></g>
+          </svg>
+          <figcaption class="cap"><h3>Split system indoor heads</h3><p>Wall-mounted and multi-head units: mounted straight and level, condensate drained away properly, airflow pointed where you actually sit.</p></figcaption>
+        </figure>
+
+        <figure class="scene">
+          <svg viewBox="0 0 420 250" role="img" aria-label="Ducted air conditioning run with ceiling outlets" xmlns="http://www.w3.org/2000/svg">
+            <rect width="420" height="250" fill="#eaf4fc"/>
+            <path d="M0 40h420" stroke="#cfe0ee" stroke-width="2"/>
+            <rect x="40" y="56" width="340" height="36" rx="11" fill="#d7e8f6" stroke="#a9c9e0" stroke-width="1.5"/>
+            <rect x="52" y="64" width="316" height="9" rx="4.5" fill="#f2f9fe"/>
+            <g stroke="#8fb6d2" stroke-width="2" opacity=".7"><path d="M110 56v36M210 56v36M310 56v36"/></g>
+            <g stroke="#bcd6ea" stroke-width="5"><path d="M110 92v30M210 92v30M310 92v30"/></g>
+            <g fill="#ffffff" stroke="#aac9df" stroke-width="1.5">
+              <rect x="80" y="122" width="60" height="20" rx="10"/>
+              <rect x="180" y="122" width="60" height="20" rx="10"/>
+              <rect x="280" y="122" width="60" height="20" rx="10"/>
+            </g>
+            <g stroke="#9dc3de" stroke-width="1.6"><path d="M90 127h40M90 132h40M90 137h40M190 127h40M190 132h40M190 137h40M290 127h40M290 132h40M290 137h40"/></g>
+            <g fill="none" stroke="#18c0d8" stroke-width="3" stroke-linecap="round" opacity=".65">
+              <path d="M110 148v34M210 148v34M310 148v34"/>
+              <path d="M104 176l6 8 6-8M204 176l6 8 6-8M304 176l6 8 6-8"/>
+            </g>
+            <g fill="none" stroke="#0078c0" stroke-width="2" stroke-linecap="round" opacity=".35">
+              <path d="M110 196c22 0 34-10 34-22M210 196c22 0 34-10 34-22M310 196c22 0 34-10 34-22"/>
+            </g>
+          </svg>
+          <figcaption class="cap"><h3>Ducted runs &amp; outlets</h3><p>Ducting, ceiling outlets and zoning. We track down the runs that are starved of air and the rooms that never get cool.</p></figcaption>
+        </figure>
+
+        <figure class="scene">
+          <svg viewBox="0 0 420 250" role="img" aria-label="Outdoor condenser unit with a fan discharging warm air" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="scCond" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4fbff"/><stop offset="1" stop-color="#cfe3f2"/></linearGradient></defs>
+            <rect width="420" height="250" fill="#eaf4fc"/>
+            <rect width="420" height="58" fill="#dcecf8"/>
+            <path d="M0 58h420" stroke="#cfe0ee" stroke-width="2"/>
+            <path d="M0 200h420" stroke="#cfe0ee" stroke-width="2"/>
+            <path d="M232 92V58h-24" stroke="#b9d5ea" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <rect x="118" y="92" width="204" height="108" rx="13" fill="url(#scCond)" stroke="#a9c9e0" stroke-width="1.5"/>
+            <circle cx="218" cy="146" r="41" fill="#e2eef8" stroke="#a9c9e0" stroke-width="1.5"/>
+            <g stroke="#9dc3de" stroke-width="6" stroke-linecap="round">
+              <path d="M218 146V114M218 146l27-16M218 146l27 16M218 146l-27 16M218 146l-27-16"/>
+            </g>
+            <circle cx="218" cy="146" r="8" fill="#0f2b45"/>
+            <g stroke="#a9c9e0" stroke-width="2"><path d="M284 108h28M284 118h28M284 128h28M284 138h28M284 148h28M284 158h28M284 168h28M284 178h28"/></g>
+            <rect x="146" y="200" width="20" height="11" rx="3" fill="#9dc3de"/>
+            <rect x="274" y="200" width="20" height="11" rx="3" fill="#9dc3de"/>
+            <g fill="none" stroke="#0078c0" stroke-width="3" stroke-linecap="round" opacity=".45">
+              <path d="M262 112c30-10 56-8 82-16M268 146c32 2 58 0 84-4M262 180c30 10 56 8 82 16"/>
+            </g>
+            <g fill="none" stroke="#18c0d8" stroke-width="4" stroke-linecap="round" opacity=".5">
+              <path d="M360 96l12-6M366 142l14-2M360 190l12 6"/>
+            </g>
+          </svg>
+          <figcaption class="cap"><h3>Outdoor condensers</h3><p>Outdoor units cleared of rubbish and re-positioned for airflow, with the coils cleaned so the system is not fighting itself.</p></figcaption>
+        </figure>
+
+        <figure class="scene">
+          <svg viewBox="0 0 420 250" role="img" aria-label="Cutaway of an air conditioning coil block and filter panel with air flowing through" xmlns="http://www.w3.org/2000/svg">
+            <rect width="420" height="250" fill="#eaf4fc"/>
+            <rect x="30" y="46" width="152" height="158" rx="10" fill="#dbeaf6" stroke="#a9c9e0" stroke-width="1.5"/>
+            <g stroke="#8fb6d2" stroke-width="2" opacity=".8"><path d="M42 46v158M56 46v158M70 46v158M84 46v158M98 46v158M112 46v158M126 46v158M140 46v158M154 46v158M168 46v158"/></g>
+            <rect x="228" y="46" width="152" height="158" rx="10" fill="#f4faff" stroke="#a9c9e0" stroke-width="1.5"/>
+            <g stroke="#b9d5ea" stroke-width="1.5" opacity=".9">
+              <path d="M228 78l152-32M228 110l152-32M228 142l152-32M228 174l152-32M228 204l152-30"/>
+              <path d="M228 78l152 32M228 110l152 32M228 142l152 32M228 174l152 32M228 204l152 30"/>
+            </g>
+            <rect x="228" y="46" width="152" height="158" rx="10" fill="none" stroke="#a9c9e0" stroke-width="3"/>
+            <g fill="none" stroke="#18c0d8" stroke-width="4" stroke-linecap="round" opacity=".75">
+              <path d="M182 90h34M182 125h34M182 160h34"/>
+              <path d="M210 84l8 6-8 6M210 119l8 6-8 6M210 154l8 6-8 6"/>
+            </g>
+            <g fill="#9fdcf0">
+              <circle cx="52" cy="58" r="3.4"/><circle cx="96" cy="66" r="2.6"/><circle cx="140" cy="56" r="3"/>
+              <circle cx="66" cy="192" r="3"/><circle cx="156" cy="196" r="2.6"/>
+            </g>
+            <g fill="#0a5c93"><circle cx="264" cy="196" r="3"/><circle cx="300" cy="196" r="3"/><circle cx="336" cy="196" r="3"/></g>
+          </svg>
+          <figcaption class="cap"><h3>Filters &amp; coils</h3><p>The part that decides whether a system cools or just runs: washable filters cleared and coils cleaned off the dust and grime.</p></figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="rv" id="process">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">How we work</span>
+        <h2>From your message to cold air</h2>
+        <p>A short, straight job &mdash; no runaround.</p>
       </div>
       <div class="steps">
-        <div class="step"><b>01</b><h3>Tell us the problem</h3><p>What the system is doing, or what you want installed, and where it would sit.</p></div>
-        <div class="step"><b>02</b><h3>We have a look</h3><p>The unit and the space assessed so the fix or the install is the right one.</p></div>
-        <div class="step"><b>03</b><h3>Fixed and running</h3><p>Work done, system tested, and you are shown how it runs before we leave.</p></div>
+        <article class="step"><h3>Tell us what&rsquo;s happening</h3><p>The unit, the room, what it is doing (or not doing), and roughly what you want. A photo of the indoor and outdoor unit helps.</p></article>
+        <article class="step"><h3>We size up the job</h3><p>Whether it is a repair, a service or a new install, we work out what the space actually needs before anything is ordered or fitted.</p></article>
+        <article class="step"><h3>Fitted, tested, explained</h3><p>The work is done, the system is run up and tested, and you are shown what to keep an eye on so it keeps working.</p></article>
       </div>
     </div>
   </section>
 
-  <section id="about">
-    <div class="wrap about-grid">
-      <ul class="facts">
-        <li><b>Installation and repairs</b>Split systems and ducted units</li>
-        <li><b>Servicing</b>Cleaned, checked and tested</li>
-        <li><b>Area</b>Lake Macquarie, Newcastle and surrounds</li>
-        <li><b>Homes and businesses</b>Residential and commercial work</li>
+  <section class="rv sec-alt" id="about">
+    <div class="wrap about">
+      <div>
+        <span class="eyebrow">About Xcel Air</span>
+        <h2>Local air conditioning, done properly</h2>
+        <p>Xcel Air handles air conditioning installation, repairs and servicing around Swansea, Lake Macquarie and Newcastle.</p>
+        <p>That covers both main families of system: wall-mounted and multi-head split systems, and full ducted installations. New installs, systems that have stopped performing, and the regular servicing that keeps them efficient.</p>
+        <p>If you are not sure whether the problem is the unit, the drainage or the setting, that is fine &mdash; send through what it is doing and we will work it out from there.</p>
+      </div>
+      <ul>
+        <li>Installation <span>split systems &amp; ducted</span></li>
+        <li>Repairs <span>cooling, heating, drainage</span></li>
+        <li>Servicing <span>filters, coils, testing</span></li>
+        <li>Service area <span>Lake Macquarie &amp; Newcastle</span></li>
       </ul>
+    </div>
+  </section>
+
+  <section class="rv" id="contact">
+    <div class="wrap contactwrap">
       <div>
-        <h2>About Xcel Air</h2>
-        <p>Xcel Air handles air conditioning installation, repairs and servicing around Lake Macquarie and Newcastle.</p>
-        <p>That covers split systems and ducted units: new installations, systems that have stopped performing, and the regular servicing that keeps them efficient.</p>
+        <span class="eyebrow">Contact</span>
+        <h2>Send us the details</h2>
+        <p class="lede">Tell us what you need and roughly the size of the job and we will come back to you with a price. The quickest way to reach Xcel Air is through the quote form below or on Facebook.</p>
+        <div class="links">
+          <a href="https://www.facebook.com/share/1JGLhqnHEy/" rel="noopener noreferrer" target="_blank">Message Xcel Air on Facebook</a>
+          <a href="#lbq">Request a quote</a>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Where we work</h3>
+        <p>Swansea, Lake Macquarie and Newcastle NSW, and the suburbs in between &mdash; from Belmont and Warners Bay through to Charlestown, Cardiff and the beaches.</p>
+        <p style="margin-top:12px">Not sure if you are in the area? Ask anyway in the quote form and we will let you know.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <div class="wrap">
-      <div>
-        <h2>Tell us what the system is doing.</h2>
-        <p>Send through the job details and we will come back with a price. Size, location and the make of the unit all help.</p>
-        <p class="area mono">Lake Macquarie and Newcastle NSW</p>
-      </div>
-      <div class="sidelinks">
-        <a href="#lbq"><b>Send a quote request</b><span>Form</span></a>
-        <a href="https://www.facebook.com/share/1JGLhqnHEy/" target="_blank" rel="noopener"><b>Xcel Air on Facebook</b><span>Message</span></a>
-      </div>
-    </div>
-  </section>
 </main>
 <footer>
   <div class="wrap">
     <div class="foot">
-      <div>
-        <h3>Xcel Air</h3>
-        <p style="max-width:32ch">Air conditioning installation, repairs and servicing across Lake Macquarie and Newcastle NSW.</p>
-      </div>
-      <div><h3>Services</h3><ul><li><a href="#s-install">Installation</a></li><li><a href="#s-repairs">Repairs</a></li><li><a href="#s-service">Servicing</a></li><li><a href="#s-ducted">Ducted systems</a></li></ul></div>
-      <div><h3>Contact</h3><ul><li><a href="#lbq">Quote request form</a></li><li><a href="https://www.facebook.com/share/1JGLhqnHEy/" target="_blank" rel="noopener">Facebook</a></li><li>Lake Macquarie NSW</li></ul></div>
+      <div><h4>XCEL AIR</h4><p>Air conditioning installation, repairs and servicing across Lake Macquarie &amp; Newcastle NSW.</p></div>
+      <div><h4>SERVICES</h4><ul><li><a href="#services">Installation</a></li><li><a href="#services">Repairs</a></li><li><a href="#services">Servicing</a></li><li><a href="#systems">Split systems &amp; ducted</a></li></ul></div>
+      <div><h4>CONTACT</h4><ul><li><a href="#lbq">Request a quote</a></li><li><a href="https://www.facebook.com/share/1JGLhqnHEy/" rel="noopener noreferrer" target="_blank">Xcel Air on Facebook</a></li></ul></div>
     </div>
     <div class="footbottom">
       <span>&copy; <span id="yr">2026</span> Xcel Air. All rights reserved.</span>
-      <span><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span>
+      <span>Lake Macquarie &amp; Newcastle NSW</span>
     </div>
   </div>
-<section id="lbq" class="rv" aria-labelledby="lbq-h">
+<section id="lbq" class="rv v1" aria-labelledby="lbq-h">
   <style>
 #lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#c4fb24))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,var(--text-muted,#5b6b7a));--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
 #lbq *{box-sizing:border-box}
@@ -348,7 +572,7 @@ footer{padding:52px 0 30px;background:#05080d;border-top:1px solid var(--line);c
       if (d.website) return;  // honeypot — silently accept bots
       if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
         st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
-        st.style.color = '#ff9d8a';
+        st.style.color = '#b3261e';
         return;
       }
       btn.disabled = true;
@@ -372,14 +596,14 @@ footer{padding:52px 0 30px;background:#05080d;border-top:1px solid var(--line);c
           if (x && x.success) {
             f.reset();
             st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
-            st.style.color = 'var(--lbq-accent)';
+            st.style.color = '#0a5c93';
           } else {
             throw new Error((x && x.error) || 'Could not send');
           }
         })
         .catch(function(err){
-          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
-          st.style.color = '#ff9d8a';
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again.';
+          st.style.color = '#b3261e';
         })
         .finally(function(){ btn.disabled = false; });
       });
@@ -391,100 +615,82 @@ footer{padding:52px 0 30px;background:#05080d;border-top:1px solid var(--line);c
 </script>
 </section>
 </footer>
+
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+<script>
+/* __LBHERO3D__ cool-air hero canvas */
 (function(){
-  var c=document.getElementById('heroCanvas'); if(!c) return;
-  var art=document.getElementById('artFrame');
-  var ctx=c.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2), w=0,h=0,raf=null,t0=performance.now();
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches, visible=true, watch=null;
-  function size(){var r=c.getBoundingClientRect(); w=Math.max(320,r.width|0); h=Math.max(320,r.height|0);
-    c.width=Math.floor(w*dpr); c.height=Math.floor(h*dpr); ctx.setTransform(dpr,0,0,dpr,0,0);}
-  function box(){
-    if(!art) return null;
-    var cr=c.getBoundingClientRect(), ar=art.getBoundingClientRect();
-    if(ar.width<40) return null;
-    return {x:ar.left-cr.left, y:ar.top-cr.top, w:ar.width, h:ar.height};
+  var c = document.getElementById('heroCanvas'); if(!c) return;
+  var ctx = c.getContext('2d');
+  var dpr = Math.min(window.devicePixelRatio || 1, 2), w = 0, h = 0, t = 0, raf = null;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){
+    var r = c.getBoundingClientRect();
+    w = Math.max(320, r.width|0); h = Math.max(320, r.height|0);
+    c.width = Math.floor(w*dpr); c.height = Math.floor(h*dpr); ctx.setTransform(dpr,0,0,dpr,0,0);
   }
-  function frame(now){
-    var t=(now-t0)/1000; if(!isFinite(t)) t=0;
-    var g=ctx.createLinearGradient(0,0,w*.75,h);
-    g.addColorStop(0,'#0a1420'); g.addColorStop(.6,'#080e16'); g.addColorStop(1,'#05080d');
-    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
-    var b=box();
-    if(b){
-      ctx.save();
-      ctx.beginPath(); if(ctx.roundRect) ctx.roundRect(b.x,b.y,b.w,b.h,16); else ctx.rect(b.x,b.y,b.w,b.h);
-      ctx.clip();
-      var wall=ctx.createLinearGradient(b.x,b.y,b.x+b.w,b.y+b.h);
-      wall.addColorStop(0,'#12202f'); wall.addColorStop(.5,'#0c1723'); wall.addColorStop(1,'#080f18');
-      ctx.fillStyle=wall; ctx.fillRect(b.x,b.y,b.w,b.h);
-      ctx.fillStyle='rgba(120,190,255,.06)'; ctx.fillRect(b.x,b.y,b.w,b.h*.22);
-      var ux=b.x+b.w*.13, uy=b.y+b.h*.17, uw=b.w*.52, uh=Math.max(34,b.h*.10);
-      var halo=ctx.createRadialGradient(ux+uw*.5,uy+uh*.7,6,ux+uw*.5,uy+uh*.7,uw*.95);
-      halo.addColorStop(0,'rgba(95,180,255,.34)'); halo.addColorStop(1,'rgba(95,180,255,0)');
-      ctx.fillStyle=halo; ctx.fillRect(b.x,b.y,b.w,b.h);
-      ctx.save(); ctx.shadowColor='rgba(3,7,12,.9)'; ctx.shadowBlur=26; ctx.shadowOffsetY=12;
-      ctx.fillStyle='rgba(250,253,255,1)';
-      ctx.beginPath(); if(ctx.roundRect) ctx.roundRect(ux,uy,uw,uh,7); else ctx.rect(ux,uy,uw,uh); ctx.fill();
-      ctx.restore();
-      ctx.fillStyle='rgba(18,30,45,.8)';
-      for(var l=0; l<6; l++) ctx.fillRect(ux+uw*.07, uy+uh*.58+l*(uh*.075), uw*.86, Math.max(1.6,uh*.045));
-      ctx.fillStyle='rgba(95,180,255,1)'; ctx.beginPath(); ctx.arc(ux+uw*.93, uy+uh*.22, Math.max(2,uh*.07),0,7); ctx.fill();
-      for(var i=0;i<8;i++){
-        var sx=ux+uw*(.1+i*.1), ph=t*.55+i*.83, amp=10+i*2.6;
-        ctx.beginPath(); ctx.lineWidth=1.6+(i%3)*.7;
-        ctx.strokeStyle='rgba(150,212,255,'+(0.40-i*0.03).toFixed(3)+')';
-        for(var yy=uy+uh; yy<b.y+b.h-6; yy+=8){
-          var p=(yy-(uy+uh))/(b.h*.8), off=Math.sin(p*4.4+i*.8+ph)*amp*p;
-          if(yy===uy+uh) ctx.moveTo(sx+off,yy); else ctx.lineTo(sx+off,yy);
-        }
-        ctx.stroke();
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    var g = ctx.createLinearGradient(0,0,w,h);
+    g.addColorStop(0,'rgba(255,255,255,.55)');
+    g.addColorStop(.5,'rgba(226,240,250,.30)');
+    g.addColorStop(1,'rgba(196,226,245,.52)');
+    ctx.fillStyle = g; ctx.fillRect(0,0,w,h);
+    for (var i=0;i<5;i++){
+      var y = h*(0.22 + i*0.145);
+      ctx.beginPath();
+      for (var x=0;x<=w;x+=16){
+        var off = Math.sin((x/w)*3.0 + i*0.8 + t)*(9 + i*3.4);
+        if (x===0) ctx.moveTo(x, y+off); else ctx.lineTo(x, y+off);
       }
-      for(var m=0;m<260;m++){
-        var mx=(m*79.3)%b.w, my=(m*53.7+b.h*.35)%b.h;
-        my += Math.sin(t*.4+m)*5;
-        ctx.fillStyle='rgba(170,220,255,.18)'; ctx.fillRect(b.x+mx,b.y+my,1.7,1.7);
-      }
-      ctx.restore();
-      ctx.strokeStyle='rgba(234,242,251,.16)'; ctx.lineWidth=1;
-      ctx.beginPath(); if(ctx.roundRect) ctx.roundRect(b.x+.5,b.y+.5,b.w-1,b.h-1,16); else ctx.rect(b.x,b.y,b.w,b.h); ctx.stroke();
+      ctx.strokeStyle = 'rgba(24,192,216,' + (0.12 - i*0.016).toFixed(3) + ')';
+      ctx.lineWidth = 2 + i*1.7; ctx.lineCap = 'round'; ctx.stroke();
     }
-    if(visible && !reduce) raf=requestAnimationFrame(frame);
+    for (var m=0;m<80;m++){
+      var bx = (m*137.51) % w;
+      var by0 = (m*79.31) % h;
+      var yy = (((by0 - (t*16) - m*1.7) % h) + h) % h;
+      var xx = bx + Math.sin(t*0.6 + m)*15;
+      var r = 1 + (m%3)*0.7;
+      ctx.beginPath(); ctx.arc(xx, yy, r, 0, 6.2832);
+      ctx.fillStyle = 'rgba(255,255,255,' + (0.30 + (m%4)*0.11).toFixed(2) + ')';
+      ctx.fill();
+    }
   }
-  function start(){ size(); raf=requestAnimationFrame(frame); clearTimeout(watch);
-    watch=setTimeout(function(){ if(visible&&!reduce) raf=requestAnimationFrame(frame); },1200); }
-  start();
-  window.addEventListener('resize', function(){ size(); raf=requestAnimationFrame(frame); }, {passive:true});
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(en){ visible=en[0].isIntersecting;
-      if(visible&&!reduce){ cancelAnimationFrame(raf); raf=requestAnimationFrame(frame); } },{threshold:.05}).observe(c);
-  }
-  window.addEventListener('pagehide', function(){ cancelAnimationFrame(raf); });
+  function loop(){ t += 0.012; draw(); raf = requestAnimationFrame(loop); }
+  size(); draw(); if(!reduce){ loop(); }
+  window.addEventListener('resize', function(){ size(); draw(); }, {passive:true});
+  window.addEventListener('pagehide', function(){ if(raf) cancelAnimationFrame(raf); });
 })();
 </script>
 <script>
-/* reveal engine: observer + safety net */
+/* __LBRV__ reveal engine: observer + 1100ms safety net so nothing stays hidden */
 (function(){
-  var els=[].slice.call(document.querySelectorAll('.rv'));
-  function all(){ els.forEach(function(e){ e.classList.add('on'); }); }
-  if(!('IntersectionObserver' in window)){ all(); return; }
-  var io=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } }); },{rootMargin:'0px 0px -6% 0px',threshold:.05});
+  var els = [].slice.call(document.querySelectorAll('.rv'));
+  function showAll(){ els.forEach(function(e){ e.classList.add('on'); }); }
+  if(!('IntersectionObserver' in window)){ showAll(); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('on'); io.unobserve(en.target); } });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.06});
   els.forEach(function(e){ io.observe(e); });
-  setTimeout(all,1100);
+  setTimeout(showAll, 1100);
+  window.addEventListener('pagehide', function(){ try{ io.disconnect(); }catch(e){} });
 })();
 </script>
 <script>
-/* nav */
+/* __LBNAV__ */
 (function(){
   var tog=document.querySelector('.navtog'), nav=document.querySelector('nav.main');
   if(!tog||!nav) return;
-  function set(o){ nav.classList.toggle('open',o); tog.setAttribute('aria-expanded',o?'true':'false'); }
+  function set(open){ nav.classList.toggle('open',open); tog.setAttribute('aria-expanded',open?'true':'false'); }
   set(false);
   tog.addEventListener('click',function(e){ e.preventDefault(); set(!nav.classList.contains('open')); });
   nav.addEventListener('click',function(e){ if(e.target.tagName==='A') set(false); });
-  window.addEventListener('resize',function(){ if(window.innerWidth>820) set(false); },{passive:true});
+  window.addEventListener('resize',function(){ if(window.innerWidth>860) set(false); },{passive:true});
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
 })();
 </script>
-</body></html>
+</body>
+</html>
