@@ -63,7 +63,7 @@ p{margin:0}
 @media(max-width:560px){.brand img{height:36px}.phone{display:none}}
 
 /* ---------- hero ---------- */
-.hero{position:relative;min-height:clamp(540px,86svh,820px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;background:var(--deep2)}
+.hero{position:relative;min-height:clamp(560px,88svh,840px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;background:var(--deep2)}
 .hero-bg{position:absolute;inset:0;z-index:-3}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 52%;filter:saturate(1.08) contrast(1.05) brightness(1.0)}
 .hero-scrim{position:absolute;inset:0;z-index:-2;
@@ -71,6 +71,12 @@ p{margin:0}
 .hero-grid{position:absolute;inset:0;z-index:-1;opacity:.4;pointer-events:none;
   background-image:repeating-linear-gradient(to right,rgba(146,160,236,.14) 0 1px,transparent 1px 84px);
   -webkit-mask-image:linear-gradient(to top,#000,transparent 74%);mask-image:linear-gradient(to top,#000,transparent 74%)}
+.hero-colours{display:flex;align-items:center;gap:7px;margin-top:26px;flex-wrap:wrap}
+.hero-colours .hc{width:40px;height:40px;border-radius:3px;border:1px solid rgba(255,255,255,.5);box-shadow:0 8px 20px -14px rgba(0,0,0,.9)}
+.hero-colours .c1{background:#3c3f3d}.hero-colours .c2{background:#4b4f55}.hero-colours .c3{background:#5c5c4a}
+.hero-colours .c4{background:#8b8f8a}.hero-colours .c5{background:#c8bda7}.hero-colours .c6{background:#d6d2c4}
+.hero-colours em{font-family:var(--mono);font-style:normal;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#e6eaf8;text-shadow:0 1px 10px rgba(0,0,0,.85)}
+@media(max-width:520px){.hero-colours{display:none}}
 .hero-3d{position:absolute;inset:80px 0 auto;height:56%;z-index:-1;perspective:880px;perspective-origin:62% 42%;pointer-events:none;overflow:hidden}
 .hero-3d .plane{position:absolute;left:-10%;right:-10%;bottom:-20%;height:74%;transform-origin:50% 100%;transform:rotateX(66deg);
   background-image:repeating-linear-gradient(to right,rgba(146,160,236,.2) 0 2px,transparent 2px 52px),repeating-linear-gradient(to bottom,rgba(146,160,236,.13) 0 2px,transparent 2px 52px);
@@ -223,6 +229,10 @@ footer{background:#0b0d1c;color:var(--paper-ink);padding:clamp(44px,6vw,64px) 0 
         <a class="btn btn-primary" href="#quote">Get a free quote</a>
         <a class="btn btn-ghost" href="tel:+61422400813">Call 0422 400 813</a>
         <p class="note">Quoted firm before any post goes in the ground.</p>
+      </div>
+      <div class="hero-colours" aria-hidden="true">
+        <span class="hc c1"></span><span class="hc c2"></span><span class="hc c3"></span><span class="hc c4"></span><span class="hc c5"></span><span class="hc c6"></span>
+        <em>Colorbond colours &mdash; Monument to Surfmist</em>
       </div>
       <div class="hero-spec">
         <p>Set out<strong>Straight and true</strong></p>
