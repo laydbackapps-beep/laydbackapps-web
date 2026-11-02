@@ -1,200 +1,384 @@
 <!DOCTYPE html>
-
 <html lang="en-AU">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Keller's Rendering &amp; Venetian Plastering — Yarrawonga VIC</title>
-<meta content="Rendering &amp; Venetian plastering — Keller's Rendering &amp; Venetian Plastering, Yarrawonga VIC." name="description"/>
-<link href="favicon-32.png" rel="icon" sizes="32x32"/>
-<meta content="#0b0b0c" name="theme-color"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keller's Rendering &amp; Venetian Plastering — Yarrawonga &amp; the Border</title>
+<meta name="description" content="Keller's Rendering &amp; Venetian Plastering applies venetian plaster, render and texture coats across Yarrawonga, Cobram, Corowa, Benalla and Wangaratta.">
+<meta name="theme-color" content="#0c0d0e">
+<meta property="og:title" content="Keller's Rendering &amp; Venetian Plastering">
+<meta property="og:description" content="Venetian plaster, rendering and texture coats across the border.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="icon" href="assets/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-
-
 :root{
-  --lb-name:#ffffff; --lb-acc:#e4e1db; --lb-subc:rgba(255,255,255,.72);
-  --ink:#ffffff; --muted:rgba(255,255,255,.70); --line:rgba(255,255,255,.14); --panel:rgba(255,255,255,.045);
-  --bg:#0b0b0c; --bg2:#141415; --accent:#e4e1db;
+  --bg:#0c0d0e; --panel:#141618; --panel2:#1a1d20; --line:#2a2e32; --line2:#3a4046;
+  --fg:#f2f3f4; --dim:#a6adb3; --mute:#818a91;
+  --acc:#b39a72; --acc-soft:#c9b89c; --hero-acc:#d8c3a1; --acc-text:#0c0d0e;
+  --disp:'Cormorant Garamond',Georgia,serif; --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4.4vw,60px);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:system-ui,-apple-system,"Segoe UI",Archivo,"Helvetica Neue",Arial,sans-serif;
-  line-height:1.36;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.38;margin:0}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-family:var(--disp);font-weight:800;letter-spacing:-.02em;line-height:1.03}
 p{margin:0}
-.container{width:min(1140px,92vw);margin-inline:auto}
-header.site{position:sticky;top:0;z-index:60;background:rgba(11,11,12,.94);border-bottom:1px solid var(--line)}
-/* A header must never be hidden by a reveal/scroll state. */
-header.site{opacity:1!important;visibility:visible!important;transform:none!important}
-.bar{display:flex;align-items:center;gap:clamp(14px,3vw,48px);padding:12px 0}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:0 1 auto;min-width:0}
-.brand img{height:56px;width:auto;max-width:min(160px,22vw);object-fit:contain;background:transparent;border-radius:50%;padding:0;box-shadow:0 0 0 1px rgba(255,255,255,.16)}
-.brand .name{font-weight:800;letter-spacing:-.01em;font-size:clamp(13px,1.35vw,18px);color:#ffffff;line-height:1.18;max-width:min(330px,34vw);white-space:normal}
-.brand .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-nav.main{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,2vw,28px);flex-wrap:wrap}
-nav.main a{color:#ffffff;text-decoration:none;font-size:0.95rem;opacity:.86;white-space:nowrap}
-nav.main a:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;
-  text-decoration:none;font-weight:700;font-size:0.95rem;background:var(--accent);color:#0b0b0c;border:1px solid var(--accent)}
-nav.main a.btn,header .btn{background:var(--accent)!important;color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important}
-.btn.ghost{background:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff!important;
-  border:1px solid rgba(255,255,255,.5)!important}
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#101012}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.14)}
-.hero .inner{position:relative;z-index:3;padding:clamp(40px,6.5vh,72px) 32px clamp(36px,5.5vh,60px);max-width:min(780px,92vw)}
-.kicker{display:inline-block;font-size:0.82rem;font-weight:700;letter-spacing:0.05em;color:#d6d8db;margin-bottom:14px}
-.hero h1{font-size:clamp(2.3rem,4.6vw,3.7rem);margin-bottom:14px}
-.hero h1 em{font-style:normal;color:#cfd2d6}
-.hero .lede{color:var(--muted);font-size:clamp(1rem,1.5vw,1.14rem);max-width:54ch;margin-bottom:22px}
-.hero .acts{display:flex;flex-wrap:wrap;gap:14px}
-.hero .facts{display:flex;flex-wrap:wrap;gap:9px 24px;list-style:none;padding:0;margin:20px 0 0;color:rgba(255,255,255,.82);font-size:0.95rem}
-.hero .facts li::before{content:"";display:inline-block;width:6px;height:6px;margin-right:9px;background:var(--accent);vertical-align:middle;border-radius:50%}
-section{padding:32px 32px;border-bottom:1px solid var(--line)}
-section.alt{background:var(--bg2)}
-.head{max-width:60ch;margin-bottom:clamp(26px,4vh,44px)}
-.head h2{font-size:clamp(1.55rem,3vw,2.3rem);margin-bottom:10px}
-.head p{color:var(--muted)}
-.grid{display:grid;gap:18px}
-.g3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:820px){
-  img.lb-word,img.word,img.brand__word{display:none!important}
-  img.lb-big.lb-big,img.lb-big.lb-big.lb-mark,img.lb-big.lb-big.lb-logo-unlock,img.lb-big.lb-big.lb-logomark{height:clamp(52px,13vw,68px)!important;max-width:72vw!important}
-  header>div,nav>div,[class*=hdr]>div,[class*=bar]>div,[class*=strip]>div{flex-wrap:wrap!important}
-  nav,[class*=nav-links],.nav-links,.links{flex-wrap:wrap!important;gap:10px!important}
-  header,nav,[class*=hdr],[class*=bar],[class*=strip]{max-width:100vw!important;overflow-x:clip!important}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace}
+.wrap{max-width:1360px;margin:0 auto;padding-inline:var(--gut)}
+.eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--dim);display:inline-flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:30px;height:2px;background:var(--acc);flex:none}
+.skip{position:absolute;left:-9999px}
+
+/* ---- nav ---- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:60;transition:background .35s,border-color .35s}
+.nav.solid{background:rgba(10,11,12,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:clamp(12px,2.4vw,34px);padding-block:15px}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand-t{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;line-height:1.12}
+.brand-t small{display:block;font-family:"JetBrains Mono",monospace;font-weight:400;font-size:9.5px;letter-spacing:.2em;color:var(--dim);margin-top:3px}
+.nav-links{display:flex;gap:clamp(12px,1.7vw,28px);margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.nav-links a:hover{color:#fff}
+.nav-tel{flex:none;font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.05em;border:1px solid var(--line2);padding:10px 16px;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.nav-tel:hover{background:var(--acc);color:var(--acc-text);border-color:var(--acc)}
+.nav-cta{flex:none;font-family:var(--disp);font-weight:800;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--acc);color:var(--acc-text);padding:11px 18px;white-space:nowrap}
+.burger{display:none;background:none;border:1px solid var(--line2);color:#fff;padding:9px 11px;cursor:pointer;margin-left:auto}
+.burger span{display:block;width:20px;height:1.5px;background:currentColor;margin:4px 0;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+@media(max-width:960px){
+  .nav-links{position:fixed;inset:76px 0 auto 0;background:rgba(10,11,12,.97);flex-direction:column;padding:1.3rem;gap:.4rem;transform:translateY(-150%);transition:transform .35s ease;border-bottom:1px solid var(--line);font-size:14px}
+  .nav-links.open{transform:none}
+  .nav-links a{padding:.7rem 0;border-bottom:1px solid var(--line)}
+  .nav-tel,.nav-cta{display:none}
+  .burger{display:block}
+}
+
+/* ---- hero ---- */
+.hero{position:relative;min-height:clamp(660px,100svh,1020px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-3}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 46%;filter:grayscale(.18) contrast(1.05) brightness(.86)}
+.hero-scrim{position:absolute;inset:0;z-index:-2;background:linear-gradient(to top,rgba(8,9,10,.95) 0%,rgba(8,9,10,.84) 24%,rgba(8,9,10,.40) 46%,rgba(8,9,10,.05) 70%,rgba(9,11,13,.22) 100%)}
+.hero-grid{position:absolute;inset:0;z-index:-1;opacity:.4;pointer-events:none;background-image:linear-gradient(to right,rgba(230,232,230,.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(230,232,230,.045) 1px,transparent 1px);background-size:clamp(58px,7.6vw,128px) clamp(58px,7.6vw,128px);-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 24%,#000 60%,transparent 88%);mask-image:linear-gradient(to bottom,transparent 0,#000 24%,#000 60%,transparent 88%)}
+.hero-3d{position:absolute;inset:96px 0 auto;height:54%;z-index:-1;perspective:900px;perspective-origin:60% 40%;pointer-events:none;overflow:hidden}
+.hero-3d .plane{position:absolute;left:-8%;right:-8%;bottom:-16%;height:78%;transform-origin:50% 100%;transform:rotateX(63deg);transition:transform .7s cubic-bezier(.16,.84,.28,1);background-image:repeating-linear-gradient(90deg,rgba(226,228,226,.16) 0 1px,transparent 1px 62px),repeating-linear-gradient(0deg,rgba(226,228,226,.11) 0 1px,transparent 1px 62px);-webkit-mask-image:radial-gradient(ellipse 76% 66% at 50% 76%,#000 8%,transparent 74%);mask-image:radial-gradient(ellipse 76% 66% at 50% 76%,#000 8%,transparent 74%)}
+#heroCanvas{display:none}
+.hero-in{position:relative;z-index:3;padding-bottom:clamp(46px,7vh,88px);width:100%;max-width:min(1360px,94vw)}
+.hero .eyebrow{color:#dfe2e1}
+.hero h1{font-size:clamp(40px,7.2vw,108px);line-height:.95;letter-spacing:-.03em;text-transform:uppercase;font-weight:900;margin-top:18px;max-width:16ch;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.55),0 1px 4px rgba(0,0,0,.5)}
+.hero h1 .acc{color:var(--hero-acc)}
+.hero h1 .thin{display:block;font-family:var(--body);font-weight:600;font-size:clamp(15px,2vw,22px);letter-spacing:0;text-transform:none;color:#d3d8d7;margin-top:16px;max-width:34ch;line-height:1.45}
+.hero-sub{margin-top:20px;color:#e4e9e8;font-size:clamp(.98rem,1.5vw,1.14rem);max-width:56ch;text-shadow:0 1px 16px rgba(0,0,0,.6)}
+.hero-cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:15px 26px;text-decoration:none;font-family:var(--disp);font-weight:800;font-size:13px;letter-spacing:.09em;text-transform:uppercase;transition:transform .15s,filter .15s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--acc);color:var(--acc-text)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:#fff;color:#0c0d0e;border-color:#fff}
+.hero-strip{margin-top:34px;display:flex;gap:clamp(20px,3vw,52px);flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.18);padding-top:20px}
+.hero-strip p{color:#9aa1a0;font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase}
+.hero-strip strong{display:block;color:#fff;font-family:var(--disp);font-size:1.12rem;margin-top:5px;font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+.hero-cardwrap{display:none}
+@media(max-width:760px){
+  .hero{min-height:auto;display:block;background:var(--bg);padding-top:74px}
+  .hero-bg,.hero-scrim,.hero-grid,.hero-3d{display:none}
+  .hero-in{padding-top:12px;padding-bottom:30px}
+  .hero-cardwrap{display:block;margin-bottom:22px}
+  .hero-card{width:100%;height:min(46vh,360px);object-fit:cover;object-position:center 44%;filter:grayscale(.1) contrast(1.04) brightness(.96);border:1px solid var(--line)}
+  .hero h1{font-size:clamp(31px,8.6vw,46px);margin-top:14px}
+  .hero-sub{margin-top:14px}
+  .hero-cta{margin-top:18px}
+  .hero-strip{margin-top:20px;gap:18px 28px;padding-top:16px}
+}
+
+/* ---- sections ---- */
+section{padding:clamp(58px,8vw,104px) 0}
+.sec-head{display:flex;gap:20px;align-items:flex-start;margin-bottom:clamp(30px,4vw,54px)}
+.sec-idx{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.2em;color:var(--acc);font-weight:600;margin-top:8px}
+.sec-title{font-size:clamp(1.9rem,4vw,3.1rem);font-weight:900;text-transform:uppercase;line-height:1;max-width:26ch}
+.lead{color:var(--dim);max-width:60ch;margin-top:14px;font-size:1.02rem}
+.band{background:var(--panel);border-block:1px solid var(--line)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.15rem}
+.svc{background:var(--panel2);border:1px solid var(--line);padding:1.7rem 1.55rem;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.svc:hover{border-color:var(--acc);transform:translateY(-3px)}
+.svc::after{content:"";position:absolute;top:0;left:0;width:46px;height:3px;background:var(--acc);transition:width .3s}
+.svc:hover::after{width:100%}
+.svc-n{font-family:"JetBrains Mono",monospace;font-size:.76rem;font-weight:600;color:var(--acc);letter-spacing:.14em}
+.svc h3{font-size:1.16rem;margin:.5rem 0 .35rem;text-transform:uppercase;letter-spacing:.005em}
+.svc p{color:var(--dim);font-size:.95rem}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.15rem}
+.step{border-left:2px solid var(--acc);padding:6px 0 6px 22px}
+.step-n{font-family:"JetBrains Mono",monospace;font-size:.78rem;letter-spacing:.16em;color:var(--acc);font-weight:600}
+.step h3{font-size:1.1rem;margin:.4rem 0 .3rem;text-transform:uppercase}
+.step p{color:var(--dim);font-size:.93rem}
+.hgal{overflow-x:auto;scrollbar-width:none;cursor:grab;margin-top:6px}
+.hgal::-webkit-scrollbar{display:none}
+.hgal .track{display:inline-flex;gap:18px;padding:0 var(--gut)}
+.hg-item{flex:0 0 auto;width:min(520px,80vw);margin:0}
+.hg-item img{width:100%;height:360px;object-fit:cover;display:block}
+.hg-item figcaption{display:flex;justify-content:space-between;padding:12px 2px;font-size:12.5px;color:var(--dim);font-family:"JetBrains Mono",monospace;letter-spacing:.04em;text-transform:uppercase}
+.trust-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
+.tr-i{display:flex;gap:14px;align-items:flex-start}
+.tr-t{width:32px;height:32px;flex:none;background:var(--acc);color:var(--acc-text);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900}
+.tr-i b{font-size:15px;display:block;text-transform:uppercase;font-family:var(--disp)}
+.tr-i span{font-size:13px;color:var(--dim)}
+.stat-band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.stat{border-top:3px solid var(--acc);padding-top:16px}
+.stat b{font-size:clamp(34px,4.4vw,58px);font-weight:900;letter-spacing:-.03em;display:block;line-height:1;color:#fff;font-family:var(--disp)}
+.stat span{font-size:12px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-top:8px;display:block;font-family:"JetBrains Mono",monospace}
+@media(max-width:900px){.stat-band .wrap{grid-template-columns:repeat(2,1fr)}}
+.faq-wrap{max-width:940px}
+details.faq{border-top:1px solid var(--line);padding:22px 0}
+details.faq:last-of-type{border-bottom:1px solid var(--line)}
+details.faq summary{font-size:18px;font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:var(--disp);text-transform:uppercase;letter-spacing:.005em}
+details.faq summary::after{content:"+";font-size:26px;color:var(--acc);font-weight:400}
+details.faq[open] summary::after{transform:rotate(45deg)}
+details.faq .a{color:var(--dim);padding:14px 0 4px;max-width:720px}
+footer{border-top:1px solid var(--line);padding:64px 0 0;background:var(--bg)}
+footer .fwrap{max-width:1360px;margin:0 auto;padding:0 var(--gut);display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px}
+footer h4{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:16px}
+footer a{display:block;color:var(--dim);font-size:14px;padding:5px 0}
+footer a:hover{color:#fff}
+.fbar{max-width:1360px;margin:48px auto 0;padding:20px var(--gut);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--mute);font-family:"JetBrains Mono",monospace}
+@media(max-width:900px){footer .fwrap{grid-template-columns:1fr 1fr}}
+footer .brand-t{color:#fff}
+/* reveals */
+html.js .drop{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+html.js .drop.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html.js .drop{opacity:1;transform:none;transition:none}
+  .hero-3d .plane{transition:none}
+  *{animation-duration:.001s !important;transition-duration:.001s !important}
 }
 </style>
-
-
-<style id="logo-big">
-/* logo blown up to fill the bar - the client's own artwork at a size people can read, not a thumbnail in the corner */
-img.lb-big.lb-big,img.lb-big.lb-big.lb-mark,img.lb-big.lb-big.lb-logo-unlock,img.lb-big.lb-big.lb-logomark{height:clamp(84px,7.6vw,104px)!important;
-  width:auto!important;max-width:none!important;max-height:none!important;object-fit:contain!important;display:block!important;flex:0 0 auto!important}
-img.lb-word{height:clamp(22px,2.1vw,30px)!important;width:auto!important;max-width:none!important;max-height:none!important;
-  object-fit:contain!important;display:block!important;margin-left:clamp(8px,1vw,14px)!important;flex:0 0 auto!important}
-a:has(> img.lb-big){display:flex!important;align-items:center!important;gap:0!important;flex:0 0 auto!important;min-width:0!important}
-header,nav,[class*=hdr],[class*=bar],[class*=strip]{min-height:0!important;height:auto!important}
-header>div,nav>div,[class*=hdr]>div,[class*=bar]>div,[class*=strip]>div{flex-wrap:nowrap!important;align-items:center!important;
-  row-gap:0!important;min-height:0!important;height:auto!important}
-nav,[class*=nav-links],.nav-links,.links{flex-wrap:nowrap!important;gap:clamp(10px,1.3vw,20px)!important;min-width:0!important}
-nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:14px!important}
-@media(max-width:1080px){img.lb-big.lb-big,img.lb-big.lb-big.lb-mark,img.lb-big.lb-big.lb-logo-unlock{height:clamp(64px,8vw,84px)!important}
-  nav a,[class*=nav-links] a,.nav-links a{font-size:13px!important}}
-@media(max-width:820px){img.lb-word{display:none!important}}
-</style><style id="kr-bar-clean">
-/* logo-only bar: no navigation, no links, the mark centred and large */
-header.site .kr-bar{display:flex;align-items:center;justify-content:center;padding:10px 0}
-header.site .kr-brand{display:flex;align-items:center;justify-content:center;text-decoration:none;border:0}
-header.site .kr-brand img{height:112px;width:auto;display:block}
-/* the company name belongs in the document, not painted across the bar */
-.lb-sr,.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;
-  margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;
-  border:0!important;opacity:0!important;pointer-events:none!important}
-@media(max-width:760px){header.site .kr-brand img{height:86px}header.site .kr-bar{padding:8px 0}}
-</style>
-<style id="kr-type">
-/* weight, not thin strokes - these faces read weak on a black ground at 400 */
-body{font-weight:450;-webkit-font-smoothing:auto;text-rendering:optimizeLegibility}
-p,li,dd,figcaption{font-weight:450}
-.hero .lede{font-weight:500;color:rgba(255,255,255,.86);font-size:clamp(17px,1.35vw,20px);max-width:60ch}
-.hero .facts li{font-weight:600;color:rgba(255,255,255,.92)}
-.hero .eyebrow{font-weight:600;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(255,255,255,.80);margin:0 0 16px}
-.card h3{font-weight:700}
-.card p{font-weight:450;color:rgba(255,255,255,.80)}
-.hero h1{font-weight:800;letter-spacing:-.03em}
+<style id="rwk-overrides">
+.hero-in{padding-inline:var(--gut)}
+.hero-bg img{filter:saturate(1.08) contrast(1.02)}
+.hero-scrim{background:linear-gradient(to top,rgba(8,9,10,.94) 0%,rgba(8,9,10,.78) 22%,rgba(8,9,10,.32) 46%,rgba(8,9,10,.03) 72%,rgba(9,11,13,.16) 100%)}
+.nav{background:linear-gradient(to bottom,rgba(8,9,10,.70),rgba(8,9,10,.12) 70%,rgba(8,9,10,0));backdrop-filter:blur(8px)}
+.nav.solid{background:rgba(10,11,12,.94)}
+.brand-mark{height:58px;width:auto;display:block;flex:none}
+.brand-word{height:24px;width:auto;max-width:32vw;display:block;flex:none}
+.brand{gap:14px;align-items:center;justify-content:space-between}
+.brand-l{display:flex;align-items:center;gap:14px;min-width:0}
+.brand-t small{font-size:10.5px;color:#cbd1d6;letter-spacing:.15em}
+@media(max-width:640px){.brand-mark{height:44px}.brand-word{height:19px}}
+.hero h1{max-width:16ch;font-weight:600}
 </style>
 </head>
 <body>
-<header class="site"><div class="container kr-bar">
-  <div class="kr-brand">
-    <img src="assets/kr-mark.png" alt="Keller's Rendering &amp; Venetian Plastering">
-  </div>
-</div></header>
-<main>
-<section aria-label="Rendering &amp; Venetian plastering" class="hero" id="top">
+<script>document.documentElement.className+=' js';</script>
+<nav class="nav" id="nav"><div class="wrap nav-in">
+  <a class="brand" href="#top"><span class="brand-l"><img class="brand-mark" src="assets/logo-mark.png" alt="Keller's Rendering logo"></span><span class="brand-t">Keller's Rendering<small>Rendering &amp; venetian plastering &mdash; Yarrawonga</small></span></a>
+  <div class="nav-links" id="navlinks"><a href="#services">Services</a><a href="#process">Process</a><a href="#work">Work</a><a href="#faq">FAQ</a><a href="#quote">Quote</a></div>
+  <a class="nav-tel" href="tel:+61488944397">0488 944 397</a>
+  <a class="nav-cta" href="#quote">Get a quote</a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></nav>
 
-<div aria-hidden="true" class="veil"></div>
-<div class="container inner">
-<p class="eyebrow">Keller's Rendering &amp; Venetian Plastering</p>
-    <h1>Rendering done properly.</h1>
-<p class="lede">Work in Yarrawonga tends to come in two kinds: the planned job, and the one that has to be sorted this week. Both get looked at before a number is given.</p>
-<div class="acts"><a class="btn" href="#contact">Get a quote</a><a class="btn ghost" href="#services">See what we do</a></div>
-<ul class="facts"><li>Cement rendering</li><li>Venetian plaster</li><li>Textured finishes</li><li>Render repairs</li></ul>
-</div>
-</section>
-<section id="detail">
-<div class="container">
-  <div class="head"><h2>Cement, acrylic, or venetian</h2>
-  <p>Three different finishes that get lumped together as “rendering”. They behave differently, age differently and cost differently.</p></div>
-  <div class="grid g3">
-    <article class="card"><h3>Cement render</h3><p>Sand and cement over masonry, hard and heavy, with a texture that can be sponged, raked or bagged. It needs to be cured and painted to keep water out — left bare it will take on moisture and hairline cracking over the years.</p></article>
-    <article class="card"><h3>Acrylic render</h3><p>A polymer-based coat that flexes with the substrate instead of fighting it. Better over blueboard, foam cladding or anywhere movement is expected, and it comes pre-coloured so it does not need painting to look finished.</p></article>
-    <article class="card"><h3>Venetian plaster</h3><p>Polished lime plaster applied in layers and burnished, giving depth and movement that paint cannot copy. It is slow, it is done by hand, and the finish depends on the person applying it — which is why the crew stays small.</p></article>
+<header class="hero" id="top"><!-- LB-3D-HERO -->
+  <div class="hero-bg"><img src="assets/hero.jpg" alt="Plaster being worked on a wall" width="1600" height="1000"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-3d" aria-hidden="true"><div class="plane"></div></div>
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-in">
+    <div class="hero-cardwrap"><img class="hero-card" src="assets/hero.jpg" alt="Plaster being worked on a wall" width="1200" height="800"></div>
+    <span class="eyebrow">Venetian plaster &amp; rendering &mdash; Yarrawonga and the border</span>
+    <h1>Plaster worked to<br><span class="acc">a polished finish.</span></h1>
+    <p class="hero-sub">Venetian plaster, rendering and texture coats across Yarrawonga, Cobram, Corowa, Benalla and Wangaratta &mdash; coats burnished back to depth and sheen.</p>
+    <div class="hero-cta"><a class="btn btn-primary" href="#quote">Get a free quote</a><a class="btn btn-ghost" href="tel:+61488944397">Call 0488 944 397</a></div>
+    <div class="hero-strip"><p>Venetian<strong>Plaster</strong></p><p>Yarrawonga<strong>&amp; the border</strong></p><p>Detail<strong>Worked by hand</strong></p></div>
   </div>
-  <div class="body" style="margin-top:22px">
-    <p>The substrate decides which of those is right. Brick and block take cement render happily. Blueboard and foam need a system that moves with them, or the finish cracks along the joints within a season. Timber weatherboards should not be rendered at all without addressing why they are being covered up.</p>
-    <p>Weather matters too: render cured in the heat without shade or dampening will shrink too fast and crack, and render applied over a wet wall traps moisture behind it. So the schedule is set around the forecast, not around when the scaffolding is free — a slower start is cheaper than a re-do.</p>
+</header>
+
+<section id="services"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">01 / SERVICES</span><div><h2 class="sec-title">What we apply</h2><p class="lead">Decorative plaster and render, worked in coats to a true, polished surface.</p></div></div>
+  <div class="svc-grid"><div class="svc drop d1"><span class="svc-n">01</span><h3>Venetian plaster</h3><p>Multi-coat lime plaster burnished back to depth and sheen.</p></div><div class="svc drop d2"><span class="svc-n">02</span><h3>Acrylic &amp; cement rendering</h3><p>External and internal render applied in coats and floated level.</p></div><div class="svc drop d3"><span class="svc-n">03</span><h3>Texture coats</h3><p>Worked texture in a chosen pattern, held consistent across the panel.</p></div><div class="svc drop d4"><span class="svc-n">04</span><h3>Skim &amp; finish coats</h3><p>Skim worked flat and paint-ready with the edges dressed.</p></div><div class="svc drop d5"><span class="svc-n">05</span><h3>Patch repairs</h3><p>Blown and damaged plaster cut back, patched and blended.</p></div><div class="svc drop d6"><span class="svc-n">06</span><h3>Interior feature walls</h3><p>A single wall finished as the focal point of the room.</p></div></div>
+</div></section>
+
+<section class="band" id="process"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">02 / PROCESS</span><div><h2 class="sec-title">Prep. Coat. Burnish. Seal.</h2></div></div>
+  <div class="steps"><div class="step drop d1"><span class="step-n">STEP 01</span><h3>Look at the surface</h3><p>We check the substrate, the light and the finish wanted.</p></div><div class="step drop d2"><span class="step-n">STEP 02</span><h3>Prepare</h3><p>Surfaces prepped and primed so the coat keys and holds.</p></div><div class="step drop d3"><span class="step-n">STEP 03</span><h3>Coat &amp; burnish</h3><p>Coats laid and worked, burnished to the sheen chosen.</p></div><div class="step drop d4"><span class="step-n">STEP 04</span><h3>Seal &amp; dress</h3><p>Sealed, edges dressed and the site cleaned.</p></div></div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">03 / WORK</span><div><h2 class="sec-title">Plaster &amp; render</h2><p class="lead">Polished plaster, texture coats and rendered walls.</p></div></div>
+</div>
+<div class="hgal drop"><div class="track"><figure class="hg-item"><img src="assets/g1.jpg" alt="Polished plaster wall" loading="lazy"><figcaption><span>Polished plaster wall</span><span>/01</span></figcaption></figure><figure class="hg-item"><img src="assets/g2.jpg" alt="Rendered surface" loading="lazy"><figcaption><span>Rendered surface</span><span>/02</span></figcaption></figure><figure class="hg-item"><img src="assets/g3.jpg" alt="Texture detail" loading="lazy"><figcaption><span>Texture detail</span><span>/03</span></figcaption></figure></div></div>
+</section>
+
+<section id="trust"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">04 / WHY US</span><div><h2 class="sec-title">Why Keller&rsquo;s</h2></div></div>
+  <div class="trust-strip"><div class="tr-i drop d1"><div class="tr-t">&#10003;</div><div><b>Hand-worked plaster</b><span>Burnished by hand, not sprayed flat</span></div></div><div class="tr-i drop d2"><div class="tr-t">&#10003;</div><div><b>Border coverage</b><span>Yarrawonga, Cobram, Corowa, Benalla, Wangaratta</span></div></div><div class="tr-i drop d3"><div class="tr-t">&#10003;</div><div><b>Prep done first</b><span>Substrate prepped and primed</span></div></div><div class="tr-i drop d4"><div class="tr-t">&#10003;</div><div><b>Talk to Matt</b><span>You deal with the plasterer</span></div></div></div>
+</div></section>
+
+<section class="stat-band band"><div class="wrap"><div class="stat drop d1"><b>Venetian</b><span>Plaster</span></div><div class="stat drop d2"><b>Render</b><span>&amp; texture</span></div><div class="stat drop d3"><b>Border</b><span>Coverage</span></div></div></section>
+
+<section id="faq"><div class="wrap faq-wrap">
+  <div class="sec-head"><span class="sec-idx">05 / FAQ</span><div><h2 class="sec-title">Plaster questions</h2></div></div>
+  <details class="faq drop"><summary>What is venetian plaster?</summary><div class="a">A multi-coat lime plaster burnished back by hand for depth and sheen &mdash; a decorative finish, not a flat paint.</div></details><details class="faq drop"><summary>Which areas do you cover?</summary><div class="a">Yarrawonga, Cobram, Corowa, Benalla and Wangaratta.</div></details><details class="faq drop"><summary>Can you match an existing finish?</summary><div class="a">Yes &mdash; matched on a test patch before the panel is worked.</div></details><details class="faq drop"><summary>How do I get a quote?</summary><div class="a">Send the form with the wall, the finish and the town.</div></details>
+</div></section>
+
+<span id="quote" style="display:block;height:0;scroll-margin-top:90px"></span>
+<section id="lbq" aria-labelledby="lbq-h">
+<style>
+#lbq{--lbq-accent:var(--acc);--lbq-ink:var(--ink);--lbq-muted:var(--ink2);--lbq-bg:var(--paper2);--lbq-panel:#fff;--lbq-line:var(--line);padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
+@media(max-width:900px){#lbq .lbq-w{grid-template-columns:1fr}}
+#lbq h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0 0 10px;letter-spacing:-.02em;font-family:var(--disp)}
+#lbq p.lbq-s{margin:0 0 22px;color:var(--lbq-muted);max-width:52ch}
+#lbq .lbq-info{display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--lbq-line);padding-top:22px}
+#lbq .lbq-info div{display:flex;gap:10px;align-items:baseline}
+#lbq .lbq-info b{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lbq-accent);min-width:64px}
+#lbq .lbq-info a{font-weight:800;text-decoration:none}
+#lbq .lbq-f{display:grid;gap:12px;background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
+#lbq label{display:block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--paper);color:var(--ink);font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:var(--lbq-acc-text,#0b0e12);font:inherit;font-weight:800;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+</style>
+<div class="lbq-w">
+  <div>
+    <h2 id="lbq-h">Get a free quote</h2>
+    <p class="lbq-s">Tell us about the job and we&rsquo;ll come back with a firm price &mdash; no surprises, no obligation.</p>
+    <div class="lbq-info">
+      <div><b>Call</b><a href="tel:+61488944397">0488 944 397</a></div>
+      
+      <div><b>Area</b><span>Yarrawonga &amp; the border</span></div>
+    </div>
   </div>
+  <form id="lbq-form" novalidate data-site="kellers-rendering" data-biz="Keller's Rendering &amp; Venetian Plastering">
+    <div class="lbq-f">
+      <div class="lbq-g">
+        <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+        <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
+        <div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
+        <div class="lbq-full"><label for="lbq-svc">Service</label>
+          <select id="lbq-svc" name="service"><option>Venetian plaster</option><option>Rendering</option><option>Texture coat</option><option>Skim coat</option><option>Repair</option><option>Feature wall</option><option>Other</option></select>
+        </div>
+        <div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="The wall, the finish and the town&hellip;" required></textarea></div>
+      </div>
+      <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
+      <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit">Send quote request</button>
+      <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
+    </div>
+  </form>
 </div>
+<script>
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = B + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 </section>
-<section id="services">
-<div class="container">
-<div class="head"><h2>What we do</h2><p>Keller's Rendering &amp; Venetian Plastering keeps the crew small on purpose: fewer jobs at once, and the standard does not slip when the schedule gets tight.</p></div>
-<div class="grid g3"><article class="card"><div class="swatch"></div><h3>texture coats</h3><p>Keller's Rendering &amp; Venetian Plastering turns up when agreed, does the rendering and plastering work to the quoted scope, and keeps the site tidy while it happens.</p></article><article class="card"><div class="swatch"></div><h3>cornice</h3><p>The job is walked with you at the end. Anything that needs attention is dealt with before the invoice, not after.</p></article><article class="card"><div class="swatch"></div><h3>external rendering</h3><p>Edges, clean-up and the small finishes that decide whether a rendering and plastering job looks professional are done before Keller's Rendering &amp; Venetian Plastering leaves site.</p></article><article class="card"><div class="swatch"></div><h3>internal plastering</h3><p>Quoted on site — Not over the phone from a photo — the price comes from seeing the job.</p></article><article class="card"><div class="swatch"></div><h3>patch repairs</h3><p>One point of contact — The same person answers the phone and runs the work.</p></article><article class="card"><div class="swatch"></div><h3>New builds &amp; extensions</h3><p>Local to Yarrawonga — Travel time is short, which is why small jobs are worth doing.</p></article></div>
+
+<footer><div class="fwrap">
+  <div>
+    <span class="brand-t">Keller's Rendering<small>Rendering &amp; venetian plastering &mdash; Yarrawonga</small></span>
+    <p style="margin-top:16px;font-size:13.5px;max-width:320px;color:var(--dim);">Venetian plaster and rendering &mdash; Yarrawonga and the border.</p>
+  </div>
+  <div><h4>Services</h4><a href="#services">Venetian plaster</a><a href="#services">Rendering</a><a href="#services">Texture coats</a><a href="#services">Feature walls</a></div><div><h4>Company</h4><a href="#work">Work</a><a href="#faq">FAQ</a><a href="#quote">Get a quote</a></div>
+  <div><h4>Contact</h4><a href="tel:+61488944397">0488 944 397</a><a href="#quote">Free quote</a></div>
 </div>
-</section>
-<section class="alt" id="process">
-<div class="container">
-<div class="head"><h2>How a job runs</h2><p>From the first look to the final clean up.</p></div>
-<div class="grid g3"><article class="card"><h3>Send us the job</h3><p>Workmanship backed — If something is not right, Keller's Rendering &amp; Venetian Plastering comes back.</p></article><article class="card"><h3>We quote the finish</h3><p>A clear price for the work and the finish you want, before anything is mixed.</p></article><article class="card"><h3>Rendered and finished</h3><p>The walls are prepped, rendered and finished properly, and the site is left clean.</p></article></div>
-</div>
-</section>
-<section id="about">
-<div class="container about">
-<div><h2>About Keller's Rendering &amp; Venetian Plastering</h2><p>Keller's Rendering &amp; Venetian Plastering is a rendering and plastering trade working around Yarrawonga in north-east Victoria — cement and acrylic rendering, Venetian plaster and textured finishes.</p><p>The work is in the preparation and the finish: walls set out and floated straight, plaster burnished by hand where it needs to be, and repairs matched back into the existing render.</p></div>
-<ul><li>Cement and acrylic render <span>· new work, existing walls and additions</span></li><li>Venetian plaster <span>· polished finishes burnished by hand</span></li><li>Textured and feature walls <span>· laid on consistently, wall to wall</span></li><li>Repairs and patching <span>· cracks and hollow render cut out and matched</span></li></ul>
-</div>
-</section>
-<section class="ownwork"><div class="container"><h2>Recent work</h2><p style="color:var(--muted);max-width:62ch">Photos from our own jobs.</p><div class="own-grid"><figure><img alt="Recent work" height="1440" loading="lazy" src="assets/own-1.jpg" width="1080"/><figcaption>Recent work</figcaption></figure><figure><img alt="Recent work" height="1365" loading="lazy" src="assets/own-2.jpg" width="1080"/><figcaption>Recent work</figcaption></figure><figure><img alt="Recent work" height="1352" loading="lazy" src="assets/own-3.jpg" width="1080"/><figcaption>Recent work</figcaption></figure><figure><img alt="Recent work" height="1080" loading="lazy" src="assets/own-4.jpg" width="1080"/><figcaption>Recent work</figcaption></figure><figure><img alt="Recent work" height="812" loading="lazy" src="assets/own-5.jpg" width="1080"/><figcaption>Recent work</figcaption></figure><figure><img alt="Recent work" height="810" loading="lazy" src="assets/own-6.jpg" width="1080"/><figcaption>Recent work</figcaption></figure></div></div></section>
-<section class="alt" id="contact">
-<div class="container contactwrap">
-<div>
-<h2>Get a quote</h2>
-<p style="color:var(--muted);margin:10px 0 22px">Tell us what you need and roughly the size of the job, and we'll get back to you with a price.</p>
-<p style="color:var(--muted)">Message us and we’ll get straight back to you.</p><p style="margin:0 0 6px"> <span style="color:var(--muted)">· ask for Matt</span></p><p style="margin:0 0 10px"><a href="mailto:kellers.rendering@gmail.com" style="color:var(--muted)">kellers.rendering@gmail.com</a></p><p style="color:var(--muted)">Yarrawonga VIC · Tocumwal, Cobram, Corowa, Benalla &amp; Wangaratta</p>
-<div class="links"><a href="https://www.instagram.com/kellers.rendering" rel="noopener">Keller's Rendering on Instagram</a><a href="https://www.facebook.com/share/1cgz4ynuJz/" rel="noopener">Keller's Rendering on Facebook</a></div>
-</div>
-<form data-biz="Keller's Rendering &amp; Venetian Plastering" data-site="kellers-rendering" id="lbq-form" novalidate="">
-<label for="lbq-n">Name</label>
-<input autocomplete="name" id="lbq-n" name="name" required=""/>
-<label for="lbq-p">Phone</label>
-<input autocomplete="tel" id="lbq-p" name="phone" required="" type="tel"/>
-<label for="lbq-m">What do you need done?</label>
-<textarea id="lbq-m" name="message" rows="4"></textarea>
-<button class="btn" type="submit">Request a quote</button>
-<p class="note" id="lbq-note">Send it through and we’ll be in touch.</p>
-</form>
-</div>
-</section>
-</main>
-<footer>
-<div class="container">
-<div class="foot">
-<div><h4>KELLER'S RENDERING &amp; VENETIAN PLASTERING</h4><p style="color:var(--muted);max-width:34ch">Rendering &amp; Venetian plastering across Yarrawonga VIC.</p></div>
-<div><h4>SERVICES</h4><ul><li><a href="#services">Cement rendering</a></li><li><a href="#services">Acrylic rendering</a></li><li><a href="#services">Venetian plastering</a></li><li><a href="#services">Textured finishes</a></li></ul></div>
-<div><h4>CONTACT</h4><ul><li><a href="https://www.instagram.com/kellers.rendering" rel="noopener">Keller's Rendering on Instagram</a></li><li><a href="https://www.facebook.com/share/1cgz4ynuJz/" rel="noopener">Keller's Rendering on Facebook</a></li></ul></div>
-</div>
-<div class="footbottom">
-<span>© <span id="yr">2026</span> Keller's Rendering &amp; Venetian Plastering. All rights reserved.</span>
-<span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
-</div>
-</div>
+<div class="fbar"><span>&copy; 2026 KELLER'S RENDERING &AMP; VENETIAN PLASTERING &middot; Yarrawonga &amp; the border</span><span></span></div>
 </footer>
 
-<script id="lb-bar-bg">(function(){var b=document.querySelector(".lb-brand");if(!b)return;var p=b.closest("header,nav,.bar,.nav")||b.parentElement;if(!p)return;p.classList.add("lb-bar");p.style.setProperty("background-color","#000000","important");})();</script>
+<script>
+(function(){var b=document.getElementById('burger'),n=document.getElementById('navlinks');if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});}})();
+(function(){var nv=document.getElementById('nav');function on(){var y=window.scrollY||window.pageYOffset;nv.classList.toggle('solid',y>40);}on();window.addEventListener('scroll',on,{passive:true});})();
+(function(){var els=document.querySelectorAll('.drop');if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el);});}else{els.forEach(function(el){el.classList.add('in');});}})();
+setTimeout(function(){document.querySelectorAll('.drop').forEach(function(el){el.classList.add('in');});},1100);
+/* 3D hero — property-care leaf & weave (property maintenance / landscaping) */
+(function(){var c=document.getElementById('heroCanvas');if(!c||!c.getContext)return;var ctx=c.getContext('2d');var DPR=Math.min(window.devicePixelRatio||1,2);var W=0,H=0,reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;var px=0,py=0;window.addEventListener('pointermove',function(e){px=(e.clientX/innerWidth-.5)*16;py=(e.clientY/innerHeight-.5)*10;},{passive:true});
+function resize(){W=c.clientWidth||c.offsetWidth;H=c.clientHeight||c.offsetHeight;if(!W||!H)return;c.width=Math.round(W*DPR);c.height=Math.round(H*DPR);ctx.setTransform(DPR,0,0,DPR,0,0);}
+function loop(t){if(!W||!H){resize();return;}frame(t||0);if(!reduce)requestAnimationFrame(loop);}
+function frame(t){var time=t*.001;ctx.clearRect(0,0,W,H);var g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#0c0d0e');g.addColorStop(1,'#141618');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+for(var i=0;i<9;i++){var cx=W*(0.1+i*0.115),cy=H*(0.25+((i*37)%55)*0.01);var rr=34+(i%4)*12;var rot=time*0.12+i*0.8;ctx.strokeStyle='rgba(179,154,114,0.16)';ctx.lineWidth=1.6;for(var pet=0;pet<4;pet++){var a=rot+pet*Math.PI/2;ctx.beginPath();ctx.ellipse(cx,cy,rr*1.6,rr*0.5,a,0,Math.PI*2);ctx.stroke();}}
+for(var k=0;k<44;k++){var sx=(k*131+time*9)%W;var sy=H*.12+((k*71+time*14)%(H*.76));var tw=0.5+0.5*Math.sin(time*1.6+k*1.3);ctx.fillStyle='rgba(179,154,114,'+(0.05+tw*0.16)+')';ctx.beginPath();ctx.arc(sx+px*.4,sy+py*.4,0.8+tw*1.8,0,Math.PI*2);ctx.fill();}
+var rg=ctx.createRadialGradient(W*.2,H*.8,10,W*.2,H*.8,W*.55);rg.addColorStop(0,'rgba(179,154,114,0.15)');rg.addColorStop(1,'rgba(179,154,114,0)');ctx.fillStyle=rg;ctx.fillRect(0,0,W,H);}
+resize();window.addEventListener('resize',resize);requestAnimationFrame(loop);})();
+(function(){var c=document.getElementById('heroCanvas');if(!c)return;var h=document.querySelector('.hero-3d');if(!h)return;var pl=h.querySelector('.plane');window.addEventListener('pointermove',function(e){var px=(e.clientX/innerWidth-.5);var py=(e.clientY/innerHeight-.5);pl.style.transform='rotateX('+(63-py*5).toFixed(2)+'deg) translateX('+(px*22).toFixed(1)+'px)';},{passive:true});})();
+(function(){var g=document.querySelector('.hgal');if(!g)return;var d=0,x0=0;g.addEventListener('pointerdown',function(e){d=1;x0=e.clientX+g.scrollLeft;});window.addEventListener('pointerup',function(){d=0;});g.addEventListener('pointermove',function(e){if(d){g.scrollLeft=x0-e.clientX;}});})();
+</script>
 </body>
 </html>
