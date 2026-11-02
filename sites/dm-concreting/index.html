@@ -52,7 +52,7 @@ section{padding:var(--sec) 0}
 .nav{display:flex;align-items:center;gap:clamp(14px,2vw,30px);margin-left:auto}
 .nav a{font-family:var(--sans);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2);padding:6px 0;border-bottom:2px solid transparent;transition:color .16s,border-color .16s}
 .nav a:hover{color:var(--char);border-bottom-color:var(--clay-d)}
-.call{display:inline-flex;align-items:center;gap:9px;background:var(--char);color:var(--paper);font-weight:700;font-size:14px;padding:13px 19px;border-radius:2px;white-space:nowrap;transition:background .16s}
+.call{display:inline-flex;align-items:center;gap:9px;background:var(--brick);color:var(--paper);font-weight:700;font-size:14px;padding:13px 19px;border-radius:2px;white-space:nowrap;transition:background .16s}
 .call:hover{background:var(--clay-d)}
 .burger{display:none;width:44px;height:42px;background:none;border:2px solid var(--char);border-radius:2px;cursor:pointer;place-items:center}
 .burger i{display:block;width:18px;height:2px;background:var(--char);margin:3px auto;transition:transform .2s,opacity .2s}
@@ -61,26 +61,22 @@ section{padding:var(--sec) 0}
 .burger[aria-expanded="true"] i:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
 
 /* ---- hero ----------------------------------------------------------- */
-.hero{padding:clamp(44px,6vw,84px) 0 0;background:var(--paper)}
-.hero__head{display:grid;grid-template-columns:1fr auto;gap:clamp(20px,3vw,46px);align-items:start}
-.hero h1{margin-top:18px;max-width:16ch}
-.hero h1 span{color:var(--clay-d)}
-.hero__aside{max-width:320px;padding-top:8px;border-top:3px solid var(--clay);padding-top:22px}
-.hero__aside ul{list-style:none;margin-top:16px;display:grid;gap:9px;border-top:1px solid var(--line);padding-top:14px}
-.hero__aside li{display:flex;gap:10px;font-size:14.5px;color:var(--ink-2)}
-.hero__aside li b{color:var(--clay-d);font-weight:700}
-.hero__aside p{font-size:15.5px;color:var(--ink-2)}
-.hero__cta{margin-top:24px;display:flex;flex-wrap:wrap;gap:14px}
+.hero{position:relative;overflow:hidden;padding:0;background:var(--paper);min-height:clamp(580px,86vh,800px);display:flex;align-items:center}
+.hero__bg{position:absolute;inset:0;z-index:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover}
+.hero__scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(243,237,228,.97) 0%,rgba(243,237,228,.94) 38%,rgba(243,237,228,.68) 62%,rgba(243,237,228,.18) 100%),linear-gradient(0deg,rgba(243,237,228,.85) 0%,rgba(243,237,228,0) 40%)}
+.hero__in{position:relative;z-index:2;width:100%;max-width:var(--max);margin:0 auto;padding:clamp(40px,5.4vw,78px) var(--pad)}
+.hero__in h1{margin-top:16px;max-width:15ch;font-size:clamp(40px,6.6vw,92px)}
+.hero__in h1 span{color:var(--brick)}
+.hero__lede{margin-top:20px;color:var(--ink-2);font-size:16.5px;max-width:44ch}
+.hero__cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:14px}
+.hero__facts{list-style:none;margin-top:30px;border-top:2px solid var(--char);padding-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;max-width:560px}
+.hero__facts li{display:flex;gap:12px;align-items:baseline;font-size:15px;color:var(--ink-2)}
+.hero__facts b{font-family:var(--disp);text-transform:uppercase;font-size:15px;letter-spacing:.02em;color:var(--brick);flex:0 0 auto}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--char);color:var(--paper);font-weight:700;font-size:15px;padding:16px 26px;border:0;border-radius:2px;cursor:pointer;transition:background .16s,transform .16s}
 .btn:hover{background:var(--clay-d);transform:translateY(-2px)}
 .btn--ghost{background:transparent;color:var(--char);border:2px solid var(--char)}
 .btn--ghost:hover{background:var(--char);color:var(--paper);transform:translateY(-2px)}
-.hero__band{margin-top:clamp(30px,4vw,48px);position:relative}
-.hero__band img{width:100%;height:clamp(300px,50vw,560px);object-fit:cover;border-radius:3px}
-.hero__stamp{position:absolute;left:clamp(16px,3vw,40px);bottom:clamp(16px,3vw,40px);background:var(--paper);border:2px solid var(--char);padding:16px 20px;max-width:300px}
-.hero__stamp b{font-family:var(--disp);font-size:26px;display:block;line-height:1}
-.hero__stamp span{font-size:13.5px;color:var(--ink-2);display:block;margin-top:7px}
-
 /* ---- ticker of trades ---------------------------------------------- */
 .trades{background:var(--char);color:var(--paper);margin-top:clamp(40px,5.4vw,72px);padding:22px 0}
 .trades .wrap{display:flex;flex-wrap:wrap;gap:12px 34px;justify-content:center}
@@ -159,7 +155,7 @@ footer li a:hover{color:#fff}
   .nav.open{display:flex;position:absolute;top:86px;left:0;right:0;background:var(--paper);border-bottom:2px solid var(--char);flex-direction:column;align-items:flex-start;gap:0;padding:8px var(--pad) 18px;margin:0}
   .nav.open a{padding:14px 0;width:100%;border-bottom:1px solid var(--line)}
   .burger{display:grid}
-  .hero__head{grid-template-columns:1fr}
+  .hero__facts{grid-template-columns:1fr}
   .strip__grid{grid-template-columns:1fr 1fr}
   .foot{grid-template-columns:1fr 1fr}
   .gal figure,.gal figure:nth-child(n){grid-column:span 12}
@@ -172,6 +168,7 @@ footer li a:hover{color:#fff}
   .call{padding:13px}
   .blk{grid-template-columns:64px minmax(0,1fr)}
   .mats__g{grid-template-columns:1fr 1fr}
+  .hero__facts b{width:88px}
   .strip__grid,.foot{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
@@ -209,30 +206,22 @@ footer li a:hover{color:#fff}
 
 <main id="main">
   <section class="hero" id="top">
-    <div class="wrap">
-      <div class="hero__head">
-        <div>
-          <p class="kick">Clarence Town · Hunter Valley</p>
-          <h1>Concrete poured <span>right</span> the first time.</h1>
-          <div class="hero__cta">
-            <a class="btn" href="tel:+61450887970">Call 0450 887 970</a>
-            <a class="btn btn--ghost" href="#lbq">Get a free quote</a>
-          </div>
-        </div>
-        <div class="hero__aside">
-          <p>Owner-operator Dan Miles, ten-plus years on the tools, quoting and pouring every job himself.</p>
-          <ul>
-            <li><b>&#9670;</b><span>Slabs &#183; driveways &#183; footings &#183; aggregate</span></li>
-            <li><b>&#9670;</b><span>Clarence Town, Dungog, Hinton, Karuah</span></li>
-            <li><b>&#9670;</b><span>Newcastle &amp; the wider Hunter</span></li>
-            <li><b>&#9670;</b><span>Free measure and quote, no obligation</span></li>
-          </ul>
-        </div>
+    <div class="hero__bg"><img src="assets/dm-hero.jpg" alt="A finished exposed-aggregate concrete driveway leading to a modern garage" width="2200" height="1375" loading="eager" decoding="async"></div>
+    <div class="hero__scrim"></div>
+    <div class="hero__in">
+      <p class="kick">Clarence Town &#183; Hunter Valley</p>
+      <h1>Concrete poured <span>right</span> the first time.</h1>
+      <p class="hero__lede">Owner-operator Dan Miles, ten-plus years on the tools &#8212; quoting, setting out and pouring every job himself, across Clarence Town and the wider Hunter.</p>
+      <div class="hero__cta">
+        <a class="btn" href="tel:+61450887970">Call 0450 887 970</a>
+        <a class="btn btn--ghost" href="#lbq">Get a free quote</a>
       </div>
-      <div class="hero__band rv">
-        <img src="assets/dm-hero.jpg" alt="A freshly poured exposed-aggregate concrete driveway running up to a modern garage" width="2200" height="1375" loading="eager" decoding="async">
-        <div class="hero__stamp"><b>Dan Miles</b><span>Owner-operator, on the tools on every job.</span></div>
-      </div>
+      <ul class="hero__facts">
+        <li><b>Slabs</b><span>House, shed &amp; extension</span></li>
+        <li><b>Driveways</b><span>Plain, coloured &amp; aggregate</span></li>
+        <li><b>Footings</b><span>Strip, pads &amp; pier cages</span></li>
+        <li><b>Area</b><span>Hunter &amp; Newcastle</span></li>
+      </ul>
     </div>
     <div class="trades">
       <div class="wrap">
