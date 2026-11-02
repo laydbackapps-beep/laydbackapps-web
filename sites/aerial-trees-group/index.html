@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aerial Trees Group — Tree Services &amp; Stump Grinding, Lake Munmorah NSW</title>
+<meta name="description" content="Aerial Trees Group — tree removal, trimming, stump grinding, chipping and green waste removal. Established, experienced and insured for over 20 years. Free quotes across the Central Coast, Lake Macquarie, Newcastle and the Hunter Valley.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<meta property="og:title" content="Aerial Trees Group — Tree Services &amp; Stump Grinding, Lake Munmorah">
+<meta property="og:description" content="Tree removal, trimming and stump grinding. Insured, 20+ years. Free quotes across the Central Coast, Lake Macquarie, Newcastle and the Hunter Valley. (02) 4358 2000.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo-round.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f7f6f3; --card: #ffffff; --ink: #1b1a17; --ink-2: #4c4a44; --ink-3: #7c7972;
+    --line: #e4e1da; --line-2: #d2cdc2; --acc: #d97a0e; --acc-ink: #a85806; --gold: #fdbd06;
+    --green: #4c8a1e; --dark: #17240f; --wrap: 1180px; --r: 6px;
+    --shadow: 0 1px 2px rgba(27,26,23,.06), 0 14px 34px -18px rgba(27,26,23,.3);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, .brand__word, .eyebrow, .btn, .chip, .svc__n, .step__n, .foot__name {
+    font-family: "Sora", "Inter", system-ui, sans-serif; }
+  h1, h2, h3 { margin: 0; letter-spacing: -0.02em; line-height: 1.06; font-weight: 700; }
+  p { margin: 0; }
+  img { display: block; max-width: 100%; height: auto; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: 12.5px;
+    letter-spacing: .13em; text-transform: uppercase; color: var(--acc-ink); }
+  .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--acc); display: inline-block; }
+
+  .nav { position: sticky; top: 0; z-index: 30; background: rgba(247,246,243,.9);
+    backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--line); }
+  .nav__in { display: flex; align-items: center; gap: 24px; height: 90px; }
+  .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand__mark { height: 52px; width: 52px; flex: none; border-radius: 50%; }
+  .brand__word { height: 34px; width: 162px; flex: none; }
+  .nav__links { display: flex; gap: 24px; margin-left: auto; }
+  .nav__links a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--ink-2); padding: 6px 0; }
+  .nav__links a:hover { color: var(--ink); }
+  .btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; cursor: pointer;
+    font-weight: 600; font-size: 15px; border-radius: var(--r); padding: 12px 20px; border: 1.5px solid transparent;
+    transition: transform .15s ease, background .15s ease, color .15s ease; }
+  .btn--solid { background: var(--dark); color: #fff; }
+  .btn--solid:hover { background: #000; transform: translateY(-1px); }
+  .btn--ghost { border-color: var(--line-2); color: var(--ink); }
+  .btn--ghost:hover { border-color: var(--ink); }
+  .btn--acc { background: var(--acc); color: #fff; }
+  .btn--acc:hover { background: var(--acc-ink); transform: translateY(-1px); }
+  .nav__cta { margin-left: 6px; padding: 11px 18px; }
+
+  .hero { position: relative; padding: 72px 0 82px; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background-image: radial-gradient(rgba(27,26,23,.05) 1px, transparent 1.5px); background-size: 24px 24px;
+    mask-image: linear-gradient(180deg, #000, transparent 74%); }
+  .hero__in { position: relative; z-index: 1; display: grid; grid-template-columns: 1.08fr .92fr; gap: 46px; align-items: center; }
+  .hero h1 { font-size: clamp(36px, 4.8vw, 58px); margin: 20px 0 18px; font-weight: 800; }
+  .hero p.lead { color: var(--ink-2); font-size: 18.5px; max-width: 35ch; }
+  .hero__cta { display: flex; gap: 12px; margin: 28px 0 30px; flex-wrap: wrap; }
+  .chips { display: flex; flex-wrap: wrap; gap: 9px; }
+  .chip { font-size: 13px; font-weight: 600; color: var(--ink-2); background: #fff; border: 1px solid var(--line);
+    border-radius: 999px; padding: 7px 13px; }
+  .chip b { color: var(--acc-ink); font-weight: 700; }
+  .hero__card figure { margin: 0 auto 0 auto; max-width: 448px; background: #fff; border: 1px solid var(--line);
+    border-radius: 10px; padding: 12px 12px 0; box-shadow: var(--shadow); }
+  .hero__card img { border-radius: 4px; width: 100%; }
+  .hero__card figcaption { font-size: 13px; color: var(--ink-3); padding: 12px 4px 14px; display: flex; align-items: center; gap: 8px; }
+  .hero__card figcaption::before { content: ""; width: 18px; height: 2px; background: var(--acc); }
+
+  section { scroll-margin-top: 100px; }
+  .band { padding: 84px 0; }
+  .band--tint { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .head { max-width: 640px; margin-bottom: 42px; }
+  .head h2 { font-size: clamp(28px, 3.4vw, 40px); margin: 16px 0 12px; }
+  .head p { color: var(--ink-2); }
+
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .svc { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 26px 24px 28px; }
+  .svc__n { display: inline-block; font-weight: 700; font-size: 13px; letter-spacing: .12em; color: var(--acc); margin-bottom: 14px; }
+  .svc h3 { font-size: 19px; margin-bottom: 9px; }
+  .svc p { color: var(--ink-2); font-size: 15.5px; }
+
+  .process { background: var(--dark); color: #eaf0e2; }
+  .process .eyebrow { color: var(--gold); }
+  .process h2 { color: #fff; }
+  .process .head p { color: #a7b39a; }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .steps li { border-top: 2px solid #33452a; padding-top: 18px; }
+  .step__n { display: block; font-weight: 700; font-size: 14px; color: var(--gold); letter-spacing: .1em; margin-bottom: 12px; }
+  .steps h3 { font-size: 17px; margin-bottom: 8px; color: #fff; }
+  .steps p { color: #a7b39a; font-size: 14.5px; }
+
+  .wrap--narrow { max-width: 940px; }
+  .work-grid { columns: 2; column-gap: 22px; }
+  .work__item { margin: 0 0 22px; break-inside: avoid; }
+  .work__item img { width: 100%; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+  .work__item figcaption { font-size: 13.5px; color: var(--ink-3); margin-top: 10px; }
+
+  .faq { max-width: 820px; }
+  .faq__item { border-bottom: 1px solid var(--line); }
+  .faq__item summary { list-style: none; cursor: pointer; padding: 20px 34px 20px 0; position: relative;
+    font-family: "Sora", sans-serif; font-weight: 600; font-size: 18px; }
+  .faq__item summary::-webkit-details-marker { display: none; }
+  .faq__item summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+    color: var(--acc); font-weight: 700; font-size: 22px; }
+  .faq__item[open] summary::after { content: "–"; }
+  .faq__item p { color: var(--ink-2); padding: 0 34px 22px 0; margin-top: -6px; }
+
+  .contact { background: #fff; border-top: 1px solid var(--line); }
+  .contact__card { display: grid; grid-template-columns: 1.1fr .9fr; gap: 46px; align-items: center;
+    border: 1px solid var(--line); border-radius: 14px; padding: 44px 46px; background: var(--paper); }
+  .contact h2 { font-size: clamp(28px, 3.4vw, 40px); margin: 16px 0 14px; }
+  .contact p { color: var(--ink-2); }
+  .contact__meta { display: grid; gap: 16px; margin-top: 26px; }
+  .contact__meta div { display: flex; gap: 12px; align-items: flex-start; }
+  .contact__meta .k { font-family: "Sora", sans-serif; font-weight: 600; font-size: 12.5px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--ink-3); min-width: 96px; padding-top: 3px; }
+  .contact__meta .v { font-weight: 500; }
+  .contact__meta a { color: var(--acc-ink); text-decoration: none; border-bottom: 1.5px solid rgba(168,88,6,.3); }
+  .contact__cta { display: flex; flex-direction: column; gap: 14px; }
+  .contact__cta .btn { justify-content: center; font-size: 16px; padding: 15px 22px; }
+  .contact__cta small { color: var(--ink-3); text-align: center; }
+
+  footer { padding: 40px 0 52px; }
+  .foot { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
+  .foot__brand { display: flex; align-items: center; gap: 13px; }
+  .foot__mark { height: 44px; width: 44px; border-radius: 50%; }
+  .foot__name { font-family: "Sora", sans-serif; font-weight: 700; font-size: 16px; }
+  .foot__meta { color: var(--ink-3); font-size: 14px; text-align: right; }
+  .foot__rule { border-top: 1px solid var(--line); margin: 26px 0 22px; }
+
+  @media (max-width: 980px) {
+    .hero__in { grid-template-columns: 1fr; gap: 40px; }
+    .svc-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+    .contact__card { grid-template-columns: 1fr; padding: 34px 28px; gap: 30px; }
+    .nav__links { display: none; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 20px; }
+    .band { padding: 62px 0; }
+    .svc-grid, .steps { grid-template-columns: 1fr; }
+    .work-grid { columns: 1; }
+    .hero h1 { font-size: 33px; }
+    .brand__word { height: 27px; width: 128px; }
+    .brand__mark { height: 44px; width: 44px; }
+    .nav__cta { padding: 10px 14px; font-size: 14px; }
+    .foot__meta { text-align: left; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="#top" aria-label="Aerial Trees Group — home">
+        <img class="brand__mark" src="assets/logo-round.png" width="720" height="720" alt="Aerial Trees Group logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 104" class="brand__word" aria-hidden="true">
+  <title>Aerial Trees Group</title>
+  <g fill="#1b1a17"><path d="M1094 272H492L397 0H10L563 1493H1022L1575 0H1188ZM588 549H997L793 1143Z" transform="translate(4.000,50.000) scale(0.029297,-0.029297)"/><path d="M188 1493H1227V1202H573V924H1188V633H573V291H1249V0H188Z" transform="translate(51.036,50.000) scale(0.029297,-0.029297)"/><path d="M735 831Q856 831 908.5 876.0Q961 921 961 1024Q961 1126 908.5 1170.0Q856 1214 735 1214H573V831ZM573 565V0H188V1493H776Q1071 1493 1208.5 1394.0Q1346 1295 1346 1081Q1346 933 1274.5 838.0Q1203 743 1059 698Q1138 680 1200.5 616.5Q1263 553 1327 424L1536 0H1126L944 371Q889 483 832.5 524.0Q776 565 682 565Z" transform="translate(92.622,50.000) scale(0.029297,-0.029297)"/><path d="M188 1493H573V0H188Z" transform="translate(139.423,50.000) scale(0.029297,-0.029297)"/><path d="M1094 272H492L397 0H10L563 1493H1022L1575 0H1188ZM588 549H997L793 1143Z" transform="translate(162.347,50.000) scale(0.029297,-0.029297)"/><path d="M188 1493H573V291H1249V0H188Z" transform="translate(209.383,50.000) scale(0.029297,-0.029297)"/></g>
+  <g fill="#d97a0e"><path d="M10 1493H1386V1202H891V0H506V1202H10Z" transform="translate(269.104,50.000) scale(0.029297,-0.029297)"/><path d="M735 831Q856 831 908.5 876.0Q961 921 961 1024Q961 1126 908.5 1170.0Q856 1214 735 1214H573V831ZM573 565V0H188V1493H776Q1071 1493 1208.5 1394.0Q1346 1295 1346 1081Q1346 933 1274.5 838.0Q1203 743 1059 698Q1138 680 1200.5 616.5Q1263 553 1327 424L1536 0H1126L944 371Q889 483 832.5 524.0Q776 565 682 565Z" transform="translate(310.632,50.000) scale(0.029297,-0.029297)"/><path d="M188 1493H1227V1202H573V924H1188V633H573V291H1249V0H188Z" transform="translate(357.433,50.000) scale(0.029297,-0.029297)"/><path d="M188 1493H1227V1202H573V924H1188V633H573V291H1249V0H188Z" transform="translate(399.019,50.000) scale(0.029297,-0.029297)"/><path d="M1227 1446V1130Q1104 1185 987.0 1213.0Q870 1241 766 1241Q628 1241 562.0 1203.0Q496 1165 496 1085Q496 1025 540.5 991.5Q585 958 702 934L866 901Q1115 851 1220.0 749.0Q1325 647 1325 459Q1325 212 1178.5 91.5Q1032 -29 731 -29Q589 -29 446.0 -2.0Q303 25 160 78V403Q303 327 436.5 288.5Q570 250 694 250Q820 250 887.0 292.0Q954 334 954 412Q954 482 908.5 520.0Q863 558 727 588L578 621Q354 669 250.5 774.0Q147 879 147 1057Q147 1280 291.0 1400.0Q435 1520 705 1520Q828 1520 958.0 1501.5Q1088 1483 1227 1446Z" transform="translate(440.605,50.000) scale(0.029297,-0.029297)"/></g>
+  <g fill="#4c8a1e"><path d="M-6 1493H1257V1323H727V0H524V1323H-6Z" transform="translate(4.000,90.000) scale(0.012207,-0.012207)"/><path d="M909 700Q974 678 1035.5 606.0Q1097 534 1159 408L1364 0H1147L956 383Q882 533 812.5 582.0Q743 631 623 631H403V0H201V1493H657Q913 1493 1039.0 1386.0Q1165 1279 1165 1063Q1165 922 1099.5 829.0Q1034 736 909 700ZM403 1327V797H657Q803 797 877.5 864.5Q952 932 952 1063Q952 1194 877.5 1260.5Q803 1327 657 1327Z" transform="translate(20.521,90.000) scale(0.012207,-0.012207)"/><path d="M201 1493H1145V1323H403V881H1114V711H403V170H1163V0H201Z" transform="translate(39.142,90.000) scale(0.012207,-0.012207)"/><path d="M201 1493H1145V1323H403V881H1114V711H403V170H1163V0H201Z" transform="translate(56.188,90.000) scale(0.012207,-0.012207)"/><path d="M1096 1444V1247Q981 1302 879.0 1329.0Q777 1356 682 1356Q517 1356 427.5 1292.0Q338 1228 338 1110Q338 1011 397.5 960.5Q457 910 623 879L745 854Q971 811 1078.5 702.5Q1186 594 1186 412Q1186 195 1040.5 83.0Q895 -29 614 -29Q508 -29 388.5 -5.0Q269 19 141 66V274Q264 205 382.0 170.0Q500 135 614 135Q787 135 881.0 203.0Q975 271 975 397Q975 507 907.5 569.0Q840 631 686 662L563 686Q337 731 236.0 827.0Q135 923 135 1094Q135 1292 274.5 1406.0Q414 1520 659 1520Q764 1520 873.0 1501.0Q982 1482 1096 1444Z" transform="translate(82.430,90.000) scale(0.012207,-0.012207)"/><path d="M201 1493H1145V1323H403V881H1114V711H403V170H1163V0H201Z" transform="translate(99.549,90.000) scale(0.012207,-0.012207)"/><path d="M909 700Q974 678 1035.5 606.0Q1097 534 1159 408L1364 0H1147L956 383Q882 533 812.5 582.0Q743 631 623 631H403V0H201V1493H657Q913 1493 1039.0 1386.0Q1165 1279 1165 1063Q1165 922 1099.5 829.0Q1034 736 909 700ZM403 1327V797H657Q803 797 877.5 864.5Q952 932 952 1063Q952 1194 877.5 1260.5Q803 1327 657 1327Z" transform="translate(116.595,90.000) scale(0.012207,-0.012207)"/><path d="M586 0 16 1493H227L700 236L1174 1493H1384L815 0Z" transform="translate(135.216,90.000) scale(0.012207,-0.012207)"/><path d="M201 1493H403V0H201Z" transform="translate(153.568,90.000) scale(0.012207,-0.012207)"/><path d="M1319 1378V1165Q1217 1260 1101.5 1307.0Q986 1354 856 1354Q600 1354 464.0 1197.5Q328 1041 328 745Q328 450 464.0 293.5Q600 137 856 137Q986 137 1101.5 184.0Q1217 231 1319 326V115Q1213 43 1094.5 7.0Q976 -29 844 -29Q505 -29 310.0 178.5Q115 386 115 745Q115 1105 310.0 1312.5Q505 1520 844 1520Q978 1520 1096.5 1484.5Q1215 1449 1319 1378Z" transform="translate(162.191,90.000) scale(0.012207,-0.012207)"/><path d="M201 1493H1145V1323H403V881H1114V711H403V170H1163V0H201Z" transform="translate(180.897,90.000) scale(0.012207,-0.012207)"/><path d="M1096 1444V1247Q981 1302 879.0 1329.0Q777 1356 682 1356Q517 1356 427.5 1292.0Q338 1228 338 1110Q338 1011 397.5 960.5Q457 910 623 879L745 854Q971 811 1078.5 702.5Q1186 594 1186 412Q1186 195 1040.5 83.0Q895 -29 614 -29Q508 -29 388.5 -5.0Q269 19 141 66V274Q264 205 382.0 170.0Q500 135 614 135Q787 135 881.0 203.0Q975 271 975 397Q975 507 907.5 569.0Q840 631 686 662L563 686Q337 731 236.0 827.0Q135 923 135 1094Q135 1292 274.5 1406.0Q414 1520 659 1520Q764 1520 873.0 1501.0Q982 1482 1096 1444Z" transform="translate(197.943,90.000) scale(0.012207,-0.012207)"/><path d="M498 803Q407 722 364.5 641.5Q322 561 322 473Q322 327 428.0 230.0Q534 133 694 133Q789 133 872.0 164.5Q955 196 1028 260ZM639 915 1147 395Q1206 484 1239.0 585.5Q1272 687 1278 801H1464Q1452 669 1400.0 540.0Q1348 411 1255 285L1534 0H1282L1139 147Q1035 58 921.0 14.5Q807 -29 676 -29Q435 -29 282.0 108.5Q129 246 129 461Q129 589 196.0 701.5Q263 814 397 913Q349 976 324.0 1038.5Q299 1101 299 1161Q299 1323 410.0 1421.5Q521 1520 705 1520Q788 1520 870.5 1502.0Q953 1484 1038 1448V1266Q951 1313 872.0 1337.5Q793 1362 725 1362Q620 1362 554.5 1306.5Q489 1251 489 1163Q489 1112 518.5 1060.5Q548 1009 639 915Z" transform="translate(224.259,90.000) scale(0.012207,-0.012207)"/><path d="M1096 1444V1247Q981 1302 879.0 1329.0Q777 1356 682 1356Q517 1356 427.5 1292.0Q338 1228 338 1110Q338 1011 397.5 960.5Q457 910 623 879L745 854Q971 811 1078.5 702.5Q1186 594 1186 412Q1186 195 1040.5 83.0Q895 -29 614 -29Q508 -29 388.5 -5.0Q269 19 141 66V274Q264 205 382.0 170.0Q500 135 614 135Q787 135 881.0 203.0Q975 271 975 397Q975 507 907.5 569.0Q840 631 686 662L563 686Q337 731 236.0 827.0Q135 923 135 1094Q135 1292 274.5 1406.0Q414 1520 659 1520Q764 1520 873.0 1501.0Q982 1482 1096 1444Z" transform="translate(254.200,90.000) scale(0.012207,-0.012207)"/><path d="M-6 1493H1257V1323H727V0H524V1323H-6Z" transform="translate(271.319,90.000) scale(0.012207,-0.012207)"/><path d="M178 1493H381V586Q381 346 468.0 240.5Q555 135 750 135Q944 135 1031.0 240.5Q1118 346 1118 586V1493H1321V561Q1321 269 1176.5 120.0Q1032 -29 750 -29Q467 -29 322.5 120.0Q178 269 178 561Z" transform="translate(287.840,90.000) scale(0.012207,-0.012207)"/><path d="M201 1493H502L883 477L1266 1493H1567V0H1370V1311L985 287H782L397 1311V0H201Z" transform="translate(307.389,90.000) scale(0.012207,-0.012207)"/><path d="M403 1327V766H657Q798 766 875.0 839.0Q952 912 952 1047Q952 1181 875.0 1254.0Q798 1327 657 1327ZM201 1493H657Q908 1493 1036.5 1379.5Q1165 1266 1165 1047Q1165 826 1036.5 713.0Q908 600 657 600H403V0H201Z" transform="translate(330.208,90.000) scale(0.012207,-0.012207)"/><path d="M1219 213V614H889V780H1419V139Q1302 56 1161.0 13.5Q1020 -29 860 -29Q510 -29 312.5 175.5Q115 380 115 745Q115 1111 312.5 1315.5Q510 1520 860 1520Q1006 1520 1137.5 1484.0Q1269 1448 1380 1378V1163Q1268 1258 1142.0 1306.0Q1016 1354 877 1354Q603 1354 465.5 1201.0Q328 1048 328 745Q328 443 465.5 290.0Q603 137 877 137Q984 137 1068.0 155.5Q1152 174 1219 213Z" transform="translate(355.731,90.000) scale(0.012207,-0.012207)"/><path d="M909 700Q974 678 1035.5 606.0Q1097 534 1159 408L1364 0H1147L956 383Q882 533 812.5 582.0Q743 631 623 631H403V0H201V1493H657Q913 1493 1039.0 1386.0Q1165 1279 1165 1063Q1165 922 1099.5 829.0Q1034 736 909 700ZM403 1327V797H657Q803 797 877.5 864.5Q952 932 952 1063Q952 1194 877.5 1260.5Q803 1327 657 1327Z" transform="translate(376.354,90.000) scale(0.012207,-0.012207)"/><path d="M201 1493H403V0H201Z" transform="translate(394.974,90.000) scale(0.012207,-0.012207)"/><path d="M201 1493H473L1135 244V1493H1331V0H1059L397 1249V0H201Z" transform="translate(403.597,90.000) scale(0.012207,-0.012207)"/><path d="M403 1327V166H647Q956 166 1099.5 306.0Q1243 446 1243 748Q1243 1048 1099.5 1187.5Q956 1327 647 1327ZM201 1493H616Q1050 1493 1253.0 1312.5Q1456 1132 1456 748Q1456 362 1252.0 181.0Q1048 0 616 0H201Z" transform="translate(423.548,90.000) scale(0.012207,-0.012207)"/><path d="M201 1493H403V0H201Z" transform="translate(444.049,90.000) scale(0.012207,-0.012207)"/><path d="M201 1493H473L1135 244V1493H1331V0H1059L397 1249V0H201Z" transform="translate(452.672,90.000) scale(0.012207,-0.012207)"/><path d="M1219 213V614H889V780H1419V139Q1302 56 1161.0 13.5Q1020 -29 860 -29Q510 -29 312.5 175.5Q115 380 115 745Q115 1111 312.5 1315.5Q510 1520 860 1520Q1006 1520 1137.5 1484.0Q1269 1448 1380 1378V1163Q1268 1258 1142.0 1306.0Q1016 1354 877 1354Q603 1354 465.5 1201.0Q328 1048 328 745Q328 443 465.5 290.0Q603 137 877 137Q984 137 1068.0 155.5Q1152 174 1219 213Z" transform="translate(472.623,90.000) scale(0.012207,-0.012207)"/></g>
+</svg>
+      </a>
+      <nav class="nav__links" aria-label="Sections">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#work">Our work</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn--acc nav__cta" href="tel:0243582000">Call (02) 4358 2000</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero__in">
+        <div>
+          <span class="eyebrow">Tree Services &amp; Stump Grinding · Lake Munmorah</span>
+          <h1>Tree removal, pruning and stump grinding, done safely.</h1>
+          <p class="lead">All tree services and stump grinding across the Central Coast, Lake Macquarie, Newcastle and the Hunter Valley — established, experienced and insured for over 20 years.</p>
+          <div class="hero__cta">
+            <a class="btn btn--acc" href="tel:0243582000">Call for a free quote</a>
+            <a class="btn btn--ghost" href="#services">See services</a>
+          </div>
+          <div class="chips">
+            <span class="chip"><b>20+ years</b> established</span>
+            <span class="chip">Insured</span>
+            <span class="chip">Free quotes — all areas</span>
+            <span class="chip">Stump grinding</span>
+          </div>
+        </div>
+        <div class="hero__card">
+          <figure>
+            <img src="assets/w3_before.jpg" alt="Tree assessed beside a fence line before removal" width="450" height="370">
+            <figcaption>A tree assessed before removal, Lake Munmorah</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="band band--tint">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">What we do</span>
+          <h2>All tree services &amp; stump grinding</h2>
+          <p>From a single overhanging limb to a full removal and stump grind — one crew, one job.</p>
+        </div>
+        <div class="svc-grid">
+        <article class="svc">
+          <span class="svc__n">01</span>
+          <h3>Tree removal</h3>
+          <p>Whole-tree removals, sectioned down safely where access is tight or the tree sits over a roof, fence or shed.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">02</span>
+          <h3>Trimming & pruning</h3>
+          <p>Deadwooding, canopy lifting and pruning to take the weight out of overhanging limbs and make the property safer.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">03</span>
+          <h3>Stump grinding</h3>
+          <p>Stumps ground out below ground level and the site cleared, so the area can be replanted or covered.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">04</span>
+          <h3>Chipping & mulch</h3>
+          <p>Branches chipped on site, with mulch left for the garden or taken away.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">05</span>
+          <h3>Aerial / elevated access</h3>
+          <p>An elevated work platform for trees that can't be climbed or that sit near buildings and powerlines.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">06</span>
+          <h3>Green waste removal</h3>
+          <p>Everything cut on site cleared away, leaving the yard tidy.</p>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="band process">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">How it runs</span>
+          <h2>From a phone call to a cleared site</h2>
+          <p>Free quotes, careful work, and the site left clean.</p>
+        </div>
+        <ol class="steps">
+          <li><span class="step__n">01</span><div><h3>Free quote</h3><p>Call or email with the address — free quotes, all areas.</p></div></li>
+          <li><span class="step__n">02</span><div><h3>Assess the tree</h3><p>The tree, the access and what's around it are looked at before anything is cut.</p></div></li>
+          <li><span class="step__n">03</span><div><h3>The work</h3><p>Climbed, platform or ground-worked — the tree is sectioned down safely.</p></div></li>
+          <li><span class="step__n">04</span><div><h3>Stump & clean up</h3><p>The stump is ground out and the site cleared and chipped.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="work" class="band">
+      <div class="wrap wrap--narrow">
+        <div class="head">
+          <span class="eyebrow">Recent work</span>
+          <h2>On the job around Lake Munmorah</h2>
+          <p>A removal, a stump grind and pruning from recent jobs.</p>
+        </div>
+        <div class="work-grid">
+        <figure class="work__item">
+          <img src="assets/w1_before.jpg" alt="Before — a large gum overhanging the roof." width="448" height="380" decoding="async">
+          <figcaption>Before — a large gum overhanging the roof.</figcaption>
+        </figure>
+        <figure class="work__item">
+          <img src="assets/w2_after.jpg" alt="After — the overhanging limbs removed." width="448" height="380" decoding="async">
+          <figcaption>After — the overhanging limbs removed.</figcaption>
+        </figure>
+        <figure class="work__item">
+          <img src="assets/reel.jpg" alt="Sectioning a log on site." width="540" height="960" decoding="async">
+          <figcaption>Sectioning a log on site.</figcaption>
+        </figure>
+        <figure class="work__item">
+          <img src="assets/w4_after.jpg" alt="Stump ground out, area cleared." width="456" height="370" decoding="async">
+          <figcaption>Stump ground out, area cleared.</figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="band band--tint">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">Questions</span>
+          <h2>Before you book</h2>
+        </div>
+        <div class="faq">
+        <details class="faq__item"><summary>What areas do you cover?</summary><p>The Central Coast, Lake Macquarie, Newcastle and the wider Hunter Valley.</p></details>
+        <details class="faq__item"><summary>How long have you been in business?</summary><p>The business has been established, experienced and insured for over 20 years.</p></details>
+        <details class="faq__item"><summary>Do you grind stumps as well?</summary><p>Yes — stump grinding is part of the service; stumps are ground out below ground level.</p></details>
+        <details class="faq__item"><summary>Can you remove trees near houses or powerlines?</summary><p>Yes. Trees are sectioned down and an elevated work platform is used where a tree can't be climbed or sits close to a building.</p></details>
+        <details class="faq__item"><summary>How do I get a quote?</summary><p>Call (02) 4358 2000 or email aerialtrees@hotmail.com for a free quote.</p></details>
+        <details class="faq__item"><summary>Do you take the green waste away?</summary><p>Branches are chipped on site — mulch can be left for the garden or removed with the rest of the green waste.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="band contact">
+      <div class="wrap">
+        <div class="contact__card">
+          <div>
+            <span class="eyebrow">Get in touch</span>
+            <h2>Free quotes, all areas</h2>
+            <p>Call or email with the address and what needs doing, and a free quote comes back.</p>
+            <div class="contact__meta">
+              <div><span class="k">Phone</span><span class="v"><a href="tel:0243582000">(02) 4358 2000</a></span></div>
+              <div><span class="k">Email</span><span class="v"><a href="mailto:aerialtrees@hotmail.com">aerialtrees@hotmail.com</a></span></div>
+              <div><span class="k">Address</span><span class="v">295 Pacific Highway, Lake Munmorah NSW</span></div>
+              <div><span class="k">Service area</span><span class="v">Central Coast · Lake Macquarie · Newcastle · Hunter Valley</span></div>
+            </div>
+          </div>
+          <div class="contact__cta">
+            <a class="btn btn--acc" href="tel:0243582000">Call (02) 4358 2000</a>
+            <a class="btn btn--ghost" href="mailto:aerialtrees@hotmail.com">Email a free quote</a>
+            <small>Established, insured, 20+ years</small>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot__rule"></div>
+      <div class="foot">
+        <div class="foot__brand">
+          <img class="foot__mark" src="assets/logo-round.png" width="720" height="720" alt="">
+          <div>
+            <div class="foot__name">Aerial Trees Group</div>
+            <div class="foot__meta">Lake Munmorah, NSW</div>
+          </div>
+        </div>
+        <div class="foot__meta">Tree services &amp; stump grinding · Central Coast &amp; the Hunter, NSW · (02) 4358 2000<br>© 2026 Aerial Trees Group</div>
+      </div>
+    </div>
+  </footer>
+<style id="fix-contact-grid">
+/* the contact block has a min-content floor wider than a 320px viewport (the <dt> auto column plus
+   unbroken values), so its pane started at x=49 and ran past the edge. minmax(0,1fr) + min-width:0
+   lets the column actually shrink, and long values wrap. */
+@media(max-width:420px){
+  .contact-grid,.contact__grid,.contact .grid{grid-template-columns:minmax(0,1fr)!important}
+  .contact-grid>*,.contact__grid>*,.contact .grid>*{min-width:0!important;max-width:100%!important}
+  .contact__meta,.contact__meta div,.info-card dl{min-width:0!important;max-width:100%!important}
+  .contact__meta *,.info-card dd,.info-card dt{overflow-wrap:anywhere!important}
+}
+</style>
+</body>
+</html>
