@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platinum Bond Cleaning — Bond, Carpet &amp; Pest Cleaning, Brisbane &amp; Coasts</title>
+<meta name="description" content="Platinum Bond Cleaning does end-of-lease bond cleans, carpet cleaning and pest control across Brisbane, the Gold Coast and Sunshine Coast. Bond back guarantee, easy booking. Call 0438 650 958.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6fafd;
+    --ink:#06356e;
+    --ink-deep:#04264f;
+    --ink-soft:#41618a;
+    --blue:#0677d6;
+    --blue-deep:#0459a3;
+    --tint:#e8f2fb;
+    --line:rgba(6,53,110,.14);
+    --wrap:1180px;
+    --navh:88px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{
+    margin:0;background:var(--paper);color:var(--ink-deep);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{width:min(100% - 44px,var(--wrap));margin-inline:auto}
+  h1,h2,h3{font-family:"Sora",system-ui,sans-serif;line-height:1.1;letter-spacing:-.02em;margin:0;font-weight:700}
+  h1{font-size:clamp(2.1rem,4.7vw,3.6rem);font-weight:800}
+  h2{font-size:clamp(1.7rem,3.1vw,2.45rem)}
+  h3{font-size:1.14rem;font-weight:600}
+  p{margin:0}
+  .eyebrow{
+    font-family:"Inter",sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--blue-deep);display:inline-flex;align-items:center;gap:.6em;margin:0 0 18px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--blue);display:inline-block}
+
+  header.site{
+    position:sticky;top:0;z-index:40;height:var(--navh);
+    background:#ffffff;border-bottom:1px solid var(--line);
+  }
+  .nav{height:var(--navh);display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;flex:none}
+  .brand img{height:56px;width:auto;max-width:300px}
+  .nav-links{display:flex;align-items:center;gap:30px;margin-left:auto;margin-right:10px}
+  .nav-links a{
+    text-decoration:none;font-weight:500;font-size:.94rem;color:var(--ink-soft);
+    padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;
+  }
+  .nav-links a:hover{color:var(--ink);border-color:var(--blue)}
+  .btn{
+    display:inline-flex;align-items:center;gap:.55em;text-decoration:none;
+    font-family:"Sora",sans-serif;font-weight:600;font-size:.94rem;
+    padding:13px 22px;border-radius:4px;border:1.5px solid transparent;
+    transition:transform .18s,background .2s,color .2s,border-color .2s;white-space:nowrap;
+  }
+  .btn-blue{background:var(--blue);color:#fff}
+  .btn-blue:hover{background:var(--blue-deep);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .nav .btn-blue{padding:11px 18px;font-size:.88rem}
+
+  .hero{padding:76px 0 66px;border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,#eef6fd 0%,var(--paper) 100%);}
+  .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:62px;align-items:center}
+  .hero p.lede{font-size:1.14rem;color:#2d4a70;margin:22px 0 30px;max-width:34ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
+  .trust{list-style:none;display:flex;flex-wrap:wrap;gap:10px 26px;padding:0;margin:0}
+  .trust li{display:flex;align-items:center;gap:.5em;font-size:.92rem;font-weight:500;color:var(--ink-soft)}
+  .trust li::before{content:"";width:7px;height:7px;background:var(--blue);border-radius:50%;flex:none}
+
+  /* designed hero panel (no stock photography) */
+  .hero-panel{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;
+    max-width:470px;margin-left:auto;box-shadow:0 26px 52px -34px rgba(4,38,79,.55)}
+  .hero-panel .ph{background:var(--ink);color:#fff;padding:22px 26px;display:flex;align-items:center;gap:16px}
+  .hero-panel .ph img{height:34px;width:auto;filter:none;background:#fff;padding:4px 6px;border-radius:4px}
+  .hero-panel .ph b{font-family:"Sora",sans-serif;font-size:.95rem;font-weight:600;line-height:1.3}
+  .hero-panel .pb{padding:24px 26px 26px}
+  .hero-panel ul{list-style:none;margin:0;padding:0;display:grid;gap:0}
+  .hero-panel li{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-top:1px solid var(--line);font-size:.96rem}
+  .hero-panel li:first-child{border-top:0}
+  .hero-panel li .i{flex:none;width:22px;height:22px;border-radius:50%;background:var(--tint);color:var(--blue-deep);
+    font-weight:700;font-size:.78rem;display:grid;place-items:center;margin-top:2px}
+  .hero-panel li b{font-weight:600;color:var(--ink-deep)}
+  .hero-panel li span{color:var(--ink-soft)}
+
+  section{padding:86px 0}
+  .sec-head{max-width:640px;margin-bottom:44px}
+  .sec-head p{color:var(--ink-soft);margin-top:14px;font-size:1.04rem}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{border:1px solid var(--line);background:#fff;padding:30px 26px 28px;border-radius:8px;transition:border-color .2s,transform .2s,box-shadow .2s}
+  .card:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 16px 34px -26px rgba(4,38,79,.5)}
+  .card .num{font-family:"Sora",sans-serif;font-weight:700;font-size:.82rem;color:var(--blue);letter-spacing:.06em}
+  .card h3{margin:12px 0 10px}
+  .card p{color:var(--ink-soft);font-size:.96rem;line-height:1.6}
+
+  .process{background:var(--ink-deep);color:#e4eefb}
+  .process .eyebrow{color:#8fc6f5}
+  .process .eyebrow::before{background:#8fc6f5}
+  .process h2{color:#fff}
+  .process .sec-head p{color:#a9c2de}
+  .phases{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+  .phase{border-top:1px solid rgba(143,198,245,.3);padding-top:20px}
+  .phase .k{font-family:"Sora",sans-serif;font-weight:700;font-size:.82rem;color:#8fc6f5;letter-spacing:.1em}
+  .phase h3{color:#fff;margin:10px 0 8px;font-size:1.04rem}
+  .phase p{color:#a9c2de;font-size:.93rem;line-height:1.6}
+
+  /* included checklist (replaces photo gallery — no own photos available) */
+  .include-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 40px}
+  .inc{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}
+  .inc .tick{flex:none;width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:700;margin-top:1px}
+  .inc b{display:block;font-family:"Sora",sans-serif;font-size:1rem;font-weight:600;margin-bottom:2px}
+  .inc span{color:var(--ink-soft);font-size:.94rem}
+
+  .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+  details{border-bottom:1px solid var(--line);padding:18px 0}
+  details summary{cursor:pointer;list-style:none;font-family:"Sora",sans-serif;font-weight:600;font-size:1.03rem;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";font-size:1.3rem;color:var(--blue);line-height:1;font-weight:700}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--ink-soft);margin-top:10px;font-size:.96rem;line-height:1.62}
+
+  .contact{background:var(--tint);border-top:1px solid var(--line)}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  .contact .big-call{display:inline-flex;align-items:center;gap:.5em;font-family:"Sora",sans-serif;font-weight:800;
+    font-size:clamp(1.5rem,3.3vw,2.15rem);text-decoration:none;color:var(--ink-deep);margin:16px 0 10px}
+  .contact .big-call span{color:var(--blue-deep)}
+  .contact p{color:var(--ink-soft)}
+  .contact .facts{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+  .contact .facts li{border-top:1px solid var(--line);padding-top:14px;font-size:.97rem}
+  .contact .facts b{display:block;font-family:"Inter",sans-serif;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:3px}
+  .contact .facts a{text-decoration:none}
+  .contact .facts a:hover{text-decoration:underline}
+
+  footer.site{background:var(--ink-deep);color:#a9c2de;padding:38px 0}
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .foot .flogo{display:flex;align-items:center;gap:16px}
+  .foot .flogo img{height:32px;width:auto;background:#fff;padding:3px 5px;border-radius:3px}
+  .foot .meta{font-size:.86rem;line-height:1.7;text-align:right}
+  .foot .meta a{color:#8fc6f5;text-decoration:none}
+  .foot .meta a:hover{text-decoration:underline}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-panel{max-width:100%;margin:0}
+    .cards{grid-template-columns:1fr 1fr}
+    .phases{grid-template-columns:1fr 1fr;gap:26px}
+    .include-grid{grid-template-columns:1fr}
+    .faq-grid{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr;gap:30px}
+  }
+  @media (max-width:720px){
+    :root{--navh:74px}
+    .nav-links{display:none}
+    .brand img{height:38px;max-width:196px}
+    .cards{grid-template-columns:1fr}
+    .phases{grid-template-columns:1fr}
+    section{padding:62px 0}
+    .hero{padding:46px 0 48px}
+    .foot{flex-direction:column;align-items:flex-start}
+    .foot .meta{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Platinum Bond Cleaning home">
+      <img src="assets/logo-lockup.png" alt="Platinum Bond Cleaning" width="1086" height="270">
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#included">What's included</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-blue" href="tel:+61438650958">Call 0438 650 958</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Bond cleaning · Brisbane, Gold Coast &amp; Sunshine Coast</p>
+        <h1>End-of-lease bond cleaning that gets your bond back.</h1>
+        <p class="lede">Bond cleans, carpet cleaning and pest control across South East Queensland — booked easily, finished properly.</p>
+        <div class="hero-cta">
+          <a class="btn btn-blue" href="tel:+61438650958">Call 0438 650 958</a>
+          <a class="btn btn-ghost" href="#included">See what's included</a>
+        </div>
+        <ul class="trust">
+          <li>100% bond back guarantee*</li>
+          <li>Brisbane, Gold Coast &amp; Sunshine Coast</li>
+          <li>Easy booking</li>
+        </ul>
+      </div>
+      <aside class="hero-panel">
+        <div class="ph">
+          <img src="assets/logo-mark.png" alt="" width="534" height="248">
+          <b>One booking, three jobs done</b>
+        </div>
+        <div class="pb">
+          <ul>
+            <li><span class="i">1</span><span><b>Bond cleaning</b> — end-of-lease, room by room</span></li>
+            <li><span class="i">2</span><span><b>Carpet cleaning</b> — steam and extraction</span></li>
+            <li><span class="i">3</span><span><b>Pest control</b> — done before the final inspection</span></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Services</p>
+        <h2>Bond cleans, carpets and pest control</h2>
+        <p>Everything a final inspection looks at, plus the extras that get flagged.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><p class="num">01</p><h3>Bond &amp; end-of-lease cleaning</h3><p>A full vacate clean, room by room, to the standard a property manager checks against.</p></article>
+        <article class="card"><p class="num">02</p><h3>Carpet cleaning</h3><p>Steam and extraction on carpets and rugs, with the traffic lanes and edges given proper attention.</p></article>
+        <article class="card"><p class="num">03</p><h3>Pest control</h3><p>Flea and general pest treatment booked in alongside the clean, so nothing is left to come back to.</p></article>
+        <article class="card"><p class="num">04</p><h3>Kitchens &amp; appliances</h3><p>Cupboards in and out, oven, rangehood, splashback and benchtops degreased and wiped down.</p></article>
+        <article class="card"><p class="num">05</p><h3>Bathrooms &amp; mould</h3><p>Showers, screens, tiles and grout scrubbed, with mould treated rather than just wiped over.</p></article>
+        <article class="card"><p class="num">06</p><h3>Windows, tracks &amp; cobwebs</h3><p>Glass, frames, tracks and cornices — the small items inspectors write down first.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Process</p>
+        <h2>Booked easily, finished properly</h2>
+        <p>Three services, one booking, and a clean you can hand back.</p>
+      </div>
+      <div class="phases">
+        <div class="phase"><p class="k">01</p><h3>Tell us the property</h3><p>Call or message with the address, the size and your inspection date.</p></div>
+        <div class="phase"><p class="k">02</p><h3>Get booked in</h3><p>We lock in a time and confirm whether carpet and pest are needed too.</p></div>
+        <div class="phase"><p class="k">03</p><h3>We clean</h3><p>Bond clean room by room, carpets steam-cleaned, pest treated.</p></div>
+        <div class="phase"><p class="k">04</p><h3>Inspection ready</h3><p>The property is left ready for the final inspection — and we're a call away if anything's flagged.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="included">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">What's included</p>
+        <h2>What a Platinum bond clean covers</h2>
+        <p>The list a property manager works through, covered in one visit.</p>
+      </div>
+      <div class="include-grid">
+        <div class="inc"><span class="tick">✓</span><span><b>Kitchen</b><span>Cupboards, oven, rangehood, splashback, sink and benches.</span></span></div>
+        <div class="inc"><span class="tick">✓</span><span><b>Bathroom &amp; ensuite</b><span>Shower, screen, tiles, grout, toilet, vanity and mirrors.</span></span></div>
+        <div class="inc"><span class="tick">✓</span><span><b>Bedrooms &amp; living</b><span>Walls spot-cleaned, skirting, cornices, switches, light fittings.</span></span></div>
+        <div class="inc"><span class="tick">✓</span><span><b>Floors</b><span>Vacuumed and mopped throughout, edges and corners included.</span></span></div>
+        <div class="inc"><span class="tick">✓</span><span><b>Windows &amp; tracks</b><span>Glass, frames, sills and tracks inside, plus cobwebs.</span></span></div>
+        <div class="inc"><span class="tick">✓</span><span><b>Extras on request</b><span>Carpet steam cleaning and pest control booked with the same visit.</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>Before you book</h2>
+      </div>
+      <div class="faq-grid">
+        <details open>
+          <summary>Which areas do you cover?</summary>
+          <p>Brisbane, the Gold Coast and the Sunshine Coast.</p>
+        </details>
+        <details>
+          <summary>What is the bond back guarantee?</summary>
+          <p>We advertise a 100% bond back guarantee. Message or call us when you book and we'll talk you through exactly what it covers for your property.</p>
+        </details>
+        <details>
+          <summary>What's included in a bond clean?</summary>
+          <p>Kitchen, bathrooms, bedrooms, living areas, floors, windows and tracks — the full list is in the section above.</p>
+        </details>
+        <details>
+          <summary>Can you clean the carpets too?</summary>
+          <p>Yes. Carpet cleaning is one of our main services and is usually booked in with the bond clean.</p>
+        </details>
+        <details>
+          <summary>Do you do pest control?</summary>
+          <p>Yes — pest control is offered alongside the clean, so the property is treated before the final inspection.</p>
+        </details>
+        <details>
+          <summary>How do I book?</summary>
+          <p>Call 0438 650 958 or email platinumbondcleaning@gmail.com with the address and your inspection date.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Book a clean</p>
+        <h2>Moving out soon?</h2>
+        <a class="big-call" href="tel:+61438650958">Call <span>0438 650 958</span></a>
+        <p>Bond cleaning, carpet cleaning and pest control across Brisbane, the Gold Coast and Sunshine Coast. Easy booking, bond back guarantee.</p>
+      </div>
+      <ul class="facts">
+        <li><b>Phone</b><a href="tel:+61438650958">0438 650 958</a></li>
+        <li><b>Email</b><a href="mailto:platinumbondcleaning@gmail.com">platinumbondcleaning@gmail.com</a></li>
+        <li><b>Service area</b>Brisbane · Gold Coast · Sunshine Coast</li>
+        <li><b>Facebook</b><a href="https://www.facebook.com/share/19osd5mzZV/" target="_blank" rel="noopener">Message us on Facebook →</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div class="flogo">
+      <img src="assets/logo-mark.png" alt="" width="32" height="32">
+      <span>Platinum Bond Cleaning · Brisbane, Gold Coast &amp; Sunshine Coast · &copy; 2026</span>
+    </div>
+    <div class="meta">
+      Bond · Carpet · Pest Control<br>
+      <a href="tel:+61438650958">0438 650 958</a>
+    </div>
+  </div>
+</footer>
+
+<style id="fix-btn-wrap">
+/* .hero-cta was a non-wrapping flex row of nowrap .btn elements, so the second button ran off the right
+   edge (170px button ending at 369 in a 320 viewport, 780 at 768). Let the row wrap and the labels break. */
+@media(max-width:900px){
+  .hero-cta{flex-wrap:wrap!important;gap:12px!important}
+  .hero-cta .btn,.hero-cta a{white-space:normal!important;max-width:100%!important;flex:0 1 auto!important}
+  .wrap.nav,nav.wrap{flex-wrap:wrap!important;row-gap:10px!important}
+}
+</style>
+</body>
+</html>
