@@ -14,13 +14,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --night:#08182B;
-  --navy:#0E2A4A;
-  --blue:#1B5EA6;
-  --blue-lit:#2E86C8;
-  --sky:#8FC2E4;
-  --sky-dim:#A9C4D8;
-  --paper:#F4F6F8;
+  --night:#061A2F;
+  --navy:#0A2B4C;
+  --blue:#1266B8;
+  --blue-lit:#3D9BE2;
+  --sky:#A8D3F0;
+  --sky-dim:#AFC6D8;
+  --paper:#F2F6FA;
   --panel:#FFFFFF;
   --ink:#101820;
   --ink-2:#39424C;
@@ -295,6 +295,34 @@ header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-
 .bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
 img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
 </style>
+
+<style id="lb-frr-polish">
+/* hero photo: real roof-restoration detail, exposed for daylight (the fleet default blew it out) */
+.hero .hero-photo img{filter:saturate(1.05) contrast(1.04) brightness(1.02)!important;object-position:50% 52%!important}
+@media (max-width:820px){.hero .hero-photo img{object-position:58% 48%!important}}
+/* logo sits directly on the navy bar — no plate */
+.nav .brand img.lb-logo{filter:none}
+/* the tile-course divider read as a brick pattern and added nothing — drop it */
+.tile-band{display:none!important}
+/* accent text on the light bands keeps >=4.5:1 with the logo blue */
+.kick{color:#0F5CA8}
+.band--night .kick{color:var(--sky)}
+.svc-row .n{color:var(--blue)}
+.lede{color:#4C5763}
+.band--night .lede{color:var(--sky-dim)}
+/* the quote band is a dark band: the form was styled for navy ink but the section had no ground */
+#lbq{background:var(--navy);color:#fff}
+#lbq h2,#lbq .qgrid h2{color:#fff}
+/* gallery tiles are real photographs — same crop treatment as the rest */
+.gal figure{background:#1d3147}
+.gal figcaption{font-weight:600;letter-spacing:.01em}
+/* mobile: nothing clipped at 390 */
+@media (max-width:520px){
+  .hero-tags li{font-size:.72rem!important}
+  .gal figcaption{font-size:.72rem}
+  .brand-name,.brand-sub,.brand-txt{display:none!important}
+}
+</style>
 </head>
 <body>
 <a class="sr" href="#services">Skip to content</a>
@@ -302,7 +330,7 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 <nav class="nav" aria-label="Main">
   <div class="nav-in">
     <a class="brand" href="#top" aria-label="Fred's Restorations — home">
-      <img src="assets/logo.png" alt="" class="lb-logo lb-logo-unlock" loading="eager" decoding="async">
+      <img src="assets/logo-bar.png" alt="" class="lb-logo lb-logo-unlock" loading="eager" decoding="async">
       <span class="brand-txt">
         <span class="brand-name">Fred's Restorations</span>
         <span class="brand-sub">Newcastle NSW</span>
@@ -327,12 +355,12 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 <header class="hero" id="top">
 <!-- LB-3D-HERO -->
   <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true" style="display:none"></canvas>
-  <div class="hero-photo" aria-hidden="true"></div>
+  <div class="hero-photo" aria-hidden="true"><img src="assets/hero-roof.jpg" alt="" width="1280" height="961" loading="eager" fetchpriority="high" decoding="async"></div>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="wrap hero-in">
     <h1>Roof restoration &amp; driveway sealing<span>Tile and metal roofs washed, re-sealed and re-sprayed &mdash; Newcastle and surrounds.</span></h1>
-    <p class="hero-sub">A local family operated crew. Every roof starts with the wash-down, then a proper sealer and top quality coating go onto clean, sound tiles &mdash; and the driveway gets the same treatment. Residential and commercial.</p>
+    <p class="hero-sub">A local family operated crew working tile and metal roofs across Newcastle. Every roof starts with the wash-down, then a proper sealer and a top quality coating go on &mdash; and the driveway gets the same wash, seal and re-spray. Residential and commercial.</p>
     <div class="hero-cta">
       <a class="btn" href="tel:+61402802940">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg>
@@ -341,9 +369,9 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
       <a class="hero-alt" href="#quote">or request a quote online</a>
     </div>
     <ul class="hero-tags">
-      <li><b>Residential &amp; commercial</b></li>
+      <li><b>Tile &amp; metal roofs</b></li>
+      <li>Wash &middot; seal &middot; re-spray</li>
       <li>Free on-site quotes</li>
-      <li>Newcastle &amp; surrounds</li>
     </ul>
   </div>
 </header>
@@ -394,11 +422,11 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
     <ul class="svc-list rv">
       <li class="svc-row">
         <span class="n">01</span>
-        <div><h3>Roof restoration</h3><p>Tired tile and metal roofs brought back instead of replaced — washed, sealed and repainted.</p></div>
+        <div><h3>Roof restoration</h3><p>Tired tile and metal roofs brought back instead of replaced — washed, sealed and re-sprayed to a uniform finish.</p></div>
       </li>
       <li class="svc-row">
         <span class="n">02</span>
-        <div><h3>Roof painting &amp; coating</h3><p>Top quality materials applied the right way, in the colour you choose, for a finish that lasts.</p></div>
+        <div><h3>Roof painting &amp; coating</h3><p>Roof coating sprayed in the colour you choose — one consistent finish across tiles, ridge capping and valleys.</p></div>
       </li>
       <li class="svc-row">
         <span class="n">03</span>
@@ -428,9 +456,9 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
     </div>
     <div class="steps rv">
       <div class="step"><span class="step-n">01</span><h3>Free quote</h3><p>Tell us about the roof or driveway. We look, we quote, no obligation.</p></div>
-      <div class="step"><span class="step-n">02</span><h3>Wash &amp; prepare</h3><p>Full wash-down and whatever preparation the surface needs.</p></div>
-      <div class="step"><span class="step-n">03</span><h3>Seal &amp; restore</h3><p>Sealer and coating applied in the colour you picked.</p></div>
-      <div class="step"><span class="step-n">04</span><h3>Walk it with you</h3><p>We check the job together and only call it done when you're happy.</p></div>
+      <div class="step"><span class="step-n">02</span><h3>Wash-down</h3><p>Full pressure wash-down first — moss, lichen and chalk lifted off tile or metal.</p></div>
+      <div class="step"><span class="step-n">03</span><h3>Re-seal</h3><p>Sealer applied once the roof is clean and dry, so the coating keys to the surface.</p></div>
+      <div class="step"><span class="step-n">04</span><h3>Re-spray &amp; handover</h3><p>Coating sprayed in the colour you picked, then we walk the finished job with you.</p></div>
     </div>
   </div>
 </section>
@@ -443,8 +471,8 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
     </div>
     <div class="gal">
       <figure class="rv"><img src="assets/work-02.jpg" alt="Brick home with a freshly restored dark tiled roof" loading="lazy"><figcaption>Full roof restoration</figcaption></figure>
-      <div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div>
-      <div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div>
+      <figure class="rv"><img src="assets/work-01.jpg" alt="Tiled roof with the ladder set up during a restoration wash-down" loading="lazy"><figcaption>Wash-down &amp; prep</figcaption></figure>
+      <figure class="rv"><img src="assets/work-05.jpg" alt="Close view of a freshly sealed grey tiled roof" loading="lazy"><figcaption>Sealed grey tiles</figcaption></figure>
       <figure class="rv"><img src="assets/work-03.jpg" alt="Home exterior with roof and driveway work underway" loading="lazy"><figcaption>Roof &amp; driveway</figcaption></figure>
       <figure class="rv"><img src="assets/work-09.jpg" alt="White cottage with a restored light grey tiled roof" loading="lazy"><figcaption>Cottage roof</figcaption></figure>
       <figure class="rv"><img src="assets/work-04.jpg" alt="Multi-level home with restored metal roof and driveway" loading="lazy"><figcaption>Metal roof &amp; driveway</figcaption></figure>
