@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Davey Power Solutions — Electrical, Solar &amp; Air Conditioning, Brisbane</title>
+<meta name="description" content="Davey Power Solutions is a licensed and insured electrical contractor in Brisbane and South East Queensland — switchboards, solar, air conditioning and refrigeration, data, CCTV and emergency callouts. Call 0437 966 361.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<meta property="og:title" content="Davey Power Solutions — Electrical, Solar &amp; Air Conditioning">
+<meta property="og:description" content="Licensed and insured electrical contractor. Brisbane · South East Queensland. Switchboards, solar, air conditioning, data and CCTV.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0B0C;
+  --panel:#141416;
+  --card:#191A1C;
+  --text:#EDEAE4;
+  --muted:#ADAFAF;
+  --line:rgba(255,255,255,.11);
+  --amber:#EFBE3B;      /* sampled from the Davey Power Solutions logo */
+  --amber-deep:#D9832C;
+  --on-amber:#0B0B0C;
+  --grey:#6E6E6E;
+  --navh:88px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--ink);color:var(--text);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  color-scheme:dark;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:Sora,system-ui,sans-serif;margin:0;line-height:1.08;letter-spacing:-0.02em}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+.eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--amber);display:block}
+
+/* nav */
+.hdr{position:sticky;top:0;z-index:60;background:rgba(11,11,12,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hdr .wrap{height:var(--navh);display:flex;align-items:center;justify-content:space-between;gap:28px}
+.logo-lockup{height:50px;width:auto;max-width:220px;object-fit:contain}
+.navlinks{display:flex;gap:30px;margin-left:auto;font-size:14.5px;font-weight:500;color:#BFBEB9}
+.navlinks a{position:relative;padding:6px 0}
+.navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .22s ease}
+.navlinks a:hover{color:#fff}
+.navlinks a:hover::after{transform:scaleX(1)}
+.navcta{display:inline-flex;align-items:center;gap:9px;background:var(--amber);color:var(--on-amber);font-size:14.5px;font-weight:600;padding:12px 18px;border-radius:7px;white-space:nowrap}
+.navcta svg{width:15px;height:15px;flex:none}
+.navcta:hover{background:#F7CE5B}
+
+/* hero */
+.hero{padding:78px 0 86px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-140px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(239,190,59,.10),rgba(239,190,59,0) 68%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.06fr .84fr;gap:62px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.3rem,4.3vw,3.6rem);font-weight:700;margin:20px 0 20px;max-width:16ch}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p.lede{font-size:18px;color:var(--muted);max-width:52ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:13px;margin:32px 0 34px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15.5px;padding:15px 24px;border-radius:8px;border:1px solid transparent;transition:transform .18s ease,background .18s ease}
+.btn svg{width:17px;height:17px;flex:none}
+.btn-primary{background:var(--amber);color:var(--on-amber)}
+.btn-primary:hover{background:#F7CE5B;transform:translateY(-1px)}
+.btn-ghost{border-color:rgba(255,255,255,.22);color:var(--text)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{font-size:12.8px;font-weight:500;color:#C9C7C0;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:7px 12px}
+.hero-shot{margin:0;position:relative}
+.hero-shot img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+.hero-shot figcaption{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(10,10,11,.88);color:#E9E6DF;font-size:12.8px;padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.08)}
+
+section{padding:86px 0}
+.s-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:46px}
+.s-head h2{font-size:clamp(1.75rem,2.9vw,2.5rem);font-weight:700;margin-top:16px;max-width:22ch}
+.s-head p{max-width:44ch;color:var(--muted);font-size:16px}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.svc{background:var(--card);padding:30px 28px 32px}
+.svc .num{font-family:Sora,sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--amber)}
+.svc h3{font-size:19px;font-weight:600;margin:14px 0 9px;letter-spacing:-0.01em}
+.svc p{font-size:14.8px;color:var(--muted);line-height:1.58}
+
+/* process */
+.process{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.step{padding:30px 26px 6px 0;border-right:1px solid var(--line)}
+.step:last-child{border-right:0}
+.step .n{font-family:Sora,sans-serif;font-size:12.5px;font-weight:600;color:var(--amber);letter-spacing:.14em}
+.step h3{font-size:19px;font-weight:600;margin:16px 0 10px}
+.step p{font-size:14.5px;color:var(--muted);line-height:1.56}
+
+/* work */
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px 26px}
+.work-grid figure{margin:0}
+.work-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+.work-grid figcaption{margin-top:12px;font-size:14px;color:var(--muted);line-height:1.5;padding-right:10px}
+.work-grid figcaption strong{display:block;color:var(--text);font-weight:600;font-size:14.5px;margin-bottom:3px}
+
+/* faq */
+.faq-wrap{display:grid;grid-template-columns:.72fr 1.28fr;gap:64px;align-items:start}
+.faq-list details{border-top:1px solid var(--line);padding:20px 0}
+.faq-list details:last-of-type{border-bottom:1px solid var(--line)}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;font-family:Sora,sans-serif;font-size:17px;font-weight:600}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";font-size:21px;font-weight:400;color:var(--amber);line-height:1}
+.faq-list details[open] summary::after{content:"–"}
+.faq-list p{margin-top:13px;color:var(--muted);font-size:15.3px;max-width:62ch}
+.faq-list a{color:var(--amber)}
+
+/* contact */
+.contact{background:var(--panel);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
+.contact h2{font-size:clamp(1.9rem,3.2vw,2.7rem);font-weight:700;margin:16px 0 18px;max-width:17ch}
+.contact p{color:var(--muted);max-width:46ch}
+.phone-big{display:inline-flex;align-items:center;gap:14px;font-family:Sora,sans-serif;font-size:clamp(1.6rem,3vw,2.1rem);font-weight:700;margin:26px 0 6px;color:var(--text)}
+.phone-big svg{width:23px;height:23px;color:var(--amber)}
+.contact .hint{font-size:13.5px;color:var(--muted)}
+.info-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:30px}
+.info-card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:14px 22px;font-size:15px}
+.info-card dt{color:var(--muted);font-weight:500}
+.info-card dd{margin:0;font-weight:500}
+.info-card dd a{color:var(--amber);border-bottom:1px solid rgba(239,190,59,.32)}
+.info-card .sep{grid-column:1/-1;height:1px;background:var(--line)}
+
+/* footer */
+.ftr{border-top:1px solid var(--line);padding:38px 0}
+.ftr .wrap{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap}
+.ftr img{height:44px;width:auto;max-width:190px}
+.ftr-meta{font-size:13.5px;color:var(--muted);text-align:right}
+.ftr-meta strong{display:block;color:var(--text);font-weight:600;font-size:14.5px}
+
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:42px}
+  .hero-shot{max-width:520px}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .step:nth-child(2){border-right:0}
+  .step{padding-bottom:28px}
+  .work-grid{grid-template-columns:repeat(2,1fr)}
+  .faq-wrap,.contact-grid{grid-template-columns:1fr;gap:38px}
+}
+@media (max-width:720px){
+  :root{--navh:70px}
+  .navlinks{display:none}
+  .logo-lockup{height:40px;max-width:176px}
+  .navcta{padding:10px 14px;font-size:13.5px}
+  section{padding:62px 0}
+  .hero{padding:48px 0 60px}
+  .s-head{display:block;margin-bottom:32px}
+  .s-head p{margin-top:14px}
+  .svc-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .step{border-right:0;border-bottom:1px solid var(--line);padding:24px 0}
+  .step:last-child{border-bottom:0}
+  .work-grid{grid-template-columns:1fr}
+  .ftr .wrap{display:block}
+  .ftr-meta{text-align:left;margin-top:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap">
+    <a href="#top" aria-label="Davey Power Solutions home"><img class="logo-lockup" src="assets/logo-lockup.png" alt="Davey Power Solutions"></a>
+    <nav class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#work">Work</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="navcta" href="tel:+61437966361">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      0437 966 361
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Electrical · Solar · Air conditioning · Brisbane</span>
+        <h1>Switchboards, solar and air conditioning, wired <em>to code</em></h1>
+        <p class="lede">Davey Power Solutions is a licensed and insured electrical contractor working across Brisbane and South East Queensland. Domestic, commercial and industrial — from a switchboard upgrade to solar, air conditioning, data and CCTV on the same site.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:+61437966361">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call 0437 966 361
+          </a>
+          <a class="btn btn-ghost" href="#services">See what we do</a>
+        </div>
+        <div class="chips">
+          <span class="chip">Licensed &amp; insured</span>
+          <span class="chip">Domestic</span>
+          <span class="chip">Commercial</span>
+          <span class="chip">Industrial</span>
+          <span class="chip">Brisbane &amp; SEQ</span>
+        </div>
+      </div>
+      <figure class="hero-shot">
+        <img src="assets/hero.jpg" width="1080" height="1440" alt="Solar inverter and conduit installed on a white wall with an emergency stop isolator">
+        <figcaption>Inverter and isolator installed — solar and electrical on the one visit</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="s-head">
+        <div>
+          <span class="eyebrow">Services</span>
+          <h2>One electrician for the whole job</h2>
+        </div>
+        <p>Electrical, solar, refrigeration and comms under the one licence — which means one trade on site, one point of contact, and no gap between the sparky and the air-conditioning installer.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc">
+          <span class="num">01</span>
+          <h3>Switchboard upgrades</h3>
+          <p>Old fuse boxes replaced with modern boards — RCBO protection, spare capacity for solar and air conditioning, labelling done properly.</p>
+        </article>
+        <article class="svc">
+          <span class="num">02</span>
+          <h3>Solar &amp; charging</h3>
+          <p>Solar and inverter installs, system checks on existing arrays, and charging points wired back to a board that can carry them.</p>
+        </article>
+        <article class="svc">
+          <span class="num">03</span>
+          <h3>Air conditioning &amp; refrigeration</h3>
+          <p>Split-system supply and install, condensers sited for airflow and access, plus servicing and commercial refrigeration work.</p>
+        </article>
+        <article class="svc">
+          <span class="num">04</span>
+          <h3>Data &amp; communications</h3>
+          <p>Data cabling, comms points and NBN connections — terminated and tested, not just pulled through the ceiling.</p>
+        </article>
+        <article class="svc">
+          <span class="num">05</span>
+          <h3>CCTV &amp; security</h3>
+          <p>Camera installs on eaves and entries, recorder set up, and remote viewing configured before the job is signed off.</p>
+        </article>
+        <article class="svc">
+          <span class="num">06</span>
+          <h3>Repairs, maintenance &amp; callouts</h3>
+          <p>Fault finding, compliance and safety checks, and emergency callouts when something has tripped and will not reset.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="process">
+    <div class="wrap">
+      <div class="s-head">
+        <div>
+          <span class="eyebrow">How it runs</span>
+          <h2>From the call to the certificate</h2>
+        </div>
+        <p>Straightforward, and the same on a single power point as on a full switchboard and solar install.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="n">STEP 01</span>
+          <h3>Call it through</h3>
+          <p>Ring 0437 966 361 or email with the address and what the job is — a fault, a quote, or a system that needs looking at.</p>
+        </div>
+        <div class="step">
+          <span class="n">STEP 02</span>
+          <h3>Site visit &amp; quote</h3>
+          <p>The job gets looked at in person — board capacity, cable runs, where the condenser or inverter can actually go.</p>
+        </div>
+        <div class="step">
+          <span class="n">STEP 03</span>
+          <h3>Install</h3>
+          <p>Work carried out to the quote, with the power isolated, the site left clean and the client told what is being changed.</p>
+        </div>
+        <div class="step">
+          <span class="n">STEP 04</span>
+          <h3>Test &amp; compliance</h3>
+          <p>Circuits tested, labelling done, and the compliance and safety paperwork issued for the work completed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="s-head">
+        <div>
+          <span class="eyebrow">Recent work</span>
+          <h2>Installations from Davey jobs</h2>
+        </div>
+        <p>Boards, units, cameras and comms — the parts of the trade a customer rarely sees once the wall is closed up.</p>
+      </div>
+      <div class="work-grid">
+        <figure>
+          <img src="assets/gal-1.jpg" width="1080" height="1440" alt="Open switchboard with meter, relay and a row of circuit breakers">
+          <figcaption><strong>Switchboard</strong>Board opened up — meter, relay and breakers, with wiring to be re-terminated.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/gal-2.jpg" width="1080" height="1440" alt="White wall-mounted air conditioning indoor unit below a timber window frame">
+          <figcaption><strong>Indoor unit</strong>Wall-mounted head set below the window line, with the drain run hidden.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/gal-3.jpg" width="1080" height="1440" alt="White split-system air conditioner mounted high on a bedroom wall">
+          <figcaption><strong>Split system</strong>Bedroom unit mounted high on the wall, clear of the blind and the bed.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/gal-4.jpg" width="1080" height="1440" alt="White dome security camera mounted on the eaves of a roof against blue sky">
+          <figcaption><strong>CCTV</strong>Dome camera on the eaves, angled to cover the entry and yard.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/gal-5.jpg" width="1080" height="1440" alt="Outdoor air conditioning condenser unit on a gravel bed beside a house wall">
+          <figcaption><strong>Condenser</strong>Outdoor unit set on a gravel bed with clearance off the wall for airflow.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/gal-6.jpg" width="1080" height="1440" alt="Electrical sensor box and rotary timer mounted on galvanised steel with conduit">
+          <figcaption><strong>Controls</strong>Sensor and timer gear mounted on a tank wall, conduit run and terminated.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap faq-wrap">
+      <div>
+        <span class="eyebrow">Questions</span>
+        <h2 style="font-size:clamp(1.75rem,2.9vw,2.5rem);font-weight:700;margin-top:16px">Before you book a sparky</h2>
+        <p style="margin-top:18px;color:var(--muted);font-size:15.5px">Anything not covered here, ring the number — it is the quickest way to get a straight answer on scope and timing.</p>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>Are you licensed and insured?</summary>
+          <p>Yes — Davey Power Solutions advertises as licensed and insured, and the compliance and safety paperwork is issued for the work carried out.</p>
+        </details>
+        <details>
+          <summary>Which areas do you cover?</summary>
+          <p>Brisbane and South East Queensland. If you are outside that, call and ask — it depends on the job.</p>
+        </details>
+        <details>
+          <summary>Do you work on homes and businesses?</summary>
+          <p>Domestic, commercial and industrial. The same crew handles a house switchboard and a commercial fit-out.</p>
+        </details>
+        <details>
+          <summary>Can you do solar and air conditioning as well as electrical?</summary>
+          <p>Yes. Solar and charging, air conditioning and refrigeration are all part of the service list, alongside data, CCTV and general electrical work.</p>
+        </details>
+        <details>
+          <summary>Do you take emergency callouts?</summary>
+          <p>Callouts and emergency service are part of the offering — if something has tripped, sparked or stopped working, ring rather than email.</p>
+        </details>
+        <details>
+          <summary>How do I get a quote?</summary>
+          <p>Call <a href="tel:+61437966361">0437 966 361</a> or email <a href="mailto:daveypowersolutions@gmail.com">daveypowersolutions@gmail.com</a> with the address and a description of the job.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="eyebrow">Get in touch</span>
+        <h2>Book a quote or a callout</h2>
+        <p>Tell us the suburb, the property type and what needs doing — a fault, a new install, or a system that needs a service.</p>
+        <a class="phone-big" href="tel:+61437966361">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0437 966 361
+        </a>
+        <p class="hint">Quotes and callouts across Brisbane and South East Queensland.</p>
+      </div>
+      <div class="info-card">
+        <dl>
+          <dt>Business</dt><dd>Davey Power Solutions</dd>
+          <span class="sep"></span>
+          <dt>Trade</dt><dd>Electrical, solar, air conditioning &amp; data</dd>
+          <span class="sep"></span>
+          <dt>Based in</dt><dd>Brisbane, QLD</dd>
+          <span class="sep"></span>
+          <dt>Service area</dt><dd>Brisbane · South East Queensland</dd>
+          <span class="sep"></span>
+          <dt>Phone</dt><dd><a href="tel:+61437966361">0437 966 361</a></dd>
+          <span class="sep"></span>
+          <dt>Email</dt><dd><a href="mailto:daveypowersolutions@gmail.com">daveypowersolutions@gmail.com</a></dd>
+          <span class="sep"></span>
+          <dt>Instagram</dt><dd><a href="https://www.instagram.com/daveypowersolutions/" target="_blank" rel="noopener">@daveypowersolutions</a></dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <img src="assets/logo-lockup.png" alt="Davey Power Solutions">
+    <div class="ftr-meta">
+      <strong>Davey Power Solutions</strong>
+      Electrical · Solar · Air conditioning · Brisbane, QLD<br>
+      © <span id="yr">2026</span> Davey Power Solutions
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<style id="mobile-grid-fix">
+/* the contact section collapsed to `grid-template-columns:1fr` at mobile, but 1fr is minmax(auto,1fr):
+   the big phone number and the auto-width <dt> column gave the track a 401px min-content width inside a
+   390px viewport, so the pane started at x=26 and ran 11px past the right edge. minmax(0,1fr) + min-width:0
+   on the children lets the track actually shrink, and long addresses wrap instead of pushing. */
+@media(max-width:760px){
+  .contact-grid{grid-template-columns:minmax(0,1fr)!important;gap:38px!important}
+  .contact-grid>*{min-width:0!important;max-width:100%!important}
+  .phone-big{overflow-wrap:anywhere}
+  .info-card dl{grid-template-columns:minmax(0,auto) minmax(0,1fr)!important}
+  .info-card dd,.info-card dt{overflow-wrap:anywhere;min-width:0}
+}
+</style>
+</body>
+</html>
