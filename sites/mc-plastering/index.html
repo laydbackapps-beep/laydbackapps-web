@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MC Plastering — Plasterer in Newcastle, Lake Macquarie &amp; the Hunter</title>
+<meta name="description" content="MC Plastering Pty Ltd — plastering for new builds, renovations and repairs across Newcastle, Lake Macquarie and the Hunter Region, NSW. Ceilings, cornice, setting and finishing.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<meta property="og:title" content="MC Plastering — Plasterer in Newcastle &amp; the Hunter">
+<meta property="og:description" content="New builds, renovations and repairs. Ceilings, cornice, setting and finishing across Newcastle, Lake Macquarie and the Hunter Region, NSW.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo-mark-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f7f5f2;
+    --card: #ffffff;
+    --ink: #14110f;
+    --ink-2: #4c4642;
+    --ink-3: #7b736c;
+    --line: #e4dfd8;
+    --line-2: #d6d0c8;
+    --acc: #d84130;
+    --acc-ink: #b03223;
+    --wrap: 1180px;
+    --r: 6px;
+    --shadow: 0 1px 2px rgba(20,17,15,.05), 0 12px 32px -18px rgba(20,17,15,.28);
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .brand__word, .eyebrow, .btn, .chip, .svc__n, .step__n {
+    font-family: "Archivo", "Inter", system-ui, sans-serif;
+  }
+  h1, h2, h3 { margin: 0; letter-spacing: -0.022em; line-height: 1.04; font-weight: 800; }
+  p { margin: 0; }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; height: auto; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 9px; font-weight: 700; font-size: 12.5px;
+    letter-spacing: .14em; text-transform: uppercase; color: var(--acc-ink);
+  }
+  .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--acc); display: inline-block; }
+
+  /* nav */
+  .nav { position: sticky; top: 0; z-index: 30; background: rgba(247,245,242,.86);
+    backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--line); }
+  .nav__in { display: flex; align-items: center; gap: 26px; height: 86px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand__mark { height: 40px; width: 40px; flex: none; }
+  .brand__word { height: 30px; width: 125px; flex: none; }
+  .nav__links { display: flex; gap: 26px; margin-left: auto; }
+  .nav__links a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--ink-2); padding: 6px 0; }
+  .nav__links a:hover { color: var(--ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none; cursor: pointer;
+    font-weight: 700; font-size: 15px; letter-spacing: .005em; border-radius: var(--r);
+    padding: 12px 20px; border: 1.5px solid transparent; transition: transform .15s ease, background .15s ease, color .15s ease;
+  }
+  .btn--solid { background: var(--ink); color: #fff; }
+  .btn--solid:hover { background: #000; transform: translateY(-1px); }
+  .btn--ghost { border-color: var(--line-2); color: var(--ink); background: transparent; }
+  .btn--ghost:hover { border-color: var(--ink); }
+  .btn--acc { background: var(--acc); color: #fff; }
+  .btn--acc:hover { background: var(--acc-ink); transform: translateY(-1px); }
+  .nav__cta { margin-left: 6px; padding: 11px 18px; }
+  .nav__links, .nav__cta { } 
+
+  /* hero */
+  .hero { position: relative; padding: 74px 0 82px; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background-image: radial-gradient(rgba(20,17,15,.055) 1px, transparent 1.4px);
+    background-size: 22px 22px; mask-image: linear-gradient(180deg, #000, transparent 78%);
+  }
+  .hero__in { position: relative; z-index: 1; display: grid; grid-template-columns: 1.12fr .88fr; gap: 44px; align-items: center; }
+  .hero h1 { font-size: clamp(38px, 5vw, 62px); margin: 20px 0 18px; }
+  .hero p.lead { color: var(--ink-2); font-size: 18.5px; max-width: 34ch; }
+  .hero__cta { display: flex; gap: 12px; margin: 28px 0 30px; flex-wrap: wrap; }
+  .chips { display: flex; flex-wrap: wrap; gap: 9px; }
+  .chip { font-size: 13px; font-weight: 600; color: var(--ink-2); background: #fff; border: 1px solid var(--line);
+    border-radius: 999px; padding: 7px 13px; }
+  .chip b { color: var(--acc-ink); font-weight: 700; }
+  .hero__card { position: relative; }
+  .hero__card figure { margin: 0; max-width: 100%; margin-left: auto; background: #fff; border: 1px solid var(--line);
+    border-radius: 10px; padding: 12px 12px 0; box-shadow: var(--shadow); }
+  .hero__card img { border-radius: 5px; width: 100%; }
+  .hero__card figcaption { font-size: 13px; color: var(--ink-3); padding: 12px 4px 14px; display: flex; align-items: center; gap: 8px; }
+  .hero__card figcaption::before { content: ""; width: 18px; height: 2px; background: var(--acc); }
+
+  /* section shell */
+  section { scroll-margin-top: 96px; }
+  .band { padding: 84px 0; }
+  .band--tint { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .head { max-width: 660px; margin-bottom: 42px; }
+  .head h2 { font-size: clamp(28px, 3.4vw, 40px); margin: 16px 0 12px; }
+  .head p { color: var(--ink-2); }
+
+  /* services */
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .svc { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 26px 24px 28px; }
+  .svc__n { display: inline-block; font-weight: 800; font-size: 13px; letter-spacing: .1em; color: var(--acc); margin-bottom: 14px; }
+  .svc h3 { font-size: 19px; margin-bottom: 9px; letter-spacing: -0.01em; }
+  .svc p { color: var(--ink-2); font-size: 15.5px; }
+
+  /* process */
+  .process { background: var(--ink); color: #f3f0ec; }
+  .process .eyebrow { color: #f0a99b; }
+  .process .eyebrow::before { background: var(--acc); }
+  .process h2 { color: #fff; }
+  .process .head p { color: #b9b2ab; }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+  .steps li { border-top: 2px solid #3a342f; padding-top: 18px; }
+  .step__n { display: block; font-weight: 800; font-size: 14px; color: var(--acc); letter-spacing: .08em; margin-bottom: 12px; }
+  .steps h3 { font-size: 17px; margin-bottom: 8px; color: #fff; }
+  .steps p { color: #b9b2ab; font-size: 14.5px; }
+
+  /* work */
+  .wrap--narrow { max-width: 980px; }
+  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .work__item { margin: 0; }
+  .work__item img { width: 100%; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+  .work__item figcaption { font-size: 13.5px; color: var(--ink-3); margin-top: 10px; }
+
+  /* faq */
+  .faq { max-width: 820px; }
+  .faq__item { border-bottom: 1px solid var(--line); padding: 4px 0; }
+  .faq__item summary { list-style: none; cursor: pointer; padding: 20px 34px 20px 0; position: relative;
+    font-family: "Archivo", sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
+  .faq__item summary::-webkit-details-marker { display: none; }
+  .faq__item summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+    color: var(--acc); font-weight: 700; font-size: 22px; }
+  .faq__item[open] summary::after { content: "–"; }
+  .faq__item p { color: var(--ink-2); padding: 0 34px 22px 0; margin-top: -6px; }
+
+  /* contact */
+  .contact { background: #fff; border-top: 1px solid var(--line); }
+  .contact__card { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center;
+    border: 1px solid var(--line); border-radius: 14px; padding: 44px 46px; background: var(--paper); }
+  .contact h2 { font-size: clamp(28px, 3.4vw, 40px); margin: 16px 0 14px; }
+  .contact p { color: var(--ink-2); }
+  .contact__meta { display: grid; gap: 16px; margin-top: 26px; }
+  .contact__meta div { display: flex; gap: 12px; align-items: flex-start; }
+  .contact__meta .k { font-family: "Archivo", sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--ink-3); min-width: 96px; padding-top: 3px; }
+  .contact__meta .v { font-weight: 500; }
+  .contact__meta a { color: var(--acc-ink); text-decoration: none; border-bottom: 1.5px solid rgba(176,50,35,.3); }
+  .contact__cta { display: flex; flex-direction: column; gap: 14px; }
+  .contact__cta .btn { justify-content: center; font-size: 16px; padding: 15px 22px; }
+  .contact__cta small { color: var(--ink-3); text-align: center; }
+
+  /* footer */
+  footer { padding: 40px 0 52px; }
+  .foot { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
+  .foot__brand { display: flex; align-items: center; gap: 12px; }
+  .foot__mark { height: 34px; width: 34px; }
+  .foot__name { font-family: "Archivo", sans-serif; font-weight: 700; font-size: 16px; }
+  .foot__meta { color: var(--ink-3); font-size: 14px; text-align: right; }
+  .foot__rule { border-top: 1px solid var(--line); margin: 26px 0 22px; }
+
+  @media (max-width: 980px) {
+    .hero__in { grid-template-columns: 1fr; gap: 40px; }
+    .hero__card figure { margin: 0 auto; }
+    .svc-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+    .work-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact__card { grid-template-columns: 1fr; padding: 34px 28px; gap: 30px; }
+    .nav__links { display: none; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 20px; }
+    .band { padding: 62px 0; }
+    .svc-grid, .steps, .work-grid { grid-template-columns: 1fr; }
+    .work__item { max-width: 340px; }
+    .hero h1 { font-size: 34px; }
+    .brand__word { height: 26px; width: 108px; }
+    .nav__cta { padding: 10px 14px; font-size: 14px; }
+    .foot__meta { text-align: left; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="#top" aria-label="MC Plastering — home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="brand__mark" aria-hidden="true">
+  <title>MC Plastering</title>
+  <g fill="#14110f"><path d="M188 1493H678L1018 694L1360 1493H1849V0H1485V1092L1141 287H897L553 1092V0H188Z" transform="translate(5.920,179.100) scale(0.068359,-0.068359)"/><path d="M1372 82Q1266 27 1151.0 -1.0Q1036 -29 911 -29Q538 -29 320.0 179.5Q102 388 102 745Q102 1103 320.0 1311.5Q538 1520 911 1520Q1036 1520 1151.0 1492.0Q1266 1464 1372 1409V1100Q1265 1173 1161.0 1207.0Q1057 1241 942 1241Q736 1241 618.0 1109.0Q500 977 500 745Q500 514 618.0 382.0Q736 250 942 250Q1057 250 1161.0 284.0Q1265 318 1372 391Z" transform="translate(147.336,179.100) scale(0.068359,-0.068359)"/></g>
+  <path d="M 219.26 93.37 L 250.76 102.82 L 219.26 114.37 Z" fill="#d84130"/>
+</svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 449 108" class="brand__word" aria-hidden="true">
+  <title>Mack Childs Plastering</title>
+  <g fill="#14110f"><path d="M188 1493H678L1018 694L1360 1493H1849V0H1485V1092L1141 287H897L553 1092V0H188Z" transform="translate(4.000,50.000) scale(0.027344,-0.027344)"/><path d="M1094 272H492L397 0H10L563 1493H1022L1575 0H1188ZM588 549H997L793 1143Z" transform="translate(60.399,50.000) scale(0.027344,-0.027344)"/><path d="M1372 82Q1266 27 1151.0 -1.0Q1036 -29 911 -29Q538 -29 320.0 179.5Q102 388 102 745Q102 1103 320.0 1311.5Q538 1520 911 1520Q1036 1520 1151.0 1492.0Q1266 1464 1372 1409V1100Q1265 1173 1161.0 1207.0Q1057 1241 942 1241Q736 1241 618.0 1109.0Q500 977 500 745Q500 514 618.0 382.0Q736 250 942 250Q1057 250 1161.0 284.0Q1265 318 1372 391Z" transform="translate(104.410,50.000) scale(0.027344,-0.027344)"/><path d="M188 1493H573V948L1128 1493H1575L856 786L1649 0H1167L573 588V0H188Z" transform="translate(146.180,50.000) scale(0.027344,-0.027344)"/><path d="M1372 82Q1266 27 1151.0 -1.0Q1036 -29 911 -29Q538 -29 320.0 179.5Q102 388 102 745Q102 1103 320.0 1311.5Q538 1520 911 1520Q1036 1520 1151.0 1492.0Q1266 1464 1372 1409V1100Q1265 1173 1161.0 1207.0Q1057 1241 942 1241Q736 1241 618.0 1109.0Q500 977 500 745Q500 514 618.0 382.0Q736 250 942 250Q1057 250 1161.0 284.0Q1265 318 1372 391Z" transform="translate(210.415,50.000) scale(0.027344,-0.027344)"/><path d="M188 1493H573V924H1141V1493H1526V0H1141V633H573V0H188Z" transform="translate(252.184,50.000) scale(0.027344,-0.027344)"/><path d="M188 1493H573V0H188Z" transform="translate(299.724,50.000) scale(0.027344,-0.027344)"/><path d="M188 1493H573V291H1249V0H188Z" transform="translate(321.231,50.000) scale(0.027344,-0.027344)"/><path d="M573 1202V291H711Q947 291 1071.5 408.0Q1196 525 1196 748Q1196 970 1072.0 1086.0Q948 1202 711 1202ZM188 1493H594Q934 1493 1100.5 1444.5Q1267 1396 1386 1280Q1491 1179 1542.0 1047.0Q1593 915 1593 748Q1593 579 1542.0 446.5Q1491 314 1386 213Q1266 97 1098.0 48.5Q930 0 594 0H188Z" transform="translate(357.587,50.000) scale(0.027344,-0.027344)"/><path d="M1227 1446V1130Q1104 1185 987.0 1213.0Q870 1241 766 1241Q628 1241 562.0 1203.0Q496 1165 496 1085Q496 1025 540.5 991.5Q585 958 702 934L866 901Q1115 851 1220.0 749.0Q1325 647 1325 459Q1325 212 1178.5 91.5Q1032 -29 731 -29Q589 -29 446.0 -2.0Q303 25 160 78V403Q303 327 436.5 288.5Q570 250 694 250Q820 250 887.0 292.0Q954 334 954 412Q954 482 908.5 520.0Q863 558 727 588L578 621Q354 669 250.5 774.0Q147 879 147 1057Q147 1280 291.0 1400.0Q435 1520 705 1520Q828 1520 958.0 1501.5Q1088 1483 1227 1446Z" transform="translate(404.743,50.000) scale(0.027344,-0.027344)"/></g>
+  <g fill="#14110f"><path d="M403 1327V766H657Q798 766 875.0 839.0Q952 912 952 1047Q952 1181 875.0 1254.0Q798 1327 657 1327ZM201 1493H657Q908 1493 1036.5 1379.5Q1165 1266 1165 1047Q1165 826 1036.5 713.0Q908 600 657 600H403V0H201Z" transform="translate(4.000,92.000) scale(0.016113,-0.016113)"/><path d="M201 1493H403V170H1130V0H201Z" transform="translate(29.180,92.000) scale(0.016113,-0.016113)"/><path d="M700 1294 426 551H975ZM586 1493H815L1384 0H1174L1038 383H365L229 0H16Z" transform="translate(52.845,92.000) scale(0.016113,-0.016113)"/><path d="M1096 1444V1247Q981 1302 879.0 1329.0Q777 1356 682 1356Q517 1356 427.5 1292.0Q338 1228 338 1110Q338 1011 397.5 960.5Q457 910 623 879L745 854Q971 811 1078.5 702.5Q1186 594 1186 412Q1186 195 1040.5 83.0Q895 -29 614 -29Q508 -29 388.5 -5.0Q269 19 141 66V274Q264 205 382.0 170.0Q500 135 614 135Q787 135 881.0 203.0Q975 271 975 397Q975 507 907.5 569.0Q840 631 686 662L563 686Q337 731 236.0 827.0Q135 923 135 1094Q135 1292 274.5 1406.0Q414 1520 659 1520Q764 1520 873.0 1501.0Q982 1482 1096 1444Z" transform="translate(80.700,92.000) scale(0.016113,-0.016113)"/><path d="M-6 1493H1257V1323H727V0H524V1323H-6Z" transform="translate(106.927,92.000) scale(0.016113,-0.016113)"/><path d="M201 1493H1145V1323H403V881H1114V711H403V170H1163V0H201Z" transform="translate(132.365,92.000) scale(0.016113,-0.016113)"/><path d="M909 700Q974 678 1035.5 606.0Q1097 534 1159 408L1364 0H1147L956 383Q882 533 812.5 582.0Q743 631 623 631H403V0H201V1493H657Q913 1493 1039.0 1386.0Q1165 1279 1165 1063Q1165 922 1099.5 829.0Q1034 736 909 700ZM403 1327V797H657Q803 797 877.5 864.5Q952 932 952 1063Q952 1194 877.5 1260.5Q803 1327 657 1327Z" transform="translate(158.495,92.000) scale(0.016113,-0.016113)"/><path d="M201 1493H403V0H201Z" transform="translate(186.705,92.000) scale(0.016113,-0.016113)"/><path d="M201 1493H473L1135 244V1493H1331V0H1059L397 1249V0H201Z" transform="translate(201.717,92.000) scale(0.016113,-0.016113)"/><path d="M1219 213V614H889V780H1419V139Q1302 56 1161.0 13.5Q1020 -29 860 -29Q510 -29 312.5 175.5Q115 380 115 745Q115 1111 312.5 1315.5Q510 1520 860 1520Q1006 1520 1137.5 1484.0Q1269 1448 1380 1378V1163Q1268 1258 1142.0 1306.0Q1016 1354 877 1354Q603 1354 465.5 1201.0Q328 1048 328 745Q328 443 465.5 290.0Q603 137 877 137Q984 137 1068.0 155.5Q1152 174 1219 213Z" transform="translate(231.683,92.000) scale(0.016113,-0.016113)"/></g>
+</svg>
+      </a>
+      <nav class="nav__links" aria-label="Sections">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#work">Our work</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn--acc nav__cta" href="https://www.instagram.com/mcplastering__/" target="_blank" rel="noopener">Get a quote</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="wrap hero__in">
+        <div class="hero__copy">
+          <span class="eyebrow">Plastering · Newcastle &amp; the Hunter</span>
+          <h1>New-build and renovation plastering, finished paint-ready.</h1>
+          <p class="lead">Interior plastering across Newcastle, Lake Macquarie and the Hunter Region — new builds, renovations and repairs, from sheet and set through to a straight, sanded surface for the painter.</p>
+          <div class="hero__cta">
+            <a class="btn btn--solid" href="https://www.instagram.com/mcplastering__/" target="_blank" rel="noopener">Get a quote</a>
+            <a class="btn btn--ghost" href="#services">See services</a>
+          </div>
+          <div class="chips">
+            <span class="chip"><b>New builds</b> · renovations · repairs</span>
+            <span class="chip">Ceilings &amp; cornice</span>
+            <span class="chip">Setting &amp; finishing</span>
+            <span class="chip">Hunter Region local</span>
+          </div>
+        </div>
+        <div class="hero__card">
+          <figure>
+            <img src="assets/gal-2.jpg" alt="Plasterer bedding and stopping joints across a new ceiling" width="640" height="564">
+            <figcaption>Ceiling plastering on a new-build, Hunter Region</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="band band--tint">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">What we do</span>
+          <h2>Plastering for walls, ceilings and everything between</h2>
+          <p>Sheet, set and finish — the work that turns a frame and a stack of plasterboard into a surface you can paint.</p>
+        </div>
+        <div class="svc-grid">
+        <article class="svc">
+          <span class="svc__n">01</span>
+          <h3>New-build plastering</h3>
+          <p>Sheeting, fixing, taping and stopping through new homes and extensions — walls and ceilings carried through to a straight, paint-ready surface.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">02</span>
+          <h3>Renovation plastering</h3>
+          <p>Reworked walls and ceilings, new linings, patched openings and set joints for kitchens, bathrooms and full-home renovations.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">03</span>
+          <h3>Ceilings & cornice</h3>
+          <p>Flat and bulkhead ceilings, raked and tray details, plus cornice supply and installation to finish the junction between wall and ceiling.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">04</span>
+          <h3>Setting & finishing</h3>
+          <p>Bedding, taping, second and final coats, then sanding — the stopping that makes a wall flat enough to paint.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">05</span>
+          <h3>Crack & patch repairs</h3>
+          <p>Cracks, damaged plasterboard, water-affected ceilings and knocked corners repaired and blended back to the surrounding finish.</p>
+        </article>
+        <article class="svc">
+          <span class="svc__n">06</span>
+          <h3>Garages & soffits</h3>
+          <p>Garage ceilings, eaves, alfresco and under-house soffits lined, stopped and finished.</p>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="band process">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">How it runs</span>
+          <h2>From first message to a paint-ready room</h2>
+          <p>A straight, five-step run so you know what's happening on site and when.</p>
+        </div>
+        <ol class="steps">
+          <li><span class="step__n">01</span><div><h3>Get in touch</h3><p>Send a DM with the address and a few photos of the space, or what you're planning.</p></div></li>
+          <li><span class="step__n">02</span><div><h3>Quote & measure</h3><p>We look at the areas, the linings and access, then come back with a clear quote.</p></div></li>
+          <li><span class="step__n">03</span><div><h3>Sheet & fix</h3><p>Plasterboard measured, cut and fixed to walls and ceilings — straight, square and set to the frame.</p></div></li>
+          <li><span class="step__n">04</span><div><h3>Stop, cornice & finish</h3><p>Joints bedded and taped, cornice fitted, coats built up and sanded to a paint-ready surface.</p></div></li>
+          <li><span class="step__n">05</span><div><h3>Handover</h3><p>Broom-clean and walk-through, ready for the painter to take over.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="work" class="band">
+      <div class="wrap wrap--narrow">
+        <div class="head">
+          <span class="eyebrow">Recent work</span>
+          <h2>On the job</h2>
+          <p>Photos from recent plastering across Newcastle and Lake Macquarie.</p>
+        </div>
+        <div class="work-grid">
+        <figure class="work__item">
+          <img src="assets/gal-3.jpg" alt="Walls and ceiling finished, set and ready to paint." width="480" height="640" decoding="async">
+          <figcaption>Walls and ceiling finished, set and ready to paint.</figcaption>
+        </figure>
+        <figure class="work__item">
+          <img src="assets/gal-4.jpg" alt="Taping and stopping a new garage ceiling." width="480" height="640" decoding="async">
+          <figcaption>Taping and stopping a new garage ceiling.</figcaption>
+        </figure>
+        <figure class="work__item">
+          <img src="assets/gal-5.jpg" alt="Bedding and stopping a hallway wall to a flat finish." width="480" height="640" decoding="async">
+          <figcaption>Bedding and stopping a hallway wall to a flat finish.</figcaption>
+        </figure>
+        <figure class="work__item">
+          <img src="assets/gal-6.jpg" alt="Tray ceiling – joints stopped, screw holes filled." width="480" height="640" decoding="async">
+          <figcaption>Tray ceiling – joints stopped, screw holes filled.</figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="band band--tint">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">Questions</span>
+          <h2>What people ask before they book</h2>
+        </div>
+        <div class="faq">
+        <details class="faq__item"><summary>What areas do you work in?</summary><p>Newcastle, Lake Macquarie and the wider Hunter Region in NSW.</p></details>
+        <details class="faq__item"><summary>Do you take on new builds and renovations?</summary><p>Yes — new build, renovation and repairs are the three areas of work the business is set up around.</p></details>
+        <details class="faq__item"><summary>How do I get a quote?</summary><p>Send a direct message through Instagram with the address and a photo or two of the area, and we'll arrange a look and a quote.</p></details>
+        <details class="faq__item"><summary>Do you repair cracks and damaged walls or ceilings?</summary><p>Yes. Cracks, damaged plasterboard, water-affected ceilings and corner damage are repaired and blended into the surrounding finish.</p></details>
+        <details class="faq__item"><summary>Do you install cornice and do the finishing?</summary><p>Yes — cornice, setting and sanding all come under the plastering work, so the surface is handed over ready to paint.</p></details>
+        <details class="faq__item"><summary>What kind of finish will I get?</summary><p>Walls and ceilings are setup, stopped and sanded to a flat, paint-ready finish for the painter to seal and topcoat.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="band contact">
+      <div class="wrap">
+        <div class="contact__card">
+          <div>
+            <span class="eyebrow">Get in touch</span>
+            <h2>Send through your job and get a quote</h2>
+            <p>Bookings and enquiries are handled through Instagram. Send a message with the address and a photo or two of the area and we'll take it from there.</p>
+            <div class="contact__meta">
+              <div><span class="k">Service area</span><span class="v">Newcastle · Lake Macquarie · Hunter Region, NSW</span></div>
+              <div><span class="k">Enquiries</span><span class="v"><a href="https://www.instagram.com/mcplastering__/" target="_blank" rel="noopener">DM @mcplastering__</a></span></div>
+              <div><span class="k">Work</span><span class="v">New builds · Renovations · Repairs</span></div>
+            </div>
+          </div>
+          <div class="contact__cta">
+            <a class="btn btn--acc" href="https://www.instagram.com/mcplastering__/" target="_blank" rel="noopener">Message on Instagram</a>
+            <a class="btn btn--ghost" href="https://www.instagram.com/mcplastering__/" target="_blank" rel="noopener">See more work</a>
+            <small>Replies via direct message</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot__rule"></div>
+      <div class="foot">
+        <div class="foot__brand">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="foot__mark" aria-hidden="true">
+  <title>MC Plastering</title>
+  <g fill="#14110f"><path d="M188 1493H678L1018 694L1360 1493H1849V0H1485V1092L1141 287H897L553 1092V0H188Z" transform="translate(5.920,179.100) scale(0.068359,-0.068359)"/><path d="M1372 82Q1266 27 1151.0 -1.0Q1036 -29 911 -29Q538 -29 320.0 179.5Q102 388 102 745Q102 1103 320.0 1311.5Q538 1520 911 1520Q1036 1520 1151.0 1492.0Q1266 1464 1372 1409V1100Q1265 1173 1161.0 1207.0Q1057 1241 942 1241Q736 1241 618.0 1109.0Q500 977 500 745Q500 514 618.0 382.0Q736 250 942 250Q1057 250 1161.0 284.0Q1265 318 1372 391Z" transform="translate(147.336,179.100) scale(0.068359,-0.068359)"/></g>
+  <path d="M 219.26 93.37 L 250.76 102.82 L 219.26 114.37 Z" fill="#d84130"/>
+</svg>
+          <div>
+            <div class="foot__name">MC Plastering Pty Ltd</div>
+            <div class="foot__meta">Newcastle &amp; Lake Macquarie, NSW</div>
+          </div>
+        </div>
+        <div class="foot__meta">Plasterer · Hunter Region, NSW<br>© 2026 MC Plastering Pty Ltd</div>
+      </div>
+    </div>
+  </footer>
+
+<style id="fix-img-cap">
+/* these files were rendering wider than their own pixels (640px JPEG in a 691px box at 768, 443px in a 457px box at 1024), i.e. upscaled. Cap each at its native width. */
+@media(min-width:0px){img[src$="gal-2.jpg"]{max-width:640px;height:auto}}
+</style>
+</body>
+</html>
