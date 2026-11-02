@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friz Electrical — Electrician, Newcastle &amp; Surrounds | Power, Lighting &amp; Reno Work</title>
+<meta name="description" content="Friz Electrical — power, lighting, maintenance and renovation wiring for homes across Newcastle and the surrounding area. No job too big or too small. Call 0490 223 240.">
+<meta property="og:title" content="Friz Electrical — Electrician, Newcastle &amp; Surrounds">
+<meta property="og:description" content="Power, lighting, maintenance and reno work across Newcastle and the surrounding area. No job too big or too small — call 0490 223 240.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff; --paper2:#eef4f6; --ink:#0e1218; --ink2:#59636e; --line:rgba(14,18,24,.14);
+  --chip:#f3f6f8; --acc:#0e1218; --brand:#0fb0d4; --teal:#0a8aa8; --deep:#0b0e12; --acc-text:#ffffff;
+  --disp:'Chakra Petch','Segoe UI',sans-serif; --body-font:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
+body{font-family:var(--body-font);background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--disp);letter-spacing:-.005em}
+a{color:inherit}
+::selection{background:var(--brand);color:#05222a}
+.mono{font-family:ui-monospace,Menlo,monospace}
+html.js .rv{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .7s ease}
+html.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}*{animation-duration:.001s!important;transition-duration:.001s!important}}
+
+.nav{position:fixed;inset:0 0 auto 0;z-index:60;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:1.4rem;height:84px;max-width:1320px;margin:0 auto;padding:0 40px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand-logo{height:clamp(42px,4.6vw,54px);width:auto;display:block}
+.nav-links{display:flex;gap:1.35rem;margin-left:auto;align-items:center}
+.nav-links a{color:var(--ink2);text-decoration:none;font-size:.9rem;font-weight:600}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{display:flex;gap:.9rem;align-items:center}
+.nav-p{font-size:.85rem;font-weight:700}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.82rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:800;font-size:.95rem;transition:transform .15s ease,filter .15s ease}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.1)}
+.btn-primary{background:var(--acc);color:var(--acc-text)}
+.btn-ghost{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+.btn-sm{padding:.62rem 1.05rem;font-size:.85rem}
+.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:5px;padding:.4rem .55rem;cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:920px){
+  .nav-in{height:72px;padding:0 20px}
+  .nav-links{position:fixed;inset:72px 0 auto 0;background:rgba(255,255,255,.98);flex-direction:column;padding:1.2rem;gap:1rem;transform:translateY(-160%);transition:transform .35s ease;border-bottom:1px solid var(--line);margin-left:0}
+  .nav-links.open{transform:none}
+  .nav-links a{width:100%;text-align:center;padding:.5rem 0}
+  .nav-cta{display:none}
+  .burger{display:block}
+  .brand-logo{height:40px}
+}
+
+.hero{position:relative;padding:150px 0 5rem;background:linear-gradient(180deg,var(--paper2) 0%,var(--paper) 80%)}
+.hero-in{max-width:1320px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:3.2rem;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:.65rem;color:var(--teal);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800;margin-bottom:1.1rem}
+.kicker::before{content:"";width:34px;height:2px;background:var(--brand)}
+.hero h1{font-size:clamp(2rem,4.3vw,3.4rem);line-height:1.05;font-weight:700;max-width:17ch}
+.hero h1 .acc{color:var(--teal)}
+.hero-sub{margin-top:1.2rem;color:var(--ink2);font-size:clamp(.98rem,1.5vw,1.1rem);max-width:56ch}
+.hero-cta{display:flex;gap:.9rem;margin-top:1.9rem;flex-wrap:wrap}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
+.chip{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--line);background:var(--paper);border-radius:100px;padding:.5rem .95rem;font-size:.8rem;font-weight:700}
+.chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--brand)}
+.hero-card{justify-self:center;width:100%;max-width:430px;position:relative}
+.hero-card img{width:100%;max-width:430px;height:auto;display:block;border-radius:12px;box-shadow:0 26px 60px rgba(11,14,18,.28)}
+.hero-card .tag{position:absolute;left:14px;top:14px;background:var(--paper);color:var(--ink);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;padding:6px 12px;border-radius:4px}
+.hero-card::after{content:"";position:absolute;right:-12px;bottom:-12px;width:54%;height:54%;border:2px solid var(--brand);border-radius:12px;z-index:-1}
+@media(max-width:980px){.hero-in{grid-template-columns:1fr;gap:1.8rem}.hero{padding:120px 0 3.5rem}.hero-card{order:-1;max-width:420px}.hero h1{max-width:none}}
+
+section{padding:5.2rem 0}
+.wrap{max-width:1320px;margin:0 auto;padding:0 44px}
+.sec-head{display:flex;gap:1rem;align-items:baseline;margin-bottom:2.4rem}
+.sec-idx{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:800}
+.sec-title{font-size:clamp(1.7rem,3.4vw,2.6rem);font-weight:700;line-height:1.12;max-width:26ch}
+.lead{color:var(--ink2);max-width:62ch;margin-top:.9rem}
+
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:1.1rem}
+.svc{background:var(--chip);border:1px solid var(--line);border-radius:8px;padding:1.6rem 1.45rem;position:relative;overflow:hidden;transition:border-color .2s ease,transform .2s ease}
+.svc:hover{border-color:var(--brand);transform:translateY(-3px)}
+.svc::after{content:"";position:absolute;top:0;left:0;width:44px;height:3px;background:var(--brand);transition:width .3s ease}
+.svc:hover::after{width:100%}
+.svc-n{font-size:.78rem;font-weight:800;color:var(--teal)}
+.svc h3{font-size:1.1rem;margin:.35rem 0;font-weight:700}
+.svc p{color:var(--ink2);font-size:.93rem}
+
+.band{background:var(--deep);color:#fff}
+.band .sec-title{color:#fff}
+.band .sec-idx{color:var(--brand)}
+.band .lead{color:rgba(255,255,255,.72)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
+.step{border-top:2px solid var(--brand);padding-top:1.1rem}
+.step-n{font-family:var(--disp);font-size:1.7rem;font-weight:700;color:#fff;line-height:1}
+.step h3{font-size:1.05rem;margin:.5rem 0 .35rem}
+.step p{color:rgba(255,255,255,.72);font-size:.92rem}
+
+.work-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.1rem}
+.work-grid figure{margin:0;background:var(--chip);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.work-grid img{width:100%;max-width:100%;height:auto;display:block}
+.work-grid figcaption{padding:.9rem 1rem;font-size:.86rem;color:var(--ink2);display:flex;justify-content:space-between;gap:1rem}
+.work-grid figcaption b{color:var(--ink);font-weight:700}
+.work-grid figcaption span{white-space:nowrap;color:var(--teal);font-weight:700}
+
+.faq-wrap{max-width:900px}
+details.faq{border-top:1px solid var(--line);padding:1.25rem 0}
+details.faq:last-of-type{border-bottom:1px solid var(--line)}
+details.faq summary{font-size:1.06rem;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--disp)}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:1.6rem;color:var(--brand);font-weight:400;transition:transform .2s}
+details.faq[open] summary::after{transform:rotate(45deg)}
+details.faq .a{color:var(--ink2);padding:.85rem 0 .2rem;max-width:70ch}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem;align-items:start}
+.contact-card{background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:1.8rem 1.7rem}
+.contact-row{display:flex;gap:.9rem;align-items:baseline;padding:.7rem 0;border-bottom:1px solid var(--line)}
+.contact-row:last-child{border-bottom:0}
+.contact-row b{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);min-width:78px}
+.contact-row a,.contact-row span{font-weight:600}
+.contact-row a:hover{color:var(--teal)}
+@media(max-width:820px){.contact-grid{grid-template-columns:1fr;gap:1.6rem}}
+
+footer{border-top:1px solid var(--line);padding:3.4rem 0 0;background:var(--paper)}
+.foot-in{max-width:1320px;margin:0 auto;padding:0 44px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.4rem}
+.fbrand{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+.fbrand img{height:clamp(44px,4.4vw,56px);width:auto}
+.foot-in p{color:var(--ink2);font-size:.9rem;max-width:34ch}
+footer h4{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:.9rem}
+footer a{display:block;text-decoration:none;color:var(--ink2);font-size:.92rem;padding:.22rem 0}
+footer a:hover{color:var(--teal)}
+.footer-bar{max-width:1320px;margin:2.6rem auto 0;padding:1.3rem 44px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.82rem;color:var(--ink2)}
+@media(max-width:820px){.foot-in{grid-template-columns:1fr;gap:1.8rem}.wrap,.foot-in,.footer-bar{padding-left:22px;padding-right:22px}.hero-in{padding:0 22px}}
+</style>
+</head>
+<body>
+<script>document.documentElement.className+=' js';</script>
+
+<nav class="nav"><div class="nav-in">
+  <a class="brand" href="#top" aria-label="Friz Electrical — home"><img class="brand-logo" src="assets/logo-word.svg" alt="Friz Electrical logo"></a>
+  <div class="nav-links" id="navlinks">
+    <a href="#services">Services</a><a href="#process">Process</a><a href="#work">Work</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+  </div>
+  <div class="nav-cta"><span class="mono nav-p">0490 223 240</span><a class="btn btn-primary btn-sm" href="tel:+61490223240">Call now</a></div>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></nav>
+
+<header class="hero" id="top"><div class="hero-in">
+  <div>
+    <p class="kicker">Electrician — Newcastle &amp; surrounding area</p>
+    <h1>Power, lighting, maintenance &amp; <span class="acc">reno work</span> across Newcastle</h1>
+    <p class="hero-sub">Friz Electrical handles power, lighting, maintenance and renovation wiring for homes across Newcastle and the surrounding area — no job too big or too small.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="tel:+61490223240">Call 0490 223 240</a>
+      <a class="btn btn-ghost" href="#services">See services</a>
+    </div>
+    <div class="chips">
+      <span class="chip">Newcastle &amp; surrounds</span>
+      <span class="chip">Power · Lighting · Maintenance</span>
+      <span class="chip">Renos &amp; fit-outs</span>
+      <span class="chip">No job too big or too small</span>
+    </div>
+  </div>
+  <div class="hero-card">
+    <span class="tag">Recent work — Newcastle</span>
+    <img src="assets/gal-1.jpg" alt="Finished living room with recessed downlights and a ceiling fan installed by Friz Electrical">
+  </div>
+</div></header>
+
+<section id="services"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">01</span><div><h2 class="sec-title">What we do.</h2><p class="lead">Electrical work for homes across Newcastle and the surrounding area — big jobs and small.</p></div></div>
+  <div class="svc-grid">
+    <div class="svc rv"><span class="svc-n">01</span><h3>Power points &amp; circuits</h3><p>New power points and dedicated circuits, indoors and out.</p></div>
+    <div class="svc rv"><span class="svc-n">02</span><h3>Lighting &amp; downlights</h3><p>Indoor and outdoor lighting, downlights and ceiling fans — fitted and finished neatly.</p></div>
+    <div class="svc rv"><span class="svc-n">03</span><h3>Electrical maintenance</h3><p>On-going maintenance and repairs to keep a home's electrics safe and working.</p></div>
+    <div class="svc rv"><span class="svc-n">04</span><h3>Renovation wiring</h3><p>Wiring for renovations and fit-outs — rough-in through to fit-off and testing.</p></div>
+    <div class="svc rv"><span class="svc-n">05</span><h3>Switchboards &amp; safety switches</h3><p>Switchboard work, safety switches and RCDs to bring older boards up to standard.</p></div>
+    <div class="svc rv"><span class="svc-n">06</span><h3>Data, TV &amp; appliance installs</h3><p>TV mounting, data points and appliance connections, installed cleanly.</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="process"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">02</span><div><h2 class="sec-title">How a job runs.</h2><p class="lead">Straightforward electrical work — from first call to switch-on.</p></div></div>
+  <div class="steps">
+    <div class="step rv"><span class="step-n">01</span><h3>Get in touch</h3><p>Call or email with what you need — a repair, a reno or a quote.</p></div>
+    <div class="step rv"><span class="step-n">02</span><h3>Quote</h3><p>We look at the job and give you a clear price before we start.</p></div>
+    <div class="step rv"><span class="step-n">03</span><h3>Do the work</h3><p>Wired and fitted properly, with the power kept on wherever we can.</p></div>
+    <div class="step rv"><span class="step-n">04</span><h3>Test &amp; tidy</h3><p>Circuits tested, everything checked, and the area left clean.</p></div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">03</span><div><h2 class="sec-title">Recent work.</h2><p class="lead">A few recent jobs — lighting, reno wiring, outdoor power and appliance installs around Newcastle.</p></div></div>
+  <div class="work-grid">
+    <figure class="rv"><img src="assets/gal-1.jpg" alt="Living room with recessed downlights and a ceiling fan" loading="lazy"><figcaption><b>Living room downlights &amp; ceiling fan</b><span>/01</span></figcaption></figure>
+    <figure class="rv"><img src="assets/gal-2.jpg" alt="Ceiling stripped back to joists and insulation during a renovation" loading="lazy"><figcaption><b>Reno wiring — ceiling stripped back</b><span>/02</span></figcaption></figure>
+    <figure class="rv"><img src="assets/gal-3.jpg" alt="Exterior wall wrap and window opening during a build" loading="lazy"><figcaption><b>Exterior rough-in — wall wrap stage</b><span>/03</span></figcaption></figure>
+    <figure class="rv"><img src="assets/gal-4.jpg" alt="Weatherproof outdoor power point installed low on an exterior wall" loading="lazy"><figcaption><b>Weatherproof outdoor power point</b><span>/04</span></figcaption></figure>
+    <figure class="rv"><img src="assets/gal-5.jpg" alt="Wall-mounted flat-screen TV above a timber media console" loading="lazy"><figcaption><b>Wall-mounted TV install</b><span>/05</span></figcaption></figure>
+    <figure class="rv"><img src="assets/gal-6.jpg" alt="Infrared sauna with blue LED accent lighting" loading="lazy"><figcaption><b>Infrared sauna — electrical &amp; LED lighting</b><span>/06</span></figcaption></figure>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap faq-wrap">
+  <div class="sec-head"><span class="sec-idx">04</span><div><h2 class="sec-title">Common questions.</h2></div></div>
+  <details class="faq rv"><summary>What areas do you cover?</summary><div class="a">Newcastle and the surrounding area. If you're nearby and not sure whether you're in range, give us a call.</div></details>
+  <details class="faq rv"><summary>Do you take on small jobs?</summary><div class="a">Yes — no job too big or too small. A single power point is as welcome as a full reno.</div></details>
+  <details class="faq rv"><summary>Do you do renovation wiring?</summary><div class="a">Yes — we wire renovations and fit-outs, from the rough-in stage through to fit-off and testing.</div></details>
+  <details class="faq rv"><summary>Do you fit lighting and fans?</summary><div class="a">Yes — downlights, indoor and outdoor lighting and ceiling fans are all part of the work we do.</div></details>
+  <details class="faq rv"><summary>Can you do maintenance and repairs?</summary><div class="a">Yes — on-going electrical maintenance and repairs are welcome, whether it's a one-off fix or regular work.</div></details>
+  <details class="faq rv"><summary>How do I get a quote?</summary><div class="a">Call 0490 223 240 or email FrizElectrical@gmail.com with a few details about the job and we'll get back to you.</div></details>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">05</span><div><h2 class="sec-title">Get in touch.</h2><p class="lead">Call or email with the job and we'll come back with a price.</p></div></div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-row"><b>Call</b><a href="tel:+61490223240">0490 223 240</a></div>
+      <div class="contact-row"><b>Email</b><a href="mailto:FrizElectrical@gmail.com">FrizElectrical@gmail.com</a></div>
+      <div class="contact-row"><b>Based</b><span>Newcastle, NSW</span></div>
+      <div class="contact-row"><b>Area</b><span>Newcastle &amp; surrounding area</span></div>
+      <div class="contact-row"><b>Social</b><a href="https://www.facebook.com/people/Friz-Electrical/61592198799846/" target="_blank" rel="noopener">Facebook — Friz Electrical</a></div>
+    </div>
+    <div class="contact-card">
+      <h3 class="sec-title" style="font-size:1.25rem;max-width:none">Powering your future.</h3>
+      <p class="lead" style="margin-top:.6rem">Power, lighting, maintenance and reno work across Newcastle and the surrounding area — no job too big or too small.</p>
+      <div class="hero-cta" style="margin-top:1.4rem"><a class="btn btn-primary" href="tel:+61490223240">Call 0490 223 240</a><a class="btn btn-ghost" href="mailto:FrizElectrical@gmail.com">Email us</a></div>
+    </div>
+  </div>
+</div></section>
+
+<footer>
+  <div class="foot-in">
+    <div>
+      <div class="fbrand"><img src="assets/logo-word.svg" alt="Friz Electrical logo"></div>
+      <p>Power · Lighting · Maintenance · Reno — Newcastle &amp; surrounding area, NSW.</p>
+    </div>
+    <div><h4>Services</h4><a href="#services">Power points &amp; circuits</a><a href="#services">Lighting &amp; downlights</a><a href="#services">Electrical maintenance</a><a href="#services">Renovation wiring</a><a href="#services">TV &amp; appliance installs</a></div>
+    <div><h4>Contact</h4><a href="tel:+61490223240">0490 223 240</a><a href="mailto:FrizElectrical@gmail.com">FrizElectrical@gmail.com</a><a href="https://www.facebook.com/people/Friz-Electrical/61592198799846/" target="_blank" rel="noopener">Facebook</a></div>
+  </div>
+  <div class="footer-bar"><span>&copy; 2026 Friz Electrical &middot; Newcastle, NSW</span><span>No job too big or too small &middot; 0490 223 240</span></div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('navlinks');
+  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});
+    n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}});}
+})();
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el);});}
+  else{els.forEach(function(el){el.classList.add('in');});}
+})();
+setTimeout(function(){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});},1100);
+</script>
+</body>
+</html>
