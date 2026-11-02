@@ -9,10 +9,10 @@
 <meta name="theme-color" content="#f7f7f5">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Archivo:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Archivo:wght@400;500;600;700;800;900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
 :root{
-  /* light warm palette (kept) + a legible warm accent so no text pair sits dark-on-dark */
+  /* warm off-white ground, charcoal ink, oak accent (sparingly) */
   --bg:#f7f7f5; --bg2:#efefec; --ink:#14181c; --muted:rgba(20,24,28,.72);
   --line:rgba(20,24,28,.16); --panel:rgba(255,255,255,.9);
   --accent:#b5793f; --accent-ink:#8a5f36;
@@ -35,42 +35,55 @@ img,canvas{overflow:hidden}
 header.mast{position:sticky;top:0;z-index:60;background:rgba(247,247,245,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;gap:clamp(14px,3vw,40px);padding:10px 0}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:0 1 auto;min-width:0}
-.brand img{height:58px;width:auto;max-width:min(300px,44vw);object-fit:contain}
+.brand img{height:32px;width:auto;max-width:min(180px,32vw);object-fit:contain}
+.brand .btxt{font-family:var(--sans);font-weight:900;letter-spacing:-.018em;font-size:clamp(17px,1.9vw,22px);color:var(--ink);white-space:nowrap}
 nav.main{margin-left:auto;display:flex;align-items:center;gap:clamp(14px,2.2vw,30px);flex-wrap:wrap}
 nav.main a{color:var(--ink);text-decoration:none;font-size:.95rem}
 nav.main a:hover{color:var(--accent-ink)}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;text-decoration:none;font-weight:600;font-size:.95rem;background:var(--accent);color:var(--ink);border:1px solid var(--accent)}
 nav.main a.btn{color:var(--ink)}
 .btn:hover,nav.main a.btn:hover{background:var(--ink);border-color:var(--ink);color:#f7f7f5}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#f7f7f5}
 /* ---- masthead hero ---- */
 .hero{position:relative;overflow:hidden;background:var(--bg);border-bottom:1px solid var(--line)}
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;pointer-events:none}
-.hero-in{position:relative;z-index:2;padding:clamp(40px,7vh,84px) 0 clamp(36px,5vh,64px)}
+.hero-in{position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(22px,4vw,54px);align-items:center;perspective:1200px;padding:clamp(38px,6vh,78px) 0 clamp(34px,5vh,64px)}
 .kicker{font-family:var(--mono);font-variant:small-caps;letter-spacing:.12em;font-size:.82rem;color:var(--accent-ink);margin:0 0 14px}
 .mrule{border:0;border-top:1px solid var(--ink);height:0;margin:0 0 clamp(20px,3vh,30px)}
-h1.display{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.04;font-size:clamp(2.1rem,5.2vw,3.7rem);margin:0 0 clamp(16px,2.4vh,22px);max-width:15ch}
+h1.display{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.04;font-size:clamp(2.1rem,4.6vw,3.4rem);margin:0 0 clamp(16px,2.4vh,22px);max-width:16ch}
 h1.display em{color:var(--accent-ink);font-style:italic}
-.standfirst{font-size:1.1rem;color:var(--muted);max-width:58ch;margin:0 0 clamp(26px,4vh,40px)}
-.idx{list-style:none;margin:0;padding:0;max-width:660px}
-.idx li{border-top:1px solid var(--line)}
-.idx li:last-child{border-bottom:1px solid var(--line)}
-.idx a{display:grid;grid-template-columns:3.4rem 1fr auto;align-items:center;gap:14px;padding:16px 4px;text-decoration:none;color:var(--ink)}
-.idx a:hover{color:var(--accent-ink)}
-.idx .n{font-family:var(--mono);font-size:.8rem;color:var(--accent-ink)}
-.idx .t{font-family:var(--serif);font-size:1.25rem}
-.idx .a{font-size:1.15rem;transition:transform .3s ease}
-.idx a:hover .a{transform:translateX(4px)}
+.standfirst{font-size:1.08rem;color:var(--muted);max-width:52ch;margin:0 0 clamp(22px,3.4vh,32px)}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.fchips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:24px 0 0;max-width:560px}
+.fchips li{font-size:.85rem;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.hero-art{position:relative;border-radius:18px;padding:12px;background:linear-gradient(180deg,#fffdf9 0%,#f0ece2 100%);box-shadow:0 26px 50px rgba(20,24,28,.16),0 8px 18px rgba(20,24,28,.10),inset 0 1px 0 #fff;transform:perspective(1400px) rotateY(-6deg) rotateX(1.4deg)}
+.heroart{width:100%;height:auto;display:block;border-radius:12px}
+@media(max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:22px;padding:26px 0 38px}
+  .hero-art{order:-1;transform:none;max-width:min(440px,92%);margin:0 auto;padding:9px;border-radius:16px}
+  h1.display{font-size:2rem}
+}
 /* ---- sections ---- */
 section.band{padding:clamp(54px,8vh,92px) 0;border-bottom:1px solid var(--line)}
+.head{max-width:70ch;margin:0 0 clamp(24px,4vh,40px)}
 h2.display{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;font-size:clamp(1.75rem,3.6vw,2.5rem);line-height:1.08;margin:0 0 12px}
-.lead{color:var(--muted);max-width:58ch;margin:0 0 clamp(26px,4vh,40px)}
-/* services index rows (two columns, hairline rules, no cards) */
-.rows{list-style:none;margin:0;padding:0}
-.rows li{display:grid;grid-template-columns:3.4rem minmax(0,.9fr) minmax(0,1.4fr);gap:clamp(12px,3vw,40px);align-items:baseline;padding:22px 0;border-top:1px solid var(--line)}
-.rows li:last-child{border-bottom:1px solid var(--line)}
-.rows .n{font-family:var(--mono);font-size:.82rem;color:var(--accent-ink)}
-.rows h3{font-family:var(--serif);font-weight:500;font-size:1.22rem;line-height:1.2}
-.rows p{color:var(--muted);font-size:.97rem;margin:0}
+.lead{color:var(--muted);max-width:58ch;margin:0}
+/* scene cards */
+.scenes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:980px){.scenes{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.scenes{grid-template-columns:1fr}}
+.scene{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 10px 28px rgba(20,24,28,.06);margin:0}
+.scene svg{width:100%;height:auto;display:block}
+.scene .cap{padding:16px 20px 22px}
+.scene .cap h3{font-family:var(--serif);font-weight:500;font-size:1.18rem;margin:0 0 7px}
+.scene .cap p{color:var(--muted);font-size:.95rem;margin:0}
+.also{margin:clamp(24px,3.4vh,34px) 0 0;color:var(--muted);max-width:64ch;font-size:.98rem}
+/* wide drawn band */
+.wideband{background:var(--bg2)}
+.widewrap{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 12px 30px rgba(20,24,28,.06)}
+.widescene{width:100%;height:auto;display:block}
 /* process: ordered narrative, serif figures */
 .seq{list-style:none;margin:0;padding:0}
 .seq li{display:grid;grid-template-columns:clamp(3rem,7vw,5.5rem) minmax(0,1fr);gap:clamp(14px,3vw,40px);align-items:start;padding:24px 0;border-top:1px solid var(--line)}
@@ -105,11 +118,8 @@ footer a{text-decoration:none}
 footer a:hover{color:var(--accent-ink);text-decoration:underline}
 .footbottom{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;color:var(--muted);font-size:.85rem}
 @media(max-width:900px){.foot{grid-template-columns:1fr 1fr}}
-@media(max-width:720px){
-  .rows li{grid-template-columns:2.6rem 1fr;padding:18px 0}
-  .rows p{grid-column:2}
-  .facts{grid-template-columns:1fr}
-}
+@media(max-width:720px){.facts{grid-template-columns:1fr}}
+@media(max-width:600px){.brand img{height:24px;max-width:min(120px,30vw)}.brand .btxt{font-size:17px}}
 @media(max-width:560px){.foot{grid-template-columns:1fr}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -141,12 +151,13 @@ footer a:hover{color:var(--accent-ink);text-decoration:underline}
 <body>
 <header class="mast">
   <div class="wrap bar">
-    <a class="brand" href="./" aria-label="Luxus Built">
+    <a class="brand" href="#top" aria-label="Luxus Built, home">
       <img src="assets/logo.png" alt="" width="763" height="300" loading="eager" decoding="async">
-      <span class="sr">Luxus Built</span>
+      <span class="btxt">Luxus Built</span>
     </a>
     <button class="navtog" aria-expanded="false" aria-controls="mainnav" aria-label="Menu"><span></span></button><nav id="mainnav" class="main" aria-label="Main">
       <a href="#services">Services</a>
+      <a href="#buildup">Detail</a>
       <a href="#process">Process</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -155,40 +166,293 @@ footer a:hover{color:var(--accent-ink);text-decoration:underline}
   </div>
 </header>
 <main>
+  <!-- LB-3D-HERO -->
   <section class="hero" id="top" aria-label="Luxus Built, residential building and design">
     <canvas id="heroCanvas" aria-hidden="true"></canvas>
     <div class="wrap hero-in">
-      <p class="kicker">Luxus Built &middot; Residential building and design</p>
-      <hr class="mrule">
-      <h1 class="display">Building and design, worked as <em>one job</em>.</h1>
-      <p class="standfirst">Luxus Built works across Newcastle, Lake Macquarie and the Hunter Valley on new homes, renovations and extensions, with the drawings and detailing settled before work starts on site.</p>
-      <ol class="idx">
-        <li><a href="#services"><span class="n">01</span><span class="t">Services</span><span class="a" aria-hidden="true">&rarr;</span></a></li>
-        <li><a href="#process"><span class="n">02</span><span class="t">Process</span><span class="a" aria-hidden="true">&rarr;</span></a></li>
-        <li><a href="#about"><span class="n">03</span><span class="t">About</span><span class="a" aria-hidden="true">&rarr;</span></a></li>
-      </ol>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Luxus Built &middot; Residential building and design</p>
+          <hr class="mrule">
+          <h1 class="display">Building and design, worked as <em>one job</em>.</h1>
+          <p class="standfirst">Luxus Built works across Newcastle, Lake Macquarie and the Hunter Valley on new homes, renovations and extensions, with the drawings and detailing settled before work starts on site.</p>
+          <div class="acts">
+            <a class="btn" href="#contact">Start a project</a>
+            <a class="btn ghost" href="#services">See the work</a>
+          </div>
+          <ul class="fchips">
+            <li>New homes</li><li>Renovations</li><li>Extensions</li><li>Design &amp; documentation</li><li>Custom joinery</li>
+          </ul>
+        </div>
+        <div class="hero-art">
+          <svg class="heroart" viewBox="0 0 620 500" role="img" aria-label="Isometric drawing of a framed timber house with a pitched gable roof, window openings and a cutaway side wall showing exposed studs" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="lxF" x1="0" y1="0" x2=".35" y2="1"><stop offset="0" stop-color="#fdfcf9"/><stop offset="1" stop-color="#eee8dc"/></linearGradient>
+              <linearGradient id="lxS" x1="0" y1="0" x2=".6" y2="1"><stop offset="0" stop-color="#f0e9dc"/><stop offset="1" stop-color="#ded4c0"/></linearGradient>
+              <linearGradient id="lxRL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d8a469"/><stop offset="1" stop-color="#c1884b"/></linearGradient>
+              <linearGradient id="lxRR" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b07a42"/><stop offset="1" stop-color="#8a5f36"/></linearGradient>
+              <linearGradient id="lxWin" x1="0" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="#eaf0f2"/><stop offset="1" stop-color="#cdd8dd"/></linearGradient>
+            </defs>
+            <ellipse cx="300" cy="436" rx="250" ry="20" fill="#14181c" opacity=".07"/>
+            <path d="M40 421H580" stroke="#14181c" stroke-width="1.2" opacity=".28"/>
+            <path d="M380 240L500 196V376L380 420Z" fill="url(#lxS)" stroke="#a4977f" stroke-width="1.6"/>
+            <g stroke="#b3a287" stroke-width="2" opacity=".9"><path d="M410 229V409M440 218V398M470 207V387"/></g>
+            <path d="M380 240L500 196" stroke="#8a5f36" stroke-width="3"/>
+            <path d="M380 420L500 376" stroke="#8a5f36" stroke-width="3"/>
+            <rect x="100" y="240" width="280" height="180" fill="url(#lxF)" stroke="#a4977f" stroke-width="1.6"/>
+            <path d="M100 240L380 240L240 150Z" fill="#f6f3ec" stroke="#a4977f" stroke-width="1.6"/>
+            <g stroke="#e0d8c8" stroke-width="1.2" opacity=".85"><path d="M170 240V196M240 240V150M310 240V196"/></g>
+            <rect x="130" y="274" width="76" height="82" rx="2" fill="url(#lxWin)" stroke="#14181c" stroke-width="3"/>
+            <path d="M168 274V356M130 315H206" stroke="#14181c" stroke-width="2"/>
+            <rect x="274" y="274" width="76" height="82" rx="2" fill="url(#lxWin)" stroke="#14181c" stroke-width="3"/>
+            <path d="M312 274V356M274 315H350" stroke="#14181c" stroke-width="2"/>
+            <rect x="216" y="300" width="48" height="120" fill="#8a5f36" stroke="#6f4a29" stroke-width="2"/>
+            <rect x="224" y="310" width="32" height="34" fill="#a9703c"/>
+            <rect x="224" y="352" width="32" height="52" fill="#a9703c"/>
+            <circle cx="256" cy="362" r="3" fill="#f2e5cf"/>
+            <path d="M240 150L86 240L206 196L360 106Z" fill="url(#lxRL)" stroke="#7d5730" stroke-width="1.6"/>
+            <path d="M240 150L394 240L514 196L360 106Z" fill="url(#lxRR)" stroke="#6f4a29" stroke-width="1.6"/>
+            <g stroke="#8a5f36" stroke-width="1" opacity=".4"><path d="M170 189L292 141M126 207L250 158M212 172L336 123"/></g>
+            <path d="M240 150L360 106" stroke="#5f3d20" stroke-width="6" stroke-linecap="round"/>
+            <path d="M86 240L206 196M394 240L514 196" stroke="#8a5f36" stroke-width="3"/>
+            <g stroke="#8a5f36" stroke-width="1.6" fill="none" opacity=".95"><path d="M30 342H92V306"/><path d="M30 342L92 306"/></g>
+            <text x="8" y="362" font-family="monospace" font-size="11" letter-spacing="1.2" fill="#8a5f36">PITCH</text>
+            <g stroke="#14181c" stroke-width="1" opacity=".55"><path d="M86 118V108M394 118V108M86 113H394"/></g>
+            <path d="M86 113l10-4v8zM394 113l-10-4v8z" fill="#14181c" opacity=".6"/>
+            <text x="240" y="102" text-anchor="middle" font-family="monospace" font-size="12" letter-spacing="1.6" fill="#14181c" opacity=".7">OVERALL SPAN</text>
+            <g stroke="#14181c" stroke-width="1" opacity=".5"><path d="M62 240H52M62 420H52M57 240V420"/></g>
+            <path d="M57 240l-4 10h8zM57 420l-4-10h8z" fill="#14181c" opacity=".55"/>
+            <text x="40" y="330" text-anchor="middle" font-family="monospace" font-size="11" letter-spacing="1.4" fill="#14181c" opacity=".7" transform="rotate(-90 40 330)">WALL HEIGHT</text>
+            <g font-family="monospace" font-size="11" letter-spacing="1.3" fill="#8a5f36">
+              <text x="404" y="288" transform="rotate(-20 404 288)">FRAMED WALL</text>
+              <text x="146" y="234">GABLE</text>
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
   </section>
+
   <section class="band rv" id="services">
     <div class="wrap">
-      <p class="kicker">Services</p>
-      <h2 class="display">Scope of work</h2>
-      <p class="lead">Six things Luxus Built takes on across Newcastle, Lake Macquarie and the Hunter Valley, all run from the same set of drawings.</p>
-      <ol class="rows">
-        <li><span class="n">01</span><h3>New homes</h3><p>New builds run from the first drawing through to handover, with the details resolved before they are built.</p></li>
-        <li><span class="n">02</span><h3>Renovations</h3><p>Existing homes reworked, with layout, structural work and finishes brought together as one job.</p></li>
-        <li><span class="n">03</span><h3>Extensions</h3><p>Additions designed and built to sit with the original house rather than bolt onto it.</p></li>
-        <li><span class="n">04</span><h3>Design and documentation</h3><p>Drawings, detailing and the paperwork sorted so the build runs to a plan.</p></li>
-        <li><span class="n">05</span><h3>Structural work</h3><p>Beams, openings and load-bearing changes handled with the engineering already in place.</p></li>
-        <li><span class="n">06</span><h3>Project management</h3><p>Trades sequenced and the site run so the work keeps moving.</p></li>
-      </ol>
+      <div class="head">
+        <p class="kicker">Services</p>
+        <h2 class="display">Scope of work</h2>
+        <p class="lead">Work Luxus Built takes on across Newcastle, Lake Macquarie and the Hunter Valley, all run from the same set of drawings.</p>
+      </div>
+      <div class="scenes">
+        <figure class="scene">
+          <svg viewBox="0 0 420 250" role="img" aria-label="Floor plan sheet with double-line walls, a dimension line, grid bubbles and a title block" xmlns="http://www.w3.org/2000/svg">
+            <rect width="420" height="250" fill="#efede7"/>
+            <text x="18" y="26" font-family="monospace" font-size="11" letter-spacing="1.5" fill="#8a5f36">DESIGN &amp; DOCUMENTATION</text>
+            <rect x="24" y="40" width="372" height="192" fill="#fdfcf9" stroke="#cfc4b0"/>
+            <g stroke="#14181c" stroke-width="1.2" fill="#fdfcf9">
+              <circle cx="66" cy="58" r="9"/><circle cx="156" cy="58" r="9"/><circle cx="246" cy="58" r="9"/>
+            </g>
+            <g stroke="#14181c" stroke-width="1" stroke-dasharray="3 3" opacity=".5"><path d="M66 67V80M156 67V80M246 67V80"/></g>
+            <g font-family="monospace" font-size="10" fill="#14181c" text-anchor="middle"><text x="66" y="62">A</text><text x="156" y="62">B</text><text x="246" y="62">C</text></g>
+            <rect x="56" y="80" width="200" height="104" fill="#f4f1ea" stroke="#14181c" stroke-width="3"/>
+            <rect x="64" y="88" width="184" height="88" fill="#fdfcf9" stroke="#14181c" stroke-width="1.4"/>
+            <path d="M150 88V176" stroke="#14181c" stroke-width="3"/>
+            <path d="M150 120v26" stroke="#fdfcf9" stroke-width="5"/>
+            <path d="M150 120h26" stroke="#8a5f36" stroke-width="2"/>
+            <path d="M150 120a26 26 0 0 1 26 26" fill="none" stroke="#8a5f36" stroke-width="1.4" stroke-dasharray="4 3"/>
+            <path d="M120 80h40" stroke="#fdfcf9" stroke-width="5"/>
+            <path d="M120 80h40" stroke="#8a5f36" stroke-width="2" opacity=".9"/>
+            <rect x="78" y="100" width="34" height="18" fill="none" stroke="#b3a287" stroke-width="1.2"/>
+            <circle cx="205" cy="120" r="13" fill="none" stroke="#b3a287" stroke-width="1.2"/>
+            <g stroke="#14181c" stroke-width="1" opacity=".7"><path d="M56 196v8M256 196v8M56 200h200"/></g>
+            <path d="M56 200l10-4v8zM256 200l-10-4v8z" fill="#14181c" opacity=".75"/>
+            <text x="156" y="216" text-anchor="middle" font-family="monospace" font-size="11" fill="#14181c">9600</text>
+            <g transform="translate(348,66)">
+              <circle r="15" fill="#fdfcf9" stroke="#cfc4b0"/>
+              <path d="M0 10V-8M0 -8l-5 8h10z" fill="#14181c"/>
+              <text y="-20" text-anchor="middle" font-family="monospace" font-size="9" fill="#14181c">N</text>
+            </g>
+            <rect x="286" y="186" width="110" height="46" fill="#f4f1ea" stroke="#cfc4b0"/>
+            <text x="294" y="202" font-family="monospace" font-size="8.5" fill="#14181c">LUXUS BUILT</text>
+            <path d="M286 208h110M320 208v24M286 222h110" stroke="#cfc4b0" stroke-width="1"/>
+            <text x="294" y="218" font-family="monospace" font-size="8" fill="#8a5f36">PLAN</text>
+            <text x="328" y="218" font-family="monospace" font-size="8" fill="#8a5f36">1:100</text>
+            <text x="294" y="234" font-family="monospace" font-size="8" fill="#8a5f36">SHEET A-01</text>
+          </svg>
+          <figcaption class="cap"><h3>Design and documentation</h3><p>Drawings, detailing and the paperwork sorted before anything is priced or built, so the job runs to one set of documents.</p></figcaption>
+        </figure>
+
+        <figure class="scene">
+          <svg viewBox="0 0 420 250" role="img" aria-label="Timber stud frame with top and bottom plates, noggins, a diagonal brace and a lintel over an opening" xmlns="http://www.w3.org/2000/svg">
+            <rect width="420" height="250" fill="#efede7"/>
+            <text x="18" y="26" font-family="monospace" font-size="11" letter-spacing="1.5" fill="#8a5f36">FRAME &amp; STRUCTURAL</text>
+            <rect x="20" y="206" width="380" height="20" fill="#ded7c8" stroke="#c3b8a2"/>
+            <g stroke="#b3a287" stroke-width="1" opacity=".8"><path d="M34 226l14-12M64 226l14-12M94 226l14-12M124 226l14-12M154 226l14-12M184 226l14-12M214 226l14-12M244 226l14-12M274 226l14-12M304 226l14-12M334 226l14-12M364 226l14-12M394 226l14-12"/></g>
+            <rect x="44" y="192" width="332" height="14" fill="#c98f52" stroke="#8a5f36"/>
+            <rect x="44" y="48" width="332" height="11" fill="#c98f52" stroke="#8a5f36"/>
+            <rect x="44" y="59" width="332" height="11" fill="#b5793f" stroke="#8a5f36"/>
+            <g fill="#d9a86a" stroke="#8a5f36">
+              <rect x="56" y="70" width="12" height="122"/>
+              <rect x="108" y="70" width="12" height="122"/>
+              <rect x="160" y="70" width="12" height="122"/>
+              <rect x="212" y="70" width="12" height="122"/>
+              <rect x="316" y="70" width="12" height="122"/>
+              <rect x="368" y="70" width="12" height="122"/>
+            </g>
+            <rect x="224" y="70" width="92" height="18" fill="#b5793f" stroke="#6f4a29"/>
+            <text x="270" y="83" text-anchor="middle" font-family="monospace" font-size="8.5" fill="#f4f1ea">LINTEL</text>
+            <g fill="#c98f52" stroke="#8a5f36"><rect x="68" y="126" width="40" height="10"/><rect x="120" y="126" width="40" height="10"/><rect x="172" y="126" width="40" height="10"/></g>
+            <path d="M120 192L212 70" stroke="#8a5f36" stroke-width="7" stroke-linecap="round" opacity=".85"/>
+            <path d="M270 20V46" stroke="#14181c" stroke-width="1.8" opacity=".6"/>
+            <path d="M270 46l-6-9h12z" fill="#14181c" opacity=".65"/>
+            <text x="286" y="34" font-family="monospace" font-size="10" fill="#14181c" opacity=".7">LOAD</text>
+            <text x="30" y="112" font-family="monospace" font-size="9.5" fill="#8a5f36">STUD</text>
+            <path d="M56 108h-16" stroke="#8a5f36" stroke-width="1" opacity=".7"/>
+            <text x="392" y="240" text-anchor="end" font-family="monospace" font-size="9.5" fill="#8a5f36">SLAB</text>
+          </svg>
+          <figcaption class="cap"><h3>Frame and structural work</h3><p>Timber frames, beams and openings set out and built to the drawings, with the engineering resolved before the work starts.</p></figcaption>
+        </figure>
+
+        <figure class="scene">
+          <svg viewBox="0 0 420 250" role="img" aria-label="Two timber boards meeting in an interlocking dovetail joint with grain lines" xmlns="http://www.w3.org/2000/svg">
+            <rect width="420" height="250" fill="#efede7"/>
+            <text x="18" y="26" font-family="monospace" font-size="11" letter-spacing="1.5" fill="#8a5f36">CUSTOM JOINERY</text>
+            <path d="M40 96H232V176H40Z" fill="#c98f52" stroke="#8a5f36" stroke-width="2"/>
+            <g stroke="#9c6a37" stroke-width="1" opacity=".55"><path d="M48 112h176M48 128h176M48 144h176M48 160h176"/></g>
+            <path d="M268 96H384V176H268Z" fill="#b5793f" stroke="#7d5730" stroke-width="2"/>
+            <g stroke="#8a5f36" stroke-width="1" opacity=".55"><path d="M276 112h100M276 128h100M276 144h100M276 160h100"/></g>
+            <g fill="#d9a86a" stroke="#7d5730" stroke-width="1.6">
+              <path d="M232 96L268 106V122L232 132Z"/>
+              <path d="M232 134L268 144V160L232 170Z"/>
+            </g>
+            <path d="M232 116L268 124V140L232 148Z" fill="#a9703c" stroke="#6f4a29" stroke-width="1.6"/>
+            <path d="M232 96V176M268 96V176" stroke="#5f3d20" stroke-width="1.4" stroke-dasharray="4 3"/>
+            <text x="210" y="58" text-anchor="middle" font-family="monospace" font-size="10" letter-spacing="1.4" fill="#14181c" opacity=".7">DOVETAIL JOINT</text>
+            <text x="176" y="216" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#8a5f36">PINS</text>
+            <text x="330" y="216" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#8a5f36">TAILS</text>
+            <path d="M250 200v-14M330 200v-14" stroke="#8a5f36" stroke-width="1" opacity=".7"/>
+          </svg>
+          <figcaption class="cap"><h3>Custom joinery</h3><p>Bespoke joinery and fit-out made to the room it goes in, with the joints worked out on the drawing first.</p></figcaption>
+        </figure>
+
+        <figure class="scene">
+          <svg viewBox="0 0 420 250" role="img" aria-label="Section through an existing house with a hatched wall and a new extension to the right, joined where the old wall is removed" xmlns="http://www.w3.org/2000/svg">
+            <rect width="420" height="250" fill="#efede7"/>
+            <text x="18" y="26" font-family="monospace" font-size="11" letter-spacing="1.5" fill="#8a5f36">RENOVATION &amp; EXTENSION</text>
+            <path d="M10 202H410" stroke="#14181c" stroke-width="1.6" opacity=".5"/>
+            <rect x="28" y="86" width="150" height="116" fill="#efeae0" stroke="#14181c" stroke-width="2.4"/>
+            <g stroke="#bcae94" stroke-width="1" opacity=".9"><path d="M28 86l150 116M28 120l116 82M28 154l82 48M28 188l48 14"/></g>
+            <path d="M28 86L103 42L178 86Z" fill="#e6e0d4" stroke="#14181c" stroke-width="2.4"/>
+            <rect x="190" y="118" width="182" height="84" fill="#fdfcf9" stroke="#8a5f36" stroke-width="2.4"/>
+            <path d="M190 118L281 74L372 118Z" fill="#e9dfcc" stroke="#8a5f36" stroke-width="2.4"/>
+            <g stroke="#c9bda6" stroke-width="1"><path d="M190 118v84M281 74v128M372 118v84"/></g>
+            <path d="M178 86V202" stroke="#8a5f36" stroke-width="2" stroke-dasharray="6 5"/>
+            <g fill="#cfc4b0" stroke="#b3a287"><rect x="46" y="202" width="52" height="14"/><rect x="230" y="202" width="86" height="14"/></g>
+            <text x="36" y="106" font-family="monospace" font-size="9.5" fill="#14181c" opacity=".8">EXISTING</text>
+            <text x="316" y="140" font-family="monospace" font-size="9.5" fill="#8a5f36">NEW</text>
+            <text x="114" y="240" font-family="monospace" font-size="9" fill="#8a5f36">REMOVED WALL</text>
+          </svg>
+          <figcaption class="cap"><h3>Renovation and extension</h3><p>Existing homes reworked and extended, with the new work drawn to sit with the original house rather than bolt onto it.</p></figcaption>
+        </figure>
+
+        <figure class="scene">
+          <svg viewBox="0 0 420 250" role="img" aria-label="Facade elevation with weatherboard cladding, a corner trim and a window opening under the eave" xmlns="http://www.w3.org/2000/svg">
+            <rect width="420" height="250" fill="#efede7"/>
+            <text x="18" y="26" font-family="monospace" font-size="11" letter-spacing="1.5" fill="#8a5f36">FACADE &amp; CLADDING</text>
+            <rect x="46" y="42" width="300" height="188" fill="#f4f1ea" stroke="#c3b8a2"/>
+            <g>
+              <rect x="46" y="42" width="300" height="22" fill="#eae4d6"/><rect x="46" y="64" width="300" height="4" fill="#bcae94"/>
+              <rect x="46" y="68" width="300" height="22" fill="#eee8db"/><rect x="46" y="90" width="300" height="4" fill="#bcae94"/>
+              <rect x="46" y="94" width="300" height="22" fill="#eae4d6"/><rect x="46" y="116" width="300" height="4" fill="#bcae94"/>
+              <rect x="46" y="120" width="300" height="22" fill="#eee8db"/><rect x="46" y="142" width="300" height="4" fill="#bcae94"/>
+              <rect x="46" y="146" width="300" height="22" fill="#eae4d6"/><rect x="46" y="168" width="300" height="4" fill="#bcae94"/>
+              <rect x="46" y="172" width="300" height="22" fill="#eee8db"/><rect x="46" y="194" width="300" height="4" fill="#bcae94"/>
+              <rect x="46" y="198" width="300" height="32" fill="#eae4d6"/>
+            </g>
+            <rect x="46" y="42" width="16" height="188" fill="#8a5f36"/>
+            <rect x="34" y="28" width="318" height="14" rx="2" fill="#14181c"/>
+            <path d="M46 42h300" stroke="#7d5730" stroke-width="2"/>
+            <rect x="120" y="80" width="126" height="84" fill="#dde5e8" stroke="#14181c" stroke-width="3.4"/>
+            <path d="M183 80V164M120 122H246" stroke="#14181c" stroke-width="2"/>
+            <text x="352" y="74" font-family="monospace" font-size="9.5" fill="#8a5f36">BOARD</text>
+            <path d="M300 70h48" stroke="#8a5f36" stroke-width="1" opacity=".7"/>
+            <text x="30" y="246" font-family="monospace" font-size="9.5" fill="#8a5f36">TRIM</text>
+            <path d="M74 232v-30" stroke="#8a5f36" stroke-width="1" opacity=".7"/>
+          </svg>
+          <figcaption class="cap"><h3>Facade and cladding</h3><p>External walls, cladding and openings detailed so the facade reads the way it was drawn.</p></figcaption>
+        </figure>
+      </div>
+      <p class="also">New homes and full project management &mdash; trades sequenced and the site run so the work keeps moving &mdash; sit across all of it.</p>
     </div>
   </section>
+
+  <section class="band wideband rv" id="buildup">
+    <div class="wrap">
+      <div class="head">
+        <p class="kicker">Detail</p>
+        <h2 class="display">How a wall goes together</h2>
+        <p class="lead">Every junction is drawn before it is built. This is the wall build-up that sits behind the cladding, from the weatherboards in to the lining.</p>
+      </div>
+      <div class="widewrap">
+        <svg class="widescene" viewBox="0 0 1100 352" role="img" aria-label="Section through a wall build-up: weatherboard cladding, batten and drained cavity, sarking, timber studs with insulation batts between them, and plasterboard lining" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="lbIns" width="72" height="46" patternUnits="userSpaceOnUse">
+              <rect width="72" height="46" fill="#efe6d2"/>
+              <path d="M4 14q16-9 32 0t32 0M4 34q16-9 32 0t32 0" fill="none" stroke="#cbbd93" stroke-width="1.4"/>
+            </pattern>
+          </defs>
+          <rect width="1100" height="352" fill="#efede7"/>
+          <g stroke="#14181c" stroke-width="1" opacity=".55"><path d="M90 16v10M930 16v10M90 21h840"/></g>
+          <path d="M90 21l10-4v8zM930 21l-10-4v8z" fill="#14181c" opacity=".6"/>
+          <text x="510" y="12" text-anchor="middle" font-family="monospace" font-size="11" letter-spacing="1.5" fill="#14181c" opacity=".7">WALL BUILD-UP &#8212; CLADDING TO LINING</text>
+          <rect x="90" y="34" width="840" height="18" fill="#8a5f36"/>
+          <rect x="90" y="52" width="80" height="240" fill="#c98f52" stroke="#8a5f36"/>
+          <g stroke="#8a5f36" stroke-width="1.6"><path d="M90 92h80M90 132h80M90 172h80M90 212h80M90 252h80"/></g>
+          <g stroke="#9c6a37" stroke-width="4" opacity=".85"><path d="M90 96h80M90 136h80M90 176h80M90 216h80M90 256h80"/></g>
+          <rect x="170" y="52" width="110" height="240" fill="#efe8db" stroke="#cfc4b0"/>
+          <g fill="#b3a287"><rect x="186" y="52" width="9" height="240"/><rect x="222" y="52" width="9" height="240"/><rect x="258" y="52" width="9" height="240"/></g>
+          <rect x="280" y="52" width="32" height="240" fill="#e2d9c6" stroke="#c3b8a2"/>
+          <g stroke="#b3a287" stroke-width="2" opacity=".9"><path d="M280 60l32 22M280 92l32 22M280 124l32 22M280 156l32 22M280 188l32 22M280 220l32 22M280 252l32 22M280 284l24 18"/></g>
+          <rect x="312" y="52" width="538" height="240" fill="#f4f0e6" stroke="#cfc4b0"/>
+          <g fill="url(#lbIns)" stroke="#ddcfa9">
+            <rect x="330" y="54" width="70" height="236"/>
+            <rect x="420" y="54" width="70" height="236"/>
+            <rect x="510" y="54" width="70" height="236"/>
+            <rect x="600" y="54" width="70" height="236"/>
+            <rect x="690" y="54" width="70" height="236"/>
+            <rect x="780" y="54" width="52" height="236"/>
+          </g>
+          <g fill="#c98f52" stroke="#8a5f36">
+            <rect x="312" y="52" width="16" height="240"/>
+            <rect x="402" y="52" width="16" height="240"/>
+            <rect x="492" y="52" width="16" height="240"/>
+            <rect x="582" y="52" width="16" height="240"/>
+            <rect x="672" y="52" width="16" height="240"/>
+            <rect x="762" y="52" width="16" height="240"/>
+            <rect x="834" y="52" width="16" height="240"/>
+          </g>
+          <rect x="850" y="52" width="80" height="240" fill="#fbfaf6" stroke="#cfc4b0"/>
+          <path d="M850 172h80" stroke="#ddd7c8" stroke-width="1.4"/>
+          <rect x="90" y="292" width="840" height="16" fill="#cfc4b0" stroke="#b3a287"/>
+          <g stroke="#8a5f36" stroke-width="1" opacity=".75">
+            <path d="M130 318v-26M225 318v-30M300 318v-26M580 318v-26M895 318v-30"/>
+          </g>
+          <g font-family="monospace" font-size="12" letter-spacing="1" fill="#14181c">
+            <text x="130" y="330" text-anchor="middle">CLADDING</text>
+            <text x="225" y="344" text-anchor="middle">CAVITY + BATTEN</text>
+            <text x="300" y="330" text-anchor="middle">SARKING</text>
+            <text x="580" y="330" text-anchor="middle">STUDS + INSULATION</text>
+            <text x="895" y="344" text-anchor="middle">PLASTERBOARD</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
   <section class="band rv" id="process">
     <div class="wrap">
-      <p class="kicker">Process</p>
-      <h2 class="display">Sequence of a build</h2>
-      <p class="lead">Four stages, from the first conversation to the final clean up.</p>
+      <div class="head">
+        <p class="kicker">Process</p>
+        <h2 class="display">Sequence of a build</h2>
+        <p class="lead">Four stages, from the first conversation to the final clean up.</p>
+      </div>
       <ol class="seq">
         <li><span class="fig" aria-hidden="true">1</span><div><h3>Brief</h3><p>What you want, what the site allows and what the budget has to carry, worked out together before anything is priced.</p></div></li>
         <li><span class="fig" aria-hidden="true">2</span><div><h3>Design and detail</h3><p>Drawings and selections settled so the job is priced and built from the same set of documents.</p></div></li>
@@ -197,6 +461,7 @@ footer a:hover{color:var(--accent-ink);text-decoration:underline}
       </ol>
     </div>
   </section>
+
   <section class="band rv" id="about">
     <div class="wrap about">
       <p class="kicker">About</p>
@@ -210,11 +475,12 @@ footer a:hover{color:var(--accent-ink);text-decoration:underline}
       <ul class="facts">
         <li>Residential building <span>&middot; new homes, renovations and extensions</span></li>
         <li>Design and documentation <span>&middot; drawings and detailing</span></li>
+        <li>Frame, joinery and facade <span>&middot; structure, fit-out and cladding</span></li>
         <li>Newcastle, Lake Macquarie, Hunter <span>&middot; and the surrounding areas</span></li>
-        <li>Licensed builder <span>&middot; NSW Builders Licence 372338c</span></li>
       </ul>
     </div>
   </section>
+
   <section class="band rv" id="contact">
     <div class="wrap">
       <p class="kicker">Contact</p>
