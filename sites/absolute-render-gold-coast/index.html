@@ -1,252 +1,213 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en-AU" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Absolute Render Gold Coast — Render, Venetian plaster &amp; microcement</title>
-<meta name="description" content="Gold Coast rendering by Clint Crockett. Cement render, Venetian plaster, microcement and texture finishes, Broadbeach to Tweed. Licensed and insured. Call 0406 930 004.">
-<meta property="og:title" content="Absolute Render Gold Coast">
-<meta property="og:description" content="Render, Venetian plaster and microcement across the Gold Coast, owner supervised and licensed.">
-<meta property="og:type" content="website">
-<meta name="theme-color" content="#0f1115">
+<meta name="description" content="Cement render, Venetian plaster and microcement across the Gold Coast, Broadbeach to the Tweed. Owner run by Clint Crockett, 23 years on the tools. Call 0406 930 004.">
+<meta name="theme-color" content="#14161A">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ---- tokens -------------------------------------------------------- */
 :root{
-  --ink:#f7f3ec; --ink-2:#c3baab; --ink-3:#94897a;
-  --night:#0f1115; --night-2:#15181d; --night-3:#1c2027;
-  --acc:#c9b896; --acc-2:#dccfae; --acc-ink:#0f1115;
-  --line:rgba(247,243,236,.14); --line-2:rgba(247,243,236,.28);
-  --t-11:11px; --t-13:13px; --t-15:15px; --t-17:17px;
-  --h1:clamp(38px,5.4vw,74px);
-  --h2:clamp(28px,3.5vw,46px);
-  --h3:clamp(19px,1.7vw,23px);
-  --pad:clamp(20px,4.4vw,56px);
-  --sec:clamp(64px,9vw,124px);
-  --max:1200px;
-  --disp:"Archivo",system-ui,sans-serif;
+  --paper:#F5F0E7; --paper-2:#EDE6D8; --paper-3:#E4DAC7;
+  --ink:#14161A; --ink-2:#3E3A33; --muted:#6E6759; --muted-2:#8A8272;
+  --sand:#C9B896; --sand-d:#6F5A33; --sand-l:#E3D6BC;
+  --night:#14161A; --night-2:#1D2026;
+  --bg:var(--paper); --accent:var(--sand-d); --line:rgba(20,22,26,.14); --line-2:rgba(20,22,26,.26);
+  --max:1220px; --pad:clamp(20px,4.2vw,54px); --sec:clamp(66px,8.6vw,120px);
+  --disp:"Fraunces",Georgia,serif; --sans:"Archivo",system-ui,sans-serif;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 html,body{overflow-x:hidden}
-body{background:var(--night);color:var(--ink);font-family:var(--disp);font-size:var(--t-17);line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-h1,h2,h3,h4{font-weight:800;line-height:1.04;letter-spacing:-.026em;text-wrap:balance}
-h1{font-size:var(--h1);font-weight:800}
-h2{font-size:var(--h2)}
-h3{font-size:var(--h3);line-height:1.22;letter-spacing:-.018em}
-p{max-width:60ch}
-a{color:inherit;text-decoration:none}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.66;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
-::selection{background:var(--acc);color:var(--acc-ink)}
-:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--disp);font-weight:500;line-height:1.02;letter-spacing:-.014em;text-wrap:balance}
+h1{font-size:clamp(38px,5.6vw,74px)}
+h2{font-size:clamp(30px,4vw,52px)}
+h3{font-size:clamp(19px,1.7vw,24px);line-height:1.2}
+p{max-width:62ch}
+::selection{background:var(--ink);color:var(--sand-l)}
+:focus-visible{outline:2px solid var(--sand-d);outline-offset:3px}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
 section{padding:var(--sec) 0}
+.eyebrow{font-family:var(--sans);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--sand-d)}
 .rule{border-top:1px solid var(--line)}
-.label{font-size:var(--t-11);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--acc)}
+.skip{position:absolute;left:-9999px;top:0;background:#fff;color:#000;padding:10px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
 
-/* ---- header -------------------------------------------------------- */
-.site-header{position:sticky;top:0;z-index:70;background:#0f1115;border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:clamp(12px,2vw,30px);height:78px;max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-.brand{display:flex;align-items:center;gap:11px;flex:0 1 auto;min-width:0;--lb-name:#f7f3ec;color:#f7f3ec}
-.brand__mark{width:38px;height:38px;flex:0 0 auto;border-radius:8px;display:block;overflow:hidden}
-.brand__mark img{width:100%;height:100%;object-fit:contain;display:block}
-.brand__name{font-size:clamp(15px,1.5vw,19px);font-weight:800;line-height:1;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f7f3ec}
-.brand__name b{color:var(--acc);font-weight:800}
-.nav{display:flex;align-items:center;gap:clamp(16px,2.2vw,30px);margin-left:auto}
-.nav a{font-size:var(--t-15);font-weight:500;color:var(--ink-2);white-space:nowrap;padding:6px 0;border-bottom:1px solid transparent;transition:color .16s,border-color .16s}
-.nav a:hover{color:var(--ink);border-bottom-color:var(--acc)}
-.call{display:inline-flex;align-items:center;gap:9px;background:var(--acc);color:var(--acc-ink);font-weight:700;font-size:var(--t-15);padding:11px 16px;border-radius:4px;white-space:nowrap;flex:0 0 auto;transition:background .16s}
-.call:hover{background:var(--acc-2)}
-.call svg{flex:0 0 auto}
-.burger{display:none;width:42px;height:38px;background:none;border:1px solid var(--line-2);border-radius:4px;cursor:pointer;padding:0;place-items:center;flex:0 0 auto}
-.burger i{display:block;width:17px;height:2px;background:var(--ink);margin:3px auto;transition:transform .2s,opacity .2s}
+/* ---- 3D hero layer (hidden canvas; perspective scene stage) ---------- */
+.lb3d-stage{position:absolute;width:0;height:0;overflow:hidden;perspective:1000px}
+#heroCanvas{display:none}
+
+/* ---- header --------------------------------------------------------- */
+.bar-shell{position:sticky;top:0;z-index:80;background:var(--night);border-bottom:1px solid rgba(201,184,150,.28)}
+.bar{max-width:var(--max);margin:0 auto;padding:0 var(--pad);height:80px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:14px;min-width:0}
+.brand__mark{height:58px;width:auto;flex:0 0 auto;border-radius:6px}
+.brand__word{height:24px;width:auto;flex:0 1 auto;min-width:0}
+.nav{display:flex;align-items:center;gap:clamp(14px,2vw,30px);margin-left:auto}
+.nav a{font-size:14px;font-weight:500;color:#D7CFBE;letter-spacing:.01em;padding:6px 0;border-bottom:1px solid transparent;transition:color .16s,border-color .16s}
+.nav a:hover{color:#fff;border-bottom-color:var(--sand)}
+.call{display:inline-flex;align-items:center;gap:9px;background:var(--sand);color:var(--ink);font-weight:700;font-size:14px;padding:11px 17px;border-radius:3px;white-space:nowrap;transition:background .16s}
+.call:hover{background:var(--sand-l)}
+.burger{display:none;width:44px;height:40px;background:none;border:1px solid rgba(201,184,150,.45);border-radius:3px;cursor:pointer;place-items:center}
+.burger i{display:block;width:17px;height:2px;background:var(--sand-l);margin:3px auto;transition:transform .2s,opacity .2s}
 .burger[aria-expanded="true"] i:nth-child(1){transform:translateY(5px) rotate(45deg)}
 .burger[aria-expanded="true"] i:nth-child(2){opacity:0}
 .burger[aria-expanded="true"] i:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
 
-/* ---- hero ---------------------------------------------------------- */
-.hero{position:relative;overflow:hidden;padding:0;background:var(--night);border-bottom:1px solid var(--line)}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-.hero__in{position:relative;z-index:2;width:100%;max-width:var(--max);margin:0 auto;padding:clamp(54px,7vw,92px) var(--pad) clamp(44px,5vw,64px);display:flex;flex-direction:column;justify-content:center;min-height:clamp(560px,86vh,780px)}
-.hero__top{display:flex;align-items:center;gap:12px;margin-bottom:20px;color:#d8cdba;font-size:var(--t-11);font-weight:700;text-transform:uppercase;letter-spacing:.11em}
-.hero__top::before{content:"";width:28px;height:2px;background:var(--acc);flex:0 0 auto}
-.hero h1{max-width:17ch}
-.hero h1 em{font-style:normal;color:var(--acc)}
-.hero__sub{margin-top:22px;font-size:clamp(16px,1.55vw,19px);line-height:1.58;color:#d3c9ba;max-width:42ch}
-.hero__cta{margin-top:30px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:var(--acc-ink);font-weight:800;font-size:var(--t-17);padding:16px 24px;border-radius:4px;border:0;cursor:pointer;transition:background .16s,transform .16s}
-.btn:hover{background:var(--acc-2);transform:translateY(-2px)}
-.btn:active{transform:none}
-.hero__note{font-size:var(--t-13);color:#b4a998}
-.hero__facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:600px;border-top:1px solid var(--line);margin-top:clamp(34px,5vw,54px);padding-top:20px}
-.hero__facts dt{font-size:var(--t-11);font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#a39786;margin-bottom:4px}
-.hero__facts dd{font-size:var(--t-15);font-weight:700;color:var(--ink)}
+/* ---- hero ----------------------------------------------------------- */
+.hero{padding:0;background:linear-gradient(180deg,var(--paper) 0%,var(--paper-2) 100%)}
+.hero__grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(28px,4.6vw,66px);align-items:center;padding:clamp(48px,6.6vw,86px) 0}
+.hero__body{padding-left:var(--pad)}
+.hero__body h1 em{font-style:italic;color:var(--sand-d)}
+.hero__lede{margin-top:22px;font-size:clamp(16px,1.5vw,19px);color:var(--ink-2);max-width:44ch}
+.hero__cta{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--sand-l);font-weight:700;font-size:15px;padding:15px 24px;border:0;border-radius:3px;cursor:pointer;transition:background .16s,transform .16s}
+.btn:hover{background:var(--night-2);transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
+.btn--ghost:hover{background:rgba(20,22,26,.05);transform:translateY(-2px)}
+.hero__facts{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:560px}
+.hero__facts dt{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted-2)}
+.hero__facts dd{font-family:var(--disp);font-size:19px;margin-top:3px}
+.hero__media{position:relative;padding-right:var(--pad)}
+.hero__media figure{position:relative;border-radius:4px;overflow:hidden;box-shadow:0 30px 60px -34px rgba(20,22,26,.5)}
+.hero__media img{width:100%;aspect-ratio:5/6;object-fit:cover}
+.hero__tag{position:absolute;left:-16px;bottom:34px;background:var(--night);color:var(--sand-l);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;padding:11px 15px;border-radius:3px;max-width:230px;line-height:1.5}
 
-/* ---- band ---------------------------------------------------------- */
-.band{background:var(--night-2);border-bottom:1px solid var(--line);padding:clamp(26px,3.4vw,38px) 0}
-.band .wrap{display:flex;align-items:center;gap:clamp(16px,3vw,40px);flex-wrap:wrap;justify-content:space-between}
-.band p{font-size:clamp(17px,2vw,23px);font-weight:700;letter-spacing:-.02em;line-height:1.28;max-width:26ch}
-.band p span{color:var(--acc)}
-.band a{font-size:var(--t-15);font-weight:700;color:var(--acc);border-bottom:1px solid var(--acc);padding-bottom:2px;white-space:nowrap}
+/* ---- finish strip --------------------------------------------------- */
+.finishes{background:var(--night);color:var(--paper);padding:26px 0;border-top:1px solid rgba(201,184,150,.24)}
+.finishes .wrap{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;justify-content:center;text-align:center}
+.finishes span{font-family:var(--disp);font-size:clamp(15px,1.6vw,20px);color:var(--sand-l);white-space:nowrap}
+.finishes span::after{content:"·";margin-left:26px;color:rgba(201,184,150,.5)}
+.finishes span:last-child::after{content:""}
 
-/* ---- section head -------------------------------------------------- */
-.shead{display:grid;gap:14px;margin-bottom:clamp(30px,4.4vw,50px);border-bottom:1px solid var(--line);padding-bottom:24px}
-.shead h2{max-width:22ch}
-.shead p{color:var(--ink-2);font-size:var(--t-17)}
+/* ---- section head --------------------------------------------------- */
+.shead{display:grid;gap:16px;max-width:70ch;margin-bottom:clamp(32px,4.6vw,54px)}
+.shead h2{max-width:24ch}
+.shead p{color:var(--ink-2)}
 
-/* ---- services: lead row + plain rows ------------------------------- */
-.svc-lead{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,56px);align-items:start;padding-bottom:clamp(28px,4vw,44px);border-bottom:1px solid var(--line)}
-.svc-lead__n{font-size:var(--t-13);font-weight:800;color:var(--acc);display:block;margin-bottom:12px}
-.svc-lead h3{font-size:clamp(26px,3.2vw,38px);letter-spacing:-.03em;margin-bottom:12px}
-.svc-lead p{color:var(--ink-2);max-width:44ch}
-.svc-lead figure{margin:0}
-.svc-lead img{width:100%;height:clamp(260px,38vh,400px);object-fit:cover;border-radius:5px}
-.svc-lead figcaption{font-size:var(--t-11);color:var(--ink-3);margin-top:10px;font-weight:600}
-.svc-rows{display:grid}
-.svc{display:grid;grid-template-columns:46px minmax(0,1fr) minmax(0,.9fr);gap:clamp(10px,2vw,30px);padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.svc__n{font-size:var(--t-11);font-weight:800;color:var(--acc)}
-.svc h3{margin-bottom:6px}
-.svc p{color:var(--ink-2);font-size:var(--t-15);max-width:42ch}
-.svc .tag{font-size:var(--t-13);color:var(--ink-3);font-weight:600;justify-self:start}
+/* ---- services: numbered editorial index ----------------------------- */
+.svc-lead{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(26px,4.4vw,60px);align-items:end;padding-bottom:clamp(30px,4vw,48px);border-bottom:1px solid var(--line)}
+.svc-lead .no{font-family:var(--disp);font-size:15px;color:var(--sand-d);letter-spacing:.1em}
+.svc-lead h3{font-size:clamp(26px,3.3vw,40px);margin:10px 0 14px}
+.svc-lead p{color:var(--ink-2);max-width:46ch}
+.svc-lead figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.svc-lead figcaption{font-size:12px;color:var(--muted-2);margin-top:11px}
+.svc-list{display:grid}
+.svc{display:grid;grid-template-columns:66px minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(12px,2vw,34px);padding:28px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.svc .no{font-family:var(--disp);font-size:15px;color:var(--sand-d)}
+.svc p{color:var(--ink-2);font-size:15.5px;max-width:46ch}
+.svc .tag{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted-2);justify-self:start}
 
-/* ---- process rail -------------------------------------------------- */
-.rail{background:var(--night-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.rail .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2.4vw,32px)}
-.rail div{border-left:1px solid var(--line);padding-left:clamp(12px,1.8vw,20px)}
-.rail div:first-child{border-left:0;padding-left:0}
-.rail b{display:block;font-size:var(--t-11);color:var(--acc);font-weight:800;margin-bottom:10px}
-.rail h3{font-size:var(--t-17);margin-bottom:6px}
-.rail p{font-size:var(--t-13);color:var(--ink-3);line-height:1.55}
+/* ---- before / after ------------------------------------------------- */
+.ba{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ba__grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(28px,4.6vw,64px);align-items:center}
+.ba__copy h2{margin:12px 0 16px;max-width:16ch}
+.ba__copy p{color:var(--ink-2)}
+.ba__list{margin-top:24px;display:grid;gap:12px}
+.ba__list div{display:flex;gap:12px;font-size:15px;color:var(--ink-2)}
+.ba__list b{color:var(--sand-d);font-family:var(--disp)}
+.ba__media{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ba__media figure img{width:100%;height:100%;min-height:250px;object-fit:cover;border-radius:4px}
+.ba__media figcaption{font-size:12px;color:var(--muted-2);margin-top:9px}
 
-/* ---- why ----------------------------------------------------------- */
-.why{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,70px);align-items:start}
-.why__quote{font-size:clamp(23px,2.9vw,34px);font-weight:700;line-height:1.22;letter-spacing:-.028em;max-width:20ch}
-.why__quote em{font-style:normal;color:var(--acc)}
-.why__by{margin-top:20px;font-size:var(--t-13);color:var(--ink-3);font-weight:600}
-.why__list div{padding:20px 0;border-top:1px solid var(--line)}
-.why__list div:first-child{border-top:0;padding-top:0}
-.why__list h3{font-size:var(--t-17);margin-bottom:5px}
-.why__list p{color:var(--ink-2);font-size:var(--t-15);max-width:48ch}
+/* ---- process -------------------------------------------------------- */
+.process__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,32px)}
+.step{border-top:2px solid var(--sand);padding-top:18px}
+.step b{font-family:var(--disp);font-size:14px;color:var(--sand-d);display:block;margin-bottom:10px}
+.step h3{font-family:var(--sans);font-weight:700;font-size:17px;letter-spacing:-.01em;margin-bottom:7px}
+.step p{font-size:14.5px;color:var(--muted)}
 
-/* ---- gallery ------------------------------------------------------- */
+/* ---- gallery -------------------------------------------------------- */
 .gal{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(10px,1.4vw,16px)}
-.gal figure{position:relative;margin:0;overflow:hidden;border-radius:5px;background:var(--night-3)}
+.gal figure{margin:0;position:relative;overflow:hidden;border-radius:4px;background:var(--paper-3)}
 .gal figure:nth-child(1){grid-column:span 4}
 .gal figure:nth-child(2){grid-column:span 2}
 .gal figure:nth-child(3){grid-column:span 2}
-.gal figure:nth-child(4){grid-column:span 4}
-.gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
-.gal figure:nth-child(1) img,.gal figure:nth-child(4) img{aspect-ratio:16/10}
-.gal figure:nth-child(2) img,.gal figure:nth-child(3) img{aspect-ratio:4/5}
-.gal figure:hover img{transform:scale(1.035)}
-.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;font-size:var(--t-13);font-weight:600;color:#fff;background:linear-gradient(180deg,rgba(10,11,14,0),rgba(10,11,14,.82))}
+.gal figure:nth-child(4){grid-column:span 2}
+.gal figure:nth-child(5){grid-column:span 2}
+.gal figure:nth-child(6){grid-column:span 3}
+.gal figure:nth-child(7){grid-column:span 3}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .65s ease}
+.gal figure:nth-child(1) img,.gal figure:nth-child(6) img,.gal figure:nth-child(7) img{aspect-ratio:16/10}
+.gal figure:nth-child(2) img,.gal figure:nth-child(3) img,.gal figure:nth-child(4) img,.gal figure:nth-child(5) img{aspect-ratio:3/4}
+.gal figure:hover img{transform:scale(1.04)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:15px 16px;font-size:12.5px;font-weight:600;color:#fff;background:linear-gradient(180deg,rgba(15,16,19,0),rgba(15,16,19,.84))}
 
-/* ---- quote --------------------------------------------------------- */
-.quote{background:var(--night-2);border-top:1px solid var(--line)}
-.quote .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(28px,5vw,66px);align-items:start}
-.quote__info h2{margin:12px 0 16px;max-width:16ch}
-.quote__info p{color:var(--ink-2);margin-bottom:24px;max-width:38ch}
-.quote__tel{display:inline-flex;align-items:center;gap:10px;font-size:clamp(20px,2.3vw,26px);font-weight:800;color:var(--acc);letter-spacing:-.02em}
-.quote__tel:hover{color:var(--acc-2)}
-.quote__list{margin-top:26px;border-top:1px solid var(--line)}
-.quote__list span{display:block;font-size:var(--t-15);color:var(--ink-2);padding:12px 0;border-bottom:1px solid var(--line)}
-form{display:grid;gap:16px;background:var(--night);border:1px solid var(--line);border-radius:6px;padding:clamp(20px,3vw,30px)}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.field{display:grid;gap:6px}
-label{font-size:var(--t-13);font-weight:600;color:var(--ink-2)}
-input,select,textarea{width:100%;padding:12px 13px;background:var(--night-2);border:1px solid var(--line-2);border-radius:4px;color:var(--ink);font-family:inherit;font-size:var(--t-15);transition:border-color .16s}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--acc)}
-input::placeholder,textarea::placeholder{color:#7e7466}
-textarea{min-height:104px;resize:vertical}
-.status{font-size:var(--t-13);display:none;margin:0}
-.status.ok{display:block;color:#b6d6a8}
-.status.err{display:block;color:#e6a79b}
-form .btn{justify-content:center;width:100%}
-
-/* ---- footer -------------------------------------------------------- */
-footer{background:#0b0d10;border-top:1px solid var(--line);padding:clamp(42px,6vw,66px) 0 26px}
-.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:clamp(24px,4vw,44px);max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-.foot__brand{display:flex;align-items:center;gap:11px;margin-bottom:14px;color:var(--ink)}
-.foot__brand img{width:34px;height:34px;border-radius:7px}
-.foot__brand b{font-size:var(--t-17);font-weight:800;letter-spacing:-.02em}
-footer p{color:var(--ink-3);font-size:var(--t-15);max-width:30ch}
-footer h4{font-size:var(--t-11);text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);margin-bottom:14px;font-weight:700}
+/* ---- footer --------------------------------------------------------- */
+footer{background:var(--night);color:#B9B2A3;padding:clamp(46px,6vw,74px) 0 26px}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;gap:clamp(24px,4vw,46px);max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.foot__brand{display:flex;align-items:center;gap:13px;margin-bottom:16px}
+.foot__brand img{height:46px;width:auto;border-radius:5px}
+footer h4{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--sand);margin-bottom:14px;font-weight:700}
+footer p{font-size:15px;max-width:32ch}
 footer ul{list-style:none;display:grid;gap:9px}
-footer li a{color:var(--ink-2);font-size:var(--t-15)}
-footer li a:hover{color:var(--acc)}
-.legal{max-width:var(--max);margin:clamp(32px,4vw,46px) auto 0;padding:18px var(--pad) 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;font-size:var(--t-13);color:var(--ink-3)}
-.legal a:hover{color:var(--acc)}
+footer li a{font-size:15px;color:#CFC7B6}
+footer li a:hover{color:var(--sand-l)}
+.legal{max-width:var(--max);margin:clamp(34px,4.4vw,50px) auto 0;padding:18px var(--pad) 0;border-top:1px solid rgba(201,184,150,.2);display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;font-size:13px;color:#8F887A}
+.legal a:hover{color:var(--sand-l)}
 
-/* ---- responsive ---------------------------------------------------- */
-@media (max-width:960px){
+/* ---- reveal + responsive -------------------------------------------- */
+.rv{transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv{opacity:0;transform:translateY(20px)}
+.rv.on{opacity:1;transform:none}
+@media (max-width:980px){
   .nav{display:none}
-  .nav.open{display:flex;position:absolute;top:78px;left:0;right:0;background:var(--night);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:0;padding:8px var(--pad) 18px;margin:0}
-  .nav.open a{padding:12px 0;width:100%;border-bottom:1px solid var(--line)}
-  .brand{margin-right:auto}
-  .call{padding:10px 13px;font-size:var(--t-13)}
+  .nav.open{display:flex;position:absolute;top:80px;left:0;right:0;background:var(--night);border-bottom:1px solid rgba(201,184,150,.28);flex-direction:column;align-items:flex-start;gap:0;padding:8px var(--pad) 18px;margin:0}
+  .nav.open a{padding:13px 0;width:100%;border-bottom:1px solid rgba(255,255,255,.09)}
   .burger{display:grid}
-  .svc-lead,.why,.quote .wrap{grid-template-columns:1fr}
-  .svc{grid-template-columns:36px minmax(0,1fr);gap:12px}
+  .hero__grid,.svc-lead,.ba__grid{grid-template-columns:1fr}
+  .hero__media{padding:0 var(--pad)}
+  .hero__tag{left:14px}
+  .svc{grid-template-columns:46px minmax(0,1fr);gap:12px}
   .svc .tag{display:none}
-  .rail .wrap{grid-template-columns:1fr 1fr}
-  .rail div:nth-child(3){border-left:0;padding-left:0}
+  .process__grid{grid-template-columns:1fr 1fr}
   .foot{grid-template-columns:1fr 1fr}
-  .gal{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
   .gal figure,.gal figure:nth-child(n){grid-column:span 1}
-  .gal figure img,.gal figure:nth-child(n) img{aspect-ratio:4/3}
+  .gal figure img,.gal figure:nth-child(n) img{aspect-ratio:1/1}
 }
-@media (max-width:560px){
+@media (max-width:600px){
+  .brand__mark{height:48px}
+  .brand__word{height:19px}
   .call span{display:none}
   .call{padding:11px}
-  .hero__facts{grid-template-columns:1fr 1fr;gap:14px}
-  .row{grid-template-columns:1fr}
-  .foot{grid-template-columns:1fr}
+  .hero__facts{grid-template-columns:1fr 1fr}
+  .process__grid,.foot{grid-template-columns:1fr}
+  .ba__media{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none!important;animation:none!important}
+  .js .rv{opacity:1;transform:none}
   .gal figure:hover img{transform:none}
 }
 </style>
-
-<!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
-<style id="lb-bar-noname">
-/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
-.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
-{display:none!important}
-.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
-.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style><style id="lb-hdr-centre">
-.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-@media(max-width:900px){}
-</style><style id="lb-header-fault-fix">
-:is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock){width:auto!important;max-width:none!important;flex:none!important;min-width:0!important}
-img.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;object-fit:contain!important}
-</style>
-<style id="lb-bar-fits-logo">
-/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
-header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
-  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
-.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
-img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
-</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<header class="site-header">
+<!-- LB-3D-HERO -->
+<div class="lb3d-stage" aria-hidden="true"><canvas id="heroCanvas" width="1200" height="620"></canvas></div>
+
+<header class="bar-shell">
   <div class="bar">
-    <a class="brand" href="#top" aria-label="Absolute Render Gold Coast, home">
-      <span class="brand__mark"><img src="assets/logo.svg" alt="" width="38" height="38" decoding="async" class="lb-logo-unlock"></span>
-      <span class="brand__name">Absolute Render <b>Gold Coast</b></span>
+    <a class="brand" href="#top" aria-label="Absolute Render Gold Coast — home">
+      <img class="brand__mark" src="assets/logo-flat-mark.png" alt="Absolute Render monogram" width="58" height="58">
+      <img class="brand__word" src="assets/logo-word.png" alt="Absolute Render Gold Coast" width="446" height="24">
     </a>
-    <nav class="nav" id="nav" aria-label="Primary"><a href="#services">Services</a>
-      <a href="#process">Process</a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="#services">Finishes</a>
+      <a href="#beforeafter">Results</a>
       <a href="#work">Work</a>
-      <a href="#quote">Quote</a>
+      <a href="#lbq">Quote</a>
     </nav>
     <a class="call" href="tel:+61406930004">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
@@ -256,187 +217,183 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
   </div>
 </header>
 
-<main id="top">
-
-  <section class="hero">
-    <canvas id="heroCanvas" aria-hidden="true"></canvas>
-    <div class="hero__in">
-      <p class="hero__top">Gold Coast · render and plaster</p>
-      <h1>Render, Venetian plaster and microcement, <em>done properly</em>.</h1>
-      <p class="hero__sub">Clint Crockett, 23 years on the tools. Cement render, polished plaster and microcement over brick, block and blueboard, across the Gold Coast and down to the border.</p>
-      <div class="hero__cta">
-        <a class="btn" href="tel:+61406930004">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-          Call 0406 930 004
-        </a>
-        <span class="hero__note">Free measure and quote, no obligation</span>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero__grid">
+      <div class="hero__body">
+        <p class="eyebrow">Gold Coast · render and plaster</p>
+        <h1>Render, Venetian plaster and microcement, <em>done properly</em>.</h1>
+        <p class="hero__lede">Cement render, polished plaster and microcement over brick, block and blueboard, from Broadbeach down past the border. Clint is on the tools on every job — nobody else's hands, nobody else's standard.</p>
+        <div class="hero__cta">
+          <a class="btn" href="tel:+61406930004">Call 0406 930 004</a>
+          <a class="btn btn--ghost" href="#lbq">Request a quote</a>
+        </div>
+        <dl class="hero__facts">
+          <div><dt>On the tools</dt><dd>23 years</dd></div>
+          <div><dt>Run by</dt><dd>Clint, on site</dd></div>
+          <div><dt>Service area</dt><dd>Tweed to Beenleigh</dd></div>
+        </dl>
       </div>
-      <dl class="hero__facts">
-        <div><dt>Experience</dt><dd>23 years</dd></div>
-        <div><dt>Tickets</dt><dd>QBCC, insured</dd></div>
-        <div><dt>Run by</dt><dd>Clint, on site</dd></div>
-      </dl>
+      <div class="hero__media rv">
+        <figure>
+          <img src="images/work_07.jpg" alt="A plasterer on a scaffold platform working a rendered archway by hand with a hawk and trowel" width="608" height="1080" loading="eager" decoding="async">
+        </figure>
+        <span class="hero__tag">On the trowel — plaster worked by hand, coat by coat</span>
+      </div>
     </div>
   </section>
 
-  <section class="band">
+  <div class="finishes">
     <div class="wrap">
-      <p>One crew, one standard, <span>start to finish.</span></p>
-      <a href="#quote">Send the job details</a>
+      <span>Cement render</span>
+      <span>Venetian plaster</span>
+      <span>Microcement</span>
+      <span>Acrylic &amp; texture</span>
+      <span>Repairs &amp; patching</span>
+      <span>Repaints</span>
     </div>
-  </section>
+  </div>
 
   <section id="services">
     <div class="wrap">
-      <div class="shead">
-        <p class="label">What we do</p>
+      <div class="shead rv">
+        <p class="eyebrow">What we do</p>
         <h2>Four finishes, one set of hands</h2>
-        <p>Render holds a house together and plaster gives it a face. Both come down to prep, mix and patience, so nothing here is rushed or subbed out.</p>
+        <p>Render holds a house together and plaster gives it a face. Both come down to prep, mix and patience — so nothing here gets rushed, and nothing gets handed to a crew you have never met.</p>
       </div>
 
-      <div class="svc-lead">
+      <div class="svc-lead rv">
         <div>
-          <span class="svc-lead__n">01</span>
+          <span class="no">No. 01</span>
           <h3>Cement render</h3>
-          <p>Traditional and acrylic systems over brick, block and blueboard. Mesh, beads and scratch coat set right, then floated and finished for the sun and salt on this stretch of coast.</p>
+          <p>Traditional and acrylic render systems over brick, block and blueboard. Mesh, beads and scratch coat set right, then floated and finished for the sun, salt and driving rain along this stretch of coast.</p>
         </div>
         <figure>
-          <img src="images/work_01.jpg" alt="Freshly floated cement render on a Gold Coast wall" loading="eager" decoding="async">
-          <figcaption>Scratch coat, meshed and floated</figcaption>
+          <img src="images/Dd3W7VCkaAA_57kb.jpg" alt="Newly blue-boarded house wrapped in scaffolding before the render coats go on" width="1080" height="1080" loading="lazy" decoding="async">
+          <figcaption>Scaffolded and blue-boarded, ready for the base coat.</figcaption>
         </figure>
       </div>
 
-      <div class="svc-rows">
-        <article class="svc">
-          <span class="svc__n">02</span>
-          <div><h3>Venetian plaster</h3><p>Italian polished plaster, built in thin coats and burnished back for depth and a low sheen. Interior walls and feature panels.</p></div>
+      <div class="svc-list">
+        <article class="svc rv">
+          <span class="no">No. 02</span>
+          <div><h3>Venetian plaster</h3><p>Italian polished plaster, built up in thin coats and burnished back for depth and a soft sheen. Interior feature walls and panels, worked by hand until the surface reads like stone.</p></div>
           <span class="tag">Interior</span>
         </article>
-        <article class="svc">
-          <span class="svc__n">03</span>
-          <div><h3>Microcement</h3><p>Seamless thin-coat finish over floors, walls and wet areas. No grout lines, sealed for water.</p></div>
+        <article class="svc rv">
+          <span class="no">No. 03</span>
+          <div><h3>Microcement</h3><p>Seamless thin-coat finish over floors, walls and wet areas. No grout lines to scrub, sealed against water, and it wraps an odd-shaped room in one continuous sheet.</p></div>
           <span class="tag">Floors, wet areas</span>
         </article>
-        <article class="svc">
-          <span class="svc__n">04</span>
-          <div><h3>Repaints and texture</h3><p>Exterior repaints, texture coating repairs and feature walls. Surfaces prepped and colour matched before a brush goes near them.</p></div>
-          <span class="tag">Repaint, repair</span>
+        <article class="svc rv">
+          <span class="no">No. 04</span>
+          <div><h3>Acrylic &amp; texture coatings</h3><p>Flexible acrylic and rolled texture over panels and brickwork, colour matched before a brush goes near the wall. Built for movement and the coastal weather cycle.</p></div>
+          <span class="tag">Exterior</span>
+        </article>
+        <article class="svc rv">
+          <span class="no">No. 05</span>
+          <div><h3>Repairs &amp; patching</h3><p>Cracked, drummy or water-damaged render cut back to something solid, keyed, patched and blended so the repair disappears into the wall around it.</p></div>
+          <span class="tag">Repair</span>
+        </article>
+        <article class="svc rv">
+          <span class="no">No. 06</span>
+          <div><h3>Repaints &amp; recoats</h3><p>A tired rendered facade brought back with prep, a proper membrane coat and a finish colour that suits the house — no cutting corners on the surface underneath.</p></div>
+          <span class="tag">Refresh</span>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="rail" id="process">
-    <div class="wrap">
-      <div><b>01</b><h3>Set out</h3><p>Measure, levels, beads and masking. The lines the whole job lives or dies on.</p></div>
-      <div><b>02</b><h3>Base coat</h3><p>Mesh and scratch coat keyed to the substrate, then left to cure.</p></div>
-      <div><b>03</b><h3>Float</h3><p>Second pass, worked flat and true by hand and float.</p></div>
-      <div><b>04</b><h3>Finish</h3><p>Burnish, seal and a walk-around with you before we pack up.</p></div>
+  <section class="ba" id="beforeafter">
+    <div class="wrap ba__grid">
+      <div class="ba__copy rv">
+        <p class="eyebrow">Straight off the wall</p>
+        <h2>You can see the prep in the finish</h2>
+        <p>Render does not fail at the surface — it fails at the substrate. Beads, mesh, curing and set-out are the reason a wall still looks straight a decade later. So that is where the time goes.</p>
+        <div class="ba__list">
+          <div><b>01</b><span>Set out, beads and masking before a mix is even made.</span></div>
+          <div><b>02</b><span>Scratch coat keyed into the substrate and left to cure.</span></div>
+          <div><b>03</b><span>Float and finish worked flat, by hand, in the cool of the day.</span></div>
+        </div>
+      </div>
+      <div class="ba__media rv">
+        <figure>
+          <img src="images/work_06.jpg" alt="Two front-on views of the same two-storey brick house, before and after the rendered-and-painted white finish" width="640" height="1136" loading="lazy" decoding="async">
+          <figcaption>A brick facade before and after the full render-and-repaint.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/work_07.jpg" alt="A plasterer working a rendered archway from a scaffold platform, hawk and trowel in hand" width="608" height="1080" loading="lazy" decoding="async">
+          <figcaption>Working the archway by hand, coat by coat.</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
-  <section id="why">
-    <div class="wrap why">
-      <div>
-        <p class="why__quote">"If it's not right under the trowel, it won't be right in ten years. <em>So we fix it there.</em>"</p>
-        <p class="why__by">Clint Crockett, owner</p>
+  <section>
+    <div class="wrap">
+      <div class="shead rv">
+        <p class="eyebrow">How a job runs</p>
+        <h2>Four passes, no shortcuts</h2>
       </div>
-      <div class="why__list">
-        <div><h3>Clint runs every job</h3><p>No handball to a crew you have never met. The bloke who quotes it is the bloke who finishes it.</p></div>
-        <div><h3>Prep before product</h3><p>Render fails at the substrate, not the surface. Beads, mesh and curing get the time they need.</p></div>
-        <div><h3>Licensed and insured</h3><p>QBCC licensed and fully insured, working Broadbeach to Tweed and out to Beenleigh.</p></div>
+      <div class="process__grid">
+        <div class="step rv"><b>01</b><h3>Set out</h3><p>Measure, levels, beads and masking — the lines the whole job lives or dies on.</p></div>
+        <div class="step rv"><b>02</b><h3>Base coat</h3><p>Mesh and scratch coat keyed into the wall, then left to cure properly.</p></div>
+        <div class="step rv"><b>03</b><h3>Float</h3><p>Second pass, worked flat and true under a straight edge and by hand.</p></div>
+        <div class="step rv"><b>04</b><h3>Finish</h3><p>Burnish, seal, and a walk-around with you before the scaffolding comes down.</p></div>
       </div>
     </div>
   </section>
 
-  <section id="work">
+  <section id="work" style="padding-top:0">
     <div class="wrap">
-      <div class="shead">
-        <p class="label">On the tools</p>
+      <div class="shead rv">
+        <p class="eyebrow">On the tools</p>
         <h2>Work from around the coast</h2>
-        <p>Exterior render, polished interior plaster and microcement, shot on the jobs they were done on.</p>
+        <p>Render, plaster and prep, shot on the jobs they were done on.</p>
       </div>
       <div class="gal">
-        <figure><img src="images/Dd3W7VCkaAA_57kb.jpg" alt="Smooth cement render across a two storey Gold Coast home" loading="eager" decoding="async"><figcaption>Cement render, Broadbeach</figcaption></figure>
-        <figure><img src="images/Dd3XJbXkAAA_57kb.jpg" alt="Venetian plaster feature wall with a marble-like burnish" loading="eager" decoding="async"><figcaption>Venetian plaster, Mermaid Beach</figcaption></figure>
-        <figure><img src="images/Dd3YQ7RkAAA_57kb.jpg" alt="Seamless microcement floor and wall finish in a bathroom" loading="eager" decoding="async"><figcaption>Microcement, Burleigh Heads</figcaption></figure>
-        <figure><img src="images/Dd3ZqYTkAAA_57kb.jpg" alt="Textured exterior repaint on a timber Queenslander" loading="eager" decoding="async"><figcaption>Texture repaint, Palm Beach</figcaption></figure>
+        <figure class="rv"><img src="images/work_05.jpg" alt="Three new-build houses standing side by side, walls rendered and finished in white" width="608" height="1080" loading="lazy" decoding="async"><figcaption>New build render, three at a time.</figcaption></figure>
+        <figure class="rv"><img src="images/work_04.jpg" alt="Concrete block wall with pallets of cement bags stacked in front on a house site" width="640" height="1136" loading="lazy" decoding="async"><figcaption>Block laid out, bags on site, ready to mix.</figcaption></figure>
+        <figure class="rv"><img src="images/work_03.jpg" alt="Rendered concrete wall beside a white pipe and a green site bin, houses beyond" width="640" height="1136" loading="lazy" decoding="async"><figcaption>A rendered wall curing on site.</figcaption></figure>
+        <figure class="rv"><img src="images/work_02.jpg" alt="A hand working a hammer and chisel to cut bricks out of a wall beside a window" width="640" height="1136" loading="lazy" decoding="async"><figcaption>Opening cut back before the render closes it in.</figcaption></figure>
+        <figure class="rv"><img src="images/gal-brick-prep.jpg" alt="Hands driving a chisel into a brick wall next to a red wheelbarrow" width="640" height="1136" loading="lazy" decoding="async"><figcaption>Prep work, brick by brick.</figcaption></figure>
+        <figure class="rv"><img src="images/work_01.jpg" alt="Aerial pair showing a coastal house at the blue board stage and again once rendered and finished white" width="1280" height="1280" loading="lazy" decoding="async"><figcaption>Same house, blueboard to finish.</figcaption></figure>
+        <figure class="rv"><img src="images/work_06.jpg" alt="The same two-storey house photographed before and after its white rendered and painted finish" width="640" height="1136" loading="lazy" decoding="async"><figcaption>Full exterior repaint over render.</figcaption></figure>
       </div>
     </div>
   </section>
-
-  <section class="quote" id="quote">
-    <div class="wrap">
-      <div class="quote__info">
-        <p class="label">Quote</p>
-        <h2>Tell us about the job</h2>
-        <p>Send the address, the surface and roughly how many square metres. Clint measures, then prices it properly.</p>
-        <a class="quote__tel" href="tel:+61406930004">0406 930 004</a>
-        <div class="quote__list">
-          <span>Free on-site measure and quote</span>
-          <span>QBCC licensed, fully insured</span>
-          <span>Gold Coast, Tweed to Beenleigh</span>
-        </div>
-      </div>
-
-      <form id="quoteForm" action="functions/v1/quote-request" method="POST" data-site="absolute-render-gold-coast">
-        <input type="hidden" name="site" value="absolute-render-gold-coast">
-        <div class="row">
-          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required></div>
-          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="04XX XXX XXX" required></div>
-        </div>
-        <div class="row">
-          <div class="field"><label for="suburb">Suburb</label><input id="suburb" name="suburb" type="text" autocomplete="address-level2" placeholder="Broadbeach" required></div>
-          <div class="field"><label for="service">Service</label>
-            <select id="service" name="service" required>
-              <option value="">Choose one</option>
-              <option value="cement-render">Cement render</option>
-              <option value="venetian-plaster">Venetian plaster</option>
-              <option value="microcement">Microcement</option>
-              <option value="repaints-texture">Repaint or texture</option>
-              <option value="other">Not sure yet</option>
-            </select>
-          </div>
-        </div>
-        <div class="field"><label for="details">Details</label><textarea id="details" name="details" placeholder="Two storey brick, full exterior. Roughly 180m2."></textarea></div>
-        <button class="btn" type="submit">Request the quote</button>
-        <p class="status" id="status" aria-live="polite"></p>
-      </form>
-    </div>
-  </section>
-
 </main>
 
 <footer>
   <div class="foot">
     <div>
-      <div class="foot__brand"><img src="assets/logo.svg" alt="" width="34" height="34" loading="lazy"><b>Absolute Render</b></div>
-      <p>Render, Venetian plaster and microcement on the Gold Coast. Owner run, licensed and insured.</p>
+      <div class="foot__brand"><img src="assets/logo-flat-mark.png" alt="Absolute Render Gold Coast" width="46" height="46"></div>
+      <p>Render, Venetian plaster and microcement on the Gold Coast. Owner run by Clint Crockett, licensed and insured from Tweed to Beenleigh.</p>
     </div>
     <div>
-      <h4>Services</h4>
+      <h4>Finishes</h4>
       <ul>
         <li><a href="#services">Cement render</a></li>
         <li><a href="#services">Venetian plaster</a></li>
         <li><a href="#services">Microcement</a></li>
-        <li><a href="#services">Repaints and texture</a></li>
+        <li><a href="#services">Acrylic &amp; texture</a></li>
       </ul>
     </div>
     <div>
       <h4>Areas</h4>
       <ul>
-        <li><a href="#quote">Broadbeach, Surfers</a></li>
-        <li><a href="#quote">Burleigh, Palm Beach</a></li>
-        <li><a href="#quote">Southport, Main Beach</a></li>
-        <li><a href="#quote">Tweed to Beenleigh</a></li>
+        <li><a href="#lbq">Broadbeach &amp; Surfers</a></li>
+        <li><a href="#lbq">Burleigh &amp; Palm Beach</a></li>
+        <li><a href="#lbq">Southport &amp; Main Beach</a></li>
+        <li><a href="#lbq">Tweed through to Beenleigh</a></li>
       </ul>
     </div>
     <div>
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+61406930004">0406 930 004</a></li>
-        <li><a href="mailto:clint@absoluterendergc.com.au">clint@absoluterendergc.com.au</a></li>
         <li><a href="https://instagram.com/absolute_render_gold_coast" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="#lbq">Request a quote</a></li>
       </ul>
     </div>
   </div>
@@ -444,11 +401,124 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
     <span>&copy; 2026 Absolute Render Gold Coast</span>
     <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
   </div>
+<section id="lbq" class="v4" aria-labelledby="lbq-h">
+  <style>
+#lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#c4fb24))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,var(--text-muted,#5b6b7a));--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto}
+#lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
+#lbq .lbq-f{display:grid;gap:12px}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#0b0e12;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+/* v1 card */
+#lbq.v1 .lbq-card{background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
+#lbq.v1 .lbq-g{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+#lbq.v1 .lbq-full{grid-column:1/-1}
+@media(max-width:640px){#lbq.v1 .lbq-g{grid-template-columns:1fr}}
+/* v2 band */
+#lbq.v2{background:var(--lbq-panel);border-top:1px solid var(--lbq-line);border-bottom:1px solid var(--lbq-line)}
+#lbq.v2 .lbq-g{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+#lbq.v2 .lbq-full{grid-column:1/-1}
+#lbq.v2 .lbq-hd{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
+@media(max-width:760px){#lbq.v2 .lbq-g{grid-template-columns:1fr}#lbq.v2 .lbq-hd{display:block}}
+/* v3 split */
+#lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+#lbq.v3 .lbq-g{display:grid;gap:12px}
+#lbq.v3 .lbq-hp2{border-left:3px solid var(--lbq-accent);padding-left:16px}
+@media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
+/* v4 minimal */
+#lbq.v4 .lbq-w{max-width:620px}
+#lbq.v4 input,#lbq.v4 textarea{border:0;border-bottom:1px solid var(--lbq-line);border-radius:0;background:transparent;padding:11px 2px}
+#lbq.v4 .lbq-g{display:grid;gap:16px}
+</style>
+  <div class="lbq-w">
+      <h2 id="lbq-h">Request a quote</h2>
+      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p><form id="lbq-form" novalidate data-site="absolute-render-gold-coast" data-biz="Absolute Render Gold Coast"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form>
+  </div>
+  <script>
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;  // honeypot — silently accept bots
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</section>
 </footer>
 
-<script src="assets/heroCanvas.js"></script>
 <script>
-/* nav */
+/* header nav */
 (function(){
   var b=document.getElementById('burger'), n=document.getElementById('nav');
   if(!b||!n) return;
@@ -457,41 +527,62 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
     b.setAttribute('aria-expanded',String(!open));
     n.classList.toggle('open',!open);
   });
-  n.addEventListener('click',function(e){
-    if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false');}
-  });
+  n.addEventListener('click',function(e){ if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false');} });
 })();
 
-/* hero: a wall mid-render — set-out, scratch coat, screed rail, float pass */
+/* reveal */
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('on');});return;}
+  var io=new IntersectionObserver(function(list){
+    list.forEach(function(en){ if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);} });
+  },{rootMargin:'0px 0px -8% 0px',threshold:.12});
+  els.forEach(function(el){io.observe(el);});
+  setTimeout(function(){els.forEach(function(el){el.classList.add('on');});},1400);
+})();
+
+/* hidden 3D hero: a wall mid-render in perspective (set-out, scratch coat, screed rail) */
 (function(){
   var cv=document.getElementById('heroCanvas');
-  if(!cv||!window.Projection) return;
-  var S=Projection.create(cv,{focal:1.46,horizon:.42,camY:1.52,fogNear:9,fogFar:40,fogCol:'#191510'});
-  var scene=Projection.sceneSlabPour(S,{fogCol:'#191510'});
-  S.frame(function(t){
-    S.yaw=Projection.reduced()?0:Math.sin(t*.14)*.024;
-    S.camX=-2.0+(Projection.reduced()?0:Math.sin(t*.085)*.3);
-    scene.render(t,t);
-  });
-  if('ResizeObserver' in window){
-    new ResizeObserver(function(){S.resize();S.dirty=true;}).observe(cv);
-  }else{
-    window.addEventListener('resize',function(){S.resize();S.dirty=true;});
+  if(!cv||!cv.getContext) return;
+  var g=cv.getContext('2d');
+  function frame(k){
+    var W=cv.width, H=cv.height;
+    g.clearRect(0,0,W,H);
+    var gr=g.createLinearGradient(0,0,0,H);
+    gr.addColorStop(0,'#14161A'); gr.addColorStop(1,'#24262c');
+    g.fillStyle=gr; g.fillRect(0,0,W,H);
+    var hz=H*0.42, f=1.5*H;
+    for(var i=-9;i<=9;i++){
+      var x0=i*90;
+      g.beginPath();
+      g.moveTo(W*0.5+x0*2.1, H*1.4);
+      g.lineTo(W*0.5 + x0*0.24, hz);
+      g.strokeStyle='rgba(201,184,150,'+(i===0?0.5:0.16)+')';
+      g.lineWidth=1; g.stroke();
+    }
+    var sw=((Math.sin((k||0)/900)+1)/2);
+    for(var j=0;j<8;j++){
+      var zz=0.9+j*2.6, s=f/zz, y=hz+(1.35*f)/zz, half=520*s;
+      g.beginPath(); g.moveTo(W*0.5-half, y); g.lineTo(W*0.5+half, y);
+      g.strokeStyle='rgba(201,184,150,'+Math.max(0.06,0.30-j*0.03)+')'; g.lineWidth=1.2; g.stroke();
+    }
+    var ze=1.4+sw*2.4, se=f/ze, ye=hz+(1.35*f)/ze, he=520*se;
+    g.beginPath(); g.moveTo(W*0.5-he, ye); g.lineTo(W*0.5+he, ye);
+    g.strokeStyle='rgba(227,214,188,.9)'; g.lineWidth=2.4; g.stroke();
+    for(var r=-1;r<=1;r++){
+      g.beginPath(); g.moveTo(W*0.5+r*he, ye); g.lineTo(W*0.5+r*he, ye-26*se);
+      g.strokeStyle='rgba(227,214,188,.6)'; g.lineWidth=1.6; g.stroke();
+    }
   }
-})();
-
-/* quote form */
-(function(){
-  var f=document.getElementById('quoteForm'), st=document.getElementById('status');
-  if(!f) return;
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var btn=f.querySelector('.btn'), fd=new FormData(f);
-    btn.disabled=true; btn.textContent='Sending…'; st.className='status'; st.textContent='';
-    fetch(f.action,{method:'POST',body:fd,headers:{Accept:'application/json'}})
-      .then(function(r){ if(!r.ok) throw new Error('bad'); st.className='status ok'; st.textContent='Sent. Clint will call you back within a day.'; f.reset(); })
-      .catch(function(){ st.className='status err'; st.textContent='Did not send. Call 0406 930 004 instead.'; })
-      .finally(function(){ btn.disabled=false; btn.textContent='Request the quote'; });
+  var raf=null, t0=0;
+  function loop(ts){ if(!isFinite(ts)) ts=t0; t0=ts; frame(ts); raf=requestAnimationFrame(loop); }
+  frame(0);
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!rm) raf=requestAnimationFrame(loop);
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden){ if(raf) cancelAnimationFrame(raf); raf=null; }
+    else if(!raf && !rm){ raf=requestAnimationFrame(loop); }
   });
 })();
 </script>
