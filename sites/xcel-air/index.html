@@ -86,7 +86,7 @@ nav.main a.btn:hover{background:var(--cyand)!important;border-color:var(--cyand)
 .hero .wrap{position:relative;z-index:2}
 .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(22px,4vw,54px);
   align-items:center;perspective:1200px;padding:clamp(34px,6vh,72px) 0 clamp(32px,5vh,62px)}
-@media(max-width:920px){.hero-grid{grid-template-columns:1fr;gap:22px;padding:clamp(28px,5vh,54px) 0}}
+@media(max-width:920px){.hero-grid{grid-template-columns:1fr;gap:18px;padding:20px 0 34px}}
 .hero h1{font-size:clamp(2rem,4.1vw,3.2rem);margin-bottom:16px}
 .hero h1 em{font-style:normal;color:var(--blued)}
 .lede{color:var(--muted);font-size:clamp(1rem,1.4vw,1.15rem);max-width:52ch;margin-bottom:24px}
@@ -107,7 +107,13 @@ nav.main a.btn:hover{background:var(--cyand)!important;border-color:var(--cyand)
 .hero .facts li{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.24);color:#eaf6fd}
 .hero .btn.ghost{color:#eaf6fd;border-color:rgba(255,255,255,.55);background:transparent}
 .hero .btn.ghost:hover{background:rgba(255,255,255,.16);border-color:#fff;color:#fff}
-@media(max-width:920px){.hero-art{transform:none}}
+@media(max-width:920px){
+  .hero-art{order:-1;transform:none;max-width:min(430px,90%);margin:0 auto;padding:9px;border-radius:16px}
+  .hero h1{font-size:1.8rem}
+  .hero .lede{font-size:.96rem;margin-bottom:18px}
+  .hero .facts li{font-size:.82rem;padding:6px 12px}
+  .hero .acts .btn{padding:12px 18px}
+}
 
 /* ---- cards ---- */
 .grid{display:grid;gap:18px}
