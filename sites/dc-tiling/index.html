@@ -3,106 +3,177 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DC Tiling — Newcastle, Hunter & Central Coast NSW</title>
-<meta name="description" content="Wall & floor tiling — DC Tiling, Newcastle, Hunter & Central Coast NSW.">
+<title>DC Tiling — Newcastle, Hunter &amp; Central Coast NSW</title>
+<meta name="description" content="Wall &amp; floor tiling across Newcastle, the Hunter and the Central Coast NSW. Bathrooms, kitchens, splashbacks and outdoor tiling. Call DC Tiling on 0402 460 362.">
 <link rel="icon" href="favicon-32.png" sizes="32x32">
 <meta name="theme-color" content="#0f1112">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&amp;family=JetBrains+Mono:wght@400&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&amp;family=JetBrains+Mono:wght@400&amp;display=swap"></noscript>
 <style>
 :root{
   --lb-name:#ffffff; --lb-acc:#c17c5e; --lb-subc:rgba(255,255,255,.72);
-  --ink:#ffffff; --muted:rgba(255,255,255,.72); --line:rgba(255,255,255,.14); --panel:rgba(255,255,255,.045);
+  --ink:#ffffff; --muted:rgba(255,255,255,.74); --line:rgba(255,255,255,.13); --line2:rgba(255,255,255,.24);
+  --panel:rgba(255,255,255,.045);
   --bg:#0f1112; --bg2:#15181a; --accent:#c17c5e;
+  --grout:#2b2e31;
+  --f-disp:'Sora',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  line-height:1.6;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-disp);
+  line-height:1.6;-webkit-font-smoothing:antialiased;font-weight:400}
 img{max-width:100%;display:block}
-h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.08;margin:0}
+h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.06;margin:0}
 p{margin:0}
-.container{width:min(1140px,92vw);margin-inline:auto}
+ul,ol,dl{margin:0;padding:0}
+a{color:inherit}
+.container{width:min(1200px,92vw);margin-inline:auto}
+.container.wide{width:min(1360px,96vw)}
+.label{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.02em;color:var(--muted)}
+
+/* header */
 header.site{position:sticky;top:0;z-index:60;background:rgba(11,11,12,.94);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;gap:clamp(14px,3vw,48px);padding:12px 0}
 .brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:0 1 auto;min-width:0}
 .brand img{height:56px;width:auto;max-width:min(340px,46vw);object-fit:contain}
-.brand .name{font-weight:800;letter-spacing:-.01em;font-size:clamp(15px,1.6vw,21px);color:#ffffff;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .brand .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 nav.main{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,2vw,28px);flex-wrap:wrap}
-nav.main a{color:#ffffff;text-decoration:none;font-size:.95rem;opacity:.86;white-space:nowrap}
+nav.main a{color:#ffffff;text-decoration:none;font-size:.95rem;opacity:.86;white-space:nowrap;padding:10px 4px;transition:opacity .2s ease}
 nav.main a:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;
-  text-decoration:none;font-weight:700;font-size:.95rem;background:var(--accent);color:#0b0b0c;border:1px solid var(--accent)}
-nav.main a.btn,header .btn{background:var(--accent)!important;color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important}
-.btn.ghost{background:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff!important;
-  border:1px solid rgba(255,255,255,.5)!important}
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#121517}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:2px;
+  text-decoration:none;font-weight:700;font-size:.95rem;background:var(--accent);color:#0b0b0c;border:1px solid var(--accent);
+  transition:transform .18s cubic-bezier(.16,1,.3,1),filter .18s ease}
+.btn:hover{filter:brightness(1.06)}
+nav.main a.btn{background:var(--accent);color:#0b0b0c}
+.btn.ghost{background:transparent;color:#ffffff;border:1px solid rgba(255,255,255,.4)}
+.btn.ghost:hover{border-color:#ffffff}
+
+/* hero (split copy + offset mosaic) */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#0b0d0e}
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.34)}
-.hero .inner{position:relative;z-index:3;padding:clamp(38px,6vh,78px) 0 clamp(34px,4.5vh,58px);max-width:min(780px,92vw)}
-.kicker{display:inline-block;font-size:.82rem;font-weight:700;letter-spacing:.13em;color:#d6d8db;margin-bottom:14px}
-.hero h1{font-size:clamp(1.95rem,4vw,3.1rem);margin-bottom:14px}
-.hero h1 em{font-style:normal;color:#cfd2d6}
-.hero .lede{color:var(--muted);font-size:clamp(1rem,1.5vw,1.14rem);max-width:54ch;margin-bottom:22px}
-.hero .acts{display:flex;flex-wrap:wrap;gap:14px}
-.hero .facts{display:flex;flex-wrap:wrap;gap:9px 24px;list-style:none;padding:0;margin:20px 0 0;color:rgba(255,255,255,.82);font-size:.95rem}
-.hero .facts li::before{content:"";display:inline-block;width:6px;height:6px;margin-right:9px;background:var(--accent);vertical-align:middle;border-radius:50%}
-section{padding:clamp(56px,8vh,96px) 0;border-bottom:1px solid var(--line)}
-section.alt{background:var(--bg2)}
-.head{max-width:60ch;margin-bottom:clamp(26px,4vh,44px)}
-.head h2{font-size:clamp(1.55rem,3vw,2.3rem);margin-bottom:10px}
+.hero .scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(9,11,12,.42)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.06fr .94fr;
+  gap:clamp(28px,4vw,64px);align-items:center;padding:clamp(42px,7vh,84px) 0 clamp(42px,7vh,88px)}
+.kicker{display:block;font-family:var(--f-mono);font-size:.75rem;letter-spacing:.04em;color:#ffd9c7;margin-bottom:16px}
+.hero h1{font-size:clamp(2.05rem,4.4vw,3.5rem);margin-bottom:18px}
+.lede{color:rgba(255,255,255,.88);font-size:clamp(1rem,1.4vw,1.12rem);max-width:52ch;margin-bottom:24px}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;list-style:none;padding:0;margin:22px 0 0;color:rgba(255,255,255,.82);font-size:.92rem}
+.facts li::before{content:"";display:inline-block;width:6px;height:6px;margin-right:9px;background:var(--accent);vertical-align:middle}
+.mosaic{display:grid;grid-template-columns:1.14fr .86fr;grid-template-rows:1.18fr .82fr;gap:2px;
+  background:var(--grout);height:clamp(340px,38vw,500px);border:2px solid var(--grout)}
+.mosaic figure{margin:0;overflow:hidden;background:#111416;position:relative}
+.mosaic img{width:100%;height:100%;object-fit:cover;display:block}
+.mosaic .m2 img{object-position:50% 38%}
+.mosaic .m3 img{object-position:50% 62%}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .mosaic{height:clamp(300px,74vw,440px);order:-1}
+  .hero .scrim{background:rgba(9,11,12,.55)}
+}
+
+section{padding:clamp(56px,8vh,104px) 0;border-bottom:1px solid var(--line)}
+.head{max-width:62ch;margin-bottom:clamp(26px,4vh,46px)}
+.head h2{font-size:clamp(1.55rem,3vw,2.35rem);margin-bottom:12px}
 .head p{color:var(--muted)}
-.grid{display:grid;gap:18px}
-.g3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:900px){.g3{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.g3{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
-.card h3{font-size:1.08rem;margin-bottom:8px}
-.card p{color:var(--muted);font-size:.95rem}
-.swatch{width:38px;height:5px;background:var(--accent);border-radius:3px;margin-bottom:16px}
-.about{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1.15fr .85fr;align-items:start}
-@media(max-width:880px){.about{grid-template-columns:1fr}}
-.about p{color:var(--muted);margin-bottom:14px}
-.about h2{margin-bottom:16px}
-.about ul{list-style:none;padding:0;margin:0}
-.about li{padding:11px 0;border-bottom:1px solid var(--line);color:rgba(255,255,255,.86);font-size:.97rem}
-.about li span{color:var(--muted)}
-.contactwrap{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1fr 1fr;align-items:start}
-@media(max-width:820px){.contactwrap{grid-template-columns:1fr}}
-.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.links a{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border:1px solid var(--line);
-  border-radius:10px;text-decoration:none;color:rgba(255,255,255,.9);font-size:.93rem}
+.srv{background:var(--bg)}
+.gal{background:var(--bg2)}
+.run{background:var(--bg)}
+.about{background:var(--bg2)}
+.contact{background:var(--bg)}
+
+/* services: hairline tile grid */
+.tiles{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.tiles li{border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:22px 20px;display:flex;flex-direction:column;gap:7px;min-height:108px;
+  transition:background .2s ease}
+.tiles li:hover{background:var(--panel)}
+.tiles .tl{font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
+.tiles .ts{font-family:var(--f-mono);font-size:.75rem;color:var(--muted)}
+@media(max-width:760px){.tiles{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.tiles{grid-template-columns:1fr}}
+
+/* gallery: full-bleed mosaic band */
+.galband{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px;background:var(--grout);width:100%}
+.galband figure{margin:0;background:var(--bg);display:flex;flex-direction:column}
+.galband .ph{display:block;overflow:hidden;background:#111416}
+.galband img{width:100%;display:block;object-fit:cover}
+.galband .p .ph img{aspect-ratio:3/4}
+.galband .w .ph img{aspect-ratio:16/10}
+.galband .b .ph img{aspect-ratio:21/9}
+.galband figcaption{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);padding:11px 14px 16px}
+.galband .g1{grid-column:span 2}.galband .g2{grid-column:span 2}.galband .g3{grid-column:span 2}
+.galband .g4{grid-column:span 3}.galband .g5{grid-column:span 3}
+.galband .g6{grid-column:span 6}
+@media(max-width:700px){
+  .galband{grid-template-columns:1fr}
+  .galband .g1,.galband .g2,.galband .g3,.galband .g4,.galband .g5,.galband .g6{grid-column:span 1}
+  .galband .p .ph img{aspect-ratio:4/3}
+  .galband .w .ph img{aspect-ratio:4/3}
+  .galband .b .ph img{aspect-ratio:16/9}
+}
+
+/* process: three inline phases on one hairline row */
+.phases{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
+.phases li{padding:26px 22px;border-right:1px solid var(--line)}
+.phases li:last-child{border-right:0}
+.phases h3{font-size:1.12rem;margin-bottom:9px}
+.phases p{color:var(--muted);font-size:.95rem}
+@media(max-width:760px){
+  .phases{grid-template-columns:1fr}
+  .phases li{border-right:0;border-bottom:1px solid var(--line);padding:22px 0}
+  .phases li:last-child{border-bottom:0}
+}
+
+/* about: narrow measure + fact list */
+.about-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(28px,5vw,74px);align-items:start}
+.about-copy h2{margin-bottom:18px}
+.about-copy p{color:var(--muted);max-width:46ch;margin-bottom:16px}
+.factlist{list-style:none}
+.factlist li{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--line);font-size:.96rem}
+.factlist .k{font-family:var(--f-mono);font-size:.74rem;color:var(--muted);padding-top:3px}
+.factlist .v{text-align:right;color:rgba(255,255,255,.92)}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+
+/* contact */
+.cblock{max-width:46rem}
+.cblock h2{margin-bottom:12px}
+.cblock .cfirst{color:var(--muted);margin-bottom:26px}
+.telbig{display:inline-block;font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;letter-spacing:-.03em;
+  text-decoration:none;color:var(--ink);border-bottom:2px solid var(--accent);padding-bottom:4px}
+.telbig:hover{color:var(--accent)}
+.carea{color:var(--muted);margin-top:14px}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.links a{display:inline-flex;align-items:center;padding:12px 18px;border:1px solid var(--line2);
+  text-decoration:none;color:rgba(255,255,255,.92);font-size:.93rem;transition:border-color .2s ease}
 .links a:hover{border-color:var(--accent)}
-form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
-label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:6px}
-input,textarea{width:100%;padding:12px 14px;border-radius:9px;border:1px solid var(--line);background:#0e0f11;color:#fff;font:inherit;margin-bottom:14px}
-input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
-form .btn{width:100%}
-.note{color:var(--muted);font-size:.85rem;margin-top:12px}
-footer{padding:48px 0 34px;background:#08090a}
-.foot{display:grid;gap:clamp(22px,3vw,44px);grid-template-columns:1.4fr 1fr 1fr}
+
+/* footer */
+footer{padding:52px 0 34px;background:#08090a}
+.foot{display:grid;gap:clamp(22px,3vw,44px);grid-template-columns:1.5fr 1fr 1fr}
+.fname{display:block;font-weight:800;font-size:1.25rem;letter-spacing:-.02em;margin-bottom:12px}
+.fmuted{color:var(--muted);max-width:36ch;font-size:.94rem}
+.flab{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);margin:0 0 14px}
+.foot ul{list-style:none;padding:0;margin:0}
+.foot li{margin-bottom:9px;color:rgba(255,255,255,.86);font-size:.94rem}
+.foot a{color:rgba(255,255,255,.86);text-decoration:none;display:inline-block;padding:10px 0}
+.foot a:hover{text-decoration:underline;color:#ffffff}
+.footbottom{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;
+  gap:14px;justify-content:space-between;color:var(--muted);font-size:.85rem}
+.footbottom a{text-decoration:none;color:var(--muted);display:inline-block;padding:11px 0}
+.footbottom a:hover{color:#ffffff}
 @media(max-width:820px){.foot{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.foot{grid-template-columns:1fr}}
-footer h4{font-size:.82rem;letter-spacing:.1em;color:var(--muted);margin:0 0 14px;font-weight:700}
-footer ul{list-style:none;padding:0;margin:0}
-footer li{margin-bottom:9px}
-footer a{color:rgba(255,255,255,.86);text-decoration:none;font-size:.94rem}
-footer a:hover{text-decoration:underline}
-.footbottom{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;
-  gap:14px;justify-content:space-between;color:var(--muted);font-size:.85rem}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 
 <style>
 /* __LBGAL__ client's own work */
-#work{padding:clamp(56px,7vw,96px) 0}
-#work .galgrid{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:26px}
-@media(max-width:820px){#work .galgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:520px){#work .galgrid{grid-template-columns:1fr}}
-#work figure{margin:0;position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--line);
-  aspect-ratio:4/5;background:#151719}
-#work img{width:100%;height:100%;object-fit:cover;display:block}
 </style>
 <style>
 /* __LBRV__ scroll reveal */
@@ -133,79 +204,113 @@ footer a:hover{text-decoration:underline}
 <header class="site">
   <div class="container bar">
     <a class="brand" href="./" aria-label="DC Tiling">
-      <img src="assets/logo.png" alt="" loading="eager" decoding="async">
+      <img src="assets/logo.png" width="1179" height="680" alt="" loading="eager" decoding="async">
       <span class="sr">DC Tiling</span>
     </a>
     <button class="navtog" aria-expanded="false" aria-controls="mainnav" aria-label="Menu"><span></span></button><nav id="mainnav" class="main" aria-label="Main">
       <a href="#services">Services</a>
-      <a href="#process">Our process</a>
+      <a href="#work">Gallery</a>
+      <a href="#run">How it runs</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
       <a class="btn" href="#contact">Get a quote</a>
     </nav>
   </div>
 </header>
 <main>
-  <section class="rv hero" id="top" aria-label="Wall & floor tiling">
+  <section class="hero" id="top" aria-label="Wall and floor tiling, Newcastle and the Hunter">
     <canvas id="heroCanvas" aria-hidden="true"></canvas>
-    <div class="veil" aria-hidden="true"></div>
-    <div class="container inner">
-      <span class="kicker">Wall & floor tiling</span>
-      <h1>Tiling that lines up<br><em>tile after tile.</em></h1>
-      <p class="lede">Wall and floor tiling for homes across Newcastle, the Hunter and the Central Coast, from bathrooms and kitchens through to outdoor areas.</p>
-      <div class="acts"><a class="btn" href="tel:0402460362">Call 0402 460 362</a><a class="btn ghost" href="#services">See what we do</a></div>
-      <ul class="facts"><li>Wall tiling</li><li>Floor tiling</li><li>Bathrooms</li><li>Kitchens</li><li>Splashbacks</li><li>Outdoor tiling</li></ul>
-    </div>
-  </section>
-  <section class="rv" id="services">
-    <div class="container">
-      <div class="head"><h2>What we do</h2><p>Wall & floor tiling work for homes and businesses across Newcastle, Hunter & Central Coast NSW.</p></div>
-      <div class="grid g3"><article class="card"><div class="swatch"></div><h3>Wall tiling</h3><p>Bathroom walls, kitchen splashbacks and feature walls set out straight and level.</p></article><article class="card"><div class="swatch"></div><h3>Floor tiling</h3><p>Ceramic, porcelain and stone floors laid on a base that has been prepared properly.</p></article><article class="card"><div class="swatch"></div><h3>Bathrooms</h3><p>Full bathroom tiling: walls, floors, niches and screeds, coordinated with waterproofing.</p></article><article class="card"><div class="swatch"></div><h3>Kitchens & splashbacks</h3><p>Splashbacks and kitchen floors cut in cleanly around cabinetry and services.</p></article><article class="card"><div class="swatch"></div><h3>Outdoor tiling</h3><p>Alfrescos, patios and pool surrounds in finishes that hold up outside.</p></article><article class="card"><div class="swatch"></div><h3>Renovations & repairs</h3><p>Retiling part of a room, replacing cracked tiles or sorting drummy ones.</p></article></div>
-    </div>
-  </section>
-  <section id="process" class="rv alt">
-    <div class="container">
-      <div class="head"><h2>How a job runs</h2><p>From the first look to the final clean up.</p></div>
-      <div class="grid g3"><article class="card"><h3>We measure and set out</h3><p>We look at the space, check levels and work out the set-out before any tile is fixed.</p></article><article class="card"><h3>Preparation and waterproofing</h3><p>Surfaces are prepped and falls and waterproofing are sorted first, because the finish depends on what is underneath.</p></article><article class="card"><h3>Tiling and finishing</h3><p>Tiles laid, cut in, grouted and cleaned down, with the room left ready to use.</p></article></div>
-    </div>
-  </section>
-  <section class="rv" id="about">
-    <div class="container about">
-      <div><h2>About DC Tiling</h2><p>DC Tiling is a wall and floor tiling business working for homeowners across Newcastle, the Hunter and the Central Coast.</p><p>The work is straightforward and tidy: a proper set-out, careful cutting around fixtures, and a finish that sits flat and even across the room.</p></div>
-      <ul><li>Wall and floor tiling <span>&middot; ceramic, porcelain and stone</span></li><li>Bathrooms and kitchens <span>&middot; the everyday jobs, done properly</span></li><li>Outdoor areas <span>&middot; alfrescos, patios and pool surrounds</span></li><li>Repairs and retiling <span>&middot; cracked, drummy or dated tiles</span></li></ul>
-    </div>
-  </section>
-  
-<section class="rv" id="work">
-  <div class="container">
-    <h2>Recent tiling work</h2>
-    <div class="galgrid"><figure><img src="assets/gallery-1.jpg" alt="" loading="lazy" decoding="async" style="max-width:576px;--nat:576"></figure><figure><img src="assets/gallery-2.jpg" alt="" loading="lazy" decoding="async" style="max-width:576px;--nat:576"></figure><figure><img src="assets/gallery-3.jpg" alt="" loading="lazy" decoding="async" style="max-width:576px;--nat:576"></figure><figure><img src="assets/gallery-4.jpg" alt="" loading="lazy" decoding="async" style="max-width:576px;--nat:576"></figure><figure><img src="assets/gallery-5.jpg" alt="" loading="lazy" decoding="async" style="max-width:576px;--nat:576"></figure><figure><img src="assets/gallery-6.jpg" alt="" loading="lazy" decoding="async" style="max-width:576px;--nat:576"></figure></div>
-  </div>
-</section>
-<section id="contact" class="rv alt">
-    <div class="container contactwrap">
-      <div>
-        <h2>Get a quote</h2>
-        <p style="color:var(--muted);margin:10px 0 22px">Tell us what you need and roughly the size of the job. We'll get back to you with a price.</p>
-        <a class="telbig" href="tel:0402460362">0402 460 362</a><p style="color:var(--muted);margin-top:10px">Newcastle, Hunter & Central Coast NSW</p>
-        <div class="links"></div>
+    <div class="scrim" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="kicker">Wall &amp; floor tiling · Newcastle to the Central Coast</span>
+        <h1>Tiling set out straight,<br>room after room.</h1>
+        <p class="lede">Wall and floor tiling for homes and businesses across Newcastle, the Hunter and the Central Coast: bathrooms, kitchens, splashbacks and outdoor areas.</p>
+        <div class="acts"><a class="btn" href="tel:0402460362">Call 0402 460 362</a><a class="btn ghost" href="#work">See recent tiling</a></div>
+        <ul class="facts"><li>Wall &amp; floor tiling</li><li>Bathrooms &amp; kitchens</li><li>Splashbacks</li><li>Outdoor &amp; pool areas</li></ul>
       </div>
-      
+      <div class="mosaic" role="group" aria-label="Examples of tiling work">
+        <figure class="m1"><img width="576" height="1280" src="assets/gallery-1.jpg" alt="Light marble-look rectangular tiles laid on exterior entry steps and the landing beside a timber front door." loading="eager" decoding="async" fetchpriority="high"></figure>
+        <figure class="m2"><img width="576" height="1280" src="assets/gallery-4.jpg" alt="White subway tiles set in a herringbone pattern with dark grout on a kitchen splashback behind a black cooktop." loading="lazy" decoding="async"></figure>
+        <figure class="m3"><img width="576" height="1280" src="assets/gallery-3.jpg" alt="Grey stone-look pavers laid in a running bond across a pool deck, with a darker waterline band at the pool edge." loading="lazy" decoding="async"></figure>
+        <figure class="m4"><img width="576" height="1280" src="assets/gallery-6.jpg" alt="Dark grey stone-look tiles laid in horizontal courses on a raised poolside structure, finished with a light coping." loading="lazy" decoding="async"></figure>
+      </div>
     </div>
   </section>
-</main>
-<footer>
-  <div class="container">
-    <div class="foot">
-      <div><h4>DC TILING</h4><p style="color:var(--muted);max-width:34ch">Wall & floor tiling across Newcastle, Hunter & Central Coast NSW.</p></div>
-      <div><h4>SERVICES</h4><ul><li><a href="#services">Wall tiling</a></li><li><a href="#services">Floor tiling</a></li><li><a href="#services">Bathrooms</a></li><li><a href="#services">Kitchens & splashbacks</a></li></ul></div>
-      <div><h4>CONTACT</h4><ul></ul></div>
+
+  <section class="srv rv" id="services">
+    <div class="container">
+      <div class="head"><h2>What we tile</h2><p>Wall and floor tiling for homes and businesses across Newcastle, the Hunter and the Central Coast.</p></div>
+      <ul class="tiles">
+        <li><span class="tl">Wall tiling</span><span class="ts">bathroom walls, features</span></li>
+        <li><span class="tl">Floor tiling</span><span class="ts">ceramic, porcelain, stone</span></li>
+        <li><span class="tl">Bathrooms</span><span class="ts">walls, floors, niches</span></li>
+        <li><span class="tl">Kitchens</span><span class="ts">floors and splashbacks</span></li>
+        <li><span class="tl">Splashbacks</span><span class="ts">cut in around services</span></li>
+        <li><span class="tl">Laundry &amp; wet areas</span><span class="ts">falls and set-out</span></li>
+        <li><span class="tl">Alfresco &amp; patio</span><span class="ts">finishes that hold up outside</span></li>
+        <li><span class="tl">Pool surrounds</span><span class="ts">decks, coping, waterline</span></li>
+        <li><span class="tl">Repairs &amp; retiling</span><span class="ts">cracked or drummy tiles</span></li>
+      </ul>
     </div>
-    <div class="footbottom">
-      <span>&copy; <span id="yr">2026</span> DC Tiling. All rights reserved.</span>
-      <span><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span>
+  </section>
+
+  <section class="gal rv" id="work">
+    <div class="container wide">
+      <div class="head"><h2>Recent tiling, tile by tile</h2><p>Wall and floor tiling from around the region, indoors and out.</p></div>
     </div>
-  </div>
+    <div class="galband">
+      <figure class="g1 p"><span class="ph"><img width="576" height="1280" src="assets/gallery-1.jpg" alt="Light marble-look rectangular tiles laid on exterior entry steps and the landing beside a timber front door." loading="lazy" decoding="async"></span><figcaption>Exterior steps / Newcastle</figcaption></figure>
+      <figure class="g2 p"><span class="ph"><img width="576" height="1280" src="assets/gallery-4.jpg" alt="White subway tiles set in a herringbone pattern with dark grout on a kitchen splashback behind a black cooktop." loading="lazy" decoding="async"></span><figcaption>Kitchen splashback / Newcastle</figcaption></figure>
+      <figure class="g3 p"><span class="ph"><img width="576" height="1280" src="assets/gallery-2.jpg" alt="Light stone-look rectangular tiles on exterior front steps, running horizontally across the treads and risers." loading="lazy" decoding="async"></span><figcaption>Entry, treads and risers / Hunter</figcaption></figure>
+      <figure class="g4 w"><span class="ph"><img width="576" height="1280" src="assets/gallery-3.jpg" alt="Grey stone-look pavers laid in a running bond across a pool deck, with a darker waterline band at the pool edge." loading="lazy" decoding="async"></span><figcaption>Pool deck / Central Coast</figcaption></figure>
+      <figure class="g5 w"><span class="ph"><img width="576" height="1280" src="assets/gallery-6.jpg" alt="Dark grey stone-look tiles laid in horizontal courses on a raised poolside structure, finished with a light coping." loading="lazy" decoding="async"></span><figcaption>Pool surround / Hunter</figcaption></figure>
+      <figure class="g6 b"><span class="ph"><img width="576" height="1280" src="assets/gallery-5.jpg" alt="Close view of a kitchen splashback, showing the herringbone set-out of the white tiles and dark grout lines." loading="lazy" decoding="async"></span><figcaption>Splashback detail / Newcastle</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="run rv" id="run">
+    <div class="container">
+      <div class="head"><h2>From measure-up to clean-down</h2><p>Three things decide how a tiling job turns out.</p></div>
+      <ol class="phases">
+        <li><h3>Measure and set out</h3><p>The space is measured, levels checked and the set-out planned before any tile is fixed, so the grout lines run true across the room.</p></li>
+        <li><h3>Prep and waterproof</h3><p>Surfaces are prepared and falls and waterproofing are sorted first, because the finish depends on what sits underneath it.</p></li>
+        <li><h3>Lay, grout and clean</h3><p>Tiles are laid, cut in around fixtures, grouted and cleaned down, with the room left ready to use.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="about rv" id="about">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <h2>Who you deal with</h2>
+        <p>DC Tiling is a wall and floor tiling business working for homeowners across Newcastle, the Hunter and the Central Coast.</p>
+        <p>The approach is straightforward and tidy: a proper set-out, careful cutting around fixtures, and a finish that sits flat and even across the room.</p>
+      </div>
+      <ul class="factlist">
+        <li><span class="k">Trade</span><span class="v">Wall &amp; floor tiling</span></li>
+        <li><span class="k">Materials</span><span class="v">Ceramic, porcelain and stone</span></li>
+        <li><span class="k">Service area</span><span class="v">Newcastle, Hunter &amp; Central Coast NSW</span></li>
+        <li><span class="k">Phone</span><span class="v"><a href="tel:0402460362">0402 460 362</a></span></li>
+        <li><span class="k">Quote</span><span class="v">Free and no obligation</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact rv" id="contact">
+    <div class="container">
+      <div class="cblock">
+        <h2>Talk to DC Tiling</h2>
+        <p class="cfirst">Tell us the room, roughly the size and what you have in mind, and we will come back with a price.</p>
+        <a class="telbig" href="tel:0402460362">0402 460 362</a>
+        <p class="carea">Wall and floor tiling across Newcastle, the Hunter and the Central Coast NSW.</p>
+        <div class="links">
+          <a href="tel:0402460362">Call 0402 460 362</a>
+          <a href="#work">See recent tiling</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 <section id="lbq" class="rv v3" aria-labelledby="lbq-h">
   <style>
 #lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#c4fb24))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,var(--text-muted,#5b6b7a));--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
@@ -247,7 +352,7 @@ footer a:hover{text-decoration:underline}
 </style>
   <div class="lbq-w">
       <div class="lbq-sp"><div class="lbq-hp2"><h2 id="lbq-h">Request a quote</h2>
-      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p><p class="lbq-s" style="margin-bottom:0">Prefer to talk? Call, text or email &mdash; we reply fast.</p></div><div><form id="lbq-form" novalidate data-site="dc-tiling" data-biz="DC Tiling"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div></div>
+      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p><p class="lbq-s" style="margin-bottom:0">Prefer to talk? Call, text or email and we reply fast.</p></div><div><form id="lbq-form" novalidate data-site="dc-tiling" data-biz="DC Tiling"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div></div>
   </div>
   <script>
 (function(){
@@ -275,7 +380,7 @@ footer a:hover{text-decoration:underline}
       e.preventDefault();
       var d = {};
       new FormData(f).forEach(function(v,k){ d[k]=v; });
-      if (d.website) return;  // honeypot — silently accept bots
+      if (d.website) return;  // honeypot, silently accept bots
       if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
         st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
         st.style.color = '#ff9d8a';
@@ -301,14 +406,14 @@ footer a:hover{text-decoration:underline}
         .then(function(x){
           if (x && x.success) {
             f.reset();
-            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.textContent = "Thanks, your request is in. We'll be in touch shortly.";
             st.style.color = 'var(--lbq-accent)';
           } else {
             throw new Error((x && x.error) || 'Could not send');
           }
         })
         .catch(function(err){
-          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.textContent = (err && err.message) ? err.message : 'Could not send, please try again or call.';
           st.style.color = '#ff9d8a';
         })
         .finally(function(){ btn.disabled = false; });
@@ -320,66 +425,85 @@ footer a:hover{text-decoration:underline}
 })();
 </script>
 </section>
+</main>
+<footer class="foot-wrap">
+  <div class="container">
+    <div class="foot">
+      <div><span class="fname">DC Tiling</span><p class="fmuted">Wall &amp; floor tiling across Newcastle, the Hunter and the Central Coast NSW.</p></div>
+      <div><p class="flab">Services</p><ul><li><a href="#services">Wall tiling</a></li><li><a href="#services">Floor tiling</a></li><li><a href="#services">Bathrooms</a></li><li><a href="#services">Splashbacks</a></li></ul></div>
+      <div><p class="flab">Contact</p><ul><li><a href="tel:0402460362">0402 460 362</a></li><li>Newcastle, Hunter &amp; Central Coast NSW</li></ul></div>
+    </div>
+    <div class="footbottom">
+      <span>&copy; <span id="yr">2026</span> DC Tiling. All rights reserved.</span>
+      <span><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span>
+    </div>
+  </div>
 </footer>
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
 (function(){
   var c=document.getElementById('heroCanvas'); if(!c) return;
-  var ctx=c.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2), w=0,h=0,t=0,raf=null;
+  var ctx=c.getContext('2d');
+  var dpr=Math.min(window.devicePixelRatio||1,2), w=320, h=240, last=0, base=null, prev=0;
+  var raf=null, running=false;
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function size(){var r=c.getBoundingClientRect(); w=Math.max(320,r.width|0); h=Math.max(320,r.height|0);
-    c.width=w*dpr; c.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);}
-  function draw(){
-    var g=ctx.createLinearGradient(0,0,0,h);
-    g.addColorStop(0,'#141518'); g.addColorStop(.55,'#0e0f11'); g.addColorStop(1,'#090a0b');
-    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
-    var y0=h*0.52;
-    ctx.beginPath(); ctx.moveTo(0,y0); ctx.lineTo(w,y0); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
-    // tiled floor running to the far wall: grout grid in perspective, a couple of accent tiles
-    var gg=ctx.createLinearGradient(0,y0,0,h);
-    gg.addColorStop(0,'#3b3f42'); gg.addColorStop(.45,'#2a2e31'); gg.addColorStop(1,'#1a1d1f');
-    ctx.fillStyle=gg; ctx.fill();
-    var hz=y0+(h-y0)*0.30;
-    ctx.lineWidth=1;
-    for(var i=-14;i<=14;i++){
-      var xt=w/2+i*(w*0.035), xb=w/2+i*(w*0.16);
-      ctx.strokeStyle='rgba(255,255,255,.07)';
-      ctx.beginPath(); ctx.moveTo(xt,hz); ctx.lineTo(xb,h); ctx.stroke();
-    }
-    for(var r=0;r<13;r++){
-      var t=r/13, yy=hz+Math.pow(t,1.75)*(h-hz);
-      ctx.strokeStyle='rgba(255,255,255,.06)';
-      ctx.beginPath(); ctx.moveTo(0,yy); ctx.lineTo(w,yy); ctx.stroke();
-    }
-    // two accent tiles catching the light
-    ctx.globalAlpha=.85;
-    ctx.fillStyle='#c17c5e';
-    ctx.beginPath(); ctx.moveTo(w*0.30,hz+(h-hz)*0.42); ctx.lineTo(w*0.42,hz+(h-hz)*0.42); ctx.lineTo(w*0.40,h); ctx.lineTo(w*0.24,h); ctx.closePath(); ctx.fill();
-    ctx.fillStyle='#8d5c46';
-    ctx.beginPath(); ctx.moveTo(w*0.60,hz+(h-hz)*0.42); ctx.lineTo(w*0.70,hz+(h-hz)*0.40); ctx.lineTo(w*0.74,h); ctx.lineTo(w*0.62,h); ctx.closePath(); ctx.fill();
-    ctx.globalAlpha=1;
-    // speckle and sheen on the tiles
-    for(var m=0;m<1100;m++){
-      var mx=(m*53.7)%w, my=hz+((m*41.3)%(h-hz));
-      ctx.fillStyle='rgba(255,255,255,'+(0.008+((m%5)*0.005))+')';
-      ctx.fillRect(mx,my,2,1.5);
-    }
-    var lg=ctx.createRadialGradient(w*.22,h*.10,12,w*.22,h*.10,w*.62);
-    lg.addColorStop(0,'rgba(255,240,225,.16)'); lg.addColorStop(1,'rgba(255,240,225,0)');
-    ctx.fillStyle=lg; ctx.fillRect(0,0,w,h);
-
+  function size(){
+    var r=c.getBoundingClientRect();
+    w=Math.max(300,Math.round(r.width));
+    h=Math.max(220,Math.round(r.height));
+    c.width=Math.round(w*dpr); c.height=Math.round(h*dpr);
+    base=null;
   }
-  function loop(){ t+=0.004; draw(); raf=requestAnimationFrame(loop); }
-  size(); draw(); if(!reduce){ loop(); }
-  window.addEventListener('resize', function(){ size(); draw(); }, {passive:true});
-  window.addEventListener('pagehide', function(){ if(raf) cancelAnimationFrame(raf); });
-})();
-(function(){
-  var f=document.getElementById('lbq-form'); if(!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('lbq-note').textContent = "Thanks. This preview form isn\u2019t wired to a mailbox yet \u2014 call 0402 460 362 or message us on Facebook.";
-  });
+  function baseGrad(){
+    if(!base){ base=ctx.createLinearGradient(0,0,0,h); base.addColorStop(0,'#141719'); base.addColorStop(1,'#0b0d0e'); }
+    return base;
+  }
+  function paint(ms){
+    if(typeof ms==='number'&&isFinite(ms)) last=ms;
+    var t=last/1000;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.fillStyle=baseGrad(); ctx.fillRect(0,0,w,h);
+    var rows=5, gap=2, rh=(h-gap*(rows+1))/rows;
+    for(var i=0;i<rows;i++){
+      var y=gap+i*(rh+gap);
+      var tone=16+i*4;
+      ctx.fillStyle='rgb('+tone+','+(tone+2)+','+(tone+3)+')';
+      ctx.fillRect(0,y,w,rh);
+      var rate=0.013+i*0.012, step=Math.max(120,w/4.2);
+      var off=((t*rate*w)+i*60)%step;
+      ctx.beginPath();
+      for(var x=-step+off;x<w+step;x+=step){ ctx.moveTo(x,y); ctx.lineTo(x,y+rh); }
+      ctx.strokeStyle='rgba(255,255,255,.05)'; ctx.lineWidth=1; ctx.stroke();
+      if(i===1||i===3){
+        var tx=((t*(0.05+i*0.05)*w)+i*230)%(w+280)-140;
+        ctx.fillStyle='rgba(193,124,94,.42)';
+        ctx.fillRect(tx,y+gap,step*0.85,rh-gap*2);
+      }
+    }
+    var sx=((t*0.09*w)%(w+240))-120;
+    ctx.fillStyle='rgba(255,236,222,.06)'; ctx.fillRect(sx-90,0,180,h);
+    ctx.beginPath(); ctx.moveTo(sx,0); ctx.lineTo(sx,h);
+    ctx.strokeStyle='rgba(255,236,222,.20)'; ctx.lineWidth=1; ctx.stroke();
+  }
+  function frame(ts){ if(ts-prev>=42){ prev=ts; paint(ts); } raf=requestAnimationFrame(frame); }
+  function play(){ if(reduce||running) return; running=true; prev=0; raf=requestAnimationFrame(frame); }
+  function stop(){ running=false; if(raf) cancelAnimationFrame(raf); raf=null; }
+  size(); paint(0);
+  if(!reduce){
+    if(document.readyState==='complete'){ play(); }
+    else { window.addEventListener('load', function(){ play(); }, {once:true}); }
+  }
+  setTimeout(function(){ if(reduce){ paint(2600); } else if(!running){ paint(1200); } },1200);
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ if(!reduce) play(); } else { stop(); } });
+    },{threshold:0.01});
+    io.observe(c);
+    window.addEventListener('pagehide', function(){ try{ io.disconnect(); }catch(e){} });
+  }
+  window.addEventListener('resize', function(){ size(); paint(last); }, {passive:true});
+  window.addEventListener('pagehide', function(){ stop(); });
+  if(reduce){ stop(); paint(2600); }
 })();
 </script>
 
