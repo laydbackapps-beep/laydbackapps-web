@@ -30,6 +30,12 @@ p{margin:0}
 .wrap{width:min(1160px,92vw);margin-inline:auto}
 section{padding:clamp(52px,7vh,92px) 0;border-bottom:1px solid var(--line)}
 .sec-alt{background:linear-gradient(180deg,#f4f9fd,#e5f0fa)}
+.sec-navy{background:linear-gradient(160deg,#092540 0%,#0c3654 58%,#0e4a70 100%);
+  border-bottom:1px solid rgba(255,255,255,.14)}
+.sec-navy .head h2{color:#f3f9fe}
+.sec-navy .eyebrow{color:#8fd6ea}
+.sec-navy .eyebrow::before{background:#18c0d8}
+.sec-navy .head p{color:#a9c6de}
 .head{max-width:62ch;margin-bottom:clamp(26px,4vh,44px)}
 .head h2{font-size:clamp(1.6rem,3.1vw,2.4rem);margin-bottom:12px}
 .head p{color:var(--muted)}
@@ -41,8 +47,8 @@ section{padding:clamp(52px,7vh,92px) 0;border-bottom:1px solid var(--line)}
   background:var(--cyan);color:#04252f;border:1px solid var(--cyan);
   box-shadow:0 8px 20px rgba(24,192,216,.26)}
 .btn:hover{background:var(--cyand);border-color:var(--cyand)}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line2);box-shadow:none}
-.btn.ghost:hover{border-color:var(--blue);color:var(--blued);background:transparent}
+.btn.ghost{background:transparent;color:var(--blued);border:1px solid rgba(10,92,147,.5);box-shadow:none}
+.btn.ghost:hover{border-color:var(--blue);color:var(--blued);background:#fff}
 
 /* ---- header ---- */
 header.site{position:sticky;top:0;z-index:60;background:rgba(247,251,254,.93);
@@ -68,8 +74,11 @@ nav.main a.btn:hover{background:var(--cyand)!important;border-color:var(--cyand)
 .navtog span::before{top:-6px}.navtog span::after{top:6px}
 
 /* ---- hero ---- */
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
-  background:linear-gradient(160deg,#fbfdff 0%,#eef6fc 44%,#dcebf8 100%)}
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line2);
+  background:
+    linear-gradient(rgba(9,74,122,.075) 1px,transparent 1px) 0 0/48px 48px,
+    linear-gradient(90deg,rgba(9,74,122,.075) 1px,transparent 1px) 0 0/48px 48px,
+    linear-gradient(158deg,#e7f4fd 0%,#cfe7f8 46%,#b7d9ef 100%)}
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
 .hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(100deg,rgba(255,255,255,.74) 0%,rgba(255,255,255,.36) 46%,rgba(255,255,255,0) 78%)}
@@ -84,7 +93,10 @@ nav.main a.btn:hover{background:var(--cyand)!important;border-color:var(--cyand)
 .facts{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:24px 0 0}
 .facts li{font-size:.87rem;font-weight:700;color:var(--ink);background:#fff;
   border:1px solid var(--line);border-radius:999px;padding:7px 14px}
-.heroart{width:100%;height:auto;display:block;filter:drop-shadow(0 22px 44px rgba(9,44,76,.16))}
+.hero-art{position:relative}
+.heroart{width:100%;height:auto;display:block;
+  filter:drop-shadow(0 34px 54px rgba(6,42,74,.30)) drop-shadow(0 8px 16px rgba(6,42,74,.16));
+  transform:perspective(1400px) rotateY(-5deg) rotateX(1.4deg)}
 
 /* ---- cards ---- */
 .grid{display:grid;gap:18px}
@@ -213,14 +225,14 @@ footer p{color:#a9c6de;font-size:.94rem;max-width:36ch}
           </div>
           <ul class="facts">
             <li>Installation</li><li>Repairs</li><li>Servicing</li>
-            <li>Split systems</li><li>Ducted</li><li>Swansea &amp; surrounds</li>
+            <li>Split systems</li><li>Ducted</li>
           </ul>
         </div>
         <div class="hero-art">
           <svg class="heroart" viewBox="0 0 640 520" role="img" aria-label="Wall-mounted split system head and a ceiling duct run with cool airflow across a room" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="hWall" x1="0" y1="0" x2=".7" y2="1">
-                <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d6e8f6"/>
+                <stop offset="0" stop-color="#f8fcff"/><stop offset="1" stop-color="#b9d6ec"/>
               </linearGradient>
               <linearGradient id="hUnit" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#eef7fd"/><stop offset="1" stop-color="#c6dcee"/>
@@ -248,6 +260,7 @@ footer p{color:#a9c6de;font-size:.94rem;max-width:36ch}
               <path d="M120 146v46M180 143v46M240 140v46M300 136v46M360 133v46M420 130v46"/>
             </g>
             <ellipse cx="330" cy="392" rx="300" ry="126" fill="url(#hGlow)"/>
+            <ellipse cx="232" cy="350" rx="178" ry="24" fill="#6f9dbd" opacity=".20"/>
             <rect x="64" y="250" width="330" height="90" rx="17" fill="url(#hUnit)" stroke="#a9c9e0" stroke-width="1.6"/>
             <rect x="80" y="262" width="298" height="10" rx="5" fill="#ffffff" opacity=".92"/>
             <rect x="76" y="316" width="306" height="18" rx="7" fill="#0f2b45"/>
@@ -326,7 +339,7 @@ footer p{color:#a9c6de;font-size:.94rem;max-width:36ch}
     </div>
   </section>
 
-  <section class="rv sec-alt" id="systems">
+  <section class="rv sec-navy" id="systems">
     <div class="wrap">
       <div class="head">
         <span class="eyebrow">Systems &amp; parts</span>
@@ -339,6 +352,7 @@ footer p{color:#a9c6de;font-size:.94rem;max-width:36ch}
           <svg viewBox="0 0 420 250" role="img" aria-label="Wall-mounted split system indoor head blowing cool air" xmlns="http://www.w3.org/2000/svg">
             <defs><linearGradient id="saUnit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c6dcee"/></linearGradient></defs>
             <rect width="420" height="250" fill="#eaf4fc"/>
+            <text x="16" y="26" font-family="monospace" font-size="11" letter-spacing="1.6" fill="#0a5c93" opacity=".85">WALL SPLIT HEAD</text>
             <path d="M0 196h420" stroke="#cfe0ee" stroke-width="2"/>
             <g stroke="#cfe0ee" stroke-width="1"><path d="M0 66h420M0 132h420M120 0v196M280 0v196"/></g>
             <rect x="46" y="62" width="252" height="66" rx="14" fill="url(#saUnit)" stroke="#a9c9e0" stroke-width="1.5"/>
@@ -358,6 +372,7 @@ footer p{color:#a9c6de;font-size:.94rem;max-width:36ch}
         <figure class="scene">
           <svg viewBox="0 0 420 250" role="img" aria-label="Ducted air conditioning run with ceiling outlets" xmlns="http://www.w3.org/2000/svg">
             <rect width="420" height="250" fill="#eaf4fc"/>
+            <text x="16" y="26" font-family="monospace" font-size="11" letter-spacing="1.6" fill="#0a5c93" opacity=".85">CEILING DUCT RUN</text>
             <path d="M0 40h420" stroke="#cfe0ee" stroke-width="2"/>
             <rect x="40" y="56" width="340" height="36" rx="11" fill="#d7e8f6" stroke="#a9c9e0" stroke-width="1.5"/>
             <rect x="52" y="64" width="316" height="9" rx="4.5" fill="#f2f9fe"/>
@@ -384,6 +399,7 @@ footer p{color:#a9c6de;font-size:.94rem;max-width:36ch}
           <svg viewBox="0 0 420 250" role="img" aria-label="Outdoor condenser unit with a fan discharging warm air" xmlns="http://www.w3.org/2000/svg">
             <defs><linearGradient id="scCond" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4fbff"/><stop offset="1" stop-color="#cfe3f2"/></linearGradient></defs>
             <rect width="420" height="250" fill="#eaf4fc"/>
+            <text x="16" y="26" font-family="monospace" font-size="11" letter-spacing="1.6" fill="#0a5c93" opacity=".85">OUTDOOR CONDENSER</text>
             <rect width="420" height="58" fill="#dcecf8"/>
             <path d="M0 58h420" stroke="#cfe0ee" stroke-width="2"/>
             <path d="M0 200h420" stroke="#cfe0ee" stroke-width="2"/>
@@ -410,6 +426,7 @@ footer p{color:#a9c6de;font-size:.94rem;max-width:36ch}
         <figure class="scene">
           <svg viewBox="0 0 420 250" role="img" aria-label="Cutaway of an air conditioning coil block and filter panel with air flowing through" xmlns="http://www.w3.org/2000/svg">
             <rect width="420" height="250" fill="#eaf4fc"/>
+            <text x="16" y="26" font-family="monospace" font-size="11" letter-spacing="1.6" fill="#0a5c93" opacity=".85">COIL + FILTER</text>
             <rect x="30" y="46" width="152" height="158" rx="10" fill="#dbeaf6" stroke="#a9c9e0" stroke-width="1.5"/>
             <g stroke="#8fb6d2" stroke-width="2" opacity=".8"><path d="M42 46v158M56 46v158M70 46v158M84 46v158M98 46v158M112 46v158M126 46v158M140 46v158M154 46v158M168 46v158"/></g>
             <rect x="228" y="46" width="152" height="158" rx="10" fill="#f4faff" stroke="#a9c9e0" stroke-width="1.5"/>
@@ -634,9 +651,9 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   function draw(){
     ctx.clearRect(0,0,w,h);
     var g = ctx.createLinearGradient(0,0,w,h);
-    g.addColorStop(0,'rgba(255,255,255,.55)');
-    g.addColorStop(.5,'rgba(226,240,250,.30)');
-    g.addColorStop(1,'rgba(196,226,245,.52)');
+    g.addColorStop(0,'rgba(255,255,255,.26)');
+    g.addColorStop(.5,'rgba(226,240,250,.10)');
+    g.addColorStop(1,'rgba(196,226,245,.24)');
     ctx.fillStyle = g; ctx.fillRect(0,0,w,h);
     for (var i=0;i<5;i++){
       var y = h*(0.22 + i*0.145);
