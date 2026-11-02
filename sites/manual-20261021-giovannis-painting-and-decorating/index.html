@@ -225,6 +225,7 @@ footer a:hover{color:#fff;text-decoration:underline}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}.js .rv{opacity:1;transform:none}}
 @media (min-width:821px){
   .bar .lb-brand .lb-mark{height:clamp(48px,4.6vw,64px)!important}
+  .bar .lb-brand .lb-word{height:clamp(26px,2.3vw,34px)!important}
 }
 
 @media (max-width:960px){
@@ -246,6 +247,7 @@ footer a:hover{color:#fff;text-decoration:underline}
   .bar-nav a{color:#241C14}
   .bar-in{min-height:0;padding:16px 0 12px;row-gap:8px}
   .bar .lb-brand .lb-mark{height:42px!important;max-height:42px!important}
+  .bar .lb-brand .lb-word{height:22px!important;max-height:22px!important}
   .bar-nav{order:3;flex-basis:100%;justify-content:center;gap:12px}
   .bar-nav a{font-size:14px}
   .hero-grid{padding:16px 0 24px}
@@ -265,6 +267,7 @@ footer a:hover{color:#fff;text-decoration:underline}
   <div class="wrap bar-in">
     <a class="lb-brand lb-brand--lockup" href="#top" aria-label="Giovanni's Painting and Decorating Services Pty Ltd">
       <img class="lb-mark" src="assets/logo-mark-giovanni.png" alt="" width="292" height="221">
+      <img class="lb-word" src="assets/logo-isolated-word.png" alt="Giovanni's Painting and Decorating" width="561" height="91">
       <span class="sr-only">Giovanni's Painting and Decorating Services Pty Ltd</span>
     </a>
     <nav class="bar-nav" aria-label="Main">
@@ -298,7 +301,10 @@ footer a:hover{color:#fff;text-decoration:underline}
         </div>
       </div>
       <figure class="hero-figure">
-        <img src="assets/hero.jpg" alt="Painted interior walls, decorative cornices and arched joinery finished sharp" width="1790" height="1180">
+        <picture>
+          <source media="(max-width:640px)" srcset="assets/hero-gio-mobile.jpg">
+          <img src="assets/hero.jpg" alt="Painted interior walls, decorative cornices and arched joinery finished sharp" width="1790" height="1180">
+        </picture>
         <figcaption>Interior decorating &mdash; painted walls, cornice detail and joinery finished to a clean edge.</figcaption>
       </figure>
     </div>
