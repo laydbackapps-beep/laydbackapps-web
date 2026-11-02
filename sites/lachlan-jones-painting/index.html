@@ -1,644 +1,456 @@
-<!doctype html>
-<html lang="en-AU">
+<!DOCTYPE html>
+<html lang="en" class="js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Lachlan Jones painting &amp; decorating - House Painting, Wyee NSW</title>
-<meta name="description" content="House painting and decorating in Wyee and across the Central Coast. Interior, exterior, decorative finishes, prep and repair. Licensed 474003C, insured.">
-<link rel="icon" type="image/png" href="assets/logo-mark_lachlan-jones-painting.png">
+<title>Lachlan Jones painting &amp; decorating &mdash; House Painting, Wyee NSW</title>
+<meta name="description" content="Interior and exterior house painting around Wyee, the Central Coast, Lake Macquarie and the Hunter. Prep, cut-in, full coats and clean-up by Lachlan Jones. Licence 474003C, insured. 0403 333 497.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#F2F1ED; --paper-2:#E8E6DF; --ink:#191D1F; --ink-2:#4A5254; --ink-3:#6C7476;
-  --teal:#50B8B0; --teal-deep:#2C7671; --line:#D3D0C7; --dark:#14181A; --dark-2:#222A2C;
-  --lb-name:#191D1F; --lb-subc:#191D1F;
-  --disp:"Bricolage Grotesque",Archivo,system-ui,sans-serif; --text:"Archivo",system-ui,sans-serif;
-  --pad:clamp(56px,7vw,104px); --gut:clamp(18px,2.4vw,34px);
+  --paper:#F4F2ED;
+  --paper-2:#EAE6DD;
+  --card:#FFFFFF;
+  --ink:#12241F;
+  --ink-2:#1D3B34;
+  --muted:#48584F;
+  --acc:#0E7C71;          /* teal fill */
+  --acc-d:#08534D;        /* deep teal: CTA fill, text on light */
+  --acc-dd:#063F3A;
+  --acc-l:#57CBBE;        /* light teal tint: accent on dark ground */
+  --tape:#E3CE97;
+  --line:#D6D2C7;
+  --disp:'Bricolage Grotesque',Georgia,'Times New Roman',serif;
+  --body:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --wrap:1180px;
+  --gut:clamp(18px,4vw,54px);
+  --rad:14px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--text);-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%;height:auto}
-a{color:inherit;text-decoration:none}
-h1,h2,h3{margin:0;font-family:var(--disp);font-weight:700;letter-spacing:-.018em;line-height:1.02;text-wrap:balance}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:clamp(15.5px,1.05vw,17px);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--disp);line-height:1.06;margin:0;letter-spacing:-.018em;font-weight:700}
 p{margin:0}
-.wrap{max-width:1240px;margin:0 auto;padding:0 var(--gut)}
-.pad{padding:var(--pad) 0}
-.skip{position:absolute;top:-60px;left:12px;z-index:99;background:var(--ink);color:var(--paper);padding:10px 16px;font-size:14px;border-radius:4px}
-.skip:focus{top:10px}
+em{font-style:normal;color:var(--acc-d)}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut);width:100%}
+.btn{display:inline-flex;align-items:center;gap:.5em;background:var(--acc-d);color:#fff;text-decoration:none;font-weight:600;padding:14px 22px;border-radius:10px;border:1px solid var(--acc-d);line-height:1;white-space:nowrap}
+.btn:hover{background:var(--acc-dd)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{background:var(--paper-2)}
 
-/* header */
-.bar{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
-.bar-in{max-width:1240px;margin:0 auto;padding:11px var(--gut);display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:12px;min-width:0}
-.brand img{height:46px;width:auto;flex:0 0 auto}
-.brand span{font-family:var(--disp);font-weight:700;font-size:16px;line-height:1.12;letter-spacing:-.01em;max-width:220px;color:#191D1F}
-.bar-nav{display:flex;align-items:center;gap:22px;flex:0 0 auto}
-.bar-tel{font-size:15px;font-weight:500;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .18s}
-.bar-tel:0403333497"";width:26px;height:2px;background:var(--teal)}
-h1{font-size:clamp(36px,4.4vw,64px);font-weight:800}
-h1 em{font-style:normal;color:var(--teal-deep)}
-.hero-sub{margin-top:18px;max-width:44ch;font-size:clamp(15px,1.15vw,17px);color:var(--ink-2);line-height:1.5}
-.hero-cta{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:18px}
-.hero-cta .btn{padding:16px 26px;font-size:17px}
-.hero-cta small{font-size:14px;color:var(--ink-3);max-width:15ch;line-height:1.35}
-.hero-feats{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:32px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-2)}
-.hero-feats b{font-weight:600;color:var(--ink)}
-.scene{position:relative;background:#DDD9CF;min-height:clamp(320px,58vh,600px);border-left:1px solid var(--line);overflow:hidden}
-.scene canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.scene-tag{position:absolute;left:0;bottom:0;background:var(--paper);border-top:1px solid var(--line);border-right:1px solid var(--line);padding:9px 14px;font-size:12px;color:var(--ink-2)}
+/* ---------- bar ---------- */
+.bar{position:sticky;top:0;z-index:20;background:rgba(244,242,237,.92);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+.bar-in{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(12px,2vw,26px);justify-content:space-between;height:104px;padding:10px 0}
+.brand{display:flex;align-items:center;gap:clamp(10px,1.4vw,18px);text-decoration:none;min-width:0;overflow:hidden}
+.brand img.lj-mark{height:clamp(38px,4vw,50px);width:auto}
+.brand img.lj-word{height:clamp(20px,2.1vw,26px);width:auto}
+.bar-nav{display:flex;flex-wrap:wrap;gap:clamp(12px,1.8vw,26px);align-items:center}
+.bar-nav a{text-decoration:none;font-weight:500;font-size:15px;color:var(--ink-2);padding:4px 0;border-bottom:2px solid transparent}
+.bar-nav a:hover{border-bottom-color:var(--acc)}
+.bar-right{display:flex;align-items:center;gap:clamp(10px,1.6vw,20px)}
+.bar-tel{display:inline-flex;align-items:center;gap:.45em;text-decoration:none;font-weight:700;color:var(--ink)}
+.bar-tel svg{width:16px;height:16px;fill:var(--acc-d)}
 
-/* prep strip */
-.prep{border-bottom:1px solid var(--line);background:var(--paper-2)}
-.prep-in{max-width:1240px;margin:0 auto;padding:26px var(--gut) 22px;display:grid;grid-template-columns:240px 1fr;gap:30px;align-items:end}
-.prep h2{font-size:19px}
-.prep p{font-size:14px;color:var(--ink-2);margin-top:5px}
-.prep-trace{position:relative;height:78px}
-#prep-trace{width:100%;height:100%;position:absolute;inset:0}
-.prep-trace .step{position:absolute;bottom:0;font-family:var(--disp);font-weight:700;font-size:15px;background:var(--paper-2);z-index:1}
-.prep-trace .step span{display:block;font-family:var(--text);font-weight:400;font-size:12.5px;color:var(--ink-3);margin-top:2px}
-.s1{left:0}.s2{left:33.5%}.s3{left:67%}
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--paper);padding:clamp(34px,5vw,74px) 0 clamp(30px,4vw,58px);overflow:hidden;perspective:1000px}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(26px,4vw,64px);align-items:center}
+.tape{display:inline-block;background:var(--tape);color:#3D3316;font-weight:600;font-size:13.5px;letter-spacing:.02em;padding:7px 18px;transform:rotate(-1.4deg);box-shadow:0 1px 0 rgba(0,0,0,.06);margin-bottom:22px}
+.hero h1{font-size:clamp(34px,5.4vw,62px);max-width:15ch;font-weight:800}
+.hero-sub{margin-top:20px;max-width:52ch;color:var(--muted);font-size:clamp(16px,1.25vw,18.5px)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14px;font-weight:600;color:var(--ink-2)}
+.hero-figure{position:relative;margin:0}
+.hero-figure img{width:100%;height:min(64vh,560px);object-fit:cover;border-radius:var(--rad);border:1px solid var(--line)}
+.hero-figure figcaption{position:absolute;left:14px;bottom:14px;right:14px;background:rgba(18,36,31,.86);color:#fff;font-size:13.5px;padding:9px 13px;border-radius:8px}
+.hero-figure::before,.hero-figure::after{content:"";position:absolute;width:74px;height:22px;background:var(--tape);opacity:.95}
+.hero-figure::before{top:-9px;left:26px;transform:rotate(-4deg)}
+.hero-figure::after{bottom:-9px;right:26px;transform:rotate(-3deg)}
 
-/* services */
-.svc{display:grid;grid-template-columns:minmax(270px,33%) 1fr;gap:clamp(24px,5vw,80px)}
-.svc-head h2{font-size:clamp(27px,3.3vw,42px)}
-.svc-head p{margin-top:15px;color:var(--ink-2);font-size:16px;max-width:30ch}
-.svc-note{margin-top:24px;font-size:13px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:14px;max-width:32ch}
-.row-list{border-top:1px solid var(--ink)}
-.svc-row{display:grid;grid-template-columns:1fr auto;align-items:start;gap:20px;padding:20px 0 24px;border-bottom:1px solid var(--line);transition:padding-left .22s}
-.svc-row:hover{padding-left:10px}
-.svc-row h3{font-size:clamp(21px,2.2vw,29px)}
-.svc-row p{margin-top:6px;color:var(--ink-2);font-size:15px;max-width:52ch}
-.svc-row i{font-style:normal;font-size:12px;color:var(--ink-3);padding-top:8px;font-variant-numeric:tabular-nums}
-.svc-row.first i{color:var(--teal-deep)}
+/* ---------- scope rows ---------- */
+.sec{padding:clamp(52px,7vw,104px) 0;border-top:1px solid var(--line)}
+.sec-alt{background:var(--paper-2)}
+.sec-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(18px,3vw,52px);align-items:end;margin-bottom:clamp(28px,4vw,54px)}
+.sec-head h2{font-size:clamp(26px,3.4vw,44px);max-width:20ch}
+.sec-head p{color:var(--muted);max-width:56ch}
+.scope{border-top:1px solid var(--line)}
+.scope-row{display:grid;grid-template-columns:74px 1.05fr 1.25fr;gap:clamp(14px,3vw,42px);padding:clamp(20px,2.6vw,30px) 0;border-bottom:1px solid var(--line);align-items:start}
+.scope-num{font-family:var(--disp);font-weight:700;font-size:22px;color:var(--acc);padding-top:2px}
+.scope-row h3{font-size:clamp(19px,1.8vw,25px)}
+.scope-row p{color:var(--muted)}
+.scope-row .scope-meta{color:var(--ink-2);font-weight:600}
 
-/* proof */
-.proof{background:var(--dark);color:var(--paper)}
-#proof-in{max-width:1240px;margin:0 auto;padding:var(--pad) var(--gut)}
-.proof-top{display:grid;grid-template-columns:1fr minmax(220px,290px);gap:var(--gut);align-items:end;margin-bottom:var(--gut)}
-.proof h2{font-size:clamp(25px,3.1vw,39px);color:#fff}
-.proof-top p{font-size:15px;color:#B9BFBE;line-height:1.5}
-.shots{display:grid;grid-template-columns:1.55fr 1fr;grid-template-rows:1fr 1fr;gap:12px}
-.shots figure{margin:0;overflow:hidden;background:#0C0F10;position:relative}
-.shots figure:first-child{grid-row:1/3}
-.shots img{width:100%;height:100%;object-fit:cover;filter:saturate(.93) contrast(1.03);transition:transform .6s ease}
-.shots figure:hover img{transform:scale(1.03)}
-.shots figcaption{position:absolute;left:0;bottom:0;background:rgba(12,15,16,.8);color:#DDE2E1;font-size:12px;padding:7px 11px}
-.facts{display:flex;flex-wrap:wrap;margin:var(--gut) 0 0;border-top:1px solid #333B3D}
-.facts div{flex:1 1 170px;padding:16px 18px 0 0}
-.facts dt{font-size:12px;color:#8E9798}
-.facts dd{margin:4px 0 0;font-family:var(--disp);font-weight:700;font-size:16px;color:#fff}
+/* ---------- process ---------- */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.6vw,22px);counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px 18px}
+.step b{display:block;font-family:var(--disp);color:var(--acc-d);font-size:14px;letter-spacing:.06em;margin-bottom:9px}
+.step h3{font-size:17.5px;margin-bottom:7px}
+.step p{color:var(--muted);font-size:14.5px}
 
-/* contact */
-.contact{display:grid;grid-template-columns:minmax(270px,37%) 1fr;gap:clamp(26px,5vw,70px);align-items:start}
-.contact h2{font-size:clamp(27px,3.5vw,44px)}
-.contact-lead{margin-top:14px;color:var(--ink-2);max-width:34ch;font-size:16px}
-.tel-big{display:inline-block;margin-top:22px;font-family:var(--disp);font-weight:800;font-size:clamp(26px,3vw,38px);letter-spacing:-.02em;border-bottom:3px solid var(--teal);padding-bottom:4px}
-.tel-big:hover{color:var(--teal-deep)}
-.det{margin-top:24px;font-size:14px;color:var(--ink-2);line-height:1.95;border-top:1px solid var(--line);padding-top:16px}
-.det b{font-weight:600;color:var(--ink);display:inline-block;min-width:86px}
-form{background:#fff;border:1px solid var(--line);padding:clamp(18px,2.4vw,30px)}
-.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-label{display:block;font-size:12px;color:var(--ink-2);margin-bottom:5px}
-input,select,textarea{width:100%;font:400 15px var(--text);color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:10px 11px}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);outline-offset:1px}
-.f3{margin-top:14px}
-textarea{resize:vertical;min-height:96px}
-.consent{display:flex;gap:9px;align-items:flex-start;margin:16px 0 18px;font-size:13px;color:var(--ink-2)}
-.consent input{width:16px;height:16px;flex:0 0 auto;margin-top:2px;accent-color:var(--teal-deep)}
-form .btn{width:100%;justify-content:center;padding:14px}
-#form-status{margin-top:12px;font-size:13px;min-height:1.2em;color:var(--ink-2)}
+/* ---------- work ---------- */
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.8vw,24px)}
+.work-grid figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden}
+.work-grid img{width:100%;height:250px;object-fit:cover}
+.work-grid figcaption{padding:14px 16px;font-size:14.5px;color:var(--muted)}
+.work-grid figcaption b{display:block;color:var(--ink);font-family:var(--disp);font-size:16px;margin-bottom:3px}
 
-/* footer */
-footer{background:var(--dark-2);color:#C9CFCE;padding:36px 0 24px;font-size:14px}
-.f-in{max-width:1240px;margin:0 auto;padding:0 var(--gut);display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
-.f-brand{display:flex;gap:11px;align-items:center;color:#fff;font-family:var(--disp);font-weight:700;font-size:15px;max-width:255px;line-height:1.2}
-.f-brand img{height:38px}
-.f-col{max-width:235px}
-.f-col a{border-bottom:1px solid #454F51;padding-bottom:1px}
-.f-col a:hover{color:#fff}
-.f-bottom{max-width:1240px;margin:24px auto 0;padding:16px var(--gut) 0;border-top:1px solid #394244;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:12px;color:#8D9697}
+/* ---------- areas ---------- */
+.areas{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,20px)}
+.area{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:10px;padding:20px 18px}
+.area b{font-family:var(--disp);font-size:19px;display:block}
+.area span{color:var(--muted);font-size:14.5px}
 
-/* reveal */
-.rv{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease;animation:fi .01s 2.4s forwards}
-.rv.on{opacity:1;transform:none}
-@keyframes fi{to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .rv,.rv.on{opacity:1;transform:none;transition:none;animation:none}
-  .svc-row,.btn,.bar-tel,.shots img{transition:none}
+/* ---------- faq ---------- */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.faq summary{cursor:pointer;font-family:var(--disp);font-weight:600;font-size:clamp(17px,1.6vw,21px);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+ ";color:var(--acc-d);font-weight:700}
+.faq details[open] summary::before{content:"\2013 "}
+.faq p{color:var(--muted);margin-top:10px;max-width:78ch}
+
+/* ---------- quote ---------- */
+.quote{position:relative;background:var(--ink);color:#EDF3F1;padding:clamp(52px,7vw,100px) 0}
+.quote h2{color:#fff;font-size:clamp(26px,3.4vw,42px);max-width:18ch}
+.quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,64px);align-items:start}
+.quote p{color:#B9C8C4}
+.quote .kicker{color:var(--acc-l);font-weight:700;font-size:14px;margin-bottom:14px}
+.quote .btn{background:var(--acc-l);border-color:var(--acc-l);color:#06302B;font-weight:700}
+.quote .btn:hover{background:#7fe0d4}
+.q-facts{margin-top:26px;display:grid;gap:10px}
+.q-facts div{display:flex;gap:10px;align-items:baseline;border-top:1px solid rgba(255,255,255,.14);padding-top:10px}
+.q-facts b{min-width:96px;color:#fff;font-size:14px}
+.q-facts span{color:#B9C8C4;font-size:14.5px}
+form{background:#fff;color:var(--ink);border-radius:var(--rad);padding:clamp(20px,2.4vw,30px);display:grid;gap:14px}
+form label{display:grid;gap:6px;font-weight:600;font-size:14px}
+form input,form select,form textarea{font:inherit;padding:12px 13px;border:1px solid var(--line);border-radius:9px;background:var(--paper);color:var(--ink);width:100%}
+form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--acc);outline-offset:1px;background:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form [role=status]{font-size:14px;color:var(--acc-dd);min-height:1.2em}
+form .note{font-size:13px;color:var(--muted)}
+
+/* ---------- footer ---------- */
+footer{background:#0C1C18;color:#A9BAB5;padding:clamp(40px,5vw,72px) 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(20px,3vw,48px)}
+.foot-brand{display:flex;align-items:center;gap:14px;color:#fff;text-decoration:none}
+.foot-brand img{height:56px;width:auto}
+footer h4{color:#fff;font-family:var(--disp);font-size:16px;margin:0 0 12px}
+footer a{color:#CBD8D4;text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+.foot-list{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:14.5px}
+.foot-bot{border-top:1px solid rgba(255,255,255,.12);margin-top:clamp(28px,3vw,44px);padding-top:20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13.5px;color:#8FA29D}
+
+/* ---------- reveal ---------- */
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.rv.on{opacity:1!important;transform:none!important}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}.js .rv{opacity:1;transform:none}}
+#heroCanvas{display:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:26px}
+  .hero-copy{order:2}
+  .hero-figure{order:1}
+  .hero-figure img{height:min(40vh,300px)}
+  .sec-head{grid-template-columns:1fr;gap:12px}
+  .scope-row{grid-template-columns:44px 1fr;gap:14px}
+  .scope-row p{grid-column:2}
+  .steps{grid-template-columns:1fr 1fr}
+  .work-grid{grid-template-columns:1fr}
+  .areas{grid-template-columns:1fr 1fr}
+  .quote-grid{grid-template-columns:1fr;gap:30px}
+  .foot-grid{grid-template-columns:1fr}
 }
-@media (max-width:900px){
-  .hero{grid-template-columns:1fr}
-  .scene{order:-1;border-left:0;border-bottom:1px solid var(--line);min-height:46vh}
-  .hero-copy{padding:30px var(--gut) 38px}
-  .prep-in{grid-template-columns:1fr;align-items:start;gap:4px}
-  .svc,.contact{grid-template-columns:1fr;gap:26px}
-  .proof-top,.shots{grid-template-columns:1fr}
-  .shots{grid-template-rows:none}
-  .shots figure:first-child{grid-row:auto}
-  .shots figure{aspect-ratio:16/10}
-  .shots figure:first-child{aspect-ratio:4/3}
-  .bar-nav .bar-tel{display:none}
-  .brand span{font-size:14px;max-width:170px}
-  .brand img{height:40px}
-  .f2{grid-template-columns:1fr}
-  .facts div{flex:1 1 50%}
+@media (max-width:640px){
+  .bar-in{height:auto;padding:10px 0 12px;row-gap:10px}
+  .brand img.lj-mark{height:36px}
+  .brand img.lj-word{height:19px}
+  .bar-nav{order:3;flex-basis:100%;justify-content:center;gap:14px}
+  .bar-nav a{font-size:14px}
+  .bar-right{gap:10px}
+  .steps{grid-template-columns:1fr}
+  .areas{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
 }
 </style>
-
-<!--LB-HERO-HEIGHT--><style id="lb-heroh">[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.38)}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
-
-<!--LB-RV--><style id="lb-rv">.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
-
-<!--LB-HEROCOPY--><style id="lb-herocopy">[class*=hero-copy],[class*=hero__copy],[class*=hero].container>div:first-child{position:relative!important;z-index:6!important;max-width:min(780px,90vw)!important}[class*=hero-copy] h1,[class*=hero] h1{max-width:20ch!important}[class*=hero] canvas{pointer-events:none!important}[class*=hero-copy] p{max-width:56ch!important}</style><!--/LB-HEROCOPY-->
-
-<!--LB-HEROCOPY2--><style id="lb-herocopy2">[class*=hero] canvas,canvas.lb-hero-canvas,[id*=scene] canvas{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{position:relative!important;z-index:3!important;width:min(780px,90vw)!important;max-width:none!important;flex:1 1 auto!important}[class*=hero-copy] h1{width:100%!important;max-width:none!important}</style><!--/LB-HEROCOPY2-->
-
-<!--LB-CANVASZ--><style id="lb-canvasz">[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
-
-<!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
-
-<!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.42)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
-
-<!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<!-- LB-3D-HERO -->
+<canvas id="heroCanvas" aria-hidden="true" width="1200" height="700"></canvas>
 
-<nav class="bar" aria-label="Lachlan Jones painting &amp; decorating">
-  <div class="bar-in">
-    <a class="brand" href="#top">
-      <img class="lj-mark" src="assets/lj-mark.png" alt="" width="952" height="323" loading="eager" decoding="async"><img class="lj-word" src="assets/lj-word.png" alt="Lachlan Jones painting &amp; decorating" width="994" height="253" loading="eager" decoding="async">
-      <span class="lb-sr-only">Lachlan Jones painting & decorating</span>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="brand" href="#top" aria-label="Lachlan Jones painting &amp; decorating">
+      <img class="lj-mark" src="assets/logo-lj-mark.png" alt="Lachlan Jones painting &amp; decorating mark" width="952" height="323">
+      <img class="lj-word" src="assets/logo-lj-word.png" alt="Lachlan Jones painting &amp; decorating" width="994" height="253">
     </a>
-    <div class="bar-nav">
-      <a class="bar-link" href="#prep">Prep</a><a class="bar-link" href="#proof">Work</a><a class="bar-link" href="#areas">Areas</a><a class="bar-link" href="#faq">FAQ</a><a class="bar-tel" href="tel:+61403333497">0403 333 497</a>
-      <a class="btn" href="#quote">Get a quote <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    <nav class="bar-nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#process">Prep &amp; process</a>
+      <a href="#work">Work</a>
+      <a href="#areas">Areas</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="bar-right">
+      <a class="bar-tel" href="tel:+61403333497"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.4.54 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .54 3.4 1 1 0 0 1-.25 1z"/></svg>0403 333 497</a>
+      <a class="btn" href="#quote" style="padding:12px 18px">Get a quote</a>
     </div>
-  </div>
-</nav>
-
-<header class="hero" id="top">
-  <div class="hero-copy">
-    <p class="kick rv">Wyee, Central Coast NSW</p>
-    <h1 class="rv">Weatherboards, walls and trim, <em>cut in clean</em>.</h1>
-    <p class="hero-sub rv">Interior and exterior house painting, decorative finishes, and the sanding, filling and sealing that make a finish last. Working out of Wyee across the Central Coast, Lake Macquarie and the Hunter.</p>
-    <div class="hero-cta rv">
-      <a class="btn" href="tel:+61403333497">Call 0403 333 497</a>
-      <small>Straight through to Lachlan. Prices given after a look at the job.</small>
-    </div>
-    <p class="hero-feats rv"><span><b>Licensed</b> 474003C</span><span><b>Insured</b></span><span>Same-day callback</span></p>
-  </div>
-  <div class="scene">
-    <canvas id="wall-scene" aria-label="Roller and brush against a weatherboard wall with a freshly painted band and crisply cut in skirting"></canvas>
-    <p class="scene-tag">Exterior repaint, weatherboard and trim</p>
   </div>
 </header>
 
-<main id="main">
-
-<section class="prep" aria-label="How the work is prepped">
-  <div class="prep-in">
-    <div>
-      <h2>Prep decides the finish</h2>
-      <p>Every job starts here.</p>
-    </div>
-    <div class="prep-trace">
-      <canvas id="prep-trace" aria-hidden="true"></canvas>
-      <span class="step s1">Wash and scrape<span>Mould, chalk, loose coats</span></span>
-      <span class="step s2">Fill and sand<span>Gaps, dents, bare timber</span></span>
-      <span class="step s3">Prime and coat<span>Seal, then two full coats</span></span>
-    </div>
-  </div>
-</section>
-
-<section class="pad" id="services">
-  <div class="wrap svc">
-    <div class="svc-head">
-      <h2>What Lachlan paints</h2>
-      <p>House painting and decorating, inside and out, on the Coast.</p>
-      <p class="svc-note">One painter on the tools, start to finish. No subbies turning up instead.</p>
-    </div>
-    <div class="row-list">
-      <article class="svc-row first">
-        <div><h3>Exterior and weatherboard</h3><p>Weatherboards, render, fascia, eaves and trims. Sun and hail damage made good before a coat goes near it.</p></div>
-        <i>01</i>
-      </article>
-      <article class="svc-row">
-        <div><h3>Interior walls, ceilings, doors</h3><p>Clean cut lines along cornice and skirting, even sheen, furniture covered and floors protected.</p></div>
-        <i>02</i>
-      </article>
-      <article class="svc-row">
-        <div><h3>Decorative finishes</h3><p>Feature walls, lime wash and texture coats for rooms with character worth keeping.</p></div>
-        <i>03</i>
-      </article>
-      <article class="svc-row">
-        <div><h3>Preparation and repair</h3><p>Pressure washing, scraping, filling, sanding, sealing and lead-safe removal on older homes.</p></div>
-        <i>04</i>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="proof" aria-label="Recent work">
-  <div id="proof-in">
-    <div class="proof-top">
-      <h2>On the wall, not just in a quote.</h2>
-      <p>Repaints and finish work around Wyee and the lower Coast.</p>
-    </div>
-    <div class="shots">
-      <figure><img src="assets/photo-3.jpg" alt="Freshly painted exterior wall and trims"><figcaption>Exterior repaint</figcaption></figure>
-      <figure><img src="assets/photo-1.jpg" alt="Painted exterior trim and fixed furniture"><figcaption>Exterior and trim</figcaption></figure>
-      <figure><img src="assets/photo-5.jpg" alt="Prepared and painted surface"><figcaption>Prep and finish</figcaption></figure><figure><img src="assets/photo-2.jpg" alt="Interior wall and ceiling repaint"><figcaption>Interior repaint</figcaption></figure><figure><img src="assets/photo-4.jpg" alt="Doors, frames and trim painted"><figcaption>Doors and trim</figcaption></figure>
-    </div>
-    <dl class="facts">
-      <div><dt>Licence</dt><dd>474003C</dd></div>
-      <div><dt>ABN</dt><dd>36 694 152 545</dd></div>
-      <div><dt>Base</dt><dd>Wyee NSW</dd></div>
-      <div><dt>Cover</dt><dd>Central Coast, Lake Mac, Hunter</dd></div>
-    </dl>
-  </div>
-</section>
-
-
-<section class="lj-sec" id="areas" aria-labelledby="lj-areas-h">
-  <div class="lj-wrap">
-    <p class="lj-kick">Coverage</p>
-    <h2 id="lj-areas-h" style="margin:12px 0 0">Wyee and the lower Coast</h2>
-    <p class="lj-lead">Working out of Wyee, painting across southern Lake Macquarie, the Central Coast and up into the Hunter. If your house is on this list, it is a normal day's drive.</p>
-    <div class="lj-chips" id="ljChips"></div>
-    <div class="lj-band">
-      <div class="cap"><span>Rotating · where we work</span><em id="ljAreaCount">01 / 05</em></div>
-      <div class="row" id="ljAreaRow"></div>
-      <div class="prog"><i></i></div>
-    </div>
-  </div>
-</section>
-
-
-<section class="lj-sec" id="faq" aria-labelledby="lj-faq-h">
-  <div class="lj-wrap">
-    <p class="lj-kick">Before you book</p>
-    <h2 id="lj-faq-h" style="margin:12px 0 0">The questions that come up</h2>
-    <div class="lj-faq">
-      <details open><summary>How is a repaint priced?</summary><p>By the job, measured room by room and wall by wall, with the prep written into the price rather than added later. Interior repaints are usually quoted per room plus ceilings and trim; exteriors are quoted on the wall area, the height and how much sanding and filling the weatherboards need.</p></details>
-      <details><summary>How much prep is actually included?</summary><p>Sanding, filling, gap sealing, stain blocking and a proper wash-down before any paint goes on — that is the part that decides whether the finish lasts. If a surface needs more than that (rotting trim, peeling render), it is quoted as its own line so you can see the cost.</p></details>
-      <details><summary>Do you do interiors and exteriors?</summary><p>Both. Interior walls, ceilings, trim, doors and feature walls, and exterior weatherboards, render, eaves, fascia and windows — including the masking and protection that keeps the paint off everything it should not touch.</p></details>
-      <details><summary>How long does a house repaint take?</summary><p>A single room is a day or two; a full interior is usually one to two weeks depending on the number of rooms and how much filling is needed; an exterior runs a week or more depending on weather and access. You get a program with the quote.</p></details>
-      <details><summary>Do I need to move everything out?</summary><p>No. Furniture is moved to the middle of the room and covered, floors are protected, and everything goes back at the end of each day. Delicate items and wall hangings are best taken down before we start.</p></details>
-      <details><summary>What paint do you use?</summary><p>Premium low-sheen acrylic for walls and ceilings, and a hard-wearing enamel on trim, doors and frames — the sheen and the product chosen for the room rather than whatever is cheapest on the day.</p></details>
-    </div>
-  </div>
-</section>
-
-<section class="pad" id="quote">
-  <div class="wrap contact">
-    <div>
-      <h2>Get a price on the job.</h2>
-      <p class="contact-lead">Ring and describe it, or send the details below. Prices are given after a look, not over the phone.</p>
-      <a class="tel-big" href="tel:+61403333497">0403 333 497</a>
-      <p class="det"><b>Servicing</b> Wyee, Lake Macquarie, Central Coast, Hunter<br><b>Hours</b> Mon to Sat, by arrangement<br><b>Licence</b> 474003C, insured</p>
-    </div>
-    <form id="quote-form" data-site="lachlan-jones-painting" action="https://api.laydbackapps.com.au/functions/v1/quote-request" method="POST" novalidate>
-      <input type="hidden" name="website" value="" tabindex="-1" autocomplete="off" style="display:none">
-      <div class="f2">
-        <div><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
-        <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
-      </div>
-      <div class="f2 f3">
-        <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-        <div><label for="service">Work needed</label>
-          <select id="service" name="service" required>
-            <option value="">Choose</option>
-            <option>Exterior and weatherboard</option>
-            <option>Interior walls, ceilings, doors</option>
-            <option>Decorative finishes</option>
-            <option>Preparation and repair</option>
-          </select>
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy rv">
+        <span class="tape">House painting &amp; decorating &middot; Wyee NSW</span>
+        <h1>Weatherboards, walls and trim, <em>cut in clean</em> and coated to last.</h1>
+        <p class="hero-sub">Interior and exterior repaints, doors, frames and decorative finishes around Wyee &mdash; prepped properly, masked properly, and cleaned down at the end of every day.</p>
+        <div class="hero-cta">
+          <a class="btn" href="tel:+61403333497">Call 0403 333 497</a>
+          <a class="btn btn-ghost" href="#quote">Get a quote</a>
+        </div>
+        <div class="hero-facts">
+          <span class="fact">Licence 474003C</span>
+          <span class="fact">Insured</span>
+          <span class="fact">One painter on the tools</span>
+          <span class="fact">Same-day callback</span>
         </div>
       </div>
-      <div class="f3"><label for="message">The job</label><textarea id="message" name="message" rows="4" placeholder="Suburb, rooms or surfaces, timing, access"></textarea></div>
-      <div class="consent"><input id="consent" name="consent" type="checkbox" required><label for="consent">Contact me about this quote. No list, no spam.</label></div>
-      <button class="btn" type="submit">Send the details</button>
-      <p id="form-status" role="status" aria-live="polite"></p>
-    </form>
-  </div>
-</section>
+      <figure class="hero-figure rv">
+        <img src="assets/hero-lj.jpg" alt="Freshly repainted exterior weatherboards, fascia and trim on a Wyee home" width="850" height="1120">
+        <figcaption>Fresh exterior repaint &mdash; weatherboards, fascia and trim.</figcaption>
+      </figure>
+    </div>
+  </section>
 
+  <section class="sec" id="services" aria-labelledby="services-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><h2 id="services-h">What Lachlan paints</h2></div>
+        <p>House painting and decorating, inside and out. One painter on the job start to finish &mdash; no subbies turning up in his place.</p>
+      </div>
+      <div class="scope">
+        <div class="scope-row rv">
+          <div class="scope-num">01</div>
+          <h3>Interior walls, ceilings &amp; trims</h3>
+          <p>Clean cut lines along cornice and skirting, an even low-sheen finish, furniture moved in and covered and the floors protected.</p>
+        </div>
+        <div class="scope-row rv">
+          <div class="scope-num">02</div>
+          <h3>Exterior, weatherboard &amp; render</h3>
+          <p>Sun and hail damage made good before a coat goes near it &mdash; fascia, eaves, barge boards, posts and trims.</p>
+        </div>
+        <div class="scope-row rv">
+          <div class="scope-num">03</div>
+          <h3>Doors, frames &amp; joinery</h3>
+          <p>Doors, architraves, window frames and built-ins sanded, primed and finished with a hard-wearing enamel.</p>
+        </div>
+        <div class="scope-row rv">
+          <div class="scope-num">04</div>
+          <h3>Decorative finishes &amp; feature walls</h3>
+          <p>Feature walls, lime wash and texture coats for rooms with character worth keeping.</p>
+        </div>
+        <div class="scope-row rv">
+          <div class="scope-num">05</div>
+          <h3>Prep, sanding, filling &amp; repair</h3>
+          <p>Pressure washing, scraping, filling, sanding, sealing and lead-safe removal on older homes &mdash; the part that decides the finish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="process" aria-labelledby="process-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><h2 id="process-h">Prep decides the finish</h2></div>
+        <p>Skipping prep is what makes a repaint peel in two years. Every job runs the same five steps, in the same order, with the prep written into the price rather than added later.</p>
+      </div>
+      <div class="steps">
+        <div class="step rv"><b>STEP 01</b><h3>Wash down</h3><p>Mould, chalk and loose coats washed off so the new paint has something to hold.</p></div>
+        <div class="step rv"><b>STEP 02</b><h3>Scrape &amp; fill</h3><p>Gaps, dents and bare timber filled and faired back.</p></div>
+        <div class="step rv"><b>STEP 03</b><h3>Sand &amp; seal</h3><p>Sanded, dusted down and sealed, with stain blocking where it needs it.</p></div>
+        <div class="step rv"><b>STEP 04</b><h3>Prime &amp; two coats</h3><p>Spot-primed, then two full coats &mdash; not a thin single pass.</p></div>
+        <div class="step rv"><b>STEP 05</b><h3>Cut in &amp; clean down</h3><p>Masking off, edges cut in sharp, floors swept and everything put back.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><h2 id="work-h">On the wall, not just in a quote</h2></div>
+        <p>Repaints and finish work around Wyee and the lower Coast. Real jobs, photographed as they finished.</p>
+      </div>
+      <div class="work-grid">
+        <figure class="rv">
+          <img src="assets/photo-3.jpg" alt="Repainted cream weatherboard wall with painted fascia and trim" width="1280" height="1280">
+          <figcaption><b>Exterior repaint</b>Weatherboards, fascia and trim recoated end to end.</figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="assets/photo-2.jpg" alt="Ceiling and soffit sheeting after being recoated" width="1280" height="1280">
+          <figcaption><b>Ceilings &amp; soffits</b>Overhead sheeting cleaned down and recoated evenly.</figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="assets/photo-1.jpg" alt="Painted render, posts and finishes around a pool setting" width="1280" height="1280">
+          <figcaption><b>Render &amp; finishes</b>Painted surfaces and trim finished around a pool setting.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="areas" aria-labelledby="areas-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><h2 id="areas-h">Wyee and the lower Coast</h2></div>
+        <p>Working out of Wyee, painting across southern Lake Macquarie, the Central Coast and up into the Hunter. If your house is on this list, it is a normal day's drive.</p>
+      </div>
+      <div class="areas">
+        <div class="area rv"><b>Wyee</b><span>Home base &mdash; and everywhere around it.</span></div>
+        <div class="area rv"><b>Central Coast</b><span>From the lakes up to the northern beaches.</span></div>
+        <div class="area rv"><b>Lake Macquarie</b><span>Morisset, Toronto and the southern lake.</span></div>
+        <div class="area rv"><b>Hunter</b><span>Newcastle and out through the valley.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><h2 id="faq-h">Before you book</h2></div>
+        <p>The questions that come up most, answered straight.</p>
+      </div>
+      <div class="faq rv">
+        <details open>
+          <summary>How is a repaint priced?</summary>
+          <p>By the job, measured room by room and wall by wall, with the prep written into the price rather than added later. Interior repaints are usually quoted per room plus ceilings and trim; exteriors on the wall area, the height and how much sanding and filling the weatherboards need.</p>
+        </details>
+        <details>
+          <summary>How much prep is actually included?</summary>
+          <p>Sanding, filling, gap sealing, stain blocking and a proper wash-down before any paint goes on &mdash; that is the part that decides whether the finish lasts. If a surface needs more than that, such as rotting trim or peeling render, it is quoted as its own line so you can see the cost.</p>
+        </details>
+        <details>
+          <summary>Do you do both interiors and exteriors?</summary>
+          <p>Both. Interior walls, ceilings, trim, doors and feature walls, and exterior weatherboards, render, eaves, fascia and windows &mdash; including the masking and protection that keeps paint off everything it should not touch.</p>
+        </details>
+        <details>
+          <summary>How long does a house repaint take?</summary>
+          <p>A single room is a day or two; a full interior is usually one to two weeks depending on the number of rooms and how much filling is needed; an exterior runs a week or more depending on weather and access. You get a program with the quote.</p>
+        </details>
+        <details>
+          <summary>Do I need to move everything out?</summary>
+          <p>No. Furniture is moved to the middle of the room and covered, floors are protected, and everything goes back at the end of each day. Delicate items and wall hangings are best taken down before work starts.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote" id="lbq" aria-labelledby="quote-h">
+    <span id="quote" style="position:absolute;top:-90px"></span>
+    <div class="wrap quote-grid">
+      <div class="rv">
+        <p class="kicker">Get a price</p>
+        <h2 id="quote-h">Get a price on the job.</h2>
+        <p style="margin-top:14px">Ring and describe it, or send the details and Lachlan will come back with a price after a proper look &mdash; not over the phone.</p>
+        <div class="q-facts">
+          <div><b>Phone</b><span><a href="tel:+61403333497" style="color:#fff;font-weight:700">0403 333 497</a> &mdash; straight through to Lachlan</span></div>
+          <div><b>Servicing</b><span>Wyee, Lake Macquarie, Central Coast and the Hunter</span></div>
+          <div><b>Hours</b><span>Mon to Sat, by arrangement</span></div>
+          <div><b>Licence</b><span>474003C &middot; ABN 36 694 152 545 &middot; insured</span></div>
+        </div>
+      </div>
+      <form id="quote-form" data-site="lachlan-jones-painting" action="https://api.laydbackapps.com.au/functions/v1/quote-request" method="POST" novalidate>
+        <input type="hidden" name="website" value="">
+        <div class="two">
+          <label>Name<input type="text" name="name" autocomplete="name" required></label>
+          <label>Phone<input type="tel" name="phone" autocomplete="tel" required></label>
+        </div>
+        <label>Email<input type="email" name="email" autocomplete="email"></label>
+        <label>Work needed
+          <select name="job">
+            <option value="">Choose</option>
+            <option>Interior repaint &mdash; walls, ceilings, trim</option>
+            <option>Exterior repaint &mdash; weatherboard and render</option>
+            <option>Doors, frames and joinery</option>
+            <option>Decorative finishes and feature walls</option>
+            <option>Prep, sanding and repair</option>
+          </select>
+        </label>
+        <label>The job<textarea name="details" rows="4" placeholder="Suburb and a quick description of the job"></textarea></label>
+        <button type="submit" class="btn">Send the details</button>
+        <p class="note">Goes straight to Lachlan. No list, no spam.</p>
+        <p role="status" aria-live="polite"></p>
+        <script>
+        (function(){
+          var f=document.getElementById('quote-form');if(!f)return;
+          f.addEventListener('submit',function(e){
+            e.preventDefault();
+            var st=f.querySelector('[role=status]'),b=f.querySelector('button[type=submit]');
+            var data=Object.fromEntries(new FormData(f));
+            if(!data.name||!data.phone){if(st)st.textContent='Please add a name and a number so Lachlan can get back to you.';return;}
+            b.disabled=true;if(st)st.textContent='Sending\u2026';
+            fetch('https://api.laydbackapps.com.au/functions/v1/quote-request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+              .then(function(r){return r.text().then(function(){return r.ok;});})
+              .then(function(ok){if(st)st.textContent=ok?'Thanks \u2014 it is with Lachlan and he will come back to you.':'Sorry, that did not send. Please call 0403 333 497.';if(ok)f.reset();})
+              .catch(function(){if(st)st.textContent='Sorry, that did not send. Please call 0403 333 497.';})
+              .then(function(){b.disabled=false;});
+          });
+        })();
+        </script>
+      </form>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <div class="f-in">
-    <a class="f-brand" href="#top"><img src="assets/logo-mark_lachlan-jones-painting.png" alt="" aria-hidden="true">Lachlan Jones painting & decorating</a>
-    <p class="f-col">House painting and decorating. Wyee NSW, working the Central Coast, Lake Macquarie and Hunter.</p>
-    <p class="f-col"><a href="privacy.html">Privacy</a><br><a href="terms.html">Terms</a><br><a href="tel:+61403333497">0403 333 497</a></p>
+  <div class="wrap foot-grid">
+    <div>
+      <a class="foot-brand" href="#top"><img src="assets/logo-mark_lachlan-jones-painting.png" alt=""><span>Lachlan Jones<br>painting &amp; decorating</span></a>
+      <p style="margin-top:16px;max-width:34ch">House painting and decorating. Wyee NSW, working the Central Coast, Lake Macquarie and Hunter.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul class="foot-list">
+        <li><a href="#services">Interior walls &amp; ceilings</a></li>
+        <li><a href="#services">Exterior &amp; weatherboard</a></li>
+        <li><a href="#services">Doors, frames &amp; joinery</a></li>
+        <li><a href="#services">Decorative finishes</a></li>
+        <li><a href="#services">Prep, sanding &amp; repair</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="foot-list">
+        <li><a href="tel:+61403333497">0403 333 497</a></li>
+        <li><a href="#quote">Get a quote</a></li>
+        <li>Licence 474003C</li>
+        <li>ABN 36 694 152 545</li>
+        <li><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="f-bottom"><span>&copy; <span id="yr">2026</span> Lachlan Jones painting &amp; decorating</span><span>LIC 474003C &middot; ABN 36 694 152 545</span></div>
+  <div class="wrap foot-bot">
+    <span>&copy; 2026 Lachlan Jones painting &amp; decorating</span>
+    <span>LIC 474003C &middot; ABN 36 694 152 545</span>
+  </div>
 </footer>
 
 <script src="heroCanvas.js" defer></script>
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-
-/* hero scene: weatherboard wall in perspective, paint band, roller, brush, tin, cut-in line */
 (function(){
-  var cv = document.getElementById('wall-scene'); if (!cv) return;
-  var ctx = cv.getContext('2d');
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var W = 0, H = 0, dpr = 1, t0 = performance.now(), raf = 0;
-
-  var cam = { yaw: 0.155, eye: 1.42, f: 1 };
-  var WALL_X = 1.38, Z0 = 0.85, Z1 = 9.4;
-  var PAINT_FROM = 1.15, PAINT_TO = 3.55;
-  var Y0 = 0.86, Y1 = 2.5;
-
-  function project(x, y, z){
-    var c = Math.cos(cam.yaw), s = Math.sin(cam.yaw);
-    var cx = x*c - z*s, cz = x*s + z*c;
-    if (cz < 0.12) cz = 0.12;
-    return [W*0.5 + cam.f*cx/cz, H*0.53 - cam.f*(y - cam.eye)/cz, cz];
-  }
-  function wall(y, z, off){ return project(WALL_X - (off||0), y, z); }
-  function quad(a, b, c, d, fill){
-    ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]);
-    ctx.lineTo(c[0], c[1]); ctx.lineTo(d[0], d[1]); ctx.closePath();
-    ctx.fillStyle = fill; ctx.fill();
-  }
-  function wallLine(y, z1, z2, style, w, cap){
-    var a = wall(y, z1), b = wall(y, z2);
-    ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]);
-    ctx.strokeStyle = style; ctx.lineWidth = w || 1; ctx.lineCap = cap || 'butt'; ctx.stroke();
-  }
-
-  function resize(){
-    var r = cv.getBoundingClientRect();
-    dpr = Math.min(2, devicePixelRatio || 1);
-    W = Math.max(260, r.width); H = Math.max(260, r.height);
-    cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    cam.f = W * 0.8;
-  }
-
-  function draw(prog){
-    var bg = ctx.createLinearGradient(0, 0, W, H);
-    bg.addColorStop(0, '#CBC6BA'); bg.addColorStop(1, '#E1DDD3');
-    ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
-
-    var fl = ctx.createLinearGradient(0, H*0.5, 0, H);
-    fl.addColorStop(0, '#B4AE9F'); fl.addColorStop(1, '#8B8375');
-    ctx.fillStyle = fl; ctx.fillRect(0, H*0.52, W, H*0.5);
-
-    quad(wall(0, Z0), wall(2.75, Z0), wall(2.75, Z1), wall(0, Z1), '#C6C1B4');
-
-    for (var y = 0.19; y < 2.75; y += 0.19){
-      wallLine(y, Z0, Z1, 'rgba(30,25,18,0.15)', 2.6);
-      wallLine(y + 0.022, Z0, Z1, 'rgba(255,253,244,0.30)', 1.4);
-    }
-
-    var zEnd = PAINT_FROM + (PAINT_TO - PAINT_FROM) * prog;
-    if (prog > 0.02){
-      quad(wall(Y1, PAINT_FROM), wall(Y1, zEnd), wall(Y0, zEnd), wall(Y0, PAINT_FROM), '#F8F6EE');
-      ctx.save(); ctx.globalAlpha = 0.55;
-      wallLine(Y1 - 0.2, PAINT_FROM, zEnd, 'rgba(255,255,252,0.6)', 12, 'round');
-      ctx.restore();
-      var e1 = wall(Y1, zEnd), e2 = wall(Y0, zEnd);
-      ctx.beginPath(); ctx.moveTo(e1[0], e1[1]); ctx.lineTo(e2[0], e2[1]);
-      ctx.strokeStyle = 'rgba(142,162,157,0.6)'; ctx.lineWidth = 4; ctx.stroke();
-      wallLine(Y0, PAINT_FROM, zEnd, '#F1EDE3', 6);
-      wallLine(Y0, PAINT_FROM, zEnd, 'rgba(255,255,255,0.75)', 2);
-    }
-
-    quad(wall(0.15, Z0), wall(0.15, Z1), wall(0, Z1), wall(0, Z0), '#EFEDE4');
-    wallLine(0.15, Z0, Z1, 'rgba(40,34,26,0.34)', 2);
-    quad(wall(0.02, Z0), wall(0.02, Z1), project(0, 0, Z1), project(0, 0, Z0), 'rgba(30,26,20,0.17)');
-
-    /* paint tin */
-    var tz = 1.66, tx = 0.9;
-    var base = project(tx, 0, tz), top = project(tx, 0.29, tz);
-    var rw = Math.max(6, cam.f * 0.17 / base[2]);
-    var hgt = base[1] - top[1];
-    ctx.beginPath(); ctx.ellipse(base[0] + rw*0.5, base[1] + 2, rw*1.1, rw*0.32, 0, 0, 6.283);
-    ctx.fillStyle = 'rgba(24,20,15,0.28)'; ctx.fill();
-    ctx.fillStyle = '#E3E0D6';
-    ctx.fillRect(base[0] - rw, base[1] - hgt, rw*2, hgt);
-    ctx.beginPath(); ctx.ellipse(base[0], base[1] - hgt, rw, rw*0.3, 0, 0, 3.142);
-    ctx.fillStyle = '#D3CFC4'; ctx.fill();
-    ctx.fillStyle = '#50B8B0';
-    ctx.fillRect(base[0] - rw, base[1] - hgt*0.55, rw*2, Math.max(3, rw*0.4));
-    ctx.beginPath(); ctx.ellipse(base[0], base[1] - hgt, rw, rw*0.32, 0, 0, 6.283);
-    ctx.fillStyle = '#F4F2E9'; ctx.fill();
-    ctx.beginPath(); ctx.ellipse(base[0], base[1] - hgt, rw*0.82, rw*0.26, 0, 0, 6.283);
-    ctx.fillStyle = '#CFCBC0'; ctx.fill();
-    ctx.beginPath(); ctx.ellipse(top[0] + rw*0.75, top[1] - rw*0.55, rw*0.8, rw*0.2, -0.55, 0, 6.283);
-    ctx.fillStyle = '#EAE7DD'; ctx.fill();
-
-    /* brush */
-    var bz = 2.4, tip = project(0.4, 0.5, bz), foot = project(0.86, 0.02, bz);
-    ctx.beginPath(); ctx.moveTo(tip[0], tip[1]); ctx.lineTo(foot[0], foot[1]);
-    ctx.strokeStyle = '#8A6A43'; ctx.lineWidth = Math.max(2, cam.f*0.026/foot[2]); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(tip[0], tip[1]); ctx.lineTo(foot[0] - 2, foot[1]);
-    ctx.strokeStyle = 'rgba(20,18,15,0.85)'; ctx.lineWidth = Math.max(2, cam.f*0.03/tip[2]);
-    ctx.lineCap = 'round'; ctx.stroke();
-    ctx.beginPath(); ctx.arc(tip[0], tip[1], Math.max(2.2, cam.f*0.02/tip[2]), 0, 6.283);
-    ctx.fillStyle = '#1C1A16'; ctx.fill();
-    ctx.lineCap = 'butt';
-
-    /* roller at the wet edge */
-    var rz = zEnd + 0.03, ry = (Y0 + Y1) / 2;
-    var rTop = wall(ry + 0.2, rz, 0.05), rBot = wall(ry - 0.2, rz, 0.05);
-    var rW = Math.max(3, cam.f * 0.042 / rTop[2]);
-    var sTop = wall(ry + 0.2, rz, 0), sBot = wall(ry - 0.2, rz, 0);
-    ctx.beginPath(); ctx.moveTo(sTop[0] + rW, sTop[1] + 5); ctx.lineTo(sBot[0] + rW, sBot[1] + 5);
-    ctx.strokeStyle = 'rgba(24,20,15,0.18)'; ctx.lineWidth = rW*1.9; ctx.lineCap = 'round'; ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(rTop[0], rTop[1]); ctx.lineTo(rBot[0], rBot[1]);
-    ctx.strokeStyle = '#93AAA7'; ctx.lineWidth = rW*2; ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(rTop[0], rTop[1]); ctx.lineTo(rBot[0], rBot[1]);
-    ctx.strokeStyle = '#C9D8D5'; ctx.lineWidth = rW; ctx.stroke();
-    for (var k = -0.18; k < 0.2; k += 0.05){
-      var p = wall(ry + k, rz, 0.05), q = wall(ry + k, rz, 0.1);
-      ctx.beginPath(); ctx.moveTo(p[0], p[1]); ctx.lineTo(q[0], q[1]);
-      ctx.strokeStyle = 'rgba(96,124,120,0.3)'; ctx.lineWidth = 1; ctx.stroke();
-    }
-    var hEnd = project(0.58, ry - 0.44, rz + 0.3);
-    ctx.beginPath(); ctx.moveTo(rBot[0], rBot[1]);
-    ctx.quadraticCurveTo(rBot[0] - rW*1.6, rBot[1] + rW*1.2, hEnd[0], hEnd[1]);
-    ctx.strokeStyle = '#B6B1A3'; ctx.lineWidth = Math.max(2, rW*0.5); ctx.stroke();
-    ctx.beginPath(); ctx.arc(hEnd[0], hEnd[1], Math.max(3, rW*0.75), 0, 6.283);
-    ctx.fillStyle = '#50B8B0'; ctx.fill();
-    ctx.lineCap = 'butt';
-
-    var haze = ctx.createLinearGradient(W*0.34, 0, W*0.95, 0);
-    haze.addColorStop(0, 'rgba(219,215,204,0.5)');
-    haze.addColorStop(0.6, 'rgba(219,215,204,0.05)');
-    haze.addColorStop(1, 'rgba(219,215,204,0)');
-    ctx.fillStyle = haze; ctx.fillRect(0, 0, W, H);
-    var lg = ctx.createLinearGradient(W, 0, W*0.25, H*0.4);
-    lg.addColorStop(0, 'rgba(255,251,238,0.26)'); lg.addColorStop(1, 'rgba(255,251,238,0)');
-    ctx.fillStyle = lg; ctx.fillRect(0, 0, W, H);
-  }
-
-  function frame(ts){
-    var prog = Math.min(1, Math.max(0, (ts - t0) / 1500));
-    prog = 1 - Math.pow(1 - prog, 3);
-    cam.yaw = 0.155 + (reduce ? 0 : Math.sin(ts * 0.00022) * 0.012);
-    cam.eye = 1.42 + (reduce ? 0 : Math.sin(ts * 0.00019) * 0.012);
-    ctx.clearRect(0, 0, W, H);
-    draw(prog);
-    raf = requestAnimationFrame(frame);
-  }
-
-  resize();
-  if ('ResizeObserver' in window){
-    new ResizeObserver(function(){ resize(); if (reduce){ ctx.clearRect(0,0,W,H); draw(1); } }).observe(cv);
-  }
-  addEventListener('resize', resize);
-  raf = requestAnimationFrame(frame);
-  document.addEventListener('visibilitychange', function(){
-    cancelAnimationFrame(raf); if (!document.hidden) raf = requestAnimationFrame(frame);
-  });
-
-  var f = document.getElementById('quote-form'), st = document.getElementById('form-status');
-  if (f) f.addEventListener('submit', function(e){
-    e.preventDefault();
-    if (!f.checkValidity()){ st.textContent = 'Name, phone, email and consent are needed.'; return; }
-    st.textContent = 'Sending...';
-    fetch(f.action, { method: 'POST', body: new FormData(f), mode: 'cors' })
-      .then(function(r){ if (!r.ok) throw 0; st.textContent = 'Sent. Lachlan will call you back.'; f.reset(); })
-      .catch(function(){ st.textContent = 'Could not send. Ring 0403 333 497 and it is done.'; });
-  });
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on');});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}});
+  },{rootMargin:'0px 0px -8% 0px',threshold:.12});
+  els.forEach(function(e){io.observe(e);});
 })();
+setTimeout(function(){document.querySelectorAll('.rv').forEach(function(e){e.classList.add('on');});},1100);
 </script>
-<style id="lb-header-fault-fix">
-.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
-img.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
-</style>
-<style id="lj-extras">
-/* ===== Lachlan Jones Painting — header lockup, own-aspect showcase, coverage (paper #F2F1ED / teal #50B8B0) ===== */
-
-/* header: the bar was loading the whole square lockup (logo.jpg, 1179x1167 with a baked grey field) at 64px,
-   so the mark and the name were both unreadable. The keyed mark and wordmark now sit side by side, sized by height. */
-.bar-in{height:92px!important;padding:0 var(--gut)!important;gap:clamp(14px,2vw,28px)!important}
-.brand{gap:clamp(10px,1.2vw,16px)!important;align-items:center!important;text-decoration:none!important}
-.brand img.lj-mark{height:clamp(36px,3.6vw,46px)!important;width:auto!important;display:block!important;flex:0 0 auto}
-.brand img.lj-word{height:clamp(20px,2vw,26px)!important;width:auto!important;display:block!important;flex:0 0 auto}
-.bar-nav{gap:clamp(12px,1.6vw,22px)!important;display:flex;align-items:center}
-.bar-nav .bar-link{font-size:.78rem!important;letter-spacing:.13em;text-transform:uppercase;text-decoration:none;color:var(--ink)!important;
-  font-weight:600;padding:6px 0;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
-.bar-nav .bar-link:hover{border-color:var(--teal);color:var(--teal-deep)!important}
-.bar-tel{font-weight:700!important}
-@media(max-width:900px){.bar-nav .bar-link{display:none}.bar-in{height:78px!important}}
-
-/* showcase: five photos kept at their own aspect instead of being cropped into a 1.55fr/1fr mosaic */
-.shots{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:none!important;gap:14px!important}
-.shots figure{background:var(--paper-2)!important;overflow:hidden!important;position:relative!important}
-.shots img{width:100%!important;height:auto!important;object-fit:contain!important;transform:none!important}
-.shots figure:hover img{transform:none!important;filter:saturate(1) contrast(1.02)!important}
-.shots figure:first-child{grid-column:span 2}
-.shots figcaption{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);padding:10px 2px 0}
-@media(max-width:820px){.shots{grid-template-columns:repeat(2,minmax(0,1fr))!important}.shots figure:first-child{grid-column:span 2}}
-@media(max-width:520px){.shots{grid-template-columns:1fr!important}.shots figure:first-child{grid-column:span 1}}
-
-/* services ticker at the hero base */
-.lj-ticker{position:relative;overflow:hidden;background:var(--dark);border-top:1px solid rgba(242,241,237,.14)}
-.lj-ticker:before,.lj-ticker:after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
-.lj-ticker:before{left:0;background:linear-gradient(90deg,var(--dark),transparent)}
-.lj-ticker:after{right:0;background:linear-gradient(270deg,var(--dark),transparent)}
-.lj-ticker .track{display:flex;gap:32px;white-space:nowrap;width:max-content;padding:12px 0;animation:ljSlide 46s linear infinite}
-.lj-ticker:hover .track{animation-play-state:paused}
-.lj-ticker span{display:inline-flex;align-items:center;gap:24px;color:rgba(242,241,237,.82);font-size:11.5px;
-  letter-spacing:.18em;text-transform:uppercase;font-weight:600}
-.lj-ticker i{font-style:normal;color:var(--teal)}
-@keyframes ljSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* coverage block */
-.lj-sec{padding:clamp(52px,6.5vw,92px) 0;border-top:1px solid var(--line)}
-.lj-wrap{max-width:1240px;margin:0 auto;padding:0 var(--gut)}
-.lj-kick{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal-deep);margin:0;font-weight:700}
-.lj-lead{max-width:70ch;margin:14px 0 0;color:var(--ink-2)}
-.lj-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
-.lj-chips span{border:1px solid var(--line);background:var(--paper-2);padding:7px 12px;font-size:.85rem;color:var(--ink-2);transition:.2s}
-.lj-chips span:hover{border-color:var(--teal);color:var(--ink);background:#fff}
-.lj-band{margin-top:24px;border:1px solid var(--dark);background:var(--dark);color:var(--paper);overflow:hidden;max-width:1000px}
-.lj-band .cap{display:flex;justify-content:space-between;gap:1rem;padding:10px 14px;border-bottom:1px solid rgba(242,241,237,.18);
-  font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,241,237,.6)}
-.lj-band .row{position:relative;height:80px}
-.lj-band .row ul{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;list-style:none;
-  margin:0;padding:0;opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .7s ease}
-.lj-band .row ul.on{opacity:1;transform:none}
-.lj-band .row li{font-size:clamp(1.1rem,2.4vw,1.55rem);text-align:center;line-height:1.15;color:#fff}
-.lj-band .row li small{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,241,237,.6);margin-top:7px}
-.lj-band .prog{height:2px;background:rgba(242,241,237,.16)}
-.lj-band .prog i{display:block;height:100%;width:0;background:var(--teal);animation:ljFill 4.2s linear infinite}
-@keyframes ljFill{from{width:0}to{width:100%}}
-
-/* faq */
-.lj-faq{margin-top:30px;border-top:1px solid var(--line)}
-.lj-faq details{border-bottom:1px solid var(--line)}
-.lj-faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:baseline;
-  padding:20px 0;font-weight:600;font-size:1.02rem}
-.lj-faq summary::-webkit-details-marker{display:none}
-.lj-faq summary::after{content:"+";color:var(--teal-deep);font-size:1.2rem;line-height:1}
-.lj-faq details[open] summary::after{content:"–"}
-.lj-faq p{color:var(--ink-2);padding:0 0 22px;max-width:78ch}
-
-/* mobile: the CTA row was pushing 146px of horizontal overflow off-screen */
-@media(max-width:760px){
-  /* the copy block is a flex ROW on desktop (headline | paragraph | contact details); on a phone it has to stack
-     or the CTA row starts at x=391 and drags .hero-feats off with it */
-  .hero-copy{flex-direction:column!important;flex-wrap:nowrap!important;gap:18px!important}
-  .hero-copy>*{width:100%!important;max-width:100%!important}
-  .hero-cta{flex-wrap:wrap!important;gap:10px!important}
-  .hero-cta .btn,.hero-cta a{max-width:100%}
-  .hero-feats{flex-wrap:wrap!important}
-  body{overflow-x:hidden}
-}
-@media (prefers-reduced-motion:reduce){.lj-ticker .track,.lj-band .prog i{animation:none}.lj-band .row ul{transition:none}}
-</style>
-
-<script id="lj-extras-js">
-(function(){
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var T = ['Interior repaints','Exterior repaints','Weatherboards','Render & masonry','Ceilings','Feature walls','Doors & trim','Windows & frames',
-           'Eaves & fascia','Gap sealing','Sanding & filling','Stain blocking','Decorative finishes','Colour consultation','Free quotes','Wyee · Central Coast'];
-  var hero = document.querySelector('.hero') || document.querySelector('header');
-  if (hero && !document.querySelector('.lj-ticker')) {
-    var w = document.createElement('div');
-    w.className = 'lj-ticker'; w.setAttribute('aria-hidden','true');
-    w.innerHTML = '<div class="track">' + T.concat(T).map(function(s){ return '<span>'+s+'<i>&#9670;</i></span>'; }).join('') + '</div>';
-    hero.insertAdjacentElement('afterend', w);
-  }
-  var AREAS = ['Wyee','Wyee Point','Morisset','Morisset Park','Bonnells Bay','Brightwaters','Dora Creek','Cooranbong','Martinsville',
-    'Eraring','Wangi Wangi','Toronto','Coal Point','Carey Bay','Belmont','Caves Beach','Swansea','Nords Wharf','Summerland Point',
-    'Gwandalan','Mannering Park','Chain Valley Bay','Lake Munmorah','Budgewoi','Toukley','The Entrance','Bateau Bay','Terrigal',
-    'Gosford','Woy Woy','Umina Beach','Ettalong','Avoca Beach','Copacabana','Macmasters Beach','Killcare','Berkeley Vale','Tuggerah','Wyong'];
-  var chips = document.getElementById('ljChips');
-  if (chips) chips.innerHTML = AREAS.map(function(a){ return '<span>'+a+'</span>'; }).join('');
-  var GROUPS = [
-    ['Wyee & southern Lake Macquarie','Wyee · Wyee Point · Morisset · Bonnells Bay · Dora Creek'],
-    ['Lake Macquarie east','Toronto · Coal Point · Belmont · Caves Beach · Swansea'],
-    ['The northern Coast','Lake Munmorah · Budgewoi · Toukley · The Entrance · Bateau Bay'],
-    ['Gosford & the beaches','Gosford · Woy Woy · Umina · Avoca · Macmasters'],
-    ['Up into the Hunter','Wyong · Tuggerah · Berkeley Vale · Morisset · Cooranbong']
-  ];
-  var row = document.getElementById('ljAreaRow'), count = document.getElementById('ljAreaCount');
-  if (row) {
-    GROUPS.forEach(function(g,i){
-      var ul = document.createElement('ul'), li = document.createElement('li');
-      if (!i) ul.className = 'on';
-      li.innerHTML = g[0] + '<small>' + g[1] + '</small>';
-      ul.appendChild(li); row.appendChild(ul);
-    });
-    if (!reduce) {
-      var rows = [].slice.call(row.children), k = 0;
-      setInterval(function(){ k = (k+1) % GROUPS.length; rows.forEach(function(u,j){ u.classList.toggle('on', j===k); });
-        if (count) count.textContent = ('0'+(k+1)).slice(-2) + ' / 0' + GROUPS.length; }, 4200);
-    }
-  }
-})();
-</script>
-
 </body>
 </html>
