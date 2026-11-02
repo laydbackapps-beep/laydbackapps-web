@@ -2,245 +2,300 @@
 <html lang="en-AU">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Supreme Fencing &amp; Gate Solutions | Fencing, Gates &amp; Gate Automation</title>
-<meta name="description" content="Supreme Fencing &amp; Gate Solutions builds and installs Colorbond and timber fencing, security gates and automated gate systems.">
-<meta name="theme-color" content="#fbf9f3">
-<link rel="icon" href="assets/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supreme Fencing &amp; Gate Solutions — Fencing, Gates &amp; Automation</title>
+<meta name="description" content="Supreme Fencing &amp; Gate Solutions builds Colorbond and timber fencing, automatic and security gates, and handles gate automation, remotes and repairs.">
+<meta name="theme-color" content="#0c0d0e">
+<meta property="og:title" content="Supreme Fencing &amp; Gate Solutions">
+<meta property="og:description" content="Fencing, automatic and security gates, and gate automation.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="icon" href="assets/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-
-/* Palette read straight off the client's crest: it is a black line-art shield on a cream
-   interior with a hairline antique-gold rule. So the scheme is ink + bone + white, with the
-   gold kept to hairlines only — not used as a fill or a button colour. */
 :root{
-  --paper:#f4f0e4;      /* bone ground */
-  --paper2:#ece7d8;
-  --panel:#ffffff;
-  --bar:#ffffff;        /* the crest's own ground, so the mark sits without a box */
-  --ink:#141109;
-  --muted:#5b5546;
-  --line:#ddd6c2;
-  --hair:#b8912a;       /* the crest's thin gold rule */
-  --hair-soft:rgba(184,145,42,.34);
-  --foot:#141109;
-  --footink:#f6f2e6;
-  --footmuted:rgba(246,242,230,.66);
-  --footline:rgba(246,242,230,.16);
-  --scrim:linear-gradient(100deg,rgba(10,9,6,.94) 0%,rgba(10,9,6,.80) 40%,rgba(10,9,6,.44) 74%,rgba(10,9,6,.28) 100%);
-  --gut:clamp(18px,4.4vw,64px);
-  --sec:clamp(56px,7vw,100px);
-  --rad:6px;
-  --font-d:'Barlow Condensed',system-ui,sans-serif;
-  --font-b:'Archivo',system-ui,sans-serif;
+  --bg:#0c0d0e; --panel:#141618; --panel2:#1a1d20; --line:#2a2e32; --line2:#3a4046;
+  --fg:#f2f3f4; --dim:#a6adb3; --mute:#818a91;
+  --acc:#b2903f; --acc-soft:#c9b178; --hero-acc:#e2c073; --acc-text:#ffffff;
+  --disp:'Archivo',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4.4vw,60px);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .js .rv{opacity:1!important;transform:none!important}
-}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-b);font-size:clamp(16px,1.02vw,17.5px);line-height:1.66;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-a{color:inherit}
-h1,h2,h3{font-family:var(--font-d);font-weight:700;margin:0;letter-spacing:-.005em;line-height:1.05}
-h2{font-size:clamp(1.7rem,3.5vw,2.6rem);margin-bottom:12px}
-h3{font-size:1.06rem;margin-bottom:7px}
-p{margin:0 0 14px}
-.wrap{width:100%;max-width:1240px;margin:0 auto;padding-inline:var(--gut)}
-.skip{position:absolute;left:-9999px;top:0}
-.skip:focus{left:12px;top:12px;z-index:99;background:#fff;color:#000;padding:8px 12px}
-.eyebrow{font-family:var(--font-b);font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--ink);margin:0 0 8px;display:inline-flex;align-items:center;gap:10px}
-.eyebrow::before{content:"";width:26px;height:1px;background:var(--hair);display:block}
-.lede{font-size:1.06rem;color:var(--muted);max-width:62ch;margin:0 0 30px}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-family:var(--disp);font-weight:800;letter-spacing:-.02em;line-height:1.03}
+p{margin:0}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace}
+.wrap{max-width:1360px;margin:0 auto;padding-inline:var(--gut)}
+.eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--dim);display:inline-flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:30px;height:2px;background:var(--acc);flex:none}
+.skip{position:absolute;left:-9999px}
 
-/* ---------- header: one axis, logo + nav + CTA in one bar ---------- */
-.hdr{position:sticky;top:0;z-index:40;background:var(--bar);border-bottom:1px solid var(--line)}
-.hdr-in{display:flex;align-items:center;gap:clamp(14px,2.4vw,34px);padding:8px var(--gut);max-width:1240px;margin:0 auto}
-.brand{display:flex;align-items:center;flex:none;text-decoration:none}
-.brand-logo{height:clamp(56px,5.2vw,84px);width:auto;object-fit:contain}
-.nav{margin-left:auto;display:flex;align-items:center;gap:1.15rem;font-size:.94rem;font-weight:500}
-.nav a{text-decoration:none;color:var(--muted);border-bottom:1px solid transparent;padding-bottom:2px}
-.nav a:hover{color:var(--ink);border-bottom-color:var(--hair)}
-.hdr-cta{font-family:var(--font-b);font-weight:700;background:var(--ink);color:#f7f3e7;text-decoration:none;padding:.66rem 1.1rem;border-radius:var(--rad);white-space:nowrap;font-size:.88rem;flex:none}
-.hdr-cta:hover{background:#2c2308;color:#fff}
-@media(max-width:920px){
-  .brand-logo{height:clamp(50px,10vw,64px)}
-  .nav{display:none}
-  .hdr-cta{margin-left:auto}
+/* ---- nav ---- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:60;transition:background .35s,border-color .35s}
+.nav.solid{background:rgba(10,11,12,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:clamp(12px,2.4vw,34px);padding-block:15px}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand-t{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;line-height:1.12}
+.brand-t small{display:block;font-family:"JetBrains Mono",monospace;font-weight:400;font-size:9.5px;letter-spacing:.2em;color:var(--dim);margin-top:3px}
+.nav-links{display:flex;gap:clamp(12px,1.7vw,28px);margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.nav-links a:hover{color:#fff}
+.nav-tel{flex:none;font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.05em;border:1px solid var(--line2);padding:10px 16px;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.nav-tel:hover{background:var(--acc);color:var(--acc-text);border-color:var(--acc)}
+.nav-cta{flex:none;font-family:var(--disp);font-weight:800;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--acc);color:var(--acc-text);padding:11px 18px;white-space:nowrap}
+.burger{display:none;background:none;border:1px solid var(--line2);color:#fff;padding:9px 11px;cursor:pointer;margin-left:auto}
+.burger span{display:block;width:20px;height:1.5px;background:currentColor;margin:4px 0;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+@media(max-width:960px){
+  .nav-links{position:fixed;inset:76px 0 auto 0;background:rgba(10,11,12,.97);flex-direction:column;padding:1.3rem;gap:.4rem;transform:translateY(-150%);transition:transform .35s ease;border-bottom:1px solid var(--line);font-size:14px}
+  .nav-links.open{transform:none}
+  .nav-links a{padding:.7rem 0;border-bottom:1px solid var(--line)}
+  .nav-tel,.nav-cta{display:none}
+  .burger{display:block}
 }
 
-/* ---------- hero ---------- */
-.hero{position:relative;isolation:isolate;display:flex;align-items:flex-end;min-height:min(78vh,720px);color:#fff;overflow:hidden;background:#0e0c08}
-.hero-bg{position:absolute;inset:0;z-index:-2;overflow:hidden}
-.hero-bg img{width:100%;height:100%;object-fit:cover}
-.hero-scrim{position:absolute;inset:0;z-index:-1;background:var(--scrim)}
-.hero-in{position:relative;padding-bottom:clamp(30px,5vw,64px);padding-top:clamp(60px,9vw,120px);max-width:1240px}
-.hero h1{font-size:clamp(2.3rem,5.3vw,4.3rem);color:#fff;max-width:19ch;text-wrap:balance;text-shadow:0 2px 22px rgba(0,0,0,.45)}
-.hero h1 em{font-style:normal;color:#f2e7cd}
-.hero-sub{margin:16px 0 26px;max-width:56ch;color:rgba(255,255,255,.9);font-size:clamp(1rem,1.15vw,1.14rem);text-shadow:0 1px 12px rgba(0,0,0,.45)}
-.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
-.btn{display:inline-block;font-family:var(--font-b);font-weight:700;background:#f6f2e6;color:var(--ink);text-decoration:none;padding:.9rem 1.5rem;border-radius:var(--rad);font-size:.95rem;white-space:nowrap}
-.btn:hover{background:#fff}
-.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
-.btn-ghost:hover{background:rgba(255,255,255,.12);color:#fff}
-.hero-facts{display:flex;flex-wrap:wrap;gap:8px 10px;list-style:none;margin:0;padding:0}
-.hero-facts li{font-family:var(--font-b);font-size:.78rem;font-weight:600;color:#fff;background:rgba(9,8,5,.6);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:.36rem .8rem}
+/* ---- hero ---- */
+.hero{position:relative;min-height:clamp(660px,100svh,1020px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-3}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 46%;filter:grayscale(.18) contrast(1.05) brightness(.86)}
+.hero-scrim{position:absolute;inset:0;z-index:-2;background:linear-gradient(to top,rgba(8,9,10,.95) 0%,rgba(8,9,10,.84) 24%,rgba(8,9,10,.40) 46%,rgba(8,9,10,.05) 70%,rgba(9,11,13,.22) 100%)}
+.hero-grid{position:absolute;inset:0;z-index:-1;opacity:.4;pointer-events:none;background-image:linear-gradient(to right,rgba(230,232,230,.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(230,232,230,.045) 1px,transparent 1px);background-size:clamp(58px,7.6vw,128px) clamp(58px,7.6vw,128px);-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 24%,#000 60%,transparent 88%);mask-image:linear-gradient(to bottom,transparent 0,#000 24%,#000 60%,transparent 88%)}
+.hero-3d{position:absolute;inset:96px 0 auto;height:54%;z-index:-1;perspective:900px;perspective-origin:60% 40%;pointer-events:none;overflow:hidden}
+.hero-3d .plane{position:absolute;left:-8%;right:-8%;bottom:-16%;height:78%;transform-origin:50% 100%;transform:rotateX(63deg);transition:transform .7s cubic-bezier(.16,.84,.28,1);background-image:repeating-linear-gradient(90deg,rgba(226,228,226,.16) 0 1px,transparent 1px 62px),repeating-linear-gradient(0deg,rgba(226,228,226,.11) 0 1px,transparent 1px 62px);-webkit-mask-image:radial-gradient(ellipse 76% 66% at 50% 76%,#000 8%,transparent 74%);mask-image:radial-gradient(ellipse 76% 66% at 50% 76%,#000 8%,transparent 74%)}
+#heroCanvas{display:none}
+.hero-in{position:relative;z-index:3;padding-bottom:clamp(46px,7vh,88px);width:100%;max-width:min(1360px,94vw)}
+.hero .eyebrow{color:#dfe2e1}
+.hero h1{font-size:clamp(40px,7.2vw,108px);line-height:.95;letter-spacing:-.03em;text-transform:uppercase;font-weight:900;margin-top:18px;max-width:16ch;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.55),0 1px 4px rgba(0,0,0,.5)}
+.hero h1 .acc{color:var(--hero-acc)}
+.hero h1 .thin{display:block;font-family:var(--body);font-weight:600;font-size:clamp(15px,2vw,22px);letter-spacing:0;text-transform:none;color:#d3d8d7;margin-top:16px;max-width:34ch;line-height:1.45}
+.hero-sub{margin-top:20px;color:#e4e9e8;font-size:clamp(.98rem,1.5vw,1.14rem);max-width:56ch;text-shadow:0 1px 16px rgba(0,0,0,.6)}
+.hero-cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:15px 26px;text-decoration:none;font-family:var(--disp);font-weight:800;font-size:13px;letter-spacing:.09em;text-transform:uppercase;transition:transform .15s,filter .15s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--acc);color:var(--acc-text)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:#fff;color:#0c0d0e;border-color:#fff}
+.hero-strip{margin-top:34px;display:flex;gap:clamp(20px,3vw,52px);flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.18);padding-top:20px}
+.hero-strip p{color:#9aa1a0;font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase}
+.hero-strip strong{display:block;color:#fff;font-family:var(--disp);font-size:1.12rem;margin-top:5px;font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+.hero-cardwrap{display:none}
+@media(max-width:760px){
+  .hero{min-height:auto;display:block;background:var(--bg);padding-top:74px}
+  .hero-bg,.hero-scrim,.hero-grid,.hero-3d{display:none}
+  .hero-in{padding-top:12px;padding-bottom:30px}
+  .hero-cardwrap{display:block;margin-bottom:22px}
+  .hero-card{width:100%;height:min(46vh,360px);object-fit:cover;object-position:center 44%;filter:grayscale(.1) contrast(1.04) brightness(.96);border:1px solid var(--line)}
+  .hero h1{font-size:clamp(31px,8.6vw,46px);margin-top:14px}
+  .hero-sub{margin-top:14px}
+  .hero-cta{margin-top:18px}
+  .hero-strip{margin-top:20px;gap:18px 28px;padding-top:16px}
+}
 
-/* ---------- sections ---------- */
-.sec{padding:var(--sec) 0;background:var(--paper)}
-.sec.alt{background:var(--paper2)}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
-.svc{padding:26px 26px 26px 0;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
-.svc:nth-child(3n){border-right:0;padding-right:0}
-.svc:hover h3{text-decoration:underline;text-decoration-color:var(--hair);text-underline-offset:4px}
-.svc p{margin:0;color:var(--muted);font-size:.96rem;max-width:38ch}
-@media(max-width:820px){
-  img.lb-word,img.word,img.brand__word{display:none!important}
-  img.lb-big.lb-big,img.lb-big.lb-big.lb-mark,img.lb-big.lb-big.lb-logo-unlock,img.lb-big.lb-big.lb-logomark{height:clamp(52px,13vw,68px)!important;max-width:72vw!important}
-  header>div,nav>div,[class*=hdr]>div,[class*=bar]>div,[class*=strip]>div{flex-wrap:wrap!important}
-  nav,[class*=nav-links],.nav-links,.links{flex-wrap:wrap!important;gap:10px!important}
-  header,nav,[class*=hdr],[class*=bar],[class*=strip]{max-width:100vw!important;overflow-x:clip!important}
+/* ---- sections ---- */
+section{padding:clamp(58px,8vw,104px) 0}
+.sec-head{display:flex;gap:20px;align-items:flex-start;margin-bottom:clamp(30px,4vw,54px)}
+.sec-idx{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.2em;color:var(--acc);font-weight:600;margin-top:8px}
+.sec-title{font-size:clamp(1.9rem,4vw,3.1rem);font-weight:900;text-transform:uppercase;line-height:1;max-width:26ch}
+.lead{color:var(--dim);max-width:60ch;margin-top:14px;font-size:1.02rem}
+.band{background:var(--panel);border-block:1px solid var(--line)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.15rem}
+.svc{background:var(--panel2);border:1px solid var(--line);padding:1.7rem 1.55rem;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.svc:hover{border-color:var(--acc);transform:translateY(-3px)}
+.svc::after{content:"";position:absolute;top:0;left:0;width:46px;height:3px;background:var(--acc);transition:width .3s}
+.svc:hover::after{width:100%}
+.svc-n{font-family:"JetBrains Mono",monospace;font-size:.76rem;font-weight:600;color:var(--acc);letter-spacing:.14em}
+.svc h3{font-size:1.16rem;margin:.5rem 0 .35rem;text-transform:uppercase;letter-spacing:.005em}
+.svc p{color:var(--dim);font-size:.95rem}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.15rem}
+.step{border-left:2px solid var(--acc);padding:6px 0 6px 22px}
+.step-n{font-family:"JetBrains Mono",monospace;font-size:.78rem;letter-spacing:.16em;color:var(--acc);font-weight:600}
+.step h3{font-size:1.1rem;margin:.4rem 0 .3rem;text-transform:uppercase}
+.step p{color:var(--dim);font-size:.93rem}
+.hgal{overflow-x:auto;scrollbar-width:none;cursor:grab;margin-top:6px}
+.hgal::-webkit-scrollbar{display:none}
+.hgal .track{display:inline-flex;gap:18px;padding:0 var(--gut)}
+.hg-item{flex:0 0 auto;width:min(520px,80vw);margin:0}
+.hg-item img{width:100%;height:360px;object-fit:cover;display:block}
+.hg-item figcaption{display:flex;justify-content:space-between;padding:12px 2px;font-size:12.5px;color:var(--dim);font-family:"JetBrains Mono",monospace;letter-spacing:.04em;text-transform:uppercase}
+.trust-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
+.tr-i{display:flex;gap:14px;align-items:flex-start}
+.tr-t{width:32px;height:32px;flex:none;background:var(--acc);color:var(--acc-text);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900}
+.tr-i b{font-size:15px;display:block;text-transform:uppercase;font-family:var(--disp)}
+.tr-i span{font-size:13px;color:var(--dim)}
+.stat-band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.stat{border-top:3px solid var(--acc);padding-top:16px}
+.stat b{font-size:clamp(34px,4.4vw,58px);font-weight:900;letter-spacing:-.03em;display:block;line-height:1;color:#fff;font-family:var(--disp)}
+.stat span{font-size:12px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-top:8px;display:block;font-family:"JetBrains Mono",monospace}
+@media(max-width:900px){.stat-band .wrap{grid-template-columns:repeat(2,1fr)}}
+.faq-wrap{max-width:940px}
+details.faq{border-top:1px solid var(--line);padding:22px 0}
+details.faq:last-of-type{border-bottom:1px solid var(--line)}
+details.faq summary{font-size:18px;font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:var(--disp);text-transform:uppercase;letter-spacing:.005em}
+details.faq summary::after{content:"+";font-size:26px;color:var(--acc);font-weight:400}
+details.faq[open] summary::after{transform:rotate(45deg)}
+details.faq .a{color:var(--dim);padding:14px 0 4px;max-width:720px}
+footer{border-top:1px solid var(--line);padding:64px 0 0;background:var(--bg)}
+footer .fwrap{max-width:1360px;margin:0 auto;padding:0 var(--gut);display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px}
+footer h4{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:16px}
+footer a{display:block;color:var(--dim);font-size:14px;padding:5px 0}
+footer a:hover{color:#fff}
+.fbar{max-width:1360px;margin:48px auto 0;padding:20px var(--gut);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--mute);font-family:"JetBrains Mono",monospace}
+@media(max-width:900px){footer .fwrap{grid-template-columns:1fr 1fr}}
+footer .brand-t{color:#fff}
+/* reveals */
+html.js .drop{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+html.js .drop.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html.js .drop{opacity:1;transform:none;transition:none}
+  .hero-3d .plane{transition:none}
+  *{animation-duration:.001s !important;transition-duration:.001s !important}
 }
 </style>
-<style id="logo-big">
-/* logo blown up to fill the bar - the client's own artwork at a size people can read, not a thumbnail in the corner */
-img.lb-big,img.lb-big.lb-mark,img.lb-big.lb-logo-unlock,img.lb-big.lb-logomark{height:clamp(84px,7.6vw,104px)!important;
-  width:auto!important;max-width:none!important;max-height:none!important;object-fit:contain!important;display:block!important;flex:0 0 auto!important}
-img.lb-word{height:clamp(22px,2.1vw,30px)!important;width:auto!important;max-width:none!important;max-height:none!important;
-  object-fit:contain!important;display:block!important;margin-left:clamp(8px,1vw,14px)!important;flex:0 0 auto!important}
-a:has(> img.lb-big){display:flex!important;align-items:center!important;gap:0!important;flex:0 0 auto!important;min-width:0!important}
-header,nav,[class*=hdr],[class*=bar],[class*=strip]{min-height:0!important;height:auto!important}
-header>div,nav>div,[class*=hdr]>div,[class*=bar]>div,[class*=strip]>div{flex-wrap:nowrap!important;align-items:center!important;
-  row-gap:0!important;min-height:0!important;height:auto!important}
-nav,[class*=nav-links],.nav-links,.links{flex-wrap:nowrap!important;gap:clamp(10px,1.3vw,20px)!important;min-width:0!important}
-nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:14px!important}
-@media(max-width:1080px){img.lb-big,img.lb-big.lb-mark,img.lb-big.lb-logo-unlock{height:clamp(64px,8vw,84px)!important}
-  nav a,[class*=nav-links] a,.nav-links a{font-size:13px!important}}
-@media(max-width:820px){img.lb-word{display:none!important}}
-</style></head>
+<style id="rwk-overrides">
+.hero-in{padding-inline:var(--gut)}
+.hero-bg img{filter:saturate(1.08) contrast(1.02)}
+.hero-scrim{background:linear-gradient(to top,rgba(8,9,10,.94) 0%,rgba(8,9,10,.78) 22%,rgba(8,9,10,.32) 46%,rgba(8,9,10,.03) 72%,rgba(9,11,13,.16) 100%)}
+.nav{background:linear-gradient(to bottom,rgba(8,9,10,.70),rgba(8,9,10,.12) 70%,rgba(8,9,10,0));backdrop-filter:blur(8px)}
+.nav.solid{background:rgba(10,11,12,.94)}
+.brand-mark{height:58px;width:auto;display:block;flex:none}
+.brand-word{height:24px;width:auto;max-width:32vw;display:block;flex:none}
+.brand{gap:14px;align-items:center;justify-content:space-between}
+.brand-l{display:flex;align-items:center;gap:14px;min-width:0}
+.brand-t small{font-size:10.5px;color:#cbd1d6;letter-spacing:.15em}
+@media(max-width:640px){.brand-mark{height:44px}.brand-word{height:19px}}
+.hero h1{max-width:13ch}
+</style>
+</head>
 <body>
-<a class="skip" href="#services">Skip to content</a>
+<script>document.documentElement.className+=' js';</script>
+<nav class="nav" id="nav"><div class="wrap nav-in">
+  <a class="brand" href="#top"><span class="brand-l"><img class="brand-mark" src="assets/logo-mark.png" alt="Supreme Fencing logo"></span><span class="brand-t">Supreme Fencing<small>Fencing, gates &amp; gate automation</small></span></a>
+  <div class="nav-links" id="navlinks"><a href="#services">Services</a><a href="#process">Process</a><a href="#work">Work</a><a href="#faq">FAQ</a><a href="#quote">Quote</a></div>
+  <a class="nav-tel" href="tel:+61434213606">0434 213 606</a>
+  <a class="nav-cta" href="#quote">Get a quote</a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></nav>
 
-<header class="hdr" id="top">
-  <div class="hdr-in">
-    <a href="#top" class="brand" aria-label="Supreme Fencing &amp; Gate Solutions"><img src="assets/logo.png" alt="Supreme Fencing &amp; Gate Solutions" class="brand-logo lb-big" width="600" height="536"></a>
-    <nav class="nav" aria-label="Main">
-      <a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#quote">Quote</a>
-    </nav>
-    <a class="tel" href="tel:0434213606">Call 0434 213 606</a>
-<a class="hdr-cta" href="#quote">Request a quote</a>
+<header class="hero" id="top"><!-- LB-3D-HERO -->
+  <div class="hero-bg"><img src="assets/hero.jpg" alt="Fence line and gate" width="1600" height="1000"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-3d" aria-hidden="true"><div class="plane"></div></div>
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-in">
+    <div class="hero-cardwrap"><img class="hero-card" src="assets/hero.jpg" alt="Fence line and gate" width="1200" height="800"></div>
+    <span class="eyebrow">Fencing, security gates &amp; automation</span>
+    <h1>Lines that hold.<br><span class="acc">Gates that work.</span></h1>
+    <p class="hero-sub">Colorbond and timber fencing, automatic and security gates, and the automation behind them &mdash; set out straight, posts set solid, hardware commissioned.</p>
+    <div class="hero-cta"><a class="btn btn-primary" href="#quote">Get a free quote</a><a class="btn btn-ghost" href="tel:+61434213606">Call 0434 213 606</a></div>
+    <div class="hero-strip"><p>Colorbond<strong>&amp; timber</strong></p><p>Automatic<strong>Gates</strong></p><p>Free<strong>Quotes</strong></p></div>
   </div>
 </header>
 
-<section class="hero" id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-scrim"></div>
-  <div class="wrap hero-in">
-    <h1>Fencing, security gates and <em>automation</em>.</h1>
-    <p class="hero-sub">Colorbond and timber fence lines, security gates and gate automation &mdash; set out, posts set in concrete, gates hung square and swinging right.</p>
-    <div class="hero-cta"><a class="btn" href="#quote">Request a quote</a><a class="btn btn-ghost" href="#work">See the work</a></div>
-    <ul class="hero-facts"><li>Colorbond</li><li>Timber</li><li>Security gates</li><li>Gate automation</li></ul>
-  </div>
+<section id="services"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">01 / SERVICES</span><div><h2 class="sec-title">What we build</h2><p class="lead">Fencing and gate work built to the boundary and to the job.</p></div></div>
+  <div class="svc-grid"><div class="svc drop d1"><span class="svc-n">01</span><h3>Colorbond fencing</h3><p>Colorbond runs set out on the boundary with posts set in concrete.</p></div><div class="svc drop d2"><span class="svc-n">02</span><h3>Timber fencing</h3><p>Paling and timber fencing built plumb with rails fixed properly.</p></div><div class="svc drop d3"><span class="svc-n">03</span><h3>Automatic gates</h3><p>Swing and sliding gates built to suit the opening and the drive.</p></div><div class="svc drop d4"><span class="svc-n">04</span><h3>Gate automation &amp; remotes</h3><p>Operators fitted, limits set and remotes paired and handed over.</p></div><div class="svc drop d5"><span class="svc-n">05</span><h3>Security gates</h3><p>Gated entries with the hardware to keep the property closed.</p></div><div class="svc drop d6"><span class="svc-n">06</span><h3>Repairs</h3><p>Storm and impact damage repaired, posts re-set and gates re-hung.</p></div></div>
+</div></section>
+
+<section class="band" id="process"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">02 / PROCESS</span><div><h2 class="sec-title">Set out. Set posts. Build. Commission.</h2></div></div>
+  <div class="steps"><div class="step drop d1"><span class="step-n">STEP 01</span><h3>Set out</h3><p>The line and opening are measured and set out with you.</p></div><div class="step drop d2"><span class="step-n">STEP 02</span><h3>Set the posts</h3><p>Posts dug, set in concrete and checked plumb.</p></div><div class="step drop d3"><span class="step-n">STEP 03</span><h3>Build</h3><p>Fence run or gate built to the line and hung to swing clear.</p></div><div class="step drop d4"><span class="step-n">STEP 04</span><h3>Commission</h3><p>Automation limits and remotes set, then walked through.</p></div></div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">03 / WORK</span><div><h2 class="sec-title">Fencing &amp; gates</h2><p class="lead">Fence runs, gate builds and automation.</p></div></div>
+</div>
+<div class="hgal drop"><div class="track"><figure class="hg-item"><img src="assets/g1.jpg" alt="Fence run" loading="lazy"><figcaption><span>Fence run</span><span>/01</span></figcaption></figure><figure class="hg-item"><img src="assets/g2.jpg" alt="Gate build" loading="lazy"><figcaption><span>Gate build</span><span>/02</span></figcaption></figure><figure class="hg-item"><img src="assets/g3.jpg" alt="Automation hardware" loading="lazy"><figcaption><span>Automation hardware</span><span>/03</span></figcaption></figure></div></div>
 </section>
 
-<main>
-<section class="sec" id="services">
-  <div class="wrap rv">
-    <p class="eyebrow">What we build</p>
-    <h2>Fence lines and gates, from the post to the motor</h2>
-    <p class="lede">Boundary fencing, privacy and security work, and gate systems that open and close the way they should.</p>
-    <div class="svc-grid"><article class="svc"><h3>Colorbond fencing</h3><p>Panels set out to the boundary and run straight, with capping and plinth done neatly.</p></article><article class="svc"><h3>Timber fencing &amp; screens</h3><p>Paling, lapped and paling-on-steel fence lines, plus screens and slatted privacy runs.</p></article><article class="svc"><h3>Security gates</h3><p>Framed and clad gate leaves built for a driveway or side access and hung to clear the ground.</p></article><article class="svc"><h3>Gate automation</h3><p>Sliding and swing motors fitted to the gate, with remotes and the safety gear set up.</p></article><article class="svc"><h3>Gate frames &amp; hardware</h3><p>Frames welded square, hinges, tracks, rollers and latches fitted to suit the gate.</p></article><article class="svc"><h3>Repairs &amp; re-hangs</h3><p>Sagging gates, leaning posts and tired fence runs put right or replaced section by section.</p></article></div>
-  </div>
-</section>
+<section id="trust"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">04 / WHY US</span><div><h2 class="sec-title">Why Supreme</h2></div></div>
+  <div class="trust-strip"><div class="tr-i drop d1"><div class="tr-t">&#10003;</div><div><b>Straight lines</b><span>Set out and strung before a post goes in</span></div></div><div class="tr-i drop d2"><div class="tr-t">&#10003;</div><div><b>Posts set solid</b><span>Concreted and plumb</span></div></div><div class="tr-i drop d3"><div class="tr-t">&#10003;</div><div><b>Automation commissioned</b><span>Limits and remotes set on site</span></div></div><div class="tr-i drop d4"><div class="tr-t">&#10003;</div><div><b>Repairs too</b><span>Storm damage and re-hangs</span></div></div></div>
+</div></section>
 
-<section class="sec alt" id="work">
-  <div class="wrap rv">
-    <p class="eyebrow">Recent work</p>
-    <h2>Fences, gates and the build behind them</h2>
-    <p class="lede">Boundary runs, privacy fences and hung gates in the same vein as these &mdash; a job like this.</p>
-    <div class="gal"><div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div><div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div><div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div><div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div></div>
-  </div>
-</section>
+<section class="stat-band band"><div class="wrap"><div class="stat drop d1"><b>Colorbond</b><span>&amp; timber</span></div><div class="stat drop d2"><b>Automatic</b><span>Gates</span></div><div class="stat drop d3"><b>Free</b><span>Quotes</span></div></div></section>
 
-<section class="sec" id="about">
-  <div class="wrap about rv">
-    <div class="about-copy">
-      <p class="eyebrow">About</p>
-      <h2>Fencing and gates built to stay straight</h2>
-      <p>Supreme Fencing &amp; Gate Solutions sets out and builds fence lines and gates: posts dug and set in concrete, rails and palings run true, and gate leaves hung so they clear the ground and latch the first time.</p>
-      <p>Automation is set up as part of the same job &mdash; the motor, the track and the safety gear fitted to the gate that is already on site, then tested through a full open and close before handover.</p>
-      <ul class="ticks"><li>Colorbond and timber fence lines</li><li>Security gates and side-access gates</li><li>Sliding and swing gate automation</li><li>Posts set in concrete, not just driven</li><li>Gates hung square and adjusted on site</li></ul>
+<section id="faq"><div class="wrap faq-wrap">
+  <div class="sec-head"><span class="sec-idx">05 / FAQ</span><div><h2 class="sec-title">Fencing questions</h2></div></div>
+  <details class="faq drop"><summary>What fencing do you build?</summary><div class="a">Colorbond and timber fencing, automatic and security gates, plus automation and repairs.</div></details><details class="faq drop"><summary>Do you supply and fit automation?</summary><div class="a">Yes &mdash; operators fitted, limits set and remotes paired.</div></details><details class="faq drop"><summary>Do you do repairs?</summary><div class="a">Yes &mdash; damaged panels, posts and gates repaired and re-hung.</div></details><details class="faq drop"><summary>How do I get a quote?</summary><div class="a">Send the form with the run length, the gate opening and the suburb.</div></details>
+</div></section>
+
+<span id="quote" style="display:block;height:0;scroll-margin-top:90px"></span>
+<section id="lbq" aria-labelledby="lbq-h">
+<style>
+#lbq{--lbq-accent:var(--acc);--lbq-ink:var(--ink);--lbq-muted:var(--ink2);--lbq-bg:var(--paper2);--lbq-panel:#fff;--lbq-line:var(--line);padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
+@media(max-width:900px){#lbq .lbq-w{grid-template-columns:1fr}}
+#lbq h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0 0 10px;letter-spacing:-.02em;font-family:var(--disp)}
+#lbq p.lbq-s{margin:0 0 22px;color:var(--lbq-muted);max-width:52ch}
+#lbq .lbq-info{display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--lbq-line);padding-top:22px}
+#lbq .lbq-info div{display:flex;gap:10px;align-items:baseline}
+#lbq .lbq-info b{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lbq-accent);min-width:64px}
+#lbq .lbq-info a{font-weight:800;text-decoration:none}
+#lbq .lbq-f{display:grid;gap:12px;background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
+#lbq label{display:block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--paper);color:var(--ink);font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:var(--lbq-acc-text,#0b0e12);font:inherit;font-weight:800;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+</style>
+<div class="lbq-w">
+  <div>
+    <h2 id="lbq-h">Get a free quote</h2>
+    <p class="lbq-s">Tell us about the job and we&rsquo;ll come back with a firm price &mdash; no surprises, no obligation.</p>
+    <div class="lbq-info">
+      <div><b>Call</b><a href="tel:+61434213606">0434 213 606</a></div>
+      
+      <div><b>Area</b><span></span></div>
     </div>
-    <aside class="factbox">
-      <strong>At a glance</strong>
-      <dl><dt>Business</dt><dd>Supreme Fencing &amp; Gate Solutions</dd><dt>Trade</dt><dd>Fencing &amp; gates</dd><dt>Materials</dt><dd>Colorbond &middot; timber</dd><dt>Gates</dt><dd>Security &amp; automated</dd><dt>Quote</dt><dd>Send the fence run</dd></dl>
-    </aside>
   </div>
-</section>
-
-<section class="sec alt" id="process">
-  <div class="wrap rv">
-    <p class="eyebrow">Process</p>
-    <h2>How a fence line goes in</h2>
-    <p class="lede">Set out to the boundary, then build it plumb.</p>
-    <ol class="steps"><li class="step"><h3>Measure &amp; set out</h3><p>Line run set out along the boundary, corners and gate openings marked.</p></li><li class="step"><h3>Dig &amp; set posts</h3><p>Holes dug to depth, posts set plumb and concreted.</p></li><li class="step"><h3>Build &amp; hang gates</h3><p>Rails, palings and panels run on, gate leaves hung and latched.</p></li><li class="step"><h3>Automate &amp; test</h3><p>Motor, track and safety gear fitted, then cycled open and closed.</p></li></ol>
-  </div>
-</section>
-
-<section class="sec" id="contact">
-  <div class="wrap rv">
-    <div class="band">
-      <h2>Need a fence run or a new gate?</h2>
-      <p>Send the length of the run, the material and whether the gate needs automating.</p>
-      <a class="btn" href="#quote">Request a quote</a>
-    </div>
-  </div>
-</section>
-</main>
-
-<section id="lbq" class="v3" aria-labelledby="lbq-h">
-  <div class="lbq-w">
-    <div class="lbq-sp">
-      <div class="lbq-side">
-        <h2 id="lbq-h">Get a price on fencing or a gate</h2>
-        <p class="lbq-s">Tell us the run, the material and what the gate needs to do.</p>
-        <ul class="lbq-pts"><li>Boundary or internal fence runs</li><li>Colorbond, timber or a mix</li><li>Gates, including automation</li><li>A number or email back to you</li></ul>
+  <form id="lbq-form" novalidate data-site="supreme-fencing-gate-solutions" data-biz="Supreme Fencing &amp; Gate Solutions">
+    <div class="lbq-f">
+      <div class="lbq-g">
+        <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+        <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
+        <div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
+        <div class="lbq-full"><label for="lbq-svc">Service</label>
+          <select id="lbq-svc" name="service"><option>Colorbond fence</option><option>Timber fence</option><option>Automatic gate</option><option>Security gate</option><option>Automation &amp; remotes</option><option>Repair</option><option>Other</option></select>
+        </div>
+        <div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Run length, gate opening, suburb and timing&hellip;" required></textarea></div>
       </div>
-      <div>
-        <form id="lbq-form" novalidate data-site="supreme-fencing-gate-solutions" data-biz="Supreme Fencing &amp; Gate Solutions">
-          <div class="lbq-g">
-            <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
-            <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
-            <div class="lbq-full"><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
-            <div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Length of the fence run, material, and any gate or automation needed&hellip;" required></textarea></div>
-          </div>
-          <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
-          <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
-          <button type="submit">Send quote request</button>
-          <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
-        </form>
-      </div>
+      <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
+      <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit">Send quote request</button>
+      <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
     </div>
-  </div>
-  <script>
+  </form>
+</div>
+<script>
 (function(){
+  var EP = null;
   function base(cb){
     if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
-    var EP = 'https://grocery-periodically-everyone-wine.trycloudflare.com';
     var done = false;
-    var t = setTimeout(function(){ if(!done){done=true;cb(EP);} }, 2500);
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
     fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
       .then(function(r){ return r.text(); })
       .then(function(txt){
         var b = (txt||'').trim().replace(/\/+$/, '');
-        if (done) return; done = true; clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : EP);
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
       })
-      .catch(function(){ if(!done){done=true;clearTimeout(t);cb(EP);} });
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
   }
   function init(){
     var f = document.getElementById('lbq-form');
@@ -254,25 +309,38 @@ nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:1
       if (d.website) return;
       if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
         st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
-        st.style.color = '#e0a49a'; return;
+        st.style.color = '#ff9d8a';
+        return;
       }
-      btn.disabled = true; st.textContent = 'Sending\u2026'; st.style.color = '';
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
       base(function(B){
-        fetch(B + '/functions/v1/quote-request', {
+        var url = B + '/functions/v1/quote-request';
+        fetch(url, {
           method:'POST',
           headers:{'Content-Type':'application/json'},
-          body: JSON.stringify({ site_id: f.dataset.site || '', business_name: f.dataset.biz || '',
-            name: d.name, phone: d.phone, email: d.email, service: d.service || '',
-            message: d.message, consent: !!d.consent })
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
         })
         .then(function(r){ return r.json().catch(function(){ return {}; }); })
         .then(function(x){
-          if (x && x.success) { f.reset(); st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly."; st.style.color = '#f6f2e6'; }
-          else throw new Error((x && x.error) || 'Could not send');
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
         })
         .catch(function(err){
-          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again.';
-          st.style.color = '#e0a49a';
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
         })
         .finally(function(){ btn.disabled = false; });
       });
@@ -281,41 +349,35 @@ nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:1
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
-  </script>
+</script>
 </section>
 
-<footer>
-  <div class="f-in">
-    <div>
-      <strong>Supreme Fencing &amp; Gate Solutions</strong>
-      <p>Colorbond and timber fencing, security gates and gate automation, installed and adjusted on site.</p>
-    </div>
-    <div>
-      <strong>Quote requests</strong>
-      <p>Send the details through the form on this page &mdash; the job, the site and what you need done &mdash; and we will come back to you.</p>
-    </div>
-    <div>
-      <strong>On this site</strong>
-      <p><a href="#services">Services</a><br><a href="#work">Work</a><br><a href="#about">About</a><br><a href="#quote">Request a quote</a><br><a href="privacy.html">Privacy</a><br><a href="terms.html">Terms</a></p>
-    </div>
+<footer><div class="fwrap">
+  <div>
+    <span class="brand-t">Supreme Fencing<small>Fencing, gates &amp; gate automation</small></span>
+    <p style="margin-top:16px;font-size:13.5px;max-width:320px;color:var(--dim);">Fencing, gates and gate automation.</p>
   </div>
-  <div class="f-leg"><span>&copy; <span id="yr">2026</span> Supreme Fencing &amp; Gate Solutions</span><span>Fencing &amp; gates &middot; gate automation</span></div>
+  <div><h4>Services</h4><a href="#services">Colorbond fencing</a><a href="#services">Timber fencing</a><a href="#services">Automatic gates</a><a href="#services">Automation</a></div><div><h4>Company</h4><a href="#work">Work</a><a href="#faq">FAQ</a><a href="#quote">Free quote</a></div>
+  <div><h4>Contact</h4><a href="tel:+61434213606">0434 213 606</a><a href="#quote">Free quote</a></div>
+</div>
+<div class="fbar"><span>&copy; 2026 SUPREME FENCING &AMP; GATE SOLUTIONS &middot; </span><span></span></div>
 </footer>
 
 <script>
-(function(){
-  var els = document.querySelectorAll('.rv');
-  function all(){ for (var i=0;i<els.length;i++){ els[i].classList.add('on'); } }
-  document.documentElement.classList.add('js');
-  if ('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(en){
-      for (var i=0;i<en.length;i++){ if(en[i].isIntersecting){ en[i].target.classList.add('on'); io.unobserve(en[i].target); } }
-    },{rootMargin:'0px 0px -6% 0px',threshold:.08});
-    for (var i=0;i<els.length;i++){ io.observe(els[i]); }
-  } else { all(); }
-  setTimeout(all, 1100);
-  var y=document.getElementById('yr'); if(y) y.textContent=String(new Date().getFullYear());
-})();
+(function(){var b=document.getElementById('burger'),n=document.getElementById('navlinks');if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});}})();
+(function(){var nv=document.getElementById('nav');function on(){var y=window.scrollY||window.pageYOffset;nv.classList.toggle('solid',y>40);}on();window.addEventListener('scroll',on,{passive:true});})();
+(function(){var els=document.querySelectorAll('.drop');if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el);});}else{els.forEach(function(el){el.classList.add('in');});}})();
+setTimeout(function(){document.querySelectorAll('.drop').forEach(function(el){el.classList.add('in');});},1100);
+/* 3D hero — building blocks rising in perspective (builder) */
+(function(){var c=document.getElementById('heroCanvas');if(!c||!c.getContext)return;var ctx=c.getContext('2d');var DPR=Math.max(1,window.devicePixelRatio||1);var W=0,H=0,reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;var px=0,py=0;window.addEventListener('pointermove',function(e){px=(e.clientX/innerWidth-.5)*16;py=(e.clientY/innerHeight-.5)*10;},{passive:true});
+function resize(){W=c.clientWidth||c.offsetWidth;H=c.clientHeight||c.offsetHeight;if(!W||!H)return;c.width=Math.round(W*DPR);c.height=Math.round(H*DPR);ctx.setTransform(DPR,0,0,DPR,0,0);}
+function loop(t){if(!W||!H){resize();return;}frame(t||0);if(!reduce)requestAnimationFrame(loop);}
+function frame(t){var time=t*.001;ctx.clearRect(0,0,W,H);var g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#0c0d0e');g.addColorStop(1,'#141618');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+var ground=H*.72+py*.4;var rows=6,cols=9;var bw=W*.075,bh=H*.05;var x0=W*.14;function ease(u){return u<0.5?2*u*u:1-Math.pow(-2*u+2,2)/2;}
+for(var r=0;r<rows;r++){var ct=time-r*0.55;if(ct<0)continue;for(var cc=0;cc<cols;cc++){var d=ct-cc*0.05;if(d<0)continue;var e=Math.min(1,d/0.6);e=ease(e);var x=x0+cc*bw+(r%2? bw*.5:0);var y=ground-r*H*.058-e*(H*.5-r*H*.058);ctx.fillStyle='rgba(178,144,63,'+(0.10+0.16*e)+')';ctx.fillRect(x,y,bw*.86,bh);ctx.strokeStyle='rgba(201,177,120,'+(0.22*e)+')';ctx.lineWidth=1.2;ctx.strokeRect(x,y,bw*.86,bh);}}}
+resize();window.addEventListener('resize',resize);requestAnimationFrame(loop);})();
+(function(){var c=document.getElementById('heroCanvas');if(!c)return;var h=document.querySelector('.hero-3d');if(!h)return;var pl=h.querySelector('.plane');window.addEventListener('pointermove',function(e){var px=(e.clientX/innerWidth-.5);var py=(e.clientY/innerHeight-.5);pl.style.transform='rotateX('+(63-py*5).toFixed(2)+'deg) translateX('+(px*22).toFixed(1)+'px)';},{passive:true});})();
+(function(){var g=document.querySelector('.hgal');if(!g)return;var d=0,x0=0;g.addEventListener('pointerdown',function(e){d=1;x0=e.clientX+g.scrollLeft;});window.addEventListener('pointerup',function(){d=0;});g.addEventListener('pointermove',function(e){if(d){g.scrollLeft=x0-e.clientX;}});})();
 </script>
 </body>
 </html>
