@@ -1,558 +1,535 @@
 <!doctype html>
-<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Walsh Electrical, Licensed Electrician</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="/assets/logo-mark_walsh-electrical.png">
-<style>
-:root{--bg:#F0F4F8;--ink:#0A0A0A;--acc:#0066CC;--acc-2:#FF6B00;--acc-dark:#004499;--mid:#CBD5E1;--mid-dark:#94A3B8;--card:#FFFFFF;--line:#CBD5E1;--shadow:rgba(0,102,204,.08);--shadow-strong:rgba(0,102,204,.14);--bg-2:#E0E8F0;--ink-2:#1A1A2E;--panel:#FFFFFF}
-html{scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*, *::before, *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
-img{max-width:100%;height:auto;display:block}
-a{color:inherit;text-decoration:none}
-.skip{position:absolute;top:-100%;left:1rem;padding:.75rem 1rem;background:var(--acc);color:#fff;border-radius:0 0 6px 6px;z-index:100;font-weight:600}.skip:focus{top:0}
-.brand{display:flex;align-items:center;gap:.8rem;color:var(--ink);text-decoration:none}.brand-mark{height:32px;width:auto;display:block}.brand-txt{display:flex;flex-direction:column;line-height:1}.brand-name{font-family:'Montserrat',sans-serif;font-size:1.16rem;line-height:1;font-weight:700}.brand-sub{display:block;margin-top:4px;font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;font-weight:700;font-style:normal;opacity:.75}.brand-sub em{font-style:normal;opacity:1;color:var(--acc)}
-@media (max-width:680px){.brand-mark{height:24px}.brand-name{font-size:1.02rem}.brand-sub{display:none}}
-nav{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(240,244,248,.92);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line);z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem}.nav-cta{display:flex;gap:.75rem;align-items:center}.btn{display:inline-flex;align-items:center;justify-content:center;padding:.65rem 1.25rem;border-radius:6px;font-family:Montserrat,sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.02em;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease}.btn:active{transform:scale(.98)}.btn-primary{background:var(--acc);color:#fff;border:none}.btn-primary:hover{box-shadow:0 6px 20px rgba(0,102,204,.35)}.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--mid)}.btn-ghost:hover{background:var(--mid);border-color:var(--mid-dark)}
-section{padding:6rem 1.5rem}@media (max-width:680px){section{padding:4rem 1rem}}
-.container{max-width:1100px;margin:0 auto}
-h1,h2,h3{font-family:Montserrat,sans-serif;line-height:1.1;margin:0}h1{font-weight:800;font-size:clamp(36px,6vw,72px)}h2{font-weight:700;font-size:clamp(28px,4vw,40px)}h3{font-weight:700;font-size:1.25rem}
-p{margin:.75rem 0 0}header{text-align:center;margin-bottom:3rem}header p{font-size:1.125rem;color:var(--ink-2);max-width:60ch;margin:1rem auto 0}
-.service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}.service-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:2rem;transition:transform .2s ease,box-shadow .2s ease}.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-strong)}.service-card h3{color:var(--acc);margin-bottom:.5rem}
-.section-marquee{overflow:hidden;background:var(--ink);color:#fff;padding:2rem 0}.marquee-track{display:flex;gap:3rem;animation:marquee 30s linear infinite;white-space:nowrap}.marquee-track span{font:700 1.1rem/1 Montserrat,sans-serif;letter-spacing:.02em}@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-#lbq{margin:0 auto}.quote-form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:2.5rem}.row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}@media (max-width:680px){.row{grid-template-columns:1fr}}.quote-form label{display:block;font:600 .85rem/1 Montserrat,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);margin-bottom:.5rem}.quote-form input,.quote-form select,.quote-form textarea{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:8px;font:inherit;background:var(--bg);color:var(--ink);box-sizing:border-box}.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px rgba(0,102,204,.15)}.consent{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1.5rem;font-size:.9rem;color:var(--ink-2)}.consent input{width:auto;margin-top:.2rem}#form-status{min-height:1.25rem;margin-top:1rem;font-size:.9rem}
-.site-footer{background:var(--ink);color:#fff;padding:4rem 1.5rem 2rem}.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1100px;margin:0 auto}.footer-brand{color:#fff;text-decoration:none}.footer-desc{color:var(--mid);margin:1rem 0}.footer-location{color:var(--mid-dark);font-size:.9rem}.footer-license{color:var(--mid-dark);font-size:.85rem;margin-top:1rem}.footer-cta{display:flex;flex-direction:column;gap:1rem}.footer-cta .btn{width:fit-content}.footer-social{color:var(--mid);font-size:.9rem}.footer-social:hover{color:var(--acc-2)}.footer-divider{border:none;border-top:1px solid rgba(203,213,225,.2);margin:2rem auto 1.5rem;max-width:1100px}.footer-copyright{text-align:center;color:var(--mid-dark);font-size:.8rem;max-width:1100px;margin:0 auto}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.rv.revealed{opacity:1;transform:none}[data-ux="words"] .word{display:inline-block;opacity:0;transform:translateY(1.2em)}[data-ux="words"].revealed .word{animation:wordReveal .8s cubic-bezier(.16,1,.3,1) forwards}@keyframes wordReveal{to{opacity:1;transform:none}}
-.magnetic{position:relative;overflow:hidden}.magnetic::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.15),transparent 70%);opacity:0;transition:opacity .2s}.magnetic:hover::before{opacity:1}
-#reveal-net{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0;transition:opacity .3s}#reveal-net.active{opacity:1}
-</style><style id="lb-brand-css">
-/* ==== LB BRAND (logo-true spanning wordmark) ==== */
-.lb-brand{display:inline-flex;align-items:center;gap:clamp(9px,1vw,16px);text-decoration:none;
- color:inherit;min-width:0;padding:0;background:none;border:0;flex:0 1 auto}
-.lb-brand__mark{flex:0 0 auto;display:block;height:clamp(34px,4.1vw,58px);width:auto;max-width:22vw}
-.lb-brand__mark img{display:block;height:100%;width:auto;max-width:22vw;object-fit:contain}
-.lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:.94}
-.lb-brand__name{font-family:var(--lb-disp,Inter),sans-serif;font-weight:800;text-transform:uppercase;
- font-size:clamp(21px,2.75vw,44px);letter-spacing:.004em;white-space:nowrap;line-height:.92;
- color:var(--lb-name,currentColor)}
-.lb-brand__name .lb-acc{color:var(--lb-acc,currentColor)}
-.lb-brand__sub{font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;text-transform:uppercase;
- font-size:clamp(7px,.82vw,12px);letter-spacing:.30em;white-space:nowrap;margin-top:.34em;
- color:var(--lb-subc,currentColor);opacity:.86}
-.lb-brand__rule{display:block;height:3px;width:100%;margin-top:.5em;border-radius:2px;
- background:linear-gradient(90deg,var(--lb-acc,currentColor),transparent)}
-@media (max-width:640px){
- .lb-brand__mark{height:clamp(30px,8vw,40px)}
- .lb-brand__name{font-size:clamp(18px,6.2vw,26px)}
- .lb-brand__sub{letter-spacing:.2em;font-size:7px}
-}
-</style>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Walsh Electrical — Electrician | Switchboards, wiring &amp; fault finding</title>
+<meta name="description" content="Walsh Electrical: residential and commercial electrician. Switchboard upgrades, RCD and safety switches, new wiring, lighting and fault finding. Call 0423 341 124.">
+<meta name="theme-color" content="#070A0E">
+<meta property="og:title" content="Walsh Electrical">
+<meta property="og:description" content="Residential and commercial electrical work: switchboard upgrades, safety switches, wiring and fault finding. Call 0423 341 124.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<style id="lb-motion-css">
-/* ==== LB MOTION PACK ==== */
-.lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
-/* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
-   content. Unrevealed .rv wrappers left whole headers at opacity:0 (invisible logo). */
-header, .site-header, .page-header, nav.nav, .nav .rv, nav.rv, .header-inner, .nav-inner,
-header .rv, .site-header .rv, .nav-inner .rv{
-  opacity:1 !important; visibility:visible !important; transform:none !important;
-}
-.lb-rb{position:relative;width:100%;max-width:100%;overflow:hidden;background:#0c0d10}
-.lb-mq{max-width:100%;overflow:hidden}
-.lb-rb__track{position:relative;width:100%;aspect-ratio:16/7}
-.lb-rb__slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;will-change:opacity}
-.lb-rb__slide.is-on{opacity:1}
-.lb-rb__slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03);transition:transform 7s linear}
-.lb-rb__slide.is-on img{transform:scale(1.10)}
-.lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2.2vw,30px);
- background:linear-gradient(180deg,transparent,rgba(6,7,10,.72));color:#fff;
- font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
- font-size:clamp(9px,1vw,13px);z-index:2}
-.lb-rb__dots{position:absolute;top:50%;right:clamp(10px,1.6vw,22px);transform:translateY(-50%);
- display:flex;flex-direction:column;gap:9px;z-index:3}
-.lb-rb__dots button{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.7);
- background:transparent;cursor:pointer;padding:0;transition:transform .25s,background .25s}
-.lb-rb__dots button.is-on{background:#fff;transform:scale(1.35)}
-.lb-rb__nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;
- border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(8,9,12,.35);color:#fff;
- cursor:pointer;display:grid;place-items:center;font-size:17px;line-height:1;backdrop-filter:blur(6px);
- transition:background .25s,transform .25s}
-.lb-rb__nav:hover{background:rgba(8,9,12,.7)}
-.lb-rb__nav--prev{left:clamp(10px,1.6vw,22px)}
-.lb-rb__nav--next{right:clamp(10px,1.6vw,22px)}
-.lb-rb__nav:active{transform:translateY(-50%) scale(.92)}
-@media (max-width:700px){.lb-rb__track{aspect-ratio:4/3}.lb-rb__nav{width:36px;height:36px}}
-
-a.btn,.btn,button.btn,.nav-cta a,.wp-block-button__link{position:relative;overflow:hidden;
- transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,filter .22s}
-a.btn:hover,.btn:hover,button.btn:hover,.nav-cta a:hover{transform:translateY(-2px);
- box-shadow:0 10px 24px -12px rgba(0,0,0,.55);filter:brightness(1.05)}
-a.btn:active,.btn:active,button.btn:active,.nav-cta a:active{transform:translateY(0) scale(.985)}
-a.btn::after,.btn::after,.nav-cta a::after{content:'';position:absolute;top:0;bottom:0;width:38%;
- left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);
- transform:skewX(-18deg);transition:left .55s ease;pointer-events:none}
-a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
-
-.lb-rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
-.lb-rv.is-in{opacity:1;transform:none}
-@media (prefers-reduced-motion: reduce){
- .lb-rv{opacity:1!important;transform:none!important;transition:none!important}
- .lb-rb__slide img{transform:none!important;transition:none!important}
- a.btn::after,.btn::after,.nav-cta a::after{display:none}
-}
-
-/* marquee band (professional, reference-derived) */
-.lb-mq{position:relative;overflow:hidden;background:#0b0c10;border-top:1px solid rgba(255,255,255,.10);
- border-bottom:1px solid rgba(255,255,255,.10)}
-.lb-mq__in{display:flex;width:max-content;animation:lb-mq 34s linear infinite}
-.lb-mq:hover .lb-mq__in{animation-play-state:paused}
-.lb-mq__in span{display:inline-flex;align-items:center;gap:clamp(18px,3vw,44px);
- padding:clamp(11px,1.5vw,19px) clamp(14px,2vw,26px);color:#fff;font-family:var(--lb-disp,Inter),sans-serif;
- font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:clamp(11px,1.25vw,17px);white-space:nowrap}
-.lb-mq__in span i{font-style:normal;color:var(--lb-acc,#e51924)}
-@keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
-</style>
-<style id="lb-depth-css">
-/* ==== LB DEPTH PACK, layered shadow + gradient surfaces ==== */
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet"></noscript>
+<style>
 :root{
-  --lb-acc: var(--acc, var(--accent, #e51924));
-  --lb-ink: var(--ink, #14161a);
-  --lb-paper: var(--paper, #ffffff);
-  --lb-e1: 0 1px 2px rgba(8,10,14,.06), 0 2px 6px rgba(8,10,14,.05);
-  --lb-e2: 0 2px 4px rgba(8,10,14,.07), 0 8px 18px -6px rgba(8,10,14,.14);
-  --lb-e3: 0 4px 10px rgba(8,10,14,.09), 0 18px 40px -12px rgba(8,10,14,.22);
-  --lb-hair: rgba(8,10,14,.10);
+  --bg:#070A0E; --bg2:#0A0F15; --panel:#0E141C; --panel2:#121A24;
+  --line:#1E2836; --line2:#2A3849;
+  --ink:#F2F6FB; --dim:#B3BFCE; --dim2:#8593A6;
+  --acc:#0066CC; --acc-deep:#0A55A8; --acc-hi:#5AA6FF; --soft:rgba(0,102,204,.16);
+  --disp:'Space Grotesk',system-ui,-apple-system,sans-serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --pad:clamp(18px,4.5vw,56px);
 }
-body{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.62 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--disp);letter-spacing:-.02em;line-height:1.06;margin:0}
+h1{font-size:clamp(34px,5.6vw,68px);font-weight:700}
+h2{font-size:clamp(24px,3.1vw,40px);font-weight:600}
+h3{font-size:clamp(17px,1.5vw,20px);font-weight:600}
+p{margin:.7rem 0 0}
+.wrap{max-width:1240px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.mono{font-family:var(--mono)}
+.kicker{font:600 12.5px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--acc-hi);display:inline-flex;align-items:center;gap:10px;margin:0}
+.kicker::before{content:"";width:22px;height:1px;background:var(--acc-hi)}
+.lede{color:var(--dim);max-width:60ch}
+.skip{position:absolute;left:-9999px;top:0;background:var(--acc-deep);color:#fff;padding:10px 16px;z-index:99}
+.skip:focus{left:12px;top:12px}
 
-/* sections: soft accent-keyed gradient wash for depth, never a flat slab */
-section{ position:relative; }
-section::before{
-  content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+/* ---------- header ---------- */
+.site-head{position:sticky;top:0;z-index:40;background:rgba(7,10,14,.94);backdrop-filter:blur(9px) saturate(150%);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:clamp(14px,2.4vw,30px);padding:11px 0;flex-wrap:wrap}
+.brand{display:inline-flex;align-items:center;gap:clamp(10px,1.1vw,16px);text-decoration:none;flex:0 0 auto}
+.brand .bm{height:clamp(38px,4.6vw,58px);width:auto;border-radius:9px}
+.brand .bw{height:clamp(15px,1.55vw,20px);width:auto;max-width:44vw}
+nav.main{display:flex;gap:clamp(13px,1.7vw,26px);margin-left:auto;flex-wrap:wrap}
+nav.main a{text-decoration:none;font-size:14.5px;color:var(--dim);padding:4px 0;border-bottom:2px solid transparent}
+nav.main a:hover{color:var(--ink);border-bottom-color:var(--acc-hi)}
+.tel-btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font:600 14px/1 var(--mono);
+  background:var(--acc-deep);color:#fff;padding:12px 16px;border-radius:8px;white-space:nowrap;border:1px solid rgba(255,255,255,.14)}
+.tel-btn:hover{background:var(--acc)}
+.tel-btn b{font-weight:600;letter-spacing:.01em}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;perspective:1200px;isolation:isolate;border-bottom:1px solid var(--line)}
+.hero-media{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-media img{width:100%;height:100%;max-width:1600px;margin:0 auto;object-fit:cover;object-position:50% 50%;
+  filter:saturate(1.02) contrast(1.05) brightness(1.08)}
+.hero-media::after{content:"";position:absolute;inset:0;
   background:
-    radial-gradient(120% 70% at 12% 0%, color-mix(in srgb, var(--lb-acc) 7%, transparent) 0%, transparent 58%),
-    radial-gradient(90% 60% at 100% 100%, color-mix(in srgb, var(--lb-acc) 5%, transparent) 0%, transparent 60%);
-}
-section > *{ position:relative; z-index:1; }
+    linear-gradient(96deg,rgba(7,10,14,.95) 0%,rgba(7,10,14,.88) 36%,rgba(7,10,14,.40) 60%,rgba(7,10,14,.02) 82%,rgba(7,10,14,.14) 100%),
+    linear-gradient(180deg,rgba(7,10,14,.30) 0%,rgba(7,10,14,.02) 48%,rgba(7,10,14,.30) 100%),
+    radial-gradient(95% 72% at 16% 16%,rgba(0,102,204,.22),transparent 62%)}
+.hero-grid{position:absolute;inset:0;z-index:0;opacity:.5;background-image:
+  repeating-linear-gradient(90deg,rgba(90,166,255,.07) 0 1px,transparent 1px 92px)}
+.hero .wrap{position:relative;z-index:2;padding-top:clamp(64px,8vw,124px);padding-bottom:clamp(64px,8vw,124px)}
+.hero-copy{max-width:680px}
+.hero h1{max-width:17ch;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--acc-hi)}
+.hero .lede{font-size:clamp(16.5px,1.35vw,19px);color:#DCE4EE;max-width:56ch;margin-top:20px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;cursor:pointer;
+  font:600 15.5px/1 var(--sans);padding:16px 26px;border-radius:9px;border:1px solid transparent;
+  transition:transform .18s ease,background .18s ease,border-color .18s ease}
+.btn:active{transform:translateY(1px)}
+.btn-p{background:var(--acc-deep);color:#fff;border-color:rgba(255,255,255,.16)}
+.btn-p:hover{background:var(--acc)}
+.btn-g{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn-g:hover{border-color:var(--acc-hi);color:var(--acc-hi)}
+.chips{display:flex;flex-wrap:wrap;gap:9px;list-style:none;padding:0;margin:34px 0 0}
+.chips li{font:500 13px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--dim);
+  border:1px solid var(--line2);border-radius:999px;padding:9px 14px;background:rgba(9,13,19,.6)}
+.hero-tag{position:relative;display:inline-block;margin-top:30px;
+  font:500 11.5px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#C9D5E4;
+  border-left:2px solid var(--acc-hi);padding:2px 0 2px 12px}
 
-/* cards / panels / figures: gradient surface + hairline + elevation, lift on hover */
-.card,.cards > *,.panel,.tile,.service,.box,.grid > article,.grid > div,figure,.gal figure,.gallery figure{
-  background:linear-gradient(180deg, color-mix(in srgb, var(--lb-paper) 100%, transparent) 0%,
-                                    color-mix(in srgb, var(--lb-ink) 3%, var(--lb-paper)) 100%);
-  border:1px solid var(--lb-hair);
-  border-radius:14px;
-  box-shadow:var(--lb-e1);
-  transition:transform .28s cubic-bezier(.2,.7,.3,1), box-shadow .28s, border-color .28s;
-}
-.card:hover,.cards > *:hover,.panel:hover,.tile:hover,.service:hover,.grid > article:hover,
-.grid > div:hover,figure:hover,.gal figure:hover,.gallery figure:hover{
-  transform:translateY(-4px); box-shadow:var(--lb-e3); border-color:color-mix(in srgb, var(--lb-acc) 34%, var(--lb-hair));
-}
+/* ---------- circuit-line divider ---------- */
+.circ{display:flex;align-items:center;gap:16px;height:34px;max-width:1240px;margin:0 auto;
+  padding-left:var(--pad);padding-right:var(--pad)}
+.circ::before,.circ::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line2) 24%,var(--line2))}
+.circ::after{background:linear-gradient(270deg,transparent,var(--line2) 24%,var(--line2))}
+.circ i{width:8px;height:8px;flex:0 0 auto;border:1px solid var(--acc-hi);transform:rotate(45deg)}
 
-/* photographs: rounded, layered shadow, slight scrim so text over them stays legible */
-section img, figure img, .gal img, .gallery img, .card img{
-  border-radius:10px; box-shadow:var(--lb-e2); display:block;
-}
-figure, .gal figure, .gallery figure{ overflow:hidden; }
-figure img, .gal img{ transform:scale(1.001); transition:transform .5s cubic-bezier(.2,.7,.3,1); }
-figure:hover img, .gal figure:hover img, .gallery figure:hover img{ transform:scale(1.035); }
+/* ---------- emergency band ---------- */
+.sos{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:linear-gradient(90deg,var(--soft),transparent 46%),var(--bg2)}
+.sos .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(16px,3vw,40px);padding-top:clamp(24px,3vw,38px);padding-bottom:clamp(24px,3vw,38px)}
+.sos .id{display:flex;align-items:center;gap:12px;font:600 12px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--acc-hi)}
+.sos .id::before{content:"";width:10px;height:10px;border-radius:50%;background:#3ED27E;box-shadow:0 0 0 4px rgba(62,210,126,.15)}
+.sos h2{font-size:clamp(20px,2.4vw,30px);max-width:24ch}
+.sos p{color:var(--dim);margin-top:8px}
+.sos .call{margin-left:auto}
 
-/* buttons: gradient fill, inset highlight, layered shadow */
-a.btn,.btn,button.btn,.nav-cta a,.btn-primary{
-  background-image:linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0) 55%);
-  box-shadow:var(--lb-e1), inset 0 1px 0 rgba(255,255,255,.22);
-  border-radius:10px;
-}
-a.btn:hover,.btn:hover,button.btn:hover,.nav-cta a:hover{
-  box-shadow:var(--lb-e3), inset 0 1px 0 rgba(255,255,255,.26);
-}
-.btn-ghost{ box-shadow:var(--lb-e1); }
+/* ---------- section frame ---------- */
+section.blk{padding-top:clamp(58px,7.5vw,104px);padding-bottom:clamp(58px,7.5vw,104px)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;gap:20px;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:clamp(28px,3.4vw,44px)}
+.sec-head p{margin:0;max-width:52ch}
+.sec-head .kicker{margin-bottom:14px}
 
-/* nav: subtle vertical gradient + hairline for separation from the page */
-.nav,nav,.site-header,header.nav{
-  background-image:linear-gradient(180deg, color-mix(in srgb, var(--lb-paper) 96%, transparent) 0%,
-                                         color-mix(in srgb, var(--lb-ink) 3%, var(--lb-paper)) 100%);
-  box-shadow:0 1px 0 var(--lb-hair), 0 6px 20px -14px rgba(8,10,14,.28);
+/* ---------- switchboard panel ---------- */
+.board{border:1px solid var(--line2);border-radius:12px;background:linear-gradient(180deg,var(--panel),var(--bg2));
+  padding:clamp(16px,2.2vw,26px);box-shadow:0 24px 60px -40px #000}
+.board-top{display:flex;flex-wrap:wrap;align-items:center;gap:12px;border-bottom:1px solid var(--line);
+  padding-bottom:14px;margin-bottom:16px;font:600 12px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--dim2)}
+.board-top .led{width:10px;height:10px;border-radius:50%;background:#3ED27E;box-shadow:0 0 9px #3ED27E}
+.board-top .sp{margin-left:auto;color:var(--dim2)}
+.breakers{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
+.bk{position:relative;display:flex;flex-direction:column;gap:9px;
+  border:1px solid var(--line);border-radius:7px;background:#090E15;padding:16px 14px 14px}
+.bk::before{content:"";width:16px;height:30px;border-radius:3px;border:1px solid var(--line2);
+  background:linear-gradient(180deg,#22303f,#0d141d);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.bk .num{position:absolute;top:14px;right:13px;font:600 12px/1 var(--mono);color:var(--dim2)}
+.bk b{font:600 14.5px/1.3 var(--sans);color:var(--ink)}
+.bk span{font:500 11.5px/1.45 var(--mono);color:var(--dim);letter-spacing:.01em}
+.boardfig{margin:clamp(18px,2.4vw,28px) auto 0;max-width:1000px;border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:#090E15}
+.boardfig img{width:100%;height:auto;display:block}
+.boardfig figcaption{padding:15px 18px;font-size:13.5px;line-height:1.55;color:var(--dim);border-top:1px solid var(--line)}
+
+/* ---------- ledger / conduit ---------- */
+.ledger{border-left:2px solid var(--line2);margin-left:7px}
+.led{position:relative;padding:18px 0 20px clamp(20px,3vw,34px);border-bottom:1px solid var(--line)}
+.led:last-child{border-bottom:0;padding-bottom:4px}
+.led::before{content:"";position:absolute;left:-8px;top:26px;width:14px;height:14px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--acc-hi)}
+.led .n{display:block;font:600 12.5px/1 var(--mono);letter-spacing:.16em;color:var(--acc-hi);margin-bottom:7px}
+.led b{font:600 17px/1.3 var(--disp);color:var(--ink)}
+.led p{margin-top:6px;max-width:58ch}
+
+/* ---------- work strip ---------- */
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,22px)}
+.shot{position:relative;border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:#090E15}
+.shot img{width:100%;height:clamp(230px,30vw,400px);object-fit:cover}
+.shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;
+  font:600 12px/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#fff;
+  background:linear-gradient(180deg,transparent,rgba(5,8,12,.9))}
+.shot figcaption span{display:block;color:var(--acc-hi);letter-spacing:.2em;font-size:11.5px;margin-bottom:5px}
+
+/* ---------- areas ---------- */
+.areas-2{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(22px,3.4vw,50px);align-items:start}
+.note{border:1px solid var(--line2);border-left:3px solid var(--acc);border-radius:0 10px 10px 0;
+  background:var(--panel);padding:clamp(18px,2.4vw,26px)}
+.note b{font-family:var(--disp);font-size:17px}
+.note p{margin-top:8px;color:var(--dim)}
+
+/* ---------- quote ---------- */
+#lbq{border-top:1px solid var(--line);background:
+  radial-gradient(90% 60% at 50% 0%,rgba(0,102,204,.12),transparent 65%),var(--bg2);
+  padding:clamp(58px,7.5vw,104px) 0}
+#lbq .lf{max-width:720px;margin:0 auto;border:1px solid var(--line2);border-radius:14px;
+  background:linear-gradient(180deg,var(--panel),var(--bg2));padding:clamp(22px,3.2vw,38px);
+  box-shadow:0 28px 70px -46px #000}
+#lbq h2{font-size:clamp(23px,2.7vw,34px)}
+#lbq .sub{color:var(--dim);margin:.6rem 0 24px}
+#lbq .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+#lbq .full{grid-column:1/-1}
+#lbq label{display:block;font:600 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--dim2);margin-bottom:8px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:13px 14px;border:1px solid var(--line2);border-radius:8px;
+  background:#090E15;color:var(--ink);font:15px/1.4 var(--sans)}
+#lbq textarea{min-height:104px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--acc-hi);outline-offset:1px;border-color:transparent}
+#lbq .cons{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:13.5px;color:var(--dim)}
+#lbq .cons input{width:auto;margin-top:3px}
+#lbq .cons a{color:var(--acc-hi)}
+#lbq button{width:100%;margin-top:18px;padding:16px;border:0;border-radius:9px;cursor:pointer;
+  background:var(--acc-deep);color:#fff;font:600 16px/1 var(--sans);border:1px solid rgba(255,255,255,.16)}
+#lbq button:hover{background:var(--acc)}
+#lbq button:disabled{opacity:.65;cursor:wait}
+#lbq .st{margin-top:12px;font-size:14px;color:var(--dim);min-height:1.2em}
+#lbq .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#lbq .help{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:var(--dim);display:flex;flex-wrap:wrap;gap:8px 22px}
+#lbq .help a{color:var(--acc-hi);text-decoration:none}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);background:var(--bg);padding-top:clamp(40px,5vw,64px);padding-bottom:32px}
+.foot{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,3.4vw,50px)}
+.foot .brand{margin-bottom:16px}
+.foot p{color:var(--dim);font-size:15px;max-width:46ch}
+.foot .mono{font-family:var(--mono);font-size:13px;color:var(--dim)}
+.foot a{color:var(--dim);text-decoration:none}
+.foot a:hover{color:var(--acc-hi)}
+.fnav{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px;font-size:14px}
+.legal{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 22px;
+  font:500 12.5px/1.4 var(--mono);color:var(--dim2);letter-spacing:.04em}
+
+/* ---------- motion ---------- */
+.rv{opacity:1;transform:none}
+html.js .rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.7,.3,1)}
+html.js .rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js .rv{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{animation-duration:.001s !important;transition-duration:.001s !important}
 }
-
-/* section heads get a hairline rule for structure (no risky text clipping) */
-.sec-head{ border-bottom:1px solid var(--lb-hair); padding-bottom:.7rem; }
-h1,h2,h3{ text-wrap:balance; }
-
-/* footer: depth anchor */
-footer{ box-shadow:0 -1px 0 var(--lb-hair), 0 -14px 40px -30px rgba(8,10,14,.5); }
-
-/* dark surfaces get stronger, softer shadows */
-@media (prefers-color-scheme: dark){ :root{ --lb-hair: rgba(255,255,255,.12); } }
-@supports not (background: color-mix(in srgb, red 5%, blue)){
-  section::before{ background:radial-gradient(120% 70% at 12% 0%, rgba(229,25,36,.06) 0%, transparent 58%); }
+@media (max-width:900px){
+  .breakers{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:820px){
+  .areas-2,.foot{grid-template-columns:1fr}
+  .shots{grid-template-columns:1fr}
+  .hero-tag{display:none}
+  .sos .call{margin-left:0}
 }
-@media (prefers-reduced-motion: reduce){
-  .card,.cards > *,.panel,.tile,figure,.gal figure, a.btn,.btn, img{ transition:none!important; transform:none!important; }
+@media (max-width:560px){
+  nav.main{order:3;width:100%;margin-left:0;gap:16px}
+  #lbq .grid{grid-template-columns:1fr}
 }
 </style>
-<style id="lb-hero-css">
-canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
-  position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
-}
-</style>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
-   Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
-   and does NOT hide the hero canvas (that is the intended 3D hero). */
-.site-header,.header{z-index:50}
-.container.nav,.nav,.nav-in{z-index:5}
-.lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
-</style>
-<style id="lb-markimg">.lb-brand__mark{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;margin-right:.6rem}.lb-brand__mark img{display:block;height:clamp(34px,3.4vw,44px);width:auto;border-radius:8px}</style>
-<style id="lb-bar-noname">
-/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
-.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
-{display:none!important}
-.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
-.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style><style id="lb-bar-noname-x">SPAN.lb-brand__name{display:none!important}
-</style><style id="lb-bar-fits-logo">
-/* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
-header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
-  height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
-.bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
-img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
-</style>
-</head><body><a class="skip" href="#main">Skip to content</a>
-<nav><a class="lb-brand" href="#top" aria-label="Walsh Electrical - Home" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#0066CC;--lb-subc:#0066CC;--lb-acc:#0066CC;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.svg" alt="" class="lb-logo-unlock"></span><span class="lb-brand__word"><span class="lb-brand__name">Walsh Electrical</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a><div class="nav-cta"><a class="btn btn-ghost" href="#quote">Get a quote</a></div></nav><header class="hero" style="position:relative;height:100vh;min-height:600px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;background:var(--bg)">
-  <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0"></canvas>
-  <div class="rv" style="position:relative;z-index:1;margin-bottom:1.5rem"><span style="font:600 .8rem/1 Montserrat,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--acc);background:rgba(0,102,204,.1);padding:.4rem 1rem;border-radius:999px">Licensed Electrician</span></div>
-  <h1 class="rv" data-ux="words" style="position:relative;z-index:1;font:800 clamp(36px,6vw,72px)/1.05 Montserrat,sans-serif;margin:0 0 1rem;max-width:900px;color:var(--ink);text-shadow:none">Powering your world safely</h1>
-  <p class="rv" style="position:relative;z-index:1;font-size:clamp(18px,2.2vw,24px);max-width:70ch;margin:0 auto 2rem;color:var(--ink);opacity:.85;text-shadow:none">Walsh Electrical, residential, commercial, switchboard upgrades, safety inspections. Licensed, insured, reliable.</p>
-  <div class="rv" style="position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-    <a class="btn btn-primary magnetic" data-ux="magnetic" href="#quote" style="padding:1rem 2rem;font-size:1rem">Get a quote</a>
+</head>
+<body>
+<a class="skip" href="#services">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Walsh Electrical — home">
+      <img class="bm" src="assets/logo.png" alt="Walsh Electrical monogram">
+      <img class="bw" src="assets/logo-word-light.png" alt="Walsh Electrical">
+    </a>
+    <nav class="main" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#work">Work</a>
+      <a href="#areas">Coverage</a>
+      <a href="#quote">Quote</a>
+    </nav>
+    <a class="tel-btn" href="tel:+61423341124"><b>0423 341 124</b></a>
   </div>
-  <div class="rv" style="position:relative;z-index:1;margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);opacity:.7"><span>Licensed</span><span>Insured</span><span>Reliable</span></div>
-</header><section class="section-services rv" id="services">
-  <div style="max-width:1100px;margin:0 auto">
-    <header>
-      <h2>What we do</h2>
-      <p>Four core electrical services, residential, commercial, upgrades & safety.</p>
-    </header>
-    <div class="service-grid">
-      <article class="service-card rv" data-ux="spotlight">
-        <h3>Residential Electrical</h3>
-        <p>Wiring, lighting, power points, ceiling fans, smoke alarms, EV charger installs, new builds & renos.</p>
-      </article>
-      <article class="service-card rv" data-ux="spotlight" data-ux="tilt">
-        <h3>Commercial Electrical</h3>
-        <p>Office fit-outs, retail, warehouses, data cabling, UPS, emergency lighting, maintenance contracts.</p>
-      </article>
-      <article class="service-card rv" data-ux="spotlight">
-        <h3>Switchboard Upgrades</h3>
-        <p>RCD protection, surge arrestors, 3-phase, meter upgrades, compliant, future-proofed.</p>
-      </article>
-      <article class="service-card rv" data-ux="spotlight">
-        <h3>Safety Inspections & Testing</h3>
-        <p>RCD testing, thermal imaging, tag & test, defect rectification, residential & commercial.</p>
-      </article>
+</header>
+
+<main id="top">
+
+<!-- LB-3D-HERO -->
+<!-- hidden depth layer: no visible 3D / scroll scene is rendered -->
+<canvas id="heroCanvas" width="600" height="300" aria-hidden="true" style="display:none"></canvas>
+
+<section class="hero" aria-labelledby="hero-h">
+  <div class="hero-media" aria-hidden="true">
+    <img src="assets/hero-board.jpg" alt="" fetchpriority="high" decoding="async">
+  </div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="kicker">Walsh Electrical — licensed electrician</p>
+      <h1 id="hero-h">Switchboards, wiring &amp; fault finding. <em>Sorted properly.</em></h1>
+      <p class="lede">Switchboard upgrades, safety switches (RCDs), new wiring, lighting, underground cabling and fault finding — carried out, tested and left working.</p>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="#quote">Request a quote</a>
+        <a class="btn btn-g" href="tel:+61423341124">Call 0423 341 124</a>
+      </div>
+      <ul class="chips">
+        <li>Switchboard upgrades</li>
+        <li>RCD &amp; safety switches</li>
+        <li>Fault finding</li>
+        <li>Underground cabling</li>
+        <li>Lighting &amp; power</li>
+      </ul>
     </div>
   </div>
-</section><div class="section-marquee rv" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Residential Electrical</span>
-    <span>Commercial Electrical</span>
-    <span>Switchboard Upgrades</span>
-    <span>Safety Inspections</span>
-    <span>Residential Electrical</span>
-    <span>Commercial Electrical</span>
-    <span>Switchboard Upgrades</span>
-    <span>Safety Inspections</span>
-  </div>
-</div><section class="section-quote rv" id="quote">
-  <div style="max-width:720px;margin:0 auto">
-    <header style="text-align:center;margin-bottom:2rem">
-      <h2>Get a quote</h2>
-      <p>Tell us what you need, we'll get back to you same day.</p>
-    </header>
-    <form id="lbq" class="quote-form" data-site="walsh-electrical" novalidate>
-      <div class="row">
-        <div>
-          <label for="name">Name *</label>
-          <input type="text" id="name" name="name" required autocomplete="name">
-        </div>
-        <div>
-          <label for="phone">Phone *</label>
-          <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="04XX XXX XXX">
-        </div>
-      </div>
-      <div class="row">
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" autocomplete="email">
-        </div>
-        <div>
-          <label for="suburb">Suburb *</label>
-          <input type="text" id="suburb" name="suburb" required autocomplete="address-level2" placeholder="e.g. Your suburb">
-        </div>
-      </div>
-      <div class="row">
-        <div>
-          <label for="service">Service *</label>
-          <select id="service" name="service" required>
-            <option value="">Choose a service</option>
-            <option value="residential-electrical">Residential Electrical</option>
-            <option value="commercial-electrical">Commercial Electrical</option>
-            <option value="switchboard-upgrades">Switchboard Upgrades</option>
-            <option value="safety-inspections">Safety Inspections & Testing</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-      </div>
-      <div>
-        <label for="details">Details</label>
-        <textarea id="details" name="details" rows="4" placeholder="What electrical work do you need? Include property type, specific issues, urgency, access details..."></textarea>
-      </div>
-      <div class="consent">
-        <input type="checkbox" id="consent" name="consent" required>
-        <label for="consent">I agree to be contacted about this enquiry. <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a></label>
-      </div>
-      <button type="submit" class="btn btn-primary magnetic" data-ux="magnetic" style="width:100%;padding:1rem;font-size:1rem">Submit request</button>
-      <div id="form-status" aria-live="polite"></div>
-    </form>
-  </div>
-</section><section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img src="assets/work_01.jpg" alt="Walsh Electrical" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_02.jpg" alt="Walsh Electrical" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_03.jpg" alt="Walsh Electrical" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_04.jpg" alt="Walsh Electrical" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="assets/work_05.jpg" alt="Walsh Electrical" loading="lazy" decoding="async"></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button><button type="button" class="" aria-label="Slide 4"></button><button type="button" class="" aria-label="Slide 5"></button></div><div class="lb-rb__cap">Walsh Electrical &mdash; recent work</div></div></section><footer class="site-footer">
-  <div class="footer-grid">
+</section>
+
+<section class="sos" aria-labelledby="sos-h">
+  <div class="wrap">
+    <p class="id">Power out?</p>
     <div>
-      <a class="brand footer-brand" href="#top" aria-label="Walsh Electrical - Home">
-        <img class="brand-mark" src="/assets/logo-mark_walsh-electrical.png" alt="" aria-hidden="true" loading="lazy">
-        <span class="brand-txt">
-          <b class="brand-name">Walsh Electrical</b>
-          <i class="brand-sub"><em>Licensed</em> Electrician</i>
-        </span>
-      </a>
-      <p class="footer-desc">Residential, commercial, switchboard upgrades, safety inspections, licensed & insured.</p>
-      <p class="footer-location">Servicing local suburbs.</p>
-      <p class="footer-license">Licensed · Insured · Reliable</p>
+      <h2 id="sos-h">No power, or a safety switch that keeps tripping?</h2>
+      <p>Call and describe what is happening — we will tell you what to check first and book the job in.</p>
     </div>
-    <div class="footer-cta">
-      <a class="btn btn-ghost" href="#quote">Get a quote</a>
-      <br>
-      <a class="footer-social" href="https://www.instagram.com/walsh.electrical?rpxt=MWs5MHZyaXd4cWkwNg==" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a class="btn btn-p call" href="tel:+61423341124">Call 0423 341 124</a>
+  </div>
+</section>
+
+<div class="circ" aria-hidden="true"><i></i></div>
+
+<section class="blk" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <p class="kicker">The board</p>
+        <h2 id="svc-h">What we do</h2>
+      </div>
+      <p class="lede">Every job is quoted before we start and tested before we leave. Here is the work we take on.</p>
+    </div>
+    <div class="board rv" role="list" aria-label="Services">
+      <div class="board-top"><span class="led" aria-hidden="true"></span>MAIN SWITCHBOARD · WALSH ELECTRICAL<span class="sp">8 CIRCUITS · MAIN SWITCH ON</span></div>
+      <div class="breakers">
+        <article class="bk" role="listitem"><span class="num">01</span><b>Residential wiring</b><span>New circuits, renovations, extensions and additions.</span></article>
+        <article class="bk" role="listitem"><span class="num">02</span><b>Switchboard upgrades</b><span>Outdated fuse boards replaced with modern circuit breakers.</span></article>
+        <article class="bk" role="listitem"><span class="num">03</span><b>RCD &amp; safety switches</b><span>Fitting and testing protection on the circuits that need it.</span></article>
+        <article class="bk" role="listitem"><span class="num">04</span><b>Lighting &amp; power</b><span>Power points, downlights, exterior and shed lighting.</span></article>
+        <article class="bk" role="listitem"><span class="num">05</span><b>Fault finding</b><span>Tracking down tripping circuits, dead points and burnt fittings.</span></article>
+        <article class="bk" role="listitem"><span class="num">06</span><b>Underground cabling</b><span>Running cable and conduit out to sheds, gates and outbuildings.</span></article>
+        <article class="bk" role="listitem"><span class="num">07</span><b>Ceiling fans &amp; smoke alarms</b><span>Supply and install, wired to current requirements.</span></article>
+        <article class="bk" role="listitem"><span class="num">08</span><b>Test &amp; inspection</b><span>Checking existing work and putting it right where needed.</span></article>
+      </div>
+    </div>
+    <figure class="boardfig rv">
+      <img src="assets/switchboard.jpg" alt="Old switchboard with an asbestos panel, unsafe circuit breakers and old ceramic fuses — the type a switchboard upgrade replaces" loading="lazy" decoding="async">
+      <figcaption>Old boards like this are what a switchboard upgrade replaces — asbestos backing panels, unsafe circuit breakers and old ceramic fuses giving way to modern circuit breakers and RCD protection.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="circ" aria-hidden="true"><i></i></div>
+
+<section class="blk" id="process" aria-labelledby="proc-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <p class="kicker">Fault to fixed</p>
+        <h2 id="proc-h">How a job runs</h2>
+      </div>
+      <p class="lede">Five steps, no surprises — from the first call to the circuit being tested and switched back on.</p>
+    </div>
+    <ol class="ledger rv" style="list-style:none;margin:0;padding:0 0 0 0">
+      <li class="led"><span class="n">01</span><b>Call and describe the fault</b><p class="lede">Tell us what has stopped working and where. If it is urgent we will say so up front.</p></li>
+      <li class="led"><span class="n">02</span><b>Test and isolate</b><p class="lede">The circuit is tested and made safe before any repair starts.</p></li>
+      <li class="led"><span class="n">03</span><b>Quote in plain terms</b><p class="lede">You get the scope and the price before we go ahead — not after.</p></li>
+      <li class="led"><span class="n">04</span><b>Fix and re-test</b><p class="lede">The fault is repaired, then the circuit is tested again to confirm it holds.</p></li>
+      <li class="led"><span class="n">05</span><b>Tidy up and switch on</b><p class="lede">Site is left clean and the circuit is returned to service.</p></li>
+    </ol>
+  </div>
+</section>
+
+<div class="circ" aria-hidden="true"><i></i></div>
+
+<section class="blk" id="work" aria-labelledby="work-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <p class="kicker">On site</p>
+        <h2 id="work-h">Recent work</h2>
+      </div>
+      <p class="lede">Cable runs and site lighting — photographs from Walsh Electrical jobs.</p>
+    </div>
+    <div class="shots rv">
+      <figure class="shot" style="margin:0">
+        <img src="assets/gallery_01.jpg" alt="Cable laid in a trench, run out across open ground" loading="lazy" decoding="async">
+        <figcaption><span>Underground cabling</span>Cable run to an outbuilding</figcaption>
+      </figure>
+      <figure class="shot" style="margin:0">
+        <img src="assets/work_05.jpg" alt="Floodlights illuminating a large open shed at night" loading="lazy" decoding="async">
+        <figcaption><span>Site lighting</span>Floodlights after dark</figcaption>
+      </figure>
     </div>
   </div>
-  <hr class="footer-divider">
-  <p class="footer-copyright">© 2026 Walsh Electrical. All rights reserved.</p>
-</footer><main id="main">
+</section>
+
+<div class="circ" aria-hidden="true"><i></i></div>
+
+<section class="blk" id="areas" aria-labelledby="area-h">
+  <div class="wrap areas-2">
+    <div class="rv">
+      <p class="kicker">Coverage</p>
+      <h2 id="area-h">Where we work</h2>
+      <p class="lede">Walsh Electrical takes on residential and commercial work — homes, sheds, shops and small commercial fit-outs. Tell us your suburb when you request a quote and we will confirm the call-out.</p>
+    </div>
+    <div class="note rv">
+      <b>Not sure if we cover your area?</b>
+      <p>Send the job through the quote form or call <a href="tel:+61423341124" style="color:var(--acc-hi);text-decoration:none">0423 341 124</a> with your suburb — you will get a straight answer on whether we can get there.</p>
+    </div>
+  </div>
+</section>
+
 </main>
-<!-- lb: old box-hero engine removed --><script>document.documentElement.setAttribute("data-debug","PS-check:"+typeof window.PS+","+typeof window.PS.setup+","+(window.PS?Object.keys(window.PS).join(","):"none"));</script><script>document.documentElement.setAttribute("data-debug","PS-after-proscene:"+typeof window.PS+","+typeof window.PS.setup);</script>
 
-<script>!function(){try{ document.documentElement.setAttribute("data-debug3d","1-script-start"); var canvas=document.getElementById("heroCanvas"); if(!canvas){document.documentElement.setAttribute("data-debug3d","2-no-canvas");return} document.documentElement.setAttribute("data-debug3d","3-canvas-found"); if(typeof window.PS==="undefined"){document.documentElement.setAttribute("data-debug3d","4-PS-undefined");return} document.documentElement.setAttribute("data-debug3d","5-PS-ok"); document.documentElement.setAttribute("data-debug3d","6-calling-setup"); var scene=window.PS.setup(canvas,{ sun:"left",seed:42,p:0,reduce:false, sky:["#F0F4F8","#E0E8F0","#CBD5E1"], glow:"#0066CC",fogNear:2,fogFar:28,horizon:.45,focal:1.15,camH:1.55,progress:null, onFrame:function(S,p,time){ document.documentElement.setAttribute("data-debug3d","7-onFrame:"+S.W+","+S.H); try{ if(S.sky){ document.documentElement.setAttribute("data-debug3d","7b-calling-sky"); S.sky(0); document.documentElement.setAttribute("data-debug3d","7c-sky-done"); document.documentElement.setAttribute("data-debug3d","7d-sky-rendered"); } }catch(e){ document.documentElement.setAttribute("data-debug3d","7e-onFrame-error:"+e) } }); document.documentElement.setAttribute("data-debug3d","8-scene-returned"); scene.start(); document.documentElement.setAttribute("data-debug3d","9-started"); }catch(e){ document.documentElement.setAttribute("data-debug3d","0-outer-error:"+e) }}();document.documentElement.setAttribute("data-debug3d","PS-check:"+typeof window.PS+","+typeof window.PS.setup);</script>
+<section id="lbq" aria-labelledby="lbq-h">
+  <div class="wrap">
+    <div class="lf">
+      <p class="kicker">Request a quote</p>
+      <h2 id="lbq-h">Tell us about the job</h2>
+      <p class="sub">A few details is enough — we will come back to you with a clear, no-obligation quote.</p>
+      <form id="lbq-form" data-site="walsh-electrical" data-endpoint="/functions/v1/quote-request" novalidate>
+        <div class="grid">
+          <div>
+            <label for="lbq-n">Name</label>
+            <input id="lbq-n" name="name" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="lbq-p">Phone</label>
+            <input id="lbq-p" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="04xx xxx xxx">
+          </div>
+          <div>
+            <label for="lbq-e">Email</label>
+            <input id="lbq-e" name="email" type="email" autocomplete="email">
+          </div>
+          <div>
+            <label for="lbq-s">Suburb</label>
+            <input id="lbq-s" name="suburb" autocomplete="address-level2" placeholder="Your suburb">
+          </div>
+          <div class="full">
+            <label for="lbq-m">What needs doing?</label>
+            <textarea id="lbq-m" name="message" placeholder="Switchboard, fault finding, new wiring, lighting…" required></textarea>
+          </div>
+        </div>
+        <label class="cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
+        <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <button type="submit">Send quote request</button>
+        <p class="st" id="lbq-st" role="status" aria-live="polite"></p>
+        <div class="help">
+          <span>Prefer to talk? Call <a href="tel:+61423341124">0423 341 124</a></span>
+          <span>Email <a href="mailto:info@walshlec.com">info@walshlec.com</a></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 
-<script>!function(){if(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("reduce-motion");setTimeout(function revealAll(){var e=document.querySelectorAll(".rv,[data-ux=\"words\"],[data-ux=\"fadein\"]");for(var t=0;t<e.length;t++){e[t].classList.add("revealed"),e[t].style.opacity="1",e[t].style.transform="none";for(var n=0;n<e[t].children.length;n++)e[t].children[n].style.opacity="1",e[t].children[n].style.transform="none"}},1200)}();</script><script>document.documentElement.setAttribute("data-debug","body-script-ran");</script>
-<script id="lb-motion-js">
-/* LB MOTION PACK v1 */
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="brand" href="#top" aria-label="Walsh Electrical — home">
+        <img class="bm" src="assets/logo.png" alt="Walsh Electrical monogram">
+        <img class="bw" src="assets/logo-word-light.png" alt="Walsh Electrical">
+      </a>
+      <p>Residential and commercial electrician — switchboard upgrades, safety switches, wiring, lighting, underground cabling and fault finding.</p>
+      <p class="mono" style="margin-top:14px">0423 341 124 · info@walshlec.com</p>
+    </div>
+    <div>
+      <h3>Get in touch</h3>
+      <ul class="fnav" style="margin-top:14px">
+        <li><a href="tel:+61423341124">Call 0423 341 124</a></li>
+        <li><a href="mailto:info@walshlec.com">info@walshlec.com</a></li>
+        <li><a href="#quote">Request a quote</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Recent work</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <span>© 2026 Walsh Electrical</span>
+    <span><a href="privacy.html">Privacy</a></span>
+    <span><a href="terms.html">Terms</a></span>
+  </div>
+</footer>
+
+<script>
 (function(){
-  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var sel = 'section > *, main > *, .sec-head, .cards > *, .grid > *, .faq details, .gal figure, .gallery figure';
-  var els = [].slice.call(document.querySelectorAll(sel)).filter(function(e){
-    if (e.closest && e.closest('.lb-rb')) return false;
-    if (e.tagName === 'SCRIPT' || e.tagName === 'STYLE') return false;
-    var r = e.getBoundingClientRect();
-    return r.width > 40 && r.height > 20;
-  });
-  els.forEach(function(e, i){ e.classList.add('lb-rv'); e.style.transitionDelay = ((i % 6) * 55) + 'ms'; });
-  if (rm || !('IntersectionObserver' in window)) {
-    els.forEach(function(e){ e.classList.add('is-in'); });
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = [].slice.call(document.querySelectorAll('.rv'));
+  function showAll(){ els.forEach(function(e){ e.classList.add('on'); }); }
+  if (reduce || !('IntersectionObserver' in window)) {
+    showAll();
   } else {
     var io = new IntersectionObserver(function(en){
-      en.forEach(function(x){ if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } });
-    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+      en.forEach(function(x){ if (x.isIntersecting) { x.target.classList.add('on'); io.unobserve(x.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     els.forEach(function(e){ io.observe(e); });
-    setTimeout(function(){ els.forEach(function(e){ if (!e.classList.contains('is-in')) e.classList.add('is-in'); }); }, 2600);
+    setTimeout(showAll, 1100);
   }
-  var rb = document.querySelector('.lb-rb');
-  if (!rb) return;
-  var slides = [].slice.call(rb.querySelectorAll('.lb-rb__slide'));
-  if (slides.length < 2) return;
-  var dots = [].slice.call(rb.querySelectorAll('.lb-rb__dots button'));
-  var i = 0, timer = null, DUR = 5600;
-  function go(n){
-    i = (n + slides.length) % slides.length;
-    slides.forEach(function(s, k){ s.classList.toggle('is-on', k === i); });
-    dots.forEach(function(d, k){ d.classList.toggle('is-on', k === i); });
-  }
-  function play(){ if (rm) return; stop(); timer = setInterval(function(){ go(i + 1); }, DUR); }
-  function stop(){ if (timer) { clearInterval(timer); timer = null; } }
-  dots.forEach(function(d, k){ d.addEventListener('click', function(){ go(k); play(); }); });
-  var pv = rb.querySelector('.lb-rb__nav--prev'), nx = rb.querySelector('.lb-rb__nav--next');
-  if (pv) pv.addEventListener('click', function(){ go(i - 1); play(); });
-  if (nx) nx.addEventListener('click', function(){ go(i + 1); play(); });
-  rb.addEventListener('mouseenter', stop); rb.addEventListener('mouseleave', play);
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function(en){ en.forEach(function(x){ x.isIntersecting ? play() : stop(); }); },
-      { threshold: 0.25 }).observe(rb);
-  } else { play(); }
-  go(0);
 })();
 </script>
-<script id="lb-hero-js">
-/* LB HERO v2 - depth field (aurora + perspective grid + parallax motes). No literal objects. */
+<script>
 (function(){
-  var cv = document.querySelector('#heroCanvas, .hero-canvas, .lb3d-canvas, .hero-canvas-bg, canvas[data-hero], header canvas, .hero canvas');
-  if (!cv) return;
-  var ctx = cv.getContext('2d'); if (!ctx) return;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var W = 0, H = 0, dpr = 1, t = 0, raf = null, visible = true;
-  function accent(){
-    var v = getComputedStyle(document.documentElement).getPropertyValue('--acc')
-         || getComputedStyle(document.documentElement).getPropertyValue('--accent');
-    v = (v || '').trim(); return /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(v) ? v : '#e51924';
+  var POINTER = 'https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=';
+  var FALLBACK = 'https://grocery-periodically-everyone-wine.trycloudflare.com';
+  var form = document.getElementById('lbq-form');
+  if (!form) return;
+  var ENDPOINT = form.dataset.endpoint || '/functions/v1/quote-request';
+  var st = document.getElementById('lbq-st');
+  var btn = form.querySelector('button[type=submit]');
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if (!done) { done = true; cb(FALLBACK); } }, 2500);
+    fetch(POINTER + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt || '').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : FALLBACK);
+      })
+      .catch(function(){ if (!done) { done = true; clearTimeout(t); cb(FALLBACK); } });
   }
-  function hex2rgb(h){ h = h.replace('#',''); if (h.length === 3) h = h[0]+h[0]+h[1]+h[1]+h[2]+h[2];
-    return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)]; }
-  var ACC = hex2rgb(accent());
-  function dark(){ var b = getComputedStyle(document.body).backgroundColor || '';
-    var m = b.match(/(\d+),\s*(\d+),\s*(\d+)/); if (!m) return true;
-    return (0.299*m[1] + 0.587*m[2] + 0.114*m[3]) < 128; }
-
-  function size(){
-    var r = cv.getBoundingClientRect();
-    dpr = Math.min(2, window.devicePixelRatio || 1);
-    W = Math.max(320, r.width || cv.clientWidth || window.innerWidth);
-    H = Math.max(240, r.height || cv.clientHeight || window.innerHeight);
-    cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr);
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-  }
-
-  // deterministic depth motes
-  var N = 46, motes = [];
-  var seed = 20261019;
-  function rnd(){ seed = (seed*1103515245 + 12345) % 2147483648; return seed/2147483648; }
-  for (var i=0;i<N;i++) motes.push({x:rnd(), y:rnd(), z:0.25+rnd()*0.75, s:0.6+rnd()*1.9, p:rnd()*6.283});
-
-  function draw(){
-    var isDark = dark();
-    var base = isDark ? [10,11,14] : [248,249,251];
-    var ink  = isDark ? [255,255,255] : [12,14,18];
-    var g = ctx.createLinearGradient(0,0,0,H);
-    g.addColorStop(0, 'rgb('+base.join(',')+')');
-    g.addColorStop(0.62, 'rgb('+Math.round(base[0]*1.06+2)+','+Math.round(base[1]*1.06+2)+','+Math.round(base[2]*1.09+2)+')');
-    g.addColorStop(1, 'rgb('+base.join(',')+')');
-    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
-
-    // aurora: two slow, wide ribbons of the brand colour
-    for (var k=0;k<2;k++){
-      var cx = W*(0.30 + 0.34*k + 0.05*Math.sin(t*0.00013 + k*2.1));
-      var cy = H*(0.34 + 0.16*k + 0.05*Math.cos(t*0.00017 + k*1.3));
-      var rad = Math.max(W,H)*(0.46 + 0.13*k);
-      var rg = ctx.createRadialGradient(cx,cy,0,cx,cy,rad);
-      var a = (isDark ? 0.20 : 0.13) * (0.72 + 0.28*Math.sin(t*0.0003 + k));
-      rg.addColorStop(0,'rgba('+ACC.join(',')+','+a.toFixed(3)+')');
-      rg.addColorStop(0.55,'rgba('+ACC.join(',')+','+(a*0.32).toFixed(3)+')');
-      rg.addColorStop(1,'rgba('+ACC.join(',')+',0)');
-      ctx.fillStyle = rg; ctx.fillRect(0,0,W,H);
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d = {};
+    new FormData(form).forEach(function(v, k){ d[k] = v; });
+    if (d.website) return;
+    if (!d.name || (!d.phone && !d.email) || !(d.message || '').trim()) {
+      st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+      st.style.color = '#FF9D8A';
+      return;
     }
-
-    // perspective floor: clean architectural depth, not blocks
-    var hz = H*0.70, vpx = W*0.5;
-    ctx.lineWidth = 1;
-    for (var j=-9;j<=9;j++){
-      var fx = vpx + j*(W/9)*1.5;
-      var al = (isDark?0.16:0.13) * (1 - Math.min(1, Math.abs(j)/11));
-      ctx.strokeStyle = 'rgba('+ACC.join(',')+','+al.toFixed(3)+')';
-      ctx.beginPath(); ctx.moveTo(vpx + j*(W/9)*0.16, hz); ctx.lineTo(fx, H+2); ctx.stroke();
-    }
-    for (var r=1;r<=9;r++){
-      var y = hz + Math.pow(r/9, 2.15)*(H-hz+4);
-      ctx.strokeStyle = 'rgba('+ACC.join(',')+','+((isDark?0.13:0.10)*(1-r/11)).toFixed(3)+')';
-      ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
-    }
-    var hg = ctx.createLinearGradient(0,hz-70,0,hz+70);
-    hg.addColorStop(0,'rgba('+ACC.join(',')+',0)');
-    hg.addColorStop(0.5,'rgba('+ACC.join(',')+','+(isDark?0.16:0.11)+')');
-    hg.addColorStop(1,'rgba('+ACC.join(',')+',0)');
-    ctx.fillStyle = hg; ctx.fillRect(0,hz-70,W,140);
-
-    // depth motes: size + opacity track z, slow parallax drift
-    for (var q=0;q<motes.length;q++){
-      var m = motes[q];
-      var y = ((m.y + t*0.0000075*m.z) % 1);
-      var x = m.x + 0.016*Math.sin(t*0.00022*m.z + m.p);
-      var px = x*W, py = y*H;
-      var a2 = (isDark?0.42:0.30) * m.z * (0.55 + 0.45*Math.sin(t*0.0011 + m.p));
-      if (a2 <= 0) continue;
-      ctx.fillStyle = 'rgba('+ink.join(',')+','+a2.toFixed(3)+')';
-      ctx.beginPath(); ctx.arc(px, py, m.s*(0.6+m.z*0.9), 0, 6.283); ctx.fill();
-    }
-
-    // vignette to seat the copy
-    var vg = ctx.createRadialGradient(W*0.5,H*0.52,Math.min(W,H)*0.30,W*0.5,H*0.52,Math.max(W,H)*0.80);
-    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1, isDark?'rgba(0,0,0,0.42)':'rgba(0,0,0,0.14)');
-    ctx.fillStyle = vg; ctx.fillRect(0,0,W,H);
-  }
-
-  function loop(ts){ if (ts) t = ts; if (visible) draw(); raf = requestAnimationFrame(loop); }
-  size(); draw();
-  window.addEventListener('resize', function(){ size(); draw(); });
-  if (!reduce && 'IntersectionObserver' in window){
-    new IntersectionObserver(function(e){ visible = e[0].isIntersecting; }, {threshold:0.02}).observe(cv);
-  }
-  document.addEventListener('visibilitychange', function(){ visible = !document.hidden && document.visibilityState === 'visible'; });
-  if (!reduce) raf = requestAnimationFrame(loop); 
+    btn.disabled = true;
+    st.textContent = 'Sending\u2026';
+    st.style.color = '';
+    base(function(B){
+      fetch(B + ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          site_id: form.dataset.site || '',
+          business_name: 'Walsh Electrical',
+          name: d.name, phone: d.phone, email: d.email, suburb: d.suburb || '',
+          message: d.message, consent: !!d.consent
+        })
+      })
+      .then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(x){
+        if (x && x.success) {
+          form.reset();
+          st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+          st.style.color = 'var(--acc-hi)';
+        } else {
+          throw new Error((x && x.error) || 'Could not send');
+        }
+      })
+      .catch(function(err){
+        st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+        st.style.color = '#FF9D8A';
+      })
+      .finally(function(){ btn.disabled = false; });
+    });
+  });
 })();
 </script>
-<style>
-/* ==== LB HEADER TRUTH: fail-safe visibility (never ship an invisible header) ==== */
-header,.site-header,.page-header,.header-inner,nav.nav,.nav-inner,
-.lb-brand,.lb-brand *,.lb-brand__mark,.lb-brand__word{
-  opacity:1 !important;visibility:visible !important}
-.lb-rv,.rv,[data-rv]{animation:lbForceIn .001s 2.5s forwards !important}
-@keyframes lbForceIn{to{opacity:1 !important;transform:none !important}}
-#sigSplash,#splash,.sp{animation:lbKillSplash .001s 2.5s forwards !important}
-@keyframes lbKillSplash{to{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}}
-</style>
-
-<style>/* ==== TASTE PASS (anti-slop, from impeccable findings) ==== */
-.lb-mq__in,.marquee-track{display:none !important}
-Colored box-shadow glow (#0066cc) on dark page{box-shadow:none !important;text-shadow:none !important}
-8px functional text "Licensed" (below 11px floor){font-size:max(1em,15px) !important}
-
-:root{--lb-disp:"Archivo",system-ui,sans-serif;--lb-sub:"Archivo",system-ui,sans-serif}
-body,h1,h2,h3,h4,h5,h6,p,li,span,a,button,input,blockquote{
-  font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
-small,.small,.meta,.caption,.eyebrow,.kicker{font-size:max(0.82em,13px)}
-p,li{line-height:1.55}
-section,header,footer,.wrap,.container,.inner,[class*="section"]{
-  scroll-margin-top:24px}
-
-</style>
-<style>/* ==== LB HEADER TRUTH ==== */
-.lb-brand{gap:clamp(8px,1vw,14px) !important;min-height:clamp(44px,5vw,64px) !important;
-  align-items:center !important;flex-wrap:nowrap !important}
-.lb-brand__mark{flex:0 0 auto !important;display:flex !important;align-items:center !important;
-  height:clamp(36px,4vw,52px) !important;width:auto !important;max-width:30vw !important}
-.lb-brand__mark img{display:block !important;height:100% !important;width:auto !important;
-  max-width:100% !important;object-fit:contain !important}
-.lb-brand__word{display:flex !important;flex-direction:column !important;justify-content:center !important;
-  min-width:0 !important;overflow:visible !important}
-@media(max-width:700px){
-  .lb-brand__mark{height:32px !important;max-width:40vw !important}
-  .lb-brand__word{font-size:.92em !important}
-}
-</style>
-
-<style>/* ==== LB HEADER POLISH 2 ==== */
-header nav a:not(.btn):not([class*="btn"]):not([class*="cta"]),
-.site-header nav a:not(.btn):not([class*="btn"]),
-.header-inner nav a:not(.btn):not([class*="btn"]),
-nav.nav a:not(.btn):not([class*="btn"]),
-.nav-inner a:not(.btn):not([class*="btn"]),
-header a[href^="tel"],.site-header a[href^="tel"]{
-  color:var(--lb-name,currentColor) !important;
-  opacity:1 !important;
-}
-.lb-brand__sub:empty{display:none !important}
-</style>
-<style id="lb-header-fault-fix">
-:is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
-img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
-</style>
-</body></html>
+<script src="https://laydback-hq.tail5b3740.ts.net:8443/pulse/js" data-project="walsh-electrical" defer></script>
+</body>
+</html>
