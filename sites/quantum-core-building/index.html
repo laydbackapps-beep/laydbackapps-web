@@ -1,433 +1,459 @@
-<!doctype html>
-<html lang="en-AU"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className='js';</script>
 <title>Quantum Core Building — residential building &amp; renovations, Sydney</title>
-<meta name="description" content="Quantum Core Building Pty Ltd: structural alterations, renovations, extensions, concrete and framing across Sydney. Staged quotes, one project lead. 0403 582 865.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<meta name="description" content="Quantum Core Building: structural alterations, extensions, renovations and fit-outs, concrete and formwork, framing and envelope across Sydney. One project lead, staged quotes. Call 0403 582 865.">
+<meta property="og:title" content="Quantum Core Building — Sydney">
+<meta property="og:description" content="Structural alterations, extensions, renovations, concrete and framing across Sydney. Staged quotes, one project lead. 0403 582 865.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0d0c0d; --panel:#151417; --orange:#d1521a; --orange-lo:#8f3610; --orange-hi:#f06a2c;
-  --silver:#c9c9cc; --paper:#f4f2ef; --dim:#a3a1a0; --line:rgba(244,242,239,.13); --line-o:rgba(209,82,26,.42);
-  --max:1180px;
+  --night:#101216; --night2:#181B21; --panel:#1D2128; --concrete:#EDECE7; --paper:#F7F6F3;
+  --ink:#15171B; --muted:#5E6470; --onight:#E9EBEF; --onight-mut:#9AA2AF;
+  --orange:#EC8C1D; --orange-dk:#C4730F; --line:rgba(21,23,27,.14); --line-n:rgba(255,255,255,.13);
+  --disp:'Space Grotesk',ui-sans-serif,system-ui,sans-serif; --sans:'Archivo',ui-sans-serif,system-ui,sans-serif;
 }
-*{box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:var(--paper);font:17px/1.62 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{max-width:100%}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4vw,46px)}
+body{background:var(--concrete);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
 a{color:inherit}
-h1,h2,h3{margin:0;letter-spacing:-.03em;line-height:1.05}
-h1{font-size:clamp(36px,5.4vw,70px);font-weight:900;letter-spacing:-.045em}
-h1 em{font-style:normal;color:var(--orange)}
-h2{font-size:clamp(23px,3vw,38px);font-weight:800}
-p{margin:0}
-.eyebrow{font:600 12px/1 "IBM Plex Mono",monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:12px}
-.eyebrow::before{content:"";width:34px;height:1px;background:var(--orange)}
-
-/* blueprint texture used behind the darker bands */
-.blueprint{background-image:linear-gradient(rgba(244,242,239,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(244,242,239,.045) 1px,transparent 1px);background-size:52px 52px}
-
-.bar{position:sticky;top:0;z-index:60;background:rgba(13,12,13,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-o)}
-.bar__in{display:flex;align-items:center;gap:clamp(14px,2vw,28px);padding-block:8px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;flex:0 0 auto;text-decoration:none}
-.brand img{display:block;width:auto}
-.brand .qc-badge{height:clamp(82px,7.8vw,112px)}
-.nav{display:flex;align-items:center;gap:clamp(14px,1.9vw,28px);margin-left:auto;flex-wrap:wrap}
-.nav a{text-decoration:none;font-size:14.5px;color:#cfcdcb;padding:6px 0;border-bottom:1px solid transparent}
-.nav a:hover{color:#fff;border-bottom-color:var(--orange)}
-.nav .tel{color:#fff;font-weight:800;border-bottom-color:var(--line-o)}
-.cta{display:inline-flex;align-items:center;gap:9px;background:var(--orange);color:#fff;text-decoration:none;font-weight:800;font-size:14.5px;padding:12px 20px;border-radius:2px;white-space:nowrap;transition:.22s}
-.cta:hover{background:var(--orange-hi);box-shadow:0 8px 26px rgba(209,82,26,.34)}
-.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:var(--paper);padding:9px 12px;font-size:18px;border-radius:2px}
-@media(max-width:980px){
-  .nav{display:none;width:100%;flex-direction:column;align-items:flex-start;gap:2px;margin-left:0;padding:10px 0 4px;border-top:1px solid var(--line)}
-  .nav.open{display:flex}
-  .nav a{padding:11px 0;width:100%;border-bottom:1px solid var(--line);font-size:16px}
-  .nav .cta{margin-top:10px;border:0;text-align:center;justify-content:center;width:100%}
-  .burger{display:block}
-  .brand .qc-badge{height:84px}
+.wrap{width:min(1220px,92vw);margin-inline:auto}
+h1,h2,h3{font-family:var(--disp);line-height:1.05;letter-spacing:-.02em;font-weight:700}
+html.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+html.js .rv.on{opacity:1;transform:none}
+@keyframes drift{0%{transform:translate3d(-6%,0,0)}100%{transform:translate3d(6%,0,0)}}
+@media (prefers-reduced-motion:reduce){
+  html.js .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  *{animation-duration:.001s !important;transition-duration:.001s !important}
 }
 
-/* ---------- rotating hero banner: service + area, cycling ---------- */
-.banner{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#0a0a0b;isolation:isolate}
-.banner__slides{position:absolute;inset:0;z-index:0}
-.banner__slide{position:absolute;inset:0;opacity:0;transition:opacity 1100ms ease;transform:scale(1.04)}
-.banner__slide img{width:100%;height:100%;object-fit:cover;filter:grayscale(.28) contrast(1.04)}
-.banner__slide.on{opacity:1;transform:scale(1);transition:opacity 1100ms ease,transform 6200ms linear}
-.banner::after{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(100deg,rgba(10,10,11,.97) 0%,rgba(10,10,11,.88) 42%,rgba(10,10,11,.55) 66%,rgba(209,82,26,.30) 100%)}
-.banner__rule{position:absolute;left:0;right:0;bottom:0;height:3px;z-index:3;background:linear-gradient(90deg,var(--orange),rgba(209,82,26,0))}
-.banner__in{position:relative;z-index:2;padding:clamp(46px,6.4vw,92px) 0 clamp(40px,5vw,74px);min-height:clamp(430px,52vw,620px);display:flex;flex-direction:column;justify-content:center}
-.banner h1{margin:16px 0 18px;max-width:17ch}
-.banner .sub{color:#d3d1ce;font-size:clamp(16px,1.2vw,18px);max-width:52ch;margin-bottom:28px}
-.banner .acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.ghost{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-o);color:var(--paper);text-decoration:none;font-weight:700;font-size:15px;padding:12px 18px;border-radius:2px;transition:.22s;background:rgba(13,12,13,.42)}
-.ghost:hover{border-color:var(--orange);background:rgba(209,82,26,.14)}
-/* slide caption: which service, which part of Sydney */
-.banner__cap{position:relative;z-index:2;margin-top:clamp(30px,4vw,52px);border:1px solid var(--line-o);background:rgba(13,12,13,.72);backdrop-filter:blur(6px);max-width:640px;border-radius:2px}
-.banner__cap .top{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line)}
-.banner__cap .tag{font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--orange)}
-.banner__cap .where{font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--silver);margin-left:auto}
-.banner__cap .body{padding:15px 18px 17px}
-.banner__cap .body b{display:block;font-size:clamp(17px,1.6vw,21px);font-weight:800;margin-bottom:6px}
-.banner__cap .body span{color:var(--dim);font-size:14.8px}
-.banner__nav{position:absolute;right:clamp(18px,4vw,46px);bottom:clamp(26px,3vw,42px);z-index:4;display:flex;align-items:center;gap:9px}
-.banner__nav button{width:40px;height:40px;border:1px solid var(--line-o);background:rgba(13,12,13,.78);color:var(--paper);font-size:15px;line-height:1;cursor:pointer;border-radius:2px;transition:.2s}
-.banner__nav button:hover{background:var(--orange);border-color:var(--orange)}
-.banner__dots{position:absolute;left:clamp(18px,4vw,46px);bottom:clamp(34px,3.6vw,50px);z-index:4;display:flex;gap:8px}
-.banner__dots i{width:28px;height:3px;background:rgba(244,242,239,.26);transition:.3s;cursor:pointer}
-.banner__dots i.on{background:var(--orange);width:46px}
-@media(max-width:640px){.banner__dots{display:none}.banner__nav{left:clamp(18px,4vw,46px);right:auto;bottom:20px}}
+/* header */
+.bar{position:sticky;top:0;z-index:60;background:rgba(16,18,22,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-n)}
+.bar-in{display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:82px;padding-block:9px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;min-width:0}
+.brand img.brand-mark{height:56px;width:auto;flex:none}
+.brand img.brand-word{height:26px;width:auto;flex:none}
+.bar-nav{display:flex;align-items:center;gap:23px;margin-left:auto}
+.bar-nav a{text-decoration:none;font-size:.93rem;font-weight:500;color:#B9BFCA}
+.bar-nav a:hover{color:#fff}
+.bar-tel{color:#fff !important;font-weight:700;white-space:nowrap}
+.bar-cta{background:var(--orange);color:#181207 !important;font-weight:700;padding:.7rem 1.25rem;border-radius:2px;white-space:nowrap}
+.bar-cta:hover{background:#FFA337 !important}
+.burger{display:none;background:none;border:1px solid var(--line-n);border-radius:3px;padding:.45rem .6rem;cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:#fff;margin:4px 0;transition:.3s}
+.burger.on span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:1080px){
+  .brand img.brand-word{display:none}
+  .bar-nav{position:fixed;inset:82px 0 auto 0;background:#101216;flex-direction:column;align-items:stretch;gap:0;padding:8px 6vw 18px;border-bottom:1px solid var(--line-n);transform:translateY(-170%);transition:transform .35s ease;margin-left:0}
+  .bar-nav.open{transform:none}
+  .bar-nav a{padding:.85rem 0;border-bottom:1px solid var(--line-n)}
+  .bar-nav a.bar-cta{text-align:center;margin-top:12px;border-bottom:0}
+  .burger{display:block}
+}
 
-/* ---------- rotating service-area ticker ---------- */
-.ticker{border-bottom:1px solid var(--line);background:#111012;overflow:hidden;position:relative}
-.ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
-.ticker::before{left:0;background:linear-gradient(90deg,#111012,transparent)}
-.ticker::after{right:0;background:linear-gradient(270deg,#111012,transparent)}
-.ticker__track{display:flex;gap:34px;white-space:nowrap;padding:14px 0;animation:slide 46s linear infinite;will-change:transform}
-.ticker:hover .ticker__track{animation-play-state:paused}
-.ticker span{font:600 12.5px/1 "IBM Plex Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:#b9b7b4;display:inline-flex;align-items:center;gap:14px}
-.ticker span::after{content:"";width:6px;height:6px;background:var(--orange);transform:rotate(45deg)}
-@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media(prefers-reduced-motion:reduce){.ticker__track{animation:none}.banner__slide{transition:none}}
+/* hero */
+.hero{position:relative;background:var(--night);color:var(--onight);perspective:1600px;overflow:hidden}
+#heroCanvas{display:none}
+.hero::before{content:"";position:absolute;inset:auto -10% -30% auto;width:62%;height:150%;background:linear-gradient(115deg,transparent 52%,rgba(236,140,29,.20) 52.2%,rgba(236,140,29,.20) 62%,transparent 62.2%);animation:drift 18s ease-in-out infinite alternate;pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;padding:66px 0 72px}
+.kicker{display:inline-flex;align-items:center;gap:11px;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--orange);margin-bottom:18px}
+.kicker::before{content:"";width:10px;height:10px;background:var(--orange);transform:rotate(45deg)}
+.hero h1{font-size:clamp(2.3rem,5vw,3.9rem);color:#F4F6F9}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero-lede{margin-top:18px;font-size:1.08rem;color:#B8BFCA;max-width:46ch}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:.9rem 1.55rem;border-radius:2px;text-decoration:none;font-weight:700;font-size:.94rem;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-p{background:var(--orange);color:#181207}
+.btn-p:hover{background:#FFA337}
+.btn-o{border:1.5px solid #6E7683;color:#EEF0F3}
+.btn-o:hover{border-color:var(--orange);color:#fff}
+.hero-tags{display:flex;gap:26px;flex-wrap:wrap;margin-top:34px;padding-top:20px;border-top:1px solid var(--line-n)}
+.hero-tags div{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:#8C93A0;font-weight:600}
+.hero-tags strong{display:block;font-family:var(--disp);font-size:1.05rem;letter-spacing:0;text-transform:none;color:#F4F6F9;margin-top:5px}
+.shot{position:relative;transform:rotateY(-9deg) rotateX(2deg);transform-style:preserve-3d;border:1px solid var(--line-n);border-radius:3px;overflow:hidden;background:#0B0D10;box-shadow:30px 40px 70px rgba(0,0,0,.55)}
+.shot img{width:100%;height:360px;object-fit:cover;opacity:.95}
+.shot figcaption{position:absolute;left:0;bottom:0;right:0;background:linear-gradient(0deg,rgba(9,11,14,.94),rgba(9,11,14,0));color:#E7EAEF;font-size:.8rem;padding:34px 16px 13px}
+.shot figcaption b{color:var(--orange);display:block;font-family:var(--disp);font-size:.9rem;letter-spacing:.02em}
+.shot-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-n);margin-top:20px;border:1px solid var(--line-n)}
+.shot-bar div{background:#15181E;padding:14px 12px;text-align:center}
+.shot-bar b{display:block;font-family:var(--disp);color:var(--orange);font-size:1.02rem}
+.shot-bar span{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#8C93A0;font-weight:600}
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:34px;padding:46px 0 52px}
+  .shot{transform:none;box-shadow:0 22px 46px rgba(0,0,0,.5)}
+  .shot img{height:280px}
+}
 
-.facts{border-bottom:1px solid var(--line);background:#111012}
-.facts__in{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-.facts div{background:#111012;padding:24px clamp(12px,2vw,24px);position:relative;transition:.25s}
-.facts div:hover{background:#161519}
-.facts div::before{content:"";position:absolute;left:0;top:0;width:0;height:2px;background:var(--orange);transition:width .4s}
-.facts div:hover::before{width:100%}
-.facts b{display:block;font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.18em;color:var(--orange);margin-bottom:8px}
-.facts span{font-size:14.5px;color:#cbc9c6;line-height:1.45}
-@media(max-width:760px){.facts__in{grid-template-columns:1fr}}
+/* hazard strip */
+.hazard{height:12px;background:repeating-linear-gradient(45deg,var(--orange) 0 18px,#15181E 18px 36px)}
 
-section{padding:clamp(46px,5.8vw,84px) 0;border-bottom:1px solid var(--line);position:relative}
-.head{display:flex;align-items:flex-end;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,38px)}
-.head p{color:var(--dim);max-width:54ch;font-size:15.5px;margin-top:10px}
+section.blk{padding:84px 0}
+.sec-top{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:38px;flex-wrap:wrap}
+.sec-eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--orange-dk)}
+.sec-h{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-top:9px;max-width:24ch}
+.sec-note{color:var(--muted);max-width:44ch}
 
-/* services: rows with icons that light up on hover */
-.ledger{border-top:1px solid var(--line)}
-.ledger article{display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,1.2fr);gap:clamp(12px,2.2vw,32px);padding:22px 0;border-bottom:1px solid var(--line);align-items:start;position:relative;transition:.25s}
-.ledger article::after{content:"";position:absolute;left:0;bottom:-1px;width:0;height:1px;background:var(--orange);transition:width .45s}
-.ledger article:hover::after{width:100%}
-.ledger article:hover{background:linear-gradient(90deg,rgba(209,82,26,.06),transparent 62%)}
-.ledger .n{font:600 12.5px/1 "IBM Plex Mono",monospace;color:var(--orange);letter-spacing:.1em;padding-top:5px}
-.ledger h3{font-size:clamp(17px,1.5vw,21px);font-weight:800;display:flex;align-items:center;gap:12px}
-.ledger h3 svg{width:22px;height:22px;flex:0 0 auto;stroke:var(--orange);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.ledger p{color:var(--dim);font-size:15px;max-width:58ch}
-@media(max-width:720px){.ledger article{grid-template-columns:40px 1fr}.ledger p{grid-column:2}}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.svc{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--orange);padding:26px 26px 24px;border-radius:2px}
+.svc .n{font-family:var(--disp);font-size:.8rem;font-weight:700;color:var(--orange-dk);letter-spacing:.14em}
+.svc h3{font-size:1.24rem;margin:11px 0 7px}
+.svc p{font-size:.94rem;color:#565C67}
+@media(max-width:760px){.svc-grid{grid-template-columns:1fr}}
 
-/* process: connected timeline with hold points */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);position:relative}
-.steps div{background:var(--ink);padding:24px 18px;position:relative;transition:.25s}
-.steps div:hover{background:var(--panel)}
-.steps div::before{content:"";position:absolute;left:18px;top:16px;width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px rgba(209,82,26,.18)}
-.steps b{display:block;font:600 11.5px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;color:var(--orange);margin:22px 0 10px}
-.steps h3{font-size:16px;margin-bottom:6px}
-.steps p{font-size:14.4px;color:var(--dim)}
-@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.steps{grid-template-columns:1fr}}
+/* stages */
+.stages{background:var(--night);color:var(--onight);padding:76px 0}
+.stages .sec-eyebrow{color:var(--orange)}
+.stages .sec-h{color:#F2F4F7}
+.stages .sec-note{color:#9AA2AF}
+.rail{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-n);border:1px solid var(--line-n);margin-top:6px}
+.rail div{background:#14171C;padding:26px 22px;position:relative}
+.rail .num{font-family:var(--disp);font-size:1.9rem;color:var(--orange);line-height:1;font-weight:700}
+.rail h3{font-size:1.06rem;margin:12px 0 7px;color:#F2F4F7}
+.rail p{font-size:.9rem;color:#9AA2AF}
+@media(max-width:860px){.rail{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.rail{grid-template-columns:1fr}}
 
-/* work: gallery with slow zoom and caption reveal */
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.gal figure{margin:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;position:relative;background:var(--panel)}
-.gal .frame{overflow:hidden}
-.gal img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform 900ms cubic-bezier(.2,.7,.2,1),filter .4s;filter:grayscale(.2)}
-.gal figure:hover img{transform:scale(1.07);filter:grayscale(0)}
-.gal figcaption{font:500 11px/1.4 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#cfcdcb;padding:9px 11px;border-top:1px solid var(--line);display:flex;align-items:center;gap:9px}
-.gal figcaption::before{content:"";width:6px;height:6px;background:var(--orange);transform:rotate(45deg)}
-@media(max-width:820px){.gal{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.gal{grid-template-columns:1fr}}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gcell{background:var(--paper);border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.gcell img{width:100%;height:250px;object-fit:cover}
+.gcell figcaption{padding:14px 16px 16px;font-size:.9rem;color:#545A65}
+.gcell figcaption b{display:block;font-family:var(--disp);font-size:.99rem;color:var(--ink);margin-bottom:3px}
+@media(max-width:900px){.gal{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.gal{grid-template-columns:1fr}.gcell img{height:230px}}
 
-.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,44px);align-items:center}
-.split figure{margin:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;position:relative}
-.split figure img{display:block;width:100%;height:auto;transition:transform 900ms cubic-bezier(.2,.7,.2,1)}
-.split figure:hover img{transform:scale(1.04)}
-.split figure::after{content:"";position:absolute;inset:0;border:1px solid transparent;transition:.3s;pointer-events:none}
-.split figure:hover::after{border-color:var(--line-o)}
-.split ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:11px}
-.split li{display:grid;grid-template-columns:16px 1fr;gap:12px;font-size:15px;color:#cfcdcb}
-.split li::before{content:"";width:7px;height:7px;background:var(--orange);transform:rotate(45deg);margin-top:8px}
-@media(max-width:820px){.split{grid-template-columns:1fr}}
+/* areas + faq */
+.two{display:grid;grid-template-columns:.92fr 1.08fr;gap:58px}
+.area-list li{list-style:none;padding:12px 0;border-bottom:1px solid var(--line);font-size:.97rem;display:flex;gap:12px;align-items:center}
+.area-list li::before{content:"";width:9px;height:9px;background:var(--orange);flex:none;transform:rotate(45deg)}
+.faq details{border-bottom:1px solid var(--line);padding:15px 0}
+.faq summary{cursor:pointer;font-family:var(--disp);font-weight:600;font-size:1.04rem;list-style:none;display:flex;justify-content:space-between;gap:18px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--sans);font-size:1.3rem;color:var(--orange-dk)}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin-top:9px;color:#565C67;font-size:.94rem}
+@media(max-width:900px){.two{grid-template-columns:1fr;gap:38px}}
 
-/* areas: chips + the big rotating area banner */
-.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-.areas span{border:1px solid var(--line);padding:8px 14px;font-size:14px;color:#c3c1be;border-radius:2px;transition:.22s;cursor:default}
-.areas span:hover{border-color:var(--orange);color:#fff;background:rgba(209,82,26,.12)}
-.areaband{margin-top:26px;border:1px solid var(--line-o);background:var(--panel);overflow:hidden;position:relative}
-.areaband .cap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:11px 16px;border-bottom:1px solid var(--line);font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
-.areaband .cap em{font-style:normal;color:var(--dim)}
-.areaband .row{position:relative;height:58px;overflow:hidden}
-.areaband .row ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity .7s ease,transform .7s ease;transform:translateY(14px)}
-.areaband .row ul.on{opacity:1;transform:translateY(0)}
-.areaband .row li{font:800 clamp(20px,2.6vw,31px)/1.1 Archivo,sans-serif;letter-spacing:-.03em}
-.areaband .row li small{display:block;font:500 11.5px/1 "IBM Plex Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-top:7px}
-.areaband .prog{height:2px;background:rgba(244,242,239,.1)}
-.areaband .prog i{display:block;height:100%;width:0;background:var(--orange);animation:fill 4s linear infinite}
-@keyframes fill{from{width:0}to{width:100%}}
-@media(prefers-reduced-motion:reduce){.areaband .prog i{animation:none;width:100%}}
-
-details{border:1px solid var(--line);border-left:2px solid transparent;background:#111012;margin-bottom:8px;transition:.25s}
-details:hover{border-left-color:var(--orange);background:#131215}
-details[open]{border-left-color:var(--orange)}
-summary{cursor:pointer;font-weight:700;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:17px 19px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--orange);font:600 20px/1 "IBM Plex Mono",monospace}
-details[open] summary::after{content:"–"}
-details .a{color:var(--dim);font-size:15px;padding:0 44px 18px 19px;max-width:78ch}
-
-.quote{background:#111012}
-.quote__in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,3.4vw,48px);align-items:start}
-.quote p{color:var(--dim);font-size:15.5px;margin-top:14px;max-width:40ch}
-.quote .mono{font:500 12.5px/1.7 "IBM Plex Mono",monospace;color:var(--orange);margin-top:20px}
-.quote .badge{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--line);padding:12px 15px;margin-top:22px;background:var(--ink);border-radius:2px}
-.quote .badge span{font:600 11px/1.4 "IBM Plex Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:var(--panel);border:1px solid var(--line);padding:clamp(20px,2.6vw,30px);border-radius:3px;position:relative;overflow:hidden}
-form::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange),rgba(209,82,26,0))}
-form .full{grid-column:1/-1}
-label{display:block;font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:7px}
-input,select,textarea{width:100%;background:#0a0a0b;border:1px solid var(--line);color:var(--paper);padding:12px;font:inherit;font-size:15px;border-radius:2px;transition:.2s}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(209,82,26,.14)}
-button{grid-column:1/-1;background:var(--orange);color:#fff;border:0;padding:15px;font:inherit;font-weight:800;font-size:15.5px;cursor:pointer;border-radius:2px;transition:.22s}
-button:hover{background:var(--orange-hi)}
-button:disabled{opacity:.72;cursor:default}
-@media(max-width:860px){.quote__in{grid-template-columns:1fr}form{grid-template-columns:1fr}}
-
-footer{padding:30px 0 44px;color:var(--dim);font-size:13.5px}
-.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
-.foot img{height:56px;width:auto}
-.foot a{color:#cfcdcb;text-decoration:none;border-bottom:1px solid var(--line-o)}
-
-/* scroll reveal */
-.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+footer{background:var(--night2);color:#B3B9C4;padding:60px 0 32px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:38px}
+.foot-brand{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.foot-brand img{height:40px}
+footer h4{font-family:var(--disp);color:#F0F2F5;font-size:1rem;margin-bottom:13px}
+footer a{color:#B3B9C4;text-decoration:none;font-size:.93rem}
+footer a:hover{color:var(--orange)}
+.foot-list li{list-style:none;padding:6px 0}
+.foot-bottom{margin-top:42px;padding-top:20px;border-top:1px solid var(--line-n);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.83rem;color:#868D99}
+@media(max-width:800px){.foot-grid{grid-template-columns:1fr 1fr;gap:26px}}
+@media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
 </style>
-</head><body>
+</head>
+<body id="top">
 
-<div class="bar"><div class="wrap bar__in">
-  <a class="brand" href="#top" aria-label="Quantum Core Building — home"><img class="qc-badge" src="assets/qc-badge.png" alt="Quantum Core Building"></a>
-  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
-  <nav class="nav" id="nav">
-    <a href="#services">Services</a>
-    <a href="#process">Process</a>
-    <a href="#work">Work</a>
-    <a href="#areas">Areas</a>
-    <a href="#faq">FAQ</a>
-    <a class="tel" href="tel:0403582865">0403 582 865</a>
-    <a class="cta" href="#quote">Get a quote</a>
-  </nav>
-</div></div>
-
-<header class="banner" id="top">
-  <div class="banner__slides" id="slides">
-    <div class="banner__slide on"><img src="images/hero-core-building.jpg" alt="Residential building work under way in Sydney" width="1080" height="969"></div>
-    <div class="banner__slide"><img src="images/work_01.jpg" alt="Structural alteration with new beam and propping" width="1280" height="1280"></div>
-    <div class="banner__slide"><img src="images/work_04.jpg" alt="Rear extension framing on a Sydney house" width="1280" height="1280"></div>
-    <div class="banner__slide"><img src="images/work_06.jpg" alt="Completed renovation and fit-out" width="1280" height="1280"></div>
-  </div>
-  <div class="banner__rule"></div>
-  <div class="wrap banner__in">
-    <span class="eyebrow">Residential building · Sydney</span>
-    <h1>Building work<br><em>in Sydney.</em></h1>
-    <p class="sub">Structural alterations, extensions, renovations and fit-outs across Sydney — planned from the engineer's detail, priced in stages, and run by the same person who quoted it.</p>
-    <p class="acts"><a class="cta" href="#quote">Request a quote</a><a class="ghost" href="tel:0403582865">Call 0403 582 865</a></p>
-
-    <div class="banner__cap" id="cap">
-      <div class="top"><span class="tag" id="capTag">Structural alterations</span><span class="where" id="capWhere">Inner West</span></div>
-      <div class="body"><b id="capTitle">Beams, openings and removed walls</b><span id="capText">Built to the engineer's detail, with certification running alongside the work.</span></div>
-    </div>
-  </div>
-  <div class="banner__dots" id="dots"></div>
-  <div class="banner__nav">
-    <button type="button" id="prev" aria-label="Previous slide">←</button>
-    <button type="button" id="next" aria-label="Next slide">→</button>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="brand" href="#top" aria-label="Quantum Core Building — home">
+      <img class="brand-mark" src="assets/logo-mark-hdr.png" alt="Quantum Core Building logo">
+      <img class="brand-word" src="assets/logo-word-hdr.png" alt="Quantum Core Building">
+    </a>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navmain"><span></span><span></span><span></span></button>
+    <nav class="bar-nav" id="navmain" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#stages">Stages</a>
+      <a href="#work">Projects</a>
+      <a href="#areas">Areas</a>
+      <a class="bar-tel" href="tel:+61403582865">0403 582 865</a>
+      <a class="bar-cta" href="#lbq">Get a quote</a>
+    </nav>
   </div>
 </header>
 
-<div class="ticker" aria-hidden="true"><div class="ticker__track" id="tick"></div></div>
-
-<div class="facts"><div class="wrap facts__in">
-  <div><b>ONE PROJECT LEAD</b><span>The person who quotes the job runs the job, start to handover.</span></div>
-  <div><b>STAGED PRICING</b><span>Quotes split into stages so you see the cost as the work moves.</span></div>
-  <div><b>SYDNEY WIDE</b><span>Inner west, eastern suburbs, north shore and the south.</span></div>
-</div></div>
-
 <main>
-<section id="services" class="blueprint"><div class="wrap">
-  <div class="head rv">
-    <div><span class="eyebrow">What we build</span><h2 style="margin-top:14px">Residential work, done in order</h2></div>
-    <p>Most jobs on a house are decided by three things: what the structure can carry, what the certifier needs to see, and what happens to the rooms while the work is going on. All three get worked out before demolition.</p>
-  </div>
-  <div class="ledger">
-    <article class="rv"><span class="n">01</span><h3><svg viewBox="0 0 24 24"><path d="M3 6h18M3 18h18M7 6v12M17 6v12"/><path d="M4.5 4.5h15v15h-15z"/></svg>Structural alterations</h3><p>Beams, openings, underpinning and removed walls — built to the engineer's detail with certification as the work proceeds, not scrambled for at the end.</p></article>
-    <article class="rv"><span class="n">02</span><h3><svg viewBox="0 0 24 24"><path d="M3 11.5 12 6l9 5.5"/><path d="M5.5 10.6V19h13v-8.4"/><path d="M12 6v13"/><path d="M9 19v-3.4h6V19"/></svg>Extensions &amp; additions</h3><p>Rear and side extensions, second-storey additions and new rooms. Set-out from the survey, frame and roof tie-in sequenced so the existing house stays weatherproof.</p></article>
-    <article class="rv"><span class="n">03</span><h3><svg viewBox="0 0 24 24"><path d="M4 20V9.6L12 4l8 5.6V20z"/><path d="M9.6 20v-6.4h4.8V20"/><path d="M3 20h18"/></svg>Renovations &amp; fit-outs</h3><p>Kitchens, bathrooms and whole-house renovations where demolition, services, waterproofing and finishes are run as one job rather than four trades arguing about who goes first.</p></article>
-    <article class="rv"><span class="n">04</span><h3><svg viewBox="0 0 24 24"><path d="M3 17h18"/><path d="M5 17V9h14v8"/><path d="M8 9V5.5h8V9"/><path d="M9.5 20.5h5"/></svg>Concrete &amp; formwork</h3><p>Footings, slabs, piers and suspended work — set out, poured and stripped on a programme that the rest of the job can actually follow.</p></article>
-    <article class="rv"><span class="n">05</span><h3><svg viewBox="0 0 24 24"><path d="M3 20 12 4l9 16"/><path d="M7.4 13h9.2"/><path d="M9.4 20l2.6-7 2.6 7"/></svg>Framing &amp; envelope</h3><p>Timber and steel framing, roof structure, cladding and glazing installed weather-tight, so the interior trades are never working in the rain.</p></article>
-  </div>
-</div></section>
 
-<section id="process"><div class="wrap">
-  <div class="head rv"><div><span class="eyebrow">How a job runs</span><h2 style="margin-top:14px">Four stages, priced separately</h2></div>
-    <p>Building work goes wrong when the sequence is decided after the quote. This is the order every job follows, and the order the price follows too.</p></div>
-  <div class="steps rv">
-    <div><b>STAGE 01</b><h3>Scope &amp; documents</h3><p>Plans, engineer's details and the certifier's requirements read together before a number is given.</p></div>
-    <div><b>STAGE 02</b><h3>Set-out &amp; demolition</h3><p>Levels set from the survey, services located, and only what the drawings say comes out.</p></div>
-    <div><b>STAGE 03</b><h3>Structure &amp; envelope</h3><p>Concrete, framing, roof and cladding closed in — inspections booked at the hold points.</p></div>
-    <div><b>STAGE 04</b><h3>Fit-out &amp; handover</h3><p>Waterproofing, lining, joinery and finishes, then a walk-through with a defect list before final payment.</p></div>
+<section class="hero">
+  <!-- LB-3D-HERO -->
+  <canvas id="heroCanvas" hidden aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div class="rv">
+      <span class="kicker">Residential building &middot; Sydney</span>
+      <h1>Building work, run to <em>a clear plan</em>.</h1>
+      <p class="hero-lede">Quantum Core Building handles structural alterations, extensions, renovations and fit-outs &mdash; concrete, formwork and framing through to handover, with one project lead and staged quotes you can plan around.</p>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="#lbq">Get a staged quote</a>
+        <a class="btn btn-o" href="tel:+61403582865">Call 0403 582 865</a>
+      </div>
+      <div class="hero-tags">
+        <div>Scope<strong>Alterations &amp; extensions</strong></div>
+        <div>Structure<strong>Concrete, framing, envelope</strong></div>
+        <div>Finish<strong>Renovations &amp; fit-outs</strong></div>
+      </div>
+    </div>
+    <div class="rv">
+      <figure class="shot">
+        <img src="images/work_02.jpg" alt="Building crew in hard hats and high-vis framing inside a residential renovation">
+        <figcaption><b>On site</b>Crew framing out around an exposed staircase, mid-renovation.</figcaption>
+      </figure>
+      <div class="shot-bar">
+        <div><b>Structural</b><span>alterations</span></div>
+        <div><b>Extensions</b><span>additions</span></div>
+        <div><b>Fit-outs</b><span>renovations</span></div>
+      </div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section id="work" class="blueprint"><div class="wrap">
-  <div class="head rv"><div><span class="eyebrow">Recent work</span><h2 style="margin-top:14px">Sydney projects</h2></div>
-    <p>Structural alterations, extensions and fit-outs — photographed on site as the work progressed.</p></div>
-  <div class="gal">
-    <figure class="rv"><span class="frame"><img src="images/work_01.jpg" alt="Structural alteration in progress" loading="lazy"></span><figcaption>Structural alteration</figcaption></figure>
-    <figure class="rv"><span class="frame"><img src="images/work_02.jpg" alt="Extension frame and roof tie-in" loading="lazy"></span><figcaption>Extension — framing</figcaption></figure>
-    <figure class="rv"><span class="frame"><img src="images/work_03.jpg" alt="Concrete and formwork stage" loading="lazy"></span><figcaption>Slab &amp; formwork</figcaption></figure>
-    <figure class="rv"><span class="frame"><img src="images/work_04.jpg" alt="Renovation in progress" loading="lazy"></span><figcaption>Renovation</figcaption></figure>
-    <figure class="rv"><span class="frame"><img src="images/work_05.jpg" alt="Interior fit-out" loading="lazy"></span><figcaption>Interior fit-out</figcaption></figure>
-    <figure class="rv"><span class="frame"><img src="images/work_06.jpg" alt="Completed work" loading="lazy"></span><figcaption>Completed work</figcaption></figure>
-  </div>
-</div></section>
+<div class="hazard" aria-hidden="true"></div>
 
-<section id="quote-notes"><div class="wrap split">
-  <figure class="rv"><img src="images/work_07.jpg" alt="Completed Sydney residential project" width="640" height="1136" loading="lazy"></figure>
-  <div class="rv">
-    <span class="eyebrow">What the quote covers</span>
-    <h2 style="margin-top:14px">No gaps between the numbers</h2>
-    <p style="color:var(--dim);margin-top:12px;font-size:15.5px">A building quote is only useful if it says what is excluded. Ours lists the scope, the provisional items and what is expected from you — access, power, and decisions that hold the programme up.</p>
-    <ul>
-      <li>Scope split by stage, with the price against each stage.</li>
-      <li>Provisional sums named, not buried in a total.</li>
-      <li>Certification and inspection costs shown separately.</li>
-      <li>Variations priced before they are built, not after.</li>
-    </ul>
+<section class="blk" id="services">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div><span class="sec-eyebrow">What we do</span><h2 class="sec-h">Six scopes we build</h2></div>
+      <p class="sec-note">From knocking out a wall to standing up a new extension &mdash; the structural work and the finish that follows.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv"><div class="n">01</div><h3>Structural alterations</h3><p>Load-bearing walls removed, beams and lintels set, and openings formed with the structure properly supported first.</p></article>
+      <article class="svc rv"><div class="n">02</div><h3>Extensions &amp; additions</h3><p>New rooms, upper-floor additions and rear extensions &mdash; set out, framed and closed in to meet the existing house.</p></article>
+      <article class="svc rv"><div class="n">03</div><h3>Renovations &amp; fit-outs</h3><p>Internal strip-outs and rebuilds, kitchen and bathroom fit-outs, linings, tiling and the finishes that go with them.</p></article>
+      <article class="svc rv"><div class="n">04</div><h3>Concrete &amp; formwork</h3><p>Footings, slabs, paths and retaining walls formed, reinforced and poured as part of the build.</p></article>
+      <article class="svc rv"><div class="n">05</div><h3>Framing &amp; envelope</h3><p>Timber and steel framing, roof structure, cladding and windows &mdash; the building made weathertight.</p></article>
+      <article class="svc rv"><div class="n">06</div><h3>Set-out &amp; demolition</h3><p>Site set-out and the careful strip-out that comes first, with the parts of the house staying kept protected.</p></article>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section id="areas" class="blueprint"><div class="wrap">
-  <div class="head rv"><div><span class="eyebrow">Where we work</span><h2 style="margin-top:14px">Across Sydney</h2></div>
-    <p>Travel time is short across the metro area, which is why smaller structural jobs are worth doing properly.</p></div>
-  <div class="areas rv">
-    <span>Inner West</span><span>Marrickville</span><span>Newtown</span><span>Leichhardt</span><span>Balmain</span>
-    <span>Eastern Suburbs</span><span>Randwick</span><span>Coogee</span><span>North Shore</span><span>Chatswood</span>
-    <span>Lane Cove</span><span>Sutherland Shire</span><span>Parramatta</span><span>Ryde</span>
+<section class="stages" id="stages">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div><span class="sec-eyebrow">How a build runs</span><h2 class="sec-h">Four stages, priced as you go</h2></div>
+      <p class="sec-note">Scope and documents first, then set-out, then structure, then the fit-out and handover.</p>
+    </div>
+    <div class="rail">
+      <div class="rv"><div class="num">01</div><h3>Scope &amp; documents</h3><p>We walk the job, read the plans and work out what is actually needed before pricing it.</p></div>
+      <div class="rv"><div class="num">02</div><h3>Set-out &amp; demolition</h3><p>Site set-out, protection up, and the strip-out done cleanly so the structure is ready to work on.</p></div>
+      <div class="rv"><div class="num">03</div><h3>Structure &amp; envelope</h3><p>Concrete, framing and roof, then cladding and windows &mdash; the building closed in and weathertight.</p></div>
+      <div class="rv"><div class="num">04</div><h3>Fit-out &amp; handover</h3><p>Linings, wet areas and finishes, then a walk-through of the finished work with you.</p></div>
+    </div>
   </div>
-  <div class="areaband rv">
-    <div class="cap"><span>Service areas — rotating</span><em id="areaCount">01 / 06</em></div>
-    <div class="row" id="areaRow"></div>
-    <div class="prog"><i></i></div>
-  </div>
-</div></section>
+</section>
 
-<section id="faq"><div class="wrap">
-  <div class="head rv"><div><span class="eyebrow">Questions</span><h2 style="margin-top:14px">Asked before every quote</h2></div></div>
-  <div class="rv">
-  <details><summary>Do I need an engineer for a wall removal?</summary><div class="a">Usually yes. A structural engineer specifies the beam, the bearings and any temporary support. That detail is what the certifier and the builder work from — it is not something to work out on site.</div></details>
-  <details><summary>Can we live in the house during the work?</summary><div class="a">Often, for part of it. Demolition and structural stages are the hard ones. The programme is set so the dustiest work happens in a block rather than dragging on for months.</div></details>
-  <details><summary>How long does an extension take?</summary><div class="a">A single-storey rear extension is typically three to five months depending on approvals, weather and finishes. A second storey or a full renovation runs longer — the programme is given with the quote.</div></details>
-  <details><summary>Who handles the certifier and inspections?</summary><div class="a">We coordinate the inspection schedule with your certifier and book the hold points into the programme, so framing and waterproofing are signed off before they are covered up.</div></details>
-  <details><summary>Is the quote fixed?</summary><div class="a">The scope is fixed and priced by stage. Provisional items are named with an allowance, and any variation is priced and agreed before the work is done.</div></details>
+<section class="blk" id="work">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div><span class="sec-eyebrow">Recent work</span><h2 class="sec-h">From frame to finish</h2></div>
+      <p class="sec-note">A selection from the job book &mdash; structure, decking, concrete and wet areas.</p>
+    </div>
+    <div class="gal">
+      <figure class="gcell rv"><img src="images/work_02.jpg" alt="Building crew working inside a stripped residential renovation"><figcaption><b>Framing on site</b>Crew in hard hats and high-vis working around an exposed staircase.</figcaption></figure>
+      <figure class="gcell rv"><img src="images/work_01.jpg" alt="Timber deck with black metal balustrade against white vertical cladding"><figcaption><b>Deck &amp; balustrade</b>New timber decking with black metal balustrade against white cladding.</figcaption></figure>
+      <figure class="gcell rv"><img src="images/work_05.jpg" alt="Backyard at dusk with a timber deck, steps and a retractable awning"><figcaption><b>Alfresco at dusk</b>Timber deck and steps with a retractable awning over the outdoor area.</figcaption></figure>
+      <figure class="gcell rv"><img src="images/work_04.jpg" alt="Finished concrete path alongside a brick retaining wall"><figcaption><b>Concrete &amp; retaining</b>Finished concrete path running alongside a brick retaining wall.</figcaption></figure>
+      <figure class="gcell rv"><img src="images/work_06.jpg" alt="Bathroom fit-out with large floor and wall tiling and a freestanding bath"><figcaption><b>Bathroom fit-out</b>Large-format floor and wall tiling with the freestanding tub set in.</figcaption></figure>
+      <figure class="gcell rv"><img src="images/work_03.jpg" alt="Primer being rolled out across a floor before the finish goes down"><figcaption><b>Floor prep</b>Primer rolled out across the slab before the floor finish goes down.</figcaption></figure>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section id="quote" class="quote blueprint"><div class="wrap quote__in">
-  <div class="rv">
-    <span class="eyebrow">Get a quote</span>
-    <h2 style="margin-top:14px">Tell us about the job</h2>
-    <p>The suburb, what you want to change, and whether you have plans or an engineer's detail yet. If not, we can tell you what is needed first.</p>
-    <p class="mono">Quantum Core Building Pty Ltd<br>Sydney NSW · 0403 582 865</p>
-    <div class="badge"><span>Staged quote · one project lead</span></div>
+<section class="blk" id="areas" style="padding-top:0">
+  <div class="wrap two">
+    <div class="rv">
+      <span class="sec-eyebrow">Where we work</span>
+      <h2 class="sec-h" style="margin-bottom:20px">Sydney and surrounding areas</h2>
+      <p class="sec-note" style="margin-bottom:20px">Residential alterations, extensions and fit-outs across Sydney and the surrounding suburbs.</p>
+      <ul class="area-list">
+        <li>Structural alterations &amp; beams</li>
+        <li>Extensions &amp; additions</li>
+        <li>Renovations &amp; fit-outs</li>
+        <li>Concrete, framing &amp; envelope</li>
+      </ul>
+    </div>
+    <div class="faq rv">
+      <span class="sec-eyebrow">Questions</span>
+      <h2 class="sec-h" style="margin-bottom:12px">Before you engage a builder</h2>
+      <details><summary>Do you quote stage by stage?</summary><p>Yes. The scope and documents are worked out first, then the work is priced in stages so you can see what each part covers.</p></details>
+      <details><summary>Do you take on the structural side as well as the finish?</summary><p>We do &mdash; concrete, formwork, framing and the envelope through to the fit-out and handover.</p></details>
+      <details><summary>Can you work with our plans?</summary><p>Yes. Send the drawings through with the enquiry and we will work from them when scoping the job.</p></details>
+      <details><summary>How do I get a quote?</summary><p>Fill in the form with the details of the job and we will be in touch, or call 0403 582 865.</p></details>
+    </div>
   </div>
-  <form id="lbq-form" data-site="quantum-core-building" class="rv">
-    <div><label for="n">Name</label><input id="n" name="name" required autocomplete="name"></div>
-    <div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel" autocomplete="tel"></div>
-    <div class="full"><label for="a">Suburb</label><input id="a" name="suburb" autocomplete="address-level2"></div>
-    <div class="full"><label for="s">What is the job?</label><select id="s" name="service">
-      <option>Structural alteration</option><option>Extension / addition</option><option>Renovation / fit-out</option>
-      <option>Concrete &amp; formwork</option><option>Framing &amp; envelope</option><option>Something else</option>
-    </select></div>
-    <div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="4" placeholder="What you want to change, and whether plans or engineering are done."></textarea></div>
-    <button type="submit">Send request</button>
-  </form>
-</div></section>
+</section>
+
+<section id="lbq" class="v4" aria-labelledby="lbq-h">
+  <style>
+#lbq{--lbq-accent:var(--orange,#EC8C1D);--lbq-ink:var(--ink,#15171B);--lbq-muted:var(--muted,#5E6470);--lbq-bg:var(--paper,#F7F6F3);--lbq-panel:var(--paper,#F7F6F3);--lbq-line:var(--line,rgba(21,23,27,.16));padding:80px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:640px;margin:0 auto}
+#lbq h2{font-size:clamp(1.55rem,3.2vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em;font-family:var(--disp)}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
+#lbq label{display:block;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:13px 4px;border:0;border-bottom:1px solid var(--lbq-line);border-radius:0;background:transparent;color:inherit;font:inherit;font-size:1rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:2px}
+#lbq .lbq-g{display:grid;gap:18px}
+#lbq button{margin-top:8px;padding:14px 24px;border:0;border-radius:2px;background:var(--orange,#EC8C1D);color:#181207;font:inherit;font-weight:700;font-size:.96rem;cursor:pointer;letter-spacing:.02em;justify-self:start}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:14px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  </style>
+  <div class="lbq-w">
+    <h2 id="lbq-h">Request a quote</h2>
+    <p class="lbq-s">Tell us a few details and we will get back to you with a free, no-obligation quote.</p>
+    <form id="lbq-form" novalidate data-site="quantum-core-building" data-biz="Quantum Core Building">
+      <div class="lbq-g">
+        <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+        <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
+        <div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
+        <div><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Alteration, extension or fit-out, suburb, stage you are at…" required></textarea></div>
+      </div>
+      <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
+      <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit">Send quote request</button>
+      <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <script>
+(function(){
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#a8452a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending…';
+      st.style.color = '';
+      base(function(B){
+        fetch(B + '/functions/v1/quote-request', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks — your request is in. We'll be in touch shortly.";
+            st.style.color = '#8f5408';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send — please try again or call.';
+          st.style.color = '#a8452a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+  </script>
+</section>
+
 </main>
 
-<footer><div class="wrap foot">
-  <img src="assets/qc-badge.png" alt="Quantum Core Building" style="height:56px">
-  <span>Quantum Core Building Pty Ltd · Sydney NSW · <a href="tel:0403582865">0403 582 865</a></span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logo-mark-hdr.png" alt="Quantum Core Building logo">
+        <p style="max-width:34ch;font-size:.93rem">Quantum Core Building &mdash; structural alterations, extensions, renovations and fit-outs across Sydney.</p>
+        <p><a href="tel:+61403582865" style="font-family:var(--disp);font-size:1.3rem;color:#F0F2F5">0403 582 865</a></p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="foot-list">
+          <li><a href="#services">Structural alterations</a></li>
+          <li><a href="#services">Extensions &amp; additions</a></li>
+          <li><a href="#services">Renovations &amp; fit-outs</a></li>
+          <li><a href="#services">Concrete &amp; formwork</a></li>
+          <li><a href="#services">Framing &amp; envelope</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>The business</h4>
+        <ul class="foot-list">
+          <li><a href="#stages">Stages</a></li>
+          <li><a href="#work">Projects</a></li>
+          <li><a href="#areas">Areas</a></li>
+          <li><a href="#lbq">Request a quote</a></li>
+          <li><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr">2026</span> Quantum Core Building. Sydney, NSW.</span>
+      <span>Residential building &amp; renovations</span>
+    </div>
+  </div>
+</footer>
 
 <script>
-document.getElementById('burger').addEventListener('click',function(){var n=document.getElementById('nav');
-  var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);});
-
-/* rotating hero banner — one slide per service, captioned with the part of Sydney it runs in */
-var SL=[
-  {tag:'Structural alterations',where:'Inner West',title:'Beams, openings and removed walls',text:'Built to the engineer\'s detail, with certification running alongside the work.'},
-  {tag:'Extensions & additions',where:'Eastern Suburbs',title:'Rear and side extensions',text:'Set out from the survey, framed and tied into the existing roof.'},
-  {tag:'Renovations & fit-outs',where:'North Shore',title:'Whole-house renovations',text:'Demolition, services, waterproofing and finishes run as one job.'},
-  {tag:'Concrete & framing',where:'Sutherland Shire',title:'Slabs, formwork and framing',text:'Poured and stripped to a programme the rest of the job can follow.'}
-];
-var slides=[].slice.call(document.querySelectorAll('.banner__slide')),
-    dots=document.getElementById('dots'),capTag=document.getElementById('capTag'),
-    capWhere=document.getElementById('capWhere'),capTitle=document.getElementById('capTitle'),
-    capText=document.getElementById('capText'),cap=document.getElementById('cap'),i=0,timer=null,
-    reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-SL.forEach(function(_,n){var b=document.createElement('i');if(!n)b.className='on';b.addEventListener('click',function(){go(n);});dots.appendChild(b);});
-function go(n){i=(n+SL.length)%SL.length;
-  slides.forEach(function(s,k){s.classList.toggle('on',k===i);});
-  [].forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===i);});
-  cap.style.transition='opacity .28s';cap.style.opacity=0;
-  setTimeout(function(){capTag.textContent=SL[i].tag;capWhere.textContent=SL[i].where;
-    capTitle.textContent=SL[i].title;capText.textContent=SL[i].text;cap.style.opacity=1;},280);
-}
-function next(){go(i+1);} function prev(){go(i-1);}
-document.getElementById('next').addEventListener('click',function(){next();restart();});
-document.getElementById('prev').addEventListener('click',function(){prev();restart();});
-function restart(){if(reduce)return;clearInterval(timer);timer=setInterval(next,6200);}
-cap.addEventListener('mouseenter',function(){clearInterval(timer);});
-cap.addEventListener('mouseleave',restart);
-restart();
-
-/* rotating service-area band */
-var AR=[['Inner West','Marrickville · Newtown · Leichhardt · Balmain'],
-        ['Eastern Suburbs','Randwick · Coogee · Bondi · Maroubra'],
-        ['North Shore','Chatswood · Lane Cove · Willoughby · Mosman'],
-        ['Sutherland Shire','Cronulla · Miranda · Caringbah · Gymea'],
-        ['Inner South','Alexandria · Mascot · Botany · Rockdale'],
-        ['Western Sydney','Parramatta · Ryde · Strathfield · Burwood']];
-var row=document.getElementById('areaRow'),ac=document.getElementById('areaCount'),ai=0;
-AR.forEach(function(a,n){var u=document.createElement('ul'),li=document.createElement('li');
-  if(!n)u.className='on';li.innerHTML=a[0]+'<small>'+a[1]+'</small>';u.appendChild(li);row.appendChild(u);});
-var rows=[].slice.call(row.children);
-if(!reduce){setInterval(function(){ai=(ai+1)%AR.length;
-  rows.forEach(function(u,k){u.classList.toggle('on',k===ai);});
-  ac.textContent=('0'+(ai+1)).slice(-2)+' / 0'+AR.length;},4000);}
-
-/* the area ticker */
-var T=['Inner West','Marrickville','Newtown','Leichhardt','Balmain','Eastern Suburbs','Randwick','Coogee','North Shore','Chatswood','Lane Cove','Sutherland Shire','Cronulla','Parramatta','Ryde','Strathfield','Alexandria','Mosman'];
-var t=document.getElementById('tick');t.innerHTML=T.concat(T).map(function(s){return '<span>'+s+'</span>';}).join('');
-
-/* scroll reveal */
-var rvs=[].slice.call(document.querySelectorAll('.rv'));
-if('IntersectionObserver' in window){
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
-  rvs.forEach(function(el){io.observe(el);});
-  /* safety net: nothing stays hidden if the observer never fires */
-  setTimeout(function(){rvs.forEach(function(el){if(!el.classList.contains('in')&&el.getBoundingClientRect().top<innerHeight)el.classList.add('in');});},2500);
-}else{rvs.forEach(function(el){el.classList.add('in');});}
-
-/* form */
-document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();
-  var f=e.currentTarget,b=f.querySelector('button');
-  b.textContent='Sending…';b.disabled=true;
-  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
-    body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})
-  .then(function(){b.textContent='Thanks — we will be in touch';})
-  .catch(function(){b.textContent='Could not send — try again';b.disabled=false;});});
+(function(){
+  var y=document.getElementById('yr'); if(y) y.textContent=new Date().getFullYear();
+  var b=document.getElementById('burger'), n=document.getElementById('navmain');
+  if(b&&n){
+    b.addEventListener('click',function(){
+      var open=n.classList.toggle('open');
+      b.classList.toggle('on',open); b.setAttribute('aria-expanded',open?'true':'false');
+    });
+    n.addEventListener('click',function(e){ if(e.target.tagName==='A'){ n.classList.remove('open'); b.classList.remove('on'); b.setAttribute('aria-expanded','false'); } });
+  }
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('on'); io.unobserve(en.target); } });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    els.forEach(function(e){ io.observe(e); });
+  } else {
+    els.forEach(function(e){ e.classList.add('on'); });
+  }
+  setTimeout(function(){ els.forEach(function(e){ e.classList.add('on'); }); },2500);
+})();
 </script>
-</body></html>
+</body>
+</html>
