@@ -38,10 +38,9 @@ html.js .rv.on{opacity:1;transform:none}
 /* header */
 .bar{position:sticky;top:0;z-index:60;background:rgba(246,241,231,.95);backdrop-filter:blur(10px);border-bottom:3px solid var(--gold)}
 .bar-in{display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:84px;padding-block:10px}
-.brand{display:flex;align-items:center;gap:16px;text-decoration:none;min-width:0}
-.brand img.brand-mark{height:62px;width:auto;flex:none}
-.brand img.brand-word{height:21px;width:auto;flex:none}
-.brand-rule{width:1px;height:38px;background:var(--line);flex:none}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;min-width:0}
+.brand img.brand-mark{height:55px;width:auto;flex:none}
+.brand img.brand-word{height:24px;width:auto;flex:none}
 .bar-nav{display:flex;align-items:center;gap:24px;margin-left:auto}
 .bar-nav a{text-decoration:none;font-size:.94rem;font-weight:500;color:#4A4236}
 .bar-nav a:hover{color:var(--gold-dk)}
@@ -77,8 +76,8 @@ html.js .rv.on{opacity:1;transform:none}
 .btn:hover{transform:translateY(-1px)}
 .btn-p{background:var(--gold);color:#241E15}
 .btn-p:hover{background:var(--gold-lt)}
-.btn-o{border:1.5px solid rgba(227,190,121,.5);color:#EFE7D6}
-.btn-o:hover{border-color:var(--gold);color:#fff}
+.btn-o{border:1.5px solid var(--gold-lt);color:#FBF6EA;background:rgba(227,190,121,.1)}
+.btn-o:hover{border-color:#fff;color:#fff;background:rgba(227,190,121,.2)}
 .hero-facts{display:flex;gap:30px;flex-wrap:wrap;margin-top:36px;padding-top:22px;border-top:1px solid rgba(227,190,121,.3)}
 .hero-facts div{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#A99B80;font-weight:600}
 .hero-facts strong{display:block;font-family:var(--disp);font-size:1.1rem;letter-spacing:0;text-transform:none;color:#FBF6EA;font-weight:600;margin-top:5px}
@@ -87,12 +86,12 @@ html.js .rv.on{opacity:1;transform:none}
 .board{position:relative;transform:rotateY(-10deg) rotateX(2.5deg);transform-style:preserve-3d;border-radius:5px;background:#0F0C08;padding:12px;box-shadow:34px 44px 80px rgba(0,0,0,.6),0 0 0 1px rgba(227,190,121,.35)}
 .board-media{position:relative;overflow:hidden;border-radius:3px}
 .board-media img{width:100%;height:352px;object-fit:cover}
-.board-media::after{content:"";position:absolute;top:-30%;left:0;width:38%;height:170%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.42),transparent);animation:sheen 7s ease-in-out infinite;pointer-events:none}
+.board-media::after{content:"";position:absolute;top:-30%;left:0;width:22%;height:170%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);animation:sheen 9s ease-in-out infinite;pointer-events:none}
 .board-cap{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-lt);font-weight:700;padding:12px 4px 4px}
 .swatches{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
 .sw{border:1px solid rgba(227,190,121,.3);border-radius:3px;overflow:hidden;background:#2A2318}
-.sw img{height:66px;width:100%;object-fit:cover}
-.sw span{display:block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#D8C7A3;padding:8px 9px}
+.sw img{height:88px;width:100%;object-fit:cover}
+.sw span{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#E4D6B6;padding:9px 10px}
 @media(max-width:960px){
   .hero-grid{grid-template-columns:1fr;gap:38px;padding:48px 0 54px}
   .board{transform:none;box-shadow:0 24px 50px rgba(0,0,0,.5)}
@@ -175,9 +174,8 @@ footer a:hover{color:var(--gold-lt)}
 <header class="bar">
   <div class="wrap bar-in">
     <a class="brand" href="#top" aria-label="Millard's Rendering — home">
-      <img class="brand-mark" src="assets/logo-isolated.png" alt="Millard's Rendering logo">
-      <span class="brand-rule" aria-hidden="true"></span>
-      <img class="brand-word" src="assets/logo-word.png" alt="Millard's Rendering Pty Ltd">
+      <img class="brand-mark" src="assets/logo-mark-hdr.png" alt="Millard's">
+      <img class="brand-word" src="assets/logo-word-hdr.png" alt="Rendering">
     </a>
     <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navmain"><span></span><span></span><span></span></button>
     <nav class="bar-nav" id="navmain" aria-label="Main">
