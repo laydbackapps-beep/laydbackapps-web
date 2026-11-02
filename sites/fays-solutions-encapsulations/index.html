@@ -73,6 +73,11 @@ section{padding:var(--sec) 0}
 .hero__bg img{width:100%;height:100%;object-fit:cover}
 .hero__scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,17,22,.96) 0%,rgba(11,17,22,.82) 46%,rgba(11,17,22,.34) 100%),linear-gradient(0deg,rgba(11,17,22,.94) 0%,rgba(11,17,22,0) 52%)}
 .hero__in{position:relative;z-index:2;width:100%;max-width:var(--max);margin:0 auto;padding:clamp(44px,6vw,80px) var(--pad) clamp(34px,4.6vw,58px)}
+.hero__side{position:absolute;top:0;right:0;bottom:0;width:clamp(40px,4vw,62px);z-index:3;border-left:1px solid var(--line);display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(11,17,22,.55),rgba(11,17,22,.2))}
+.hero__side span{writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);font-family:var(--mono);font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--cyan-2);white-space:nowrap}
+.hero__spec{margin-top:26px;display:flex;flex-wrap:wrap;gap:9px}
+.hero__spec i{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan-2);border:1px solid rgba(0,162,208,.5);background:rgba(0,162,208,.09);padding:6px 11px;border-radius:2px}
+@media(max-width:900px){.hero__side{display:none}}
 .hero h1{margin:20px 0 0;max-width:15ch}
 .hero h1 em{font-style:normal;color:var(--cyan-2)}
 .hero__lede{margin-top:22px;color:#CBE0E9;max-width:46ch}
@@ -217,12 +222,14 @@ footer li a:hover{color:var(--cyan)}
         <a class="btn" href="tel:+61478770099">Call 0478 770 099</a>
         <a class="btn btn--ghost" href="#lbq">Request a quote</a>
       </div>
+      <p class="hero__spec"><i>White wrap</i><i>Fire-rated scrim</i><i>Dust screens</i><i>Debris netting</i><i>Sealed bay by bay</i></p>
       <dl class="hero__meta">
         <div><dt>Service area</dt><dd>Greater Sydney</dd></div>
         <div><dt>Works with</dt><dd>Builders &amp; scaffolders</dd></div>
         <div><dt>Focus</dt><dd>Compliant containment</dd></div>
       </dl>
     </div>
+    <div class="hero__side" aria-hidden="true"><span>Shrink wrap encapsulation &#183; Sydney</span></div>
   </section>
 
   <section class="levels" id="levels">
