@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valley Wide Maintenance — Lawn Care, Gardening &amp; Property Maintenance, Barossa SA</title>
+<meta name="description" content="Valley Wide Maintenance does lawn mowing, gardening, hedge trimming, yard cleanups, pressure cleaning and property repairs across the Barossa Valley and surrounds. Free quotes — call 0413 456 792.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f6f0;
+    --ink:#1b1c18;
+    --ink-soft:#55584c;
+    --green:#4f6f2f;
+    --green-deep:#3d5723;
+    --green-bright:#6f9a3f;
+    --dark:#23281c;
+    --tint:#eaeede;
+    --line:rgba(27,28,24,.14);
+    --wrap:1180px;
+    --navh:88px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{width:min(100% - 44px,var(--wrap));margin-inline:auto}
+  h1,h2,h3{font-family:"Outfit",system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em;margin:0;font-weight:700}
+  h1{font-size:clamp(2.1rem,4.7vw,3.6rem);font-weight:800}
+  h2{font-size:clamp(1.7rem,3.1vw,2.45rem)}
+  h3{font-size:1.14rem;font-weight:600}
+  p{margin:0}
+  .eyebrow{
+    font-family:"Outfit",sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--green-deep);display:inline-flex;align-items:center;gap:.6em;margin:0 0 18px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--green);display:inline-block}
+
+  header.site{
+    position:sticky;top:0;z-index:40;height:var(--navh);
+    background:#ffffff;border-bottom:1px solid var(--line);
+  }
+  .nav{height:var(--navh);display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;flex:none}
+  .brand img{height:66px;width:auto;max-width:250px}
+  .nav-links{display:flex;align-items:center;gap:30px;margin-left:auto;margin-right:10px}
+  .nav-links a{
+    text-decoration:none;font-weight:500;font-size:.94rem;color:var(--ink-soft);
+    padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;
+  }
+  .nav-links a:hover{color:var(--ink);border-color:var(--green)}
+  .btn{
+    display:inline-flex;align-items:center;gap:.55em;text-decoration:none;
+    font-family:"Outfit",sans-serif;font-weight:600;font-size:.95rem;
+    padding:13px 22px;border-radius:3px;border:1.5px solid transparent;
+    transition:transform .18s,background .2s,color .2s,border-color .2s;white-space:nowrap;
+  }
+  .btn-green{background:var(--green);color:#fff}
+  .btn-green:hover{background:var(--green-deep);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+  .nav .btn-green{padding:11px 18px;font-size:.9rem}
+
+  .hero{padding:76px 0 66px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:62px;align-items:center}
+  .hero p.lede{font-size:1.14rem;color:#43473c;margin:22px 0 30px;max-width:35ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
+  .trust{list-style:none;display:flex;flex-wrap:wrap;gap:10px 26px;padding:0;margin:0}
+  .trust li{display:flex;align-items:center;gap:.5em;font-size:.92rem;font-weight:500;color:var(--ink-soft)}
+  .trust li::before{content:"";width:7px;height:7px;background:var(--green);border-radius:50%;flex:none}
+  .hero-card{position:relative;border:1px solid var(--line);background:var(--tint);padding:12px;max-width:500px;margin-left:auto;box-shadow:0 24px 50px -32px rgba(27,28,24,.5)}
+  .hero-card img{width:100%;height:auto}
+  .hero-card figcaption{font-size:.88rem;color:#3a3d33;padding:12px 4px 4px;line-height:1.5;font-weight:500}
+
+  section{padding:86px 0}
+  .sec-head{max-width:640px;margin-bottom:44px}
+  .sec-head p{color:var(--ink-soft);margin-top:14px;font-size:1.04rem}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{border:1px solid var(--line);background:#fdfcf8;padding:30px 26px 28px;border-radius:3px;transition:border-color .2s,transform .2s}
+  .card:hover{border-color:var(--green);transform:translateY(-2px)}
+  .card .num{font-family:"Outfit",sans-serif;font-weight:800;font-size:.86rem;color:var(--green);letter-spacing:.06em}
+  .card h3{margin:12px 0 10px}
+  .card p{color:var(--ink-soft);font-size:.96rem;line-height:1.6}
+
+  .process{background:var(--dark);color:#dfe3d5}
+  .process .eyebrow{color:#b7d894}
+  .process .eyebrow::before{background:#b7d894}
+  .process h2{color:#fff}
+  .process .sec-head p{color:#a9ad9c}
+  .phases{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+  .phase{border-top:1px solid rgba(183,216,148,.3);padding-top:20px}
+  .phase .k{font-family:"Outfit",sans-serif;font-weight:800;font-size:.86rem;letter-spacing:.1em;color:#b7d894}
+  .phase h3{color:#fff;margin:8px 0 8px;font-size:1.05rem}
+  .phase p{color:#a9ad9c;font-size:.93rem;line-height:1.6}
+
+  .gallery{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:start}
+  .shot{border:1px solid var(--line);background:#fdfcf8;padding:8px;margin:0}
+  .shot img{width:100%;height:auto}
+  .shot figcaption{padding:12px 6px 4px;font-size:.86rem;color:var(--ink-soft);line-height:1.5}
+  .shot figcaption b{display:block;font-family:"Outfit",sans-serif;color:var(--green-deep);font-weight:700;font-size:.74rem;letter-spacing:.1em;margin-bottom:3px}
+
+  .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+  details{border-bottom:1px solid var(--line);padding:18px 0}
+  details summary{cursor:pointer;list-style:none;font-family:"Outfit",sans-serif;font-weight:600;font-size:1.05rem;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";font-size:1.3rem;color:var(--green);line-height:1;font-weight:600}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--ink-soft);margin-top:10px;font-size:.96rem;line-height:1.62}
+
+  .contact{background:var(--tint);border-top:1px solid var(--line)}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  .contact .big-call{display:inline-flex;align-items:center;gap:.5em;font-family:"Outfit",sans-serif;font-weight:800;
+    font-size:clamp(1.5rem,3.3vw,2.15rem);text-decoration:none;color:var(--ink);margin:14px 0 8px}
+  .contact .big-call span{color:var(--green-deep)}
+  .contact p{color:var(--ink-soft)}
+  .contact .facts{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+  .contact .facts li{border-top:1px solid var(--line);padding-top:14px;font-size:.97rem}
+  .contact .facts b{display:block;font-family:"Inter",sans-serif;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--green-deep);margin-bottom:3px}
+  .contact .facts a{text-decoration:none}
+  .contact .facts a:hover{text-decoration:underline}
+
+  footer.site{background:var(--dark);color:#a9ad9c;padding:38px 0}
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .foot .flogo{display:flex;align-items:center;gap:16px}
+  .foot .flogo img{height:30px;width:auto;background:#fff;padding:2px 4px;border-radius:2px}
+  .foot .meta{font-size:.86rem;line-height:1.7;text-align:right}
+  .foot .meta a{color:#b7d894;text-decoration:none}
+  .foot .meta a:hover{text-decoration:underline}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:38px}
+    .hero-card{max-width:100%;margin:0}
+    .cards{grid-template-columns:1fr 1fr}
+    .phases{grid-template-columns:1fr 1fr;gap:26px}
+    .gallery{grid-template-columns:1fr}
+    .faq-grid{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr;gap:30px}
+  }
+  @media (max-width:720px){
+    :root{--navh:74px}
+    .nav-links{display:none}
+    .brand img{height:48px;max-width:180px}
+    .cards{grid-template-columns:1fr}
+    .phases{grid-template-columns:1fr}
+    section{padding:62px 0}
+    .hero{padding:44px 0 48px}
+    .foot{flex-direction:column;align-items:flex-start}
+    .foot .meta{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Valley Wide Maintenance home">
+      <img src="assets/logo-lockup.png" alt="Valley Wide Maintenance" width="668" height="237">
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#work">Work</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-green" href="tel:+61413456792">Call 0413 456 792</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Lawn &amp; garden care · Barossa Valley, SA</p>
+        <h1>Lawn care, gardening and property maintenance across the Barossa.</h1>
+        <p class="lede">Mowing, weeding, hedges, cleanups and repairs — reliably done for homes and properties around Tanunda and the Barossa Valley.</p>
+        <div class="hero-cta">
+          <a class="btn btn-green" href="tel:+61413456792">Call 0413 456 792</a>
+          <a class="btn btn-ghost" href="#services">See our services</a>
+        </div>
+        <ul class="trust">
+          <li>Barossa Valley &amp; surrounds</li>
+          <li>Free quotes</li>
+          <li>5% off your first service</li>
+        </ul>
+      </div>
+      <figure class="hero-card">
+        <img src="assets/hero-card.jpg" alt="A freshly mown green lawn edged with brick paving beside a timber fence" width="2048" height="1536" loading="eager">
+        <figcaption>A mown and edged lawn after a regular visit.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Services</p>
+        <h2>Everything the yard needs, in one visit</h2>
+        <p>Regular upkeep or a one-off cleanup — no job too big or small.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><p class="num">01</p><h3>Lawn mowing</h3><p>Regular mowing, edging and blowing down so the lawn stays neat between visits.</p></article>
+        <article class="card"><p class="num">02</p><h3>Gardening &amp; weeding</h3><p>Beds weeded, plants tidied and garden areas kept under control.</p></article>
+        <article class="card"><p class="num">03</p><h3>Hedge trimming</h3><p>Hedges and shrubs shaped and cut back, with the trimmings cleared away.</p></article>
+        <article class="card"><p class="num">04</p><h3>Yard cleanups</h3><p>One-off clear-outs of overgrown yards, leaves and green waste before you sell, move or host.</p></article>
+        <article class="card"><p class="num">05</p><h3>Pressure cleaning</h3><p>Paths, driveways and paved areas cleaned back to their original finish.</p></article>
+        <article class="card"><p class="num">06</p><h3>Property maintenance &amp; repairs</h3><p>Odds and ends around the property sorted while we're there — ask what you need.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Process</p>
+        <h2>Simple, reliable, and on time</h2>
+        <p>Get in touch, get a free quote, and we take it from there.</p>
+      </div>
+      <div class="phases">
+        <div class="phase"><p class="k">01</p><h3>Get in touch</h3><p>Call or message Tyler with the address and what needs doing.</p></div>
+        <div class="phase"><p class="k">02</p><h3>Free quote</h3><p>A clear price for the job before anything is booked in.</p></div>
+        <div class="phase"><p class="k">03</p><h3>We do the work</h3><p>Mowing, gardening, hedges or the cleanup — done to a proper finish.</p></div>
+        <div class="phase"><p class="k">04</p><h3>Left tidy</h3><p>Clippings and green waste cleared, and the property left looking right.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Work</p>
+        <h2>Lawns and properties we look after</h2>
+        <p>Photos from jobs in and around the Barossa Valley.</p>
+      </div>
+      <div class="gallery">
+        <figure class="shot">
+          <img src="assets/gal-1.jpg" alt="A freshly mown green lawn with brick paving edging and a timber fence" width="1500" height="1445" loading="lazy">
+          <figcaption><b>LAWN CARE</b> A mown and edged lawn, kept in regular shape.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/gal-2.jpg" alt="A stone cottage with a neat lawn and trimmed hedge in the Barossa Valley" width="607" height="356" loading="lazy">
+          <figcaption><b>PROPERTY</b> A tidy lawn and trimmed hedge at a stone cottage.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>Before you get in touch</h2>
+      </div>
+      <div class="faq-grid">
+        <details open>
+          <summary>Which areas do you cover?</summary>
+          <p>The Barossa Valley and surrounds — based in Tanunda, SA.</p>
+        </details>
+        <details>
+          <summary>Do you do one-off jobs or only regular visits?</summary>
+          <p>Both. Regular mowing and garden upkeep, or a one-off yard cleanup when you need it.</p>
+        </details>
+        <details>
+          <summary>How do I get a quote?</summary>
+          <p>Call or message Tyler on 0413 456 792 with the address and what's needed. Quotes are free.</p>
+        </details>
+        <details>
+          <summary>Is there a discount for a first service?</summary>
+          <p>Yes — receive 5% off your first service.</p>
+        </details>
+        <details>
+          <summary>Can you take the green waste away?</summary>
+          <p>Rubbish removal and yard cleanups are part of what we do, so clippings and green waste can be cleared as part of the job.</p>
+        </details>
+        <details>
+          <summary>Do you do pressure cleaning and repairs too?</summary>
+          <p>Yes — pressure cleaning and general property maintenance and repairs are on the list alongside the gardening.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Get in touch</p>
+        <h2>Garden due a tidy-up?</h2>
+        <a class="big-call" href="tel:+61413456792">Call <span>0413 456 792</span></a>
+        <p>Lawn care, gardening and property maintenance across the Barossa Valley and surrounds. Ask for Tyler — free quotes.</p>
+      </div>
+      <ul class="facts">
+        <li><b>Phone</b><a href="tel:+61413456792">0413 456 792</a></li>
+        <li><b>Email</b><a href="mailto:vwmbarossa@gmail.com">vwmbarossa@gmail.com</a></li>
+        <li><b>Based in</b>Tanunda, Barossa, SA</li>
+        <li><b>Service area</b>Barossa Valley &amp; surrounds</li>
+        <li><b>Facebook</b><a href="https://www.facebook.com/profile.php?id=61595502490931" target="_blank" rel="noopener">Message us on Facebook →</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div class="flogo">
+      <img src="assets/logo-mark.png" alt="" width="30" height="30">
+      <span>Valley Wide Maintenance · Tanunda, Barossa, SA · &copy; 2026</span>
+    </div>
+    <div class="meta">
+      Lawn Care · Gardening · Property Maintenance<br>
+      <a href="tel:+61413456792">0413 456 792</a>
+    </div>
+  </div>
+</footer>
+
+<style id="fix-btn-wrap">
+/* .hero-cta was a non-wrapping flex row of nowrap .btn elements, so the second button ran off the right
+   edge (170px button ending at 369 in a 320 viewport, 780 at 768). Let the row wrap and the labels break. */
+@media(max-width:900px){
+  .hero-cta{flex-wrap:wrap!important;gap:12px!important}
+  .hero-cta .btn,.hero-cta a{white-space:normal!important;max-width:100%!important;flex:0 1 auto!important}
+  .wrap.nav,nav.wrap{flex-wrap:wrap!important;row-gap:10px!important}
+}
+</style>
+<style id="fix-img-cap">
+/* these JPEGs were being drawn wider than their own pixels at intermediate widths (a small photo stretched into a full-width panel = the "blown up" look). Cap each at native. */
+img[src$="gal-2.jpg"]{max-width:607px;height:auto}
+</style>
+</body>
+</html>
