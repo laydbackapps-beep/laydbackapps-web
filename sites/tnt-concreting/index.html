@@ -1,261 +1,498 @@
 <!doctype html>
-<html lang="en-AU"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TNT Concreting — Concreting, driveways &amp; slabs | Bellbird NSW</title>
 <meta name="description" content="TNT Concreting, Bellbird NSW. Thirty years pouring driveways, slabs, shed floors, paths and exposed aggregate across Cessnock and the Hunter Valley. Call 0401 174 385.">
+<meta name="theme-color" content="#0d0c0b">
 <link rel="icon" href="favicon-32.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <style>
 :root{
-  --ink:#0b0b0c; --ink-2:#141416; --panel:#1b1b1e; --paper:#f4f3f0; --dim:#a3a3a3;
-  --line:rgba(244,243,240,.16); --line-s:rgba(244,243,240,.34); --grey:#c9c9c9; --max:1160px;
+  --bg:#0d0c0b; --bar:#000; --panel:#161512; --panel2:#1e1c18;
+  --ink:#efeae1; --sand:#cfc7b6; --earth:#6f675a; --dim:#a29b8e;
+  --line:rgba(239,234,225,.14); --line2:rgba(239,234,225,.32);
+  --max:1200px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:var(--paper);font:17px/1.62 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.62 Barlow,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4vw,46px)}
 a{color:inherit}
-h1,h2,h3{margin:0;letter-spacing:-.03em;line-height:1.05}
-h1{font-size:clamp(34px,5.2vw,66px);font-weight:900;letter-spacing:-.045em}
-h2{font-size:clamp(23px,3vw,38px);font-weight:800}
+h1,h2,h3{margin:0;font-weight:700;line-height:1.02;letter-spacing:-.01em}
+h1,h2{font-family:"Barlow Condensed",Impact,system-ui,sans-serif;text-transform:uppercase}
+h1{font-size:clamp(42px,6.6vw,92px);font-weight:700;letter-spacing:-.015em}
+h2{font-size:clamp(30px,4.4vw,60px)}
+h3{font-family:Barlow,system-ui,sans-serif;font-size:19px;font-weight:700;letter-spacing:0;text-transform:none}
 p{margin:0}
-.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
-.eyebrow{font:600 11.5px/1 "IBM Plex Mono",monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--grey);display:flex;align-items:center;gap:12px}
-.eyebrow::before{content:"";width:32px;height:1px;background:var(--grey)}
-.rule{height:6px;background:var(--paper);width:84px}
-
-/* ---------- bar ---------- */
-.bar{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:1px solid var(--line-s)}
-.bar__in{display:flex;align-items:center;gap:clamp(14px,2vw,30px);padding-block:10px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;flex:0 0 auto;text-decoration:none}
-.brand img{height:clamp(56px,5.2vw,84px);width:auto}
-.nav{display:flex;align-items:center;gap:clamp(14px,1.9vw,26px);margin-left:auto;flex-wrap:wrap;font-family:Archivo,system-ui,sans-serif}
-.nav a{text-decoration:none;font-size:14.6px;color:var(--grey);padding:6px 0;border-bottom:1px solid transparent}
-.nav a:hover{color:#fff;border-bottom-color:var(--paper)}
-.nav .tel{color:#fff;font-weight:800}
-.cta{display:inline-flex;align-items:center;background:var(--paper);color:var(--ink);text-decoration:none;font-weight:800;font-size:14.6px;padding:12px 20px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4vw,44px)}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--sand)}
+section{border-top:1px solid var(--line)}
+.pad{padding:clamp(56px,7.2vw,104px) 0}
+.bar{position:sticky;top:0;z-index:60;background:var(--bar);border-bottom:1px solid var(--line2)}
+.bar__in{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:11px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;min-width:0}
+.brand .mark{height:clamp(56px,5.6vw,70px);width:auto;display:block}
+.brand .word{height:clamp(20px,2.1vw,26px);width:auto;display:block}
+.nav{display:flex;align-items:center;gap:clamp(14px,1.9vw,26px);flex-wrap:wrap}
+.nav a:not(.cta){text-decoration:none;font-size:14.6px;font-weight:500;color:var(--sand);padding:6px 0;border-bottom:1px solid transparent}
+.nav a:not(.cta):hover{color:#fff;border-bottom-color:var(--ink)}
+.nav .cta{color:#0d0c0b}
+.nav .tel{color:var(--ink);font-weight:700;font-family:"Barlow Condensed",sans-serif;font-size:19px;letter-spacing:.02em}
+.cta{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#0d0c0b;text-decoration:none;font-weight:700;padding:12px 20px;text-transform:uppercase;font-family:"Barlow Condensed",sans-serif;letter-spacing:.04em;font-size:17px}
 .cta:hover{background:#fff}
-.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:var(--paper);padding:9px 12px;font-size:18px}
-@media(max-width:1000px){
-  .nav{display:none;width:100%;flex-direction:column;align-items:flex-start;gap:2px;margin-left:0;padding:10px 0 4px;border-top:1px solid var(--line)}
+.burger{display:none;background:none;border:1px solid var(--line2);color:var(--ink);padding:10px 13px;font-size:18px;line-height:1}
+@media(max-width:1040px){
+  .nav{display:none;width:100%;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 0 6px;border-top:1px solid var(--line)}
   .nav.open{display:flex}
-  .nav a{padding:11px 0;width:100%;border-bottom:1px solid var(--line);font-size:16px}
-  .nav .cta{justify-content:center;width:100%;margin-top:10px}
+  .nav a:not(.cta){padding:11px 0;width:100%;border-bottom:1px solid var(--line);font-size:16px}
+  .nav .cta{justify-content:center;width:100%;margin-top:10px;color:#0d0c0b}
   .burger{display:block}
-  .brand img{height:58px}
 }
-
-/* ---------- hero ---------- */
-.hero{padding:clamp(26px,4vw,54px) 0 clamp(30px,4.4vw,58px);border-bottom:1px solid var(--line)}
-.hero__in{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(24px,3.6vw,54px);align-items:center}
-.hero h1{margin:16px 0 16px}
-.hero .sub{color:var(--grey);font-size:clamp(16px,1.2vw,18.5px);max-width:44ch;margin-bottom:24px}
-.hero .acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.ghost{display:inline-flex;align-items:center;border:1px solid var(--line-s);color:var(--paper);text-decoration:none;font-weight:700;font-size:15px;padding:11px 18px}
-.hero figure{margin:0;border:1px solid var(--line);background:var(--panel)}
-.hero figure img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;filter:grayscale(1) contrast(1.06)}
-.hero figcaption{font:500 10.5px/1.4 "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);padding:9px 12px;border-top:1px solid var(--line)}
-@media(max-width:880px){.hero__in{grid-template-columns:1fr}}
-
-/* ---------- strip of facts ---------- */
-.strip{background:var(--ink-2);border-bottom:1px solid var(--line)}
-.strip__in{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
-.strip div{background:var(--ink-2);padding:18px clamp(12px,2vw,22px)}
-.strip b{display:block;font:600 10.5px/1 "IBM Plex Mono",monospace;letter-spacing:.18em;color:var(--grey);margin-bottom:7px}
-.strip span{font-size:14.2px;color:var(--grey)}
-@media(max-width:820px){
-  img.lb-word,img.word,img.brand__word{display:none!important}
-  img.lb-big.lb-big,img.lb-big.lb-big.lb-mark,img.lb-big.lb-big.lb-logo-unlock,img.lb-big.lb-big.lb-logomark{height:clamp(52px,13vw,68px)!important;max-width:72vw!important}
-  header>div,nav>div,[class*=hdr]>div,[class*=bar]>div,[class*=strip]>div{flex-wrap:wrap!important}
-  nav,[class*=nav-links],.nav-links,.links{flex-wrap:wrap!important;gap:10px!important}
-  header,nav,[class*=hdr],[class*=bar],[class*=strip]{max-width:100vw!important;overflow-x:clip!important}
+.hero{position:relative;perspective:1300px;overflow:hidden;border-top:0;background:#000}
+.hero__in{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);min-height:clamp(520px,62vh,660px)}
+.hero__copy{position:relative;z-index:3;padding:clamp(34px,4.6vw,64px) clamp(20px,4vw,54px) clamp(30px,4vw,52px) clamp(18px,4vw,44px);display:flex;flex-direction:column;justify-content:center;background:linear-gradient(120deg,#0b0a09 0%,#141210 100%)}
+.hero__copy .wrappad{max-width:600px;margin-left:auto}
+.kicker{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--sand);margin:0 0 18px}
+.hero h1{color:#fff}
+.hero h1 em{font-style:normal;color:var(--sand)}
+.hero .sub{max-width:52ch;color:#d9d3c8;margin:20px 0 0;font-size:clamp(16px,1.5vw,18px)}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-block;padding:15px 26px;text-decoration:none;font-weight:700;font-size:16px;font-family:"Barlow Condensed",sans-serif;letter-spacing:.05em;text-transform:uppercase;border:1px solid transparent}
+.btn-fill{background:var(--ink);color:#0d0c0b}
+.btn-fill:hover{background:#fff}
+.btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-ghost:hover{border-color:#fff}
+.hero__media{position:relative;overflow:hidden;background:#000;border-left:1px solid var(--line);min-height:380px}
+.hero__media img.big{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.hero__media .strip{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(0,0,0,.4);z-index:3}
+.hero__media .strip figure{margin:0;position:relative;overflow:hidden}
+.hero__media .strip img{width:100%;height:112px;object-fit:cover;display:block}
+.hero__media .strip figcaption{position:absolute;left:0;bottom:0;right:0;background:rgba(8,7,6,.72);color:var(--sand);font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 8px}
+.finishes{border-top:1px solid var(--line);background:var(--panel)}
+.finishes .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.fin{background:var(--panel);padding:18px 16px 20px}
+.fin .sw{height:52px;border:1px solid var(--line2);margin-bottom:12px}
+.sw-broom{background:repeating-linear-gradient(90deg,#8f887b 0 2px,#b7b0a2 2px 4px)}
+.sw-trowel{background:linear-gradient(135deg,#c8c1b2,#9d9587)}
+.sw-agg{background:radial-gradient(circle at 30% 40%,#cdc6b6 0 3px,#6c6558 3px 4px),radial-gradient(circle at 70% 65%,#b7b0a1 0 2px,#565046 2px 3px),#7d7668}
+.sw-colour{background:linear-gradient(135deg,#a8a094,#7e766a)}
+.fin b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:19px;text-transform:uppercase;color:#fff;letter-spacing:.02em}
+.fin span{font-size:12.5px;color:var(--sand)}
+#heroCanvas{display:none}
+@media(max-width:900px){.hero__in{grid-template-columns:1fr}.hero__media{min-height:320px;border-left:0;border-top:1px solid var(--line)}}
+@media(max-width:640px){.finishes .wrap{grid-template-columns:1fr 1fr}}
+.ticker{background:var(--sand);color:#141210;border-top:1px solid var(--line2)}
+.ticker .wrap{display:flex;flex-wrap:wrap;gap:8px 26px;padding-top:15px;padding-bottom:15px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.ticker b{font-weight:700}
+.two{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(26px,4vw,64px);align-items:start}
+.lede{font-family:"Barlow Condensed",sans-serif;font-size:clamp(24px,2.7vw,34px);line-height:1.18;color:var(--ink);text-transform:uppercase;letter-spacing:-.005em}
+.body p{color:var(--dim);margin-top:18px;max-width:60ch}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px;border-top:1px solid var(--line);padding-top:24px}
+.facts b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:clamp(30px,3.4vw,44px);font-weight:700;color:#fff;line-height:1}
+.facts span{font-size:13.5px;color:var(--earth);display:block;margin-top:6px}
+@media(max-width:860px){.two{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}}
+.slab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,4vw,60px);align-items:center}
+.slabstack{perspective:900px}
+.stack{transform:rotateX(52deg) rotateZ(-14deg);transform-style:preserve-3d;display:grid;gap:12px}
+.plate{height:60px;border:1px solid var(--line2);position:relative}
+.plate span{position:absolute;left:10px;top:50%;transform:translateY(-50%) rotateZ(14deg) rotateX(-52deg);font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#0f0d0b;background:var(--sand);padding:3px 7px}
+.p1{background:linear-gradient(135deg,#4a463e,#6b6559)}
+.p2{background:linear-gradient(135deg,#20303e,#2c4356)}
+.p3{background:linear-gradient(135deg,#8f887a,#b7b0a2)}
+.p4{background:linear-gradient(135deg,#cbc4b5,#9c9484)}
+@media(max-width:820px){.slab{grid-template-columns:1fr}}
+.row{display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1.25fr);gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line);transition:background .25s ease}
+.row:hover{background:var(--panel)}
+.row .num{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--earth);letter-spacing:.14em}
+.row h3{font-family:"Barlow Condensed",sans-serif;font-size:clamp(24px,2.6vw,34px);font-weight:700;text-transform:uppercase;letter-spacing:.005em;color:#fff}
+.row p{color:var(--dim);font-size:15.5px}
+@media(max-width:760px){.row{grid-template-columns:52px minmax(0,1fr)}.row p{grid-column:2}}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.step{background:var(--bg);padding:26px 20px}
+.step .n{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--sand);letter-spacing:.2em}
+.step h3{font-family:"Barlow Condensed",sans-serif;font-size:22px;text-transform:uppercase;color:#fff;margin-top:14px}
+.step p{color:var(--earth);font-size:14px;margin-top:8px}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tile{margin:0;border:1px solid var(--line);background:var(--panel)}
+.tile img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.tile figcaption{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--sand);padding:11px 13px;border-top:1px solid var(--line);min-height:46px}
+@media(max-width:820px){.gal{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.gal{grid-template-columns:1fr}}
+.faq{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.qa{background:var(--bg);padding:22px 24px;display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:22px}
+.qa h3{font-family:"Barlow Condensed",sans-serif;font-size:22px;text-transform:uppercase;color:#fff}
+.qa p{color:var(--dim);font-size:15.5px}
+@media(max-width:700px){.qa{grid-template-columns:1fr;gap:8px}}
+.areas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.area{border:1px solid var(--line2);padding:9px 15px;font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.08em;color:var(--sand)}
+footer{border-top:1px solid var(--line2);background:var(--panel)}
+.foot{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(2,minmax(0,.85fr));gap:34px;padding:clamp(40px,5vw,64px) 0}
+.foot img.mark{height:60px;width:auto;margin-bottom:16px}
+.foot h4{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin:0 0 14px;font-weight:500}
+.foot a{display:block;text-decoration:none;color:var(--ink);padding:5px 0;font-size:15px}
+.foot a:hover{color:#fff}
+.foot p{color:var(--dim);font-size:14px;max-width:44ch}
+.legal{border-top:1px solid var(--line);padding:18px 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--dim)}
+.legal a{text-decoration:none;color:var(--sand)}
+@media(max-width:760px){.foot{grid-template-columns:1fr}}
+.rv{opacity:1}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.js .rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
 }
 </style>
-<style id="logo-big">
-/* logo blown up to fill the bar - the client's own artwork at a size people can read, not a thumbnail in the corner */
-img.lb-big,img.lb-big.lb-mark,img.lb-big.lb-logo-unlock,img.lb-big.lb-logomark{height:clamp(84px,7.6vw,104px)!important;
-  width:auto!important;max-width:none!important;max-height:none!important;object-fit:contain!important;display:block!important;flex:0 0 auto!important}
-img.lb-word{height:clamp(22px,2.1vw,30px)!important;width:auto!important;max-width:none!important;max-height:none!important;
-  object-fit:contain!important;display:block!important;margin-left:clamp(8px,1vw,14px)!important;flex:0 0 auto!important}
-a:has(> img.lb-big){display:flex!important;align-items:center!important;gap:0!important;flex:0 0 auto!important;min-width:0!important}
-header,nav,[class*=hdr],[class*=bar],[class*=strip]{min-height:0!important;height:auto!important}
-header>div,nav>div,[class*=hdr]>div,[class*=bar]>div,[class*=strip]>div{flex-wrap:nowrap!important;align-items:center!important;
-  row-gap:0!important;min-height:0!important;height:auto!important}
-nav,[class*=nav-links],.nav-links,.links{flex-wrap:nowrap!important;gap:clamp(10px,1.3vw,20px)!important;min-width:0!important}
-nav a,[class*=nav-links] a,.nav-links a{white-space:nowrap!important;font-size:14px!important}
-@media(max-width:1080px){img.lb-big,img.lb-big.lb-mark,img.lb-big.lb-logo-unlock{height:clamp(64px,8vw,84px)!important}
-  nav a,[class*=nav-links] a,.nav-links a{font-size:13px!important}}
-@media(max-width:820px){img.lb-word{display:none!important}}
-</style><style id="lb-table-fit">table,.tbl{max-width:100%!important}@media(max-width:420px){table,.tbl{display:block!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch}}</style><!-- lb-seo:start -->
-<link rel="canonical" href="https://laydbackapps.com/sites/tnt-concreting/">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<meta property="og:url" content="https://laydbackapps.com/sites/tnt-concreting/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="TNT Concreting">
-<meta name="twitter:card" content="summary_large_image">
-<meta property="og:image" content="https://laydbackapps.com/sites/tnt-concreting/assets/logo-header.png">
-<meta name="twitter:image" content="https://laydbackapps.com/sites/tnt-concreting/assets/logo-header.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://laydbackapps.com/sites/tnt-concreting/#business", "name": "TNT Concreting", "description": "TNT Concreting, Bellbird NSW. Thirty years pouring driveways, slabs, shed floors, paths and exposed aggregate across Cessnock and the Hunter Valley. Call 0401 174 385.", "url": "https://laydbackapps.com/sites/tnt-concreting/", "telephone": "0401 174 385", "image": "https://laydbackapps.com/sites/tnt-concreting/assets/logo-header.png", "areaServed": [{"@type": "Place", "name": "Bellbird NSW"}], "knowsAbout": ["Concreting"]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "@id": "https://laydbackapps.com/sites/tnt-concreting/#service", "name": "Concreting", "provider": {"@id": "https://laydbackapps.com/sites/tnt-concreting/#business"}, "areaServed": [{"@type": "Place", "name": "Bellbird NSW"}]}</script>
-<!-- lb-seo:end -->
-</head><body>
+<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
 
-<div class="bar"><div class="wrap bar__in">
-  <a class="brand" href="#top" aria-label="TNT Concreting — home"><img class="lb-big" src="assets/logo-header.png" alt="TNT Concreting" width="1128" height="632"></a>
-  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
-  <nav class="nav" id="nav">
-    <a href="#ledger">Concrete</a>
-    <a href="#finishes">Finishes</a>
-    <a href="#pour">Pour</a>
-    <a href="#work">Work</a>
-    <a href="#faq">FAQ</a>
-    <a class="tel" href="tel:0401174385">0401 174 385</a>
-    <a class="cta" href="#quote">Free quote</a>
-  </nav>
-</div></div>
+<header class="bar">
+  <div class="wrap bar__in">
+    <a class="brand" href="#top" aria-label="TNT Concreting — home">
+      <img class="mark" src="assets/logo-hdr-mark.png" alt="TNT">
+      <img class="word" src="assets/logo-hdr-word.png" alt="Concreting">
+    </a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#slab">Slab build-up</a>
+      <a href="#process">How we pour</a>
+      <a href="#work">Work</a>
+      <a class="tel" href="tel:+61401174385">0401 174 385</a>
+      <a class="cta" href="#lbq">Get a quote</a>
+    </nav>
+  </div>
+</header>
 
-<header class="hero" id="top"><div class="wrap hero__in">
-  <div>
-    <span class="eyebrow">Bellbird · Cessnock · Hunter Valley</span>
-    <h1>Concrete that starts<br>level and stays level.</h1>
-    <p class="sub">Thirty years pouring driveways, slabs, shed floors, paths and footings around Bellbird and Cessnock. Set out to the fall, steel chaired to cover, cut and cured before anyone builds on it.</p>
-    <p class="acts"><a class="cta" href="#quote">Request a quote</a><a class="ghost" href="tel:0401174385">Call 0401 174 385</a></p>
-  </div>
-  <div class="imgstub"><b>What you get</b><span>Driveways and slabs set out to the fall, steel chaired to cover, cut and cured before anything is built on them.</span></div>
-</div></header>
+<main id="top">
 
-<div class="strip"><div class="wrap strip__in">
-  <div><b>30 YEARS POURING</b><span>Residential and light commercial concrete.</span></div>
-  <div><b>DRIVEWAYS &amp; SLABS</b><span>Driveways, shed floors, paths, footings.</span></div>
-  <div><b>CUT &amp; CURED</b><span>Control joints and curing, not left to chance.</span></div>
-  <div><b>BELLBIRD &amp; CESSNOCK</b><span>Local crew, Hunter Valley wide.</span></div>
-</div></div>
+  <section class="hero" id="hero" aria-label="TNT Concreting">
+    <div class="hero__in">
+      <div class="hero__copy">
+        <div class="wrappad">
+          <p class="kicker">Concreting &middot; Bellbird &middot; Cessnock &amp; the Hunter Valley</p>
+          <h1>Concrete, poured level and <em>finished clean.</em></h1>
+          <p class="sub">TNT Concreting has spent thirty years on the trowel and the screed &mdash; driveways and crossovers, house and shed slabs, paths, footings and exposed aggregate, for homes and trades across the Cessnock and Hunter Valley area.</p>
+          <div class="cta-row">
+            <a class="btn btn-fill" href="#lbq">Get a quote</a>
+            <a class="btn btn-ghost" href="tel:+61401174385">Call 0401 174 385</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero__media">
+        <!-- LB-3D-HERO --><canvas id="heroCanvas" width="1600" height="900" aria-hidden="true"></canvas>
+        <img class="big" src="assets/photo_1.jpg" alt="Finished concrete driveway at a residential home in the Hunter Valley">
+        <div class="strip">
+          <figure><img src="assets/photo_2.jpg" alt="Concrete slab being power-trowelled under work lights at night"><figcaption>Power-trowelling a slab</figcaption></figure>
+          <figure><img src="assets/job-like-this-1.jpg" alt="Poured concrete slab and paths at a residential property"><figcaption>A job like this</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<main>
-<section id="ledger"><div class="wrap">
-  <div class="head">
-    <div><span class="eyebrow">Schedule of work</span><h2 style="margin-top:12px">What gets poured</h2></div>
-    <p>Everything below is quoted after the site is looked at. Concrete fails on the base and the fall, not on the mix, so those are the first things checked.</p>
+  <div class="finishes" aria-label="Concrete finishes we pour">
+    <div class="wrap">
+      <div class="fin"><div class="sw sw-broom"></div><b>Broomed</b><span>Non-slip finish for driveways and paths</span></div>
+      <div class="fin"><div class="sw sw-trowel"></div><b>Trowelled</b><span>Hard, smooth steel-float finish for slabs</span></div>
+      <div class="fin"><div class="sw sw-agg"></div><b>Exposed aggregate</b><span>Stone cast in and washed back</span></div>
+      <div class="fin"><div class="sw sw-colour"></div><b>Coloured</b><span>Decorative and coloured concrete finishes</span></div>
+    </div>
   </div>
-  <div class="ledger">
-    <div class="ledger__row"><span class="ledger__no">01</span><h3>Driveways &amp; crossovers</h3><p>Set out with the fall running away from the house and shed, poured in one spread where access allows, finished broom or exposed to match the house.</p></div>
-    <div class="ledger__row"><span class="ledger__no">02</span><h3>House &amp; shed slabs</h3><p>Ground slabs and shed floors on a proof-rolled, compacted base, mesh chaired to the specified cover, sawn the next day.</p></div>
-    <div class="ledger__row"><span class="ledger__no">03</span><h3>Paths &amp; paved areas</h3><p>Paths, entertaining areas and outdoor slabs kept level, edged and drained so water leaves the building instead of sitting against it.</p></div>
-    <div class="ledger__row"><span class="ledger__no">04</span><h3>Exposed aggregate</h3><p>Washed back evenly across the whole pour so the aggregate reads the same front to back — not patchy where the work was rushed.</p></div>
-    <div class="ledger__row"><span class="ledger__no">05</span><h3>Footings &amp; piers</h3><p>Strip and pad footings, pier holes and slab thickening built to the engineer's detail, with steel checked before the pour.</p></div>
-    <div class="ledger__row"><span class="ledger__no">06</span><h3>Decorative &amp; coloured</h3><p>Oxide colouring, stencil patterns and saw-cut borders for driveways and paths that need to match a facade or carry a design.</p></div>
-    <div class="ledger__row"><span class="ledger__no">07</span><h3>Repairs &amp; replacement</h3><p>Cracked, sunken or spalled concrete broken out, the base re-compacted and the slab replaced rather than patched over.</p></div>
-  </div>
-</div></section>
 
-<section id="finishes"><div class="wrap">
-  <div class="head">
-    <div><span class="eyebrow">Finish specification</span><h2 style="margin-top:12px">Four finishes, four jobs</h2></div>
-    <p>The finish is chosen for how the slab is used, not for looks alone. A drive takes a different surface to a shed floor.</p>
+  <div class="ticker" aria-hidden="true">
+    <div class="wrap">
+      <b>Driveways</b><span>&middot;</span><span>House &amp; shed slabs</span><span>&middot;</span><span>Paths &amp; paved areas</span><span>&middot;</span><span>Exposed aggregate</span><span>&middot;</span><span>Footings &amp; piers</span><span>&middot;</span><span>Decorative &amp; coloured</span>
+    </div>
   </div>
-  <div class="scroll">
-  <table class="tbl">
-    <caption>Finish — how it is laid, and where it belongs</caption>
-    <thead><tr><th>Finish</th><th>How it is worked</th><th>Best used for</th><th>Traction</th></tr></thead>
-    <tbody>
-      <tr><td>Broom</td><td>Dragged with a stiff broom while the surface is still green</td><td>Driveways, paths and crossovers — the standard outdoor slab</td><td>High, wet or dry</td></tr>
-      <tr><td>Steel trowel</td><td>Machine-trowelled flat, then cured under cover</td><td>Shed floors, garages and internal slabs</td><td>Low — keep it under cover</td></tr>
-      <tr><td>Exposed aggregate</td><td>Topped with aggregate, washed back once the cream has set</td><td>Driveways and entries where grip and look both matter</td><td>Very high</td></tr>
-      <tr><td>Coloured oxide</td><td>Pigment mixed through the batch, then broom or trowel</td><td>Where a driveway has to match brick, render or roof tones</td><td>Follows the base finish</td></tr>
-      <tr><td>Saw-cut joints</td><td>Cut on a set spacing once the slab has taken its first set</td><td>Every slab over a few metres — this is what keeps the cracking in straight lines</td><td>—</td></tr>
-    </tbody>
-  </table>
-  </div>
-</div></section>
 
-<section id="pour"><div class="wrap">
-  <div class="head">
-    <div><span class="eyebrow">Pour sequence</span><h2 style="margin-top:12px">How the week runs</h2></div>
-    <p>Concrete does not allow a second attempt at the set-out, so each stage is finished before the next one is started.</p>
-  </div>
-  <div class="pour">
-    <article><b>STAGE 01</b><h3>Set out</h3><p>Levels taken, falls worked out and the outline marked. Access and where the truck will stand decided now, not on the morning.</p></article>
-    <article><b>STAGE 02</b><h3>Excavate &amp; compact</h3><p>Strip to depth, proof-roll and compact the subgrade in layers. Soft spots are dug out, because a slab over a soft patch cracks whatever the mix.</p></article>
-    <article><b>STAGE 03</b><h3>Form &amp; steel</h3><p>Formwork to the finished level, mesh and bar chaired to cover, penetration and joint positions set and checked before the pour.</p></article>
-    <article><b>STAGE 04</b><h3>Place &amp; finish</h3><p>Placed by chute or pump, vibrated and screeded, then finished while it is still workable. Larger areas are run in one spread for a consistent surface.</p></article>
-    <article><b>STAGE 05</b><h3>Cut &amp; cure</h3><p>Control cuts at the right spacing, curing compound or wet cure as specified, and cure times left with you in writing at handover.</p></article>
-  </div>
-</div></section>
+  <section class="pad" id="about">
+    <div class="wrap two">
+      <div>
+        <p class="eyebrow rv">01 &mdash; The crew</p>
+        <p class="lede rv" style="margin-top:20px">One crew, one pour, thirty years of doing it the same honest way.</p>
+      </div>
+      <div class="body rv">
+        <h2 style="font-size:clamp(26px,3.2vw,40px)">Concrete is all we do</h2>
+        <p>TNT Concreting works across Bellbird, Cessnock and the Hunter Valley. Every job is set out on the ground, the levels checked and the formwork squared before the truck backs in &mdash; so what gets poured is what was measured.</p>
+        <p>Driveways and crossovers, house and shed slabs, paths and paved areas, footings, cast-in piers, exposed aggregate, decorative and coloured finishes, and repairs or replacement of tired concrete that has had its day. Residential and trade work alike.</p>
+        <div class="facts">
+          <div><b>30</b><span>years on the trowel</span></div>
+          <div><b>1</b><span>crew, start to finish</span></div>
+          <div><b>5</b><span>steps, every single job</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="work" class="work"><div class="wrap work__in">
-  <div class="imgstub"><b>On the tools</b><span>Placement and screeding run in one spread, so the surface finishes consistently across the whole slab.</span></div>
-  <div>
-    <span class="eyebrow">On the tools</span>
-    <h2 style="margin-top:12px">Poured by the crew that quoted it</h2>
-    <p style="color:var(--grey);margin-top:12px;font-size:15.3px">There is no booking desk between the quote and the pour. The people who walk the site are the people who set the forms and run the screed, which is why the levels on the day match the levels in the price.</p>
-    <ul>
-      <li>Set out and levels agreed on site before anything is ordered.</li>
-      <li>Formwork and steel set the day before, not the same morning.</li>
-      <li>Pours sequenced around the weather, not forced into it.</li>
-      <li>Waste concrete and spoil taken off site when the job is finished.</li>
-    </ul>
-  </div>
-</div></section>
+  <section class="pad" id="slab">
+    <div class="wrap slab">
+      <div class="rv">
+        <p class="eyebrow">02 &mdash; Slab build-up</p>
+        <h2 style="margin:18px 0 18px;max-width:16ch">Good concrete starts under the concrete</h2>
+        <p style="color:var(--dim);max-width:52ch">A driveway only stays put if the layers under it are right. TNT Concreting strips, compacts, ties the steel and holds the levels before a single barrow of concrete hits the ground &mdash; which is why the finished surface stays flat and crack-free.</p>
+        <div class="areas" style="margin-top:26px">
+          <span class="area">Compacted base</span><span class="area">Mesh &amp; bar</span><span class="area">Poured &amp; screeded</span><span class="area">Finished surface</span>
+        </div>
+      </div>
+      <div class="slabstack rv" aria-hidden="true">
+        <div class="stack">
+          <div class="plate p4"><span>Finished surface</span></div>
+          <div class="plate p3"><span>Pour &amp; screed</span></div>
+          <div class="plate p2"><span>Steel &amp; mesh</span></div>
+          <div class="plate p1"><span>Compacted base</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="areas"><div class="wrap">
-  <div class="head">
-    <div><span class="eyebrow">Where we pour</span><h2 style="margin-top:12px">Bellbird and the Cessnock district</h2></div>
-    <p>Local to Bellbird, working across the Cessnock and Maitland area. If your suburb is not listed, ask — most of the valley is within reach.</p>
-  </div>
-  <div class="areas">
-    <span>Bellbird</span><span>Cessnock</span><span>Bellbird Heights</span><span>Kurri Kurri</span><span>Weston</span>
-    <span>Abermain</span><span>Neath</span><span>Paxton</span><span>Millfield</span><span>Ellalong</span>
-    <span>Kitchener</span><span>Greta</span><span>Branxton</span><span>Maitland</span><span>Hunter Valley</span>
-  </div>
-</div></section>
+  <section class="pad" id="services">
+    <div class="wrap">
+      <p class="eyebrow rv">03 &mdash; What we pour</p>
+      <h2 class="rv" style="margin:18px 0 34px;max-width:18ch">Everything concrete, end to end</h2>
+      <div>
+        <div class="row rv"><span class="num">01</span><h3>Driveways &amp; crossovers</h3><p>New driveways and council crossovers, set out to fall away from the shed or garage and finished how you want it.</p></div>
+        <div class="row rv"><span class="num">02</span><h3>House &amp; shed slabs</h3><p>Slabs for homes, sheds, garages and extensions &mdash; boxed, steel in, levels held and poured flat.</p></div>
+        <div class="row rv"><span class="num">03</span><h3>Paths &amp; paved areas</h3><p>Pathways, side access and paved areas that drain properly and tie into the existing levels.</p></div>
+        <div class="row rv"><span class="num">04</span><h3>Exposed aggregate</h3><p>Aggregate cast in and washed back to reveal the stone &mdash; a hard-wearing, non-slip finish for driveways and paths.</p></div>
+        <div class="row rv"><span class="num">05</span><h3>Footings &amp; piers</h3><p>Trench and pad footings, piers and structural pours, set out and poured to your engineer's plan.</p></div>
+        <div class="row rv"><span class="num">06</span><h3>Decorative, coloured &amp; repairs</h3><p>Coloured and decorative finishes, plus removal and replacement of cracked or sunk concrete that needs a fresh pour.</p></div>
+      </div>
+    </div>
+  </section>
 
-<section id="faq"><div class="wrap">
-  <div class="head"><div><span class="eyebrow">Questions</span><h2 style="margin-top:12px">Asked before most quotes</h2></div></div>
-  <details><summary>How long before I can drive on a new driveway?</summary><div class="a">Foot traffic is usually fine the next day. Cars generally wait about seven days, and anything heavy — trucks, caravans, loaded trailers — longer than that. Your cure times are written down at handover rather than guessed at.</div></details>
-  <details><summary>Can you match the concrete I already have?</summary><div class="a">Colour and texture are matched as closely as the age of the existing pour allows. Older concrete weathers, so it is judged on site before quoting rather than promised over the phone.</div></details>
-  <details><summary>Do you take the old slab and spoil away?</summary><div class="a">Yes. Breaking out, disposal and re-compaction of the base under the new slab are all part of the quote where an existing surface has to come up.</div></details>
-  <details><summary>Will the slab crack?</summary><div class="a">All concrete moves, so the aim is to control where it cracks. That means a properly compacted base, steel chaired to cover, and saw-cut joints at the correct spacing so any movement follows the lines you can live with.</div></details>
-  <details><summary>How soon can you get to it?</summary><div class="a">It depends on the run of jobs and the weather, which decides everything in concreting. Call and you will be given an honest window rather than a date that slips.</div></details>
-  <details><summary>Do you do shed floors and footings, or just driveways?</summary><div class="a">All of it. Driveways, paths, shed floors, house slabs and footings — thirty years of the same work around the same towns.</div></details>
-</div></section>
+  <section class="pad" id="process">
+    <div class="wrap">
+      <p class="eyebrow rv">04 &mdash; How we pour</p>
+      <h2 class="rv" style="margin:18px 0 34px">Same five steps, every job</h2>
+      <div class="steps">
+        <div class="step rv"><div class="n">STEP 01</div><h3>Set out</h3><p>Mark it on the ground and confirm the levels and falls before anything is dug.</p></div>
+        <div class="step rv"><div class="n">STEP 02</div><h3>Excavate &amp; compact</h3><p>Strip the area, remove the old surface and compact a stable base.</p></div>
+        <div class="step rv"><div class="n">STEP 03</div><h3>Form &amp; steel</h3><p>Box it up square, place and tie the mesh or bar to spec.</p></div>
+        <div class="step rv"><div class="n">STEP 04</div><h3>Pour</h3><p>Pour, screed and float the slab to a consistent, level finish.</p></div>
+        <div class="step rv"><div class="n">STEP 05</div><h3>Finish &amp; clean</h3><p>Finish the surface &mdash; broomed, trowelled or aggregate &mdash; then strip and clean up.</p></div>
+      </div>
+    </div>
+  </section>
 
-<section id="quote" class="quote"><div class="wrap quote__in">
-  <div>
-    <span class="eyebrow">Free measure &amp; quote</span>
-    <h2 style="margin-top:12px">Send the details</h2>
-    <p>Suburb, roughly how many square metres, and what the slab is for — driveway, shed, path or footings. Photos of the site help if you have them.</p>
-    <p class="mono">TNT Concreting<br>Bellbird NSW · 0401 174 385<br>Thirty years in concrete.</p>
+  <section class="pad" id="work">
+    <div class="wrap">
+      <p class="eyebrow rv">05 &mdash; On the tools</p>
+      <h2 class="rv" style="margin:18px 0 30px">Recent concrete work</h2>
+      <div class="gal">
+        <figure class="tile rv">
+          <img src="assets/photo_1.jpg" alt="Finished concrete driveway at a residential property">
+          <figcaption>TNT Concreting &mdash; a finished driveway, poured and broomed</figcaption>
+        </figure>
+        <figure class="tile rv">
+          <img src="assets/photo_2.jpg" alt="Concrete slab being power-trowelled under work lights">
+          <figcaption>TNT Concreting &mdash; power-trowelling a slab after dark</figcaption>
+        </figure>
+        <figure class="tile rv">
+          <img src="assets/job-like-this-2.jpg" alt="Poured and finished concrete work on a Hunter Valley job">
+          <figcaption>A job like this &mdash; concreting in the Hunter Valley</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" id="faq">
+    <div class="wrap">
+      <p class="eyebrow rv">06 &mdash; Straight answers</p>
+      <h2 class="rv" style="margin:18px 0 30px">Questions we get</h2>
+      <div class="faq">
+        <div class="qa rv"><h3>How much does a driveway cost?</h3><p>It comes down to the area, the access, the thickness and the finish. Send the size and a rough idea of the finish and TNT Concreting will price it properly.</p></div>
+        <div class="qa rv"><h3>Do you do exposed aggregate?</h3><p>Yes &mdash; aggregate cast into the slab and washed back the same day to leave the stone showing. Popular on driveways, paths and alfresco areas.</p></div>
+        <div class="qa rv"><h3>Can you replace old concrete?</h3><p>Yes. Cracked, sunk or tired concrete can be broken out and replaced, reusing the levels and tying the new pour back into what is staying.</p></div>
+        <div class="qa rv"><h3>What areas do you cover?</h3><p>Bellbird, Cessnock and out through the Hunter Valley. If your job is nearby, call and we will tell you straight.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" id="areas">
+    <div class="wrap two">
+      <div>
+        <p class="eyebrow rv">07 &mdash; Where we work</p>
+        <h2 class="rv" style="margin-top:18px;max-width:14ch">Bellbird, Cessnock &amp; the Hunter</h2>
+      </div>
+      <div class="rv">
+        <p style="color:var(--dim);max-width:58ch">Based at Bellbird, TNT Concreting pours across the Cessnock local government area and out through the wider Hunter Valley &mdash; driveways, slabs, paths, footings and exposed aggregate.</p>
+        <div class="areas">
+          <span class="area">Bellbird</span><span class="area">Cessnock</span><span class="area">Hunter Valley</span><span class="area">Cessnock &amp; surrounds</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lbq" aria-labelledby="lbq-h">
+  <div class="lbq-w">
+    <div>
+      <p class="lbq-k">Request a quote</p>
+      <h2 id="lbq-h">Tell us about the job</h2>
+      <p class="lbq-s">Send through the details and we will come back with a price. No obligation, no sales talk.</p>
+      <div class="lbq-cl"><div><b>Call</b><a href="tel:+61401174385">0401 174 385</a></div><div><b>Instagram</b><a href="https://www.instagram.com/tntconcreting" rel="noopener" target="_blank">@tntconcreting</a></div><div><b>Facebook</b><a href="https://www.facebook.com/tntconcreting" rel="noopener" target="_blank">TNT Concreting</a></div><div><b>Area</b><span>Bellbird &amp; the Hunter Valley, NSW</span></div></div>
+    </div>
+    <form id="lbq-form" novalidate data-site="tnt-concreting" data-biz="TNT Concreting">
+      <div class="lbq-g">
+        <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+        <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="lbq-full"><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
+        <div class="lbq-full"><label for="lbq-svc">Service</label><select id="lbq-svc" name="service"><option>Driveway or crossover</option><option>House or shed slab</option><option>Path or paved area</option><option>Exposed aggregate</option><option>Footings or piers</option><option>Decorative or coloured</option><option>Repair / replacement</option><option>Other</option></select></div>
+        <div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, finish, timing…" required></textarea></div>
+      </div>
+      <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
+      <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit">Send quote request</button>
+      <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
+    </form>
   </div>
-  <form id="lbq-form" data-site="tnt-concreting">
-    <div><label for="n">Name</label><input id="n" name="name" required autocomplete="name"></div>
-    <div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel" autocomplete="tel"></div>
-    <div class="full"><label for="a">Suburb / site</label><input id="a" name="suburb" autocomplete="address-level2"></div>
-    <div class="full"><label for="s">What is the job?</label><select id="s" name="service">
-      <option>Driveway / crossover</option><option>Shed floor / house slab</option><option>Path / outdoor area</option>
-      <option>Exposed aggregate</option><option>Footings / piers</option><option>Repair or replacement</option><option>Something else</option>
-    </select></div>
-    <div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="4" placeholder="Rough size in square metres, finish you have in mind, and access to the site."></textarea></div>
-    <button type="submit">Send request</button>
-  </form>
-</div></section>
+  <style>
+#lbq{background:#0c0c0d;color:#f2f1ec;padding:clamp(54px,7vw,96px) 0;border-top:1px solid rgba(242,241,236,.20)}
+#lbq .lbq-w{max-width:1120px;margin:0 auto;padding:0 clamp(18px,4vw,44px);display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(26px,4vw,58px);align-items:start}
+#lbq .lbq-k{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#a2a29d;margin:0 0 16px}
+#lbq h2{font-size:clamp(26px,3.4vw,42px);margin:0 0 14px;line-height:1.05}
+#lbq p.lbq-s{margin:0 0 24px;color:#a2a29d;max-width:46ch;font-size:15.5px}
+#lbq .lbq-cl{display:grid;gap:2px}
+#lbq .lbq-cl a,#lbq .lbq-cl span{color:#f2f1ec;text-decoration:none}
+#lbq .lbq-cl div{display:flex;gap:12px;padding:11px 0;border-top:1px solid rgba(242,241,236,.20);font-size:15px}
+#lbq .lbq-cl b{min-width:84px;color:#a2a29d;font-weight:500;font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
+#lbq form{background:rgba(255,255,255,.04);border:1px solid rgba(242,241,236,.20);padding:clamp(20px,3vw,30px)}
+#lbq .lbq-g{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+#lbq .lbq-full{grid-column:1/-1}
+#lbq label{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#a2a29d;margin-bottom:6px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 13px;border:1px solid rgba(242,241,236,.20);background:rgba(255,255,255,.06);color:#f2f1ec;font:inherit;font-size:15px;border-radius:0}
+#lbq textarea{min-height:104px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid #f2f1ec;outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:16px;width:100%;padding:15px 20px;border:0;background:#f2f1ec;color:#0c0c0d;font:inherit;font-weight:700;font-size:16px;cursor:pointer;letter-spacing:.03em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:12px 0 0;font-size:13.5px;color:#a2a29d;min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:14px;font-family:inherit;font-size:13px;color:#a2a29d;text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media(max-width:860px){#lbq .lbq-w{grid-template-columns:1fr}}
+@media(max-width:560px){#lbq .lbq-g{grid-template-columns:1fr}}
+</style>
+  <script>
+(function(){
+  var EP=null;
+  function base(cb){
+    if(window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done=false;
+    var t=setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} },2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_='+Date.now())
+      .then(function(r){return r.text();})
+      .then(function(txt){var b=(txt||'').trim().replace(/\/+$/,'');if(done)return;done=true;clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b)?b:'https://grocery-periodically-everyone-wine.trycloudflare.com');})
+      .catch(function(){if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');}});
+  }
+  var f=document.getElementById('lbq-form'); if(!f) return;
+  var st=document.getElementById('lbq-st');
+  var btn=f.querySelector('button[type=submit]');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d={}; new FormData(f).forEach(function(v,k){d[k]=v;});
+    if(d.website) return;
+    if(!d.name || (!d.phone && !d.email) || !(d.message||'').trim()){
+      st.textContent='Please add your name, a phone or email, and a few words about the job.'; st.style.color='#e2574c'; return; }
+    btn.disabled=true; st.textContent='Sending\u2026'; st.style.color='';
+    base(function(B){
+      fetch(B+'/functions/v1/quote-request',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({site_id:f.dataset.site||'',business_name:f.dataset.biz||'',name:d.name,phone:d.phone,email:d.email,service:d.service||'',message:d.message,consent:!!d.consent})})
+      .then(function(r){return r.json().catch(function(){return {};});})
+      .then(function(x){
+        if(x&&x.success){ f.reset(); st.textContent="Thanks \u2014 your request is in. We'll be in touch shortly."; st.style.color='#f2f1ec'; }
+        else { throw new Error((x&&x.error)||'Could not send'); }
+      })
+      .catch(function(err){ st.textContent=(err&&err.message)?err.message:'Could not send \u2014 please try again or call.'; st.style.color='#e2574c'; })
+      .finally(function(){ btn.disabled=false; });
+    });
+  });
+})();
+</script>
+</section>
+
 </main>
 
-<footer><div class="wrap foot">
-  <img src="assets/logo-header.png" alt="TNT Concreting" width="1128" height="632">
-  <span>TNT Concreting · Bellbird NSW · <a href="tel:0401174385">0401 174 385</a></span>
-</div></footer>
+<footer>
+  <div class="wrap foot">
+    <div>
+      <img class="mark" src="assets/logo-hdr-mark.png" alt="TNT Concreting">
+      <p>Concreting done properly for the Hunter Valley. Driveways, slabs, paths, footings and exposed aggregate, poured and finished by one crew.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="tel:+61401174385">0401 174 385</a>
+      <a href="https://www.instagram.com/tntconcreting" rel="noopener" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/tntconcreting" rel="noopener" target="_blank">Facebook</a>
+      <a href="#lbq">Request a quote</a>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="#services">Driveways &amp; crossovers</a>
+      <a href="#services">House &amp; shed slabs</a>
+      <a href="#services">Paths &amp; paved areas</a>
+      <a href="#services">Exposed aggregate</a>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <span>TNT Concreting &mdash; Bellbird, NSW</span>
+    <span><a href="privacy.html">Privacy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms</a></span>
+  </div>
+</footer>
 
 <script>
-document.getElementById('burger').addEventListener('click',function(){var n=document.getElementById('nav');
-  var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);});
-document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();
-  var f=e.currentTarget,b=f.querySelector('button');
-  b.textContent='Sending…';b.disabled=true;
-  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
-    body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})
-  .then(function(){b.textContent='Thanks — we will be in touch';})
-  .catch(function(){b.textContent='Could not send — try again';b.disabled=false;});});
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  var fold=window.innerHeight||800;
+  els.forEach(function(e){ if(e.getBoundingClientRect().top < fold) e.classList.add('on'); });
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px 2% 0px',threshold:.05});
+  els.forEach(function(e){ if(!e.classList.contains('on')) io.observe(e); });
+  setTimeout(function(){els.forEach(function(e){e.classList.add('on')})},600);
+})();
 </script>
-</body></html>
+<script>
+(function(){
+  var b=document.getElementById('burger'), n=document.getElementById('nav');
+  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});}
+})();
+</script>
+<script>
+(function(){
+  var c=document.getElementById('heroCanvas'); if(!c||!c.getContext) return;
+  var x=c.getContext('2d'), W=c.width, H=c.height;
+  var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var f=1.15*H, horizon=0.54*H, camH=1.35;
+  function draw(ts){
+    if(!isFinite(ts)) ts=0;
+    x.clearRect(0,0,W,H);
+    var sweep=(Math.sin(ts/2600)*0.5+0.5);
+    x.strokeStyle='rgba(207,199,182,.26)'; x.lineWidth=1;
+    for(var z=0.9; z<26; z+=1.6){
+      var s=f/z, y=horizon+camH*f/z, x0=W/2-9*s, x1=W/2+9*s;
+      if(!isFinite(y)||!isFinite(x0)||!isFinite(x1)) continue;
+      x.beginPath(); x.moveTo(x0,y); x.lineTo(x1,y); x.stroke();
+    }
+    var ze=2.2+sweep*22, se=f/ze;
+    if(isFinite(se)){
+      x.fillStyle='rgba(239,234,225,.05)';
+      x.fillRect(W/2-8*se, horizon+camH*f/ze, 16*se, H);
+      x.strokeStyle='rgba(239,234,225,.5)';
+      x.beginPath(); x.moveTo(W/2-8*se, horizon+camH*se); x.lineTo(W/2+8*se, horizon+camH*se); x.stroke();
+    }
+    if(!reduced) requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
