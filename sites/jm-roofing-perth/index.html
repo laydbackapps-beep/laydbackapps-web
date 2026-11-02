@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JM Roofing — Gutter Cleaning &amp; Roof Repairs, Perth WA</title>
+<meta name="description" content="JM Roofing clears gutters, flushes downpipes, repairs roof leaks and re-gutters homes across Perth north and south, plus country areas. Free quotes — call 0406 641 002.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#faf6f0;
+    --ink:#1a001d;
+    --ink-soft:#4a3550;
+    --red:#d4211e;
+    --red-deep:#a91614;
+    --tint:#f2e7df;
+    --line:rgba(26,0,29,.13);
+    --wrap:1180px;
+    --navh:86px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{width:min(100% - 44px,var(--wrap));margin-inline:auto}
+  h1,h2,h3{font-family:"Archivo",system-ui,sans-serif;line-height:1.06;letter-spacing:-.02em;margin:0}
+  h1{font-size:clamp(2.1rem,4.6vw,3.5rem);font-weight:800}
+  h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700}
+  h3{font-size:1.12rem;font-weight:700;letter-spacing:-.01em}
+  p{margin:0}
+  .eyebrow{
+    font-family:"Archivo",sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:.6em;margin:0 0 18px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--red);display:inline-block}
+
+  /* ---------- nav ---------- */
+  header.site{
+    position:sticky;top:0;z-index:40;height:var(--navh);
+    background:rgba(250,246,240,.93);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{height:var(--navh);display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;flex:none}
+  .brand img{height:50px;width:auto;max-width:250px}
+  .nav-links{display:flex;align-items:center;gap:30px;margin-left:auto;margin-right:8px}
+  .nav-links a{
+    text-decoration:none;font-weight:500;font-size:.95rem;color:var(--ink-soft);
+    padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;
+  }
+  .nav-links a:hover{color:var(--ink);border-color:var(--red)}
+  .btn{
+    display:inline-flex;align-items:center;gap:.55em;text-decoration:none;
+    font-family:"Archivo",sans-serif;font-weight:700;font-size:.95rem;
+    padding:13px 22px;border-radius:2px;border:1.5px solid transparent;
+    transition:transform .18s,background .2s,color .2s,border-color .2s;white-space:nowrap;
+  }
+  .btn-call{background:var(--red);color:#fff}
+  .btn-call:hover{background:var(--red-deep);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+  .nav .btn-call{padding:11px 18px;font-size:.9rem}
+  .menu-toggle{display:none}
+
+  /* ---------- hero ---------- */
+  .hero{padding:74px 0 64px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
+  .hero p.lede{font-size:1.14rem;color:var(--ink-soft);margin:22px 0 30px;max-width:33ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
+  .trust{list-style:none;display:flex;flex-wrap:wrap;gap:10px 26px;padding:0;margin:0}
+  .trust li{display:flex;align-items:center;gap:.5em;font-size:.92rem;font-weight:500;color:var(--ink-soft)}
+  .trust li::before{content:"";width:7px;height:7px;background:var(--red);border-radius:50%;flex:none}
+  .hero-card{
+    position:relative;border:1px solid var(--line);background:var(--tint);
+    padding:12px;max-width:492px;margin-left:auto;box-shadow:0 22px 48px -30px rgba(26,0,29,.5);
+  }
+  .hero-card img{width:100%;height:auto}
+  .hero-card figcaption{
+    font-size:.88rem;color:#3c2a42;padding:12px 4px 4px;line-height:1.5;font-weight:500;
+  }
+
+  /* ---------- generic section ---------- */
+  section{padding:84px 0}
+  .sec-head{max-width:620px;margin-bottom:44px}
+  .sec-head p{color:var(--ink-soft);margin-top:14px;font-size:1.04rem}
+
+  /* ---------- services ---------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{
+    border:1px solid var(--line);background:#fffdf9;padding:30px 26px 28px;border-radius:2px;
+    transition:border-color .2s,transform .2s;
+  }
+  .card:hover{border-color:var(--red);transform:translateY(-2px)}
+  .card .num{font-family:"Archivo",sans-serif;font-weight:800;font-size:.8rem;color:var(--red);letter-spacing:.08em}
+  .card h3{margin:14px 0 10px}
+  .card p{color:var(--ink-soft);font-size:.96rem;line-height:1.6}
+
+  /* ---------- process (dark band) ---------- */
+  .process{background:var(--ink);color:var(--paper)}
+  .process .eyebrow{color:#ffb3b0}
+  .process .eyebrow::before{background:#ffb3b0}
+  .process h2{color:#fff}
+  .process .sec-head p{color:#cbb9d0}
+  .phases{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;counter-reset:step}
+  .phase{border-top:1px solid rgba(250,246,240,.22);padding-top:20px}
+  .phase .k{font-family:"Archivo",sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.12em;color:#ffb3b0}
+  .phase h3{color:#fff;margin:10px 0 8px;font-size:1.05rem}
+  .phase p{color:#cbb9d0;font-size:.93rem;line-height:1.6}
+
+  /* ---------- work ---------- */
+  .work-list{display:grid;gap:26px}
+  .shot{border:1px solid var(--line);background:#fffdf9;padding:10px}
+  .shot img{width:100%;max-width:943px;height:auto;margin-inline:auto}
+  .shot figcaption{padding:12px 6px 4px;font-size:.86rem;color:var(--ink-soft);display:flex;gap:.7em;align-items:baseline}
+  .shot figcaption b{font-family:"Archivo",sans-serif;color:var(--ink);font-weight:700;font-size:.8rem;letter-spacing:.06em;white-space:nowrap}
+
+  /* ---------- faq ---------- */
+  .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px}
+  details{border-bottom:1px solid var(--line);padding:18px 0}
+  details summary{
+    cursor:pointer;list-style:none;font-family:"Archivo",sans-serif;font-weight:700;font-size:1.02rem;
+    display:flex;justify-content:space-between;gap:16px;align-items:baseline;
+  }
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";font-size:1.3rem;color:var(--red);line-height:1;font-weight:700}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--ink-soft);margin-top:10px;font-size:.96rem;line-height:1.62}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--tint);border-top:1px solid var(--line)}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  .contact .big-call{
+    display:inline-flex;align-items:center;gap:.6em;font-family:"Archivo",sans-serif;font-weight:800;
+    font-size:clamp(1.5rem,3.4vw,2.2rem);text-decoration:none;color:var(--ink);margin:16px 0 8px;
+  }
+  .contact .big-call span{color:var(--red)}
+  .contact p{color:var(--ink-soft)}
+  .contact .facts{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
+  .contact .facts li{border-top:1px solid var(--line);padding-top:14px;font-size:.97rem}
+  .contact .facts b{display:block;font-family:"Archivo",sans-serif;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;color:var(--red);margin-bottom:3px}
+  .social-link{display:inline-flex;align-items:center;gap:.5em;margin-top:8px;text-decoration:none;font-weight:600;color:var(--ink);border-bottom:1.5px solid var(--red);padding-bottom:2px}
+
+  /* ---------- footer ---------- */
+  footer.site{background:var(--ink);color:#cbb9d0;padding:40px 0}
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .foot .flogo{display:flex;align-items:center;gap:16px}
+  .foot .flogo img{height:30px;width:auto;filter:brightness(0) invert(1);opacity:.92}
+  .foot .meta{font-size:.86rem;line-height:1.7;text-align:right}
+  .foot .meta a{color:#ffb3b0;text-decoration:none}
+  .foot .meta a:hover{text-decoration:underline}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:38px}
+    .hero-card{max-width:100%;margin:0}
+    .cards{grid-template-columns:1fr 1fr}
+    .phases{grid-template-columns:1fr 1fr;gap:26px}
+    .faq-grid{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr;gap:30px}
+  }
+  @media (max-width:720px){
+    :root{--navh:72px}
+    .nav-links{display:none}
+    .brand img{height:36px;max-width:176px}
+    .cards{grid-template-columns:1fr}
+    .phases{grid-template-columns:1fr}
+    section{padding:60px 0}
+    .hero{padding:44px 0 48px}
+    .foot{flex-direction:column;align-items:flex-start}
+    .foot .meta{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="JM Roofing home">
+      <img src="assets/logo-lockup.svg" alt="JM Roofing" width="364" height="120">
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#work">Our work</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-call" href="tel:+61406641002">Call 0406 641 002</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Gutter &amp; roof care · Bassendean, Perth WA</p>
+        <h1>Gutter cleaning and roof repairs, done properly across Perth.</h1>
+        <p class="lede">Blocked gutters, leaking roofs and tired downpipes sorted by a local crew — north, south and out into the country.</p>
+        <div class="hero-cta">
+          <a class="btn btn-call" href="tel:+61406641002">Call 0406 641 002</a>
+          <a class="btn btn-ghost" href="#services">See what we do</a>
+        </div>
+        <ul class="trust">
+          <li>Free quotes</li>
+          <li>Perth metro &amp; country</li>
+          <li>Based in Bassendean</li>
+        </ul>
+      </div>
+      <figure class="hero-card">
+        <img src="assets/hero-card.jpg" alt="A gloved hand clearing wet leaves from a metal gutter" width="943" height="320" loading="eager">
+        <figcaption>Gutters cleared by hand and blower — leaves and debris out, downpipes flushed.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Services</p>
+        <h2>What we clear, repair and replace</h2>
+        <p>The jobs that keep a Perth roof shedding water the way it should.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <p class="num">01</p>
+          <h3>Gutter cleaning</h3>
+          <p>Leaves, twigs and silt lifted out by hand and blower so the run flows instead of overflowing.</p>
+        </article>
+        <article class="card">
+          <p class="num">02</p>
+          <h3>Downpipes &amp; soakwells</h3>
+          <p>Downpipes flushed through and soakwells checked, so stormwater gets away from the walls.</p>
+        </article>
+        <article class="card">
+          <p class="num">03</p>
+          <h3>Re-guttering</h3>
+          <p>Worn or sagging gutter replaced and re-pitched so it drains to the outlet, not the fascia.</p>
+        </article>
+        <article class="card">
+          <p class="num">04</p>
+          <h3>Roof leak repairs</h3>
+          <p>Tracking down where water is actually getting in, then sealing the fault rather than the symptom.</p>
+        </article>
+        <article class="card">
+          <p class="num">05</p>
+          <h3>Roof repairs</h3>
+          <p>Broken tiles, failed flashings and worn sections made good before they turn into a ceiling stain.</p>
+        </article>
+        <article class="card">
+          <p class="num">06</p>
+          <h3>Solar panel cleaning</h3>
+          <p>Panels and the gutters around them cleared, so both the array and the roof drain keep working.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How it works</p>
+        <h2>From first call to cleared gutters</h2>
+        <p>Straightforward, and you know the price before the work starts.</p>
+      </div>
+      <div class="phases">
+        <div class="phase">
+          <p class="k">01</p>
+          <h3>Call or message</h3>
+          <p>Tell us the address and what the roof is doing. Photos help if you have them.</p>
+        </div>
+        <div class="phase">
+          <p class="k">02</p>
+          <h3>Free quote</h3>
+          <p>A clear price for the job — gutter clean, leak, re-gutter or a mix.</p>
+        </div>
+        <div class="phase">
+          <p class="k">03</p>
+          <h3>We do the work</h3>
+          <p>Gutters cleared by hand and blower, downpipes flushed, faults repaired on the spot where possible.</p>
+        </div>
+        <div class="phase">
+          <p class="k">04</p>
+          <h3>Tidy up</h3>
+          <p>Debris bagged and taken away, and we walk the result with you before we go.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Our work</p>
+        <h2>Gutters before and after a clear-out</h2>
+        <p>Straight from the jobs we post about — what a blocked run looks like, and what it looks like once it's cleared.</p>
+      </div>
+      <div class="work-list">
+        <figure class="shot">
+          <img src="assets/gal-1.jpg" alt="A gloved hand pulling wet leaves and debris out of a metal gutter" width="943" height="320" loading="lazy">
+          <figcaption><b>GUTTER CLEAR-OUT</b> Wet leaves and debris lifted out of a packed gutter by hand.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/gal-2.jpg" alt="Side view of a gloved hand clearing debris from a gutter run along a roof edge" width="943" height="250" loading="lazy">
+          <figcaption><b>ALONG THE RUN</b> Working the length of a gutter from the roof edge, debris pulled clear as we go.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/gal-3.jpg" alt="Before-and-after comparison of a gutter blocked with dry leaves and the same run cleared" width="943" height="275" loading="lazy">
+          <figcaption><b>BEFORE &amp; AFTER</b> A run blocked with dry leaves beside a cleared section — the difference a clear-out makes.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Questions</p>
+        <h2>What people ask before booking</h2>
+      </div>
+      <div class="faq-grid">
+        <details open>
+          <summary>How often should gutters be cleaned?</summary>
+          <p>Around Perth, most homes need it once or twice a year — more often if you're under trees or near bush. Before the winter rains and again ahead of summer is the usual rhythm.</p>
+        </details>
+        <details>
+          <summary>Do you clear the downpipes too?</summary>
+          <p>Yes. Downpipes are flushed as part of the clean, because a clear gutter still overflows if the pipe below it is blocked.</p>
+        </details>
+        <details>
+          <summary>Can you find and fix a roof leak?</summary>
+          <p>That's a big part of what we do — tracking where the water is actually entering, then repairing the flashing, tile or gutter causing it.</p>
+        </details>
+        <details>
+          <summary>Do you charge for quotes?</summary>
+          <p>No — quotes are free. Tell us the address and what's happening and we'll price the job before any work starts.</p>
+        </details>
+        <details>
+          <summary>Which areas do you cover?</summary>
+          <p>All areas of Perth, north and south, and we also travel to country areas. We're based in Bassendean.</p>
+        </details>
+        <details>
+          <summary>Do you clean solar panels as well?</summary>
+          <p>Yes — solar panel cleaning is on the list, and we clear the gutters around the array while we're up there.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Get a quote</p>
+        <h2>Gutters due for a clear-out?</h2>
+        <a class="big-call" href="tel:+61406641002">Call <span>0406 641 002</span></a>
+        <p>Free quotes for gutter cleaning, roof repairs and re-guttering across Perth — north, south and country areas.</p>
+        <a class="social-link" href="https://www.facebook.com/people/Jm-roofing/100032901892971/" target="_blank" rel="noopener">See more on Facebook →</a>
+      </div>
+      <ul class="facts">
+        <li><b>Phone</b><a href="tel:+61406641002">0406 641 002</a></li>
+        <li><b>Email</b><a href="mailto:info@jmroofing.au">info@jmroofing.au</a></li>
+        <li><b>Based in</b>Bassendean, Perth WA</li>
+        <li><b>Service area</b>Perth north &amp; south, plus country areas</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div class="flogo">
+      <img src="assets/logo-mark.svg" alt="" width="30" height="30">
+      <span>JM Roofing · Bassendean, Perth WA · &copy; 2026</span>
+    </div>
+    <div class="meta">
+      Gutter cleaning · Roof repairs · ABN 36 866 956 859<br>
+      <a href="tel:+61406641002">0406 641 002</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
