@@ -78,15 +78,19 @@ p{margin:0}
 /* hero */
 .hero{position:relative;overflow:hidden;perspective:1400px;background:var(--bg-2);border-bottom:1px solid var(--line);
   padding:clamp(42px,6.6vw,96px) 0 clamp(42px,6.4vw,88px)}
-.scene{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.75;pointer-events:none}
+.scene{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.95;pointer-events:none}
 .hero__in{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
   gap:clamp(28px,4.4vw,66px);align-items:center}
 .hero h1{margin:20px 0 24px}
 .hero h1 em{font-style:italic;font-weight:300;display:block;color:var(--slate)}
 .hero .lede{margin-bottom:30px}
 .hero .acts{display:flex;gap:12px;flex-wrap:wrap}
-.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:14px;transform-style:preserve-3d}
-.collage figure{margin:0}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:14px;transform-style:preserve-3d;perspective:1200px}
+.collage figure{margin:0;transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.collage figure:first-child{transform:translateZ(28px) rotateX(1.4deg)}
+.collage figure:not(:first-child){transform:translateZ(-8px)}
+.collage:hover figure:first-child{transform:translateZ(40px) rotateX(0deg)}
+.collage:hover figure:not(:first-child){transform:translateZ(6px)}
 .collage figure:first-child{grid-column:1/-1}
 .collage img{width:100%;object-fit:cover;border:1px solid var(--line-2)}
 .collage figure:first-child img{aspect-ratio:16/9}
@@ -120,9 +124,9 @@ p{margin:0}
 @media(max-width:760px){.finishes{grid-template-columns:1fr}}
 
 /* statement */
-.band{padding:clamp(58px,9vw,124px) 0;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
-.band p{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;font-size:clamp(28px,4.6vw,64px);line-height:1.12;max-width:22ch;margin:0 auto}
-.band p em{font-style:italic;color:var(--slate)}
+.band{padding:clamp(58px,9vw,124px) 0;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--slate)}
+.band p{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;font-size:clamp(28px,4.6vw,64px);line-height:1.12;max-width:22ch;margin:0 auto;color:#f6f4f0}
+.band p em{font-style:italic;color:#c9cfe4}
 
 /* areas */
 .areas{display:flex;flex-wrap:wrap;gap:12px}
