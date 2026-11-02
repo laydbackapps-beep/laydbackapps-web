@@ -1,279 +1,501 @@
-<!doctype html>
-<html lang="en-AU"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className='js';</script>
 <title>Millard's Rendering — cement, acrylic &amp; texture rendering, Newcastle</title>
-<meta name="description" content="Millard's Rendering Pty Ltd: cement rendering, acrylic rendering, texture coating and render repairs across Newcastle and surrounds. Fully insured, free quotes. 0431 285 705.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<meta name="description" content="Millard's Rendering Pty Ltd: cement rendering, acrylic rendering, texture coating, render repairs and restorations across Newcastle and surrounding areas. Fully insured, free quotes. Call 0431 285 705.">
+<meta property="og:title" content="Millard's Rendering — Newcastle">
+<meta property="og:description" content="Cement, acrylic and texture rendering, render repairs and restorations. Newcastle and surrounding areas. Free quotes — 0431 285 705.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0c0c0d; --panel:#141416; --gold:#cd9a4c; --gold-lo:#8f6a2f;
-  --paper:#f3efe7; --dim:#a09c94; --line:rgba(243,239,231,.13); --line-gold:rgba(205,154,76,.38);
-  --max:1180px;
+  --bg:#F6F1E7; --panel:#FFFDF8; --ink:#1D1B17; --muted:#6A6257; --line:rgba(29,27,23,.14);
+  --gold:#C8964A; --gold-dk:#A87729; --gold-lt:#E3BE79; --brown:#241E15; --brown2:#3A3226;
+  --disp:'Fraunces',ui-serif,Georgia,serif; --sans:'Archivo',ui-sans-serif,system-ui,sans-serif;
 }
-*{box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:var(--paper);font:17px/1.62 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-img{max-width:100%}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4vw,46px)}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
 a{color:inherit}
-h1,h2,h3{margin:0;letter-spacing:-.03em;line-height:1.05}
-h1{font-size:clamp(36px,5.6vw,72px);font-weight:900;letter-spacing:-.045em}
-h1 em{font-style:normal;color:var(--gold)}
-h2{font-size:clamp(23px,3vw,38px);font-weight:800}
-p{margin:0}
-.eyebrow{font:600 12px/1 "IBM Plex Mono",monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px}
-.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+.wrap{width:min(1200px,92vw);margin-inline:auto}
+h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.07;letter-spacing:-.015em}
+html.js .rv{opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.2,.7,.2,1),transform .65s cubic-bezier(.2,.7,.2,1)}
+html.js .rv.on{opacity:1;transform:none}
+@keyframes sheen{0%{transform:translateX(-130%) skewX(-14deg)}55%,100%{transform:translateX(260%) skewX(-14deg)}}
+@media (prefers-reduced-motion:reduce){
+  html.js .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  *{animation-duration:.001s !important;transition-duration:.001s !important}
+}
 
-/* bar */
-.bar{position:sticky;top:0;z-index:50;background:rgba(12,12,13,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-gold)}
-.bar__in{display:flex;align-items:center;gap:clamp(14px,2vw,30px);min-height:0;padding-block:12px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;flex:0 0 auto;text-decoration:none}
-.brand img{display:block;height:clamp(54px,4.6vw,66px);width:auto}
-.nav{display:flex;align-items:center;gap:clamp(14px,1.9vw,28px);margin-left:auto;flex-wrap:wrap}
-.nav a{text-decoration:none;font-size:14.5px;color:#cfcac1;padding:6px 0;border-bottom:1px solid transparent}
-.nav a:hover{color:#fff;border-bottom-color:var(--gold)}
-.nav .tel{color:#fff;font-weight:800;border-bottom-color:var(--line-gold)}
-.cta{display:inline-flex;align-items:center;gap:9px;background:var(--gold);color:#17130c;text-decoration:none;font-weight:800;font-size:14.5px;padding:12px 20px;border-radius:2px;white-space:nowrap}
-.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:var(--paper);padding:9px 12px;font-size:18px;border-radius:2px}
-@media(max-width:960px){
-  .nav{display:none;width:100%;flex-direction:column;align-items:flex-start;gap:2px;margin-left:0;padding:10px 0 4px;border-top:1px solid var(--line)}
-  .nav.open{display:flex}
-  .nav a{padding:11px 0;width:100%;border-bottom:1px solid var(--line);font-size:16px}
-  .nav .cta{margin-top:10px;border:0;text-align:center;justify-content:center;width:100%}
+/* header */
+.bar{position:sticky;top:0;z-index:60;background:rgba(246,241,231,.95);backdrop-filter:blur(10px);border-bottom:3px solid var(--gold)}
+.bar-in{display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:84px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none;min-width:0}
+.brand img.brand-mark{height:62px;width:auto;flex:none}
+.brand img.brand-word{height:21px;width:auto;flex:none}
+.brand-rule{width:1px;height:38px;background:var(--line);flex:none}
+.bar-nav{display:flex;align-items:center;gap:24px;margin-left:auto}
+.bar-nav a{text-decoration:none;font-size:.94rem;font-weight:500;color:#4A4236}
+.bar-nav a:hover{color:var(--gold-dk)}
+.bar-tel{font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap}
+.bar-cta{background:var(--gold);color:#241E15;text-decoration:none;font-weight:700;font-size:.9rem;padding:.72rem 1.3rem;border-radius:3px;white-space:nowrap}
+.bar-cta:hover{background:var(--gold-dk);color:#FFFDF8}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:4px;padding:.45rem .6rem;cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0;transition:.3s}
+.burger.on span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:1040px){
+  .brand img.brand-word{display:none}
+  .brand img.brand-mark{height:52px}
+  .bar-nav{position:fixed;inset:87px 0 auto 0;background:#F6F1E7;flex-direction:column;align-items:stretch;gap:0;padding:10px 6vw 20px;border-bottom:1px solid var(--line);transform:translateY(-170%);transition:transform .35s ease;margin-left:0}
+  .bar-nav.open{transform:none}
+  .bar-nav a{padding:.85rem 0;border-bottom:1px solid var(--line)}
+  .bar-nav a.bar-cta{text-align:center;margin-top:12px;border-bottom:0;color:#241E15}
   .burger{display:block}
 }
 
 /* hero */
-.hero{padding:clamp(30px,4.4vw,62px) 0 clamp(34px,4.6vw,60px);border-bottom:1px solid var(--line)}
-.hero__in{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:clamp(26px,3.6vw,54px);align-items:center}
-.hero h1{margin:16px 0 18px}
-.hero .sub{color:#c8c3ba;font-size:clamp(16px,1.2vw,18px);max-width:46ch;margin-bottom:26px}
-.hero .acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.ghost{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-gold);color:var(--paper);text-decoration:none;font-weight:700;font-size:15px;padding:12px 18px;border-radius:2px}
-.hero figure{margin:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--panel)}
-.hero figure img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-.hero figcaption{font:500 11.5px/1.4 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding:10px 13px;border-top:1px solid var(--line)}
-@media(max-width:900px){.hero__in{grid-template-columns:1fr}.hero figure{order:-1}}
+.hero{position:relative;perspective:1500px;overflow:hidden;background:linear-gradient(180deg,#2A2318 0%,#241E15 100%);color:#EFE7D6}
+#heroCanvas{display:none}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center;padding:70px 0 74px}
+.kicker{display:inline-flex;align-items:center;gap:12px;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--gold-lt);margin-bottom:20px}
+.kicker::before{content:"";width:34px;height:2px;background:var(--gold)}
+.hero h1{font-size:clamp(2.3rem,5vw,3.95rem);color:#FBF6EA}
+.hero h1 em{font-style:italic;color:var(--gold-lt);font-weight:400}
+.hero-lede{margin-top:20px;font-size:1.09rem;color:#CFC4AE;max-width:47ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:.92rem 1.6rem;border-radius:3px;text-decoration:none;font-weight:600;font-size:.95rem;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-p{background:var(--gold);color:#241E15}
+.btn-p:hover{background:var(--gold-lt)}
+.btn-o{border:1.5px solid rgba(227,190,121,.5);color:#EFE7D6}
+.btn-o:hover{border-color:var(--gold);color:#fff}
+.hero-facts{display:flex;gap:30px;flex-wrap:wrap;margin-top:36px;padding-top:22px;border-top:1px solid rgba(227,190,121,.3)}
+.hero-facts div{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#A99B80;font-weight:600}
+.hero-facts strong{display:block;font-family:var(--disp);font-size:1.1rem;letter-spacing:0;text-transform:none;color:#FBF6EA;font-weight:600;margin-top:5px}
 
-/* facts */
-.facts{border-bottom:1px solid var(--line);background:#101012}
-.facts__in{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-.facts div{background:#101012;padding:20px clamp(12px,2vw,24px)}
-.facts b{display:block;font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.18em;color:var(--gold);margin-bottom:7px}
-.facts span{font-size:14.5px;color:#cdc8bf;line-height:1.45}
-@media(max-width:760px){.facts__in{grid-template-columns:1fr}}
+/* sample board (CSS 3D) */
+.board{position:relative;transform:rotateY(-10deg) rotateX(2.5deg);transform-style:preserve-3d;border-radius:5px;background:#0F0C08;padding:12px;box-shadow:34px 44px 80px rgba(0,0,0,.6),0 0 0 1px rgba(227,190,121,.35)}
+.board-media{position:relative;overflow:hidden;border-radius:3px}
+.board-media img{width:100%;height:352px;object-fit:cover}
+.board-media::after{content:"";position:absolute;top:-30%;left:0;width:38%;height:170%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.42),transparent);animation:sheen 7s ease-in-out infinite;pointer-events:none}
+.board-cap{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-lt);font-weight:700;padding:12px 4px 4px}
+.swatches{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+.sw{border:1px solid rgba(227,190,121,.3);border-radius:3px;overflow:hidden;background:#2A2318}
+.sw img{height:66px;width:100%;object-fit:cover}
+.sw span{display:block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#D8C7A3;padding:8px 9px}
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:38px;padding:48px 0 54px}
+  .board{transform:none;box-shadow:0 24px 50px rgba(0,0,0,.5)}
+  .board-media img{height:280px}
+}
 
-section{padding:clamp(44px,5.6vw,80px) 0;border-bottom:1px solid var(--line)}
-.head{display:flex;align-items:flex-end;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-bottom:clamp(22px,3vw,34px)}
-.head p{color:var(--dim);max-width:54ch;font-size:15.5px;margin-top:10px}
+/* gold stat strip */
+.strip{background:var(--gold);color:#241E15}
+.strip-in{display:grid;grid-template-columns:repeat(4,1fr);gap:1px}
+.strip div{padding:22px 18px;border-right:1px solid rgba(36,30,21,.22)}
+.strip b{display:block;font-family:var(--disp);font-size:1.25rem;font-weight:600;line-height:1.1}
+.strip span{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#4A3C1E}
+@media(max-width:760px){.strip-in{grid-template-columns:1fr 1fr}.strip div{border-bottom:1px solid rgba(36,30,21,.22)}}
 
-/* services ledger */
-.ledger{border-top:1px solid var(--line)}
-.ledger article{display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,1.2fr);gap:clamp(12px,2.2vw,32px);padding:20px 0;border-bottom:1px solid var(--line);align-items:start}
-.ledger .n{font:600 12.5px/1 "IBM Plex Mono",monospace;color:var(--gold);letter-spacing:.1em;padding-top:5px}
-.ledger h3{font-size:clamp(17px,1.5vw,21px);font-weight:800}
-.ledger p{color:var(--dim);font-size:15px;max-width:58ch}
-@media(max-width:720px){.ledger article{grid-template-columns:40px 1fr}}
+section.blk{padding:88px 0}
+.sec-top{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:42px;flex-wrap:wrap}
+.sec-eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--gold-dk)}
+.sec-h{font-size:clamp(1.85rem,3.5vw,2.7rem);margin-top:10px;max-width:24ch}
+.sec-note{color:var(--muted);max-width:44ch;font-size:1rem}
 
-/* finish comparison */
-.finish{width:100%;border-collapse:collapse;font-size:14.8px}
-.finish th,.finish td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
-.finish th{font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--line-gold)}
-.finish td:first-child{color:#fff;font-weight:700;white-space:nowrap}
-.finish td{color:#bdb8ae}
-@media(max-width:700px){.finish,.finish tbody,.finish tr,.finish td{display:block}.finish thead{display:none}.finish tr{border-bottom:1px solid var(--line);padding:10px 0}.finish td{border:0;padding:4px 0}}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.svc{background:var(--panel);padding:34px 30px;border-top:3px solid transparent;transition:border-color .2s ease}
+.svc:hover{border-top-color:var(--gold)}
+.svc .n{font-family:var(--disp);font-size:.82rem;font-weight:700;color:var(--gold-dk);letter-spacing:.12em}
+.svc h3{font-size:1.26rem;margin:14px 0 8px}
+.svc p{font-size:.95rem;color:#57503f}
+@media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.svc-grid{grid-template-columns:1fr}}
 
-/* process */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.steps div{background:var(--ink);padding:22px 18px}
-.steps b{display:block;font:600 11.5px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;color:var(--gold);margin-bottom:10px}
-.steps h3{font-size:16px;margin-bottom:6px}
-.steps p{font-size:14.4px;color:var(--dim)}
-@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+.spec{background:var(--brown);color:#EDE6D8;padding:82px 0}
+.spec .sec-eyebrow{color:var(--gold-lt)}
+.spec .sec-h{color:#F5EFE2}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.spec-card{border-top:2px solid var(--gold);padding-top:20px}
+.spec-card h3{color:#F7F1E4;font-size:1.3rem;margin-bottom:12px}
+.spec-card p{color:#BFB4A0;font-size:.96rem}
+@media(max-width:820px){.spec-grid{grid-template-columns:1fr;gap:26px}}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.step{padding-top:22px;border-top:1px solid var(--line)}
+.step .num{font-family:var(--disp);font-size:2.4rem;color:var(--gold);line-height:1;font-weight:600}
+.step h3{font-size:1.12rem;margin:12px 0 6px}
+.step p{font-size:.93rem;color:#57503f}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr;gap:22px}}
 @media(max-width:520px){.steps{grid-template-columns:1fr}}
 
-/* repairs split */
-.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,44px);align-items:center}
-.split figure{margin:0;border:1px solid var(--line);border-radius:3px;overflow:hidden}
-.split img{display:block;width:100%;height:auto}
-.split ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:11px}
-.split li{display:grid;grid-template-columns:16px 1fr;gap:12px;font-size:15px;color:#cfcac1}
-.split li::before{content:"";width:7px;height:7px;background:var(--gold);transform:rotate(45deg);margin-top:8px}
-@media(max-width:820px){.split{grid-template-columns:1fr}}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.gcell{background:var(--panel);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.gcell img{width:100%;height:300px;object-fit:cover}
+.gcell figcaption{padding:16px 20px 20px;font-size:.93rem;color:#4E4739;border-top:3px solid var(--gold)}
+.gcell figcaption b{display:block;font-family:var(--disp);font-size:1.02rem;color:var(--ink);font-weight:600;margin-bottom:3px}
+@media(max-width:760px){.gal{grid-template-columns:1fr}.gcell img{height:250px}}
 
-/* areas */
-.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-.areas span{border:1px solid var(--line);padding:7px 13px;font-size:14px;color:#c2bdb4;border-radius:2px}
+.two{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px}
+.area-list li{list-style:none;padding:12px 0;border-bottom:1px solid var(--line);font-size:.98rem;display:flex;gap:12px;align-items:center}
+.area-list li::before{content:"";width:8px;height:8px;background:var(--gold);flex:none;transform:rotate(45deg)}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.faq summary{cursor:pointer;font-family:var(--disp);font-size:1.06rem;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:18px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--sans);font-weight:400;font-size:1.3rem;color:var(--gold-dk)}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin-top:10px;color:#57503f;font-size:.95rem}
+@media(max-width:900px){.two{grid-template-columns:1fr;gap:40px}}
 
-/* faq */
-details{border-bottom:1px solid var(--line);padding:16px 0}
-summary{cursor:pointer;font-weight:700;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--gold);font:600 20px/1 "IBM Plex Mono",monospace}
-details[open] summary::after{content:"–"}
-details .a{color:var(--dim);font-size:15px;padding:10px 40px 0 0;max-width:72ch}
-
-/* quote */
-.quote{background:#101012}
-.quote__in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,3.4vw,48px);align-items:start}
-.quote p{color:var(--dim);font-size:15.5px;margin-top:14px;max-width:40ch}
-.quote .mono{font:500 12.5px/1.7 "IBM Plex Mono",monospace;color:var(--gold);margin-top:20px}
-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:var(--panel);border:1px solid var(--line);padding:clamp(20px,2.6vw,30px);border-radius:3px}
-form .full{grid-column:1/-1}
-label{display:block;font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:7px}
-input,select,textarea{width:100%;background:#0a0a0b;border:1px solid var(--line);color:var(--paper);padding:12px;font:inherit;font-size:15px;border-radius:2px}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
-button{grid-column:1/-1;background:var(--gold);color:#17130c;border:0;padding:15px;font:inherit;font-weight:800;font-size:15.5px;cursor:pointer;border-radius:2px}
-@media(max-width:860px){.quote__in{grid-template-columns:1fr}form{grid-template-columns:1fr}}
-
-footer{padding:28px 0 40px;color:var(--dim);font-size:13.5px}
-.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
-.foot img{height:44px;width:auto;opacity:.95}
-.foot a{color:#cfcac1;text-decoration:none;border-bottom:1px solid var(--line-gold)}
+footer{background:var(--brown2);color:#C9BFAD;padding:64px 0 34px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.foot-brand{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.foot-brand img{height:34px;background:#F6F1E7;border-radius:3px;padding:5px}
+footer h4{font-family:var(--disp);color:#F4EEE1;font-size:1rem;margin-bottom:14px;font-weight:600}
+footer a{color:#C9BFAD;text-decoration:none;font-size:.94rem}
+footer a:hover{color:var(--gold-lt)}
+.foot-list li{list-style:none;padding:6px 0}
+.foot-bottom{margin-top:46px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.84rem;color:#9A917F}
+@media(max-width:800px){.foot-grid{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
 </style>
-</head><body>
+</head>
+<body id="top">
 
-<div class="bar"><div class="wrap bar__in">
-  <a class="brand" href="#top" aria-label="Millard's Rendering — home"><img src="assets/mr-mark-hi.png" alt="Millard's Rendering"></a>
-  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
-  <nav class="nav" id="nav">
-    <a href="#services">Services</a>
-    <a href="#finishes">Finishes</a>
-    <a href="#repairs">Repairs</a>
-    <a href="#areas">Areas</a>
-    <a href="#faq">FAQ</a>
-    <a class="tel" href="tel:0431285705">0431 285 705</a>
-    <a class="cta" href="#quote">Free quote</a>
-  </nav>
-</div></div>
-
-<header class="hero" id="top"><div class="wrap hero__in">
-  <div>
-    <span class="eyebrow">Cement · acrylic · texture — Newcastle</span>
-    <h1>Walls finished.<br><em>Built to last.</em></h1>
-    <p class="sub">Cement and acrylic rendering, texture coating and render repairs across Newcastle and the surrounding suburbs. Straight walls, clean corners, and a finish that still looks right after a few summers.</p>
-    <p class="acts"><a class="cta" href="#quote">Get a free quote</a><a class="ghost" href="tel:0431285705">Call 0431 285 705</a></p>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="brand" href="#top" aria-label="Millard's Rendering — home">
+      <img class="brand-mark" src="assets/logo-isolated.png" alt="Millard's Rendering logo">
+      <span class="brand-rule" aria-hidden="true"></span>
+      <img class="brand-word" src="assets/logo-word.png" alt="Millard's Rendering Pty Ltd">
+    </a>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navmain"><span></span><span></span><span></span></button>
+    <nav class="bar-nav" id="navmain" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#finishes">Finishes</a>
+      <a href="#process">Process</a>
+      <a href="#work">Our work</a>
+      <a href="#areas">Areas</a>
+      <a class="bar-tel" href="tel:+61431285705">0431 285 705</a>
+      <a class="bar-cta" href="#lbq">Free quote</a>
+    </nav>
   </div>
-  <div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div>
-</div></header>
-
-<div class="facts"><div class="wrap facts__in">
-  <div><b>FULLY INSURED</b><span>Public liability cover on every job, domestic and commercial.</span></div>
-  <div><b>FREE QUOTES</b><span>Measured on site, written down, no obligation to book.</span></div>
-  <div><b>NEWCASTLE BASED</b><span>Newcastle, Lake Macquarie and the surrounding suburbs.</span></div>
-</div></div>
+</header>
 
 <main>
-<section id="services"><div class="wrap">
-  <div class="head">
-    <div><span class="eyebrow">What we do</span><h2 style="margin-top:14px">Five ways a wall gets finished</h2></div>
-    <p>A render job is decided before the first bag is mixed: what the wall is made of, how much sun it takes, and what the finish has to survive. That is what gets quoted.</p>
-  </div>
-  <div class="ledger">
-    <article><span class="n">01</span><h3>Cement rendering</h3><p>The traditional sand-and-cement coat, applied over brick, block or blueboard. Hard, breathable and repairable — the right choice where the wall needs to move with the weather and still take a knock.</p></article>
-    <article><span class="n">02</span><h3>Acrylic rendering</h3><p>A polymer-modified render that flexes with the substrate and resists cracking better than straight cement. Used where there is movement, or where a smoother, more consistent finish is wanted.</p></article>
-    <article><span class="n">03</span><h3>Texture coating</h3><p>Rolled or sprayed coatings that give the wall a fine grain, a float finish or a heavier sand texture — and put a weather skin over the render at the same time.</p></article>
-    <article><span class="n">04</span><h3>Render repairs &amp; patching</h3><p>Drummy sections cut out, edges feathered and the patch floated to match the surrounding wall. Hairline cracking raked and filled rather than painted over.</p></article>
-    <article><span class="n">05</span><h3>Restorations &amp; recoating</h3><p>Older rendered homes cleaned down, failed patches repaired and the whole wall re-coated so the finish is even from the front fence to the back corner.</p></article>
-  </div>
-</div></section>
 
-<section id="finishes"><div class="wrap">
-  <div class="head">
-    <div><span class="eyebrow">Choosing a finish</span><h2 style="margin-top:14px">Cement or acrylic, in plain terms</h2></div>
-    <p>Both are render. The difference is how much they move and what they cost to keep. If you are not sure, the wall tells you which one it wants.</p>
+<section class="hero">
+  <!-- LB-3D-HERO -->
+  <canvas id="heroCanvas" hidden aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div class="hero-copy rv">
+      <span class="kicker">Cement &middot; Acrylic &middot; Texture &mdash; Newcastle</span>
+      <h1>Render that reads right <em>up close</em> and holds for years.</h1>
+      <p class="hero-lede">Millard's Rendering Pty Ltd lays cement and acrylic render, texture coats, render repairs and restorations across Newcastle and the surrounding areas. Fully insured, free written quotes.</p>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="#lbq">Get a free quote</a>
+        <a class="btn btn-o" href="tel:+61431285705">Call 0431 285 705</a>
+      </div>
+      <div class="hero-facts">
+        <div>Finishes<strong>Cement &middot; acrylic &middot; texture</strong></div>
+        <div>Coverage<strong>Newcastle &amp; surrounds</strong></div>
+        <div>Quotes<strong>Free &amp; written</strong></div>
+      </div>
+    </div>
+    <div class="rv">
+      <figure class="board">
+        <div class="board-media"><img src="assets/hero.jpg" alt="Completed white cement render with a dark garage door and matching fence"></div>
+        <figcaption class="board-cap">Completed cement render &mdash; white finish, dark garage and fence</figcaption>
+      </figure>
+      <div class="swatches">
+        <figure class="sw"><img src="assets/float.jpg" alt="Beige render to a window reveal"><span>Cement</span></figure>
+        <figure class="sw"><img src="assets/acrylic.jpg" alt="Render up on an elevation by the water"><span>Acrylic</span></figure>
+        <figure class="sw"><img src="assets/sponge.jpg" alt="Grey render to a garage extension"><span>Texture</span></figure>
+      </div>
+    </div>
   </div>
-  <table class="finish">
-    <thead><tr><th>Finish</th><th>Best for</th><th>What to know</th></tr></thead>
-    <tbody>
-      <tr><td>Cement</td><td>Brick and block, older homes, hard-wearing walls</td><td>Traditional mix, breathable, easy to patch later. Needs curing time and a sealer to hold its colour.</td></tr>
-      <tr><td>Acrylic</td><td>Newer builds, blueboard, walls with movement</td><td>Flexes with the substrate, less prone to hairline cracking, dries to a more uniform tone.</td></tr>
-      <tr><td>Texture coat</td><td>Rendered walls that need a weather skin or a different grain</td><td>Goes over sound render. Hides small imperfections and can be re-coated without cutting back to the base.</td></tr>
-      <tr><td>Repair &amp; recoat</td><td>Walls with drummy patches, cracks or patchy fading</td><td>Cheaper than a full re-render when the base is still sound — but only if the sound areas are genuinely sound.</td></tr>
-    </tbody>
-  </table>
-</div></section>
+</section>
 
-<section id="process"><div class="wrap">
-  <div class="head"><div><span class="eyebrow">How a job runs</span><h2 style="margin-top:14px">Four steps, no surprises</h2></div></div>
-  <div class="steps">
-    <div><b>STEP 01</b><h3>Look &amp; measure</h3><p>Wall type, height, access and how much needs cutting out. The quote is built from that, not from a photo.</p></div>
-    <div><b>STEP 02</b><h3>Prepare</h3><p>Surface cleaned, loose render removed, windows and frames masked, beads set where the wall needs them.</p></div>
-    <div><b>STEP 03</b><h3>Render</h3><p>Coats applied and floated while they are workable, so corners stay sharp and the plane stays flat.</p></div>
-    <div><b>STEP 04</b><h3>Finish &amp; clean</h3><p>Texture or coating applied where it is specified, site swept down, and the wall walked with you before we go.</p></div>
+<div class="strip">
+  <div class="wrap strip-in">
+    <div><b>Cement render</b><span>Sand &amp; cement</span></div>
+    <div><b>Acrylic render</b><span>Flexible systems</span></div>
+    <div><b>Texture coats</b><span>Rolled &amp; sprayed</span></div>
+    <div><b>Repairs &amp; recoats</b><span>Cracks &amp; blowouts</span></div>
   </div>
-</div></section>
+</div>
 
-<section id="repairs"><div class="wrap split">
-  <div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div>
-  <div>
-    <span class="eyebrow">Repairs</span>
-    <h2 style="margin-top:14px">Patch it properly, or it comes back</h2>
-    <p style="color:var(--dim);margin-top:12px;font-size:15.5px">Most failed render starts at a crack, a downpipe or a corner that never got enough cover. Painting over it holds for a season. Cutting it back and re-rendering holds for years.</p>
-    <ul>
-      <li>Drummy render sounded out and removed before patching.</li>
-      <li>Patches floated and textured to match the surrounding wall.</li>
-      <li>Cracks raked, filled and sealed rather than skimmed.</li>
-      <li>Re-coating only where the base render is actually sound.</li>
-    </ul>
+<section class="blk" id="services">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div>
+        <span class="sec-eyebrow">What we do</span>
+        <h2 class="sec-h">Six jobs we get called for</h2>
+      </div>
+      <p class="sec-note">From a full house render to patching a hairline crack before a repaint &mdash; if it is render, we look at it.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv"><div class="n">01</div><h3>Cement rendering</h3><p>Traditional sand-and-cement render to brick, block and Hebel &mdash; built up and floated to a straight, hard wall.</p></article>
+      <article class="svc rv"><div class="n">02</div><h3>Acrylic rendering</h3><p>Flexible acrylic render that takes a texture finish and handles weather and wall movement better than cement alone.</p></article>
+      <article class="svc rv"><div class="n">03</div><h3>Texture coating</h3><p>Rolled and sprayed texture coats over sound render &mdash; the finish that ties a whole elevation together.</p></article>
+      <article class="svc rv"><div class="n">04</div><h3>Render repairs &amp; patching</h3><p>Cracks, blown patches, chipped corners and water-damaged walls cut back, re-rendered and blended in.</p></article>
+      <article class="svc rv"><div class="n">05</div><h3>Restorations &amp; recoating</h3><p>Old, chalky or stained render cleaned, repaired and recoated so the building looks finished again.</p></article>
+      <article class="svc rv"><div class="n">06</div><h3>Free measure &amp; quote</h3><p>We come out, look at the walls and give you a straight written quote before anything starts.</p></article>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section id="areas"><div class="wrap">
-  <div class="head"><div><span class="eyebrow">Where we work</span><h2 style="margin-top:14px">Newcastle and surrounds</h2></div>
-    <p>Based in Newcastle, working across the Hunter and Lake Macquarie. If you are just outside the list, ask — the answer is usually yes.</p></div>
-  <div class="areas">
-    <span>Newcastle</span><span>Hamilton</span><span>Merewether</span><span>New Lambton</span><span>Charlestown</span>
-    <span>Belmont</span><span>Swansea</span><span>Maitland</span><span>Wallsend</span><span>Cardiff</span>
-    <span>Toronto</span><span>Morisset</span><span>Lake Macquarie</span><span>Raymond Terrace</span>
+<section class="spec" id="finishes">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div>
+        <span class="sec-eyebrow">Finishes</span>
+        <h2 class="sec-h">The right finish for the wall</h2>
+      </div>
+      <p class="sec-note" style="color:#B6AB97">Three ways render goes on &mdash; and the look each one gives.</p>
+    </div>
+    <div class="spec-grid">
+      <article class="spec-card rv"><h3>Cement</h3><p>Hard-wearing sand-and-cement render. Builds out uneven blockwork and leaves a solid base ready for paint or texture.</p></article>
+      <article class="spec-card rv"><h3>Acrylic</h3><p>Flexible, crack-resistant acrylic render &mdash; the usual choice for newer homes and recladding where the wall will move.</p></article>
+      <article class="spec-card rv"><h3>Texture</h3><p>Rolled or sprayed texture coats in the profile you want, over cement or acrylic render, to finish the elevation.</p></article>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section id="faq"><div class="wrap">
-  <div class="head"><div><span class="eyebrow">Questions</span><h2 style="margin-top:14px">Asked before every quote</h2></div></div>
-  <details><summary>How long does rendering take?</summary><div class="a">A single-storey exterior is usually a few days including preparation and curing. Two storeys, repairs or a texture coat add time — the schedule is set at quote stage, not discovered halfway through.</div></details>
-  <details><summary>Can you render over existing render?</summary><div class="a">Only where the existing render is sound and properly bonded. Drummy areas are cut out first. Rendering over failed render is how a wall ends up looking worse a year later.</div></details>
-  <details><summary>Which is better, cement or acrylic?</summary><div class="a">Cement is harder and more traditional; acrylic flexes more and suits newer substrates and walls with movement. The right answer depends on what the wall is built from and how much sun and weather it takes.</div></details>
-  <details><summary>Do you fix cracks only, or the whole wall?</summary><div class="a">Both. Small areas can be patched and blended. Where the cracking is widespread, a full re-render or recoat usually works out cheaper than chasing patches every year.</div></details>
-  <details><summary>Are you insured and do you quote in writing?</summary><div class="a">Yes — public liability cover, and every quote is written down with the scope, the finish specified and the price, so there is nothing to argue about later.</div></details>
-</div></section>
-
-<section id="quote" class="quote"><div class="wrap quote__in">
-  <div>
-    <span class="eyebrow">Free quote</span>
-    <h2 style="margin-top:14px">Tell us about the wall</h2>
-    <p>What it is built from, roughly how many square metres, and whether it is a new render, a repair or a re-coat. Photos help.</p>
-    <p class="mono">Millard's Rendering Pty Ltd<br>Newcastle &amp; surrounds · 0431 285 705</p>
+<section class="blk" id="process">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div><span class="sec-eyebrow">How a job runs</span><h2 class="sec-h">Look, prepare, render, finish</h2></div>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="num">01</div><h3>Look &amp; measure</h3><p>We walk the walls with you, check the substrate and measure up, so the quote is real rather than a guess.</p></div>
+      <div class="step rv"><div class="num">02</div><h3>Prepare</h3><p>Wall cleaned, loose material knocked back, windows and frames masked so render grips properly.</p></div>
+      <div class="step rv"><div class="num">03</div><h3>Render</h3><p>Render built up in coats to a consistent thickness, ruled and floated to a flat, true plane.</p></div>
+      <div class="step rv"><div class="num">04</div><h3>Finish &amp; clean</h3><p>The chosen finish worked in, edges cut sharp, and the site swept down before we leave.</p></div>
+    </div>
   </div>
-  <form id="lbq-form" data-site="millards-rendering">
-    <div><label for="n">Name</label><input id="n" name="name" required autocomplete="name"></div>
-    <div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel" autocomplete="tel"></div>
-    <div class="full"><label for="a">Suburb</label><input id="a" name="suburb" autocomplete="address-level2"></div>
-    <div class="full"><label for="s">What is the job?</label><select id="s" name="service">
-      <option>Cement rendering</option><option>Acrylic rendering</option><option>Texture coating</option>
-      <option>Render repair / patching</option><option>Restoration &amp; recoat</option><option>Something else</option>
-    </select></div>
-    <div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="4" placeholder="Wall type, rough size, and what is wrong with it."></textarea></div>
-    <button type="submit">Send request</button>
-  </form>
-</div></section>
+</section>
+
+<section class="blk" id="work" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div><span class="sec-eyebrow">Recent work</span><h2 class="sec-h">Render, as it goes on</h2></div>
+      <p class="sec-note">A few walls from the job book &mdash; the finish, the reveal, the corner details.</p>
+    </div>
+    <div class="gal">
+      <figure class="gcell rv"><img src="assets/hero.jpg" alt="White rendered house with a dark garage door and fence"><figcaption><b>Completed house render</b>White cement finish with a dark garage door and a matching fence line.</figcaption></figure>
+      <figure class="gcell rv"><img src="assets/acrylic.jpg" alt="Rendered building by the water with planks and tools on site"><figcaption><b>A job by the water</b>Render up on the elevation, with planks and tools still set up on site.</figcaption></figure>
+      <figure class="gcell rv"><img src="assets/float.jpg" alt="Beige rendered wall around a window opening with a brick pillar at the corner"><figcaption><b>Beige render, window reveal</b>Render worked around the opening, with a brick pillar framing the corner.</figcaption></figure>
+      <figure class="gcell rv"><img src="assets/sponge.jpg" alt="Light grey rendered garage extension set against a red brick wall"><figcaption><b>Garage extension</b>Light grey render tying a new garage wall in against existing red brick.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="areas" style="padding-top:0">
+  <div class="wrap two">
+    <div class="rv">
+      <span class="sec-eyebrow">Where we work</span>
+      <h2 class="sec-h" style="margin-bottom:22px">Newcastle and surrounding areas</h2>
+      <p class="sec-note" style="margin-bottom:22px">Based in Newcastle and rendering across the surrounding suburbs &mdash; new builds and repaints alike.</p>
+      <ul class="area-list">
+        <li>New builds &amp; extensions</li>
+        <li>Repaints &amp; texture recoats</li>
+        <li>Crack &amp; blown-render repairs</li>
+        <li>Free on-site measure &amp; quote</li>
+      </ul>
+    </div>
+    <div class="faq rv">
+      <span class="sec-eyebrow">Questions</span>
+      <h2 class="sec-h" style="margin-bottom:14px">Before you book</h2>
+      <details><summary>Do you give free quotes?</summary><p>Yes. We come out, look at the walls and give you a written quote at no cost.</p></details>
+      <details><summary>Are you insured?</summary><p>Millard's Rendering Pty Ltd is fully insured.</p></details>
+      <details><summary>Do you handle repairs as well as new render?</summary><p>We do. Cracks, blown patches and water-damaged render are cut back and re-rendered to match the wall.</p></details>
+      <details><summary>Can you recoat render that is already there?</summary><p>If the existing render is sound we can clean, repair and recoat it rather than strip it back.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="lbq" class="v2" aria-labelledby="lbq-h">
+  <style>
+#lbq{--lbq-accent:var(--gold,#C8964A);--lbq-ink:var(--ink,#1D1B17);--lbq-muted:var(--muted,#6A6257);--lbq-bg:var(--bg,#F6F1E7);--lbq-panel:var(--panel,#FFFDF8);--lbq-line:var(--line,rgba(29,27,23,.14));padding:80px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto}
+#lbq h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0 0 8px;letter-spacing:-.02em;font-family:var(--disp)}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
+#lbq label{display:block;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:6px;background:#FFFFFF;color:inherit;font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:6px;background:var(--ink);color:#FBF7EE;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#lbq.v2{background:#EDE6D8;border-top:4px solid var(--gold);border-bottom:4px solid var(--gold)}
+#lbq.v2 .lbq-g{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+#lbq.v2 .lbq-full{grid-column:1/-1}
+#lbq.v2 .lbq-hd{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
+@media(max-width:760px){#lbq.v2 .lbq-g{grid-template-columns:1fr}#lbq.v2 .lbq-hd{display:block}}
+  </style>
+  <div class="lbq-w">
+    <div class="lbq-hd"><div>
+      <h2 id="lbq-h">Request a quote</h2>
+      <p class="lbq-s">Tell us a few details and we will get back to you with a free, no-obligation quote.</p>
+    </div></div>
+    <form id="lbq-form" novalidate data-site="millards-rendering" data-biz="Millard's Rendering Pty Ltd">
+      <div class="lbq-g">
+        <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+        <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
+        <div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
+        <div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Suburb, wall type, finish you want, rough timing…" required></textarea></div>
+      </div>
+      <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
+      <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit">Send quote request</button>
+      <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <script>
+(function(){
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#a8452a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending…';
+      st.style.color = '';
+      base(function(B){
+        fetch(B + '/functions/v1/quote-request', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks — your request is in. We'll be in touch shortly.";
+            st.style.color = '#8a6220';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send — please try again or call.';
+          st.style.color = '#a8452a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+  </script>
+</section>
+
 </main>
 
-<footer><div class="wrap foot">
-  <img src="assets/mr-mark-hi.png" alt="Millard's Rendering">
-  <span>Millard's Rendering Pty Ltd · Newcastle NSW · <a href="tel:0431285705">0431 285 705</a></span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logo-isolated.png" alt="Millard's Rendering logo">
+        <p style="max-width:34ch;font-size:.94rem">Millard's Rendering Pty Ltd &mdash; cement, acrylic and texture rendering, render repairs and restorations. Newcastle and surrounding areas.</p>
+        <p><a href="tel:+61431285705" style="font-family:var(--disp);font-size:1.35rem;color:#F4EEE1">0431 285 705</a></p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="foot-list">
+          <li><a href="#services">Cement rendering</a></li>
+          <li><a href="#services">Acrylic rendering</a></li>
+          <li><a href="#services">Texture coating</a></li>
+          <li><a href="#services">Render repairs</a></li>
+          <li><a href="#services">Restorations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>The business</h4>
+        <ul class="foot-list">
+          <li><a href="#finishes">Finishes</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#work">Our work</a></li>
+          <li><a href="#lbq">Request a quote</a></li>
+          <li><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr">2026</span> Millard's Rendering Pty Ltd. Fully insured.</span>
+      <span>Newcastle &amp; surrounding areas, NSW</span>
+    </div>
+  </div>
+</footer>
 
 <script>
-document.getElementById('burger').addEventListener('click',function(){var n=document.getElementById('nav');
-  var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);});
-document.getElementById('lbq-form').addEventListener('submit',function(e){e.preventDefault();
-  var f=e.currentTarget,b=f.querySelector('button');
-  b.textContent='Sending…';b.disabled=true;
-  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
-    body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})
-  .then(function(){b.textContent='Thanks — we will be in touch';})
-  .catch(function(){b.textContent='Could not send — try again';b.disabled=false;});});
+(function(){
+  var y=document.getElementById('yr'); if(y) y.textContent=new Date().getFullYear();
+  var b=document.getElementById('burger'), n=document.getElementById('navmain');
+  if(b&&n){
+    b.addEventListener('click',function(){
+      var open=n.classList.toggle('open');
+      b.classList.toggle('on',open); b.setAttribute('aria-expanded',open?'true':'false');
+    });
+    n.addEventListener('click',function(e){ if(e.target.tagName==='A'){ n.classList.remove('open'); b.classList.remove('on'); b.setAttribute('aria-expanded','false'); } });
+  }
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('on'); io.unobserve(en.target); } });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    els.forEach(function(e){ io.observe(e); });
+  } else {
+    els.forEach(function(e){ e.classList.add('on'); });
+  }
+  setTimeout(function(){ els.forEach(function(e){ e.classList.add('on'); }); },2500);
+})();
 </script>
-</body></html>
+</body>
+</html>
