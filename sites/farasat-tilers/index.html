@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Farasat Tilers — Bathroom, Floor &amp; Wall Tiling</title>
+<meta name="description" content="Farasat Tilers lays bathroom, floor and wall tiles — large-format porcelain, marble-look and stone finishes, shower niches and splashbacks, set straight and grouted clean.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f4ee;
+    --ink:#141210;
+    --ink-soft:#574f45;
+    --black:#000000;
+    --gold:#cdaf55;
+    --gold-deep:#8a6d2a;
+    --line:rgba(20,18,16,.13);
+    --wrap:1180px;
+    --navh:88px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{width:min(100% - 44px,var(--wrap));margin-inline:auto}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;line-height:1.08;letter-spacing:-.015em;margin:0;font-weight:600}
+  h1{font-size:clamp(2.2rem,4.8vw,3.7rem);font-weight:600}
+  h2{font-size:clamp(1.75rem,3.1vw,2.5rem)}
+  h3{font-size:1.16rem;font-weight:600}
+  p{margin:0}
+  .eyebrow{
+    font-family:"Inter",sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--gold-deep);display:inline-flex;align-items:center;gap:.6em;margin:0 0 18px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--gold-deep);display:inline-block}
+
+  /* ---------- nav (black bar, gold artwork) ---------- */
+  header.site{
+    position:sticky;top:0;z-index:40;height:var(--navh);
+    background:var(--black);border-bottom:1px solid rgba(205,175,85,.28);
+  }
+  .nav{height:var(--navh);display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;flex:none}
+  .brand img{height:54px;width:auto;max-width:280px}
+  .nav-links{display:flex;align-items:center;gap:30px;margin-left:auto;margin-right:10px}
+  .nav-links a{
+    text-decoration:none;font-weight:500;font-size:.94rem;color:#e7e0d2;
+    padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;
+  }
+  .nav-links a:hover{color:#fff;border-color:var(--gold)}
+  .btn{
+    display:inline-flex;align-items:center;gap:.55em;text-decoration:none;
+    font-family:"Inter",sans-serif;font-weight:600;font-size:.94rem;
+    padding:13px 22px;border-radius:2px;border:1.5px solid transparent;
+    transition:transform .18s,background .2s,color .2s,border-color .2s;white-space:nowrap;
+  }
+  .btn-gold{background:var(--gold);color:#1a1508}
+  .btn-gold:hover{background:#dcc06a;transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+  .nav .btn-gold{padding:11px 18px;font-size:.88rem}
+
+  /* ---------- hero ---------- */
+  .hero{padding:78px 0 68px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  .hero p.lede{font-size:1.14rem;color:var(--ink-soft);margin:22px 0 30px;max-width:34ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
+  .trust{list-style:none;display:flex;flex-wrap:wrap;gap:10px 26px;padding:0;margin:0}
+  .trust li{display:flex;align-items:center;gap:.5em;font-size:.92rem;font-weight:500;color:var(--ink-soft)}
+  .trust li::before{content:"";width:7px;height:7px;background:var(--gold-deep);border-radius:50%;flex:none}
+  .hero-card{
+    position:relative;border:1px solid var(--line);background:#efe9df;
+    padding:12px;max-width:494px;margin-left:auto;box-shadow:0 24px 50px -32px rgba(20,18,16,.55);
+  }
+  .hero-card img{width:100%;height:auto}
+  .hero-card figcaption{font-size:.88rem;color:#3f382e;padding:12px 4px 4px;line-height:1.5;font-weight:500}
+
+  /* ---------- sections ---------- */
+  section{padding:86px 0}
+  .sec-head{max-width:640px;margin-bottom:44px}
+  .sec-head p{color:var(--ink-soft);margin-top:14px;font-size:1.04rem}
+
+  /* services */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{border:1px solid var(--line);background:#fffdf8;padding:30px 26px 28px;border-radius:2px;transition:border-color .2s,transform .2s}
+  .card:hover{border-color:var(--gold-deep);transform:translateY(-2px)}
+  .card .num{font-family:"Fraunces",serif;font-weight:600;font-size:1rem;color:var(--gold-deep)}
+  .card h3{margin:10px 0 10px}
+  .card p{color:var(--ink-soft);font-size:.96rem;line-height:1.6}
+
+  /* process dark */
+  .process{background:#111012;color:#ece6da}
+  .process .eyebrow{color:var(--gold)}
+  .process .eyebrow::before{background:var(--gold)}
+  .process h2{color:#fff}
+  .process .sec-head p{color:#b9b0a1}
+  .phases{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+  .phase{border-top:1px solid rgba(205,175,85,.35);padding-top:20px}
+  .phase .k{font-family:"Fraunces",serif;font-weight:600;font-size:1rem;color:var(--gold)}
+  .phase h3{color:#fff;margin:8px 0 8px;font-size:1.06rem}
+  .phase p{color:#b9b0a1;font-size:.93rem;line-height:1.6}
+
+  /* work gallery */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .shot{border:1px solid var(--line);background:#fffdf8;padding:8px;margin:0}
+  .shot .frame{width:100%;aspect-ratio:4/3;overflow:hidden;background:#e9e3d8}
+  .shot .frame img{width:100%;height:100%;object-fit:cover}
+  .shot figcaption{padding:12px 6px 4px;font-size:.85rem;color:var(--ink-soft);line-height:1.5}
+  .shot figcaption b{display:block;font-family:"Inter",sans-serif;color:var(--ink);font-weight:600;font-size:.72rem;letter-spacing:.1em;margin-bottom:4px}
+  .shot--wide{grid-column:span 2}
+  .shot--wide .frame{aspect-ratio:16/9}
+
+  /* faq */
+  .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+  details{border-bottom:1px solid var(--line);padding:18px 0}
+  details summary{cursor:pointer;list-style:none;font-family:"Fraunces",serif;font-weight:600;font-size:1.06rem;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";font-size:1.3rem;color:var(--gold-deep);line-height:1;font-weight:600}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--ink-soft);margin-top:10px;font-size:.96rem;line-height:1.62}
+
+  /* contact */
+  .contact{background:#111012;color:#ece6da;border-top:1px solid rgba(205,175,85,.2)}
+  .contact .eyebrow{color:var(--gold)}
+  .contact .eyebrow::before{background:var(--gold)}
+  .contact h2{color:#fff}
+  .contact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .contact p{color:#b9b0a1}
+  .contact .btn-gold{margin:24px 0 6px;font-size:1rem;padding:15px 26px}
+  .contact .facts{list-style:none;padding:0;margin:0;display:grid;gap:16px}
+  .contact .facts li{border-top:1px solid rgba(205,175,85,.25);padding-top:14px;font-size:.97rem;color:#e7e0d2}
+  .contact .facts b{display:block;font-family:"Inter",sans-serif;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+
+  /* footer */
+  footer.site{background:var(--black);color:#b9b0a1;padding:36px 0}
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .foot .flogo{display:flex;align-items:center;gap:16px}
+  .foot .flogo img{height:34px;width:auto}
+  .foot .meta{font-size:.86rem;line-height:1.7;text-align:right}
+  .foot .meta a{color:var(--gold);text-decoration:none}
+  .foot .meta a:hover{text-decoration:underline}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-card{max-width:100%;margin:0}
+    .cards{grid-template-columns:1fr 1fr}
+    .phases{grid-template-columns:1fr 1fr;gap:26px}
+    .gallery{grid-template-columns:1fr 1fr}
+    .shot--wide{grid-column:span 2}
+    .faq-grid{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr;gap:30px}
+  }
+  @media (max-width:720px){
+    :root{--navh:74px}
+    .nav-links{display:none}
+    .brand img{height:40px;max-width:200px}
+    .cards,.gallery{grid-template-columns:1fr}
+    .shot--wide{grid-column:span 1}
+    .phases{grid-template-columns:1fr}
+    section{padding:62px 0}
+    .hero{padding:46px 0 50px}
+    .foot{flex-direction:column;align-items:flex-start}
+    .foot .meta{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Farasat Tilers home">
+      <img src="assets/logo-lockup.png" alt="Farasat Tilers" width="1608" height="412">
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#work">Work</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-gold" href="#contact">Request a quote</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Bathroom, floor &amp; wall tiling</p>
+        <h1>Precision tiling for bathrooms, floors and feature walls.</h1>
+        <p class="lede">Large-format porcelain, marble-look and stone finishes — set out properly, laid flat and true, grouted clean.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#contact">Request a quote</a>
+          <a class="btn btn-ghost" href="#work">See recent work</a>
+        </div>
+        <ul class="trust">
+          <li>Bathrooms &amp; wet areas</li>
+          <li>Large-format &amp; marble-look</li>
+          <li>Floors and walls</li>
+        </ul>
+      </div>
+      <figure class="hero-card">
+        <img src="assets/hero-card.jpg" alt="A polished white marble-look tiled floor with grey veining across a large room" width="720" height="771" loading="eager">
+        <figcaption>A polished marble-look floor laid wall to wall — level, seamless and finished.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Services</p>
+        <h2>Tiling from the wet area out</h2>
+        <p>The work we take on across bathrooms, floors and walls.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><p class="num">01</p><h3>Bathroom &amp; wet-area tiling</h3><p>Full bathroom walls and floors, set out around shower recesses, fixtures and falls to the drain.</p></article>
+        <article class="card"><p class="num">02</p><h3>Large-format floor tiling</h3><p>Big-format porcelain and marble-look tiles laid flat, with tight, even joints across the whole span.</p></article>
+        <article class="card"><p class="num">03</p><h3>Wall tiling &amp; feature walls</h3><p>Full-height walls, half-height dado lines and single feature walls that read as one clean plane.</p></article>
+        <article class="card"><p class="num">04</p><h3>Marble &amp; stone-look finishes</h3><p>Veined marble-look and stone-effect tiles, book-matched and aligned so the pattern carries across the wall.</p></article>
+        <article class="card"><p class="num">05</p><h3>Shower niches &amp; recesses</h3><p>Niches and recessed shelves built into the wall, tiled and lined so the edges sit crisp and flush.</p></article>
+        <article class="card"><p class="num">06</p><h3>Splashbacks &amp; kitchens</h3><p>Kitchen splashbacks and upstands cut around power points and rangehoods, finished off neatly.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Process</p>
+        <h2>How a tiling job runs</h2>
+        <p>Simple steps, and no surprises once the tiles are on site.</p>
+      </div>
+      <div class="phases">
+        <div class="phase"><p class="k">01</p><h3>Send your details</h3><p>Message with the space, your plans or a few photos, and the tiles you have in mind.</p></div>
+        <div class="phase"><p class="k">02</p><h3>Quote &amp; set-out</h3><p>We agree the scope and price, then set out the layout before a single tile is fixed.</p></div>
+        <div class="phase"><p class="k">03</p><h3>Lay the tiles</h3><p>Walls and floors laid level, joints kept even, cuts planned rather than forced.</p></div>
+        <div class="phase"><p class="k">04</p><h3>Grout &amp; finish</h3><p>Grout and silicone finished clean, the site tidied, and the job walked through with you.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Work</p>
+        <h2>Recent tiling, up close</h2>
+        <p>A look at bathrooms, floors and walls from jobs in progress and finished.</p>
+      </div>
+      <div class="gallery">
+        <figure class="shot shot--wide">
+          <div class="frame"><img src="assets/gal-1.jpg" alt="A bathroom prepared for tiling with walls lined and protected" width="1200" height="1200" loading="lazy"></div>
+          <figcaption><b>PREP</b> A bathroom lined and protected before the tiles go on.</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="frame"><img src="assets/gal-2.jpg" alt="A wall being clad in grey marble-look tiles with protective film on" width="748" height="748" loading="lazy"></div>
+          <figcaption><b>MARBLE-LOOK WALL</b> A veined wall going up, protective film still on.</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="frame"><img src="assets/gal-3.jpg" alt="A finished bathroom wall in white marble tiles with a recessed niche and shower mixer" width="1200" height="1200" loading="lazy"></div>
+          <figcaption><b>BATHROOM</b> Marble-look walls with a niche cut in and the mixer set low.</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="frame"><img src="assets/gal-4.jpg" alt="Large light-grey floor tiles running through a hallway into the next room" width="1200" height="1200" loading="lazy"></div>
+          <figcaption><b>FLOOR</b> Large-format floor tiles running through to the next room.</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="frame"><img src="assets/gal-5.jpg" alt="A shower enclosure in large grey rectangular tiles with chrome fittings" width="676" height="910" loading="lazy"></div>
+          <figcaption><b>SHOWER</b> A shower in large grey tiles, chrome fittings set true.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions before you book</h2>
+      </div>
+      <div class="faq-grid">
+        <details open>
+          <summary>How do I get a quote?</summary>
+          <p>Message the page with the space, your plans or a few photos, and the tiles you're considering. You'll get a price back before any work is booked.</p>
+        </details>
+        <details>
+          <summary>Do you tile bathrooms and wet areas?</summary>
+          <p>Yes — full bathroom walls and floors, shower recesses and falls to the drain are core to the work.</p>
+        </details>
+        <details>
+          <summary>Can you lay large-format tiles?</summary>
+          <p>Yes. Much of the work shown here is large-format and marble-look, laid flat with tight, even joints.</p>
+        </details>
+        <details>
+          <summary>Do you do floors as well as walls?</summary>
+          <p>Both. Floors, walls, full-height walls and single feature walls are all part of the job.</p>
+        </details>
+        <details>
+          <summary>Can you build shower niches and recesses?</summary>
+          <p>Yes — niches and recessed shelves are built into the wall and tiled so the edges sit flush and crisp.</p>
+        </details>
+        <details>
+          <summary>What tile finishes do you work with?</summary>
+          <p>Marble-look, stone-effect and porcelain, in the large formats shown in the gallery above.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Get in touch</p>
+        <h2>Got a tiling job in mind?</h2>
+        <p>Send through the space, your plans or a few photos and the tiles you're thinking of. We'll come back with a quote.</p>
+        <a class="btn btn-gold" href="https://www.facebook.com/share/1MWybFyxb1/" target="_blank" rel="noopener">Message us on Facebook</a>
+      </div>
+      <ul class="facts">
+        <li><b>Best contact</b>Facebook message — photos and plans welcome</li>
+        <li><b>Work</b>Bathrooms, floors, walls, niches &amp; splashbacks</li>
+        <li><b>Enquiries</b>Quotes before any work is booked</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div class="flogo">
+      <img src="assets/logo-mark.png" alt="" width="34" height="34">
+      <span>Farasat Tilers · Bathroom, floor &amp; wall tiling · &copy; 2026</span>
+    </div>
+    <div class="meta">
+      <a href="https://www.facebook.com/share/1MWybFyxb1/" target="_blank" rel="noopener">Find us on Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<style id="fix-btn-wrap">
+/* .hero-cta was a non-wrapping flex row of nowrap .btn elements, so the second button ran off the right
+   edge (170px button ending at 369 in a 320 viewport, 780 at 768). Let the row wrap and the labels break. */
+@media(max-width:900px){
+  .hero-cta{flex-wrap:wrap!important;gap:12px!important}
+  .hero-cta .btn,.hero-cta a{white-space:normal!important;max-width:100%!important;flex:0 1 auto!important}
+  .wrap.nav,nav.wrap{flex-wrap:wrap!important;row-gap:10px!important}
+}
+</style>
+<style id="fix-img-cap">
+/* these JPEGs were being drawn wider than their own pixels at intermediate widths (a small photo stretched into a full-width panel = the "blown up" look). Cap each at native. */
+img[src$="hero-card.jpg"]{max-width:720px;height:auto}
+</style>
+</body>
+</html>
