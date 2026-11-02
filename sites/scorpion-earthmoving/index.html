@@ -1,518 +1,441 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-AU">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scorpion Earthmoving - Site Cuts, Pad Prep, Trenching &amp; Clearing | NT</title>
-<meta name="description" content="Scorpion Earthmoving NT - site cuts, pad preparation, trenching, land clearing and detailed excavation. Owner operated, laser-level finish, Top End coverage.">
-<meta property="og:title" content="Scorpion Earthmoving - NT Earthworks">
-<meta property="og:description" content="Site cuts, pad prep, trenching, clearing and detailed excavation across the Top End. Laser-level finish, owner operated.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="assets/logo.jpg">
-<link rel="icon" href="assets/logo.jpg">
+<meta charset="utf-8">
+<title>Scorpion Earthmoving | Site Cuts, Pad Prep, Trenching &amp; Clearing, NT</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Scorpion Earthmoving: site cuts, pad preparation, trenching, land clearing and detailed excavation across the Northern Territory. One machine, one operator, laser grade held to final trim.">
+<link rel="canonical" href="https://laydbackapps.com/sites/scorpion-earthmoving/">
+<link rel="icon" href="assets/logo-cut.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --coal:#0b0906; --coal2:#110d09; --panel:#171210;
-  --bone:#f2e9db; --bone2:#c0b4a3; --muted:#968a79;
-  --rust:#c2703a; --rust-hi:#e39758;
-  --hair:rgba(242,233,219,.15); --hair-soft:rgba(242,233,219,.08);
-  --bar:72px; --shell:1240px; --gutter:clamp(20px,4vw,48px);
-  --fs-hero:clamp(2.5rem,5.6vw,4.9rem);
-  --fs-h2:clamp(1.75rem,3.1vw,2.85rem);
-  --fs-h3:clamp(1.12rem,1.6vw,1.45rem);
-  --fs-body:clamp(.98rem,.4vw + .88rem,1.06rem);
-  --fs-sm:.875rem; --fs-label:.78rem;
+  --coal:#0d0b08; --coal2:#14110c; --panel:#1a1610; --panel2:#201a13;
+  --ink:#f2e9db; --muted:#9d9184; --line:rgba(242,233,219,.14); --line2:rgba(242,233,219,.07);
+  --deep:#a8562a; --deep2:#7f3f1e; --acc:#e8a768; --deep-ink:#140c07;
+  --bar:74px; --shell:1220px; --gut:clamp(20px,4vw,48px);
+  --disp:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
 }
-*{margin:0;padding:0;box-sizing:border-box}
+*,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
 html,body{overflow-x:hidden}
-body{background:var(--coal);color:var(--bone);font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
-  font-size:var(--fs-body);line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-h1,h2,h3{line-height:1.06;font-weight:900;letter-spacing:-.018em;text-wrap:balance}
-a{color:inherit}
+body{margin:0;background:var(--coal);color:var(--ink);font-family:var(--disp);line-height:1.6;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
-::selection{background:var(--rust);color:#0b0906}
-:focus-visible{outline:2px solid var(--rust-hi);outline-offset:3px}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;line-height:1.05;letter-spacing:-.02em;font-weight:800}
+h2{font-size:clamp(1.7rem,3.4vw,2.65rem)}
+h3{font-size:1.14rem;font-weight:800}
+p{margin:0}
+.shell{width:min(var(--shell),92vw);margin:0 auto}
+.label{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--acc)}
+.label::before{content:"";width:26px;height:2px;background:var(--acc);flex:none}
+.lead{color:var(--muted);font-size:1.03rem;max-width:58ch}
 
-.shell{max-width:var(--shell);margin:0 auto;padding:0 var(--gutter)}
-.label{font-size:var(--fs-label);font-weight:700;color:var(--rust-hi)}
-.lead{color:var(--bone2);max-width:56ch;margin-top:16px}
-
-/* ---------- header ---------- */
-.site-head{position:sticky;top:0;z-index:70;background:var(--coal);border-bottom:1px solid var(--hair)}
-.site-head__in{display:flex;align-items:center;gap:clamp(14px,2vw,32px);height:var(--bar);
-  max-width:var(--shell);margin:0 auto;padding:0 var(--gutter);flex-wrap:nowrap}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0;flex:0 1 auto}
-.brand img{height:42px;width:auto;flex:0 0 auto;border-radius:4px}
-.brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0}
-.brand__name{font-size:1.06rem;font-weight:800;line-height:1.05;letter-spacing:-.012em;color:var(--bone);
-  white-space:nowrap;--lb-name:var(--bone)}
-.brand__sub{font-size:.7rem;color:var(--muted);font-weight:600;white-space:nowrap}
-.site-nav{display:flex;align-items:center;gap:clamp(14px,1.7vw,26px);margin-left:auto}
-.site-nav a{text-decoration:none;color:var(--bone2);font-size:var(--fs-sm);font-weight:600}
-.site-nav a:hover{color:var(--bone)}
-.tel-chip{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:var(--fs-sm);
-  color:#100b06;background:var(--rust);padding:11px 16px;border-radius:4px;white-space:nowrap;flex:0 0 auto}
-.tel-chip:hover{background:var(--rust-hi)}
-.tel-chip svg{flex:0 0 auto}
-@media(max-width:880px){.site-nav{display:none}}
-@media(max-width:520px){
-  .brand{gap:10px}
-  .brand img{height:30px}
-  .brand__name{font-size:.9rem}
-  .brand__sub{display:none}
-  .tel-chip{padding:0;width:42px;height:42px;justify-content:center;font-size:0;gap:0}
-  .tel-chip svg{width:17px;height:17px}
+/* ---------- bar ---------- */
+.bar{position:sticky;top:0;z-index:60;background:rgba(13,11,8,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line2)}
+.bar .shell{display:flex;align-items:center;gap:clamp(14px,2vw,30px);min-height:var(--bar);padding-block:9px;position:relative}
+.brand{display:flex;align-items:center;flex:none}
+.brand img{height:clamp(46px,4.6vw,58px);width:auto;max-height:none}
+.nav{display:flex;align-items:center;gap:clamp(14px,1.8vw,28px);margin-left:auto;font-family:var(--mono);font-size:.74rem;letter-spacing:.13em;text-transform:uppercase}
+.nav a{color:#c9c0b2;font-weight:500}
+.nav a:hover{color:var(--acc)}
+.telchip{display:inline-flex;align-items:center;gap:9px;background:var(--deep);color:#fff;padding:12px 17px;border-radius:3px;
+  font-weight:800;font-size:.9rem;white-space:nowrap;flex:none}
+.telchip:hover{background:var(--deep2)}
+.telchip svg{flex:none}
+.burger{display:none;margin-left:auto;width:44px;height:40px;border:1px solid var(--line);background:none;border-radius:3px;cursor:pointer}
+.burger span{display:block;height:2px;margin:5px 8px;background:var(--ink)}
+@media(max-width:920px){
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;
+    margin:0;padding:6px var(--gut) 14px;background:var(--coal2);border-bottom:1px solid var(--line)}
+  .bar.open .nav{display:flex}
+  .nav a{padding:13px 0;width:100%;border-bottom:1px solid var(--line2);font-size:.82rem}
+  .burger{display:block}
+  .telchip span{display:none}
+  .telchip{padding:11px 13px}
 }
+@media(max-width:520px){.brand img{height:40px}}
 
 /* ---------- hero ---------- */
-.hero{position:relative;isolation:isolate;min-height:clamp(560px,78vh,780px);display:flex;align-items:flex-end;
-  overflow:hidden;border-bottom:1px solid var(--hair);background:var(--coal)}
-#heroCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
-.hero__veil{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(100deg,var(--coal) 6%,rgba(11,9,6,.92) 34%,rgba(11,9,6,.55) 56%,rgba(11,9,6,.15) 78%)}
-.hero__in{position:relative;z-index:2;width:100%;max-width:var(--shell);margin:0 auto;
-  padding:calc(var(--bar) + 56px) var(--gutter) clamp(44px,6vw,72px)}
-.hero .label{display:inline-flex;align-items:center;gap:10px}
-.hero .label::before{content:"";width:28px;height:2px;background:var(--rust);flex:0 0 auto}
-.hero h1{font-size:var(--fs-hero);margin-top:18px;max-width:16ch;letter-spacing:-.026em}
-.hero h1 em{font-style:normal;color:var(--rust-hi);display:block}
-.hero__sub{color:#d8ccba;max-width:44ch;margin-top:20px}
-.hero__cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:30px}
-.btn-call{display:inline-flex;align-items:center;gap:11px;text-decoration:none;background:var(--rust);color:#100b06;
-  font-weight:800;padding:15px 24px;border-radius:4px;
-  box-shadow:0 12px 30px -18px rgba(0,0,0,.9);transition:background .18s,transform .18s}
-.btn-call:hover{background:var(--rust-hi);transform:translateY(-2px)}
-.btn-call small{display:block;font-size:.68rem;font-weight:700;color:#3a2110;line-height:1;margin-bottom:3px}
-.btn-call b{font-size:1.06rem;letter-spacing:-.01em}
-.hero__note{color:var(--bone2);font-size:var(--fs-sm);max-width:24ch}
-.hero__facts{display:flex;gap:clamp(18px,3.4vw,44px);flex-wrap:wrap;margin-top:clamp(30px,4vw,46px);
-  padding-top:20px;border-top:1px solid var(--hair);max-width:640px}
-.hero__facts dt{display:block;color:var(--bone);font-weight:800;font-size:.95rem}
-.hero__facts dd{color:var(--muted);font-size:var(--fs-sm)}
-@media(max-width:760px){
-  .hero__veil{background:linear-gradient(180deg,rgba(11,9,6,.86) 0%,rgba(11,9,6,.72) 46%,rgba(11,9,6,.94) 100%)}
-  .hero{min-height:clamp(600px,86vh,720px)}
-  .hero__in{padding-top:calc(var(--bar) + 38px)}
-  .hero h1{max-width:100%}
-}
-
-/* ---------- spec strip ---------- */
-.strip{border-bottom:1px solid var(--hair);background:var(--coal2)}
-.strip ul{display:flex;flex-wrap:wrap;gap:6px clamp(18px,3vw,40px);list-style:none;
-  padding:18px var(--gutter);max-width:var(--shell);margin:0 auto}
-.strip li{font-size:var(--fs-sm);color:var(--bone2);display:flex;align-items:center;gap:10px}
-.strip li::before{content:"";width:5px;height:5px;background:var(--rust);flex:0 0 auto;transform:rotate(45deg)}
+.hero{position:relative;min-height:clamp(540px,88svh,880px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;background:var(--coal2)}
+.hero-bg{position:absolute;inset:0;z-index:-3}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 52%;filter:saturate(1.05) contrast(1.05) brightness(.9)}
+.hero-scrim{position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(to top,rgba(9,7,5,.96) 0%,rgba(9,7,5,.82) 26%,rgba(9,7,5,.44) 52%,rgba(9,7,5,.22) 80%,rgba(9,7,5,.3) 100%)}
+.hero-grid{position:absolute;inset:0;z-index:-1;opacity:.42;pointer-events:none;
+  background-image:repeating-linear-gradient(to right,rgba(232,167,104,.1) 0 1px,transparent 1px 92px);
+  -webkit-mask-image:linear-gradient(to top,#000,transparent 72%);mask-image:linear-gradient(to top,#000,transparent 72%)}
+.hero-3d{position:absolute;inset:78px 0 auto;height:58%;z-index:-1;perspective:920px;perspective-origin:58% 40%;pointer-events:none;overflow:hidden}
+.hero-3d .plane{position:absolute;left:-12%;right:-12%;bottom:-22%;height:74%;transform-origin:50% 100%;transform:rotateX(66deg);
+  background-image:repeating-linear-gradient(to right,rgba(232,167,104,.22) 0 2px,transparent 2px 58px),repeating-linear-gradient(to bottom,rgba(232,167,104,.14) 0 2px,transparent 2px 58px);
+  -webkit-mask-image:linear-gradient(to top,#000,transparent 80%);mask-image:linear-gradient(to top,#000,transparent 80%)}
+#heroCanvas{display:none}
+.hero-in{position:relative;z-index:3;width:100%;padding:0 var(--gut) clamp(42px,7vh,78px);max-width:min(1240px,94vw);margin:0 auto}
+.hero .label{color:#f3dcc0;text-shadow:0 1px 12px rgba(0,0,0,.85)}
+.hero h1{font-size:clamp(2.4rem,7vw,5.2rem);line-height:.95;letter-spacing:-.03em;margin-top:18px;max-width:16ch;color:#fff;
+  text-shadow:0 2px 30px rgba(0,0,0,.62),0 1px 4px rgba(0,0,0,.5)}
+.hero h1 em{font-style:normal;color:var(--acc);display:block}
+.hero-sub{margin-top:20px;color:#e5dccd;font-size:clamp(1rem,1.5vw,1.16rem);max-width:54ch;text-shadow:0 1px 16px rgba(0,0,0,.68)}
+.hero-cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:3px;font-weight:800;
+  font-size:.95rem;cursor:pointer;border:1px solid transparent;transition:background .18s,transform .18s,color .18s}
+.btn-primary{background:var(--deep);color:#fff;box-shadow:0 16px 34px -22px rgba(168,86,42,.95)}
+.btn-primary:hover{background:var(--deep2);transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.hero-cta .note{color:#c9beae;font-size:.86rem;max-width:26ch}
+.hero-spec{margin-top:32px;display:flex;gap:clamp(18px,3vw,52px);flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.2);padding-top:20px;max-width:760px}
+.hero-spec p{font-family:var(--mono);font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:#a99c8a}
+.hero-spec strong{display:block;color:#fff;font-family:var(--disp);font-size:1rem;margin-top:5px;font-weight:800}
 
 /* ---------- sections ---------- */
-section{padding:clamp(64px,8vw,104px) 0}
-.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(20px,4vw,56px);
-  align-items:end;padding-bottom:clamp(26px,3vw,38px);border-bottom:1px solid var(--hair)}
-.sec-head h2{font-size:var(--fs-h2);max-width:20ch}
-.sec-head .lead{margin-top:0}
-@media(max-width:820px){.sec-head{grid-template-columns:1fr;align-items:start}.sec-head h2{max-width:100%}}
+section{padding:clamp(60px,7.6vw,102px) 0}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(20px,4vw,56px);align-items:end;
+  padding-bottom:clamp(22px,3vw,34px);border-bottom:1px solid var(--line);margin-bottom:6px}
+.sec-head h2{max-width:19ch;margin-top:14px}
+@media(max-width:820px){.sec-head{grid-template-columns:1fr;align-items:start}}
 
-/* work ledger: rows, not equal cards */
-.ledger{list-style:none}
-.ledger li{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:8px clamp(20px,4vw,56px);
-  align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--hair-soft)}
-.ledger h3{font-size:var(--fs-h3);font-weight:800;letter-spacing:-.014em}
-.ledger p{color:var(--bone2)}
-.ledger .tag{display:block;color:var(--rust-hi);font-size:var(--fs-label);font-weight:700;margin-bottom:7px}
-.ledger li.is-lead{background:linear-gradient(90deg,rgba(194,112,58,.10),transparent 62%);
-  box-shadow:inset 3px 0 0 var(--rust);padding-left:clamp(16px,2vw,26px)}
-.ledger li.is-lead h3{font-size:clamp(1.3rem,2.3vw,1.85rem)}
-@media(max-width:760px){
-  .ledger li{grid-template-columns:1fr;gap:6px}
-  .ledger li.is-lead{padding-left:14px}
-}
+.ledger-row{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:6px clamp(20px,4vw,56px);align-items:start;
+  padding:clamp(20px,2.6vw,30px) 0;border-bottom:1px solid var(--line2)}
+.ledger-row:first-child{border-top:1px solid var(--line2)}
+.ledger-row .tag{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-bottom:8px}
+.ledger-row p{color:var(--muted);font-size:.98rem}
+.ledger-row.is-lead{background:linear-gradient(90deg,rgba(168,86,42,.12),transparent 62%);box-shadow:inset 3px 0 0 var(--deep);padding-left:clamp(14px,2vw,24px)}
+.ledger-row.is-lead h3{font-size:clamp(1.25rem,2.2vw,1.7rem)}
+@media(max-width:760px){.ledger-row{grid-template-columns:1fr;gap:6px}}
 
-/* method: statement left, spec list right */
-.method{background:var(--coal2);border-block:1px solid var(--hair)}
-.method__grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
-.method h2{font-size:var(--fs-h2);max-width:16ch;margin-top:14px}
-.method__list .pair{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:6px 20px;
-  padding:18px 0;border-top:1px solid var(--hair-soft)}
-.method__list .pair:last-child{border-bottom:1px solid var(--hair-soft)}
-.method__list dt{font-weight:800;font-size:.95rem;color:var(--bone)}
-.method__list dd{color:var(--bone2)}
-@media(max-width:820px){.method__grid{grid-template-columns:1fr}}
+.method{background:var(--coal2);border-block:1px solid var(--line)}
+.method .grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(26px,5vw,70px);align-items:start}
+.pairs{display:grid;gap:0}
+.pair{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:6px 20px;padding:17px 0;border-top:1px solid var(--line2)}
+.pair:last-child{border-bottom:1px solid var(--line2)}
+.pair b{font-size:.97rem}
+.pair span{color:var(--muted);font-size:.96rem}
+@media(max-width:820px){.method .grid{grid-template-columns:1fr;gap:32px}.pair{grid-template-columns:1fr;gap:4px}}
 
-/* photo band */
-.work{position:relative;padding:0;border-block:1px solid var(--hair);background:#0a0806}
-.work figure{position:relative;margin:0;max-height:min(66vh,560px);overflow:hidden}
-.work img{width:100%;height:100%;min-height:300px;object-fit:cover;object-position:center 42%}
-.work figcaption{position:absolute;left:0;right:0;bottom:0;padding:clamp(18px,3vw,34px) var(--gutter);
-  background:linear-gradient(180deg,transparent,rgba(8,6,4,.88));color:var(--bone);font-size:var(--fs-sm);
-  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.work figcaption span{color:var(--muted)}
+.gal{background:var(--coal)}
+.gal-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:clamp(12px,1.6vw,18px);margin-top:30px}
+.gal figure{margin:0;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:4px;background:var(--panel)}
+.gal img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.gal .wide img{aspect-ratio:auto;height:100%;min-height:320px}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;font-family:var(--mono);font-size:.66rem;
+  letter-spacing:.1em;text-transform:uppercase;color:#e6dccd;background:linear-gradient(to top,rgba(9,7,5,.9),transparent)}
+@media(max-width:900px){.gal-grid{grid-template-columns:1fr 1fr}.gal .wide{grid-column:1/-1}}
+@media(max-width:560px){.gal-grid{grid-template-columns:1fr}}
 
-/* quote */
-.quote{background:var(--coal)}
-.quote__grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,64px);align-items:start}
-.quote h2{font-size:var(--fs-h2);max-width:15ch;margin-top:14px}
-.quote__call{display:block;margin-top:24px;text-decoration:none;max-width:max-content}
-.quote__call .label{display:block;margin-bottom:6px}
-.quote__call b{font-size:clamp(1.45rem,3vw,2rem);font-weight:900;letter-spacing:-.02em;color:var(--bone);
-  border-bottom:2px solid var(--rust);padding-bottom:3px}
-.quote__call:hover b{color:var(--rust-hi)}
-.quote__facts{margin-top:26px;padding-top:16px;border-top:1px solid var(--hair-soft);display:grid;gap:9px;
-  font-size:var(--fs-sm);color:var(--bone2)}
-.quote__facts b{color:var(--muted);font-weight:600;display:inline-block;min-width:52px}
+.trust{background:var(--panel2);border-block:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,34px);margin-top:30px}
+.trust-grid b{display:block;font-size:.97rem;margin-bottom:7px}
+.trust-grid p{color:var(--muted);font-size:.9rem}
+@media(max-width:900px){.trust-grid{grid-template-columns:1fr 1fr}}
 
-form{background:var(--panel);border:1px solid var(--hair);border-radius:6px;padding:clamp(20px,3vw,32px)}
-.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.fields .full{grid-column:1/-1}
-form label{display:block;font-size:var(--fs-sm);color:var(--bone2);font-weight:600;margin-bottom:6px}
-form input,form textarea,form select{width:100%;padding:12px 13px;border:1px solid var(--hair);border-radius:4px;
-  background:var(--coal);color:var(--bone);font:inherit;font-size:var(--fs-sm)}
-form textarea{min-height:104px;resize:vertical}
-form input:focus,form textarea:focus,form select:focus{outline:2px solid var(--rust);outline-offset:1px;border-color:transparent}
-.consent{display:flex;gap:9px;align-items:flex-start;margin-top:14px;font-size:.82rem;color:var(--muted);font-weight:400}
-.consent input{width:auto;margin-top:3px}
-form button{margin-top:16px;width:100%;padding:14px 20px;border:0;border-radius:4px;background:var(--rust);
-  color:#100b06;font:inherit;font-weight:800;font-size:.98rem;cursor:pointer;transition:background .18s}
-form button:hover{background:var(--rust-hi)}
-form button:disabled{opacity:.6;cursor:wait}
-.form-status{margin-top:12px;font-size:var(--fs-sm);color:var(--bone2);min-height:1.3em}
-.form-status.err{color:#f0a58c}
+/* ---------- quote / lbq ---------- */
+#lbq{background:var(--coal2);border-top:1px solid var(--line);padding:clamp(56px,7vw,90px) 0}
+.lbq-wrap{width:min(var(--shell),92vw);margin:0 auto;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(26px,5vw,62px);align-items:start}
+.lbq-call{display:inline-block;margin-top:22px}
+.lbq-call b{font-size:clamp(1.35rem,3vw,1.9rem);font-weight:800;letter-spacing:-.02em;border-bottom:2px solid var(--acc);padding-bottom:3px}
+.lbq-call:hover b{color:var(--acc)}
+.lbq-facts{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);display:grid;gap:9px;font-size:.9rem;color:var(--muted)}
+.lbq-facts b{color:#d5cbba;font-weight:700;display:inline-block;min-width:64px}
+#lbq form{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:clamp(20px,3vw,32px);display:grid;gap:14px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#lbq label{display:block;font-size:.82rem;color:#c8bfae;font-weight:600;margin-bottom:6px}
+#lbq input,#lbq textarea{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:3px;background:var(--coal);
+  color:var(--ink);font:inherit;font-size:.94rem}
+#lbq textarea{min-height:104px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus{outline:2px solid var(--acc);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:4px;justify-self:start;padding:14px 24px;border:0;border-radius:3px;background:var(--deep);color:#fff;
+  font:inherit;font-weight:800;font-size:.95rem;cursor:pointer;transition:background .18s}
+#lbq button:hover{background:var(--deep2)}
+#lbq button:disabled{opacity:.6;cursor:wait}
+.lbq-st{margin-top:2px;font-size:.9rem;color:var(--muted);min-height:1.2em}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-@media(max-width:820px){.quote__grid{grid-template-columns:1fr}}
-@media(max-width:520px){.fields{grid-template-columns:1fr}}
+@media(max-width:820px){.lbq-wrap{grid-template-columns:1fr;gap:32px}}
+@media(max-width:520px){.f2{grid-template-columns:1fr}}
 
-/* footer */
-.site-foot{border-top:1px solid var(--hair);background:var(--coal2);padding:clamp(44px,6vw,64px) 0 0}
-.site-foot__in{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,.7fr));
-  gap:clamp(24px,4vw,48px);max-width:var(--shell);margin:0 auto;padding:0 var(--gutter)}
-.site-foot .brand{margin-bottom:16px}
-.site-foot .brand img{height:52px}
-.site-foot p{color:var(--bone2);font-size:var(--fs-sm);max-width:32ch}
-.site-foot h3{font-size:var(--fs-label);font-weight:700;color:var(--rust-hi);margin-bottom:12px;letter-spacing:0}
-.site-foot a{display:block;text-decoration:none;color:var(--bone2);font-size:var(--fs-sm);padding:5px 0}
-.site-foot a:hover{color:var(--bone)}
-.site-foot .abn{color:var(--muted);font-size:var(--fs-sm);margin-top:10px}
-.foot-bar{max-width:var(--shell);margin:clamp(32px,5vw,48px) auto 0;padding:20px var(--gutter);
-  border-top:1px solid var(--hair-soft);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  font-size:.8rem;color:var(--muted)}
-.foot-bar span{max-width:70ch}
-.foot-bar .legal{display:flex;gap:16px}
-.foot-bar .legal a{color:var(--muted);text-decoration:none}
-.foot-bar .legal a:hover{color:var(--bone)}
-@media(max-width:760px){.site-foot__in{grid-template-columns:1fr 1fr}}
+/* ---------- footer ---------- */
+footer{background:var(--coal);border-top:1px solid var(--line);padding:clamp(44px,6vw,64px) 0 0}
+.f-grid{width:min(var(--shell),92vw);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,.72fr));gap:clamp(24px,4vw,46px)}
+.foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.foot-brand img{height:50px;width:auto}
+.f-grid p{color:var(--muted);font-size:.9rem;max-width:34ch}
+.f-grid h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin:0 0 12px;font-weight:500}
+.f-grid a{display:block;color:#c8bfae;font-size:.92rem;padding:5px 0}
+.f-grid a:hover{color:var(--acc)}
+.f-bar{width:min(var(--shell),92vw);margin:clamp(30px,4vw,44px) auto 0;padding:20px 0;border-top:1px solid var(--line2);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.f-bar a{color:var(--muted)}
+.f-bar a:hover{color:var(--acc)}
+@media(max-width:760px){.f-grid{grid-template-columns:1fr 1fr}}
 
-/* reveal */
-.rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .rv.on{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .rv{opacity:1;transform:none;transition:none}
+  .hero-3d .plane{transition:none}
   *{animation-duration:.001s!important;transition-duration:.001s!important}
 }
 </style>
-
-<!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
-<style id="lb-bar-noname">
-/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
-.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
-{display:none!important}
-.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
-.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style><style id="lb-hdr-centre">
-.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-@media(max-width:900px){}
-</style></head>
+<noscript><style>.rv{opacity:1!important;transform:none!important;transition:none!important}</style></noscript>
+</head>
 <body>
 
-<header class="site-head">
-  <div class="site-head__in">
+<header class="bar" id="sitebar">
+  <div class="shell">
     <a class="brand" href="#top" aria-label="Scorpion Earthmoving, home">
-      <img src="assets/logo.jpg" alt="" class="lb-logo" loading="eager" decoding="async">
-      <span class="brand__word">
-        <span class="brand__name">Scorpion Earthmoving</span>
-        <span class="brand__sub">Earthworks · Top End NT</span>
-      </span>
+      <img src="assets/logo-isolated.png" alt="Scorpion Earthmoving" width="58" height="35">
     </a>
-    <nav class="site-nav" aria-label="Main"><a href="#services">Services</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="navlinks" aria-label="Main">
+      <a href="#services">Services</a>
       <a href="#method">How we work</a>
+      <a href="#work">Work</a>
       <a href="#quote">Quote</a>
     </nav>
-    <a class="tel-chip" href="tel:0488907100" aria-label="Call 0488 907 100">
+    <a class="telchip" href="tel:+61488907100" aria-label="Call 0488 907 100">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" aria-hidden="true"><path d="M6 3h3l2 5-2 1a12 12 0 0 0 6 6l1-2 5 2v3a2 2 0 0 1-2 2A17 17 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
-      0488 907 100
+      <span>0488 907 100</span>
     </a>
   </div>
 </header>
 
-<header class="hero" id="top">
-  <canvas id="heroCanvas" aria-hidden="true"></canvas>
-  <div class="hero__veil" aria-hidden="true"></div>
-  <div class="hero__in">
-    <p class="label">Site cuts · Pad prep · Trenching · Clearing</p>
-    <h1>Cut to level.<br>Fill to spec.<em>Finish flat.</em></h1>
-    <p class="hero__sub">Detailed earthworks across the Top End. One machine, one operator, laser grade held from the first cut to the final trim.</p>
-    <div class="hero__cta">
-      <a class="btn-call" href="tel:0488907100">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" aria-hidden="true"><path d="M6 3h3l2 5-2 1a12 12 0 0 0 6 6l1-2 5 2v3a2 2 0 0 1-2 2A17 17 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
-        <span><small>Call the operator</small><b>0488 907 100</b></span>
-      </a>
-      <p class="hero__note">Straight to the person on the machine. No call centre.</p>
-    </div>
-    <dl class="hero__facts">
-      <div><dt>Owner operated</dt><dd>Accountable on site</dd></div>
-      <div><dt>Laser grade</dt><dd>Level checked, not eyeballed</dd></div>
-      <div><dt>Top End, NT</dt><dd>Regional coverage</dd></div>
-    </dl>
-  </div>
-</header>
+<main id="top">
 
-<div class="strip">
-  <ul>
-    <li>Site cuts</li><li>Pad preparation</li><li>Trenching</li><li>Land clearing</li><li>Detailed excavation</li>
-  </ul>
-</div>
-
-<section id="services">
-  <div class="shell">
-    <div class="sec-head rv">
-      <h2>Ground worked to design level.</h2>
-      <p class="lead">Every job follows the same discipline: strip, cut, fill, trim, check. The pad is left ready for the slab, the footing or the next trade.</p>
+  <header class="hero"><!-- LB-3D-HERO -->
+    <div class="hero-bg"><img src="assets/hero.jpg" alt="Excavator stripping and shaping a building pad on a cleared site" width="1600" height="1000"></div>
+    <div class="hero-scrim"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-3d" aria-hidden="true"><div class="plane"></div></div>
+    <canvas id="heroCanvas" aria-hidden="true" style="display:none"></canvas>
+    <div class="hero-in">
+      <span class="label">Site cuts &middot; pad prep &middot; trenching &middot; clearing</span>
+      <h1>Cut to level.<br>Fill to spec.<em>Finish flat.</em></h1>
+      <p class="hero-sub">Detailed earthworks across the Northern Territory. One machine, one operator, laser grade held from the first cut through to the final trim.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#quote">Get a price on the cut</a>
+        <a class="btn btn-ghost" href="tel:+61488907100">Call 0488 907 100</a>
+        <p class="note">Straight to the person on the machine. No call centre.</p>
+      </div>
+      <div class="hero-spec">
+        <p>Owner operated<strong>Accountable on site</strong></p>
+        <p>Laser grade<strong>Checked, not eyeballed</strong></p>
+        <p>Coverage<strong>Northern Territory</strong></p>
+      </div>
     </div>
-    <ol class="ledger">
-      <li class="is-lead rv">
+  </header>
+
+  <section id="services">
+    <div class="shell">
+      <div class="sec-head rv">
         <div>
-          <span class="tag">Bulk and detailed</span>
-          <h3>Site cuts and pad preparation</h3>
+          <span class="label">What we run</span>
+          <h2>Ground worked to design level.</h2>
         </div>
-        <p>Cuts taken to design level, tracked with laser receivers on a staked grid. Fill placed in layers, compacted and trimmed so the pad holds its edge.</p>
-      </li>
-      <li class="rv">
-        <div>
-          <span class="tag">Depth and fall</span>
-          <h3>Trenching</h3>
-        </div>
-        <p>Services, drainage and footing trenches cut to the depth and fall marked out. Spoil stacked clear of the line, backfill on request.</p>
-      </li>
-      <li class="rv">
-        <div>
-          <span class="tag">Strip out</span>
-          <h3>Land clearing</h3>
-        </div>
+        <p class="lead">Every job follows the same discipline: strip, cut, fill, trim, check. The pad is left ready for the slab, the footing or the next trade.</p>
+      </div>
+      <div class="ledger-row is-lead rv">
+        <div><span class="tag">Bulk and detailed</span><h3>Site cuts and pad preparation</h3></div>
+        <p>Cuts taken to design level, tracked with laser receivers on a staked grid. Fill placed in layers, compacted and trimmed so the pad holds its edge and drains away from the build.</p>
+      </div>
+      <div class="ledger-row rv">
+        <div><span class="tag">Depth and fall</span><h3>Trenching</h3></div>
+        <p>Service, drainage and footing trenches cut to the depth and fall marked out. Spoil stacked clear of the line, backfill on request.</p>
+      </div>
+      <div class="ledger-row rv">
+        <div><span class="tag">Strip out</span><h3>Land clearing</h3></div>
         <p>Vegetation removal, root raking and topsoil stripping. Green waste mulched on site or carted, ground left clean for the next stage.</p>
-      </li>
-      <li class="rv">
-        <div>
-          <span class="tag">Tight tolerance</span>
-          <h3>Detailed excavation</h3>
-        </div>
+      </div>
+      <div class="ledger-row rv">
+        <div><span class="tag">Tight tolerance</span><h3>Detailed excavation</h3></div>
         <p>Footings, piers, service pits and tight cuts. Minimal over-dig, material handled once, edges left straight enough to trim by bucket.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section class="method" id="method">
-  <div class="shell method__grid">
-    <div class="rv">
-      <p class="label">Method</p>
-      <h2>How the level gets held.</h2>
-      <p class="lead">Grade is set before the machine starts and checked before it leaves. Cut and fill are worked as one operation so nothing is shifted twice.</p>
-    </div>
-    <div class="method__list rv">
-      <dl>
-        <div class="pair"><dt>Grade control</dt><dd>Dual-grade laser on the pad, staked at a 5 m grid with receivers on the stick.</dd></div>
-        <div class="pair"><dt>One machine</dt><dd>The same excavator cuts, pushes and finishes. No hand-offs, no arguments about level.</dd></div>
-        <div class="pair"><dt>Spoil balance</dt><dd>Cut volume worked back into the fill zones. Excess carted only where the design demands it.</dd></div>
-        <div class="pair"><dt>Handover</dt><dd>Final trim by bucket, level read across the pad, spoil and ruts cleaned up before we go.</dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
-
-<section class="work">
-  <div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div>
-</section>
-
-<section class="quote" id="quote">
-  <div class="shell quote__grid">
-    <div class="rv">
-      <p class="label">Quote</p>
-      <h2>Get a price on the cut.</h2>
-      <p class="lead">Send the job, the access and the timing. The operator prices it, so you deal with the person who runs the machine.</p>
-      <a class="quote__call" href="tel:0488907100">
-        <span class="label">Call direct</span>
-        <b>0488 907 100</b>
-      </a>
-      <div class="quote__facts">
-        <div><b>Area</b> Top End, NT</div>
-        <div><b>ABN</b> 76 606 468 615</div>
+      </div>
+      <div class="ledger-row rv">
+        <div><span class="tag">On and off truck</span><h3>Driveways and hardstand</h3></div>
+        <p>Access tracks, driveways and hardstand cut, formed and compacted, so plant and deliveries can get around a tight site.</p>
+      </div>
+      <div class="ledger-row rv">
+        <div><span class="tag">Movement</span><h3>Spoil cartage and site clean</h3></div>
+        <p>Excess material loaded out and the site left broom-clean behind the truck, or cut balanced back into the fill zones to save cartage.</p>
       </div>
     </div>
-    <form id="quote-form" novalidate data-site="scorpion-earthmoving" data-biz="Scorpion Earthmoving">
-      <div class="fields">
-        <div><label for="q-name">Name</label><input id="q-name" name="name" autocomplete="name" required></div>
-        <div><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" autocomplete="tel"></div>
-        <div class="full"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email"></div>
-        <div class="full"><label for="q-service">Service</label>
-          <select id="q-service" name="service">
-            <option>Site cuts and pad preparation</option>
-            <option>Trenching</option>
-            <option>Land clearing</option>
-            <option>Detailed excavation</option>
-            <option>Something else</option>
-          </select>
+  </section>
+
+  <section class="method" id="method">
+    <div class="shell grid">
+      <div class="rv">
+        <span class="label">Method</span>
+        <h2 style="margin-top:14px">How the level gets held.</h2>
+        <p class="lead" style="margin-top:14px">Grade is set before the machine starts and checked before it leaves. Cut and fill are worked as one operation so nothing is shifted twice.</p>
+      </div>
+      <div class="pairs rv">
+        <div class="pair"><b>Grade control</b><span>Dual-grade laser on the pad, staked at a 5&nbsp;m grid with receivers on the stick.</span></div>
+        <div class="pair"><b>One machine</b><span>The same excavator cuts, pushes and finishes. No hand-offs, no arguments about level.</span></div>
+        <div class="pair"><b>Spoil balance</b><span>Cut volume worked back into the fill zones. Excess carted only where the design demands it.</span></div>
+        <div class="pair"><b>Tight access</b><span>Tracked machine that gets down a side boundary and works without taking the fence line out.</span></div>
+        <div class="pair"><b>Handover</b><span>Final trim by bucket, level read across the pad, spoil and ruts cleaned up before we go.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gal" id="work">
+    <div class="shell">
+      <div class="sec-head rv">
+        <div>
+          <span class="label">On site</span>
+          <h2>Cuts, pads and site prep.</h2>
         </div>
-        <div class="full"><label for="q-message">The job</label><textarea id="q-message" name="message" placeholder="Job type, site size, access and timing" required></textarea></div>
+        <p class="lead">Straight off the machine: excavation on a cut, formwork set on a stepped site, and a pad trimmed ready for the next trade.</p>
       </div>
-      <label class="consent"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
-      <div class="hp" aria-hidden="true"><label for="q-web">Website</label><input id="q-web" name="website" tabindex="-1" autocomplete="off"></div>
-      <button type="submit">Send quote request</button>
-      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-    </form>
-  </div>
-</section>
+      <div class="gal-grid">
+        <figure class="wide rv"><img src="assets/hero-work.jpg" alt="Excavator working a cut beside a stone retaining wall and set formwork" width="2200" height="2200" loading="lazy"><figcaption>Cut beside a retaining wall &middot; formed and stepped</figcaption></figure>
+        <figure class="rv"><img src="assets/work_01.jpg" alt="Excavator beside a concrete block retaining wall on a cut" width="1080" height="810" loading="lazy"><figcaption>Retaining wall cut and drainage</figcaption></figure>
+        <figure class="rv"><img src="assets/work_02.jpg" alt="Excavator trimming a batter on a cleared slope" width="1080" height="810" loading="lazy"><figcaption>Batter trim on a cleared slope</figcaption></figure>
+        <figure class="rv"><img src="assets/work_03.jpg" alt="Excavator sitting on a graded pad ready for the next stage" width="1080" height="810" loading="lazy"><figcaption>Pad graded and ready</figcaption></figure>
+      </div>
+    </div>
+  </section>
 
-<footer class="site-foot">
-  <div class="site-foot__in">
+  <section class="trust">
+    <div class="shell">
+      <span class="label">Why the pad holds</span>
+      <h2 style="margin-top:14px">One operator, one standard.</h2>
+      <div class="trust-grid">
+        <div class="rv"><b>Owner operated</b><p>You deal with the person who runs the machine, from the first look at the site to the final trim.</p></div>
+        <div class="rv"><b>Level measured</b><p>Grade read across the pad with the laser, not judged by eye from the cab.</p></div>
+        <div class="rv"><b>Material handled once</b><p>Cut and fill planned together so spoil moves once, not three times.</p></div>
+        <div class="rv"><b>Site left tidy</b><p>Spoil, ruts and off-cuts cleaned up, access and boundaries left as we found them.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lbq">
+    <div class="lbq-wrap">
+      <div class="rv">
+        <span class="label">Quote</span>
+        <h2 style="margin-top:14px">Get a price on the cut.</h2>
+        <p class="lead" style="margin-top:14px">Send the job, the access and the timing. The operator prices it, so you deal with the person who runs the machine.</p>
+        <a class="lbq-call" href="tel:+61488907100"><b>0488 907 100</b></a>
+        <div class="lbq-facts">
+          <div><b>Area</b> Northern Territory &mdash; regional coverage</div>
+          <div><b>Works</b> Site cuts, pad prep, trenching, clearing, detailed excavation</div>
+        </div>
+      </div>
+      <div class="rv">
+        <form id="quote" novalidate data-site="scorpion-earthmoving" data-biz="Scorpion Earthmoving">
+          <div class="f2">
+            <div><label for="q-name">Name</label><input id="q-name" name="name" autocomplete="name" required></div>
+            <div><label for="q-tel">Phone</label><input id="q-tel" name="phone" type="tel" autocomplete="tel"></div>
+          </div>
+          <div><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email"></div>
+          <div><label for="q-job">The job</label><textarea id="q-job" name="message" placeholder="Site cut and pad, roughly 20 x 15, tight side access, need it before the slab." required></textarea></div>
+          <div class="hp" aria-hidden="true"><label for="q-web">Website</label><input id="q-web" name="website" tabindex="-1" autocomplete="off"></div>
+          <button type="submit">Send the details</button>
+          <p class="lbq-st" id="q-st" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var EP='https://grocery-periodically-everyone-wine.trycloudflare.com';
+      function base(cb){
+        if(window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+        var done=false;
+        var t=setTimeout(function(){if(!done){done=true;cb(EP);}},2200);
+        fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_='+Date.now())
+          .then(function(r){return r.text();})
+          .then(function(txt){ if(done)return; done=true; clearTimeout(t);
+            var b=(txt||'').trim().replace(/\/+$/,'');
+            cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b)?b:EP);
+          })
+          .catch(function(){ if(!done){done=true;clearTimeout(t);cb(EP);} });
+      }
+      var f=document.getElementById('quote'); if(!f) return;
+      var st=document.getElementById('q-st');
+      var btn=f.querySelector('button[type=submit]');
+      f.addEventListener('submit',function(e){
+        e.preventDefault();
+        var d={}; new FormData(f).forEach(function(v,k){d[k]=v;});
+        if(d.website) return;
+        if(!d.name || (!d.phone && !d.email) || !(d.message||'').trim()){
+          st.textContent='Add a name, a phone or email, and a line about the job.';
+          st.style.color='#f0a58c'; return;
+        }
+        btn.disabled=true; st.textContent='Sending\u2026'; st.style.color='';
+        base(function(B){
+          fetch(B+'/functions/v1/quote-request',{
+            method:'POST', headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({
+              site_id:f.dataset.site||'', business_name:f.dataset.biz||'',
+              name:d.name, phone:d.phone, email:d.email, message:d.message, consent:true
+            })
+          })
+          .then(function(r){return r.json().catch(function(){return {};});})
+          .then(function(x){
+            if(x&&x.success){ f.reset(); st.textContent="In \u2014 the operator will come back with a price.";
+              st.style.color='var(--acc)'; }
+            else throw new Error((x&&x.error)||'Could not send');
+          })
+          .catch(function(err){ st.textContent=(err&&err.message)?err.message:'Could not send. Ring 0488 907 100.';
+            st.style.color='#f0a58c'; })
+          .finally(function(){ btn.disabled=false; });
+        });
+      });
+    })();
+    </script>
+  </section>
+
+</main>
+
+<footer>
+  <div class="f-grid">
     <div>
-      <a class="brand" href="#top">
-        <img src="assets/logo.jpg" alt="Scorpion Earthmoving" width="120" height="72" loading="lazy" decoding="async">
-        <span class="brand__word">
-          <span class="brand__name">Scorpion Earthmoving</span>
-          <span class="brand__sub">Earthworks · Top End NT</span>
-        </span>
-      </a>
-      <p>Site cuts, pad prep, trenching, clearing and detailed excavation across the Top End.</p>
+      <div class="foot-brand"><img src="assets/logo-isolated.png" alt="Scorpion Earthmoving" width="50" height="30"></div>
+      <p>Site cuts, pad prep, trenching, land clearing and detailed excavation, with the grade held from the first cut to the final trim.</p>
     </div>
     <div>
-      <h3>Services</h3>
-      <a href="#services">Site cuts and pad prep</a>
-      <a href="#services">Trenching</a>
-      <a href="#services">Land clearing</a>
-      <a href="#services">Detailed excavation</a>
+      <h4>Services</h4>
+      <a href="#services">Site cuts and pad prep</a><a href="#services">Trenching</a><a href="#services">Land clearing</a><a href="#services">Detailed excavation</a>
     </div>
     <div>
-      <h3>Company</h3>
-      <a href="#method">How we work</a>
-      <a href="#quote">Get a quote</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+      <h4>Company</h4>
+      <a href="#method">How we work</a><a href="#work">On site</a><a href="#quote">Get a quote</a>
     </div>
     <div>
-      <h3>Contact</h3>
-      <a href="tel:0488907100">0488 907 100</a>
-      <p class="abn">ABN 76 606 468 615</p>
+      <h4>Contact</h4>
+      <a href="tel:+61488907100">0488 907 100</a><a href="#quote">Request a quote</a>
     </div>
   </div>
-  <div class="foot-bar">
-    <span>&copy; <span id="year">2026</span> Scorpion Earthmoving · Site cuts · Pad prep · Trenching · Clearing · Top End, NT</span>
-    <span class="legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></span>
+  <div class="f-bar">
+    <p>&copy; <span id="yr">2026</span> Scorpion Earthmoving &middot; Site cuts &middot; Pad prep &middot; Trenching &middot; Clearing</p>
+    <p><a href="privacy.html">Privacy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms</a></p>
   </div>
 </footer>
 
-<script src="assets/heroCanvas.js"></script>
 <script>
-/* hero: the cut itself. Trench, batter, spoil heap, dipper arm and bucket. */
 (function(){
-  var cv = document.getElementById('heroCanvas');
-  if (!cv || !window.Projection) return;
-  var S = Projection.create(cv, {focal:1.5, horizon:0.44, camY:1.56, fogNear:8, fogFar:42, fogCol:'#0e0b08'});
-  var scene = Projection.sceneExcavation(S, {
-    fogCol:'#0e0b08',
-    tone:{soil:'#2a231a', soil2:'#332a1f', clay:'#4b3a26', clay2:'#5c4631', sand:'#71593a',
-      gravel:'#4c463c', rock:'#3b3833', lip:'#c08a52', wear:'#c9b49a', bush:'#1d251f', rut:'#1c1710'}
+  var bar=document.getElementById('sitebar'),b=document.getElementById('burger');
+  if(b){b.addEventListener('click',function(){
+    var open=bar.classList.toggle('open');
+    b.setAttribute('aria-expanded',open?'true':'false');
+    b.setAttribute('aria-label',open?'Close menu':'Open menu');
   });
-  S.frame(function(t){
-    var still = Projection.reduced();
-    S.yaw = still ? 0 : Math.sin(t * 0.14) * 0.018;
-    S.camX = still ? 0 : Math.sin(t * 0.08) * 0.2;
-    scene.render(t, t);
-  });
-  if ('ResizeObserver' in window) new ResizeObserver(function(){ S.resize(); S.dirty = true; }).observe(cv);
-  else window.addEventListener('resize', function(){ S.resize(); S.dirty = true; });
-  if ('IntersectionObserver' in window){
-    new IntersectionObserver(function(e){ S.visible = e[0].isIntersecting; }, {threshold:0.01}).observe(cv);
+  document.querySelectorAll('#navlinks a').forEach(function(a){
+    a.addEventListener('click',function(){bar.classList.remove('open');b.setAttribute('aria-expanded','false');});
+  });}
+  var y=document.getElementById('yr'); if(y) y.textContent=new Date().getFullYear();
+  var rvs=[].slice.call(document.querySelectorAll('.rv'));
+  if(!('IntersectionObserver' in window)){rvs.forEach(function(e){e.classList.add('on');});}
+  else{
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    rvs.forEach(function(e){io.observe(e);});
+    setTimeout(function(){rvs.forEach(function(e){e.classList.add('on');});},1600);
   }
 })();
 </script>
-<script>
-/* reveal */
-(function(){
-  var els = [].slice.call(document.querySelectorAll('.rv'));
-  if (!('IntersectionObserver' in window) || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)){
-    els.forEach(function(e){ e.classList.add('on'); });
-    return;
-  }
-  var io = new IntersectionObserver(function(en){
-    en.forEach(function(x){ if (x.isIntersecting){ x.target.classList.add('on'); io.unobserve(x.target); } });
-  }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
-  els.forEach(function(e){ io.observe(e); });
-  setTimeout(function(){ els.forEach(function(e){ e.classList.add('on'); }); }, 2400);
-})();
-</script>
-<script>
-/* quote form */
-(function(){
-  var EP = 'https://grocery-periodically-everyone-wine.trycloudflare.com';
-  function base(cb){
-    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
-    var done = false;
-    var t = setTimeout(function(){ if(!done){ done = true; cb(EP); } }, 2200);
-    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
-      .then(function(r){ return r.text(); })
-      .then(function(txt){
-        if (done) return; done = true; clearTimeout(t);
-        var b = (txt || '').trim().replace(/\/+$/, '');
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : EP);
-      })
-      .catch(function(){ if(!done){ done = true; clearTimeout(t); cb(EP); } });
-  }
-  var f = document.getElementById('quote-form');
-  if (!f) return;
-  var st = document.getElementById('form-status');
-  var btn = f.querySelector('button[type=submit]');
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    var d = {};
-    new FormData(f).forEach(function(v,k){ d[k] = v; });
-    if (d.website) return;
-    if (!d.name || (!d.phone && !d.email) || !(d.message || '').trim()){
-      st.className = 'form-status err';
-      st.textContent = 'Add a name, a phone or email, and a line about the job.';
-      return;
-    }
-    btn.disabled = true;
-    st.className = 'form-status';
-    st.textContent = 'Sending…';
-    base(function(B){
-      fetch(B + '/functions/v1/quote-request', {
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({
-          site_id: f.dataset.site || '',
-          business_name: f.dataset.biz || '',
-          name: d.name, phone: d.phone, email: d.email,
-          service: d.service || '', message: d.message,
-          consent: !!d.consent
-        })
-      })
-      .then(function(r){ return r.json().catch(function(){ return {}; }); })
-      .then(function(x){
-        if (!x || !x.success) throw new Error((x && x.error) || 'Could not send');
-        f.reset();
-        st.className = 'form-status';
-        st.textContent = 'In. The operator will come back with a price.';
-      })
-      .catch(function(err){
-        st.className = 'form-status err';
-        st.textContent = (err && err.message) ? err.message : 'Could not send. Ring 0488 907 100.';
-      })
-      .finally(function(){ btn.disabled = false; });
-    });
-  });
-})();
-</script>
-<script src="https://laydback-hq.tail5b3740.ts.net:8443/pulse/js" data-project="scorpion-earthmoving" defer></script>
 </body>
 </html>
