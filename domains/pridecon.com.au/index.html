@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pridecon Concrete — Driveways, exposed aggregate &amp; slabs. Central Coast &amp; Newcastle</title>
+<meta name="description" content="Licensed concreting across the Central Coast &amp; Newcastle — driveways, exposed aggregate and pathways. Call 0411 150 045 or email Prideconcreting@gmail.com.">
+<meta property="og:title" content="Pridecon Concrete — Central Coast &amp; Newcastle">
+<meta property="og:description" content="Driveways, exposed aggregate and pathways. Licensed &amp; insured. Firm quotes.">
+<meta property="og:image" content="images/logo-new.png">
+<link rel="icon" href="images/favicon.png">
+<style>
+:root {
+  --paper: #F3EADB;
+  --paper2: #EAE0CC;
+  --ink: #252528;
+  --ink2: #5d5a52;
+  --acc: #2A488A;
+  --acc2: #3E5C9E;
+  --line: rgba(37,37,40,.16);
+  --chip: #EAE0CC;
+  --fluid: clamp(44px, 9vw, 118px);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; }
+body {
+  font-family: "Archivo", "Inter", -apple-system, "Segoe UI", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.mono { font-family: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace; }
+a { color: inherit; }
+::selection { background: var(--acc); color: #F3EADB; }
+
+/* progress bar */
+.sa-progress { position: fixed; top: 0; left: 0; height: 4px; width: 100%; z-index: 99; transform-origin: 0 50%; transform: scaleX(0); background: var(--acc); }
+
+/* nav — minimal editorial */
+.nav { position: sticky; top: 0; z-index: 50; background: rgba(243,234,219,.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.nav .wrap { max-width: 1360px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; gap: 28px; }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.brand img { height: 64px; object-fit: contain; }
+.brand .b-txt { line-height: 1.1; }
+.brand .b-name { font-weight: 900; font-size: 22px; letter-spacing: .05em; line-height: 1; }
+.brand .b-sub { font-size: 11px; letter-spacing: .18em; color: var(--acc); text-transform: uppercase; font-weight: 800; }
+.nav-links { display: flex; gap: 26px; margin-left: auto; }
+.nav-links a { text-decoration: none; font-size: 13.5px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ink2); transition: color .15s; }
+.nav-links a:hover { color: var(--acc); }
+.nav-cta { white-space: nowrap; }
+.btn { display: inline-block; padding: 14px 28px; font-size: 13.5px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; border-radius: 999px; transition: transform .12s, background .15s, color .15s; }
+.btn-acc { background: var(--acc); color: #F3EADB; }
+.btn-acc:hover { background: var(--acc2); transform: translateY(-2px); }
+.btn-ghost { border: 1.5px solid var(--ink); color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+.btn-sm { padding: 10px 20px; font-size: 12.5px; }
+@media (max-width: 980px) { .nav-links { display: none; } .nav .wrap { justify-content: space-between; } }
+
+/* hero — massive editorial type over full-bleed photo strip */
+.hero { padding: 0 0 0; }
+.hero .wrap { max-width: 1360px; margin: 0 auto; padding: 90px 40px 40px; }
+.hero .kick { display: flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--acc); margin-bottom: 26px; }
+.hero .kick::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+h1 { font-size: var(--fluid); line-height: .96; font-weight: 900; letter-spacing: -.03em; text-transform: uppercase; }
+h1 .thin { font-weight: 300; letter-spacing: -.01em; display: block; font-size: calc(var(--fluid) * .44); text-transform: none; color: var(--ink2); margin-top: 10px; }
+h1 .acc { color: var(--acc); }
+.hero-sub { display: flex; gap: 40px; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; margin-top: 44px; }
+.hero-sub p { max-width: 460px; font-size: 17.5px; color: var(--ink2); }
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-photo { max-width: 1360px; margin: 0 auto; padding: 0 40px; }
+.hero-photo .ph { position: relative; }
+.hero-photo img { width: 100%; height: min(56vh, 560px); object-fit: cover; object-position: center 40%; display: block; }
+.hero-photo .tag { position: absolute; top: 18px; left: 18px; background: var(--paper); color: var(--ink); padding: 6px 14px; font-size: 11px; font-weight: 700; letter-spacing: .14em; }
+.hero-photo .cap { position: absolute; right: 24px; bottom: 20px; color: #fff; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+
+/* marquee band */
+.sa-marquee { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper2); -webkit-mask-image: none; mask-image: none; }
+.mq-track { display: inline-flex; white-space: nowrap; animation: saMq 38s linear infinite; }
+.mq-item { display: inline-block; padding: 18px 34px; font-size: 15px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); border-right: 1px solid var(--line); }
+.mq-item:nth-child(even) { color: var(--acc); }
+@keyframes saMq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .mq-track { animation: none; } }
+
+/* sections */
+section { padding: 110px 0; }
+.wrap { max-width: 1360px; margin: 0 auto; padding: 0 40px; }
+.sec-head { display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: end; margin-bottom: 70px; }
+.sec-idx { font-size: clamp(70px, 9vw, 130px); font-weight: 900; line-height: .8; color: transparent; -webkit-text-stroke: 1.5px var(--acc); letter-spacing: -.02em; }
+.sec-head h2 { font-size: clamp(34px, 4.4vw, 58px); line-height: 1.02; font-weight: 900; letter-spacing: -.02em; text-transform: uppercase; max-width: 700px; }
+.sec-head .lead { margin-top: 18px; color: var(--ink2); font-size: 16.5px; max-width: 560px; }
+
+/* services — numbered editorial rows */
+.svc-row { display: grid; grid-template-columns: 110px 1fr auto; gap: 30px; align-items: center; padding: 34px 10px; border-top: 1px solid var(--line); transition: background .18s, padding .18s; }
+.svc-row:last-child { border-bottom: 1px solid var(--line); }
+.svc-row:hover { background: var(--paper2); padding-left: 26px; }
+.svc-n { font-size: 15px; font-weight: 800; color: var(--acc); letter-spacing: .08em; }
+.svc-row h3 { font-size: clamp(22px, 2.6vw, 34px); font-weight: 900; letter-spacing: -.01em; text-transform: uppercase; margin-bottom: 6px; }
+.svc-row p { color: var(--ink2); font-size: 15.5px; max-width: 620px; }
+.svc-arrow { font-size: 26px; color: var(--acc); opacity: .5; transition: opacity .18s, transform .18s; }
+.svc-row:hover .svc-arrow { opacity: 1; transform: translate(4px, -4px); }
+
+/* full-bleed statement band */
+.statement { background: var(--ink); color: var(--paper); }
+.statement .wrap { display: grid; grid-template-columns: 1.2fr .8fr; gap: 60px; align-items: center; }
+.statement h2 { font-size: clamp(34px, 4.6vw, 62px); line-height: 1.0; font-weight: 900; letter-spacing: -.02em; text-transform: uppercase; }
+.statement h2 .acc { color: var(--acc2); }
+.statement p { color: #b9b2a2; font-size: 16.5px; max-width: 460px; }
+.sub-pts { margin-top: 30px; display: grid; gap: 16px; }
+.sub-pt { display: flex; gap: 16px; align-items: flex-start; }
+.sub-pt .tick { flex: none; width: 30px; height: 30px; display: grid; place-items: center; border: 1.5px solid var(--acc2); color: var(--acc2); font-size: 14px; border-radius: 50%; margin-top: 2px; }
+.sub-pt b { display: block; font-size: 16px; }
+.sub-pt span { color: #b9b2a2; font-size: 14.5px; }
+.statement .btn-row { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; }
+.statement .btn-ghost { border-color: #b9b2a2; color: var(--paper); }
+.statement .btn-ghost:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+
+/* horizontal work gallery */
+.hgal { overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; cursor: grab; }
+.hgal.dragging { cursor: grabbing; }
+.hgal-nav { display: flex; gap: 10px; justify-content: flex-end; padding: 0 40px 8px; }
+.hgal-btn { width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); font-size: 20px; cursor: pointer; transition: background .15s, color .15s, transform .12s; display: grid; place-items: center; }
+.hgal-btn:hover { background: var(--acc); color: #F3EADB; border-color: var(--acc); transform: translateY(-2px); }
+.hgal::-webkit-scrollbar { display: none; }
+.hgal .track { display: flex; gap: 22px; width: max-content; padding: 0 40px 26px; }
+.hg-item { position: relative; flex: none; width: min(520px, 78vw); }
+.hg-item img { width: 100%; height: 380px; object-fit: cover; display: block; filter: saturate(.95); transition: filter .3s; }
+.hg-item:hover img { filter: saturate(1.08); }
+.hg-item figcaption { display: flex; justify-content: space-between; align-items: center; padding: 12px 4px 0; font-size: 13.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.hg-item figcaption .mono { color: var(--acc); font-size: 11px; }
+
+/* process — split sticky */
+.process .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: start; }
+.process .sticky { position: sticky; top: 110px; }
+.step { display: grid; grid-template-columns: 74px 1fr; gap: 22px; padding: 30px 0; border-top: 1px solid var(--line); }
+.step-n { font-size: clamp(34px, 3.6vw, 52px); font-weight: 900; color: transparent; -webkit-text-stroke: 1.5px var(--acc); line-height: 1; }
+.step h3 { font-size: 20px; font-weight: 900; text-transform: uppercase; letter-spacing: .01em; margin-bottom: 6px; }
+.step p { color: var(--ink2); font-size: 15.5px; }
+
+/* quote — sticky side panel (Apple pattern) */
+.quote { background: var(--paper2); border-top: 1px solid var(--line); }
+.quote .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: start; }
+.quote .side { position: sticky; top: 110px; }
+.quote .side h2 { font-size: clamp(32px, 3.8vw, 50px); line-height: 1.02; font-weight: 900; letter-spacing: -.02em; text-transform: uppercase; }
+.q-lines { margin-top: 30px; display: grid; gap: 4px; }
+.q-line { padding: 16px 0; border-top: 1px solid var(--line); }
+.q-line b { display: block; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--acc); margin-bottom: 4px; }
+.q-line a { font-size: 19px; font-weight: 800; text-decoration: none; }
+.q-line a:hover { color: var(--acc); }
+.q-line span { display: block; color: var(--ink2); font-size: 13px; margin-top: 2px; }
+.form-card { background: var(--paper); border: 1.5px solid var(--ink); padding: 40px 38px; }
+.f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.f-group { margin-bottom: 18px; }
+.f-group label { display: block; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--acc); font-weight: 800; margin-bottom: 8px; }
+.f-group input, .f-group select, .f-group textarea { width: 100%; background: transparent; border: none; border-bottom: 1.5px solid var(--line); color: var(--ink); padding: 10px 2px; font-size: 15.5px; font-family: inherit; transition: border-color .15s; }
+.f-group input:focus, .f-group select:focus, .f-group textarea:focus { outline: none; border-color: var(--acc); }
+.f-group textarea { min-height: 100px; resize: vertical; }
+.f-note { font-size: 12.5px; color: var(--ink2); margin-top: 12px; }
+.f-submit { width: 100%; margin-top: 8px; padding: 17px; font-size: 14px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; background: var(--acc); color: #F3EADB; border: none; border-radius: 999px; cursor: pointer; transition: background .15s, transform .12s; }
+.f-submit:hover { background: var(--acc2); transform: translateY(-2px); }
+
+/* faq */
+.faq-wrap { max-width: 860px; margin: 0 auto; }
+.faq { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; list-style: none; padding: 24px 0; font-weight: 800; font-size: 18px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-size: 26px; color: var(--acc); font-weight: 300; }
+.faq[open] summary::after { content: "\2013"; }
+.faq .a { padding: 0 0 24px; color: var(--ink2); font-size: 15.5px; max-width: 700px; }
+
+/* cta band */
+.cta-band { background: var(--acc); color: #F3EADB; }
+.cta-band .wrap { display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; }
+.cta-band h2 { font-size: clamp(36px, 5vw, 66px); font-weight: 900; letter-spacing: -.02em; text-transform: uppercase; line-height: .98; }
+.cta-band .btn-ghost { border-color: #F3EADB; color: #F3EADB; }
+.cta-band .btn-ghost:hover { background: #F3EADB; color: var(--acc); }
+
+/* footer */
+footer { padding: 70px 0 0; }
+footer .wrap { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; padding-bottom: 50px; }
+footer .f-brand { display: flex; align-items: center; gap: 14px; }
+footer .f-brand img { height: 58px; object-fit: contain; }
+footer .f-brand .b-name { font-weight: 900; font-size: 19px; text-transform: uppercase; letter-spacing: .05em; }
+footer h4 { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--acc); margin-bottom: 16px; font-weight: 800; }
+footer a { color: var(--ink2); text-decoration: none; font-size: 14px; display: block; padding: 3px 0; }
+footer a:hover { color: var(--acc); }
+.footer-bar { border-top: 1px solid var(--line); padding: 20px 40px; max-width: 1360px; margin: 0 auto; display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--ink2); }
+.footer-bar a { display: inline; color: var(--acc); font-weight: 700; }
+
+/* reveal — continuous scroll (Buyckveth law: never a dead scroll) */
+html.js .rv { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
+html.js .rv.in { opacity: 1; transform: none; }
+html.js .rv.d1 { transition-delay: .08s; } html.js .rv.d2 { transition-delay: .16s; } html.js .rv.d3 { transition-delay: .24s; }
+@media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+
+@media (max-width: 1020px) {
+  .statement .wrap, .process .wrap, .quote .wrap { grid-template-columns: 1fr; gap: 44px; }
+  .process .sticky, .quote .side { position: static; }
+  .sec-head { grid-template-columns: 1fr; gap: 18px; }
+  .svc-row { grid-template-columns: 56px 1fr auto; gap: 16px; }
+}
+@media (max-width: 640px) {
+  .wrap, .hero .wrap, .hero-photo, .hgal .track { padding-left: 20px; padding-right: 20px; }
+  .nav .wrap { padding: 12px 20px; }
+  .nav-cta .btn-ghost { display: none; }
+  section { padding: 70px 0; }
+  .f-row { grid-template-columns: 1fr; }
+  .hero-sub { gap: 24px; }
+  .footer-bar { padding: 20px; }
+}
+
+/* brand plate: the mark is white-on-black, so it sits on its own background rather than
+   being boxed into a photo crop; the page bar stays cream */
+.brand{ display:flex; align-items:center; gap:0; text-decoration:none; }
+.f-brand .f-brand @media (max-width:700px){
+    }
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+  clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+
+/* brand mark: the client's artwork on the bar itself — no plate, no box */
+.brand{ display:flex; align-items:center; text-decoration:none; }
+.brand img{ height:64px; width:auto; max-width:min(230px,42vw); display:block; }
+.f-brand img{ height:42px; width:auto; display:block; }
+@media (max-width:900px){ .brand img{ height:54px; } }
+@media (max-width:520px){ .brand img{ height:50px; max-width:min(196px,56vw); } .f-brand img{ height:34px; } }
+</style>
+<link rel="canonical" href="https://pridecon.com.au/">
+<!-- LB-PRIDECON-SCHEMA -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://pridecon.com.au/#business", "name": "Pridecon Concrete", "legalName": "Pridecon Concrete Constructions Pty Ltd", "url": "https://pridecon.com.au/", "telephone": "+61411150045", "email": "Prideconcreting@gmail.com", "taxID": "50 666 436 497", "image": "https://pridecon.com.au/images/logo-dark.png", "areaServed": "Central Coast & Newcastle, NSW", "sameAs": ["https://www.instagram.com/pridecon_pty_ltd"], "address": {"@type": "PostalAddress", "addressRegion": "NSW", "addressCountry": "AU"}}</script>
+</head>
+<body id="top">
+<div class="sa-progress" id="sa-progress"></div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Pridecon Concrete — home">
+      <img src="images/logo-dark.png" alt="" width="800" height="315" decoding="async">
+      <span class="sr-only">Pridecon Concrete Constructions</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#builders">Builders</a>
+      <a href="#work">Work</a>
+      <a href="#areas">Areas</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:+61411150045" class="btn btn-ghost btn-sm">0411 150 045</a>
+      <a href="#quote" class="btn btn-acc btn-sm">Free quote</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kick">Concreting — Central Coast &amp; Newcastle NSW</div>
+    <h1>Concrete<br>poured with<br><span class="acc">pride.</span><span class="thin">Driveways &middot; Exposed aggregate &middot; Slabs</span></h1>
+    <div class="hero-sub">
+      <p class="rv d2">Licensed and insured concreting from the Coast to Newcastle. Proper prep, firm quotes, finishes that still look right in twenty years.</p>
+      <div class="hero-ctas rv d3">
+        <a href="#quote" class="btn btn-acc">Get a free quote</a>
+        <a href="tel:+61411150045" class="btn btn-ghost">Call 0411 150 045</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <div class="ph">
+      <span class="tag mono">FIG. 01 — RECENT WORK</span>
+      <img src="images/ig_02.jpg" alt="Pridecon Concrete recent work">
+      <span class="cap mono">Pridecon &middot; ABN 50 666 436 497</span>
+    </div>
+  </div>
+</header>
+
+<div class="sa-marquee" id="areas" aria-label="Service area">
+  <div class="mq-track"><span class="mq-item">Gosford</span><span class="mq-item">Terrigal</span><span class="mq-item">Erina</span><span class="mq-item">Wyong</span><span class="mq-item">Tuggerah</span><span class="mq-item">Warnervale</span><span class="mq-item">Lake Macquarie</span><span class="mq-item">Newcastle</span><span class="mq-item">Charlestown</span><span class="mq-item">Maitland</span><span class="mq-item">Ourimbah</span><span class="mq-item">The Entrance</span><span class="mq-item">Gosford</span><span class="mq-item">Terrigal</span><span class="mq-item">Erina</span><span class="mq-item">Wyong</span><span class="mq-item">Tuggerah</span><span class="mq-item">Warnervale</span><span class="mq-item">Lake Macquarie</span><span class="mq-item">Newcastle</span><span class="mq-item">Charlestown</span><span class="mq-item">Maitland</span><span class="mq-item">Ourimbah</span><span class="mq-item">The Entrance</span></div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-idx rv">01</div>
+      <div>
+        <h2 class="rv d1">What we pour.</h2>
+        <p class="lead rv d2">Set-out, formwork, reinforcement, pour and finish — one crew owns the whole job, so nothing gets lost between trades.</p>
+      </div>
+    </div>
+    <div class="svc-row rv"><span class="svc-n">01</span><div class="svc-body"><h3>Driveways</h3><p>Plain, coloured and exposed-aggregate driveways poured to grade — built for the cars, built for the street appeal.</p></div><span class="svc-arrow">&#8599;</span></div>
+      <div class="svc-row rv"><span class="svc-n">02</span><div class="svc-body"><h3>Exposed aggregate driveways</h3><p>Hard-wearing decorative finishes that hold their look for decades.</p></div><span class="svc-arrow">&#8599;</span></div>
+      <div class="svc-row rv"><span class="svc-n">03</span><div class="svc-body"><h3>Pathways & edging</h3><p>Clean, level paths and edging that tie the yard together.</p></div><span class="svc-arrow">&#8599;</span></div>
+      <div class="svc-row rv"><span class="svc-n">04</span><div class="svc-body"><h3>Repairs & replacements</h3><p>Cracked or dated concrete assessed, quoted and replaced properly.</p></div><span class="svc-arrow">&#8599;</span></div>
+  </div>
+</section>
+
+<section class="statement" id="builders">
+  <div class="wrap">
+    <div>
+      <h2 class="rv">The crew <span class="acc">builders book</span> before the frames go up.</h2>
+      <p class="rv d1" style="margin-top:22px;">Pridecon subcontracts directly to builders and construction companies across the Coast and Newcastle — your program, our crew, no handballing.</p>
+      <div class="btn-row rv d2">
+        <a href="#quote" class="btn btn-acc">Request a subcontract quote</a>
+        <a href="mailto:Prideconcreting@gmail.com" class="btn btn-ghost">Email us</a>
+      </div>
+    </div>
+    <div class="sub-pts">
+      <div class="sub-pt rv"><div class="tick">&#10003;</div><div><b>Builder partnerships</b><span>Driveway and pathway packages slotted into your program — job after job.</span></div></div>
+      <div class="sub-pt rv d1"><div class="tick">&#10003;</div><div><b>Construction companies</b><span>Driveway packages, civil concrete and stage works priced per project or per stage.</span></div></div>
+      <div class="sub-pt rv d2"><div class="tick">&#10003;</div><div><b>On your schedule</b><span>We pour when the program says — and we turn up when we say we will.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-idx rv">02</div>
+      <div>
+        <h2 class="rv d1">Real pours. No stock photos.</h2>
+        <p class="lead rv d2">Straight from the Pridecon feed — actual driveways and exposed aggregate, every one ours.</p>
+      </div>
+    </div>
+  </div>
+  <div class="hgal rv">
+    <div class="track">
+      <figure class="hg-item rv"><img src="images/ig_01.jpg" alt="Recent works — Pridecon Concrete" loading="lazy"><figcaption><span>Recent works</span><span class="mono">/01</span></figcaption></figure>
+      <figure class="hg-item rv"><img src="images/ig_02.jpg" alt="Recent works — Pridecon Concrete" loading="lazy"><figcaption><span>Recent works</span><span class="mono">/02</span></figcaption></figure>
+      <figure class="hg-item rv"><img src="images/ig_03.jpg" alt="Recent works — Pridecon Concrete" loading="lazy"><figcaption><span>Recent works</span><span class="mono">/03</span></figcaption></figure>
+      <figure class="hg-item rv"><img src="images/ig_04.jpg" alt="Recent works — Pridecon Concrete" loading="lazy"><figcaption><span>Recent works</span><span class="mono">/04</span></figcaption></figure>
+      <figure class="hg-item rv"><img src="images/ig_05.jpg" alt="Recent works — Pridecon Concrete" loading="lazy"><figcaption><span>Recent works</span><span class="mono">/05</span></figcaption></figure>
+      <figure class="hg-item rv"><img src="images/ig_06.jpg" alt="Recent works — Pridecon Concrete" loading="lazy"><figcaption><span>Recent works</span><span class="mono">/06</span></figcaption></figure>
+      <figure class="hg-item rv"><img src="images/ig_07.jpg" alt="Recent works — Pridecon Concrete" loading="lazy"><figcaption><span>Recent works</span><span class="mono">/07</span></figcaption></figure>
+      <figure class="hg-item rv"><img src="images/ig_08.jpg" alt="Recent works — Pridecon Concrete" loading="lazy"><figcaption><span>Recent works</span><span class="mono">/08</span></figcaption></figure>
+      <figure class="hg-item rv"><img src="images/ig_09.jpg" alt="Recent works — Pridecon Concrete" loading="lazy"><figcaption><span>Recent works</span><span class="mono">/09</span></figcaption></figure>
+      <figure class="hg-item rv"><img src="images/ig_10.jpg" alt="Recent works — Pridecon Concrete" loading="lazy"><figcaption><span>Recent works</span><span class="mono">/10</span></figcaption></figure>
+      <figure class="hg-item rv"><img src="images/ig_11.jpg" alt="Recent works — Pridecon Concrete" loading="lazy"><figcaption><span>Recent works</span><span class="mono">/11</span></figcaption></figure>
+      <figure class="hg-item rv"><img src="images/ig_12.jpg" alt="Recent works — Pridecon Concrete" loading="lazy"><figcaption><span>Recent works</span><span class="mono">/12</span></figcaption></figure>
+    </div>
+  </div>
+  <div class="hgal-nav">
+    <button class="hgal-btn" id="hgPrev" aria-label="Previous photos">&#8592;</button>
+    <button class="hgal-btn" id="hgNext" aria-label="Next photos">&#8594;</button>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sticky">
+      <div class="sec-head" style="margin-bottom:30px;">
+        <div class="sec-idx rv">03</div>
+        <div>
+          <h2 class="rv d1">How a pour runs.</h2>
+          <p class="lead rv d2">Four steps, zero surprises.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="step rv"><span class="step-n">01</span><div><h3>Tell us the job</h3><p>Size, finish, timing — photos help. We reply fast.</p></div></div>
+      <div class="step rv"><span class="step-n">02</span><div><h3>Firm quote</h3><p>Measured, priced, written down. Before anything is poured.</p></div></div>
+      <div class="step rv"><span class="step-n">03</span><div><h3>Prep & pour</h3><p>Base prep, reinforcement, clean formwork — the part that makes concrete last.</p></div></div>
+      <div class="step rv"><span class="step-n">04</span><div><h3>Finish & cure</h3><p>Finished to spec, cured on schedule, site left clean.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="wrap">
+    <div class="side">
+      <h2 class="rv">Get a firm price for your pour.</h2>
+      <div class="q-lines">
+        <div class="q-line rv d1"><b>Phone</b><a href="tel:+61411150045">0411 150 045</a><span>Mon&ndash;Sat, site hours</span></div>
+        <div class="q-line rv d2"><b>Email</b><a href="mailto:Prideconcreting@gmail.com">Prideconcreting@gmail.com</a><span>Quotes &amp; enquiries</span></div>
+        <div class="q-line rv d3"><b>Area</b><span style="font-size:19px;font-weight:800;">Central Coast &amp; Newcastle, NSW</span><span>Region-wide mobilisation</span></div>
+      </div>
+    </div>
+    <form class="form-card rv d1" id="quoteForm" action="mailto:Prideconcreting@gmail.com" method="post" enctype="text/plain" onsubmit="return buildMailto(this);">
+      <div class="f-row">
+        <div class="f-group"><label for="q_name">Your name</label><input id="q_name" name="name" type="text" required placeholder="Dave Smith"></div>
+        <div class="f-group"><label for="q_phone">Phone</label><input id="q_phone" name="phone" type="tel" required placeholder="04xx xxx xxx"></div>
+      </div>
+      <div class="f-row">
+        <div class="f-group"><label for="q_email">Email</label><input id="q_email" name="email" type="email" required placeholder="you@email.com"></div>
+        <div class="f-group"><label for="q_suburb">Suburb</label><input id="q_suburb" name="suburb" type="text" required placeholder="Terrigal"></div>
+      </div>
+      <div class="f-row">
+        <div class="f-group"><label for="q_type">Job type</label>
+          <select id="q_type" name="job_type" required>
+            <option value="">Select&hellip;</option>
+            <option>Driveway</option>
+            <option>Exposed aggregate driveway</option>
+            <option>Pathway / edging</option>
+            <option>Concrete repair / replacement</option>
+            <option>Subcontract &mdash; builder / construction</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="f-group"><label for="q_when">Ideal start</label>
+          <select id="q_when" name="timing">
+            <option value="">Select&hellip;</option>
+            <option>ASAP</option>
+            <option>Within 2 weeks</option>
+            <option>Within a month</option>
+            <option>Just planning</option>
+          </select>
+        </div>
+      </div>
+      <div class="f-group"><label for="q_details">Job details</label><textarea id="q_details" name="details" required placeholder="Approx size (m&sup2;), access, finish you&rsquo;re after, timing&hellip;"></textarea></div>
+      <button class="f-submit" type="submit">Send my quote request</button>
+      <p class="f-note">Opens your email app with everything filled in, addressed to Prideconcreting@gmail.com. We reply with a firm price &mdash; no obligation.</p>
+    </form>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq-wrap">
+    <div class="sec-head">
+      <div class="sec-idx rv">04</div>
+      <div>
+        <h2 class="rv d1">Asked on every job.</h2>
+      </div>
+    </div>
+    <details class="faq rv"><summary>How much does a concrete driveway cost?</summary><div class="a">It depends on size, access and finish — exposed aggregate typically runs $65–$100+ per m². Pridecon quotes firm prices after a site measure, so there are no surprises.</div></details>
+    <details class="faq rv"><summary>Do you do exposed aggregate?</summary><div class="a">Yes — it’s one of our specialties. Every photo in the gallery is a real Pridecon pour.</div></details>
+    <details class="faq rv"><summary>Are you licensed and insured?</summary><div class="a">Yes — Pridecon Concrete Constructions Pty Ltd (ABN 50 666 436 497) is licensed and fully insured.</div></details>
+    <details class="faq rv"><summary>Which areas do you cover?</summary><div class="a">The Central Coast through to Newcastle — if you’re on the marquee below or near it, we can get a crew to you.</div></details>
+    <details class="faq rv"><summary>How long before I can drive on new concrete?</summary><div class="a">About 7 days for cars, longer for heavy vehicles. Every pour comes with a cure schedule.</div></details>
+    <details class="faq rv"><summary>Do you work for builders?</summary><div class="a">Yes — slabs and structural pours for builders and construction companies, quoted per stage or per project.</div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2 class="rv">Ready<br>to pour?</h2>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;" class="rv d1">
+      <a href="tel:+61411150045" class="btn btn-ghost">Call 0411 150 045</a>
+      <a href="mailto:Prideconcreting@gmail.com" class="btn btn-ghost">Email Prideconcreting@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="f-brand"><img src="images/logo-dark.png" alt="" width="800" height="315" loading="lazy" decoding="async"><span class="sr-only">Pridecon Concrete Constructions</span></div>
+      <p style="margin-top:16px;font-size:13.5px;max-width:300px;color:var(--ink2);">Driveways &middot; Exposed aggregate &middot; Slabs — Central Coast &amp; Newcastle, NSW.<br>ABN 50 666 436 497</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="#services">Driveways</a>
+      <a href="#services">Exposed aggregate</a>
+      <a href="#services">Pathways &amp; edging</a>
+      <a href="#builders">For builders</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="#work">Recent work</a>
+      <a href="#process">How a pour runs</a>
+      <a href="#areas">Service area</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://www.instagram.com/pridecon_pty_ltd/" target="_blank" rel="noopener">Instagram @pridecon_pty_ltd</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="tel:+61411150045">0411 150 045</a>
+      <a href="mailto:Prideconcreting@gmail.com">Prideconcreting@gmail.com</a>
+      <a href="#quote">Free quote</a>
+    </div>
+  </div>
+  <div class="footer-bar mono">
+    <span>&copy; 2026 PRIDECON CONCRETE CONSTRUCTIONS PTY LTD &middot; ABN 50 666 436 497</span>
+    <a href="mailto:Prideconcreting@gmail.com">Prideconcreting@gmail.com</a>
+  </div>
+</footer>
+
+<script>document.documentElement.classList.add('js');</script>
+<script>
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: .1 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// horizontal gallery: arrows + drag + wheel
+const hg = document.querySelector('.hgal');
+if (hg) {
+  const step = () => Math.min(hg.clientWidth * 0.8, 600);
+  const prev = document.getElementById('hgPrev');
+  const next = document.getElementById('hgNext');
+  if (prev) prev.addEventListener('click', () => hg.scrollBy({ left: -step(), behavior: 'smooth' }));
+  if (next) next.addEventListener('click', () => hg.scrollBy({ left: step(), behavior: 'smooth' }));
+  let down = false, startX = 0, startL = 0, moved = false;
+  hg.addEventListener('pointerdown', (e) => { down = true; moved = false; startX = e.clientX; startL = hg.scrollLeft; hg.classList.add('dragging'); });
+  hg.addEventListener('pointermove', (e) => { if (!down) return; const dx = e.clientX - startX; if (Math.abs(dx) > 4) moved = true; hg.scrollLeft = startL - dx; });
+  hg.addEventListener('pointerup', () => { down = false; hg.classList.remove('dragging'); });
+  hg.addEventListener('click', (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
+  hg.addEventListener('wheel', (e) => {
+    const canScroll = hg.scrollWidth > hg.clientWidth + 4;
+    if (!canScroll) return;
+    const atStart = hg.scrollLeft <= 2;
+    const atEnd = hg.scrollLeft >= hg.scrollWidth - hg.clientWidth - 2;
+    const going = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+    if ((going > 0 && !atEnd) || (going < 0 && !atStart)) {
+      e.preventDefault();
+      hg.scrollLeft += going;
+    }
+  }, { passive: false });
+}
+
+const pb = document.getElementById('sa-progress');
+if (pb) {
+  const upd = () => {
+    const h = document.documentElement;
+    const p = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
+    pb.style.transform = 'scaleX(' + p + ')';
+  };
+  document.addEventListener('scroll', upd, { passive: true });
+  upd();
+}
+
+function buildMailto(form) {
+  const get = (id) => (document.getElementById(id) || {}).value || '';
+  const subject = 'Quote request — ' + get('q_type') + ' — ' + get('q_suburb');
+  const body =
+    'Name: ' + get('q_name') + '\n' +
+    'Phone: ' + get('q_phone') + '\n' +
+    'Email: ' + get('q_email') + '\n' +
+    'Suburb: ' + get('q_suburb') + '\n' +
+    'Job type: ' + get('q_type') + '\n' +
+    'Ideal start: ' + (get('q_when') || 'Not specified') + '\n\n' +
+    'Job details:\n' + get('q_details');
+  window.location.href = 'mailto:Prideconcreting@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  return false;
+}
+</script>
+</body>
+</html>
