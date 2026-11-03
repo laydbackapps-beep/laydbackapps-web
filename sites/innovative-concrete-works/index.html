@@ -169,6 +169,77 @@ footer li a:hover{color:var(--gold-lt)}
   .gal figure:hover img,.svc:hover{transform:none}
 }
 </style>
+<style id="lb-argon-standard">
+/* ==== LB ARGON EXCELLENCE PASS ==== */
+/* 1. Instant first-paint visibility: never leave any section or reveal element at opacity:0 */
+html.js .rv, html.js .rv.on, html.js .rv:not(.on),
+.rv, .rv.on, .rv-d0, .rv-d1, .rv-d2, .lb-rv, .lb-rv.is-in, .reveal, [data-reveal], [data-rv],
+section, header, main, footer, .hero, .hero-in, .hero__in, .hero-copy, .hero__copy, .hero-grid {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  transition: none !important;
+}
+/* 2. Header Brand Lockup Law: logo artwork only, hide any typed name or drawn monogram in bar */
+a.brand-monogram, .brand-monogram,
+header .lb-brand__name, header .lb-brand__word, header .lb-brand__sub, header .lb-brand__rule,
+header .brand-name, header .brand__name, header .bname, header .brand-txt,
+nav .lb-brand__name, nav .lb-brand__word, nav .brand-name, nav .brand__name, nav .bname, nav .nav-b,
+.site-header .lb-brand__name, .site-header .brand-name, .site-header .bname {
+  display: none !important;
+}
+/* 3. Mobile 390px overflow & crushed H1 protection */
+html, body {
+  overflow-x: clip !important;
+  max-width: 100% !important;
+}
+@media (max-width: 860px) {
+  header, nav, .hdr-in, .nav-in, .header-inner, .bar, .bar__in, .wrap {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+  header img, nav img, .brand img, .lb-brand img, .brand__word, img.word, .lb-word {
+    max-width: min(52vw, 200px) !important;
+    height: auto !important;
+  }
+  .stack, .plate, .card, .hero, .hero-in, .hero__in, .hero-grid, .hero-copy, .hero__copy {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  header.hero, .hero, .hero-in, .hero__in, .hero-grid, .wrap.hero__in {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-copy, .hero__copy, [class*="hero-copy"], [class*="hero__copy"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+  .hero h1, [class*="hero"] h1, h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word !important;
+  }
+  .sjn-ticker, .asap-ticker, .tt-ticker, .lb-mq {
+    max-width: 100vw !important;
+    overflow: hidden !important;
+  }
+}
+/* 4. Anti-slop typography & polish */
+:root {
+  --lb-disp: "Archivo", system-ui, -apple-system, sans-serif !important;
+  --lb-sub: "Archivo", system-ui, -apple-system, sans-serif !important;
+}
+body, h1, h2, h3, h4, h5, h6, p, li, a, button, input, select, textarea {
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif !important;
+}
+small, .small, .meta, .caption, .eyebrow, .kicker, .mono {
+  font-size: max(0.82em, 12px) !important;
+}
+p, li {
+  line-height: 1.55 !important;
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -212,10 +283,10 @@ footer li a:hover{color:var(--gold-lt)}
     </div>
 </section>
     <div class="hero__strip rv">
-      <figure><img src="assets/borrow-slab.jpg" alt="A freshly poured concrete slab finished with a plain broom surface" width="1280" height="853" loading="lazy" decoding="async"><figcaption>Plain &amp; broom</figcaption></figure>
-      <figure><img src="assets/borrow-stamped.jpg" alt="A poured concrete slab carrying a textured decorative pattern" width="1280" height="853" loading="lazy" decoding="async"><figcaption>Decorative</figcaption></figure>
-      <figure><img src="assets/borrow-aggregate.jpg" alt="A concrete surface with exposed aggregate stone showing through" width="1280" height="853" loading="lazy" decoding="async"><figcaption>Exposed aggregate</figcaption></figure>
-      <figure><img src="assets/borrow-driveway.jpg" alt="A pale exposed-aggregate concrete driveway edged with barrier tape" width="2048" height="1536" loading="lazy" decoding="async"><figcaption>Aggregate driveway</figcaption></figure>
+      <figure><img src="assets/borrow-slab.jpg" alt="A freshly poured concrete slab finished with a plain broom surface" width="1280" height="853" loading="eager" decoding="async"><figcaption>Plain &amp; broom</figcaption></figure>
+      <figure><img src="assets/borrow-stamped.jpg" alt="A poured concrete slab carrying a textured decorative pattern" width="1280" height="853" loading="eager" decoding="async"><figcaption>Decorative</figcaption></figure>
+      <figure><img src="assets/borrow-aggregate.jpg" alt="A concrete surface with exposed aggregate stone showing through" width="1280" height="853" loading="eager" decoding="async"><figcaption>Exposed aggregate</figcaption></figure>
+      <figure><img src="assets/borrow-driveway.jpg" alt="A pale exposed-aggregate concrete driveway edged with barrier tape" width="2048" height="1536" loading="eager" decoding="async"><figcaption>Aggregate driveway</figcaption></figure>
     </div>
 
   <section id="services">
@@ -282,12 +353,12 @@ footer li a:hover{color:var(--gold-lt)}
         <p>Slabs, driveways, aggregate and decorative finishes — the jobs that keep this trade busy.</p>
       </div>
       <div class="gal">
-        <figure class="rv"><img src="assets/borrow-e1.jpg" alt="A pebble-dashed concrete driveway leading to a white house with a garage" width="2048" height="1536" loading="lazy" decoding="async"><figcaption>Aggregate driveway beside a brick home.<em>A job like this</em></figcaption></figure>
-        <figure class="rv"><img src="assets/borrow-e3.jpg" alt="A pebble-finished concrete driveway in front of a modern house with a white garage door" width="2048" height="1536" loading="lazy" decoding="async"><figcaption>Pebble-finished driveway.<em>A job like this</em></figcaption></figure>
-        <figure class="rv"><img src="assets/borrow-e5.jpg" alt="A completed concrete driveway slab with fresh barrier tape beside a white house" width="2048" height="1536" loading="lazy" decoding="async"><figcaption>A driveway slab finished and curing.<em>A job like this</em></figcaption></figure>
-        <figure class="rv"><img src="assets/borrow-pool.jpg" alt="A worker running a hand tool across an exposed-aggregate concrete surface in a backyard" width="1280" height="853" loading="lazy" decoding="async"><figcaption>Working an exposed-aggregate backyard.<em>A job like this</em></figcaption></figure>
-        <figure class="rv"><img src="assets/borrow-slab2.jpg" alt="A large freshly poured concrete slab with a broom finish curing beside a house" width="1280" height="960" loading="lazy" decoding="async"><figcaption>A house slab, poured and floated.<em>A job like this</em></figcaption></figure>
-        <figure class="rv"><img src="assets/borrow-chdrive.jpg" alt="A concrete driveway and path leading to a modern brick house behind a white metal fence" width="1280" height="853" loading="lazy" decoding="async"><figcaption>A driveway and path finished to the house.<em>A job like this</em></figcaption></figure>
+        <figure class="rv"><img src="assets/borrow-e1.jpg" alt="A pebble-dashed concrete driveway leading to a white house with a garage" width="2048" height="1536" loading="eager" decoding="async"><figcaption>Aggregate driveway beside a brick home.<em>A job like this</em></figcaption></figure>
+        <figure class="rv"><img src="assets/borrow-e3.jpg" alt="A pebble-finished concrete driveway in front of a modern house with a white garage door" width="2048" height="1536" loading="eager" decoding="async"><figcaption>Pebble-finished driveway.<em>A job like this</em></figcaption></figure>
+        <figure class="rv"><img src="assets/borrow-e5.jpg" alt="A completed concrete driveway slab with fresh barrier tape beside a white house" width="2048" height="1536" loading="eager" decoding="async"><figcaption>A driveway slab finished and curing.<em>A job like this</em></figcaption></figure>
+        <figure class="rv"><img src="assets/borrow-pool.jpg" alt="A worker running a hand tool across an exposed-aggregate concrete surface in a backyard" width="1280" height="853" loading="eager" decoding="async"><figcaption>Working an exposed-aggregate backyard.<em>A job like this</em></figcaption></figure>
+        <figure class="rv"><img src="assets/borrow-slab2.jpg" alt="A large freshly poured concrete slab with a broom finish curing beside a house" width="1280" height="960" loading="eager" decoding="async"><figcaption>A house slab, poured and floated.<em>A job like this</em></figcaption></figure>
+        <figure class="rv"><img src="assets/borrow-chdrive.jpg" alt="A concrete driveway and path leading to a modern brick house behind a white metal fence" width="1280" height="853" loading="eager" decoding="async"><figcaption>A driveway and path finished to the house.<em>A job like this</em></figcaption></figure>
       </div>
       <p class="note">Innovative Concrete Works' own photos are held on their Facebook page rather than handed to us as files, so the images in this gallery are representative concreting work captioned honestly as &ldquo;a job like this&rdquo;. Send us your own photos and they go straight in.</p>
     </div>
@@ -379,16 +450,16 @@ footer li a:hover{color:var(--gold-lt)}
   function base(cb){
     if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
     var done = false;
-    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://laydback-hq.tail5b3740.ts.net');} }, 2500);
     fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
       .then(function(r){ return r.text(); })
       .then(function(txt){
         var b = (txt||'').trim().replace(/\/+$/, '');
         if (done) return;
         done = true; clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://laydback-hq.tail5b3740.ts.net');
       })
-      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://laydback-hq.tail5b3740.ts.net');} });
   }
   function init(){
     var f = document.getElementById('lbq-form');
@@ -409,7 +480,7 @@ footer li a:hover{color:var(--gold-lt)}
       st.textContent = 'Sending\u2026';
       st.style.color = '';
       base(function(B){
-        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        var url = (B === 'https://laydback-hq.tail5b3740.ts.net' ? 'https://laydback-hq.tail5b3740.ts.net' : B) + '/functions/v1/quote-request';
         fetch(url, {
           method:'POST',
           headers:{'Content-Type':'application/json'},

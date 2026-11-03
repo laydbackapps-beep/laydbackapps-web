@@ -173,6 +173,77 @@ html.js .drop.in{opacity:1;transform:none}
 #lbq .lbq-cons input{width:auto}
 #lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 </style>
+<style id="lb-argon-standard">
+/* ==== LB ARGON EXCELLENCE PASS ==== */
+/* 1. Instant first-paint visibility: never leave any section or reveal element at opacity:0 */
+html.js .rv, html.js .rv.on, html.js .rv:not(.on),
+.rv, .rv.on, .rv-d0, .rv-d1, .rv-d2, .lb-rv, .lb-rv.is-in, .reveal, [data-reveal], [data-rv],
+section, header, main, footer, .hero, .hero-in, .hero__in, .hero-copy, .hero__copy, .hero-grid {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  transition: none !important;
+}
+/* 2. Header Brand Lockup Law: logo artwork only, hide any typed name or drawn monogram in bar */
+a.brand-monogram, .brand-monogram,
+header .lb-brand__name, header .lb-brand__word, header .lb-brand__sub, header .lb-brand__rule,
+header .brand-name, header .brand__name, header .bname, header .brand-txt,
+nav .lb-brand__name, nav .lb-brand__word, nav .brand-name, nav .brand__name, nav .bname, nav .nav-b,
+.site-header .lb-brand__name, .site-header .brand-name, .site-header .bname {
+  display: none !important;
+}
+/* 3. Mobile 390px overflow & crushed H1 protection */
+html, body {
+  overflow-x: clip !important;
+  max-width: 100% !important;
+}
+@media (max-width: 860px) {
+  header, nav, .hdr-in, .nav-in, .header-inner, .bar, .bar__in, .wrap {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+  header img, nav img, .brand img, .lb-brand img, .brand__word, img.word, .lb-word {
+    max-width: min(52vw, 200px) !important;
+    height: auto !important;
+  }
+  .stack, .plate, .card, .hero, .hero-in, .hero__in, .hero-grid, .hero-copy, .hero__copy {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  header.hero, .hero, .hero-in, .hero__in, .hero-grid, .wrap.hero__in {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-copy, .hero__copy, [class*="hero-copy"], [class*="hero__copy"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+  .hero h1, [class*="hero"] h1, h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word !important;
+  }
+  .sjn-ticker, .asap-ticker, .tt-ticker, .lb-mq {
+    max-width: 100vw !important;
+    overflow: hidden !important;
+  }
+}
+/* 4. Anti-slop typography & polish */
+:root {
+  --lb-disp: "Archivo", system-ui, -apple-system, sans-serif !important;
+  --lb-sub: "Archivo", system-ui, -apple-system, sans-serif !important;
+}
+body, h1, h2, h3, h4, h5, h6, p, li, a, button, input, select, textarea {
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif !important;
+}
+small, .small, .meta, .caption, .eyebrow, .kicker, .mono {
+  font-size: max(0.82em, 12px) !important;
+}
+p, li {
+  line-height: 1.55 !important;
+}
+</style>
 </head>
 <body>
 <script>document.documentElement.className+=' js';</script>
@@ -200,7 +271,7 @@ html.js .drop.in{opacity:1;transform:none}
   </div>
 </header>
 
-<section id="work"><div class="wrap"><div class="sec-head"><span class="sec-idx">01 / WORK</span><div><h2 class="sec-title">Yards, walls &amp; lawns</h2><p class="lead">Retaining, paving and garden work &mdash; a job like this.</p></div></div></div><div class="hgal drop"><div class="track"><figure class="hg-item"><img src="assets/g1.jpg" alt="Timber retaining wall with lawn and gravel pad" loading="lazy"><figcaption><span>Timber retaining</span><span>/01</span></figcaption></figure><figure class="hg-item"><img src="assets/g2.jpg" alt="Block retaining wall, steps and garden beds" loading="lazy"><figcaption><span>Block wall &amp; steps</span><span>/02</span></figcaption></figure><figure class="hg-item"><img src="assets/g3.jpg" alt="Mulched bed and clipped hedge" loading="lazy"><figcaption><span>Beds &amp; hedging</span><span>/03</span></figcaption></figure></div></div></section>
+<section id="work"><div class="wrap"><div class="sec-head"><span class="sec-idx">01 / WORK</span><div><h2 class="sec-title">Yards, walls &amp; lawns</h2><p class="lead">Retaining, paving and garden work &mdash; a job like this.</p></div></div></div><div class="hgal drop"><div class="track"><figure class="hg-item"><img src="assets/g1.jpg" alt="Timber retaining wall with lawn and gravel pad" loading="eager"><figcaption><span>Timber retaining</span><span>/01</span></figcaption></figure><figure class="hg-item"><img src="assets/g2.jpg" alt="Block retaining wall, steps and garden beds" loading="eager"><figcaption><span>Block wall &amp; steps</span><span>/02</span></figcaption></figure><figure class="hg-item"><img src="assets/g3.jpg" alt="Mulched bed and clipped hedge" loading="eager"><figcaption><span>Beds &amp; hedging</span><span>/03</span></figcaption></figure></div></div></section>
 <section id="services"><div class="wrap"><div class="sec-head"><span class="sec-idx">02 / SERVICES</span><div><h2 class="sec-title">What we build in a yard</h2><p class="lead">Ground work first, then the finishes &mdash; the same crew from the first cut to the last plant.</p></div></div><div class="svc-grid"><div class="svc drop d1"><span class="svc-n">01</span><h3>Turf &amp; lawns</h3><p>Level, screened and laid so the lawn takes evenly instead of puddling.</p></div><div class="svc drop d2"><span class="svc-n">02</span><h3>Retaining walls</h3><p>Timber and block walls stepped to the fall of the block, drained behind.</p></div><div class="svc drop d3"><span class="svc-n">03</span><h3>Paving &amp; paths</h3><p>Paths and paved areas set on a proper base, cut in to the levels.</p></div><div class="svc drop d4"><span class="svc-n">04</span><h3>Garden construction</h3><p>Beds, edging, soil and mulch built to the planting plan.</p></div><div class="svc drop d5"><span class="svc-n">05</span><h3>Hedging &amp; pruning</h3><p>Hedges cut back to line and kept off paths and fences.</p></div><div class="svc drop d6"><span class="svc-n">06</span><h3>Clean-ups &amp; mulching</h3><p>Overgrowth cleared out and beds re-mulched.</p></div></div></div></section>
 <section class="band" id="process"><div class="wrap"><div class="sec-head"><span class="sec-idx">03 / PROCESS</span><div><h2 class="sec-title">Read the fall. Cut the levels. Build. Plant.</h2><p class="lead">A yard that works is set out before anything is built in it.</p></div></div><div class="steps"><div class="step drop d1"><span class="step-n">STEP 01</span><h3>Walk the block</h3><p>Fall, drainage and access worked out with you on site.</p></div><div class="step drop d2"><span class="step-n">STEP 02</span><h3>Set the levels</h3><p>Lines and heights set so water runs where it should.</p></div><div class="step drop d3"><span class="step-n">STEP 03</span><h3>Build the structure</h3><p>Walls, base and edging built and drained.</p></div><div class="step drop d4"><span class="step-n">STEP 04</span><h3>Turf &amp; plant</h3><p>Lawn laid and beds planted, then watered in and cleaned up.</p></div></div></div></section>
 <section id="trust"><div class="wrap"><div class="sec-head"><span class="sec-idx">04 / WHY US</span><div><h2 class="sec-title">How we work</h2></div></div><div class="trust-strip"><div class="tr-i drop d1"><div class="tr-t">&#10003;</div><div><b>Levels first</b><span>Water is planned before anything is built</span></div></div><div class="tr-i drop d2"><div class="tr-t">&#10003;</div><div><b>One crew</b><span>The same people quote it and build it</span></div></div><div class="tr-i drop d3"><div class="tr-t">&#10003;</div><div><b>Local</b><span>Working the blocks around here</span></div></div><div class="tr-i drop d4"><div class="tr-t">&#10003;</div><div><b>Left tidy</b><span>Offcuts and spoil taken away</span></div></div></div></div></section>
@@ -243,16 +314,16 @@ html.js .drop.in{opacity:1;transform:none}
   function base(cb){
     if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
     var done = false;
-    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://laydback-hq.tail5b3740.ts.net');} }, 2500);
     fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
       .then(function(r){ return r.text(); })
       .then(function(txt){
         var b = (txt||'').trim().replace(/\/+$/, '');
         if (done) return;
         done = true; clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://laydback-hq.tail5b3740.ts.net');
       })
-      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://laydback-hq.tail5b3740.ts.net');} });
   }
   function init(){
     var f = document.getElementById('lbq-form');

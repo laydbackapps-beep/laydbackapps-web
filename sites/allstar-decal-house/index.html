@@ -187,15 +187,86 @@ footer a:hover{color:var(--acc)}
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://laydbackapps.com/sites/allstar-decal-house/#business", "name": "Allstar Decal House", "description": "Allstar Decal House - Signage & decals,  None", "url": "https://laydbackapps.com/sites/allstar-decal-house/", "image": "https://laydbackapps.com/sites/allstar-decal-house/assets/logo.png", "knowsAbout": ["Signage & decals"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "@id": "https://laydbackapps.com/sites/allstar-decal-house/#service", "name": "Signage & decals", "provider": {"@id": "https://laydbackapps.com/sites/allstar-decal-house/#business"}}</script>
 <!-- lb-seo:end -->
+<style id="lb-argon-standard">
+/* ==== LB ARGON EXCELLENCE PASS ==== */
+/* 1. Instant first-paint visibility: never leave any section or reveal element at opacity:0 */
+html.js .rv, html.js .rv.on, html.js .rv:not(.on),
+.rv, .rv.on, .rv-d0, .rv-d1, .rv-d2, .lb-rv, .lb-rv.is-in, .reveal, [data-reveal], [data-rv],
+section, header, main, footer, .hero, .hero-in, .hero__in, .hero-copy, .hero__copy, .hero-grid {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  transition: none !important;
+}
+/* 2. Header Brand Lockup Law: logo artwork only, hide any typed name or drawn monogram in bar */
+a.brand-monogram, .brand-monogram,
+header .lb-brand__name, header .lb-brand__word, header .lb-brand__sub, header .lb-brand__rule,
+header .brand-name, header .brand__name, header .bname, header .brand-txt,
+nav .lb-brand__name, nav .lb-brand__word, nav .brand-name, nav .brand__name, nav .bname, nav .nav-b,
+.site-header .lb-brand__name, .site-header .brand-name, .site-header .bname {
+  display: none !important;
+}
+/* 3. Mobile 390px overflow & crushed H1 protection */
+html, body {
+  overflow-x: clip !important;
+  max-width: 100% !important;
+}
+@media (max-width: 860px) {
+  header, nav, .hdr-in, .nav-in, .header-inner, .bar, .bar__in, .wrap {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+  header img, nav img, .brand img, .lb-brand img, .brand__word, img.word, .lb-word {
+    max-width: min(52vw, 200px) !important;
+    height: auto !important;
+  }
+  .stack, .plate, .card, .hero, .hero-in, .hero__in, .hero-grid, .hero-copy, .hero__copy {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  header.hero, .hero, .hero-in, .hero__in, .hero-grid, .wrap.hero__in {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-copy, .hero__copy, [class*="hero-copy"], [class*="hero__copy"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+  .hero h1, [class*="hero"] h1, h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word !important;
+  }
+  .sjn-ticker, .asap-ticker, .tt-ticker, .lb-mq {
+    max-width: 100vw !important;
+    overflow: hidden !important;
+  }
+}
+/* 4. Anti-slop typography & polish */
+:root {
+  --lb-disp: "Archivo", system-ui, -apple-system, sans-serif !important;
+  --lb-sub: "Archivo", system-ui, -apple-system, sans-serif !important;
+}
+body, h1, h2, h3, h4, h5, h6, p, li, a, button, input, select, textarea {
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif !important;
+}
+small, .small, .meta, .caption, .eyebrow, .kicker, .mono {
+  font-size: max(0.82em, 12px) !important;
+}
+p, li {
+  line-height: 1.55 !important;
+}
+</style>
 </head>
 <body>
 <header class="hdr" id="top">
 <div class="wrap hdr-in">
 <a aria-label="Allstar Decal House" class="brand" href="#top">
 <img alt="Allstar Decal House logo" height="852" src="assets/logo.png" width="1164"/>
-<span class="brand-name">Allstar <i>Decal House</i></span>
+
 </a>
-<nav aria-label="Main navigation" class="nav"><a class="brand-monogram" href="#top" aria-label="Allstar Decal House"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
+<nav aria-label="Main navigation" class="nav">
 <a href="#print">What we print</a>
 <a href="#index">Design index</a>
 <a href="#process">Process</a>
@@ -230,10 +301,10 @@ footer a:hover{color:var(--acc)}
 </figure>
 </div>
 <div class="strip">
-<img alt="Mahi Mahi boat wrap design on a centre console hull" decoding="async" height="1600" loading="lazy" src="assets/work-mahi-madness.jpg" width="1600"/>
-<img alt="Camouflage boat wrap design shown on two hulls" decoding="async" height="1600" loading="lazy" src="assets/work-airborne-ambush.jpg" width="1600"/>
-<img alt="Black and white illustrated decal artwork" decoding="async" height="2048" loading="lazy" src="assets/gal_3.jpg" width="2048"/>
-<img alt="Gold and black boat wrap design on a centre console hull" decoding="async" height="1600" loading="lazy" src="assets/work-sucker-punch.jpg" width="1600"/>
+<img alt="Mahi Mahi boat wrap design on a centre console hull" decoding="async" height="1600" loading="eager" src="assets/work-mahi-madness.jpg" width="1600"/>
+<img alt="Camouflage boat wrap design shown on two hulls" decoding="async" height="1600" loading="eager" src="assets/work-airborne-ambush.jpg" width="1600"/>
+<img alt="Black and white illustrated decal artwork" decoding="async" height="2048" loading="eager" src="assets/gal_3.jpg" width="2048"/>
+<img alt="Gold and black boat wrap design on a centre console hull" decoding="async" height="1600" loading="eager" src="assets/work-sucker-punch.jpg" width="1600"/>
 </div>
 </div>
 </section>
@@ -260,18 +331,18 @@ footer a:hover{color:var(--acc)}
         against the hull or panel before anything is printed.</p>
 </div>
 <div class="index-grid">
-<figure class="tile"><img alt="Bone Rider boat wrap design showing the stern with skull graphic" decoding="async" height="1599" loading="lazy" src="assets/work-bone-rider.jpg" width="1600"/><figcaption><b>Bone Rider</b><span class="mono">Hull graphic</span></figcaption></figure>
-<figure class="tile"><img alt="Airborne Ambush camouflage boat wrap in black" decoding="async" height="1600" loading="lazy" src="assets/work-airborne-ambush.jpg" width="1600"/><figcaption><b>Airborne Ambush</b><span class="mono">Black</span></figcaption></figure>
-<figure class="tile"><img alt="Baitstorm baitfish themed boat wrap in yellow" decoding="async" height="1600" loading="lazy" src="assets/work-baitstorm.jpg" width="1600"/><figcaption><b>Baitstorm</b><span class="mono">Yellow</span></figcaption></figure>
-<figure class="tile"><img alt="Barrel Chase dark blue water themed boat wrap" decoding="async" height="1600" loading="lazy" src="assets/work-barrel-chase.jpg" width="1600"/><figcaption><b>Barrel Chase</b><span class="mono">Deep blue</span></figcaption></figure>
-<figure class="tile"><img alt="Captain Castaway tropical chart themed boat wrap" decoding="async" height="1600" loading="lazy" src="assets/work-captain-castaway.jpg" width="1600"/><figcaption><b>Captain Castaway</b><span class="mono">Atlantic</span></figcaption></figure>
-<figure class="tile"><img alt="Dead Helm sepia camouflage boat wrap" decoding="async" height="1600" loading="lazy" src="assets/work-dead-helm.jpg" width="1600"/><figcaption><b>Dead Helm</b><span class="mono">Sepia</span></figcaption></figure>
-<figure class="tile"><img alt="Fracture abstract boat wrap in bright blue" decoding="async" height="1600" loading="lazy" src="assets/work-fracture.jpg" width="1600"/><figcaption><b>Fracture</b><span class="mono">Bright blue</span></figcaption></figure>
-<figure class="tile"><img alt="Jack the Ripper green and teal swirl boat wrap" decoding="async" height="1600" loading="lazy" src="assets/work-jack-the-ripper.jpg" width="1600"/><figcaption><b>Jack the Ripper</b><span class="mono">Green / teal</span></figcaption></figure>
-<figure class="tile"><img alt="Mahi Madness mahi mahi fish artwork boat wrap" decoding="async" height="1600" loading="lazy" src="assets/work-mahi-madness.jpg" width="1600"/><figcaption><b>Mahi Madness</b><span class="mono">Fishing series</span></figcaption></figure>
-<figure class="tile"><img alt="Mako Shark grey boat cabin wrap with shark graphic" decoding="async" height="1600" loading="lazy" src="assets/work-mako-shark.jpg" width="1600"/><figcaption><b>Mako Shark</b><span class="mono">Grey hull</span></figcaption></figure>
-<figure class="tile"><img alt="Sucker Punch gold and black graphic boat wrap" decoding="async" height="1600" loading="lazy" src="assets/work-sucker-punch.jpg" width="1600"/><figcaption><b>Sucker Punch</b><span class="mono">Gold</span></figcaption></figure>
-<figure class="tile"><img alt="Black and white illustrated decal artwork" decoding="async" height="2048" loading="lazy" src="assets/gal_2.jpg" width="2048"/><figcaption><b>Bar Art</b><span class="mono">Illustration</span></figcaption></figure>
+<figure class="tile"><img alt="Bone Rider boat wrap design showing the stern with skull graphic" decoding="async" height="1599" loading="eager" src="assets/work-bone-rider.jpg" width="1600"/><figcaption><b>Bone Rider</b><span class="mono">Hull graphic</span></figcaption></figure>
+<figure class="tile"><img alt="Airborne Ambush camouflage boat wrap in black" decoding="async" height="1600" loading="eager" src="assets/work-airborne-ambush.jpg" width="1600"/><figcaption><b>Airborne Ambush</b><span class="mono">Black</span></figcaption></figure>
+<figure class="tile"><img alt="Baitstorm baitfish themed boat wrap in yellow" decoding="async" height="1600" loading="eager" src="assets/work-baitstorm.jpg" width="1600"/><figcaption><b>Baitstorm</b><span class="mono">Yellow</span></figcaption></figure>
+<figure class="tile"><img alt="Barrel Chase dark blue water themed boat wrap" decoding="async" height="1600" loading="eager" src="assets/work-barrel-chase.jpg" width="1600"/><figcaption><b>Barrel Chase</b><span class="mono">Deep blue</span></figcaption></figure>
+<figure class="tile"><img alt="Captain Castaway tropical chart themed boat wrap" decoding="async" height="1600" loading="eager" src="assets/work-captain-castaway.jpg" width="1600"/><figcaption><b>Captain Castaway</b><span class="mono">Atlantic</span></figcaption></figure>
+<figure class="tile"><img alt="Dead Helm sepia camouflage boat wrap" decoding="async" height="1600" loading="eager" src="assets/work-dead-helm.jpg" width="1600"/><figcaption><b>Dead Helm</b><span class="mono">Sepia</span></figcaption></figure>
+<figure class="tile"><img alt="Fracture abstract boat wrap in bright blue" decoding="async" height="1600" loading="eager" src="assets/work-fracture.jpg" width="1600"/><figcaption><b>Fracture</b><span class="mono">Bright blue</span></figcaption></figure>
+<figure class="tile"><img alt="Jack the Ripper green and teal swirl boat wrap" decoding="async" height="1600" loading="eager" src="assets/work-jack-the-ripper.jpg" width="1600"/><figcaption><b>Jack the Ripper</b><span class="mono">Green / teal</span></figcaption></figure>
+<figure class="tile"><img alt="Mahi Madness mahi mahi fish artwork boat wrap" decoding="async" height="1600" loading="eager" src="assets/work-mahi-madness.jpg" width="1600"/><figcaption><b>Mahi Madness</b><span class="mono">Fishing series</span></figcaption></figure>
+<figure class="tile"><img alt="Mako Shark grey boat cabin wrap with shark graphic" decoding="async" height="1600" loading="eager" src="assets/work-mako-shark.jpg" width="1600"/><figcaption><b>Mako Shark</b><span class="mono">Grey hull</span></figcaption></figure>
+<figure class="tile"><img alt="Sucker Punch gold and black graphic boat wrap" decoding="async" height="1600" loading="eager" src="assets/work-sucker-punch.jpg" width="1600"/><figcaption><b>Sucker Punch</b><span class="mono">Gold</span></figcaption></figure>
+<figure class="tile"><img alt="Black and white illustrated decal artwork" decoding="async" height="2048" loading="eager" src="assets/gal_2.jpg" width="2048"/><figcaption><b>Bar Art</b><span class="mono">Illustration</span></figcaption></figure>
 </div>
 <p class="tile-note mono">Designs shown are catalogue artwork. Name, colourway and size are confirmed at the proof stage.</p>
 </div>
@@ -354,16 +425,16 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   function base(cb){
     if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
     var done = false;
-    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://laydback-hq.tail5b3740.ts.net');} }, 2500);
     fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
       .then(function(r){ return r.text(); })
       .then(function(txt){
         var b = (txt||'').trim().replace(/\/+$/, '');
         if (done) return;
         done = true; clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://laydback-hq.tail5b3740.ts.net');
       })
-      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://laydback-hq.tail5b3740.ts.net');} });
   }
   var f = document.getElementById('lbq-form');
   if (!f) return;

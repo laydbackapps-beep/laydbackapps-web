@@ -173,6 +173,77 @@ html.js .drop.in{opacity:1;transform:none}
 #lbq .lbq-cons input{width:auto}
 #lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 </style>
+<style id="lb-argon-standard">
+/* ==== LB ARGON EXCELLENCE PASS ==== */
+/* 1. Instant first-paint visibility: never leave any section or reveal element at opacity:0 */
+html.js .rv, html.js .rv.on, html.js .rv:not(.on),
+.rv, .rv.on, .rv-d0, .rv-d1, .rv-d2, .lb-rv, .lb-rv.is-in, .reveal, [data-reveal], [data-rv],
+section, header, main, footer, .hero, .hero-in, .hero__in, .hero-copy, .hero__copy, .hero-grid {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  transition: none !important;
+}
+/* 2. Header Brand Lockup Law: logo artwork only, hide any typed name or drawn monogram in bar */
+a.brand-monogram, .brand-monogram,
+header .lb-brand__name, header .lb-brand__word, header .lb-brand__sub, header .lb-brand__rule,
+header .brand-name, header .brand__name, header .bname, header .brand-txt,
+nav .lb-brand__name, nav .lb-brand__word, nav .brand-name, nav .brand__name, nav .bname, nav .nav-b,
+.site-header .lb-brand__name, .site-header .brand-name, .site-header .bname {
+  display: none !important;
+}
+/* 3. Mobile 390px overflow & crushed H1 protection */
+html, body {
+  overflow-x: clip !important;
+  max-width: 100% !important;
+}
+@media (max-width: 860px) {
+  header, nav, .hdr-in, .nav-in, .header-inner, .bar, .bar__in, .wrap {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+  header img, nav img, .brand img, .lb-brand img, .brand__word, img.word, .lb-word {
+    max-width: min(52vw, 200px) !important;
+    height: auto !important;
+  }
+  .stack, .plate, .card, .hero, .hero-in, .hero__in, .hero-grid, .hero-copy, .hero__copy {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  header.hero, .hero, .hero-in, .hero__in, .hero-grid, .wrap.hero__in {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-copy, .hero__copy, [class*="hero-copy"], [class*="hero__copy"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+  .hero h1, [class*="hero"] h1, h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word !important;
+  }
+  .sjn-ticker, .asap-ticker, .tt-ticker, .lb-mq {
+    max-width: 100vw !important;
+    overflow: hidden !important;
+  }
+}
+/* 4. Anti-slop typography & polish */
+:root {
+  --lb-disp: "Archivo", system-ui, -apple-system, sans-serif !important;
+  --lb-sub: "Archivo", system-ui, -apple-system, sans-serif !important;
+}
+body, h1, h2, h3, h4, h5, h6, p, li, a, button, input, select, textarea {
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif !important;
+}
+small, .small, .meta, .caption, .eyebrow, .kicker, .mono {
+  font-size: max(0.82em, 12px) !important;
+}
+p, li {
+  line-height: 1.55 !important;
+}
+</style>
 </head>
 <body>
 <script>document.documentElement.className+=' js';</script>
@@ -202,7 +273,7 @@ html.js .drop.in{opacity:1;transform:none}
 
 <section id="services"><div class="wrap"><div class="sec-head"><span class="sec-idx">01 / SERVICES</span><div><h2 class="sec-title">What we pull down and cart away</h2><p class="lead">Structural demolition, strip-outs and removal for homeowners, builders and property managers.</p></div></div><div class="svc-grid"><div class="svc drop d1"><span class="svc-n">01</span><h3>House demolition</h3><p>Full house pull-downs, loaded out and the block left clear for the next stage.</p></div><div class="svc drop d2"><span class="svc-n">02</span><h3>Strip-outs</h3><p>Kitchens, bathrooms, linings and fit-outs stripped back to the frame before a renovation.</p></div><div class="svc drop d3"><span class="svc-n">03</span><h3>Asbestos removal</h3><p>Sheeting and lagging removed and bagged, with the paperwork the tip and the buyer need.</p></div><div class="svc drop d4"><span class="svc-n">04</span><h3>Site clearing</h3><p>Sheds, decks, carports and outbuildings pulled down and taken away in one run.</p></div><div class="svc drop d5"><span class="svc-n">05</span><h3>Concrete & hardstand</h3><p>Paths, driveways and slabs broken out, loaded and carted off site.</p></div><div class="svc drop d6"><span class="svc-n">06</span><h3>Rubbish removal</h3><p>Builders' waste and green waste cleared in the same visit as the demolition.</p></div></div></div></section>
 <section class="band" id="process"><div class="wrap"><div class="sec-head"><span class="sec-idx">02 / PROCESS</span><div><h2 class="sec-title">Make safe. Strip out. Load out. Clean.</h2><p class="lead">The order matters on a demolition job - nothing gets pulled until the site is safe to work in.</p></div></div><div class="steps"><div class="step drop d1"><span class="step-n">STEP 01</span><h3>Make safe</h3><p>Services isolated, hazards identified and the work area fenced before anything moves.</p></div><div class="step drop d2"><span class="step-n">STEP 02</span><h3>Strip out</h3><p>Fit-out, linings and sheeting come out first, sorted as they go.</p></div><div class="step drop d3"><span class="step-n">STEP 03</span><h3>Pull down</h3><p>Structure brought down in a controlled sequence, not grabbed and dragged.</p></div><div class="step drop d4"><span class="step-n">STEP 04</span><h3>Load out &amp; clean</h3><p>Everything loaded, the slab swept and the site left clear for the next trade.</p></div></div></div></section>
-<section id="work"><div class="wrap"><div class="sec-head"><span class="sec-idx">03 / WORK</span><div><h2 class="sec-title">Demolition &amp; strip-outs on site</h2><p class="lead">Pull-downs, strip-outs and load-outs from recent work.</p></div></div></div><div class="hgal drop"><div class="track"><figure class="hg-item"><img src="assets/g1.jpg" alt="House stripped out to the frame" loading="lazy"><figcaption><span>Strip-out</span><span>/01</span></figcaption></figure><figure class="hg-item"><img src="assets/g2.jpg" alt="Demolition waste loaded into a bin" loading="lazy"><figcaption><span>Load out</span><span>/02</span></figcaption></figure><figure class="hg-item"><img src="assets/g3.jpg" alt="Concrete being cut and broken out" loading="lazy"><figcaption><span>Cutting out</span><span>/03</span></figcaption></figure></div></div></section>
+<section id="work"><div class="wrap"><div class="sec-head"><span class="sec-idx">03 / WORK</span><div><h2 class="sec-title">Demolition &amp; strip-outs on site</h2><p class="lead">Pull-downs, strip-outs and load-outs from recent work.</p></div></div></div><div class="hgal drop"><div class="track"><figure class="hg-item"><img src="assets/g1.jpg" alt="House stripped out to the frame" loading="eager"><figcaption><span>Strip-out</span><span>/01</span></figcaption></figure><figure class="hg-item"><img src="assets/g2.jpg" alt="Demolition waste loaded into a bin" loading="eager"><figcaption><span>Load out</span><span>/02</span></figcaption></figure><figure class="hg-item"><img src="assets/g3.jpg" alt="Concrete being cut and broken out" loading="eager"><figcaption><span>Cutting out</span><span>/03</span></figcaption></figure></div></div></section>
 <section id="trust"><div class="wrap"><div class="sec-head"><span class="sec-idx">04 / WHY US</span><div><h2 class="sec-title">Why X Demolition</h2></div></div><div class="trust-strip"><div class="tr-i drop d1"><div class="tr-t">&#10003;</div><div><b>Made safe first</b><span>Hazards and services sorted before the pull-down</span></div></div><div class="tr-i drop d2"><div class="tr-t">&#10003;</div><div><b>Shed cleared</b><span>Debris loaded out, not left for the owner</span></div></div><div class="tr-i drop d3"><div class="tr-t">&#10003;</div><div><b>Strip-outs too</b><span>Interiors taken back before a renovation</span></div></div><div class="tr-i drop d4"><div class="tr-t">&#10003;</div><div><b>Asbestos handled</b><span>Sheeting bagged and documented</span></div></div></div></div></section>
 <section class="stat-band band"><div class="wrap"><div class="stat drop d1"><b>Demo</b><span>& strip-outs</span></div><div class="stat drop d2"><b>Site</b><span>made safe</span></div><div class="stat drop d3"><b>Waste</b><span>loaded out</span></div></div></section>
 <section id="faq"><div class="wrap faq-wrap"><div class="sec-head"><span class="sec-idx">06 / FAQ</span><div><h2 class="sec-title">Demolition questions</h2></div></div><details class="faq drop"><summary>Do you do asbestos?</summary><div class="a">Yes &mdash; sheeting and lagging come out and are bagged, and you get the paperwork for it.</div></details><details class="faq drop"><summary>Can you strip out before a renovation?</summary><div class="a">Yes. Kitchens, bathrooms and linings are stripped back to the frame.</div></details><details class="faq drop"><summary>Do you take the rubbish?</summary><div class="a">Yes &mdash; the debris is loaded out and carted in the same visit.</div></details><details class="faq drop"><summary>How is it priced?</summary><div class="a">From the site. Access, what is being pulled and where it goes decide the number.</div></details></div></section>
@@ -243,16 +314,16 @@ html.js .drop.in{opacity:1;transform:none}
   function base(cb){
     if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
     var done = false;
-    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://laydback-hq.tail5b3740.ts.net');} }, 2500);
     fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
       .then(function(r){ return r.text(); })
       .then(function(txt){
         var b = (txt||'').trim().replace(/\/+$/, '');
         if (done) return;
         done = true; clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://laydback-hq.tail5b3740.ts.net');
       })
-      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://laydback-hq.tail5b3740.ts.net');} });
   }
   function init(){
     var f = document.getElementById('lbq-form');

@@ -261,12 +261,85 @@ nav a:hover {color:#ffffff!important;opacity:.85!important}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 </style><style id="lb-hdr-centre">
+.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-@media(max-width:900px){}
-</style></head>
+@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
+</style><style id="lb-argon-standard">
+/* ==== LB ARGON EXCELLENCE PASS ==== */
+/* 1. Instant first-paint visibility: never leave any section or reveal element at opacity:0 */
+html.js .rv, html.js .rv.on, html.js .rv:not(.on),
+.rv, .rv.on, .rv-d0, .rv-d1, .rv-d2, .lb-rv, .lb-rv.is-in, .reveal, [data-reveal], [data-rv],
+section, header, main, footer, .hero, .hero-in, .hero__in, .hero-copy, .hero__copy, .hero-grid {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  transition: none !important;
+}
+/* 2. Header Brand Lockup Law: logo artwork only, hide any typed name or drawn monogram in bar */
+a.brand-monogram, .brand-monogram,
+header .lb-brand__name, header .lb-brand__word, header .lb-brand__sub, header .lb-brand__rule,
+header .brand-name, header .brand__name, header .bname, header .brand-txt,
+nav .lb-brand__name, nav .lb-brand__word, nav .brand-name, nav .brand__name, nav .bname, nav .nav-b,
+.site-header .lb-brand__name, .site-header .brand-name, .site-header .bname {
+  display: none !important;
+}
+/* 3. Mobile 390px overflow & crushed H1 protection */
+html, body {
+  overflow-x: clip !important;
+  max-width: 100% !important;
+}
+@media (max-width: 860px) {
+  header, nav, .hdr-in, .nav-in, .header-inner, .bar, .bar__in, .wrap {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+  header img, nav img, .brand img, .lb-brand img, .brand__word, img.word, .lb-word {
+    max-width: min(52vw, 200px) !important;
+    height: auto !important;
+  }
+  .stack, .plate, .card, .hero, .hero-in, .hero__in, .hero-grid, .hero-copy, .hero__copy {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  header.hero, .hero, .hero-in, .hero__in, .hero-grid, .wrap.hero__in {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-copy, .hero__copy, [class*="hero-copy"], [class*="hero__copy"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+  .hero h1, [class*="hero"] h1, h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word !important;
+  }
+  .sjn-ticker, .asap-ticker, .tt-ticker, .lb-mq {
+    max-width: 100vw !important;
+    overflow: hidden !important;
+  }
+}
+/* 4. Anti-slop typography & polish */
+:root {
+  --lb-disp: "Archivo", system-ui, -apple-system, sans-serif !important;
+  --lb-sub: "Archivo", system-ui, -apple-system, sans-serif !important;
+}
+body, h1, h2, h3, h4, h5, h6, p, li, a, button, input, select, textarea {
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif !important;
+}
+small, .small, .meta, .caption, .eyebrow, .kicker, .mono {
+  font-size: max(0.82em, 12px) !important;
+}
+p, li {
+  line-height: 1.55 !important;
+}
+</style>
+</head>
 <body>
 <header class="hdr"><a aria-label="Tiger Flooring" class="lb-brand lb-brand--lockup lb-brand--square" href="#top" style="--lb-name:#ffffff"><img alt="" class="lb-mark" decoding="async" loading="eager" src="assets/logo-cut.png"/><span class="lb-sr">Tiger Flooring</span></a><div class="hdr-in">
-<nav aria-label="Main" class="nav"><a href="#services">Services</a>
+<nav aria-label="Main" class="nav">
+<a href="#services">Services</a>
 <a href="#work">Work</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
@@ -320,8 +393,8 @@ nav a:hover {color:#ffffff!important;opacity:.85!important}
 <h2 id="work-h">Floors we lay</h2>
 <p>Local to the local area — Travel time is short, which is why small jobs are worth doing.</p>
 </div>
-<div class="grid g2"> <figure class="fig rv"><img alt="Timber flooring laid through a room with an ocean view" decoding="async" height="811" loading="lazy" src="assets/gal_1.jpg" style="max-width:1080px" width="1080"/><figcaption>Solid timber laid through a coastal home.</figcaption></figure>
-<figure class="fig rv"><img alt="Timber plank flooring installed beside a new kitchen" decoding="async" height="810" loading="lazy" src="assets/gal_2.jpg" style="max-width:1080px" width="1080"/><figcaption>Plank flooring set out to a new kitchen.</figcaption></figure><figure class="fig rv"><img alt="Tile flooring laid in a wet area" decoding="async" height="810" loading="lazy" src="assets/gal_3.jpg" style="max-width:1080px" width="1080"/><figcaption>Tile laid, screeded and grouted.</figcaption></figure></div>
+<div class="grid g2"> <figure class="fig rv"><img alt="Timber flooring laid through a room with an ocean view" decoding="async" height="811" loading="eager" src="assets/gal_1.jpg" style="max-width:1080px" width="1080"/><figcaption>Solid timber laid through a coastal home.</figcaption></figure>
+<figure class="fig rv"><img alt="Timber plank flooring installed beside a new kitchen" decoding="async" height="810" loading="eager" src="assets/gal_2.jpg" style="max-width:1080px" width="1080"/><figcaption>Plank flooring set out to a new kitchen.</figcaption></figure><figure class="fig rv"><img alt="Tile flooring laid in a wet area" decoding="async" height="810" loading="eager" src="assets/gal_3.jpg" style="max-width:1080px" width="1080"/><figcaption>Tile laid, screeded and grouted.</figcaption></figure></div>
 <p class="note">Workmanship backed — If something is not right, Tiger Flooring comes back.</p>
 </div>
 </section>
@@ -419,16 +492,16 @@ nav a:hover {color:#ffffff!important;opacity:.85!important}
   function base(cb){
     if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
     var done = false;
-    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://laydback-hq.tail5b3740.ts.net');} }, 2500);
     fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
       .then(function(r){ return r.text(); })
       .then(function(txt){
         var b = (txt||'').trim().replace(/\/+$/, '');
         if (done) return;
         done = true; clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://laydback-hq.tail5b3740.ts.net');
       })
-      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://laydback-hq.tail5b3740.ts.net');} });
   }
   function init(){
     var f = document.getElementById('lbq-form');
@@ -449,7 +522,7 @@ nav a:hover {color:#ffffff!important;opacity:.85!important}
       st.textContent = 'Sending\u2026';
       st.style.color = '';
       base(function(B){
-        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        var url = (B === 'https://laydback-hq.tail5b3740.ts.net' ? 'https://laydback-hq.tail5b3740.ts.net' : B) + '/functions/v1/quote-request';
         fetch(url, {
           method:'POST',
           headers:{'Content-Type':'application/json'},
