@@ -390,14 +390,19 @@
   // Resolves the live API base at boot: baked fallback first, then the GitHub
   // gist pointer (updated by the keeper within ~1 min of a tunnel rotation).
   (function () {
-    var BAKED = '';
+    // Live funnel backend. The Supabase edge function this page used to post to
+    // is egress-dead (404) and the gist pointer only accepted trycloudflare
+    // hosts, so __LAYDBACK_API_BASE stayed '' and every opt-in failed silently
+    // -> the free-plan funnel captured nothing. Pinned to the live tunnel.
+    var BAKED = 'https://laydback-hq.tail5b3740.ts.net';
     window.__LAYDBACK_API_BASE = BAKED;
     try {
       fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
         .then(function (r) { return r.text(); })
         .then(function (t) {
           t = (t || '').trim();
-          if (/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(t) && !/^https:\/\/api\./i.test(t)) {
+          // accept any https host that is NOT the supabase project
+          if (/^https:\/\/[a-z0-9.-]+\.[a-z]{2,}$/i.test(t) && !/supabase\.co/i.test(t)) {
             window.__LAYDBACK_API_BASE = t;
           }
         })
