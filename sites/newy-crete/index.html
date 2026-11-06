@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Newy Crete — Concreting &amp; Earthmoving, Newcastle NSW</title>
 <meta name="description" content="Concreting and earthmoving in Newcastle NSW. House and shed slabs, driveways, piers, footings, retaining and site earthworks — one crew from first cut to final pour. Free quote.">
-<link rel="canonical" href="https://laydbackapps.juno.page/newgen-concrete-earthmoving/">
+<link rel="canonical" href="https://laydbackapps.com/sites/newy-crete/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Newy Crete">
 <meta property="og:title" content="Newy Crete — Concreting &amp; Earthmoving, Newcastle NSW">>
 <meta property="og:description" content="House and shed slabs, piers, driveways and site earthworks from one crew — Newcastle, the Hunter and Lake Macquarie.">
-<meta property="og:image" content="assets/logo.jpg">
-<meta property="og:url" content="https://laydbackapps.juno.page/newgen-concrete-earthmoving/">
+<meta property="og:image" content="https://laydbackapps.com/sites/newy-crete/assets/logo.jpg">
+<meta property="og:url" content="https://laydbackapps.com/sites/newy-crete/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/logo.jpg">
+<link rel="icon" href="assets/logo-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -69,14 +69,19 @@ img{display:block;max-width:100%}
 .specbar a:hover{color:var(--orange)}
 
 /* ---------- nav ---------- */
-.nav{display:flex;align-items:center;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
-.wordmark{display:flex;align-items:center;gap:13px}
+.nav{display:flex;align-items:center;gap:18px;padding:14px 0;border-bottom:1px solid var(--line)}
+.wordmark{display:flex;align-items:center;gap:13px;flex:none}
 .logo{width:56px;height:56px;border-radius:50%;display:block;flex:none}
-.logo-wide{width:auto;height:52px;border-radius:0;filter:none}
 .logo-chip{background:#F2EEE3;padding:8px 12px;border-radius:4px;display:inline-flex;align-items:center}
 .logo-dark{box-shadow:0 0 0 3px rgba(239,236,228,.16)}
-.wordmark .name{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.01em;line-height:1}
+.wordmark .name{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.01em;line-height:1}
 .wordmark .sub{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.wordmark-text{display:flex;flex-direction:column;justify-content:center}
+.wordmark .name,.wordmark .sub{display:block;white-space:nowrap}
+.foot-brand .wordmark .sub{color:#B9B3A6}
+@media(max-width:1200px){.phone{display:none}.nav .nav-links{gap:20px}}
+@media(max-width:560px){.wordmark{gap:9px}.wordmark .logo{width:48px;height:48px}.wordmark .name{font-size:16px}.wordmark .sub{display:none}}
+@media(max-width:380px){.nav .nav-cta{display:none}}
 .nav-links{margin-left:auto;display:flex;gap:30px;list-style:none}
 .nav-links a{font-size:13px;font-weight:500;color:var(--muted);transition:color .25s}
 .nav-links a:hover{color:var(--ink)}
@@ -96,8 +101,12 @@ img{display:block;max-width:100%}
 .btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
 .btn-line:hover{background:#fff;transform:translateY(-2px)}
 .burger{display:none;background:none;border:1px solid var(--line);width:42px;height:42px;font-size:18px;cursor:pointer;border-radius:3px}
-@media(max-width:900px){.nav-links{display:none}.phone{display:none}}
-@media(max-width:900px){.burger{display:grid;place-items:center}}
+.burger-lines{display:block;width:20px;height:2px;background:var(--ink);position:relative}
+.burger-lines::before,.burger-lines::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--ink)}
+.burger-lines::before{top:-6px}
+.burger-lines::after{top:6px}
+@media(max-width:1100px){.nav-links{display:none}.phone{display:none}}
+@media(max-width:1100px){.burger{display:grid;place-items:center;margin-left:auto}}
 .mnav{display:none;border-bottom:1px solid var(--line);background:var(--card)}
 .mnav.on{display:block}
 .mnav a{display:block;padding:14px clamp(20px,4.5vw,52px);border-top:1px solid var(--line);font-weight:500;font-size:15px}
@@ -465,7 +474,8 @@ html{overflow-x:hidden}
 <header class="wrap">
   <nav class="nav">
     <a class="wordmark" href="#top" aria-label="Newy Crete — home">
-      <img class="logo logo-wide" src="assets/logo.jpg" alt="Newy Crete — concreting and earthmoving" width="1280" height="714">
+      <img class="logo" src="assets/logo-icon.png" alt="Newy Crete" width="56" height="56">
+      <span class="wordmark-text"><span class="name">Newy Crete</span><span class="sub">Concreting &amp; Earthmoving</span></span>
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
@@ -829,7 +839,8 @@ html{overflow-x:hidden}
     <div class="foot-grid">
       <div class="foot-brand">
         <a class="wordmark" href="#top" aria-label="Newy Crete — home">
-          <span class="logo-chip"><img class="logo logo-wide" src="assets/logo.jpg" alt="Newy Crete — concreting and earthmoving" width="1280" height="714"></span>
+          <span class="logo-chip"><img class="logo" src="assets/logo-icon.png" alt="Newy Crete" width="56" height="56"></span>
+          <span class="wordmark-text"><span class="name">Newy Crete</span><span class="sub">Concreting &amp; Earthmoving</span></span>
         </a>
         <p>Slabs, piers, driveways and earthworks from one crew, across Newcastle, the Hunter and Lake Macquarie.</p>
       </div>
@@ -1012,7 +1023,7 @@ document.documentElement.classList.add('js');
 <button class="chat-fab" id="chatFab" type="button" aria-label="Message the crew"><span class="c-dot"></span> Message the crew</button>
 <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Quick answers">
   <div class="chat-head">
-    <img src="assets/logo.jpg" alt="Newy Crete">
+    <img src="assets/logo-icon.png" alt="Newy Crete">
     <div><b>Newy Crete</b><span>Quick answers · not a live agent</span></div>
   </div>
   <div class="chat-body" id="chatBody"></div>
