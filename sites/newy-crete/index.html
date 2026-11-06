@@ -69,9 +69,11 @@ img{display:block;max-width:100%}
 .specbar a:hover{color:var(--orange)}
 
 /* ---------- nav ---------- */
-.nav{display:flex;align-items:center;gap:18px;padding:14px 0;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:18px;padding:10px 0;border-bottom:1px solid var(--line)}
 .wordmark{display:flex;align-items:center;gap:13px;flex:none}
 .logo{width:56px;height:56px;border-radius:50%;display:block;flex:none}
+.logo-wide{width:auto;height:72px;border-radius:8px;display:block;flex:none;max-width:190px;object-fit:contain}
+@media(max-width:560px){.logo-wide{height:56px;max-width:150px}}
 .logo-chip{background:#F2EEE3;padding:8px 12px;border-radius:4px;display:inline-flex;align-items:center}
 .logo-dark{box-shadow:0 0 0 3px rgba(239,236,228,.16)}
 .wordmark .name{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.01em;line-height:1}
@@ -473,9 +475,8 @@ html{overflow-x:hidden}
 
 <header class="wrap">
   <nav class="nav">
-    <a class="wordmark" href="#top" aria-label="Newy Crete — home">
-      <img class="logo" src="assets/logo-icon.png" alt="Newy Crete" width="56" height="56">
-      <span class="wordmark-text"><span class="name">Newy Crete</span><span class="sub">Concreting &amp; Earthmoving</span></span>
+    <a href="#top" aria-label="Newy Crete — home">
+      <img class="logo-wide" src="assets/logo.jpg" alt="Newy Crete — concreting and earthmoving" width="1280" height="714">
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
@@ -838,9 +839,8 @@ html{overflow-x:hidden}
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="wordmark" href="#top" aria-label="Newy Crete — home">
-          <span class="logo-chip"><img class="logo" src="assets/logo-icon.png" alt="Newy Crete" width="56" height="56"></span>
-          <span class="wordmark-text"><span class="name">Newy Crete</span><span class="sub">Concreting &amp; Earthmoving</span></span>
+        <a href="#top" aria-label="Newy Crete — home">
+          <span class="logo-chip" style="padding:10px 14px"><img class="logo-wide" src="assets/logo.jpg" alt="Newy Crete — concreting and earthmoving" width="1280" height="714" style="height:64px"></span>
         </a>
         <p>Slabs, piers, driveways and earthworks from one crew, across Newcastle, the Hunter and Lake Macquarie.</p>
       </div>
