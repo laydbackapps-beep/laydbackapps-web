@@ -1204,3 +1204,32 @@ html { overflow-x: clip; max-width: 100%; }
 @media (max-width: 760px) {
   .foot__wordmark { margin-left: 0; }
 }
+
+/* ---------- Final Above-Fold, Triptych Picture & Mobile Polish ------ */
+.mast__book, .btn, .triptych__primary, .triptych__secondary, .homage__frame, .homage__sister-card {
+  border-radius: 0px !important;
+}
+.hero {
+  padding-block: clamp(1.6rem, 3vw, 2.5rem) clamp(2.4rem, 4.2vw, 3.5rem) !important;
+}
+.hero__facts dd {
+  font-variant-numeric: lining-nums !important;
+}
+.triptych__primary picture,
+.triptych__secondary picture {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.triptych__secondary img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 4 / 3.9 !important;
+  object-fit: cover !important;
+  object-position: center 22% !important;
+}
+@media (max-width: 960px) {
+  .triptych-wrap { order: -1; }
+  .hero__title { font-size: clamp(2.65rem, 10.5vw, 3.6rem) !important; max-width: 15ch !important; }
+}
