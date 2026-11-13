@@ -1048,3 +1048,159 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 html { overflow-x: clip; max-width: 100%; }
 .aura-form { position: relative; overflow: hidden; }
 .lookbook { overflow: hidden; }
+/* ---------- $20k+ Flagship Architectural Refinements ---------------- */
+.hero__grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.032;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.mast__sister-link {
+  color: var(--gold-bright) !important;
+  padding-left: 0.85rem;
+  border-left: 1px solid var(--line-dark);
+}
+.mast__book, .btn {
+  border-radius: 2px !important;
+}
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+  margin-bottom: clamp(1.35rem, 2.4vw, 1.85rem);
+  transition: opacity 0.3s var(--ease);
+}
+.hero__eyebrow:hover { opacity: 0.82; }
+.hero__eyebrow-rule {
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.hero__title {
+  font-size: clamp(3.5rem, 6.1vw, 6.05rem) !important;
+  line-height: 0.94 !important;
+  letter-spacing: -0.03em !important;
+  max-width: 13.5ch !important;
+}
+.hero__lead {
+  font-size: clamp(0.98rem, 1.08vw, 1.07rem) !important;
+  line-height: 1.66 !important;
+  color: rgba(246, 241, 232, 0.76) !important;
+}
+.hero__editorial-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--cream-text);
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(212, 180, 131, 0.45);
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.hero__editorial-link:hover {
+  color: var(--gold-bright);
+  border-color: var(--gold-bright);
+}
+
+.hero__facts dt {
+  font-size: 0.68rem !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--gold) !important;
+}
+.hero__facts dd {
+  font-family: var(--display) !important;
+  font-size: 1.12rem !important;
+  font-weight: 400 !important;
+  color: var(--cream-text) !important;
+}
+
+.triptych-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.triptych__primary,
+.triptych__secondary {
+  border-radius: 2px !important;
+  border: 1px solid rgba(212, 180, 131, 0.22) !important;
+}
+.triptych__primary img {
+  aspect-ratio: 3 / 3.9 !important;
+  object-fit: cover !important;
+  object-position: center 42% !important;
+}
+.triptych__caption {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cream-soft);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.2rem;
+}
+
+.homage__grid {
+  align-items: start !important;
+}
+.homage__frame {
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  border: 1px solid rgba(23, 18, 14, 0.14);
+  aspect-ratio: 4 / 4.33 !important;
+}
+.homage__frame img {
+  object-position: center top !important;
+}
+.homage__seal-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.15rem;
+}
+.homage__wordmark {
+  width: 96px;
+  height: auto;
+}
+.homage__kicker {
+  margin-bottom: 0 !important;
+  font-size: 0.74rem !important;
+  letter-spacing: 0.11em !important;
+  text-transform: uppercase !important;
+  padding-left: 1rem;
+  border-left: 1px solid var(--line-light);
+}
+.homage__sister-card {
+  border-radius: 2px !important;
+  border: 1px solid rgba(212, 180, 131, 0.28);
+}
+.homage__sister-left {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+.homage__sister-mark {
+  width: 78px;
+  height: auto;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .homage__sister-left { flex-direction: column; align-items: flex-start; }
+  .triptych__caption { flex-direction: column; gap: 0.25rem; }
+}
+.foot__wordmark {
+  width: 92px;
+  height: auto;
+  margin-left: auto;
+  margin-bottom: 0.2rem;
+}
+@media (max-width: 760px) {
+  .foot__wordmark { margin-left: 0; }
+}
