@@ -1419,6 +1419,43 @@ html, body { overflow-x: clip; }
 @media (max-width: 820px) {
   .asap-work__grid { grid-template-columns: 1fr; }
 }
+
+.hero *:not(.hero__inner) {
+  min-height: 0 !important;
+  max-height: none !important;
+}
+.hero .hero__actions {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+  height: auto !important;
+}
+.hero .hero__cta, .hero .hero__cta-ghost {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: auto !important;
+  min-height: 46px !important;
+  max-height: 54px !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+}
+.hero .hero__shot {
+  height: auto !important;
+  align-self: center !important;
+}
+.hero .hero__shot-frame {
+  height: auto !important;
+  aspect-ratio: 16 / 10 !important;
+}
+.hero .hero__shot img {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 16 / 10 !important;
+  object-fit: cover !important;
+  display: block !important;
+}
 </style>
 <script id="asap-extras-js">
 (function(){
