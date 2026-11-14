@@ -61,7 +61,7 @@
       const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
       const loader = new THREE.TextureLoader();
       const tex1 = loader.load(image.currentSrc || image.src);
-      const tex2 = loader.load(new URL("./img/DeY4GB7T0bq-1440.jpg", document.baseURI).href);
+      const tex2 = loader.load(new URL("./img/Dd0sfqUFKw2-1440.jpg", document.baseURI).href);
       [tex1, tex2].forEach((tex) => {
         tex.colorSpace = THREE.SRGBColorSpace;
         tex.minFilter = THREE.LinearFilter;
@@ -73,13 +73,13 @@
         uTexture1: { value: tex1 },
         uTexture2: { value: tex2 },
         uPlaneResolution: { value: new THREE.Vector2(1, 1) },
-        uImageResolution1: { value: new THREE.Vector2(1920, 2428) },
-        uImageResolution2: { value: new THREE.Vector2(1440, 1634) },
+        uImageResolution1: { value: new THREE.Vector2(1920, 2020) },
+        uImageResolution2: { value: new THREE.Vector2(1440, 1621) },
         uMouse: { value: new THREE.Vector2(0.5, 0.5) },
         uMouseStrength: { value: 0 },
         uProgress: { value: 0 },
         uTime: { value: 0 },
-        uFocal: { value: new THREE.Vector2(0.82, 0.42) },
+        uFocal: { value: new THREE.Vector2(0.72, 0.34) },
         uGrade: { value: new THREE.Vector3(0.72, 0.55, 0.36) },
       };
 
