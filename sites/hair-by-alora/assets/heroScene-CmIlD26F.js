@@ -4275,7 +4275,7 @@ void main() {
     float n = noise(vUv * 7.0 + vec2(uTime * 0.025, -uTime * 0.012));
     float n2 = noise(vUv * 14.0 + 8.3);
     vec2 warp = vec2(n - 0.5, n2 - 0.5) * uProgress * 0.14;
-    float wipe = smoothstep(n - 0.28, n + 0.28, uProgress);
+    float wipe = smoothstep(n * 0.85, 0.15 + n * 0.85, uProgress);
 
     vec3 a = texture2D(uTexture1, uv1 + displacement + warp).rgb;
     vec3 b = texture2D(uTexture2, uv2 - displacement - warp * 0.65).rgb;

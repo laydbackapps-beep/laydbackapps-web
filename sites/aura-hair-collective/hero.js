@@ -73,7 +73,7 @@
         uTexture1: { value: tex1 },
         uTexture2: { value: tex2 },
         uPlaneResolution: { value: new THREE.Vector2(1, 1) },
-        uImageResolution1: { value: new THREE.Vector2(1920, 2020) },
+        uImageResolution1: { value: new THREE.Vector2(1440, 1600) },
         uImageResolution2: { value: new THREE.Vector2(1440, 1621) },
         uMouse: { value: new THREE.Vector2(0.5, 0.5) },
         uMouseStrength: { value: 0 },
@@ -124,7 +124,7 @@
             float n = noise(vUv * 7.0 + vec2(uTime * 0.025, -uTime * 0.012));
             float n2 = noise(vUv * 14.0 + 8.3);
             vec2 warp = vec2(n - 0.5, n2 - 0.5) * uProgress * 0.14;
-            float wipe = smoothstep(n - 0.28, n + 0.28, uProgress);
+            float wipe = smoothstep(n * 0.85, 0.15 + n * 0.85, uProgress);
             vec3 a = texture2D(uTexture1, uv1 + displacement + warp).rgb;
             vec3 b = texture2D(uTexture2, uv2 - displacement - warp * 0.65).rgb;
             vec3 col = mix(a, b, wipe);
