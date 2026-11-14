@@ -171,10 +171,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   white-space: nowrap;
 }
 .mast__roundel {
-  width: 48px;
-  height: 48px;
+  width: 54px;
+  height: 54px;
   object-fit: cover;
   border-radius: 50%;
+  border: 1px solid rgba(197, 166, 117, 0.45);
 }
 .mast__title {
   font-family: var(--display);
@@ -1256,7 +1257,10 @@ h1, h2, h3, h4, .mast__title, .foot__mark {
 .mast__nav a, .mast__book { white-space: nowrap; }
 .hero__title { line-height: 1.02 !important; }
 @media (min-width: 961px) {
-  .hero__title { max-width: 16ch !important; }
+  .hero__title {
+    max-width: 20ch !important;
+    font-size: clamp(3.5rem, 5.3vw, 5.3rem) !important;
+  }
 }
 .hero__facts dd {
   font-family: var(--sans) !important;
@@ -1274,7 +1278,7 @@ h1, h2, h3, h4, .mast__title, .foot__mark {
   .mast__title { font-size: 1.45rem; }
 }
 @media (max-width: 600px) {
-  .mast__roundel { width: 44px; height: 44px; }
+  .mast__roundel { width: 46px; height: 46px; }
   .mast__title { font-size: 1.35rem; }
   .hero__title { line-height: 1.04 !important; }
 }
