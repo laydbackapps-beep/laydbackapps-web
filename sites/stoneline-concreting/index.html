@@ -66,7 +66,13 @@
   .btn--gold:hover { background: #b2913c; transform: translateY(-1px); }
   .nav__cta { margin-left: 6px; padding: 11px 18px; }
 
-  .hero { position: relative; padding: 74px 0 82px; overflow: hidden; }
+  .hero { position: relative; padding: 74px 0 82px; overflow: hidden; background:linear-gradient(135deg,#1c1c1c,#34322c);color:#f4f2ee;border-bottom:4px solid var(--gold); }
+  .hero h1 { color:#fff; }
+  .hero p.lead { color:#d8d5ce; }
+  .hero .eyebrow { color:#e3bd60; }
+  .hero .chip { background:#3b3933;border-color:#625c4d;color:#f4f2ee; }
+  .hero .chip b { color:#e3bd60; }
+  .hero .btn--ghost { color:#fff;border-color:#a9872c; }
   .hero::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
     background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
     background-size: 46px 46px; opacity: .5; mask-image: linear-gradient(180deg, #000, transparent 72%); }
@@ -78,8 +84,9 @@
   .chip { font-size: 13px; font-weight: 600; color: var(--ink-2); background: #fff; border: 1px solid var(--line);
     border-radius: 999px; padding: 7px 13px; }
   .chip b { color: var(--acc); font-weight: 700; }
-  .hero__card figure { margin: 0; max-width: 100%; margin-left: auto; background: #fff; border: 1px solid var(--line);
-    border-radius: 10px; padding: 12px 12px 0; box-shadow: var(--shadow); }
+  .hero__card figure { margin: 0; max-width: 100%; margin-left: auto; background: #fff; border: 1px solid #766033;
+    border-radius: 10px; padding: 12px 12px 0; box-shadow: 0 18px 44px rgba(0,0,0,.28);perspective:1000px; }
+  .hero__card img { aspect-ratio:4/5;object-fit:cover; }
   .hero__card img { border-radius: 5px; width: 100%; }
   .hero__card figcaption { font-size: 13px; color: var(--ink-3); padding: 12px 4px 14px; display: flex; align-items: center; gap: 8px; }
   .hero__card figcaption::before { content: ""; width: 18px; height: 2px; background: var(--gold); }
@@ -147,8 +154,10 @@
   .foot__rule { border-top: 1px solid var(--line); margin: 26px 0 22px; }
 
   @media (max-width: 980px) {
-    .hero__in { grid-template-columns: 1fr; gap: 40px; }
-    .hero__card figure { margin: 0 auto; }
+    .hero__in { grid-template-columns: 1fr; gap: 24px; }
+    .hero__card { order:-1; }
+    .hero__card figure { margin: 0 auto;max-width:680px; }
+    .hero__card img { aspect-ratio:4/3;max-height:38vh;object-fit:cover; }
     .svc-grid { grid-template-columns: repeat(2, 1fr); }
     .steps { grid-template-columns: repeat(2, 1fr); }
     .contact__card { grid-template-columns: 1fr; padding: 34px 28px; gap: 30px; }
@@ -167,87 +176,12 @@
   }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
-<style id="lb-argon-standard">
-/* ==== LB ARGON EXCELLENCE PASS ==== */
-/* 1. Instant first-paint visibility: never leave any section or reveal element at opacity:0 */
-html.js .rv, html.js .rv.on, html.js .rv:not(.on),
-.rv, .rv.on, .rv-d0, .rv-d1, .rv-d2, .lb-rv, .lb-rv.is-in, .reveal, [data-reveal], [data-rv],
-section, header, main, footer, .hero, .hero-in, .hero__in, .hero-copy, .hero__copy, .hero-grid {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  transition: none !important;
-}
-/* 2. Header Brand Lockup Law: logo artwork only, hide any typed name or drawn monogram in bar */
-a.brand-monogram, .brand-monogram,
-header .lb-brand__name, header .lb-brand__word, header .lb-brand__sub, header .lb-brand__rule,
-header .brand-name, header .brand__name, header .bname, header .brand-txt,
-nav .lb-brand__name, nav .lb-brand__word, nav .brand-name, nav .brand__name, nav .bname, nav .nav-b,
-.site-header .lb-brand__name, .site-header .brand-name, .site-header .bname {
-  display: none !important;
-}
-/* 3. Mobile 390px overflow & crushed H1 protection */
-html, body {
-  overflow-x: clip !important;
-  max-width: 100% !important;
-}
-@media (max-width: 860px) {
-  header, nav, .hdr-in, .nav-in, .header-inner, .bar, .bar__in, .wrap {
-    max-width: 100vw !important;
-    box-sizing: border-box !important;
-  }
-  header img, nav img, .brand img, .lb-brand img, .brand__word, img.word, .lb-word {
-    max-width: min(52vw, 200px) !important;
-    height: auto !important;
-  }
-  .stack, .plate, .card, .hero, .hero-in, .hero__in, .hero-grid, .hero-copy, .hero__copy {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  header.hero, .hero, .hero-in, .hero__in, .hero-grid, .wrap.hero__in {
-    grid-template-columns: 1fr !important;
-  }
-  .hero-copy, .hero__copy, [class*="hero-copy"], [class*="hero__copy"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 1 1 100% !important;
-  }
-  .hero h1, [class*="hero"] h1, h1 {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    overflow-wrap: break-word !important;
-  }
-  .sjn-ticker, .asap-ticker, .tt-ticker, .lb-mq {
-    max-width: 100vw !important;
-    overflow: hidden !important;
-  }
-}
-/* 4. Anti-slop typography & polish */
-:root {
-  --lb-disp: "Archivo", system-ui, -apple-system, sans-serif !important;
-  --lb-sub: "Archivo", system-ui, -apple-system, sans-serif !important;
-}
-body, h1, h2, h3, h4, h5, h6, p, li, a, button, input, select, textarea {
-  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif !important;
-}
-small, .small, .meta, .caption, .eyebrow, .kicker, .mono {
-  font-size: max(0.82em, 12px) !important;
-}
-p, li {
-  line-height: 1.55 !important;
-}
-</style>
 </head>
 <body>
   <header class="nav">
     <div class="wrap nav__in">
       <a class="brand" href="#top" aria-label="Stoneline Concreting — home">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="brand__mark" aria-hidden="true">
-  <title>Stoneline Concreting</title>
-  <rect x="14" y="14" width="228" height="228" rx="46" fill="#2b2b2b"/>
-  <path d="M82 153 C82 103 102 82 128 82 C154 82 174 103 174 153 Z" fill="#c2a04c"/><rect x="62" y="149" width="132" height="18" rx="9" fill="#c2a04c"/><path d="M71 167 h114 a9 9 0 0 1 -9 9 H80 a9 9 0 0 1 -9 -9 z" fill="#1c1c1c" opacity="0.38"/>
-</svg>
+        <img class="brand__mark" src="assets/logo.png" width="512" height="512" alt="Stoneline Concreting logo">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 409 112" class="brand__word" aria-hidden="true">
   <title>Stoneline Concreting</title>
   <g fill="#232323"><path d="M1227 1446V1130Q1104 1185 987.0 1213.0Q870 1241 766 1241Q628 1241 562.0 1203.0Q496 1165 496 1085Q496 1025 540.5 991.5Q585 958 702 934L866 901Q1115 851 1220.0 749.0Q1325 647 1325 459Q1325 212 1178.5 91.5Q1032 -29 731 -29Q589 -29 446.0 -2.0Q303 25 160 78V403Q303 327 436.5 288.5Q570 250 694 250Q820 250 887.0 292.0Q954 334 954 412Q954 482 908.5 520.0Q863 558 727 588L578 621Q354 669 250.5 774.0Q147 879 147 1057Q147 1280 291.0 1400.0Q435 1520 705 1520Q828 1520 958.0 1501.5Q1088 1483 1227 1446Z" transform="translate(4.000,54.000) scale(0.030273,-0.030273)"/><path d="M10 1493H1386V1202H891V0H506V1202H10Z" transform="translate(49.893,54.000) scale(0.030273,-0.030273)"/><path d="M870 1241Q694 1241 597.0 1111.0Q500 981 500 745Q500 510 597.0 380.0Q694 250 870 250Q1047 250 1144.0 380.0Q1241 510 1241 745Q1241 981 1144.0 1111.0Q1047 1241 870 1241ZM870 1520Q1230 1520 1434.0 1314.0Q1638 1108 1638 745Q1638 383 1434.0 177.0Q1230 -29 870 -29Q511 -29 306.5 177.0Q102 383 102 745Q102 1108 306.5 1314.0Q511 1520 870 1520Z" transform="translate(93.425,54.000) scale(0.030273,-0.030273)"/><path d="M188 1493H618L1161 469V1493H1526V0H1096L553 1024V0H188Z" transform="translate(147.371,54.000) scale(0.030273,-0.030273)"/><path d="M188 1493H1227V1202H573V924H1188V633H573V291H1249V0H188Z" transform="translate(200.500,54.000) scale(0.030273,-0.030273)"/><path d="M188 1493H573V291H1249V0H188Z" transform="translate(244.093,54.000) scale(0.030273,-0.030273)"/><path d="M188 1493H573V0H188Z" transform="translate(284.839,54.000) scale(0.030273,-0.030273)"/><path d="M188 1493H618L1161 469V1493H1526V0H1096L553 1024V0H188Z" transform="translate(309.148,54.000) scale(0.030273,-0.030273)"/><path d="M188 1493H1227V1202H573V924H1188V633H573V291H1249V0H188Z" transform="translate(362.276,54.000) scale(0.030273,-0.030273)"/></g>
@@ -260,7 +194,7 @@ p, li {
         <a href="#work">Our work</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="btn btn--gold nav__cta" href="https://www.instagram.com/stonelineconcreting/" target="_blank" rel="noopener">Free quote</a>
+      <a class="btn btn--gold nav__cta" href="#quote">Free quote</a>
     </div>
   </header>
 
@@ -272,8 +206,8 @@ p, li {
           <h1>Concrete driveways, paths and slabs, poured and finished properly.</h1>
           <p class="lead">Form, pour and finish for driveways, paths, patios, slabs and council crossovers across Lake Macquarie and the Hunter — exposed aggregate, broom, swirl and colour finishes.</p>
           <div class="hero__cta">
-            <a class="btn btn--solid" href="https://www.instagram.com/stonelineconcreting/" target="_blank" rel="noopener">Get a free quote</a>
-            <a class="btn btn--ghost" href="#services">See services</a>
+            <a class="btn btn--solid" href="#quote">Get a free quote</a>
+            <a class="btn btn--ghost" href="#work">See finished work</a>
           </div>
           <div class="chips">
             <span class="chip"><b>Driveways</b> · paths · patios</span>
@@ -283,9 +217,11 @@ p, li {
           </div>
         </div>
         <div class="hero__card">
+          <!-- LB-3D-HERO -->
+          <canvas id="heroCanvas" class="lb3d-stage" width="1" height="1" style="display:none" aria-hidden="true"></canvas>
           <figure>
-            <img src="assets/p3.jpg" alt="Exposed aggregate concrete driveway extension alongside a new build" width="640" height="480">
-            <figcaption>Exposed aggregate driveway extension, Lake Macquarie</figcaption>
+            <img src="assets/p9-hd.jpg" alt="Finished stone-look concrete slab beside the water" width="1080" height="1440">
+            <figcaption>Finished stone-look concrete · from Stoneline's project gallery</figcaption>
           </figure>
         </div>
       </div>
@@ -359,24 +295,12 @@ p, li {
         </div>
         <div class="work-grid">
         <figure class="work__item">
-          <img src="assets/p9.jpg" alt="Stone-look slab, finished beside the water." width="480" height="640" decoding="async">
+          <img src="assets/p9-hd.jpg" alt="Stone-look slab, finished beside the water." width="1080" height="1440" decoding="async">
           <figcaption>Stone-look slab, finished beside the water.</figcaption>
         </figure>
         <figure class="work__item">
-          <img src="assets/p11.jpg" alt="Slab poured with control joints beside a retaining wall." width="480" height="640" decoding="async">
+          <img src="assets/p11-hd.jpg" alt="Slab poured with control joints beside a retaining wall." width="1080" height="1440" decoding="async">
           <figcaption>Slab poured with control joints beside a retaining wall.</figcaption>
-        </figure>
-        <figure class="work__item">
-          <img src="assets/p10.jpg" alt="Reo mesh and formwork set out for a slab." width="640" height="480" decoding="async">
-          <figcaption>Reo mesh and formwork set out for a slab.</figcaption>
-        </figure>
-        <figure class="work__item">
-          <img src="assets/p4.jpg" alt="Site cut and levelling, ready for the pour." width="480" height="640" decoding="async">
-          <figcaption>Site cut and levelling, ready for the pour.</figcaption>
-        </figure>
-        <figure class="work__item">
-          <img src="assets/p7.jpg" alt="Posts set in poured concrete footings beside a house." width="640" height="479" decoding="async">
-          <figcaption>Posts set in poured concrete footings beside a house.</figcaption>
         </figure>
         </div>
       </div>
@@ -399,13 +323,26 @@ p, li {
       </div>
     </section>
 
+    <section id="lbq" class="band" style="padding:56px 0;border-top:1px solid var(--line)">
+      <div class="wrap" style="max-width:760px">
+        <span id="quote" style="position:absolute"></span>
+        <div class="head"><span class="eyebrow">Request a quote</span><h2>Tell us about your job</h2><p>Send the job details here, or message Stoneline directly on Instagram.</p></div>
+        <form id="lbq-form" action="/functions/v1/quote-request" method="POST" data-site="stoneline-concreting" style="display:grid;gap:14px">
+          <label style="display:grid;gap:6px">Name<input type="text" name="name" required autocomplete="name" style="padding:13px;border:1px solid var(--line);border-radius:8px;background:transparent;color:inherit"></label>
+          <label style="display:grid;gap:6px">Phone<input type="tel" name="phone" required autocomplete="tel" style="padding:13px;border:1px solid var(--line);border-radius:8px;background:transparent;color:inherit"></label>
+          <label style="display:grid;gap:6px">Job details<textarea name="notes" rows="4" required placeholder="What work do you need done?" style="padding:13px;border:1px solid var(--line);border-radius:8px;background:transparent;color:inherit;font-family:inherit"></textarea></label>
+          <button type="submit" class="btn btn--solid" style="padding:13px 20px;border:0;cursor:pointer">Send quote request</button>
+        </form>
+      </div>
+    </section>
+
     <section id="contact" class="band contact">
       <div class="wrap">
         <div class="contact__card">
           <div>
             <span class="eyebrow">Get in touch</span>
             <h2>Message for a free quote</h2>
-            <p>Quotes are done over Instagram. Send a message with the address and a photo or two of the area and you'll get a price back.</p>
+            <p>Use the quote form above or send an Instagram message with the address and a photo or two of the area.</p>
             <div class="contact__meta">
               <div><span class="k">Service area</span><span class="v">Lake Macquarie &amp; the Hunter, NSW</span></div>
               <div><span class="k">Enquiries</span><span class="v"><a href="https://www.instagram.com/stonelineconcreting/" target="_blank" rel="noopener">DM @stonelineconcreting</a></span></div>
@@ -420,20 +357,7 @@ p, li {
         </div>
       </div>
     </section>
-  
-<section id="lbq" class="sec" style="padding:48px 0;border-top:1px solid rgba(128,128,128,0.2)">
-  <div class="wrap container" style="max-width:760px;margin:0 auto;padding:0 20px">
-    <span id="quote" style="position:absolute;top:-90px"></span>
-    <h2 style="margin:0 0 12px">Request a Quote — Stoneline Concreting</h2>
-    <form id="lbq-form" action="/functions/v1/quote-request" method="POST" data-site="stoneline-concreting" style="display:grid;gap:12px">
-      <input type="text" name="name" required placeholder="Your name" style="padding:12px;border:1px solid rgba(128,128,128,0.35);border-radius:6px;background:transparent;color:inherit">
-      <input type="tel" name="phone" required placeholder="Phone number" style="padding:12px;border:1px solid rgba(128,128,128,0.35);border-radius:6px;background:transparent;color:inherit">
-      <textarea name="notes" rows="3" placeholder="Tell us about your job..." style="padding:12px;border:1px solid rgba(128,128,128,0.35);border-radius:6px;background:transparent;color:inherit"></textarea>
-      <button type="submit" class="btn cta-btn" style="padding:12px 20px;font-weight:700;cursor:pointer">Send Quote Request</button>
-    </form>
-  </div>
-</section>
-</main>
+  </main>
 
   <footer>
     <div class="wrap">
@@ -454,20 +378,16 @@ p, li {
       </div>
     </div>
   </footer>
-<style id="fix-contact-grid">
-/* the contact block has a min-content floor wider than a 320px viewport (the <dt> auto column plus
-   unbroken values), so its pane started at x=49 and ran past the edge. minmax(0,1fr) + min-width:0
-   lets the column actually shrink, and long values wrap. */
-@media(max-width:420px){
-  .contact-grid,.contact__grid,.contact .grid{grid-template-columns:minmax(0,1fr)!important}
-  .contact-grid>*,.contact__grid>*,.contact .grid>*{min-width:0!important;max-width:100%!important}
-  .contact__meta,.contact__meta div,.info-card dl{min-width:0!important;max-width:100%!important}
-  .contact__meta *,.info-card dd,.info-card dt{overflow-wrap:anywhere!important}
-}
-</style>
-<style id="fix-img-cap">
-/* these JPEGs were being drawn wider than their own pixels at intermediate widths (a small photo stretched into a full-width panel = the "blown up" look). Cap each at native. */
-img[src$="p3.jpg"]{max-width:640px;height:auto}
-</style>
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:.05});
+    els.forEach(function(el){io.observe(el);});
+  }
+  setTimeout(function(){els.forEach(function(el){el.classList.add('on');});},1100);
+})();
+</script>
 </body>
 </html>

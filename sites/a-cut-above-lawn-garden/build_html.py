@@ -15,7 +15,7 @@ BRANDW = inline(open(os.path.join(A, "logo-word.svg")).read()).replace(
     'role="img" aria-label="A Cut Above — Lawn &amp; Garden Maintenance"', 'class="brand__word" aria-hidden="true"')
 
 PHONE = "0432 600 356"
-TEL = "tel:0432600356"
+TEL = "tel:+61" + PHONE[1:].replace(" ", "")
 FB = "https://www.facebook.com/people/A-Cut-Above-the-Best-Lawn-Garden-Maintenance/61596072501384/"
 YEAR = "2026"
 
@@ -129,7 +129,16 @@ HTML = f'''<!doctype html>
   .btn--acc:hover {{ background: var(--acc-ink); transform: translateY(-1px); }}
   .nav__cta {{ margin-left: 6px; padding: 11px 18px; }}
 
-  .hero {{ position: relative; padding: 70px 0 80px; overflow: hidden; }}
+  .hero {{ position: relative; padding: 70px 0 80px; overflow: hidden; background:linear-gradient(135deg,#163508 0%,#2c5e08 60%,#4f8f00 100%);color:#fff;border-bottom:4px solid var(--lime); }}
+  .hero h1 {{ color:#fff; }}
+  .hero p.lead {{ color:#e5f0d9; }}
+  .hero .eyebrow {{ color:#d7ff70; }}
+  .hero .chip {{ background:rgba(10,36,0,.42);border-color:rgba(215,255,112,.36);color:#f4ffdf; }}
+  .hero .chip b {{ color:#d7ff70; }}
+  .hero .btn--ghost {{ color:#fff;border-color:#b6e01a; }}
+  .trade-visual {{ margin:0;background:#f3f8e9;border:1px solid rgba(182,224,26,.65);border-radius:16px;overflow:hidden;box-shadow:0 18px 44px rgba(5,25,0,.28);perspective:1000px; }}
+  .trade-visual svg {{ display:block;width:100%;height:auto; }}
+  .trade-visual figcaption {{ padding:12px 16px;background:#fff;color:#38550b;font-size:.86rem;font-weight:700;letter-spacing:.02em; }}
   .hero::before {{ content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
     background-image: radial-gradient(rgba(23,23,23,.05) 1px, transparent 1.5px); background-size: 24px 24px;
     mask-image: linear-gradient(180deg, #000, transparent 76%); }}
@@ -223,8 +232,11 @@ HTML = f'''<!doctype html>
   .foot__rule {{ border-top: 1px solid var(--line); margin: 26px 0 22px; }}
 
   @media (max-width: 980px) {{
-    .hero__in {{ grid-template-columns: 1fr; gap: 40px; }}
+    .hero__in {{ grid-template-columns: 1fr; gap: 24px; }}
     .qcard {{ margin: 0 auto; }}
+    .hero__visual {{ order:-1; }}
+    .trade-visual {{ max-width:680px;margin:0 auto; }}
+    .trade-visual svg {{ max-height:34vh; }}
     .svc-grid {{ grid-template-columns: repeat(2, 1fr); }}
     .steps {{ grid-template-columns: repeat(2, 1fr); }}
     .areas__grid {{ grid-template-columns: 1fr; gap: 28px; }}
@@ -271,7 +283,7 @@ HTML = f'''<!doctype html>
           <p class="lead">Mowing, trimming, planting, mulching, clean ups and pressure washing for homes and businesses across Maitland, Newcastle, Lake Macquarie, Cessnock and the Hunter Valley.</p>
           <div class="hero__cta">
             <a class="btn btn--acc" href="{TEL}">Call for a free quote</a>
-            <a class="btn btn--ghost" href="#services">See services</a>
+            <a class="btn btn--ghost" href="#quote">Request a quote</a>
           </div>
           <div class="chips">
             <span class="chip"><b>Residential</b> &amp; commercial</span>
@@ -280,19 +292,23 @@ HTML = f'''<!doctype html>
             <span class="chip">Green waste removed</span>
           </div>
         </div>
-        <div class="qcard">
-          <div class="qcard__top">
-            <img src="assets/logo-round.png" width="720" height="720" alt="">
-            <div>
-              <strong>A Cut Above</strong>
-              <span>Lawn &amp; garden maintenance</span>
-            </div>
-          </div>
-          <p class="small">Text details including pictures to</p>
-          <a class="phone" href="{TEL}">{PHONE}</a>
-          <span class="note">Free quote · Residential &amp; commercial · Hunter Valley</span>
-          <a class="btn btn--solid" href="{TEL}">Call now</a>
-        </div>
+        <figure class="trade-visual hero__visual">
+          <!-- LB-3D-HERO -->
+          <canvas id="heroCanvas" class="lb3d-stage" width="1" height="1" style="display:none" aria-hidden="true"></canvas>
+          <svg viewBox="0 0 640 470" role="img" aria-label="Lawn mower on a freshly striped lawn beside neatly trimmed hedges">
+            <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#e8f6cf"/><stop offset="1" stop-color="#fff"/></linearGradient><linearGradient id="mower" x2="0" y2="1"><stop stop-color="#c8f53b"/><stop offset="1" stop-color="#76a900"/></linearGradient></defs>
+            <rect width="640" height="470" fill="url(#sky)"/><circle cx="526" cy="78" r="38" fill="#d7f47a"/>
+            <path d="M0 192L92 108l88 84v90H0z" fill="#f6f0dc"/><path d="M-12 194L92 94l104 100" fill="none" stroke="#705844" stroke-width="22"/>
+            <rect x="33" y="208" width="48" height="72" fill="#8fb5a0"/><rect x="112" y="204" width="38" height="38" fill="#8fb5a0"/>
+            <path d="M0 284h640v186H0z" fill="#4f8f00"/><path d="M0 304l640 94v52L0 356zM0 396l432 74H276L0 428z" fill="#70ae19" opacity=".9"/>
+            <path d="M0 330l640 94M0 414l394 56" stroke="#c1e57a" stroke-width="4" opacity=".65"/>
+            <g fill="#2d650c"><rect x="385" y="192" width="255" height="91" rx="34"/><circle cx="414" cy="184" r="35"/><circle cx="470" cy="177" r="43"/><circle cx="535" cy="182" r="38"/><circle cx="598" cy="176" r="44"/></g>
+            <path d="M382 282h258" stroke="#b6e01a" stroke-width="7"/>
+            <g transform="translate(214 220)"><path d="M154 94L222 4" stroke="#263b16" stroke-width="12" stroke-linecap="round"/><path d="M207 5h52" stroke="#263b16" stroke-width="12" stroke-linecap="round"/><path d="M28 84h142l32 72H0z" fill="url(#mower)" stroke="#315400" stroke-width="5"/><path d="M49 84V46h72l35 38" fill="#9dd91d" stroke="#315400" stroke-width="5"/><rect x="70" y="55" width="46" height="23" rx="6" fill="#263b16"/><circle cx="38" cy="158" r="29" fill="#1e2b18"/><circle cx="38" cy="158" r="12" fill="#a9b79c"/><circle cx="164" cy="158" r="29" fill="#1e2b18"/><circle cx="164" cy="158" r="12" fill="#a9b79c"/><path d="M4 145h194" stroke="#d7ff70" stroke-width="5"/></g>
+            <text x="28" y="42" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#4f8f00" letter-spacing="2">LAWN &amp; GARDEN CARE</text>
+          </svg>
+          <figcaption>Mowing · edging · hedging · garden clean-ups</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -354,6 +370,19 @@ HTML = f'''<!doctype html>
       </div>
     </section>
 
+    <section id="lbq" class="band" style="padding:56px 0;border-top:1px solid var(--line)">
+      <div class="wrap" style="max-width:760px">
+        <span id="quote" style="position:absolute"></span>
+        <div class="head"><span class="eyebrow">Request a quote</span><h2>Tell us about your job</h2></div>
+        <form id="lbq-form" action="/functions/v1/quote-request" method="POST" data-site="a-cut-above-lawn-garden" style="display:grid;gap:14px">
+          <label style="display:grid;gap:6px">Name<input type="text" name="name" required autocomplete="name" style="padding:13px;border:1px solid var(--line);border-radius:8px;background:transparent;color:inherit"></label>
+          <label style="display:grid;gap:6px">Phone<input type="tel" name="phone" required autocomplete="tel" style="padding:13px;border:1px solid var(--line);border-radius:8px;background:transparent;color:inherit"></label>
+          <label style="display:grid;gap:6px">Job details<textarea name="notes" rows="4" required placeholder="What work do you need done?" style="padding:13px;border:1px solid var(--line);border-radius:8px;background:transparent;color:inherit;font-family:inherit"></textarea></label>
+          <button type="submit" class="btn btn--solid" style="padding:13px 20px;border:0;cursor:pointer">Send quote request</button>
+        </form>
+      </div>
+    </section>
+
     <section id="contact" class="band contact">
       <div class="wrap">
         <div class="contact__card">
@@ -392,6 +421,17 @@ HTML = f'''<!doctype html>
       </div>
     </div>
   </footer>
+<script>
+(function(){{
+  document.documentElement.classList.add('js');
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){{
+    var io=new IntersectionObserver(function(entries){{entries.forEach(function(e){{if(e.isIntersecting){{e.target.classList.add('on');io.unobserve(e.target);}}}});}},{{threshold:.05}});
+    els.forEach(function(el){{io.observe(el);}});
+  }}
+  setTimeout(function(){{els.forEach(function(el){{el.classList.add('on');}});}},1100);
+}})();
+</script>
 </body>
 </html>
 '''

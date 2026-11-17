@@ -20,11 +20,8 @@ YEAR = "2026"
 IG = "https://www.instagram.com/stonelineconcreting/"
 
 WORK = [
-    ("p9.jpg",  480, 640, "Stone-look slab, finished beside the water."),
-    ("p11.jpg", 480, 640, "Slab poured with control joints beside a retaining wall."),
-    ("p10.jpg", 640, 480, "Reo mesh and formwork set out for a slab."),
-    ("p4.jpg",  480, 640, "Site cut and levelling, ready for the pour."),
-    ("p7.jpg",  640, 479, "Posts set in poured concrete footings beside a house."),
+    ("p9-hd.jpg",  1080, 1440, "Stone-look slab, finished beside the water."),
+    ("p11-hd.jpg", 1080, 1440, "Slab poured with control joints beside a retaining wall."),
 ]
 
 SERVICES = [
@@ -142,7 +139,13 @@ HTML = f'''<!doctype html>
   .btn--gold:hover {{ background: #b2913c; transform: translateY(-1px); }}
   .nav__cta {{ margin-left: 6px; padding: 11px 18px; }}
 
-  .hero {{ position: relative; padding: 74px 0 82px; overflow: hidden; }}
+  .hero {{ position: relative; padding: 74px 0 82px; overflow: hidden; background:linear-gradient(135deg,#1c1c1c,#34322c);color:#f4f2ee;border-bottom:4px solid var(--gold); }}
+  .hero h1 {{ color:#fff; }}
+  .hero p.lead {{ color:#d8d5ce; }}
+  .hero .eyebrow {{ color:#e3bd60; }}
+  .hero .chip {{ background:#3b3933;border-color:#625c4d;color:#f4f2ee; }}
+  .hero .chip b {{ color:#e3bd60; }}
+  .hero .btn--ghost {{ color:#fff;border-color:#a9872c; }}
   .hero::before {{ content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
     background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
     background-size: 46px 46px; opacity: .5; mask-image: linear-gradient(180deg, #000, transparent 72%); }}
@@ -154,8 +157,9 @@ HTML = f'''<!doctype html>
   .chip {{ font-size: 13px; font-weight: 600; color: var(--ink-2); background: #fff; border: 1px solid var(--line);
     border-radius: 999px; padding: 7px 13px; }}
   .chip b {{ color: var(--acc); font-weight: 700; }}
-  .hero__card figure {{ margin: 0; max-width: 100%; margin-left: auto; background: #fff; border: 1px solid var(--line);
-    border-radius: 10px; padding: 12px 12px 0; box-shadow: var(--shadow); }}
+  .hero__card figure {{ margin: 0; max-width: 100%; margin-left: auto; background: #fff; border: 1px solid #766033;
+    border-radius: 10px; padding: 12px 12px 0; box-shadow: 0 18px 44px rgba(0,0,0,.28);perspective:1000px; }}
+  .hero__card img {{ aspect-ratio:4/5;object-fit:cover; }}
   .hero__card img {{ border-radius: 5px; width: 100%; }}
   .hero__card figcaption {{ font-size: 13px; color: var(--ink-3); padding: 12px 4px 14px; display: flex; align-items: center; gap: 8px; }}
   .hero__card figcaption::before {{ content: ""; width: 18px; height: 2px; background: var(--gold); }}
@@ -223,8 +227,10 @@ HTML = f'''<!doctype html>
   .foot__rule {{ border-top: 1px solid var(--line); margin: 26px 0 22px; }}
 
   @media (max-width: 980px) {{
-    .hero__in {{ grid-template-columns: 1fr; gap: 40px; }}
-    .hero__card figure {{ margin: 0 auto; }}
+    .hero__in {{ grid-template-columns: 1fr; gap: 24px; }}
+    .hero__card {{ order:-1; }}
+    .hero__card figure {{ margin: 0 auto;max-width:680px; }}
+    .hero__card img {{ aspect-ratio:4/3;max-height:38vh;object-fit:cover; }}
     .svc-grid {{ grid-template-columns: repeat(2, 1fr); }}
     .steps {{ grid-template-columns: repeat(2, 1fr); }}
     .contact__card {{ grid-template-columns: 1fr; padding: 34px 28px; gap: 30px; }}
@@ -248,7 +254,7 @@ HTML = f'''<!doctype html>
   <header class="nav">
     <div class="wrap nav__in">
       <a class="brand" href="#top" aria-label="Stoneline Concreting — home">
-        {BRAND}
+        <img class="brand__mark" src="assets/logo.png" width="512" height="512" alt="Stoneline Concreting logo">
         {BRANDW}
       </a>
       <nav class="nav__links" aria-label="Sections">
@@ -257,7 +263,7 @@ HTML = f'''<!doctype html>
         <a href="#work">Our work</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="btn btn--gold nav__cta" href="{IG}" target="_blank" rel="noopener">Free quote</a>
+      <a class="btn btn--gold nav__cta" href="#quote">Free quote</a>
     </div>
   </header>
 
@@ -269,8 +275,8 @@ HTML = f'''<!doctype html>
           <h1>Concrete driveways, paths and slabs, poured and finished properly.</h1>
           <p class="lead">Form, pour and finish for driveways, paths, patios, slabs and council crossovers across Lake Macquarie and the Hunter — exposed aggregate, broom, swirl and colour finishes.</p>
           <div class="hero__cta">
-            <a class="btn btn--solid" href="{IG}" target="_blank" rel="noopener">Get a free quote</a>
-            <a class="btn btn--ghost" href="#services">See services</a>
+            <a class="btn btn--solid" href="#quote">Get a free quote</a>
+            <a class="btn btn--ghost" href="#work">See finished work</a>
           </div>
           <div class="chips">
             <span class="chip"><b>Driveways</b> · paths · patios</span>
@@ -280,9 +286,11 @@ HTML = f'''<!doctype html>
           </div>
         </div>
         <div class="hero__card">
+          <!-- LB-3D-HERO -->
+          <canvas id="heroCanvas" class="lb3d-stage" width="1" height="1" style="display:none" aria-hidden="true"></canvas>
           <figure>
-            <img src="assets/p3.jpg" alt="Exposed aggregate concrete driveway extension alongside a new build" width="640" height="480">
-            <figcaption>Exposed aggregate driveway extension, Lake Macquarie</figcaption>
+            <img src="assets/p9-hd.jpg" alt="Finished stone-look concrete slab beside the water" width="1080" height="1440">
+            <figcaption>Finished stone-look concrete · from Stoneline's project gallery</figcaption>
           </figure>
         </div>
       </div>
@@ -339,13 +347,26 @@ HTML = f'''<!doctype html>
       </div>
     </section>
 
+    <section id="lbq" class="band" style="padding:56px 0;border-top:1px solid var(--line)">
+      <div class="wrap" style="max-width:760px">
+        <span id="quote" style="position:absolute"></span>
+        <div class="head"><span class="eyebrow">Request a quote</span><h2>Tell us about your job</h2><p>Send the job details here, or message Stoneline directly on Instagram.</p></div>
+        <form id="lbq-form" action="/functions/v1/quote-request" method="POST" data-site="stoneline-concreting" style="display:grid;gap:14px">
+          <label style="display:grid;gap:6px">Name<input type="text" name="name" required autocomplete="name" style="padding:13px;border:1px solid var(--line);border-radius:8px;background:transparent;color:inherit"></label>
+          <label style="display:grid;gap:6px">Phone<input type="tel" name="phone" required autocomplete="tel" style="padding:13px;border:1px solid var(--line);border-radius:8px;background:transparent;color:inherit"></label>
+          <label style="display:grid;gap:6px">Job details<textarea name="notes" rows="4" required placeholder="What work do you need done?" style="padding:13px;border:1px solid var(--line);border-radius:8px;background:transparent;color:inherit;font-family:inherit"></textarea></label>
+          <button type="submit" class="btn btn--solid" style="padding:13px 20px;border:0;cursor:pointer">Send quote request</button>
+        </form>
+      </div>
+    </section>
+
     <section id="contact" class="band contact">
       <div class="wrap">
         <div class="contact__card">
           <div>
             <span class="eyebrow">Get in touch</span>
             <h2>Message for a free quote</h2>
-            <p>Quotes are done over Instagram. Send a message with the address and a photo or two of the area and you'll get a price back.</p>
+            <p>Use the quote form above or send an Instagram message with the address and a photo or two of the area.</p>
             <div class="contact__meta">
               <div><span class="k">Service area</span><span class="v">Lake Macquarie &amp; the Hunter, NSW</span></div>
               <div><span class="k">Enquiries</span><span class="v"><a href="{IG}" target="_blank" rel="noopener">DM @stonelineconcreting</a></span></div>
@@ -377,6 +398,17 @@ HTML = f'''<!doctype html>
       </div>
     </div>
   </footer>
+<script>
+(function(){{
+  document.documentElement.classList.add('js');
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){{
+    var io=new IntersectionObserver(function(entries){{entries.forEach(function(e){{if(e.isIntersecting){{e.target.classList.add('on');io.unobserve(e.target);}}}});}},{{threshold:.05}});
+    els.forEach(function(el){{io.observe(el);}});
+  }}
+  setTimeout(function(){{els.forEach(function(el){{el.classList.add('on');}});}},1100);
+}})();
+</script>
 </body>
 </html>
 '''
