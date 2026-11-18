@@ -1,33 +1,65 @@
-/* Hair by Alora: use the actual stacked wordmark, never the Aura mark. */
-.head{background:#211a15!important;border-bottom:1px solid rgba(255,251,238,.2)!important;color:#fffbee!important}
-.head__inner{position:relative;min-height:88px;display:flex;align-items:center;justify-content:space-between!important}
+/* Hair by Alora — locked identity + salon-specific atelier hero. */
+.head{background:#211a15!important;border-bottom:1px solid rgba(222,193,169,.22)!important;color:#fffbee!important}
+.head__inner{position:relative;min-height:112px;display:flex;align-items:center;justify-content:space-between!important}
 .head__left{display:contents}
-.head__brand{position:absolute;left:50%;top:50%;z-index:10;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:210px;height:82px;overflow:visible;background:transparent;border-radius:0}
-.head__brand-logo{display:block;width:190px!important;height:132px!important;max-height:none!important;object-fit:contain!important;object-position:center!important;filter:none!important;image-rendering:auto!important}
-.head__sister{margin-right:auto!important;max-width:230px;color:#e5c58f!important;font-size:.7rem!important;letter-spacing:.06em}
-.head__nav{margin-left:auto!important;margin-right:1rem!important;color:#fffbee!important}
-.head__nav a{color:#fffbee!important}
-.head__cta{background:#d9b079!important;color:#211a15!important;border-color:#d9b079!important}
-.head__toggle{color:#fffbee!important}
-
-/* Keep the shader and literal salon tools above the photo treatment, below copy. */
-.hero--cinema .hero__media{isolation:isolate;background:#211a15}
-.hero__spatial-canvas{z-index:4!important;opacity:0!important;mix-blend-mode:normal!important}.hero__spatial-canvas.is-live{opacity:.94!important}
-.alora-gloss-canvas{z-index:3!important;opacity:0!important;mix-blend-mode:screen!important}.alora-gloss-canvas.is-live{opacity:.36!important}
-.hero--cinema .hero__shade{z-index:2!important;background:linear-gradient(90deg,rgba(20,12,8,.82) 0%,rgba(33,26,21,.38) 48%,rgba(33,26,21,.12) 100%),linear-gradient(0deg,rgba(20,12,8,.74),transparent 62%)!important}
-.hero--cinema .hero__content{z-index:6!important}
-.hero--cinema .hero__eyebrow,.hero--cinema .hero__lead,.hero--cinema .hero__caption,.hero--cinema .hero__ledger{color:#fff8ec!important;text-shadow:0 2px 12px rgba(0,0,0,.9)}
-.hero--cinema .hero__eyebrow{font-size:.76rem!important;letter-spacing:.14em!important}
-.hero--cinema .hero__lead{font-size:1rem!important;line-height:1.55!important}
-.hero--cinema .hero__ledger{background:rgba(24,14,9,.72)!important;border:1px solid rgba(229,197,143,.28)!important}
-.hero--cinema .hero__ledger strong{color:#e5c58f!important}
-@media(max-width:900px){.head__nav,.head__cta{display:none!important}.head__sister{font-size:.62rem!important;max-width:125px;line-height:1.25}.head__brand{width:176px;height:76px}.head__brand-logo{width:160px!important;height:112px!important;max-height:none!important}.head__toggle{display:flex!important;margin-left:auto;position:relative;z-index:11}}
-@media(max-width:480px){.head__inner{min-height:80px;padding-inline:16px!important}.head__sister{visibility:hidden;width:40px}.head__brand{width:160px;height:70px}.head__brand-logo{width:150px!important;height:104px!important;max-height:none!important}}
-@media(max-width:679px){.hero__spatial-canvas,.alora-gloss-canvas{display:none!important}.hero--cinema .hero__img{object-position:58% 26%!important;filter:saturate(.98) contrast(1.04) sepia(.01)!important}}
-
-
-/* Header identity guard: the header uses the Alora lockup, never the Aura roundel. */
+.head__brand{position:absolute;left:24px;top:50%;z-index:10;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:170px;height:88px;overflow:visible;background:transparent!important;border-radius:0}
+.head .head__brand-logo,.head__brand-logo{display:block;width:160px!important;height:112px!important;max-height:none!important;object-fit:contain!important;object-position:center!important;filter:none!important;image-rendering:auto!important;content:url("./img/alora-mark.png")!important}
 .head .head__brand-logo[src*="aura-roundel"]{display:none!important}
-.head .head__brand-logo{content:url("./img/alora-mark.png")!important}
-.head .head__brand{background:#211a15!important}
-.head .head__brand-logo{width:min(190px,38vw)!important;height:132px!important;max-height:none!important;object-fit:contain!important;object-position:center!important;image-rendering:auto!important}
+.head__sister{display:none!important}
+.head__nav{margin-left:auto!important;margin-right:1rem!important;color:#fffbee!important}.head__nav a{color:#fffbee!important}
+.head__cta{background:#d9b079!important;color:#211a15!important;border-color:#d9b079!important}.head__toggle{color:#fffbee!important}
+
+.hero--alora{min-height:100svh;background:#211a15}
+.hero--alora .hero__media{isolation:isolate;background:radial-gradient(circle at 72% 38%,#3b2d22 0,#2a2018 35%,#211a15 68%,#17110e 100%)}
+.hero--alora .hero__media picture{position:absolute;top:8%;right:4vw;width:46%;height:84%;opacity:.84;border-radius:280px 280px 22px 22px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.34)}
+.hero--alora .hero__img{width:100%;height:100%;object-fit:cover;object-position:50% 44%!important;filter:saturate(.9) contrast(1.03) brightness(.94)!important}
+.hero--alora .hero__canvas,.hero--alora .alora-gloss-canvas{display:none!important}
+.hero--alora .hero__shade{z-index:2!important;background:linear-gradient(90deg,rgba(23,17,14,.98) 0%,rgba(33,26,21,.92) 30%,rgba(33,26,21,.35) 58%,rgba(23,17,14,.12) 100%),linear-gradient(0deg,rgba(23,17,14,.74),transparent 48%)!important}
+.hero--alora .hero__content{z-index:6!important;min-height:100svh;padding:15vh 5vw 60px!important;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;pointer-events:none}
+.hero--alora .hero__studio{margin:0 0 1.4rem!important;color:#dec1a9!important;font-size:.68rem!important;letter-spacing:.19em!important;text-shadow:none!important}
+.hero--alora .hero__studio-line{display:none!important}
+.hero--alora .hero__title{max-width:680px!important;margin:0!important;color:#fffbee!important;font-family:"Italiana",serif!important;font-size:clamp(4.5rem,7.5vw,7.4rem)!important;font-weight:400!important;line-height:.96!important;letter-spacing:-.035em!important;text-shadow:0 3px 28px rgba(0,0,0,.28)!important}
+.hero--alora .hero__line{display:block}
+.hero--alora .hero__bottom{display:block;width:min(530px,43vw);margin-top:2rem}
+.hero--alora .hero__sub{max-width:470px!important;margin:0!important;color:#f0e4d6!important;font-size:.94rem!important;line-height:1.7!important;text-shadow:none!important}
+.hero--alora .hero__actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:1.8rem;pointer-events:auto}
+.hero--alora .hero__actions .btn--dark{background:#dec1a9!important;color:#211a15!important;border:1px solid #dec1a9!important;border-radius:999px;padding:.9rem 1.35rem!important}
+.hero--alora .hero__link{color:#fffbee!important;border-bottom:1px solid rgba(222,193,169,.55);padding:.8rem .1rem}
+.hero--alora .hero__ledger,.hero--alora .hero__caption,.hero--alora .hero__scroll{display:none!important}
+
+.alora-kit-stage{position:absolute;z-index:4;right:-1%;top:29%;width:58%;height:63%;pointer-events:none;overflow:visible}
+.alora-kit-poster,.alora-kit-canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
+.alora-kit-poster{opacity:.98;filter:drop-shadow(0 28px 34px rgba(0,0,0,.28));transition:opacity .65s ease}
+.alora-kit-canvas{opacity:0;transition:opacity .65s ease}
+.alora-kit-stage.is-live .alora-kit-canvas{opacity:1}.alora-kit-stage.is-live .alora-kit-poster{opacity:0}
+.alora-kit-hint{position:absolute;right:16%;bottom:3%;padding:.55rem .85rem;border:1px solid rgba(222,193,169,.32);border-radius:999px;color:#dec1a9;background:rgba(33,26,21,.58);backdrop-filter:blur(10px);font:500 .58rem/1 "Montserrat",sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.alora-kit-stage.is-live .alora-kit-hint{opacity:.78}
+
+@media(max-width:1100px){
+  .head__sister{max-width:170px}.hero--alora .hero__title{font-size:clamp(4rem,8vw,6rem)!important}
+  .alora-kit-stage{right:-9%;width:68%}.hero--alora .hero__bottom{width:48vw}
+}
+@media(max-width:900px){
+  .head__nav,.head__cta{display:none!important}.head__brand{left:18px;width:160px;height:82px}.head__brand-logo{width:150px!important;height:104px!important}.head__toggle{display:flex!important;margin-left:auto;position:relative;z-index:11}
+  .hero--alora,.hero--alora .hero__media,.hero--alora .hero__content{min-height:900px}
+  .hero--alora .hero__media picture{top:46%;right:5%;width:90%;height:46%;opacity:.86;border-radius:180px 180px 18px 18px}
+  .hero--alora .hero__shade{background:linear-gradient(180deg,rgba(23,17,14,.9) 0%,rgba(33,26,21,.76) 42%,rgba(23,17,14,.12) 100%)!important}
+  .hero--alora .hero__content{padding:64px 6vw 400px!important;justify-content:flex-start}
+  .hero--alora .hero__title{max-width:600px!important;font-size:clamp(3.7rem,10vw,5.6rem)!important}
+  .hero--alora .hero__bottom{width:min(540px,84vw);margin-top:1.5rem}.hero--alora .hero__sub{max-width:520px!important}
+  .alora-kit-stage{right:2%;top:auto;bottom:1%;width:96%;height:34%}.alora-kit-hint{display:none}
+}
+@media(max-width:480px){
+  .head__inner{min-height:120px;padding:12px 16px 0!important}.head__brand{left:12px;width:150px;height:74px}.head__brand-logo{width:140px!important;height:98px!important}
+  .hero--alora,.hero--alora .hero__media,.hero--alora .hero__content{min-height:calc(100svh - 120px)}
+  .hero--alora .hero__content{padding:30px 22px 340px!important}.hero--alora .hero__studio{font-size:.6rem!important;letter-spacing:.13em!important;margin-bottom:.8rem!important}
+  .hero--alora .hero__title{font-size:clamp(3rem,13vw,3.7rem)!important;line-height:.98!important}
+  .hero--alora .hero__bottom{width:100%;margin-top:1.25rem}.hero--alora .hero__sub{font-size:.84rem!important;line-height:1.6!important;max-width:350px!important;color:#fffbee!important;font-weight:500!important}
+  .hero--alora .hero__actions{gap:10px;margin-top:1.3rem}.hero--alora .hero__actions .btn--dark{padding:.78rem 1.05rem!important;font-size:.78rem}.hero--alora .hero__link{font-size:.75rem;font-weight:600!important;color:#fffbee!important}
+  .hero--alora .hero__media picture{top:60%;height:30%}
+  .alora-kit-stage{bottom:4%;height:25%;width:92%;right:4%}
+}
+@media(prefers-reduced-motion:reduce){
+  .alora-kit-poster,.alora-kit-canvas{transition:none!important}.alora-kit-canvas{display:none!important}.alora-kit-hint{display:none!important}
+  .hero--alora .hero-char,.hero--alora .hero-word{animation:none!important;transition:none!important;transform:none!important;opacity:1!important}
+}

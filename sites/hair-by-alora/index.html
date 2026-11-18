@@ -18,12 +18,9 @@
     <meta property="og:url" content="https://laydbackapps.com/sites/hair-by-alora/" />
     <meta property="og:image" content="https://laydbackapps.com/sites/hair-by-alora/img/DeY4GB7T0bq-1920.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" href="./fonts/italiana-400.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="./fonts/montserrat-400.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="./fonts/fonts.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -48,28 +45,9 @@
     </script>
     <script type="module" crossorigin src="./assets/index-3d.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-3d.css?v=mobile-clean-2">
-    <link rel="stylesheet" href="./alora-polish.css?v=header-5" />
-    <script type="module" src="./spatial-hero.js?v=tools-hero-5" defer></script>
-    <script type="module" src="./alora-gloss.js?v=gloss-2" defer></script>
-    <script>
-      // Static fallback for GitHub Pages/subpath deployments: the compiled bundle
-      // must resolve image URLs relative to this site, never from the domain root.
-      const siteRoot = new URL('.', document.baseURI).pathname;
-      const repairAssetPaths = () => {
-        document.querySelectorAll('img').forEach((img) => {
-          const src = img.getAttribute('src');
-          if (!src) return;
-          const asset = src.match(/(?:DeY4GB7T0bq-1920\.jpg|DGJ7jvBTowB-1440\.jpg|Dei0DSREw24-1920\.jpg|DdoNZz-E7BJ-1920\.jpg|DD20wAXTtpy-864\.jpg|DfWmWKnk7F4-1920\.jpg|alora-mark\.png|alora-tile\.jpg|Dd0sfqUFKw2-1920\.jpg)$/)?.[0];
-          if (asset && (src.startsWith('/') || src.includes('/sites/'))) {
-            img.removeAttribute('srcset');
-            img.onerror = null;
-            img.src = asset === 'DeY4GB7T0bq-1920.jpg' ? './img/alora-hero-v3.png' : `./img/${asset}`;
-          }
-        });
-      };
-      new MutationObserver(repairAssetPaths).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['src', 'srcset'] });
-      repairAssetPaths();
-    </script>
+    <link rel="stylesheet" href="./alora-polish.css?v=atelier-duo-20261118e" />
+    <script type="module" src="./spatial-hero.js?v=atelier-duo-20261118e" defer></script>
+    <script src="./asset-paths.js" defer></script>
 </head>
   <body>
     <div id="root"></div>
