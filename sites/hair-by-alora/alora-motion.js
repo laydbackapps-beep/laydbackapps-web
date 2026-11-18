@@ -40,27 +40,6 @@
     const raf = time => lenis.raf(time * 1000);
     gsap.ticker.add(raf); gsap.ticker.lagSmoothing(0);
 
-    const cursor = document.createElement('div');
-    cursor.className = 'alora-cursor'; cursor.textContent = 'VIEW'; cursor.setAttribute('aria-hidden','true');
-    document.body.append(cursor);
-    const cursorX = gsap.quickTo(cursor,'left',{duration:.28,ease:'power3.out'});
-    const cursorY = gsap.quickTo(cursor,'top',{duration:.28,ease:'power3.out'});
-    work.querySelectorAll('.work__card').forEach(card => {
-      card.addEventListener('pointermove', event => { cursorX(event.clientX); cursorY(event.clientY); gsap.to(cursor,{opacity:1,scale:1,duration:.2}); }, {passive:true});
-      card.addEventListener('pointerleave', () => gsap.to(cursor,{opacity:0,scale:.6,duration:.2}), {passive:true});
-    });
-    hero.querySelectorAll('.hero__actions .btn').forEach(button => {
-      button.addEventListener('pointermove', event => {
-        const r = button.getBoundingClientRect();
-        gsap.to(button,{x:(event.clientX-r.left-r.width/2)*.12,y:(event.clientY-r.top-r.height/2)*.12,duration:.25});
-      }, {passive:true});
-      button.addEventListener('pointerleave', () => gsap.to(button,{x:0,y:0,duration:.35}), {passive:true});
-    });
-    ScrollTrigger.create({
-      trigger: document.body, start: 0, end: 'max',
-      onUpdate: self => { rail.querySelector('.alora-marquee__track').style.animationDirection = self.direction === 1 ? 'normal' : 'reverse'; }
-    });
-
     const heroTimeline = gsap.timeline({
       scrollTrigger: { trigger: hero, start: 'top top', end: '+=110%', scrub: 1.1, pin: true, anticipatePin: 1 }
     });
