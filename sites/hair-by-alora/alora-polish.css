@@ -64,7 +64,35 @@ main section[id]{scroll-margin-top:90px}
 .alora-reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease var(--reveal-delay,0ms),transform .65s ease var(--reveal-delay,0ms)}
 .alora-reveal.is-visible{opacity:1;transform:translateY(0)}
 @media(prefers-reduced-motion:reduce){
-  .alora-kit-poster,.alora-kit-canvas{transition:none!important}.alora-kit-canvas{display:none!important}
+  .alora-kit-poster,.alora-kit-canvas{transition:none!important}.alora-kit-canvas{display:none!important}.alora-kit-hint{display:none!important}
   .hero--alora .hero-char,.hero--alora .hero-word{animation:none!important;transition:none!important;transform:none!important;opacity:1!important}
   .alora-reveal{opacity:1!important;transform:none!important;transition:none!important}
+}
+
+/* Editorial header and page hierarchy: balanced chrome, readable content. */
+html{scroll-behavior:smooth;scroll-padding-top:98px}
+body{font-size:16px;line-height:1.7}
+.head{position:sticky!important;top:0;z-index:120;padding-block:0!important;background:rgba(33,26,21,.97)!important;border-bottom:1px solid rgba(222,193,169,.22)!important;backdrop-filter:blur(16px)}
+.head__inner{min-height:84px!important;gap:1.25rem!important}
+.head__brand{left:24px!important;width:158px!important;height:78px!important}
+.head .head__brand-logo,.head__brand-logo{width:146px!important;height:94px!important;object-fit:contain!important;object-position:center!important}
+.head__nav{margin-left:auto!important;margin-right:1.2rem!important;gap:1.65rem!important;display:flex;align-items:center;font-size:.74rem!important;font-weight:600!important;letter-spacing:.09em!important;text-transform:uppercase!important;color:#fffbee!important}
+.head__nav>a{color:#fffbee!important;padding-block:.45rem;border-bottom:1px solid transparent;transition:color .2s ease,border-color .2s ease}
+.head__nav>a:hover,.head__menu[open] summary{color:#d9b079!important;border-bottom-color:#d9b079!important}
+.head__menu{position:relative}
+.head__menu summary{list-style:none;cursor:pointer;padding-block:.45rem;border-bottom:1px solid transparent;color:#fffbee}
+.head__menu summary::-webkit-details-marker{display:none}
+.head__menu summary:after{content:"⌄";margin-left:.35rem;color:#d9b079}
+.head__menu-panel{position:absolute;top:calc(100% + .9rem);left:-1rem;width:225px;display:grid;padding:.55rem;background:#2b211a;border:1px solid rgba(222,193,169,.25);box-shadow:0 18px 45px rgba(0,0,0,.35);z-index:130}
+.head__menu-panel a{padding:.7rem .75rem;color:#fffbee!important;font-size:.72rem;text-transform:none;letter-spacing:.04em;border:0!important}
+.head__menu-panel a:hover{background:#3a2c22;color:#d9b079!important}
+.head__cta{min-height:44px!important;display:inline-flex!important;align-items:center!important;padding:0 1.05rem!important;border-radius:0!important;font-size:.7rem!important;font-weight:600!important;letter-spacing:.08em!important;text-transform:uppercase!important}
+main h2{font-size:clamp(2.35rem,4.2vw,4.1rem)!important;line-height:1.05!important;letter-spacing:-.025em!important;text-wrap:balance}
+main h3{line-height:1.16!important;text-wrap:balance}
+main p{font-size:clamp(.96rem,1.05vw,1.04rem);line-height:1.75}
+.alora-kit-stage{right:0!important}
+@media(max-width:900px){
+  .head__inner{min-height:68px!important}.head__brand{left:14px!important;width:136px!important;height:64px!important}.head .head__brand-logo{width:126px!important;height:82px!important}
+  .head__nav.is-open{inset:68px 0 0!important}.head__menu-panel{position:fixed;left:0;right:0;top:68px;width:auto;border-left:0;border-right:0}
+  main h2{font-size:clamp(2rem,8.5vw,3rem)!important}main p{font-size:.97rem}
 }

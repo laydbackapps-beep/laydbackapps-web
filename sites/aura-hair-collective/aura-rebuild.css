@@ -1,10 +1,24 @@
 /* Aura — warm lakeside sanctuary; deliberately distinct from Alora's dark atelier. */
-.mast{--mast-h:182px;background:#7b5f4a!important;border-bottom:1px solid rgba(255,251,238,.28)!important;padding-block:.55rem!important}
-.mast__inner{min-height:164px!important}
-.mast__brand{left:50%!important;transform:translate(-50%,-50%)!important;width:160px!important;height:160px!important;justify-content:center!important;gap:0!important}
-.mast__roundel{width:160px!important;height:160px!important;max-width:none!important;flex:0 0 160px!important;object-fit:contain!important;border:0!important;border-radius:50%!important;box-shadow:none!important}
-.mast__nav{margin:0 auto 0 0!important}.mast__nav.is-open{inset:var(--mast-h) 0 0!important}
-@media(max-width:880px){.mast{--mast-h:136px}.mast__inner{min-height:118px!important}.mast__brand{width:118px!important;height:118px!important}.mast__roundel{width:118px!important;height:118px!important;flex-basis:118px!important}}
+.mast{--mast-h:78px;position:sticky!important;top:0;z-index:120;background:rgba(255,251,238,.97)!important;border-bottom:1px solid rgba(75,54,39,.16)!important;padding-block:0!important;backdrop-filter:blur(16px);color:#211a15!important}
+.mast__inner{min-height:78px!important;display:flex!important;align-items:center!important;gap:1.1rem!important}
+.mast__brand{left:24px!important;top:50%!important;transform:translateY(-50%)!important;width:auto!important;height:auto!important;justify-content:flex-start!important;gap:.72rem!important}
+.mast__roundel{width:48px!important;height:48px!important;max-width:48px!important;flex:0 0 48px!important;object-fit:contain!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:none!important}
+.mast__wordmark{display:flex;flex-direction:column;line-height:1;text-align:left}
+.mast__name{font-family:var(--display);font-size:1.48rem;letter-spacing:.015em;color:#211a15}
+.mast__sub{margin-top:.28rem;font-size:.52rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#8d6332}
+.mast__nav{margin:0 0 0 auto!important;gap:1.65rem!important;font-size:.76rem!important;font-weight:600!important;letter-spacing:.08em!important;text-transform:uppercase!important;color:#211a15!important}
+.mast__nav>a{color:#211a15!important;padding-block:.4rem;border-bottom:1px solid transparent;transition:border-color .2s ease,color .2s ease}
+.mast__nav>a:hover,.mast__menu[open] summary{border-bottom-color:#8d6332;color:#8d6332!important}
+.mast__menu{position:relative}
+.mast__menu summary{list-style:none;cursor:pointer;padding-block:.4rem;border-bottom:1px solid transparent;color:#211a15}
+.mast__menu summary::-webkit-details-marker{display:none}
+.mast__menu summary:after{content:"⌄";margin-left:.35rem;font-size:.9em;color:#8d6332}
+.mast__menu-panel{position:absolute;top:calc(100% + .9rem);left:-1rem;width:225px;display:grid;padding:.6rem;background:#fffbee;border:1px solid rgba(75,54,39,.16);box-shadow:0 18px 45px rgba(54,38,26,.14);z-index:130}
+.mast__menu-panel a{padding:.7rem .75rem;color:#211a15!important;font-size:.72rem;letter-spacing:.06em;text-transform:none;border:0!important}
+.mast__menu-panel a:hover{background:#f0e4d6}
+.mast__book{min-height:44px!important;display:inline-flex!important;align-items:center!important;padding:0 1.1rem!important;background:#211a15!important;color:#fffbee!important;border:1px solid #211a15!important;border-radius:0!important;font-size:.7rem!important;font-weight:600!important;letter-spacing:.09em!important;text-transform:uppercase!important}
+.mast__toggle{color:#211a15!important}
+@media(max-width:880px){.mast{--mast-h:68px}.mast__inner{min-height:68px!important}.mast__brand{left:14px!important}.mast__roundel{width:42px!important;height:42px!important;flex-basis:42px!important;max-width:42px!important}.mast__name{font-size:1.22rem}.mast__sub{font-size:.46rem;letter-spacing:.13em}.mast__nav.is-open{inset:var(--mast-h) 0 0!important}}
 .hero--cinema{background:#f0e4d6;color:#211a15;min-height:calc(100svh - 86px)}
 .hero--cinema .hero__media{background:radial-gradient(circle at 70% 25%,#fff8e9 0,#f0e4d6 46%,#e5d2b9 100%)}
 .hero--cinema .hero__media picture{inset:6% 4vw 12% auto;width:44%;height:82%;border-radius:280px 280px 12px 12px;overflow:hidden;box-shadow:0 28px 70px rgba(59,45,34,.2)}
@@ -36,3 +50,19 @@
   .hero__sanctuary,.hero--cinema .hero__caption{display:none!important}.hero--cinema .hero__intro{padding-left:.8rem!important}
 }
 @media(prefers-reduced-motion:reduce){.hero--cinema .hero__canvas{display:none!important}}
+
+/* Editorial scale and controls: readable without oversized chrome. */
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{font-size:16px;line-height:1.7}
+main h2{font-size:clamp(2.25rem,4vw,3.9rem)!important;line-height:1.06!important;letter-spacing:-.025em!important;text-wrap:balance}
+main h3{line-height:1.16!important;text-wrap:balance}
+main p{font-size:clamp(.96rem,1.05vw,1.04rem);line-height:1.75}
+.services__tabs{display:grid!important;gap:.55rem!important}
+.services__tab{padding:1rem 1.05rem!important;border:1px solid rgba(75,54,39,.18)!important;background:rgba(255,251,238,.4)!important;text-align:left!important;transition:background .2s ease,color .2s ease,border-color .2s ease}
+.services__tab:hover{border-color:#8d6332!important}
+.services__tab.is-active{background:#211a15!important;border-color:#211a15!important;color:#fffbee!important}
+.services__tab-title{font-size:1.02rem!important;line-height:1.25!important;font-weight:500!important}
+.services__tab.is-active .services__tab-title{color:#fffbee!important}
+.services__tab-sub{font-size:.74rem!important;line-height:1.5!important;letter-spacing:.01em!important}
+.services__tab.is-active .services__tab-sub{color:rgba(255,251,238,.72)!important}
+@media(max-width:880px){main h2{font-size:clamp(2rem,8.5vw,3rem)!important}main p{font-size:.97rem}.mast__menu-panel{position:fixed;left:0;right:0;top:var(--mast-h);width:auto;border-left:0;border-right:0}}
