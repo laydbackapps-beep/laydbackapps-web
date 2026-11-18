@@ -22,7 +22,16 @@
     button.addEventListener('pointerdown', () => { button.style.transform = 'scale(.97)'; });
     button.addEventListener('pointerup', () => { button.style.transform = ''; });
   }
-  if (!canvas || !image || reduced.matches || matchMedia('(max-width: 679px)').matches) return;
+  if (!canvas || !image) return;
+  if (reduced.matches || matchMedia('(max-width: 679px)').matches) {
+    hero.dataset.heroState = reduced.matches ? 'reduced-motion-static' : 'mobile-static';
+    return;
+  }
+  const probe = document.createElement('canvas');
+  if (!probe.getContext('webgl2') && !probe.getContext('webgl')) {
+    hero.dataset.heroState = 'static-no-webgl';
+    return;
+  }
 
   // One quad, transparent above the hair photograph. Its source is 5KB;
   // the existing Three module is shared with the other salon hero layer.
@@ -82,7 +91,7 @@
     document.addEventListener('visibilitychange',start);
     new ResizeObserver(resize).observe(canvas);
     const io=new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;if(visible)start();else{cancelAnimationFrame(raf);raf=0;}},{threshold:.01});
-    io.observe(hero);resize();updateScroll();renderer.render(scene,camera);canvas.classList.add('is-live');start();
+    io.observe(hero);resize();updateScroll();renderer.render(scene,camera);canvas.classList.add('is-live');hero.dataset.heroState='interactive';start();
     addEventListener('pagehide',()=>{cancelAnimationFrame(raf);io.disconnect();quad.geometry.dispose();material.dispose();renderer.dispose();},{once:true});
-  }).catch((error)=>{window.__auraShaderError=String(error);canvas.classList.remove('is-live');});
+  }).catch((error)=>{window.__auraShaderError=String(error);hero.dataset.heroState='static-error';canvas.classList.remove('is-live');});
 })();
