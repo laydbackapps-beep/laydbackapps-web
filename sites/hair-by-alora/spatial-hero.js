@@ -4,6 +4,10 @@ const mountAloraHero = () => {
   const media = hero?.querySelector('.hero__media');
   if (!hero || !media || hero.querySelector('.alora-kit-stage')) return false;
   hero.classList.add('alora-hero--atelier');
+  document.querySelectorAll('.quotes__item footer a[aria-label]').forEach((link) => {
+    const label = link.getAttribute('aria-label');
+    if (!label.includes('View on Instagram')) link.setAttribute('aria-label', `View on Instagram — ${label}`);
+  });
   const secondary = hero.querySelector('.hero__link');
   if (secondary) secondary.textContent = 'View colour work';
   const headerCta = document.querySelector('.head__cta');
