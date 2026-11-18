@@ -22,7 +22,7 @@
   const serviceData = {
     blonde: {
       title: "Lived-In Blonde & Foilayage",
-      body: "Our signature house service led by Alora. Fine micro-foils and hand-swept balayage are mapped to your natural root depth so brightness frames the face while regrowth stays whisper-soft for months.",
+      body: "A tailored colour service for soft, natural-looking brightness. Fine micro-foils and hand-swept balayage are mapped to your natural root depth so brightness frames the face while regrowth stays soft.",
       items: [
         "Custom root smudge & multi-zone tonal gloss",
         "Bright creamy, pearl or honey tones without brassiness",
@@ -253,14 +253,14 @@
         if (!res.ok || json.error || json.detail) throw new Error("Request failed");
         if (statusEl) {
           statusEl.textContent =
-            "Thank you — your enquiry is with Alora and the Aura Hair Collective team. You can also view live times directly via our online booking calendar.";
+            "Thank you — your enquiry is with the Aura Hair Collective team. You can also view live times directly via our online booking calendar.";
         }
         form.reset();
       } catch {
         if (statusEl) {
           statusEl.className = "aura-form__status is-error";
           statusEl.textContent =
-            "Couldn’t send just now — please DM @aurahaircollective_ or @hairbyaloraa on Instagram, or book directly via our online calendar.";
+            "Couldn’t send just now — please DM @aurahaircollective_ on Instagram, or book directly via our online calendar.";
         }
       } finally {
         if (submitBtn) submitBtn.removeAttribute("disabled");
