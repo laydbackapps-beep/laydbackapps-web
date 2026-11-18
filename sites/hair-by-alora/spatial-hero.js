@@ -3,7 +3,7 @@ const mountAloraHero = () => {
   const hero = document.querySelector('.hero--cinema.hero--alora');
   const media = hero?.querySelector('.hero__media');
   if (!hero || !media) return false;
-  if (hero.dataset.aloraMounted === 'true') return true;
+  if (hero.dataset.aloraMounted === 'true' && hero.querySelector('.alora-kit-stage')) return true;
   hero.dataset.aloraMounted = 'true';
   hero.classList.add('alora-hero--atelier');
   document.querySelectorAll('.quotes__item footer a[aria-label]').forEach((link) => {
@@ -107,8 +107,7 @@ const mountAloraHero = () => {
   return true;
 };
 
-if (!mountAloraHero()) {
-  const observer = new MutationObserver(() => { if (mountAloraHero()) observer.disconnect(); });
-  observer.observe(document.documentElement, { childList: true, subtree: true });
-  setTimeout(() => observer.disconnect(), 15000);
-}
+const observer = new MutationObserver(mountAloraHero);
+observer.observe(document.documentElement, { childList: true, subtree: true });
+mountAloraHero();
+setTimeout(() => observer.disconnect(), 15000);
