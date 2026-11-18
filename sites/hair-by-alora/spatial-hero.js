@@ -2,7 +2,9 @@
 const mountAloraHero = () => {
   const hero = document.querySelector('.hero--cinema.hero--alora');
   const media = hero?.querySelector('.hero__media');
-  if (!hero || !media || hero.querySelector('.alora-kit-stage')) return false;
+  if (!hero || !media) return false;
+  if (hero.dataset.aloraMounted === 'true') return true;
+  hero.dataset.aloraMounted = 'true';
   hero.classList.add('alora-hero--atelier');
   document.querySelectorAll('.quotes__item footer a[aria-label]').forEach((link) => {
     const label = link.getAttribute('aria-label');
@@ -12,15 +14,16 @@ const mountAloraHero = () => {
   if (secondary) secondary.textContent = 'View colour work';
   const headerCta = document.querySelector('.head__cta');
   if (headerCta) headerCta.textContent = 'Book a consultation';
-  const stage = document.createElement('div');
-  stage.className = 'alora-kit-stage';
-  stage.setAttribute('aria-hidden', 'true');
-  stage.innerHTML = `
-    <img class="alora-kit-poster" src="./assets/hero/alora-salon-kit.webp?v=duo-20261118"
-      width="1600" height="1200" alt="" fetchpriority="high" decoding="sync">
-    <canvas class="alora-kit-canvas"></canvas>
-    <span class="alora-kit-hint">Move to turn the tools</span>`;
-  media.append(stage);
+  let stage = hero.querySelector('.alora-kit-stage');
+  if (!stage) {
+    stage = document.createElement('div');
+    stage.className = 'alora-kit-stage';
+    stage.setAttribute('aria-hidden', 'true');
+    stage.innerHTML = '<img class="alora-kit-poster" src="./assets/hero/alora-salon-kit.webp?v=duo-20261118" width="1600" height="1200" alt="" fetchpriority="high" decoding="sync">';
+    media.append(stage);
+  }
+  if (!stage.querySelector('canvas')) stage.insertAdjacentHTML('beforeend', '<canvas class="alora-kit-canvas"></canvas>');
+  if (!stage.querySelector('.alora-kit-hint')) stage.insertAdjacentHTML('beforeend', '<span class="alora-kit-hint">Move to turn the tools</span>');
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   const mobile = matchMedia('(max-width: 900px), (pointer: coarse)');
