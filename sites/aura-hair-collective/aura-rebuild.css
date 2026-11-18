@@ -1,7 +1,10 @@
 /* Aura — warm lakeside sanctuary; deliberately distinct from Alora's dark atelier. */
-.mast__brand{left:24px!important;transform:translateY(-50%)!important;width:auto!important;justify-content:flex-start!important;gap:12px!important}
-.mast__roundel{width:72px!important;height:72px!important;flex-basis:72px!important;object-fit:contain!important;border-radius:50%!important;box-shadow:0 0 0 3px #fffbee!important}
-.mast__sister{display:none!important}.mast__nav{margin-left:auto!important}.mast__title{font-size:1.4rem!important}
+.mast{--mast-h:182px;background:#7b5f4a!important;border-bottom:1px solid rgba(255,251,238,.28)!important;padding-block:.55rem!important}
+.mast__inner{min-height:164px!important}
+.mast__brand{left:50%!important;transform:translate(-50%,-50%)!important;width:160px!important;height:160px!important;justify-content:center!important;gap:0!important}
+.mast__roundel{width:160px!important;height:160px!important;max-width:none!important;flex:0 0 160px!important;object-fit:contain!important;border:0!important;border-radius:50%!important;box-shadow:none!important}
+.mast__nav{margin:0 auto 0 0!important}.mast__nav.is-open{inset:var(--mast-h) 0 0!important}
+@media(max-width:880px){.mast{--mast-h:136px}.mast__inner{min-height:118px!important}.mast__brand{width:118px!important;height:118px!important}.mast__roundel{width:118px!important;height:118px!important;flex-basis:118px!important}}
 .hero--cinema{background:#f0e4d6;color:#211a15;min-height:calc(100svh - 86px)}
 .hero--cinema .hero__media{background:radial-gradient(circle at 70% 25%,#fff8e9 0,#f0e4d6 46%,#e5d2b9 100%)}
 .hero--cinema .hero__media picture{inset:6% 4vw 12% auto;width:44%;height:82%;border-radius:280px 280px 12px 12px;overflow:hidden;box-shadow:0 28px 70px rgba(59,45,34,.2)}
@@ -21,9 +24,7 @@
 .hero__sanctuary img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.88) brightness(.95)}
 .hero__sanctuary figcaption{position:absolute;inset:auto 0 0;padding:.6rem .8rem;background:rgba(33,26,21,.86);color:#fffbee;font-size:.62rem;letter-spacing:.11em;text-transform:uppercase}
 @media(max-width:1100px){.hero__sanctuary{right:32%;width:31%}.hero--cinema .hero__title{font-size:clamp(3.6rem,7vw,5.6rem)!important}}
-@media(max-width:880px){.mast__brand{left:16px!important}.mast__title{font-size:1.1rem!important}}
 @media(max-width:679px){
-  .mast__brand{left:12px!important;gap:.55rem!important}.mast__roundel{width:56px!important;height:56px!important;flex-basis:56px!important}.mast__title{font-size:1rem!important}
   .hero--cinema,.hero--cinema .hero__content{min-height:calc(100svh - 76px)}
   .hero--cinema .hero__content{padding:2rem 6vw 200px}
   .hero--cinema .hero__eyebrow{font-size:.58rem!important;letter-spacing:.09em!important;margin-bottom:1rem!important}
