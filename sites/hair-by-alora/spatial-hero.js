@@ -23,7 +23,7 @@ const mountAloraHero = () => {
     media.append(stage);
   }
   if (!stage.querySelector('canvas')) stage.insertAdjacentHTML('beforeend', '<canvas class="alora-kit-canvas"></canvas>');
-  if (!stage.querySelector('.alora-kit-hint')) stage.insertAdjacentHTML('beforeend', '<span class="alora-kit-hint">Move to turn the tools</span>');
+  stage.querySelector('.alora-kit-hint')?.remove();
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   const mobile = matchMedia('(max-width: 900px), (pointer: coarse)');
