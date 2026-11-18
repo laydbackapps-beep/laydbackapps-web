@@ -1,0 +1,50 @@
+/* Aura — the lakeside ritual. Editorial stillness with expanding photographic portals. */
+body{overflow-x:hidden!important}
+.aura-watermark{position:absolute;left:-1%;bottom:-4%;z-index:0;color:#7b5f4a;opacity:.055;font:400 23vw/.7 "Italiana",serif;letter-spacing:-.08em;pointer-events:none}
+.hero--cinema .hero__media picture{transform-origin:70% 50%;will-change:clip-path,transform,border-radius}
+.hero--cinema .hero__title .hero__line{display:block;will-change:transform,opacity}
+.aura-marquee{display:flex;overflow:hidden;background:#7b5f4a;color:#fffbee;border-block:1px solid rgba(255,251,238,.18);padding:1rem 0;white-space:nowrap}
+.aura-marquee__track{display:flex;gap:3rem;min-width:max-content;animation:aura-rail 34s linear infinite;font:500 .65rem/1 "Montserrat",sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.aura-marquee__track span{display:inline-flex;gap:3rem}.aura-marquee__track i{font-style:normal;opacity:.45}
+@keyframes aura-rail{to{transform:translateX(-50%)}}
+
+.lookbook.is-aura-motion{position:relative;padding:10vh 5vw;background:#f7f0e5;color:#211a15}
+.lookbook.is-aura-motion .lookbook__head{position:sticky;top:8vh;z-index:4;width:32%;padding-top:5vh}
+.lookbook.is-aura-motion .lookbook__heading{font-size:clamp(3.5rem,5.8vw,6rem)!important;line-height:.92}
+.lookbook.is-aura-motion .lookbook__sub{max-width:34ch;color:#655044}
+.lookbook.is-aura-motion .lookbook__controls{display:none}
+.lookbook.is-aura-motion .lookbook__rail{display:block;padding-left:38%}
+.lookbook.is-aura-motion .lookbook__card{position:relative;display:grid;grid-template-columns:1fr;gap:0;height:74vh;min-height:600px;margin:0 0 16vh;background:#211a15;color:#fffbee;overflow:hidden;box-shadow:0 30px 80px rgba(59,45,34,.18);will-change:clip-path,transform}
+.lookbook.is-aura-motion .lookbook__media{position:relative;height:100%;min-height:0;overflow:hidden}
+.lookbook.is-aura-motion .lookbook__media img{width:100%;height:115%;object-fit:cover;object-position:center 38%;will-change:transform;filter:sepia(.06) saturate(1.04)}
+.lookbook.is-aura-motion .lookbook__cap{position:absolute;z-index:2;left:0;right:0;bottom:0;display:block;padding:1.8rem 2rem;background:linear-gradient(0deg,rgba(23,17,14,.96),rgba(23,17,14,.72) 68%,transparent);color:#fffbee}
+.lookbook.is-aura-motion .lookbook__cap::before{content:attr(data-index);position:absolute;right:1.8rem;bottom:1.6rem;color:#dec1a9;font:400 5.5rem/.75 "Italiana",serif;opacity:.75}
+.lookbook.is-aura-motion .lookbook__cat{color:#dec1a9;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase}
+.lookbook.is-aura-motion .lookbook__title{max-width:32ch;margin-top:.6rem;font:400 clamp(1.8rem,3vw,3rem)/1.05 "Italiana",serif}
+.services.is-aura-motion .services__head{position:sticky;top:10vh;align-self:start}
+.services.is-aura-motion .services__tab{position:relative;padding:4rem 0;border-top:1px solid rgba(117,96,77,.24)}
+.services.is-aura-motion .services__tab:last-child{border-bottom:1px solid rgba(117,96,77,.24)}
+.services.is-aura-motion .services__tab-title{font-size:clamp(2.8rem,4.5vw,5rem)!important;line-height:.96}
+.services.is-aura-motion .services__detail{display:block}
+.homage.is-aura-motion{overflow:hidden}.homage.is-aura-motion .homage__frame{will-change:clip-path,transform}.homage.is-aura-motion .homage__frame img{will-change:transform}
+.collective.is-aura-motion .chair-card{transform-origin:50% 100%}
+.aura-reveal{opacity:0;transform:translateY(35px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+.aura-reveal.is-visible{opacity:1;transform:none}
+@media(max-width:1000px){.lookbook.is-aura-motion .lookbook__head{width:38%}.lookbook.is-aura-motion .lookbook__rail{padding-left:44%}}
+@media(max-width:679px){
+  .aura-watermark{display:none}.hero--cinema .hero__media picture{will-change:auto}
+  .lookbook.is-aura-motion{padding:4rem 6vw}
+  .lookbook.is-aura-motion .lookbook__head{position:relative;top:auto;width:auto;padding:0 0 2rem}
+  .lookbook.is-aura-motion .lookbook__heading{font-size:3rem!important}
+  .lookbook.is-aura-motion .lookbook__rail{padding-left:0}
+  .lookbook.is-aura-motion .lookbook__card{height:64vh;min-height:490px;margin-bottom:2rem}
+  .lookbook.is-aura-motion .lookbook__cap{padding:1.2rem}.lookbook.is-aura-motion .lookbook__cap::before{right:1rem;bottom:1rem;font-size:3.4rem}
+  .lookbook.is-aura-motion .lookbook__title{font-size:1.65rem}
+  .services.is-aura-motion .services__head{position:relative;top:auto}.services.is-aura-motion .services__detail{display:block}
+  .services.is-aura-motion .services__tab{padding:2.4rem 0}.services.is-aura-motion .services__tab-title{font-size:2.6rem!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .aura-marquee__track{animation:none}.hero--cinema .hero__media picture{clip-path:none!important;transform:none!important}
+  .lookbook.is-aura-motion .lookbook__card{clip-path:none!important;transform:none!important}.lookbook.is-aura-motion .lookbook__media img{transform:none!important}
+  .aura-reveal{opacity:1;transform:none;transition:none}
+}
