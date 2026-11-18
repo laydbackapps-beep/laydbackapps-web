@@ -60,7 +60,11 @@
   .hero--alora .hero__media picture{top:60%;height:30%}
   .alora-kit-stage{bottom:4%;height:25%;width:92%;right:4%}
 }
+@media(min-width:901px){.work__grid>.work__card:last-child:nth-child(odd){display:none!important}}
+.alora-reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease var(--reveal-delay,0ms),transform .65s ease var(--reveal-delay,0ms)}
+.alora-reveal.is-visible{opacity:1;transform:translateY(0)}
 @media(prefers-reduced-motion:reduce){
   .alora-kit-poster,.alora-kit-canvas{transition:none!important}.alora-kit-canvas{display:none!important}.alora-kit-hint{display:none!important}
   .hero--alora .hero-char,.hero--alora .hero-word{animation:none!important;transition:none!important;transform:none!important;opacity:1!important}
+  .alora-reveal{opacity:1!important;transform:none!important;transition:none!important}
 }
