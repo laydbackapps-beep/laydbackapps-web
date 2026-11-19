@@ -88,14 +88,20 @@
   async function loadDates() {
     state.dates = [];
     const today = new Date(); today.setHours(0, 0, 0, 0);
+    let available = null;
+    try {
+      const d = await api(`/availability/dates?services=${encodeURIComponent(selectedServices().map((s) => s.id).join(","))}`);
+      available = new Set(d.dates || []);
+    } catch (e) { available = null; }
     for (let i = 1; i < 29; i++) {
       const d = new Date(today); d.setDate(today.getDate() + i);
       state.dates.push(d);
     }
+    const isOpen = (d) => available ? available.has(isoDate(d)) : [2, 4, 5].includes(d.getDay());
     el.dates.innerHTML = state.dates.map((d) => {
-      const open = [2, 4, 5].includes(d.getDay());
+      const open = isOpen(d);
       const iso = isoDate(d);
-      return `<button type="button" class="date ${open ? "" : "is-closed"} ${state.date === iso ? "is-active" : ""}" data-date="${iso}" ${open ? "" : "disabled"} aria-label="${d.toDateString()}${open ? "" : " closed"}"><span>${d.toLocaleDateString("en-AU", { weekday: "short" })}</span><b>${d.getDate()}</b><small>${d.toLocaleDateString("en-AU", { month: "short" })}</small></button>`;
+      return `<button type="button" class="date ${open ? "" : "is-closed"} ${state.date === iso ? "is-active" : ""}" data-date="${iso}" ${open ? "" : "disabled"} aria-label="${d.toDateString()}${open ? "" : " no availability"}"><span>${d.toLocaleDateString("en-AU", { weekday: "short" })}</span><b>${d.getDate()}</b><small>${d.toLocaleDateString("en-AU", { month: "short" })}</small></button>`;
     }).join("");
     $$(".date:not([disabled])", el.dates).forEach((b) => b.addEventListener("click", () => { state.date = b.dataset.date; state.slot = null; renderCart(); loadDates(); loadSlots(); }));
     if (!state.date || !$$(".date[data-date='" + state.date + "']:not([disabled])").length) {
