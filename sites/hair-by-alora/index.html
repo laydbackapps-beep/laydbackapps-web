@@ -18,13 +18,12 @@
     <meta property="og:url" content="https://laydbackapps.com/sites/hair-by-alora/" />
     <meta property="og:image" content="https://laydbackapps.com/sites/hair-by-alora/img/DeY4GB7T0bq-1920.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preload" href="./fonts/italiana-400.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="./fonts/montserrat-400.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="stylesheet" href="./fonts/fonts.css" />
-    <link rel="preload" as="image" href="./assets/hero/alora-salon-kit.webp?v=duo-20261118" type="image/webp" fetchpriority="high" />
-    <link rel="preload" as="image" href="./img/DeY4GB7T0bq-960.avif" type="image/avif"
-      imagesrcset="./img/DeY4GB7T0bq-640.avif 640w, ./img/DeY4GB7T0bq-800.avif 800w, ./img/DeY4GB7T0bq-960.avif 960w, ./img/DeY4GB7T0bq-1280.avif 1280w, ./img/DeY4GB7T0bq-1600.avif 1600w, ./img/DeY4GB7T0bq-1920.avif 1920w"
-      imagesizes="(max-width: 900px) 90vw, 46vw" fetchpriority="high" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -47,62 +46,33 @@
         ]
       }
     </script>
-    <script src="./legacy-guard.js"></script>
-    <script type="module" crossorigin src="./assets/index-3d.js?v=legacy-off-20261118"></script>
+    <script type="module" crossorigin src="./assets/index-3d.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-3d.css?v=mobile-clean-2">
-    <link rel="stylesheet" href="./alora-polish.css?v=visible-content-20261119" />
-    <script type="module" src="./spatial-hero.js?v=static-poster-20261119" defer></script>
-    <script src="./asset-paths.js" defer></script>
-    <script src="./alora-scroll.js?v=balanced-scroll-20261119" defer></script>
+    <link rel="stylesheet" href="./alora-polish.css?v=hero-fx-1" />
+    <script type="module" src="./spatial-hero.js?v=tools-hero-5" defer></script>
+    <script type="module" src="./alora-gloss.js?v=gloss-2" defer></script>
+    <script src="./alora-hero-extra.js?v=hero-fx-1" defer></script>
+    <script>
+      // Static fallback for GitHub Pages/subpath deployments: the compiled bundle
+      // must resolve image URLs relative to this site, never from the domain root.
+      const siteRoot = new URL('.', document.baseURI).pathname;
+      const repairAssetPaths = () => {
+        document.querySelectorAll('img').forEach((img) => {
+          const src = img.getAttribute('src');
+          if (!src) return;
+          const asset = src.match(/(?:DeY4GB7T0bq-1920\.jpg|DGJ7jvBTowB-1440\.jpg|Dei0DSREw24-1920\.jpg|DdoNZz-E7BJ-1920\.jpg|DD20wAXTtpy-864\.jpg|DfWmWKnk7F4-1920\.jpg|alora-mark\.png|alora-tile\.jpg|Dd0sfqUFKw2-1920\.jpg)$/)?.[0];
+          if (asset && (src.startsWith('/') || src.includes('/sites/'))) {
+            img.removeAttribute('srcset');
+            img.onerror = null;
+            img.src = asset === 'DeY4GB7T0bq-1920.jpg' ? './img/alora-hero-v3.png' : `./img/${asset}`;
+          }
+        });
+      };
+      new MutationObserver(repairAssetPaths).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['src', 'srcset'] });
+      repairAssetPaths();
+    </script>
 </head>
   <body>
-    <div id="root">
-      <header class="head">
-        <div class="head__inner shell">
-          <a class="head__brand" href="#top" aria-label="Hair by Alora home">
-            <img class="head__brand-logo" src="./img/alora-mark.png" alt="Hair by Alora" width="160" height="112" />
-          </a>
-          <nav class="head__nav" aria-label="Primary navigation">
-            <a href="#craft">The Craft</a>
-            <details class="head__menu">
-              <summary>Services</summary>
-              <div class="head__menu-panel">
-                <a href="#craft">Lived-in blonde</a>
-                <a href="#craft">Balayage &amp; dimension</a>
-                <a href="#craft">Corrective colour</a>
-                <a href="#craft">Styling &amp; occasion</a>
-              </div>
-            </details>
-            <a href="#chair-work">Chair Work</a>
-            <a href="#era">Aura Collective</a>
-            <a href="#visit">Visit</a>
-          </nav>
-          <a class="head__cta" href="#enquire">Book a consultation</a>
-          <button class="head__toggle" type="button" aria-label="Open menu">Menu</button>
-        </div>
-      </header>
-      <main id="main">
-        <section class="hero hero--cinema hero--alora" id="top" data-hero-state="static">
-          <div class="hero__media">
-            <picture>
-              <source type="image/avif" srcset="./img/DeY4GB7T0bq-640.avif 640w, ./img/DeY4GB7T0bq-800.avif 800w, ./img/DeY4GB7T0bq-960.avif 960w, ./img/DeY4GB7T0bq-1280.avif 1280w, ./img/DeY4GB7T0bq-1600.avif 1600w, ./img/DeY4GB7T0bq-1920.avif 1920w" sizes="100vw" />
-              <img class="hero__img" src="./img/DeY4GB7T0bq-960.jpg" width="1920" height="2027" alt="Dimensional lived-in honey blonde waves styled by Alora" fetchpriority="high" decoding="sync" />
-            </picture>
-            <div class="hero__shade" aria-hidden="true"></div>
-            <div class="alora-kit-stage" aria-hidden="true">
-              <img class="alora-kit-poster" src="./assets/hero/alora-salon-kit.webp?v=duo-20261118" width="1600" height="1200" alt="" fetchpriority="high" decoding="sync" />
-            </div>
-          </div>
-          <div class="hero__content shell">
-            <p class="hero__studio">CAREY BAY · LAKE MACQUARIE<br />BLONDE &amp; BALAYAGE SPECIALIST</p>
-            <h1 class="hero__title"><span class="hero__line">Hair that holds</span><span class="hero__line">the light.</span></h1>
-            <div class="hero__bottom"><div class="hero__intro">
-              <p class="hero__sub">Lived-in blonde, dimensional balayage and seamless root melts built to grow out gracefully between appointments.</p>
-              <div class="hero__actions"><a class="btn btn--dark" href="#enquire">Book a consultation</a><a class="hero__link" href="#craft">View colour work</a></div>
-            </div></div>
-          </div>
-        </section>
-      </main>
-    </div>
+    <div id="root"></div>
   </body>
 </html>
