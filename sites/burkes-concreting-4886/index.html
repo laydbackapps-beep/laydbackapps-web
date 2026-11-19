@@ -1,263 +1,127 @@
-<!DOCTYPE html>
-<html lang="en-AU" class="no-js">
+<!doctype html>
+<html lang="en-AU">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Burkes Concreting | Concrete Driveways, Slabs & Shed Floors — Bendigo</title>
-<meta name="description" content="Burkes Concreting — a small local business in Bendigo providing concrete driveways, house slabs, shed floors, paths and light commercial concreting. Call 0404 992 750.">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/logo.png">
-<style>
-:root{
-  --ink:#14161A; --ground:#1C1F23; --panel:#24282D; --line:#34383E;
-  --paper:#F3F4F5; --muted:#A9AEB5; --acc:#8A949E; --acc-deep:#5C666F;
-  --acc-ink:#14161A; --acc-lite:#8A949E; --max:1160px; --gut:clamp(1.1rem,4vw,2.5rem);
-  --lb-acc:#8A949E; --lb-name:#F3F4F5;
-}
-@font-face{font-family:"Antonio";src:url("assets/fonts/antonio-600.woff2") format("woff2");font-weight:600;font-display:swap}
-@font-face{font-family:"Antonio";src:url("assets/fonts/antonio-400.woff2") format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Manrope";src:url("assets/fonts/manrope-400.woff2") format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Manrope";src:url("assets/fonts/manrope-500.woff2") format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Manrope";src:url("assets/fonts/manrope-700.woff2") format("woff2");font-weight:700;font-display:swap}
-*,*:before,*:after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-.js .rv{opacity:0;transform:translateY(20px)}
-.js .rv.on{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
-@media (prefers-reduced-motion:reduce){
-  .js .rv{opacity:1!important;transform:none!important;transition:none!important}
-  html{scroll-behavior:auto}
-}
-body{margin:0;background:var(--ground);color:var(--paper);font-family:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;font-size:clamp(1rem,1.05vw,1.0625rem);line-height:1.65;-webkit-font-smoothing:antialiased}
-img{max-width:100%;height:auto;display:block}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
-h1,h2,h3{font-family:"Antonio","Arial Narrow",Arial,sans-serif;font-weight:600;margin:0;line-height:1.06;letter-spacing:-.01em;text-transform:none}
-h1{font-size:clamp(2.15rem,5.4vw,4.35rem)}
-h2{font-size:clamp(1.7rem,3.4vw,2.65rem)}
-h3{font-size:clamp(1.15rem,1.7vw,1.4rem)}
-p{margin:0 0 1em}
-.acc{color:var(--acc);font-style:normal}
-/* ---------- header ---------- */
-.hd{position:sticky;top:0;z-index:40;background:rgba(9,10,12,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.09)}
-.hd-in{display:flex;align-items:center;gap:clamp(.7rem,2vw,1.4rem);max-width:var(--max);margin:0 auto;padding:.6rem var(--gut);min-height:70px}
-.brand{display:flex;align-items:center;gap:.7rem;flex:0 1 auto;min-width:0}
-.brand img{height:clamp(34px,3.4vw,46px);width:auto;max-width:34vw;border-radius:8px;flex:0 0 auto}
-.brand-txt{display:flex;flex-direction:column;min-width:0}
-.brand-name{font-family:"Antonio","Arial Narrow",Arial,sans-serif;font-weight:600;font-size:clamp(1.05rem,1.7vw,1.4rem);letter-spacing:.02em;line-height:1.05;color:var(--paper);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.brand-sub{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acc-lite,var(--acc));line-height:1.3}
-.nav{margin-left:auto;display:flex;align-items:center;gap:clamp(.7rem,1.7vw,1.5rem)}
-.nav a{font-size:.9rem;font-weight:500;color:var(--paper);opacity:.86;white-space:nowrap}
-.nav a:hover{color:var(--acc);opacity:1}
-.hd-call{flex:0 0 auto;background:var(--acc);color:var(--acc-ink);font-weight:700;font-size:.9rem;padding:.62rem 1.05rem;border-radius:9px;white-space:nowrap}
-.hd-call:hover{background:var(--paper);color:var(--ink)}
-.hd-burger{display:none}
-@media (max-width:880px){
-  .nav{display:none}
-  .brand-sub{letter-spacing:.14em}
-  .brand-name{font-size:1rem}
-}
-/* ---------- hero ---------- */
-.hero{position:relative;isolation:isolate;perspective:1200px;overflow:hidden;min-height:min(calc(100vh - 71px),940px);display:flex;align-items:center;background:var(--ink)}
-.hero--nophoto{background:radial-gradient(115% 85% at 76% 6%,var(--hero-glow,rgba(255,255,255,.06)),transparent 62%),linear-gradient(158deg,#232833,#12151C)}
-.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
-.hero-scrim{position:absolute;inset:0;background:linear-gradient(96deg,rgba(6,7,9,.93) 0%,rgba(6,7,9,.85) 30%,rgba(6,7,9,.44) 60%,rgba(6,7,9,.13) 100%)}
-.hero-scrim:after{content:"";position:absolute;left:0;right:0;bottom:0;height:20%;background:linear-gradient(180deg,rgba(7,8,10,0),rgba(7,8,10,.42))}
-.hero-in{position:relative;z-index:3;width:100%;max-width:var(--max);margin:0 auto;padding:clamp(3rem,7vw,5rem) var(--gut)}
-.hero-copy{max-width:39rem}
-.hero h1{color:#fff;text-wrap:balance}
-.hero-lede{font-size:clamp(1.06rem,1.4vw,1.22rem);color:#fff;max-width:36rem;margin-top:1.1rem}
-.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.9rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem 1.55rem;border-radius:10px;font-weight:700;font-size:.98rem;border:2px solid transparent;white-space:nowrap;cursor:pointer;font-family:inherit}
-.btn-acc{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
-.btn-acc:hover{background:#fff;color:var(--ink);border-color:#fff}
-.btn-ghost{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.5)}
-.btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
-.hero-tags{list-style:none;display:flex;flex-wrap:wrap;gap:.45rem 1.3rem;margin:2rem 0 0;padding:0;font-size:.95rem;color:rgba(255,255,255,.94)}
-.hero-tags li{padding-left:1rem;position:relative}
-.hero-tags li:before{content:"";position:absolute;left:0;top:.5em;width:.42rem;height:.42rem;background:var(--acc);border-radius:50%}
-.hero-credit{margin:1.7rem 0 0;padding-left:.85rem;border-left:3px solid var(--acc);font-size:.8rem;letter-spacing:.01em;color:rgba(255,255,255,.8);max-width:34ch}
-.hero-canvas{display:none}
-.hero-mark{position:absolute;top:50%;right:-6%;transform:translateY(-50%);z-index:1;pointer-events:none;opacity:.28;width:min(58vw,780px);height:auto}
-@media (max-width:880px){
-  .hero{min-height:min(calc(100svh - 61px),820px)}
-  .hero-scrim{background:linear-gradient(178deg,rgba(6,7,9,.62) 0%,rgba(6,7,9,.76) 44%,rgba(6,7,9,.88) 100%)}
-  .hero-scrim:after{height:14%}
-  .hero-in{padding:clamp(2.2rem,8vw,3.2rem) var(--gut)}
-  .hero-copy{max-width:none}
-  .hero-mark{width:74vw;right:-16%;opacity:.16}
-  .hd-in{min-height:61px}
-}
-/* ---------- generic sections ---------- */
-.sec{padding:clamp(3.2rem,7vw,5.6rem) 0}
-.sec--alt{background:var(--ink)}
-.sec-hd{max-width:44rem;margin-bottom:clamp(1.8rem,3.6vw,2.8rem)}
-.sec-kick{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc-lite,var(--acc));margin:0 0 .7rem;font-weight:700}
-.sec-hd p{color:var(--muted);margin:.9rem 0 0}
-.grid{display:grid;gap:clamp(.9rem,1.8vw,1.35rem)}
-.g3{grid-template-columns:repeat(3,1fr)}
-.g2{grid-template-columns:repeat(2,1fr)}
-@media (max-width:960px){.g3{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:660px){.g3,.g2{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:clamp(1.6rem,2.8vw,2.05rem)}
-.card h3{margin-bottom:.55rem}
-.card p{margin:0;color:var(--muted);font-size:.96rem}
-.card .bar{width:2.1rem;height:3px;background:var(--acc);border-radius:2px;margin-bottom:1rem}
-.step{display:flex;gap:1.05rem;align-items:flex-start}
-.step-n{flex:0 0 auto;font-family:"Antonio",Arial,sans-serif;font-size:1.6rem;line-height:1;color:var(--acc-lite,var(--acc));min-width:2rem}
-.step h3{margin-bottom:.35rem}
-.step p{color:var(--muted);margin:0;font-size:.96rem}
-/* work gallery */
-.work-grid{display:grid;gap:clamp(.7rem,1.5vw,1.1rem);grid-template-columns:repeat(3,1fr)}
-@media (max-width:860px){.work-grid{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.work-grid{grid-template-columns:1fr}}
-figure.shot{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-figure.shot img{aspect-ratio:4/3;width:100%;object-fit:cover}
-figure.shot figcaption{padding:.85rem 1rem 1rem;font-size:.83rem;color:var(--muted)}
-/* detail band (no-photo sites) */
-.band{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-@media (max-width:760px){.band{grid-template-columns:1fr}}
-.band div{background:var(--panel);padding:clamp(1.3rem,2.6vw,1.9rem)}
-.band strong{display:block;font-family:"Antonio",Arial,sans-serif;font-size:1.2rem;margin-bottom:.4rem;color:var(--paper)}
-.band span{color:var(--muted);font-size:.96rem}
-/* area strip */
-.area-strip{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0;margin:1.4rem 0 0}
-.area-strip li{border:1px solid var(--line);border-radius:999px;padding:.45rem 1rem;font-size:.88rem;color:var(--paper);background:var(--panel)}
-/* footer */
-.ft{background:var(--ink);border-top:1px solid var(--line);padding:clamp(2.6rem,5vw,3.6rem) 0 1.6rem}
-.ft-in{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(1.4rem,3vw,2.6rem)}
-@media (max-width:760px){.ft-in{grid-template-columns:1fr}}
-.ft h3{font-size:1.05rem;margin-bottom:.9rem}
-.ft p,.ft li{color:var(--muted);font-size:.93rem}
-.ft ul{list-style:none;padding:0;margin:0}
-.ft li{margin-bottom:.45rem}
-.ft a:hover{color:var(--acc-lite,var(--acc))}
-.ft-bot{margin-top:2.2rem;padding-top:1.3rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.7rem 1.4rem;justify-content:space-between;color:var(--muted);font-size:.83rem}
-.ft-bot a{text-decoration:underline}
-#lbq{--lbq-accent:var(--acc);--lbq-ink:var(--paper);--lbq-muted:var(--muted);--lbq-bg:var(--ink);--lbq-panel:rgba(255,255,255,.05);--lbq-line:var(--line);padding:clamp(3rem,7vw,5.6rem) 0;background:var(--lbq-bg);color:var(--lbq-ink);position:relative}
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Burkes Concreting — Concreting &amp; Earthworks, Bendigo</title>
+<meta name="description" content="Burkes Concreting provides all aspects of concreting and earthworks in Bendigo. Call 0404 992 750 or send a project enquiry."><meta name="theme-color" content="#202020">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32"><link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap head-grid">
+ <a class="brand" href="#top" aria-label="Burkes Concreting home"><img src="assets/logo-src.png" width="1200" height="1200" alt="Burkes Concreting B mark"><span><span class="brand-name">Burkes Concreting</span><small>BENDIGO / VICTORIA</small></span></a>
+ <nav class="nav" aria-label="Main navigation"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">Bendigo</a><a href="#lbq">Enquire</a></nav>
+ <a class="call" href="tel:0404992750" aria-label="Call Burkes Concreting on 0404 992 750">0404 992 750</a>
+</div></header>
+<main id="main">
+ <section class="hero" id="top" aria-labelledby="hero-title">
+  <figure class="hero-band"><img src="assets/hero.jpg" width="1600" height="900" alt="Finished concrete driveway at a Bendigo-area home" fetchpriority="high"><figcaption><span>Plate 01 — finished driveway</span><span>Burkes Concreting / Bendigo VIC</span></figcaption></figure>
+  <div class="wrap hero-row">
+   <h1 id="hero-title">Slabs that<br>drain. Edges<br>that hold.</h1>
+   <div class="hero-aside">
+    <p class="hero-lede"><strong>Burkes Concreting</strong> — concreting and earthworks in Bendigo. Set-out, formwork, pour, saw cuts and finish — the parts that decide whether a slab still looks right in ten years.</p>
+    <div class="hero-actions"><a class="call" href="#lbq">Send the job through</a><a class="text-link" href="tel:0404992750">or call 0404 992 750</a></div>
+    <p class="hero-hint">The enquiry form asks for access, size, finish and fall — four fields, no account.</p>
+   </div>
+  </div>
+ </section>
+ <section class="brief" aria-labelledby="brief-h"><div class="wrap">
+  <div class="study rv"><div class="study-copy"><div><span class="eyebrow">Before you call</span><h2 id="brief-h">What to<br>have ready.</h2></div><p>Four things that decide how a pour is set out, costed and scheduled. Ring through with these and the conversation starts on the job.</p></div>
+   <ol class="sheet"><li><span class="num">01</span><h3>Site access</h3><p>Where a truck and excavator can get in, and how far the pour sits from that point.</p></li><li><span class="num">02</span><h3>Size</h3><p>A rough length and width, or the plan you are working from.</p></li><li><span class="num">03</span><h3>Finish</h3><p>Plain, exposed aggregate, or a surface you have seen and want matched.</p></li><li><span class="num">04</span><h3>Fall</h3><p>Where water needs to run to, and what it runs into at the edge.</p></li></ol></div>
+ </div></section>
+ <section class="services" id="services" aria-labelledby="services-title"><div class="wrap">
+  <div class="section-head rv"><span class="eyebrow">Scope</span><div><h2 id="services-title">Concreting<br>and earthworks.</h2><p>Two trades, one number. Everything below is what Burkes Concreting lists as its scope.</p></div></div>
+  <div class="scope-grid">
+  <div class="service-list">
+   <article class="service-row rv"><span class="num">01</span><h3>Concreting</h3><p>Driveways, slabs, shed floors, crossovers and paths. Measured on site, set out to fall, poured, saw-cut and finished.</p></article>
+   <article class="service-row rv"><span class="num">02</span><h3>Earthworks</h3><p>Site cuts, excavation and levelling — the levels sorted before a bar of steel or a metre of concrete goes down.</p></article>
+  </div>
+  <figure class="plan rv">
+   <svg viewBox="0 0 420 300" role="img" aria-label="Typical driveway set-out diagram with saw-cut grid and fall direction">
+    <g fill="none" stroke="currentColor" stroke-width="1.2">
+     <rect x="64" y="30" width="232" height="64"/>
+     <path d="M64 94V262h232V94"/>
+     <path d="M64 158h232M64 210h232" stroke-dasharray="5 5" stroke-width="1"/>
+     <path d="M296 94V262" stroke-width=".6" stroke-dasharray="2 4"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width=".9">
+     <path d="M64 18h232M64 13v10M296 13v10"/>
+     <path d="M52 94v168M47 94h10M47 262h10"/>
+     <path d="M312 120l14 16-14 16" stroke-dasharray="3 3"/>
+    </g>
+    <g fill="currentColor" stroke="none">
+     <text x="180" y="11" text-anchor="middle">SLAB WIDTH</text>
+     <text x="16" y="182" transform="rotate(-90 16 182)" text-anchor="middle">LENGTH</text>
+     <text x="64" y="288">FALL AWAY FROM DWELLING</text>
+     <text x="330" y="140">FALL</text>
+     <text x="222" y="152" text-anchor="end">SAW CUTS</text>
+     <text x="70" y="66">DWELLING</text>
+    </g>
+   </svg>
+   <figcaption>Typical set-out only — every job is measured on site.</figcaption>
+  </figure>
+  </div>
+ </div></section>
+ <section class="work" id="work" aria-labelledby="work-title"><div class="wrap">
+  <div class="section-head rv"><span class="eyebrow">Recent work</span><div><h2 id="work-title">Four recent<br>jobs.</h2><p>Photographs sent through by Burkes Concreting. No invented suburbs, client names or project values.</p></div></div>
+  <figure class="work-wide rv"><img src="assets/hero.jpg" width="1600" height="900" loading="lazy" alt="Finished concrete driveway at a Bendigo-area home"><figcaption><span>Finished driveway — Bendigo VIC</span><span>01 / 04</span></figcaption></figure>
+  <div class="work-grid">
+   <figure class="work-item rv"><img src="assets/work-1.jpg" width="1400" height="1252" loading="lazy" alt="Close view of a finished patterned concrete surface"><figcaption><span>Surface detail</span><span>02 / 04</span></figcaption></figure>
+   <figure class="work-item rv"><img src="assets/work-2.jpg" width="1050" height="1400" loading="lazy" alt="Close view of exposed aggregate in a finished concrete surface"><figcaption><span>Aggregate detail</span><span>03 / 04</span></figcaption></figure>
+   <figure class="work-item rv"><img src="assets/work-3.jpg" width="1120" height="1400" loading="lazy" alt="Finished dark concrete driveway beside a residential property"><figcaption><span>Completed driveway</span><span>04 / 04</span></figcaption></figure>
+  </div>
+ </div></section>
+ <section class="local" id="about" aria-labelledby="local-title"><div class="wrap">
+  <div class="local-title rv"><span class="eyebrow">Where the work is</span><h2 id="local-title">Bendigo<br>Victoria</h2></div>
+  <div class="local-copy rv"><p>Burkes Concreting is a small Bendigo business doing concreting and earthworks. For work outside Bendigo, ask about your location when you call.</p><div><a class="call" href="tel:0404992750">Call 0404 992 750</a></div><div class="socials"><a href="https://www.instagram.com/burkes_concreting/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/p/Burkes-Concreting-100089868882961" target="_blank" rel="noopener">Facebook</a></div></div>
+ </div></section>
+</main>
+<footer class="footer"><div class="wrap footer-bottom">
+ <div><a class="brand" href="#top"><img src="assets/logo-src.png" width="1200" height="1200" loading="lazy" alt=""><span><span class="brand-name">Burkes Concreting</span><small>CONCRETING / EARTHWORKS</small></span></a><p class="copyright">© <span id="year">2026</span> Burkes Concreting. Preview enquiry page.</p></div>
+ <div class="legal"><details id="privacy"><summary>Privacy</summary><p>Details you choose to send through the enquiry form are used to respond to your project request. Do not include sensitive information. You can call instead.</p></details><details id="terms"><summary>Terms</summary><p>This page provides general business and enquiry information. Project scope, pricing, scheduling and any site requirements are confirmed directly with Burkes Concreting.</p></details></div>
+</div><section id="lbq" class="v1" aria-labelledby="lbq-h">
+  <style>
+#lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#c4fb24))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,var(--text-muted,#5b6b7a));--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
 #lbq *{box-sizing:border-box}
-#lbq .lbq-w{max-width:1060px;margin:0 auto;padding:0 var(--gut)}
-#lbq h2{font-size:clamp(1.7rem,3.4vw,2.65rem);margin:0 0 10px}
-#lbq p.lbq-s{margin:0 0 18px;color:var(--lbq-muted);max-width:56ch}
+#lbq .lbq-w{max-width:1060px;margin:0 auto}
+#lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
 #lbq .lbq-f{display:grid;gap:12px}
-#lbq label{display:block;font-size:.82rem;letter-spacing:.03em;color:var(--lbq-muted);margin-bottom:5px}
-#lbq input,#lbq textarea{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:9px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
-#lbq textarea{min-height:104px;resize:vertical}
-#lbq input:focus,#lbq textarea:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
-#lbq button{margin-top:6px;padding:14px 24px;border:0;border-radius:9px;background:var(--lbq-accent);color:var(--acc-ink);font:inherit;font-weight:700;font-size:.96rem;cursor:pointer;letter-spacing:.01em}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#0b0e12;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
 #lbq button:disabled{opacity:.6;cursor:wait}
 #lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
-#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.83rem;color:var(--lbq-muted)}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
 #lbq .lbq-cons input{width:auto}
 #lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-#lbq .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.4rem,3vw,2.6rem);align-items:start}
-#lbq .lbq-g{display:grid;gap:12px;grid-template-columns:1fr 1fr}
-#lbq .lbq-full{grid-column:1/-1}
-#lbq .lbq-aside{border:1px solid var(--lbq-accent);border-radius:14px;padding:1.4rem 1.5rem;background:var(--lbq-panel)}
-@media(max-width:780px){#lbq .lbq-sp,#lbq .lbq-g{grid-template-columns:1fr}}</style>
-<script>document.documentElement.className='js';</script>
-<style id="lb-hero-noscale">
-/* hero.jpg is 1600x900. Full-bleed at 1920 it was enlarged; it is held at its own pixel size here so
-   nothing is interpolated, and the bar's own ground fills either side. */
-img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
-{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
-  transform:none!important;width:100%!important;max-width:1600px!important;height:auto!important;max-height:none!important;
-  object-fit:contain!important;display:block!important;margin:0 auto!important}
-</style><style id="lb-hdr-centre">
-.brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
-.brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-@media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
-</style></head>
-<body>
-<header class="hd">
-  <div class="hd-in">
-    <a class="brand" href="#top" aria-label="Burkes Concreting — home">
-      <img src="assets/logo.png" alt="Burkes Concreting logo" width="512" height="512" class="lb-logo-unlock">
-      <span class="brand-txt">
-        <span class="brand-name lb-sr-only">Burkes Concreting</span>
-        <span class="brand-sub">Bendigo, VIC</span>
-      </span>
-    </a>
-    <nav class="nav" aria-label="Main"><a class="brand-monogram" href="#top" aria-label="Burkes Concreting"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#process">How we work</a>
-      <a href="#quote">Get a quote</a>
-    </nav>
-    <a class="hd-call" href="tel:+61404992750">0404 992 750</a>
-  </div>
-</header>
-
-<section class="hero" id="top" aria-labelledby="hero-h">
-  <img class="hero-img" src="assets/hero.jpg" alt="A job like this: a finished concrete driveway leading to a garage" width="1600" height="900" fetchpriority="high" decoding="async">
-  <div class="hero-scrim" aria-hidden="true"></div>
-  <div class="hero-in">
-    <div class="hero-copy">
-      <h1 id="hero-h">Concrete driveways, slabs and shed floors in Bendigo</h1>
-      <p class="hero-lede">A small local business in Bendigo providing concreting — driveways, house slabs, shed floors, paths and light commercial work, poured and finished properly.</p>
-      <div class="hero-cta"><a class="btn btn-acc" href="tel:+61404992750">Call 0404 992 750</a><a class="btn btn-ghost" href="#quote">Request a quote</a></div>
-      <ul class="hero-tags"><li>Driveways</li><li>House slabs</li><li>Shed floors</li><li>Paths &amp; patios</li></ul>
-      <p class="hero-credit">A job like this: a finished concrete driveway.</p>
-    </div>
-  </div>
-  <canvas id="heroCanvas" class="hero-canvas" width="16" height="16" aria-hidden="true" style="display:none"></canvas>
-  <!-- LB-3D-HERO -->
-</section>
-
-<section class="sec" id="services" aria-labelledby="svc-h">
-  <div class="wrap">
-    <div class="sec-hd rv">
-      <p class="sec-kick">What we do</p>
-      <h2 id="svc-h">Concrete work, poured and finished properly</h2>
-      <p>Residential and light commercial concreting across Bendigo and the surrounding districts.</p>
-    </div>
-    <div class="grid g3"><div class="card rv"><div class="bar"></div><h3>Driveways</h3><p>Set out to the plan, edged with clean arris lines, screeded flat and finished for grip.</p></div><div class="card rv"><div class="bar"></div><h3>House slabs &amp; extensions</h3><p>Reinforced, level slabs formed and poured so the next trade has something true to work off.</p></div><div class="card rv"><div class="bar"></div><h3>Shed floors</h3><p>Slabs for workshops, garages and farm sheds, finished hard-wearing where the traffic runs.</p></div><div class="card rv"><div class="bar"></div><h3>Paths, patios &amp; walkways</h3><p>Poured to a fall, so water leaves the slab instead of sitting on it.</p></div><div class="card rv"><div class="bar"></div><h3>Light commercial</h3><p>Hardstand, car park and commercial slab work, planned around access and pours.</p></div><div class="card rv"><div class="bar"></div><h3>Excavation &amp; formwork</h3><p>Set out, excavation, compaction and formwork set true to the line before the pour.</p></div></div>
-  </div>
-</section>
-
-<section class="sec sec--alt" id="work" aria-labelledby="work-h">
-  <div class="wrap">
-    <div class="sec-hd rv">
-      <p class="sec-kick">The finish</p>
-      <h2 id="work-h">Slabs, driveways and finishes</h2>
-      <p>Broom, stamped and exposed aggregate finishes — the surfaces that come out of a well-set pour.</p>
-    </div>
-    <div class="work-grid"><figure class="shot rv"><img src="assets/work-1.jpg" alt="A job like this: stamped concrete finish." loading="lazy" decoding="async"><figcaption>A job like this: a stamped concrete surface, patterned and sealed.</figcaption></figure><figure class="shot rv"><img src="assets/work-2.jpg" alt="A job like this: exposed aggregate." loading="lazy" decoding="async"><figcaption>A job like this: an exposed aggregate finish, washed back to the stone.</figcaption></figure><figure class="shot rv"><img src="assets/work-3.jpg" alt="A job like this: a driveway poured and screeded." loading="lazy" decoding="async"><figcaption>A job like this: a freshly poured driveway, formed and screeded.</figcaption></figure></div>
-  </div>
-</section>
-
-<section class="sec" id="process" aria-labelledby="proc-h">
-  <div class="wrap">
-    <div class="sec-hd rv">
-      <p class="sec-kick">How we work</p>
-      <h2 id="proc-h">Four stages, in this order</h2>
-      <p>You know what happens on which day before anyone lifts a shovel.</p>
-    </div>
-    <div class="grid g2"><div class="step rv"><span class="step-n">01</span><div><h3>Walk the job</h3><p>We walk the site, take levels and talk through finish, drainage and access. You get the scope in writing.</p></div></div><div class="step rv"><span class="step-n">02</span><div><h3>Set out and form</h3><p>Excavation, compaction and formwork set true to the line, staked and checked before the pour.</p></div></div><div class="step rv"><span class="step-n">03</span><div><h3>Place and finish</h3><p>Concrete placed and screeded to level, then floated so the surface comes up uniform.</p></div></div><div class="step rv"><span class="step-n">04</span><div><h3>Finish and clean up</h3><p>Broom finish for slip resistance, control joints cut to spec, forms stripped and the site left clean.</p></div></div></div>
-  </div>
-</section>
-
-<section class="sec sec--alt" id="area" aria-labelledby="area-h">
-  <div class="wrap">
-    <div class="sec-hd rv">
-      <p class="sec-kick">Where we work</p>
-      <h2 id="area-h">Bendigo and surrounding districts</h2>
-      <p>Concreting across Bendigo and the surrounding districts, Victoria: residential and light commercial.</p>
-    </div>
-    <ul class="area-strip rv"><li>Bendigo</li><li>Surrounding districts</li><li>Residential</li><li>Light commercial</li></ul>
-  </div>
-</section>
-
-<span id="quote" aria-hidden="true"></span>
-<section id="lbq" aria-labelledby="lbq-h">
+/* v1 card */
+#lbq.v1 .lbq-card{background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
+#lbq.v1 .lbq-g{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+#lbq.v1 .lbq-full{grid-column:1/-1}
+@media(max-width:640px){#lbq.v1 .lbq-g{grid-template-columns:1fr}}
+/* v2 band */
+#lbq.v2{background:var(--lbq-panel);border-top:1px solid var(--lbq-line);border-bottom:1px solid var(--lbq-line)}
+#lbq.v2 .lbq-g{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+#lbq.v2 .lbq-full{grid-column:1/-1}
+#lbq.v2 .lbq-hd{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
+@media(max-width:760px){#lbq.v2 .lbq-g{grid-template-columns:1fr}#lbq.v2 .lbq-hd{display:block}}
+/* v3 split */
+#lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+#lbq.v3 .lbq-g{display:grid;gap:12px}
+#lbq.v3 .lbq-hp2{border-left:3px solid var(--lbq-accent);padding-left:16px}
+@media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
+/* v4 minimal */
+#lbq.v4 .lbq-w{max-width:620px}
+#lbq.v4 input,#lbq.v4 textarea{border:0;border-bottom:1px solid var(--lbq-line);border-radius:0;background:transparent;padding:11px 2px}
+#lbq.v4 .lbq-g{display:grid;gap:16px}
+</style>
   <div class="lbq-w">
-    <div class="lbq-sp">
-      <div class="lbq-aside">
-        <h2 id="lbq-h">Request a quote</h2>
-        <p class="lbq-s">Tell us about the slab, driveway or shed floor and we'll come back with a quote. Prefer to talk? Call 0404 992 750.</p>
-        <p class="lbq-s" style="margin-bottom:0"><a href="tel:+61404992750" style="color:var(--acc-lite);font-weight:700">0404 992 750</a><br>Bendigo, VIC</p>
-      </div>
-      <div><form id="lbq-form" novalidate data-site="burkes-concreting-4886" data-biz="Burkes Concreting"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Driveway, slab, shed floor — size, access and time frame…" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div>
-    </div>
+      <h2 id="lbq-h">Request a quote</h2>
+      <p class="lbq-s">Tell us the project location and a few details so Burkes Concreting can respond to your enquiry.</p><div class="lbq-card"><form id="lbq-form" novalidate data-site="burkes-concreting-4886" data-biz="Burkes Concreting"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div>
   </div>
   <script>
 (function(){
@@ -285,7 +149,7 @@ img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
       e.preventDefault();
       var d = {};
       new FormData(f).forEach(function(v,k){ d[k]=v; });
-      if (d.website) return;
+      if (d.website) return;  // honeypot — silently accept bots
       if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
         st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
         st.style.color = '#ff9d8a';
@@ -330,49 +194,8 @@ img[src$="hero.jpg"], .hero-photo, .hero img, .hero__bg, .hero-bg img
 })();
 </script>
 </section>
-
-<footer class="ft">
-  <div class="wrap">
-    <div class="ft-in">
-      <div>
-        <h3>Burkes Concreting</h3>
-        <p>A small local business in Bendigo providing concrete driveways, slabs, shed floors, paths and light commercial concreting.</p>
-        
-      </div>
-      <div>
-        <h3>Services</h3>
-        <ul><li>Driveways</li><li>House slabs &amp; extensions</li><li>Shed floors</li><li>Paths, patios &amp; walkways</li><li>Light commercial</li><li>Excavation &amp; formwork</li></ul>
-      </div>
-      <div>
-        <h3>Contact</h3>
-        <ul><li><a href="tel:+61404992750">0404 992 750</a></li><li>Bendigo and surrounding districts, VIC</li></ul>
-      </div>
-    </div>
-    <div class="ft-bot">
-      <span>&copy; 2026 Burkes Concreting. Bendigo, VIC.</span>
-      <span><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span>
-    </div>
-  </div>
 </footer>
-<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 <script>
-(function(){
-  var els = document.querySelectorAll('.rv');
-  function all(){ for (var i=0;i<els.length;i++) els[i].classList.add('on'); }
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(en){
-      en.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    for (var i=0;i<els.length;i++) io.observe(els[i]);
-  } else {
-    all();
-  }
-  setTimeout(function(){ document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('on'); }); }, 1200);
-})();
+(function(){var els=document.querySelectorAll('.rv');if('IntersectionObserver' in window){var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -5% 0px'});els.forEach(function(el){io.observe(el)})}else{els.forEach(function(el){el.classList.add('on')})}setTimeout(function(){els.forEach(function(el){el.classList.add('on')})},1100);document.getElementById('year').textContent=new Date().getFullYear()})();
 </script>
-<style id="lb-header-fault-fix">
-.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
-img.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
-</style>
-</body>
-</html>
+</body></html>
