@@ -217,3 +217,45 @@ html, body { overflow-x: clip; max-width: 100vw; }
     margin-top: 0 !important;
   }
 }
+
+/* === REVAMP: broader scope, local proof, answer content === */
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.capability{display:grid;grid-template-columns:repeat(3,1fr);margin-top:52px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.capability>div{padding:27px 30px 29px 0;border-right:1px solid var(--line)}
+.capability>div+div{padding-left:30px}
+.capability>div:last-child{border-right:0;padding-right:0}
+.capability span{display:block;margin-bottom:11px;color:var(--accent);font-size:9px;font-weight:600;letter-spacing:.18em}
+.capability p{max-width:31ch;color:#5d635c;font-size:12px;line-height:1.75}
+.areas{padding-top:130px;padding-bottom:130px;border-top:1px solid var(--line)}
+.areas-layout{display:grid;grid-template-columns:1fr 1.05fr;gap:10vw;align-items:start;margin-top:45px}
+.areas h2{font-size:clamp(48px,5.2vw,86px)}
+.areas-lead{max-width:48ch;font-size:14px;line-height:1.85;color:#4f5650}
+.area-list{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:28px 0 0}
+.area-list li{padding:8px 13px;border:1px solid var(--line);font-size:10px;font-weight:600;letter-spacing:.05em}
+.faq{padding-top:0;padding-bottom:140px}
+.faq-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:9vw;margin-top:46px;align-items:start}
+.faq h2{font-size:clamp(50px,5.4vw,88px)}
+.faq-intro{max-width:29ch;margin-top:24px;font-size:13px;line-height:1.8;color:#555c55}
+.faq-list{border-top:1px solid var(--ink)}
+.faq-list details{border-bottom:1px solid var(--line)}
+.faq-list summary{position:relative;cursor:pointer;list-style:none;padding:22px 36px 22px 0;font-family:var(--serif);font-size:clamp(22px,2vw,29px);line-height:1.25}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:'+';position:absolute;right:0;top:20px;color:var(--accent);font-family:var(--sans);font-size:21px;font-weight:400;transition:transform .25s var(--ease)}
+.faq-list details[open] summary::after{transform:rotate(45deg)}
+.faq-list details p{padding:0 40px 23px 0;max-width:58ch;font-size:12.5px;line-height:1.8;color:#4f5650}
+@media(max-width:900px){.capability{grid-template-columns:1fr}.capability>div,.capability>div+div{padding:22px 0;border-right:0;border-bottom:1px solid var(--line)}.capability>div:last-child{border-bottom:0}.areas{padding-top:82px;padding-bottom:82px}.areas-layout{grid-template-columns:1fr;gap:28px;margin-top:30px}.areas h2{font-size:52px}.faq{padding-bottom:86px}.faq-layout{grid-template-columns:1fr;gap:28px;margin-top:30px}.faq h2{font-size:52px}.faq-intro{margin-top:14px}.faq-list summary{font-size:24px;padding:19px 30px 19px 0}.faq-list details p{padding-right:20px}}
+.areas-cta{margin-top:30px}
+.hero-grid{display:none!important}
+.brand img{width:64px!important;height:64px!important}
+.project-card{overflow:visible!important}
+.project-card-media{border:1px solid rgba(37,43,42,.08)}
+.project-card-body{padding-bottom:32px}
+@media(max-width:760px){.hero-intro{font-size:12px!important}.brand img{width:48px!important;height:48px!important}.project-card-body p{font-size:12px;line-height:1.7}}
+.hero-cta{width:auto!important;min-height:58px;padding:0 26px!important;background:var(--accent)!important;color:var(--paper)!important;font-size:12px!important;letter-spacing:.02em}
+.hero-cta:hover{background:var(--moss)!important}
+.button-inline{display:inline-flex;align-items:center;gap:28px;width:auto;padding:16px 20px;background:var(--ink);color:var(--paper);border:0;font-size:11px;font-weight:600;transition:background .3s var(--ease),transform .3s var(--ease)}
+.button-inline span{font-size:18px}.button-inline:hover{background:var(--accent);transform:translateY(-2px)}
+.project-track{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:24px!important;overflow:visible!important;cursor:default!important;scroll-snap-type:none!important}
+.project-card{height:auto!important}
+.gallery-btn{display:none!important}
+@media(max-width:760px){.hero-cta{width:100%!important}.project-track{grid-template-columns:1fr!important}}
