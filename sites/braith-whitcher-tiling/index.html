@@ -1,308 +1,536 @@
 <!doctype html>
-<html lang="en-AU"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Braith Whitcher Tiling — wall &amp; floor tiling | Newcastle &amp; Central Coast</title>
-<meta name="description" content="Braith Whitcher Tiling — wall and floor tiling across Newcastle and the Central Coast. Screeds, waterproofing, large-format, mosaics and repairs, set out properly. Call 0431 366 357.">
-<meta name="theme-color" content="#0c0f12">
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Braith Whitcher Tiling | wall &amp; floor tiling, Newcastle &amp; Central Coast</title>
+<meta name="description" content="Licensed tiling (NSW 472080C) across Newcastle and the Central Coast. Bathrooms, kitchens, laundries and floors, set out properly and quoted free on site. 0431 366 357.">
+<meta name="theme-color" content="#212121">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
 <style>
 :root{
-  --ink:#0c0f12; --ink2:#11161b; --panel:#151b21; --line:rgba(255,255,255,.12);
-  --grout:#1d242b; --paper:#f3f4ef; --dim:#9fabb5;
-  --acc:#a0b817; --acc2:#c6df2e; --acc-ink:#12160a;
-  --max:1180px;
+  --paper:#f2f1ec; --ink:#1d1d1b; --plate:#212121; --lime:#b7c62a;
+  --dim:#66665e; --line:#d6d4c9; --white:#fff;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:#eef2f5;overflow-x:clip;
-  font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-img{max-width:100%;height:auto;display:block}
+body{margin:0;background:var(--paper);color:var(--ink);font:16.5px/1.6 "Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
+img,svg{max-width:100%}
 a{color:inherit}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4vw,44px)}
-.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;
-  font-weight:800;color:var(--acc);margin:0 0 16px}
-.kicker:before{content:"";width:30px;height:2px;background:var(--acc)}
-h1{margin:0 0 18px;font-size:clamp(33px,5.4vw,62px);line-height:1.02;letter-spacing:-.035em;font-weight:800}
-h1 em{font-style:normal;color:var(--acc)}
-h2{margin:0 0 12px;font-size:clamp(23px,3vw,38px);line-height:1.1;letter-spacing:-.03em;font-weight:800}
-h3{margin:0 0 6px;font-size:17px;letter-spacing:-.01em}
-p{margin:0}
-.lead{color:var(--dim);max-width:62ch}
-.cta{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:var(--acc-ink);text-decoration:none;
-  font-weight:850;padding:15px 24px;border-radius:10px;transition:transform .14s,filter .14s}
-.cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.cta.ghost{background:transparent;border:1px solid rgba(255,255,255,.24);color:#fff;font-weight:650;border-radius:10px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,44px)}
+.num{font-variant-numeric:tabular-nums}
+.mono{font-family:"Archivo",system-ui,sans-serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:11px}
 
-/* ---------- bar ---------- */
-nav{position:sticky;top:0;z-index:50;background:rgba(12,15,18,.96);backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line)}
-.nav-in{display:flex;align-items:center;gap:clamp(14px,2.2vw,30px);min-height:96px;padding-block:12px}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:none}
-.brand img.mark{height:clamp(48px,4.4vw,62px);width:auto}
-.brand img.word{height:clamp(18px,1.5vw,23px);width:auto}
-.links{display:flex;gap:clamp(14px,1.8vw,26px);margin-left:auto;font-size:15px}
-.links a{text-decoration:none;color:#dfe6ea;padding:8px 0;border-bottom:2px solid transparent}
-.links a:hover{color:#fff;border-bottom-color:var(--acc)}
-.tel{background:var(--acc);color:var(--acc-ink);text-decoration:none;font-weight:850;padding:13px 20px;
-  border-radius:999px;white-space:nowrap}
-.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:#fff;padding:9px 12px;
-  font-size:17px;border-radius:8px}
-@media(max-width:980px){
-  .nav-in{flex-wrap:wrap;row-gap:12px;padding-block:14px;min-height:0}
-  .brand{width:100%;justify-content:center}
-  .links{display:none;width:100%;flex-direction:column;gap:2px;order:4}
-  .links.open{display:flex}
-  .links a{padding:11px 2px;border-bottom:1px solid var(--line)}
-  .tel{margin:0 auto}
-  .burger{display:block;position:absolute;right:clamp(16px,4vw,32px);top:26px;margin:0}
+/* header */
+header.site{background:var(--plate);color:#f2f1ec;position:sticky;top:0;z-index:40}
+.bar{display:flex;align-items:center;gap:16px;padding-block:11px}
+.plate{display:flex;align-items:center;gap:13px;text-decoration:none;min-height:60px}
+.plate img{display:block;height:66px;width:auto}
+.plate .txt{line-height:1.05;font-weight:700;font-size:17px;letter-spacing:-.022em;color:#fff}
+.plate .txt small{display:block;font-weight:600;font-size:11px;letter-spacing:.19em;color:var(--lime);margin-top:5px}
+nav.main{display:flex;gap:26px;margin-left:auto}
+nav.main a{text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#b9b9b0;padding:8px 0;border-bottom:2px solid transparent}
+nav.main a:hover,nav.main a:focus-visible{color:#fff;border-bottom-color:var(--lime)}
+.head-cta{display:flex;align-items:center;gap:14px}
+.head-tel{font-weight:700;font-size:19px;letter-spacing:-.02em;text-decoration:none;white-space:nowrap;color:#fff}
+.head-tel:hover,.head-tel:focus-visible{color:var(--lime)}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;padding:16px 24px;background:var(--ink);color:#f2f1ec;border:2px solid var(--ink);box-shadow:inset 6px 0 0 var(--lime)}
+.btn:hover,.btn:focus-visible{background:var(--lime);border-color:var(--lime);color:#1a1a18;box-shadow:inset 6px 0 0 var(--ink)}
+.btn.dark{background:var(--plate);color:#f2f1ec;border-color:var(--plate)}
+.btn.dark:hover,.btn.dark:focus-visible{background:#000;border-color:#000;color:#fff}
+
+/* spec strip — a single line of stated facts, not a table */
+.spec{border-bottom:1px solid var(--line);background:#eceae2}
+.spec .wrap{display:flex;align-items:center;flex-wrap:wrap;gap:10px 22px;padding-block:11px}
+.spec span,.spec a{font-size:13px;font-weight:600;letter-spacing:.01em;color:#3d3d37;text-decoration:none;display:inline-flex;align-items:center;gap:9px}
+.spec span+span::before,.spec a::before{content:"";width:4px;height:4px;background:#a8a79c;display:inline-block}
+.spec .tag{background:var(--plate);color:#f2f1ec;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:5px 9px 5px 8px;gap:7px}
+.spec .tag b{color:var(--lime);font-size:12px;letter-spacing:.06em}
+.spec .tag::before{display:none}
+.spec a:hover,.spec a:focus-visible{color:#3f4a00;text-decoration:underline;text-underline-offset:3px}
+
+/* hero */
+.hero{padding:clamp(22px,3vw,34px) 0 0}
+.hero-top{display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(20px,4vw,48px);align-items:end;padding-bottom:clamp(18px,2.4vw,26px)}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#4a4a42;margin:0 0 14px}
+.eyebrow i{display:block;width:9px;height:9px;background:var(--lime);border:1px solid #8b9612}
+h1{margin:0;font-weight:700;font-size:clamp(34px,5.6vw,68px);line-height:.98;letter-spacing:-.035em}
+h1 em{font-style:normal;background:rgba(183,198,42,.55);padding:0 .06em}
+.hero-side p{margin:0 0 18px;font-size:15.5px;line-height:1.5;color:#4a4a44}
+.hero-side .btn{width:100%;text-align:left;margin-bottom:10px}
+.hero-side .alt{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin:0;text-align:left}
+
+/* drawing sheet: figure + title block + key */
+figure.dwg{margin:0;border-top:2px solid var(--ink);background:#fbfaf6}
+.dwg svg{display:block;width:100%;height:auto}
+.dwg svg.wide{height:clamp(250px,30vh,336px)}
+.dwg .tall{display:none}
+.tblock{display:grid;grid-template-columns:1.6fr .5fr .7fr 1.2fr;border-top:1px solid var(--ink);border-bottom:1px solid var(--line);background:#fbfaf6}
+.tblock>div{padding:9px 14px 10px;border-left:1px solid var(--line)}
+.tblock>div:first-child{border-left:0;padding-left:0}
+.tblock span{display:block;font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#7a7a70;margin-bottom:3px}
+.tblock b{display:block;font-size:12.5px;font-weight:700;letter-spacing:-.01em;color:#2a2a26}
+.key{border-bottom:1px solid var(--line);background:#fbfaf6}
+.key ol{list-style:none;margin:0;padding:14px 0 16px;display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(24px,4vw,56px)}
+.key li{display:grid;grid-template-columns:20px 1fr;gap:8px;padding:5px 0;font-size:12.5px;line-height:1.45;color:#4f4f48}
+.key .k{font-weight:700;font-variant-numeric:tabular-nums;color:#1d1d1b}
+.key b{color:#1d1d1b;font-weight:700}
+.key .sh{display:none}
+
+/* sections */
+section{padding:clamp(38px,5.5vw,72px) 0}
+.s-head{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin:0 0 28px}
+.s-head h2{margin:0;font-weight:700;font-size:clamp(24px,3.2vw,36px);letter-spacing:-.03em;line-height:1.05}
+.s-head p{margin:0;color:var(--dim);font-size:14.5px;max-width:44ch}
+.sheet-ref{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#4d5a00;border-bottom:3px solid var(--lime);padding:2px 0 3px;white-space:nowrap}
+
+/* schedule (where tiles go) */
+.sched{border-top:2px solid var(--ink);display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(24px,4vw,56px)}
+.sched .row{border-bottom:1px solid var(--line);padding:18px 0;display:grid;grid-template-columns:28px 1fr 86px;gap:14px;align-items:baseline}
+.sched .row .i{font-size:12px;font-weight:700;color:#6a6a62;font-variant-numeric:tabular-nums;padding-top:3px}
+.sched h3{margin:0 0 4px;font-size:17px;font-weight:700;letter-spacing:-.02em}
+.sched p{margin:0;font-size:13.5px;line-height:1.5;color:#55554e}
+.sched .ref{font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--dim);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* licence block */
+.lic{background:var(--plate);color:#f2f1ec}
+.lic .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,4vw,60px);align-items:center}
+.lic .stamp{border:2px solid var(--lime);padding:22px 24px}
+.lic .stamp small{display:block;font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--lime);margin:0 0 10px}
+.lic .stamp strong{display:block;font-size:clamp(34px,5vw,54px);font-weight:700;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
+.lic .stamp span{display:block;font-size:12px;color:#b9b9b0;margin-top:10px;letter-spacing:.02em}
+.lic h2{margin:0 0 16px;font-weight:700;font-size:clamp(23px,3vw,32px);letter-spacing:-.03em;line-height:1.1;color:#fff}
+.lic p{margin:0 0 12px;color:#c3c3b9;font-size:15px}
+.lic ul{margin:0;padding:0;list-style:none;border-top:1px solid rgba(255,255,255,.14)}
+.lic li{border-bottom:1px solid rgba(255,255,255,.14);padding:11px 0;font-size:14px;color:#d8d8cf;display:grid;grid-template-columns:18px 1fr;gap:10px}
+.lic li::before{content:"";width:8px;height:8px;background:var(--lime);margin-top:7px}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--ink);counter-reset:s}
+.steps li{list-style:none;padding:0 20px 0 0;position:relative;counter-increment:s}
+.steps li+li{border-left:1px solid var(--line);padding-left:20px}
+.steps li::before{content:counter(s);position:absolute;left:-2px;top:-16px;width:30px;height:30px;background:var(--lime);border:2px solid var(--ink);display:grid;place-items:center;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.steps li+li::before{left:18px}
+.steps .t{display:block;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);padding:26px 0 8px}
+.steps h3{margin:0 0 6px;font-size:16.5px;font-weight:700;letter-spacing:-.02em}
+.steps p{margin:0;font-size:13.5px;line-height:1.5;color:#55554e}
+
+/* quote */
+.quote{background:var(--paper);border-top:1px solid var(--line)}
+.q-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,4vw,56px);align-items:start}
+.q-copy h2{margin:0 0 14px;font-weight:700;font-size:clamp(26px,3.6vw,40px);letter-spacing:-.03em;line-height:1.02}
+.q-copy p{margin:0 0 20px;font-size:15.5px;color:#4a4a44}
+.q-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.q-list li{border-bottom:1px solid var(--line);padding:12px 0;display:grid;grid-template-columns:74px 1fr;gap:12px;font-size:14.5px}
+.q-list span{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);padding-top:4px}
+form{background:var(--plate);color:#f2f1ec;padding:clamp(18px,3vw,30px)}
+form label{display:block;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#a8a8a0;margin:0 0 6px}
+input,select,textarea{width:100%;border:1px solid #4a4a44;background:#2a2a27;color:#fff;padding:12px 10px;font:inherit;font-size:15px;margin-bottom:15px;border-radius:0}
+input:focus,select,textarea:focus{outline:2px solid var(--lime);outline-offset:1px}
+textarea{resize:vertical;min-height:84px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+form button{width:100%;background:var(--lime);color:#1a1a18;border:0;padding:16px;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+form button:hover,form button:focus-visible{background:#fff}
+form button:disabled{opacity:.6;cursor:progress}
+.f-st{margin:12px 0 0;font-size:13.5px;min-height:1.2em;color:#ffb2a3}
+.f-note{margin:10px 0 0;font-size:11.5px;color:#8f8f86;line-height:1.5}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+footer{background:var(--plate);color:#a5a59c;padding:26px 0;font-size:12.5px}
+footer .wrap{display:flex;gap:14px 26px;justify-content:space-between;flex-wrap:wrap;align-items:center}
+footer a{text-decoration:none;color:#fff}
+footer a:hover{color:var(--lime)}
+footer .fb{display:flex;gap:16px}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--lime);color:#1a1a18;padding:10px 14px;z-index:99;font-weight:700}
+.skip:focus{left:8px;top:8px}
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1!important;transform:none!important;transition:none!important}
 }
-
-/* ---------- hero: copy beside a tile field, no photograph ---------- */
-.hero{position:relative;border-bottom:1px solid var(--line);overflow:hidden}
-.hero-in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,72px);
-  align-items:center;padding:clamp(44px,6vw,86px) 0 clamp(40px,5vw,70px)}
-.hero p.sub{color:#c9d3da;margin:0 0 26px;max-width:54ch;font-size:clamp(16px,1.55vw,18.5px)}
-.hero .acts{display:flex;gap:12px;flex-wrap:wrap}
-.hero .spec{margin-top:30px;display:flex;gap:26px;flex-wrap:wrap;color:var(--dim);font-size:12.5px;
-  letter-spacing:.1em;text-transform:uppercase}
-.hero .spec b{color:#fff;display:block;font-size:20px;letter-spacing:-.01em;margin-bottom:2px}
-.field{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(58px,1fr);gap:10px;
-  background:linear-gradient(180deg,rgba(160,184,23,.06),transparent 70%);padding:14px;border:1px solid var(--line);
-  border-radius:16px}
-.field i{background:var(--grout);border-radius:4px}
-.field i:nth-child(1){grid-column:span 2;grid-row:span 2}
-.field i:nth-child(6){grid-column:span 2}
-.field i:nth-child(9){background:linear-gradient(135deg,var(--acc),#6f7d10)}
-.field i:nth-child(11){grid-column:span 2;background:#232b33}
-@media(max-width:980px){.hero-in{grid-template-columns:1fr}.field{max-width:520px}}
-
-/* ---------- what we lay: tiles as cards, grout gaps ---------- */
-section{padding:clamp(50px,6.5vw,92px) 0;border-top:1px solid var(--line)}
-.lay{margin-top:clamp(24px,3vw,40px);display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
-.lay article{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px 20px;
-  grid-column:span 2;transition:border-color .16s,transform .16s}
-.lay article:hover{border-color:rgba(160,184,23,.5);transform:translateY(-2px)}
-.lay article.wide{grid-column:span 3}
-.lay .no{font:800 11px/1 ui-monospace,monospace;letter-spacing:.16em;color:var(--acc);display:block;margin-bottom:10px}
-.lay p{color:var(--dim);font-size:14.8px;line-height:1.55}
-@media(max-width:900px){.lay{grid-template-columns:1fr}.lay article,.lay article.wide{grid-column:auto}}
-
-/* ---------- how a set runs: horizontal ribbon ---------- */
-.ribbon{margin-top:clamp(22px,3vw,38px);display:grid;grid-template-columns:repeat(5,1fr);gap:0;
-  border-top:2px solid var(--acc)}
-.ribbon div{padding:20px 16px 0 0;position:relative}
-.ribbon div:before{content:"";position:absolute;top:-6px;left:0;width:10px;height:10px;background:var(--acc);
-  border-radius:50%}
-.ribbon b{display:block;font:800 12px/1 ui-monospace,monospace;letter-spacing:.14em;color:var(--acc);margin-bottom:8px}
-.ribbon h3{font-size:16px}
-.ribbon p{color:var(--dim);font-size:14.5px;line-height:1.5}
-@media(max-width:900px){.ribbon{grid-template-columns:1fr;border-top:0;border-left:2px solid var(--acc);padding-left:18px}
-  .ribbon div{padding:0 0 20px}.ribbon div:before{top:4px;left:-24px}}
-
-/* ---------- materials table ---------- */
-.table{margin-top:26px;border-top:1px solid var(--line)}
-.table div{display:grid;grid-template-columns:minmax(0,.32fr) minmax(0,1fr);gap:clamp(14px,3vw,40px);
-  padding:16px 0;border-bottom:1px solid var(--line)}
-.table b{font-size:15.5px}
-.table span{color:var(--dim);font-size:15px}
-
-/* ---------- questions ---------- */
-.qa{display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,1fr);gap:clamp(20px,4vw,60px);align-items:start}
-.qa details{border-bottom:1px solid var(--line);padding:16px 0}
-.qa summary{cursor:pointer;font-weight:700;font-size:16.5px;list-style:none;display:flex;gap:12px}
-.qa summary::-webkit-details-marker{display:none}
-.qa summary:before{content:"+";color:var(--acc);font-weight:800}
-.qa details[open] summary:before{content:"–"}
-.qa .a{color:var(--dim);font-size:15px;padding:10px 0 0 22px;max-width:68ch}
-@media(max-width:900px){.qa{grid-template-columns:1fr}}
-
-/* ---------- quote ---------- */
-.quote-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,4vw,58px);align-items:start}
-form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:clamp(20px,3vw,32px);
-  display:grid;grid-template-columns:1fr 1fr;gap:14px;box-shadow:0 24px 60px -34px #000}
-form .full{grid-column:1/-1}
-label{display:block;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
-input,textarea,select{width:100%;background:#0a0e11;border:1px solid rgba(255,255,255,.16);color:#fff;padding:13px 14px;
-  font:inherit;font-size:15.5px;border-radius:9px}
-input:focus,textarea:focus,select:focus{outline:0;border-color:var(--acc);box-shadow:0 0 0 3px rgba(160,184,23,.18)}
-textarea{min-height:104px;resize:vertical}
-button{grid-column:1/-1;background:var(--acc);color:var(--acc-ink);border:0;padding:15px;border-radius:999px;
-  font:inherit;font-weight:850;font-size:16px;cursor:pointer}
-button:hover{filter:brightness(1.07)}
-button:disabled{opacity:.65;cursor:default}
-.needs{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:11px}
-.needs li{color:var(--dim);font-size:15px;padding-left:20px;position:relative}
-.needs li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--acc);border-radius:1px}
-@media(max-width:900px){.quote-in{grid-template-columns:1fr}form{grid-template-columns:1fr}}
-
-/* ---------- footer ---------- */
-footer{border-top:1px solid var(--line);padding:34px 0;color:var(--dim);font-size:14px}
-.f-in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
-footer a{color:#fff;font-weight:800;text-decoration:none}
+@media(max-width:900px){
+  .hero-top{grid-template-columns:1fr;align-items:start}
+  .hero-side{max-width:420px}
+  .legend ol{grid-template-columns:1fr 1fr}
+  .legend li{border-left:0;border-top:1px solid var(--line);padding:14px 16px 14px 0}
+  .legend li+li{padding-left:0}
+  .legend li:nth-child(2n){padding-left:16px;border-left:1px solid var(--line)}
+  .sched{grid-template-columns:1fr}
+  .lic .grid,.q-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .steps li{padding:0 16px 22px 0}
+  .steps li+li{padding-left:16px}
+  .steps li:nth-child(odd){border-left:0;padding-left:0}
+  .steps li:nth-child(odd)::before{left:-2px}
+  .steps li:nth-child(even)::before{left:14px}
+}
+@media(max-width:720px){
+  nav.main{display:none}
+  .bar{padding-block:8px;gap:10px}
+  .plate{min-height:40px;gap:9px}
+  .plate img{height:40px}
+  .plate .txt{font-size:13.5px}
+  .plate .txt small{font-size:9px;letter-spacing:.14em;margin-top:2px}
+  .head-cta{gap:0;margin-left:auto}
+  .head-tel{display:none}
+  .head-cta .btn{display:inline-block;white-space:nowrap;padding:10px 12px;font-size:10px;letter-spacing:.08em;box-shadow:inset 4px 0 0 var(--lime)}
+  .spec .wrap{padding-block:8px;gap:6px 12px}
+  .spec span,.spec a{font-size:11.5px;gap:6px}
+  .spec .area,.spec .opt{display:none}
+  .spec .tag{font-size:9.5px;padding:4px 7px}
+  .spec .tag b{font-size:10.5px}
+  .hero{padding-top:11px}
+  .hero-top{gap:10px;padding-bottom:12px}
+  .eyebrow{font-size:10px;letter-spacing:.13em;margin-bottom:8px}
+  h1{font-size:clamp(27px,7.8vw,33px);letter-spacing:-.03em;line-height:1.02}
+  .hero-side p{font-size:13.5px;line-height:1.4;margin-bottom:9px}
+  .hero-side .btn{display:block;text-align:center;width:100%;padding:13px 16px;margin-bottom:7px}
+  .hero-side .alt{font-size:10.5px;text-align:center}
+  .dwg svg.wide{display:none}
+  .dwg svg.tall{display:block;height:auto}
+  .tblock{grid-template-columns:repeat(3,1fr);border-top-width:1px}
+  .tblock>div{padding:7px 9px 8px}
+  .tblock>div:first-child{display:none}
+  .tblock>div:nth-child(2){border-left:0;padding-left:0}
+  .tblock span{font-size:9.5px;letter-spacing:.14em;margin-bottom:2px}
+  .tblock b{font-size:12px}
+  .key ol{grid-template-columns:1fr;padding:10px 0 14px;column-gap:0}
+  .key li{font-size:13px;line-height:1.38;padding:4px 0;grid-template-columns:18px 1fr;gap:7px}
+  .key .lo{display:none}
+  .key .sh{display:inline}
+  .hero{padding-bottom:26px}
+  .steps{grid-template-columns:1fr}
+  .steps li{border-left:0;padding-left:0}
+  .steps li+li{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:14px;margin-top:8px}
+  .steps li+li::before{left:-2px}
+  .f-row{grid-template-columns:1fr}
+  .btn{font-size:11.5px}
+}
+@media(max-width:430px){
+  .sched .row{grid-template-columns:24px 1fr;gap:10px}
+  .sched .ref{grid-column:2;text-align:left}
+  .q-list li{grid-template-columns:1fr;gap:2px}
+}
 </style>
 </head>
-<body id="top">
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-<nav><div class="wrap nav-in">
-  <a class="brand" href="#top" aria-label="Braith Whitcher Tiling">
-    <img class="mark" src="assets/brand-mark-bwt.png" alt="" width="393" height="380">
-    <img class="word" src="assets/brand-word-bwt.png" alt="Braith Whitcher Tiling" width="512" height="43">
+<header class="site"><div class="wrap bar">
+  <a class="plate" href="#top" aria-label="Braith Whitcher Tiling home">
+    <img src="assets/logo.png" alt="Braith Whitcher Tiling" width="512" height="437">
+    <span class="txt">Braith Whitcher<small>NSW licensed tiler · 472080C</small></span>
   </a>
-  <div class="links" id="navlinks">
-    <a href="#lay">What we lay</a><a href="#how">How a set runs</a><a href="#materials">Materials</a><a href="#faq">FAQ</a>
+  <nav class="main" aria-label="Primary">
+    <a href="#work">What I tile</a>
+    <a href="#licence">Licence</a>
+    <a href="#process">Process</a>
+  </nav>
+  <div class="head-cta">
+    <a class="head-tel num" href="tel:+61431366357">0431 366 357</a>
+    <a class="btn" href="#quote">Free quote</a>
   </div>
-  <a class="tel" href="tel:0431366357">0431 366 357</a>
-  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
-</div></nav>
+</div></header>
 
-<header class="hero">
-  <div class="wrap hero-in">
+<div class="spec"><div class="wrap">
+  <span class="tag">Licensed tiler <b class="num">472080C</b></span>
+  <span class="area">Newcastle &amp; Central Coast</span>
+  <span class="opt">Free measure &amp; quote on site</span>
+  <a href="tel:+61431366357" class="num">0431 366 357</a>
+</div></div>
+
+<main id="main">
+<div id="top"></div>
+
+<section class="hero">
+  <div class="wrap hero-top">
     <div>
-      <span class="kicker">Wall &amp; floor tiling · Newcastle</span>
-      <h1>Tiles set out properly, <em>not just stuck down.</em></h1>
-      <p class="sub">Bathrooms, kitchens, laundries, floors and splashbacks across Newcastle and the Central Coast.
-        Screed checked, waterproofing done, and the set-out worked out on the floor before a tile is cut.</p>
-      <div class="acts">
-        <a class="cta" href="tel:0431366357">Call 0431 366 357</a>
-        <a class="cta ghost" href="#quote">Send the plans</a>
-      </div>
-      <div class="spec">
-        <div><b>Walls &amp; floors</b>wet areas, splashbacks</div>
-        <div><b>Large format</b>up to 1200mm</div>
-        <div><b>Repairs</b>re-grout, loose tiles</div>
-      </div>
+      <p class="eyebrow"><i></i>Wall &amp; floor tiling · Newcastle &amp; Central Coast</p>
+      <h1>A wall is <em>set out</em> before the first tile goes down.</h1>
     </div>
-    <div class="field" aria-hidden="true">
-      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    <div class="hero-side">
+      <p>Walls, floors and wet areas tiled by a licensed tiler across Newcastle and the Central Coast.</p>
+      <a class="btn" href="#quote">Get a free quote</a>
+      <p class="alt">or call <a href="tel:+61431366357" class="num" style="font-weight:700;color:var(--ink)">0431 366 357</a></p>
     </div>
   </div>
-</header>
 
-<main>
-<section id="lay">
+  <figure class="dwg">
+    <svg class="wide" viewBox="0 0 1200 400" role="img" aria-label="Dimensioned elevation of a tiled bathroom wall: 600 by 300 tiles in a stacked bond, a centred set-out line, a niche, shower screen, floor line with fall to waste, and numbered set-out callouts.">
+      <defs>
+        <pattern id="g" width="160" height="80" patternUnits="userSpaceOnUse" x="40" y="90">
+          <rect width="160" height="80" fill="#fbfaf6"/>
+          <path d="M0 0H160M0 79.5H160M0 0V80M159.5 0V80" fill="none" stroke="#dcd7c6" stroke-width="1.4"/>
+        </pattern>
+        <pattern id="fall" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="10" stroke="#cfc9b6" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="1200" height="400" fill="#fbfaf6"/>
+
+      <!-- wall face -->
+      <rect x="40" y="90" width="1120" height="240" fill="url(#g)" stroke="#1d1d1b" stroke-width="1.6"/>
+
+      <!-- niche -->
+      <rect x="440" y="170" width="160" height="80" fill="#f1efe6" stroke="#1d1d1b" stroke-width="2"/>
+      <line x1="440" y1="178" x2="600" y2="178" stroke="#b7a98a" stroke-width="2"/>
+      <line x1="520" y1="178" x2="520" y2="250" stroke="#dcd7c6" stroke-width="1.2"/>
+
+      <!-- set-out centre line -->
+      <line x1="600" y1="56" x2="600" y2="352" stroke="#8ea016" stroke-width="1.6" stroke-dasharray="14 6 3 6"/>
+      <path d="M600 56 l-9 -14 h18 z" fill="#b7c62a" stroke="#1d1d1b" stroke-width="1"/>
+
+      <!-- shower screen -->
+      <line x1="920" y1="90" x2="920" y2="330" stroke="#5d6a63" stroke-width="3"/>
+      <circle cx="920" cy="150" r="4" fill="#fbfaf6" stroke="#5d6a63" stroke-width="2"/>
+      <circle cx="920" cy="270" r="4" fill="#fbfaf6" stroke="#5d6a63" stroke-width="2"/>
+
+      <!-- floor line + hatch -->
+      <line x1="0" y1="330" x2="1200" y2="330" stroke="#1d1d1b" stroke-width="3"/>
+      <rect x="0" y="333" width="1200" height="14" fill="url(#fall)" opacity=".8"/>
+
+      <!-- floor waste with falls -->
+      <circle cx="1000" cy="352" r="10" fill="#fbfaf6" stroke="#1d1d1b" stroke-width="2"/>
+      <line x1="1000" y1="344" x2="1000" y2="330" stroke="#1d1d1b" stroke-width="1.2"/>
+      <path d="M1090 330 l-16 9 v-18 z" fill="#1d1d1b" opacity=".75"/>
+      <path d="M910 330 l16 9 v-18 z" fill="#1d1d1b" opacity=".75"/>
+
+      <!-- dimension: overall width -->
+      <line x1="40" y1="62" x2="1160" y2="62" stroke="#8a8a80" stroke-width="1"/>
+      <line x1="40" y1="52" x2="40" y2="72" stroke="#8a8a80" stroke-width="1"/>
+      <line x1="1160" y1="52" x2="1160" y2="72" stroke="#8a8a80" stroke-width="1"/>
+      <rect x="566" y="52" width="68" height="20" fill="#fbfaf6"/>
+      <text x="600" y="67" text-anchor="middle" font-family="Archivo,sans-serif" font-size="15" font-weight="600" fill="#1d1d1b">4200</text>
+
+      <!-- dimension: height -->
+      <line x1="20" y1="90" x2="20" y2="330" stroke="#8a8a80" stroke-width="1"/>
+      <line x1="10" y1="90" x2="30" y2="90" stroke="#8a8a80" stroke-width="1"/>
+      <line x1="10" y1="330" x2="30" y2="330" stroke="#8a8a80" stroke-width="1"/>
+      <text transform="rotate(-90 24 210)" x="24" y="210" text-anchor="middle" font-family="Archivo,sans-serif" font-size="14" font-weight="600" fill="#4a4a44">900</text>
+
+      <!-- tile size note -->
+      <text x="40" y="386" font-family="Archivo,sans-serif" font-size="12.5" font-weight="600" letter-spacing="1.6" fill="#66665e">600 × 300 STACKED BOND · 2mm JOINTS · SCALE 1:20</text>
+      <text x="1160" y="386" text-anchor="end" font-family="Archivo,sans-serif" font-size="12.5" font-weight="600" letter-spacing="1.6" fill="#8ea016">ELEVATION / BATHROOM WALL</text>
+
+      <!-- callouts -->
+      <g font-family="Archivo,sans-serif" font-size="14" font-weight="700" text-anchor="middle">
+        <circle cx="286" cy="106" r="13" fill="#1d1d1b"/><text x="286" y="111" fill="#fff">1</text>
+        <circle cx="181" cy="215" r="13" fill="#1d1d1b"/><text x="181" y="220" fill="#fff">2</text>
+        <circle cx="520" cy="152" r="13" fill="#1d1d1b"/><text x="520" y="157" fill="#fff">3</text>
+        <circle cx="1064" cy="303" r="13" fill="#1d1d1b"/><text x="1064" y="308" fill="#fff">4</text>
+        <circle cx="620" cy="303" r="13" fill="#1d1d1b"/><text x="620" y="308" fill="#fff">5</text>
+      </g>
+    </svg>
+
+    <svg class="tall" viewBox="0 0 360 200" role="img" aria-label="Set-out strip for a tiled wall: 600 by 300 tiles, the centre set-out line, a niche, the floor line and a floor waste, with five numbered callouts.">
+      <rect width="360" height="200" fill="#fbfaf6"/>
+      <!-- wall face -->
+      <rect x="16" y="40" width="300" height="100" fill="url(#g)" stroke="#1d1d1b" stroke-width="1.6"/>
+      <!-- niche -->
+      <rect x="146" y="70" width="86" height="48" fill="#f1efe6" stroke="#1d1d1b" stroke-width="2"/>
+      <line x1="146" y1="76" x2="232" y2="76" stroke="#b7a98a" stroke-width="2"/>
+      <!-- centre set-out line -->
+      <line x1="166" y1="24" x2="166" y2="152" stroke="#8ea016" stroke-width="1.6" stroke-dasharray="11 5 3 5"/>
+      <path d="M166 24 l-8 -12 h16 z" fill="#b7c62a" stroke="#1d1d1b" stroke-width=".8"/>
+      <!-- shower screen -->
+      <line x1="316" y1="40" x2="316" y2="140" stroke="#5d6a63" stroke-width="3"/>
+      <!-- floor line + fall hatch -->
+      <line x1="0" y1="140" x2="360" y2="140" stroke="#1d1d1b" stroke-width="3"/>
+      <rect x="0" y="143" width="360" height="9" fill="url(#fall)" opacity=".8"/>
+      <!-- waste + arrows -->
+      <circle cx="292" cy="156" r="7" fill="#fbfaf6" stroke="#1d1d1b" stroke-width="2"/>
+      <line x1="292" y1="149" x2="292" y2="140" stroke="#1d1d1b" stroke-width="1.2"/>
+      <path d="M348 140 l-13 7 v-14 z" fill="#1d1d1b" opacity=".75"/>
+      <path d="M240 140 l13 7 v-14 z" fill="#1d1d1b" opacity=".75"/>
+      <!-- callouts -->
+      <g font-family="Archivo,sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+        <circle cx="88" cy="58" r="11" fill="#1d1d1b"/><text x="88" y="62" fill="#fff">1</text>
+        <circle cx="60" cy="112" r="11" fill="#1d1d1b"/><text x="60" y="116" fill="#fff">2</text>
+        <circle cx="258" cy="60" r="11" fill="#1d1d1b"/><text x="258" y="64" fill="#fff">3</text>
+        <circle cx="212" cy="128" r="11" fill="#1d1d1b"/><text x="212" y="132" fill="#fff">4</text>
+        <circle cx="122" cy="128" r="11" fill="#1d1d1b"/><text x="122" y="132" fill="#fff">5</text>
+      </g>
+      <text x="16" y="182" font-family="Archivo,sans-serif" font-size="10" font-weight="600" letter-spacing="1.2" fill="#66665e">600 × 300 STACKED BOND · CENTRE-LINE SET-OUT</text>
+      <text x="344" y="182" text-anchor="end" font-family="Archivo,sans-serif" font-size="10" font-weight="600" letter-spacing="1.2" fill="#8ea016">1:20</text>
+    </svg>
+  </figure>
+
+  <div class="wrap tblock">
+    <div><span>Drawing</span><b>Bathroom wall — set-out</b></div>
+    <div><span>Scale</span><b class="num">1:20</b></div>
+    <div><span>Sheet</span><b class="num">BW-01</b></div>
+    <div><span>Licence</span><b class="num">472080C</b></div>
+  </div>
+
+  <div class="key"><div class="wrap"><ol>
+    <li><span class="k num">1</span><span><b>Centre line.</b> <span class="lo">Set out from the true centre so both edge cuts match.</span><span class="sh">Set out from the centre; both edge cuts match.</span></span></li>
+    <li><span class="k num">2</span><span><b>Joint.</b> <span class="lo">2mm everywhere. A wandering joint is the first thing an eye catches.</span><span class="sh">2mm everywhere. A wandering joint is the first thing you see.</span></span></li>
+    <li><span class="k num">3</span><span><b>Niche.</b> <span class="lo">Framed and set before the first tile, lined up with the joints.</span><span class="sh">Framed and set before the first tile, square to the joints.</span></span></li>
+    <li><span class="k num">4</span><span><b>Fall to waste.</b> <span class="lo">Floors laid to fall so water leaves instead of sitting.</span><span class="sh">Laid to fall so water leaves instead of sitting.</span></span></li>
+    <li><span class="k num">5</span><span><b>Floor cut.</b> <span class="lo">Rip the bottom row to the floor, keep the top row full.</span><span class="sh">Rip the bottom row, keep the top row full.</span></span></li>
+  </ol></div></div>
+</section>
+
+<section id="work">
   <div class="wrap">
-    <span class="kicker">What we lay</span>
-    <h2>The work, tile by tile</h2>
-    <p class="lead">Most jobs come down to the same four questions: what is under the tile, where the falls go,
-      how the set-out lands on the walls, and what finish you want to look at for the next twenty years.</p>
-    <div class="lay">
-      <article class="wide"><span class="no">01</span><h3>Bathrooms &amp; wet areas</h3>
-        <p>Floor falls to the waste, waterproofing to the corners and penetrations, then wall and floor tiling set out
-          so the cuts land in the least obvious place.</p></article>
-      <article class="wide"><span class="no">02</span><h3>Kitchen splashbacks</h3>
-        <p>Cut to the bench and window reveals, with the layout centred on the cooktop or the rangehood so it reads
-          straight at eye level.</p></article>
-      <article><span class="no">03</span><h3>Floors</h3>
-        <p>Screed checked for level and hollows before a bag is opened, then laid on a full bed.</p></article>
-      <article><span class="no">04</span><h3>Large format</h3>
-        <p>Big tiles need flat substrate and a plan — back-buttered, lippage controlled, joints kept tight.</p></article>
-      <article><span class="no">05</span><h3>Mosaics &amp; feature walls</h3>
-        <p>Sheets set to a line, not floated — the pattern stays true across the whole wall.</p></article>
-      <article><span class="no">06</span><h3>Repairs &amp; re-grout</h3>
-        <p>Loose or drummy tiles taken up, old grout raked out, silicones replaced where they have gone black.</p></article>
+    <div class="s-head">
+      <span class="sheet-ref">Schedule</span>
+      <h2>What gets tiled</h2>
+      <p>Residential work, mostly renovations and mostly rooms that are already stripped out. Sizes below are the common ones. Bring your tile and the layout gets worked out on site.</p>
+    </div>
+    <div class="sched">
+      <div class="row"><span class="i num">01</span><div><h3>Bathrooms &amp; ensuites</h3><p>Wall and floor, shower recess included. Falls, screed check and set-out before a single tile is laid.</p></div><span class="ref">300×600 wall<br>600×600 floor</span></div>
+      <div class="row"><span class="i num">02</span><div><h3>Kitchens &amp; splashbacks</h3><p>Cut around powerpoints and rangehoods without the joints running off line.</p></div><span class="ref">up to 1200 slab</span></div>
+      <div class="row"><span class="i num">03</span><div><h3>Laundries &amp; wet rooms</h3><p>Small rooms where the set-out matters most: a 2mm drift shows up across 1.8m.</p></div><span class="ref">300×600</span></div>
+      <div class="row"><span class="i num">04</span><div><h3>Floors &amp; hallways</h3><p>Large-format floor tiles, laid square to the main sight line, with door thresholds worked out first.</p></div><span class="ref">600×600 / 900×900</span></div>
+      <div class="row"><span class="i num">05</span><div><h3>Outdoor &amp; alfresco</h3><p>Paving and patio tiling over a prepared base, with the fall running away from the house.</p></div><span class="ref">400×400 / 600×600</span></div>
     </div>
   </div>
 </section>
 
-<section id="how">
-  <div class="wrap">
-    <span class="kicker">How a set runs</span>
-    <h2>From measure to final clean</h2>
-    <div class="ribbon">
-      <div><b>01</b><h3>Measure</h3><p>Rooms measured, substrate checked, falls and waste positions noted.</p></div>
-      <div><b>02</b><h3>Set out</h3><p>Layout marked on the floor and walls so cuts are decided before cutting.</p></div>
-      <div><b>03</b><h3>Prep</h3><p>Screed, sheeting and waterproofing done and left to cure properly.</p></div>
-      <div><b>04</b><h3>Lay</h3><p>Tiles set to line, spacers kept true, checked for lippage as it goes.</p></div>
-      <div><b>05</b><h3>Grout &amp; seal</h3><p>Grout, silicone to the wet joints, floor wiped down and left clean.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="materials">
-  <div class="wrap">
-    <span class="kicker">Materials</span>
-    <h2>What suits the room</h2>
-    <div class="table">
-      <div><b>Porcelain</b><span>Dense and low absorption — the default for floors and wet areas, in matt or lappato.</span></div>
-      <div><b>Ceramic</b><span>Lighter and easier to cut, best kept to walls where there is no heavy wear.</span></div>
-      <div><b>Natural stone</b><span>Travertine, marble and bluestone — needs sealing, and the layout has to respect the veining.</span></div>
-      <div><b>Mosaic</b><span>Small sheets for shower floors and feature bands, set to a line so the pattern stays true.</span></div>
-      <div><b>Underlay &amp; screed</b><span>Where the floor is out, it gets packed or screeded first — tiles only look flat if the base is.</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="wrap qa">
-    <div>
-      <span class="kicker">Questions</span>
-      <h2>Before you book</h2>
-      <p class="lead">If it is not here, ring the number in the header or send it through the form — you get a
-        straight answer either way.</p>
+<section class="lic" id="licence">
+  <div class="wrap grid">
+    <div class="stamp">
+      <small>NSW licence</small>
+      <strong class="num">472080C</strong>
+      <span>Braith Whitcher Tiling · ask for the number on any quote.</span>
     </div>
     <div>
-      <details open><summary>Do you supply the tiles or do I?</summary>
-        <div class="a">Either. Plenty of people pick their own tile and have it delivered; if you want help choosing
-          something that suits the room, that gets sorted before the job is priced.</div></details>
-      <details><summary>How is the price worked out?</summary>
-        <div class="a">Square metres, the state of the substrate, how many cuts and wet areas are involved, and
-          whether the old surface has to come up. It is priced after the room has been looked at.</div></details>
-      <details><summary>Can you tile over the existing tiles?</summary>
-        <div class="a">Sometimes — it depends on what is there and how sound it is. If it is not a good idea, you
-          will be told why rather than finding out later.</div></details>
-      <details><summary>How long does a bathroom take?</summary>
-        <div class="a">Waterproofing has to cure before tiling starts, so it is days rather than hours. The sequence
-          gets explained up front so you know when the room is usable again.</div></details>
-      <details><summary>Do you do small jobs?</summary>
-        <div class="a">Yes — a splashback, a repaired shower base or a re-grout is a normal job, not an inconvenience.</div></details>
-    </div>
-  </div>
-</section>
-
-<section id="quote">
-  <div class="wrap quote-in">
-    <div>
-      <span class="kicker">Get a quote</span>
-      <h2>Send the details</h2>
-      <p class="lead">Plans, a photo of the room, or just the measurements — any of them is enough to start.</p>
-      <ul class="needs">
-        <li>Which room, and roughly how many square metres</li>
-        <li>Whether the tiles are already chosen or still open</li>
-        <li>If the old surface has to come up</li>
-        <li>The best number and a time to call</li>
+      <h2>Why the number gets shown</h2>
+      <p>Anyone can advertise tiling. A licence number is the part you can check, so it belongs at the top of the page rather than buried in a footer.</p>
+      <ul>
+        <li>The licence is held by the business quoting your job.</li>
+        <li>Work is quoted from a site measure, so the price matches what gets laid.</li>
+        <li>One tiler on the job from set-out to grout, not a different crew each day.</li>
       </ul>
     </div>
-    <form id="lbq-form" data-site="braith-whitcher-tiling">
-      <div><label for="n">Name</label><input id="n" name="name" required autocomplete="name"></div>
-      <div><label for="p">Phone</label><input id="p" name="phone" required inputmode="tel" autocomplete="tel"></div>
-      <div class="full"><label for="a">Suburb</label><input id="a" name="suburb" autocomplete="address-level2"></div>
-      <div class="full"><label for="s">What is the job?</label><select id="s" name="service">
-        <option>Bathroom / wet area</option><option>Kitchen splashback</option><option>Floor tiling</option>
-        <option>Large format</option><option>Mosaic / feature wall</option><option>Repair or re-grout</option>
-        <option>Something else</option></select></div>
-      <div class="full"><label for="m">Details</label><textarea id="m" name="message" rows="4"
-        placeholder="Room, square metres, tile size if you know it…"></textarea></div>
-      <button type="submit">Send quote request</button>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="tag">Sequence</span>
+      <h2>How a tiling job runs</h2>
+      <p>The order doesn't change much, whether it's one splashback or a whole bathroom.</p>
+    </div>
+    <ol class="steps">
+      <li class="rv"><span class="t">Step 01</span><h3>Measure &amp; quote</h3><p>On site, free. Room dimensions, tile size, what's being removed and whether the screed is staying.</p></li>
+      <li class="rv"><span class="t">Step 02</span><h3>Set-out &amp; check</h3><p>Centre lines marked, substrate checked for flat, falls confirmed in the wet area before tiling starts.</p></li>
+      <li class="rv"><span class="t">Step 03</span><h3>Lay</h3><p>Walls then floor, cuts kept to the edges, joints run true off the set-out line.</p></li>
+      <li class="rv"><span class="t">Step 04</span><h3>Grout &amp; clean</h3><p>Grout, silicone to the wet joints, tiles cleaned down and the room left ready for the plumber.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="wrap q-grid">
+    <div class="q-copy">
+      <h2>Free measure and quote</h2>
+      <p>Send the suburb, roughly what's being tiled and when the room will be ready. If you've chosen a tile, say the size, because it changes the set-out.</p>
+      <ul class="q-list">
+        <li><span>Phone</span><a href="tel:+61431366357" class="num" style="font-weight:700;text-decoration:none">0431 366 357</a></li>
+        <li><span>Email</span><a href="mailto:bwhitchertiling@outlook.com" style="text-decoration:none">bwhitchertiling@outlook.com</a></li>
+        <li><span>Area</span>Newcastle and the Central Coast, and the suburbs between</li>
+        <li><span>Facebook</span><a href="https://www.facebook.com/share/1Jw2eFhbX4/?mibextid=wwXIfr" target="_blank" rel="noopener" style="text-decoration:none">Braith Whitcher Tiling</a></li>
+      </ul>
+    </div>
+    <form id="lbq-form" data-site="braith-whitcher-tiling" data-biz="Braith Whitcher Tiling" novalidate>
+      <div class="f-row">
+        <div><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
+      </div>
+      <div class="f-row">
+        <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+        <div><label for="f-sub">Suburb</label><input id="f-sub" name="suburb" autocomplete="address-level2"></div>
+      </div>
+      <label for="f-service">What's being tiled</label>
+      <select id="f-service" name="service">
+        <option>Bathroom or ensuite</option>
+        <option>Kitchen or splashback</option>
+        <option>Laundry or wet room</option>
+        <option>Floors or hallway</option>
+        <option>Outdoor or alfresco</option>
+        <option>Something else</option>
+      </select>
+      <label for="f-msg">The job</label>
+      <textarea id="f-msg" name="message" placeholder="Room, tile size if you've chosen one, and when it's ready."></textarea>
+      <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit">Request the quote</button>
+      <p class="f-st" id="lbq-st" role="status" aria-live="polite"></p>
+      <p class="f-note">Your details go to Braith Whitcher Tiling only, to answer this enquiry.</p>
     </form>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap f-in">
-  <span>Braith Whitcher Tiling — Newcastle &amp; Central Coast</span>
-  <a href="tel:0431366357">0431 366 357</a>
+<footer><div class="wrap">
+  <span>Braith Whitcher Tiling · NSW licence 472080C</span>
+  <span class="fb"><a href="tel:+61431366357" class="num">0431 366 357</a><a href="mailto:bwhitchertiling@outlook.com">Email</a></span>
+  <span class="fb"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></span>
 </div></footer>
 
 <script>
-document.getElementById('burger').addEventListener('click',function(){
-  var l=document.getElementById('navlinks'); var o=l.classList.toggle('open'); this.setAttribute('aria-expanded',o);});
-document.getElementById('lbq-form').addEventListener('submit',function(e){
-  e.preventDefault(); var f=e.currentTarget, b=f.querySelector('button');
-  b.textContent='Sending…'; b.disabled=true;
-  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',
-    headers:{'Content-Type':'application/json',Prefer:'return=minimal'},
-    body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,
-      service:f.service.value,message:f.message.value})})
-  .then(function(){b.textContent='Thanks — we will be in touch';})
-  .catch(function(){b.textContent='Could not send — try again';b.disabled=false;});});
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var rvs = [].slice.call(document.querySelectorAll('.rv'));
+  if(!reduce && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -6% 0px', threshold:.15});
+    rvs.forEach(function(el){ io.observe(el); });
+  } else { rvs.forEach(function(el){ el.classList.add('in'); }); }
+
+  var FB = 'https://grocery-periodically-everyone-wine.trycloudflare.com';
+  var f = document.getElementById('lbq-form');
+  if(!f) return;
+  var st = document.getElementById('lbq-st');
+  var btn = f.querySelector('button[type=submit]');
+  function base(cb){
+    if(window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done=false;
+    var t=setTimeout(function(){ if(!done){done=true;cb(FB);} },2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_='+Date.now())
+      .then(function(r){return r.text();})
+      .then(function(txt){
+        var b=(txt||'').trim().replace(/\/+$/,'');
+        if(done) return; done=true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b)?b:FB);
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb(FB);} });
+  }
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d={}; new FormData(f).forEach(function(v,k){ d[k]=v; });
+    if(d.website) return;
+    if(!d.name || (!d.phone && !d.email) || !(d.message||'').trim()){
+      st.textContent='Please add your name, a phone or email, and a few words about the job.';
+      return;
+    }
+    btn.disabled=true; st.textContent='Sending…';
+    base(function(B){
+      fetch(B+'/functions/v1/quote-request', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          site_id:f.dataset.site, business_name:f.dataset.biz,
+          name:d.name, phone:d.phone, email:d.email,
+          suburb:d.suburb, service:d.service||'', message:d.message, consent:true
+        })
+      })
+      .then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(x){
+        if(x && x.success){ f.reset(); st.textContent="Thanks. Your request is with Braith."; st.style.color='#c6e06a'; }
+        else throw new Error((x&&x.error)||'Could not send');
+      })
+      .catch(function(){ st.textContent='Could not send. Call 0431 366 357 and it will get sorted.'; btn.disabled=false; });
+    });
+  });
+})();
 </script>
-</body></html>
+</body>
+</html>
