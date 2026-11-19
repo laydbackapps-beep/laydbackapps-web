@@ -58,6 +58,10 @@ instruction.
 ### Aura Hair Collective
 - Source: clean Instagram roundel capture and the original dimensional wall-sign
   photograph.
+- Header wordmark: `img/aura-wordmark.svg`, a potrace vector of
+  `img/aura-wordmark.png` traced at 4x and checked against the source mask
+  (IoU 1.000, zero differing pixels). Regenerate from the PNG with
+  `~/.local/bin/potrace`; never redraw, re-type or re-space the letters.
 - Small branding: `aura-roundel.png`, circular crop only. Do not enlarge into a
   hero or print asset; the source is limited.
 - Gold treatment: use the wall-sign photograph as environmental imagery, not as
