@@ -235,117 +235,40 @@ small, .small, .meta, .caption, .eyebrow, .kicker, .mono {
 p, li {
   line-height: 1.55 !important;
 }
-
-/* === LAYDBACK GREENLINE CONTRAST & BRAND POLISH === */
-:root { --lb-name: #eef6ef; }
-html, body { overflow-x: clip; }
-.bar__in { padding-block: 12px !important; }
-.brand {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  text-decoration: none !important;
-}
-.brand__badge {
-  width: 52px !important;
-  height: 52px !important;
-  border-radius: 50%;
-  border: 1px solid rgba(142, 210, 78, 0.35);
-  flex-shrink: 0;
-}
-.brand__text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.12;
-}
-.brand__text strong {
-  font-size: 20px;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: -0.02em;
-}
-.brand__text strong span { color: var(--lime); }
-.brand__text small {
-  font-size: 11.5px;
-  font-weight: 600;
-  color: #b7cdbd;
-  letter-spacing: 0.04em;
-}
-
-/* Fix .nav a overriding .cta padding & text color! */
-.nav a.cta, a.cta, button.cta {
-  background: var(--lime) !important;
-  color: #061c0b !important;
-  padding: 11px 20px !important;
-  border-radius: 6px !important;
-  border-bottom: 0 !important;
-  font-weight: 800 !important;
-  line-height: 1.2 !important;
-}
-.nav a.cta:hover, a.cta:hover {
-  background: #a1e361 !important;
-  color: #041307 !important;
-}
-.turfband {
-  height: 3px !important;
-  background: linear-gradient(90deg, #6fae37, #8ed24e, #43a8ef) !important;
-}
-
-.hero__loc {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--lime);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.hero__checks {
-  list-style: none;
-  padding: 0;
-  margin: 24px 0 0;
-  display: grid;
-  gap: 10px;
-}
-.hero__checks li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 15px;
-  color: #d7e7db;
-}
-.hero__checks svg { flex-shrink: 0; margin-top: 3px; }
-
-.hero__photo {
-  margin: 0;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid rgba(238, 246, 239, 0.16);
-  background: var(--ink-2);
-  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.35);
-}
-.hero__photo img {
-  width: 100%;
-  aspect-ratio: 4 / 3.4;
-  object-fit: cover;
-  display: block;
-}
-.hero__photo figcaption {
-  padding: 12px 16px;
-  font-size: 13.5px;
-  color: #c3d6c8;
-  border-top: 1px solid var(--line);
-}
 </style>
+<!-- ==== TASTE PASS (legibility, from impeccable selectors) ==== -->
+<style id="lb-taste-pass">
+div.care > article:nth-of-type(1){border-left-width:1px!important}
+div.care > article:nth-of-type(2){border-left-width:1px!important}
+div.care > article:nth-of-type(3){border-left-width:1px!important}
+div.full:nth-of-type(3) > label{font-size:max(11px,.72em)!important;line-height:1.45!important}
+div.full:nth-of-type(4) > label{font-size:max(11px,.72em)!important;line-height:1.45!important}
+div.full:nth-of-type(5) > label{font-size:max(11px,.72em)!important;line-height:1.45!important}
+div.wrap.irrig__in > figure > figcaption{font-size:max(11px,.72em)!important;line-height:1.45!important}
+div:nth-of-type(1) > label{font-size:max(11px,.72em)!important;line-height:1.45!important}
+div:nth-of-type(2) > label{font-size:max(11px,.72em)!important;line-height:1.45!important}
+td:nth-of-type(3) > span.pill.mid{font-size:max(11px,.72em)!important;line-height:1.45!important}
+td:nth-of-type(4) > span.pill.hi{font-size:max(11px,.72em)!important;line-height:1.45!important}
+th:nth-of-type(1){font-size:max(11px,.72em)!important;line-height:1.45!important}
+th:nth-of-type(2){font-size:max(11px,.72em)!important;line-height:1.45!important}
+th:nth-of-type(3){font-size:max(11px,.72em)!important;line-height:1.45!important}
+th:nth-of-type(4){font-size:max(11px,.72em)!important;line-height:1.45!important}
+th:nth-of-type(5){font-size:max(11px,.72em)!important;line-height:1.45!important}
+tr:nth-of-type(1) > td:nth-of-type(3) > span.pill.hi{font-size:max(11px,.72em)!important;line-height:1.45!important}
+tr:nth-of-type(1) > td:nth-of-type(4) > span.pill.mid{font-size:max(11px,.72em)!important;line-height:1.45!important}
+tr:nth-of-type(2) > td:nth-of-type(3) > span.pill.hi{font-size:max(11px,.72em)!important;line-height:1.45!important}
+tr:nth-of-type(2) > td:nth-of-type(4) > span.pill.mid{font-size:max(11px,.72em)!important;line-height:1.45!important}
+tr:nth-of-type(3) > td:nth-of-type(3) > span.pill.hi{font-size:max(11px,.72em)!important;line-height:1.45!important}
+tr:nth-of-type(3) > td:nth-of-type(4) > span.pill.lo{font-size:max(11px,.72em)!important;line-height:1.45!important}
+tr:nth-of-type(5) > td:nth-of-type(3) > span.pill.hi{font-size:max(11px,.72em)!important;line-height:1.45!important}
+tr:nth-of-type(5) > td:nth-of-type(4) > span.pill.lo{font-size:max(11px,.72em)!important;line-height:1.45!important}
+</style>
+<!-- ==== /TASTE PASS ==== -->
 </head><body>
 
 <div class="bar"><div class="wrap bar__in">
-  <a class="brand" href="#top" aria-label="GreenLine Turf &amp; Irrigation — Home">
-    <img class="brand__badge" src="assets/logo-badge-clean.webp" alt="GreenLine emblem" width="54" height="54">
-    <span class="brand__text">
-      <strong><span>Green</span>Line</strong>
-      <small>Turf &amp; Irrigation &middot; Bundaberg</small>
-    </span>
-  </a>
+  <a class="brand" href="#top" aria-label="GreenLine Turf &amp; Irrigation — home"><img class="lb-big" src="assets/logo-isolated-mark.png" alt="GreenLine Turf &amp; Irrigation">
+<img class="lb-word" src="assets/logo-isolated-word.png" alt=""></a>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
   <nav class="nav" id="nav">
     <a href="#turf">Turf</a>
@@ -361,21 +284,21 @@ html, body { overflow-x: clip; }
 <div class="turfband"></div>
 
 <header class="hero" id="top"><div class="wrap hero__in">
-  <div class="hero__copy">
-    <p class="hero__loc">Bundaberg &amp; Wide Bay QLD</p>
-    <h1>A lawn that starts right<br>under the turf.</h1>
-    <p class="sub">Fresh-cut turf supply and laying, zoned pop-up and dripline irrigation, conditioned garden beds and seasonal lawn care built for Bundaberg heat.</p>
-    <p class="acts"><a class="cta" href="#quote">Request a Free Quote</a><a class="ghost" href="tel:0422585516">Call 0422 585 516</a></p>
-    <ul class="hero__checks">
-      <li><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M4 10.5 8 14.5 16 6.5" fill="none" stroke="#8ed24e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Soil rotary-hoed, levelled for drainage and rolled before laying</span></li>
-      <li><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M4 10.5 8 14.5 16 6.5" fill="none" stroke="#8ed24e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Head-to-head pop-up irrigation &amp; rain-sensored controllers</span></li>
-      <li><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M4 10.5 8 14.5 16 6.5" fill="none" stroke="#8ed24e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Garden beds cultivated, mulched and maintained year-round</span></li>
+  <div>
+    <span class="eyebrow">Turf &amp; irrigation · Bundaberg</span>
+    <h1>A lawn that starts right<br>under the <em>turf.</em></h1>
+    <p class="sub">Turf supply and laying, irrigation designed and installed, garden beds built and the ongoing care to keep it green through a Bundaberg summer. Soil, sun and watering planned before a single roll comes off the truck.</p>
+    <p class="acts"><a class="cta" href="#quote">Request a quote</a><a class="ghost" href="tel:0422585516">Call 0422 585 516</a></p>
+  </div>
+  <div class="hero__card">
+    <b>What GreenLine does</b>
+    <ul>
+      <li><span>Turf supply and laying — soil prepared, levelled and rolled, then watered in.</span></li>
+      <li><span>Irrigation design and installation — zones, controllers, dripline and pop-ups.</span></li>
+      <li><span>Garden beds and soil — cultivated, conditioned and mulched to hold moisture.</span></li>
+      <li><span>Ongoing lawn and garden care — mowing, edging, hedging and seasonal work.</span></li>
     </ul>
   </div>
-  <figure class="hero__photo">
-    <img src="assets/lawn-hero.webp" alt="Freshly laid and edged residential lawn with mulched garden bed" width="912" height="996" loading="eager" fetchpriority="high">
-    <figcaption>Levelled subgrade, tight staggered turf joints and crisp edging.</figcaption>
-  </figure>
 </div></header>
 
 <main>
