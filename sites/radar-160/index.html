@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en-AU"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MWD Carpentry | Timber Decks and Framing, Corlette NSW</title>
+<meta name="description" content="MWD Carpentry builds timber decks, framing, screens and verandas around Corlette and Port Stephens. Matthew Douglass, 0403 481 281. Seven reviews on Facebook, 100% recommend.">
+<meta name="theme-color" content="#0d1b20">
+<link rel="icon" href="assets/favicon.png" sizes="128x128">
+<style>
+@font-face{font-family:Syne;src:url(assets/fonts/syne-var.woff2) format("woff2");font-weight:400 800;font-display:swap}
+@font-face{font-family:Outfit;src:url(assets/fonts/outfit-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:PlexMono;src:url(assets/fonts/plexmono-500.woff2) format("woff2");font-weight:500;font-display:swap}
+:root{
+ --paper:#f6f3ec;--paper2:#efeade;--ink:#0d1b20;--ink2:#14262c;--muted:#55636a;
+ --rule:#d9d3c6;--acc:#7a4a1f;--acc-raw:#c98a3c;--timber:#a9713f;
+ --mono:PlexMono,ui-monospace,monospace;--sans:Outfit,system-ui,-apple-system,"Segoe UI",sans-serif;
+ --display:Outfit,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(18px,4vw,52px)}
+a{color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:800;letter-spacing:-.03em;line-height:.98}
+.mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.15em;text-transform:uppercase}
+
+/* header */
+.hd{background:var(--ink);color:var(--paper)}
+.hd .bar{display:flex;align-items:center;gap:clamp(14px,2.4vw,34px);padding:14px 0}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:0 1 auto;min-width:0}
+.brand img{height:clamp(22px,2.7vw,31px);width:auto}
+.brand .sb{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a9bcc3;margin-top:6px}
+.brand .txt{display:block}
+.brand .nm{display:block;font-family:var(--display);font-weight:800;font-size:clamp(16px,1.7vw,21px);letter-spacing:-.02em;line-height:1.1;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand .sb{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a9bcc3;margin-top:5px}
+.nav{display:flex;gap:clamp(14px,2.2vw,30px);margin-left:auto}
+.nav a{text-decoration:none;font-size:15px;color:#b9c6cb;padding:5px 0;border-bottom:1px solid transparent}
+.nav a:hover{color:#fff;border-color:var(--acc-raw)}
+.tel{display:inline-flex;align-items:center;gap:9px;background:var(--acc);color:#fff;text-decoration:none;font-weight:700;
+ font-size:16px;padding:12px 18px;border-radius:2px;white-space:nowrap;flex:0 0 auto}
+.tel:hover{background:#61391a}
+
+/* hero */
+.hero{position:relative;background:var(--ink2);color:#fff;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 46%}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(102deg,rgba(8,18,22,.9) 0%,rgba(8,18,22,.72) 34%,rgba(8,18,22,.28) 62%,rgba(8,18,22,.1) 100%),linear-gradient(to top,rgba(8,18,22,.93) 0%,rgba(8,18,22,.7) 12%,rgba(8,18,22,0) 34%)}
+.hero .inner{position:relative;z-index:2;padding:clamp(56px,10vw,140px) 0 clamp(30px,4vw,54px);max-width:820px}
+.hero .eyebrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;color:#cfe0e5;margin:0 0 20px;letter-spacing:.08em}
+.hero .eyebrow:before{content:"";width:30px;height:1px;background:var(--acc-raw)}
+.hero h1{font-size:clamp(34px,5.6vw,68px);letter-spacing:-.035em;line-height:1.0;margin:0 0 18px;text-wrap:balance}
+.hero p{color:#d8e2e6;font-size:clamp(16px,1.5vw,18.5px);max-width:50ch;margin:0 0 26px}
+.acts{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--paper);color:var(--ink);text-decoration:none;font-weight:700;
+ padding:15px 24px;font-size:16.5px;border-radius:2px;transition:transform .16s ease,background .16s ease}
+.btn:hover{background:#fff;transform:translateY(-1px)}
+.ghost{display:inline-flex;align-items:center;color:#fff;text-decoration:none;font-size:16px;font-weight:600;padding:14px 22px;border:1px solid rgba(255,255,255,.55);border-radius:2px}
+.ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.hero .trust{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.22);display:flex;gap:clamp(16px,3vw,40px);flex-wrap:wrap;
+ padding:16px 0 20px;color:#eef5f7;font-size:14.5px;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.hero .trust b{color:#fff;font-weight:700}
+@media(min-width:900px){
+ .hero{background:var(--ink)}
+ .hero img{left:auto;right:0;width:56%;object-position:58% 50%;clip-path:polygon(13% 0,100% 0,100% 100%,0 100%)}
+ .hero:after{background:linear-gradient(97deg,rgba(13,27,32,1) 0%,rgba(13,27,32,1) 41%,rgba(13,27,32,.82) 47%,rgba(13,27,32,.18) 60%,rgba(13,27,32,.12) 100%)}
+ .hero .inner{padding-right:8%}
+}
+
+
+section{padding:clamp(46px,6vw,88px) 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:0 0 clamp(24px,3vw,40px)}
+h2{font-size:clamp(27px,3.4vw,44px)}
+.sec-head p{margin:6px 0 0;color:var(--muted);max-width:48ch;font-size:16px}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--acc);border:1px solid var(--rule);padding:7px 11px}
+
+/* mosaic */
+.mosaic{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(10px,1.3vw,16px)}
+.plate{margin:0;min-width:0}
+.plate .frame{overflow:hidden;background:#e5e0d3}
+.plate img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.plate:hover img{transform:scale(1.02)}
+.plate figcaption{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#33424a;margin-top:9px;line-height:1.5}
+.p1{grid-column:span 7}.p2{grid-column:span 5}
+.p3{grid-column:span 4}.p4{grid-column:span 4}.p5{grid-column:span 4}
+.cap-top{display:block}
+.cap-top figcaption{margin:9px 0 0;padding-top:0;border-top:0}
+.p6{grid-column:span 12}
+.p1 .frame{aspect-ratio:4/3}.p2 .frame{aspect-ratio:4/5}
+.p3 .frame,.p4 .frame,.p5 .frame{aspect-ratio:1/1}
+.p6 .frame{aspect-ratio:21/9}
+
+/* services */
+.svc{border-top:1px solid var(--ink);margin-top:8px}
+.svc .r{display:grid;grid-template-columns:78px minmax(0,3fr) minmax(0,4fr) 100px;gap:clamp(12px,2vw,28px);
+ padding:clamp(16px,2.2vw,24px) 0;border-bottom:1px solid var(--rule);align-items:center}
+.svc .r img{width:78px;height:78px;object-fit:cover;background:var(--paper2)}
+.svc .r b{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.svc .r span{color:var(--muted);font-size:15.5px}
+.svc .r i{font-family:var(--mono);font-style:normal;font-size:12.5px;letter-spacing:.1em;color:var(--ink2);text-align:right}
+@media(max-width:720px){.svc .r{grid-template-columns:64px minmax(0,1fr);align-items:start}
+ .svc .r img{width:64px;height:64px;grid-row:span 2}
+ .svc .r span{grid-column:2}.svc .r i{grid-column:2;text-align:left;padding-top:4px}}
+
+/* sequence */
+.seq{background:var(--ink);color:var(--paper);padding:clamp(46px,6vw,88px) 0}
+.seq h2{color:#fff}
+.seq .lead{color:#b9c6cb;margin:10px 0 34px;max-width:52ch}
+.seq-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(26px,4vw,64px);align-items:start}
+.seq-plate{margin:0}
+.seq-plate img{width:100%;height:clamp(320px,42vw,560px);object-fit:cover}
+.seq-plate figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8fa3aa;margin-top:10px}
+.seq ol{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.18)}
+.seq li{display:grid;grid-template-columns:120px 1fr;gap:clamp(12px,3vw,40px);padding:20px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.seq li b{font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.15em;color:var(--acc-raw);text-transform:uppercase;padding-top:3px}
+.seq li span{color:#cfd8dc;font-size:16px}
+.seq li span strong{display:block;color:#fff;font-size:18px;font-weight:700;margin-bottom:3px;letter-spacing:-.01em}
+
+
+/* contact */
+.ct{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px)}
+.ct .big-t{display:inline-block;font-family:var(--display);font-size:clamp(30px,4vw,48px);font-weight:800;letter-spacing:-.03em;
+ text-decoration:none;border-bottom:2px solid var(--acc);padding-bottom:6px;margin:8px 0 0}
+.ct .lines{margin:26px 0 0;display:grid;gap:11px;font-size:15.5px;color:var(--muted)}
+.ct .lines a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+form{border-top:1px solid var(--ink);padding-top:20px}
+label{display:block;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin:0 0 6px}
+input,textarea{width:100%;background:#fff;border:1px solid var(--rule);color:var(--ink);padding:12px;font:inherit;font-size:15.5px;
+ margin-bottom:14px;border-radius:0}
+input:focus,textarea:focus{outline:2px solid rgba(27,127,153,.35);border-color:var(--acc)}
+button{width:100%;background:var(--ink);color:var(--paper);border:0;padding:15px;font:inherit;font-weight:700;font-size:16px;cursor:pointer;border-radius:2px}
+button:hover{background:var(--ink2)}
+
+footer{background:var(--ink);color:#b9c6cb;padding:34px 0 36px}
+footer .in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer img{height:44px;width:auto}
+footer .fl{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
+footer a{color:#cfd8dc;text-decoration:none}
+footer a:hover{color:#fff}
+
+.sig{display:none;margin:clamp(24px,3vw,34px) 0 0;padding-top:14px;border-top:1px solid var(--rule);align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase}
+.sig img{display:none}
+.nav a{font-size:16px;color:#e2ecef}
+.brand .lock,footer img.lock{height:clamp(38px,4vw,46px);width:auto}
+.fnote{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;line-height:1.6}
+.mk{display:inline-flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;letter-spacing:.02em;background:var(--acc-raw,#c4fb24);color:#0f1115;border-radius:4px;line-height:1}
+.brand .mk{height:clamp(38px,4.2vw,46px);padding:0 12px;font-size:clamp(17px,2vw,21px)}
+footer .mk{height:56px;padding:0 16px;font-size:26px}
+.sig span{display:flex;align-items:center;gap:10px}
+.sig-dark{border-top-color:rgba(255,255,255,.2);color:#93a8b0}
+.contact-plate img{width:100%;height:clamp(220px,26vw,360px);object-fit:cover;margin:0 0 clamp(20px,3vw,32px)}
+@media(max-width:520px){
+ .brand .sb{display:none}
+ .brand .nm{white-space:normal;font-size:15px}
+ .brand img{height:42px}
+}
+.rev-item{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rev-item.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+ *{animation:none!important;transition:none!important;scroll-behavior:auto}
+ .rev-item{opacity:1;transform:none}
+}
+
+@media(max-width:900px){
+ .mosaic{grid-template-columns:1fr 1fr}
+ .p1,.p2,.p3,.p4,.p5,.p6{grid-column:span 2}
+ .p1 .frame,.p2 .frame,.p3 .frame,.p4 .frame,.p5 .frame{aspect-ratio:4/5}
+ .p6 .frame{aspect-ratio:4/3}
+ .svc .r{grid-template-columns:1fr;gap:6px}
+ .svc .r i{text-align:left}
+ .ct{grid-template-columns:1fr}
+ .seq-grid{grid-template-columns:1fr}
+ .seq-plate img{height:clamp(240px,52vw,380px)}
+}
+@media(max-width:860px){
+ .hd .bar{flex-wrap:wrap;gap:10px}
+ .nav{order:3;width:100%;margin-left:0;border-top:1px solid rgba(255,255,255,.16);padding-top:10px;overflow-x:auto}
+ .nav a{white-space:nowrap;font-size:14px}
+ .tel{margin-left:auto;font-size:14.5px;padding:11px 13px}
+ .brand{gap:10px;min-width:0;flex:1 1 auto}
+ .brand img{height:38px}
+ .brand .nm{font-size:15.5px}
+ .brand .sb{display:none}
+ .tel{flex:0 0 auto}
+ .mosaic{grid-template-columns:1fr}
+ .p1,.p2,.p3,.p4,.p5,.p6{grid-column:span 1}
+ .p6 .frame{aspect-ratio:4/3}
+ .seq li{grid-template-columns:1fr;gap:4px}
+ .hero .inner{padding-top:64px}
+}
+@media(max-width:600px){
+ body{font-size:17.5px}
+ .hero .inner{padding-top:40px;padding-bottom:20px}
+ .hero h1{font-size:clamp(29px,8.2vw,40px);line-height:1.04}
+ .hero p,.svc .r span,.ct .lines{font-size:16.5px}
+ .hero .trust{font-size:14.5px;gap:8px 18px;padding:14px 0 16px}
+}
+</style></head>
+<body>
+
+<header class="hd"><div class="wrap bar">
+  <a class="brand" href="#top" aria-label="MWD Carpentry, Corlette">
+    <img class="lock" src="assets/logo-word.png" alt="MWD Carpentry" width="1103" height="113">
+    <span class="txt"><span class="sb">Carpentry · Corlette NSW</span></span>
+  </a>
+  <nav class="nav"><a href="#work">Work</a><a href="#services">Services</a><a href="#build">Build</a><a href="#contact">Contact</a></nav>
+  <a class="tel" href="tel:+61403481281">0403 481 281</a>
+</div></header>
+
+<main id="top">
+
+<section class="hero">
+  <img src="assets/work.jpg" alt="Finished elevated timber deck with white posts and cable railing above a Port Stephens street" width="2200" height="2051">
+  <div class="wrap">
+    <div class="inner">
+      <p class="eyebrow mono">MWD Carpentry · Corlette NSW 2315</p>
+      <h1>Elevated timber decks built around Corlette.</h1>
+      <p>MWD Carpentry is Matthew Douglass, building elevated timber decks, framing and screens around Corlette. One carpenter sets out the job, frames it and finishes it.</p>
+      <div class="acts">
+        <a class="btn" href="tel:+61403481281">Call 0403 481 281</a>
+        <a class="ghost" href="#work">See the work</a>
+      </div>
+    </div>
+    <div class="trust">
+      <span><b>Every review</b> 5-star</span>
+      <span><b>100%</b> recommend</span>
+      <span><b>Carpentry</b>, Corlette NSW</span>
+      <span><b>Owner</b> on the tools</span>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="work"><div class="wrap">
+  <div class="sec-head">
+    <div><h2>Recent jobs</h2><p>Decks, framing and screens Matthew has built around Corlette and Port Stephens. Every photo below is his own work.</p></div>
+    <span class="tag">Corlette · Port Stephens</span>
+  </div>
+  <div class="mosaic">
+    <figure class="plate p1 rev-item"><div class="frame"><img src="assets/gal_2.jpg" alt="Cable railing on a timber deck looking over a suburban Port Stephens block" loading="lazy" width="2200" height="2933"></div><figcaption>Cable railing deck, suburban block</figcaption></figure>
+    <figure class="plate p2 rev-item"><div class="frame"><img src="assets/gal_7.jpg" alt="Timber decking around a pool finished in blue mosaic tiles" loading="lazy" width="2200" height="2933"></div><figcaption>Pool deck, mosaic tiles</figcaption></figure>
+    <figure class="plate p3 rev-item cap-top"><div class="frame"><img src="assets/gal_11.jpg" alt="Underside of a timber deck showing joists, bearer and posts" loading="lazy" width="2200" height="2933"></div><figcaption>Joists and posts, under the deck</figcaption></figure>
+    <figure class="plate p4 rev-item cap-top"><div class="frame"><img src="assets/gal_8.jpg" alt="Horizontal timber slat screen against a clear sky" loading="lazy" width="2200" height="1237"></div><figcaption>Timber slat screen</figcaption></figure>
+    <figure class="plate p5 rev-item cap-top"><div class="frame"><img src="assets/gal_6.jpg" alt="Rooftop terrace with built-in timber seating and a closed umbrella" loading="lazy" width="2200" height="2933"></div><figcaption>Terrace seating, built in</figcaption></figure>
+    <figure class="plate p6 rev-item"><div class="frame"><img src="assets/gal_12.jpg" alt="Covered veranda walkway with timber flooring beside palm trees" loading="lazy" width="2200" height="1650"></div><figcaption>Covered veranda walkway</figcaption></figure>
+  </div>
+  <p class="sig"><span><img src="assets/logo-lockup.png" alt="" width="438" height="106" loading="lazy">MWD Carpentry · Corlette NSW</span><a href="tel:+61403481281" style="text-decoration:none;border-bottom:1px solid var(--rule);color:inherit">0403 481 281</a></p>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <div class="sec-head"><div><h2>What Matthew takes on</h2><p>The carpentry around a house: the deck you stand on, the frame behind it and the screens that close it in.</p></div></div>
+  <div class="svc">
+    <div class="r"><img src="assets/gal_2.jpg" alt="Cable railing on a timber deck" loading="lazy" width="2200" height="2933"><b>Timber decks</b><span>Elevated decks and pool surrounds. Posts, bearers, joists, decking and the fall running away from the house.</span><i>Decks</i></div>
+    <div class="r"><img src="assets/gal_11.jpg" alt="Joists, bearer and posts under a timber deck" loading="lazy" width="2200" height="2933"><b>Framing</b><span>Floor and wall framing, trims and set-out for extensions and new work.</span><i>Frames</i></div>
+    <div class="r"><img src="assets/gal_8.jpg" alt="Horizontal timber slat screen" loading="lazy" width="2200" height="1237"><b>Screens and slat fencing</b><span>Batten screens, privacy runs and gates that match the deck detail.</span><i>Screens</i></div>
+    <div class="r"><img src="assets/gal_12.jpg" alt="Covered veranda walkway with timber flooring" loading="lazy" width="2200" height="1650"><b>Verandas and covered walkways</b><span>Posts, beams and roof framing over outdoor areas and entry walks.</span><i>Verandas</i></div>
+    <div class="r"><img src="assets/gal_6.jpg" alt="Built-in timber seating on a terrace" loading="lazy" width="2200" height="2933"><b>Renovation carpentry</b><span>Internal fit-out, linings, doors and the finishing that closes a renovation out.</span><i>Fit-out</i></div>
+  </div>
+  <p class="sig"><span><img src="assets/logo-lockup.png" alt="" width="438" height="106" loading="lazy">MWD Carpentry · Corlette NSW</span><a href="tel:+61403481281" style="text-decoration:none;border-bottom:1px solid var(--rule);color:inherit">0403 481 281</a></p>
+</div></section>
+
+<section class="seq" id="build"><div class="wrap">
+  <div class="seq-grid">
+  <div>
+  <h2>How a deck goes together</h2>
+  <p class="lead">The order the work happens in, from the first line on the wall to the last board.</p>
+  <ol>
+    <li><b>Set out</b><span><strong>Levels off the door</strong>The deck height is taken off the door sill, so the step out is the size it should be and the boards land under the threshold.</span></li>
+    <li><b>Bearers</b><span><strong>Posts and bearers</strong>Posts set to the span, bearers fixed back to the house, and the frame squared before anything is laid on it.</span></li>
+    <li><b>Joists</b><span><strong>Joist spacing</strong>Joists run at the spacing the board direction needs, with the blocking in to keep them straight.</span></li>
+    <li><b>Deck</b><span><strong>Decking and fall</strong>Boards laid with a consistent gap and the fall set so water runs off, not back to the wall.</span></li>
+    <li><b>Rail</b><span><strong>Rails and screens</strong>Cable rail, slat screens and the finish, fitted after the deck is down so the lines stay true.</span></li>
+  </ol>
+  </div>
+  <figure class="seq-plate">
+    <img src="assets/gal_11.jpg" alt="Underside of a finished timber deck showing joists, bearer and posts" loading="lazy" width="2200" height="2933">
+    <figcaption>Joists, bearer and posts, under a finished deck</figcaption>
+  </figure>
+  </div>
+  <p class="sig sig-dark"><span><img src="assets/logo-lockup.png" alt="" width="438" height="106" loading="lazy">MWD Carpentry · Corlette NSW</span><a href="tel:+61403481281" style="text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);color:inherit">0403 481 281</a></p>
+</div></section>
+
+
+
+<section id="contact"><div class="wrap">
+  <figure class="contact-plate"><img src="assets/gal_10.jpg" alt="Long timber deck with cable railing looking toward the sun" loading="lazy" width="2200" height="2933"><figcaption style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:9px 0 0">Deck and cable rail, Port Stephens</figcaption></figure>
+  <div class="ct">
+  <div>
+    <h2>Decks and framing, priced from a photo</h2>
+    <p class="lead" style="color:var(--muted);margin:10px 0 0;max-width:40ch">Tell him the suburb, what the deck or frame has to do, and send a photo of the site. A price and a start date come back from that.</p>
+    <a class="big-t" href="tel:+61403481281">0403 481 281</a>
+    <div class="lines">
+      <span>Email <a href="mailto:matthew.douglass2315@gmail.com">Matthew</a>, replies the same day</span>
+      <span>Facebook <a href="https://www.facebook.com/profile.php?id=61589326233351" target="_blank" rel="noopener">Mwd.Carpentry</a>, every review a 5-star recommendation</span>
+      <span>Corlette, NSW 2315 · Port Stephens</span>
+    </div>
+  </div>
+  <form id="quote-form" data-site="radar-160">
+    <p class="fnote">Rather type it out? Send it through and Matthew calls you back.</p>
+    <label for="n">Name</label><input id="n" name="name" required placeholder="Your name" autocomplete="name">
+    <label for="p">Phone</label><input id="p" name="phone" required inputmode="tel" placeholder="04xx xxx xxx" autocomplete="tel">
+    <label for="s">Suburb</label><input id="s" name="suburb" placeholder="e.g. Corlette" autocomplete="address-level2">
+    <label for="m">Project details</label><textarea id="m" name="message" rows="3" placeholder="Deck, frame, screens, veranda"></textarea>
+    <button type="submit">Request a price</button>
+  </form>
+  </div>
+  <p class="sig"><span><img src="assets/logo-lockup.png" alt="" width="438" height="106" loading="lazy">MWD Carpentry · Corlette NSW 2315</span><a href="tel:+61403481281" style="text-decoration:none;border-bottom:1px solid var(--rule);color:inherit">0403 481 281</a></p>
+</div></section>
+</main>
+
+<footer><div class="wrap in">
+  <img src="assets/logo-word.png" alt="MWD Carpentry" width="1103" height="113" class="lock">
+  <p class="ft-name">MWD Carpentry · Corlette NSW 2315</p>
+  <div class="fl">
+    <a href="tel:+61403481281">0403 481 281</a>
+    <a href="mailto:matthew.douglass2315@gmail.com">Email</a>
+    <a href="https://www.facebook.com/profile.php?id=61589326233351" target="_blank" rel="noopener">Facebook</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</div></footer>
+
+<script>
+document.getElementById('quote-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.currentTarget, b = f.querySelector('button');
+  b.textContent = 'Sending...'; b.disabled = true;
+  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests', {
+    method: 'POST', headers: { 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+    body: JSON.stringify({ site: f.dataset.site, name: f.name.value, phone: f.phone.value,
+      suburb: f.suburb.value, message: f.message.value })
+  }).then(function () { b.textContent = 'Thanks, Matthew will call you back'; })
+    .catch(function () { b.textContent = 'Call 0403 481 281'; b.disabled = false; });
+});
+(function () {
+  var els = document.querySelectorAll('.rev-item');
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function (e) { e.classList.add('in'); }); return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
+</body></html>
