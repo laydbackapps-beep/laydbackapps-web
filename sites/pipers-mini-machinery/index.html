@@ -265,6 +265,11 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 div.container.footer-bottom > p:nth-of-type(1){color:#f2efe9!important}
 </style>
 <!-- ==== /TASTE PASS ==== -->
+<style id="lb-rv-fallback">/* ponytail: reveal fallback - if the observer never fires the copy still lands */
+@keyframes lbRvForce{to{opacity:1!important;transform:none!important}}
+.rv,.lb-rv{animation:lbRvForce .001s 4s forwards}
+@media (prefers-reduced-motion:reduce){.rv,.lb-rv{animation:none;opacity:1!important;transform:none!important}}
+</style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
