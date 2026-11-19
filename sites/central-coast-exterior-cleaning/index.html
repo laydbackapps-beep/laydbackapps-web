@@ -37,6 +37,7 @@ html{scroll-behavior:smooth}
   .rv{opacity:1!important;transform:none!important;transition:none!important}
 }
 <noscript><style>.rv{opacity:1!important;transform:none!important;transition:none!important}</style></noscript>
+<style>
 body{margin:0;font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
@@ -805,6 +806,14 @@ header a[href^="tel"],.site-header a[href^="tel"]{
   opacity:1 !important;
 }
 .lb-brand__sub:empty{display:none !important}
+</style>
+<style id="lb-canvas-fallback">/* the hero canvas paints nothing until WebGL runs; give it a designed plate so the layout never reads as an empty box */
+.hero-canvas{position:relative!important;min-height:clamp(240px,32vw,380px)!important;border:1px solid var(--hairline,rgba(0,0,0,.12))!important;background:
+  radial-gradient(90% 80% at 22% 18%,rgba(40,120,136,.16),transparent 62%),
+  radial-gradient(80% 80% at 88% 92%,rgba(40,120,136,.10),transparent 66%),
+  repeating-linear-gradient(135deg,rgba(0,0,0,.045) 0 1px,transparent 1px 10px),
+  linear-gradient(160deg,#eef4f5,#dfe9eb 55%,#cfdcdf)!important}
+.hero-canvas canvas{position:relative!important;z-index:1!important}
 </style>
 </body>
 </html>
