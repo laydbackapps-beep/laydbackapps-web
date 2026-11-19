@@ -18,7 +18,7 @@
       const tools = document.createElement('div');
       tools.className = 'alora-hero-tools';
       tools.setAttribute('aria-hidden', 'true');
-      const src = new URL('./assets/hero/alora-salon-kit.webp?v=hero-fx-4', document.baseURI).href;
+      const src = new URL('./assets/hero/alora-salon-kit.webp?v=hero-fx-5', document.baseURI).href;
       tools.innerHTML = `<img src="${src}" width="1600" height="1200" alt="" decoding="async" />`;
       media.appendChild(tools);
     }
