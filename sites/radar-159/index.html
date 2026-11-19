@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en-AU"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ace Construction Services | Excavation &amp; Site Prep, Perth WA</title>
+<meta name="description" content="Owner-operated excavation, site cuts, sand removal and footing holes across the Perth metro. Residential and commercial. Call Lewis on 0499 887 415.">
+<meta name="theme-color" content="#eae3d2">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<style>
+@font-face{font-family:Outfit;src:url(assets/fonts/outfit-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:PlexMono;src:url(assets/fonts/plexmono-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:PlexMono;src:url(assets/fonts/plexmono-500.woff2) format("woff2");font-weight:500;font-display:swap}
+:root{
+ --paper:#eae3d2;--paper2:#f3eee1;--ink:#191a15;--muted:#5c5a4e;--rule:#c9c0aa;
+ --acc:#35563f;--acc-deep:#243b2b;--mono:PlexMono,ui-monospace,monospace;
+ --sans:Outfit,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.62 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4.4vw,52px)}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.035em;line-height:1.02}
+img{max-width:100%;display:block}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+
+/* header */
+.hd{position:sticky;top:0;z-index:50;background:rgba(234,227,210,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.hd .bar{display:flex;align-items:center;gap:clamp(12px,2vw,28px);padding:11px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:0 0 auto}
+.brand svg{width:clamp(42px,4.4vw,52px);height:auto;display:block}
+.brand .nm{display:block;font-weight:800;font-size:clamp(15px,1.5vw,18.5px);letter-spacing:-.02em;line-height:1.1}
+.brand .sb{display:block;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.nav{display:flex;gap:clamp(14px,2vw,26px);margin-left:auto}
+.nav a{text-decoration:none;font-size:15px;color:var(--muted);padding:4px 0;border-bottom:1px solid transparent}
+.nav a:hover{color:var(--ink);border-color:var(--acc)}
+.tel{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:var(--acc);color:var(--paper2);
+ font-weight:700;font-size:15.5px;padding:11px 17px;border-radius:2px;white-space:nowrap;flex:0 0 auto}
+.tel:hover{background:var(--acc-deep)}
+.tel .dot{width:6px;height:6px;border-radius:50%;background:#cfe3d2;display:inline-block}
+
+/* hero */
+.hero{padding:clamp(30px,4vw,56px) 0 0;border-bottom:1px solid var(--rule);min-height:calc(100vh - 72px);display:flex;flex-direction:column;justify-content:space-between}
+.heroref{border-top:1px solid var(--rule);margin-top:clamp(24px,3vw,40px);padding:14px 0 16px;display:flex;gap:clamp(12px,2.4vw,30px);flex-wrap:wrap;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase}
+.heroref b{font-weight:500;color:var(--acc)}
+.hero .grid{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:clamp(26px,3.6vw,58px);align-items:center}
+.kick{display:flex;align-items:center;gap:12px;color:var(--muted);margin:0 0 20px}
+.kick:before{content:"";width:34px;height:1px;background:var(--acc);display:block}
+.hero h1{font-size:clamp(37px,5.5vw,72px);letter-spacing:-.045em;margin:0 0 20px}
+.hero h1 b{font-weight:800;display:block}
+.lead{margin:0 0 26px;color:var(--muted);font-size:clamp(16px,1.5vw,18.5px);max-width:44ch}
+.acts{display:flex;align-items:center;gap:clamp(14px,2vw,24px);flex-wrap:wrap}
+.numline{color:var(--muted);margin:14px 0 0;letter-spacing:.1em;font-size:11.5px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:var(--paper2);text-decoration:none;
+ font-weight:700;padding:15px 24px;font-size:16.5px;border-radius:2px;transition:background .18s ease}
+.btn:hover{background:var(--acc-deep)}
+.link{display:inline-flex;align-items:center;text-decoration:none;font-weight:600;font-size:15.5px;padding:14px 20px;border:1px solid var(--acc);color:var(--acc);border-radius:2px}
+.link:hover{background:rgba(53,86,63,.08)}
+.sheet{background:var(--paper2);border:1px solid var(--ink);padding:10px;box-shadow:6px 6px 0 rgba(25,26,21,.07)}
+.sheet svg{display:block;width:100%;height:auto}
+.foot-note{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted);margin:9px 2px 0;text-transform:uppercase;display:flex;justify-content:space-between;gap:12px}
+
+/* section sheet header */
+.sect-tag{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-bottom:1px solid var(--rule);
+ padding-bottom:10px;margin:0 0 clamp(24px,3vw,38px);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.sect-tag b{display:flex;align-items:center;gap:8px;font-weight:500;color:var(--acc)}
+.sect-tag b svg{width:20px;height:20px;flex:0 0 auto}
+.sect-tag .cta{text-decoration:none;background:var(--acc);color:var(--paper2);padding:7px 12px;border-radius:2px;letter-spacing:.1em;font-weight:500}
+.callbar{display:none}
+/* owned plates */
+.specs{border-bottom:1px solid var(--rule)}
+
+section{padding:clamp(44px,5.6vw,82px) 0;border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:0}
+h2{font-size:clamp(26px,3.1vw,40px);margin:0 0 14px}
+.intro{color:var(--muted);max-width:56ch;margin:0 0 clamp(26px,3.4vw,42px)}
+
+/* scope ledger */
+.ledger{width:100%;border-collapse:collapse}
+.ledger tr{border-top:1px solid var(--rule)}
+.ledger tr:first-child{border-top:1px solid var(--ink)}
+.ledger td{padding:clamp(16px,2.1vw,22px) 0;vertical-align:top}
+.ledger .op{width:106px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--acc);padding-top:calc(clamp(16px,2.1vw,22px) + 3px)}
+.ledger .nm{width:31%;font-weight:700;font-size:17.5px;padding-right:22px}
+.ledger .ds{color:var(--muted);font-size:15.5px}
+@media(max-width:760px){
+ .ledger .op,.ledger .nm,.ledger .ds{display:block;width:auto;padding-right:0}
+ .ledger td{padding:0}
+ .ledger tr{padding:16px 0;display:block}
+ .ledger .op{padding-bottom:6px}
+ .ledger .nm{padding-bottom:4px}
+}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink)}
+.steps article{padding:clamp(20px,2.6vw,30px) clamp(16px,2.4vw,30px);border-left:1px solid var(--rule)}
+.steps article:first-child{border-left:0;padding-left:0}
+.steps .lab{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--acc);margin:0 0 12px}
+.steps h3{font-size:19px;margin:0 0 8px;letter-spacing:-.02em}
+.steps p{margin:0;color:var(--muted);font-size:15.5px}
+@media(max-width:820px){.steps{grid-template-columns:1fr}.steps article{border-left:0;border-top:1px solid var(--rule);padding-left:0}.steps article:first-child{border-top:0}}
+
+/* plates */
+.sig{margin:clamp(24px,3vw,32px) 0 0;padding-top:12px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.sig b{font-weight:500;color:var(--acc)}
+.blocks-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,56px);align-items:start}
+.plan{margin:0}.plan svg{width:100%;height:auto;border:1px solid var(--ink);background:#f7f3e8}
+.plan figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:9px;line-height:1.5}
+.plates{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.8vw,20px);margin-top:clamp(24px,3vw,36px)}
+.plates figure{margin:0}
+.plates img{width:100%;height:clamp(190px,24vw,290px);object-fit:cover;border:1px solid var(--rule)}
+.plates figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.areas{display:flex;gap:0;flex-wrap:wrap;border-top:1px solid var(--ink);margin-top:clamp(24px,3vw,34px)}
+.areas span{padding:14px 22px 14px 0;font-size:15.5px;color:var(--ink);border-right:1px solid var(--rule);margin-right:22px}
+.areas span:last-child{border-right:0}
+
+/* contact */
+.close{background:var(--acc-deep);color:var(--paper2);border-bottom:0}
+.close h2{color:#fff}
+.close .intro{color:#b9cdbc}
+.close .big{color:#fff;border-bottom-color:#a9bfa9}
+.close .small-links{color:#a9bfa9}
+.close .small-links a{color:#fff;border-bottom-color:#3f6350}
+.close .btn{background:var(--paper2);color:var(--acc-deep)}
+.close .sect-tag{color:#a9bfa9;border-bottom-color:#3f6350}
+.close .sect-tag b{color:#cfe3d2}
+.close .sect-tag .cta{background:#f3eee1;color:var(--acc-deep)}
+.close form{background:var(--paper2);padding:clamp(20px,2.6vw,30px);border-top:0;color:var(--ink)}
+.close label{color:var(--muted)}
+.close button{background:var(--acc-deep);color:var(--paper2)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px)}
+.big{display:inline-block;font-size:clamp(30px,4.2vw,46px);font-weight:800;letter-spacing:-.035em;text-decoration:none;
+ border-bottom:2px solid var(--acc);padding-bottom:4px;margin:6px 0 4px}
+.small-links{margin:24px 0 0;display:grid;gap:10px;font-size:15.5px;color:var(--muted)}
+.small-links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+form{border-top:1px solid var(--ink);padding-top:18px}
+label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+input,textarea{width:100%;background:var(--paper2);border:1px solid var(--rule);color:var(--ink);padding:12px;font:inherit;font-size:15.5px;margin-bottom:14px;border-radius:0}
+input:focus,textarea:focus{outline:2px solid rgba(53,86,63,.35);border-color:var(--acc)}
+button{width:100%;background:var(--acc);color:var(--paper2);border:0;padding:15px;font:inherit;font-weight:700;font-size:16px;cursor:pointer;border-radius:2px}
+button:hover{background:var(--acc-deep)}
+footer{padding:30px 0 34px;background:var(--acc-deep);color:#dfe6dc}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer a{color:#dfe6dc;text-decoration:none}
+footer .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#a9bfa9;display:block;margin-top:4px}
+footer .fl{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
+
+@media(max-width:900px){
+ .hero .grid{grid-template-columns:1fr}
+ .contact{grid-template-columns:1fr}
+ .plates{grid-template-columns:1fr}
+ .blocks-grid{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+ .sect-tag{display:none}
+ .sig{display:none}
+ .callbar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--acc);color:var(--paper2);text-decoration:none;font-weight:700;padding:14px;justify-content:center;font-size:16px;box-shadow:0 -2px 12px rgba(25,26,21,.18);transform:translateY(110%);transition:transform .25s ease}
+ .callbar.show{transform:none}
+ body{padding-bottom:54px}
+ .hd .bar{flex-wrap:wrap;gap:10px}
+ .nav{order:3;width:100%;margin-left:0;gap:16px;padding-bottom:6px;border-top:1px solid var(--rule);padding-top:9px;justify-content:space-between}
+ .nav a{white-space:nowrap;font-size:13.5px}
+ .tel{margin-left:auto;padding:10px 14px;font-size:14.5px}
+ .brand .sb{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ *{animation:none!important;transition:none!important;scroll-behavior:auto}
+ .draw{stroke-dashoffset:0!important}
+}
+@keyframes drawLine{to{stroke-dashoffset:0}}
+@keyframes settle{from{transform:translateY(-9px)}to{transform:translateY(0)}}
+.draw{stroke-dasharray:520;stroke-dashoffset:520;animation:drawLine 1.5s cubic-bezier(.2,.8,.2,1) forwards}
+.bucket{animation:settle 1.7s cubic-bezier(.25,.9,.3,1) .35s both}
+@media(prefers-reduced-motion:reduce){.bucket{animation:none}}
+
+/* readability + nav robustness */
+.mono,.heroref,.foot-note,.sect-tag,.steps .lab,.plan figcaption,.plates figcaption,label,.sig,footer .tag{font-size:12.5px}
+.brand .sb{font-size:11.5px;letter-spacing:.08em}
+.sect-tag b{font-family:var(--sans);font-weight:700;font-size:14.5px;letter-spacing:-.01em;text-transform:none;color:var(--ink)}
+.sect-tag .cta{font-size:12.5px;color:var(--paper2)}
+.nav{overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+@media(max-width:720px){
+ .nav{display:grid;grid-template-columns:1fr 1fr;gap:0;flex-wrap:nowrap;margin-left:0;width:100%;
+   border-top:1px solid var(--rule);margin-top:8px;padding-top:4px;overflow:visible}
+ .nav a{font-size:15px;padding:12px 0;border-bottom:1px solid var(--rule);color:var(--ink)}
+ .nav a:nth-child(odd){border-right:1px solid var(--rule)}
+ .nav a:nth-child(even){padding-left:14px}
+ .acts{flex-direction:column;align-items:stretch;gap:12px}
+ .acts .btn,.acts .link{justify-content:center;min-height:52px;padding:16px 20px;width:100%}
+ .brand .sb{display:block;font-size:11.5px;line-height:1.4}
+ .numline,.foot-note .heroref{font-size:13.5px}
+ .sheet svg text{font-size:17px}
+ .plates figcaption,.plan figcaption{font-size:12px}
+}
+</style></head>
+<body>
+
+<header class="hd"><div class="wrap bar">
+  <a class="brand" href="#top" aria-label="Ace Construction Services, Perth">
+    <svg viewBox="0 0 64 64" role="img" aria-label="Ace Construction Services mark">
+      <rect width="64" height="64" rx="9" fill="#35563f"/>
+      <path d="M17 49 32 15 47 49" fill="none" stroke="#f3eee1" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+      <path d="M24 38h16" stroke="#f3eee1" stroke-width="4.5"/>
+      <path d="M11 55h42" stroke="#a9bfa9" stroke-width="2"/>
+    </svg>
+    <span><span class="nm">Ace Construction Services</span><span class="sb">Excavation · Site prep · Perth WA</span></span>
+  </a>
+  <nav class="nav">
+    <a href="#scope">What we dig</a><a href="#levels">How a cut runs</a><a href="#blocks">Areas</a><a href="#contact">Contact</a>
+  </nav>
+  <a class="tel" href="tel:+61499887415"><span class="dot"></span>0499 887 415</a>
+</div></header>
+
+<main id="top">
+
+<section class="hero"><div class="wrap grid">
+  <div>
+    <p class="kick mono">Perth metro · Residential &amp; commercial</p>
+    <h1>Cut to level.<br>Carted out.<br><b>Ready to build on.</b></h1>
+    <p class="lead">Owner-operated earthworks in Perth. Site cuts, sand removal, and footing or trench holes dug to the detail your builder or engineer has set, and the block handed over clean.</p>
+    <div class="acts">
+      <a class="btn" href="tel:+61499887415">Call Lewis</a>
+      <a class="link" href="mailto:lewis@aceconstructionservices.com.au?subject=Site%20works%20enquiry">Email the job details</a>
+    </div>
+    <p class="mono numline" style="font-size:14px;letter-spacing:.04em"><a href="tel:+61499887415" style="text-decoration:none;border-bottom:1px solid var(--acc)">0499 887 415</a> · <a href="mailto:lewis@aceconstructionservices.com.au" style="text-decoration:none;border-bottom:1px solid var(--acc)">lewis@aceconstructionservices.com.au</a></p>
+  </div>
+
+  <div>
+    <div class="sheet">
+      <svg viewBox="0 0 520 470" role="img" aria-label="Section A-A of a site cut: excavated material hatched out, finished cut level with a datum mark, cut batter, and an excavator at the toe of the batter">
+        <defs>
+          <clipPath id="voidcut"><path d="M22 100h476v-4L452 262H22z"/></clipPath>
+        </defs>
+        <rect x="0" y="0" width="520" height="470" fill="#f3eee1"/>
+        <rect x="14" y="14" width="492" height="442" fill="none" stroke="#191a15" stroke-width="1"/>
+        <rect x="22" y="22" width="476" height="426" fill="none" stroke="#c9c0aa" stroke-width=".7"/>
+
+        <rect x="22" y="100" width="476" height="42" fill="#e3d9c1"/>
+        <rect x="22" y="142" width="476" height="120" fill="#eee6d2"/>
+        <rect x="22" y="262" width="476" height="186" fill="#e6dcc6"/>
+        <g stroke="#c2b698" stroke-width=".55">
+          <path d="M40 274l-16 26M76 270l-24 38M112 270l-24 38M148 270l-24 38M184 270l-24 38M220 270l-24 38M256 270l-24 38M292 270l-24 38M328 270l-24 38M364 270l-24 38M400 270l-24 38M436 270l-24 38M472 270l-24 38"/>
+        </g>
+
+        <g clip-path="url(#voidcut)" stroke="#b9ad90" stroke-width=".6">
+          <path d="M20 270 190 42M40 278 210 50M60 286 230 58M80 294 250 66M100 302 270 74M120 310 290 82M140 318 310 90M160 326 330 98M180 334 350 106M200 342 370 114M220 350 390 122M240 358 410 130M260 366 430 138M280 374 450 146M300 382 470 154M320 390 490 162M340 398 510 170"/>
+        </g>
+
+        <path d="M22 100 498 88" fill="none" stroke="#5c5a4e" stroke-width="1.2" stroke-dasharray="7 4"/>
+        <path d="M452 100 498 96" fill="none" stroke="#5c5a4e" stroke-width="1.2" stroke-dasharray="7 4"/>
+        <path d="M350 262 452 100" fill="none" stroke="#191a15" stroke-width="1.7"/>
+        <path class="draw" d="M22 262h328" fill="none" stroke="#35563f" stroke-width="3.4"/>
+
+        <g fill="#35563f" stroke="#35563f" stroke-width="1">
+          <path d="M42 262v14"/>
+          <path d="M42 262l-5-9h10z" fill="none" stroke-width="1.2"/>
+        </g>
+        <g>
+          <rect x="30" y="300" width="216" height="56" fill="#f7f3e8" stroke="#191a15" stroke-width=".8"/>
+          <path d="M38 318h16" stroke="#35563f" stroke-width="3"/>
+          <text x="62" y="322" font-family="PlexMono,monospace" font-size="12" letter-spacing="1.1" fill="#191a15">CUT  RL +0.00</text>
+          <g stroke="#b9ad90" stroke-width=".8"><path d="M38 336l10 -12M46 340l10-12M54 344l10-12"/></g>
+          <text x="72" y="342" font-family="PlexMono,monospace" font-size="10.5" letter-spacing="1" fill="#5c5a4e">HATCH = MATERIAL REMOVED</text>
+        </g>
+        <g fill="#c9bd9f"><circle cx="60" cy="160" r="1"/><circle cx="84" cy="176" r="1"/><circle cx="108" cy="158" r="1"/><circle cx="132" cy="180" r="1"/><circle cx="156" cy="162" r="1"/><circle cx="180" cy="178" r="1"/><circle cx="204" cy="160" r="1"/><circle cx="228" cy="182" r="1"/><circle cx="252" cy="164" r="1"/><circle cx="276" cy="180" r="1"/><circle cx="300" cy="166" r="1"/><circle cx="324" cy="184" r="1"/><circle cx="348" cy="168" r="1"/><circle cx="372" cy="188" r="1"/><circle cx="396" cy="172" r="1"/><circle cx="420" cy="190" r="1"/><circle cx="444" cy="176" r="1"/><circle cx="468" cy="196" r="1"/><circle cx="72" cy="216" r="1"/><circle cx="96" cy="232" r="1"/><circle cx="120" cy="214" r="1"/><circle cx="144" cy="236" r="1"/><circle cx="168" cy="218" r="1"/><circle cx="192" cy="240" r="1"/><circle cx="216" cy="220" r="1"/><circle cx="240" cy="242" r="1"/><circle cx="264" cy="224" r="1"/><circle cx="288" cy="246" r="1"/><circle cx="312" cy="228" r="1"/><circle cx="336" cy="248" r="1"/><circle cx="360" cy="232" r="1"/><circle cx="384" cy="250" r="1"/><circle cx="408" cy="236" r="1"/><circle cx="432" cy="252" r="1"/><circle cx="456" cy="240" r="1"/><circle cx="480" cy="256" r="1"/></g>
+
+        <g font-family="PlexMono,monospace" font-size="12" letter-spacing="1.1" fill="#5c5a4e">
+          <text x="292" y="74">EXISTING SURFACE</text>
+          <text x="396" y="122">CUT BATTER</text>
+        </g>
+        <path d="M345 78 392 92" stroke="#5c5a4e" stroke-width=".7"/>
+        <circle cx="392" cy="92" r="1.8" fill="#5c5a4e"/>
+        <path d="M394 126 420 148" stroke="#5c5a4e" stroke-width=".7"/>
+        <circle cx="420" cy="148" r="1.8" fill="#5c5a4e"/>
+
+        <g class="bucket">
+          <rect x="110" y="240" width="150" height="22" rx="11" fill="#191a15"/>
+          <rect x="118" y="233" width="120" height="8" fill="#191a15"/>
+          <rect x="140" y="205" width="78" height="29" fill="#191a15"/>
+          <rect x="147" y="211" width="19" height="12" fill="#eee6d2"/>
+          <rect x="196" y="189" width="34" height="49" fill="#191a15"/>
+          <rect x="201" y="194" width="24" height="23" fill="#eee6d2"/>
+          <polygon points="204,242 214,232 278,180 288,192" fill="#191a15"/>
+          <polygon points="272,176 286,188 324,214 312,224" fill="#191a15"/>
+          <polygon points="308,208 326,220 334,240 331,260 303,260 300,236 302,220" fill="#191a15"/>
+          <g fill="#191a15"><rect x="303" y="260" width="5" height="5"/><rect x="313" y="260" width="5" height="5"/><rect x="323" y="260" width="5" height="5"/></g>
+          <g fill="#f3eee1"><circle cx="126" cy="251" r="4"/><circle cx="185" cy="251" r="4"/><circle cx="244" cy="251" r="4"/></g>
+        </g>
+
+        <g>
+          <rect x="300" y="392" width="198" height="50" fill="#f7f3e8" stroke="#191a15" stroke-width="1"/>
+          <path d="M300 418h198M396 392v50M446 392v50" stroke="#191a15" stroke-width=".8"/>
+          <text x="308" y="409" font-family="PlexMono,monospace" font-size="11" letter-spacing="1" fill="#191a15">SEC A-A</text>
+          <text x="308" y="434" font-family="PlexMono,monospace" font-size="10" letter-spacing="1" fill="#5c5a4e">SITE CUT</text>
+          <text x="404" y="409" font-family="PlexMono,monospace" font-size="10.5" letter-spacing="1" fill="#5c5a4e">NTS</text>
+          <text x="404" y="434" font-family="PlexMono,monospace" font-size="10.5" letter-spacing="1" fill="#5c5a4e">SHT 01</text>
+          <text x="454" y="409" font-family="PlexMono,monospace" font-size="10.5" letter-spacing="1" fill="#5c5a4e">REV A</text>
+          <text x="454" y="434" font-family="PlexMono,monospace" font-size="10.5" letter-spacing="1" fill="#5c5a4e">SEC A-A</text>
+        </g>
+      </svg>
+    </div>
+    <p class="foot-note"><span>Section A-A · site cut</span><span>Perth metro</span></p>
+  </div>
+</div></section>
+
+
+
+<section id="onsite"><div class="wrap">
+  <p class="sect-tag"><b><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="9" fill="#35563f"/><path d="M17 49 32 15 47 49" fill="none" stroke="#f3eee1" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/><path d="M24 38h16" stroke="#f3eee1" stroke-width="4.5"/><path d="M11 55h42" stroke="#a9bfa9" stroke-width="2"/></svg>Ace Construction Services</b><span>SHT 01 · On site</span><a class="cta" href="tel:+61499887415">Call Lewis</a></p>
+  <div class="plates">
+    <figure>
+      <img src="assets/hero.jpg" alt="Excavator working on a residential block beside a concrete sleeper retaining wall" loading="lazy" width="1080" height="1035">
+      <figcaption>Excavator on a sleeper wall block, Perth</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/gal_3.jpg" alt="Mini excavator grading beside a concrete sleeper wall on a sloping block" loading="lazy" width="1400" height="824">
+      <figcaption>Grading beside a sleeper wall</figcaption>
+    </figure>
+  </div>
+  <p class="sig"><b>Ace Construction Services · Perth WA</b><a href="tel:+61499887415" style="text-decoration:none;color:inherit">0499 887 415</a></p>
+</div></section>
+
+<section id="scope"><div class="wrap">
+  <p class="sect-tag"><b><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="9" fill="#35563f"/><path d="M17 49 32 15 47 49" fill="none" stroke="#f3eee1" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/><path d="M24 38h16" stroke="#f3eee1" stroke-width="4.5"/><path d="M11 55h42" stroke="#a9bfa9" stroke-width="2"/></svg>Ace Construction Services</b><span>SHT 02 · Scope</span><a class="cta" href="tel:+61499887415">Call Lewis</a></p>
+  <h2>What gets dug</h2>
+  <p class="intro">The work that has to be right before anyone sets a form or lays a slab. Rates come off the site, not off a phone call, because access and levels change every block.</p>
+  <table class="ledger">
+    <tr><td class="op">CUT</td><td class="nm">Site cut and level</td><td class="ds">Ground cut down to the levels on the plan, with batters trimmed back so the block drains the way it should and the slab sits true.</td></tr>
+    <tr><td class="op">CART</td><td class="nm">Sand removal and spoil</td><td class="ds">Building sand, fill and excess spoil loaded and trucked out, or stockpiled where you want it. Not left in a heap on the block.</td></tr>
+    <tr><td class="op">DIG</td><td class="nm">Footing, pier and trench holes</td><td class="ds">Dug to the engineer's detail, with the spoil placed where it is wanted rather than where it lands.</td></tr>
+    <tr><td class="op">BASE</td><td class="nm">Driveway and crossover prep</td><td class="ds">Sub-base cut and compacted ready for the concreter, with the fall set back to the street.</td></tr>
+    <tr><td class="op">TRENCH</td><td class="nm">Trenching for services</td><td class="ds">Water, power and drainage trenches dug to grade and left open for inspection.</td></tr>
+    <tr><td class="op">CLEAR</td><td class="nm">Clearing and demolition spoil</td><td class="ds">Old slabs, sheds and trees broken out and carted before the new work starts.</td></tr>
+  </table>
+  <p class="sig"><b>Ace Construction Services · Perth WA</b><a href="tel:+61499887415" style="text-decoration:none;color:inherit">0499 887 415</a></p>
+</div></section>
+
+<section id="levels"><div class="wrap">
+  <p class="sect-tag"><b><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="9" fill="#35563f"/><path d="M17 49 32 15 47 49" fill="none" stroke="#f3eee1" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/><path d="M24 38h16" stroke="#f3eee1" stroke-width="4.5"/><path d="M11 55h42" stroke="#a9bfa9" stroke-width="2"/></svg>Ace Construction Services</b><span>SHT 03 · Levels</span><a class="cta" href="tel:+61499887415">Call Lewis</a></p>
+  <h2>How a cut gets to level</h2>
+  <p class="intro">Three stages, and the block is left the way the next trade needs to receive it.</p>
+  <div class="steps">
+    <article>
+      <p class="lab">A</p>
+      <h3>Walk the block</h3>
+      <p>Access, services, and the finished levels are checked on site. Levels are read from the survey pegs or the engineer's plan.</p>
+    </article>
+    <article>
+      <p class="lab">B</p>
+      <h3>Cut and trim</h3>
+      <p>Ground taken down to the mark, batters cut back at a grade that holds, and the edges cleaned up as the machine goes.</p>
+    </article>
+    <article>
+      <p class="lab">C</p>
+      <h3>Cart and hand over</h3>
+      <p>Spoil and sand trucked out, tracks swept, and the block left ready for the concreter or the builder.</p>
+    </article>
+  </div>
+  <p class="sig"><b>Ace Construction Services · Perth WA</b><a href="tel:+61499887415" style="text-decoration:none;color:inherit">0499 887 415</a></p>
+</div></section>
+
+<section id="blocks"><div class="wrap">
+  <p class="sect-tag"><b><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="9" fill="#35563f"/><path d="M17 49 32 15 47 49" fill="none" stroke="#f3eee1" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/><path d="M24 38h16" stroke="#f3eee1" stroke-width="4.5"/><path d="M11 55h42" stroke="#a9bfa9" stroke-width="2"/></svg>Ace Construction Services</b><span>SHT 04 · Blocks</span><a class="cta" href="tel:+61499887415">Call Lewis</a></p>
+  <h2>Blocks we work</h2>
+  <p class="intro">New-build corridors on both sides of the river, plus commercial site works across the Perth metro in Western Australia. Mindarie, Banksia Grove, Currambine and Landsdale are all within about 30 km of the CBD.</p>
+  <div class="blocks-grid">
+  <div>
+  <div class="areas">
+    <span>Mindarie</span><span>Banksia Grove</span><span>Currambine</span><span>Landsdale</span><span>Perth metro</span>
+  </div>
+  <p style="color:var(--muted);font-size:15.5px;margin:18px 0 0">If the block is inside the metro and the survey has been done, the cut can be priced from the plan. If there are no pegs on site, they get set before the machine arrives.</p>
+  </div>
+  <figure class="plan">
+      <svg viewBox="0 0 460 400" role="img" aria-label="Site plan of a residential block showing the cut area, driveway crossover, level pegs and north point">
+        <defs><pattern id="cut" width="9" height="9" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+          <line x1="0" y1="0" x2="0" y2="9" stroke="#b9ad90" stroke-width="1.1"/></pattern></defs>
+        <rect x="0" y="0" width="460" height="400" fill="#f7f3e8"/>
+        <rect x="10" y="10" width="440" height="380" fill="none" stroke="#191a15" stroke-width="1"/>
+
+        <!-- road -->
+        <path d="M10 344h440" stroke="#5c5a4e" stroke-width="1.2" stroke-dasharray="9 5"/>
+        <text x="18" y="363" font-family="PlexMono,monospace" font-size="11.5" letter-spacing="1.4" fill="#5c5a4e">ROAD RESERVE</text>
+
+        <!-- block boundary -->
+        <path d="M34 322 34 60 300 44 424 96 424 322z" fill="none" stroke="#191a15" stroke-width="2"/>
+
+        <!-- cut area -->
+        <path d="M58 300 58 92 296 78 400 120 400 300z" fill="url(#cut)" opacity=".95"/>
+        <path d="M58 300 58 92 296 78 400 120 400 300z" fill="none" stroke="#35563f" stroke-width="2" stroke-dasharray="10 5"/>
+
+        <!-- house footprint -->
+        <rect x="150" y="140" width="150" height="104" fill="#eae3d2" stroke="#191a15" stroke-width="1.4"/>
+        <text x="160" y="196" font-family="PlexMono,monospace" font-size="11.5" letter-spacing="1.2" fill="#5c5a4e">SLAB</text>
+
+        <!-- crossover -->
+        <rect x="232" y="300" width="62" height="22" fill="#eae3d2" stroke="#191a15" stroke-width="1.4"/>
+        <path d="M263 322v22" stroke="#5c5a4e" stroke-width="1" stroke-dasharray="5 4"/>
+        <text x="302" y="316" font-family="PlexMono,monospace" font-size="11" letter-spacing="1.1" fill="#5c5a4e">CROSSOVER</text>
+
+        <!-- pegs -->
+        <g stroke="#35563f" stroke-width="1.2" fill="none">
+          <path d="M34 322h12M34 322v-12"/><path d="M34 60h12M34 60v12"/>
+          <path d="M424 322h-12M424 322v-12"/><path d="M300 44v12M300 44h-12"/>
+          <circle cx="263" cy="322" r="3"/>
+        </g>
+        <g font-family="PlexMono,monospace" font-size="11" letter-spacing="1" fill="#243b2b">
+          <text x="14" y="342">RL +1.20</text>
+          <text x="14" y="52">RL +1.45</text>
+          <text x="352" y="342">RL +0.85</text>
+        </g>
+
+        <!-- dimension -->
+        <g stroke="#5c5a4e" stroke-width=".8">
+          <path d="M44 340v10M424 340v10"/><path d="M44 345h380"/>
+        </g>
+        <text x="196" y="336" font-family="PlexMono,monospace" font-size="11" letter-spacing="1.1" fill="#5c5a4e">FRONTAGE</text>
+
+        <!-- north -->
+        <g transform="translate(398,58)">
+          <circle r="19" fill="none" stroke="#191a15" stroke-width="1"/>
+          <path d="M0 12 0-12 6 2 0-1-6 2z" fill="#191a15"/>
+          <text y="-24" text-anchor="middle" font-family="PlexMono,monospace" font-size="11" fill="#5c5a4e">N</text>
+        </g>
+
+        <text x="24" y="30" font-family="PlexMono,monospace" font-size="11.5" letter-spacing="1.4" fill="#191a15">PLAN · CUT EXTENTS</text>
+        <text x="24" y="384" font-family="PlexMono,monospace" font-size="10.5" letter-spacing="1" fill="#5c5a4e">PRELIMINARY · LEVELS TO BE SET FROM SURVEY PEGS</text>
+      </svg>
+      <figcaption>A cut set out off the survey pegs, with the crossover kept clear for the trucks.</figcaption>
+    </figure>
+  </div>
+  <p class="sig"><b>Ace Construction Services · Perth WA</b><a href="tel:+61499887415" style="text-decoration:none;color:inherit">0499 887 415</a></p>
+</div></section>
+
+<section id="contact" class="close"><div class="wrap">
+  <p class="sect-tag"><b><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="9" fill="#35563f"/><path d="M17 49 32 15 47 49" fill="none" stroke="#f3eee1" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/><path d="M24 38h16" stroke="#f3eee1" stroke-width="4.5"/><path d="M11 55h42" stroke="#a9bfa9" stroke-width="2"/></svg>Ace Construction Services</b><span>SHT 05 · Contact</span><a class="cta" href="tel:+61499887415">Call Lewis</a></p>
+  <div class="contact">
+  <div>
+    <h2>Tell Lewis about the block</h2>
+    <p class="intro" style="margin-bottom:6px">Tell Lewis the suburb, what the block has to end up at, and whether the spoil stays on site or goes. A rate and a start date come back from that.</p>
+    <a class="big" href="tel:+61499887415">0499 887 415</a>
+    <div class="small-links">
+      <span>Email <a href="mailto:lewis@aceconstructionservices.com.au">lewis@aceconstructionservices.com.au</a></span>
+      <span>Instagram <a href="https://www.instagram.com/acecservices/" target="_blank" rel="noopener">@acecservices</a></span>
+      <span>Servicing Perth, Western Australia</span>
+    </div>
+  </div>
+  <form id="quote-form" data-site="radar-159">
+    <label for="n">Name</label><input id="n" name="name" required placeholder="Your name" autocomplete="name">
+    <label for="p">Phone</label><input id="p" name="phone" required inputmode="tel" placeholder="04xx xxx xxx" autocomplete="tel">
+    <label for="s">Suburb</label><input id="s" name="suburb" placeholder="e.g. Banksia Grove" autocomplete="address-level2">
+    <label for="m">The job</label><textarea id="m" name="message" rows="3" placeholder="Site cut, sand out, footing or trench holes"></textarea>
+    <button type="submit">Send the job details</button>
+  </form>
+  </div>
+</div></section>
+</main>
+<a class="callbar" href="tel:+61499887415">Call Lewis, 0499 887 415</a>
+
+<footer><div class="wrap row">
+  <div>
+    <b>Ace Construction Services</b>
+    <span class="tag">Where expertise meets execution</span>
+  </div>
+  <div class="fl">
+    <a href="tel:+61499887415">0499 887 415</a>
+    <a href="mailto:lewis@aceconstructionservices.com.au">Email</a>
+    <a href="https://www.instagram.com/acecservices/" target="_blank" rel="noopener">Instagram</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</div></footer>
+
+<script>
+document.getElementById('quote-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.currentTarget, b = f.querySelector('button');
+  b.textContent = 'Sending...'; b.disabled = true;
+  fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests', {
+    method: 'POST', headers: { 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+    body: JSON.stringify({ site: f.dataset.site, name: f.name.value, phone: f.phone.value,
+      suburb: f.suburb.value, message: f.message.value })
+  }).then(function () { b.textContent = 'Thanks, Lewis will call you back'; })
+    .catch(function () { b.textContent = 'Call 0499 887 415'; b.disabled = false; });
+});
+</script>
+<script>
+(function(){var b=document.querySelector('.callbar');if(!b)return;
+var t=function(){b.classList.toggle('show',window.scrollY>420)};t();addEventListener('scroll',t,{passive:true});})();
+</script>
+</body></html>
