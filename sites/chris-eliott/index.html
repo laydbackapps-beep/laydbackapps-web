@@ -246,12 +246,6 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
 </style><style id="lb-rb-cap">.lb-rb{max-width:1090px!important;margin-inline:auto!important}</style><style id="lb-word-visible">.lb-brand .lb-word--text{position:static!important;width:auto!important;height:auto!important;clip:auto!important;clip-path:none!important;overflow:visible!important;margin-left:12px!important;font-weight:700!important;letter-spacing:.01em!important;color:inherit!important;white-space:nowrap!important;font-size:clamp(1rem,1.5vw,1.22rem)!important;-webkit-mask-image:none!important;mask-image:none!important;max-height:none!important;max-width:none!important}</style>
-<style id="lb-hero-flow">/* the scroll-scene wrapper needs JS to hold its height; without it the copy is clipped */
-.hero{min-height:auto!important;display:block!important;padding:0!important}
-#sceneWrap,#sceneSticky{position:static!important;height:auto!important;min-height:0!important;overflow:visible!important}
-.hero-copy{position:static!important;left:auto!important;top:auto!important;transform:none!important;opacity:1!important;max-width:68ch!important;margin:0 auto!important;padding:clamp(40px,8vh,96px) clamp(16px,5vw,48px)!important;text-align:center!important}
-.hud{position:static!important;margin:0 auto!important;text-align:center!important}
-</style>
 </head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <header class="header" role="banner"><a href="/" class="lb-brand" aria-label="Chris Eliott"><img src="assets/logo.jpg" alt="" class="lb-mark" loading="eager" decoding="async"><span class="lb-word lb-word--text">Chris Eliott</span><span class="lb-sr">Chris Eliott</span></a>
@@ -268,22 +262,13 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 </header>
 
 <main id="main">
-  <section class="hero" aria-label="Civil works scroll scene">
-    <div class="hero-bg" aria-hidden="true" style="background-image: radial-gradient(120% 90% at 14% 0%,rgba(56,64,112,0.2),transparent 62%),repeating-linear-gradient(115deg,rgba(56,64,112,0.08) 0 2px,transparent 2px 17px),linear-gradient(162deg,#151013 0%,#0b0b0c 58%,#130e11 100%)'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
-    <div class="hero-scrim" aria-hidden="true"></div>
-    <div class="lbwm" aria-hidden="true">CONCRETE</div>
-    <div id="sceneWrap">
-      <div id="sceneSticky">
-        
-        <div class="hero-copy rv rv-delay-1">
-          <h1 style="width:100% !important;grid-column:1/-1 !important;max-width:none !important">Excavation, drainage<br>and concrete <em>works.</em></h1>
-          <p>Site preparation, subdivisions and concrete construction around Highfields, Queensland.</p>
-          <a href="#lbq" class="cta-btn" style="margin-top: 24px; display: inline-block;">Get a Quote</a>
-        </div>
-        <div class="hud">
-          <b>QLD</b>EXCAVATION &middot; DRAINAGE &middot; CIVIL
-        </div>
-      </div>
+  <section class="hero" id="lb-hero" aria-label="Chris Eliott">
+    <div class="hero-bg" aria-hidden="true" style="background-image: radial-gradient(120% 90% at 14% 0%,rgba(56,64,112,0.28),transparent 62%),repeating-linear-gradient(115deg,rgba(56,64,112,0.10) 0 2px,transparent 2px 17px),linear-gradient(162deg,#151013 0%,#0b0b0c 58%,#130e11 100%);"></div>
+    <div class="lb-hero-copy">
+      <h1>Excavation, drainage<br>and concrete <em>works.</em></h1>
+      <p>Site preparation, subdivisions and concrete construction around Highfields, Queensland.</p>
+      <a href="#lbq" class="lb-hero-cta">Get a Quote</a>
+      <div class="lb-hero-hud"><b>QLD</b> EXCAVATION &middot; DRAINAGE &middot; CIVIL</div>
     </div>
   </section>
 
@@ -826,6 +811,27 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
 <script>setTimeout(function(){document.querySelectorAll('.rv,.lb-rb__slide:first-child').forEach(function(e){e.classList.add('on','is-on})},1100);</script>
 <style id="lb-header-fault-fix">
 .lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+</style>
+<style id="lb-hero-flow">/* the scroll scene needs JS to hold its layout; pin the copy so it is always in the first screen */
+.hero{position:relative!important;display:block!important;min-height:78vh!important;height:auto!important;padding:0!important;overflow:hidden!important}
+#sceneWrap,#sceneSticky{position:static!important;display:block!important;height:0!important;min-height:0!important;overflow:visible!important;margin:0!important;padding:0!important}
+.hero-copy{position:absolute!important;left:50%!important;top:16vh!important;transform:translateX(-50%)!important;width:min(940px,92vw)!important;max-width:none!important;margin:0!important;padding:0!important;text-align:center!important;z-index:6!important;opacity:1!important}
+.hero-copy h1{font-size:clamp(2.2rem,4.6vw,3.9rem)!important;line-height:1.06!important;margin:0 auto 16px!important;max-width:none!important;width:100%!important}
+.hero-copy p{margin:0 auto!important;max-width:56ch!important}
+.hero-copy .cta-btn{display:inline-block!important;margin-top:24px!important}
+.hud{position:absolute!important;left:50%!important;bottom:6vh!important;transform:translateX(-50%)!important;margin:0!important;white-space:nowrap!important}
+</style>
+
+<style id="lb-hero-solid">
+#lb-hero{position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;min-height:74vh!important;padding:clamp(48px,9vh,96px) 20px!important;overflow:hidden!important;background:#0c0c0e!important}
+#lb-hero .hero-bg{position:absolute!important;inset:0!important;z-index:0!important;background-size:cover!important;background-position:center!important}
+#lb-hero .lb-hero-copy{position:relative!important;z-index:2!important;max-width:52ch!important;margin:0 auto!important;text-align:center!important;opacity:1!important;visibility:visible!important}
+#lb-hero h1{font-family:var(--font-display,system-ui)!important;font-weight:800!important;font-size:clamp(2.3rem,5vw,4rem)!important;line-height:1.06!important;color:#eef1f6!important;margin:0 0 18px!important;text-shadow:0 2px 30px rgba(0,0,0,.6)!important}
+#lb-hero h1 em{font-style:normal!important;color:#a9b4ee!important}
+#lb-hero p{color:#b9c2cf!important;font-size:clamp(1rem,1.6vw,1.16rem)!important;margin:0 auto 26px!important;max-width:52ch!important}
+#lb-hero .lb-hero-cta{display:inline-block!important;background:#384070!important;color:#fff!important;padding:15px 30px!important;border-radius:2px!important;font-weight:700!important;text-decoration:none!important;letter-spacing:.06em!important;text-transform:uppercase!important;font-size:.82rem!important}
+#lb-hero .lb-hero-hud{margin-top:34px!important;font-size:.72rem!important;letter-spacing:.22em!important;color:#8f9bb0!important}
+#lb-hero .lb-hero-hud b{color:#a9b4ee!important;margin-right:10px!important}
 </style>
 </body>
 </html>
