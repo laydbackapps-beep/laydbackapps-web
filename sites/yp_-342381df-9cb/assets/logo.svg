@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- DAVOS Bobcat & Excavations logo - gradation-curve family -->
+  <!-- BOTTLE GREEN #1e6f52 + GRAPHITE #22262b -->
+  <title>Davos Bobcat and Excavations</title>
+  
+  <defs>
+    <!-- D-shape with subtle curve suggestion -->
+    <path id="D-shape" d="M56 40 L136 40 C168 40 184 56 184 88 L184 168 C184 200 168 216 136 216 L56 216 C24 216 8 200 8 168 L8 88 C8 56 24 40 56 40 Z M56 56 L120 56 C135.2 56 148 68.8 148 84 L148 172 C148 187.2 135.2 200 120 200 L56 200 C40.8 200 28 187.2 28 172 L28 84 C28 68.8 40.8 56 56 56 Z"/>
+    
+    <!-- Grading curve as a filled shape (not stroke) -->
+    <path id="curve-shape" d="M48 148 Q80 110 115 75 Q150 40 190 50 L195 55 Q155 45 120 80 Q85 115 53 153 Z"/>
+    
+    <!-- Bobcat/loader silhouette at foot of curve -->
+    <path id="bobcat-silhouette" d="M170 110 L176 102 L184 102 L188 94 L196 94 L200 86 L208 86 L212 78 L220 78 L224 70 L232 70 L236 62 L244 62 L248 54 L256 54 L256 180 L160 180 L160 110 Z"/>
+    
+    <!-- Tick marks (measurement marks) -->
+    <path id="tick-marks" d="M56 40 L56 32 M136 40 L136 32 M184 88 L192 88 M184 168 L192 168 M136 216 L136 224 M56 216 L56 224 M8 168 L0 168 M8 88 L0 88"/>
+  </defs>
+  
+  <!-- D-shape in BOTTLE GREEN -->
+  <use href="#D-shape" fill="#1e6f52"/>
+  
+  <!-- Grading curve as filled shape in GRAPHITE -->
+  <use href="#curve-shape" fill="#22262b"/>
+  
+  <!-- Bobcat/loader silhouette in GRAPHITE -->
+  <use href="#bobcat-silhouette" fill="#22262b" transform="translate(0,0) scale(0.28)"/>
+  
+  <!-- Tick marks in GRAPHITE (hairline) -->
+  <use href="#tick-marks" stroke="#22262b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Small callout marks (abstract legend chips) as small rectangles with labels implied -->
+  <g fill="#1e6f52">
+    <!-- GRAVEL marker -->
+    <rect x="70" y="132" width="28" height="5" rx="1"/>
+    <rect x="72" y="126" width="4" height="7" rx="1"/>
+    <!-- SAND marker -->
+    <rect x="110" y="92" width="24" height="5" rx="1"/>
+    <rect x="112" y="86" width="4" height="7" rx="1"/>
+    <!-- FINES marker -->
+    <rect x="150" y="62" width="20" height="5" rx="1"/>
+    <rect x="152" y="56" width="4" height="7" rx="1"/>
+  </g>
+</svg>
