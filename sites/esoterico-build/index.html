@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esoterico — Architectural build, Perth WA</title>
+<meta name="description" content="Esoterico is an architectural builder in Perth, Western Australia — design and construction held to the same set of drawings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900;1,9..40,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f2efe8; --paper-2:#eae6dc; --ink:#14161a; --stone:#5f5c54;
+  --line:#d5cfc2; --acc:#35513f; --acc-soft:#dfe5dd;
+  --disp:"DM Sans",system-ui,sans-serif; --body:"Plus Jakarta Sans",system-ui,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:17px;line-height:1.62;font-weight:400;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(1180px,92vw);margin-inline:auto}
+
+/* ---------- header ---------- */
+header{position:relative;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:clamp(1rem,3vw,2.4rem);
+  padding:.95rem 0;min-height:74px}
+.mark{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex:none}
+.mark svg{width:26px;height:34px;flex:none}
+.mark b{font-family:var(--disp);font-weight:900;font-size:1.32rem;letter-spacing:.075em;
+  text-transform:uppercase;line-height:1}
+.mark small{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;
+  color:var(--stone);margin-top:.42rem;text-transform:uppercase;white-space:nowrap}
+nav{margin-left:auto;display:flex;align-items:center;gap:clamp(.8rem,2.2vw,1.9rem)}
+nav a{font-size:.9rem;text-decoration:none;color:var(--stone);padding:.3rem 0;
+  border-bottom:1px solid transparent}
+nav a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.enq{font-family:var(--disp);font-weight:500;font-size:.9rem;background:transparent;
+  color:var(--ink)!important;padding:.62rem 1.05rem;border-radius:2px;text-decoration:none;
+  border:1px solid #b9b3a5!important;white-space:nowrap}
+.enq:hover{border-color:var(--ink)!important}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(2.2rem,5vw,4.2rem) 0 clamp(1.6rem,3vw,2.4rem)}
+.hero-in{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(1.6rem,4vw,3.4rem);
+  align-items:center}
+.kicker{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--acc);margin:0 0 1.5rem;display:flex;align-items:center;gap:.7rem}
+.kicker::before{content:"";width:34px;height:1px;background:var(--acc)}
+h1{font-family:var(--disp);font-weight:300;font-size:clamp(2.35rem,5.6vw,4.15rem);
+  line-height:1.02;letter-spacing:-.022em;margin:0 0 1.35rem}
+h1 em{font-style:normal;font-weight:900;letter-spacing:-.03em}
+h1 span{display:block;color:var(--stone);font-weight:300;font-size:.62em;line-height:1.16;
+  margin-top:.5rem;letter-spacing:-.01em}
+.lede{font-size:clamp(1rem,1.35vw,1.14rem);color:#33312c;max-width:46ch;margin:0 0 1.9rem}
+.acts{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.6rem}
+.btn{font-family:var(--disp);font-weight:500;font-size:.96rem;text-decoration:none;
+  background:var(--acc);color:#fff;padding:.95rem 1.5rem;border-radius:2px;display:inline-block}
+.btn:hover{background:#2a4133}
+.link{font-size:.93rem;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--ink);
+  padding-bottom:2px}
+.facts{display:flex;flex-wrap:wrap;gap:.55rem 1.6rem;margin:2.1rem 0 0;padding:1.15rem 0 0;
+  border-top:1px solid var(--line);font-family:var(--mono);font-size:.71rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--stone)}
+.facts b{color:var(--ink);font-weight:600}
+
+/* ---------- drawing ---------- */
+.plate{background:#faf8f2;border:1px solid var(--line);padding:clamp(.9rem,2vw,1.5rem);
+  box-shadow:0 1px 0 #fff inset,0 18px 40px -28px rgba(20,22,26,.5);position:relative}
+.plate::before{content:"DETAIL 01 — WALL / ROOF JUNCTION";position:absolute;top:0;left:0;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;color:var(--stone);
+  background:var(--acc-soft);padding:.3rem .65rem;border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line)}
+.plate svg{margin-top:1.4rem;width:100%;height:auto}
+.plate-cap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 1rem;
+  border-top:1px solid var(--line);margin-top:.9rem;padding-top:.7rem;
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--stone)}
+.plate-cap b{color:var(--acc);font-weight:600}
+.plate-key{display:none;grid-template-columns:1fr 1fr;gap:.35rem 1rem;margin-top:.9rem;
+  padding-top:.75rem;border-top:1px solid var(--line);font-family:var(--mono);
+  font-size:.74rem;letter-spacing:.09em;text-transform:uppercase;color:#3f3d37}
+.plate-key b{color:var(--acc);font-weight:600}
+
+/* ---------- sections ---------- */
+section{scroll-margin-top:90px}
+.band{padding:clamp(2.6rem,5vw,4.4rem) 0;border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1rem,3vw,2.6rem);
+  align-items:end;margin-bottom:clamp(1.6rem,3vw,2.6rem)}
+.sec-head p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;
+  color:var(--stone);display:block;margin-bottom:.85rem}
+h2{font-family:var(--disp);font-weight:400;font-size:clamp(1.65rem,3.1vw,2.5rem);
+  line-height:1.12;letter-spacing:-.02em;margin:0}
+h2 b{font-weight:900}
+.sec-head .intro{color:#3a3833;font-size:1.02rem;max-width:44ch}
+
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink)}
+.work div{padding:1.6rem 1.5rem 1.7rem 0;border-bottom:1px solid var(--line)}
+.work div+div{padding-left:1.5rem;border-left:1px solid var(--line)}
+.work .n{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--acc);
+  display:block;margin-bottom:.75rem}
+.work h3{font-family:var(--disp);font-weight:700;font-size:1.16rem;margin:0 0 .55rem;
+  letter-spacing:-.01em}
+.work p{margin:0;color:#302e29;font-size:.98rem}
+
+.reg{border-top:1px solid var(--ink)}
+.reg-row{display:grid;grid-template-columns:52px 1fr 1.35fr;gap:1rem 1.4rem;
+  padding:1.1rem .2rem;border-bottom:1px solid var(--line);align-items:baseline}
+.reg-row span:first-child{font-family:var(--mono);font-size:.72rem;color:var(--stone)}
+.reg-row b{font-family:var(--disp);font-weight:500;font-size:1.02rem}
+.reg-row p{margin:0;color:#2f2d28;font-size:.97rem}
+
+/* ---------- contact ---------- */
+.touch{background:var(--ink);color:#f2efe8;padding:clamp(2.6rem,5.5vw,4.6rem) 0}
+.touch-in{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.4rem,4vw,3rem);
+  align-items:center}
+.touch h2{color:#f2efe8}
+.touch h2 em{font-style:normal;color:#cfe0d2}
+.touch p{color:#c3beb2;margin:1rem 0 0;max-width:42ch}
+.touch .box{border:1px solid #343a36;padding:clamp(1.2rem,2.6vw,1.7rem)}
+.touch .box .lbl{font-family:var(--mono);font-size:.65rem;letter-spacing:.18em;
+  text-transform:uppercase;color:#8e968e;display:block;margin-bottom:.55rem}
+.touch .box a.big{font-family:var(--disp);font-weight:500;font-size:clamp(1.05rem,2vw,1.35rem);
+  color:#f2efe8;text-decoration:none;border-bottom:1px solid #6f7d72;padding-bottom:3px;
+  display:inline-block;word-break:break-word}
+.touch .box p{font-size:.86rem;margin:.9rem 0 0;color:#9aa39a}
+.touch .btn.light{background:#f2efe8;color:#14161a;margin-top:1.4rem}
+.touch .btn.light:hover{background:#fff}
+
+footer{padding:1.9rem 0;border-top:1px solid var(--line)}
+.foot{display:flex;flex-wrap:wrap;gap:.8rem 1.6rem;align-items:baseline;
+  justify-content:space-between;font-size:.82rem;color:var(--stone)}
+.foot b{font-family:var(--disp);letter-spacing:.24em;text-transform:uppercase;
+  color:var(--ink);font-weight:900;font-size:.82rem}
+.foot a{color:var(--stone)}
+
+@media(max-width:1000px){
+  .annot{display:none}
+  .plate-key{display:grid}
+  .hero-in{grid-template-columns:1fr;gap:2rem}
+  .plate{order:0;max-width:560px}
+  .work{grid-template-columns:1fr}
+  .work div,.work div+div{padding:1.2rem 0;border-left:0}
+  .sec-head{grid-template-columns:1fr;align-items:start;gap:1rem}
+  .touch-in{grid-template-columns:1fr}
+  .reg-row{grid-template-columns:38px 1fr;row-gap:.35rem}
+  .reg-row p{grid-column:2}
+}
+@media(max-width:640px){
+  body{font-size:16px}
+  .bar{min-height:64px;gap:.6rem;padding:.75rem 0}
+  .mark b{font-size:1.12rem;letter-spacing:.06em}
+  .mark small{font-size:.74rem;letter-spacing:.05em;color:#4a4740}
+  nav{gap:.9rem}
+  nav a:not(.enq){display:none}
+  .enq{font-size:.82rem;padding:.58rem .85rem}
+  h1{font-size:clamp(2.05rem,10vw,2.7rem)}
+  .plate::before{font-size:.66rem;letter-spacing:.1em}
+  .annot{display:none}
+  .facts{font-size:.64rem;gap:.4rem 1rem}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="mark" href="#top" aria-label="Esoterico, architectural build Perth">
+      <svg viewBox="0 0 26 34" aria-hidden="true">
+        <path d="M2 33V15L13 2l11 13v18" fill="none" stroke="#14161a" stroke-width="2.2" stroke-linejoin="miter"/>
+        <path d="M8.5 33V22h9v11" fill="none" stroke="#35513f" stroke-width="2.2"/>
+      </svg>
+      <span><b>Esoterico</b><small>Architectural build · Perth WA</small></span>
+    </a>
+    <nav>
+      <a href="#method">Method</a>
+      <a href="#detail">Detail</a>
+      <a class="enq" href="#enquire">Enquire</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <p class="kicker">Perth, Western Australia</p>
+        <h1>The drawing is the <em>promise</em>.<span>The build is the proof.</span></h1>
+        <p class="lede">Esoterico is an architectural builder working across Perth — design and
+          construction held to the same set of drawings, so the performance worked out on paper
+          is the performance that ends up in the wall.</p>
+        <div class="acts">
+          <a class="btn" href="#enquire">Start a project</a>
+          <a class="link" href="#method">How we work</a>
+        </div>
+        <p class="facts"><span><b>Design</b> and build</span><span><b>Perth</b> metro</span><span><b>Architectural</b> residential</span></p>
+      </div>
+
+      <div class="plate">
+        <svg viewBox="0 0 520 470" role="img" aria-label="Section detail drawing of a wall and roof junction with insulation, air barrier and glazing noted">
+          <defs>
+            <pattern id="hatch" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="0" x2="0" y2="7" stroke="#b7b1a3" stroke-width="1"/>
+            </pattern>
+            <pattern id="hatch2" width="6" height="6" patternTransform="rotate(-45)" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="0" x2="0" y2="6" stroke="#c9a98d" stroke-width="1"/>
+            </pattern>
+          </defs>
+
+          <!-- roof build-up -->
+          <rect x="60" y="52" width="400" height="26" fill="#fff" stroke="#14161a" stroke-width="1.6"/>
+          <rect x="60" y="78" width="400" height="34" fill="url(#hatch2)" stroke="#14161a" stroke-width="1.6"/>
+          <rect x="60" y="112" width="400" height="10" fill="#fff" stroke="#14161a" stroke-width="1.6"/>
+
+          <!-- wall build-up -->
+          <rect x="60" y="122" width="26" height="286" fill="#fff" stroke="#14161a" stroke-width="1.6"/>
+          <rect x="86" y="122" width="40" height="286" fill="url(#hatch)" stroke="#14161a" stroke-width="1.6"/>
+          <rect x="126" y="122" width="10" height="286" fill="#fff" stroke="#14161a" stroke-width="1.6"/>
+          <rect x="136" y="122" width="18" height="286" fill="none" stroke="#14161a" stroke-width="1.6"/>
+
+          <!-- glazing -->
+          <rect x="176" y="140" width="284" height="196" fill="#fbfaf6" stroke="#14161a" stroke-width="1.8"/>
+          <line x1="176" y1="140" x2="460" y2="336" stroke="#cfc9ba" stroke-width="1"/>
+          <line x1="176" y1="196" x2="460" y2="392" stroke="#cfc9ba" stroke-width="1"/>
+          <line x1="316" y1="140" x2="176" y2="280" stroke="#cfc9ba" stroke-width="1"/>
+          <rect x="176" y="140" width="284" height="196" fill="none" stroke="#14161a" stroke-width="1.8"/>
+
+          <!-- airtightness line -->
+          <line x1="152" y1="122" x2="152" y2="408" stroke="#35513f" stroke-width="2.2" stroke-dasharray="9 6"/>
+          <!-- thermal break -->
+          <line x1="60" y1="122" x2="154" y2="122" stroke="#b4552f" stroke-width="3.4"/>
+
+          <!-- ground line -->
+          <line x1="30" y1="408" x2="486" y2="408" stroke="#14161a" stroke-width="2.2"/>
+          <line x1="30" y1="418" x2="486" y2="418" stroke="#14161a" stroke-width="1" stroke-dasharray="5 5"/>
+
+          <g class="annot" font-family="ui-monospace,Menlo,monospace" font-size="13" fill="#3f3d37" letter-spacing="0.7">
+            <line x1="106" y1="78" x2="106" y2="40" stroke="#a8a294" stroke-width="1"/>
+            <text x="112" y="44">ROOF INSULATION</text>
+            <line x1="106" y1="240" x2="106" y2="452" stroke="#a8a294" stroke-width="1"/>
+            <text x="112" y="464">FRAMED WALL / INSULATED</text>
+            <line x1="152" y1="360" x2="200" y2="360" stroke="#35513f" stroke-width="1"/>
+            <text x="205" y="364" fill="#35513f">AIR BARRIER — CONTINUOUS</text>
+            <line x1="100" y1="120" x2="60" y2="96" stroke="#b4552f" stroke-width="1"/>
+            <text x="18" y="90" fill="#b4552f">THERMAL BREAK</text>
+            <line x1="318" y1="238" x2="318" y2="196" stroke="#a8a294" stroke-width="1"/>
+            <text x="252" y="190">GLAZING / SHADING</text>
+          </g>
+
+          <!-- dimension -->
+          <g font-family="ui-monospace,Menlo,monospace" font-size="9.5" fill="#8c8779">
+            <line x1="486" y1="52" x2="486" y2="408" stroke="#b7b1a3" stroke-width="1"/>
+            <line x1="480" y1="52" x2="492" y2="52" stroke="#b7b1a3" stroke-width="1"/>
+            <line x1="480" y1="408" x2="492" y2="408" stroke="#b7b1a3" stroke-width="1"/>
+            <text x="468" y="230" transform="rotate(-90 468 230)" text-anchor="middle">FLOOR–CEILING</text>
+          </g>
+        </svg>
+        <div class="plate-cap"><span><b>Drawn first</b> · built to it</span><span>Insulation · air barrier · glazing · Perth WA</span></div>
+        <div class="plate-key">
+          <span><b>01</b> Roof insulation</span>
+          <span><b>02</b> Framed wall, insulated</span>
+          <span><b>03</b> Thermal break</span>
+          <span><b>04</b> Air barrier, continuous</span>
+          <span><b>05</b> Glazing &amp; shading</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="method">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow">Method</span><h2>Design and <b>building</b>, one set of hands.</h2></div>
+        <p class="intro">Most projects lose their intent in the gap between the drawing and the
+          trade on site. Keeping both sides of that gap in-house is the whole point of Esoterico —
+          and the reason the finished detail still matches what was resolved on paper.</p>
+      </div>
+      <div class="work">
+        <div>
+          <span class="n">01</span>
+          <h3>The detail gets resolved early</h3>
+          <p>Junctions, set-outs and services are worked through while they are still lines on a
+            drawing — not discovered once the frames are up and the cost of changing them has
+            multiplied.</p>
+        </div>
+        <div>
+          <span class="n">02</span>
+          <h3>One contract, start to handover</h3>
+          <p>Design intent and construction sit under the same roof, so accountability does not
+            get handed between a designer, a builder and a series of trades.</p>
+        </div>
+        <div>
+          <span class="n">03</span>
+          <h3>Performance is built in, not added</h3>
+          <p>Insulation, air barrier and glazing are part of the build sequence from the first
+            course — treated as structure, not as an upgrade signed off at the end.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="detail">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow">Detail register</span><h2>What gets <b>drawn</b> before it gets built.</h2></div>
+        <p class="intro">Every project runs off a set of resolved details rather than a set of
+          assumptions. These are the ones that decide how a house feels and performs.</p>
+      </div>
+      <div class="reg">
+        <div class="reg-row"><span>01</span><b>Wall &amp; roof junctions</b><p>Where the envelope changes
+          direction — the spot where continuity is easiest to lose and hardest to see later.</p></div>
+        <div class="reg-row"><span>02</span><b>Thermal &amp; air barrier</b><p>Insulation runs and the
+          airtight line, drawn as one continuous path through the section.</p></div>
+        <div class="reg-row"><span>03</span><b>Glazing &amp; shading</b><p>Glass, frame and overhang
+          set against orientation, so summer sun is handled by the building rather than the
+          air-conditioning.</p></div>
+        <div class="reg-row"><span>04</span><b>Wet areas &amp; cladding</b><p>Falls, membranes and
+          fixing zones agreed before the first sheet goes on.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="touch" id="enquire">
+    <div class="wrap touch-in">
+      <div>
+        <span class="eyebrow" style="color:#8e968e">Enquiries</span>
+        <h2>Have a set of drawings,<br>or the <em>beginnings</em> of one?</h2>
+        <p>Send through the brief, the site or the plans you already have. Esoterico works
+          across Perth metro, on projects where the design and the build are expected to hold
+          together.</p>
+      </div>
+      <div class="box">
+        <span class="lbl">Direct</span>
+        <a class="big" href="https://instagram.com/esoterico.build" target="_blank" rel="noopener">@esoterico.build</a>
+        <p>Instagram is where enquiries are answered. A short message with the site suburb and
+          the stage you are at is enough to start.</p>
+        <a class="btn light" href="https://instagram.com/esoterico.build" target="_blank" rel="noopener">Message Esoterico</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <b>Esoterico</b>
+    <span>Architectural building · Perth, Western Australia</span>
+    <a href="https://instagram.com/esoterico.build" target="_blank" rel="noopener">@esoterico.build</a>
+  </div>
+</footer>
+
+</body>
+</html>
