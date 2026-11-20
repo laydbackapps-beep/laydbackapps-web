@@ -1,0 +1,188 @@
+<section class="statement-band section" aria-labelledby="statement-heading">
+    <div class="reveal-cut reveal-cut--statement" aria-hidden="true"></div>
+    <div class="container">
+      <p class="eyebrow rv" id="statement-heading"><span class="bullet"></span>03 / STATEMENT</p>
+      <p class="statement-band__title rv">Redhead based, Newcastle region wide.</p>
+      <p class="statement-band__sub rv">Concreting work for homes, yards and local sites.</p>
+    </div>
+  </section>
+
+  <section id="quote" class="quote-slab section quote" aria-labelledby="quote-heading">
+    <div class="container">
+      <p class="eyebrow rv" id="quote-heading"><span class="bullet"></span>04 / QUOTE</p>
+      <h2 class="quote__heading rv">Request a quote</h2>
+      <p class="quote__lead rv">Tell us the job — we'll call to scope and quote.</p>
+      <form id="quote-form" class="rv" action="https://api.laydbackapps.com.au/v1/quote" method="POST" data-site="2a06bf86-dfe4-4984-b9b5-c3b632fdad6a">
+        <input type="hidden" name="site" value="2a06bf86-dfe4-4984-b9b5-c3b632fdad6a">
+        <input type="hidden" name="business" value="WJS Concrete Pty Ltd">
+        <input type="hidden" name="category" value="concreting">
+        <input type="hidden" name="region" value="Redhead · Newcastle region, NSW">
+        <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+          <div>
+            <label for="name" class="label" style="display:block; margin-bottom:.35rem">Name</label>
+            <input type="text" id="name" name="name" required style="width:100%; padding:.75rem 1rem; font-family:'Golos Text',system-ui,sans-serif; font-size:1rem; border:1px solid var(--hairline); background:var(--field); color:var(--ink); outline:none">
+          </div>
+          <div>
+            <label for="phone" class="label" style="display:block; margin-bottom:.35rem">Phone</label>
+            <input type="tel" id="phone" name="phone" required style="width:100%; padding:.75rem 1rem; font-family:'Golos Text',system-ui,sans-serif; font-size:1rem; border:1px solid var(--hairline); background:var(--field); color:var(--ink); outline:none">
+          </div>
+          <div style="grid-column:1/-1">
+            <label for="email" class="label" style="display:block; margin-bottom:.35rem">Email (optional)</label>
+            <input type="email" id="email" name="email" style="width:100%; padding:.75rem 1rem; font-family:'Golos Text',system-ui,sans-serif; font-size:1rem; border:1px solid var(--hairline); background:var(--field); color:var(--ink); outline:none">
+          </div>
+          <div style="grid-column:1/-1">
+            <label for="message" class="label" style="display:block; margin-bottom:.35rem">Job details</label>
+            <textarea id="message" name="message" rows="4" required style="width:100%; padding:.75rem 1rem; font-family:'Golos Text',system-ui,sans-serif; font-size:1rem; border:1px solid var(--hairline); background:var(--field); color:var(--ink); outline:none; resize:vertical"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn" style="margin-top:1.5rem">Send request</button>
+        <p class="muted" style="margin-top:1rem; font-size:.85rem">Submits to Laydback quote API. No email is stored on this site.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <p class="footer__wordmark">WJS Concrete Pty Ltd</p>
+      <p class="footer__location">Redhead · Newcastle region, NSW</p>
+      <a href="tel:__PHONE_TEL__" class="footer__phone phone-link">__PHONE_DISPLAY__</a>
+    </div>
+    <p class="footer__copy">© 2026 WJS Concrete Pty Ltd</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add('js');
+  var rv = document.querySelectorAll('.rv');
+  if ('matchMedia' in window && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    rv.forEach(function(el){ el.classList.add('on'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, {rootMargin:'0px 0px -10% 0px', threshold:0});
+  rv.forEach(function(el){ io.observe(el); });
+  setTimeout(function(){ rv.forEach(function(el){ el.classList.add('on'); }); }, 1100);
+})();
+</script>
+
+<script>
+(function(){
+  var canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  if ('matchMedia' in window && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+  var ctx = canvas.getContext('2d');
+  var dpr = window.devicePixelRatio || 1;
+  var W, H;
+  var particles = [];
+  var PARTICLE_COUNT = 600;
+  var settled = false;
+  var settleStart = 0;
+  var SETTLE_DURATION = 2200;
+  var SPECKLE_PALETTE = ['#2e2f31','#8a8478','#bdb7aa'];
+  var SPECKLE_SIZES = [1.5, 2, 1, 2.5, 1.5, 1];
+  var mouseX = -9999, mouseY = -9999;
+  var rafId = null;
+  var isVisible = false;
+
+  function resize(){
+    var rect = canvas.parentElement.getBoundingClientRect();
+    W = canvas.width = Math.round(rect.width * dpr);
+    H = canvas.height = Math.round(rect.height * dpr);
+    ctx.scale(dpr, dpr);
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+    if (!settled) initParticles();
+  }
+
+  function initParticles(){
+    particles = [];
+    var bandTop = 0;
+    var bandBottom = H / dpr;
+    for (var i = 0; i < PARTICLE_COUNT; i++) {
+      var x = Math.random() * (W / dpr);
+      var y = bandTop + Math.random() * (bandBottom - bandTop);
+      var targetY = bandTop + (bandBottom - bandTop) * 0.5;
+      var color = SPECKLE_PALETTE[Math.floor(Math.random() * SPECKLE_PALETTE.length)];
+      var size = SPECKLE_SIZES[Math.floor(Math.random() * SPECKLE_SIZES.length)];
+      var vx = (Math.random() - 0.5) * 0.3;
+      var vy = (Math.random() - 0.5) * 0.3;
+      particles.push({x:x, y:y, targetY:targetY, color:color, size:size, vx:vx, vy:vy, settled:false, delay:Math.random()*300});
+    }
+    settleStart = performance.now();
+  }
+
+  function draw(t){
+    if (!isVisible) return;
+    ctx.clearRect(0,0,W,H);
+    var elapsed = t - settleStart;
+    var progress = Math.min(1, elapsed / SETTLE_DURATION);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      if (elapsed < p.delay) continue;
+      if (!p.settled) {
+        var dy = p.targetY - p.y;
+        if (Math.abs(dy) < 0.5 || progress >= 1) {
+          p.y = p.targetY;
+          p.settled = true;
+        } else {
+          p.y += dy * eased * 0.15;
+        }
+      } else {
+        var dx = (mouseX - p.x * dpr) * 0.0008;
+        var dy = (mouseY - p.y * dpr) * 0.0008;
+        p.x += dx;
+        p.y += dy;
+        p.x = Math.max(p.size, Math.min((W/dpr)-p.size, p.x));
+        p.y = Math.max(p.size, Math.min((H/dpr)-p.size, p.y));
+      }
+      ctx.beginPath();
+      ctx.arc(p.x * dpr, p.y * dpr, p.size * dpr * 0.5, 0, Math.PI*2);
+      ctx.fillStyle = p.color;
+      ctx.fill();
+    }
+    if (progress < 1 || !settled) {
+      settled = progress >= 1;
+      rafId = requestAnimationFrame(draw);
+    } else {
+      rafId = requestAnimationFrame(draw);
+    }
+  }
+
+  function onMove(e){
+    var rect = canvas.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+  }
+
+  function onVisibilityChange(){
+    isVisible = !document.hidden && canvas.getBoundingClientRect().height > 0;
+    if (isVisible && !rafId) {
+      rafId = requestAnimationFrame(draw);
+    }
+  }
+
+  canvas.addEventListener('mousemove', onMove, {passive:true});
+  document.addEventListener('visibilitychange', onVisibilityChange);
+  window.addEventListener('resize', resize);
+  resize();
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      isVisible = e.isIntersecting;
+      if (isVisible && !rafId) rafId = requestAnimationFrame(draw);
+    });
+  }, {rootMargin:'100px'});
+  obs.observe(canvas);
+})();
+</script>
+</body>
+</html>
