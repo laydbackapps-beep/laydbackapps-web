@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" id="logo">
+  <title>JNC Painting & Property Maintenance</title>
+  <!-- JNC Painting & Property Maintenance - Mask-tape dockets mark -->
+  <!-- Charcoal ink: #1a1a2e, Tape yellow: #e8c547, Chalk: #f5f5f0 -->
+
+  <defs>
+    <clipPath id="tape-seam">
+      <polygon points="0,0 256,0 256,170 0,256"/>
+    </clipPath>
+  </defs>
+
+  <!-- Two flat colour fields meeting at crisp diagonal seam (~15 deg) -->
+  <!-- Upper: charcoal -->
+  <path d="M0,0 L256,0 L256,170 L0,256 Z" fill="#1a1a2e"/>
+  <!-- Lower: chalk -->
+  <path d="M0,256 L256,170 L256,256 Z" fill="#f5f5f0"/>
+  <!-- Tape-yellow seam (the masking tape edge) - expanded stroke -->
+  <path d="M-2,258 L258,168 L260,172 L0,258 Z" fill="#e8c547"/>
+
+  <!-- J letterform as a cut-in edge tool (the painter's brush stroke) -->
+  <g clip-path="url(#tape-seam)" fill="#f5f5f0" transform="translate(64, 32)">
+    <path d="M0,0 h96 v16 h-80 v160 h16 v-16 h64 v16 h16 v-160 h-16 z"/>
+  </g>
+
+  <!-- N and C as outlined paths (not text) in chalk field -->
+  <g fill="#1a1a2e" transform="translate(170, 180)">
+    <!-- N -->
+    <path d="M0,0 v28 h10 v-28 h-10 z M0,0 l22,28 h10 l-22,-28 h-10 z M32,0 v28 h10 v-28 h-10 z"/>
+    <!-- C -->
+    <path d="M44,0 h-18 v6 h16 v34 h-16 v6 h18 v-46 z"/>
+  </g>
+
+  <!-- Tape corner accents (serrated edges) - expanded strokes -->
+  <g fill="#e8c547">
+    <!-- Top-left tape corner -->
+    <path d="M24,24 h16 l-8,12 h16 l-8,12 h16 v-2 l-16,8 h-16 l16,-8 h-16 l-8,-12 h-16 l8,-12 h16 l-8,12 z"/>
+    <!-- Bottom-right tape corner -->
+    <path d="M216,216 h-16 l8,-12 h-16 l8,-12 h-16 v2 l16,-8 h16 l-16,8 h16 l8,12 h-16 l-8,12 z"/>
+  </g>
+
+  <!-- Docket number as outlined paths -->
+  <g fill="#1a1a2e" transform="translate(180, 220)">
+    <!-- N -->
+    <path d="M0,0 v14 h5 v-14 h-5 z M0,0 l10,14 h5 l-10,-14 h-5 z M15,0 v14 h5 v-14 h-5 z" opacity="0.35"/>
+    <!-- O -->
+    <path d="M25,0 h10 v14 h-10 v-14 z m2,2 h6 v10 h-6 v-10 z" opacity="0.35"/>
+    <!-- . -->
+    <circle cx="42" cy="12" r="2" opacity="0.35"/>
+    <!-- 0 -->
+    <path d="M48,0 h10 v14 h-10 v-14 z m2,2 h6 v10 h-6 v-10 z" opacity="0.35"/>
+    <!-- 1 -->
+    <path d="M66,0 h5 v14 h-5 v-14 z" opacity="0.35"/>
+  </g>
+</svg>
