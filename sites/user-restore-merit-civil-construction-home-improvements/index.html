@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MERIT — Civil, Construction &amp; Home Improvements</title>
+<meta name="description" content="MERIT takes on civil and earthworks, general construction and residential improvements. Send drawings or a description and get a written scope back.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0e100f; --ink2:#171a18; --ink3:#1f2320;
+    --chalk:#f4f2ec; --ash:#a9aea7; --signal:#ff6b2c;
+    --line:rgba(244,242,236,.16); --line-soft:rgba(244,242,236,.08);
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+    --max:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--ink);color:var(--chalk);
+    font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Barlow Condensed",Impact,sans-serif;font-weight:700;
+    text-transform:uppercase;letter-spacing:.01em;line-height:.98;margin:0}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);margin:0 0 18px}
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{left:20px;top:20px;z-index:99;background:var(--signal);color:#101210;padding:10px 16px;font-weight:600}
+
+  /* ---------- header ---------- */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(14,16,15,.94);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;gap:28px;min-height:76px}
+  .lockup{display:flex;align-items:center;gap:13px;text-decoration:none}
+  .lockup svg{flex:none}
+  .lockup .name{font-family:"Barlow Condensed",Impact,sans-serif;font-size:31px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;line-height:1}
+  .lockup .tag{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;
+    color:var(--ash);text-transform:uppercase;margin-top:5px}
+  nav.main{margin-left:auto;display:flex;gap:26px;font-size:14px;letter-spacing:.02em}
+  nav.main a{text-decoration:none;color:#d9ded6;padding:6px 0;border-bottom:1px solid transparent}
+  nav.main a:hover,nav.main a:focus-visible{color:#fff;border-color:var(--signal)}
+  .btn{display:inline-block;font-family:"Plus Jakarta Sans",sans-serif;font-weight:600;font-size:14px;
+    text-decoration:none;padding:13px 22px;border:1px solid var(--signal);background:var(--signal);
+    color:#141008;transition:transform .18s ease,background .18s ease}
+  .btn:hover,.btn:focus-visible{background:#ff834f;transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--chalk);border-color:var(--line)}
+  .btn.ghost:hover{background:rgba(244,242,236,.07)}
+  .bar .btn{margin-left:8px;white-space:nowrap}
+  @media(max-width:940px){nav.main{display:none}.lockup .tag{display:none}.lockup .name{font-size:26px}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+    background:radial-gradient(120% 90% at 78% 0%,#20261f 0%,#141714 46%,#0e100f 100%)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
+    padding:78px 0 84px;position:relative;z-index:2}
+  .hero h1{font-size:clamp(44px,6.2vw,80px);max-width:15ch}
+  .hero h1 em{font-style:normal;color:var(--signal)}
+  .hero p.lede{font-size:19px;line-height:1.6;color:#c9cec6;max-width:52ch;margin:26px 0 0}
+  .hero .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;align-items:center}
+  .hero .meta{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ash);margin:30px 0 0;display:flex;gap:18px;flex-wrap:wrap}
+  .hero .meta span{display:flex;align-items:center;gap:7px}
+  .hero .meta i{width:5px;height:5px;background:var(--signal);display:block}
+
+  /* drawn section detail */
+  .drawing{position:relative;border:1px solid var(--line);background:#0a0c0b;padding:16px}
+  .drawing svg{display:block;width:100%;height:auto}
+  .drawing figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;
+    text-transform:uppercase;color:#8e948c;padding:10px 2px 0;display:flex;justify-content:space-between;gap:12px}
+  .hero .bp{position:absolute;inset:0;z-index:1;opacity:.5;pointer-events:none;
+    background:repeating-linear-gradient(0deg,transparent 0 47px,rgba(244,242,236,.045) 47px 48px),
+               repeating-linear-gradient(90deg,transparent 0 47px,rgba(244,242,236,.045) 47px 48px);
+    mask-image:linear-gradient(180deg,rgba(0,0,0,.75),transparent 78%)}
+  @media(max-width:960px){.hero-grid{grid-template-columns:1fr;gap:40px;padding:58px 0 62px}
+    .hero h1{max-width:20ch}.drawing{order:2}}
+
+  /* ---------- stream rows ---------- */
+  .sec{padding:92px 0;border-bottom:1px solid var(--line)}
+  .sec.alt{background:#111412}
+  .sec-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:52px}
+  .sec-head h2{font-size:clamp(32px,4.3vw,52px);max-width:22ch}
+  .sec-head p{margin:0;color:var(--ash);font-size:16px;max-width:44ch}
+  @media(max-width:860px){.sec-head{grid-template-columns:1fr;gap:20px;margin-bottom:36px}}
+
+  .streams{border-top:1px solid var(--line)}
+  .stream{display:grid;grid-template-columns:minmax(210px,.85fr) 1.35fr;gap:38px;
+    padding:34px 0;border-bottom:1px solid var(--line)}
+  .stream h3{font-size:30px;letter-spacing:.02em}
+  .stream .idx{font-family:var(--mono);font-size:11px;color:var(--signal);letter-spacing:.16em;display:block;margin-bottom:9px}
+  .stream ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 30px}
+  .stream li{font-size:15.5px;color:#cfd4cc;padding-left:16px;position:relative;line-height:1.5}
+  .stream li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:1px;background:var(--signal)}
+  @media(max-width:860px){.stream{grid-template-columns:1fr;gap:16px}.stream ul{grid-template-columns:1fr}}
+
+  /* ---------- process rail ---------- */
+  .process{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px}
+  .process .sticky{position:sticky;top:110px;align-self:start}
+  .process h2{font-size:clamp(32px,4.3vw,50px);max-width:14ch}
+  .process p.intro{color:var(--ash);margin:20px 0 0;max-width:34ch}
+  ol.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+  ol.steps li{counter-increment:s;position:relative;padding:0 0 30px 62px;border-left:1px solid var(--line);margin-left:8px}
+  ol.steps li:last-child{border-color:transparent;padding-bottom:0}
+  ol.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:-9px;top:-4px;
+    background:var(--ink);border:1px solid var(--line);color:var(--signal);
+    font-family:var(--mono);font-size:11px;padding:5px 0;width:34px;text-align:center;letter-spacing:.06em}
+  ol.steps h3{font-size:22px;letter-spacing:.03em;margin-bottom:6px}
+  ol.steps p{margin:0;color:#b9bfb7;font-size:15.5px;max-width:52ch}
+  @media(max-width:860px){.process{grid-template-columns:1fr;gap:34px}.process .sticky{position:static}}
+
+  /* ---------- send-list table ---------- */
+  .send{background:#0b0d0c;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:92px 0}
+  table{width:100%;border-collapse:collapse;margin-top:40px;font-size:15px}
+  caption{text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ash);padding-bottom:14px}
+  th,td{text-align:left;padding:16px 18px 16px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--signal);font-weight:400}
+  td:first-child{font-weight:600;color:#fff;width:24%}
+  td{color:#bcc2ba}
+  @media(max-width:720px){table,thead,tbody,tr,td,th{display:block}thead{display:none}
+    tr{border-bottom:1px solid var(--line);padding:14px 0}td{border:0;padding:3px 0;width:auto!
+    }td:first-child{width:auto;padding-top:10px}}
+
+  /* ---------- faq ---------- */
+  .faq details{border-bottom:1px solid var(--line);padding:4px 0}
+  .faq summary{cursor:pointer;list-style:none;display:flex;gap:20px;align-items:baseline;
+    padding:24px 0;font-family:"Barlow Condensed",Impact,sans-serif;text-transform:uppercase;
+    font-size:23px;letter-spacing:.02em;font-weight:600}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::before{content:"+";font-family:var(--mono);color:var(--signal);font-size:18px;flex:none}
+  .faq details[open] summary::before{content:"–"}
+  .faq summary:focus-visible{outline:2px solid var(--signal);outline-offset:4px}
+  .faq p{margin:0 0 26px 32px;color:#b9bfb7;max-width:70ch;font-size:15.5px}
+
+  /* ---------- quote ---------- */
+  .quote{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .quote h2{font-size:clamp(34px,4.6vw,56px);max-width:13ch}
+  .quote p{color:#c2c8c0;max-width:40ch}
+  form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  form .full{grid-column:1/-1}
+  label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ash);margin-bottom:7px}
+  input,select,textarea{width:100%;background:#0a0c0b;border:1px solid var(--line);color:var(--chalk);
+    font-family:inherit;font-size:15px;padding:13px 14px;border-radius:0}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--signal);box-shadow:0 0 0 3px rgba(255,107,44,.16)}
+  textarea{min-height:112px;resize:vertical}
+  .formnote{grid-column:1/-1;font-size:13px;color:#8f958d;margin:2px 0 0}
+  .formnote a{color:#cbd0c8}
+  @media(max-width:860px){.quote{grid-template-columns:1fr;gap:36px}form{grid-template-columns:1fr}}
+
+  footer.site{padding:44px 0 54px;color:#8b918a;font-size:13.5px}
+  .foot{display:flex;flex-wrap:wrap;gap:18px 40px;align-items:baseline;justify-content:space-between}
+  .foot a{color:#c2c8c0;text-decoration:none;border-bottom:1px solid var(--line)}
+  .foot a:hover{color:#fff}
+  .foot .mark{font-family:"Barlow Condensed",Impact,sans-serif;font-size:20px;letter-spacing:.16em;color:#e7e9e4}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="lockup" href="#top" aria-label="MERIT home">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+        <rect x="0" y="0" width="34" height="34" fill="none" stroke="#4a504a"/>
+        <path d="M8 25V9l5 7 4-7 5 7 4-7v16" fill="none" stroke="#ff6b2c" stroke-width="2.4"/>
+      </svg>
+      <span>
+        <span class="name">MERIT</span>
+        <span class="tag">Civil · Construction · Home Improvements</span>
+      </span>
+    </a>
+    <nav class="main" aria-label="Primary">
+      <a href="#scope">Scope</a>
+      <a href="#process">How it runs</a>
+      <a href="#before">What to send</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <a class="btn" href="#quote">Request a scope</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="bp" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Civil · Construction · Home improvements</p>
+      <h1>Three streams of work, scoped before a price goes on them.</h1>
+      <p class="lede">MERIT takes on civil and earthworks, general construction, and residential
+        improvements. Send the drawings — or describe the job in a few lines — and you get the
+        scope back itemised, with the assumptions written down.</p>
+      <div class="actions">
+        <a class="btn" href="#quote">Send project details</a>
+        <a class="btn ghost" href="#scope">See what's covered</a>
+      </div>
+      <p class="meta">
+        <span><i></i>Fixed-scope quoting</span>
+        <span><i></i>Residential &amp; civil</span>
+        <span><i></i>Written assumptions</span>
+      </p>
+    </div>
+
+    <figure class="drawing" style="margin:0">
+      <svg viewBox="0 0 520 400" role="img" aria-label="Dimensional section drawing of a slab edge on strip footing">
+        <defs>
+          <pattern id="hatch" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="0" y2="7" stroke="#ff6b2c" stroke-opacity=".55" stroke-width="1"/>
+          </pattern>
+          <pattern id="grain" width="30" height="30" patternUnits="userSpaceOnUse">
+            <path d="M0 30L30 0" stroke="#f4f2ec" stroke-opacity=".07"/>
+          </pattern>
+          <marker id="arw" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M0 0L8 4L0 8z" fill="#f4f2ec" fill-opacity=".7"/>
+          </marker>
+        </defs>
+        <rect width="520" height="400" fill="url(#grain)"/>
+
+        <!-- ground line -->
+        <line x1="30" y1="150" x2="490" y2="150" stroke="#f4f2ec" stroke-opacity=".35" stroke-dasharray="7 6"/>
+        <text x="492" y="146" text-anchor="end" font-family="monospace" font-size="9"
+              fill="#a9aea7" letter-spacing="1">GL</text>
+
+        <!-- slab -->
+        <rect x="70" y="150" width="380" height="34" fill="#f4f2ec" fill-opacity=".1" stroke="#f4f2ec" stroke-opacity=".55"/>
+        <rect x="70" y="150" width="380" height="34" fill="url(#hatch)" opacity=".25"/>
+
+        <!-- footing -->
+        <rect x="120" y="184" width="150" height="96" fill="#f4f2ec" fill-opacity=".07" stroke="#f4f2ec" stroke-opacity=".45"/>
+        <rect x="120" y="184" width="150" height="96" fill="url(#hatch)" opacity=".35"/>
+        <line x1="120" y1="240" x2="270" y2="240" stroke="#ff6b2c" stroke-opacity=".5" stroke-dasharray="4 5"/>
+        <text x="278" y="244" font-family="monospace" font-size="9" fill="#ff6b2c" letter-spacing="1">F'C = 25 MPa</text>
+
+        <!-- wall / building line -->
+        <rect x="132" y="60" width="26" height="90" fill="none" stroke="#f4f2ec" stroke-opacity=".6"/>
+        <rect x="132" y="60" width="26" height="90" fill="url(#hatch)" opacity=".2"/>
+
+        <!-- dimension: slab width -->
+        <line x1="70" y1="128" x2="450" y2="128" stroke="#f4f2ec" stroke-opacity=".7" marker-start="url(#arw)" marker-end="url(#arw)"/>
+        <line x1="70" y1="150" x2="70" y2="120" stroke="#f4f2ec" stroke-opacity=".35"/>
+        <line x1="450" y1="150" x2="450" y2="120" stroke="#f4f2ec" stroke-opacity=".35"/>
+        <text x="260" y="122" text-anchor="middle" font-family="monospace" font-size="10" fill="#f4f2ec" letter-spacing="1">SLAB — SET OUT</text>
+
+        <!-- dimension: footing depth -->
+        <line x1="98" y1="184" x2="98" y2="280" stroke="#f4f2ec" stroke-opacity=".7" marker-start="url(#arw)" marker-end="url(#arw)"/>
+        <text x="92" y="238" text-anchor="end" font-family="monospace" font-size="10" fill="#f4f2ec" letter-spacing="1">DEPTH</text>
+
+        <!-- levels -->
+        <line x1="30" y1="184" x2="470" y2="310" stroke="#ff6b2c" stroke-opacity=".25"/>
+        <text x="34" y="342" font-family="monospace" font-size="9" fill="#8e948c" letter-spacing="1.4">SECTION A—A · 1:20 · NOT TO SCALE</text>
+        <text x="34" y="374" font-family="monospace" font-size="9" fill="#8e948c" letter-spacing="1.4">REV C · ISSUED FOR SCOPE</text>
+
+        <g opacity=".8">
+          <rect x="352" y="252" width="138" height="86" fill="none" stroke="#f4f2ec" stroke-opacity=".3"/>
+          <text x="362" y="272" font-family="monospace" font-size="9" fill="#a9aea7" letter-spacing="1">SCOPE ITEMS</text>
+          <text x="362" y="290" font-family="monospace" font-size="9" fill="#f4f2ec" letter-spacing="1">01 EXCAVATION</text>
+          <text x="362" y="304" font-family="monospace" font-size="9" fill="#f4f2ec" letter-spacing="1">02 FOOTINGS</text>
+          <text x="362" y="318" font-family="monospace" font-size="9" fill="#f4f2ec" letter-spacing="1">03 SLAB / DECK</text>
+          <text x="362" y="332" font-family="monospace" font-size="9" fill="#ff6b2c" letter-spacing="1">04 HANDOVER</text>
+        </g>
+      </svg>
+      <figcaption><span>Fig. 01 — typical slab edge on strip footing</span><span>illustrative</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="scope" aria-labelledby="scope-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">01 / Scope</p>
+        <h2 id="scope-h">What each stream actually covers.</h2>
+      </div>
+      <p>Most enquiries to a builder are vague for a good reason: the work sits across
+        two or three of these. MERIT quotes them as separate line items so you can see
+        what the ground and the structure are each costing you.</p>
+    </div>
+
+    <div class="streams">
+      <div class="stream">
+        <h3><span class="idx">Stream 01</span>Civil &amp; earthworks</h3>
+        <ul>
+          <li>Site cut and fill, set-out to levels</li>
+          <li>Strip footings, pad footings, slabs on ground</li>
+          <li>Retaining walls, including block and sleeper</li>
+          <li>Driveway crossovers and hardstand</li>
+          <li>Stormwater runs, pits and tie-ins</li>
+          <li>Machine work to engineering detail</li>
+        </ul>
+      </div>
+      <div class="stream">
+        <h3><span class="idx">Stream 02</span>Construction</h3>
+        <ul>
+          <li>Extensions and additions, framed and finished</li>
+          <li>Structural alterations and new openings</li>
+          <li>Decks, pergolas and carports</li>
+          <li>Concreting, formwork and reinforcement</li>
+          <li>Roof, cladding and stormwater connections</li>
+          <li>Trade coordination through to handover</li>
+        </ul>
+      </div>
+      <div class="stream">
+        <h3><span class="idx">Stream 03</span>Home improvements</h3>
+        <ul>
+          <li>Kitchen, laundry and bathroom rebuilds</li>
+          <li>Waterproofing and tiling to wet areas</li>
+          <li>Flooring, linings and joinery install</li>
+          <li>Fencing, gates and outdoor structures</li>
+          <li>Accessibility and layout changes</li>
+          <li>Repair work after damage or age</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="process" aria-labelledby="proc-h">
+  <div class="wrap process">
+    <div class="sticky">
+      <p class="eyebrow">02 / Method</p>
+      <h2 id="proc-h">How a MERIT job runs.</h2>
+      <p class="intro">Five stages, in order. Nothing gets ordered or demolished before
+        stage two is signed, because that is where the surprises get priced instead of absorbed.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <h3>Site visit and measure</h3>
+        <p>Someone walks the site, checks access, levels and services, and photographs the
+          existing condition. This is where a job either fits the drawings or doesn't.</p>
+      </li>
+      <li>
+        <h3>Written scope and programme</h3>
+        <p>Itemised by stage — preliminaries, ground works, structure, finishes. Assumptions
+          and exclusions are listed separately so they can be argued with before work starts.</p>
+      </li>
+      <li>
+        <h3>Approvals and engineering</h3>
+        <p>Where the work needs certification, the engineering detail and any council or
+          private certifier steps are confirmed before a start date is given.</p>
+      </li>
+      <li>
+        <h3>Build, in inspected stages</h3>
+        <p>Ground, frame and waterproofing stages are held for inspection rather than covered
+          over. Progress is reported at those points, not only at the end.</p>
+      </li>
+      <li>
+        <h3>Handover with a defect list</h3>
+        <p>Walk the job together, write the list down, and close it out. Practical completion
+          means the list exists and has an owner, not that the last tradie left.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="send" id="before" aria-labelledby="send-h">
+  <div class="wrap">
+    <p class="eyebrow">03 / Before you send</p>
+    <h2 id="send-h" style="font-size:clamp(30px,4.2vw,48px);max-width:26ch">What we need to price it properly.</h2>
+    <p style="color:var(--ash);max-width:60ch;margin:20px 0 0">A single photo and "how much for an extension" gets a range at best.
+      These three things turn it into a number.</p>
+    <table>
+      <caption>Minimum information per stream</caption>
+      <thead>
+        <tr><th scope="col">Stream</th><th scope="col">Send</th><th scope="col">So we can answer</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Civil</td>
+          <td>Site plan or survey, engineering details, levels, and where the stormwater is going.</td>
+          <td>Volume of cut and fill, footing sizes, and whether the access is machine-viable.</td>
+        </tr>
+        <tr>
+          <td>Construction</td>
+          <td>Architectural drawings if they exist, plus a photo of each elevation and the roof line.</td>
+          <td>Whether it is a framed addition or a structural alteration, and what has to be opened up.</td>
+        </tr>
+        <tr>
+          <td>Home improvements</td>
+          <td>Room photos, rough dimensions, and what's staying — floor, joinery, fixtures.</td>
+          <td>Demolition scope, waterproofing extent, and the trade sequence for the rebuild.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sec faq" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <p class="eyebrow">04 / Questions</p>
+    <h2 id="faq-h" style="font-size:clamp(30px,4.2vw,48px);max-width:24ch;margin-bottom:34px">The four we get asked first.</h2>
+
+    <details>
+      <summary>Can one quote cover civil work and the build?</summary>
+      <p>Yes, but they're priced as separate sections. Ground work is priced off the survey and
+        engineering; the build is priced off the drawings. Bundling them into one number hides
+        which part is driving the cost, which is usually the part you'd want to change.</p>
+    </details>
+
+    <details>
+      <summary>Do you work off someone else's drawings?</summary>
+      <p>Regularly — most extension and improvement work already has a designer or building
+        designer attached. What changes is that the scope gets re-read against site conditions
+        before pricing, so a detail that doesn't suit the ground gets flagged rather than built.</p>
+    </details>
+
+    <details>
+      <summary>What happens if the ground isn't what the drawings assume?</summary>
+      <p>Work stops at that stage and the difference is documented — depth, spoil, rock, services.
+        You get the variation in writing with a cost before it's carried out, not a line on the
+        final invoice explaining why the number moved.</p>
+    </details>
+
+    <details>
+      <summary>Is a small home improvement job too small?</summary>
+      <p>Depends on scope rather than size. A bathroom rebuild with waterproofing and tiling is a
+        normal job. A single repair is better handled by a handyman, and we'll say so rather than
+        quote for it.</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec quote" id="quote" aria-labelledby="quote-h">
+  <div class="wrap quote">
+    <div>
+      <p class="eyebrow">05 / Enquiry</p>
+      <h2 id="quote-h">Send the job and get a written scope.</h2>
+      <p>Describe the work, note the stream it falls under, and attach or link the drawings
+        if you have them. Enquiries with a plan attached get answered first.</p>
+      <p style="font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ash);margin-top:28px">
+        MERIT Civil · Construction · Home Improvements</p>
+    </div>
+    <form action="#" method="post" novalidate>
+      <div>
+        <label for="n">Name</label>
+        <input id="n" name="name" type="text" autocomplete="name" placeholder="Your name">
+      </div>
+      <div>
+        <label for="p">Phone or email</label>
+        <input id="p" name="contact" type="text" autocomplete="tel" placeholder="How to reach you">
+      </div>
+      <div class="full">
+        <label for="s">Stream</label>
+        <select id="s" name="stream">
+          <option>Civil &amp; earthworks</option>
+          <option>Construction</option>
+          <option>Home improvements</option>
+          <option>Two or more — not sure which</option>
+        </select>
+      </div>
+      <div class="full">
+        <label for="d">What needs doing</label>
+        <textarea id="d" name="details" placeholder="Site, rough size, what's there now, and what you want at the end of it."></textarea>
+      </div>
+      <div class="full">
+        <button class="btn" type="submit">Send project details</button>
+      </div>
+      <p class="formnote">Prefer to talk it through? The fastest line is the contact button on the
+        <a href="https://www.facebook.com/people/MERIT-Civil-Construction-Home-Improvements/61595179485900/" rel="noopener">MERIT Facebook page</a>.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <span class="mark">MERIT</span>
+    <span>Civil · Construction · Home Improvements</span>
+    <a href="https://www.facebook.com/people/MERIT-Civil-Construction-Home-Improvements/61595179485900/" rel="noopener">Facebook</a>
+    <span>© <span id="y">2026</span> MERIT</span>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
