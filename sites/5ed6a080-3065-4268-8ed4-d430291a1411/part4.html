@@ -1,0 +1,99 @@
+<section id="quote" class="quote rv">
+  <div class="quote__inner">
+    <h2 class="quote__heading">Request a quote</h2>
+    <!-- lbq-form injected here -->
+  </div>
+</section>
+<footer class="footer rv" role="contentinfo">
+  <div class="footer__inner">
+    <p class="footer__legal">DWA Concrete Constructions Pty Ltd</p>
+    <p class="footer__region">Hunter region, NSW</p>
+    <div class="footer__contact">
+      <a href="tel:__PHONE_TEL__">__PHONE_DISPLAY__</a>
+      <a href="https://www.instagram.com/dwa_concrete_constructions" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <p class="footer__copy">© 2026 DWA Concrete Constructions Pty Ltd</p>
+  </div>
+</footer>
+<script>
+(function(){
+  // Hero canvas animation - saw line draw with volt shimmer and keyway stamp
+  const canvas=document.querySelector('.hero__canvas');
+  if(!canvas) return;
+  const ctx=canvas.getContext('2d');
+  let w=0,h=0,raf=0;
+  const prefersReduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  let hasDrawn=false;
+  function resize(){
+    const rect=canvas.getBoundingClientRect();
+    w=rect.width;h=rect.height;
+    canvas.width=w*devicePixelRatio;canvas.height=h*devicePixelRatio;
+    ctx.scale(devicePixelRatio,devicePixelRatio);
+    drawSettled();
+  }
+  function drawSettled(){
+    // Clear and draw final settled state
+    ctx.clearRect(0, 0, w, h);
+    const y=h*0.85; // base line position within hero content area (below buttons)
+    const lineW=w*0.82;const x0=(w-lineW)/2;const x1=x0+lineW;
+    // Draw full cut line (ink)
+    ctx.strokeStyle='#17181a';ctx.lineWidth=2;ctx.lineCap='round';
+    ctx.beginPath();ctx.moveTo(x0,y);ctx.lineTo(x1,y);ctx.stroke();
+    // Volt keyway circle at end
+    ctx.strokeStyle='#b5ee3f';ctx.lineWidth=2;
+    ctx.beginPath();ctx.arc(x1,y,8,0,Math.PI*2);ctx.stroke();
+    ctx.fillStyle='#b5ee3f';
+    ctx.beginPath();ctx.arc(x1,y,5,0,Math.PI*2);ctx.fill();
+  }
+  function loop(ts){
+    if(prefersReduced || hasDrawn) return;
+    hasDrawn=true;
+    // Animate: draw line progressively
+    const duration=3000;
+    const start=performance.now();
+    function animate(now){
+      const elapsed=now-start;
+      const progress=Math.min(elapsed/duration,1);
+      ctx.clearRect(0, 0, w, h);
+      const y=h*0.85;
+      const lineW=w*0.82;const x0=(w-lineW)/2;const x1=x0+lineW;
+      const drawX=x0+lineW*progress;
+      // Draw line
+      ctx.strokeStyle='#17181a';ctx.lineWidth=2;ctx.lineCap='round';
+      ctx.beginPath();ctx.moveTo(x0,y);ctx.lineTo(drawX,y);ctx.stroke();
+      // Shimmer
+      if(progress>0.15 && progress<0.95){
+        const shimmerX=x0+lineW*(progress-0.15)/0.8;
+        const grad=ctx.createLinearGradient(shimmerX-60,y,shimmerX+60,y);
+        grad.addColorStop(0,'rgba(181,238,63,0)');
+        grad.addColorStop(0.5,'rgba(181,238,63,0.6)');
+        grad.addColorStop(1,'rgba(181,238,63,0)');
+        ctx.strokeStyle=grad;ctx.lineWidth=3;
+        ctx.beginPath();ctx.moveTo(Math.max(x0,shimmerX-60),y);ctx.lineTo(Math.min(x1,shimmerX+60),y);ctx.stroke();
+      }
+      // Keyway at end
+      if(progress>=1){
+        ctx.strokeStyle='#b5ee3f';ctx.lineWidth=2;
+        ctx.beginPath();ctx.arc(x1,y,8,0,Math.PI*2);ctx.stroke();
+        ctx.fillStyle='#b5ee3f';
+        ctx.beginPath();ctx.arc(x1,y,5,0,Math.PI*2);ctx.fill();
+      }
+      if(progress<1){
+        raf=requestAnimationFrame(animate);
+      }
+    }
+    raf=requestAnimationFrame(animate);
+  }
+  window.addEventListener('resize',resize);
+  resize();
+  if(prefersReduced){
+    drawSettled();
+  }else{
+    loop(0);
+  }
+  // Reveal system safety net
+  setTimeout(()=>{document.querySelectorAll('.rv').forEach(el=>el.classList.add('on'))},1100);
+})();
+</script>
+</body>
+</html>
