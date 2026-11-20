@@ -1,0 +1,176 @@
+<script>
+// ===== Static detail canvas (painted once, no rAF loop) =====
+(function(){
+  var canvas = document.getElementById('detail-canvas');
+  if(!canvas) return;
+  function draw(){
+    var dpr = Math.max(1, window.devicePixelRatio || 1);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.floor(rect.width);
+    var h = Math.floor(rect.height);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+    // Clear
+    ctx.fillStyle = '#f5f5f0'; // chalk
+    ctx.fillRect(0, 0, w, h);
+    // Palette
+    var ink = '#1a1a2e';
+    var tape = '#e8c547';
+    var chalk2 = '#e8e8e0';
+    // Seed for deterministic "random"
+    var seed = 42;
+    function rand(){ seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; }
+    // Draw diagonal seam line first (tape yellow)
+    ctx.strokeStyle = tape;
+    ctx.lineWidth = 3;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(-10, h + 10);
+    ctx.lineTo(w + 10, -10);
+    ctx.stroke();
+    // Draw striations - roller/brush marks
+    var strokes = Math.floor((w * h) / 800);
+    for(var i = 0; i < strokes; i++){
+      var x = rand() * w;
+      var y = rand() * h;
+      var len = 20 + rand() * 60;
+      var angle = (rand() - 0.5) * 0.6 + Math.PI / 6; // ~15-45 deg
+      var width = 1 + rand() * 2.5;
+      var alpha = 0.15 + rand() * 0.25;
+      var colorChoice = rand();
+      var strokeColor = colorChoice < 0.5 ? ink : (colorChoice < 0.75 ? tape : chalk2);
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(angle);
+      ctx.globalAlpha = alpha;
+      ctx.strokeStyle = strokeColor;
+      ctx.lineWidth = width;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(-len/2, 0);
+      ctx.lineTo(len/2, 0);
+      ctx.stroke();
+      ctx.restore();
+    }
+    // Add some cross-hatching near seam
+    for(var i = 0; i < strokes / 3; i++){
+      var x = rand() * w;
+      var y = rand() * h;
+      var len = 10 + rand() * 30;
+      var angle = (rand() - 0.5) * 0.4 - Math.PI / 3; // crossing angle
+      var width = 0.8 + rand() * 1.5;
+      var alpha = 0.1 + rand() * 0.2;
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(angle);
+      ctx.globalAlpha = alpha;
+      ctx.strokeStyle = ink;
+      ctx.lineWidth = width;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(-len/2, 0);
+      ctx.lineTo(len/2, 0);
+      ctx.stroke();
+      ctx.restore();
+    }
+    // Guard: ensure at least 2% painted pixels (ink verify)
+    try{
+      var imgData = ctx.getImageData(0, 0, w, h);
+      var data = imgData.data;
+      var nonChalk = 0;
+      var chalkR = 245, chalkG = 245, chalkB = 240;
+      for(var i = 0; i < data.length; i += 4){
+        var dr = Math.abs(data[i] - chalkR);
+        var dg = Math.abs(data[i+1] - chalkG);
+        var db = Math.abs(data[i+2] - chalkB);
+        if(dr > 10 || dg > 10 || db > 10) nonChalk++;
+      }
+      var ratio = nonChalk / (w * h);
+      if(!isFinite(ratio) || ratio < 0.02){
+        // Force a few more strokes if too empty
+        console.warn('[detail-canvas] painted ratio low:', ratio, '- adding fallback strokes');
+        ctx.fillStyle = ink;
+        ctx.globalAlpha = 0.3;
+        for(var i = 0; i < 20; i++){
+          var x = (i / 20) * w;
+          var y = h * 0.3 + Math.sin(i) * h * 0.1;
+          ctx.fillRect(x, y, 2, 20);
+        }
+      }
+    }catch(e){}
+  }
+  // Draw on load
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', draw);
+  }else{
+    draw();
+  }
+  // Redraw on resize
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(draw, 150);
+  });
+})();
+
+// ===== Reveal system + 1100ms safety net =====
+(function(){
+  function initReveal(){
+    document.documentElement.classList.add('js');
+    var observers = [];
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('on');
+            io.unobserve(entry.target);
+          }
+        });
+      }, {rootMargin: '0px 0px -10% 0px', threshold: 0.1});
+      document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+      observers.push(io);
+    }
+    // 1100ms safety net
+    setTimeout(function(){
+      document.querySelectorAll('.rv:not(.on)').forEach(function(el){
+        el.classList.add('on');
+      });
+    }, 1100);
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initReveal);
+  }else{
+    initReveal();
+  }
+})();
+
+// ===== Smooth scroll for anchor links =====
+(function(){
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var href = a.getAttribute('href');
+      if(href.length > 1){
+        var target = document.querySelector(href);
+        if(target){
+          e.preventDefault();
+          var navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 64;
+          var y = target.getBoundingClientRect().top + window.pageYOffset - navH - 10;
+          window.scrollTo({top: y, behavior: 'smooth'});
+        }
+      }
+    });
+  });
+})();
+
+// ===== Current year in footer if needed =====
+(function(){
+  var y = new Date().getFullYear();
+  document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = y; });
+})();
+</script>
+</body>
+</html>
