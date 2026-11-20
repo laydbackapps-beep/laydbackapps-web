@@ -267,7 +267,7 @@ footer .container{display:flex;flex-wrap:wrap;align-items:center;justify-content
 .rv{opacity:1!important;transform:none!important;transition:none!important}
 </style>
 </noscript>
-<style id="lb-motion-css">
+<style>
 /* ==== LB MOTION PACK ==== */
 .lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
 /* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
@@ -332,13 +332,13 @@ a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
 @keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
 </style>
-<style id="lb-hero-css">
+<style>
 canvas.lb-hero-canvas{position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0; pointer-events:none}
 canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-<style id="lb-brand-css">
+<style>
 /* ==== LB BRAND (logo-true spanning wordmark) ==== */
 .lb-brandwrap{display:block;padding:14px 18px;background:inherit}
 .lb-brandwrap .lb-brand{display:inline-flex}
@@ -366,23 +366,23 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
+<style>/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
 .site-header,.header{z-index:50}
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-<style id="lb-nav-contrast">/* nav links measured below 4.5:1 against this bar */
+<style>/* nav links measured below 4.5:1 against this bar */
 nav a, nav a:visited, .nav-in a, .nav-links a, .nav a {color:#ffffff!important;opacity:1!important}
 nav a:hover {color:#ffffff!important;opacity:.85!important}
-</style><style id="lb-bar-noname">
+</style><style>
 /* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
 .lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
 {display:none!important}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style><style id="lb-hdr-centre">
+</style><style>
 .brand-monogram{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:2}
 .brand-monogram img{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
 @media(max-width:900px){.brand-monogram{position:static!important;transform:none!important;margin-right:auto!important}}
@@ -453,21 +453,21 @@ nav a:hover {color:#ffffff!important;opacity:.85!important}
       </div>
       <div class="process-steps">
         <div class="step rv" style="transition-delay:0.15s">
-          <span class="step-num">1</span>
+          
           <div class="step-copy">
             <h3>Scope & schedule</h3>
             <p>Walk the site, agree the loop, set frequencies, and load the checklist.</p>
           </div>
         </div>
         <div class="step rv" style="transition-delay:0.2s">
-          <span class="step-num">2</span>
+          
           <div class="step-copy">
             <h3>Execute on cycle</h3>
             <p>Technicians follow the route, tick nodes, capture photos, flag variances.</p>
           </div>
         </div>
         <div class="step rv" style="transition-delay:0.25s">
-          <span class="step-num">3</span>
+          
           <div class="step-copy">
             <h3>Review & close</h3>
             <p>Supervisor signs off, exceptions routed, report delivered, loop resets.</p>
@@ -850,7 +850,7 @@ header a[href^="tel"],.site-header a[href^="tel"]{
 }
 .lb-brand__sub:empty{display:none !important}
 </style>
-<style id="lb-header-fault-fix">
+<style>
 :is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
 img.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
