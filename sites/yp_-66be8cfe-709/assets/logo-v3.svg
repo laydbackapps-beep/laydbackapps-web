@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- JNC Painting & Property Maintenance - Mask-tape dockets mark (v3: letterform J with tape cut) -->
+  <!-- Charcoal ink: #1a1a2e, Tape yellow: #e8c547, Chalk: #f5f5f0 -->
+  
+  <defs>
+    <clipPath id="tape-seam">
+      <polygon points="0,0 256,0 256,170 0,256"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Two flat colour fields meeting at crisp diagonal seam (12-15 deg) -->
+  <!-- Upper: charcoal -->
+  <path d="M0,0 L256,0 L256,170 L0,256 Z" fill="#1a1a2e"/>
+  <!-- Lower: chalk -->
+  <path d="M0,256 L256,170 L256,256 Z" fill="#f5f5f0"/>
+  <!-- Tape-yellow seam (the masking tape edge) -->
+  <path d="M0,256 L256,170" fill="none" stroke="#e8c547" stroke-width="3.5" stroke-linecap="round"/>
+  
+  <!-- J letterform as a cut-in edge tool (the painter's brush stroke) -->
+  <g clip-path="url(#tape-seam)" fill="#f5f5f0" transform="translate(64, 32)">
+    <path d="M0,0 h96 v16 h-80 v160 h16 v-16 h64 v16 h16 v-160 h-16 z"/>
+  </g>
+  
+  <!-- N and C smaller in chalk field -->
+  <g fill="#1a1a2e" transform="translate(170, 180)" font-family="monospace" font-size="24" font-weight="700">
+    <text x="0" y="0">N</text>
+    <text x="28" y="0">C</text>
+  </g>
+  
+  <!-- Tape corner accents (serrated edges) -->
+  <g fill="none" stroke="#e8c547" stroke-width="2" stroke-linecap="round" opacity="0.85">
+    <!-- Top-left tape corner -->
+    <path d="M24,24 h16 l-8,12 h16 l-8,12 h16"/>
+    <!-- Bottom-right tape corner -->
+    <path d="M216,216 h-16 l8,-12 h-16 l8,-12 h-16" transform="scale(-1, -1) translate(-256, -256)"/>
+  </g>
+  
+  <!-- Docket number -->
+  <text x="180" y="232" font-family="monospace" font-size="16" font-weight="700" fill="#1a1a2e" opacity="0.35">NO. 01</text>
+</svg>
