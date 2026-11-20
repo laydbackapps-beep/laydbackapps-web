@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bradshaw Polished Concrete — Polished Concrete Floors | Lake Macquarie &amp; Newcastle</title>
+<meta name="description" content="Bradshaw Polished Concrete — polished, ground and sealed concrete floors across Boolaroo, Lake Macquarie and Newcastle. Concrete polishing, grinding and sealing. Call for a firm quote.">
+<meta property="og:title" content="Bradshaw Polished Concrete — Boolaroo, Lake Macquarie">
+<meta property="og:description" content="Polished, ground and sealed concrete floors across Lake Macquarie and Newcastle.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo.png">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800;900&family=Lora:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eceef0; --bg2:#e3e7e9; --ink:#14181a; --ink2:#59636a; --accent:#0e7c7b;
+  --line:rgba(20,24,26,.14); --panel:#ffffff;
+  --paper:#ffffff; --paper2:#eceef0; --acc:#0e7c7b; --acc2:#3f9d9c; --chip:#e6eaec; --acc-text:#ffffff;
+  --disp:'Manrope',ui-sans-serif,system-ui,sans-serif;
+  --serif:'Lora',Georgia,serif;
+  --body:'Manrope',ui-sans-serif,system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(18px,5vw,48px)}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:60;background:rgba(236,238,240,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:.8rem;height:72px;max-width:1240px;margin:0 auto;padding:0 clamp(16px,5vw,48px)}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;min-width:0}
+.brand img{height:42px;width:auto;object-fit:contain;border-radius:6px}
+.brand-txt{min-width:0}
+.brand-word{font-family:var(--disp);font-weight:900;font-size:1.06rem;letter-spacing:-.01em;display:block;line-height:1.1}
+.brand-word i{color:var(--accent);font-style:normal}
+.brand-tag{display:block;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);font-weight:700}
+.nav-links{display:flex;gap:1.2rem;margin-left:auto;align-items:center}
+.nav-links a{text-decoration:none;color:var(--ink2);font-size:.88rem;font-weight:700;letter-spacing:.01em}
+.nav-links a:hover{color:var(--accent)}
+.nav-tel{font-weight:800;color:var(--ink);text-decoration:none;font-size:.9rem;white-space:nowrap;margin-left:.6rem}
+.nav-cta{margin-left:.6rem;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.82rem 1.35rem;border-radius:8px;text-decoration:none;font-weight:800;font-size:.92rem;transition:transform .15s ease,background .15s ease,color .15s ease,border-color .15s ease;border:1.5px solid transparent;cursor:pointer}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:var(--accent)}
+.btn.ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+@media(max-width:1000px){.nav-links{display:none}.nav-tel{display:none}}
+@media(max-width:430px){.nav-cta{padding:.72rem 1rem;font-size:.85rem}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;min-height:clamp(470px,62vh,660px);display:flex;align-items:center;padding:clamp(30px,5vw,66px) 0 clamp(24px,4vw,54px)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+.hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(236,238,240,.74) 0%,rgba(236,238,240,.30) 40%,rgba(236,238,240,.88) 100%)}
+.hero-in{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(18px,5vw,48px);display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(24px,3.6vw,58px);align-items:center}
+.hero-photo{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(20,24,26,.24);border:1px solid rgba(20,24,26,.10)}
+/* hero-photo uses gradient instead of stretched photo */
+.hero-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(118deg,rgba(255,255,255,0) 38%,rgba(255,255,255,.34) 51%,rgba(255,255,255,0) 66%);mix-blend-mode:screen}
+.hero-photo .ph-tag{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.94);color:var(--ink);padding:7px 14px;border-radius:6px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-family:var(--disp)}
+.hero-photo .hp-inset{position:absolute;right:14px;bottom:14px;width:120px;height:120px;object-fit:cover;border-radius:10px;border:3px solid #fff;box-shadow:0 10px 30px rgba(20,24,26,.35);z-index:2}
+@media(max-width:640px){.hero-photo .hp-inset{width:84px;height:84px}}
+@media(max-width:900px){.hero-in{grid-template-columns:1fr;gap:1.5rem;align-items:start}.hero-photo{order:2}.hero-photo img{height:min(32vh,300px)}}
+.hero-copy{min-width:0}
+/* surface strip — trade evidence inside the first viewport */
+.surfaces{padding:clamp(18px,2.6vw,34px) 0 0}
+.surface-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.surface-row figure{margin:0;position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--panel)}
+.surface-row img{width:100%;height:clamp(110px,15vh,170px);object-fit:cover;display:block}
+.surface-row figcaption{font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--ink2);padding:8px 10px;background:var(--panel)}
+@media(max-width:640px){.surfaces{display:none}}
+.kicker{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:var(--accent);margin-bottom:1.1rem}
+.kicker::before{content:"";width:32px;height:2px;background:var(--accent);flex:none}
+.hero h1{font-family:var(--disp);font-weight:900;font-size:clamp(2.35rem,6.4vw,5rem);line-height:1.03;letter-spacing:-.025em;max-width:15ch}
+.hero h1 em{font-family:var(--serif);font-style:italic;font-weight:600;color:var(--accent)}
+.lede{margin-top:1.25rem;max-width:60ch;color:var(--ink2);font-size:clamp(1rem,1.6vw,1.12rem)}
+.cta-row{display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.85rem}
+.hero-strip{list-style:none;display:flex;flex-wrap:wrap;gap:1rem 2.4rem;margin-top:2.3rem;padding-top:1.2rem;border-top:1px solid var(--line);max-width:920px}
+.hero-strip li{color:var(--ink2);font-size:.8rem}
+.hero-strip b{display:block;font-family:var(--disp);color:var(--ink);font-weight:900;font-size:1rem;letter-spacing:-.01em}
+
+/* ---------- sections ---------- */
+section{padding:clamp(48px,7vw,96px) 0}
+.sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:2.3rem;flex-wrap:wrap}
+.sec-idx{font-family:var(--disp);font-weight:800;font-size:.78rem;letter-spacing:.2em;color:var(--accent);flex:none}
+.sec-title{font-family:var(--disp);font-weight:900;font-size:clamp(1.7rem,3.6vw,2.7rem);letter-spacing:-.02em;line-height:1.08}
+.sec-lead{color:var(--ink2);max-width:62ch;margin-top:.65rem}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,258px),1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.6rem 1.5rem;position:relative;overflow:hidden;transition:transform .18s ease,border-color .18s ease}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.card::before{content:"";position:absolute;top:0;left:0;height:3px;width:46px;background:var(--accent);transition:width .3s ease}
+.card:hover::before{width:100%}
+.card .n{font-family:var(--disp);font-weight:800;color:var(--accent);font-size:.8rem;letter-spacing:.14em}
+.card h3{font-family:var(--disp);font-weight:800;font-size:1.12rem;margin:.5rem 0 .35rem;letter-spacing:-.01em}
+.card p{color:var(--ink2);font-size:.94rem}
+
+/* spec band — the signature "finish levels" */
+.spec{background:var(--ink);color:#fff;border-radius:16px;overflow:hidden}
+.spec-in{padding:clamp(28px,5vw,58px)}
+.spec .sec-idx{color:#7fc7c5}
+.spec .sec-title{color:#fff}
+.spec p.spec-lead{color:rgba(255,255,255,.7);max-width:62ch;margin-top:.6rem}
+.spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));margin-top:1.7rem;border-top:1px solid rgba(255,255,255,.16)}
+.spec-item{padding:1.5rem 1.3rem;border-bottom:1px solid rgba(255,255,255,.12)}
+.spec-item .sn{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#8fb7b5;font-weight:800}
+.spec-item b{display:block;font-family:var(--disp);font-weight:900;font-size:1.5rem;margin:.5rem 0 .35rem;letter-spacing:-.01em}
+.spec-item span{color:rgba(255,255,255,.72);font-size:.9rem}
+.sheen{height:8px;border-radius:4px;margin-top:.9rem}
+.sheen.gloss{background:linear-gradient(90deg,#8fa0a3,#ffffff 46%,#7f9295)}
+.sheen.honed{background:linear-gradient(90deg,#9aa7aa,#eef1f2 46%,#94a1a4)}
+.sheen.matte{background:linear-gradient(90deg,#93a0a3,#dfe4e5 46%,#a2adaf)}
+
+/* process */
+.steps{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.5rem 1.4rem}
+.step .sn{font-family:var(--disp);font-weight:900;font-size:1.7rem;line-height:1;color:var(--accent)}
+.step h3{font-family:var(--disp);font-weight:800;font-size:1.04rem;margin:.6rem 0 .3rem}
+.step p{color:var(--ink2);font-size:.9rem}
+
+/* areas */
+.area-list{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;margin-top:1.5rem}
+.area-list li{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:.5rem .95rem;font-size:.85rem;font-weight:700;color:var(--ink2)}
+
+/* faq */
+details.faq{border-top:1px solid var(--line);padding:1.15rem 0}
+details.faq:last-of-type{border-bottom:1px solid var(--line)}
+details.faq summary{font-family:var(--disp);font-weight:800;font-size:1.04rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:flex-start}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";color:var(--accent);font-weight:400;font-size:1.5rem;line-height:.9;flex:none}
+details.faq[open] summary::after{content:"\2212"}
+details.faq .a{color:var(--ink2);padding-top:.7rem;max-width:68ch}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:clamp(40px,6vw,72px) 0 0;background:var(--bg2)}
+.foot-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:2rem;max-width:1240px;margin:0 auto;padding:0 clamp(18px,5vw,48px)}
+footer h4{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;font-weight:800;font-family:var(--disp)}
+footer a{display:block;text-decoration:none;color:var(--ink2);font-size:.9rem;padding:.22rem 0}
+footer a:hover{color:var(--accent)}
+.foot-brand{display:flex;align-items:center;gap:.7rem}
+.foot-brand img{height:44px;width:44px;border-radius:10px;flex:none}
+.foot-line{color:var(--ink2);font-size:.9rem;max-width:32ch;margin-top:1rem}
+.foot-bottom{border-top:1px solid var(--line);max-width:1240px;margin:2.3rem auto 0;padding:1.2rem clamp(18px,5vw,48px) 2.2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.78rem;color:var(--ink2)}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}}
+
+/* reveal — content is visible by default; .on plays a soft entrance (never hides content) */
+.rv{opacity:1}
+@keyframes rvIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.rv.on{animation:rvIn .6s ease both}
+@media (prefers-reduced-motion: reduce){
+  .rv.on{animation:none}
+  *{animation-duration:.001s!important;transition-duration:.001s!important}
+}
+</style>
+<noscript><style>html.js .rv{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+a.brand-monogram{display:none!important}
+</style>
+</head>
+<body>
+<script>document.documentElement.className+=' js';</script>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav-in">
+    <a class="brand" href="#top"><span class="brand-txt"><span class="brand-word">Bradshaw <i>Polished Concrete</i></span><span class="brand-tag">Boolaroo &middot; Lake Macquarie</span></span></a>
+    <div class="nav-links"><a href="#services">Services</a><a href="#finish">Finishes</a><a href="#process">Process</a><a href="#areas">Areas</a><a href="#faq">FAQ</a></div>
+    <a class="nav-tel" href="tel:+61457638292">0457 638 292</a>
+    <a class="btn primary nav-cta" href="#quote">Get a quote</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-scrim"></div>
+  <div class="hero-in">
+    <div class="hero-copy">
+      <p class="kicker">Polished concrete &mdash; Boolaroo &amp; Lake Macquarie</p>
+      <h1>Polished concrete floors that read like <em>glass</em>.</h1>
+      <p class="lede">Concrete floors and slabs ground back, densified and sealed to a hard, low-sheen surface that reflects the room back at you. Polishing, grinding and sealing across Lake Macquarie and Newcastle.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#quote">Get a free quote</a>
+        <a class="btn ghost" href="tel:+61457638292">Call 0457 638 292</a>
+      </div>
+      <ul class="hero-strip">
+        <li><b>5.0</b>Google rating</li>
+        <li><b>Grinding &middot; Polishing &middot; Sealing</b>The polished-concrete specialist</li>
+        <li><b>Boolaroo</b>Lake Macquarie &amp; Newcastle</li>
+      </ul>
+    </div>
+    <figure class="hero-photo"><img src="assets/hv3.jpg" alt="Polished concrete floor in a finished interior, reflecting the room"><img class="hp-inset" src="assets/work2.jpg" alt="Aggregate detail in the polished concrete surface"><span class="ph-tag">Polished concrete</span></figure>
+  </div>
+</header>
+
+<section class="surfaces" aria-label="Concrete finishes">
+  <div class="wrap">
+    <div class="surface-row">
+      <figure><img src="assets/work2.jpg" alt="Polished concrete surface with the aggregate showing through"><figcaption>Exposed aggregate</figcaption></figure>
+      <figure><img src="assets/hv3.jpg" alt="Polished concrete floor reflecting the room"><figcaption>Gloss finish</figcaption></figure>
+      <figure><img src="assets/hv2.jpg" alt="Concrete being ground and prepared on site"><figcaption>Grinding &amp; prep</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head"><div><h2 class="sec-title">What we polish.</h2><p class="sec-lead">Concrete floors and slabs prepared properly &mdash; cut back in measured passes, densified, then sealed. The surface is the product.</p></div></div>
+    <div class="grid">
+      <div class="card rv"><h3>Concrete polishing</h3><p>New and existing slabs ground back to a polished finish, with the aggregate showing through and the floor reading like glass.</p></div>
+      <div class="card rv"><h3>Concrete grinding</h3><p>Diamond grinding to level the slab, cut back the surface and open the concrete so the polish takes evenly.</p></div>
+      <div class="card rv"><h3>Sealing &amp; densifying</h3><p>A penetrating densifier and sealer harden the surface, shut out stains and make the floor easy to sweep and mop.</p></div>
+      <div class="card rv"><h3>Honed &amp; matte floors</h3><p>Where a full gloss is not wanted, the same floor honed and sealed to a softer, matte sheen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="finish">
+  <div class="wrap">
+    <div class="spec rv">
+      <div class="spec-in">
+        <div class="sec-head"><div><h2 class="sec-title">Three finishes, one surface.</h2><p class="spec-lead">The grade you choose is the amount of gloss left in the concrete &mdash; everything else stays the same: ground, densified and sealed.</p></div></div>
+        <div class="spec-grid">
+          <div class="spec-item"><span class="sn">Finish 01</span><b>High gloss</b><span>A sharp, mirror-like reflection. The floor bounces the room back at you.</span><div class="sheen gloss"></div></div>
+          <div class="spec-item"><span class="sn">Finish 02</span><b>Honed</b><span>A soft, satin sheen. Reflects the light without the hard mirror.</span><div class="sheen honed"></div></div>
+          <div class="spec-item"><span class="sn">Finish 03</span><b>Matte</b><span>A flat, even surface for an understated look that hides marks.</span><div class="sheen matte"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head"><div><h2 class="sec-title">How a floor is done.</h2></div></div>
+    <div class="steps">
+      <div class="step rv"><h3>Check the slab</h3><p>We inspect the concrete, the finish you want and the access, then price it properly.</p></div>
+      <div class="step rv"><h3>Firm quote</h3><p>A written price before we bring the grinder on site.</p></div>
+      <div class="step rv"><h3>Grind &amp; densify</h3><p>The slab is cut back in steps and densified so the polish holds.</p></div>
+      <div class="step rv"><h3>Polish &amp; seal</h3><p>Polished to the agreed sheen, sealed, cleaned and walked with you before we pack up.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="areas">
+  <div class="wrap">
+    <div class="sec-head"><div><h2 class="sec-title">Where we work.</h2><p class="sec-lead">Based at Boolaroo, polishing floors across Lake Macquarie, Newcastle and the surrounding suburbs. Call to confirm we cover your area.</p></div></div>
+    <ul class="area-list rv">
+      <li>Boolaroo</li><li>Lake Macquarie</li><li>Newcastle</li><li>Warners Bay</li><li>Belmont</li><li>Cardiff</li><li>Speers Point</li><li>Wallsend</li><li>Charlestown</li><li>Maitland</li><li>Toronto</li><li>Swansea</li>
+    </ul>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap" style="max-width:900px">
+    <div class="sec-head"><div><h2 class="sec-title">Asked on every floor.</h2></div></div>
+    <details class="faq rv"><summary>Do you polish existing concrete slabs?</summary><div class="a">Yes. Existing concrete can be ground back, repaired and polished &mdash; it does not have to be a new pour.</div></details>
+    <details class="faq rv"><summary>What finish can I get?</summary><div class="a">From a full high-gloss polish through to a honed satin or a flat matte, depending on the slab and the aggregate showing through it.</div></details>
+    <details class="faq rv"><summary>How is the surface sealed?</summary><div class="a">The slab is densified, then sealed, so the floor resists staining and wipes clean. The finish is walked with you before handover.</div></details>
+    <details class="faq rv"><summary>What does it cost?</summary><div class="a">The price depends on floor size, the condition of the slab and the finish you choose &mdash; we give a firm written quote after checking the slab.</div></details>
+    <details class="faq rv"><summary>Which areas do you cover?</summary><div class="a">Boolaroo and across Lake Macquarie, Newcastle and the surrounding suburbs &mdash; call to confirm your area.</div></details>
+  </div>
+</section>
+
+<span id="quote" style="display:block;height:0;scroll-margin-top:90px"></span>
+<section id="lbq" aria-labelledby="lbq-h">
+<style>
+#lbq{--lbq-accent:var(--acc);--lbq-ink:var(--ink);--lbq-muted:var(--ink2);--lbq-bg:var(--paper2);--lbq-panel:#fff;--lbq-line:var(--line);padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
+@media(max-width:900px){#lbq .lbq-w{grid-template-columns:1fr}}
+#lbq h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0 0 10px;letter-spacing:-.02em;font-family:var(--disp)}
+#lbq p.lbq-s{margin:0 0 22px;color:var(--lbq-muted);max-width:52ch}
+#lbq .lbq-info{display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--lbq-line);padding-top:22px}
+#lbq .lbq-info div{display:flex;gap:10px;align-items:baseline}
+#lbq .lbq-info b{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lbq-accent);min-width:64px}
+#lbq .lbq-info a{font-weight:800;text-decoration:none}
+#lbq .lbq-f{display:grid;gap:12px;background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
+#lbq label{display:block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--paper);color:var(--ink);font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:var(--lbq-acc-text,#0b0e12);font:inherit;font-weight:800;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* mobile overflow guard 2026-10-14 */
+html,body{overflow-x:hidden}
+@media (max-width:820px){
+  h1,h2,h3,.h1,.hero h1,.sec-title,.k,.kicker,.kick,.eyebrow,.tag-line,.tag,.hero-kicker,.hero-sub,.lead{
+    white-space:normal!important;overflow-wrap:anywhere;word-break:break-word;max-width:100%!important}
+  .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(10px,3.1vw,13px)!important;letter-spacing:.22em!important}
+  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.05!important}
+}
+</style>
+<div class="lbq-w">
+  <div>
+    <h2 id="lbq-h">Get a free quote</h2>
+    <p class="lbq-s">Tell us about the job and we&rsquo;ll come back with a firm price &mdash; no surprises, no obligation.</p>
+    <div class="lbq-info">
+      <div><b>Call</b><a href="tel:+61457638292">0457 638 292</a></div>
+      
+      <div><b>Area</b><span>Boolaroo, Lake Macquarie &amp; Newcastle, NSW</span></div>
+    </div>
+  </div>
+  <form id="lbq-form" novalidate data-site="gmaps-bradshaw" data-biz="Bradshaw Polished Concrete">
+    <div class="lbq-f">
+      <div class="lbq-g">
+        <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+        <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
+        <div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
+        <div class="lbq-full"><label for="lbq-svc">Service</label>
+          <select id="lbq-svc" name="service"><option>New polished concrete floor</option><option>Grind &amp; seal existing slab</option><option>Honed / matte finish</option><option>Garage or shed floor</option><option>Driveway polish</option><option>Other</option></select>
+        </div>
+        <div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Floor size, slab type, finish you want, timing…" required></textarea></div>
+      </div>
+      <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
+      <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit">Send quote request</button>
+      <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+</div>
+<script>
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = B + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand"><img src="assets/logo.png" alt="Bradshaw Polished Concrete"><span><span class="brand-word">Bradshaw <i>Polished Concrete</i></span><span class="brand-tag">Boolaroo &middot; Lake Macquarie</span></span></div>
+      <p class="foot-line">Polishing, grinding and sealing concrete floors &mdash; Lake Macquarie &amp; Newcastle, NSW.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="#services">Concrete polishing</a><a href="#services">Concrete grinding</a><a href="#services">Sealing &amp; densifying</a><a href="#finish">Honed &amp; matte finishes</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="tel:+61457638292">0457 638 292</a>
+      <a href="https://facebook.com/bradshawpolishedconcrete" rel="nofollow noopener" target="_blank">Facebook</a>
+      <a href="#quote">Request a quote</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 Bradshaw Polished Concrete &middot; Boolaroo, NSW 2284</span>
+    <a href="tel:+61457638292" style="display:inline">0457 638 292</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!els.length) return;
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+    },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    Array.prototype.forEach.call(els,function(el){ io.observe(el); });
+  } else {
+    Array.prototype.forEach.call(els,function(el){ el.classList.add('on'); });
+  }
+})();
+setTimeout(function(){ document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('on'); }); },1100);
+</script>
+<script>
+/* Mirror-finish hero: a polished concrete slab in perspective, control joints,
+   aggregate speckle and a light-sweep sheen travelling across the surface. */
+(function(){
+  var c=document.getElementById('heroCanvas');
+  if(!c||!c.getContext) return;
+  var ctx=c.getContext('2d');
+  var DPR=Math.min(window.devicePixelRatio||1,2);
+  var W=0,H=0;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px=0,py=0;
+  window.addEventListener('pointermove',function(e){
+    px=((e.clientX/(window.innerWidth||1))-0.5)*20;
+    py=((e.clientY/(window.innerHeight||1))-0.5)*12;
+  },{passive:true});
+  function resize(){
+    W=c.clientWidth||c.offsetWidth||0;
+    H=c.clientHeight||c.offsetHeight||0;
+    if(!isFinite(W)||!isFinite(H)||W<=0||H<=0) return;
+    c.width=Math.round(W*DPR); c.height=Math.round(H*DPR);
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+  function animate(ts){
+    if(!isFinite(W)||!isFinite(H)||W<=0||H<=0){ resize(); if(!reduce) requestAnimationFrame(animate); return; }
+    var t=((isFinite(ts)?ts:0))*0.001;
+    var hy=H*0.40;
+    var g=ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,'#f6f8f8'); g.addColorStop(0.55,'#e8eced'); g.addColorStop(1,'#dadee0');
+    ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+    var fg=ctx.createLinearGradient(0,hy,0,H);
+    fg.addColorStop(0,'#cdd4d6'); fg.addColorStop(1,'#98a2a5');
+    ctx.beginPath(); ctx.moveTo(0,hy); ctx.lineTo(W,hy); ctx.lineTo(W,H); ctx.lineTo(0,H); ctx.closePath();
+    ctx.fillStyle=fg; ctx.fill();
+    for(var gr=0;gr<900;gr++){
+      var gx=(gr*53.7+t*2)%W, gy=(gr*97.3)%H;
+      ctx.fillStyle='rgba(20,24,26,'+(0.016+0.018*Math.sin(t*0.8+gr))+')';
+      ctx.fillRect(gx,gy,1.1,1.1);
+    }
+    for(var s=0;s<150;s++){
+      var sx=(s*167+t*7)%W; var sy=hy+((s*97)%(H-hy));
+      var tw=0.5+0.5*Math.sin(t*1.4+s);
+      ctx.fillStyle='rgba(20,24,26,'+(0.05+tw*0.11)+')';
+      ctx.beginPath(); ctx.arc(sx+px*0.3,sy,0.5+(s%3)*0.35+tw*0.6,0,Math.PI*2); ctx.fill();
+    }
+    for(var s2=0;s2<70;s2++){
+      var ax=(s2*211-t*5)%W; if(ax<0) ax+=W;
+      var ay=hy+((s2*131)%(H-hy));
+      ctx.fillStyle='rgba(255,255,255,'+(0.10+0.10*Math.sin(t*1.1+s2))+')';
+      ctx.beginPath(); ctx.arc(ax,ay,0.9,0,Math.PI*2); ctx.fill();
+    }
+    var sweep=(t*46)%(W+560)-280;
+    ctx.save();
+    ctx.beginPath(); ctx.moveTo(0,hy); ctx.lineTo(W,hy); ctx.lineTo(W,H); ctx.lineTo(0,H); ctx.closePath(); ctx.clip();
+    ctx.translate(sweep,0); ctx.rotate(-0.18);
+    var sg=ctx.createLinearGradient(0,0,260,0);
+    sg.addColorStop(0,'rgba(255,255,255,0)'); sg.addColorStop(0.5,'rgba(255,255,255,0.60)'); sg.addColorStop(1,'rgba(255,255,255,0)');
+    ctx.fillStyle=sg; ctx.fillRect(-40,hy-40,320,H-hy+80);
+    ctx.restore();
+    var cx=W*0.74+px*0.4, cy=H*0.42+py*0.3, R=Math.min(W,H)*0.7;
+    var rg=ctx.createRadialGradient(cx,cy,8,cx,cy,R*1.6);
+    rg.addColorStop(0,'rgba(14,124,123,0.11)'); rg.addColorStop(1,'rgba(14,124,123,0)');
+    ctx.fillStyle=rg; ctx.fillRect(0,0,W,H);
+    var tg=ctx.createLinearGradient(0,0,0,hy);
+    tg.addColorStop(0,'rgba(255,255,255,0.45)'); tg.addColorStop(1,'rgba(255,255,255,0)');
+    ctx.fillStyle=tg; ctx.fillRect(0,0,W,hy);
+    if(!reduce) requestAnimationFrame(animate);
+  }
+  resize();
+  window.addEventListener('resize',resize);
+  requestAnimationFrame(animate);
+})();
+</script>
+</body>
+</html>
