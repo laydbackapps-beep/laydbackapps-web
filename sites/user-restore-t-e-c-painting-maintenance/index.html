@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T.E.C Painting &amp; Maintenance — Painting and property maintenance</title>
+<meta name="description" content="T.E.C Painting &amp; Maintenance — interior and exterior repaints, patching, trims and the maintenance jobs that keep a property finished.">
+<meta name="theme-color" content="#121110">
+<meta property="og:title" content="T.E.C Painting &amp; Maintenance">
+<meta property="og:description" content="Interior and exterior repaints, prep and maintenance — straight lines, even coats.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1210; --panel:#161a17; --panel2:#1c211d; --line:#2d332e; --line2:#454d47;
+  --fg:#f2f0e8; --dim:#b3b8ae; --mute:#868c82;
+  --acc:#8fbf9b; --acc-ink:#0c150f; --acc-soft:#b6d6bd;
+  --disp:'Archivo',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4.2vw,56px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip;max-width:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-family:var(--disp);font-weight:800;letter-spacing:-.02em;line-height:1.04}
+p{margin:0}
+.wrap{max-width:1300px;margin:0 auto;padding-inline:var(--gut)}
+.eyebrow{font-family:var(--disp);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:inline-flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:34px;height:3px;background:var(--acc);flex:none}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:60;background:rgba(18,17,16,.86);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+.nav.solid{background:rgba(18,17,16,.97);border-bottom-color:var(--line)}
+.nav-in{display:flex;align-items:center;gap:clamp(10px,2vw,30px);padding-block:13px}
+.brand{display:flex;align-items:center;gap:12px;flex:none;min-width:0}
+.brand-mark{width:52px;height:52px;flex:none;position:relative;overflow:hidden;background:var(--panel);border:1px solid var(--line2);border-radius:2px}
+.brand-mark::before{content:"";position:absolute;inset:0 0 42% 0;background:var(--acc)}
+.brand-mark::after{content:"";position:absolute;left:9px;top:60%;width:22px;height:5px;background:var(--fg);transform:rotate(-28deg);transform-origin:0 50%;box-shadow:-6px 0 0 0 var(--fg),22px 12px 0 -1px var(--fg)}
+.mark-line{position:absolute;right:0;bottom:0;width:38%;height:36%;background:repeating-linear-gradient(90deg,var(--fg) 0 2px,transparent 2px 7px);opacity:.4}
+.brand-t{font-family:var(--disp);font-weight:900;font-size:24px;letter-spacing:.1em;line-height:1;text-transform:uppercase;white-space:nowrap}
+.brand-t em{font-style:normal;color:var(--acc)}
+.brand-t small{display:block;font-family:var(--body);font-weight:500;font-size:10px;letter-spacing:.22em;color:var(--dim);margin-top:6px;text-transform:uppercase}
+.nav-links{display:flex;gap:clamp(12px,1.7vw,26px);margin-left:auto;font-family:var(--disp);font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--dim)}
+.nav-links a{padding:6px 0;border-bottom:2px solid transparent}
+.nav-links a:hover{color:#fff;border-bottom-color:var(--acc)}
+.nav-tel{flex:none;font-family:var(--disp);font-weight:700;font-size:14px;letter-spacing:.02em;border:1px solid var(--line2);padding:10px 15px;white-space:nowrap}
+.nav-tel:hover{border-color:var(--acc);color:var(--acc-soft)}
+.nav-cta{flex:none;font-family:var(--disp);font-weight:800;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;background:var(--acc);color:var(--acc-ink);padding:12px 18px;white-space:nowrap}
+.nav-cta:hover{filter:brightness(1.08)}
+.burger{display:none;background:none;border:1px solid var(--line2);color:#fff;padding:9px 11px;cursor:pointer;margin-left:auto}
+.burger span{display:block;width:20px;height:2px;background:currentColor;margin:4px 0;transition:.25s}
+.burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:1000px){
+  .nav-links{position:fixed;inset:70px 0 auto 0;background:rgba(18,17,16,.98);flex-direction:column;padding:1.2rem var(--gut) 1.6rem;gap:.2rem;transform:translateY(-160%);transition:transform .3s ease;border-bottom:1px solid var(--line);font-size:15px}
+  .nav-links.open{transform:none}
+  .nav-links a{padding:.75rem 0;border-bottom:1px solid var(--line)}
+  .nav-tel,.nav-cta{display:none}
+  .burger{display:block}
+  .brand-t small{display:none}
+}
+
+/* hero — CSS paint-bench scene, no stock photo */
+.hero{position:relative;overflow:hidden;padding-top:104px;background:
+   radial-gradient(90% 80% at 84% 10%,rgba(143,191,155,.14) 0%,rgba(143,191,155,0) 60%),
+   linear-gradient(180deg,#141814 0%,#0f1210 64%,#0f1210 100%)}
+.hero-in{position:relative;z-index:3;padding-bottom:clamp(48px,7vw,92px);max-width:1360px;margin:0 auto;padding-inline:var(--gut)}
+/* the wall, mid-repaint */
+.roll-scene{position:absolute;right:-3vw;bottom:0;width:min(52vw,640px);height:74%;z-index:1;pointer-events:none;perspective:1300px;perspective-origin:20% 50%}
+.roll-wall{position:absolute;inset:0;transform:rotateY(-17deg) rotateX(3deg);transform-origin:0 50%;background:linear-gradient(155deg,#1f1d19,#141311 62%,#121110);border-left:1px solid rgba(245,242,236,.14);box-shadow:-40px 0 80px rgba(0,0,0,.55);overflow:hidden}
+.roll-wall::before{content:"";position:absolute;left:0;right:0;bottom:0;height:58%;background:
+   repeating-linear-gradient(96deg,rgba(255,255,255,.05) 0 2px,rgba(0,0,0,.035) 2px 5px),
+   linear-gradient(178deg,#f3eee3 0%,#e6dfd0 58%,#d8cfbd 100%)}
+.roll-wall::after{content:"";position:absolute;left:0;right:0;bottom:58%;height:4px;background:linear-gradient(90deg,rgba(255,255,255,.95),rgba(255,255,255,.6));filter:blur(1px);box-shadow:0 -6px 18px rgba(255,255,255,.22)}
+.roll-drip{position:absolute;left:38%;bottom:calc(58% - 26px);width:5px;height:26px;background:#f3eee3;border-radius:0 0 4px 4px;opacity:.9}
+.roll-drip.b{left:63%;height:16px;width:4px;opacity:.7}
+.roll-tape{position:absolute;left:0;right:0;height:16px;background:repeating-linear-gradient(90deg,rgba(240,232,214,.85) 0 22px,rgba(214,203,180,.85) 22px 44px);opacity:.75}
+.roll-tape.t{top:16%}
+.roll-tape.b{bottom:6%}
+.roll-tool{position:absolute;right:9%;top:44%;width:clamp(120px,15vw,190px);height:26px;transform:rotate(-13deg);z-index:2}
+.roll-tool i{position:absolute;inset:0;border-radius:13px;background:linear-gradient(180deg,#5a5248,#2c2822);box-shadow:0 10px 24px rgba(0,0,0,.5)}
+.roll-tool i::after{content:"";position:absolute;inset:3px 6px;border-radius:10px;background:repeating-linear-gradient(90deg,#6e6558 0 3px,#443e36 3px 6px);opacity:.85}
+.roll-tool b{position:absolute;right:-6px;top:9px;width:14px;height:14px;border-radius:50%;background:#8d8478}
+.roll-tool u{position:absolute;right:-46px;top:13px;width:44px;height:7px;background:#6c6458;transform:rotate(24deg);transform-origin:0 50%;border-radius:4px}
+.roll-shadow{position:absolute;inset:auto 0 0 0;height:22%;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,0))}
+@media(max-width:900px){
+  .roll-scene{width:76vw;height:44%;opacity:.5;right:-16vw}
+  .roll-tool{display:none}
+}
+.hero h1{font-size:clamp(42px,7.6vw,104px);line-height:.94;letter-spacing:-.035em;text-transform:uppercase;font-weight:900;max-width:15ch;margin-top:22px}
+.hero h1 .acc{color:var(--acc-soft)}
+.hero-sub{margin-top:22px;color:#e7e2d9;font-size:clamp(1rem,1.5vw,1.16rem);max-width:54ch}
+.hero-cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:16px 26px;font-family:var(--disp);font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;transition:transform .15s,filter .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--acc);color:var(--acc-ink)}
+.btn-ghost{border:1.5px solid rgba(242,240,232,.5);color:#fff}
+.btn-ghost:hover{border-color:#fff;background:rgba(242,240,232,.08)}
+/* one primary action: the phone. quote form is the quieter second path */
+.hero-cta .btn-primary{background:var(--acc);border:1.5px solid var(--acc);color:var(--acc-ink);padding:16px 30px;font-size:13px}
+.hero-cta .hero-tel{background:transparent;border:0;padding:16px 0 16px 6px;color:#fff;border-bottom:1px solid rgba(242,240,232,.32);font-family:var(--body);font-weight:600;font-size:15px;letter-spacing:0;text-transform:none}
+.hero-cta .hero-tel:hover{color:#fff;border-bottom-color:var(--acc)}
+.hero-strip{display:flex;gap:clamp(22px,4vw,64px);flex-wrap:wrap;margin-top:44px;padding-top:22px;border-top:1px solid rgba(245,242,236,.16);position:relative;z-index:2}
+.hero-strip p{font-family:var(--disp);font-size:11.5px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--dim)}
+.hero-strip strong{display:block;color:#fff;font-family:var(--disp);font-weight:800;font-size:1.02rem;margin-top:6px;letter-spacing:.01em}
+@media(max-width:820px){
+  .hero{padding-top:88px}
+  .hero-swatches{width:70vw;height:52%;opacity:.5;right:-6vw}
+  .hero h1{font-size:clamp(34px,10vw,52px);max-width:100%}
+  .hero-in{padding-bottom:44px}
+  .hero-strip{gap:16px 26px;margin-top:30px}
+  .hero-strip p{font-size:11px}
+}
+
+/* sections */
+section{padding:clamp(56px,7.6vw,100px) 0}
+.band{background:var(--panel);border-block:1px solid var(--line)}
+.run-steps{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,4vw,56px);margin-top:clamp(18px,2.6vw,30px);max-width:1080px}
+.run-steps>div{display:grid;grid-template-columns:2.4rem minmax(0,1fr);gap:0 1rem;padding:18px 0;border-top:1px solid var(--line);align-content:start}
+.run-steps span{font-family:var(--disp);font-size:11px;letter-spacing:.16em;color:var(--acc);font-weight:800;padding-top:3px}
+.run-steps h3{font-family:var(--disp);text-transform:uppercase;font-size:1.1rem;font-weight:800;letter-spacing:.02em;color:#fff}
+.run-steps p{grid-column:2;color:var(--dim);font-size:.94rem;margin-top:6px}
+@media(max-width:820px){.run-steps{grid-template-columns:1fr}}
+.sec-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:clamp(28px,3.6vw,48px);max-width:900px}
+.sec-idx{font-family:var(--disp);font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--acc);margin-top:10px;flex:none}
+.sec-title{font-size:clamp(1.85rem,3.9vw,3rem);font-weight:900;text-transform:uppercase;line-height:1;max-width:24ch}
+.lead{color:var(--dim);max-width:62ch;margin-top:14px;font-size:1.03rem}
+
+.hero-tel{display:inline-flex;align-items:center;font-family:var(--disp);font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--dim);text-transform:uppercase;border-bottom:1px solid var(--line2);padding-bottom:2px}
+.hero-tel:hover{color:#fff;border-bottom-color:var(--acc)}
+
+.svc-list{border-top:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:64px minmax(180px,.9fr) 1.6fr;gap:clamp(14px,3vw,44px);align-items:baseline;padding:clamp(20px,2.6vw,30px) 0;border-bottom:1px solid var(--line);transition:background .2s}
+.svc:hover{background:rgba(255,255,255,.02)}
+.svc-n{font-family:var(--disp);font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--acc)}
+.svc h3{font-size:clamp(1.15rem,2.1vw,1.55rem);text-transform:uppercase;letter-spacing:.01em}
+.svc p{color:var(--dim);font-size:.98rem;max-width:62ch}
+@media(max-width:760px){.svc{grid-template-columns:40px 1fr;gap:10px 16px}.svc p{grid-column:2}}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(18px,2.4vw,34px)}
+.step{border-top:2px solid var(--acc);padding-top:18px}
+.step-n{font-family:var(--disp);font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--acc-soft)}
+.step h3{font-size:1.08rem;margin:.45rem 0 .35rem;text-transform:uppercase}
+.step p{color:var(--dim);font-size:.94rem}
+
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(18px,2.4vw,32px)}
+.trust div{border-left:2px solid var(--line2);padding-left:18px}
+.trust b{display:block;font-family:var(--disp);font-size:1rem;text-transform:uppercase;letter-spacing:.02em;margin-bottom:3px}
+.trust span{font-size:.93rem;color:var(--dim)}
+
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:var(--gut)}
+.strip div{background:var(--panel);padding:20px 22px}
+.strip b{display:block;font-family:var(--disp);font-weight:900;font-size:1.05rem;text-transform:uppercase}
+.strip span{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--mute)}
+
+details.faq{border-top:1px solid var(--line);padding:22px 0;max-width:860px}
+details.faq:last-of-type{border-bottom:1px solid var(--line)}
+details.faq summary{font-family:var(--disp);font-size:1.06rem;font-weight:800;text-transform:uppercase;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:18px}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:24px;color:var(--acc);font-weight:400;line-height:1}
+details.faq[open] summary::after{transform:rotate(45deg)}
+details.faq .a{color:var(--dim);padding:14px 0 2px;max-width:70ch}
+
+footer{border-top:1px solid var(--line);padding:60px 0 0;background:#0e0d0c}
+.fwrap{max-width:1300px;margin:0 auto;padding:0 var(--gut);display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px}
+footer h4{font-family:var(--disp);font-size:11.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin:0 0 14px}
+footer a{display:block;color:var(--dim);font-size:14.5px;padding:5px 0}
+footer a:hover{color:#fff}
+.fbar{max-width:1300px;margin:44px auto 0;padding:20px var(--gut);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--mute)}
+@media(max-width:860px){.fwrap{grid-template-columns:1fr 1fr}}
+
+/* quote form */
+#lbq{padding:clamp(54px,7vw,88px) var(--gut);background:var(--panel);border-top:1px solid var(--line)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(28px,4vw,52px);align-items:start}
+@media(max-width:900px){#lbq .lbq-w{grid-template-columns:1fr}}
+#lbq h2{font-size:clamp(1.7rem,3.6vw,2.4rem);margin:0 0 10px;text-transform:uppercase;line-height:1}
+#lbq p.lbq-s{margin:14px 0 24px;color:var(--dim);max-width:46ch}
+#lbq .lbq-info{display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--line);padding-top:22px}
+#lbq .lbq-info div{display:flex;gap:12px;align-items:baseline}
+#lbq .lbq-info b{font-family:var(--disp);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);min-width:70px}
+#lbq .lbq-info a,#lbq .lbq-info span{font-weight:700;font-size:1rem;color:#fff}
+#lbq .lbq-f{display:grid;gap:14px;background:var(--bg);border:1px solid var(--line);padding:clamp(20px,3vw,30px)}
+#lbq .lbq-g{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){#lbq .lbq-g{grid-template-columns:1fr}}
+#lbq .lbq-full{grid-column:1/-1}
+#lbq label{display:block;font-family:var(--disp);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:13px 14px;border:1px solid var(--line2);background:#191816;color:#fff;font:inherit;font-size:.96rem;border-radius:2px}
+#lbq textarea{min-height:100px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--acc);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:4px;padding:15px 22px;border:0;background:var(--acc);color:var(--acc-ink);font-family:var(--disp);font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--dim);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:2px;font-size:.86rem;color:var(--dim);text-transform:none;letter-spacing:0;font-family:var(--body);font-weight:400}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.drop{opacity:1}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav"><div class="wrap nav-in">
+  <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i class="mark-line"></i></span><span class="brand-t">T.E.C <em>Painting</em><small>&amp; Maintenance</small></span></a>
+  <div class="nav-links" id="navlinks"><a href="#services">Services</a><a href="#why">Why T.E.C</a><a href="#faq">Questions</a><a href="#quote">Quote</a></div>
+  <a class="nav-tel" href="tel:+61439206444">0439 206 444</a>
+  <a class="nav-cta" href="#quote">Get a quote</a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="roll-scene" aria-hidden="true">
+    <div class="roll-wall"></div>
+    <span class="roll-tape t"></span><span class="roll-tape b"></span>
+    <span class="roll-drip"></span><span class="roll-drip b"></span>
+  </div>
+  <div class="hero-in">
+    <span class="eyebrow">Repaints &middot; repairs &middot; touch-ups</span>
+    <h1>The wall gets fixed<br><span class="acc">before it gets colour.</span></h1>
+    <p class="hero-sub">Holes filled and set, trim sanded back, edges taped and cut in by hand — then the coats go on. Repaints, repairs and the touch-ups in between, scoped in one walk-through and priced in writing.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#quote">Get a quote</a>
+      <a class="hero-tel" href="tel:+61439206444">or call 0439 206 444</a>
+    </div>
+    <div class="hero-strip">
+      <p>Scope<strong>Interior &amp; exterior</strong></p>
+      <p>Prep<strong>Patch, fill &amp; sand</strong></p>
+      <p>Finish<strong>Low sheen to enamel</strong></p>
+    </div>
+  </div>
+</header>
+
+<section id="services"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">01</span><div><h2 class="sec-title">What we take on</h2><p class="lead">One scope from repair to clean down — holes filled and set, edges sanded, masking on, coats rolled and laid off, tape pulled while the paint is still green.</p></div></div>
+  <div class="svc-list">
+    <div class="svc"><span class="svc-n">01</span><h3>Interior repaints</h3><p>Walls and ceilings patched, sanded and coated — low sheen on the broad areas, washable where hands and steam land.</p></div>
+    <div class="svc"><span class="svc-n">02</span><h3>Exterior repaints</h3><p>Weatherboards, render, eaves and fascias scraped back where they have let go, primed, then coated to take the weather.</p></div>
+    <div class="svc"><span class="svc-n">03</span><h3>Trims, doors &amp; skirts</h3><p>Architraves, skirting and doors sanded between coats and finished in enamel so they wipe clean instead of scuffing.</p></div>
+    <div class="svc"><span class="svc-n">04</span><h3>Patch &amp; repair</h3><p>Holes filled, cracks set and cornice lines squared before paint — the part of the job that is invisible when it is done right.</p></div>
+    <div class="svc"><span class="svc-n">05</span><h3>Feature walls</h3><p>One wall pulled hard and cut in by hand, with the colour sampled on the wall against the room's own light first.</p></div>
+    <div class="svc"><span class="svc-n">06</span><h3>Maintenance &amp; touch-ups</h3><p>Scuffed walls, damaged sections and the small jobs between full repaints — same prep, smaller scope.</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="why"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">02</span><div><h2 class="sec-title">How a job runs</h2><p class="lead">Four things happen between the first walk-through and the day you get the room back.</p></div></div>
+  <div class="run-steps">
+    <div><span>01</span><h3>Walk &amp; price</h3><p>Surfaces looked over, scope measured — the number in writing before anything is shifted.</p></div>
+    <div><span>02</span><h3>Prep</h3><p>Holes filled and set, peeling scraped back, trim sanded, floors masked.</p></div>
+    <div><span>03</span><h3>Paint</h3><p>Edges cut in by hand, broad areas rolled and laid off, second coat once the first has set.</p></div>
+    <div><span>04</span><h3>Handover</h3><p>Tape pulled while the paint is green, furniture back, dust out with us.</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="faq"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">03</span><div><h2 class="sec-title">Before you book</h2></div></div>
+  <details class="faq" open><summary>Do you quote the whole job or price per room?</summary><div class="a">Either. Most jobs get one price for the full scope — prep through clean down — so nothing arrives as a surprise mid-way.</div></details>
+  <details class="faq"><summary>Can you repair damaged walls too?</summary><div class="a">Yes. Holes, cracks and loose sections are filled and set before painting, which is usually why a repaint looks right afterwards.</div></details>
+  <details class="faq"><summary>Do you do exterior work?</summary><div class="a">Yes — weatherboards, render, eaves and fascias are prepped and coated for the weather they will get.</div></details>
+  <details class="faq"><summary>How do I get a quote?</summary><div class="a">Call 0439 206 444 or send the form below with the rooms and a few photos. We come and look, then price it in writing.</div></details>
+</div></section>
+
+<span id="quote" style="display:block;height:0;scroll-margin-top:90px"></span>
+<section id="lbq" aria-labelledby="lbq-h">
+<div class="lbq-w">
+  <div>
+    <h2 id="lbq-h">Get the job priced in writing</h2>
+    <p class="lbq-s">Tell us what needs painting, repairing or touching up and we&rsquo;ll come back with a firm price — no obligation.</p>
+    <div class="lbq-info">
+      <div><b>Call</b><a href="tel:+61439206444">0439 206 444</a></div>
+      <div><b>Email</b><a href="mailto:tecpainting@hotmail.com">tecpainting@hotmail.com</a></div>
+      <div><b>See work</b><a href="https://www.instagram.com/tec.painting" rel="noopener" target="_blank">instagram.com/tec.painting</a></div>
+    </div>
+  </div>
+  <form id="lbq-form" novalidate data-site="user-restore-t-e-c-painting-maintenance" data-biz="T.E.C Painting &amp; Maintenance">
+    <div class="lbq-f">
+      <div class="lbq-g">
+        <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+        <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="lbq-full"><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
+        <div class="lbq-full"><label for="lbq-svc">Service</label>
+          <select id="lbq-svc" name="service"><option>Interior repaint</option><option>Exterior repaint</option><option>Trims &amp; doors</option><option>Patch &amp; repair</option><option>Feature wall</option><option>Maintenance / touch-up</option><option>Other</option></select>
+        </div>
+        <div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Rooms, surfaces, condition and suburb&hellip;" required></textarea></div>
+      </div>
+      <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
+      <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit">Send quote request</button>
+      <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+</div>
+<script>
+(function(){
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://laydback-hq.tail5b3740.ts.net');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://laydback-hq.tail5b3740.ts.net');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://laydback-hq.tail5b3740.ts.net');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        fetch(B + '/functions/v1/quote-request', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = '#f08a5f';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</section>
+
+<footer><div class="fwrap">
+  <div>
+    <span class="brand-t" style="display:block">T.E.C Painting<small>&amp; Maintenance</small></span>
+    <p style="margin-top:16px;font-size:14px;max-width:320px;color:var(--dim)">Interior and exterior repaints, repairs and maintenance — prepped properly before a coat goes on.</p>
+  </div>
+  <div><h4>Services</h4><a href="#services">Interior repaints</a><a href="#services">Exterior repaints</a><a href="#services">Trims &amp; doors</a><a href="#services">Patch &amp; repair</a></div>
+  <div><h4>Company</h4><a href="#why">Why T.E.C</a><a href="#faq">Questions</a><a href="#quote">Get a quote</a></div>
+  <div><h4>Contact</h4><a href="tel:+61439206444">0439 206 444</a><a href="mailto:tecpainting@hotmail.com">tecpainting@hotmail.com</a><a href="https://www.instagram.com/tec.painting" rel="noopener" target="_blank">Instagram</a></div>
+</div>
+<div class="fbar"><span>&copy; 2026 T.E.C Painting &amp; Maintenance</span><span>Painting &amp; property maintenance</span></div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById('burger'),n=document.getElementById('navlinks');if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});}})();
+(function(){var nv=document.getElementById('nav');function on(){nv.classList.toggle('solid',(window.scrollY||window.pageYOffset)>30);}on();window.addEventListener('scroll',on,{passive:true});})();
+</script>
+</body>
+</html>
