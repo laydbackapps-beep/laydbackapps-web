@@ -1051,6 +1051,7 @@ html,body{overflow-x:hidden}
 /* LB HERO v2 - depth field (aurora + perspective grid + parallax motes). No literal objects. */
 (function(){
   var cv = document.querySelector('.lb-hero-canvas, #heroCanvas, .hero-canvas, .lb3d-canvas, .hero-canvas-bg, canvas[data-hero]');
+  if (cv && cv.tagName !== 'CANVAS') cv = cv.querySelector('canvas');   // matched the wrapper div, not the canvas
   if (!cv || cv.tagName !== 'CANVAS') return;
   var ctx = cv.getContext('2d'); if (!ctx) return;
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
