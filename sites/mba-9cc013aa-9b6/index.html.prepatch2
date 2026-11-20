@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soley's Carpentry &amp; Maintenance — Carpenter, Newcastle &amp; the Hunter NSW</title>
+<meta name="description" content="Soley's Carpentry &amp; Maintenance — carpentry and property maintenance across Newcastle and the Hunter region, NSW. Decking, framing, repairs and general maintenance. Call 0473 973 878.">
+<meta name="theme-color" content="#f4efe6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Work+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f4efe6'/%3E%3Ccircle cx='6' cy='6' r='1.6' fill='%23c9c2b4'/%3E%3Ccircle cx='16' cy='6' r='1.6' fill='%23c9c2b4'/%3E%3Ccircle cx='26' cy='6' r='1.6' fill='%23c9c2b4'/%3E%3Ccircle cx='6' cy='16' r='1.6' fill='%23c9c2b4'/%3E%3Ccircle cx='16' cy='16' r='1.6' fill='%23c9c2b4'/%3E%3Ccircle cx='26' cy='16' r='1.6' fill='%23c9c2b4'/%3E%3Ccircle cx='6' cy='26' r='1.6' fill='%23c9c2b4'/%3E%3Ccircle cx='16' cy='26' r='1.6' fill='%23c9c2b4'/%3E%3Ccircle cx='26' cy='26' r='1.6' fill='%23c9c2b4'/%3E%3Crect x='13' y='9' width='6' height='4' rx='1' fill='%2333566b'/%3E%3C/svg%3E">
+<style>
+:root{
+  --birch:#f4efe6;
+  --birch-deep:#eae3d6;
+  --steel:#33566b;
+  --steel-deep:#274253;
+  --char:#2e2e2e;
+  --muted:#5c5a55;
+  --dot:rgba(46,46,46,.10);
+  --rail:rgba(46,46,46,.22);
+  --card:#fffdf9;
+  --edge:rgba(46,46,46,.13);
+  --shadow:0 1px 0 rgba(46,46,46,.06), 0 14px 26px -20px rgba(46,46,46,.30);
+  --wrap:clamp(1.25rem,4.4vw,4.5rem);
+  --offset:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background-color:var(--birch);
+  background-image:radial-gradient(var(--dot) 1.7px, transparent 1.8px);
+  background-size:22px 22px;
+  background-position:0 0;
+  color:var(--char);
+  font-family:'Work Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:1rem;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--steel);color:var(--birch)}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1220px;margin:0 auto;padding-inline:var(--wrap)}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background-color:rgba(244,239,230,.94);
+  background-image:radial-gradient(var(--dot) 1.7px, transparent 1.8px);
+  background-size:22px 22px;
+  border-bottom:1px solid var(--edge);
+  backdrop-filter:blur(6px);
+}
+.nav-in{display:flex;align-items:center;gap:18px;padding-block:13px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.mark{
+  width:30px;height:30px;flex:0 0 30px;position:relative;
+  background:var(--steel);border-radius:3px;
+}
+.mark::before{
+  content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:13px;height:13px;border-radius:50%;
+  background:var(--birch);
+}
+.mark::after{
+  content:"";position:absolute;left:50%;bottom:2px;transform:translateX(-50%);
+  width:4px;height:9px;background:var(--birch);border-radius:0 0 2px 2px;
+}
+.brand-t{font-family:'Work Sans',sans-serif;font-weight:800;font-size:.95rem;letter-spacing:-.005em;line-height:1.15}
+.brand-t span{display:block;font-weight:500;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:24px}
+.nav-links a{
+  text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);
+}
+.nav-links a:hover{color:var(--steel)}
+.nav-tel{
+  text-decoration:none;font-weight:700;font-size:.86rem;letter-spacing:.02em;
+  color:var(--birch);background:var(--steel);padding:9px 15px;border-radius:3px;
+  white-space:nowrap;flex-shrink:0;
+}
+.nav-tel:hover{background:var(--steel-deep)}
+
+/* ---------- pegboard rail / board ---------- */
+.board{padding-block:clamp(2.4rem,5vw,4.2rem) clamp(2.6rem,5vw,4.6rem)}
+.rail-head{
+  display:flex;align-items:baseline;gap:16px;
+  border-bottom:2px solid var(--char);
+  padding-bottom:9px;margin-bottom:clamp(1.5rem,3vw,2.4rem);
+}
+.rail-tag{
+  font-family:'Archivo',sans-serif;font-weight:700;font-size:.74rem;
+  letter-spacing:.19em;text-transform:uppercase;color:var(--steel);
+  border-left:3px solid var(--steel);padding-left:9px;flex-shrink:0;
+}
+.rail-note{font-size:.82rem;color:var(--muted);letter-spacing:.02em}
+
+/* ---------- hero ---------- */
+.hero{padding-block:clamp(2.8rem,6vw,5rem) clamp(2.2rem,4.5vw,3.6rem)}
+.hero-grid{
+  display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);
+  gap:clamp(1.4rem,3.4vw,3rem);align-items:start;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Archivo',sans-serif;font-weight:700;font-size:.72rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--steel);
+  margin-bottom:1.05rem;
+}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--steel)}
+h1{
+  font-family:'Work Sans',sans-serif;font-weight:800;
+  font-size:clamp(2.5rem,6.4vw,5.1rem);
+  line-height:.98;letter-spacing:-.028em;color:var(--char);
+  max-width:15ch;
+}
+h1 em{font-style:normal;color:var(--steel);display:block}
+.hero-lede{
+  margin-top:1.4rem;font-size:clamp(1rem,1.4vw,1.1rem);
+  color:var(--muted);max-width:52ch;line-height:1.65;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.9rem;align-items:center}
+.btn{
+  display:inline-block;text-decoration:none;font-weight:700;font-size:.9rem;
+  letter-spacing:.03em;padding:14px 22px;border-radius:3px;
+  border:1.5px solid var(--steel);white-space:nowrap;
+}
+.btn-solid{background:var(--steel);color:var(--birch)}
+.btn-solid:hover{background:var(--steel-deep);border-color:var(--steel-deep)}
+.btn-ghost{color:var(--steel);background:transparent}
+.btn-ghost:hover{background:rgba(51,86,107,.08)}
+
+/* hanging cards */
+.hang{display:grid;gap:clamp(1rem,2vw,1.5rem)}
+.hang-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.hang-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{
+  position:relative;background:var(--card);
+  border:1px solid var(--edge);border-radius:4px;
+  box-shadow:var(--shadow);
+  padding:clamp(1.5rem,2.6vw,2.1rem) clamp(1.25rem,2.2vw,1.7rem) clamp(1.4rem,2.4vw,1.9rem);
+  margin-top:var(--offset);
+}
+.card::before{
+  content:"";position:absolute;left:50%;top:0;transform:translate(-50%,-100%);
+  width:2px;height:14px;background:var(--rail);
+}
+.card::after{
+  content:"";position:absolute;left:50%;top:0;transform:translate(-50%,-50%);
+  width:16px;height:16px;border-radius:50%;
+  background:var(--birch);
+  border:1px solid var(--rail);
+  box-shadow:inset 0 0 0 4px var(--birch);
+}
+.hang .card:nth-child(2n){--offset:26px}
+.hang .card:nth-child(3n){--offset:6px}
+.hang .card:nth-child(4n){--offset:34px}
+.hang .card:nth-child(5n){--offset:18px}
+.card h3{
+  font-family:'Work Sans',sans-serif;font-weight:800;font-size:1.06rem;
+  letter-spacing:-.012em;line-height:1.25;margin-bottom:.55rem;
+}
+.card p{font-size:.94rem;color:var(--muted);line-height:1.62}
+.card-tag{
+  display:block;font-family:'Archivo',sans-serif;font-weight:700;
+  font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--steel);margin-bottom:.85rem;
+}
+.card-num{
+  position:absolute;right:clamp(1rem,2vw,1.5rem);bottom:clamp(.9rem,1.8vw,1.3rem);
+  font-family:'Archivo',sans-serif;font-weight:700;font-size:.7rem;
+  letter-spacing:.1em;color:rgba(46,46,46,.26);
+}
+.card-photo{padding:0;overflow:hidden;--offset:26px;aspect-ratio:4/3}
+.card-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.card-photo .photo-cap{
+  position:absolute;left:0;right:0;bottom:0;padding:26px 16px 13px;
+  background:linear-gradient(to top, rgba(46,46,46,.80), rgba(46,46,46,0));
+  color:var(--birch);font-size:.76rem;letter-spacing:.05em;font-weight:600;
+}
+.photo-frame{position:relative;border-radius:3px;overflow:hidden;border:1px solid var(--edge)}
+
+/* meta list on hero */
+.meta-card{padding-top:clamp(1.9rem,3vw,2.4rem)}
+.meta-list{list-style:none;display:grid;gap:.85rem}
+.meta-list li{display:grid;gap:2px;border-top:1px solid var(--edge);padding-top:.75rem}
+.meta-list li:first-child{border-top:0;padding-top:0}
+.meta-k{font-family:'Archivo',sans-serif;font-weight:700;font-size:.64rem;letter-spacing:.17em;text-transform:uppercase;color:var(--steel)}
+.meta-v{font-size:.92rem;color:var(--char);font-weight:500}
+.meta-v a{color:var(--char);text-decoration:none;border-bottom:1px solid rgba(51,86,107,.4)}
+.meta-v a:hover{color:var(--steel)}
+
+/* ---------- section heading (non-hero, avoids eyebrow->headline->card formula) ---------- */
+.sec-title{
+  font-family:'Work Sans',sans-serif;font-weight:800;
+  font-size:clamp(1.5rem,2.9vw,2.15rem);line-height:1.1;
+  letter-spacing:-.022em;color:var(--char);max-width:24ch;
+}
+.sec-title b{font-weight:800;color:var(--steel)}
+.sec-split{
+  display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,1fr);
+  gap:clamp(1.2rem,3vw,2.6rem);align-items:start;
+}
+.split-gap{margin-bottom:clamp(1.6rem,3.4vw,2.6rem)}
+.sec-title.narrow{max-width:20ch}
+.sec-body{font-size:.96rem;color:var(--muted);max-width:56ch;line-height:1.68}
+
+/* deep band */
+.band-deep{
+  background-color:var(--steel-deep);
+  background-image:radial-gradient(rgba(244,239,230,.13) 1.7px, transparent 1.8px);
+  background-size:22px 22px;
+  color:var(--birch);
+}
+.band-deep .rail-tag{color:var(--birch);border-left-color:rgba(244,239,230,.6)}
+.band-deep .rail-head{border-bottom-color:rgba(244,239,230,.45)}
+.band-deep .rail-note{color:rgba(244,239,230,.72)}
+.band-deep .sec-title{color:var(--birch)}
+.band-deep .sec-title b{color:#bcd3e0}
+.band-deep .sec-body{color:rgba(244,239,230,.82)}
+.band-deep .card{
+  background:rgba(244,239,230,.055);
+  border-color:rgba(244,239,230,.22);
+  box-shadow:none;
+}
+.band-deep .card::before{background:rgba(244,239,230,.45)}
+.band-deep .card::after{background:var(--steel-deep);border-color:rgba(244,239,230,.35);box-shadow:inset 0 0 0 4px var(--steel-deep)}
+.band-deep .card h3{color:var(--birch)}
+.band-deep .card p{color:rgba(244,239,230,.78)}
+.band-deep .card-tag{color:#bcd3e0}
+.band-deep .card-num{color:rgba(244,239,230,.35)}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(1.2rem,3vw,2.4rem);align-items:start}
+.big-tel{
+  display:inline-block;text-decoration:none;
+  font-family:'Work Sans',sans-serif;font-weight:800;
+  font-size:clamp(2rem,5.4vw,3.9rem);line-height:1;letter-spacing:-.03em;
+  color:var(--steel);margin-top:1.1rem;white-space:nowrap;
+  border-bottom:3px solid rgba(51,86,107,.28);padding-bottom:.14em;
+}
+.big-tel:hover{color:var(--steel-deep);border-bottom-color:var(--steel-deep)}
+.contact-note{margin-top:1.15rem;font-size:.95rem;color:var(--muted);max-width:46ch;line-height:1.65}
+
+/* ---------- footer ---------- */
+.foot{
+  background-color:var(--char);
+  background-image:radial-gradient(rgba(244,239,230,.10) 1.7px, transparent 1.8px);
+  background-size:22px 22px;
+  color:var(--birch);padding-block:2.2rem;
+}
+.foot-in{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:baseline;justify-content:space-between}
+.foot-brand{font-weight:800;font-size:.98rem;letter-spacing:-.01em}
+.foot-meta{font-size:.82rem;color:rgba(244,239,230,.68);letter-spacing:.02em}
+.foot-meta a{color:var(--birch);text-decoration:none;border-bottom:1px solid rgba(244,239,230,.4)}
+.foot-note{width:100%;font-size:.76rem;color:rgba(244,239,230,.5);letter-spacing:.02em}
+
+/* ---------- reveals ---------- */
+.drop{opacity:0;transform:translateY(14px);transition:opacity .62s ease, transform .62s ease}
+.drop.on{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr}
+  .sec-split{grid-template-columns:1fr;gap:1rem}
+  .contact-grid{grid-template-columns:1fr}
+  .hang-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:680px){
+  body{font-size:.97rem}
+  .nav-links{display:none}
+  .hang-2,.hang-3{grid-template-columns:1fr}
+  .hang .card:nth-child(n){--offset:10px}
+  .card::after{width:15px;height:15px}
+  .big-tel{font-size:clamp(1.75rem,9vw,2.6rem)}
+  h1{max-width:100%}
+  .foot-in{flex-direction:column;gap:10px}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .drop{opacity:1;transform:none;transition:none}
+  *{animation-duration:.001ms !important;transition-duration:.001ms !important}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="brand-t">Soley's Carpentry &amp; Maintenance<span>Carpenter · Newcastle &amp; the Hunter</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-tel" href="tel:+61473973878">0473 973 878</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow drop">Carpenter · Newcastle &amp; the Hunter NSW</p>
+        <h1 class="drop d1">Carpentry and maintenance,<em>hung straight and built right.</em></h1>
+        <p class="hero-lede drop d2">Soley's Carpentry &amp; Maintenance takes on carpentry work and general property maintenance across Newcastle and the Hunter region — from new decking and framing through to the repairs and upkeep that keep a place sound.</p>
+        <div class="hero-actions drop d3">
+          <a class="btn btn-solid" href="tel:+61473973878">Call 0473 973 878</a>
+          <a class="btn btn-ghost" href="#work">See what we take on</a>
+        </div>
+      </div>
+
+      <div class="hang">
+        <div class="card meta-card drop d1">
+          <span class="card-tag">On the board</span>
+          <ul class="meta-list">
+            <li>
+              <span class="meta-k">Business</span>
+              <span class="meta-v">Soley's Carpentry &amp; Maintenance</span>
+            </li>
+            <li>
+              <span class="meta-k">Trade</span>
+              <span class="meta-v">Carpentry &amp; maintenance</span>
+            </li>
+            <li>
+              <span class="meta-k">Phone</span>
+              <span class="meta-v"><a href="tel:+61473973878">0473 973 878</a></span>
+            </li>
+            <li>
+              <span class="meta-k">Area</span>
+              <span class="meta-v">Newcastle &amp; the Hunter, NSW</span>
+            </li>
+          </ul>
+        </div>
+        <div class="card card-photo drop d2" style="--offset:26px;aspect-ratio:4/3">
+          <img src="assets/work-deck.jpg" alt="Completed timber deck with metal railing and lattice skirting" loading="lazy" width="800" height="1000">
+          <span class="photo-cap">Decking and railing work</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="board" id="work">
+    <div class="wrap">
+      <div class="rail-head drop">
+        <span class="rail-tag">Row 01</span>
+        <span class="rail-note">What we take on</span>
+      </div>
+      <div class="sec-split split-gap">
+        <h2 class="sec-title drop">Carpentry work and upkeep, <b>handled properly.</b></h2>
+        <p class="sec-body drop d1">General carpentry and maintenance scope, from the framing and fix-out side of a build through to the ongoing repair work that older places always need. If it's timber, fixing, or general upkeep, it's worth a call.</p>
+      </div>
+
+      <div class="hang hang-3">
+        <article class="card drop">
+          <span class="card-tag">Timber &amp; framing</span>
+          <h3>Carpentry &amp; framing</h3>
+          <p>Structural and non-structural carpentry — framing, fix-out, timber repairs and the general carpentry work that holds a job together.</p>
+          <span class="card-num">01</span>
+        </article>
+        <article class="card drop d1">
+          <span class="card-tag">Decks &amp; outdoor</span>
+          <h3>Decking &amp; outdoor timber</h3>
+          <p>Decks, steps, railings and outdoor timber built to take the weather and stay solid underfoot year after year.</p>
+          <span class="card-num">02</span>
+        </article>
+        <article class="card drop d2">
+          <span class="card-tag">Repairs</span>
+          <h3>Repairs &amp; maintenance</h3>
+          <p>General property maintenance — fixing what's loose, rotten, sticking or worn before it turns into a bigger problem.</p>
+          <span class="card-num">03</span>
+        </article>
+        <article class="card drop">
+          <span class="card-tag">Fit-out</span>
+          <h3>Doors, trims &amp; fittings</h3>
+          <p>Hanging doors, fitting trims and mouldings, shelving and the smaller carpentry details that finish a space off.</p>
+          <span class="card-num">04</span>
+        </article>
+        <article class="card drop d1">
+          <span class="card-tag">Property upkeep</span>
+          <h3>Property upkeep</h3>
+          <p>Ongoing maintenance for homes and properties — the practical list of jobs that keeps a place in good order.</p>
+          <span class="card-num">05</span>
+        </article>
+        <article class="card drop d2">
+          <span class="card-tag">Scope</span>
+          <h3>Small jobs welcome</h3>
+          <p>No job too small to be worth doing right. A quick repair or a full deck rebuild gets the same straight answer on scope and cost.</p>
+          <span class="card-num">06</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="board band-deep" id="approach">
+    <div class="wrap">
+      <div class="rail-head drop">
+        <span class="rail-tag">Row 02</span>
+        <span class="rail-note">How it runs</span>
+      </div>
+      <div class="sec-split split-gap">
+        <h2 class="sec-title drop">One call, <b>then it's on the board.</b></h2>
+        <p class="sec-body drop d1">Tell us what's going on and where the property is. You get a straight read on what the job involves and what it takes to get it done.</p>
+      </div>
+
+      <div class="hang hang-3">
+        <article class="card drop">
+          <span class="card-tag">First</span>
+          <h3>Call</h3>
+          <p>Ring 0473 973 878 and describe the job. Photos help, a clear description helps more.</p>
+          <span class="card-num">A</span>
+        </article>
+        <article class="card drop d1">
+          <span class="card-tag">Then</span>
+          <h3>Measured up</h3>
+          <p>We talk through what's involved, what it will take, and what it will cost before any timber is cut.</p>
+          <span class="card-num">B</span>
+        </article>
+        <article class="card drop d2">
+          <span class="card-tag">Finally</span>
+          <h3>The work</h3>
+          <p>The job runs to the agreed scope, on your property, cleaned up when it's finished.</p>
+          <span class="card-num">C</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="board" id="contact">
+    <div class="wrap">
+      <div class="rail-head drop">
+        <span class="rail-tag">Row 03</span>
+        <span class="rail-note">Give us a ring</span>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <h2 class="sec-title drop" style="max-width:20ch">Ring through and <b>get it sorted.</b></h2>
+          <a class="big-tel drop d1" href="tel:+61473973878">0473 973 878</a>
+          <p class="contact-note drop d2">Soley's Carpentry &amp; Maintenance works across Newcastle and the Hunter region, NSW. Call and we'll talk the job over.</p>
+        </div>
+        <div class="hang">
+          <div class="card drop d1">
+            <span class="card-tag">Details</span>
+            <ul class="meta-list">
+              <li>
+                <span class="meta-k">Phone</span>
+                <span class="meta-v"><a href="tel:+61473973878">0473 973 878</a></span>
+              </li>
+              <li>
+                <span class="meta-k">Business</span>
+                <span class="meta-v">Soley's Carpentry &amp; Maintenance</span>
+              </li>
+              <li>
+                <span class="meta-k">Area</span>
+                <span class="meta-v">Newcastle &amp; the Hunter, NSW</span>
+              </li>
+              <li>
+                <span class="meta-k">Scope</span>
+                <span class="meta-v">Carpentry &amp; property maintenance</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span class="foot-brand">Soley's Carpentry &amp; Maintenance</span>
+    <span class="foot-meta">Newcastle &amp; the Hunter, NSW</span>
+    <span class="foot-meta"><a href="tel:+61473973878">0473 973 878</a></span>
+    <span class="foot-note">Carpenter · Newcastle &amp; the Hunter region, NSW</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.drop');
+  function stamp(){for(var i=0;i<els.length;i++){els[i].classList.add('on')}}
+  if(!('IntersectionObserver' in window)){stamp();return;}
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(entries[i].isIntersecting){entries[i].target.classList.add('on');io.unobserve(entries[i].target)}
+    }
+  },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  for(var j=0;j<els.length;j++){io.observe(els[j])}
+  setTimeout(stamp,1100);
+})();
+</script>
+<noscript><style>.drop{opacity:1;transform:none}</style></noscript>
+
+</body>
+</html>
