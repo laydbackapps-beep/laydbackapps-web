@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en-AU" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="McCosker Partners — Chartered Accountants & Business Advisors in Cooks Hill · Newcastle, NSW" />
+<title>McCosker Partners — Chartered Accountants & Business Advisors in Cooks Hill · Newcastle, NSW</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Radio+Canada:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bond:#fbfaf7;
+  --ink:#23272e;
+  --muted:#6a7076;
+  --rule-blue:#46586b;
+  --acct-red:#a63c2e;
+  --panel:#f3f1ea;
+  --hair:rgba(35,39,46,.16);
+  --max:1200px;
+  --space:clamp(1.25rem,2.5vw,2rem);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *, *::before, *::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+body{
+  margin:0;
+  font-family:'Radio Canada',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--bond);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+html.no-js .rv{opacity:1;transform:none}
+.rv{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+.page{
+  position:relative;
+  min-height:100vh;
+}
+.page::before{
+  content:"";
+  position:fixed;
+  top:0;bottom:0;left:0;
+  width:2px;
+  background:linear-gradient(var(--acct-red),var(--acct-red));
+  z-index:10;
+}
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px var(--space);
+  border-top:1px solid var(--hair);
+  border-bottom:1px solid var(--hair);
+  position:sticky;
+  top:0;
+  background:var(--bond);
+  z-index:50;
+}
+.wordmark{
+  font-family:'Spectral',Georgia,serif;
+  font-weight:600;
+  font-size:clamp(1.1rem,2vw,1.35rem);
+  color:var(--ink);
+  letter-spacing:-.02em;
+  text-decoration:none;
+}
+.nav{display:flex;gap:2rem;align-items:center}
+.nav a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:.85rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:500;
+  transition:color .2s;
+}
+.nav a:hover{color:var(--ink)}
+.phone-topbar{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  font-size:.85rem;
+  color:var(--muted);
+  font-family:'Courier Prime',monospace;
+}
+.phone-topbar a{color:inherit;text-decoration:none}
+.phone-topbar a:hover{color:var(--ink);text-decoration:underline}
+.burger{display:none;background:none;border:none;padding:6px;cursor:pointer}
+.burger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;transition:.2s}
+@media (max-width:640px){
+  .nav{position:fixed;top:0;right:0;bottom:0;width:70vw;max-width:280px;background:var(--bond);flex-direction:column;align-items:flex-start;padding:4rem var(--space);gap:1.5rem;transform:translateX(100%);transition:transform .3s ease;z-index:60;border-left:1px solid var(--hair)}
+  .nav.open{transform:translateX(0)}
+  .burger{display:block;z-index:70}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
+.hero{
+  position:relative;
+  padding:calc(var(--space)*3) var(--space) calc(var(--space)*4);
+  max-width:var(--max);
+  margin:0 auto;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  top:0;bottom:0;left:0;
+  width:2px;
+  background:var(--acct-red);
+  transform-origin:top;
+  transform:scaleY(0);
+  z-index:1;
+}
+.hero.drawn::before{animation:redRuleDown 1.2s ease forwards}
+@keyframes redRuleDown{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@media (prefers-reduced-motion:reduce){.hero.drawn::before{animation:none;transform:scaleY(1)}}
+.hero-content{position:relative;z-index:2;padding-left:calc(var(--space)*1.5)}
+.hero h1{
+  font-family:'Spectral',Georgia,serif;
+  font-weight:700;
+  font-size:clamp(2.5rem,6vw,4.5rem);
+  line-height:1.1;
+  letter-spacing:-.03em;
+  margin:0 0 .5rem;
+  color:var(--ink);
+}
+.hero .descriptor{
+  font-family:'Radio Canada',sans-serif;
+  font-weight:500;
+  font-size:clamp(.9rem,1.8vw,1.15rem);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:0 0 .35rem;
+}
+.hero .area{
+  font-family:'Radio Canada',sans-serif;
+  font-weight:400;
+  font-size:clamp(.85rem,1.5vw,1rem);
+  color:var(--muted);
+  margin:0 0 1.5rem;
+}
+.hero .double-rule{
+  position:relative;
+  height:4px;
+  width:100%;
+  max-width:420px;
+  background:var(--ink);
+  overflow:hidden;
+}
+.hero .double-rule::after{
+  content:"";
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:1px;
+  background:var(--ink);
+  transform:translateY(3px);
+}
+.hero .double-rule.draw{animation:doubleRuleDraw 1.2s .3s ease forwards}
+.hero .double-rule.draw::after{animation:doubleRuleDraw 1.2s .3s ease forwards}
+@keyframes doubleRuleDraw{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
+@media (prefers-reduced-motion:reduce){.hero .double-rule.draw,.hero .double-rule.draw::after{animation:none;transform:scaleX(1)}}
+
+.section{padding:calc(var(--space)*2) var(--space);max-width:var(--max);margin:0 auto}
+.section-inner{padding-left:calc(var(--space)*1.5)}
+.section-head{display:flex;align-items:baseline;gap:.75rem;margin-bottom:1rem}
+.section-num{
+  font-family:'Courier Prime',monospace;
+  font-weight:700;
+  font-size:clamp(1.5rem,3vw,2rem);
+  color:var(--acct-red);
+  line-height:1;
+}
+.section-head h2{
+  font-family:'Spectral',Georgia,serif;
+  font-weight:600;
+  font-size:clamp(1.5rem,3vw,2.25rem);
+  letter-spacing:-.02em;
+  margin:0;
+  color:var(--ink);
+}
+.section-lead{color:var(--muted);font-size:clamp(1rem,1.8vw,1.1rem);margin:0 0 1.5rem;max-width:55ch}
+
+.schedule{display:flex;flex-direction:column;gap:0}
+.schedule-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 0;
+  border-bottom:1px solid var(--hair);
+}
+.schedule-row:first-child{border-top:1px solid var(--hair)}
+.schedule-label{font-size:clamp(1rem,1.8vw,1.1rem);color:var(--ink);font-weight:500}
+.schedule-mark{
+  font-family:'Courier Prime',monospace;
+  font-size:.75rem;
+  color:var(--acct-red);
+  opacity:.7;
+}
+.double-rule.section-close{
+  position:relative;
+  height:4px;
+  width:100%;
+  max-width:420px;
+  background:var(--ink);
+  margin-top:1.5rem;
+  overflow:hidden;
+}
+.double-rule.section-close::after{
+  content:"";
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:1px;
+  background:var(--ink);
+  transform:translateY(3px);
+}
+.double-rule.section-close.draw{animation:doubleRuleDraw 1s ease forwards}
+.double-rule.section-close.draw::after{animation:doubleRuleDraw 1s ease forwards}
+@media (prefers-reduced-motion:reduce){.double-rule.section-close.draw,.double-rule.section-close.draw::after{animation:none;transform:scaleX(1)}}
+
+.approach{background:var(--panel);margin-top:calc(var(--space)*2)}
+.approach .section-inner{padding-top:calc(var(--space)*3);padding-bottom:calc(var(--space)*3)}
+.steps{display:grid;gap:calc(var(--space)*1.5)}
+@media (min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{
+  background:var(--bond);
+  border:1px solid var(--hair);
+  padding:calc(var(--space)*1.5);
+  position:relative;
+}
+.step::before{
+  content:attr(data-num);
+  position:absolute;
+  top:calc(var(--space)*1.5);
+  left:calc(var(--space)*1.5);
+  font-family:'Courier Prime',monospace;
+  font-weight:700;
+  font-size:clamp(2rem,4vw,3rem);
+  color:var(--acct-red);
+  opacity:.25;
+  line-height:1;
+}
+.step h3{
+  font-family:'Spectral',Georgia,serif;
+  font-weight:600;
+  font-size:clamp(1.1rem,2vw,1.35rem);
+  margin:0 0 .5rem;
+  padding-left:calc(var(--space)*1.5);
+  color:var(--ink);
+}
+.step p{margin:0;padding-left:calc(var(--space)*1.5);color:var(--muted);font-size:.95rem}
+.double-rule.section-close.approach-close{margin-top:calc(var(--space)*2)}
+
+.practice{padding-top:calc(var(--space)*3);padding-bottom:calc(var(--space)*3)}
+.practice .section-lead{max-width:60ch}
+.practice-points{display:grid;gap:1rem;margin-top:1.5rem}
+@media (min-width:640px){.practice-points{grid-template-columns:repeat(2,1fr)}}
+.practice-point{
+  display:flex;
+  gap:.75rem;
+  align-items:flex-start;
+  padding:.75rem;
+  background:var(--panel);
+  border:1px solid var(--hair);
+}
+.practice-point .mark{
+  font-family:'Courier Prime',monospace;
+  font-weight:700;
+  color:var(--acct-red);
+  font-size:1.25rem;
+  flex-shrink:0;
+  margin-top:.1rem;
+}
+.practice-point p{margin:0;color:var(--ink);font-size:.95rem}
+
+.contact{background:var(--panel);margin-top:calc(var(--space)*2)}
+.contact .section-inner{padding-top:calc(var(--space)*3);padding-bottom:calc(var(--space)*3)}
+.contact-grid{display:grid;gap:calc(var(--space)*2)}
+@media (min-width:760px){.contact-grid{grid-template-columns:1fr 1fr}}
+.contact-info h3{
+  font-family:'Spectral',Georgia,serif;
+  font-weight:600;
+  font-size:clamp(1.5rem,3vw,2.25rem);
+  margin:0 0 1rem;
+  color:var(--ink);
+}
+.contact-info p{color:var(--muted);margin:.5rem 0;font-size:1rem}
+.contact-info .phone-link{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-family:'Courier Prime',monospace;
+  font-size:1.1rem;
+  color:var(--ink);
+  text-decoration:none;
+  margin-top:.5rem;
+}
+.contact-info .phone-link:hover{text-decoration:underline}
+
+footer{
+  border-top:1px solid var(--hair);
+  padding:calc(var(--space)*2) var(--space);
+  max-width:var(--max);
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  font-size:.85rem;
+  color:var(--muted);
+}
+footer .wordmark{font-size:1rem}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--ink);text-decoration:underline}
+
+@media (max-width:640px){
+  footer{flex-direction:column;text-align:center}
+}
+.hero-canvas{
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  z-index:0;
+  pointer-events:none;
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-canvas{display:none}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="topbar" role="banner">
+  <a href="#" class="wordmark" aria-label="McCosker Partners home">McCosker Partners</a>
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <a href="#services">Services</a>
+    <a href="#approach">Approach</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="phone-topbar">
+    <a href="tel:__PHONE_TEL__">__PHONE_DISPLAY__</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
+    <span></span><span></span><span></span>
+  </button>
+</header>
