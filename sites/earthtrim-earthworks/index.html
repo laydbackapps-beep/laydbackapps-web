@@ -635,7 +635,8 @@ p, li {
   PS.setup = function (canvas, opts) {
     opts = opts || {};
     var ctx = canvas.getContext('2d');
-    var DPR = Math.min(global.devicePixelRatio || 1, 2);
+    var DPR = Math.min(global.devicePixelRatio || 1, 1.5);
+    var SCALE = DPR * (opts.renderScale || 1);   // renderScale<1 = fewer pixels, same layout
     var S = {
       ctx: ctx, W: 0, H: 0, DPR: DPR, sun: opts.sun || 'left',
       skyCols: opts.sky || ['#0b1622', '#16324c', '#2b4a63'],
@@ -650,8 +651,8 @@ p, li {
       S.W = canvas.clientWidth || canvas.offsetWidth || global.innerWidth;
       S.H = canvas.clientHeight || canvas.offsetHeight || global.innerHeight;
       if (!S.W || !S.H) return false;
-      canvas.width = Math.round(S.W * DPR); canvas.height = Math.round(S.H * DPR);
-      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      canvas.width = Math.round(S.W * SCALE); canvas.height = Math.round(S.H * SCALE);
+      ctx.setTransform(SCALE, 0, 0, SCALE, 0, 0);
       return true;
     };
 
@@ -815,8 +816,14 @@ p, li {
     S.mix = PS.mix; S.rgba = PS.rgba; S.lighten = PS.lighten; S.darken = PS.darken;
 
     /* ---------- frame loop ---------- */
-    var t0 = 0, last = 0, current = 0, lastDraw = 0;
+    var t0 = 0, last = 0, current = 0, lastDraw = 0, lastPaint = 0, awake = true;
     function targetP() { return opts.progress ? PS.clamp(opts.progress(), 0, 1) : (opts.p || 0); }
+    /* one queued frame at a time; nothing runs once the hero leaves the viewport */
+    function kick() {
+      if (S.reduce || !awake || S._q) return;
+      S._q = true;
+      global.requestAnimationFrame(function (t) { S._q = false; S.frame(t); });
+    }
     /* draw exactly one frame, synchronously, swallowing errors so a bad frame can never
        leave the hero blank or kill the loop */
     S.drawOnce = function (p, time) {
@@ -828,7 +835,8 @@ p, li {
       if (!t0) t0 = ts;
       var dt = Math.min(64, ts - last); last = ts;                 // ms
       if (!S.W || !S.H) { if (S.resize()) S.cam(); }
-      if (S.W && S.H) {
+      if (S.W && S.H && ts - lastPaint >= 42) {      // ~24fps ceiling: the drift is 3px/s, 60fps buys nothing
+        lastPaint = ts;
         var target = opts.progress ? PS.clamp(opts.progress(), 0, 1) : (opts.p || 0);
         /* frame-rate independent smoothing: the scene glides, never snaps */
         current = PS.lerp(current, target, S.reduce ? 1 : 1 - Math.pow(0.0018, dt / 1000));
@@ -837,7 +845,7 @@ p, li {
         try { opts.onFrame(S, current, ts - t0); lastDraw = Date.now(); }
         catch (e) { if (!S._errOnce) { S._errOnce = true; if (global.console) console.warn('[scene] frame error', e); } }
       }
-      if (!S.reduce) global.requestAnimationFrame(S.frame);
+      kick();
     };
     /* watchdog: if rAF is throttled (hidden tab, headless, power saving) or the loop died,
        repaint at least 4x/second so the hero is never a blank canvas */
@@ -857,7 +865,17 @@ p, li {
         S.cam();
         current = opts.progress ? PS.clamp(opts.progress(), 0, 1) : (opts.p || 0);
         S.drawOnce(current, 0);                              // FIRST PAINT IS SYNCHRONOUS
-        if (!S.reduce) { global.requestAnimationFrame(S.frame); S.watch(); }
+        if (!S.reduce) { kick(); S.watch(); }
+        /* stop burning frames when the hero is scrolled away or the tab is hidden */
+        if (global.IntersectionObserver) {
+          new global.IntersectionObserver(function (es) {
+            if (es[0].isIntersecting) { awake = true; kick(); } else awake = false;
+          }, { threshold: 0 }).observe(canvas);
+        }
+        global.document.addEventListener('visibilitychange', function () {
+          if (global.document.hidden) awake = false;
+          else { awake = true; kick(); }
+        });
       }
       boot();
       /* second synchronous attempt after layout settles (covers slow fonts/sticky layout) */
@@ -901,6 +919,7 @@ p, li {
     focal: 1.2, horizon: 0.56, fogNear: 7, fogFar: 68,
     seed: 20261023,
     reduce: reduce,
+    renderScale: 0.75,      // hero is a soft painterly backdrop; 3/4 pixels is invisible, 44% cheaper
     onFrame: frame
   });
 
