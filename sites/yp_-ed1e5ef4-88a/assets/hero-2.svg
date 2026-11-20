@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="sky2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fefaf5"/>
+      <stop offset="40%" stop-color="#f6efe0"/>
+      <stop offset="80%" stop-color "#ece3d0"/>
+      <stop offset="100%" stop-color="#e4d8c0"/>
+    </linearGradient>
+    <radialGradient id="stone2" cx="45%" cy="35%" r="90%">
+      <stop offset="0%" stop-color="#f2e6cc"/>
+      <stop offset="25%" stop-color="#e4d4b0"/>
+      <stop offset="55%" stop-color="#d0bc94"/>
+      <stop offset="80%" stop-color="#b8a078"/>
+      <stop offset="100%" stop-color="#988058"/>
+    </radialGradient>
+    <filter id="tex2" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="5" result="n"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.07"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="overlay"/>
+    </filter>
+    <radialGradient id="sunGlow" cx="30%" cy="20%" r="80%">
+      <stop offset="0%" stop-color="#fffef0" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#f0e8d0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky2)"/>
+  <rect width="1200" height="800" fill="url(#sunGlow)"/>
+  
+  <!-- Soft background garden -->
+  <path d="M0,680 Q200,550 400,600 Q600,510 800,560 Q1000,500 1200,540 L1200,800 L0,800 Z" fill="#8ab86a" opacity="0.22"/>
+  <path d="M0,730 Q300,620 600,670 Q900,600 1200,630 L1200,800 L0,800 Z" fill="#6a984a" opacity="0.18"/>
+  
+  <g filter="url(#tex2)">
+    <!-- Main garden wall -->
+    <path d="M140,260 L1060,260 L1080,640 L120,640 Z" fill="url(#stone2)"/>
+    
+    <!-- Courses -->
+    <g stroke="#9a8464" stroke-width="1.6" opacity="0.5" fill="none">
+      <path d="M140,305 Q170,303 230,305 Q370,307 510,305 Q650,303 790,305 Q930,307 1060,305"/>
+      <path d="M140,355 Q160,353 220,355 Q380,357 530,355 Q680,353 830,355 Q980,357 1060,355"/>
+      <path d="M140,405 Q170,403 235,405 Q390,407 540,405 Q690,403 840,405 Q990,407 1060,405"/>
+      <path d="M140,455 Q150,453 210,455 Q370,457 520,455 Q670,453 820,455 Q970,457 1060,455"/>
+      <path d="M140,505 Q170,503 235,505 Q390,507 540,505 Q690,503 840,505 Q990,507 1060,505"/>
+      <path d="M140,555 Q160,553 220,555 Q380,557 530,555 Q680,553 830,555 Q980,557 1060,555"/>
+      <path d="M140,605 Q170,603 235,605 Q390,607 540,605 Q690,603 840,605 Q990,607 1060,605"/>
+    </g>
+    
+    <!-- Sandstone steps ascending left -->
+    <g fill="url(#stone2)" stroke="#8a7454" stroke-width="1.2" opacity="0.95">
+      <path d="M70,405 Q65,400 60,405 Q55,410 60,415 Q65,420 70,415 Q75,410 70,405" fill="url(#stone2)"/>
+      <rect x="50" y="450" width="100" height="48" rx="3"/>
+      <rect x="30" y="505" width="120" height="48" rx="3"/>
+      <rect x="15" y="560" width="140" height="48" rx="3"/>
+    </g>
+    
+    <!-- Step tread highlights - sun catching edges -->
+    <g stroke="#f5e8d0" stroke-width="2.5" opacity="0.5" fill="none">
+      <line x1="50" y1="450" x2="150" y2="450"/>
+      <line x1="30" y1="505" x2="150" y2="505"/>
+      <line x1="15" y1="560" x2="155" y2="560"/>
+      <line x1="15" y1="608" x2="155" y2="608"/>
+    </g>
+    
+    <!-- Step riser shadows -->
+    <g stroke="#705838" stroke-width="1.5" opacity="0.3" fill="none">
+      <line x1="50" y1="450" x2="50" y2="498"/>
+      <line x1="150" y1="450" x2="150" y2="498"/>
+      <line x1="30" y1="505" x2="30" y2="553"/>
+      <line x1="150" y1="505" x2="150" y2="553"/>
+      <line x1="15" y1="560" x2="15" y2="608"/>
+      <line x1="155" y1="560" x2="155" y2="608"/>
+    </g>
+    
+    <!-- Vertical joints on main wall -->
+    <g stroke="#887050" stroke-width="1" opacity="0.4" fill="none">
+      <path d="M220,260 Q222,330 225,390 Q228,450 230,510 Q232,570 235,630 Q238,670 240,640"/>
+      <path d="M400,260 Q402,320 405,380 Q408,440 410,500 Q412,560 415,620 Q418,670 420,640"/>
+      <path d="M580,260 Q582,330 585,390 Q588,450 590,510 Q592,570 595,630 Q598,670 600,640"/>
+      <path d="M760,260 Q762,320 765,380 Q768,440 770,500 Q772,560 775,620 Q778,670 780,640"/>
+      <path d="M940,260 Q942,320 945,380 Q948,440 950,500 Q952,560 955,620 Q958,670 960,640"/>
+    </g>
+    
+    <!-- Cap -->
+    <path d="M130,255 L1070,255 L1075,280 L125,280 Z" fill="#efe5d0" opacity="0.95"/>
+    <path d="M125,280 L1075,280 Q1070,290 1055,298 Q1020,302 980,298 Q940,294 900,298 Q860,302 820,298 Q780,294 740,298 Q700,302 660,298 Q620,294 580,298 Q540,302 500,298 Q460,294 420,298 Q380,302 340,298 Q300,294 260,298 Q220,302 180,298 Q160,290 150,285 Z" fill="#e0d4b8" opacity="0.85"/>
+  </g>
+  
+  <!-- Garden plants with depth -->
+  <g opacity="0.5">
+    <ellipse cx="1100" cy="320" rx="55" ry="85" fill="#2a4a1a"/>
+    <ellipse cx="1140" cy="350" rx="35" ry="55" fill="#3a5a2a"/>
+    <ellipse cx="1170" cy="390" rx="25" ry="40" fill="#1a3a0a"/>
+    <ellipse cx="300" cy="680" rx="55" ry="28" fill="#3a5a2a"/>
+    <ellipse cx="850" cy="690" rx="45" ry="22" fill="#4a6a3a"/>
+    <ellipse cx="1100" cy="710" rx="35" ry="18" fill="#2a4a1a"/>
+  </g>
+  
+  <!-- Lens flare / sun glint on stone -->
+  <ellipse cx="300" cy="280" rx="80" ry="40" fill="#fffef0" opacity="0.08"/>
+</svg>
