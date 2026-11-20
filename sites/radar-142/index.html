@@ -152,10 +152,13 @@ p{margin:0}
 form{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:20px 24px}
 .field{display:flex;flex-direction:column;gap:7px}
 .field--full{grid-column:1 / -1}
-label{font-family:var(--mono);font-size:.86rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);font-weight:500}
+.brand__word{display:block;font-family:var(--serif);font-size:1.9rem;line-height:1;color:#fff;letter-spacing:-.01em}
+.brand__word em{display:block;font-style:normal;font-family:var(--mono);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#f2f4f6;margin-top:8px;font-weight:500}
+label{font-family:var(--sans);font-size:.95rem;letter-spacing:.01em;text-transform:none;color:var(--ink);font-weight:600}
 input,select,textarea{font-family:var(--sans);font-size:1rem;color:var(--ink);background:#fff;
-  border:1px solid #9a9891;padding:13px 14px;width:100%;border-radius:0}
-input:focus,select:focus,textarea:focus{border-color:var(--acc);outline:none}
+  border:1px solid #8b8f97;padding:14px 15px;width:100%;border-radius:0;
+  transition:border-color .15s ease,box-shadow .15s ease}
+input:focus,select:focus,textarea:focus{border-color:var(--acc);outline:none;box-shadow:0 0 0 3px rgba(224,31,43,.18)}
 textarea{min-height:96px;resize:vertical}
 form .btn{grid-column:1 / -1;justify-self:start;margin-top:6px}
 .form__note{grid-column:1 / -1;font-size:.88rem;line-height:1.5;color:var(--body-ink);margin:2px 0 0}
@@ -258,6 +261,33 @@ footer{background:var(--dark);padding:52px 0 38px;border-top:1px solid rgba(255,
 @media (max-width:760px){
   .plate img{aspect-ratio:auto;max-height:none;object-fit:contain}
 }
+/* ---------- pass: legibility, tap targets, clearer labels ---------- */
+.facts__in span{font-size:.72rem;letter-spacing:.14em;color:#4a4e55}
+.facts__in b{font-size:.9rem;font-weight:600}
+.contact dt{font-size:.72rem;letter-spacing:.12em;color:#d7dade}
+.contact dd{font-size:1rem}
+.plate figcaption,.gal figcaption{font-size:1.02rem}
+.bar__tel{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid rgba(255,255,255,.32)}
+@media (max-width:760px){
+  .plate figcaption,.gal figcaption,.work__hd p{font-size:.94rem;line-height:1.45}
+  .btn2{background:#fff;border:2px solid var(--ink);font-size:.86rem;min-height:52px}
+  .facts__in span{font-size:.74rem}
+  .contact dt{font-size:.74rem}
+}
+/* mobile: nav reachable behind a single-row menu toggle */
+.navt{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.navbtn{display:none}
+@media (max-width:1060px){
+  .bar__in{flex-wrap:wrap}
+  .nav{display:none;order:3;flex-basis:100%;width:100%;flex-wrap:wrap;justify-content:flex-start;
+    gap:4px 24px;margin:0;padding:10px 0 6px;border-top:1px solid rgba(255,255,255,.16)}
+  .nav a{display:inline-flex;align-items:center;min-height:44px;font-size:.86rem}
+  .navt:checked~.nav{display:flex}
+  .navbtn{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;margin-left:10px;
+    border:1px solid rgba(255,255,255,.4);color:#fff;font-family:var(--mono);font-size:.78rem;
+    letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+  .navt:focus-visible~.navbtn{outline:3px solid var(--acc);outline-offset:2px}
+}
 </style>
 </head>
 <body>
@@ -266,14 +296,17 @@ footer{background:var(--dark);padding:52px 0 38px;border-top:1px solid rgba(255,
 <header class="bar">
   <div class="bar__in">
     <a class="brand" href="#top" aria-label="Allards Auto Detailing — home">
-      <img src="assets/allards-logo-trim.png" alt="Allards Auto Detailing" width="905" height="364">
+      <span class="brand__word">Allards<em>Auto Detailing</em></span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="#work">The work</a>
+      <a href="#work">Our work</a>
       <a href="#services">Detailing</a>
       <a href="#graphene">Graphene</a>
       <a href="#book">Book</a>
     </nav>
+    <a class="bar__tel" href="tel:0405733769">0405 733 769</a>
+    <input type="checkbox" id="navt" class="navt" aria-label="Show menu">
+    <label for="navt" class="navbtn">&#9776; Menu</label>
   </div>
 </header>
 
@@ -325,8 +358,8 @@ footer{background:var(--dark);padding:52px 0 38px;border-top:1px solid rgba(255,
           <figcaption><span>Boat and trailer</span></figcaption>
         </figure>
         <figure class="rv">
-          <img src="assets/photos/06.jpg" alt="Yellow Amphibian boat on a trailer in the workshop" width="864" height="1080" loading="lazy">
-          <figcaption><span>Amphibian &mdash; hull and topsides</span></figcaption>
+          <img src="assets/photos/06.jpg" alt="Yellow speedboat on a trailer in the workshop" width="864" height="1080" loading="lazy">
+          <figcaption><span>Speedboat &mdash; hull and topsides</span></figcaption>
         </figure>
       </div>
       <div class="gal__col">
@@ -351,8 +384,8 @@ footer{background:var(--dark);padding:52px 0 38px;border-top:1px solid rgba(255,
   <div class="wrap svc__in">
     <div>
       <p class="lbl">Detailing</p>
-      <h2>Full detail, interior, graphene, towables.</h2>
-      <p class="svc__lede">Choose by what the car actually needs. Tell us what the paint and the interior are doing, and we will confirm which service fits and how long it is with us.</p>
+      <h2>Pick the detail by what the car actually needs.</h2>
+      <p class="svc__lede">Tell us what the paint and the interior are doing, and we will confirm which service fits and how long it is with us.</p>
       <a class="btn" href="#book" style="margin-top:28px">Book a detail</a>
     </div>
     <ul class="list">
@@ -389,7 +422,7 @@ footer{background:var(--dark);padding:52px 0 38px;border-top:1px solid rgba(255,
       <div class="book__proof">
         <figure><img src="assets/photos/01.jpg" alt="Yellow Mustang convertible freshly detailed in the Allards bay" width="1150" height="964" loading="lazy"><figcaption>Mustang &mdash; in the bay</figcaption></figure>
         <figure><img src="assets/photos/02.jpg" alt="Grey Ram 1500 bonnet polished and reflecting the workshop lights" width="646" height="1150" loading="lazy"><figcaption>Ram 1500 &mdash; bonnet</figcaption></figure>
-        <figure><img src="assets/photos/06.jpg" alt="Yellow Amphibian hull finished inside the workshop" width="864" height="1080" loading="lazy"><figcaption>Amphibian &mdash; hull</figcaption></figure>
+        <figure><img src="assets/photos/06.jpg" alt="Boat hull polished inside the workshop" width="864" height="1080" loading="lazy"><figcaption>Boat &mdash; hull polished</figcaption></figure>
       </div>
       <form id="booking">
         <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
