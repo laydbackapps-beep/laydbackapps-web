@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B&amp;B Built Pty Ltd — Custom Home Builder, Hunter NSW</title>
+<meta name="description" content="B&B Built Pty Ltd — residential building work across the Hunter region, NSW. New builds, renovations and extensions. Call 0421 771 432.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Archivo:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  /* palette sampled from assets/logo-header@2x.png (see mklogo.py) */
+  --paper:#141414;        /* logo plaque ground            */
+  --accent:#B08D3E;       /* logo brass (plaque rule/truss) */
+  --accent-bright:#D6B25F;/* logo bright brass (roof line)  */
+  --ink-sampled:#E9E4D8;  /* logo wordmark ink              */
+  --ground:var(--paper);
+  --ground-2:#1c1b19;
+  --brass:var(--accent);
+  --brass-bright:var(--accent-bright);
+  --ink:#E9E4D8;
+  --ink-dim:#948d7f;
+  --hairline:rgba(176,141,62,.28);
+  --acc:var(--accent);    /* decorative 3D layer — never the Laydback lime */
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+body{
+  background:var(--ground);
+  color:var(--ink);
+  font-family:'Archivo',system-ui,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body>*{position:relative}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1240px,92vw);margin-inline:auto}
+
+/* ---------- nav ---------- */
+.nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:28px 0 0;
+}
+.wordmark{
+  font-family:'Archivo',sans-serif;font-weight:500;font-size:15px;
+  letter-spacing:.22em;text-transform:lowercase;color:var(--ink);
+}
+.wordmark .amp{color:var(--brass-bright)}
+.nav-tel{
+  font-size:13px;letter-spacing:.14em;color:var(--brass-bright);
+  border-bottom:1px solid var(--hairline);padding-bottom:3px;
+}
+.nav-tel:hover{border-bottom-color:var(--brass-bright)}
+
+/* ---------- aperture frame ---------- */
+.aperture{
+  position:relative;
+  overflow:hidden;
+  padding:clamp(56px,10vw,120px) clamp(24px,6vw,88px);
+  margin-top:clamp(48px,8vw,96px);
+}
+.blade{position:absolute;width:clamp(44px,7vw,84px);height:clamp(44px,7vw,84px);pointer-events:none}
+.blade svg{display:block;width:100%;height:100%}
+.blade path{fill:none;stroke:var(--brass);stroke-width:2.5}
+.blade-tl{top:0;left:0}
+.blade-tr{top:0;right:0;transform:scaleX(-1)}
+.blade-bl{bottom:0;left:0;transform:scaleY(-1)}
+.blade-br{bottom:0;right:0;transform:scale(-1)}
+
+/* ---------- ring motif ---------- */
+.ring{
+  position:absolute;border-radius:50%;pointer-events:none;
+  border:1px solid var(--hairline);
+}
+.ring-1{
+  width:clamp(340px,46vw,640px);height:clamp(340px,46vw,640px);
+  right:max(-160px,-14vw);top:-8%;
+}
+.ring-2{
+  width:clamp(240px,32vw,440px);height:clamp(240px,32vw,440px);
+  right:clamp(-60px,-4vw,0px);top:14%;
+  border-color:rgba(176,141,62,.45);
+}
+.ring-3{
+  width:clamp(120px,16vw,220px);height:clamp(120px,16vw,220px);
+  right:clamp(40px,6vw,120px);top:34%;
+  border-style:dashed;
+}
+
+/* ---------- hero type ---------- */
+.kicker{
+  font-size:12px;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--brass-bright);margin-bottom:28px;
+}
+h1{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:clamp(52px,9.2vw,118px);
+  line-height:1.02;letter-spacing:-.015em;
+  max-width:14ch;color:var(--ink);
+}
+h1 em{font-style:italic;color:var(--brass-bright)}
+.hero-sub{
+  margin-top:34px;max-width:52ch;color:var(--ink-dim);font-size:17px;
+}
+.hero-meta{
+  margin-top:44px;display:flex;flex-wrap:wrap;gap:12px 40px;
+  font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);
+}
+.hero-meta span b{color:var(--ink);font-weight:500}
+
+/* ---------- statement sections ---------- */
+.sect{
+  padding:clamp(88px,14vw,168px) 0;
+  border-top:1px solid rgba(176,141,62,.16);
+}
+.sect-inner{display:flex;gap:clamp(28px,5vw,72px);align-items:flex-start}
+.marker{
+  flex:0 0 auto;
+  width:clamp(56px,7vw,84px);height:clamp(56px,7vw,84px);
+  border-radius:50%;border:1px solid var(--brass);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.2vw,26px);
+  color:var(--brass-bright);
+}
+.sect-body{max-width:62ch}
+.sect h2{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:clamp(30px,4.4vw,52px);line-height:1.12;letter-spacing:-.01em;
+  margin-bottom:22px;color:var(--ink);
+}
+.sect p{color:var(--ink-dim);font-size:16.5px}
+.sect.alt{background:var(--ground-2)}
+.sect.alt .marker{border-color:var(--brass-bright)}
+
+/* ---------- contact ---------- */
+.contact-line{
+  margin-top:36px;display:flex;flex-wrap:wrap;align-items:center;gap:24px;
+}
+.call-link{
+  font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);
+  color:var(--brass-bright);border-bottom:1px solid var(--hairline);
+  padding-bottom:6px;
+}
+.call-link:hover{border-bottom-color:var(--brass-bright)}
+.contact-note{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid rgba(176,141,62,.16);
+  padding:30px 0;
+}
+.foot-row{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  font-size:12.5px;letter-spacing:.08em;color:var(--ink-dim);
+}
+.foot-row .amp{color:var(--brass)}
+
+/* ---------- reveal (js-gated; no-js keeps content visible) ---------- */
+html.js .rv{opacity:0;transform:translateY(18px);transition: opacity .45s ease,transform .7s ease}
+html.js .rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html.js .rv{opacity:1;transform:none;transition:none}
+}
+
+/* ---------- mobile ---------- */
+@media (max-width:640px){
+  .sect-inner{flex-direction:column;gap:22px}
+  .ring-1{width:260px;height:260px;right:-140px;top:-4%;opacity:.55}
+  .ring-2{width:180px;height:180px;right:-96px;top:22%;opacity:.55}
+  .ring-3{display:none}
+  .hero-meta{gap:10px 24px}
+  .hero-meta span{text-wrap:balance}
+  .aperture{padding-bottom:96px}
+}
+</style>
+<noscript>
+  <style>
+    .rv { opacity: 1 !important; transform: none !important; }
+    .rv.on { opacity: 1 !important; }
+  </style>
+</noscript><style id="lb-logo7">
+/* header bar: client logo artwork (plaque + roof-truss mark, "B&amp;B BUILT" wordmark) */
+.nav{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:16px!important;min-height:84px!important;padding:10px 0!important;width:100%!important;position:relative;z-index:2}
+.nav .brand{display:flex;align-items:center;gap:14px;min-width:0;flex:0 1 auto;text-decoration:none}
+.nav .brand img{display:block}
+.nav .brand-mark{height:48px;width:48px;flex:0 0 auto}
+.nav .brand-word{height:31px;width:auto;max-width:100%}
+.nav-tel{flex:0 0 auto;margin-left:0!important}
+@media(max-width:600px){
+  .nav{min-height:70px!important;gap:10px!important}
+  .nav .brand{gap:0}
+  .nav .brand img.brand-mark{height:40px;width:40px}
+  .nav .brand img.brand-word{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+
+<style>
+/* 3D hero layer — floating geometric depth */
+.lb3d-stage { position: absolute; inset: 0; overflow: hidden; pointer-events: none; perspective: 1200px; z-index: 1; }
+.lb3d-stage .lb3d-shape { position: absolute; border-radius: 0; animation: lb3dFloat 12s ease-in-out infinite; transform-style: preserve-3d; backface-visibility: hidden; }
+.lb3d-shape.s1 { width: 60px; height: 60px; background: var(--acc, #c4fb24); opacity: .08; top: 12%; left: 8%; animation: lb3dFloat1 14s ease-in-out infinite; transform: rotateY(15deg) translateZ(40px); }
+.lb3d-shape.s2 { width: 90px; height: 90px; border: 2px solid var(--acc, #c4fb24); opacity: .06; top: 60%; right: 12%; border-radius: 50%; animation: lb3dFloat2 18s ease-in-out infinite; transform: rotateY(-25deg) translateZ(80px); }
+.lb3d-shape.s3 { width: 40px; height: 40px; background: var(--acc, #c4fb24); opacity: .05; bottom: 20%; left: 55%; animation: lb3dFloat3 10s ease-in-out infinite; transform: rotateY(45deg) translateZ(20px); }
+.lb3d-shape.s4 { width: 120px; height: 2px; background: var(--acc, #c4fb24); opacity: .07; top: 30%; right: 30%; animation: lb3dFloat4 22s ease-in-out infinite; transform: translateZ(60px) rotateY(20deg); }
+.lb3d-shape.s5 { width: 50px; height: 50px; border: 1.5px solid var(--acc, #c4fb24); opacity: .05; top: 75%; left: 20%; transform: rotate(45deg) translateZ(100px); animation: lb3dFloat5 16s ease-in-out infinite; }
+@keyframes lb3dFloat1 { 0%,100% { transform: translateY(0) rotateY(15deg) translateZ(40px); } 50% { transform: translateY(-30px) rotateY(180deg) translateZ(80px); } }
+@keyframes lb3dFloat2 { 0%,100% { transform: translateY(0) rotateY(-25deg) translateZ(80px); } 50% { transform: translateY(24px) rotateY(25deg) translateZ(40px); } }
+@keyframes lb3dFloat3 { 0%,100% { transform: translateY(0) rotateY(45deg) translateZ(20px); } 50% { transform: translateY(-18px) rotateY(-45deg) translateZ(60px); } }
+@keyframes lb3dFloat4 { 0%,100% { transform: translateX(0) translateZ(60px) rotateY(20deg); } 50% { transform: translateX(-40px) translateZ(100px) rotateY(-20deg); } }
+@keyframes lb3dFloat5 { 0%,100% { transform: rotate(45deg) translateZ(100px) translateY(0); } 50% { transform: rotate(225deg) translateZ(60px) translateY(-20px); } }
+@media (prefers-reduced-motion:reduce){.lb3d-stage{display:none}}
+</style>
+
+  <div class="lb3d-stage" aria-hidden="true">
+  <div class="lb3d-shape s2"></div>
+  <div class="lb3d-shape s3"></div>
+  <div class="lb3d-shape s4"></div>
+  <div class="lb3d-shape s5"></div>
+</div>
+
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="#" aria-label="B&amp;B Built — back to top">
+      <img class="brand-mark" src="assets/logo-mark.svg" alt="B&amp;B Built" width="48" height="48">
+      <img class="brand-word" src="assets/logo-word.svg" alt="" aria-hidden="true">
+    </a>
+    <a class="nav-tel" href="tel:0421771432">0421 771 432</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="wrap">
+    <div class="aperture">
+      <span class="blade blade-tl" aria-hidden="true"><svg viewBox="0 0 80 80"><path d="M2 78 L2 22 Q2 2 22 2 L78 2"/></svg></span>
+      <span class="blade blade-tr" aria-hidden="true"><svg viewBox="0 0 80 80"><path d="M2 78 L2 22 Q2 2 22 2 L78 2"/></svg></span>
+      <span class="blade blade-bl" aria-hidden="true"><svg viewBox="0 0 80 80"><path d="M2 78 L2 22 Q2 2 22 2 L78 2"/></svg></span>
+      <span class="blade blade-br" aria-hidden="true"><svg viewBox="0 0 80 80"><path d="M2 78 L2 22 Q2 2 22 2 L78 2"/></svg></span>
+      <span class="ring ring-1" aria-hidden="true"></span>
+      <span class="ring ring-2" aria-hidden="true"></span>
+      <span class="ring ring-3" aria-hidden="true"></span>
+
+      <p class="kicker rv">Custom home builder — Hunter NSW</p>
+      <h1 class="rv">Built with the patience a <em>home</em> deserves.</h1>
+      <p class="hero-sub rv">B&amp;B Built Pty Ltd is a residential building company serving the Hunter region of New South Wales — new builds, renovations and extensions, delivered as promised and finished properly.</p>
+      <div class="hero-meta rv">
+        <span>New builds <b>·</b> Renovations <b>·</b> Extensions</span>
+        <span>Hunter NSW</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sect" id="scope">
+    <div class="wrap sect-inner">
+      <div class="marker" aria-hidden="true">01</div>
+      <div class="sect-body">
+        <h2 class="rv">Residential building work, end to end.</h2>
+        <p class="rv">From first drawings to final handover, B&amp;B Built manages the whole scope of residential building work — new builds, renovations and extensions — with one point of contact from start to finish.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sect alt" id="process">
+    <div class="wrap sect-inner">
+      <div class="marker" aria-hidden="true">02</div>
+      <div class="sect-body">
+        <h2 class="rv">A clear process, kept honest.</h2>
+        <p class="rv">Every project runs to a written scope and a visible schedule. You know what is happening, what it costs and what comes next — no surprises buried in the build.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sect" id="ground">
+    <div class="wrap sect-inner">
+      <div class="marker" aria-hidden="true">03</div>
+      <div class="sect-body">
+        <h2 class="rv">Local to the Hunter.</h2>
+        <p class="rv">Based in the Hunter region of New South Wales, B&amp;B Built works where it lives — with the local suppliers, trades and approvals knowledge that only comes from building in one region over many years.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sect alt" id="contact">
+    <div class="wrap sect-inner">
+      <div class="marker" aria-hidden="true">04</div>
+      <div class="sect-body">
+        <h2 class="rv">Talk to the builder.</h2>
+        <p class="rv">Every project starts with a conversation about the site, the budget and the way you want to live in it. Call directly — you will speak with the people who will build it.</p>
+        <div class="contact-line rv">
+          <a class="call-link" href="tel:0421771432">0421 771 432</a>
+          <span class="contact-note">Open 24 hours</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>B&amp;B Built Pty Ltd — custom home builder, Hunter NSW</span>
+    <span><span class="amp">b&amp;b</span> built</span>
+  </div>
+<section id="lbq" class="v1" aria-labelledby="lbq-h">
+  <style>
+#lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#c4fb24))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,#9aa6b2);--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto}
+#lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
+#lbq .lbq-f{display:grid;gap:12px}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#0b0e12;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+/* v1 card */
+#lbq.v1 .lbq-card{background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
+#lbq.v1 .lbq-g{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+#lbq.v1 .lbq-full{grid-column:1/-1}
+@media(max-width:640px){#lbq.v1 .lbq-g{grid-template-columns:1fr}}
+/* v2 band */
+#lbq.v2{background:var(--lbq-panel);border-top:1px solid var(--lbq-line);border-bottom:1px solid var(--lbq-line)}
+#lbq.v2 .lbq-g{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+#lbq.v2 .lbq-full{grid-column:1/-1}
+#lbq.v2 .lbq-hd{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
+@media(max-width:760px){#lbq.v2 .lbq-g{grid-template-columns:1fr}#lbq.v2 .lbq-hd{display:block}}
+/* v3 split */
+#lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+#lbq.v3 .lbq-g{display:grid;gap:12px}
+#lbq.v3 .lbq-hp2{border-left:3px solid var(--lbq-accent);padding-left:16px}
+@media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
+/* v4 minimal */
+#lbq.v4 .lbq-w{max-width:620px}
+#lbq.v4 input,#lbq.v4 textarea{border:0;border-bottom:1px solid var(--lbq-line);border-radius:0;background:transparent;padding:11px 2px}
+#lbq.v4 .lbq-g{display:grid;gap:16px}
+</style>
+  <div class="lbq-w">
+      <h2 id="lbq-h">Request a quote</h2>
+      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p><div class="lbq-card"><form id="lbq-form" novalidatedata-biz="B&amp;B Built Pty Ltd" data-site="mba-ace66962-d8d" action="/functions/v1/quote-request"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div>
+  </div>
+  <script>
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;  // honeypot — silently accept bots
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</section>
+</footer>
+
+<script>
+    (function(){
+      'use strict';
+      document.documentElement.classList.add('js');
+      function heroCanvas(){
+        var c=document.getElementById('hero-canvas'); if(!c) return;
+        var ctx=c.getContext('2d'); var dpr=window.devicePixelRatio||1;
+        function resize(){
+          var r=c.getBoundingClientRect();
+          c.width=r.width*dpr; c.height=r.height*dpr;
+          ctx.scale(dpr,dpr); c.style.width=r.width+'px'; c.style.height=r.height+'px';
+        }
+        var prefersReduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+        var traceProg=0; var traceTarget=1; var colsProg=0; var colsTarget=1;
+        var startTime=performance.now();
+        function drawTrace(t){
+          var w=c.width/dpr; var h=c.height/dpr;
+          ctx.clearRect(0,0,w,h);
+          ctx.strokeStyle='#3f88a8'; ctx.lineWidth=2; ctx.lineCap='round';
+          ctx.beginPath();
+          var y0=h*0.55; var y1=h*0.45;
+          var steps=80;
+          for(var i=0;i<=steps;i++){
+            var x=(i/steps)*w;
+            var wave=Math.sin(i*0.15)*12*(1-t);
+            var y=y0+(y1-y0)*(i/steps)+wave*(1-t);
+            if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+          }
+          ctx.stroke();
+        }
+        function drawCols(t){
+          var w=c.width/dpr; var h=c.height/dpr;
+          var baseline=h*0.72;
+          ctx.fillStyle='#2c5d7c';
+          var clusters=[{x:w*0.15,n:5},{x:w*0.35,n:7},{x:w*0.55,n:4},{x:w*0.75,n:6},{x:w*0.9,n:3}];
+          clusters.forEach(function(cl){
+            for(var i=0;i<cl.n;i++){
+              var hgt=(30+Math.random()*80)*t;
+              var x=cl.x+(i-(cl.n-1)/2)*10;
+              ctx.fillRect(x-2,baseline-hgt,4,hgt);
+            }
+          });
+        }
+        function frame(now){
+          var elapsed=(now-startTime)/1000;
+          if(!prefersReduced){
+            traceProg=Math.min(1,elapsed/1.5);
+            colsProg=Math.min(1,Math.max(0,(elapsed-0.4)/1.2));
+          }else{
+            traceProg=1; colsProg=1;
+          }
+          drawTrace(traceProg);
+          drawCols(colsProg);
+          if(traceProg<1 || colsProg<1) requestAnimationFrame(frame);
+        }
+        resize(); window.addEventListener('resize',resize);
+        if(prefersReduced){ drawTrace(1); drawCols(1); }
+        else requestAnimationFrame(frame);
+      }
+      function processTrace(){
+        var c=document.getElementById('process-trace'); if(!c) return;
+        var ctx=c.getContext('2d'); var dpr=window.devicePixelRatio||1;
+        function resize(){
+          var r=c.getBoundingClientRect();
+          c.width=r.width*dpr; c.height=r.height*dpr;
+          ctx.scale(dpr,dpr); c.style.width=r.width+'px'; c.style.height=r.height+'px';
+          draw();
+        }
+        var prefersReduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+        function draw(){
+          var w=c.width/dpr; var h=c.height/dpr;
+          ctx.clearRect(0,0,w,h);
+          var steps=c.querySelectorAll('.step');
+          if(steps.length<2) return;
+          var centers=Array.from(steps).map(function(s){
+            var r=s.getBoundingClientRect(); var cr=c.getBoundingClientRect();
+            return {x:r.left+ r.width/2 - cr.left, y:r.top + 40 - cr.top};
+          });
+          ctx.strokeStyle='#3f88a8'; ctx.lineWidth=2; ctx.lineCap='round';
+          ctx.beginPath();
+          centers.forEach(function(p,i){
+            if(i===0) ctx.moveTo(p.x,p.y);
+            else{
+              var prev=centers[i-1];
+              var cx=(prev.x+p.x)/2;
+              ctx.bezierCurveTo(cx,prev.y,cx,p.y,p.x,p.y);
+            }
+          });
+          ctx.stroke();
+          centers.forEach(function(p){
+            ctx.fillStyle='#2c5d7c';
+            ctx.beginPath(); ctx.arc(p.x,p.y,4,0,Math.PI*2); ctx.fill();
+          });
+        }
+        resize(); window.addEventListener('resize',resize);
+      }
+      function reveal(){
+        var els=document.querySelectorAll('.rv');
+        var io=new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+          });
+        },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+        els.forEach(function(el){ io.observe(el); });
+      }
+      function mobileNav(){
+        var burger=document.querySelector('.burger');
+        var menu=document.getElementById('mobile-menu');
+        var links=menu?menu.querySelectorAll('a'):[];
+        if(!burger || !menu) return;
+        burger.addEventListener('click',function(){
+          var open=burger.getAttribute('aria-expanded')==='true';
+          burger.setAttribute('aria-expanded',!open);
+          menu.style.display=open?'none':'block';
+        });
+        links.forEach(function(a){ a.addEventListener('click',function(){
+          burger.setAttribute('aria-expanded','false'); menu.style.display='none';
+        }); });
+        window.addEventListener('resize',function(){
+          if(window.innerWidth>=600){ burger.setAttribute('aria-expanded','false'); menu.style.display='none'; }
+        });
+      }
+      function init(){
+        heroCanvas(); processTrace(); reveal(); mobileNav();
+        setTimeout(function(){
+          document.documentElement.classList.add('loaded');
+          document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('on'); });
+        },1100);
+      }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+      else init();
+    })();
+  </script>
+</body>
+</html>
