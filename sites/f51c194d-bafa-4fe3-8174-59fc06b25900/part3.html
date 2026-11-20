@@ -1,0 +1,281 @@
+<svg class="strings-bg" aria-hidden="true" viewBox="0 0 1200 2400" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="stringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff4d9d" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ff4d9d" stop-opacity=".35"/>
+      <stop offset="100%" stop-color="#ff4d9d" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path class="string-line" d="M120 180 Q300 320 480 200 Q660 80 840 160 Q1020 240 1080 320"/>
+  <path class="string-line" d="M80 420 Q260 560 440 440 Q620 320 800 400 Q980 480 1040 560"/>
+  <path class="string-line" d="M160 840 Q340 980 520 860 Q700 740 880 820 Q1060 900 1120 980"/>
+  <path class="string-line" d="M100 1280 Q280 1420 460 1300 Q640 1180 820 1260 Q1000 1340 1060 1420"/>
+  <path class="string-line" d="M140 1720 Q320 1860 500 1740 Q680 1620 860 1700 Q1040 1780 1100 1860"/>
+  <path class="string-line" d="M180 2160 Q360 2300 540 2180 Q720 2060 900 2140 Q1080 2220 1140 2300"/>
+  <polygon class="string-peg" points="120,180 128,196 112,196"/>
+  <polygon class="string-peg" points="1080,320 1088,336 1072,336"/>
+  <polygon class="string-peg" points="80,420 88,436 72,436"/>
+  <polygon class="string-peg" points="1040,560 1048,576 1032,576"/>
+  <polygon class="string-peg" points="160,840 168,856 152,856"/>
+  <polygon class="string-peg" points="1120,980 1128,996 1112,996"/>
+  <polygon class="string-peg" points="100,1280 108,1296 92,1296"/>
+  <polygon class="string-peg" points="1060,1420 1068,1436 1052,1436"/>
+  <polygon class="string-peg" points="140,1720 148,1736 132,1736"/>
+  <polygon class="string-peg" points="1100,1860 1108,1876 1092,1876"/>
+  <polygon class="string-peg" points="180,2160 188,2176 172,2176"/>
+  <polygon class="string-peg" points="1140,2300 1148,2316 1132,2316"/>
+  <g class="chalk-mark">
+    <line x1="110" y1="170" x2="130" y2="170"/>
+    <line x1="120" y1="165" x2="120" y2="175"/>
+    <line x1="1070" y1="310" x2="1090" y2="310"/>
+    <line x1="1080" y1="305" x2="1080" y2="315"/>
+  </g>
+</svg>
+
+<script>
+// Reveal system (no-JS shows everything via .rv default opacity 0 in CSS, but we add .on)
+(function(){
+  'use strict';
+  var rv = document.querySelectorAll('.rv');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, {rootMargin:'0px 0px -10% 0px', threshold:.08});
+  rv.forEach(function(el){ io.observe(el); });
+  // Safety net
+  setTimeout(function(){ rv.forEach(function(el){ el.classList.add('on'); }); }, 1100);
+})();
+
+// Hero string-pull motion (SVG + canvas hybrid)
+(function(){
+  'use strict';
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canvas = document.querySelector('.hero-canvas');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var peg1 = {x:0, y:0, targetX:0, targetY:0, vx:0, vy:0, settled:false};
+  var peg2 = {x:0, y:0, targetX:0, targetY:0, vx:0, vy:0, settled:false};
+  var stringProgress = 0;
+  var shimmerPhase = 0;
+  var dust1 = [];
+  var dust2 = [];
+  var animId = null;
+  var heroRect = null;
+  var contentRect = null;
+  
+  function resize(){
+    heroRect = canvas.parentElement.getBoundingClientRect();
+    canvas.width = Math.round(heroRect.width * dpr);
+    canvas.height = Math.round(heroRect.height * dpr);
+    canvas.style.width = heroRect.width + 'px';
+    canvas.style.height = heroRect.height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    
+    contentRect = document.querySelector('.hero-content').getBoundingClientRect();
+    var cw = contentRect.width;
+    var ch = contentRect.height;
+    
+    // Peg positions relative to canvas (centered on content area)
+    var leftX = cw * 0.18;
+    var rightX = cw * 0.82;
+    var centerY = ch * 0.55;
+    
+    peg1.targetX = leftX; peg1.targetY = centerY;
+    peg2.targetX = rightX; peg2.targetY = centerY;
+    
+    if(prefersReduced){
+      peg1.x = leftX; peg1.y = centerY; peg1.settled = true;
+      peg2.x = rightX; peg2.y = centerY; peg2.settled = true;
+      stringProgress = 1;
+      draw();
+    } else {
+      // Start pegs off-screen (above)
+      peg1.x = leftX; peg1.y = centerY - 200; peg1.settled = false;
+      peg2.x = rightX; peg2.y = centerY - 200; peg2.settled = false;
+      stringProgress = 0;
+      shimmerPhase = 0;
+      dust1 = []; dust2 = [];
+      if(animId) cancelAnimationFrame(animId);
+      animate();
+    }
+  }
+  
+  function springStep(p, stiffness, damping){
+    var dx = p.targetX - p.x;
+    var dy = p.targetY - p.y;
+    p.vx += dx * stiffness;
+    p.vy += dy * stiffness;
+    p.vx *= damping;
+    p.vy *= damping;
+    p.x += p.vx;
+    p.y += p.vy;
+    if(Math.abs(p.vx) < 0.05 && Math.abs(p.vy) < 0.05 && 
+       Math.abs(dx) < 0.3 && Math.abs(dy) < 0.3){
+      p.x = p.targetX; p.y = p.targetY; p.vx = 0; p.vy = 0; p.settled = true;
+    }
+  }
+  
+  function spawnDust(px, py, arr){
+    for(var i=0;i<6;i++){
+      arr.push({
+        x: px + (Math.random()-0.5)*12,
+        y: py + (Math.random()-0.5)*12,
+        vx: (Math.random()-0.5)*1.5,
+        vy: Math.random()*-1.5 - 0.5,
+        life: 1,
+        decay: 0.02 + Math.random()*0.02,
+        size: 1.5 + Math.random()*2
+      });
+    }
+  }
+  
+  function updateDust(arr){
+    for(var i=arr.length-1;i>=0;i--){
+      var d = arr[i];
+      d.x += d.vx; d.y += d.vy; d.vy += 0.03; d.life -= d.decay;
+      if(d.life <= 0) arr.splice(i,1);
+    }
+  }
+  
+  function drawDust(arr){
+    ctx.fillStyle = '#f4f2ec';
+    arr.forEach(function(d){
+      ctx.globalAlpha = d.life * 0.4;
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.size * d.life, 0, Math.PI*2);
+      ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+  }
+  
+  function drawString(p1, p2, progress){
+    if(progress <= 0) return;
+    var cx = (p1.x + p2.x) * 0.5;
+    var cy = (p1.y + p2.y) * 0.5;
+    var cp1x = p1.x + (cx - p1.x) * 0.5;
+    var cp1y = p1.y - 30 * Math.sin(shimmerPhase * 0.5);
+    var cp2x = p2.x + (cx - p2.x) * 0.5;
+    var cp2y = p2.y - 30 * Math.sin(shimmerPhase * 0.5 + 0.8);
+    
+    // Draw string with dash pattern
+    ctx.save();
+    ctx.strokeStyle = '#ff4d9d';
+    ctx.lineWidth = 1.2;
+    ctx.setLineDash([8, 6]);
+    ctx.lineDashOffset = -shimmerPhase * 10;
+    ctx.beginPath();
+    ctx.moveTo(p1.x, p1.y);
+    ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p2.x, p2.y);
+    ctx.stroke();
+    ctx.restore();
+    
+    // Shimmer highlight
+    if(progress > 0.95 && !prefersReduced){
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,77,157,0.6)';
+      ctx.lineWidth = 0.3;
+      ctx.setLineDash([]);
+      ctx.beginPath();
+      ctx.moveTo(p1.x, p1.y);
+      ctx.bezierCurveTo(cp1x, cp1y - 0.5, cp2x, cp2y - 0.5, p2.x, p2.y);
+      ctx.stroke();
+      ctx.restore();
+    }
+  }
+  
+  function drawPeg(p, isLeft){
+    // Peg body
+    ctx.save();
+    ctx.fillStyle = '#ff4d9d';
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y - 7);
+    ctx.lineTo(p.x + 7, p.y);
+    ctx.lineTo(p.x, p.y + 7);
+    ctx.lineTo(p.x - 7, p.y);
+    ctx.closePath();
+    ctx.fill();
+    
+    // Inner highlight
+    ctx.fillStyle = '#fff';
+    ctx.globalAlpha = 0.3;
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y - 4);
+    ctx.lineTo(p.x + 4, p.y);
+    ctx.lineTo(p.x, p.y + 4);
+    ctx.lineTo(p.x - 4, p.y);
+    ctx.closePath();
+    ctx.fill();
+    ctx.restore();
+  }
+  
+  function draw(){
+    ctx.clearRect(0, 0, canvas.width/dpr, canvas.height/dpr);
+    drawString(peg1, peg2, stringProgress);
+    drawPeg(peg1, true);
+    drawPeg(peg2, false);
+    drawDust(dust1);
+    drawDust(dust2);
+  }
+  
+  function animate(){
+    springStep(peg1, 0.12, 0.78);
+    springStep(peg2, 0.12, 0.78);
+    
+    // String draw progress starts after pegs are ~60% settled
+    var peg1Dist = Math.hypot(peg1.targetX - peg1.x, peg1.targetY - peg1.y);
+    var peg2Dist = Math.hypot(peg2.targetX - peg2.x, peg2.targetY - peg2.y);
+    var maxDist = Math.hypot(peg1.targetX - (peg1.targetX), peg1.targetY - (peg1.targetY - 200));
+    var settledRatio = 1 - Math.max(peg1Dist, peg2Dist) / 200;
+    
+    if(settledRatio > 0.6 && stringProgress < 1){
+      stringProgress = Math.min(1, stringProgress + 0.012);
+    }
+    
+    // Spawn dust on landing
+    if(peg1.settled && dust1.length === 0){
+      spawnDust(peg1.x, peg1.y, dust1);
+    }
+    if(peg2.settled && dust2.length === 0){
+      spawnDust(peg2.x, peg2.y, dust2);
+    }
+    
+    updateDust(dust1);
+    updateDust(dust2);
+    
+    shimmerPhase += 0.04;
+    
+    draw();
+    
+    if(peg1.settled && peg2.settled && stringProgress >= 1 && dust1.length === 0 && dust2.length === 0){
+      // Fully settled - just draw static with subtle shimmer
+      if(!prefersReduced){
+        animId = requestAnimationFrame(function loop(){
+          shimmerPhase += 0.02;
+          draw();
+          animId = requestAnimationFrame(loop);
+        });
+      }
+      return;
+    }
+    
+    animId = requestAnimationFrame(animate);
+  }
+  
+  // Pointer guard - reset on mouseleave
+  canvas.addEventListener('mouseleave', function(){
+    // Could add subtle interaction here but keeping it clean per brief
+  });
+  
+  // Initialize
+  if('ResizeObserver' in window){
+    new ResizeObserver(resize).observe(canvas.parentElement);
+  } else {
+    window.addEventListener('resize', resize);
+  }
+  resize();
+})();
+</script>
+</body>
+</html>
