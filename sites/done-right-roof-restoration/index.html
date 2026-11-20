@@ -136,7 +136,7 @@ footer a:hover{color:#fff}
 #sceneWrap,#sceneSticky{height:auto!important;min-height:0!important;overflow:visible!important}
 #sceneSticky .hero-copy,#sceneWrap .hero-copy{position:relative!important;left:auto!important;top:auto!important;right:auto!important;padding:calc(var(--nav-h,64px) + 7vh) clamp(1rem,6vw,7rem) 44px!important;max-width:64ch}
 </style>
-<style id="lb-brand-css">
+<style>
 /* ==== LB BRAND (logo-true spanning wordmark) ==== */
 .lb-brand{display:inline-flex;align-items:center;gap:clamp(9px,1vw,16px);text-decoration:none;
  color:inherit;min-width:0;padding:0;background:none;border:0;flex:0 1 auto}
@@ -161,7 +161,7 @@ footer a:hover{color:#fff}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&display=swap" rel="stylesheet">
-<style id="lb-motion-css">
+<style>
 /* ==== LB MOTION PACK ==== */
 .lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
 /* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
@@ -226,7 +226,7 @@ a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
 @keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
 </style>
-<style id="lb-depth-css">
+<style>
 /* ==== LB DEPTH PACK — layered shadow + gradient surfaces ==== */
 :root{
   --lb-acc: var(--acc, var(--accent, #e51924));
@@ -305,25 +305,25 @@ footer{ box-shadow:0 -1px 0 var(--lb-hair), 0 -14px 40px -30px rgba(8,10,14,.5);
   .card,.cards > *,.panel,.tile,figure,.gal figure, a.btn,.btn, img{ transition:none!important; transform:none!important; }
 }
 </style>
-<style id="lb-hero-css">
+<style>
 canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-<style id="lb-bar-noname">
+<style>
 /* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
 .lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
 {display:none!important}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style><style id="lb-bar-fits-logo">
+</style><style>
 /* the logo is sized to be read, so the bar grows to hold it instead of clipping or spilling */
 header:has(img.lb-logo-unlock),nav:has(img.lb-logo-unlock),.bar:has(img.lb-logo-unlock),.hdr:has(img.lb-logo-unlock),.site-header:has(img.lb-logo-unlock),.navbar:has(img.lb-logo-unlock){
   height:auto!important;min-height:0!important;max-height:none!important;padding-block:8px!important;align-items:center!important}
 .bar > *,.hdr > *,.site-header > *,.navbar > *{min-width:0}
 img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center!important}
 </style>
-<style id="dr-extras">
+<style>
 /* ==== added features + showcase photo sizing, in this site's own palette (ink #131a26 / blue #274980 / #2f5da8) ==== */
 
 /* rotating service-area ticker under the hero */
@@ -375,7 +375,7 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 }
 </style>
 
-<style id="dr-photos">
+<style>
 /* ==== showcase photographs: rendered smaller, at the photographs' own shape, so nothing is cropped up or stretched ====
    the gallery shots are 897x1200 (3:4) and the rotation shots are 899x1599 (9:16).
    Covering a 16:7 banner with a portrait shot was upscaling it ~1.6x and cutting most of it away. */
@@ -403,7 +403,7 @@ img.lb-logo-unlock{display:block!important;flex:none!important;align-self:center
 @media(max-width:520px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:360px;gap:10px!important}}
 </style>
 
-<style id="lb-rb-cap">.lb-rb{max-width:810px!important;margin-inline:auto!important}</style><style id="lb-argon-standard">
+<style>.lb-rb{max-width:810px!important;margin-inline:auto!important}</style><style>
 /* ==== LB ARGON EXCELLENCE PASS ==== */
 /* 1. Instant first-paint visibility: never leave any section or reveal element at opacity:0 */
 html.js .rv, html.js .rv.on, html.js .rv:not(.on),
@@ -531,19 +531,19 @@ p, li {
 
 
 <section class="sec" id="services">
-  <div class="sec-head rv"><span class="sec-idx">01</span><div><h2 class="sec-title">Every part of the roof, covered.</h2><p class="lead">Repairs and restorations by someone who has tiled roofs his whole career. Right materials, right method, no shortcuts.</p></div></div>
+  <div class="sec-head rv"><div><h2 class="sec-title">Every part of the roof, covered.</h2><p class="lead">Repairs and restorations by someone who has tiled roofs his whole career. Right materials, right method, no shortcuts.</p></div></div>
   <div class="svc-grid">
-    <article class="svc rv"><span class="n">01</span><h3>Roof repairs</h3><p>Broken tiles, leaks, flashing and storm damage fixed properly at the source.</p></article>
-    <article class="svc rv"><span class="n">02</span><h3>Roof restoration</h3><p>Full restoration: repair, pressure clean, re-point, seal and paint for a roof that looks after itself.</p></article>
-    <article class="svc rv"><span class="n">03</span><h3>Gutters &amp; fascia</h3><p>Gutter replacement, fascia covers and downpipe work that moves water away from the house.</p></article>
-    <article class="svc rv"><span class="n">04</span><h3>Leak detection</h3><p>We find the actual source of the leak, not just the stain on the ceiling.</p></article>
-    <article class="svc rv"><span class="n">05</span><h3>Re-tiling &amp; ridge capping</h3><p>New tile work, and re-bedding and re-pointing of ridge caps done to hold.</p></article>
-    <article class="svc rv"><span class="n">06</span><h3>Licensed &amp; insured</h3><p>Lic 465538C. Trade-qualified work that stands behind the name.</p></article>
+    <article class="svc rv"><h3>Roof repairs</h3><p>Broken tiles, leaks, flashing and storm damage fixed properly at the source.</p></article>
+    <article class="svc rv"><h3>Roof restoration</h3><p>Full restoration: repair, pressure clean, re-point, seal and paint for a roof that looks after itself.</p></article>
+    <article class="svc rv"><h3>Gutters &amp; fascia</h3><p>Gutter replacement, fascia covers and downpipe work that moves water away from the house.</p></article>
+    <article class="svc rv"><h3>Leak detection</h3><p>We find the actual source of the leak, not just the stain on the ceiling.</p></article>
+    <article class="svc rv"><h3>Re-tiling &amp; ridge capping</h3><p>New tile work, and re-bedding and re-pointing of ridge caps done to hold.</p></article>
+    <article class="svc rv"><h3>Licensed &amp; insured</h3><p>Lic 465538C. Trade-qualified work that stands behind the name.</p></article>
   </div>
 </section>
 
 <section class="sec sec--tint" id="process">
-  <div class="sec-head rv"><span class="sec-idx">02</span><div><h2 class="sec-title">Straight answers, straight pricing.</h2></div></div>
+  <div class="sec-head rv"><div><h2 class="sec-title">Straight answers, straight pricing.</h2></div></div>
   <div class="steps">
     <div class="step rv"><b>01</b><h3>Get in touch</h3><p>Call with the problem: a leak, storm damage or a tired-looking roof.</p></div>
     <div class="step rv"><b>02</b><h3>Inspection &amp; quote</h3><p>We get up there, find the issue and price the fix in writing.</p></div>
@@ -553,7 +553,7 @@ p, li {
 </section>
 
 <section class="sec" id="faq">
-  <div class="sec-head rv"><span class="sec-idx">03</span><div><h2 class="sec-title">Asked on every roof.</h2></div></div>
+  <div class="sec-head rv"><div><h2 class="sec-title">Asked on every roof.</h2></div></div>
   <div class="faq">
   <details class="faq rv"><summary>Are you licensed?</summary><div class="a">Yes. A licensed roof tiler, Lic 465538C, and fully insured.</div></details>
   <details class="faq rv"><summary>Do you do storm emergencies?</summary><div class="a">Yes. Open 24 hours for leaks and storm damage on the Central Coast.</div></details>
@@ -572,7 +572,7 @@ p, li {
 </section>
 
 <section class="sec" id="work">
-  <div class="sec-head rv"><span class="sec-idx">04</span><div><h2 class="sec-title">On the roofs.</h2><p class="lead">Recent work from around the Central Coast.</p></div></div>
+  <div class="sec-head rv"><div><h2 class="sec-title">On the roofs.</h2><p class="lead">Recent work from around the Central Coast.</p></div></div>
   <div class="gal">
     <div class="imgstub"><b>Work photo</b><span>Withheld - this image also appears on another business's site.</span></div>
     <figure class="rv"><img src="assets/gal_2.jpg" alt="Moss treatment before restoration" loading="eager"><figcaption><span>Moss treatment before restoration</span><span class="mono">/02</span></figcaption></figure>
@@ -584,7 +584,7 @@ p, li {
 <span id="quote" style="position:absolute;top:-90px"></span>
 <section class="sec sec--tint" id="areas" aria-labelledby="areas-title">
   <div class="sec-head rv">
-    <span class="sec-idx">06</span>
+    
     <div>
       <h2 class="sec-title" id="areas-title">Where we work.</h2>
       <p class="lead">Roof repairs, restorations and gutter work across the Central Coast — from the Peninsula and the beaches through to the lakes.</p>
@@ -922,7 +922,7 @@ var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear(
   if (!reduce) raf = requestAnimationFrame(loop); 
 })();
 </script>
-<style id="lb-header-fault-fix">
+<style>
 img.lb-logo-unlock.lb-logo-unlock{height:clamp(58px,5.2vw,78px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
 <script id="dr-extras-js">
