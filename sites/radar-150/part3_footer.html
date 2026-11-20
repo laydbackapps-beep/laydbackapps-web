@@ -1,0 +1,160 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Dale's Professional Tree Services logo" height="52">
+          <span>
+            <span class="foot-brand-name">Dale's Tree Services</span><br>
+            <span class="foot-brand-sub">Tree Services · Newcastle & Hunter</span>
+          </span>
+        </div>
+        <p>Dale's Professional Tree Services — tree removal, pruning, stump grinding and 24/7 emergency service across Newcastle and the Hunter.</p>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <p>
+          <a href="tel:+61491173125">0491 173 125</a><br>
+          <a href="mailto:dalegtr17@hotmail.com">dalegtr17@hotmail.com</a><br>Newcastle &amp; Maitland NSW · Hunter region
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Dale's Professional Tree Services · Newcastle NSW</span>
+      <span>24/7 emergency service</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 16;
+    py = (e.clientY / window.innerHeight - 0.5) * 9;
+  }, {passive: true});
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  function loop(t){
+    if (!W || !H){ resize(); return; }
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  function frame(t){
+
+    var time = t * 0.001;
+    ctx.clearRect(0,0,W,H);
+    var g = ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,'#1E2A18'); g.addColorStop(.5,'#16200F'); g.addColorStop(1,'#0D130A');
+    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+
+    /* misty depth band */
+    var mg = ctx.createLinearGradient(0,H*0.45,0,H*0.75);
+    mg.addColorStop(0,'rgba(190,205,170,0)'); mg.addColorStop(.5,'rgba(190,205,170,0.07)'); mg.addColorStop(1,'rgba(190,205,170,0)');
+    ctx.fillStyle = mg; ctx.fillRect(0,0,W,H);
+
+    /* forest trunks (some lean, one highlighted cut) */
+    var tk = [[0.08,0.04,0.02],[0.24,0.05,-0.03],[0.44,0.045,0.01],[0.66,0.055,0.04],[0.88,0.05,-0.02]];
+    for (var i1=0; i1<tk.length; i1++){
+      var bx1 = W*tk[i1][0] + px*(0.4 + i1*0.16);
+      var bw1 = W*tk[i1][1];
+      var lean = tk[i1][2];
+      ctx.fillStyle = (i1===3) ? '#2C3A1E' : '#141C0E';
+      ctx.beginPath();
+      ctx.moveTo(bx1, H);
+      ctx.lineTo(bx1 + lean*W, H*0.06);
+      ctx.lineTo(bx1 + lean*W + bw1*0.55, H*0.05);
+      ctx.lineTo(bx1 + bw1, H);
+      ctx.closePath(); ctx.fill();
+      /* bark texture line */
+      ctx.strokeStyle = 'rgba(90,110,60,0.14)';
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.moveTo(bx1 + bw1*0.4, H);
+      ctx.lineTo(bx1 + lean*W + bw1*0.3, H*0.08);
+      ctx.stroke();
+    }
+
+    /* cut notch on highlighted trunk + sawdust burst */
+    var cx0 = W*0.66 + W*0.04*0.3 + px*1.1;
+    var cy0 = H*0.52 + py*0.5;
+    ctx.fillStyle = 'rgba(228,204,150,0.30)';
+    ctx.beginPath();
+    ctx.moveTo(cx0-14, cy0);
+    ctx.lineTo(cx0+22, cy0-16);
+    ctx.lineTo(cx0+22, cy0+16);
+    ctx.closePath(); ctx.fill();
+
+    /* sawdust particles spraying */
+    for (var s1=0; s1<30; s1++){
+      var ph = (time*0.9 + s1*0.13) % 1;
+      var sx = cx0 + ph*W*0.26 + Math.sin(s1*3.1)*20;
+      var sy = cy0 + Math.sin(s1*2.3)*24 - ph*ph*H*0.22 + 14;
+      var alpha = (1-ph)*0.34;
+      ctx.fillStyle = 'rgba(238,218,160,' + alpha + ')';
+      ctx.beginPath(); ctx.arc(sx, sy, 1.4 + (s1%3)*0.9, 0, Math.PI*2); ctx.fill();
+    }
+
+    /* soft light shaft */
+    var lg2 = ctx.createLinearGradient(W*0.5,0,W*0.72,H);
+    lg2.addColorStop(0,'rgba(214,230,150,0.10)');
+    lg2.addColorStop(1,'rgba(214,230,150,0)');
+    ctx.fillStyle = lg2; ctx.fillRect(0,0,W,H);
+
+    var vg = ctx.createRadialGradient(W*0.5,H*0.5,H*0.25,W*0.5,H*0.5,H*0.92);
+    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,'rgba(0,0,0,0.48)');
+    ctx.fillStyle = vg; ctx.fillRect(0,0,W,H);
+
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
