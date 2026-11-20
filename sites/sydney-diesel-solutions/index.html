@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sydney Diesel Solutions, 4x4 diesel tuning, Sydney NSW</title>
+<meta name="description" content="Customised diesel tuning for 4x4s in Sydney: more torque for towing, better fuel use at cruise, and a map written around how the vehicle is actually used.">
+<meta property="og:title" content="Sydney Diesel Solutions, 4x4 diesel tuning">
+<meta property="og:description" content="Customised tuning for your 4x4: more torque for towing, increased fuel efficiency, improved reliability.">
+<meta name="theme-color" content="#0d1013">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' fill='%230d1013'/%3E%3Cpath d='M8 32 Q16 22 22 20 T36 12' stroke='%23f0a02a' stroke-width='4' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#f2f0ec; --ink-dim:#a7b0b8; --base:#0d1013; --panel:#151a1f; --panel-2:#1b2229;
+  --line:rgba(242,240,236,.14); --amber:#f0a02a; --amber-deep:#c97d12;
+  --disp:'Archivo',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --wrap:1180px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--base);color:var(--ink);font-family:var(--disp);font-size:clamp(1rem,.55vw + .88rem,1.06rem);line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.025em;line-height:1.02;text-wrap:balance}
+p{margin:0}
+.wrap{width:min(100% - 40px,var(--wrap));margin-inline:auto}
+.mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+.kicker{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+.kicker::before{content:"";width:26px;height:2px;background:var(--amber);flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--amber);color:#120d05;font-weight:800;letter-spacing:.005em;text-decoration:none;padding:17px 28px;border:2px solid var(--amber);white-space:nowrap;transition:transform .18s ease,background .18s ease,box-shadow .18s ease}
+.btn:hover{background:#ffb443;border-color:#ffb443;transform:translate(-1px,-1px);box-shadow:4px 4px 0 rgba(240,160,42,.22)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:rgba(242,240,236,.34)}
+.btn-ghost:hover{background:rgba(242,240,236,.06);border-color:var(--ink);box-shadow:none;transform:none}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+/* nav */
+header.top{position:sticky;top:0;z-index:20;background:rgba(13,16,19,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:clamp(16px,3vw,44px);min-height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.brand-mark{width:42px;height:42px;flex:none;display:block}
+.brand-txt{display:flex;flex-direction:column;line-height:1}
+.brand-name{font-weight:900;font-size:1.02rem;letter-spacing:-.02em}
+.brand-sub{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);margin-top:6px}
+.nav{display:flex;gap:clamp(14px,2vw,28px)}
+.nav a{font-size:.9rem;font-weight:600;text-decoration:none;color:var(--ink-dim);padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--ink);border-bottom-color:var(--amber)}
+.top .btn{padding:12px 20px;font-size:.88rem}
+@media(max-width:880px){.nav{display:none}.brand-sub{display:none}}
+
+/* hero */
+.hero{padding:clamp(46px,7vw,92px) 0 clamp(38px,5vw,64px);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(700px 380px at 82% 8%,rgba(240,160,42,.11),transparent 70%),
+  linear-gradient(rgba(242,240,236,.05) 1px,transparent 1px) 0 0/100% 84px,
+  linear-gradient(90deg,rgba(242,240,236,.05) 1px,transparent 1px) 0 0/84px 100%;
+  mask-image:linear-gradient(#000 55%,transparent);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(28px,4.5vw,64px);align-items:center}
+.hero h1{font-size:clamp(2.3rem,5.4vw,4.15rem);margin:18px 0 0;max-width:17ch}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero-sub{margin-top:22px;max-width:46ch;color:var(--ink-dim);font-size:clamp(1.02rem,.4vw + .95rem,1.14rem)}
+.hero-act{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-note{margin-top:18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim)}
+.hero-note b{color:var(--ink);font-weight:600}
+
+/* torque panel */
+.dyno{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);padding:clamp(16px,2vw,22px);box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.dyno-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.dyno-head span{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim)}
+.dyno-head strong{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);font-weight:600}
+.dyno svg{display:block;width:100%;height:auto;margin:14px 0 4px}
+.dyno-legend{display:flex;flex-wrap:wrap;gap:18px;padding-top:10px}
+.dyno-legend span{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim)}
+.dyno-legend i{width:18px;height:3px;display:block;background:var(--amber)}
+.dyno-legend span.map i{background:transparent;border-top:2px dashed #7d8892;height:0}
+.dyno p{margin-top:14px;font-size:.9rem;line-height:1.55;color:var(--ink-dim);border-top:1px solid var(--line);padding-top:14px}
+@media(max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr);gap:26px}.hero-act .btn{padding:14px 18px;font-size:.92rem;width:100%}.hero-act{max-width:420px}.hero-note{margin-top:12px}.dyno{margin-top:2px}}
+
+/* strip */
+.strip{border-block:1px solid var(--line);background:#0a0d10}
+.strip .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2.4vw,32px);padding:22px 0}
+.strip div b{display:block;font-weight:700;font-size:.96rem}
+.strip div span{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim)}
+@media(max-width:700px){.strip .wrap{grid-template-columns:minmax(0,1fr);gap:16px}}
+
+/* sections */
+section{padding:clamp(52px,7vw,96px) 0}
+.sec-head{max-width:60ch}
+.sec-head h2{font-size:clamp(1.75rem,3.4vw,2.6rem);margin-top:14px}
+.sec-head p{margin-top:16px;color:var(--ink-dim);max-width:54ch}
+
+/* what changes */
+.rows{margin-top:clamp(30px,4vw,48px);border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:64px minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(14px,3vw,40px);padding:clamp(22px,3vw,32px) 0;border-bottom:1px solid var(--line);align-items:start}
+.row .num{font-family:var(--mono);font-size:.76rem;color:var(--amber);font-weight:600;letter-spacing:.1em;padding-top:6px}
+.row h3{font-size:clamp(1.12rem,1.7vw,1.35rem)}
+.row p{color:var(--ink-dim);max-width:50ch}
+@media(max-width:760px){.row{grid-template-columns:40px minmax(0,1fr);row-gap:10px}.row p{grid-column:2}}
+
+/* send / checklist */
+.send{background:var(--panel);border-block:1px solid var(--line)}
+.send .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.send h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-top:14px}
+.send p{margin-top:16px;color:var(--ink-dim);max-width:42ch}
+.send ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.send li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:14px;padding:18px 20px;background:var(--panel-2);border-left:2px solid rgba(240,160,42,.5)}
+.send li span{font-family:var(--mono);font-size:.7rem;color:var(--amber);padding-top:3px}
+.send li b{display:block;font-size:.98rem;font-weight:700}
+.send li em{font-style:normal;display:block;color:var(--ink-dim);font-size:.9rem;margin-top:4px;line-height:1.5}
+@media(max-width:820px){.send .wrap{grid-template-columns:minmax(0,1fr)}}
+
+/* faq */
+.faq{margin-top:clamp(26px,3.4vw,40px);border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:16px;padding:22px 0;font-weight:700;font-size:clamp(1.02rem,1.4vw,1.12rem)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";margin-left:auto;font-family:var(--mono);font-weight:400;color:var(--amber);font-size:1.2rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq summary:hover{color:var(--amber)}
+.faq details p{padding:0 0 22px;max-width:66ch;color:var(--ink-dim)}
+
+/* cta */
+.cta{background:#12171c;color:var(--ink);border-top:2px solid rgba(240,160,42,.5)}
+.cta .wrap{max-width:1080px;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(26px,4vw,56px);align-items:start}
+.cta-lock{display:inline-flex;align-items:center;gap:14px;margin-bottom:24px}
+.cta-lock svg{width:52px;height:52px;flex:none}
+.cta-lock-txt{display:flex;flex-direction:column;line-height:1.05}
+.cta-lock-txt b{font-size:clamp(1.45rem,2.8vw,1.95rem);font-weight:900;letter-spacing:-.03em}
+.cta-lock-txt i{font-style:normal;font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;margin-top:7px;color:var(--amber)}
+.cta h2{font-size:clamp(1.9rem,4.2vw,3rem);max-width:24ch}
+.cta p{margin-top:18px;max-width:52ch;color:var(--ink-dim)}
+.cta .btn{margin-top:30px}
+.cta-note{margin-top:14px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+.cta-side{background:var(--panel);border:1px solid var(--line);border-top:2px solid var(--amber);padding:clamp(20px,2.6vw,28px)}
+.cta-side-h{color:var(--amber);margin:0 0 6px;font-size:.68rem}
+.cta-side dl{margin:0}
+.cta-side dl>div{display:grid;grid-template-columns:74px minmax(0,1fr);gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.cta-side dt{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);padding-top:3px}
+.cta-side dd{margin:0;font-size:.96rem;font-weight:500;line-height:1.4}
+@media(max-width:860px){.cta .wrap{grid-template-columns:minmax(0,1fr)}}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:44px 0 56px;background:#0a0d10}
+footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start}
+footer .brand-name{font-size:1rem}
+footer p{color:var(--ink-dim);font-size:.88rem;max-width:46ch}
+footer a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(240,160,42,.6)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Sydney Diesel Solutions, 4x4 diesel tuning">
+      <svg class="brand-mark" viewBox="0 0 44 44" role="img" aria-label="Sydney Diesel Solutions mark">
+        <rect width="44" height="44" fill="#f0a02a"/>
+        <path d="M7 31c6 0 10-10 16-15 5-4 10-4 14 0" fill="none" stroke="#0d1013" stroke-width="3.4" stroke-linecap="round"/>
+        <circle cx="7" cy="31" r="2.2" fill="#0d1013"/>
+        <circle cx="37" cy="16" r="2.2" fill="#0d1013"/>
+        <path d="M7 36h22" stroke="#0d1013" stroke-width="2" opacity=".5"/>
+      </svg>
+      <span class="brand-txt">
+        <span class="brand-name">Sydney Diesel Solutions</span>
+        <span class="brand-sub">4x4 diesel tuning, Sydney</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#tuning">Tuning</a>
+      <a href="#details">What to send</a>
+      <a href="#questions">Questions</a>
+    </nav>
+    <a class="btn" href="https://facebook.com/share/1CBKD6EH25" target="_blank" rel="noopener">Message on Facebook</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Diesel tuning, Sydney, NSW</p>
+        <h1 id="hero-h">Tuned for the load your 4x4 <em>actually carries</em>.</h1>
+        <p class="hero-sub">Customised diesel tuning: more torque for towing, better fuel use on the highway, and a map that respects the engine instead of chasing a headline number. Written for the vehicle in front of us, not a one-size map.</p>
+        <div class="hero-act">
+          <a class="btn" href="https://facebook.com/share/1CBKD6EH25" target="_blank" rel="noopener">Message us on Facebook &rarr;</a>
+          <a class="btn btn-ghost" href="#tuning">What a tune changes</a>
+        </div>
+        <p class="hero-note">Enquiries by Facebook message, <b>Tell us the 4x4 and what you tow</b></p>
+      </div>
+
+      <div class="dyno" role="img" aria-label="Torque curve comparison: a factory map rising late against a custom map that pulls earlier and flattens across the mid range">
+        <div class="dyno-head">
+          <span>Torque / rpm</span>
+          <strong>Shape, not peak</strong>
+        </div>
+        <svg viewBox="0 0 420 260" aria-hidden="true">
+          <g stroke="rgba(242,240,236,.1)" stroke-width="1">
+            <path d="M46 30 V218 H400"/>
+            <path d="M46 68 H400 M46 106 H400 M46 144 H400 M46 182 H400"/>
+            <path d="M118 30 V218 M190 30 V218 M262 30 V218 M334 30 V218"/>
+          </g>
+          <path d="M46 200 C110 196 150 170 200 138 C250 108 306 88 400 76" fill="none" stroke="#7d8892" stroke-width="2" stroke-dasharray="6 6"/>
+          <path d="M46 206 C96 186 140 138 196 116 C252 94 312 84 400 62" fill="none" stroke="#f0a02a" stroke-width="3.5"/>
+          <g font-family="IBM Plex Mono, monospace" font-size="9" fill="#7d8892" letter-spacing="1">
+            <text x="46" y="234">1000</text><text x="176" y="234">2400</text><text x="300" y="234">3600</text><text x="378" y="234">RPM</text>
+            <text x="10" y="40" transform="rotate(-90 10 40)">TORQUE</text>
+          </g>
+          <circle cx="196" cy="116" r="4" fill="#f0a02a"/>
+        </svg>
+        <div class="dyno-legend">
+          <span class="tuned"><i></i>Custom map</span>
+          <span class="map"><i></i>Factory map</span>
+        </div>
+        <p>The useful difference is where the pull arrives, not the biggest number on a printout. Early torque is what gets a loaded trailer moving without working the gearbox.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-label="At a glance">
+    <div class="wrap">
+      <div><b>4x4 diesel</b><span>Light commercial and wagon</span></div>
+      <div><b>Customised maps</b><span>Written per vehicle</span></div>
+      <div><b>Sydney, NSW</b><span>Enquiries by message</span></div>
+    </div>
+  </div>
+
+  <section id="tuning" aria-labelledby="tuning-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">What the tune works on</p>
+        <h2 id="tuning-h">Three things a diesel owner actually notices.</h2>
+        <p>A tune that only looks good on a dyno sheet is a bad tune. These are the three areas a customised map is built around, in the order most owners care about them.</p>
+      </div>
+      <div class="rows">
+        <div class="row">
+          <span class="num">01</span>
+          <h3>Torque where you tow</h3>
+          <p>Weight is the point of a 4x4. A customised map brings the pull in earlier and holds it through the mid range, so a loaded trailer or a tray full of tools needs fewer downshifts and less right foot to keep moving.</p>
+        </div>
+        <div class="row">
+          <span class="num">02</span>
+          <h3>Fuel use on the highway</h3>
+          <p>Most of the fuel goes in at cruise and on cold starts, not at full throttle. Tuning the part-throttle area is where economy comes from, which is also the area a generic file tends to leave alone.</p>
+        </div>
+        <div class="row">
+          <span class="num">03</span>
+          <h3>Reliability under load</h3>
+          <p>More torque is easy to write and easy to regret. A tune for a working vehicle should stay inside what the turbo, injectors and cooling can support, and be honest about where the limit is instead of chasing a bigger figure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="send" id="details" aria-labelledby="details-h">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Before a quote</p>
+        <h2 id="details-h">Four details make the tune specific.</h2>
+        <p>Without these, any file is a guess. Send them in a Facebook message and the answer is about your vehicle rather than a generic package.</p>
+      </div>
+      <ul>
+        <li><span>01</span><div><b>The 4x4, engine and year</b><em>Model, engine code if you know it, and anything already changed, exhaust, intercooler, intake.</em></div></li>
+        <li><span>02</span><div><b>What it carries or tows</b><em>Trailer, van, boat, tray weight, and whether it is a daily driver or a weekend rig.</em></div></li>
+        <li><span>03</span><div><b>Tyres and gearing</b><em>Oversized tyres and a re-gear change the load the engine sees, and change what the map should do.</em></div></li>
+        <li><span>04</span><div><b>What you want fixed</b><em>Sluggish low end, fuel use, or a specific complaint. One clear problem is easier to tune for than five vague ones.</em></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="questions" aria-labelledby="q-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Questions</p>
+        <h2 id="q-h">Straight answers before you message.</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Is a tune a problem for a daily driver?</summary>
+          <p>It should not be. A daily driver spends most of its life at light throttle, so that is the part of the map that matters most for smoothness and fuel. Say that the vehicle is a daily and the tune is written around that use rather than a maximum-effort setting.</p>
+        </details>
+        <details>
+          <summary>Will tuning help with towing, or just power?</summary>
+          <p>Towing is a torque-shape problem: getting the pull in early so the gearbox is not hunting and the engine is not working at the top of the rev range. That is the part of a customised map that makes the biggest difference with weight behind you.</p>
+        </details>
+        <details>
+          <summary>What about fuel efficiency, is that a real gain or a claim?</summary>
+          <p>It is real when the part-throttle area is tuned for it and the vehicle is otherwise healthy. It is not a guarantee, and it is not the reason to tune a vehicle on its own. How you drive and what you carry still decide most of the number.</p>
+        </details>
+        <details>
+          <summary>My 4x4 is modified. Does that change things?</summary>
+          <p>Yes, and it needs to be in the first message. Exhaust, intercooler, intake and tyre size all change what the engine sees, so a file written for a standard vehicle is the wrong file for a modified one.</p>
+        </details>
+        <details>
+          <summary>How do I start?</summary>
+          <p>Send a Facebook message with the vehicle, what it tows or carries, and what you want changed. That is enough for a straight answer on whether a custom tune suits the vehicle and what the next step is.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact" aria-labelledby="cta-h">
+      <div class="wrap">
+        <div class="cta-main">
+          <span class="cta-lock">
+            <svg viewBox="0 0 44 44" aria-hidden="true" focusable="false">
+              <rect width="44" height="44" fill="#f0a02a"/>
+              <rect x="9" y="25" width="6.5" height="10" fill="#0d1013"/>
+              <rect x="18.5" y="18" width="6.5" height="17" fill="#0d1013"/>
+              <rect x="28" y="10" width="6.5" height="25" fill="#0d1013"/>
+              <path d="M9 39 H36" stroke="#0d1013" stroke-width="3"/>
+            </svg>
+            <span class="cta-lock-txt"><b>Sydney Diesel Solutions</b><i>4x4 diesel tuning &middot; Sydney, NSW</i></span>
+          </span>
+          <h2 id="cta-h">Tell us the 4x4, the load, and what you want it to do better.</h2>
+          <p>Enquiries and quotes are handled by Facebook message. Include the vehicle, what it tows or carries, and any modifications, and the reply is about your 4x4 rather than a generic package.</p>
+          <a class="btn" href="https://facebook.com/share/1CBKD6EH25" target="_blank" rel="noopener">Message Sydney Diesel Solutions &rarr;</a>
+          <p class="cta-note">Opens Facebook Messenger</p>
+        </div>
+        <div class="cta-side">
+          <p class="mono cta-side-h">What to send in your message</p>
+          <dl>
+            <div><dt>Vehicle</dt><dd>Make, model, engine, year</dd></div>
+            <div><dt>Work</dt><dd>Towing, tray, daily, weekend</dd></div>
+            <div><dt>Changes</dt><dd>Exhaust, intercooler, tyres, gearing</dd></div>
+            <div><dt>Map</dt><dd>The tune written into the ECU, matched to your 4x4</dd></div>
+            <div><dt>Reply</dt><dd>Facebook message, by the tuner</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <span class="brand-name">Sydney Diesel Solutions</span>
+      <p style="margin-top:8px">Customised diesel tuning for 4x4s, torque for towing, fuel efficiency at cruise, and reliability under load. Sydney, NSW.</p>
+    </div>
+    <p><a href="https://facebook.com/share/1CBKD6EH25" target="_blank" rel="noopener">Message on Facebook</a><br>&copy; 2026 Sydney Diesel Solutions</p>
+  </div>
+</footer>
+
+</body>
+</html>
