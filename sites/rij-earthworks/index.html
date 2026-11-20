@@ -145,7 +145,7 @@ section#lbq{--lbq-accent:var(--gold);--lbq-muted:#A9B0B7}
 }
 @media (prefers-reduced-motion:reduce){.lb-pulse{animation:none;opacity:.5}}
 </style>
-<style id="lb-motion-css">
+<style>
 /* ==== LB MOTION PACK ==== */
 .lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
 /* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
@@ -210,13 +210,13 @@ a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
 @keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
 </style>
-<style id="lb-hero-css">
+<style>
 canvas.lb-hero-canvas{position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0; pointer-events:none}
 canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-<style id="lb-brand-css">
+<style>
 /* ==== LB BRAND (logo-true spanning wordmark) ==== */
 .lb-brandwrap{display:block;padding:14px 18px;background:inherit}
 .lb-brandwrap .lb-brand{display:inline-flex}
@@ -240,42 +240,42 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
  .lb-brand__sub{letter-spacing:.2em;font-size:7px}
 }
 </style>
-<style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
+<style>/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
 .site-header,.header{z-index:50}
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-<style id="lb-repair-polish">/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<!--LB-HDRFIX--><style id="lb-hdrfix">header{position:sticky!important;top:0;min-height:72px;overflow:hidden}header>.lb-hero-canvas,header>canvas{position:absolute!important;inset:0!important;height:100%!important;width:100%!important;z-index:0!important;pointer-events:none}header>.container{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:nowrap;min-height:72px;padding-block:10px}header .lb-brand,header a[class*=brand]{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}header>.container>nav,header nav[role=navigation]{flex:0 1 auto;min-width:0;display:flex;align-items:center;gap:clamp(10px,1.4vw,22px)}header .lb-tel,header a[href^="tel:"]{white-space:nowrap;flex:0 0 auto}header .lb-brand__name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}</style><!--/LB-HDRFIX-->
+<!--LB-HDRFIX--><style>header{position:sticky!important;top:0;min-height:72px;overflow:hidden}header>.lb-hero-canvas,header>canvas{position:absolute!important;inset:0!important;height:100%!important;width:100%!important;z-index:0!important;pointer-events:none}header>.container{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:nowrap;min-height:72px;padding-block:10px}header .lb-brand,header a[class*=brand]{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}header>.container>nav,header nav[role=navigation]{flex:0 1 auto;min-width:0;display:flex;align-items:center;gap:clamp(10px,1.4vw,22px)}header .lb-tel,header a[href^="tel:"]{white-space:nowrap;flex:0 0 auto}header .lb-brand__name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}</style><!--/LB-HDRFIX-->
 
-<!--LB-EMPTY--><style id="lb-empty">[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
+<!--LB-EMPTY--><style>[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
 
-<!--LB-HERO-HEIGHT--><style id="lb-heroh">[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.38)}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
+<!--LB-HERO-HEIGHT--><style>[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.38)}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
 
-<!--LB-RV--><style id="lb-rv">.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
+<!--LB-RV--><style>.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
 
-<!--LB-HEROCOPY--><style id="lb-herocopy">[class*=hero-copy],[class*=hero__copy],[class*=hero].container>div:first-child{position:relative!important;z-index:6!important;max-width:min(780px,90vw)!important}[class*=hero-copy] h1,[class*=hero] h1{max-width:20ch!important}[class*=hero] canvas{pointer-events:none!important}[class*=hero-copy] p{max-width:56ch!important}</style><!--/LB-HEROCOPY-->
+<!--LB-HEROCOPY--><style>[class*=hero-copy],[class*=hero__copy],[class*=hero].container>div:first-child{position:relative!important;z-index:6!important;max-width:min(780px,90vw)!important}[class*=hero-copy] h1,[class*=hero] h1{max-width:20ch!important}[class*=hero] canvas{pointer-events:none!important}[class*=hero-copy] p{max-width:56ch!important}</style><!--/LB-HEROCOPY-->
 
-<!--LB-HEROCOPY2--><style id="lb-herocopy2">[class*=hero] canvas,canvas.lb-hero-canvas,[id*=scene] canvas{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{position:relative!important;z-index:3!important;width:min(780px,90vw)!important;max-width:none!important;flex:1 1 auto!important}[class*=hero-copy] h1{width:100%!important;max-width:none!important}</style><!--/LB-HEROCOPY2-->
+<!--LB-HEROCOPY2--><style>[class*=hero] canvas,canvas.lb-hero-canvas,[id*=scene] canvas{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{position:relative!important;z-index:3!important;width:min(780px,90vw)!important;max-width:none!important;flex:1 1 auto!important}[class*=hero-copy] h1{width:100%!important;max-width:none!important}</style><!--/LB-HEROCOPY2-->
 
-<!--LB-CANVASZ--><style id="lb-canvasz">[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
+<!--LB-CANVASZ--><style>[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
 
-<!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
+<!--LB-H1W--><style>[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
 
-<!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.42)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
+<!--LB-HEROFIX2--><style>[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.42)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
 
-<!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
-<style id="lb-bar-noname">
+<!--LB-RM--><style>@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
+<style>
 /* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
 .lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
 {display:none!important}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style><style id="lb-bar-noname-x">SPAN.lb-brand__name{display:none!important}
-</style><style id="lb-rb-cap">.lb-rb{max-width:1160px!important;margin-inline:auto!important}</style></head>
+</style><style>SPAN.lb-brand__name{display:none!important}
+</style><style>.lb-rb{max-width:1160px!important;margin-inline:auto!important}</style></head>
 <body>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav">
@@ -314,21 +314,21 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 
 <section id="services">
   <div class="wrap">
-    <span class="idx rv">01 &mdash; Services</span>
+    <span class="idx rv">Services</span>
     <h2 class="rv">The work we take on.</h2>
     <p class="sec-sub rv">A range of ground works for homes, sheds and sites around Branxton and the Hunter.</p>
     <div class="svc-list">
-      <div class="svc-row rv"><span class="n">01</span><div><h3>Drainage</h3></div><span class="tick" aria-hidden="true"></span></div>
-      <div class="svc-row rv"><span class="n">02</span><div><h3>Driveways</h3></div><span class="tick" aria-hidden="true"></span></div>
-      <div class="svc-row rv"><span class="n">03</span><div><h3>Retaining walls</h3></div><span class="tick" aria-hidden="true"></span></div>
-      <div class="svc-row rv"><span class="n">04</span><div><h3>Shed pads</h3></div><span class="tick" aria-hidden="true"></span></div>
-      <div class="svc-row rv"><span class="n">05</span><div><h3>Trenches</h3></div><span class="tick" aria-hidden="true"></span></div>
-      <div class="svc-row rv"><span class="n">06</span><div><h3>Tree clearing</h3></div><span class="tick" aria-hidden="true"></span></div>
-      <div class="svc-row rv"><span class="n">07</span><div><h3>Site clean-ups</h3></div><span class="tick" aria-hidden="true"></span></div>
-      <div class="svc-row rv"><span class="n">08</span><div><h3>Cut fills</h3></div><span class="tick" aria-hidden="true"></span></div>
-      <div class="svc-row rv"><span class="n">09</span><div><h3>Turf prep</h3></div><span class="tick" aria-hidden="true"></span></div>
-      <div class="svc-row rv"><span class="n">10</span><div><h3>Pressure cleaning</h3></div><span class="tick" aria-hidden="true"></span></div>
-      <div class="svc-row rv"><span class="n">11</span><div><h3>Property maintenance</h3></div><span class="tick" aria-hidden="true"></span></div>
+      <div class="svc-row rv"><div><h3>Drainage</h3></div><span class="tick" aria-hidden="true"></span></div>
+      <div class="svc-row rv"><div><h3>Driveways</h3></div><span class="tick" aria-hidden="true"></span></div>
+      <div class="svc-row rv"><div><h3>Retaining walls</h3></div><span class="tick" aria-hidden="true"></span></div>
+      <div class="svc-row rv"><div><h3>Shed pads</h3></div><span class="tick" aria-hidden="true"></span></div>
+      <div class="svc-row rv"><div><h3>Trenches</h3></div><span class="tick" aria-hidden="true"></span></div>
+      <div class="svc-row rv"><div><h3>Tree clearing</h3></div><span class="tick" aria-hidden="true"></span></div>
+      <div class="svc-row rv"><div><h3>Site clean-ups</h3></div><span class="tick" aria-hidden="true"></span></div>
+      <div class="svc-row rv"><div><h3>Cut fills</h3></div><span class="tick" aria-hidden="true"></span></div>
+      <div class="svc-row rv"><div><h3>Turf prep</h3></div><span class="tick" aria-hidden="true"></span></div>
+      <div class="svc-row rv"><div><h3>Pressure cleaning</h3></div><span class="tick" aria-hidden="true"></span></div>
+      <div class="svc-row rv"><div><h3>Property maintenance</h3></div><span class="tick" aria-hidden="true"></span></div>
     </div>
   </div>
 </section>
@@ -336,7 +336,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 <section id="about">
   <div class="wrap about">
     <div class="rv">
-      <span class="idx">02 &mdash; About</span>
+      <span class="idx">About</span>
       <p class="pride" style="margin-top:16px">We take <em>pride</em> in all the work we do.</p>
       <p>RIJ Earthworks is a Branxton-based earthworks crew handling everything from the first cut to the final clean-up &mdash; and going the extra mile to get the best result, even on the smallest jobs.</p>
       <p>Local work around Branxton, Huntlee and the wider Hunter region.</p>
@@ -347,7 +347,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 
 <section id="work">
   <div class="wrap">
-    <span class="idx rv">03 &mdash; Work</span>
+    <span class="idx rv">Work</span>
     <h2 class="rv">Recent ground.</h2>
     <div class="work-grid">
       <figure class="rv"><img src="assets/work-1.jpg" alt="Earthworks job — RIJ Earthworks" loading="eager" width="1180" height="886" decoding="async"><figcaption>Local job &mdash; Hunter</figcaption></figure>
@@ -360,7 +360,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 <section id="areas">
   <div class="wrap">
     <div class="band rv">
-      <span class="idx">04 &mdash; Areas</span>
+      <span class="idx">Areas</span>
       <h2 style="margin-top:10px">Branxton based, Hunter wide.</h2>
       <p>Working out of Branxton across the Hunter Valley and surrounds &mdash; if you&rsquo;re local, give us a call and we&rsquo;ll take a look.</p>
       <div class="tags">
@@ -373,7 +373,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 <section id="contact">
   <div class="wrap contact">
     <div class="rv">
-      <span class="idx">05 &mdash; Contact</span>
+      <span class="idx">Contact</span>
       <p class="big-a"><a href="tel:0419632321">0419 632 321</a></p>
       <p class="note">Call the crew or message the RIJ Earthworks Facebook page with the job &mdash; drainage, driveway, shed pad or a full site clean-up.</p>
       <a class="fb" href="https://www.facebook.com/profile.php?id=61591449337485" target="_blank" rel="noopener">Message on Facebook</a>
@@ -747,7 +747,7 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
   scroll-margin-top:24px}
 
 </style>
-<style id="lb-header-fault-fix">
+<style>
 :is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
 img.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
