@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sydney to Coast Roofing - Roof Tiling, Repairs & Restoration, Medowie NSW</title>
+<meta name="description" content="Sydney to Coast Roofing - Roof tiling, roof repairs, re-roofing and roof restoration. Medowie NSW, working across the Central Coast and Sydney.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700&family=Mulish:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700&family=Mulish:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700&family=Mulish:wght@400;500;600&display=swap"></noscript>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta property="og:title" content="Sydney to Coast Roofing">
+<meta property="og:description" content="Roof tiling, repairs, re-roofing & restoration - Medowie NSW">
+<meta property="og:image" content="assets/logo.png">
+<meta property="og:type" content="website">
+<style>
+:root {
+  --bg: #f2f3ee;
+  --ink: #22313c;
+  --line: #d8dcd6;
+  --accent: #96451a;
+  --muted: #4c5a64;
+  --hairline: #d8dcd6;
+  --eave-white: #f2f3ee;
+  --storm-slate: #22313c;
+  --surf-blue: #2f6f9e;
+  --terracotta: #96451a;
+  --terracotta-light: #a04d1f;
+  --font-display: 'Epilogue', system-ui, sans-serif;
+  --font-body: 'Mulish', system-ui, sans-serif;
+  --fs-hero: clamp(2.5rem, 6vw, 4.5rem);
+  --fs-h2: clamp(1.75rem, 4vw, 2.75rem);
+  --fs-body: 1rem;
+  --fs-sm: 0.875rem;
+  --fs-xs: 0.75rem;
+  --space: clamp(1rem, 2.5vw, 1.5rem);
+  --space-lg: clamp(2rem, 5vw, 3rem);
+  --space-xl: clamp(3rem, 8vw, 5rem);
+  --max-w: 72rem;
+  --nav-h: 4.75rem;
+  --radius: 0;
+  --trans: 160ms ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --trans: 0ms; }
+  .rv { opacity: 1 !important; transform: none !important; transition: none !important; }
+  canvas { transition: none !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rv { opacity: 1; transform: none; transition: opacity 700ms ease, transform 700ms ease; }
+.js .rv { opacity: 0; transform: translateY(1.5rem); transition: opacity 700ms ease, transform 700ms ease; }
+.js .rv.on, .rv.on { opacity: 1; transform: none; }
+.rv[style*="opacity: 0"] { opacity: 1 !important; transform: none !important; }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--space); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* Topbar */
+.topbar {
+  position: sticky; top: 0; z-index: 100;
+  height: var(--nav-h);
+  background: rgba(242, 243, 238, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hairline);
+}
+.topbar__inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.topbar__brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--ink); }
+.topbar__logo { width: 4rem; height: 4rem; display: block; }
+.topbar__name { font-family: var(--font-display); font-weight: 700; font-size: 1.125rem; letter-spacing: -0.02em; white-space: nowrap; }
+.topbar__phone { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+.topbar__phone:hover { color: var(--ink); }
+
+/* Hero - split: copy left, canvas right */
+.hero { padding: var(--space-xl) var(--space); }
+.hero__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-xl); align-items: start; }
+@media (max-width: 900px) { .hero__grid { grid-template-columns: 1fr; gap: var(--space-lg); } .hero__panel { order: -1; aspect-ratio: 16/9; max-width: 100%; } }
+.hero__copy { padding-top: 1rem; }
+.hero__kicker { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; display: block; }
+.hero__title { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-hero); line-height: 1.1; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 1rem; }
+.hero__desc { font-size: var(--fs-body); color: var(--ink); line-height: 1.7; max-width: 48ch; margin-bottom: 1.5rem; opacity: 0.9; }
+.hero__ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.btn { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-sm); padding: 0.875rem 1.5rem; border: 2px solid transparent; cursor: pointer; transition: background var(--trans), color var(--trans), border-color var(--trans); }
+.btn--primary { background: var(--terracotta); color: var(--bg); border-color: var(--terracotta); }
+.btn--primary:hover { background: var(--terracotta-light); border-color: var(--terracotta-light); color: var(--bg); }
+.btn--ghost { background: transparent; color: var(--terracotta); border-color: var(--terracotta); }
+.btn--ghost:hover { background: var(--terracotta); color: var(--bg); border-color: var(--terracotta); }
+
+/* Hero canvas panel */
+.hero__panel { position: relative; aspect-ratio: 4/3; background: var(--bg); overflow: hidden; }
+.hero__canvas { width: 100%; height: 100%; display: block; }
+
+/* Eave rule divider - horizontal eave line with gutter hanger ticks */
+.eave-divider { width: 100%; height: 60px; background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.eave-divider svg { width: 100%; height: 100%; display: block; }
+
+/* Services as eave-course rows */
+.services { padding: var(--space-xl) var(--space); background: var(--bg); }
+.services__header { text-align: center; margin-bottom: var(--space-lg); }
+.services__label { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-xs); letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; display: block; }
+.services__title { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h2); margin: 0; color: var(--ink); opacity: 1 !important; }
+.services__rows { display: grid; gap: 0; }
+.service-row { display: grid; grid-template-columns: 1fr auto; gap: var(--space); align-items: start; padding: var(--space-lg) 0; border-top: 1px solid var(--line); position: relative; }
+.service-row:first-child { border-top: none; }
+.service-row::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--line); background-image: repeating-linear-gradient(90deg, var(--line), var(--line) 8px, transparent 8px, transparent 16px); z-index: 0; }
+.service-row:last-child::after { display: none; }
+.service-row__content { position: relative; z-index: 1; }
+.service-row__name { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.1rem, 2vw, 1.35rem); margin: 0 0 0.5rem; color: var(--ink); }
+.service-row__desc { font-size: var(--fs-body); color: var(--muted); margin: 0; max-width: 55ch; line-height: 1.7; }
+.service-row__icon { position: relative; z-index: 1; width: 48px; height: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.service-row__icon svg { width: 100%; height: 100%; display: block; }
+@media (max-width: 640px) { .service-row { grid-template-columns: 1fr; gap: 0.75rem; } .service-row::after { display: none; } .service-row__icon { width: 36px; height: 36px; } }
+
+/* Detail-art section */
+.detail-art { padding: var(--space-xl) var(--space); background: var(--bg); opacity: 1 !important; }
+.detail-art__header { text-align: center; margin-bottom: var(--space-lg); }
+.detail-art__label { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-xs); letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; display: block; }
+.detail-art__title { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h2); margin: 0; color: var(--ink); }
+.detail-art__panel { position: relative; aspect-ratio: 3/2; max-width: 800px; margin: 0 auto; background: var(--bg); overflow: hidden; }
+.detail-art__canvas { width: 100%; height: 100%; display: block; }
+
+/* Area band */
+.area-band { padding: var(--space-xl) var(--space); background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); opacity: 1 !important; }
+.area-band__inner { max-width: var(--max-w); margin: 0 auto; }
+.area-band__header { text-align: center; margin-bottom: var(--space-lg); }
+.area-band__label { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-xs); letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; display: block; }
+.area-band__title { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h2); margin: 0; color: var(--ink); }
+.area-band__map { position: relative; aspect-ratio: 2/1; max-width: 100%; background: var(--bg); overflow: hidden; }
+.area-band__canvas { width: 100%; height: 100%; display: block; }
+
+/* Trust signals */
+.trust-signals { padding: var(--space-xl) var(--space); background: var(--bg); }
+.trust-signals__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space); max-width: var(--max-w); margin: 0 auto; }
+@media (max-width: 900px) { .trust-signals__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .trust-signals__grid { grid-template-columns: 1fr; } }
+.trust-item { display: flex; align-items: center; gap: 0.75rem; padding: var(--space); background: var(--bg); border: 1px solid var(--line); }
+.trust-item__icon { width: 1.75rem; height: 1.75rem; flex-shrink: 0; color: var(--accent); }
+.trust-item__text { font-family: var(--font-body); font-size: var(--fs-sm); font-weight: 500; color: var(--ink); line-height: 1.4; }
+.trust-signals { opacity: 1 !important; }
+
+/* Quote section (lbq) */
+.quote { padding: var(--space-xl) var(--space); background: var(--bg); opacity: 1 !important; }
+.quote__inner { max-width: 600px; margin: 0 auto; text-align: center; }
+.quote__label { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-xs); letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; display: block; }
+.quote__title { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h2); margin: 0 0 var(--space); color: var(--ink); }
+.quote__desc { font-size: var(--fs-body); color: var(--muted); margin: 0 0 var(--space-lg); line-height: 1.7; }
+#lbq { border: 2px solid var(--ink); border-radius: 0; padding: var(--space-lg); text-align: left; background: var(--bg); }
+#lbq .form-field { margin-bottom: var(--space); }
+#lbq label { display: block; font-family: var(--font-display); font-weight: 600; font-size: var(--fs-sm); color: var(--ink); margin-bottom: 0.375rem; }
+#lbq input, #lbq textarea, #lbq select { width: 100%; font-family: var(--font-body); font-size: var(--fs-body); padding: 0.75rem 1rem; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+#lbq input:focus, #lbq textarea:focus, #lbq select:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+#lbq button { width: 100%; font-family: var(--font-display); font-weight: 700; font-size: var(--fs-body); padding: 1rem; background: var(--ink); color: var(--bg); border: none; cursor: pointer; transition: background var(--trans); }
+#lbq button:hover { background: var(--accent); color: var(--bg); }
+#lbq button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Footer */
+.footer { padding: var(--space-xl) var(--space); background: var(--bg); border-top: 1px solid var(--line); }
+.footer__grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: var(--space-xl); align-items: center; }
+@media (max-width: 768px) { .footer__grid { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; } .footer__legal { justify-content: center; flex-wrap: wrap; } }
+.footer__brand { display: flex; flex-direction: column; gap: 0.25rem; }
+.footer__logo { width: 2rem; height: 2rem; display: block; }
+.footer__name { font-family: var(--font-display); font-weight: 700; font-size: 1.125rem; color: var(--ink); }
+.footer__sub { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-xs); color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+.footer__socials { display: flex; gap: 1rem; justify-content: center; }
+.footer__socials a { display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border: 1px solid var(--line); border-radius: 50%; color: var(--muted); transition: all var(--trans); }
+.footer__socials a:hover { border-color: var(--accent); color: var(--accent); }
+.footer__legal { display: flex; gap: 2rem; justify-content: end; font-family: var(--font-body); font-size: var(--fs-xs); color: var(--muted); }
+.footer__legal a:hover { color: var(--accent); }
+
+/* Legal pages (privacy/terms) */
+.legal { padding: var(--space-xl) var(--space); background: var(--bg); border-top: 1px solid var(--line); }
+.legal h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h2); margin: 0 0 1rem; color: var(--ink); }
+.legal p { font-size: var(--fs-body); color: var(--muted); margin: 0 0 1rem; max-width: 70ch; line-height: 1.7; }
+
+@media (max-width: 360px) {
+  .hero__title { font-size: 2rem; }
+  .hero__desc { font-size: 0.95rem; }
+}
+</style>
+<noscript>
+  <style>
+    .rv { opacity: 1 !important; transform: none !important; transition: none !important; }
+  </style>
+</noscript>
+<style id="parent-mobile-fixes">
+/* wave auto-2026-10-13d parent fixes: topbar mobile fit */
+@media (max-width:760px){ .topbar__nav{display:none !important} }
+@media (max-width:520px){ .topbar__name{font-size:.95rem} .topbar__phone{font-size:.95rem} }
+@media (max-width:420px){ .topbar__name{font-size:.9rem} }
+@media (max-width:380px){ .topbar__name{display:none} }
+@media (min-width:901px){ .hero__panel{order:-1} .hero__grid{grid-template-columns:.95fr 1.05fr} }
+@media (min-width:761px){ .topbar__logo{width:4.25rem !important;height:4.25rem !important} }
+.hero__title{text-wrap:balance}
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<nav class="topbar" role="navigation" aria-label="Main navigation">
+  <div class="container topbar__inner">
+    <a href="#" class="topbar__brand" aria-label="Sydney to Coast Roofing home">
+      <img src="assets/logo.png" alt="" class="topbar__logo" width="64" height="64" style="width:4rem;height:4rem;display:block;">
+      <span class="topbar__name lb-sr-only">Sydney to Coast Roofing</span>
+    </a>
+    <div class="topbar__nav" style="display:flex;align-items:center;gap:1.5rem;">
+      <a href="#services" class="topbar__link" style="font-family:var(--font-display);font-weight:600;font-size:0.9rem;color:var(--ink);text-decoration:none;">Services</a>
+      <a href="#area" class="topbar__link" style="font-family:var(--font-display);font-weight:600;font-size:0.9rem;color:var(--ink);text-decoration:none;">Areas</a>
+      <a href="#lbq" class="topbar__link" style="font-family:var(--font-display);font-weight:600;font-size:0.9rem;color:var(--ink);text-decoration:none;">Get a quote</a>
+          </div>
+          <a href="tel:+61425353651" class="topbar__phone" style="text-decoration:none;color:var(--terracotta);font-weight:600;">0425 353 651</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" aria-labelledby="hero-title" style="line-height: 1.15;">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <span class="hero__kicker" style="display:block; margin-bottom:0.5rem;">Roof tiling & repairs, Medowie NSW</span>
+      <h1 id="hero-title" style="line-height: 1.15; letter-spacing: -0.02em;">Tile roof repairs & re-roofing across Medowie, Central Coast & Sydney</h1>
+      <p class="hero__desc" style="line-height: 1.6; margin-top: 1rem;">Roof tiling specialists. Re-roofing, repairs, restoration &amp; ridge capping.</p>
+      <div class="hero__ctas" style="margin-top: 1.5rem;">
+        <a href="tel:+61425353651" class="btn btn--primary">Call 0425 353 651</a>
+        <a href="#lbq" class="btn btn--ghost">Request a quote</a>
+      </div>
+      <!-- Trust signals -->
+      <div class="hero__trust" style="margin-top: 2rem; display:flex; flex-wrap:wrap; gap:1.5rem; font-size:0.9rem; color:var(--muted);">
+        <span style="display:flex;align-items:center;gap:0.4rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Roof tiling &amp; repairs</span>
+        <span style="display:flex;align-items:center;gap:0.4rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Re-roofing &amp; restoration</span>
+        <span style="display:flex;align-items:center;gap:0.4rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Medowie NSW based</span>
+        <span style="display:flex;align-items:center;gap:0.4rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Central Coast &amp; Sydney</span>
+      </div>
+    </div>
+    <div class="hero__panel" aria-hidden="true">
+            <canvas class="hero__canvas" id="hero-canvas-main" width="800" height="600" style="position:relative;z-index:3;display:block;width:100%;height:100%;"></canvas>
+    </div>
+  </div>
+</header>
+
+<!-- Eave divider -->
+<div class="eave-divider" aria-hidden="true" style="padding-top: 2rem; padding-bottom: 2rem; background:#f2f3ee; margin:0 -1.5rem;">
+  <div class="container" style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
+    <svg viewBox="0 0 1100 70" preserveAspectRatio="none" style="width:100%;height:auto;display:block;">
+      <!-- Main eave line -->
+      <line x1="0" y1="35" x2="1100" y2="35" stroke="#d8dcd6" stroke-width="3"/>
+      <g font-family="Mulish, system-ui, sans-serif" font-size="14" fill="#22313c" font-weight="600">
+        <text x="80" y="18" text-anchor="middle">Medowie</text>
+        <text x="480" y="18" text-anchor="middle">Central Coast</text>
+        <text x="880" y="18" text-anchor="middle">Sydney</text>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<!-- Services - Eave courses -->
+<section class="services rv" id="services" aria-labelledby="services-title">
+  <div class="container">
+    <header class="services__header">
+      <span class="services__label">Our services</span>
+      <h2 class="services__title" id="services-title">Tile repairs, re-roofing & ridge capping</h2>
+    </header>
+    <div class="services__rows">
+      <div class="service-row">
+        <div class="service-row__content">
+          <h3 class="service-row__name">Roof tiling</h3>
+          <p class="service-row__desc">Concrete and terracotta tile installation, replacement and ridge capping.</p>
+        </div>
+        <div class="service-row__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M6 38 L14 26 L22 38 L30 26 L38 38" stroke="#22313c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M6 30 L14 18 L22 30 L30 18 L38 30" stroke="#22313c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M6 22 L14 10 L22 22 L30 10 L38 22" stroke="#22313c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-row__content">
+          <h3 class="service-row__name">Roof repairs</h3>
+          <p class="service-row__desc">Leak detection, broken tile replacement, flashing and valley repairs.</p>
+        </div>
+        <div class="service-row__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M24 6 L42 30 L6 30 Z" stroke="#22313c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M24 16 L24 30" stroke="#22313c" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M16 26 L32 26" stroke="#22313c" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-row__content">
+          <h3 class="service-row__name">Re-roofing</h3>
+          <p class="service-row__desc">Full roof replacement including sarking, battening and new tile installation.</p>
+        </div>
+        <div class="service-row__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M6 38 L14 26 L22 38 L30 26 L38 38" stroke="#22313c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M6 30 L14 18 L22 30 L30 18 L38 30" stroke="#22313c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M42 6 L42 38" stroke="#2f6f9e" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M38 38 L42 34" stroke="#2f6f9e" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-row__content">
+          <h3 class="service-row__name">Roof restoration</h3>
+          <p class="service-row__desc">Pressure cleaning, re-bedding, re-pointing and protective coating systems.</p>
+        </div>
+        <div class="service-row__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M6 38 L14 26 L22 38 L30 26 L38 38" stroke="#22313c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M6 30 L14 18 L22 30 L30 18 L38 30" stroke="#22313c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M16 22 L32 22" stroke="#2f6f9e" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M24 16 L24 28" stroke="#2f6f9e" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust signals -->
+<section class="trust-signals rv" id="trust" aria-labelledby="trust-title">
+  <div class="container">
+    <header class="trust-signals__header" style="text-align:center;margin-bottom:var(--space-lg);">
+      <span class="trust-signals__label" style="font-family:var(--font-display);font-weight:600;font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;display:block;">Why choose us</span>
+      <h2 id="trust-title" style="font-family:var(--font-display);font-weight:700;font-size:var(--fs-h2);margin:0;color:var(--ink);">Trusted across NSW</h2>
+    </header>
+    <div class="trust-signals__grid">
+      <div class="trust-item">
+        <svg class="trust-item__icon" viewBox="0 0 24 24" fill="none" stroke="#22313c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 12l2 2 4-4"/>
+          <circle cx="12" cy="12" r="10"/>
+        </svg>
+        <span class="trust-item__text">Roof tiling specialists</span>
+      </div>
+      <div class="trust-item">
+        <svg class="trust-item__icon" viewBox="0 0 24 24" fill="none" stroke="#22313c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        <span class="trust-item__text">Roof repairs &amp; maintenance</span>
+      </div>
+      <div class="trust-item">
+        <svg class="trust-item__icon" viewBox="0 0 24 24" fill="none" stroke="#22313c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="trust-item__text">Medowie, Central Coast, Sydney</span>
+      </div>
+      <div class="trust-item">
+        <svg class="trust-item__icon" viewBox="0 0 24 24" fill="none" stroke="#22313c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M6 8h12M12 12v8"/>
+        </svg>
+        <span class="trust-item__text">New tile roofs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Detail art -->
+<section class="detail-art rv" id="detail" aria-labelledby="detail-title">
+  <div class="container">
+    <header class="detail-art__header">
+      <span class="detail-art__label">Detail</span>
+      <h2 class="detail-art__title" id="detail-title">Gutter cross-section</h2>
+    </header>
+    <div class="detail-art__panel">
+      <canvas class="detail-art__canvas" id="detail-canvas" width="800" height="533"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- Area band -->
+<section class="area-band rv" id="area" aria-labelledby="area-title">
+  <div class="area-band__inner">
+    <header class="area-band__header">
+      <span class="area-band__label">Route</span>
+      <h2 class="area-band__title" id="area-title">Where we work</h2>
+    </header>
+    <div class="area-band__map">
+      <canvas class="area-band__canvas" id="area-canvas" width="1000" height="500"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- Quote form section -->
+<section class="quote rv" id="lbq" aria-labelledby="quote-title">
+  <div class="quote__inner">
+    <span class="quote__label">Enquiry</span>
+    <h2 class="quote__title" id="quote-title">Request a quote</h2>
+    <p class="quote__desc">Tell us about the job and we'll get back to you.</p>
+    <form id="lbq-form" novalidate data-site="yp_-df650412-952" data-biz="Sydney to Coast Roofing">
+      <div class="form-field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name">
+      </div>
+      <div class="form-field">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel">
+      </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email">
+      </div>
+      <div class="form-field">
+        <label for="service">Service</label>
+        <select id="service" name="service">
+          <option value="">Select a service</option>
+          <option value="roof-tiling">Roof tiling</option>
+          <option value="roof-repairs">Roof repairs</option>
+          <option value="re-roofing">Re-roofing</option>
+          <option value="roof-restoration">Roof restoration</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="message">Details</label>
+        <textarea id="message" name="message" rows="4" placeholder="Describe the work needed..." required></textarea>
+      </div>
+      <label style="display:flex;gap:9px;align-items:center;font-size:.82rem;color:var(--muted);margin:.5rem 0">
+        <input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
+      <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit" class="btn btn--primary" style="margin-top:1rem">Send quote request</button>
+      <p id="lbq-st" role="status" aria-live="polite" style="margin:10px 0 0;font-size:.9rem;color:var(--muted);min-height:1.2em"></p>
+    </form>
+  </div>
+<script>
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;  // honeypot - silently accept bots
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</section>
+
+<!-- Footer -->
+<footer class="footer rv" role="contentinfo">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <svg class="footer__logo" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+        <title>Sydney to Coast Roofing</title>
+        <path d="M32 172 L96 92 L160 172" stroke="#22313c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M28 180 C56 164, 100 164, 128 180 C156 196, 200 196, 228 180" stroke="#22313c" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <g stroke="#22313c" stroke-width="3" stroke-linecap="round">
+          <line x1="48" y1="162" x2="48" y2="180"/>
+          <line x1="80" y1="157" x2="80" y2="180"/>
+          <line x1="112" y1="157" x2="112" y2="180"/>
+          <line x1="144" y1="162" x2="144" y2="180"/>
+          <line x1="176" y1="167" x2="176" y2="180"/>
+          <line x1="208" y1="167" x2="208" y2="180"/>
+        </g>
+        <path d="M160 180 L160 216" stroke="var(--terracotta)" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <path d="M160 216 Q170 220 176 216" stroke="var(--terracotta)" stroke-width="6" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span class="footer__name">Sydney to Coast Roofing</span>
+      <span class="footer__sub">Roofing contractor - Medowie NSW</span>
+    </div>
+    <div class="footer__socials">
+      <a href="https://facebook.com/sydneytocoastroofing" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+      </a>
+    </div>
+    <nav class="footer__legal" aria-label="Legal">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+// Reveal system initialization - ensure content visible immediately for static render
+(function() {
+  var rvElements = document.querySelectorAll('.rv');
+  rvElements.forEach(function(el) { el.classList.add('on'); });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('on');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+  rvElements.forEach(function(el) { observer.observe(el); });
+  // Safety net: reveal all after 1100ms in case observer misses
+  setTimeout(function() {
+    rvElements.forEach(function(el) { el.classList.add('on'); });
+  }, 1100);
+})();
+
+// Hero canvas main - painted terracotta tile roof illustration (static: one paint + resize redraw)
+(function() {
+  var canvas = document.getElementById('hero-canvas-main');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var dpr = window.devicePixelRatio || 1;
+  function draw() {
+    var rect = canvas.parentElement.getBoundingClientRect();
+    canvas.width = Math.max(2, Math.floor(rect.width * dpr));
+    canvas.height = Math.max(2, Math.floor(rect.height * dpr));
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var w = rect.width;
+    var h = rect.height;
+    ctx.clearRect(0, 0, w, h);
+    if (!isFinite(w) || !isFinite(h) || w < 8 || h < 8) return;
+
+    var T1 = 'rgba(150,69,26,1)';
+    var T2 = 'rgba(196,110,58,1)';
+    var T3 = 'rgba(219,148,94,1)';
+    var SL = 'rgba(34,49,60,1)';
+
+    // soft sky wash
+    var sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, 'rgba(247,248,244,1)');
+    sky.addColorStop(1, 'rgba(233,235,229,1)');
+    ctx.fillStyle = sky;
+    ctx.fillRect(0, 0, w, h);
+
+    // three-quarter roof plane corners
+    var mx = w * 0.50, my = h * 0.48;
+    var rx = w * 0.40, ry = h * 0.36;
+    var ridgeL = {x: mx - rx, y: my - ry * 0.95};
+    var ridgeR = {x: mx + rx * 0.94, y: my - ry * 0.58};
+    var eaveR  = {x: mx + rx, y: my + ry * 0.40};
+    var eaveL  = {x: mx - rx * 0.86, y: my + ry * 0.24};
+
+    function lerp(a, b, tt) { return {x: a.x + (b.x - a.x) * tt, y: a.y + (b.y - a.y) * tt}; }
+
+    // plane fill: lighter at ridge, deep at eave
+    var pg = ctx.createLinearGradient(0, ridgeL.y, 0, eaveR.y);
+    pg.addColorStop(0, T3);
+    pg.addColorStop(0.42, T2);
+    pg.addColorStop(1, T1);
+    ctx.beginPath();
+    ctx.moveTo(ridgeL.x, ridgeL.y);
+    ctx.lineTo(ridgeR.x, ridgeR.y);
+    ctx.lineTo(eaveR.x, eaveR.y);
+    ctx.lineTo(eaveL.x, eaveL.y);
+    ctx.closePath();
+    ctx.fillStyle = pg;
+    ctx.fill();
+
+    // tile courses + column seams, clipped to the plane
+    ctx.save();
+    ctx.clip();
+    var rows = 9;
+    for (var i = 1; i < rows; i++) {
+      var tt = i / rows;
+      var pL = lerp(ridgeL, eaveL, tt);
+      var pR = lerp(ridgeR, eaveR, tt);
+      ctx.beginPath();
+      ctx.moveTo(pL.x, pL.y);
+      ctx.lineTo(pR.x, pR.y);
+      ctx.strokeStyle = 'rgba(118,50,16,0.55)';
+      ctx.lineWidth = 1.6;
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(pL.x, pL.y - 1.6);
+      ctx.lineTo(pR.x, pR.y - 1.6);
+      ctx.strokeStyle = 'rgba(255,216,172,0.30)';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+    }
+    var cols = 12;
+    for (var c = 0; c < cols; c++) {
+      var tc = (c + 0.5) / cols;
+      for (var rr = 0; rr < rows; rr++) {
+        var t0 = rr / rows, t1 = (rr + 1) / rows;
+        var off = (rr % 2) * (0.5 / cols);
+        var tG = tc + off;
+        if (tG > 1) continue;
+        var aL = lerp(ridgeL, eaveL, t0), aR = lerp(ridgeR, eaveR, t0);
+        var bL = lerp(ridgeL, eaveL, t1), bR = lerp(ridgeR, eaveR, t1);
+        var ax = aL.x + (aR.x - aL.x) * tG, ay = aL.y + (aR.y - aL.y) * tG;
+        var bx = bL.x + (bR.x - bL.x) * tG, by = bL.y + (bR.y - bL.y) * tG;
+        ctx.beginPath();
+        ctx.moveTo(ax, ay + 2);
+        ctx.lineTo(bx, by);
+        ctx.strokeStyle = 'rgba(118,50,16,0.34)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+    ctx.restore();
+
+    // ridge cap (slate band + warm highlight)
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(ridgeL.x, ridgeL.y);
+    ctx.lineTo(ridgeR.x, ridgeR.y);
+    ctx.strokeStyle = SL;
+    ctx.lineWidth = Math.max(3, h * 0.024);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(ridgeL.x, ridgeL.y - h * 0.013);
+    ctx.lineTo(ridgeR.x, ridgeR.y - h * 0.013);
+    ctx.strokeStyle = 'rgba(255,231,199,0.55)';
+    ctx.lineWidth = Math.max(1, h * 0.007);
+    ctx.stroke();
+
+    // fascia + gutter along the eave edge
+    var gOff = Math.max(5, h * 0.028);
+    var fL = {x: eaveL.x - w * 0.012, y: eaveL.y + gOff * 0.5};
+    var fR = {x: eaveR.x + w * 0.012, y: eaveR.y + gOff * 0.5};
+    var gL = {x: fL.x, y: fL.y + gOff};
+    var gR = {x: fR.x, y: fR.y + gOff};
+    ctx.beginPath();
+    ctx.moveTo(fL.x, fL.y);
+    ctx.lineTo(fR.x, fR.y);
+    ctx.strokeStyle = SL;
+    ctx.lineWidth = Math.max(3, h * 0.022);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(gL.x, gL.y);
+    ctx.lineTo(gR.x, gR.y);
+    ctx.strokeStyle = 'rgba(34,49,60,0.85)';
+    ctx.lineWidth = Math.max(2, h * 0.014);
+    ctx.stroke();
+    // hanger ticks
+    for (var hk = 0; hk <= 8; hk++) {
+      var th = hk / 8;
+      var hx = fL.x + (fR.x - fL.x) * th;
+      var hy = fL.y + (fR.y - fL.y) * th;
+      ctx.beginPath();
+      ctx.moveTo(hx, hy + 1);
+      ctx.lineTo(hx, hy + gOff * 0.9);
+      ctx.strokeStyle = 'rgba(34,49,60,0.65)';
+      ctx.lineWidth = Math.max(1.2, h * 0.008);
+      ctx.stroke();
+    }
+    // downpipe at right end
+    var dpX = gR.x - w * 0.02;
+    var dpY0 = gR.y;
+    var dpY1 = Math.min(h * 0.985, gR.y + h * 0.30);
+    ctx.beginPath();
+    ctx.moveTo(dpX, dpY0);
+    ctx.lineTo(dpX, dpY1);
+    ctx.strokeStyle = T1;
+    ctx.lineWidth = Math.max(3, h * 0.026);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(dpX, dpY1);
+    ctx.quadraticCurveTo(dpX + w * 0.02, dpY1 + h * 0.02, dpX + w * 0.035, dpY1 + h * 0.005);
+    ctx.strokeStyle = T1;
+    ctx.lineWidth = Math.max(3, h * 0.024);
+    ctx.stroke();
+    // soft contact shadow under the gutter
+    ctx.beginPath();
+    ctx.moveTo(gL.x, gL.y + gOff * 0.6);
+    ctx.lineTo(gR.x, gR.y + gOff * 0.6);
+    ctx.strokeStyle = 'rgba(34,49,60,0.10)';
+    ctx.lineWidth = Math.max(4, h * 0.03);
+    ctx.stroke();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', draw);
+  } else {
+    draw();
+  }
+  var heroResizeT;
+  window.addEventListener('resize', function() {
+    clearTimeout(heroResizeT);
+    heroResizeT = setTimeout(draw, 250);
+  });
+})();
+
+// Detail art canvas - gutter cross-section with hanger and downpipe junction
+(function() {
+  var canvas = document.getElementById('detail-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var dpr = window.devicePixelRatio || 1;
+  function draw() {
+    var rect = canvas.parentElement.getBoundingClientRect();
+    canvas.width = Math.max(1, Math.floor(rect.width * dpr));
+    canvas.height = Math.max(1, Math.floor(rect.height * dpr));
+    ctx.scale(dpr, dpr);
+    var w = rect.width;
+    var h = rect.height;
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = '#f2f3ee';
+    ctx.fillRect(0, 0, w, h);
+    var cx = w * 0.5;
+    var cy = h * 0.5;
+    var scale = Math.min(w, h) * 0.35;
+    // Gutter cross-section (U-shape)
+    ctx.beginPath();
+    ctx.moveTo(cx - scale * 0.6, cy - scale * 0.2);
+    ctx.lineTo(cx - scale * 0.5, cy + scale * 0.4);
+    ctx.lineTo(cx + scale * 0.5, cy + scale * 0.4);
+    ctx.lineTo(cx + scale * 0.6, cy - scale * 0.2);
+    ctx.strokeStyle = '#22313c';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    // Gutter thickness
+    ctx.beginPath();
+    ctx.moveTo(cx - scale * 0.55, cy - scale * 0.15);
+    ctx.lineTo(cx - scale * 0.45, cy + scale * 0.35);
+    ctx.lineTo(cx + scale * 0.45, cy + scale * 0.35);
+    ctx.lineTo(cx + scale * 0.55, cy - scale * 0.15);
+    ctx.strokeStyle = '#22313c';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    // Hanger bracket
+    ctx.beginPath();
+    ctx.moveTo(cx - scale * 0.7, cy - scale * 0.3);
+    ctx.lineTo(cx - scale * 0.5, cy - scale * 0.2);
+    ctx.lineTo(cx, cy - scale * 0.5);
+    ctx.lineTo(cx + scale * 0.5, cy - scale * 0.2);
+    ctx.lineTo(cx + scale * 0.7, cy - scale * 0.3);
+    ctx.strokeStyle = '#22313c';
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+    // Hanger vertical
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - scale * 0.5);
+    ctx.lineTo(cx, cy - scale * 0.9);
+    ctx.strokeStyle = '#22313c';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    // Rafter tail
+    ctx.beginPath();
+    ctx.moveTo(cx - scale * 0.5, cy - scale * 0.2);
+    ctx.lineTo(cx - scale * 1.1, cy - scale * 0.8);
+    ctx.strokeStyle = '#22313c';
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+    // Fascia
+    ctx.beginPath();
+    ctx.moveTo(cx - scale * 1.1, cy - scale * 0.8);
+    ctx.lineTo(cx + scale * 0.8, cy - scale * 0.8);
+    ctx.strokeStyle = '#22313c';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    // Downpipe junction
+    ctx.beginPath();
+    ctx.moveTo(cx + scale * 0.5, cy + scale * 0.4);
+    ctx.lineTo(cx + scale * 0.5, cy + scale * 0.9);
+    ctx.strokeStyle = '#2f6f9e';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    // Downpipe shoe
+    ctx.beginPath();
+    ctx.moveTo(cx + scale * 0.5, cy + scale * 0.9);
+    ctx.quadraticCurveTo(cx + scale * 0.7, cy + scale * 1.0, cx + scale * 0.9, cy + scale * 0.9);
+    ctx.strokeStyle = '#2f6f9e';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    // Annotations
+    ctx.font = '11px Mulish, system-ui, sans-serif';
+    ctx.fillStyle = '#5c6d78';
+    ctx.textAlign = 'left';
+    ctx.fillText('Gutter', cx + scale * 0.7, cy - scale * 0.1);
+    ctx.fillText('Hanger', cx - scale * 1.2, cy - scale * 0.6);
+    ctx.fillText('Rafter', cx - scale * 1.3, cy - scale * 0.9);
+    ctx.fillText('Fascia', cx - scale * 1.3, cy - scale * 0.7);
+    ctx.fillText('Downpipe', cx + scale * 0.6, cy + scale * 0.7);
+    ctx.fillText('Shoe', cx + scale * 0.6, cy + scale * 1.0);
+    // Dimension lines
+    ctx.strokeStyle = '#5c6d78';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 3]);
+    // Gutter width
+    ctx.beginPath();
+    ctx.moveTo(cx - scale * 0.5, cy + scale * 0.55);
+    ctx.lineTo(cx + scale * 0.5, cy + scale * 0.55);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(cx - scale * 0.5, cy + scale * 0.4);
+    ctx.lineTo(cx - scale * 0.5, cy + scale * 0.55);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(cx + scale * 0.5, cy + scale * 0.4);
+    ctx.lineTo(cx + scale * 0.5, cy + scale * 0.55);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.font = '10px Mulish, system-ui, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('125mm', cx, cy + scale * 0.52);
+    // Depth
+    ctx.setLineDash([4, 3]);
+    ctx.beginPath();
+    ctx.moveTo(cx + scale * 0.65, cy - scale * 0.2);
+    ctx.lineTo(cx + scale * 0.65, cy + scale * 0.4);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.save();
+    ctx.translate(cx + scale * 0.68, cy + scale * 0.1);
+    ctx.rotate(-Math.PI / 2);
+    ctx.textAlign = 'center';
+    ctx.fillText('75mm', 0, 0);
+    ctx.restore();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', draw);
+  } else {
+    draw();
+  }
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(draw, 300);
+  });
+})();
+
+// Area band canvas - geometric route stroke
+(function() {
+  var canvas = document.getElementById('area-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var dpr = window.devicePixelRatio || 1;
+  function draw() {
+    var rect = canvas.parentElement.getBoundingClientRect();
+    canvas.width = Math.max(1, Math.floor(rect.width * dpr));
+    canvas.height = Math.max(1, Math.floor(rect.height * dpr));
+    ctx.scale(dpr, dpr);
+    var w = rect.width;
+    var h = rect.height;
+    ctx.clearRect(0, 0, w, h);
+    // Clean background
+    ctx.fillStyle = '#f8f9f6';
+    ctx.fillRect(0, 0, w, h);
+    // Route: Medowie -> Central Coast -> Sydney (horizontal flow)
+    var y = h * 0.5;
+    var startX = w * 0.1;
+    var endX = w * 0.9;
+    var points = [
+      { x: startX, y: y, label: 'Medowie' },
+      { x: w * 0.5, y: y, label: 'Central Coast' },
+      { x: endX, y: y, label: 'Sydney' }
+    ];
+    // Route line - terracotta
+    ctx.beginPath();
+    ctx.moveTo(points[0].x, points[0].y);
+    ctx.lineTo(points[2].x, points[2].y);
+    ctx.strokeStyle = 'rgba(150,69,26,1)';
+    ctx.lineWidth = 4;
+    ctx.lineCap = 'round';
+    ctx.stroke();
+    // Tick marks at each location
+    points.forEach(function(p) {
+      // Tick mark
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y - 12);
+      ctx.lineTo(p.x, p.y + 12);
+      ctx.strokeStyle = 'rgba(150,69,26,1)';
+      ctx.lineWidth = 3;
+      ctx.lineCap = 'round';
+      ctx.stroke();
+      // Location dot
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 8, 0, Math.PI * 2);
+      ctx.fillStyle = '#22313c';
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(150,69,26,1)';
+      ctx.fill();
+      // Label - larger, higher contrast
+      ctx.font = 'bold 16px Mulish, system-ui, sans-serif';
+      ctx.fillStyle = '#22313c';
+      ctx.textAlign = 'center';
+      ctx.fillText(p.label, p.x, p.y + 36);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', draw);
+  } else {
+    draw();
+  }
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(draw, 300);
+  });
+})();
+</script>
+<noscript>
+  <style>
+    .rv { opacity: 1 !important; transform: none !important; }
+  
+/* mobile overflow guard 2026-10-14 */
+html,body{overflow-x:hidden}
+@media (max-width:820px){
+  h1,h2,h3,.h1,.hero h1,.sec-title,.k,.kicker,.kick,.eyebrow,.tag-line,.tag,.hero-kicker,.hero-sub,.lead{
+    white-space:normal!important;overflow-wrap:anywhere;word-break:break-word;max-width:100%!important}
+  .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(10px,3.1vw,13px)!important;letter-spacing:.22em!important}
+  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.05!important}
+}
+</style>
+</noscript>
+
+<style id="lb-header-fault-fix">
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+</style>
+</body>
+</html>
