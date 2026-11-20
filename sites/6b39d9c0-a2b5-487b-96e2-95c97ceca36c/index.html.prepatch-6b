@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VPB Constructions Pty Ltd — Licensed builder serving Hunter NSW. Residential, commercial, renovations and project management.">
+  <title>VPB Constructions Pty Ltd — Builder, Hunter NSW</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;700;900&family=Overpass+Mono:wght@400;600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Reveal CSS (base-hide + effective no-JS fallback via .js gating) -->
+  <style>
+    /* ===== CSS Custom Properties ===== */
+    :root {
+      --field: #f2f3f0;
+      --steel: #c3c8cc;
+      --ink: #232f3d;
+      --safety-green: #2e7d4f;
+      --secondary-grey: #6f767c;
+      --white: #ffffff;
+      
+      --font-display: "Saira Condensed", sans-serif;
+      --font-mono: "Overpass Mono", monospace;
+      --font-body: "Public Sans", sans-serif;
+      
+      --pole-width: 8px;
+      --pole-left: 40px;
+      --pole-right: calc(100% - 48px);
+      --coupler-size: 8px;
+      --coupler-gap: 120px;
+      --brace-width: 2px;
+      --deck-width: 90%;
+      --tag-radius: 8px;
+      --tag-hole: 4px;
+      --string-width: 2px;
+      
+      --hero-size: clamp(48px, 8vw, 96px);
+      --deck-title-size: clamp(28px, 4vw, 40px);
+      --tag-size: 13px;
+      --body-size: clamp(16px, 2vw, 18px);
+      --number-size: 24px;
+      --contact-size: clamp(18px, 2.5vw, 24px);
+    }
+    
+    /* ===== Reduced Motion ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    
+    /* ===== Base Reset ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* ===== No-JS Reveal Fallback (html.js gating — hide only applies WITH JS) ===== */
+    .js .rv {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    
+    .js .rv.on {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* ===== Body & Layout ===== */
+    body {
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--field);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    /* Subtle plank-line texture on body */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(195, 200, 204, 0.08) 3px,
+        rgba(195, 200, 204, 0.08) 4px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    /* ===== Scaffold Poles (Desktop) ===== */
+    .scaffold-poles {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .pole {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: var(--pole-width);
+      background: linear-gradient(180deg, var(--steel) 0%, #a8afb4 100%);
+      border-radius: 4px;
+    }
+    
+    .pole-left {
+      left: var(--pole-left);
+    }
+    
+    .pole-right {
+      right: var(--pole-left);
+    }
+    
+    /* Coupler joints */
+    .coupler {
+      position: absolute;
+      width: var(--coupler-size);
+      height: var(--coupler-size);
+      background: var(--steel);
+      border: 2px solid var(--ink);
+      border-radius: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .pole-left .coupler,
+    .pole-right .coupler {
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.15);
+    }
+    
+    /* Cross braces */
+    .cross-brace {
+      position: absolute;
+      width: calc(100% - var(--pole-left) * 2);
+      height: var(--brace-width);
+      background: var(--steel);
+      opacity: 0.6;
+      left: var(--pole-left);
+      transform-origin: center;
+    }
+    
+    .cross-brace:nth-child(odd) {
+      transform: rotate(3deg);
+    }
+    
+    .cross-brace:nth-child(even) {
+      transform: rotate(-3deg);
+    }
+    
+    /* ===== Mobile Scaffold (Top Rail) ===== */
+    .mobile-scaffold {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--steel), var(--ink), var(--steel));
+      z-index: 10;
+    }
+    
+    .mobile-scaffold::before,
+    .mobile-scaffold::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 4px;
+      height: 4px;
+      background: var(--ink);
+      border-radius: 2px;
+    }
+    
+    .mobile-scaffold::before { left: 16px; }
+    .mobile-scaffold::after { right: 16px; }
+    
+    @media (max-width: 768px) {
+      .scaffold-poles { display: none; }
+      .mobile-scaffold { display: block; }
+      :root {
+        --pole-left: 16px;
+      }
+    }
+    
+    /* ===== Main Content ===== */
+    main {
+      position: relative;
+      z-index: 2;
+      padding-top: 0;
+    }
+    
+    /* ===== Decks (Sections) ===== */
+    .deck {
+      position: relative;
+      width: var(--deck-width);
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: clamp(60px, 10vh, 120px) clamp(24px, 5vw, 60px);
+      z-index: 5;
+    }
+    
+    .deck::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 20px,
+        rgba(195, 200, 204, 0.12) 20px,
+        rgba(195, 200, 204, 0.12) 21px
+      );
+      border-radius: 4px;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+    
+    .deck-inner {
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Deck number plate */
+    .deck-number {
+      font-family: var(--font-mono);
+      font-size: var(--number-size);
+      font-weight: 600;
+      color: var(--secondary-grey);
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+    
+    /* Safety tag label */
+    .safety-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: var(--tag-size);
+      font-weight: 600;
+      color: var(--white);
+      background: var(--safety-green);
+      padding: 6px 14px 6px 18px;
+      border-radius: var(--tag-radius);
+      position: relative;
+      margin-bottom: clamp(16px, 3vh, 32px);
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    
+    .safety-tag::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: var(--tag-hole);
+      height: var(--tag-hole);
+      background: var(--field);
+      border-radius: 50%;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
+    }
+    
+    .safety-tag::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -14px;
+      width: 14px;
+      height: var(--string-width);
+      background: var(--steel);
+      transform: translateY(-50%);
+    }
+    
+    /* Deck title */
+    .deck-title {
+      font-family: var(--font-display);
+      font-size: var(--deck-title-size);
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(16px, 2.5vh, 28px);
+    }
+    
+    /* Deck content */
+    .deck-content {
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      color: var(--ink);
+      line-height: 1.75;
+    }
+    
+    .deck-content p {
+      margin-bottom: 1em;
+    }
+    
+    .deck-content ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .deck-content li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 0.75em;
+    }
+    
+    .deck-content li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      border: 2px solid var(--steel);
+      border-radius: 50%;
+      background: var(--field);
+    }
+    
+    /* ===== Hero Deck (Special) ===== */
+    .deck-hero {
+      text-align: center;
+      padding-top: clamp(100px, 15vh, 180px);
+      padding-bottom: clamp(80px, 12vh, 140px);
+    }
+    
+    .deck-hero .deck-number {
+      color: var(--safety-green);
+    }
+    
+    .deck-hero .safety-tag {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: var(--hero-size);
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+    
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: var(--contact-size);
+      font-weight: 500;
+      color: var(--secondary-grey);
+      letter-spacing: 0.02em;
+    }
+    
+    /* ===== Contact Deck ===== */
+    .deck-contact .deck-content {
+      font-family: var(--font-mono);
+      font-size: var(--contact-size);
+      font-weight: 600;
+      line-height: 1.8;
+      text-align: center;
+    }
+    
+    .deck-contact a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    
+    .deck-contact a:hover,
+    .deck-contact a:focus {
+      color: var(--safety-green);
+      border-bottom-color: var(--safety-green);
+      outline: none;
+    }
+    
+    .deck-contact a:focus-visible {
+      outline: 3px solid var(--safety-green);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+    
+    /* ===== Footer ===== */
+    .site-footer {
+      text-align: center;
+      padding: clamp(40px, 6vh, 80px) clamp(24px, 5vw, 60px);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--secondary-grey);
+      border-top: 1px solid var(--steel);
+      margin-top: 40px;
+    }
+    
+    /* ===== Accessibility ===== */
+    :focus-visible {
+      outline: 3px solid var(--safety-green);
+      outline-offset: 4px;
+    }
+    
+    /* ===== Print ===== */
+    @media print {
+      .scaffold-poles, .mobile-scaffold, .cross-brace { display: none !important; }
+      .deck { page-break-inside: avoid; }
+      .rv { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Scaffold Poles (Desktop) -->
+  <div class="scaffold-poles" aria-hidden="true">
+    <div class="pole pole-left" id="poleLeft"></div>
+    <div class="pole pole-right" id="poleRight"></div>
+  </div>
+  
+  <!-- Mobile Scaffold Top Rail -->
+  <div class="mobile-scaffold" aria-hidden="true"></div>
+  
+  <main>
+    <!-- Deck 01: Hero -->
+    <section class="deck deck-hero rv" data-deck="01" aria-labelledby="hero-title">
+      <div class="deck-inner">
+        <div class="deck-number">01</div>
+        <span class="safety-tag">VPB Constructions</span>
+        <h1 class="hero-name" id="hero-title">VPB Constructions Pty Ltd</h1>
+        <p class="hero-sub">Licensed Builder — Hunter NSW</p>
+      </div>
+    </section>
+    
+    <!-- Deck 02: About -->
+    <section class="deck rv" data-deck="02" aria-labelledby="about-title">
+      <div class="deck-inner">
+        <div class="deck-number">02</div>
+        <span class="safety-tag">About</span>
+        <h2 class="deck-title" id="about-title">About VPB Constructions</h2>
+        <div class="deck-content">
+          <p>VPB Constructions Pty Ltd is a licensed builder operating across the Hunter region of New South Wales. We deliver residential and commercial construction projects with a focus on structural integrity, clear communication, and on-time delivery.</p>
+          <p>Based at 12 Ilford Rd, Rylstone NSW 2849, we serve clients throughout the Hunter Valley and surrounding areas. Our team manages every phase from groundwork to handover, ensuring compliance with all Australian standards and local council requirements.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Deck 03: Services -->
+    <section class="deck rv" data-deck="03" aria-labelledby="services-title">
+      <div class="deck-inner">
+        <div class="deck-number">03</div>
+        <span class="safety-tag">Services</span>
+        <h2 class="deck-title" id="services-title">What We Build</h2>
+        <div class="deck-content">
+          <ul>
+            <li>New home construction</li>
+            <li>Renovations and extensions</li>
+            <li>Commercial fit-outs</li>
+            <li>Project management</li>
+            <li>Insurance restoration works</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Deck 04: Contact -->
+    <section class="deck deck-contact rv" data-deck="04" aria-labelledby="contact-title">
+      <div class="deck-inner">
+        <div class="deck-number">04</div>
+        <span class="safety-tag">Contact</span>
+        <h2 class="deck-title" id="contact-title">Get in Touch</h2>
+        <div class="deck-content">
+          <a href="tel:+61428418302">0428 418 302</a><br>
+          <span style="font-size: var(--body-size); font-family: var(--font-body); font-weight: 400; color: var(--secondary-grey);">12 Ilford Rd, Rylstone NSW 2849</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="site-footer" role="contentinfo">
+    VPB Constructions Pty Ltd — Licensed Builder NSW — Built with scaffold-lattice family
+  </footer>
+  
+  <!-- Reveal JS (safety net ~1100ms) -->
+  <script>
+    (function() {
+      'use strict';
+      
+      // Mark HTML as JS-enabled (gates the .rv hide rule)
+      document.documentElement.classList.add('js');
+      
+      // IntersectionObserver reveal
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('on');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.1
+      });
+      
+      document.querySelectorAll('.rv').forEach(function(el) {
+        observer.observe(el);
+      });
+      
+      // Safety net: force-reveal all after ~1100ms
+      setTimeout(function() {
+        document.querySelectorAll('.rv:not(.on)').forEach(function(el) {
+          el.classList.add('on');
+        });
+      }, 1100);
+      
+      // Build scaffold couplers and cross-braces dynamically
+      function buildScaffold() {
+        var poleLeft = document.getElementById('poleLeft');
+        var poleRight = document.getElementById('poleRight');
+        var poles = document.querySelector('.scaffold-poles');
+        if (!poleLeft || !poleRight || !poles) return;
+        
+        var decks = document.querySelectorAll('.deck');
+        var poleHeight = poleLeft.offsetHeight;
+        var couplerGap = 120; // px
+        
+        // Clear existing dynamic elements
+        poles.querySelectorAll('.coupler, .cross-brace').forEach(function(el) { el.remove(); });
+        
+        // Couplers on both poles
+        for (var y = couplerGap; y < poleHeight; y += couplerGap) {
+          ['Left', 'Right'].forEach(function(side) {
+            var pole = document.getElementById('pole' + side);
+            var coupler = document.createElement('div');
+            coupler.className = 'coupler';
+            coupler.style.top = y + 'px';
+            pole.appendChild(coupler);
+          });
+        }
+        
+        // Cross braces between section gaps
+        var deckTops = Array.from(decks).map(function(d) { return d.offsetTop; });
+        for (var i = 0; i < deckTops.length - 1; i++) {
+          var midY = (deckTops[i] + decks[i].offsetHeight + deckTops[i + 1]) / 2;
+          var brace = document.createElement('div');
+          brace.className = 'cross-brace';
+          brace.style.top = midY + 'px';
+          poles.appendChild(brace);
+        }
+      }
+      
+      // Build on load and resize
+      window.addEventListener('load', buildScaffold);
+      window.addEventListener('resize', function() {
+        clearTimeout(window._scaffoldResize);
+        window._scaffoldResize = setTimeout(buildScaffold, 100);
+      });
+      
+      // Initial build in case load already fired
+      if (document.readyState === 'complete') buildScaffold();
+    })();
+  </script>
+</body>
+</html>
