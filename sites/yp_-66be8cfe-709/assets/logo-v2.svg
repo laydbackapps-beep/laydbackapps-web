@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- JNC Painting & Property Maintenance - Mask-tape dockets mark -->
+  <!-- Charcoal ink: #1a1a2e, Tape yellow: #e8c547, Chalk: #f5f5f0 -->
+  
+  <defs>
+    <!-- Diagonal cut for the tape seam (12-15 degree) -->
+    <clipPath id="seam-cut">
+      <polygon points="0,0 256,0 256,165 0,256"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Main symbol area - two fields meeting at diagonal seam -->
+  <!-- Upper field (charcoal) -->
+  <path d="M0,0 L256,0 L256,165 L0,256 Z" fill="#1a1a2e"/>
+  
+  <!-- Lower field (chalk) with tape-yellow seam -->
+  <path d="M0,256 L256,165 L256,256 Z" fill="#f5f5f0"/>
+  
+  <!-- Tape-yellow seam line (the masking tape edge) -->
+  <path d="M0,256 L256,165" fill="none" stroke="#e8c547" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- JNC Monogram in the charcoal field -->
+  <g fill="#f5f5f0" transform="translate(48, 40)">
+    <!-- J -->
+    <path d="M0,0 h72 v14 h-58 v100 h14 v-14 h44 v14 h14 v-100 h-14 z"/>
+    <!-- N -->
+    <path d="M100,0 v114 h14 v-114 h-14 z M100,0 l50,114 h14 l-50,-114 h-14 z M164,0 v114 h14 v-114 h-14 z"/>
+    <!-- C -->
+    <path d="M196,0 h-68 v14 h54 v86 h-54 v14 h68 v-114 z"/>
+  </g>
+  
+  <!-- Tape corner accent (serrated edge) in chalk field -->
+  <g fill="none" stroke="#e8c547" stroke-width="2" stroke-linecap="round" opacity="0.85" transform="translate(20, 190)">
+    <path d="M0,0 h12 l-6,10 h12 l-6,10 h12"/>
+  </g>
+  
+  <!-- Docket number style marker -->
+  <text x="200" y="220" font-family="monospace" font-size="18" font-weight="700" fill="#1a1a2e" opacity="0.4">NO. 01</text>
+</svg>
