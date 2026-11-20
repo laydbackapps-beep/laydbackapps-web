@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nique Building — Builder, Hunter NSW</title>
+  <meta name="description" content="Nique Building — Builder serving Hunter NSW. Warm concrete architecture with clerestory light.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* === CSS Custom Properties === */
+    :root {
+      --field: #efece4;
+      --shadow-ink: #26231e;
+      --glass-blue: #5b7c8d;
+      --sunlit-cream: #faf6ec;
+      --beam-start: rgba(250, 246, 236, 0.9);
+      --beam-end: rgba(250, 246, 236, 0.0);
+      --soffit: rgba(38, 35, 30, 0.08);
+      --slot-glass: rgba(91, 124, 141, 0.15);
+      --slot-border: rgba(91, 124, 141, 0.3);
+      --text-primary: #26231e;
+      --text-muted: rgba(38, 35, 30, 0.6);
+      --focus-ring: #5b7c8d;
+      --max-width: 720px;
+      --space-1: clamp(0.75rem, 1.5vw, 1.25rem);
+      --space-2: clamp(1.5rem, 3vw, 2.5rem);
+      --space-3: clamp(3rem, 6vw, 5rem);
+      --space-4: clamp(5rem, 10vw, 8rem);
+    }
+
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media (prefers-reduced-motion: reduce) {
+      .hero .light-slot { animation: none !important; transform: none !important; }
+      .hero::before { animation: none !important; opacity: 0 !important; }
+    }
+
+    body {
+      font-family: 'Instrument Sans', system-ui, sans-serif;
+      font-weight: 300;
+      font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+      line-height: 1.8;
+      color: var(--text-primary);
+      background: var(--field);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* === No-JS Reveal Fallback (ferry-shed pattern) === */
+    .rv { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .rv.on { opacity: 1; transform: translateY(0); }
+    .no-js .rv { opacity: 1 !important; transform: none !important; }
+    html.no-js .rv { opacity: 1 !important; transform: none !important; }
+
+    /* === JS Safety Net Class === */
+    html.js .rv { opacity: 0; transform: translateY(24px); }
+    html.js .rv.on { opacity: 1; transform: translateY(0); }
+
+    /* === Reduced Motion === */
+    @media (prefers-reduced-motion: reduce) {
+      .rv { transition: none !important; opacity: 1 !important; transform: none !important; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* === Layout === */
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1; width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-1); }
+    section { padding: var(--space-3) 0; }
+
+    /* === Soffit Shadow Dividers === */
+    section + section::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--soffit), transparent);
+      margin-bottom: var(--space-3);
+    }
+
+    /* === Section Header with Light Slot === */
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-2);
+      margin-bottom: var(--space-2);
+      position: relative;
+    }
+
+    .light-slot {
+      flex: 0 0 60px;
+      height: 220px;
+      background: 
+        linear-gradient(135deg, var(--beam-start) 0%, var(--beam-end) 100%),
+        var(--slot-glass);
+      border: 1px solid var(--slot-border);
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .light-slot::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(135deg, var(--beam-start) 0%, var(--beam-end) 100%),
+        var(--slot-glass);
+      opacity: 0.5;
+    }
+
+    /* Alternate beam direction per section */
+    section:nth-of-type(even) .light-slot {
+      background: 
+        linear-gradient(225deg, var(--beam-start) 0%, var(--beam-end) 100%),
+        var(--slot-glass);
+    }
+    section:nth-of-type(even) .light-slot::after {
+      background: 
+        linear-gradient(225deg, var(--beam-start) 0%, var(--beam-end) 100%),
+        var(--slot-glass);
+    }
+
+    .section-header__text { flex: 1; min-width: 0; }
+
+    .section-header__label {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.75rem, 0.7rem + 0.3vw, 0.875rem);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--glass-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header__title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 200;
+      font-size: clamp(2rem, 1.5rem + 3vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--shadow-ink);
+    }
+
+    /* === Hero === */
+    .hero {
+      padding: var(--space-4) 0 var(--space-3);
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      perspective: 900px;
+    }
+
+    .hero .light-slot {
+      margin: 0 auto var(--space-3);
+      width: 60px;
+      height: 220px;
+      transform-origin: center;
+      animation: nique-slot-turn 12s ease-in-out infinite alternate;
+    }
+    
+    /* Hero 3D — morning light rakes across the hero (order 6b) */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, transparent 40%, rgba(250, 246, 236, 0.5) 50%, transparent 60%);
+      transform: translateX(-100%);
+      animation: nique-light-sweep 13s ease-in-out infinite;
+      pointer-events: none;
+      z-index: -1;
+    }
+    @keyframes nique-light-sweep {
+      0%, 15% { transform: translateX(-100%); }
+      60%, 100% { transform: translateX(100%); }
+    }
+    @keyframes nique-slot-turn {
+      from { transform: rotateY(-10deg); }
+      to { transform: rotateY(10deg); }
+    }
+
+    .hero__category {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.75rem, 0.7rem + 0.3vw, 0.875rem);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--glass-blue);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero__title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 200;
+      font-size: clamp(3rem, 2.5rem + 5vw, 6rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--shadow-ink);
+      margin-bottom: var(--space-1);
+    }
+
+    .hero__location {
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 300;
+      font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+      color: var(--text-muted);
+      margin-bottom: var(--space-2);
+    }
+
+    .hero__contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      align-items: center;
+    }
+
+    .hero__phone {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      font-size: clamp(1.25rem, 1.1rem + 0.8vw, 1.75rem);
+      letter-spacing: -0.01em;
+      color: var(--shadow-ink);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .hero__phone:hover { color: var(--glass-blue); }
+    .hero__phone:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 4px; border-radius: 2px; }
+
+    /* === Content Blocks === */
+    .content-block {
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 300;
+      font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+      line-height: 1.85;
+      color: var(--text-primary);
+    }
+
+    .content-block p { margin-bottom: 1.25em; }
+    .content-block p:last-child { margin-bottom: 0; }
+
+    .content-block strong { font-weight: 500; color: var(--shadow-ink); }
+
+    /* === Services List === */
+    .services-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-1);
+      margin-top: var(--space-1);
+    }
+
+    .services-list li {
+      position: relative;
+      padding-left: var(--space-2);
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 300;
+      font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+
+    .services-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--glass-blue);
+      opacity: 0.6;
+    }
+
+    /* === Contact Section === */
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .contact-block__item {
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 300;
+      font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+      color: var(--text-primary);
+    }
+
+    .contact-block__label {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.75rem, 0.7rem + 0.3vw, 0.875rem);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--glass-blue);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-block__value a {
+      color: var(--shadow-ink);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .contact-block__value a:hover { color: var(--glass-blue); }
+    .contact-block__value a:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; border-radius: 2px; }
+
+    /* === Footer === */
+    footer {
+      padding: var(--space-3) var(--space-1) var(--space-4);
+      text-align: center;
+      border-top: 1px solid var(--soffit);
+      margin-top: var(--space-2);
+    }
+
+    .footer__copyright {
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.875rem, 0.825rem + 0.2vw, 1rem);
+      color: var(--text-muted);
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 599px) {
+      .section-header { flex-direction: column; gap: var(--space-1); }
+      .light-slot { width: 100%; height: 120px; flex: none; }
+      .hero .light-slot { width: 60px; height: 180px; margin: 0 auto var(--space-2); }
+      .services-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main>
+      <!-- Hero Section -->
+      <section class="hero rv" aria-labelledby="hero-title">
+        <div class="light-slot" aria-hidden="true"></div>
+        <p class="hero__category">Builder</p>
+        <h1 id="hero-title" class="hero__title">Nique Building</h1>
+        <p class="hero__location">Hunter NSW</p>
+        <div class="hero__contact">
+          <a href="tel:+61432808535" class="hero__phone">0432 808 535</a>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="rv" aria-labelledby="about-title">
+        <header class="section-header">
+          <div class="light-slot" aria-hidden="true"></div>
+          <div class="section-header__text">
+            <p class="section-header__label">About</p>
+            <h2 id="about-title" class="section-header__title">Warm concrete, high light</h2>
+          </div>
+        </header>
+        <div class="content-block">
+          <p>Nique Building works across the Hunter region of New South Wales. We build with warm concrete — honest material, generous margins, and light that enters high through clerestory slots.</p>
+          <p>Every project begins with the site: its orientation, its ground, the way sun moves across it. From there we shape spaces that breathe.</p>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="rv" aria-labelledby="services-title">
+        <header class="section-header">
+          <div class="light-slot" aria-hidden="true"></div>
+          <div class="section-header__text">
+            <p class="section-header__label">Scope</p>
+            <h2 id="services-title" class="section-header__title">What we build</h2>
+          </div>
+        </header>
+        <ul class="services-list">
+          <li>New residential construction</li>
+          <li>Architectural renovations</li>
+          <li>Concrete & masonry works</li>
+          <li>Project management</li>
+          <li>Design collaboration</li>
+        </ul>
+      </section>
+
+      <!-- Approach Section -->
+      <section class="rv" aria-labelledby="approach-title">
+        <header class="section-header">
+          <div class="light-slot" aria-hidden="true"></div>
+          <div class="section-header__text">
+            <p class="section-header__label">Approach</p>
+            <h2 id="approach-title" class="section-header__title">Site first, always</h2>
+          </div>
+        </header>
+        <div class="content-block">
+          <p>We don't import designs. We listen to the land, the client, the budget — in that order. The result is architecture that belongs to its place.</p>
+          <p>Concrete is our primary language. We work with its thermal mass, its texture, its capacity to hold light. Clerestory windows become the punctuation — slots that draw the sky deep into the plan.</p>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="rv" aria-labelledby="contact-title">
+        <header class="section-header">
+          <div class="light-slot" aria-hidden="true"></div>
+          <div class="section-header__text">
+            <p class="section-header__label">Contact</p>
+            <h2 id="contact-title" class="section-header__title">Start a conversation</h2>
+          </div>
+        </header>
+        <div class="contact-block">
+          <div class="contact-block__item">
+            <p class="contact-block__label">Phone</p>
+            <p class="contact-block__value"><a href="tel:+61432808535">0432 808 535</a></p>
+          </div>
+          <div class="contact-block__item">
+            <p class="contact-block__label">Region</p>
+            <p class="contact-block__value">Hunter NSW</p>
+          </div>
+          <div class="contact-block__item">
+            <p class="contact-block__label">Category</p>
+            <p class="contact-block__value">Builder</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p class="footer__copyright">© 2026 Nique Building. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // JS Safety Net: reveal all after ~1100ms regardless of IntersectionObserver
+    (function() {
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+      
+      // IntersectionObserver reveal
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('on');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+
+      document.querySelectorAll('.rv').forEach(function(el) { observer.observe(el); });
+
+      // Safety net timeout
+      setTimeout(function() {
+        document.querySelectorAll('.rv').forEach(function(el) { el.classList.add('on'); });
+      }, 1100);
+    })();
+  </script>
+</body>
+</html>
