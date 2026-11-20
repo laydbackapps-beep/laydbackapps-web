@@ -1,0 +1,151 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="RCI Painting & Decorating PTY LTD logo" height="52">
+          <span>
+            <span class="foot-brand-name">RCI Painting & Decorating</span><br>
+            <span class="foot-brand-sub">Residential · Commercial · Industrial</span>
+          </span>
+        </div>
+        <p>RCI Painting & Decorating PTY LTD — residential, commercial and industrial painting, decorative finishes, spray work and pools across Adelaide.</p>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <p>
+          <a href="tel:+61415441848">0415 441 848</a><br>
+          Licensed builder BLD 303011 · Adelaide SA
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 RCI Painting & Decorating PTY LTD · Adelaide SA</span>
+      <span>Licensed painter BLD 303011</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 16;
+    py = (e.clientY / window.innerHeight - 0.5) * 9;
+  }, {passive: true});
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  function loop(t){
+    if (!W || !H){ resize(); return; }
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  function frame(t){
+
+    var time = t * 0.001;
+    ctx.clearRect(0,0,W,H);
+    var g = ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,'#0A0C0F'); g.addColorStop(.5,'#131720'); g.addColorStop(1,'#0A0C0F');
+    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+
+    /* spray fan sweeping a wall — silver mist */
+    var sweep = Math.sin(time*0.45)*0.5+0.5;
+    var fanX = W*0.14 + sweep*W*0.50, fanY = H*0.26 + py*0.5;
+    ctx.save();
+    var fg2 = ctx.createLinearGradient(fanX, fanY, fanX + W*0.30, fanY + H*0.20);
+    fg2.addColorStop(0,'rgba(214,222,230,0.26)'); fg2.addColorStop(1,'rgba(214,222,230,0)');
+    ctx.fillStyle = fg2;
+    ctx.beginPath();
+    ctx.moveTo(fanX, fanY);
+    ctx.lineTo(fanX + W*0.34, fanY - H*0.15);
+    ctx.lineTo(fanX + W*0.30, fanY + H*0.28);
+    ctx.closePath(); ctx.fill();
+    ctx.restore();
+    /* nozzle */
+    ctx.fillStyle = 'rgba(232,238,244,0.6)';
+    ctx.fillRect(fanX-3.5, fanY-3.5, 7, 7);
+    /* mist */
+    for (var i=0;i<34;i++){
+      var md = (i%17)/17;
+      var mx = fanX + Math.cos(-0.5+(i%7)*0.22)*W*0.30*md + Math.sin(time*2+i)*4;
+      var my = fanY + Math.sin(-0.4+(i%7)*0.25)*H*0.22*md + Math.cos(time*2.3+i)*4;
+      ctx.fillStyle = 'rgba(224,230,236,' + (0.28 - md*0.19) + ')';
+      ctx.beginPath(); ctx.arc(mx,my,1.6,0,Math.PI*2); ctx.fill();
+    }
+
+    /* pool band: neutral shimmer + glints */
+    var poolY = H*0.72;
+    var pg = ctx.createLinearGradient(0,poolY,0,H);
+    pg.addColorStop(0,'rgba(52,58,66,0.85)'); pg.addColorStop(1,'rgba(24,28,34,0.9)');
+    ctx.fillStyle = pg; ctx.fillRect(0,poolY,W,H-poolY);
+    for (var s=0;s<4;s++){
+      ctx.strokeStyle = 'rgba(205,214,222,' + (0.15 - s*0.024) + ')';
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      for (var x=0;x<=W;x+=8){
+        var yy = poolY + 14 + s*22 + Math.sin((x*0.02)+time*1.6+s*1.3)*3.2;
+        if (x===0) ctx.moveTo(x,yy); else ctx.lineTo(x,yy);
+      }
+      ctx.stroke();
+    }
+    for (var c2=0;c2<16;c2++){
+      var cx = (c2*191 + time*24) % W;
+      var cy = poolY + 10 + ((c2*97) % Math.max(H-poolY-16, 20));
+      ctx.fillStyle = 'rgba(226,232,238,' + (0.08 + (c2%3)*0.05) + ')';
+      ctx.beginPath(); ctx.ellipse(cx, cy, 9, 3, 0, 0, Math.PI*2); ctx.fill();
+    }
+
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  requestAnimationFrame(loop);
+})();
+
+</script>
+</body>
+</html>
