@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMS Formwork Newcastle — Board-Formed Concrete Specialists</title>
+  <meta name="description" content="SMS Formwork Newcastle — board-formed concrete and formwork specialists serving Hunter NSW. Tie-hole precision, structural integrity.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Spline+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Critical CSS inline for no-JS fallback -->
+  <style>
+    /* CSS Custom Properties */
+    :root {
+      --concrete: #d7d3cc;
+      --deep-ink: #26282a;
+      --rust: #8a5a3a;
+      --safety-orange: #e8641f;
+      --text: #26282a;
+      --text-muted: #5a5d5f;
+      --white: #ffffff;
+      --max-width: 1200px;
+      --board-line: rgba(38, 40, 42, 0.08);
+      --tie-hole-ring: #26282a;
+      --rust-streak: rgba(138, 90, 58, 0.15);
+    }
+    
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    
+    /* Base reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Spline Sans', system-ui, sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--concrete);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* No-JS reveal fallback - content visible by default */
+    .rv { opacity: 1; transform: none; transition: none; }
+    
+    /* Layout */
+    .site-wrapper {
+      min-height: 100vh;
+      background: var(--concrete);
+    }
+    
+    /* Board-formed texture - vertical lines across entire site */
+    .site-wrapper::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent 39px,
+        var(--board-line) 39px,
+        var(--board-line) 40px
+      );
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.6;
+    }
+    
+    /* Rust streak - single atmospheric texture */
+    .site-wrapper::after {
+      content: '';
+      position: fixed;
+      top: 20%;
+      left: 8%;
+      width: 3px;
+      height: 60vh;
+      background: linear-gradient(180deg, transparent, var(--rust-streak) 30%, var(--rust-streak) 70%, transparent);
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.4;
+    }
+    
+    .section {
+      position: relative;
+      z-index: 2;
+      padding: 6rem 2rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 768px) {
+      .section { padding: 10rem 4rem; }
+    }
+    
+    /* Tie-hole pair - section starter */
+    .tie-hole-pair {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      align-items: center;
+    }
+    
+    .tie-hole {
+      width: 64px;
+      height: 64px;
+      border: 3px solid var(--tie-hole-ring);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-shrink: 0;
+      background: var(--concrete);
+      box-shadow: 
+        inset 0 -4px 8px rgba(0,0,0,0.15),
+        inset 0 2px 4px rgba(255,255,255,0.1),
+        0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .tie-hole::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 1px solid var(--rust);
+      opacity: 0.3;
+      animation: rust-pulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes rust-pulse {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.02); }
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .tie-hole::before { animation: none; opacity: 0.3; }
+    }
+    
+    .tie-hole-number {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--safety-orange);
+      line-height: 1;
+    }
+    
+    .tie-hole-label {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: var(--deep-ink);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+    }
+    
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent 39px,
+        var(--board-line) 39px,
+        var(--board-line) 40px
+      );
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.8;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: 5%;
+      width: 4px;
+      height: 70%;
+      background: linear-gradient(180deg, transparent, var(--rust-streak) 20%, var(--rust-streak) 80%, transparent);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+    
+    .hero-tie-holes {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .hero-tie-hole {
+      width: 48px;
+      height: 48px;
+      border: 2px solid var(--tie-hole-ring);
+      border-radius: 50%;
+      background: var(--concrete);
+      box-shadow: 
+        inset 0 -3px 6px rgba(0,0,0,0.15),
+        inset 0 1px 3px rgba(255,255,255,0.1),
+        0 3px 8px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    
+    .hero-tie-hole::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      border: 1px solid var(--rust);
+      opacity: 0.25;
+    }
+
+    /* Hero 3D — tie-cone cross-section orbit (order 6b) */
+    .hero-cone {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: min(420px, 78vw);
+      height: min(420px, 78vw);
+      transform: translate(-50%, -52%);
+      color: var(--deep-ink);
+      opacity: 0.13;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .hero h1 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 10vw, 8rem);
+      color: var(--deep-ink);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin: 0 0 1.5rem;
+    }
+    
+    .hero .subtitle {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: clamp(1rem, 2.5vw, 1.375rem);
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 2.5rem;
+    }
+    
+    .hero .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2.5rem;
+      background: var(--deep-ink);
+      color: var(--white);
+      font-family: 'Spline Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    
+    .hero .cta:hover { background: var(--safety-orange); transform: translateY(-2px); }
+    .hero .cta:focus-visible { outline: 3px solid var(--safety-orange); outline-offset: 3px; }
+    
+    .hero .cta .arrow {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: currentColor;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat;
+    }
+    
+    /* Form panel - content blocks */
+    .form-panel {
+      position: relative;
+      padding: 3rem;
+      background: var(--white);
+      margin-bottom: 3rem;
+    }
+    
+    .form-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent 39px,
+        var(--board-line) 39px,
+        var(--board-line) 40px
+      );
+      pointer-events: none;
+      opacity: 0.4;
+    }
+    
+    .form-panel > * { position: relative; z-index: 1; }
+    
+    .form-panel h2 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--deep-ink);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      margin: 0 0 1.5rem;
+    }
+    
+    .form-panel p {
+      margin: 0 0 1.25rem;
+      color: var(--text);
+    }
+    
+    .form-panel p:last-child { margin-bottom: 0; }
+    
+    .annotation {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    
+    /* Services grid */
+    .services-list {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .services-list { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    .service-item {
+      padding: 2rem;
+      background: var(--concrete);
+      border-left: 4px solid var(--safety-orange);
+    }
+    
+    .service-item h3 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--deep-ink);
+      text-transform: uppercase;
+      margin: 0 0 0.5rem;
+    }
+    
+    .service-item p { margin: 0; color: var(--text-muted); font-size: 1rem; }
+    
+    /* Contact */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .contact-info { flex-direction: row; flex-wrap: wrap; }
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem 2rem;
+      background: var(--white);
+      min-width: 280px;
+      flex: 1;
+    }
+    
+    .contact-item .icon {
+      width: 40px;
+      height: 40px;
+      border: 2px solid var(--tie-hole-ring);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--deep-ink);
+      flex-shrink: 0;
+    }
+    
+    .contact-item .icon svg { width: 20px; height: 20px; }
+    
+    .contact-item .label {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    
+    .contact-item .value {
+      font-weight: 500;
+      color: var(--deep-ink);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .contact-item .value:hover { color: var(--safety-orange); }
+    
+    /* Footer */
+    .footer {
+      padding: 4rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(38, 40, 42, 0.1);
+      background: var(--white);
+    }
+    
+    .footer p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+    
+    .footer a { color: var(--deep-ink); text-decoration: none; }
+    .footer a:hover { color: var(--safety-orange); }
+    
+    /* Focus styles */
+    :focus-visible { outline: 3px solid var(--safety-orange); outline-offset: 3px; }
+    
+    /* JS reveal classes - applied when JS loads */
+    html.js .rv {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    html.js .rv.on {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Stagger delays */
+    html.js .rv.delay-1 { transition-delay: 100ms; }
+    html.js .rv.delay-2 { transition-delay: 200ms; }
+    html.js .rv.delay-3 { transition-delay: 300ms; }
+    html.js .rv.delay-4 { transition-delay: 400ms; }
+    html.js .rv.delay-5 { transition-delay: 500ms; }
+  </style>
+  
+  <!-- No-JS fallback: reveal all content -->
+  <noscript>
+    <style>
+      .rv { opacity: 1 !important; transform: none !important; transition: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <div class="site-wrapper">
+    
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <svg class="hero-cone" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="100" cy="100" r="88" opacity="0.35"/>
+            <circle cx="100" cy="100" r="56" opacity="0.5"/>
+            <circle cx="100" cy="100" r="24" opacity="0.7"/>
+            <g class="hero-cone__ticks">
+              <line x1="100" y1="6" x2="100" y2="30"/>
+              <line x1="100" y1="170" x2="100" y2="194"/>
+              <line x1="6" y1="100" x2="30" y2="100"/>
+              <line x1="170" y1="100" x2="194" y2="100"/>
+              <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="36s" repeatCount="indefinite"/>
+            </g>
+          </g>
+        </svg>
+        <div class="hero-tie-holes" aria-hidden="true">
+          <div class="hero-tie-hole"></div>
+          <div class="hero-tie-hole"></div>
+          <div class="hero-tie-hole"></div>
+          <div class="hero-tie-hole"></div>
+          <div class="hero-tie-hole"></div>
+          <div class="hero-tie-hole"></div>
+        </div>
+        <h1 id="hero-title" class="rv">SMS Formwork Newcastle</h1>
+        <p class="subtitle rv delay-1">Board-Formed Concrete &mdash; Tie-Hole Precision</p>
+        <a href="#contact" class="cta rv delay-2">
+          <span>Get in Touch</span>
+          <span class="arrow" aria-hidden="true"></span>
+        </a>
+      </div>
+    </section>
+    
+    <!-- ABOUT -->
+    <section class="section" aria-labelledby="about-title">
+      <div class="tie-hole-pair">
+        <div class="tie-hole" aria-hidden="true">
+          <span class="tie-hole-number">01</span>
+        </div>
+        <div class="tie-hole" aria-hidden="true">
+          <span class="tie-hole-number">01</span>
+        </div>
+        <h2 id="about-title" class="tie-hole-label rv">About</h2>
+      </div>
+      
+      <div class="form-panel rv delay-1">
+        <span class="annotation">Hunter NSW / Est. 2018</span>
+        <p>SMS Formwork Newcastle delivers board-formed concrete walls with tie-hole precision across the Hunter region. We specialise in structural and architectural formwork for commercial, infrastructure, and residential projects where finish quality and dimensional accuracy are non-negotiable.</p>
+        <p>Every pour is planned around the tie-hole grid — the organizing logic that aligns structure, services, and architectural intent. Our crews work to millimetre tolerances on tie placement, ensuring clean cone recovery and consistent surface expression across every panel.</p>
+        <p>Based in Toronto NSW, we operate across Newcastle, Lake Macquarie, Maitland, and the wider Hunter Valley.</p>
+      </div>
+    </section>
+    
+    <!-- SERVICES -->
+    <section class="section" aria-labelledby="services-title">
+      <div class="tie-hole-pair">
+        <div class="tie-hole" aria-hidden="true">
+          <span class="tie-hole-number">02</span>
+        </div>
+        <div class="tie-hole" aria-hidden="true">
+          <span class="tie-hole-number">02</span>
+        </div>
+        <h2 id="services-title" class="tie-hole-label rv">Services</h2>
+      </div>
+      
+      <div class="form-panel rv delay-1">
+        <div class="services-list">
+          <article class="service-item rv delay-2">
+            <h3>Board-Formed Walls</h3>
+            <p>Architectural and structural walls with timber board imprint — tie-hole pattern as design intent.</p>
+          </article>
+          <article class="service-item rv delay-3">
+            <h3>Shaft & Core Formwork</h3>
+            <p>Lift shafts, stair cores, and service risers — tight tolerances, repeatable tie-hole alignment.</p>
+          </article>
+          <article class="service-item rv delay-4">
+            <h3>Retaining Structures</h3>
+            <p>Basement walls, bridge abutments, and wing walls — water-resistant joints, coordinated tie layout.</p>
+          </article>
+          <article class="service-item rv delay-5">
+            <h3>Specialist Formwork</h3>
+            <p>Curved panels, tapered sections, and custom profiles — CNC-cut form faces, engineered tie systems.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <!-- METHOD -->
+    <section class="section" aria-labelledby="method-title">
+      <div class="tie-hole-pair">
+        <div class="tie-hole" aria-hidden="true">
+          <span class="tie-hole-number">03</span>
+        </div>
+        <div class="tie-hole" aria-hidden="true">
+          <span class="tie-hole-number">03</span>
+        </div>
+        <h2 id="method-title" class="tie-hole-label rv">Method</h2>
+      </div>
+      
+      <div class="form-panel rv delay-1">
+        <div class="services-list">
+          <article class="service-item rv delay-2">
+            <h3>Tie Grid Planning</h3>
+            <p>Every pour is set out before a shutter is built &mdash; hole spacing, cone type, and panel modules established so structure and finish follow the same grid.</p>
+          </article>
+          <article class="service-item rv delay-3">
+            <h3>Shutter Assembly</h3>
+            <p>Form faces assembled, sealed, and set true panel by panel; ties, bracing, and joints checked so pour lines land where the grid says they will.</p>
+          </article>
+          <article class="service-item rv delay-4">
+            <h3>Pour &amp; Stripping</h3>
+            <p>Concrete placed in coordinated lifts with vibration control, then stripped, cones recovered, and tie holes patched cleanly before handover.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CONTACT -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="tie-hole-pair">
+        <div class="tie-hole" aria-hidden="true">
+          <span class="tie-hole-number">04</span>
+        </div>
+        <div class="tie-hole" aria-hidden="true">
+          <span class="tie-hole-number">04</span>
+        </div>
+        <h2 id="contact-title" class="tie-hole-label rv">Contact</h2>
+      </div>
+      
+      <div class="form-panel rv delay-1">
+        <p>Ready to discuss your next board-formed concrete project? Call or email — we respond within 24 hours.</p>
+        
+        <div class="contact-info">
+          <a href="tel:+61432116612" class="contact-item rv delay-2">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </span>
+            <div>
+              <span class="label">Phone</span>
+              <span class="value">0432 116 612</span>
+            </div>
+          </a>
+          
+          <a href="mailto:shane@smscivil.com.au" class="contact-item rv delay-3">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </span>
+            <div>
+              <span class="label">Email</span>
+              <span class="value">shane@smscivil.com.au</span>
+            </div>
+          </a>
+          
+          <div class="contact-item rv delay-4">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <div>
+              <span class="label">Address</span>
+              <span class="value">1 Elford St, Toronto NSW 2283</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer class="footer rv delay-1" role="contentinfo">
+      <p>&copy; 2025 SMS Formwork Newcastle. Board-formed concrete specialists. <a href="tel:+61432116612">0432 116 612</a></p>
+    </footer>
+    
+  </div>
+  
+  <!-- JavaScript: IntersectionObserver reveal + safety net -->
+  <script>
+    (function() {
+      'use strict';
+      
+      // Mark JS as loaded for CSS reveal
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+      
+      // IntersectionObserver reveal
+      var revealElements = document.querySelectorAll('.rv');
+      
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('on');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          rootMargin: '0px 0px -10% 0px',
+          threshold: 0.1
+        });
+        
+        revealElements.forEach(function(el) { observer.observe(el); });
+      } else {
+        // Fallback for browsers without IntersectionObserver
+        revealElements.forEach(function(el) { el.classList.add('on'); });
+      }
+      
+      // Safety net: force-reveal all after ~1100ms
+      setTimeout(function() {
+        revealElements.forEach(function(el) { el.classList.add('on'); });
+      }, 1100);
+      
+      // Pause decorative hero SVG when reduced motion is preferred
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        var cone = document.querySelector('.hero-cone');
+        if (cone && cone.pauseAnimations) cone.pauseAnimations();
+      }
+    })();
+  </script>
+</body>
+</html>
