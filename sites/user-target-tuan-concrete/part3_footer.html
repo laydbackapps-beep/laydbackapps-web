@@ -1,0 +1,186 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Tuan Concrete logo" width="56" height="56">
+          <span>
+            <span class="foot-brand-name">TUAN</span><br>
+            <span class="foot-brand-sub">Concrete</span>
+          </span>
+        </div>
+        <p>Sydney expert concreter — driveways, paths, slabs and decorative concrete for residential and commercial projects across the entire Sydney area.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p>
+          Concrete driveways<br>
+          Paths &amp; footpaths<br>
+          Slabs &amp; footings<br>
+          Decorative concrete<br>
+          Landscaping &amp; excavation
+        </p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:+61411053516">0411 053 516</a><br>
+          <a href="https://www.facebook.com/Tuanconcreteservices" target="_blank" rel="noopener">Facebook</a><br>
+          Sydney, NSW
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Tuan Concrete &middot; Sydney NSW</span>
+      <span>Concrete done right</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+/* reveals — html.js-gated */
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+/* safety net */
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+/* hero: wet concrete with screed board sweeping a smooth finish */
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+
+  /* aggregate speckles */
+  var specs = [];
+  for (var i = 0; i < 160; i++){
+    specs.push({x: Math.random(), y: 0.25 + Math.random() * 0.75, r: 0.6 + Math.random() * 2.2, tone: Math.random()});
+  }
+
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 22;
+    py = (e.clientY / window.innerHeight - 0.5) * 11;
+  }, {passive: true});
+
+  function frame(t){
+    if (!W || !H){ resize(); return; }
+    var time = (t || 0) * 0.001;
+    ctx.clearRect(0, 0, W, H);
+
+    /* wet concrete slab surface */
+    var slabTop = H * 0.30 + py * 0.4;
+    var grad = ctx.createLinearGradient(0, slabTop, 0, H);
+    grad.addColorStop(0, '#4A4A48');
+    grad.addColorStop(1, '#39393A');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, slabTop, W, H - slabTop);
+
+    /* screed board: a horizontal bar sweeping down the slab */
+    var sweep = ((time * 0.06) % 1.25) - 0.15;  /* 0..1 down the slab */
+    var boardY = slabTop + sweep * (H - slabTop);
+    var boardX = W * 0.5 + Math.sin(time * 0.4) * W * 0.05 + px;
+
+    /* smoothed zone above the board (already screeded - lighter, flat) */
+    if (boardY > slabTop){
+      var sg = ctx.createLinearGradient(0, slabTop, 0, boardY);
+      sg.addColorStop(0, '#585856');
+      sg.addColorStop(1, '#4E4E4C');
+      ctx.fillStyle = sg;
+      ctx.fillRect(0, slabTop, W, boardY - slabTop);
+      /* faint screed lines */
+      ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+      ctx.lineWidth = 1.5;
+      for (var lx = -60; lx < W + 60; lx += 52){
+        ctx.beginPath();
+        ctx.moveTo(lx + px * 0.5, slabTop + 4);
+        ctx.lineTo(lx + px * 0.5 + 24, boardY - 4);
+        ctx.stroke();
+      }
+    }
+
+    /* aggregate speckles visible in the un-screeded zone below the board */
+    for (var s = 0; s < specs.length; s++){
+      var sp = specs[s];
+      var sy = sp.y * H + py * 0.4;
+      if (sy < boardY + 10) continue;  /* smoothed over */
+      var sx = sp.x * W + px * 0.5;
+      var v = Math.round(90 + sp.tone * 60);
+      ctx.fillStyle = 'rgba(' + v + ',' + v + ',' + (v - 4) + ',0.5)';
+      ctx.beginPath();
+      ctx.arc(sx, sy, sp.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    /* the screed board itself */
+    ctx.fillStyle = '#D8D8D4';
+    ctx.fillRect(0, boardY - 7, W, 12);
+    ctx.fillStyle = 'rgba(0,0,0,0.25)';
+    ctx.fillRect(0, boardY + 5, W, 5);
+    /* handle glow */
+    var hg = ctx.createRadialGradient(boardX, boardY - 20, 2, boardX, boardY - 20, 70);
+    hg.addColorStop(0, 'rgba(240,56,56,0.25)');
+    hg.addColorStop(1, 'rgba(240,56,56,0)');
+    ctx.fillStyle = hg;
+    ctx.fillRect(boardX - 80, boardY - 90, 160, 140);
+    ctx.fillStyle = '#E02020';
+    ctx.fillRect(boardX - 5, boardY - 78, 10, 72);
+
+    /* red glow */
+    var g = ctx.createRadialGradient(W*0.78 + px, H*0.4 + py, 10, W*0.78 + px, H*0.4 + py, W*0.5);
+    g.addColorStop(0, 'rgba(224,32,32,0.10)');
+    g.addColorStop(1, 'rgba(224,32,32,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  function loop(t){
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  loop(0);
+})();
+</script>
+</body>
+</html>
