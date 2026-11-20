@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VBS Carpentry — framing, decks &amp; custom joinery, Perth</title>
+<meta name="description" content="VBS Carpentry builds frames, decks, pergolas and custom joinery across Perth. Measured, cut and fitted by the same pair of hands from frame to finish.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4efe5; --paper-2:#ece5d7; --ink:#231f1b; --ink-soft:#4c453d;
+    --walnut:#5d4029; --cedar:#b4552b; --moss:#3f4a3a;
+    --rule:rgba(35,31,27,.16); --rule-soft:rgba(35,31,27,.08);
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  section[id]{scroll-margin-top:104px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"DM Sans",system-ui,-apple-system,Segoe UI,sans-serif;font-size:17px;line-height:1.72;
+    -webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.06;margin:0;letter-spacing:-.01em;padding-bottom:.08em}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--cedar);margin:0 0 18px}
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{left:18px;top:18px;z-index:99;background:var(--ink);color:var(--paper);padding:10px 16px}
+  a{color:inherit}
+  .btn{display:inline-block;font-weight:600;font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+    text-decoration:none;padding:15px 26px;background:var(--ink);color:var(--paper);
+    border:1px solid var(--ink);transition:background .18s,color .18s,transform .18s}
+  .btn:hover,.btn:focus-visible{background:var(--walnut);border-color:var(--walnut);transform:translateY(-1px)}
+  .btn.quiet{background:transparent;color:var(--ink);border:1px solid var(--rule);padding:15px 24px;text-decoration:none}
+  .btn.quiet:hover{background:rgba(35,31,27,.06);border-color:var(--ink)}
+  .btn.line{background:transparent;color:var(--ink);border-color:var(--rule)}
+  .btn.line:hover{background:rgba(35,31,27,.05);border-color:var(--ink)}
+
+  header.site{position:sticky;top:0;z-index:60;background:rgba(244,239,229,.94);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--rule-soft)}
+  .bar{display:flex;align-items:center;gap:24px;min-height:78px}
+  .lockup{display:flex;align-items:center;gap:13px;text-decoration:none}
+  .mark{width:56px;height:56px;flex:none;display:block}
+  .lockup .word{font-family:"DM Serif Display",Georgia,serif;font-size:32px;line-height:1;letter-spacing:-.01em;white-space:nowrap}
+  .lockup .sub{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;
+    color:var(--ink);text-transform:uppercase;margin-top:6px}
+  nav.main{margin-left:auto;display:flex;gap:26px;font-size:14.5px}
+  nav.main a{text-decoration:none;color:var(--ink-soft);padding:6px 0;border-bottom:1px solid transparent}
+  nav.main a:hover,nav.main a:focus-visible{color:var(--ink);border-color:var(--cedar)}
+  .bar .btn{padding:11px 18px;white-space:nowrap}
+  @media(max-width:920px){.bar{flex-wrap:wrap;gap:10px 14px;min-height:0;padding:11px 0 0}
+    .lockup .sub{display:block;font-size:10.5px;letter-spacing:.14em}
+    .bar .btn{margin-left:auto}
+    nav.main{order:3;width:100%;margin-left:0;display:flex;gap:22px;font-size:14px;
+      padding:9px 0 11px;border-top:1px solid var(--rule-soft);overflow-x:auto;white-space:nowrap}}
+  @media(max-width:560px){.lockup .word{font-size:23px}.bar{gap:14px}.bar .btn{padding:10px 14px;font-size:13px}
+    nav.main{width:100%;margin-left:0;display:flex;gap:18px;font-size:13px;
+      padding:8px 0 10px;border-top:1px solid var(--rule-soft);overflow-x:auto;white-space:nowrap;
+      -webkit-overflow-scrolling:touch}
+    .hero .facts{display:grid;grid-template-columns:1fr;gap:10px}
+    .hero .facts span{padding-bottom:9px;border-bottom:1px solid var(--rule-soft)}
+    .hero .facts span:last-child{padding-bottom:0;border-bottom:0}
+    .hero .actions{flex-direction:column;align-items:stretch}
+    .hero .actions .btn{width:100%;text-align:center}
+    .battens .plate{flex-direction:column;gap:8px;font-size:15px}}
+
+  .hero{border-bottom:1px solid var(--rule);background:
+      radial-gradient(70% 80% at 88% 10%,rgba(180,85,43,.10),transparent 62%),
+      linear-gradient(180deg,#f6f1e8,#efe8da)}
+  .hero .inner{display:grid;grid-template-columns:1.04fr .96fr;gap:54px;align-items:center;
+    padding:78px 0 84px}
+  .hero h1{font-size:clamp(44px,6.2vw,80px)}
+  .hero h1 i{font-style:italic;color:var(--cedar)}
+  .hero p.lede{font-size:18.5px;color:var(--ink-soft);max-width:46ch;margin:24px 0 0}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+  .hero .facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:30px;padding-top:22px;
+    border-top:1px solid var(--rule);font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink-soft)}
+  .hero .facts b{display:block;color:var(--ink);font-weight:600;letter-spacing:.06em;margin-bottom:4px}
+
+  /* timber batten wall: CSS only, grain + shadow per slat */
+  .battens{position:relative;width:100%;aspect-ratio:4/5;max-width:430px;margin-left:auto;overflow:hidden;
+    border:1px solid rgba(35,31,27,.18);background:#3a2a1c;
+    box-shadow:0 34px 60px -30px rgba(35,31,27,.55)}
+  .battens::before{content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(90deg,
+      #6b4a2f 0 22px,#573a24 22px 24px,#7a5636 24px 46px,#4d3320 46px 48px,#6f4d31 48px 70px,
+      #543a25 70px 72px,#7d5839 72px 94px,#4a3120 94px 96px);
+    box-shadow:inset 0 0 80px rgba(0,0,0,.5)}
+  .battens::after{content:"";position:absolute;inset:0;opacity:.5;mix-blend-mode:overlay;
+    background:
+      repeating-linear-gradient(89deg,rgba(255,255,255,.16) 0 1px,transparent 1px 12px),
+      radial-gradient(120% 60% at 20% 0%,rgba(255,255,255,.22),transparent 60%),
+      linear-gradient(180deg,transparent 0 68%,rgba(0,0,0,.45) 100%)}
+  .battens .plate{position:absolute;left:18px;bottom:18px;right:18px;z-index:2;
+    background:rgba(244,239,229,.97);padding:15px 17px;display:flex;justify-content:space-between;
+    gap:12px;font-family:var(--mono);font-size:16px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--ink);border-left:3px solid var(--cedar);line-height:1.6}
+  .battens .plate b{color:var(--ink);font-weight:600}
+  /* framing reference overlay: stud line + set-out pin so the panel reads as a build detail */
+  .battens .frame-line,.battens .pin{display:none}
+  .battens .frame-line.v{left:58%;top:0;bottom:0;width:2px}
+  .battens .frame-line.h{top:34%;left:0;right:0;height:2px}
+  .battens .pin{position:absolute;z-index:1;left:58%;top:34%;width:13px;height:13px;
+    transform:translate(-50%,-50%);border:2px solid #f4efe5;background:var(--cedar)}
+  .battens .tag{position:absolute;top:0;left:0;z-index:2;background:rgba(35,31,27,.88);
+    color:#f4efe5;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;
+    text-transform:uppercase;padding:8px 12px}
+  @media(max-width:920px){.hero .inner{grid-template-columns:1fr;gap:26px;padding:34px 0 40px}
+    .hero h1{font-size:clamp(32px,8.6vw,44px)}
+    .hero p.lede{font-size:16.5px;margin-top:16px}
+    .hero .actions{margin-top:22px}
+    .hero .facts{margin-top:20px;padding-top:16px;gap:16px}
+    .battens{max-width:100%;margin:0;aspect-ratio:16/10}}
+
+  .sec{padding:88px 0;border-bottom:1px solid var(--rule)}
+  .sec-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:end;margin-bottom:46px}
+  .sec-head h2{font-size:clamp(30px,4.4vw,54px);max-width:20ch}
+  .sec-head p{margin:0;color:var(--ink-soft);font-size:16px;max-width:44ch}
+  @media(max-width:860px){.sec-head{grid-template-columns:1fr;gap:18px;margin-bottom:30px}}
+
+  .build{display:grid;grid-template-columns:1fr;border-top:1px solid var(--rule)}
+  .item{display:grid;grid-template-columns:230px 1fr;gap:0 40px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--rule)}
+  .item p{grid-column:2}
+  .item .k{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--cedar)}
+  .item h3{font-size:27px;margin:12px 0 8px}
+  .item p{margin:0;color:var(--ink-soft);font-size:15.5px}
+  @media(max-width:780px){.build{grid-template-columns:1fr}.item:nth-child(odd){border-right:0;padding:26px 0}
+    .item:nth-child(even){padding:26px 0}}
+
+  .detail{background:#ece5d7;padding:88px 0;border-bottom:1px solid var(--rule)}
+  .detail .inner{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+  .joint{position:relative;aspect-ratio:3/2;border:1px solid rgba(35,31,27,.2);overflow:hidden;
+    background:linear-gradient(150deg,#7a5636,#543a25 62%,#6b4a2f)}
+  .joint::before{content:"";position:absolute;inset:0;opacity:.55;
+    background:repeating-linear-gradient(91deg,rgba(255,255,255,.14) 0 1px,transparent 1px 9px)}
+  .joint .pin{position:absolute;background:#e6d9c2;box-shadow:inset 0 0 0 1px rgba(35,31,27,.25)}
+  .joint .pin.a{left:0;right:0;top:50%;height:16px;transform:translateY(-50%);
+    -webkit-mask:repeating-linear-gradient(90deg,#000 0 56px,transparent 56px 62px);
+    mask:repeating-linear-gradient(90deg,#000 0 56px,transparent 56px 62px);opacity:.85}
+  .joint .pin.b{top:0;bottom:0;left:50%;width:16px;transform:translateX(-50%);
+    -webkit-mask:repeating-linear-gradient(180deg,#000 0 56px,transparent 56px 62px);
+    mask:repeating-linear-gradient(180deg,#000 0 56px,transparent 56px 62px);opacity:.85}
+  .joint .note{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:10px;
+    letter-spacing:.18em;text-transform:uppercase;background:rgba(244,239,229,.92);padding:5px 9px;color:var(--ink)}
+  .detail h2{font-size:clamp(30px,4.2vw,50px);max-width:18ch}
+  .detail p{color:var(--ink-soft);margin:20px 0 0;font-size:16.5px;max-width:46ch}
+  .detail ul{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:12px;font-size:15.5px}
+  .detail li{padding-left:22px;position:relative;color:var(--ink-soft)}
+  .detail li::before{content:"";position:absolute;left:0;top:11px;width:10px;height:1.5px;background:var(--cedar)}
+  @media(max-width:860px){.detail .inner{grid-template-columns:1fr;gap:32px}}
+
+  .steps{margin-top:54px;display:grid;grid-template-columns:repeat(3,1fr);position:relative;padding-top:22px}
+  .steps::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;
+    background:linear-gradient(90deg,var(--cedar) 0%,rgba(180,85,43,.45) 58%,rgba(35,31,27,.18) 100%)}
+  .step{position:relative;padding:0 26px 0 0}
+  .step::before{content:"";position:absolute;left:0;top:-27px;width:10px;height:10px;border-radius:50%;
+    background:var(--paper);border:2px solid var(--cedar)}
+  .step .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;color:var(--cedar);text-transform:uppercase}
+  .step h3{font-size:24px;margin:12px 0 8px}
+  .step p{margin:0;font-size:15px;color:var(--ink-soft)}
+  @media(max-width:820px){.steps{grid-template-columns:1fr;gap:30px;padding-top:0}
+    .steps::before{display:none}.step{padding-left:22px}
+    .step::before{left:0;top:7px}}
+
+  .call{background:#231d17;
+    color:var(--paper);padding:82px 0}
+  .call .inner{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  .call .eyebrow{color:#f0a878}
+  .call h2{font-size:clamp(32px,4.6vw,56px);max-width:17ch;color:#fdfaf4}
+  .call p{color:#f4efe4;margin:20px 0 0;max-width:44ch;font-size:18px;line-height:1.55}
+  .call .btn{background:var(--paper);color:#1b1611;border-color:var(--paper);margin-top:30px;font-weight:600}
+  .call .btn:hover,.call .btn:focus-visible{background:#f0a878;border-color:#f0a878;color:#1b120c}
+  .call .who{border-left:2px solid var(--cedar);padding-left:26px;font-family:var(--mono);
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#cfc6b7;display:grid;gap:14px}
+  .call .who b{display:block;color:#fdfaf4;font-weight:500;letter-spacing:.04em;
+    text-transform:none;font-family:"DM Sans",sans-serif;font-size:17px;margin-top:5px}
+  @media(max-width:860px){.call .inner{grid-template-columns:1fr;gap:34px}}
+
+  footer.site{padding:30px 0;font-size:13.5px;background:#1a1714;color:#b3a99c}
+  footer.site .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
+  footer.site a{color:#c4bbae;text-decoration:none}
+  footer.site a:hover{color:var(--paper)}
+</style>
+</head>
+<body>
+<a class="skip" href="#build">Skip to what we build</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="lockup" href="#top" aria-label="VBS Carpentry home">
+      <svg class="mark" style="width:84px;height:84px" viewBox="0 0 96 96" role="img" aria-label="VBS Carpentry logo">
+        <rect width="96" height="96" rx="4" fill="#231f1b"/>
+        <rect x="4" y="4" width="88" height="88" fill="none" stroke="#f7f2e7" stroke-opacity=".22"/>
+        <rect x="13" y="26" width="70" height="18" fill="#f7f2e7"/>
+        <rect x="39" y="26" width="18" height="44" fill="#b4552b"/>
+        <rect x="13" y="52" width="70" height="18" fill="#f7f2e7"/>
+        <path d="M39 26h18M39 70h18" stroke="#231f1b" stroke-width="2"/>
+      </svg>
+      <span>
+        <span class="word">VBS Carpentry</span>
+        <span class="sub">Perth · Framing to finish</span>
+      </span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#build">What we build</a>
+      <a href="#detail">Detail</a>
+      <a href="#how">How it runs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#contact">Request a quote</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap inner">
+      <div>
+        <p class="eyebrow">Carpentry — Perth, Western Australia</p>
+        <h1>Framed true enough<br>that the plaster<br><i>goes on flat.</i></h1>
+        <p class="lede">Frames, decks, pergolas and joinery built by the same hands from set-out to final fix. If a line is out by three millimetres, it gets fixed before the next sheet goes on.</p>
+        <div class="actions">
+          <a class="btn" href="#contact">Request a quote</a>
+          <a class="btn quiet" href="#build">What we build &rarr;</a>
+        </div>
+        <div class="facts">
+          <span><b>Perth, Western Australia</b>Based and mobile</span>
+          <span><b>Rough to finish</b>One crew</span>
+          <span><b>Every set out</b>Checked twice</span>
+        </div>
+      </div>
+      <div class="battens" role="img" aria-label="Illustrated build detail: timber batten screen with set-out lines">
+        <span class="tag">Batten screen · shadow gap detail</span>
+        <span class="frame-line v" aria-hidden="true"></span>
+        <span class="frame-line h" aria-hidden="true"></span>
+        <span class="pin" aria-hidden="true"></span>
+        <span class="plate"><span><b>Shadow gap 12 mm</b><br>Dressed pine, stainless fixings</span><span>Set-out checked<br>before cladding</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="build">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Framing, decks, joinery.</h2>
+        <p>Carpentry is a sequence — get the frame true and everything after it is easier. VBS takes on both the structural end and the finish end of that sequence.</p>
+      </div>
+      <div class="build">
+        <div class="item">
+          <span class="k">01 / Frame</span>
+          <h3>Framing &amp; extensions</h3>
+          <p>Wall and roof framing for new work and extensions. Walls plumbed and straightened before bracing goes on, so the plasterboard sits flat later.</p>
+        </div>
+        <div class="item">
+          <span class="k">02 / Deck</span>
+          <h3>Decks &amp; boardwalks</h3>
+          <p>Subframe set to fall, joists spaced to the board, then decking laid with the gap consistent the whole way across — including around posts and steps.</p>
+        </div>
+        <div class="item">
+          <span class="k">03 / Outdoor</span>
+          <h3>Pergolas &amp; patio structures</h3>
+          <p>Timber pergolas, posts and beams cut and housed to fit the space, with the fixings detailed for the weather rather than for the photo.</p>
+        </div>
+        <div class="item">
+          <span class="k">04 / Inside</span>
+          <h3>Built-ins &amp; robes</h3>
+          <p>Robes, shelving and window seats scribed to the actual walls — not to the plan — because older Perth homes are rarely straight.</p>
+        </div>
+        <div class="item">
+          <span class="k">05 / Joinery</span>
+          <h3>Custom joinery &amp; trim</h3>
+          <p>Skirts, arcs, cavity sliders and door sets hung so the gaps are even. The parts nobody photographs are the parts that give a build away.</p>
+        </div>
+        <div class="item">
+          <span class="k">06 / Fix-out</span>
+          <h3>Doors, windows &amp; hardware</h3>
+          <p>Replacement doors and window units fitted and flashed, then hardware set so everything closes on the first push.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail" id="detail">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>The joint is the tell.</h2>
+        <p>Anyone can hide a gap with filler. A clean joint — cut tight, aligned, no squeeze-out — is what separates a built-in from a bought one.</p>
+      </div>
+      <div class="inner">
+        <div class="joint" role="img" aria-label="Diagram of an interlocking timber joint">
+          <span class="pin a" aria-hidden="true"></span>
+          <span class="pin b" aria-hidden="true"></span>
+          <span class="note">Half-lap / dry fit</span>
+        </div>
+        <div>
+          <h2>Measured, dry-fitted, then fixed.</h2>
+          <p>Every run gets dry-fitted before it's fixed. That's the step that gets skipped on fast jobs, and the one you notice five years later when a deck board cups or a robe door rubs.</p>
+          <ul>
+            <li>Timber selected for the job — treated for outside, dressed for inside</li>
+            <li>Boards laid to consistent gaps, screwed not nailed where it matters</li>
+            <li>Cuts and fixings detailed so water runs off instead of sitting</li>
+            <li>Site cleaned at the end of each stage, not just at handover</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>How a job runs.</h2>
+        <p>Three stages, and you know which one you're in. No week of silence between the quote and the first day on site.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="k">Stage 01</span>
+          <h3>Measure &amp; quote</h3>
+          <p>On-site measure with photos of the existing structure, then a written scope — what's included and what isn't.</p>
+        </div>
+        <div class="step">
+          <span class="k">Stage 02</span>
+          <h3>Build</h3>
+          <p>Materials delivered, set out checked against the house, and the frame or subframe built true before anything is clad.</p>
+        </div>
+        <div class="step">
+          <span class="k">Stage 03</span>
+          <h3>Finish &amp; hand over</h3>
+          <p>Trim, hardware and final fix, then a walk-through with you before the tools go in the ute.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="call" id="contact">
+    <div class="wrap inner">
+      <div>
+        <p class="eyebrow">VBS Carpentry — Perth, Western Australia</p>
+        <h2>Send a photo. Book a measure.</h2>
+        <p>Send a photo of the area and rough dimensions to the Instagram account. You'll get a straight answer on whether it's a deck, a robe or a frame job — and a day to measure it.</p>
+        <a class="btn" href="https://www.instagram.com/vbs_carpentry/">Send an Instagram DM</a>
+      </div>
+      <div class="who">
+        <span>What to send<b>Photo of the space</b></span>
+        <span>Then<b>Rough dimensions</b></span>
+        <span>Where<b><a href="https://www.instagram.com/vbs_carpentry/" style="color:#e08a5d;text-decoration:none">@vbs_carpentry · Perth, Western Australia</a></b></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>VBS Carpentry — Perth, Western Australia</span>
+    <span><a href="#contact">Request a quote</a></span>
+    <span><a href="https://www.instagram.com/vbs_carpentry/">@vbs_carpentry</a></span>
+  </div>
+</footer>
+</body>
+</html>
