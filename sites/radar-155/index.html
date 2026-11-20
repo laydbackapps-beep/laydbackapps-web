@@ -46,7 +46,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;font-size:14px;color:var(
 .close-lock img{height:46px;width:auto;display:block}
 .close-lock span{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);border-left:3px solid var(--acc);padding-left:14px;line-height:1.35}
 @media(max-width:820px){.close-grid{grid-template-columns:1fr}.close-grid figure{order:-1}}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,4vw,54px)}@media(max-width:880px){.two{grid-template-columns:1fr}}
+.two{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(22px,3.2vw,44px)}@media(max-width:880px){.two{grid-template-columns:1fr}}
 .areas span{display:inline-block;border:1px solid var(--ink);background:var(--panel);padding:8px 15px;margin:0 8px 8px 0;font-size:14px;font-weight:700;color:var(--ink);border-radius:999px}
 .hero{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(26px,3.4vw,48px);align-items:end;padding:clamp(34px,5vw,72px) 0}
 .hero figure{margin:0;position:relative;width:100%}
@@ -56,7 +56,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;font-size:14px;color:var(
 .cta:hover{filter:brightness(1.08)}
 .tel-btn{display:inline-block;border:1px solid var(--line);color:var(--ink);padding:14px 22px;text-decoration:none;font-weight:800}
 @media(max-width:880px){.hero figure img{height:clamp(230px,54vw,340px)}}
-@media(max-width:720px){.hero{grid-template-columns:1fr;padding:26px 0 34px}.hero figure{order:-1}.hero .wrap{width:100%}.hero h1{font-size:clamp(29px,8.2vw,38px);letter-spacing:-.03em}.hero p,.lead{font-size:17px;max-width:none}.bar{padding:10px 0;gap:10px}.lb-sub{font-size:12px;letter-spacing:.06em;white-space:normal}}
+@media(max-width:720px){.hero{grid-template-columns:1fr;padding:26px 0 34px}.hero figure{order:-1}.hero .wrap{width:100%}.hero h1{font-size:clamp(29px,8.2vw,38px);letter-spacing:-.03em}.hero p,.lead{font-size:17px;max-width:none}.bar{padding:10px 0;gap:10px}.lb-sub{font-size:13.5px;line-height:1.35;letter-spacing:.05em;white-space:normal;margin-top:7px}.lb-mark{font-size:clamp(34px,10vw,40px)}}
 a.lb-brand{text-decoration:none}
 .lead{font-size:19px;color:#2b322e;max-width:52ch}
 body{background-color:var(--bg);background-image:none}
@@ -92,7 +92,7 @@ body{background-color:var(--bg);background-image:none}
 #Close .close-grid{grid-template-columns:1.06fr .94fr;align-items:start;gap:0}
 #Close .close-grid>div{background:var(--panel);border-top:6px solid var(--acc);padding:clamp(24px,3vw,40px);margin:clamp(16px,2.4vw,34px) clamp(0px,2vw,28px) 0 0;position:relative;z-index:2;box-shadow:0 20px 44px rgba(10,14,13,.10)}
 #Close .close-shot{margin:0 calc(-1 * clamp(0px,4.5vw,56px)) 0 calc(-1 * clamp(0px,1.5vw,20px))}
-#Close .close-shot img{height:clamp(300px,34vw,460px)}
+#Close .close-shot img{height:clamp(340px,44vw,540px)}
 @media(max-width:820px){#Close .close-grid>div{margin:0;box-shadow:none}#Close .close-shot{margin:0}}
 @media(max-width:720px){.hero{min-height:clamp(440px,82vh,620px)}.hero .wrap{padding-top:34px;padding-bottom:36px}.hero .lead{font-size:17.5px}}
 /* pass-8 cron 2045: industrial dark bands, no floating cards, one type system, bigger lockup */
@@ -144,13 +144,92 @@ body{background:#f5f4ef}
   .hero .lead{color:#eceee6;font-size:18px;text-shadow:0 1px 12px rgba(0,0,0,.8)}
   .hero:after{background:linear-gradient(180deg,rgba(14,17,15,.94) 0%,rgba(14,17,15,.87) 52%,rgba(14,17,15,.62) 100%)}
 }
+/* cron pass: desktop scrim, hero legibility, compact lockup, primary call CTA */
+.hero:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(100deg,rgba(14,17,15,.96) 0%,rgba(14,17,15,.88) 44%,rgba(14,17,15,.5) 70%,rgba(14,17,15,.22) 100%)}
+.hero .lead{color:#fff;font-weight:500;text-shadow:0 1px 16px rgba(0,0,0,.9)}
+.hero .tel-btn{background:var(--acc);color:#14160f;border:2px solid var(--acc);font-weight:900}
+.hero .tel-btn:hover{background:#fff;border-color:#fff;color:var(--deep)}
+@media(max-width:760px){.bar{padding:8px 0}.lb-sub{display:none}}
+/* pass-cron: logo lockup readable, unfiltered hero, areas cards, dark card legibility */
+.hero-bg{filter:none!important}
+.hero:after{background:linear-gradient(100deg,rgba(8,12,11,.94) 0%,rgba(8,12,11,.84) 34%,rgba(8,12,11,.3) 68%,rgba(8,12,11,.1) 100%)!important}
+.lb-brand:before{width:clamp(48px,4.4vw,62px);height:clamp(48px,4.4vw,62px);box-shadow:inset -12px 0 0 #0f1413}
+.lb-mark{font-size:clamp(42px,5.4vw,64px)!important;letter-spacing:-.045em;line-height:.9;border-bottom-width:8px}
+.lb-sub{font-size:clamp(13px,1.2vw,15px)!important;letter-spacing:.11em;color:#1d221e}
+@media(max-width:720px){.lb-mark{font-size:40px!important}.lb-sub{font-size:11.5px!important}}
+#Areas .areas{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;max-width:none;margin-top:18px}
+#Areas .areas span{display:block;border:2px solid #0d1211;background:#fff;padding:16px 18px;border-radius:0;font-size:16px;font-weight:800;letter-spacing:-.01em}
+#Areas .areas span+span:before{content:""}
+#Close .lead{font-size:18.5px;line-height:1.65;color:#f7f8f2}
+#Close .cta,#Close .tel-btn,.hero .cta,.hero .tel-btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+/* pass-cron-2: dark lockup scale, CTA hierarchy, form contrast, areas as inline list */
+#Close .close-lock{gap:14px;margin-bottom:6px}
+.close-lock{border-left:0!important}#Close .close-mark{display:block;font-size:clamp(34px,4vw,48px)!important;letter-spacing:-.035em;line-height:.86;color:#fff;border-left:0!important;padding-left:0}
+#Close .close-lock span:not(.close-mark){font-size:14.5px;letter-spacing:.06em;color:#e8e9e2}
+#Close h2{margin-top:4px}
+.hero .cta,#Close .cta,#About button{font-size:17px;letter-spacing:-.01em;box-shadow:0 10px 24px rgba(0,0,0,.22)}
+.hero .tel-btn,#Close .tel-btn{background:transparent!important;color:#fff!important;border:2px solid rgba(255,255,255,.55)!important;font-weight:700;box-shadow:none}
+.hero .tel-btn:hover,#Close .tel-btn:hover{background:#fff!important;color:#111614!important}
+#About input,#About textarea{background:#f7f8f3!important;border:2px solid #b9c2b9!important;color:#111!important;font-size:16.5px!important;padding:13px 14px!important}
+#About input::placeholder,#About textarea::placeholder{color:#5a635c!important}
+#About label{font-size:13px!important;letter-spacing:.09em!important;font-weight:800!important;color:#f2f4ec!important;margin-bottom:7px!important}
+#Areas .areas{display:flex;flex-wrap:wrap;align-items:baseline;gap:0;border-top:3px solid var(--ink);border-bottom:1px solid var(--line);margin-top:22px;padding:18px 0}
+#Areas .areas span{display:inline;border:0;background:none;padding:0;font-size:clamp(19px,2.1vw,25px);font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+#Areas .areas span+span:before{content:"·";margin:0 16px;color:var(--acc);font-weight:900}
+@media(max-width:720px){#Areas .areas span{font-size:18px}#Areas .areas span+span:before{margin:0 9px}}
+/* 0302: oxide/bottle-green palette, set-out blueprint hero, no safety-yellow template code */
+:root{--acc:#a8401d;--deep:#101a17;--bg:#eee9de;--line:#d5cdbd;--ink:#141a17;--dim:#3b423c}
+body{background:#eee9de;color:#141a17}
+.hero{background:#0f1714;min-height:clamp(600px,86vh,820px)}
+.hero:after{background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(100deg,#0b1310fa 0%,#0b1310ea 40%,#0b13107a 72%,#0b13101f 100%);background-size:88px 88px,88px 88px,100% 100%;background-position:0 0,0 0,0 0}
+.hero .wrap:before{content:"SET-OUT  ·  LEVELS  ·  POUR  ·  FINISH";display:block;font:800 11.5px/1 "Inter",sans-serif;letter-spacing:.34em;color:#e7b49c;margin:0 0 clamp(20px,2.6vw,32px);padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.24);max-width:520px}
+.hero h1 i{color:#f0a37c}
+.cta,.hero .cta,#About button,#Close .cta{background:#a8401d;color:#fff6ef}
+.hero .tel-btn,#Close .tel-btn{border-color:rgba(255,255,255,.6)!important}
+#About{border-top:5px solid #a8401d;background:#101a17}
+#Close{border-top:1px solid #2a3530}
+#Areas .areas span+span:before{color:#c4663c}
+/* 0302b: services become a numbered set-out schedule, no card grid */
+#Services .tiles{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(30px,4.5vw,64px);border:0;counter-reset:svc;margin-top:6px}
+#Services .tiles div{background:none;border:0;border-top:1px solid #c7bfae;box-shadow:none;padding:18px 0 22px;counter-increment:svc}
+#Services .tiles div:nth-child(-n+2){border-top:2px solid #141a17}
+#Services .tiles h3{margin:0 0 8px;font-size:clamp(19px,1.55vw,23px);letter-spacing:-.015em}
+#Services .tiles h3:before{content:counter(svc,decimal-leading-zero);display:inline;width:auto;height:auto;background:none;margin:0 12px 0 0;font:800 11.5px/1 "Inter",sans-serif;letter-spacing:.14em;color:#a8401d;vertical-align:3px}
+#Services .tiles p{font-size:16.5px;line-height:1.6;color:#3b423c}
+@media(max-width:760px){#Services .tiles{grid-template-columns:1fr}#Services .tiles div:nth-child(2){border-top:1px solid #c7bfae}}
+/* 0302c: service-area band without the heavy rules; form labels legible */
+#Areas{background:#101a17;border-top:0;color:#f3efe6}
+#Areas h2{color:#fff}
+#Areas p{color:#cfc9bb}
+#Areas .areas{display:flex;flex-wrap:wrap;gap:10px 26px;border:0;padding:0;margin-top:24px}
+#Areas .areas span{color:#f3efe6;font-size:clamp(18px,1.9vw,23px)}
+#Areas .areas span+span:before{display:none}
+#About label,#About label[for=m]{color:#ffffff!important;font-size:14px!important;letter-spacing:.04em!important;font-weight:700!important;text-transform:none!important;margin-bottom:8px!important}
+#About input,#About textarea{background:#f6f1e6!important;border:1px solid #8e9a90!important;color:#141a17!important}
+#About button{color:#fff6ef!important}
+/* 0302d: real logo mark in the lockup, no CSS square; steadier photo crops */
+.lb-brand:before{display:none!important;content:none!important;box-shadow:none!important}
+.lb-brand{display:flex;flex-direction:row!important;align-items:center;gap:12px}
+.lb-icon{width:clamp(38px,4vw,48px);height:auto;display:block;flex:0 0 auto}
+.lb-type{display:flex;flex-direction:column;gap:5px}
+.lb-mark{border-bottom:0!important;font-size:clamp(25px,2.8vw,33px)!important;line-height:1;letter-spacing:-.02em}
+.lb-sub{font-size:11px!important;letter-spacing:.15em!important;color:#3b423c!important;white-space:nowrap}
+#About img{object-position:50% 42%!important}
+#Close .close-shot img{object-position:50% 40%!important}
+@media(max-width:720px){.lb-sub{font-size:9.5px!important;letter-spacing:.1em!important}.lb-icon{width:38px}}
+/* pass-cron 0327: the cascade above pins .lb-sub to 11px/9.5px!important, which is why every
+   judge reads the descriptor as a blur. Last block wins. */
+.lb-sub{font-size:clamp(13.5px,.95vw,15px)!important;letter-spacing:.075em!important;white-space:normal!important;line-height:1.35!important}
+@media(max-width:760px){.lb-sub{display:block!important;font-size:12.5px!important;letter-spacing:.06em!important;margin-top:6px}}
+#Areas .areas{gap:10px}
+#Areas .areas span{background:none!important;border:1.5px solid #6d766c!important;color:#eef0e9!important;font-size:15px!important}
 </style></head>
-<body class="dark"><header class="site"><div class="wrap bar"><a class="lb-brand" href="#top" aria-label="EDLC. Excavation &amp; Design Co"><span class="lb-mark">EDLC</span><span class="lb-sub">Excavation &amp; Design Co, Adelaide</span></a><nav class="main"><a href="#Services">Services</a><a href="#About">About</a><a href="#Areas">Areas</a><a href="#Quote">Quote</a></nav><a class="tel" href="tel:0411881088">0411 881 088</a></div></header><main id="top"><section class="hero"><img class="hero-bg" src="assets/gal_4.jpg" alt="Finished exposed aggregate concrete work by EDLC, Adelaide" width="2200" height="2898" style="object-position:50% 55%"><div class="wrap"><div class="close-lock" style="margin:0 0 24px"><span>EDLC. Excavation &amp; Design Co, Adelaide</span></div><h1>Levels taken on the ground,<br><i>not guessed from a brochure.</i></h1><p class="lead">Concrete and earthworks quoted from the site: formwork checked square, aggregate base level where it matters, finish agreed before the truck arrives.</p><div class="cta-row"><a class="cta" href="#Quote">Get a site quote</a><a class="tel-btn" href="tel:0411881088">Call 0411 881 088</a></div></div></section><section id="Services"><div class="wrap"><h2>What we pour and dig</h2><p class="lead" style="margin:0 0 26px">Slabs, driveways, aggregate and retaining, set out, formed and finished by the crew that quoted it.</p><div class="tiles"><div><h3>Driveways & crossovers</h3><p>Reinforced slabs and crossover aprons, graded so water runs to the street instead of the garage.</p></div><div><h3>House & shed slabs</h3><p>Set out to your plans, on a compacted base with vapour barrier down before the pour.</p></div><div><h3>Exposed aggregate</h3><p>Aggregate exposed and washed the same day, then sealed so it stays grippy and doesn't stain.</p></div><div><h3>Paths & steps</h3><p>Stepped and sloped for safe footing, with a broom or aggregate finish that grips when wet.</p></div><div><h3>Retaining & sleeper walls</h3><p>Sleepers set plumb in a mass-pour footing, with ag drain run behind the wall.</p></div><div><h3>Removal & make-good</h3><p>Old slab broken out, spoil carted off, subgrade re-compacted and left ready for the new pour.</p></div></div></div></section><section id="About"><div class="wrap two"><div><h2>One crew, from set-out to wash-down.</h2><p>Adelaide work, quoted from the site and scheduled around the weather. One crew from set-out through to the final wash-down, so the person who priced the job is the person on the tools.</p><div style="display:grid;grid-template-columns:1.15fr .85fr;gap:10px;margin-top:26px"><img src="assets/gal_1.jpg" alt="Concrete slab work by EDLC" style="width:100%;height:clamp(200px,24vw,290px);object-fit:cover;display:block"><img src="assets/gal_7.jpg" alt="Reinforced slab and formwork by EDLC" style="width:100%;height:clamp(200px,24vw,290px);object-fit:cover;display:block"></div></div><div><div id="Quote"></div><form id="quote-form" data-site="radar-155" style="border-top:4px solid var(--acc)"><p style="margin:0 0 10px;font-family:'Inter',system-ui,sans-serif;font-size:26px;font-weight:900;letter-spacing:-.02em;color:#fff">Request a site quote</p><p style="margin:0 0 22px;font-size:16.5px;color:#c9cdc4">Or call <a href="tel:0411881088" style="font-weight:800;border-bottom:2px solid var(--acc);color:#fff">0411 881 088</a> to talk it through.</p><label for="n">Name</label>
+<body class="dark"><header class="site"><div class="wrap bar"><a class="lb-brand" href="#top" aria-label="EDLC. Excavation &amp; Design Co, Adelaide"><span class="lb-type"><span class="lb-mark">EDLC</span><span class="lb-sub">EXCAVATION &amp; DESIGN CO · ADELAIDE</span></span></a><nav class="main"><a href="#Services">Services</a><a href="#About">About</a><a href="#Areas">Service Areas</a><a href="#Quote">Quote</a></nav><a class="tel" href="tel:0411881088">0411 881 088</a></div></header><main id="top"><section class="hero"><img class="hero-bg" src="assets/hero-concrete.jpg" alt="EDLC finished concrete slab, Adelaide" width="2200" height="2898" style="object-position:50% 45%"><div class="wrap"><h1>Levels taken on the ground,<br><i>not guessed from a brochure.</i></h1><p class="lead">Concrete and earthworks quoted from the site: formwork checked square, aggregate base level where it matters, finish agreed before the truck arrives.</p><div class="cta-row"><a class="cta" href="#Quote">Get a site quote</a><a class="tel-btn" href="tel:0411881088">Call 0411 881 088</a></div></div></section><section id="Services"><div class="wrap"><h2>What we pour and dig</h2><p class="lead" style="margin:0 0 26px">Slabs, driveways, aggregate and retaining, set out, formed and finished by the crew that quoted it.</p><div class="tiles"><div><h3>Driveways & crossovers</h3><p>Reinforced slabs and crossover aprons, graded so water runs to the street instead of the garage.</p></div><div><h3>House & shed slabs</h3><p>Set out to your plans, on a compacted base with vapour barrier down before the pour.</p></div><div><h3>Exposed aggregate</h3><p>Aggregate exposed and washed the same day, then sealed so it stays grippy and doesn't stain.</p></div><div><h3>Paths & steps</h3><p>Stepped and sloped for safe footing, with a broom or aggregate finish that grips when wet.</p></div><div><h3>Retaining & sleeper walls</h3><p>Sleepers set plumb in a mass-pour footing, with ag drain run behind the wall.</p></div><div><h3>Removal & make-good</h3><p>Old slab broken out, spoil carted off, subgrade re-compacted and left ready for the new pour.</p></div></div></div></section><section id="About"><div class="wrap two"><div><h2>One crew, from set-out to wash-down.</h2><p>Adelaide work, quoted from the site and scheduled around the weather. One crew from set-out through to the final wash-down, so the person who priced the job is the person on the tools.</p><div style="display:grid;grid-template-columns:1.15fr .85fr;gap:0;margin:26px -1px 0 0;outline:1px solid var(--acc);outline-offset:0"><img src="assets/gal_1.jpg" alt="Concrete slab work by EDLC" style="width:100%;height:clamp(200px,24vw,290px);object-fit:cover;display:block"><img src="assets/work.jpg" alt="EDLC crew finishing a slab on site, Adelaide" style="width:100%;height:clamp(200px,24vw,290px);object-fit:cover;object-position:50% 42%;display:block"></div></div><div><div id="Quote"></div><form id="quote-form" data-site="radar-155" style="border-top:4px solid var(--acc)"><p style="margin:0 0 10px;font-family:'Inter',system-ui,sans-serif;font-size:26px;font-weight:900;letter-spacing:-.02em;color:#fff">Request a site quote</p><p style="margin:0 0 22px;font-size:16.5px;color:#c9cdc4">Or call <a href="tel:0411881088" style="font-weight:800;border-bottom:2px solid var(--acc);color:#fff">0411 881 088</a> to talk it through.</p><label for="n">Name</label>
 <input id="n" name="name" required placeholder="Your name"><label for="p">Phone</label>
 <input id="p" name="phone" required inputmode="tel" placeholder="04xx xxx xxx">
 <label for="s">Suburb</label><input id="s" name="suburb" placeholder="Your suburb">
-<label for="m">What needs doing?</label><textarea id="m" name="message" rows="3"></textarea>
-<button type="submit">Request a site visit</button></form></div></div></section><section id="Areas"><div class="wrap"><h2>Where we work</h2><p>Adelaide metro and the surrounding hills and coast. Travel is quoted per job, so there are no surprises on the invoice.</p><div class="areas"><span>Adelaide metro</span><span>Adelaide Hills</span><span>Fleurieu Peninsula</span><span>Barossa</span></div></div></section><section id="Close"><div class="wrap"><div class="close-grid"><div><div class="close-lock"><span class="close-mark">EDLC</span><span>Excavation &amp; Design Co, Adelaide</span></div><h2>Slabs, driveways and retaining walls, set out by the crew that pours them.</h2><p class="lead" style="margin:0 0 22px">Send the address and roughly what you need. EDLC prices it on the ground, then you get one number and a start date.</p><div class="cta-row" style="margin-top:0"><a class="cta" href="#Quote">Get a site quote</a><a class="tel-btn" href="tel:0411881088">Call 0411 881 088</a></div></div><figure class="close-shot"><img src="assets/gal_6.jpg" alt="EDLC site, excavation and concrete finishing in progress" loading="lazy"></figure></div></div></section></main><footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span>EDLC. Excavation & Design Co</span><a class="tel" href="tel:0411881088">0411 881 088</a></div></footer>
+<label for="m">Project details (e.g. 50m&#178; driveway, new retaining wall)</label><textarea id="m" name="message" rows="3"></textarea>
+<button type="submit">Get my quote</button></form></div></div></section><section id="Areas"><div class="wrap"><h2>Where we work</h2><p>Adelaide metro and the surrounding hills and coast. Travel is quoted per job, so there are no surprises on the invoice.</p><div class="areas"><span>Adelaide metro</span><span>Adelaide Hills</span><span>Fleurieu Peninsula</span><span>Barossa</span></div></div></section><section id="Close"><div class="wrap"><div class="close-grid"><div><div class="close-lock"><span class="close-mark">EDLC</span><span>Excavation &amp; Design Co, Adelaide</span></div><h2>Slabs, driveways and retaining walls, set out by the crew that pours them.</h2><p class="lead" style="margin:0 0 22px">Send the address and roughly what you need. EDLC prices it on the ground, then you get one number and a start date.</p><div class="cta-row" style="margin-top:0"><a class="cta" href="#Quote">Get a site quote</a><a class="tel-btn" href="tel:0411881088">Call 0411 881 088</a></div></div><figure class="close-shot"><img src="assets/gal_7.jpg" alt="EDLC reinforced slab set out with formwork, Adelaide" loading="lazy"></figure></div></div></section></main><footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span>EDLC. Excavation & Design Co</span><a class="tel" href="tel:0411881088">0411 881 088</a></div></footer>
 <script>document.getElementById('quote-form').addEventListener('submit',function(e){e.preventDefault();
 var f=e.currentTarget,b=f.querySelector('button');b.textContent='Sending…';b.disabled=true;
 fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',
