@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kinetic Building Pty Ltd — Builder serving Hunter NSW. Quality construction and renovation services.">
+  <title>Kinetic Building Pty Ltd | Builder Hunter NSW</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Azeret+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <noscript>
+    <style>
+      .rv { opacity: 1 !important; transform: none !important; }
+      .js .rv { opacity: 0; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <p class="site-id" aria-hidden="true">KINETIC BUILDING PTY LTD</p>
+      <a href="tel:+61428330910" class="header-phone" aria-label="Call Kinetic Building">0428 330 910</a>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    <!-- HERO SECTION -->
+    <section class="hero rv" aria-labelledby="hero-title">
+      <div class="hero-plate">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-sparks" aria-hidden="true" role="img" aria-label="Welding spark cluster"></div>
+        <h1 id="hero-title" class="hero-title">Kinetic Building</h1>
+        <p class="hero-subtitle">Builder — Hunter NSW</p>
+      </div>
+    </section>
+
+    <!-- WELD BEAD DIVIDER -->
+    <div class="weld-divider" aria-hidden="true" role="separator"></div>
+
+    <!-- ABOUT SECTION -->
+    <section class="ticket rv" aria-labelledby="ticket-01-title">
+      <div class="ticket-meta">
+        <span class="ticket-num" aria-hidden="true">T-01</span>
+      </div>
+      <div class="ticket-content">
+        <h2 id="ticket-01-title" class="ticket-title">About</h2>
+        <p class="ticket-body">Kinetic Building Pty Ltd delivers quality residential and commercial construction across the Hunter region. From new builds and extensions to structural renovations, we approach every project with precision and accountability.</p>
+        <p class="ticket-body">Licensed builder. Fully insured. Projects managed from foundation to handover.</p>
+      </div>
+    </section>
+
+    <!-- WELD BEAD DIVIDER -->
+    <div class="weld-divider" aria-hidden="true" role="separator"></div>
+
+    <!-- SERVICES SECTION -->
+    <section class="ticket rv" aria-labelledby="ticket-02-title">
+      <div class="ticket-meta">
+        <span class="ticket-num" aria-hidden="true">T-02</span>
+      </div>
+      <div class="ticket-content">
+        <h2 id="ticket-02-title" class="ticket-title">Services</h2>
+        <ul class="ticket-list" role="list">
+          <li>New home construction</li>
+          <li>Extensions & additions</li>
+          <li>Structural renovations</li>
+          <li>Project management</li>
+          <li>Insurance repair work</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- WELD BEAD DIVIDER -->
+    <div class="weld-divider" aria-hidden="true" role="separator"></div>
+
+    <!-- PROCESS SECTION -->
+    <section class="ticket rv" aria-labelledby="ticket-03-title">
+      <div class="ticket-meta">
+        <span class="ticket-num" aria-hidden="true">T-03</span>
+      </div>
+      <div class="ticket-content">
+        <h2 id="ticket-03-title" class="ticket-title">Process</h2>
+        <ol class="ticket-steps" role="list">
+          <li>Initial consultation & site assessment</li>
+          <li>Detailed quote & programme outline</li>
+          <li>Approvals & documentation</li>
+          <li>Construction with regular updates</li>
+          <li>Final inspection & handover</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- WELD BEAD DIVIDER -->
+    <div class="weld-divider" aria-hidden="true" role="separator"></div>
+
+    <!-- CONTACT SECTION -->
+    <section class="ticket rv" aria-labelledby="ticket-04-title">
+      <div class="ticket-meta">
+        <span class="ticket-num" aria-hidden="true">T-04</span>
+      </div>
+      <div class="ticket-content">
+        <h2 id="ticket-04-title" class="ticket-title">Contact</h2>
+        <address class="ticket-contact">
+          <a href="tel:+61428330910" class="contact-phone">0428 330 910</a>
+          <span class="contact-region">Servicing Hunter NSW</span>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; <span id="year"></span> Kinetic Building Pty Ltd. All rights reserved.</p>
+      <p class="footer-license">Licensed Builder — NSW Fair Trading</p>
+    </div>
+  </footer>
+
+  <script>
+  function revealSafetyNet() {
+    document.querySelectorAll('.rv').forEach(function(el) {
+      el.classList.add('on');
+    });
+  }
+  (function () {
+    'use strict';
+
+    // Signal that JS is active - enables CSS .js .rv hiding
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+
+    // --------------------------------------------------------------------------
+    // INTERSECTION OBSERVER REVEAL
+    // --------------------------------------------------------------------------
+    const revealElements = document.querySelectorAll('.rv');
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.1
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('on');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // --------------------------------------------------------------------------
+    // JS SAFETY NET (~1100ms)
+    // Ensures all reveal elements become visible even if IntersectionObserver fails
+    // --------------------------------------------------------------------------
+    const SAFETY_NET_DELAY = 1100;
+    setTimeout(revealSafetyNet, SAFETY_NET_DELAY);
+
+    // --------------------------------------------------------------------------
+    // CURRENT YEAR IN FOOTER
+    // --------------------------------------------------------------------------
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    // --------------------------------------------------------------------------
+    // SMOOTH SCROLL POLYFILL FOR ANCHOR LINKS (fallback)
+    // --------------------------------------------------------------------------
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          const headerOffset = 64;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+          target.focus({ preventScroll: true });
+        }
+      });
+    });
+
+  })();
+  
+    // Hero 3D — machined plate responds to the cursor (order 6b)
+    (function() {
+      var plate = document.querySelector('.hero-plate');
+      var hero = document.querySelector('.hero');
+      if (!plate || !hero) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var raf = null, tx = 0, ty = 0;
+      function apply() {
+        raf = null;
+        plate.style.transform = 'rotateX(' + tx.toFixed(2) + 'deg) rotateY(' + ty.toFixed(2) + 'deg) translateZ(10px)';
+      }
+      hero.addEventListener('pointermove', function(e) {
+        var r = hero.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        ty = px * 5;
+        tx = py * -4;
+        if (!raf) raf = requestAnimationFrame(apply);
+      });
+      hero.addEventListener('pointerleave', function() {
+        plate.style.transform = '';
+      });
+    })();
+  </script>
+</body>
+</html>
