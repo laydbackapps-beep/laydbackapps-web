@@ -1,0 +1,203 @@
+<footer class="rv" role="contentinfo" style="padding:clamp(48px,6vw,72px) 0;background:var(--panel);">
+<div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start;">
+<div>
+<p style="font-family:'Young Serif',serif;font-size:1.25rem;margin-bottom:8px;">T J Nielsen Building Pty Ltd</p>
+<p style="font-size:0.9375rem;color:var(--muted);margin-bottom:16px;">Hunter region, NSW</p>
+<a href="tel:__PHONE_TEL__" style="display:inline-block;font-size:0.9375rem;font-weight:500;margin-bottom:12px;color:var(--cream);">__PHONE_DISPLAY__</a>
+<div style="display:flex;gap:16px;align-items:center;">
+<a href="https://www.instagram.com/nielsen_building" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--grout);border-radius:50%;transition:border-color 0.2s,background 0.2s;">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+</a>
+</div>
+</div>
+<p style="font-size:0.8125rem;color:var(--muted);margin-top:auto;">© 2026 T J Nielsen Building Pty Ltd</p>
+</div>
+<div class="grout-rule" aria-hidden="true" style="height:2px;background:linear-gradient(90deg,var(--grout),var(--grout) calc(100% - 12px),var(--brass) calc(100% - 12px));margin:0 auto;max-width:1200px;"></div>
+</footer>
+<script>
+(function() {
+  'use strict';
+  var html = document.documentElement;
+  html.classList.add('js');
+  var rv = document.querySelectorAll('.rv');
+  rv.forEach(function(el) { el.classList.add('on'); });
+  var heroCanvas = document.getElementById('hero-canvas');
+  if (heroCanvas) {
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var ctx = heroCanvas.getContext('2d');
+    var tiles = [];
+    var tileCount = 32;
+    var gridCols = 8;
+    var gridRows = 4;
+    var tileW, tileH, groutW = 2;
+    var animationId;
+    var startTime;
+    var duration = 2500;
+    var settled = false;
+    var glossPhase = 0;
+    var glossDuration = 2000;
+    function resize() {
+      var rect = heroCanvas.parentElement.getBoundingClientRect();
+      var dpr = window.devicePixelRatio || 1;
+      heroCanvas.width = Math.floor(rect.width * dpr);
+      heroCanvas.height = Math.floor(180 * dpr);
+      heroCanvas.style.width = rect.width + 'px';
+      heroCanvas.style.height = '180px';
+      ctx.scale(dpr, dpr);
+      tileW = (rect.width - (gridCols + 1) * groutW) / gridCols;
+      tileH = (180 - (gridRows + 1) * groutW) / gridRows;
+      if (!settled) initTiles(rect.width);
+    }
+    function initTiles(canvasWidth) {
+      tiles = [];
+      for (var i = 0; i < tileCount; i++) {
+        var col = i % gridCols;
+        var row = Math.floor(i / gridCols);
+        var targetX = groutW + col * (tileW + groutW);
+        var targetY = groutW + row * (tileH + groutW);
+        var startX = Math.random() * canvasWidth;
+        var startY = -tileH - Math.random() * 200;
+        var delay = Math.random() * 400;
+        tiles.push({
+          x: startX, y: startY,
+          targetX: targetX, targetY: targetY,
+          delay: delay, locked: false,
+          overshoot: 0, overshootDir: 1
+        });
+      }
+      startTime = performance.now();
+      animationId = requestAnimationFrame(animate);
+    }
+    function easeOutBack(t) {
+      var c1 = 1.70158;
+      return 1 + c1 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+    }
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+    function drawTile(tile, x, y, locked) {
+      if (!isFinite(x) || !isFinite(y)) return;
+      var r = 3;
+      ctx.fillStyle = '#cfe4d8';
+      ctx.beginPath();
+      ctx.roundRect(x, y, tileW, tileH, r);
+      ctx.fill();
+      if (locked) {
+        var grad = ctx.createLinearGradient(x, y, x, y + tileH);
+        grad.addColorStop(0, 'rgba(255,255,255,0.08)');
+        grad.addColorStop(0.5, 'rgba(255,255,255,0.02)');
+        grad.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.roundRect(x, y, tileW, tileH, r);
+        ctx.fill();
+      }
+    }
+    function drawGrout() {
+      ctx.fillStyle = '#162a25';
+      for (var c = 0; c <= gridCols; c++) {
+        var x = c * (tileW + groutW);
+        ctx.fillRect(x, 0, groutW, 180);
+      }
+      for (var r = 0; r <= gridRows; r++) {
+        var y = r * (tileH + groutW);
+        ctx.fillRect(0, y, heroCanvas.width / (window.devicePixelRatio || 1), groutW);
+      }
+    }
+    function drawBrassTick() {
+      var canvasWidth = heroCanvas.width / (window.devicePixelRatio || 1);
+      var cx = canvasWidth - 20;
+      var cy = 90;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 4, 0, Math.PI * 2);
+      ctx.fillStyle = '#c29b58';
+      ctx.fill();
+    }
+    function drawGloss(progress) {
+      var canvasWidth = heroCanvas.width / (window.devicePixelRatio || 1);
+      var y = 180 * (1 - progress);
+      var grad = ctx.createLinearGradient(0, y - 60, 0, y + 60);
+      grad.addColorStop(0, 'rgba(255,255,255,0)');
+      grad.addColorStop(0.5, 'rgba(255,255,255,0.06)');
+      grad.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, y - 60, canvasWidth, 120);
+    }
+    function animate(ts) {
+      if (!startTime) startTime = ts;
+      var elapsed = ts - startTime;
+      var canvasWidth = heroCanvas.width / (window.devicePixelRatio || 1);
+      ctx.clearRect(0, 0, canvasWidth, 180);
+      var allLocked = true;
+      tiles.forEach(function(tile) {
+        var localElapsed = elapsed - tile.delay;
+        if (localElapsed < 0) {
+          drawTile(tile, tile.x, tile.y, false);
+          allLocked = false;
+          return;
+        }
+        var progress = Math.min(localElapsed / duration, 1);
+        var eased = easeOutBack(progress);
+        if (progress >= 1 && !tile.locked) {
+          tile.locked = true;
+          tile.overshoot = 1;
+        }
+        if (tile.locked && tile.overshoot > 0) {
+          tile.overshoot = Math.max(0, tile.overshoot - 0.08);
+        }
+        tile.x = tile.targetX + (tile.x - tile.targetX) * (1 - eased);
+        tile.y = tile.targetY + (tile.y - tile.targetY) * (1 - eased);
+        if (!isFinite(tile.x)) tile.x = tile.targetX;
+        if (!isFinite(tile.y)) tile.y = tile.targetY;
+        if (tile.locked && tile.overshoot > 0) {
+          tile.y -= tile.overshoot * tile.overshootDir;
+          tile.overshootDir *= -1;
+        }
+        drawTile(tile, tile.x, tile.y, tile.locked);
+        if (!tile.locked) allLocked = false;
+      });
+      drawGrout();
+      drawBrassTick();
+      if (allLocked && !settled) {
+        settled = true;
+        startTime = ts;
+      }
+      if (settled) {
+        var glossProgress = Math.min((ts - startTime) / glossDuration, 1);
+        if (glossProgress < 1) {
+          drawGloss(easeOutCubic(glossProgress));
+        }
+      }
+      animationId = requestAnimationFrame(animate);
+    }
+    function handleResize() {
+      if (animationId) cancelAnimationFrame(animationId);
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      resize();
+    }
+    if (!prefersReduced) {
+      window.addEventListener('resize', handleResize);
+      resize();
+    } else {
+      resize();
+      drawStatic();
+    }
+    function drawStatic() {
+      var canvasWidth = heroCanvas.width / (window.devicePixelRatio || 1);
+      ctx.clearRect(0, 0, canvasWidth, 180);
+      for (var row = 0; row < gridRows; row++) {
+        for (var col = 0; col < gridCols; col++) {
+          var x = groutW + col * (tileW + groutW);
+          var y = groutW + row * (tileH + groutW);
+          drawTile({locked: true}, x, y, true);
+        }
+      }
+      drawGrout();
+      drawBrassTick();
+    }
+  }
+  var safety = setTimeout(function() {
+    document.querySelectorAll('.rv').forEach(function(el) { el.classList.add('on'); });
+  }, 1100);
+})();
+</script>
+</body>
+</html>
