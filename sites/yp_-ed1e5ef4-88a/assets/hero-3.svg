@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="sky3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffef8"/>
+      <stop offset="50%" stop-color="#f8f2e8"/>
+      <stop offset="100%" stop-color="#efe8dc"/>
+    </linearGradient>
+    <radialGradient id="stone3" cx="50%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#f5eacc"/>
+      <stop offset="20%" stop-color="#e8d8b4"/>
+      <stop offset="45%" stop-color="#d8c498"/>
+      <stop offset="70%" stop-color="#c0ac7c"/>
+      <stop offset="100%" stop-color="#a08858"/>
+    </radialGradient>
+    <radialGradient id="pillarGrad" cx="50%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#f8ecdc"/>
+      <stop offset="30%" stop-color="#e8d4bc"/>
+      <stop offset="60%" stop-color="#d4bc9c"/>
+      <stop offset="100%" stop-color="#b8a07c"/>
+    </radialGradient>
+    <filter id="detailTex" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="6" result="detail"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.06"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="overlay"/>
+    </filter>
+    <filter id="microGrain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="2.0" numOctaves="2" result="mg"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.03 0"/>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky3)"/>
+  
+  <!-- Soft atmospheric background -->
+  <ellipse cx="600" cy="850" rx="1000" ry="350" fill="#9ab87a" opacity="0.12"/>
+  <ellipse cx="600" cy="900" rx="1200" ry="450" fill="#7a985a" opacity="0.08"/>
+  
+  <g filter="url(#detailTex)">
+    <!-- Left gate pillar - tall, detailed -->
+    <path d="M160,160 L440,160 L450,700 L150,700 Z" fill="url(#pillarGrad)"/>
+    <!-- Right gate pillar -->
+    <path d="M750,160 L1040,160 L1050,700 L740,700 Z" fill="url(#pillarGrad)"/>
+    <!-- Connecting feature wall -->
+    <path d="M440,240 L750,240 L760,360 L430,360 Z" fill="url(#stone3)"/>
+    
+    <!-- Pillar courses - precise, crafted -->
+    <g stroke="#988058" stroke-width="1.8" opacity="0.55" fill="none">
+      <!-- Left pillar -->
+      <path d="M160,210 Q180,208 220,210 Q280,212 340,210 Q390,208 430,210 Q440,208 440,210"/>
+      <path d="M160,265 Q180,263 220,265 Q280,267 340,265 Q390,263 430,265 Q440,263 440,265"/>
+      <path d="M160,320 Q170,318 210,320 Q280,322 350,320 Q400,318 430,320 Q440,318 440,320"/>
+      <path d="M160,375 Q180,373 220,375 Q280,377 340,375 Q390,373 430,375 Q440,373 440,375"/>
+      <path d="M160,430 Q170,428 210,430 Q280,432 350,430 Q400,428 430,430 Q440,428 440,430"/>
+      <path d="M160,485 Q180,483 220,485 Q280,487 340,485 Q390,483 430,485 Q440,483 440,485"/>
+      <path d="M160,540 Q170,538 210,540 Q280,542 350,540 Q400,538 430,540 Q440,538 440,540"/>
+      <path d="M160,595 Q180,593 220,595 Q280,597 340,595 Q390,593 430,595 Q440,593 440,595"/>
+      <path d="M160,650 Q170,648 210,650 Q280,652 350,650 Q400,648 430,650 Q440,648 440,650"/>
+      
+      <!-- Right pillar -->
+      <path d="M750,210 Q770,208 810,210 Q870,212 930,210 Q980,208 1030,210 Q1040,208 1040,210"/>
+      <path d="M750,265 Q770,263 810,265 Q870,267 930,265 Q980,263 1030,265 Q1040,263 1040,265"/>
+      <path d="M750,320 Q760,318 800,320 Q870,322 940,320 Q990,318 1030,320 Q1040,318 1040,320"/>
+      <path d="M750,375 Q770,373 810,375 Q870,377 930,375 Q980,373 1030,375 Q1040,373 1040,375"/>
+      <path d="M750,430 Q760,428 800,430 Q870,432 940,430 Q990,428 1030,430 Q1040,428 1040,430"/>
+      <path d="M750,485 Q770,483 810,485 Q870,487 930,485 Q980,483 1030,485 Q1040,483 1040,485"/>
+      <path d="M750,540 Q760,538 800,540 Q870,542 940,540 Q990,538 1030,540 Q1040,538 1040,540"/>
+      <path d="M750,595 Q770,593 810,595 Q870,597 930,595 Q980,593 1030,595 Q1040,593 1040,595"/>
+      <path d="M750,650 Q760,648 800,650 Q870,652 940,650 Q990,648 1030,650 Q1040,648 1040,650"/>
+      
+      <!-- Wall courses -->
+      <path d="M440,265 Q480,263 540,265 Q600,267 660,265 Q700,263 750,265"/>
+      <path d="M440,310 Q480,308 540,310 Q600,312 660,310 Q700,308 750,310"/>
+    </g>
+    
+    <!-- Vertical joints on pillars - deep, shadowed -->
+    <g stroke="#705830" stroke-width="1.2" opacity="0.5" fill="none">
+      <path d="M230,160 Q232,240 235,300 Q238,360 240,420 Q242,480 245,540 Q248,600 250,660 Q252,680 255,700"/>
+      <path d="M320,160 Q322,230 325,290 Q328,350 330,410 Q332,470 335,530 Q338,590 340,650 Q342,680 345,700"/>
+      <path d="M810,160 Q812,240 815,300 Q818,360 820,420 Q822,480 825,540 Q828,600 830,660 Q832,680 835,700"/>
+      <path d="M900,160 Q902,230 905,290 Q908,350 910,410 Q912,470 915,530 Q918,590 920,650 Q922,680 925,700"/>
+    </g>
+    
+    <!-- Mortar shadows -->
+    <g stroke="#503818" stroke-width="0.8" opacity="0.2" fill="none">
+      <path d="M160,210 Q180,208 220,210 Q280,212 340,210 Q390,208 430,210 Q440,208 440,210"/>
+      <path d="M160,265 Q180,263 220,265 Q280,267 340,265 Q390,263 430,265 Q440,263 440,265"/>
+      <path d="M160,320 Q170,318 210,320 Q280,322 350,320 Q400,318 430,320 Q440,318 440,320"/>
+      <path d="M160,375 Q180,373 220,375 Q280,377 340,375 Q390,373 430,375 Q440,373 440,375"/>
+      <path d="M750,210 Q770,208 810,210 Q870,212 930,210 Q980,208 1030,210 Q1040,208 1040,210"/>
+      <path d="M750,265 Q770,263 810,265 Q870,267 930,265 Q980,263 1030,265 Q1040,263 1040,265"/>
+    </g>
+    
+    <!-- Pillar caps - detailed bullnose -->
+    <path d="M150,155 L450,155 L455,185 L145,185 Z" fill="#f0e4d0" opacity="0.98"/>
+    <path d="M740,155 L1050,155 L1055,185 L735,185 Z" fill="#f0e4d0" opacity="0.98"/>
+    
+    <!-- Cap overhang shadow -->
+    <path d="M145,185 L455,185 Q450,195 440,202 Q410,208 380,205 Q340,202 310,205 Q280,208 250,202 Q220,198 190,200 Q170,195 160,190 Z" fill="#d4c4a0" opacity="0.8"/>
+    <path d="M735,185 L1055,185 Q1050,195 1040,202 Q1010,208 980,205 Q940,202 910,205 Q900,208 870,202 Q840,198 810,200 Q820,195 790,190 Z" fill="#d4c4a0" opacity="0.8"/>
+    
+    <!-- Wall cap -->
+    <path d="M430,235 L760,235 L765,265 L425,265 Z" fill="#f0e4d0" opacity="0.98"/>
+    <path d="M425,265 L765,265 Q760,275 745,282 Q710,288 670,285 Q630,282 590,285 Q550,288 510,285 Q470,282 450,285 Q450,278 440,272 Z" fill="#e0d4b8" opacity="0.85"/>
+  </g>
+  
+  <!-- Micro grain on everything -->
+  <rect width="1200" height="800" filter="url(#microGrain)"/>
+  
+  <!-- Sun highlights on pillar edges -->
+  <path d="M160,160 L160,700" stroke="#fffef0" stroke-width="1" opacity="0.15"/>
+  <path d="M1040,160 L1040,700" stroke="#fffef0" stroke-width="1" opacity="0.1"/>
+  <path d="M440,240 L440,360" stroke="#fffef0" stroke-width="1" opacity="0.12"/>
+</svg>
