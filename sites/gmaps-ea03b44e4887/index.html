@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BowerBuilt — Concrete &amp; Landscaping, Newcastle NSW</title>
+<meta name="description" content="Shed slabs, driveways, pathways, retaining walls and landscaping across Newcastle. BowerBuilt concrete and landscaping.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15140f;
+    --ink-soft:#33302a;
+    --bone:#f4f0e8;
+    --concrete:#e4dfd4;
+    --formwork:#c8c0b0;
+    --oxide:#a8451f;
+    --oxide-dark:#8b3818;
+    --rule:rgba(21,20,15,.16);
+    --display:"Barlow Condensed","Archivo Narrow",Impact,sans-serif;
+    --body:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--bone);color:var(--ink);
+    font-family:var(--body);font-size:17px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.94;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  p{margin:0}
+  .eyebrow{
+    font-size:15px;letter-spacing:.12em;text-transform:uppercase;
+    font-weight:700;color:#c2612f;
+  }
+  :focus-visible{outline:3px solid var(--oxide);outline-offset:3px}
+
+  /* ---------- header ---------- */
+  .topbar{background:var(--ink);border-bottom:1px solid rgba(244,240,232,.16);position:sticky;top:0;z-index:40}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:88px}
+  .brand{display:flex;align-items:center;gap:15px;text-decoration:none;color:var(--bone)}
+  .mark{
+    width:52px;height:52px;flex:none;background:var(--bone);color:var(--ink);
+    display:grid;place-items:center;font-family:var(--display);font-weight:700;
+    font-size:22px;letter-spacing:.01em;position:relative;
+    box-shadow:inset 0 0 0 1px rgba(21,20,15,.14);
+  }
+  .mark::after{content:"";position:absolute;inset:auto 0 0 0;height:5px;background:var(--oxide)}
+  .mark::before{content:"";position:absolute;top:6px;right:6px;width:7px;height:7px;border-top:1px solid rgba(21,20,15,.4);border-right:1px solid rgba(21,20,15,.4)}
+  .mark svg{width:30px;height:30px}
+  .brand-txt{display:flex;flex-direction:column;line-height:1}
+  .brand-name{font-family:var(--display);font-weight:700;font-size:clamp(34px,3vw,46px);letter-spacing:.02em;line-height:.86;text-shadow:0 1px 0 rgba(0,0,0,.4)}
+  .brand-sub{font-family:var(--body);font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,240,232,.96);margin-top:9px;font-weight:700}
+  .nav{display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500}
+  .nav a{text-decoration:none;color:rgba(244,240,232,.76);padding:6px 0;border-bottom:1px solid transparent}
+  .nav a:hover{color:#fff;border-bottom-color:var(--oxide)}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+    background:var(--oxide);color:#fff;font-weight:600;font-size:14.5px;
+    padding:13px 21px;border:1px solid var(--oxide-dark);
+    transition:background .18s ease,transform .18s ease;
+  }
+  .btn:hover{background:var(--oxide-dark);transform:translateY(-1px)}
+  .btn svg{width:15px;height:15px;flex:none}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;background:var(--ink);color:var(--bone);overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(26px,4vw,56px);align-items:center;padding-block:clamp(46px,6vw,86px) clamp(38px,5vw,68px)}
+  .hero::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:
+      repeating-linear-gradient(90deg,rgba(244,240,232,.055) 0 1px,transparent 1px 96px),
+      repeating-linear-gradient(0deg,rgba(244,240,232,.03) 0 1px,transparent 1px 96px),
+      radial-gradient(120% 90% at 78% 8%,rgba(224,121,79,.2),transparent 62%),
+      linear-gradient(168deg,#1b1a14 0%,#12110d 58%,#201e17 100%);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='.3'/></svg>");
+    mix-blend-mode:soft-light;
+  }
+  .hero .wrap>*{position:relative;z-index:1}
+  .hero .eyebrow{color:#e0794f}
+  .hero h1{font-size:clamp(52px,7.2vw,102px);letter-spacing:-.015em;margin:16px 0 0;color:var(--bone)}
+  .hero h1 em{font-style:normal;color:#e0794f;display:block}
+  .hero p.lede{font-size:clamp(16.5px,1.5vw,19px);color:rgba(244,240,232,.9);max-width:43ch;margin-top:22px}
+  .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:30px}
+  .hero-actions .btn{font-size:17.5px;padding:21px 36px;box-shadow:none}
+  .hero-actions .btn svg{width:18px;height:18px}
+  .hero-actions small{flex-basis:100%;font-size:13.5px;color:rgba(244,240,232,.92);letter-spacing:.01em}
+  .hero-meta{
+    display:flex;gap:26px;flex-wrap:wrap;margin-top:32px;padding-top:20px;
+    border-top:1px solid rgba(244,240,232,.2);font-size:14px;color:rgba(244,240,232,.88);letter-spacing:.02em;
+  }
+  .hero-meta b{display:block;font-family:var(--display);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--bone);font-weight:600;margin-bottom:2px}
+  .btn-ghost{background:transparent;color:var(--bone);border-color:rgba(244,240,232,.5)}
+  .btn-ghost:hover{background:var(--bone);color:var(--ink)}
+  .btn-nav{background:transparent;color:var(--bone);border-color:rgba(244,240,232,.42);font-weight:500}
+  .btn-nav:hover{background:rgba(244,240,232,.1);color:#fff;border-color:rgba(244,240,232,.7)}
+  .slab .legend{display:none}
+
+  /* hero figure: poured slab, perspective */
+  .slab{position:relative;margin:0}
+  .slab svg{width:100%;height:auto;filter:drop-shadow(0 26px 38px rgba(0,0,0,.45))}
+  .slab figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px;margin-top:12px;padding:11px 14px;border:1px solid rgba(244,240,232,.22);border-left:3px solid #e2734a;background:rgba(21,20,15,.55);font-size:11.5px;letter-spacing:.17em;text-transform:uppercase;color:rgba(244,240,232,.92);font-weight:600}
+
+  /* ---------- scope band ---------- */
+  .scope{border-block:1px solid var(--rule);background:var(--ink);color:var(--bone)}
+  .scope .wrap{display:flex;flex-wrap:wrap;gap:0}
+  .scope span{
+    flex:1 1 0;min-width:150px;padding:17px 18px;text-align:center;
+    font-family:var(--display);font-size:clamp(15px,1.5vw,19px);letter-spacing:.12em;
+    text-transform:uppercase;border-left:1px solid rgba(244,240,232,.18);
+  }
+  .scope span:first-child{border-left:0}
+
+  /* ---------- sections ---------- */
+  section{position:relative}
+  .band{padding:clamp(52px,7vw,96px) 0}
+  .head{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,4vw,56px);align-items:end;margin-bottom:clamp(30px,4vw,52px)}
+  .head h2{font-size:clamp(38px,5vw,66px);margin-top:12px}
+  .head p{color:var(--ink-soft);max-width:46ch;font-size:16.5px}
+
+  .rows{border-top:1px solid var(--ink)}
+  .row{
+    display:grid;grid-template-columns:64px 1.15fr 1.6fr;gap:clamp(14px,3vw,42px);
+    align-items:baseline;padding:24px 0;border-bottom:1px solid var(--rule);
+  }
+  .row .num{font-family:var(--display);font-size:15px;letter-spacing:.1em;color:var(--oxide);font-weight:600}
+  .row h3{font-size:clamp(25px,2.6vw,34px);letter-spacing:0}
+  .row p{color:var(--ink-soft);font-size:17px;line-height:1.66;max-width:56ch}
+
+  /* editorial notes */
+  .notes{background:var(--ink);color:var(--bone);border-block:1px solid var(--ink)}
+  .notes .head h2{color:var(--bone)}
+  .notes .head p{color:rgba(244,240,232,.72)}
+  .notes .eyebrow{color:#e0794f}
+  .specs{display:grid;gap:clamp(24px,3.4vw,40px);max-width:880px}
+  .spec{display:grid;grid-template-columns:150px 1fr;gap:clamp(12px,3vw,44px);align-items:baseline}
+  .spec dt{font-family:var(--display);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:#e0794f;font-weight:600;padding-top:4px}
+  .spec dd{margin:0;font-size:clamp(16px,1.65vw,19px);line-height:1.58;color:rgba(244,240,232,.88);max-width:56ch}
+  .spec dd b{display:block;color:var(--bone);font-weight:600;margin-bottom:3px;font-size:clamp(17px,1.8vw,21px);line-height:1.35}
+
+  /* process */
+  .rail{margin-top:clamp(26px,4vw,44px);border-left:1px solid var(--rule);padding-left:clamp(22px,3.2vw,42px)}
+  .step{position:relative;padding-bottom:clamp(24px,3.4vw,38px);max-width:62ch}
+  .step:last-child{padding-bottom:0}
+  .step::before{content:"";position:absolute;left:calc(-1 * clamp(22px,3.2vw,42px) - 4px);top:11px;width:8px;height:8px;background:var(--oxide);transform:rotate(45deg)}
+  .step h3{font-size:clamp(23px,2.5vw,31px);font-weight:600}
+  .step p{color:var(--ink-soft);margin-top:7px;font-size:16px;line-height:1.6}
+  .rail-cta{margin-top:clamp(24px,3.4vw,36px);display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+  .rail-cta .btn{font-size:16.5px;padding:18px 28px}
+  .rail-cta small{font-size:13.5px;color:#33302a;max-width:34ch;line-height:1.5;background:rgba(255,255,255,.72);border:1px solid rgba(21,20,15,.16);border-left:3px solid var(--oxide);padding:12px 16px;border-radius:2px}
+
+  /* cta */
+  .cta{
+    position:relative;
+    background:
+      repeating-linear-gradient(90deg,rgba(244,240,232,.055) 0 1px,transparent 1px 96px),
+      repeating-linear-gradient(0deg,rgba(244,240,232,.032) 0 1px,transparent 1px 96px),
+      radial-gradient(120% 130% at 86% 0%,rgba(168,69,31,.34),transparent 64%),
+      linear-gradient(168deg,#1c1b15 0%,#12110d 100%);
+    color:var(--bone);
+    border-top:1px solid rgba(244,240,232,.18)}
+  .cta .wrap{display:grid;grid-template-columns:1.3fr auto;gap:32px;align-items:center;padding-block:clamp(42px,5vw,70px)}
+  .cta .eyebrow{color:#e0794f}
+  .cta h2{font-size:clamp(34px,4.4vw,56px);color:var(--bone)}
+  .cta p{color:rgba(244,240,232,.9);margin-top:12px;max-width:48ch;font-size:16px}
+  .cta .fine{font-size:15px;color:rgba(244,240,232,.88);margin-top:14px;letter-spacing:.01em}
+  .cta .cta-note{grid-column:2;justify-self:center;font-size:13px;color:rgba(244,240,232,.7);margin-top:-14px;text-align:center}
+  @media(max-width:720px){.cta .cta-note{grid-column:1;margin-top:-8px}}
+  .cta .btn{
+    position:relative;background:var(--oxide);color:#fff;font-family:var(--display);
+    font-size:21px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+    padding:22px 40px 22px 38px;border:1px solid rgba(244,240,232,.3);border-radius:0;
+    clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%);
+    box-shadow:none}
+  .cta .btn:hover{background:var(--oxide-dark);transform:translateY(-2px)}
+
+  footer{background:var(--ink);color:rgba(244,240,232,.78);font-size:13.5px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;padding-block:30px;align-items:center}
+  .foot-brand{display:flex;align-items:center;gap:12px;color:var(--bone);text-decoration:none}
+  .foot-brand .mark{width:34px;height:34px;font-size:15px;background:var(--bone);color:var(--ink)}
+  .foot-brand .mark::after{height:3px}
+  footer a{color:rgba(244,240,232,.9);text-decoration:none;border-bottom:1px solid rgba(244,240,232,.35)}
+  footer a:hover{color:#fff;border-bottom-color:#e2734a}
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr}
+    .slab{max-width:560px}
+    .head{grid-template-columns:1fr;align-items:start}
+    .spec{grid-template-columns:1fr;gap:6px}
+    .cta .wrap{grid-template-columns:1fr}
+  }
+  @media (max-width:720px){
+    .nav{gap:0}
+    .topbar .wrap{min-height:0;flex-wrap:wrap;padding-block:10px;gap:8px 12px}
+    .nav{width:100%;justify-content:space-between;gap:8px}
+    .nav a:not(.btn){display:inline;font-size:12px;padding:4px 0}
+    .row{grid-template-columns:40px 1fr;gap:10px 14px;padding:20px 0}
+    .row p{grid-column:2}
+    .scope span{flex:1 1 45%;min-width:0;border-top:1px solid rgba(244,240,232,.18)}
+    .hero h1{font-size:clamp(36px,9.6vw,46px);margin-top:12px}
+    .hero .wrap{padding-block:12px 20px;row-gap:14px}
+    .hero p.lede{margin-top:12px;font-size:16px;line-height:1.5}
+    .hero-actions{margin-top:18px}
+    .hero-meta{gap:10px 22px;font-size:15.5px;line-height:1.5}
+    .hero-meta b{font-size:13px}
+    .hero .slab svg .annot text,.slab .annot text{font-size:26px;letter-spacing:.4px}
+    .slab{max-width:100%}
+    .slab svg{width:100%;height:auto;max-height:none;margin:0 auto}
+    .slab figcaption{display:flex;flex-direction:column;gap:5px;font-size:12.5px;letter-spacing:.14em}
+    .slab .legend{display:block;text-transform:none;letter-spacing:.02em;font-size:13.5px;line-height:1.4;color:rgba(244,240,232,.9);font-weight:500}
+    .steps{grid-template-columns:1fr}
+    .topbar .mark{width:40px;height:40px;font-size:17px}
+    .brand{gap:11px;min-width:0}
+    .brand-txt{min-width:0}
+    .brand-name{font-size:clamp(20px,6.2vw,28px);letter-spacing:.03em}
+    .brand-sub{font-size:15px;letter-spacing:.09em;color:rgba(244,240,232,.97);margin-top:7px;font-weight:600}
+    .btn{padding:12px 15px;white-space:nowrap}
+    .cta .wrap{row-gap:22px}
+    .cta .btn{font-size:17.5px;padding:20px 24px;width:100%;justify-content:center;white-space:normal}
+    .nav .btn{font-size:12.5px;padding:10px 11px}
+    .hero .slab svg .annot text{font-size:26px;letter-spacing:.4px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="BowerBuilt concrete and landscaping, home">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M2.5 18.6 L16 12 L29.5 18.6 L16 25.2 Z" fill="#15140f"/><path d="M2.5 18.6 L16 25.2 L16 29.4 L2.5 22.8 Z" fill="#a8451f"/><path d="M16 25.2 L29.5 18.6 L29.5 22.8 L16 29.4 Z" fill="#57534a"/><g stroke="#f4f0e8" stroke-width=".85" opacity=".9"><path d="M7.6 17.4 L19.4 20.4"/><path d="M10.6 15.8 L22.4 18.8"/><path d="M5.2 19.1 L13.4 21.2"/></g><path d="M16 12 L16 6.6" stroke="#15140f" stroke-width="1.7"/><path d="M10.4 6" stroke="#15140f" stroke-width="1.7" stroke-linecap="round" d="M10.4 6 L21.6 6"/></svg></span>
+      <span class="brand-txt">
+        <span class="brand-name">BOWERBUILT</span>
+        <span class="brand-sub">Concrete &amp; Landscaping</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work">What we build</a>
+      <a href="#process">Process</a>
+      <a class="btn btn-nav" href="https://facebook.com/share/14zjQ3AVe8t" target="_blank" rel="noopener">
+        Contact us
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Shed slabs · Driveways · Walls</p>
+        <h1 id="hero-h">Poured level.<em>Falls set right.</em></h1>
+        <p class="lede">Concreting and landscaping across Newcastle — shed slabs, driveways, pathways, retaining walls and the landscaping that finishes them off.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://facebook.com/share/14zjQ3AVe8t" target="_blank" rel="noopener">
+            Get a quote
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H10l-6 4V5a1 1 0 0 1 1-1z"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#work">See what we build</a>
+          <small>No phone call — send an address and a photo.</small>
+        </div>
+        <div class="hero-meta">
+          <div><b>Based</b>Newcastle, NSW · Australia</div>
+          <div><b>Scope</b>Concrete &amp; landscaping</div>
+          <div><b>To quote</b>An address and a photo</div>
+        </div>
+      </div>
+
+      <figure class="slab">
+        <svg viewBox="0 0 640 520" role="img" aria-label="A freshly poured concrete slab in perspective, broom finished with control joints cut, a formwork board along the front edge and a string line above it">
+          <defs>
+            <linearGradient id="slabface" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ded7c7"/><stop offset=".55" stop-color="#c5bdac"/><stop offset="1" stop-color="#a2998a"/>
+            </linearGradient>
+            <linearGradient id="slabedge" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#90876f"/><stop offset="1" stop-color="#6a6252"/>
+            </linearGradient>
+            <pattern id="broom" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(72)">
+              <line x1="0" y1="0" x2="0" y2="6" stroke="#8d8676" stroke-width="1" opacity=".45"/>
+            </pattern>
+            <pattern id="agg" width="14" height="14" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="4" r="1" fill="#7f7868" opacity=".5"/>
+              <circle cx="10" cy="9" r=".8" fill="#9d9686" opacity=".45"/>
+              <circle cx="6" cy="11" r=".6" fill="#6f6858" opacity=".4"/>
+            </pattern>
+            <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="16"/></filter>
+            <clipPath id="topface"><polygon points="96,286 516,232 588,326 150,392"/></clipPath>
+          </defs>
+
+          <ellipse cx="352" cy="436" rx="228" ry="30" fill="#000" opacity=".55" filter="url(#soft)"/>
+
+          <!-- wider scope: retaining wall + turf terrace behind the slab -->
+          <g>
+            <polygon points="96,222 516,168 560,142 140,196" fill="#46552f"/>
+            <g fill="#3d5a2c">
+              <circle cx="210" cy="192" r="11"/><circle cx="252" cy="184" r="14"/><circle cx="300" cy="178" r="12"/>
+              <circle cx="352" cy="168" r="13"/><circle cx="404" cy="158" r="11"/><circle cx="458" cy="150" r="13"/>
+            </g>
+            <g fill="#57713a" opacity=".9">
+              <circle cx="214" cy="187" r="5"/><circle cx="258" cy="178" r="6"/><circle cx="355" cy="163" r="5"/><circle cx="460" cy="145" r="6"/>
+            </g>
+            <polygon points="96,286 516,232 516,168 96,222" fill="#8b8375"/>
+            <g stroke="#5e5749" stroke-width="1.4" opacity=".75">
+              <line x1="96" y1="238" x2="516" y2="184"/>
+              <line x1="96" y1="254" x2="516" y2="200"/>
+              <line x1="96" y1="270" x2="516" y2="216"/>
+              <line x1="160" y1="276" x2="160" y2="212"/><line x1="244" y1="266" x2="244" y2="202"/>
+              <line x1="328" y1="256" x2="328" y2="192"/><line x1="412" y1="246" x2="412" y2="182"/>
+            </g>
+            <polygon points="96,222 516,168 522,158 102,212" fill="#a29a8b"/>
+            <g class="annot" font-family="Barlow Condensed, sans-serif" font-size="22" letter-spacing="1" fill="#ffffff" opacity="1">
+              <line x1="430" y1="206" x2="486" y2="120" stroke="#f4f0e8" stroke-opacity=".3" stroke-width="1"/>
+              <text x="392" y="108">RETAINING WALL</text>
+              <line x1="300" y1="176" x2="246" y2="128" stroke="#f4f0e8" stroke-opacity=".3" stroke-width="1"/>
+              <text x="106" y="124">TURF &amp; PLANTING</text>
+            </g>
+          </g>
+
+          <polygon points="96,286 150,392 150,414 96,308" fill="#6d6454"/>
+          <polygon points="150,392 588,326 588,348 150,414" fill="url(#slabedge)"/>
+
+          <polygon points="96,286 516,232 588,326 150,392" fill="url(#slabface)"/>
+          <g clip-path="url(#topface)">
+            <rect x="86" y="222" width="520" height="180" fill="url(#broom)"/>
+            <rect x="86" y="222" width="520" height="180" fill="url(#agg)"/>
+            <path d="M292 250 L350 382" stroke="#8a8272" stroke-width="2" opacity=".8"/>
+            <path d="M418 238 L486 360" stroke="#8a8272" stroke-width="2" opacity=".8"/>
+            <polygon points="96,286 516,232 588,326 150,392" fill="none" stroke="#f4f0e8" stroke-opacity=".16" stroke-width="4"/>
+          </g>
+          <polygon points="96,286 516,232 588,326 150,392" fill="none" stroke="#7a7261" stroke-width="1.5"/>
+
+          <polygon points="146,404 592,336 592,364 146,432" fill="#a8451f"/>
+          <polygon points="146,404 592,336 592,344 146,412" fill="#c9613a" opacity=".85"/>
+          <g stroke="#7c3115" stroke-width="1.2" opacity=".65">
+            <line x1="240" y1="388" x2="240" y2="418"/><line x1="330" y1="374" x2="330" y2="404"/>
+            <line x1="420" y1="359" x2="420" y2="390"/><line x1="510" y1="345" x2="510" y2="376"/>
+          </g>
+
+          <g stroke="#8a6a3c" stroke-width="5" stroke-linecap="round" opacity=".9">
+            <line x1="58" y1="302" x2="58" y2="270"/><line x1="548" y1="222" x2="548" y2="190"/>
+          </g>
+          <line x1="58" y1="272" x2="548" y2="192" stroke="#e0794f" stroke-width="1.4" opacity=".8"/>
+
+          <g class="annot" font-family="Barlow Condensed, sans-serif" font-size="22" letter-spacing="1" fill="#ffffff" opacity=".96">
+            <line x1="330" y1="296" x2="330" y2="152" stroke="#f4f0e8" stroke-opacity=".3" stroke-width="1"/>
+            <text x="338" y="150">BROOM FINISH</text>
+            <line x1="470" y1="378" x2="470" y2="440" stroke="#f4f0e8" stroke-opacity=".3" stroke-width="1"/>
+            <text x="448" y="452">FORMWORK</text>
+          </g>
+        </svg>
+        <figcaption><span>Slab, base, fall, finish</span><span class="legend">Turf &amp; planting · Retaining wall · Broom finish · Formwork</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow">What we build</p>
+          <h2 id="work-h">Five jobs, one crew.</h2>
+        </div>
+        <p>Concrete work and the landscaping around it, so the finished job isn't waiting on a second trade to make it look right.</p>
+      </div>
+
+      <div class="rows">
+        <div class="row">
+          <div class="num">01</div>
+          <h3>Shed slabs</h3>
+          <p>A level, square slab set to the shed's footprint, with the base prepared and compacted before anything is poured.</p>
+        </div>
+        <div class="row">
+          <div class="num">02</div>
+          <h3>Driveways</h3>
+          <p>Laid to a workable cross-fall so water runs off the slab, not into the garage or back against the house.</p>
+        </div>
+        <div class="row">
+          <div class="num">03</div>
+          <h3>Paths &amp; paving</h3>
+          <p>Access paths and hard surfaces around the house — sized for the way the yard actually gets used.</p>
+        </div>
+        <div class="row">
+          <div class="num">04</div>
+          <h3>Retaining walls</h3>
+          <p>Walls that hold the ground they're sitting against, with drainage behind them so they keep doing it.</p>
+        </div>
+        <div class="row">
+          <div class="num">05</div>
+          <h3>Landscaping</h3>
+          <p>Ground prep, edging, turf and planting to finish the concrete — the part that makes a slab look planned.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band notes" id="ground" aria-labelledby="ground-h">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow">The ground first</p>
+          <h2 id="ground-h">The pour is the easy part.</h2>
+        </div>
+        <p>Most concrete complaints trace back to what happened before the truck arrived. These are the three things worth getting right.</p>
+      </div>
+      <dl class="specs">
+        <div class="spec">
+          <dt>Base</dt>
+          <dd><b>Soft spots dug out, base laid and compacted in layers.</b>Concrete poured over an uncompacted base ends up cracking along whatever it settles into.</dd>
+        </div>
+        <div class="spec">
+          <dt>Fall</dt>
+          <dd><b>A slab needs somewhere for water to go.</b>Fall away from the building, with drainage sorted before the surface is finished — not after the first downpour.</dd>
+        </div>
+        <div class="spec">
+          <dt>Joints &amp; cure</dt>
+          <dd><b>Control joints cut where the slab wants to move.</b>Then it's left to cure at a sensible rate instead of drying out hard and fast in the sun.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band" id="process" aria-labelledby="process-h">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow">How it runs</p>
+          <h2 id="process-h">Photos in, price out, slab poured.</h2>
+        </div>
+        <p>We start from the address and a photo. If it's straightforward, that's usually enough to talk numbers; if not, we come and measure.</p>
+      </div>
+      <div class="rail">
+        <div class="step">
+          <h3>Send the address</h3>
+          <p>Address, a couple of photos and roughly what you're after. Photos of the site usually save a phone call.</p>
+        </div>
+        <div class="step">
+          <h3>Site visit or straight quote</h3>
+          <p>Where the photos tell the story we can quote from them. Where they don't, we come out, measure up, check access and the ground.</p>
+        </div>
+        <div class="step">
+          <h3>One written price</h3>
+          <p>A single price for the job as discussed — turf, edging and clean-up included in it rather than added at the end.</p>
+        </div>
+        <div class="step">
+          <h3>Prep, pour, finish</h3>
+          <p>Base, formwork, pour, finish. Then the site is cleared and left usable, not sitting behind a pile of offcuts.</p>
+        </div>
+      </div>
+      <div class="rail-cta">
+        <a class="btn btn-ghost" href="#quote">
+          Get the price
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H10l-6 4V5a1 1 0 0 1 1-1z"/></svg>
+        </a>
+        <small>Send a suburb, a photo and rough timing — the quote comes back by message.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="quote" aria-labelledby="cta-h">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">BowerBuilt · Concrete &amp; Landscaping · Newcastle</p>
+        <h2 id="cta-h">Get a quote without the phone call.</h2>
+        <p>Slabs, driveways, paths, retaining walls and turf — send the address and a couple of photos of the ground, and the price comes back by message.</p>
+      </div>
+      <a class="btn" href="https://facebook.com/share/14zjQ3AVe8t" target="_blank" rel="noopener">
+        Chat on Facebook
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H10l-6 4V5a1 1 0 0 1 1-1z"/></svg>
+      </a>
+      <p class="cta-note">Message goes to the BowerBuilt Facebook page · Newcastle, NSW</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="foot-brand" href="#top">
+      <span class="mark" aria-hidden="true">BB</span>
+      <span>BowerBuilt · Concrete &amp; Landscaping</span>
+    </a>
+    <span>Newcastle, NSW · <a href="https://facebook.com/share/14zjQ3AVe8t" target="_blank" rel="noopener">Facebook</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
