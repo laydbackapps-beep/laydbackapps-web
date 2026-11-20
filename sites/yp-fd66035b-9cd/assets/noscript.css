@@ -1,0 +1,32 @@
+/* No-JS Fallback — all reveal content visible without JavaScript */
+/* This is loaded via <noscript><link rel="stylesheet" href="assets/noscript.css"></noscript> */
+
+.rv {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Ensure hero swash is visible without animation */
+.hero__swash {
+  animation: none !important;
+  transform: translateY(-100%) scaleX(1) !important;
+}
+
+/* Ensure rubric plates are visible without animation */
+.rubric-plate {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Ensure criteria ticks show as complete */
+.tick-mark::after {
+  transform: rotate(45deg) scale(1) !important;
+  opacity: 1 !important;
+}
+
+.tick-mark {
+  border-color: var(--clr-assessor) !important;
+  background: rgba(178, 59, 50, 0.1) !important;
+}
