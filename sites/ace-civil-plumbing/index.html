@@ -170,14 +170,14 @@ nav.main a.hd-call{color:var(--paper)}
 
 /* scope docket table */
 .scope{border-top:1px solid var(--ink)}
-.scope-row{display:grid;grid-template-columns:56px minmax(170px,.8fr) 1.9fr;gap:clamp(.7rem,2.2vw,1.8rem);padding:.92rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+.scope-row{display:grid;grid-template-columns:minmax(170px,.8fr) 1.9fr;gap:clamp(.7rem,2.2vw,1.8rem);padding:.92rem 0;border-bottom:1px solid var(--line);align-items:baseline}
 .scope-head{color:var(--ink);font-size:.72rem;letter-spacing:.14em;border-bottom:1px solid var(--line-strong);padding:.6rem 0}
 .scope-row .n{font-family:"JetBrains Mono",monospace;font-size:.75rem;color:var(--blue);letter-spacing:.08em}
 .scope-row h3{font-size:clamp(1.2rem,1.7vw,1.45rem)}
 .scope-row p{color:var(--muted);font-size:.97rem}
 @media(max-width:680px){
   .scope-head{display:none}
-  .scope-row{grid-template-columns:38px 1fr;gap:.3rem 1rem}
+  .scope-row{grid-template-columns:1fr;gap:.3rem 1rem}
   .scope-row p{grid-column:1/-1;padding-left:calc(38px + 1rem);font-size:1rem;line-height:1.55}
   .scope-row p::before{content:"Included · ";font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
 }
@@ -202,7 +202,7 @@ nav.main a.hd-call{color:var(--paper)}
 
 /* stages */
 .stages{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(1.6rem,4vw,3.2rem);border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);margin-bottom:1rem}
-.stages > div{display:grid;grid-template-columns:44px 1fr;gap:.2rem 1rem;padding:1.35rem 0 1.45rem;border-bottom:1px solid var(--line);align-items:baseline}
+.stages > div{display:grid;grid-template-columns:1fr;gap:.2rem 1rem;padding:1.35rem 0 1.45rem;border-bottom:1px solid var(--line);align-items:baseline}
 .stages > div:nth-last-child(-n+2){border-bottom:0}
 .stages .n{font-family:"JetBrains Mono",monospace;font-size:.76rem;color:var(--blue);letter-spacing:.1em;padding-top:.2rem}
 .stages h3{margin-bottom:.35rem;font-size:1.4rem}
@@ -253,7 +253,7 @@ textarea{resize:vertical;min-height:104px}
 }
 </style>
 <!-- ==== TASTE PASS (legibility, from impeccable selectors) ==== -->
-<style id="lb-taste-pass">
+<style>
 #scope > div.wrap > div.sec-hd.rv > div > span.mono{font-size:max(11px,.72em)!important;line-height:1.45!important}
 #site > div.wrap > div.sec-hd.rv > div > span.mono{font-size:max(11px,.72em)!important;line-height:1.45!important}
 #stages > div.wrap > div.sec-hd.rv > div > span.mono{font-size:max(11px,.72em)!important;line-height:1.45!important}
@@ -385,7 +385,7 @@ span:nth-of-type(4){font-size:max(11px,.72em)!important;line-height:1.45!importa
 
         <!-- steps -->
         <g font-family="monospace" font-size="10" letter-spacing="1.4" fill="#9DA3A6">
-          <text x="20" y="410">01 SET OUT · 02 EXCAVATE · 03 LAY &amp; TEST · 04 REINSTATE</text>
+          <text x="20" y="410">SET OUT · 02 EXCAVATE · 03 LAY &amp; TEST · 04 REINSTATE</text>
           <text class="micro" x="20" y="430" fill="#6E7A7D">CONNECTION LEFT EXPOSED FOR INSPECTION BEFORE BACKFILL</text>
         </g>
       </svg>
@@ -420,22 +420,22 @@ span:nth-of-type(4){font-size:max(11px,.72em)!important;line-height:1.45!importa
     <div class="scope">
       <div class="scope-row scope-head mono"><span>Item</span><span>Works</span><span>What's included</span></div>
 
-      <div class="scope-row rv"><span class="n">01</span><h3>Water mains &amp; cut-ins</h3>
+      <div class="scope-row rv"><h3>Water mains &amp; cut-ins</h3>
         <p>Mains tapping and live cut-ins, meter sets including 100&nbsp;mm ultrasonic meters, thrust blocks and poly service feeds to the lot.</p></div>
 
-      <div class="scope-row rv"><span class="n">02</span><h3>Sewer property connections</h3>
+      <div class="scope-row rv"><h3>Sewer property connections</h3>
         <p>Junction cut-in to the main, grade set and pipe bedded, opened for inspection before any backfill goes on.</p></div>
 
-      <div class="scope-row rv"><span class="n">03</span><h3>Stormwater &amp; drainage</h3>
+      <div class="scope-row rv"><h3>Stormwater &amp; drainage</h3>
         <p>Pit-to-pit pipe runs, grated pits, headwalls and tie-ins into the council system, laid to fall.</p></div>
 
-      <div class="scope-row rv"><span class="n">04</span><h3>Pits, excavation &amp; reinstatement</h3>
+      <div class="scope-row rv"><h3>Pits, excavation &amp; reinstatement</h3>
         <p>Rubble pits, trench excavation, spoil removal, compaction and surface reinstatement back to council standard.</p></div>
 
-      <div class="scope-row rv"><span class="n">05</span><h3>Subdivisional works</h3>
+      <div class="scope-row rv"><h3>Subdivisional works</h3>
         <p>Water, sewer and stormwater reticulation for lot servicing, staged so each stage can be handed over clean.</p></div>
 
-      <div class="scope-row rv"><span class="n">06</span><h3>Inspection &amp; repair</h3>
+      <div class="scope-row rv"><h3>Inspection &amp; repair</h3>
         <p>CCTV runs on sewer and stormwater lines, locating, and repair of failed or blocked sections.</p></div>
     </div>
   </div>
@@ -461,16 +461,16 @@ span:nth-of-type(4){font-size:max(11px,.72em)!important;line-height:1.45!importa
     <div class="posts">
       <figure class="rv">
         <img src="assets/photos/pipe-line.jpg" alt="Poly water main laid in a trench with the run set to grade" width="1400" height="1050" loading="lazy" decoding="async">
-        <figcaption><b>01 — Live sewer property connection and water main cut-in.</b> Tied in on the same visit on a recently completed build.</figcaption>
+        <figcaption><b>Live sewer property connection and water main cut-in.</b> Tied in on the same visit on a recently completed build.</figcaption>
       </figure>
       <div class="col">
         <figure class="rv">
           <img src="assets/photos/pit-levels.jpg" alt="Levels being checked inside an excavated pit" width="1050" height="1400" loading="lazy" decoding="async">
-          <figcaption><b>02 — Rubble pit for a Logan City Council job.</b> Excavation, pit installation and turf reinstatement once the pit was signed off.</figcaption>
+          <figcaption><b>Rubble pit for a Logan City Council job.</b> Excavation, pit installation and turf reinstatement once the pit was signed off.</figcaption>
         </figure>
         <figure class="rv">
           <img src="assets/photos/footing-pipes.jpg" alt="Poly service feeds and thrust block set into footings" width="1061" height="1400" loading="lazy" decoding="async">
-          <figcaption><b>03 — 100&nbsp;mm ultrasonic meter and four poly feeds.</b> Thrust block and 4 × 25&nbsp;mm poly water meter feeds for house connections.</figcaption>
+          <figcaption><b>100&nbsp;mm ultrasonic meter and four poly feeds.</b> Thrust block and 4 × 25&nbsp;mm poly water meter feeds for house connections.</figcaption>
         </figure>
       </div>
     </div>
@@ -487,10 +487,10 @@ span:nth-of-type(4){font-size:max(11px,.72em)!important;line-height:1.45!importa
       <p>Nothing gets covered until it has been checked — that is the part that saves the second visit.</p>
     </div>
     <div class="stages rv">
-      <div><span class="n">01</span><div class="body"><h3>Set out</h3><p>Locate existing services, confirm levels and agree the tie-in point before the machine starts.</p></div></div>
-      <div><span class="n">02</span><div class="body"><h3>Excavate</h3><p>Trench and pit to depth, with the bedding material and support the ground needs.</p></div></div>
-      <div><span class="n">03</span><div class="body"><h3>Lay &amp; test</h3><p>Pipe, joint and pressure test, opened for inspection while it is still visible.</p></div></div>
-      <div><span class="n">04</span><div class="body"><h3>Reinstate</h3><p>Backfill, compact and restore the surface — turf, concrete or road, to council standard.</p></div></div>
+      <div><div class="body"><h3>Set out</h3><p>Locate existing services, confirm levels and agree the tie-in point before the machine starts.</p></div></div>
+      <div><div class="body"><h3>Excavate</h3><p>Trench and pit to depth, with the bedding material and support the ground needs.</p></div></div>
+      <div><div class="body"><h3>Lay &amp; test</h3><p>Pipe, joint and pressure test, opened for inspection while it is still visible.</p></div></div>
+      <div><div class="body"><h3>Reinstate</h3><p>Backfill, compact and restore the surface — turf, concrete or road, to council standard.</p></div></div>
     </div>
     <p class="stages-note">Set out → excavate → lay &amp; test → reinstate · inspection before backfill</p>
   </div>
