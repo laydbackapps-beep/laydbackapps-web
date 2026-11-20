@@ -207,7 +207,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
 <style id="lb-bar-noname">
-/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+/* the bar shows the client's own logo artwork and nothing typed, the name belongs in the logo, not in a system font */
 .lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
 {display:none!important}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
@@ -287,17 +287,14 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
       </header>
       <div class="container" style="display:contents">
         <article class="process-step rv" style="--i:0">
-          <div class="num">1</div>
           <h3>Assess</h3>
           <p>On-site review of surfaces, light, and scope. Clear scope, no surprises.</p>
         </article>
         <article class="process-step rv" style="--i:1">
-          <div class="num">2</div>
           <h3>Prepare</h3>
           <p>Mask, tape, patch, prime. The finish lives in the prep.</p>
         </article>
         <article class="process-step rv" style="--i:2">
-          <div class="num">3</div>
           <h3>Execute</h3>
           <p>Cut-in by brush, roll for body. Clean edges, even film, consistent sheen.</p>
         </article>
@@ -371,7 +368,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
     </nav>
   </div>
   <div class="legal">
-    <p><a href="#privacy" id="privacy">Privacy</a> · <a href="#terms" id="terms">Terms</a> · © <span class="mono" id="year"></span> Platinum Painters Plus</p>
+    <p><a href="#privacy" id="privacy">Privacy</a>, <a href="#terms" id="terms">Terms</a>, © <span class="mono" id="year"></span> Platinum Painters Plus</p>
   </div>
 <section id="lbq" class="v2" aria-labelledby="lbq-h">
   <style>
@@ -442,7 +439,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
       e.preventDefault();
       var d = {};
       new FormData(f).forEach(function(v,k){ d[k]=v; });
-      if (d.website) return;  // honeypot — silently accept bots
+      if (d.website) return;  // honeypot, silently accept bots
       if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
         st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
         st.style.color = '#ff9d8a';
