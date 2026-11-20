@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gunalda Tree Works — Tree Services, Gunalda QLD</title>
+<meta name="description" content="All aspects of tree work in Gunalda and the Gympie region. Professional, reliable, local.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#0e1a14;
+    --forest-2:#15261c;
+    --forest-3:#1d3327;
+    --bone:#f2efe4;
+    --sage:#a9bfae;
+    --ochre:#d99a3a;
+    --ochre-deep:#b87b22;
+    --rule:rgba(14,26,20,.18);
+    --display:"Oswald","Archivo Narrow",Impact,sans-serif;
+    --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bone);color:var(--forest);font-family:var(--body);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.04;letter-spacing:.005em;margin:0;text-wrap:balance}
+  p{margin:0}
+  .wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+  .eyebrow{font-family:var(--display);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ochre-deep);font-weight:600}
+  :focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+
+  /* header */
+  .top{position:sticky;top:0;z-index:20;background:var(--bone);color:var(--forest);border-bottom:1px solid var(--rule)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:clamp(14px,2.4vw,30px);min-height:104px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:var(--forest)}
+  .brand .mark{width:66px;height:66px;flex:none;background:var(--forest);display:grid;place-items:center;color:var(--bone)}
+  .brand .name{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.4vw,42px);letter-spacing:.03em;text-transform:uppercase;line-height:.88;display:block}
+  .brand .name .thin{display:block;font-size:clamp(19px,1.7vw,23px);letter-spacing:.08em;color:#8a5a24;margin-top:5px;font-weight:500}
+  .nav{display:flex;align-items:center;gap:clamp(16px,2.2vw,30px);font-size:14px;font-weight:500;margin-left:auto}
+  .nav a{text-decoration:none;color:#3c4a40;padding:5px 0;border-bottom:1px solid transparent}
+  .nav a:hover{color:var(--forest);border-bottom-color:var(--ochre)}
+  .top-cta{flex:none;background:var(--forest);color:var(--bone);border:0}
+  .top-cta:hover{background:#1c3327}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;text-decoration:none;cursor:pointer;
+    background:var(--ochre);color:#191307;font-weight:600;font-size:16px;
+    padding:13px 20px;border:0;transition:background .18s ease;
+  }
+  .btn:hover{background:#eeb055}
+  .btn svg{width:14px;height:14px;flex:none}
+  .btn-outline{background:transparent;color:var(--bone);border:1px solid rgba(242,239,228,.45)}
+  .btn-outline:hover{background:rgba(242,239,228,.1);color:#fff}
+
+  /* hero */
+  .hero{position:relative;background:var(--forest);color:var(--bone);overflow:hidden;border-bottom:1px solid #0a130e}
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(720px 520px at 78% 46%,rgba(217,154,58,.16),transparent 70%),
+               repeating-linear-gradient(115deg,rgba(242,239,228,.014) 0 1px,transparent 1px 11px)}
+  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.14fr .86fr;gap:clamp(22px,4vw,54px);align-items:center;padding-block:clamp(46px,6vw,84px) clamp(38px,5vw,64px)}
+  .hero .eyebrow{color:var(--ochre)}
+  .hero h1{font-size:clamp(48px,7.4vw,98px);font-weight:600;letter-spacing:.005em;max-width:14ch;margin-top:16px;color:var(--bone)}
+  .hero h1 .line2{display:block;color:var(--ochre)}
+  .hero .lede{color:rgba(242,239,228,.84);font-size:clamp(16.5px,1.5vw,19px);max-width:44ch;margin-top:22px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;align-items:center}
+  .hero-actions .note{font-size:13px;color:rgba(242,239,228,.78);flex-basis:100%;max-width:34ch;line-height:1.45;order:2;margin-top:2px}
+  .hero-actions .btn-ghost{order:3}
+  .hero-fig{position:relative;margin:0}
+  .hero-fig svg{width:100%;height:auto;filter:drop-shadow(0 26px 54px rgba(0,0,0,.55))}
+  .hero-fig figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-family:var(--display);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,239,228,.62)}
+  .btn-ghost{background:transparent;color:var(--bone);border:1px solid rgba(242,239,228,.55)}
+  .btn-ghost:hover{background:var(--bone);color:var(--forest)}
+
+  /* what we do */
+  .band{padding:clamp(52px,7vw,98px) 0}
+  .split{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,5vw,72px);align-items:start}
+  h2.big{font-size:clamp(36px,5vw,64px);font-weight:500;margin-top:12px}
+  .lede-sm{color:#3c4a40;font-size:16.5px;max-width:44ch}
+
+  .services{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,3.4vw,44px);border-top:1px solid var(--forest)}
+  .svc{padding:20px 0 22px;border-bottom:1px solid var(--rule)}
+  .svc h3{font-size:clamp(21px,2.1vw,26px);font-weight:500;display:flex;align-items:baseline;gap:10px}
+  .svc h3 .dot{width:7px;height:7px;background:var(--ochre-deep);flex:none;transform:rotate(45deg);margin-bottom:3px}
+  .svc p{font-size:16px;color:#4a564c;margin-top:6px;line-height:1.55}
+
+  /* look-before-cut */
+  .dark{background:var(--forest-2);color:var(--bone);border-block:1px solid #0a130e}
+  .dark .eyebrow{color:var(--ochre)}
+  .dark .lede-sm{color:rgba(242,239,228,.74)}
+  .checks{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,40px);margin-top:clamp(28px,4vw,48px)}
+  .check{border-top:1px solid rgba(242,239,228,.28);padding-top:18px}
+  .check .label{font-family:var(--display);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ochre)}
+  .check h3{font-size:clamp(21px,2.2vw,27px);margin:9px 0 8px;font-weight:500}
+  .check p{font-size:16px;color:rgba(242,239,228,.72);line-height:1.6}
+
+  /* process */
+  .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:clamp(26px,4vw,44px);border-top:2px solid var(--forest)}
+  .tl{padding:22px clamp(14px,2vw,28px) 0 0;position:relative}
+  .tl + .tl{padding-left:clamp(14px,2vw,28px);border-left:1px solid var(--rule)}
+  .tl .n{font-family:var(--display);font-size:34px;line-height:1;color:var(--ochre-deep);font-weight:600}
+  .tl h3{font-size:22px;margin:10px 0 6px;font-weight:500}
+  .tl p{font-size:16px;color:#4a564c}
+
+  /* area */
+  .area{background:var(--bone)}
+  .area-box{border:1px solid var(--forest);display:grid;grid-template-columns:1.25fr .75fr;align-items:stretch}
+  .area-txt{padding:clamp(24px,3.4vw,42px)}
+  .area-txt h2{font-size:clamp(32px,4vw,50px);font-weight:500;margin-top:10px}
+  .area-txt p{color:#3c4a40;font-size:16px;margin-top:14px;max-width:46ch}
+  .area-map{background:var(--forest-3);position:relative;min-height:220px;overflow:hidden;border-left:1px solid var(--forest)}
+  .area-map svg{position:absolute;inset:0;width:100%;height:100%}
+
+  /* cta */
+  .cta{background:var(--ochre);color:#1a1406}
+  .cta .wrap{display:grid;grid-template-columns:1.4fr auto;align-items:center;gap:28px;padding-block:clamp(40px,5vw,66px)}
+  .cta h2{font-size:clamp(32px,4.4vw,54px);font-weight:600}
+  .cta p{margin-top:10px;font-size:17.5px;max-width:48ch;color:#140f04;font-weight:500}
+  .cta .btn{background:var(--bone);color:var(--forest);font-size:clamp(16.5px,1.7vw,19px);font-weight:700;padding:21px 34px;border:2px solid #140f04;box-shadow:0 3px 0 #6b4a10}
+  .cta .btn:hover{background:#fff;color:#132a1f}
+
+  footer{background:var(--forest);color:rgba(242,239,228,.72);font-size:13.5px}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 40px;padding-block:28px;align-items:center}
+  footer a{color:rgba(242,239,228,.92);text-decoration:none;border-bottom:1px solid rgba(242,239,228,.32)}
+  footer a:hover{border-bottom-color:var(--ochre)}
+  footer .fname{font-family:var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--bone);font-size:14px}
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr}
+    .hero-fig{max-width:400px;margin-inline:auto}
+    .split{grid-template-columns:1fr}
+    .checks{grid-template-columns:1fr;gap:22px}
+    .area-box{grid-template-columns:1fr}
+    .area-map{border-left:0;border-top:1px solid var(--forest);min-height:170px}
+    .cta .wrap{grid-template-columns:1fr}
+    .hero .scrim{background:linear-gradient(180deg,rgba(14,26,20,.9) 0%,rgba(14,26,20,.7) 45%,rgba(14,26,20,.92) 100%)}
+  }
+  @media (max-width:720px){
+    .top .wrap{flex-wrap:wrap;padding-block:14px;gap:10px}
+    .nav{
+      display:flex;order:3;width:100%;gap:18px;font-size:13px;
+      padding-top:11px;border-top:1px solid rgba(242,239,228,.14);
+      overflow-x:auto;white-space:nowrap;scrollbar-width:none;
+    }
+    .nav::-webkit-scrollbar{display:none}
+    .nav a{flex:none}
+    .nav .btn{flex:none;margin-left:auto;font-size:13px;padding:10px 14px}
+    .brand .name{font-size:22px;letter-spacing:.04em}
+    .brand .name .thin{font-size:16px;letter-spacing:.08em}
+    .services{grid-template-columns:1fr}
+    .timeline{grid-template-columns:1fr}
+    .tl{padding:18px 0}
+    .tl + .tl{padding-left:0;border-left:0;border-top:1px solid var(--rule)}
+    .hero .wrap{padding-block:36px 40px}
+    .hero-fig{max-width:340px}
+    .hero-fig figcaption{font-size:12px;letter-spacing:.08em;flex-wrap:wrap;gap:6px}
+    .hero h1{font-size:clamp(42px,12.5vw,62px)}
+    .hero .scene{opacity:.9}
+    .chips{max-width:none}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  /* pass 3: fold-filling hero, readable captions, larger trade copy */
+  .brand .name .thin{color:#7d5217}
+  .area-box{border:0;background:#e8e3d1}
+  .area-map{border-left:1px solid rgba(14,26,20,.22)}
+  .hero-fig figcaption{color:rgba(242,239,228,.82);font-size:12.5px}
+  .svc p,.check p,.tl p{font-size:16.5px;line-height:1.6}
+  .check p{color:rgba(242,239,228,.8)}
+  @media (min-width:901px){.hero .wrap{min-height:calc(100svh - 105px)}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Gunalda Tree Works, home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 34 34" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 31V21"/>
+          <path d="M17 3 7 15.5h20L17 3z" fill="currentColor"/>
+          <path d="M17 12 4 26h26L17 12z" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="name">Gunalda<span class="thin">Tree Works</span></span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work">What we do</a>
+      <a href="#before">Before we cut</a>
+      <a href="#how">How it runs</a>
+    </nav>
+    <a class="btn top-cta" href="https://facebook.com/share/14x5La66iCJ" target="_blank" rel="noopener">Send a photo</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Gunalda Tree Works · Gympie region</p>
+        <h1 id="hero-h">Trees down.<span class="line2">Yard cleared.</span></h1>
+        <p class="lede">Removals, pruning, storm cleanup and stumps — all aspects of tree work, done properly, around the house you actually live in.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://facebook.com/share/14x5La66iCJ" target="_blank" rel="noopener">Send a photo on Facebook</a>
+          <a class="btn btn-ghost" href="#work">What we do</a>
+          <span class="note">Send it through Facebook — that's where the quote comes back.</span>
+        </div>
+      </div>
+      <figure class="hero-fig">
+        <svg viewBox="0 0 560 560" role="img" aria-label="Cross-section of a felled eucalyptus: growth rings inside a bark edge, with one wedge sawn out of the side">
+          <defs>
+            <clipPath id="logclip"><circle cx="272" cy="276" r="214"/></clipPath>
+          </defs>
+          <circle cx="294" cy="304" r="228" fill="#16241b" opacity=".07"/>
+          <circle cx="272" cy="276" r="232" fill="#6a461c"/>
+          <circle cx="272" cy="276" r="222" fill="#8a5a24"/>
+          <circle cx="272" cy="276" r="214" fill="#efe4c8"/>
+          <g clip-path="url(#logclip)" fill="none" stroke="#bd8033">
+            <circle cx="272" cy="276" r="196" stroke-width="2" opacity=".55"/>
+            <circle cx="277" cy="271" r="178" stroke-width="1.6" opacity=".45"/>
+            <circle cx="267" cy="281" r="160" stroke-width="2.6" opacity=".5"/>
+            <circle cx="275" cy="273" r="138" stroke-width="1.4" opacity=".38"/>
+            <circle cx="269" cy="279" r="118" stroke-width="2" opacity=".46"/>
+            <circle cx="277" cy="275" r="96" stroke-width="1.4" opacity=".34"/>
+            <circle cx="269" cy="273" r="74" stroke-width="1.8" opacity=".4"/>
+            <circle cx="275" cy="279" r="52" stroke-width="1.3" opacity=".32"/>
+            <circle cx="272" cy="276" r="30" stroke-width="1.6" opacity=".36"/>
+            <path d="M272 276 L272 52" stroke-width="2" opacity=".38"/>
+            <path d="M272 276 L118 402" stroke-width="1.6" opacity=".3"/>
+            <path d="M272 276 L424 172" stroke-width="1.6" opacity=".26"/>
+          </g>
+          <circle cx="272" cy="276" r="7" fill="#7f5120"/>
+          <path d="M272 276 L386 72 L470 126 Z" fill="#f7f4e9"/>
+          <path d="M272 276 L386 72" stroke="#16241b" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M272 276 L470 126" stroke="#16241b" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M300 250 L392 88" stroke="#c8862a" stroke-width="1.2" stroke-dasharray="5 7" opacity=".7"/>
+          <g fill="#8a5a24" opacity=".45">
+            <circle cx="404" cy="58" r="2"/><circle cx="434" cy="84" r="1.6"/><circle cx="352" cy="46" r="1.5"/><circle cx="472" cy="100" r="1.8"/><circle cx="488" cy="150" r="1.4"/>
+          </g>
+        </svg>
+        <figcaption><span>Cross-section · eucalypt</span><span>Gunalda, QLD</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band" id="work" aria-labelledby="work-h">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">What we do</p>
+        <h2 class="big" id="work-h">All aspects of tree work — not just the tree in the middle of the yard.</h2>
+        <p class="lede-sm" style="margin-top:18px">The job is usually easy to describe and harder to do: something big, close to something you'd rather keep. We work around the house, the shed, the fence and the cars.</p>
+      </div>
+      <div class="services">
+        <div class="svc"><h3><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="#a9671a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 17L15 6"/><path d="M12 3h5v5"/><path d="M3 9h4M6 6h3"/></svg>Tree removal</h3><p>Standing trees taken down whole, or section by section where there's no room to drop them.</p></div>
+        <div class="svc"><h3><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="#a9671a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M16 4c0 7-5 11-11 11 0-7 5-11 11-11z"/><path d="M5 15L13 7"/></svg>Pruning</h3><p>Deadwood and overhang cleared back off roofs, gutters, driveways and power lines.</p></div>
+        <div class="svc"><h3><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="#a9671a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M2 7h9a3 3 0 1 0-3-3"/><path d="M2 12h13"/><path d="M2 17h8"/></svg>Storm cleanup</h3><p>Branches and split leaders cleared after weather, with the unsafe bits dealt with first.</p></div>
+        <div class="svc"><h3><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="#a9671a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 17h13"/><path d="M7 17V9h7v8"/><path d="M7 9c2-2 5-2 7 0"/></svg>Stump grinding</h3><p>Stumps taken below ground level so you can mow over them or plant where they stood.</p></div>
+        <div class="svc"><h3><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="#a9671a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M2 17h16"/><path d="M6 17V9M13 17V9M4 13h12"/></svg>Land clearing</h3><p>Overgrown blocks and fence lines cleared back to something you can work with.</p></div>
+        <div class="svc"><h3><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="#a9671a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M3 17h14"/><path d="M6 17c0-4 2.7-7 5-7s5 3 5 7"/></svg>Green waste</h3><p>Cut material taken away or left as firewood, whichever you'd prefer — say so up front.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark" id="before" aria-labelledby="before-h">
+    <div class="wrap">
+      <p class="eyebrow">Before we cut</p>
+      <h2 class="big" id="before-h" style="color:var(--bone);max-width:22ch">Three things decide how a tree comes down.</h2>
+      <p class="lede-sm" style="margin-top:16px">None of them are the tree itself. They're what's around it, and what it's standing in.</p>
+      <div class="checks">
+        <div class="check">
+          <div class="label">01 / Lean</div>
+          <h3>Which way it wants to go</h3>
+          <p>Lean, weight distribution and dead limbs set the direction long before a saw starts. It's the first thing we look at, not the last.</p>
+        </div>
+        <div class="check">
+          <div class="label">02 / Drop zone</div>
+          <h3>What's underneath it</h3>
+          <p>Fences, sheds, cars, clotheslines, the neighbour's roof. Where the pieces land is the whole plan; everything else follows from it.</p>
+        </div>
+        <div class="check">
+          <div class="label">03 / Ground</div>
+          <h3>What's under the surface</h3>
+          <p>Roots, services, septic and slope. A stump doesn't come out clean if nobody checked what runs past it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <p class="eyebrow">How it runs</p>
+      <h2 class="big" id="how-h">Three steps, no site visit for a straight answer.</h2>
+      <div class="timeline">
+        <div class="tl">
+          <div class="n">01</div>
+          <h3>Send a photo</h3>
+          <p>Message the page with a photo of the tree, your suburb, and what you want done with it.</p>
+          <a class="btn" style="margin-top:16px;font-size:13.5px;padding:10px 16px" href="https://facebook.com/share/14x5La66iCJ" target="_blank" rel="noopener">Start on Facebook</a>
+        </div>
+        <div class="tl">
+          <div class="n">02</div>
+          <h3>Get a straight price</h3>
+          <p>Where it's clear from the photo we'll quote it. Where it isn't, we'll come and look before quoting.</p>
+        </div>
+        <div class="tl">
+          <div class="n">03</div>
+          <h3>Tree down, gear out</h3>
+          <p>Work done as quoted, material sorted, and the site left the way you'd want to walk back into.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band area" aria-labelledby="area-h">
+    <div class="wrap">
+      <div class="area-box">
+        <div class="area-txt">
+          <p class="eyebrow">Where we work</p>
+          <h2 id="area-h">Gunalda and the Gympie region.</h2>
+          <p>We work in Gunalda and out through the Gympie region. Not sure if we reach you? Send your suburb through and we'll tell you straight.</p>
+          <a class="btn" style="margin-top:22px" href="https://facebook.com/share/14x5La66iCJ" target="_blank" rel="noopener">Check your service area</a>
+        </div>
+        <div class="area-map" aria-hidden="true" style="background:#12231a;display:grid;place-items:center;padding:24px;background-image:radial-gradient(circle at 50% 50%,rgba(217,154,58,.30) 0 1px,transparent 1px),radial-gradient(circle at 50% 50%,transparent 0 28%,rgba(217,154,58,.22) 28% 28.5%,transparent 28.5% 54%,rgba(217,154,58,.16) 54% 54.4%,transparent 54.4% 80%,rgba(217,154,58,.2) 80% 80.3%,transparent 80.3%)">
+          <div style="position:relative;text-align:center">
+            <div style="font-family:var(--display);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,239,228,.55)">Service area</div>
+            <div style="font-family:var(--display);font-size:clamp(26px,3.4vw,38px);font-weight:600;letter-spacing:.02em;color:#f2efe4;line-height:1;margin-top:10px">GYMPIE REGION</div>
+            <div style="font-family:var(--display);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#d99a3a;margin-top:10px">Based in Gunalda</div>
+            <div style="display:flex;gap:18px;justify-content:center;margin-top:26px;font-family:var(--display);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,239,228,.62)">
+              <span>Gunalda</span><span style="color:rgba(242,239,228,.3)">/</span><span>Gympie</span><span style="color:rgba(242,239,228,.3)">/</span><span>Region</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" style="color:#241a06;font-size:13px">Gunalda Tree Works · Tree services</p>
+        <h2 id="cta-h">Send a photo. Get a price.</h2>
+        <p>Your suburb and what you want gone is usually enough to quote from. Message us on Facebook and we'll take it from there.</p>
+      </div>
+      <a class="btn" href="https://facebook.com/share/14x5La66iCJ" target="_blank" rel="noopener">
+        Message us on Facebook
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H10l-6 4V5a1 1 0 0 1 1-1z"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="fname">Gunalda Tree Works</span>
+    <span>Tree services · Gunalda, QLD · <a href="https://facebook.com/share/14x5La66iCJ" target="_blank" rel="noopener">Facebook</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
