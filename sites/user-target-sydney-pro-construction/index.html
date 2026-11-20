@@ -101,7 +101,7 @@ h1,h2,h3{line-height:1.05;font-weight:800;text-wrap:balance}
 .areas .label{color:var(--navy);flex:0 0 auto;margin-right:.4rem}
 .areas ul{display:flex;gap:1.1rem;list-style:none;flex:0 0 auto}
 .areas li{font-size:var(--fs-sm);color:var(--muted);white-space:nowrap}
-.areas li + li::before{content:"·";margin-right:1.1rem;color:var(--gold)}
+.areas li + li::before{content:"";margin-right:1.1rem;color:var(--gold)}
 
 /* ---------- sections ---------- */
 section{padding-block:var(--sec)}
@@ -242,10 +242,10 @@ footer a:hover{color:var(--navy)}
 
 <!--LB-RM--><style>@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
 <style>
-/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
+/* the bar shows the client's own logo artwork and nothing typed, the name belongs in the logo, not in a system font */
 .lb-brand__word, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
 {display:none!important}
-/* ponytail: the wordmark is the only brand signal on a photo-less build — never hide it */
+/* ponytail: the wordmark is the only brand signal on a photo-less build, never hide it */
 .lb-brand{display:flex!important;align-items:center!important;gap:.65rem!important;text-decoration:none!important}
 .lb-brand__name{display:block!important;font-weight:800!important;letter-spacing:-.025em!important;
   font-size:clamp(15px,1.55vw,20px)!important;line-height:1.1!important;color:#0f1d42!important;white-space:nowrap}
@@ -256,7 +256,7 @@ footer a:hover{color:var(--navy)}
 </style>
 <style>
 /* ponytail: no owned photos exist for this lead and the only on-disk photo is a
-   Wikimedia placeholder (other company's site) — a CSS/SVG set-out plan beats
+   Wikimedia placeholder (other company's site), a CSS/SVG set-out plan beats
    clip-art canvas and avoids reusing foreign media. Swap for real photos when supplied. */
 #heroCanvas{display:none!important}
 .hero-scrim{display:none!important}
@@ -281,7 +281,7 @@ footer a:hover{color:var(--navy)}
 @media(max-width:720px){.plan{display:none}.hero-in h1{font-size:clamp(2rem,9vw,2.9rem);line-height:1.06;max-width:22ch}}
 @media(max-width:900px){.hero-in>.plan{grid-column:1!important;grid-row:auto!important;order:2}}
 @media(max-width:720px){
-  /* mobile: the plan does not fit, but its caption is the argument — keep the words, drop the drawing */
+  /* mobile: the plan does not fit, but its caption is the argument, keep the words, drop the drawing */
   .plan{display:block}
   .plan svg{display:none}
   .plan{padding:14px 16px}
@@ -291,7 +291,7 @@ footer a:hover{color:var(--navy)}
   .areas li + li::before{margin-right:.55rem}
 }
 .plan{border-color:rgba(255,212,0,.45);background:rgba(16,19,16,.55)}
-/* contrast: hi-vis yellow is a dark-ground accent only — on cream it reads as 1.1:1 */
+/* contrast: hi-vis yellow is a dark-ground accent only, on cream it reads as 1.1:1 */
 :root{--gold-ink:#8a5c00}
 .sec-head .idx,.svc .go,.work-fig .label,.step .n,.faq summary::after,.areas li + li::before{color:var(--gold-ink)}
 </style><style>
@@ -335,7 +335,7 @@ footer a:hover{color:var(--navy)}
   <canvas id="heroCanvas" aria-hidden="true"></canvas>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap hero-in">
-    <p class="kick label">Sydney Pro Construction — licensed builders, Sydney metro</p>
+    <p class="kick label">Sydney Pro Construction, licensed builders, Sydney metro</p>
         <h1>Set-out, frame and lock-up. <em>Priced in writing before we start.</em></h1>
         <p>Commercial fit-outs, new homes and renovations across Sydney. The builder who prices your job is the one running it on site every day, from the first set-out to handover.</p>
         <a class="tel-btn" href="#quote" style="margin-right:.7rem">Get a written, itemised price</a>
