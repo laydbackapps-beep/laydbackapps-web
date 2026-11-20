@@ -1,0 +1,155 @@
+<script>
+/* braided twin-stream manifold hero — native canvas 2D, no libs.
+   Signature motion: COLD and HOT strands braid down in opposite phase; flow paints in,
+   then a settle-once shimmer (never a hard reset). Reduced-motion draws one static frame. */
+(function(){
+  var cv=document.getElementById('manifold');
+  if(!cv||!cv.getContext) return;
+  var ctx=cv.getContext('2d');
+  var DPR=Math.min(window.devicePixelRatio||1,2);
+  var W=1,H=1,mx=-100,my=-100,pointerTarget=0,pointerPhase=0;
+  var flow=0,dial=0,drift=0,driftTarget=0;
+  var drops=[],dropTick=0,seq=0;
+  var t0=null,last=0,running=false,reduce=false;
+  try{reduce=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);}catch(e){reduce=false;}
+
+  function num(v,d){return (typeof v==='number'&&isFinite(v))?v:d;}
+  function easeOut(t){return 1-Math.pow(1-t,3);}
+  function lg(x1,y1,x2,y2,stops){var g=ctx.createLinearGradient(x1,y1,x2,y2);for(var i=0;i<stops.length;i++)g.addColorStop(stops[i][0],stops[i][1]);return g;}
+  function roundRect(x,y,w,h,r){r=Math.min(r,w/2,h/2);ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+
+  function fit(){
+    var r=cv.getBoundingClientRect();
+    W=Math.max(1,num(r.width,1));H=Math.max(1,num(r.height,1));
+    cv.width=Math.round(W*DPR);cv.height=Math.round(H*DPR);
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+  function geo(){
+    var mainY=H*0.36,pw=60,ph=104,pcx=W*0.62,pcy=mainY;
+    var py=pcy-ph/2,portY=py+ph;
+    var yStart=portY+4,yEnd=H*0.97,L=Math.max(1,yEnd-yStart);
+    var A0=Math.max(19,Math.min(33,W*0.05));
+    var k=(3.4*Math.PI)/L;
+    var base=Math.asin(Math.min(0.92,14/A0));
+    return {mainY:mainY,pw:pw,ph:ph,pcx:pcx,py:py,portY:portY,cx:pcx,yStart:yStart,yEnd:yEnd,L:L,A0:A0,k:k,base:base};
+  }
+  function sX(g,y,sign,phase){
+    var A=g.A0*(1-0.28*Math.min(1,(y-g.yStart)/g.L));
+    return g.cx+sign*A*Math.sin(g.k*(y-g.yStart)+g.base+num(phase,0));
+  }
+
+  function strand(g,sign,col,phase,drawnY){
+    var ya=g.yStart,yb=drawnY;
+    // halo (translucent outer glow so the motion reads and coverage holds)
+    ctx.strokeStyle=col;ctx.globalAlpha=0.24;ctx.lineWidth=16;ctx.lineCap='round';ctx.lineJoin='round';
+    ctx.beginPath();ctx.moveTo(sX(g,ya,sign,phase),ya);ctx.lineTo(sX(g,yb,sign,phase),yb);ctx.stroke();
+    // core: per-segment width taper + fade toward the bottom fold
+    var steps=Math.max(2,Math.round((yb-ya)/6));
+    ctx.globalAlpha=1;ctx.strokeStyle=col;
+    for(var i=0;i<steps;i++){
+      var p0=ya+(yb-ya)*(i/steps),p1=ya+(yb-ya)*((i+1)/steps);
+      var tt=(p0-g.yStart)/g.L;
+      ctx.globalAlpha=Math.max(0,1-0.7*tt);
+      ctx.lineWidth=Math.max(3.4,10-5*tt);
+      ctx.beginPath();ctx.moveTo(sX(g,p0,sign,phase),p0);ctx.lineTo(sX(g,p1,sign,phase),p1);ctx.stroke();
+    }
+    ctx.globalAlpha=1;
+  }
+
+  function stepDrops(dt){
+    var i;
+    for(i=drops.length-1;i>=0;i--){
+      var d=drops[i];d.y+=d.vy*dt;d.life-=0.00034*dt;
+      if(d.life<=0)drops.splice(i,1);
+    }
+    dropTick+=dt;
+    var cap=14,gate=(flow>=1?1500:420);
+    if(flow>0.35&&drops.length<cap&&dropTick>gate){
+      dropTick=0;seq++;
+      var side=(seq%2===0)?1:-1;
+      drops.push({side:side,y:0,vy:0.055+Math.random()*0.06,life:0.75+Math.random()*0.25,ox:(Math.random()-0.5)*7});
+    }
+  }
+  function drawDrops(g,phase){
+    for(var i=0;i<drops.length;i++){
+      var d=drops[i];
+      var y=g.yStart+d.y*(g.yEnd-g.yStart)*0.9;
+      if(y>g.yEnd)continue;
+      var x=sX(g,y,d.side,phase)+d.ox;
+      ctx.globalAlpha=Math.max(0,Math.min(0.9,d.life*0.85));
+      ctx.fillStyle=(d.side===1)?'#1f7fd8':'#e8593f';
+      ctx.beginPath();ctx.arc(x,y,1.5+2.1*(1-Math.abs(d.life-0.75)),0,Math.PI*2);ctx.fill();
+    }
+    ctx.globalAlpha=1;
+  }
+
+  function draw(){
+    if(!W||!H)return;
+    ctx.clearRect(0,0,W,H);
+    var g=geo(),phase=drift+pointerPhase;
+    // main pipe (chrome gradient stroke)
+    ctx.lineCap='round';ctx.lineJoin='round';
+    ctx.strokeStyle=lg(0,g.mainY-9,0,g.mainY+9,[[0,'#e7eef2'],[.42,'#b9c8d2'],[.58,'#8ba0b0'],[1,'#c7d3db']]);
+    ctx.lineWidth=18;ctx.beginPath();ctx.moveTo(-12,g.mainY);ctx.lineTo(g.pcx, g.mainY);ctx.stroke();
+    // coupling rings on the main
+    ctx.strokeStyle='#8ba0b0';ctx.lineWidth=3;
+    [0.14,0.30,0.46].forEach(function(f){ctx.beginPath();ctx.ellipse(W*f,g.mainY,7,13,0,0,Math.PI*2);ctx.stroke();});
+    // junction plate
+    ctx.fillStyle=lg(0,g.py,0,g.py+g.ph,[[0,'#eef3f6'],[.5,'#c3d0da'],[1,'#93a7b6']]);
+    roundRect(g.pcx-g.pw/2,g.py,g.pw,g.ph,12);ctx.fill();
+    ctx.strokeStyle='#7f95a5';ctx.lineWidth=1.6;ctx.stroke();
+    // ports
+    ctx.fillStyle='#5c6e7e';
+    ctx.beginPath();ctx.arc(g.cx-14,g.portY-3,4.5,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.arc(g.cx+14,g.portY-3,4.5,0,Math.PI*2);ctx.fill();
+    // dial: circle + needle easing to ~60deg
+    var dx=g.pcx,dy=g.py+30,dr=13,ang=(-90+num(dial,0))*Math.PI/180;
+    ctx.strokeStyle='#5c6e7e';ctx.lineWidth=1.6;ctx.beginPath();ctx.arc(dx,dy,dr,0,Math.PI*2);ctx.stroke();
+    ctx.strokeStyle='#0f1720';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(dx,dy);ctx.lineTo(dx+Math.cos(ang)*(dr-3),dy+Math.sin(ang)*(dr-3));ctx.stroke();
+    ctx.fillStyle='#0f1720';ctx.beginPath();ctx.arc(dx,dy,2.4,0,Math.PI*2);ctx.fill();
+    // braid
+    var drawnY=g.yStart+(g.yEnd-g.yStart)*Math.min(1,num(flow,1));
+    strand(g,1,'#1f7fd8',phase,drawnY);
+    strand(g,-1,'#e8593f',phase,drawnY);
+    drawDrops(g,phase);
+    // pointer tick (guarded sentinel)
+    if(mx>-100&&my>-100){
+      ctx.strokeStyle='rgba(15,23,32,.35)';ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(mx-6,my);ctx.lineTo(mx+6,my);ctx.moveTo(mx,my-6);ctx.lineTo(mx,my+6);ctx.stroke();
+    }
+  }
+
+  function animate(ts){
+    if(!running)return;
+    if(t0===null){t0=ts;last=ts;}
+    var dt=ts-last;last=ts;
+    if(!isFinite(dt)||dt<0)dt=16;dt=Math.min(64,dt);
+    if(flow<1)flow=Math.min(1,(ts-t0)/2800);
+    dial+=(60*easeOut(flow)-dial)*0.10;
+    driftTarget=(flow>=1)?Math.sin(ts*0.00055)*0.10:0;
+    drift+=(driftTarget-drift)*0.05;
+    pointerPhase+=(pointerTarget-pointerPhase)*0.06;
+    if(!isFinite(pointerPhase))pointerPhase=0;
+    if(!isFinite(dial))dial=0;
+    stepDrops(dt);
+    draw();
+    requestAnimationFrame(animate);
+  }
+
+  window.__heroSettle=function(){flow=1;dial=60;drift=0;pointerPhase=0;draw();};
+
+  cv.addEventListener('pointermove',function(ev){
+    var r=cv.getBoundingClientRect();
+    var x=ev.clientX-r.left,y=ev.clientY-r.top;
+    if(!isFinite(x)||!isFinite(y))return;
+    mx=x;my=y;
+    pointerTarget=Math.max(-0.9,Math.min(0.9,(x/Math.max(1,W)-0.5)*1.4));
+  });
+  cv.addEventListener('pointerleave',function(){mx=-100;my=-100;pointerTarget=0;});
+  window.addEventListener('resize',function(){fit();if(reduce){flow=1;dial=60;draw();}});
+
+  fit();
+  if(reduce){flow=1;dial=60;drift=0;pointerPhase=0;draw();}
+  else{running=true;requestAnimationFrame(animate);}
+})();
+</script>
