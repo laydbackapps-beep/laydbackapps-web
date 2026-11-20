@@ -88,7 +88,7 @@ svg{display:block}
 .plinth .side{font-family:var(--serif);font-size:clamp(1.3rem,2.5vw,1.95rem);line-height:1.36;margin:0;color:#213530}
 .plinth .side .hl{color:var(--clay)}
 /* services trace rows */
-.trow{display:grid;grid-template-columns:72px minmax(0,1fr) 52px;gap:22px;align-items:center;padding:26px 0;border-top:1px solid var(--line)}
+.trow{display:grid;grid-template-columns:minmax(0,1fr) 52px;gap:22px;align-items:center;padding:26px 0;border-top:1px solid var(--line)}
 .trow:last-child{border-bottom:1px solid var(--line)}
 .trow .swatch{color:var(--sage)}
 .trow .swatch svg{width:62px;height:26px}
@@ -138,7 +138,7 @@ svg{display:block}
  .phases{grid-template-columns:1fr}
  .stage{border-right:0;border-bottom:1px solid var(--line)}
  .stage:last-child{border-bottom:0}
- .trow{grid-template-columns:54px minmax(0,1fr) 38px;gap:14px}
+ .trow{grid-template-columns:minmax(0,1fr) 38px;gap:14px}
  .hero-inner{grid-template-columns:1fr}
 }
 @media (max-width:560px){
@@ -169,14 +169,14 @@ svg{display:block}
   <canvas id="bedcanvas" aria-hidden="true"></canvas>
   <div class="hero-inner wrap">
     <div class="hero-copy">
-      <p class="eyebrow">Landscape design &middot; Terrigal NSW</p>
+      <p class="eyebrow">Landscape design, Terrigal NSW</p>
       <h1>The garden begins as a drawn line.</h1>
       <p class="lead">Strolin Landscapes designs and builds residential gardens across Terrigal and the Central Coast. Each garden is drawn first, then planted to that drawing.</p>
       <div class="hero-cta">
         <a class="btn btn-p" href="#lbq">Request a quote</a>
         <a class="btn btn-g" href="tel:+61424616496">Call <span class="mono">0424 616 496</span></a>
       </div>
-      <p class="hero-note">Design &middot; Construct &middot; Plant</p>
+      <p class="hero-note">Design, Construct, Plant</p>
     </div>
   </div>
 </section>
@@ -196,22 +196,22 @@ svg{display:block}
       <div class="trow rv">
         <div class="swatch" aria-hidden="true"><svg viewBox="0 0 64 26"><path d="M1 20 C 18 20, 26 7, 63 7" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="60" cy="7" r="3" fill="currentColor"/></svg></div>
         <div><h3>Landscape design</h3><p>Concept, layout and planting plans drawn from your site and how you want to use it.</p></div>
-        <div class="tidx">01</div>
+        
       </div>
       <div class="trow rv">
         <div class="swatch" aria-hidden="true"><svg viewBox="0 0 64 26"><path d="M1 6 C 20 6, 30 19, 63 19" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="60" cy="19" r="3" fill="currentColor"/></svg></div>
         <div><h3>Garden construction</h3><p>Retaining, paving, steps and garden structure set out and built to the drawing.</p></div>
-        <div class="tidx">02</div>
+        
       </div>
       <div class="trow rv">
         <div class="swatch" aria-hidden="true"><svg viewBox="0 0 64 26"><path d="M1 13 C 22 13, 34 5, 63 5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="60" cy="5" r="3" fill="currentColor"/></svg></div>
         <div><h3>Planting and softscaping</h3><p>Trees, hedging, groundcover and turf planted out to the plan.</p></div>
-        <div class="tidx">03</div>
+        
       </div>
       <div class="trow rv">
         <div class="swatch" aria-hidden="true"><svg viewBox="0 0 64 26"><path d="M1 20 C 24 20, 32 6, 63 6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="60" cy="6" r="3" fill="currentColor"/></svg></div>
         <div><h3>Garden care</h3><p>Seasonal care that helps a new garden settle and keep its shape.</p></div>
-        <div class="tidx">04</div>
+        
       </div>
     </div>
   </div>
@@ -364,7 +364,7 @@ html,body{overflow-x:hidden}
       e.preventDefault();
       var d = {};
       new FormData(f).forEach(function(v,k){ d[k]=v; });
-      if (d.website) return;  // honeypot — silently accept bots
+      if (d.website) return;  // honeypot, silently accept bots
       if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
         st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
         st.style.color = '#ff9d8a';
