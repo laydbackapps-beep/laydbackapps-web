@@ -1,0 +1,35 @@
+/* PART 3 STARTS MID-STYLE */
+    /* Statement */
+    .statement { background: var(--sand); color: var(--text-on-sand); padding: var(--space-5) 0; }
+    .statement__grid { display: grid; gap: var(--space-4); }
+    @media (min-width: 900px) { .statement__grid { grid-template-columns: 5fr 7fr; align-items: start; } }
+    .statement__meta { display: grid; gap: var(--space-2); }
+    .statement__row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; font-family: var(--font-mono); font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.85rem); letter-spacing: 0.04em; color: var(--text-muted-sand); }
+    .statement__label { font-weight: 600; color: var(--quarry); }
+    .statement__value a { color: var(--ironbark); text-decoration: underline; text-underline-offset: 2px; }
+    .statement__value a:hover { color: var(--ochre); }
+    .statement__copy h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.75rem, 1.4rem + 2vw, 2.5rem); line-height: 1.2; color: var(--quarry); margin-bottom: var(--space-2); }
+    .statement__copy p { margin-bottom: var(--space-2); color: var(--text-on-sand); }
+    /* Services */
+    .services { background: var(--sand); color: var(--text-on-sand); padding: var(--space-5) 0; }
+    .section-head { margin-bottom: var(--space-4); }
+    .section-head__eyebrow { font-family: var(--font-mono); font-size: clamp(0.7rem, 0.65rem + 0.3vw, 0.85rem); letter-spacing: 0.12em; color: var(--ochre); margin-bottom: var(--space-1); }
+    .section-head__title { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.75rem, 1.4rem + 2vw, 2.5rem); line-height: 1.2; color: var(--quarry); }
+    .services__grid { display: grid; gap: var(--space-3); }
+    @media (min-width: 600px) { .services__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1000px) { .services__grid { grid-template-columns: repeat(3, 1fr); } }
+    /* Course-offset masonry: varying column spans and offsets */
+    @media (min-width: 1000px) {
+      .service:nth-child(1) { grid-column: span 2; }
+      .service:nth-child(2) { grid-column: span 2; }
+      .service:nth-child(3) { grid-column: span 2; }
+      .service:nth-child(4) { grid-column: span 2; }
+      .service:nth-child(5) { grid-column: span 2; }
+    }
+    .service { background: var(--chisel); border: 1px solid var(--line); padding: var(--space-3); position: relative; }
+    .service::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--ironbark); opacity: 0.15; }
+    .service__code { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--ochre); margin-bottom: var(--space-1); }
+    .service__glyph { width: 48px; height: 48px; margin-bottom: var(--space-2); opacity: 0.5; }
+    .service__title { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem); color: var(--quarry); margin-bottom: var(--space-1); }
+    .service__scope { font-size: clamp(0.9rem, 0.85rem + 0.2vw, 1rem); color: var(--text-muted-sand); }
+    /* PART 3 ENDS MID-STYLE
