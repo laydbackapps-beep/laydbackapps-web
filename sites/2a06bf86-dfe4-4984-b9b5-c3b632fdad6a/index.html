@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en-AU" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WJS Concrete — Concreting in Redhead, NSW</title>
+<meta name="description" content="Concreting work across Redhead and the Newcastle region — driveways, slabs, paths and finishes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gantari:wght@600;700;800&family=Golos+Text:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{ /* lbq-contrast */ --bg:#e7e4de;--line:rgba(26,28,29,.16);
+  --field:#e7e4de;
+  --panel:#dcd8d0;
+  --ink:#1a1c1d;
+  --muted:#57595d;
+  --hairline:rgba(26,28,29,.14);
+  --speckle-1:#2e2f31;
+  --speckle-2:#7f8186;
+  --speckle-3:#b9b8b4;
+  --oxide:#2f3237;
+  --radius:0;
+}
+*, *::before, *::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *, *::before, *::after{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important}
+}
+body{
+  margin:0;
+  font-family:'Golos Text',system-ui,sans-serif;
+  background:var(--field);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+img{max-width:100%; height:auto; display:block}
+a{color:inherit; text-decoration:none}
+a:hover{text-decoration:underline}
+.phone-link{text-decoration:underline; text-underline-offset:2px}
+.phone-link:hover{text-decoration:none}
+.rv{opacity:1; transform:none; transition: opacity .45s ease, transform .6s ease}
+.js .rv{opacity:0; transform:translateY(12px)}
+.rv.on{opacity:1; transform:none}
+.no-js .rv{opacity:1; transform:none}
+.speckle-bg{
+  position:absolute; inset:0;
+  background-image:
+    radial-gradient(2px 2px at 12% 18%, var(--speckle-1) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 34% 42%, var(--speckle-2) 50%, transparent 51%),
+    radial-gradient(1px 1px at 56% 28%, var(--speckle-3) 50%, transparent 51%),
+    radial-gradient(2px 2px at 78% 64%, var(--speckle-1) 50%, transparent 51%),
+    radial-gradient(1px 1px at 89% 12%, var(--speckle-2) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 5% 82%, var(--speckle-3) 50%, transparent 51%),
+    radial-gradient(2px 2px at 45% 76%, var(--speckle-1) 50%, transparent 51%),
+    radial-gradient(1px 1px at 67% 91%, var(--speckle-2) 50%, transparent 51%);
+  background-size:200px 200px;
+  opacity:.35;
+  pointer-events:none;
+}
+.speckle-bg--thin{opacity:.18}
+.hairline-h{height:1px; background:var(--hairline); border:none}
+.hairline-v{width:1px; height:100%; background:var(--hairline); border:none; position:absolute; top:0; bottom:0}
+.seam{position:absolute; top:0; bottom:0; width:1px; background:var(--hairline); pointer-events:none}
+.wordmark{font-family:'Gantari',system-ui,sans-serif; font-weight:800; font-size:clamp(1.25rem,3.5vw,1.75rem); letter-spacing:-.02em; line-height:1.1}
+html body #lbq{--lbq-muted:#aab4bf}
+.eyebrow{font-family:'Geist Mono',monospace; font-weight:500; font-size:.7rem; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:.5rem}
+.eyebrow .bullet{display:inline-block; width:.5rem; height:.5rem; background:var(--oxide); margin-right:.5rem; vertical-align:middle}
+h1{font-family:'Gantari',system-ui,sans-serif; font-weight:800; font-size:clamp(2.5rem,7vw,4.5rem); line-height:1.05; letter-spacing:-.03em; margin:0}
+h2{font-family:'Gantari',system-ui,sans-serif; font-weight:700; font-size:clamp(1.75rem,4.5vw,3rem); line-height:1.15; letter-spacing:-.02em; margin:0 0 .75rem}
+h3{font-family:'Gantari',system-ui,sans-serif; font-weight:600; font-size:clamp(1.1rem,2.5vw,1.4rem); line-height:1.2; margin:0 0 .5rem}
+p{margin:0 0 1rem; color:var(--ink)}
+.muted{color:var(--muted)}
+.label{font-family:'Geist Mono',monospace; font-weight:500; font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted)}
+.oxide-underline{text-decoration:underline; text-decoration-color:var(--oxide); text-underline-offset:3px; text-decoration-thickness:2px}
+.container{width:100%; max-width:1200px; margin:0 auto; padding:0 clamp(1rem,4vw,3rem)}
+.section{padding:clamp(3rem,8vw,6rem) 0; position:relative}
+.section::before{content:""; position:absolute; left:50%; top:0; bottom:0; width:1px; background:var(--hairline); transform:translateX(-50%); pointer-events:none}
+@media (max-width:760px){.section::before{display:none}}
+.btn{display:inline-block; padding:.875rem 1.75rem; font-family:'Gantari',system-ui,sans-serif; font-weight:700; font-size:.95rem; letter-spacing:-.01em; border:2px solid var(--ink); background:var(--ink); color:var(--field); transition:background .2s ease, color .2s ease, border-color .2s ease}
+.btn:hover{background:transparent; color:var(--ink); text-decoration:none}
+.btn--phone{background:transparent; color:var(--ink); border-color:var(--ink)}
+.btn--phone:hover{background:var(--ink); color:var(--field)}
+
+.chip{display:inline-flex; align-items:center; justify-content:center; width:2.5rem; height:2.5rem; border-radius:999px; background:var(--panel); position:relative; flex-shrink:0}
+.chip::before{content:""; position:absolute; inset:2px; border-radius:999px; background:
+  radial-gradient(3px 3px at 30% 30%, var(--speckle-1) 50%, transparent 51%),
+  radial-gradient(2px 2px at 70% 65%, var(--speckle-2) 50%, transparent 51%),
+  radial-gradient(1.5px 1.5px at 45% 45%, var(--speckle-3) 50%, transparent 51%);
+  background-size:100% 100%}
+.chip-index{font-family:'Geist Mono',monospace; font-weight:500; font-size:.65rem; color:var(--muted); z-index:1}
+.slab{display:flex; align-items:center; gap:1rem; width:100%; min-height:72px; max-height:96px; background:var(--panel); border:1px solid var(--hairline); position:relative}
+.slab:hover{background:#d4cfc5}
+.slab__name{font-family:'Gantari',system-ui,sans-serif; font-weight:700; font-size:clamp(.95rem,2vw,1.15rem); letter-spacing:-.015em; flex:1; padding-right:1.5rem}
+.step{display:flex; gap:1.5rem; padding:1.5rem 0; border-top:1px solid var(--hairline)}
+.step:first-child{border-top:none}
+.step__num{font-family:'Geist Mono',monospace; font-weight:500; font-size:clamp(1.5rem,3vw,2rem); color:var(--oxide); line-height:1; flex-shrink:0; width:3.5rem; text-align:right; padding-top:.15rem}
+.step__text{flex:1; padding-top:.15rem}
+.step__text p:last-child{margin-bottom:0}
+.reveal-cut{position:relative; height:120px; background:var(--panel); border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); overflow:hidden}
+.reveal-cut--thin{height:16px}
+.reveal-cut--statement{height:140px}
+#hero-canvas{display:block; width:100%; height:100%}
+@media (prefers-reduced-motion:reduce){
+  #hero-canvas{display:none}
+  .reveal-cut::after{content:""; position:absolute; inset:0; background:
+    radial-gradient(2px 2px at 10% 50%, var(--speckle-1) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 25% 45%, var(--speckle-2) 50%, transparent 51%),
+    radial-gradient(1px 1px at 40% 55%, var(--speckle-3) 50%, transparent 51%),
+    radial-gradient(2px 2px at 55% 50%, var(--speckle-1) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 70% 48%, var(--speckle-2) 50%, transparent 51%),
+    radial-gradient(1px 1px at 85% 52%, var(--speckle-3) 50%, transparent 51%),
+    radial-gradient(2px 2px at 95% 50%, var(--speckle-1) 50%, transparent 51%);
+    background-size:auto 100%; background-position:center; background-repeat:no-repeat; opacity:.4}
+}
+.nav{position:sticky; top:0; z-index:100; background:var(--field); border-bottom:1px solid var(--hairline)}
+.nav__inner{display:flex; align-items:center; justify-content:space-between; height:56px; max-width:1200px; margin:0 auto; padding:0 clamp(1rem,4vw,3rem)}
+.nav__links{display:flex; align-items:center; gap:2rem}
+.nav__link{font-family:'Gantari',system-ui,sans-serif; font-weight:600; font-size:.85rem; letter-spacing:-.01em; color:var(--ink); text-decoration:none}
+.nav__link:hover{color:var(--oxide); text-decoration:none}
+.nav__phone{font-family:'Gantari',system-ui,sans-serif; font-weight:700; font-size:.85rem; letter-spacing:-.01em; color:var(--ink); text-decoration:underline; text-underline-offset:2px}
+.nav__phone:hover{color:var(--oxide); text-decoration:none}
+@media (max-width:760px){
+  .nav__links{display:none}
+  .nav__phone{display:inline-block}
+}
+.hero{position:relative; padding:clamp(3rem,6vw,5rem) 0 clamp(2rem,4vw,3rem); overflow:hidden}
+.hero__inner{position:relative; z-index:1}
+.hero__eyebrow{margin-bottom:.75rem}
+.hero__title{margin-bottom:1rem}
+.hero__sub{max-width:55ch; margin-bottom:2rem; font-size:clamp(1rem,2.2vw,1.2rem); line-height:1.6; color:var(--muted)}
+.hero__cta{display:flex; flex-wrap:wrap; gap:1rem; align-items:center}
+.scope-slab{background:var(--field)}
+.scope-slab .slab-stack{display:flex; flex-direction:column; gap:.75rem}
+.pour-flow{background:var(--panel)}
+.pour-flow .step:first-child{border-top:1px solid var(--hairline)}
+.statement-band{background:var(--field); text-align:center}
+.statement-band .reveal-cut--statement{margin-bottom:2rem}
+.statement-band__title{font-family:'Gantari',system-ui,sans-serif; font-weight:800; font-size:clamp(1.5rem,4vw,2.5rem); line-height:1.15; letter-spacing:-.02em; margin:0 0 .75rem}
+.statement-band__sub{max-width:60ch; margin:0 auto; font-size:clamp(1rem,2.2vw,1.15rem); line-height:1.6; color:var(--muted)}
+.quote{background:var(--panel)}
+.quote__heading{font-family:'Gantari',system-ui,sans-serif; font-weight:700; font-size:clamp(1.5rem,3.5vw,2.25rem); line-height:1.2; margin:0 0 .5rem}
+.quote__lead{color:var(--muted); margin-bottom:2rem}
+footer{background:var(--ink); color:var(--field); padding:3rem 0 2rem}
+.footer__inner{display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between; align-items:flex-start; max-width:1200px; margin:0 auto; padding:0 clamp(1rem,4vw,3rem)}
+.footer__brand{flex:1; min-width:200px}
+.footer__wordmark{font-family:'Gantari',system-ui,sans-serif; font-weight:800; font-size:clamp(1.1rem,2.5vw,1.5rem); letter-spacing:-.02em; margin-bottom:.5rem}
+.footer__location{font-size:.9rem; color:rgba(231,228,222,.7); margin-bottom:1rem}
+.footer__phone{font-family:'Gantari',system-ui,sans-serif; font-weight:700; font-size:.95rem; color:var(--field); text-decoration:underline; text-underline-offset:2px}
+.footer__phone:hover{color:var(--oxide); text-decoration:none}
+.footer__copy{font-size:.8rem; color:rgba(231,228,222,.5); margin-top:2rem; width:100%}
+@media (max-width:600px){
+  .footer__inner{flex-direction:column; gap:1.5rem}
+}
+</style>
+<style>
+.nav__inner{height:80px!important}
+.nav .lb-hdr-brand{display:flex!important;align-items:center!important;text-decoration:none!important}
+.nav .lb-hdr-brand img.lb-hdr-logo{height:clamp(40px,4.6vw,48px)!important;width:auto!important;max-width:none!important;max-height:none!important;display:block!important;object-fit:contain!important;-webkit-mask-image:none!important;mask-image:none!important}
+@media(max-width:520px){.nav .lb-hdr-brand img.lb-hdr-logo{height:clamp(34px,9vw,40px)!important}}
+</style></head>
+<body>
+<nav class="nav" role="navigation" aria-label="Main">
+  <div class="nav__inner">
+    <a href="./" class="wordmark lb-hdr-brand" aria-label="WJS Concrete home"><img class="lb-hdr-logo" src="assets/logo-header.svg" alt="WJS Concrete" width="360" height="150"></a>
+    <div class="nav__links">
+      <a href="#scope" class="nav__link">Scope</a>
+      <a href="#pour-day" class="nav__link">Pour day</a>
+      <a href="#quote" class="nav__link">Contact</a>
+      <a href="tel:+61412334597" class="nav__phone phone-link">0412 334 597</a>
+    </div>
+    <a href="tel:+61412334597" class="nav__phone phone-link" style="display:none">0412 334 597</a>
+  </div>
+</nav>
+<header class="hero" role="banner">
+  <div class="container hero__inner">
+    <p class="eyebrow hero__eyebrow rv"><span class="bullet"></span>CONCRETING · REDHEAD NSW</p>
+    <h1 class="hero__title rv">WJS Concrete</h1>
+    <p class="hero__sub rv">All aspects of concreting — Redhead based, working across the Newcastle region.</p>
+    <div class="hero__cta rv">
+      <a href="#quote" class="btn">Request a quote</a>
+      <a href="tel:+61412334597" class="btn btn--phone phone-link">0412 334 597</a>
+    </div>
+  </div>
+  <div class="reveal-cut" aria-hidden="true">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  </div>
+</header><main id="main">
+  <section id="scope" class="scope-slab section" aria-labelledby="scope-heading">
+    <div class="container">
+      <p class="eyebrow rv" id="scope-heading"><span class="bullet"></span>01 / SCOPE</p>
+      <h2 class="rv">Concrete work, all kinds.</h2>
+      <div class="slab-stack">
+        <div class="slab rv">
+          <div class="chip"></div>
+          <span class="slab__name">Driveways</span>
+        </div>
+        <div class="slab rv">
+          <div class="chip"></div>
+          <span class="slab__name">Slabs & footings</span>
+        </div>
+        <div class="slab rv">
+          <div class="chip"></div>
+          <span class="slab__name">Paths & crossovers</span>
+        </div>
+        <div class="slab rv">
+          <div class="chip"></div>
+          <span class="slab__name">Shed & patio slabs</span>
+        </div>
+        <div class="slab rv">
+          <div class="chip"></div>
+          <span class="slab__name">Exposed aggregate</span>
+        </div>
+        <div class="slab rv">
+          <div class="chip"></div>
+          <span class="slab__name">Formwork & reinforcement</span>
+        </div>
+        <div class="slab rv">
+          <div class="chip"></div>
+          <span class="slab__name">Concrete removal & replacement</span>
+        </div>
+        <div class="slab rv">
+          <div class="chip"></div>
+          <span class="slab__name">Decorative finishes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pour-day" class="pour-flow section" aria-labelledby="pour-day-heading">
+    <div class="container">
+      <p class="eyebrow rv" id="pour-day-heading"><span class="bullet"></span>02 / POUR DAY</p>
+      <h2 class="rv">From set-out to handover.</h2>
+      <div class="step rv">
+        
+        <div class="step__text">
+          <p><strong>Call & scope.</strong> We discuss the job, take measurements and confirm the finish.</p>
+        </div>
+      </div>
+      <div class="step rv">
+        
+        <div class="step__text">
+          <p><strong>Site visit & quote.</strong> On-site assessment, then a written quote with no surprises.</p>
+        </div>
+      </div>
+      <div class="step rv">
+        
+        <div class="step__text">
+          <p><strong>Form, pour, finish.</strong> Formwork goes in, concrete is placed and finished to spec.</p>
+        </div>
+      </div>
+      <div class="step rv">
+        
+        <div class="step__text">
+          <p><strong>Handover & clean-up.</strong> Site left clean, work explained, you sign off.</p>
+        </div>
+      </div>
+    </div>
+  </section><section class="statement-band section" aria-labelledby="statement-heading">
+    <div class="reveal-cut reveal-cut--statement" aria-hidden="true"></div>
+    <div class="container">
+      <p class="eyebrow rv" id="statement-heading"><span class="bullet"></span>03 / STATEMENT</p>
+      <p class="statement-band__title rv">Redhead based, Newcastle region wide.</p>
+      <p class="statement-band__sub rv">Concreting work for homes, yards and local sites.</p>
+    </div>
+  </section>
+
+  <section id="quote" class="quote-slab section quote" aria-labelledby="quote-heading">
+    <div class="container">
+      <p class="eyebrow rv" id="quote-heading"><span class="bullet"></span>04 / QUOTE</p>
+      <h2 class="quote__heading rv">Request a quote</h2>
+      <p class="quote__lead rv">Tell us the job — we'll call to scope and quote.</p>
+      <a href="#lbq" class="btn rv">Open the form</a>
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <p class="footer__wordmark">WJS Concrete Pty Ltd</p>
+      <p class="footer__location">Redhead · Newcastle region, NSW</p>
+      <a href="tel:+61412334597" class="footer__phone phone-link">0412 334 597</a>
+    </div>
+    <p class="footer__copy">© 2026 WJS Concrete Pty Ltd</p>
+  </div>
+<section id="lbq" class="v3" aria-labelledby="lbq-h">
+  <style>
+#lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#111111))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,#9aa6b2);--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto}
+#lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
+#lbq .lbq-f{display:grid;gap:12px}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#0b0e12;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+/* v1 card */
+#lbq.v1 .lbq-card{background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
+#lbq.v1 .lbq-g{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+#lbq.v1 .lbq-full{grid-column:1/-1}
+@media(max-width:640px){#lbq.v1 .lbq-g{grid-template-columns:1fr}}
+/* v2 band */
+#lbq.v2{background:var(--lbq-panel);border-top:1px solid var(--lbq-line);border-bottom:1px solid var(--lbq-line)}
+#lbq.v2 .lbq-g{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+#lbq.v2 .lbq-full{grid-column:1/-1}
+#lbq.v2 .lbq-hd{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
+@media(max-width:760px){#lbq.v2 .lbq-g{grid-template-columns:1fr}#lbq.v2 .lbq-hd{display:block}}
+/* v3 split */
+#lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+#lbq.v3 .lbq-g{display:grid;gap:12px}
+#lbq.v3 .lbq-hp2{border-left:3px solid var(--lbq-accent);padding-left:16px}
+@media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
+/* v4 minimal */
+#lbq.v4 .lbq-w{max-width:620px}
+#lbq.v4 input,#lbq.v4 textarea{border:0;border-bottom:1px solid var(--lbq-line);border-radius:0;background:transparent;padding:11px 2px}
+#lbq.v4 .lbq-g{display:grid;gap:16px}
+</style>
+  <div class="lbq-w">
+      <div class="lbq-sp"><div class="lbq-hp2"><h2 id="lbq-h">Request a quote</h2>
+      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p><p class="lbq-s" style="margin-bottom:0">Prefer to talk? Call, text or email &mdash; we reply fast.</p></div><div><form id="lbq-form" novalidate data-site="2a06bf86-dfe4-4984-b9b5-c3b632fdad6a" data-biz="WJS Concrete Pty Ltd"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div></div>
+  </div>
+  <script>
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;  // honeypot — silently accept bots
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</section>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add('js');
+  var rv = document.querySelectorAll('.rv');
+  if ('matchMedia' in window && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    rv.forEach(function(el){ el.classList.add('on'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, {rootMargin:'0px 0px -10% 0px', threshold:0});
+  rv.forEach(function(el){ io.observe(el); });
+  setTimeout(function(){ rv.forEach(function(el){ el.classList.add('on'); }); }, 1100);
+})();
+</script>
+
+<script>
+(function(){
+  var canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  if ('matchMedia' in window && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+  var ctx = canvas.getContext('2d');
+  var dpr = window.devicePixelRatio || 1;
+  var W, H;
+  var particles = [];
+  var PARTICLE_COUNT = 650;
+  var settled = false;
+  var settleStart = 0;
+  var SETTLE_DURATION = 2200;
+  var SPECKLE_PALETTE = ['#403f41','#8a8478','#b5afa2'];
+  var SPECKLE_SIZES = [2, 2.5, 3, 1.5, 2, 2.5];
+  var mouseX = -9999, mouseY = -9999;
+  var rafId = null;
+  var isVisible = false;
+
+  function resize(){
+    var rect = canvas.parentElement.getBoundingClientRect();
+    W = canvas.width = Math.round(rect.width * dpr);
+    H = canvas.height = Math.round(rect.height * dpr);
+    ctx.scale(dpr, dpr);
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+    if (!settled) initParticles();
+  }
+
+  function initParticles(){
+    particles = [];
+    var bandTop = 0;
+    var bandBottom = H / dpr;
+    for (var i = 0; i < PARTICLE_COUNT; i++) {
+      var x = Math.random() * (W / dpr);
+      var y = bandTop + Math.random() * (bandBottom - bandTop);
+      var targetY = bandTop + (bandBottom - bandTop) * (0.18 + Math.random() * 0.64);
+      var color = SPECKLE_PALETTE[Math.floor(Math.random() * SPECKLE_PALETTE.length)];
+      var size = SPECKLE_SIZES[Math.floor(Math.random() * SPECKLE_SIZES.length)];
+      var vx = (Math.random() - 0.5) * 0.3;
+      var vy = (Math.random() - 0.5) * 0.3;
+      particles.push({x:x, y:y, targetY:targetY, color:color, size:size, vx:vx, vy:vy, settled:false, delay:Math.random()*300});
+    }
+    settleStart = performance.now();
+  }
+
+  function draw(t){
+    if (!isVisible) return;
+    ctx.clearRect(0,0,W,H);
+    var elapsed = t - settleStart;
+    var progress = Math.min(1, elapsed / SETTLE_DURATION);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      if (elapsed < p.delay) continue;
+      if (!p.settled) {
+        var dy = p.targetY - p.y;
+        if (Math.abs(dy) < 0.5 || progress >= 1) {
+          p.y = p.targetY;
+          p.settled = true;
+        } else {
+          p.y += dy * eased * 0.15;
+        }
+      } else if (mouseX > -100 && mouseY > -100) {
+        var dx = (mouseX - p.x * dpr) * 0.0008;
+        var dy = (mouseY - p.y * dpr) * 0.0008;
+        p.x += dx;
+        p.y += dy;
+        p.x = Math.max(p.size, Math.min((W/dpr)-p.size, p.x));
+        p.y = Math.max(p.size, Math.min((H/dpr)-p.size, p.y));
+      } else {
+        p.x += p.vx * 0.12;
+        p.y += p.vy * 0.12;
+        if (p.x < p.size || p.x > (W/dpr)-p.size) p.vx *= -1;
+        if (p.y < p.size || p.y > (H/dpr)-p.size) p.vy *= -1;
+      }
+      ctx.beginPath();
+      ctx.arc(p.x * dpr, p.y * dpr, p.size * dpr * 0.5, 0, Math.PI*2);
+      ctx.fillStyle = p.color;
+      ctx.fill();
+    }
+    if (progress < 1 || !settled) {
+      settled = progress >= 1;
+      rafId = requestAnimationFrame(draw);
+    } else {
+      rafId = requestAnimationFrame(draw);
+    }
+  }
+
+  function onMove(e){
+    var rect = canvas.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+  }
+
+  function onVisibilityChange(){
+    isVisible = !document.hidden && canvas.getBoundingClientRect().height > 0;
+    if (isVisible && !rafId) {
+      rafId = requestAnimationFrame(draw);
+    }
+  }
+
+  canvas.addEventListener('mousemove', onMove, {passive:true});
+  canvas.addEventListener('mouseleave', function(){ mouseX = -9999; mouseY = -9999; });
+  document.addEventListener('visibilitychange', onVisibilityChange);
+  window.addEventListener('resize', resize);
+  resize();
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      isVisible = e.isIntersecting;
+      if (isVisible && !rafId) rafId = requestAnimationFrame(draw);
+    });
+  }, {rootMargin:'100px'});
+  obs.observe(canvas);
+})();
+</script>
+</body>
+</html>
