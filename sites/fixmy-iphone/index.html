@@ -154,7 +154,7 @@ footer{background:var(--ink);color:var(--ground);padding:calc(var(--space)*1.5) 
 #lbq button[type="button"]{padding:12px 24px;background:transparent;color:var(--ink);border:2px solid var(--ink);border-radius:var(--radius);font-weight:700;font-family:Rubik,sans-serif;font-size:1rem;cursor:pointer;transition:background var(--trans),color var(--trans)}
 #lbq button[type="button"]:hover{background:var(--ink);color:var(--ground)}
 </style>
-<style id="lb-motion-css">
+<style>
 /* ==== LB MOTION PACK ==== */
 .lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
 /* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
@@ -219,13 +219,13 @@ a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
 @keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
 </style>
-<style id="lb-hero-css">
+<style>
 canvas.lb-hero-canvas{position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0; pointer-events:none}
 canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-<style id="lb-brand-css">
+<style>
 /* ==== LB BRAND (logo-true spanning wordmark) ==== */
 .lb-brandwrap{display:block;padding:14px 18px;background:inherit}
 .lb-brandwrap .lb-brand{display:inline-flex}
@@ -253,14 +253,14 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
+<style>/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
 .site-header,.header{z-index:50}
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-<style id="lb-bar-noname">
+<style>
 /* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
 .lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
 {display:none!important}
@@ -337,22 +337,22 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 <h2>How it works</h2>
 <div class="process-steps">
 <div class="step rv">
-<span class="step-num">01</span>
+
 <h3>Drop off or book</h3>
 <p>Bring your device to the Inverell bench or book a slot &mdash; no mystery queue.</p>
 </div>
 <div class="step rv">
-<span class="step-num">02</span>
+
 <h3>Diagnose & quote</h3>
 <p>We test, identify the fault, and give you a clear price before any work starts.</p>
 </div>
 <div class="step rv">
-<span class="step-num">03</span>
+
 <h3>Repair & test</h3>
 <p>Parts fitted, calibrated, and stress-tested. You collect a working device.</p>
 </div>
 <div class="step rv">
-<span class="step-num">04</span>
+
 <h3>Warranty on parts</h3>
 <p>Fitted parts carry the supplier warranty. Labour is re-checked if issues return.</p>
 </div>
@@ -742,7 +742,7 @@ header a[href^="tel"],.site-header a[href^="tel"]{
 }
 .lb-brand__sub:empty{display:none !important}
 </style>
-<style id="lb-header-fault-fix">
+<style>
 :is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
 img.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
