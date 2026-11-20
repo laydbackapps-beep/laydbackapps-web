@@ -1,0 +1,181 @@
+/* ===== CTA band ===== */
+.cta-band{padding:3.5rem clamp(1rem,4vw,3rem);background:var(--ink);position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:0;left:-10%;width:120%;height:4px;background:repeating-linear-gradient(90deg,var(--tape),var(--tape) 8px,transparent 8px,transparent 16px)}
+.cta-band::after{content:'';position:absolute;bottom:0;left:-10%;width:120%;height:4px;background:repeating-linear-gradient(90deg,var(--tape),var(--tape) 8px,transparent 8px,transparent 16px)}
+.cta-band__inner{max-width:700px;margin:0 auto;text-align:center}
+.cta-band__kick{font-family:var(--font-m);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--tape);font-weight:700;margin-bottom:.5rem;display:block}
+.cta-band h2{font-family:var(--font-d);font-size:clamp(1.5rem,3.5vw,2.3rem);line-height:1.1;font-weight:800;letter-spacing:-.01em;color:var(--chalk);margin-bottom:1rem}
+.cta-band p{font-size:1rem;line-height:1.6;color:var(--chalk-2);margin-bottom:1.5rem}
+.cta-band__btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.75rem;font-family:var(--font-d);font-size:.8rem;font-weight:700;letter-spacing:.05em;background:var(--tape);color:var(--ink);border-radius:4px;transition:background .2s,transform .1s,box-shadow .2s}
+.cta-band__btn:hover{background:var(--tape-2);transform:translateY(-1px);box-shadow:0 4px 16px rgba(232,197,71,.3)}
+@media (max-width:520px){.cta-band{padding:2.5rem 1rem}}
+
+/* ===== footer ===== */
+.foot{padding:2.5rem clamp(1rem,4vw,3rem);background:var(--chalk);border-top:1px solid var(--line)}
+.foot__inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;align-items:center}
+.foot__brand{display:flex;align-items:center;gap:.75rem}
+.foot__brand-svg{width:32px;height:32px;flex-shrink:0}
+.foot__brand-text{display:flex;flex-direction:column;gap:.1rem}
+.foot__brand-name{font-family:var(--font-d);font-size:1.1rem;font-weight:800;letter-spacing:-.01em}
+.foot__brand-sub{font-family:var(--font-body);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tape);font-weight:600}
+.foot__contact{display:flex;flex-direction:column;gap:.35rem;font-size:.875rem;line-height:1.5;text-align:right}
+.foot__phone{font-family:var(--font-m);font-weight:700}
+.foot__fb{font-size:.75rem;color:var(--ink-2);transition:color .2s}
+.foot__fb:hover{color:var(--tape)}
+.foot__loc{font-size:.75rem;color:var(--ink-2)}
+@media (max-width:520px){
+  .foot__inner{flex-direction:column;text-align:center}
+  .foot__contact{text-align:center}
+}
+
+/* ===== reveal system ===== */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.rv.on{opacity:1;transform:none}
+.rv-delay-1{transition-delay:.1s}
+.rv-delay-2{transition-delay:.2s}
+.rv-delay-3{transition-delay:.3s}
+.rv-delay-4{transition-delay:.4s}
+</style>
+</head>
+<body>
+<header class="nav" role="banner">
+  <a href="#main" class="skip">Skip to content</a>
+  <div class="nav__brand">
+    <svg class="nav__brand-svg" viewBox="0 0 256 256" aria-hidden="true"><use href="assets/logo-final-fixed.svg#logo"/></svg>
+    <div class="nav__brand-text">
+      <span class="nav__brand-name">JNC Painting & Property Maintenance</span>
+      <span class="nav__brand-sub">Failford NSW</span>
+    </div>
+  </div>
+  <nav class="nav__center" aria-label="Primary">
+    <ul class="nav__links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">How it works</a></li>
+      <li><a href="#quote">Quote</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__copy rv rv-delay-1">
+      <span class="hero__kick">Painter · Property Maintenance</span>
+      <h1 id="hero-title">JNC Painting & Property Maintenance</h1>
+      <p class="hero__sub">Interior, exterior, repaints, doors & trim, deck & fence staining, and property maintenance. Failford, NSW.</p>
+      <a href="#quote" class="hero__cta">Get a quote</a>
+    </div>
+    <div class="hero__art rv rv-delay-2">
+      <div class="hero__canvas-wrap">
+        <canvas id="detail-canvas" aria-label="Striation study — roller and brush marks in charcoal, chalk, and tape yellow"></canvas>
+        <div class="tape-seam" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="dockets" aria-labelledby="services-title">
+    <div class="dockets__inner">
+      <header class="sec-head">
+        <span class="sec-head__kick">Docket</span>
+        <h2 id="services-title">Services</h2>
+      </header>
+      <div class="docket-grid" role="list">
+        <article class="docket rv rv-delay-1" role="listitem">
+          <span class="docket__num">NO. 01</span>
+          <svg class="docket__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9h18"/><path d="M3 15h18"/><path d="M3 21h18"/><path d="M12 3v18"/></svg>
+          <h3>Interior painting</h3>
+          <p>Walls, ceilings, trims — clean cut-in, even roll.</p>
+          <div class="docket__corner" aria-hidden="true"></div>
+        </article>
+        <article class="docket rv rv-delay-2" role="listitem">
+          <span class="docket__num">NO. 02</span>
+          <svg class="docket__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16"/><path d="M4 12h16"/><path d="M4 20h16"/><path d="M12 4v16"/></svg>
+          <h3>Exterior painting</h3>
+          <p>Weather-resistant systems for timber, render, brick.</p>
+          <div class="docket__corner" aria-hidden="true"></div>
+        </article>
+        <article class="docket rv rv-delay-3" role="listitem">
+          <span class="docket__num">NO. 03</span>
+          <svg class="docket__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2v20"/><path d="M2 12h20"/></svg>
+          <h3>Repaints</h3>
+          <p>Prep, prime, topcoat — refresh without the mess.</p>
+          <div class="docket__corner" aria-hidden="true"></div>
+        </article>
+        <article class="docket rv rv-delay-4" role="listitem">
+          <span class="docket__num">NO. 04</span>
+          <svg class="docket__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 8h16"/><path d="M4 16h16"/><path d="M12 4v16"/></svg>
+          <h3>Doors & trim</h3>
+          <p>Enamel finishes, crisp edges, durable hardware-ready.</p>
+          <div class="docket__corner" aria-hidden="true"></div>
+        </article>
+        <article class="docket rv rv-delay-1" role="listitem">
+          <span class="docket__num">NO. 05</span>
+          <svg class="docket__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 12l6-6 6 6"/><path d="M8 6v12"/></svg>
+          <h3>Deck & fence staining</h3>
+          <p>Penetrating oils and stains — grain stays visible.</p>
+          <div class="docket__corner" aria-hidden="true"></div>
+        </article>
+        <article class="docket rv rv-delay-2" role="listitem">
+          <span class="docket__num">NO. 06</span>
+          <svg class="docket__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22v-6"/><path d="M9 16h6"/><path d="M12 10V4"/><path d="M5 10h14"/></svg>
+          <h3>Property maintenance</h3>
+          <p>Minor repairs, touch-ups, and scheduled upkeep.</p>
+          <div class="docket__corner" aria-hidden="true"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="process" aria-labelledby="process-title">
+    <div class="process__inner">
+      <header class="sec-head">
+        <span class="sec-head__kick">Process</span>
+        <h2 id="process-title">How it works</h2>
+      </header>
+      <div class="process__grid">
+        <article class="step rv rv-delay-1">
+          <div class="step__tape" aria-hidden="true"></div>
+          <span class="step__num">01</span>
+          <h3>Get in touch</h3>
+          <p>Call or fill the form. We listen, note the scope, and book a look.</p>
+        </article>
+        <article class="step rv rv-delay-2">
+          <div class="step__tape" aria-hidden="true"></div>
+          <span class="step__num">02</span>
+          <h3>Prep</h3>
+          <p>Mask, protect, repair, prime. The finish lives in the prep.</p>
+        </article>
+        <article class="step rv rv-delay-3">
+          <div class="step__tape" aria-hidden="true"></div>
+          <span class="step__num">03</span>
+          <h3>Paint and tidy</h3>
+          <p>Apply system, pull tape, clean site. Job signed off on site.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote" class="cta-band" aria-labelledby="cta-title">
+    <div class="cta-band__inner">
+      <span class="cta-band__kick">Next job</span>
+      <h2 id="cta-title">Ready for a fresh coat?</h2>
+      <p>Tell us the scope. We'll send a clear, itemised quote within 24 hours.</p>
+      <a href="#lbq" class="cta-band__btn">Request a quote</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" role="contentinfo">
+  <div class="foot__inner">
+    <div class="foot__brand">
+      <svg class="foot__brand-svg" viewBox="0 0 256 256" aria-hidden="true"><use href="assets/logo-final-fixed.svg#logo"/></svg>
+      <div class="foot__brand-text">
+        <span class="foot__brand-name">JNC Painting & Property Maintenance</span>
+        <span class="foot__brand-sub">Failford NSW</span>
+      </div>
+    </div>
+    <div class="foot__contact">
+      <a href="tel:+61478684631" class="foot__phone">0478 684 631</a>
+      <a href="https://facebook.com/jncpainting" target="_blank" rel="noopener" class="foot__fb">facebook.com/jncpainting</a>
+      <span class="foot__loc">Failford, NSW 2430</span>
+    </div>
+  </div>
+</footer>
