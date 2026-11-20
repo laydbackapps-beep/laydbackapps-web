@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vernonn — rubbish removal &amp; demolition, Melbourne</title>
+<meta name="description" content="Vernonn Rubbish Removal and Demolition Service clears, strips and pulls down across Melbourne. Call 0451 386 808 to book a look at the site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d0f11; --ink-2:#15181b; --steel:#1e2327; --line:rgba(255,255,255,.13);
+    --paper:#f2efe9; --dust:#cdc7be; --hi:#e8b23a; --hi-2:#c88f1d;
+    --sans:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,sans-serif;
+    --cond:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--sans);
+    font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--cond);font-weight:600;text-transform:uppercase;
+    letter-spacing:.005em;line-height:.94;margin:0}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 26px}
+  .eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--hi);margin:0 0 16px}
+  a{color:inherit}
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{left:18px;top:18px;z-index:99;background:var(--hi);color:var(--ink);padding:10px 16px}
+  .btn{display:inline-block;font-family:var(--cond);font-size:17px;font-weight:600;letter-spacing:.06em;
+    text-transform:uppercase;text-decoration:none;padding:13px 24px 15px;background:var(--hi);
+    color:#101214;border:2px solid var(--hi);transition:background .16s,border-color .16s,transform .16s}
+  .btn:hover,.btn:focus-visible{background:#f6c65a;border-color:#f6c65a;transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--paper);border-color:rgba(255,255,255,.32)}
+  .btn.ghost:hover{background:rgba(255,255,255,.07);border-color:var(--paper)}
+
+  header.site{position:sticky;top:0;z-index:60;background:rgba(13,15,17,.92);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;gap:22px;min-height:80px}
+  .lockup{display:flex;align-items:center;gap:13px;text-decoration:none}
+  /* logo mark: steel plate, knocked-out V, rubble baseline */
+  .lmark{width:52px;height:52px;flex:none;display:block}
+  .lockup .word{font-family:var(--cond);font-size:34px;font-weight:700;text-transform:uppercase;
+    letter-spacing:.02em;line-height:.9}
+  .lockup .sub{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.19em;
+    color:var(--dust);text-transform:uppercase;margin-top:6px}
+  nav.main{margin-left:auto;display:flex;gap:24px;font-size:14.5px}
+  nav.main a{text-decoration:none;color:var(--dust);padding:6px 0;border-bottom:1px solid transparent}
+  nav.main a:hover,nav.main a:focus-visible{color:var(--paper);border-color:var(--hi)}
+  header .btn{padding:10px 16px 12px;font-size:15px}
+  @media(max-width:980px){.bar{flex-wrap:wrap;row-gap:6px;padding-bottom:10px}nav.main{display:flex;order:3;width:100%;margin:0;gap:18px;font-size:13.5px;justify-content:space-between}}
+  @media(max-width:560px){.lockup .sub{display:none}.lockup .word{font-size:25px}.bar{gap:12px}}
+
+  /* hero: CSS plan grid, no stock photo */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+    background:radial-gradient(120% 90% at 82% 0%,rgba(232,178,58,.10),transparent 58%),var(--ink)}
+  .hero .plan{position:absolute;inset:0;pointer-events:none;opacity:.65;
+    background-image:radial-gradient(circle at 30% 40%,rgba(255,255,255,.055) 0 1.5px,transparent 2px),
+      radial-gradient(circle at 70% 65%,rgba(255,255,255,.04) 0 2px,transparent 2.5px),
+      radial-gradient(circle at 15% 80%,rgba(232,178,58,.06) 0 3px,transparent 4px);
+    background-size:37px 37px,53px 53px,71px 71px;
+    mask-image:linear-gradient(115deg,transparent 10%,#000 68%)}
+  .hero .inner{position:relative;display:grid;grid-template-columns:1.12fr .88fr;gap:52px;
+    align-items:center;padding:82px 0 88px}
+  .hero h1{font-size:clamp(46px,7.2vw,92px);max-width:15ch}
+  .hero h1 em{font-style:normal;color:var(--hi);display:block}
+  .hero p.lede{font-size:18px;color:#cfcac2;max-width:47ch;margin:24px 0 0}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+  .hero .facts{display:flex;gap:30px;flex-wrap:wrap;margin-top:34px;padding-top:20px;
+    border-top:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--dust)}
+  .hero .facts b{display:block;color:var(--paper);font-weight:500;letter-spacing:.05em;
+    font-family:var(--sans);font-size:14px;margin-bottom:4px;text-transform:none}
+  /* hero object: bespoke cutaway of the strip-out, drawn in-page */
+  .scene{margin:0;position:relative;border:1px solid var(--line);background:#0b0e10;
+    box-shadow:0 34px 60px -34px #000}
+  .scene svg{display:block;width:100%;height:auto}
+  .scene figcaption{position:absolute;left:0;bottom:0;background:rgba(11,14,16,.9);
+    color:var(--dust);font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;
+    text-transform:uppercase;padding:9px 13px;border-top:1px solid var(--line);
+    border-right:1px solid var(--line)}
+  @media(max-width:900px){.hero .inner{display:flex;flex-direction:column;gap:24px;padding:52px 0 58px}
+    /* headline, then the cutaway as proof, then the copy and the call — proof lands above the CTA */
+    .hero .inner>div:first-child{display:contents}
+    .hero .eyebrow{order:1;margin-bottom:0}
+    .hero h1{order:2}
+    .scene{order:4;max-width:430px;margin:4px auto 0;width:100%}
+    .hero p.lede{order:5;margin:0}
+    .hero .actions{order:3;margin:14px 0 0}
+    .hero .btn{width:100%;text-align:center}}
+
+  .sec{padding:86px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:grid;grid-template-columns:.95fr 1.05fr;gap:50px;align-items:end;margin-bottom:44px}
+  .sec-head h2{font-size:clamp(32px,4.6vw,58px);max-width:19ch}
+  .sec-head p{margin:0;color:var(--dust);font-size:16px;max-width:46ch}
+  @media(max-width:860px){.sec-head{grid-template-columns:1fr;gap:16px;margin-bottom:28px}}
+
+  .svc{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+    border:1px solid var(--line)}
+  .svc > div{background:var(--ink-2);padding:30px 26px 32px}
+  .svc > div:nth-child(3){grid-column:span 2;background:var(--steel);
+    display:grid;grid-template-columns:auto 1fr;gap:6px 28px;align-items:baseline}
+  .svc > div:nth-child(3) .k{grid-column:1}
+  .svc > div:nth-child(3) h3{grid-column:1;font-size:34px}
+  .svc > div:nth-child(3) p{grid-column:2;font-size:16px;max-width:56ch}
+  .svc .k{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--hi);
+    text-transform:uppercase}
+  .svc h3{font-size:26px;margin:14px 0 10px}
+  .svc p{margin:0;color:var(--dust);font-size:15px}
+  .svc > div:first-child{background:var(--steel)}
+  @media(max-width:860px){.svc{grid-template-columns:1fr}
+    .svc > div:nth-child(3){grid-column:auto;display:block}}
+
+  .band{background:var(--ink-2);padding:80px 0;border-bottom:1px solid var(--line)}
+  .band .inner{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+  .band h2{font-size:clamp(30px,4.4vw,50px);max-width:17ch}
+  .band ol{counter-reset:s;margin:0;padding:0;list-style:none;display:grid;gap:22px}
+  .band li{position:relative;padding-left:54px;color:var(--dust);font-size:15.5px}
+  .band li::before{counter-increment:s;content:counter(s,decimal-leading-zero);
+    position:absolute;left:0;top:-2px;font-family:var(--cond);font-size:30px;
+    font-weight:700;color:var(--hi);line-height:1}
+  .band li b{display:block;color:var(--paper);font-weight:600;font-size:16.5px;margin-bottom:2px}
+  @media(max-width:860px){.band .inner{grid-template-columns:1fr;gap:30px}}
+
+  .call{background:var(--hi);color:#101214;padding:74px 0}
+  .call .inner{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+  .call .eyebrow{color:#3a2a06}
+  .call h2{font-size:clamp(34px,5vw,60px);max-width:16ch}
+  .call p{margin:16px 0 0;max-width:42ch;font-size:16.5px;color:#2a2110}
+  .call .btn{background:#101214;color:var(--paper);border-color:#101214}
+  .call .btn:hover{background:#1d2126;border-color:#1d2126}
+  .call .num{font-family:var(--cond);font-size:clamp(34px,5vw,52px);font-weight:700;
+    text-decoration:none;display:block;letter-spacing:.01em;line-height:1}
+  .call .num small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;margin-bottom:10px;color:#3a2a06;font-weight:400}
+  @media(max-width:860px){.call .inner{grid-template-columns:1fr;gap:26px}}
+
+  footer.site{padding:28px 0;background:#08090a}
+  footer.site .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;
+    font-size:13px;color:#8b8681}
+  footer.site a{color:#c9c3ba;text-decoration:none}
+  footer.site a:hover{color:var(--paper)}
+</style>
+</head>
+<body>
+<a class="skip" href="#services">Skip to services</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="lockup" href="#top" aria-label="Vernonn Rubbish Removal and Demolition Service home">
+      <svg class="lmark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="61" height="61" fill="#1e2327" stroke="#e8b23a" stroke-width="3"/>
+        <path d="M14 14h11l7 24 7-24h11L36 52h-8z" fill="#e8b23a"/>
+        <path d="M10 58h12M26 58h8M38 58h16" stroke="#e8b23a" stroke-width="4" opacity=".55"/>
+      </svg>
+      <span>
+        <span class="word">Vernonn</span>
+      </span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#how">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="tel:+61451386808">0451 386 808</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <span class="plan" aria-hidden="true"></span>
+    <div class="wrap inner">
+      <div>
+        <p class="eyebrow">Melbourne · rubbish removal &amp; demolition</p>
+        <h1>We pull the room apart,<em>then take the room away.</em></h1>
+        <p class="lede">Vernonn does both halves of the job in one visit: the strip-out — kitchen, bathroom, shed, garage — and the load that comes out of it. Brick, concrete, timber and hard waste leave on the truck the same day they come down, across Melbourne metro.</p>
+        <div class="actions">
+          <a class="btn" href="tel:+61451386808">Call 0451 386 808</a>
+        </div>
+      </div>
+      <figure class="scene">
+        <svg viewBox="0 0 620 480" role="img" aria-label="Cutaway drawing of a strip-out: brick wall broken open to the timber studs, rubble on the slab, a loaded skip bin alongside">
+          <defs>
+            <pattern id="brick" width="64" height="32" patternUnits="userSpaceOnUse">
+              <rect width="64" height="32" fill="#6d5a4a"/>
+              <path d="M0 0h64M0 16h64M0 32h64M0 0v16M64 0v16M32 16v16" stroke="#39302a" stroke-width="2.4" fill="none"/>
+            </pattern>
+            <pattern id="haz" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <rect width="26" height="26" fill="#0f1113"/><rect width="13" height="26" fill="#e8b23a"/>
+            </pattern>
+            <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#2b3238"/><stop offset="1" stop-color="#14181c"/>
+            </linearGradient>
+            <linearGradient id="stud" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#c8a068"/><stop offset="1" stop-color="#7c5f39"/>
+            </linearGradient>
+            <linearGradient id="binface" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f0bd48"/><stop offset=".55" stop-color="#dda32e"/><stop offset="1" stop-color="#b8821a"/>
+            </linearGradient>
+          </defs>
+          <rect width="620" height="480" fill="url(#steel)"/>
+          <rect x="0" y="392" width="620" height="88" fill="#101418"/>
+          <path d="M0 392h620" stroke="#e8b23a" stroke-width="2" opacity=".4"/>
+
+          <!-- framing, seen where the brick is gone -->
+          <rect x="46" y="88" width="344" height="304" fill="#191510"/>
+          <g fill="url(#stud)">
+            <rect x="56" y="100" width="15" height="288"/><rect x="106" y="100" width="15" height="288"/>
+            <rect x="156" y="100" width="15" height="288"/><rect x="206" y="100" width="15" height="288"/>
+            <rect x="256" y="100" width="15" height="288"/><rect x="306" y="100" width="15" height="288"/>
+            <rect x="356" y="100" width="15" height="288"/>
+          </g>
+          <rect x="46" y="88" width="344" height="14" fill="url(#stud)"/>
+          <rect x="46" y="374" width="344" height="14" fill="url(#stud)"/>
+          <path d="M56 100 371 388M371 100 56 388" stroke="#a1804f" stroke-width="8" opacity=".5"/>
+
+          <!-- brick wall, broken open on the right -->
+          <path d="M46 88H300l-16 34 24 8-22 38 24 10-22 36 24 10-22 38 24 10-22 36 24 10-22 34 24 8v34H46z" fill="url(#brick)"/>
+          <path d="M46 88H300l-16 34 24 8-22 38 24 10-22 36 24 10-22 38 24 10-22 36 24 10-22 34 24 8v34H46z" fill="none" stroke="#241f1a" stroke-width="3"/>
+
+          <!-- rubble on the slab -->
+          <g>
+            <path d="M120 392l18-40 22 22 16-30 26 26 14-18 22 40z" fill="#514941"/>
+            <path d="M214 392l14-26 18 10 12-20 20 36z" fill="#3d3731"/>
+            <path d="M92 392l10-18 14 8 10-12 12 22z" fill="#5d544a"/>
+            <path d="M300 392l8-14 12 6 8-10 10 18z" fill="#494138"/>
+          </g>
+
+          <!-- skip bin, loaded -->
+          <path d="M414 252 602 236v152H414z" fill="url(#binface)" stroke="#0f1113" stroke-width="3"/>
+          <path d="M414 252 602 236v22L414 274z" fill="url(#haz)" opacity=".92"/>
+          <path d="M414 300l188-16v10l-188 16zM414 342l188-16v8l-188 16z" fill="#0f1113" opacity=".16"/>
+          <path d="M424 246 596 232l-6 16-166 14z" fill="#2a2724"/>
+          <g fill="#4b453e">
+            <path d="M440 250l34-8 26 8-24 6z"/><path d="M500 244l40-8 30 10-38 4z"/>
+            <path d="M470 240l22-6 18 6-18 5z" fill="#60574c"/>
+          </g>
+          <path d="M414 388h188l-10 16H424z" fill="#0b0d0f"/>
+
+          <!-- drawing annotations -->
+          <g font-family="ui-monospace,Menlo,monospace" font-size="13" letter-spacing="2.2" fill="#c9c2b7">
+            <path d="M336 150h44" stroke="#8e877d" stroke-width="1.2"/>
+            <text x="386" y="154" fill="#e8b23a">EXPOSED STUDS</text>
+            <path d="M508 214v22" stroke="#8e877d" stroke-width="1.2"/>
+            <text x="452" y="208" fill="#c9c2b7">LOAD-OUT</text>
+          </g>
+        </svg>
+        <figcaption>Strip-out in section — brick off, studs exposed, load in the bin</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>What we take on.</h2>
+        <p>The job is usually two jobs: what comes out of the building, and the building itself. Vernonn quotes them together so nothing is left sitting in the driveway.</p>
+      </div>
+      <div class="svc">
+        <div>
+          <span class="k">01 / Removal</span>
+          <h3>Rubbish removal</h3>
+          <p>Household and site waste cleared and taken away — furniture, timber, hard rubbish, green waste. Loaded by hand where the truck can't get close.</p>
+        </div>
+        <div>
+          <span class="k">02 / Strip-out</span>
+          <h3>Strip-outs &amp; clean-ups</h3>
+          <p>Kitchens, bathrooms, sheds and garages gutted back to the studs, then the debris removed the same visit rather than stacked in the yard.</p>
+        </div>
+        <div>
+          <span class="k">03 / Demolition</span>
+          <h3>Demolition &amp; masonry</h3>
+          <p>Sheds, carports, internal walls and brickwork taken down, broken up and carted off — with the brick and concrete separated for disposal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="how">
+    <div class="wrap inner">
+      <div>
+        <p class="eyebrow">Process</p>
+        <h2>The look is the quote.</h2>
+        <p style="color:var(--dust);max-width:40ch;margin-top:18px">Rubbish fills a trailer; a demolition fills a page. Tell us the address and what's there, and if the job needs eyes on it we walk the access before putting a number on it.</p>
+      </div>
+      <ol>
+        <li><b>You call with the address</b>What has to go: one room, a shed, a whole structure, or the pile out the back.</li>
+        <li><b>We walk the access</b>Driveway, gate, stairs, overhead wires — that's what decides the bin size and how the job is priced.</li>
+        <li><b>Site handed back empty</b>Load out, sweep, brick and concrete separated. The waste leaves on the same visit it comes down.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="call" id="contact">
+    <div class="wrap inner">
+      <div>
+        <p class="eyebrow">Vernonn — Rubbish Removal &amp; Demolition Service</p>
+        <h2>Got a pile or a room to clear?</h2>
+        <p>Call with the suburb and what's being removed. If it's a demolition, we'll book a look before quoting it.</p>
+        <a class="btn" href="tel:+61451386808" style="margin-top:26px">Call 0451 386 808</a>
+      </div>
+      <div>
+        <a class="num" href="tel:+61451386808"><small>Call or text</small>0451 386 808</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span class="flock"><svg width="20" height="20" viewBox="0 0 64 64" aria-hidden="true" style="vertical-align:-4px;margin-right:9px"><rect x="1.5" y="1.5" width="61" height="61" fill="#1e2327" stroke="#e8b23a" stroke-width="3"/><path d="M14 14h11l7 24 7-24h11L36 52h-8z" fill="#e8b23a"/></svg>Vernonn Rubbish Removal and Demolition Service — Melbourne, VIC</span>
+    <span><a href="tel:+61451386808">0451 386 808</a></span>
+  </div>
+</footer>
+</body>
+</html>
