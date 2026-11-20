@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Just in time Towing — car &amp; vehicle towing, Melbourne</title>
+<meta name="description" content="Just in time Towing moves cars and light vehicles across Melbourne: running, non-running, damaged or just out of rego. Send the details on Facebook and get a time and price back before you book.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#0b0d11; --night-2:#121620; --panel:#161b26;
+    --white:#f5f4ef; --grey:#d7d8d2; --dim:#a7adb7;
+    --amber:#f5a623; --amber-hot:#ffc14d; --steel:#5c6573;
+    --rule:rgba(245,244,239,.16); --rule-soft:rgba(245,244,239,.08);
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  section[id]{scroll-margin-top:92px}
+  body{margin:0;background:var(--night);color:var(--white);overflow-x:clip;
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,sans-serif;
+    font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-weight:800;
+    line-height:1.02;margin:0;letter-spacing:-.02em;padding-bottom:.04em}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 26px;min-width:0}
+  .eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--amber-hot);margin:0 0 18px;font-weight:500}
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{left:16px;top:16px;z-index:99;background:var(--amber);color:#0b0d11;padding:10px 16px;font-weight:700}
+  a{color:inherit}
+  .btn{display:inline-block;font-weight:700;font-size:15px;letter-spacing:.02em;
+    text-decoration:none;padding:17px 28px;background:var(--amber);color:#0b0d11;
+    border:1px solid var(--amber);transition:background .18s,transform .18s}
+  .btn:hover,.btn:focus-visible{background:var(--amber-hot);border-color:var(--amber-hot);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--white);border:1px solid rgba(245,244,239,.42)}
+  .btn.ghost:hover,.btn.ghost:focus-visible{background:rgba(245,244,239,.1);border-color:var(--white);color:#fff}
+
+  header.site{position:sticky;top:0;z-index:60;background:rgba(11,13,17,.95);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--rule-soft)}
+  .bar{display:flex;align-items:center;gap:26px;min-height:80px}
+  .lockup{display:flex;align-items:center;gap:14px;text-decoration:none}
+  .mark{width:56px;height:56px;flex:none;display:block}
+  .lockup .word{font-family:"Archivo",sans-serif;font-weight:800;font-size:28px;line-height:1.02;
+    letter-spacing:-.02em;white-space:nowrap}
+  .lockup .sub{display:block;font-family:var(--mono);font-size:15px;letter-spacing:.05em;
+    color:#f2f0e7;text-transform:uppercase;margin-top:7px;font-weight:600}
+  nav.main{margin-left:auto;display:flex;gap:26px;font-size:15px}
+  nav.main a{text-decoration:none;color:var(--grey);padding:6px 0;border-bottom:2px solid transparent}
+  nav.main a:hover,nav.main a:focus-visible{color:var(--white);border-color:var(--amber)}
+  .bar .btn{padding:13px 20px;font-size:14px;white-space:nowrap;background:transparent;
+    color:var(--white);border:1px solid rgba(245,244,239,.42)}
+  .bar .btn:hover,.bar .btn:focus-visible{background:rgba(245,244,239,.1);color:#fff;border-color:var(--white)}
+  @media(max-width:960px){.bar{flex-wrap:wrap;gap:10px 14px;min-height:0;padding:12px 0 0}
+    .bar .btn{margin-left:auto}
+    nav.main{order:3;width:100%;margin-left:0;display:grid;grid-template-columns:1fr 1fr;
+      gap:4px 18px;font-size:14.5px;padding:10px 0 12px;border-top:1px solid var(--rule-soft);white-space:normal}
+    nav.main a{border-bottom:0;border-left:2px solid transparent;padding:9px 0 9px 10px}
+    nav.main a:hover,nav.main a:focus-visible{border-left-color:var(--amber);border-bottom-color:transparent}}
+  @media(max-width:560px){.lockup .word{font-size:22px}.mark{width:44px;height:44px}
+    .lockup .sub{font-size:11.5px;letter-spacing:.04em;margin-top:5px}.bar .btn{padding:11px 14px;font-size:13px}}
+
+  .hero{position:relative;overflow:clip;border-bottom:1px solid var(--rule);
+    background:
+      radial-gradient(88% 76% at 78% -8%,rgba(245,166,35,.16),transparent 60%),
+      radial-gradient(60% 50% at 12% 106%,rgba(92,101,115,.22),transparent 66%),
+      linear-gradient(172deg,#1b212c 0%,#121620 46%,#0b0d11 100%)}
+  /* plain vignette only: no lane lines, they read as template skin */
+  .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(0deg,rgba(11,13,17,.88),rgba(11,13,17,0) 62%)}
+  /* hazard-stripe edge: reads as truck livery, not SaaS gradient */
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;
+    background:repeating-linear-gradient(-45deg,var(--amber) 0 14px,#0b0d11 14px 28px);
+    opacity:.85}
+  .hero .inner{position:relative;z-index:1;display:grid;grid-template-columns:1.04fr .96fr;gap:44px;align-items:center;padding:64px 0 44px}
+  .hero h1{font-size:clamp(46px,7.2vw,96px);max-width:16ch}
+  .hero h1 span{color:var(--amber)}
+  .hero p.lede{font-size:19px;color:var(--grey);max-width:56ch;margin:24px 0 0}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+  .hero .actions .btn{font-size:17px;padding:20px 32px}
+  .hero .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:22px 26px;
+    justify-content:start;margin-top:32px;padding-top:22px;border-top:1px solid var(--rule);
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#eceae3}
+  .hero .facts b{display:block;margin-bottom:2px;font-size:15px;color:#fff;
+    font-family:"Inter",sans-serif;font-weight:700;letter-spacing:0;text-transform:none}
+  .hero .facts>span{display:grid;grid-template-columns:20px 1fr;column-gap:10px;row-gap:2px;align-items:start}
+  .hero .facts>span>svg{grid-row:1/3;grid-column:1;width:20px;height:20px;margin-top:1px;fill:none;
+    stroke:var(--amber);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  @media(max-width:960px){.hero .inner{grid-template-columns:1fr;gap:32px;padding:36px 0 46px}
+    .hero h1{font-size:clamp(34px,8.4vw,50px)}.hero p.lede{font-size:16.5px;margin-top:16px}
+    .hero .actions{margin-top:22px}.hero .facts{margin-top:24px;padding-top:16px;gap:20px}}
+
+  .rig{position:relative;border:0;margin:0;padding:0;background:none}
+  .thread{max-width:392px;margin:0 auto;border:1px solid var(--rule);border-radius:30px;
+    background:linear-gradient(180deg,#1c232f,#141922);padding:22px 16px 18px;
+    box-shadow:0 20px 50px rgba(0,0,0,.48),inset 0 0 0 6px #0b0d11}
+  .thread::before{content:"";display:block;width:74px;height:6px;border-radius:3px;
+    background:#3a4252;margin:0 auto 14px}
+  .thread-h{display:flex;justify-content:space-between;gap:10px;align-items:baseline;
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:#e6e4da;padding:2px 4px 11px;border-bottom:1px solid var(--rule-soft);margin-bottom:12px}
+  .bub{max-width:90%;font-size:16px;line-height:1.5;padding:12px 14px;border-radius:14px;margin:0 0 10px}
+  .bub.them{background:#252d3a;color:#f2f0e7;border-bottom-left-radius:3px}
+  .bub.me{margin-left:auto;background:var(--amber);color:#141008;font-weight:500;border-bottom-right-radius:3px}
+  .bub .tag{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
+    text-transform:uppercase;opacity:.8;margin-bottom:5px}
+  .shot{display:block;margin-top:9px;padding:16px 10px;text-align:center;
+    border:1px dashed rgba(245,244,239,.48);border-radius:6px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.1em}
+  .rig .cap{display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--grey);border-top:1px solid var(--rule-soft);margin-top:14px;padding:11px 0 0;
+    max-width:660px;margin-left:auto;margin-right:auto}
+  .rig .cap b{color:var(--white);font-weight:600;font-family:"Inter",sans-serif;
+    letter-spacing:0;text-transform:none;font-size:13.5px}
+  @media(max-width:960px){.rig{margin:30px 0 0;padding:0}}
+
+  .sec{padding:88px 0;border-bottom:1px solid var(--rule)}
+  .sec-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:end;margin-bottom:44px}
+  .sec-head h2{font-size:clamp(34px,4.4vw,58px);max-width:19ch}
+  .sec-head p{margin:0;color:var(--grey);font-size:17px;max-width:48ch}
+  @media(max-width:860px){.sec-head{grid-template-columns:1fr;gap:16px;margin-bottom:30px}}
+
+  .moves{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--rule)}
+  .move{display:grid;grid-template-columns:minmax(200px,.34fr) 1fr;gap:8px 34px;align-items:baseline;
+    padding:26px 0 28px;border-bottom:1px solid var(--rule-soft)}
+  .move:nth-child(3n+2),.move:nth-child(3n){padding-left:0;border-left:0}
+  .move .k{grid-area:1/1;font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;color:var(--amber);
+    text-transform:uppercase;align-self:start;padding-top:6px}
+  .move h3{grid-area:1/2;font-size:27px;margin:0;letter-spacing:-.01em}
+  .move p{grid-area:2/2;margin:6px 0 0;color:var(--grey);font-size:16.5px;max-width:62ch}
+  @media(max-width:900px){.moves{grid-template-columns:1fr}
+    .move{grid-template-columns:1fr;padding:24px 0 26px;gap:4px}
+    .move .k{grid-area:1/1;padding-top:0}.move h3{grid-area:2/1}.move p{grid-area:3/1}}
+  @media(max-width:620px){.moves{grid-template-columns:1fr}
+    .move,.move:nth-child(2n){padding:26px 0;border-left:0}}
+
+  .how{background:var(--night-2);padding:88px 0;border-bottom:1px solid var(--rule)}
+  .how ol{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:0}
+  .how li{counter-increment:s;display:grid;grid-template-columns:96px 1fr;gap:0 30px;
+    align-items:start;padding:30px 0;border-top:1px solid var(--rule)}
+  .how li:last-child{border-bottom:1px solid var(--rule)}
+  .how li::before{content:"0" counter(s);font-family:var(--mono);font-size:13px;letter-spacing:.14em;
+    color:var(--amber);padding-top:7px}
+  .how h3{font-size:27px;margin:0 0 8px}
+  .how p{margin:0;color:var(--grey);font-size:16.5px;max-width:56ch}
+  @media(max-width:640px){.how li{grid-template-columns:56px 1fr;gap:0 12px;padding:24px 0}
+    .how h3{font-size:23px}}
+
+  .band{background:var(--amber);color:#0b0d11;padding:76px 0}
+  .band .inner{display:block;max-width:760px}
+  .band .eyebrow{color:#5a3c07}
+  .band h2{font-size:clamp(36px,4.8vw,60px);max-width:24ch;color:#0b0d11}
+  .band p{margin:18px 0 0;font-size:18px;line-height:1.55;max-width:52ch;color:#22200f}
+  .band .btn{background:#0b0d11;color:#fff;border-color:#0b0d11;margin-top:30px;
+    font-weight:800;font-size:20px;padding:24px 40px;display:inline-block;text-align:center;
+    box-shadow:0 10px 26px rgba(11,13,17,.28)}
+  .band .btn:hover,.band .btn:focus-visible{background:#20242c;border-color:#20242c;color:#fff}
+  @media(max-width:860px){.band .inner{max-width:100%}}
+
+  footer.site{padding:28px 0;font-size:13.5px;background:#08090c;color:#8d939e}
+  footer.site .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
+  footer.site a{color:#bcbfc6;text-decoration:none}
+  footer.site a:hover{color:var(--white)}
+  /* readability + wrap: no stranded words, no sticky header over section tops */
+  header.site{position:relative}
+  .eyebrow{text-wrap:balance;overflow-wrap:break-word}
+  .btn{max-width:100%;text-align:center}
+  @media(max-width:560px){.eyebrow{font-size:12px;letter-spacing:.09em}}
+</style>
+</head>
+<body>
+<a class="skip" href="#moves">Skip to what we tow</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="lockup" href="#top" aria-label="Just in time Towing home">
+      <svg class="mark" viewBox="0 0 96 96" role="img" aria-label="Just in time Towing logo">
+        <rect width="96" height="96" rx="12" fill="#f5a623"/>
+        <!-- tilt tray deck -->
+        <path d="M8 60h44v7H8z" fill="#0b0d11"/>
+        <!-- cab -->
+        <path d="M52 42h10l9 10 5 15H52z" fill="#0b0d11"/>
+        <!-- chassis + wheels -->
+        <path d="M6 67h84v5H6z" fill="#0b0d11"/>
+        <circle cx="22" cy="78" r="6.5" fill="#0b0d11"/>
+        <circle cx="70" cy="78" r="6.5" fill="#0b0d11"/>
+        <circle cx="22" cy="78" r="2.6" fill="#f5a623"/>
+        <circle cx="70" cy="78" r="2.6" fill="#f5a623"/>
+        <!-- boom, cable and hook: unmistakable tow truck -->
+        <path d="M56 40 74 22" stroke="#0b0d11" stroke-width="5.5" stroke-linecap="round"/>
+        <path d="M74 22v14" stroke="#0b0d11" stroke-width="3" stroke-linecap="round"/>
+        <path d="M74 36a6 6 0 1 0 5 9" fill="none" stroke="#0b0d11" stroke-width="3.4" stroke-linecap="round"/>
+        <circle cx="74" cy="22" r="4" fill="#0b0d11"/>
+      </svg>
+      <span>
+        <span class="word">Just in time<br>Towing</span>
+        <span class="sub">Tilt tray · Cars &amp; light vehicles</span>
+      </span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#moves">What we tow</a>
+      <a href="#how">How it works</a>
+    </nav>
+    <a class="btn" href="https://www.facebook.com/share/1FjSiUuBaF" rel="noopener">Message us</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap inner">
+      <div>
+        <p class="eyebrow">Just in time Towing &middot; Melbourne metro</p>
+        <h1>Flat price,<br>agreed before<br><span>the load.</span></h1>
+        <p class="lede">Tilt-tray towing for cars and light vehicles across Melbourne — running, non-running, damaged, or parked where it shouldn&rsquo;t be. Message the details and the flat price and pick-up window come straight back.</p>
+        <div class="actions">
+          <a class="btn" href="https://www.facebook.com/share/1FjSiUuBaF" rel="noopener">Get a flat price on Messenger</a>
+          <a class="btn ghost" href="#how">How it works &rarr;</a>
+        </div>
+        <div class="facts">
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            <span><b>Melbourne</b>Metro pick-ups</span>
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16h18M5 16V9l3-3h6l2 3h3v7"/><circle cx="7.5" cy="16" r="2"/><circle cx="17.5" cy="16" r="2"/></svg>
+            <span><b>Cars &amp; light vehicles</b>Drivable or not</span>
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 19h20M4 15h9l3-4M19 4v6M19 10a2.5 2.5 0 1 0 2 4"/><circle cx="8" cy="19" r="1.6"/></svg>
+            <span><b>Tilt tray</b>Loaded, strapped, delivered</span>
+          </span>
+        </div>
+      </div>
+      <div class="rig">
+        <div class="thread" role="img" aria-label="Example message thread: details sent, flat price and a window back, booking confirmed">
+          <div class="thread-h"><span>Just in time Towing</span><span>Messenger</span></div>
+          <p class="bub them"><span class="tag">4:07pm &middot; customer</span>Brunswick &rarr; Preston. 2014 Corolla, turns over but won&rsquo;t start.<span class="shot">PHOTO &middot; car &amp; rego</span></p>
+          <p class="bub me"><span class="tag">Driver</span>Flat price for that run, and a 40-minute window. Nothing locked in until you say go.</p>
+          <p class="bub them"><span class="tag">4:12pm &middot; customer</span>Done &mdash; send it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="moves">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Every car has a reason it can't drive.</h2>
+        <p>They all get moved the same way: a tilt tray, four straps and a driver who checks the load before pulling out.</p>
+      </div>
+      <div class="moves">
+        <div class="move">
+          <span class="k">01 / No start</span>
+          <h3>Won't start or won't run</h3>
+          <p>Dead battery, dead gearbox, dead engine — loaded without pushing it down the street first.</p>
+        </div>
+        <div class="move">
+          <span class="k">02 / Damaged</span>
+          <h3>Accident &amp; damaged vehicles</h3>
+          <p>Panel damage, no wheels turning, fluids down. Tray to tray, no towing on a bar.</p>
+        </div>
+        <div class="move">
+          <span class="k">03 / Bought</span>
+          <h3>New purchase pick-up</h3>
+          <p>Bought a car interstate or across town and it needs to reach your driveway in one piece.</p>
+        </div>
+        <div class="move">
+          <span class="k">04 / Unregistered</span>
+          <h3>Unrego &amp; project cars</h3>
+          <p>No plates, no permit, no problem — moved on the tray instead of on the road.</p>
+        </div>
+        <div class="move">
+          <span class="k">05 / Moving</span>
+          <h3>Relocations &amp; storage</h3>
+          <p>House moves, shed clear-outs and cars going into or out of storage.</p>
+        </div>
+        <div class="move">
+          <span class="k">06 / Low</span>
+          <h3>Lowered &amp; wide vehicles</h3>
+          <p>Tell us the height and the wheels up front and the ramps get set for it before arrival.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Three messages and it's booked.</h2>
+        <p>No call centre, no hold music. The page is answered directly, so you're talking to the person doing the tow.</p>
+      </div>
+      <ol>
+        <li>
+          <div>
+            <h3>Send the details</h3>
+            <p>Pick-up suburb, drop-off suburb, the vehicle and whether it rolls, steers and brakes. A photo saves ten questions.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Get a time and a price</h3>
+            <p>You get a window and a flat price back in the message thread — before anything is locked in, not after the car is loaded.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Loaded and delivered</h3>
+            <p>Straps checked, tray tilted, vehicle tied down and taken straight to the drop-off. You get told when it lands.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" id="book">
+    <div class="wrap inner">
+      <p class="eyebrow">Just in time Towing — Melbourne metro</p>
+      <h2>Your car moved, at the price you were quoted.</h2>
+      <p>Two suburbs and the vehicle is all it takes. The flat price and the pick-up window come back on Messenger before the truck moves — a same-day job gets looked at first.</p>
+      <a class="btn" href="https://www.facebook.com/share/1FjSiUuBaF">Get my flat price</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>Just in time Towing — Melbourne, Victoria</span>
+    <span><a href="https://www.facebook.com/share/1FjSiUuBaF">Facebook</a></span>
+    <span>Cars &amp; light vehicle towing</span>
+  </div>
+</footer>
+</body>
+</html>
