@@ -161,7 +161,7 @@ p{margin:0 0 1em}
 @media(max-width:760px){.proof{grid-template-columns:1fr 1fr;gap:.9rem}.proof figure:last-of-type{grid-column:1/-1}.proof figure:last-of-type img{aspect-ratio:16/10}}
 /* job run */
 .run{list-style:none;margin:0;padding:0;counter-reset:s}
-.run li{counter-increment:s;display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(.9rem,2.4vw,2rem);padding:1.25rem 0;border-bottom:1px solid var(--line)}
+.run li{counter-increment:s;display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(.9rem,2.4vw,2rem);padding:1.25rem 0;border-bottom:1px solid var(--line)}
 .run li:first-child{border-top:1px solid var(--line-strong)}
 .run li::before{content:"0" counter(s);font-family:"JBMono",monospace;font-size:.82rem;color:var(--gold);padding-top:.3rem}
 .run h3{margin-bottom:.3rem}
@@ -270,7 +270,7 @@ textarea{resize:vertical;min-height:104px}
 .sheet .craft figcaption{margin-top:.55rem;font-family:"JBMono",ui-monospace,monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
 </style>
 <!-- ==== TASTE PASS (legibility, from impeccable selectors) ==== -->
-<style id="lb-taste-pass">
+<style>
 div.f-row:nth-of-type(1) > div:nth-of-type(1) > label{font-size:max(11px,.72em)!important;line-height:1.45!important}
 div.f-row:nth-of-type(1) > div:nth-of-type(2) > label{font-size:max(11px,.72em)!important;line-height:1.45!important}
 div.f-row:nth-of-type(2) > div:nth-of-type(1) > label{font-size:max(11px,.72em)!important;line-height:1.45!important}
@@ -454,31 +454,31 @@ ul.talk > li:nth-of-type(3) > span{font-size:max(11px,.72em)!important;line-heig
     <div class="sched">
       <div class="sched-row sched-head mono"><span>Way</span><span>Circuit</span><span>What it covers</span></div>
 
-      <article class="sched-row rv"><span class="way">01</span>
+      <article class="sched-row rv">
         <h3>Lighting &amp; power</h3>
         <p>Downlights, powerpoints, ceiling fans, outdoor and shed circuits, and the fault-finding when something keeps tripping.</p></article>
 
-      <article class="sched-row rv"><span class="way">02</span>
+      <article class="sched-row rv">
         <h3>Switchboard</h3>
         <p>Board replacement and upgrade: new enclosure, RCBO protection on the circuits, and the spare ways left for whatever goes on next.</p></article>
 
-      <article class="sched-row rv"><span class="way">03</span>
+      <article class="sched-row rv">
         <h3>Solar</h3>
         <p>Panels and inverter installed and wired into the board, sized against what the property actually draws rather than the roof area.</p></article>
 
-      <article class="sched-row rv"><span class="way">04</span>
+      <article class="sched-row rv">
         <h3>Battery storage</h3>
         <p>Storage connected alongside the solar so the generation is used after dark, with the changeover and protection done at the board.</p></article>
 
-      <article class="sched-row rv"><span class="way">05</span>
+      <article class="sched-row rv">
         <h3>EV charger</h3>
         <p>A dedicated charging circuit run from the board to the car space, for a home garage or a workplace bay.</p></article>
 
-      <article class="sched-row rv"><span class="way">06</span>
+      <article class="sched-row rv">
         <h3>Air conditioning</h3>
         <p>Split-system installs including the electrical supply, isolator and commissioning. That is the part that is not the refrigeration work.</p></article>
 
-      <article class="sched-row rv"><span class="way">07</span>
+      <article class="sched-row rv">
         <h3>CCTV</h3>
         <p>Cameras, cabling and recorder for a house or a small commercial site, run back to a single point you can get to.</p></article>
     </div>
@@ -711,7 +711,7 @@ document.documentElement.className += ' js';
 </script>
 
 <script>(function(){var b=document.querySelector('.callbar');if(!b)return;var h=document.querySelector('.hero');function up(){var on=window.scrollY>((h?h.offsetHeight:420)-140);b.classList.toggle('on',on);document.body.classList.toggle('bar-on',on);}up();addEventListener('scroll',up,{passive:true});addEventListener('resize',up);})();</script>
-<style id="lb-mobile-hd">/* the wordmark image is 2137px wide and clipped on phones; scale it and keep the menu reachable */
+<style>/* the wordmark image is 2137px wide and clipped on phones; scale it and keep the menu reachable */
 @media(max-width:640px){
   .hd-in{flex-wrap:wrap!important;align-items:center!important;min-height:60px!important;gap:.4rem .6rem!important}
   .brand{flex:1 1 auto!important;min-width:0!important;overflow:hidden!important}
