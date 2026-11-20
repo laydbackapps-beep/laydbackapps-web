@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>The Pitt Stop Mechanical &amp; Air Conditioning | Car Repairs &amp; Air-Con Service</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The Pitt Stop Mechanical &amp; Air Conditioning. Mechanical repairs, scheduled servicing and air-conditioning service — diagnosed first, then fixed. Call 0455 541 557.">
+<meta name="theme-color" content="#f2efe8">
+<meta property="og:title" content="The Pitt Stop Mechanical &amp; Air Conditioning">
+<meta property="og:description" content="Mechanical repairs, scheduled servicing and air-conditioning service. Diagnosed first, then fixed.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f2efe8; --paper-2:#e9e5db; --ink:#121316; --body-ink:#2c2e33; --mut:#6c6e73;
+  --dark:#0c0d0f; --dark-2:#141518; --on-dark:#f4f2ee; --on-dark-mut:#a2a6ab;
+  --acc:#d2060e; --acc-dk:#9c0409; --acc-bright:#ff2f35;
+  --rule:rgba(18,19,22,.16); --rule-strong:rgba(18,19,22,.34);
+  --disp:"Barlow Condensed",Impact,system-ui,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --maxw:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17.5px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--disp);font-weight:700;line-height:.94;letter-spacing:-.015em;margin:0;text-transform:uppercase}
+p{margin:0}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--acc);color:#fff;padding:12px 18px;z-index:200}
+.skip:focus{left:12px;top:12px}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.lbl{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.lbl b{color:var(--acc);font-weight:500}
+
+/* ---------- header ---------- */
+.bar{position:sticky;top:0;z-index:80;background:rgba(242,239,232,.96);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule-strong)}
+.bar__in{max-width:var(--maxw);margin:0 auto;padding:0 32px;display:flex;align-items:stretch;gap:30px;height:98px}
+.brand{display:flex;align-items:center;flex:0 0 auto}
+.brand img{height:84px;width:auto}
+.nav{display:flex;gap:26px;margin-left:auto;align-items:center}
+.nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--body-ink);
+  padding:6px 0;border-bottom:1px solid transparent}
+.nav a:hover{color:var(--acc);border-bottom-color:var(--acc)}
+.bar__tel{display:flex;align-items:center;font-family:var(--disp);font-weight:600;font-size:1.32rem;letter-spacing:.01em;
+  border-left:1px solid var(--rule);padding-left:26px;white-space:nowrap}
+.bar__tel:hover{color:var(--acc)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 30px;
+  background:var(--acc);color:#fff;font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:500;border:1px solid var(--acc);transition:background .18s ease,border-color .18s ease}
+.btn:hover{background:var(--acc-dk);border-color:var(--acc-dk)}
+
+/* ---------- hero ---------- */
+.hero{border-bottom:1px solid var(--rule-strong);position:relative}
+.hero__in{max-width:var(--maxw);margin:0 auto;padding:0 0 0 32px;display:grid;
+  grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:0;align-items:stretch}
+.hero__main{padding:64px 40px 58px 0;border-right:1px solid var(--rule)}
+.hero h1{font-size:clamp(3rem,7vw,6.2rem);margin:18px 0 0;max-width:15ch}
+.hero h1 .red{color:var(--acc)}
+.hero__lede{margin-top:24px;max-width:42ch;font-size:1.1rem;line-height:1.6;color:var(--body-ink)}
+.hero__cta{margin-top:32px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.hero__cta .btn{padding:21px 34px;font-size:.86rem}
+.hero__hours{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);line-height:1.9}
+.hero__hours b{display:block;color:var(--ink);font-weight:500}
+
+/* technical plate */
+.plate{background:var(--dark);color:var(--on-dark);padding:26px 20px 22px 28px;display:flex;flex-direction:column;
+  justify-content:space-between;gap:12px;position:relative;overflow:hidden}
+.plate::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:34px 34px;opacity:.6}
+.plate__hd{position:relative;display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:10px}
+.plate__hd span{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-mut)}
+.plate__hd b{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc-bright);font-weight:500}
+.schematic{position:relative;width:100%;height:auto;display:block}
+.schematic .comp{fill:none;stroke:rgba(255,255,255,.85);stroke-width:1.6}
+.schematic .fins{stroke:rgba(255,255,255,.42);stroke-width:1.2}
+.schematic .flow{fill:none;stroke:var(--acc-bright);stroke-width:2;stroke-linecap:square;stroke-dasharray:9 7}
+.schematic .ret{fill:none;stroke:rgba(255,255,255,.38);stroke-width:1.4;stroke-dasharray:4 6}
+.schematic text{font-family:var(--mono);fill:rgba(255,255,255,.9)}
+.schematic .t-num{font-size:15px;fill:var(--acc-bright);letter-spacing:.1em}
+.schematic .t-lbl{font-size:21px;letter-spacing:.12em}
+.schematic .t-sub{font-size:19px;fill:rgba(255,255,255,.88);letter-spacing:.06em}
+.schematic .head{fill:var(--acc-bright)}
+.is-live .schematic .flow{animation:flow 2.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-64}}
+.plate__cap{position:relative;font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--on-dark-mut);border-top:1px solid rgba(255,255,255,.18);padding-top:10px;line-height:1.9}
+.plate__cap b{color:#fff;font-weight:500}
+
+/* dark fact strip under hero */
+.strip{background:var(--dark-2);color:var(--on-dark);border-top:1px solid rgba(255,255,255,.12)}
+.strip__in{max-width:var(--maxw);margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(3,1fr)}
+.strip__in div{padding:24px 30px 24px 0;border-right:1px solid rgba(255,255,255,.14)}
+.strip__in div:last-child{border-right:0;padding-right:0}
+.strip__in dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--acc-bright)}
+.strip__in dd{margin:8px 0 0;font-family:var(--disp);font-size:1.2rem;font-weight:500;text-transform:uppercase;letter-spacing:.01em;color:var(--on-dark)}
+
+/* ---------- shared section head ---------- */
+.sec{padding:92px 0}
+.sec__hd{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:end;
+  padding-bottom:30px;border-bottom:2px solid var(--ink)}
+.sec__hd h2{font-size:clamp(2.2rem,4.1vw,3.5rem);max-width:15ch;line-height:1.04;padding-top:2px}
+.sec__hd p{color:var(--body-ink);max-width:46ch;font-size:1.02rem}
+
+/* service rows */
+.rows{list-style:none;margin:0;padding:0;counter-reset:r}
+.row{display:grid;grid-template-columns:88px minmax(0,1fr) 210px;gap:36px;align-items:start;
+  padding:38px 0;border-bottom:1px solid var(--rule)}
+.row__no{font-family:var(--mono);font-size:.82rem;color:var(--acc);padding-top:10px}
+.row h3{font-size:clamp(1.7rem,2.7vw,2.35rem);max-width:20ch}
+.row p{margin-top:12px;color:var(--body-ink);max-width:56ch}
+.row__tag{font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--body-ink);
+  text-align:right;padding-top:12px}
+.row--ask{background:linear-gradient(90deg,rgba(210,6,14,.06),transparent 55%)}
+.row--ask h3{color:var(--acc)}
+
+/* ---------- aircon explainer ---------- */
+.ac{background:var(--acc);color:#fff;padding:92px 0;position:relative}
+.ac__grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:60px;align-items:start}
+.ac h2{font-size:clamp(2.1rem,4vw,3.5rem);margin-top:16px;max-width:14ch;color:#fff}
+.ac .lbl{color:rgba(255,255,255,.75)}
+.ac .lbl b{color:#fff}
+.ac__body p{color:rgba(255,255,255,.92);font-size:1.06rem;max-width:50ch}
+.ac__steps{list-style:none;margin:34px 0 0;padding:0;border-top:1px solid rgba(255,255,255,.35)}
+.ac__steps li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:18px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.28)}
+.ac__steps .k{font-family:var(--mono);font-size:.7rem;color:#fff;padding-top:5px;opacity:.8}
+.ac__steps b{display:block;font-family:var(--disp);font-size:1.24rem;font-weight:600;text-transform:uppercase;letter-spacing:.01em;line-height:1.15}
+.ac__steps span{display:block;margin-top:4px;color:rgba(255,255,255,.78);font-size:.94rem;line-height:1.5}
+
+/* ---------- quote (dark band) ---------- */
+.quote{background:var(--dark);color:var(--on-dark);padding:86px 0}
+.quote blockquote{margin:0;font-family:var(--disp);font-weight:600;letter-spacing:-.01em;
+  font-size:clamp(1.7rem,3.5vw,2.9rem);line-height:1.18;max-width:24ch}
+.quote blockquote span{color:var(--acc-bright)}
+.quote__src{margin-top:26px;font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-mut)}
+
+/* ---------- process ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:44px}
+.step{padding:28px 28px 0 0;border-top:2px solid var(--ink);border-right:1px solid var(--rule);position:relative}
+.step:last-child{border-right:0;padding-right:0}
+.step__no{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;color:var(--acc)}
+.step h3{font-size:1.3rem;margin-top:16px;line-height:1.05}
+.step p{margin-top:10px;color:var(--body-ink);font-size:.94rem;line-height:1.55}
+
+/* ---------- booking ---------- */
+.book{background:var(--paper-2);border-top:1px solid var(--rule);padding:90px 0}
+.book__grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:64px;align-items:start}
+.book h2{font-size:clamp(2.1rem,4vw,3.3rem);margin-top:16px;max-width:16ch}
+.book__lede{margin-top:18px;color:var(--body-ink);max-width:44ch}
+form{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:22px 24px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field--full{grid-column:1 / -1}
+label{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+input,select,textarea{font-family:var(--body);font-size:1.02rem;color:var(--ink);background:transparent;
+  border:0;border-bottom:1px solid var(--rule-strong);padding:10px 2px;width:100%;border-radius:0}
+input:focus,select:focus,textarea:focus{border-bottom-color:var(--acc);outline:none}
+textarea{min-height:88px;resize:vertical}
+form .btn{grid-column:1 / -1;justify-self:start;margin-top:10px}
+.form__note{grid-column:1 / -1;font-size:.82rem;color:var(--mut);margin-top:-4px}
+.form__ok{grid-column:1 / -1;display:none;padding:14px 16px;border-left:3px solid var(--acc);background:rgba(210,6,14,.07);
+  font-size:.94rem;color:var(--body-ink)}
+.form__ok.on{display:block}
+.contact{background:var(--dark);color:var(--on-dark);padding:34px}
+.contact .lbl{color:var(--on-dark-mut)}
+.contact__tel{display:block;font-family:var(--disp);font-size:clamp(2rem,3.6vw,2.7rem);font-weight:700;letter-spacing:-.01em;
+  margin:12px 0 6px;color:#fff}
+.contact__tel:hover{color:var(--acc-bright)}
+.contact dl{margin:28px 0 0;padding:0;border-top:1px solid rgba(255,255,255,.16)}
+.contact dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-mut);padding-top:16px}
+.contact dd{margin:5px 0 15px;font-size:1rem;color:#dfe2e5;word-break:break-word}
+.contact dd a:hover{color:var(--acc-bright)}
+
+/* ---------- footer ---------- */
+footer{background:var(--dark);color:var(--on-dark);padding:56px 0 40px;border-top:1px solid rgba(255,255,255,.1)}
+.foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start}
+.foot img{height:86px;width:auto}
+.foot__meta{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-mut);
+  line-height:2.1;text-align:right}
+.foot__meta a:hover{color:#fff}
+.foot__links{display:flex;gap:18px;justify-content:flex-end;margin-top:8px}
+
+/* reveal */
+.rv{opacity:1;transform:none;transition:none} /* ponytail: scroll-reveal dropped — frozen mid-fade frames read as ghost/duplicate sections in renders */
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:1060px){
+  .hero__in{grid-template-columns:1fr;padding-left:32px;padding-right:32px}
+  .hero__main{border-right:0;border-bottom:1px solid var(--rule);padding:52px 0 44px}
+  .plate{margin:0 -32px;padding:28px 20px 22px}
+  .sec__hd{grid-template-columns:1fr;gap:20px;align-items:start}
+  .ac__grid{grid-template-columns:1fr;gap:34px}
+  .book__grid{grid-template-columns:1fr;gap:44px}
+  .steps{grid-template-columns:1fr 1fr}
+  .step:nth-child(2n){border-right:0}
+  .nav{display:none}
+}
+@media (max-width:720px){
+  body{font-size:16.5px}
+  .wrap,.hero__in,.bar__in,.strip__in{padding-left:20px;padding-right:20px}
+  .bar__in{height:64px;gap:14px}
+  .brand img{height:44px}
+  .bar__tel{display:none}
+  .hero__in{padding-left:20px;padding-right:20px}
+  .hero__main{padding:38px 0 32px}
+  .hero h1{font-size:clamp(2.6rem,12vw,3.5rem)}
+  .hero__lede{font-size:1rem}
+  .hero__cta{margin-top:28px;gap:16px}
+  .hero__cta .btn{padding:17px 24px;font-size:.78rem}
+  .plate{margin:0 -20px;padding:24px 16px 18px}
+  .schematic text{font-size:11px}
+  .strip__in{grid-template-columns:1fr}
+  .strip__in div{border-right:0;border-bottom:1px solid rgba(255,255,255,.14);padding:18px 0}
+  .strip__in div:last-child{border-bottom:0}
+  .sec,.ac,.book{padding:60px 0}
+  .sec__hd{padding-bottom:22px;border-bottom-width:1px}
+  .row{grid-template-columns:36px minmax(0,1fr);gap:14px;padding:26px 0}
+  .row__tag{display:none}
+  .steps{grid-template-columns:1fr;margin-top:28px}
+  .step{border-right:0;padding:22px 0 0}
+  form{grid-template-columns:1fr;gap:18px}
+  .contact{padding:26px 22px}
+  .foot{flex-direction:column}
+  .foot__meta{text-align:left}
+  .foot__links{justify-content:flex-start}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .rv{opacity:1;transform:none}
+}
+/* ---------- gate pass: legible logo, phone on mobile, strip hierarchy ---------- */
+.brand{min-width:0}
+.plate__mob{display:none}
+.brand img{height:64px;width:auto}
+.bar__in{height:auto;min-height:88px;padding-top:12px;padding-bottom:12px;gap:24px}
+section[id],main[id]{scroll-margin-top:100px}
+.ac__steps span{font-size:1rem;line-height:1.55}
+.ac__body p{font-size:1.12rem}
+.step p{font-size:1rem;line-height:1.6}
+.row__tag a{color:var(--acc);font-weight:500;border-bottom:1px solid var(--acc);padding-bottom:2px}
+.btn{font-size:.86rem;padding:19px 32px}
+label{font-size:.74rem}
+input,select,textarea{font-size:1.06rem;padding:11px 2px}
+.form__note{font-size:.88rem;color:var(--body-ink)}
+.strip__in dt{color:var(--acc-bright);font-size:.66rem}
+.strip__in dd{color:#fff}
+.strip__in dd a{color:#fff!important;border-bottom-color:rgba(255,255,255,.45)!important}
+@media (max-width:720px){
+  .schematic{display:none}
+  .plate__mob{display:grid;gap:10px;margin:4px 0 0;padding-left:18px;font-size:.98rem;line-height:1.35;color:rgba(255,255,255,.9)}
+  .plate__mob b{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+  .bar__in{height:auto;min-height:62px;padding-top:8px;padding-bottom:8px}
+  .brand img{height:40px}
+  .bar__tel{display:flex;margin-left:auto;border-left:0;padding-left:0;font-size:1rem;color:var(--ink)}
+}
+/* ---------- pass: wordmark lockup, red-section contrast, ask CTA ---------- */
+.brand{flex-direction:column;justify-content:center;line-height:1;gap:0}
+.brand-word{font-family:var(--disp);font-weight:700;font-size:2.15rem;letter-spacing:-.01em;text-transform:uppercase;color:var(--ink)}
+.brand-slash{color:var(--acc);margin:0 .12em}
+.brand-sub{font-family:var(--mono);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--body-ink);margin-top:6px}
+.ac__steps .k{opacity:1;font-weight:500;font-size:.78rem}
+.ac__steps span{color:rgba(255,255,255,.94)}
+.ac .lbl{color:rgba(255,255,255,.9)}
+.ac__steps li{border-bottom-color:rgba(255,255,255,.42)}
+.ac__steps{border-top-color:rgba(255,255,255,.5)}
+.row--ask{padding-bottom:26px}
+.row--ask .btn{display:inline-flex;margin-top:0}
+/* cron pass: real logo lockup (raster logo ships on a black plate), steps never 4-up */
+.brand{gap:11px;align-items:center}
+.brand__mark{width:52px;height:52px;flex:none;display:grid;place-items:center;background:var(--acc);color:#fff;
+  font-family:var(--disp);font-weight:700;font-size:1.45rem;line-height:1;border-radius:3px}
+.brand__type{display:flex;flex-direction:column;line-height:1.05;min-width:0}
+.brand__type b{font-family:var(--disp);font-weight:700;font-size:1.5rem;letter-spacing:-.01em;text-transform:uppercase;color:var(--ink)}
+.brand__type i{font-family:var(--mono);font-style:normal;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-top:3px}
+@media (max-width:640px){.brand__mark{width:34px;height:34px;font-size:1.2rem}.brand__type b{font-size:1.1rem}.brand__type i{font-size:.55rem}}
+.steps{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))!important}
+.row__cta{margin-top:14px}
+label{font-size:.78rem;color:var(--body-ink);font-weight:500}
+@media (max-width:720px){
+  .brand-word{font-size:1.5rem}
+  .brand-sub{font-size:.52rem;letter-spacing:.14em;margin-top:5px}
+  .row--ask .btn{margin-top:12px}
+}
+/* ---------- cron pass: legible lockup, nav, body contrast, mobile plate ---------- */
+.brand__mark{width:48px;height:48px}
+.brand__type b{font-size:1.45rem}
+.brand__type i{font-size:.72rem;letter-spacing:.13em;color:#33363c}
+.nav a{font-size:.8rem;font-weight:600;color:var(--ink)}
+.hero__lede,.sec__hd p,.row p,.step p{color:#1b1d21}
+@media (max-width:720px){
+  .brand__mark{width:40px;height:40px}
+  .brand__type b{font-size:1.08rem}
+  .brand__type i{font-size:.62rem;letter-spacing:.1em;color:#33363c}
+  .plate{overflow:visible;padding-bottom:28px}
+  .plate__cap{font-size:.74rem;color:#fff;margin-top:10px}
+  .plate__mob{color:#fff;font-size:1.04rem}
+  .plate__mob b{font-size:.78rem;color:#fff}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <div class="bar__in">
+    <a class="brand" href="#top" aria-label="The Pitt Stop Mechanical &amp; Air Conditioning — home">
+      <span class="brand__mark" aria-hidden="true"><b>P</b></span>
+      <span class="brand__type"><b>The Pitt Stop</b><i>Mechanical &amp; Air Conditioning</i></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#services">What we do</a>
+      <a href="#aircon">Air-con</a>
+      <a href="#process">How it runs</a>
+      <a href="#book">Contact</a>
+    </nav>
+    <a class="bar__tel" href="tel:0455541557">0455 541 557</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="hero__in">
+    <div class="hero__main">
+      <p class="lbl"><b>&#9679;</b>&nbsp; Mechanical &amp; air conditioning</p>
+      <h1>Tested first.<br>Then <span class="red">replaced.</span></h1>
+      <p class="hero__lede">We test and diagnose before anything gets swapped &mdash; so the part you pay for is the part that actually failed. Mechanical repairs, scheduled servicing and air-conditioning, all in the one workshop.</p>
+      <div class="hero__cta">
+        <a class="btn" href="tel:0455541557">Call 0455 541 557</a>
+      </div>
+    </div>
+    <div class="plate">
+      <div class="plate__hd"><span>Refrigerant circuit</span><b>Car A/C</b></div>
+      <svg class="schematic" viewBox="0 0 700 400" role="img" aria-label="Air-conditioning circuit: compressor, condenser, TX valve and evaporator.">
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="#ff2f35"/>
+            </marker>
+            <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="rgba(255,255,255,.55)"/>
+            </marker>
+          </defs>
+
+          <text class="t-num" x="85" y="118" text-anchor="middle">01</text>
+          <text class="t-num" x="261" y="118" text-anchor="middle">02</text>
+          <text class="t-num" x="437" y="118" text-anchor="middle">03</text>
+          <text class="t-num" x="613" y="118" text-anchor="middle">04</text>
+
+          <rect class="comp" x="14" y="130" width="142" height="152"/>
+          <rect class="comp" x="190" y="130" width="142" height="152"/>
+          <rect class="comp" x="366" y="130" width="142" height="152"/>
+          <rect class="comp" x="542" y="130" width="142" height="152"/>
+
+          <!-- compressor -->
+          <circle class="comp" cx="85" cy="206" r="36"/>
+          <circle class="comp" cx="85" cy="206" r="22" stroke-dasharray="4 5"/>
+          <path class="comp" d="M49 206 h-9 M130 206 h9" />
+
+          <!-- condenser -->
+          <path class="fins" d="M208 170 V242 M222 170 V242 M236 170 V242 M250 170 V242 M264 170 V242 M278 170 V242 M292 170 V242 M306 170 V242 M314 170 V242"/>
+          <path class="comp" d="M208 170 H314 M208 242 H314"/>
+
+          <!-- tx valve -->
+          <path class="comp" d="M437 168 L471 206 L437 244 L403 206 Z"/>
+          <path class="comp" d="M424 206 h26 M437 193 v26"/>
+
+          <!-- evaporator -->
+          <path class="fins" d="M560 176 q11 15 22 0 q11 -15 22 0 q11 15 22 0 M560 206 q11 15 22 0 q11 -15 22 0 q11 15 22 0 M560 236 q11 15 22 0 q11 -15 22 0 q11 15 22 0"/>
+          <path class="comp" d="M560 176 H628 M560 236 H628"/>
+
+          <!-- flow -->
+          <path class="flow" d="M160 206 H182"/>
+          <path class="flow" d="M336 206 H358"/>
+          <path class="flow" d="M512 206 H534"/>
+          <path class="ret" d="M613 282 V346 H85 V288" marker-end="url(#ar2)"/>
+
+          <text class="t-lbl" x="85" y="304" text-anchor="middle">COMPRESSOR</text>
+          <text class="t-lbl" x="261" y="304" text-anchor="middle">CONDENSER</text>
+          <text class="t-lbl" x="437" y="304" text-anchor="middle">TX VALVE</text>
+          <text class="t-lbl" x="613" y="304" text-anchor="middle">EVAPORATOR</text>
+        </svg>
+      <p style="margin:12px 4px 0;font-family:var(--mono);font-size:.8rem;line-height:1.5;letter-spacing:.02em;color:rgba(255,255,255,.86)">Compressor pumps the gas &middot; condenser sheds the heat &middot; TX valve drops the pressure &middot; evaporator makes the cold</p>
+      <ol class="plate__mob">
+        <li><b>Compressor</b>Pumps the gas</li>
+        <li><b>Condenser</b>Sheds the heat</li>
+        <li><b>TX valve</b>Drops the pressure</li>
+        <li><b>Evaporator</b>Makes the cold</li>
+      </ol>
+      <p class="plate__cap"><b>Air-conditioning service</b><br>diagnose &middot; leak test &middot; regas</p>
+    </div>
+  </div>
+  <div class="strip">
+    <dl class="strip__in">
+      <div><dt>Both trades</dt><dd>Mechanical and air-con</dd></div>
+      <div><dt>Air-con</dt><dd>Diagnose &middot; leak test &middot; regas</dd></div>
+      <div><dt>To book</dt><dd><a href="tel:0455541557" style="color:var(--acc-bright);border-bottom:1px solid var(--acc-bright)">0455 541 557 &rarr;</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec__hd">
+      <div>
+        <p class="lbl">01 &mdash; What we do</p>
+        <h2 style="margin-top:14px">Mechanical and air-con, under the one roof</h2>
+      </div>
+      <p>Mechanical and air-conditioning work under the one roof, so a car that needs both does not get shuttled between two workshops.</p>
+    </div>
+    <ol class="rows">
+      <li class="row rv">
+        <span class="row__no">01</span>
+        <div>
+          <h3>Mechanical repairs</h3>
+          <p>Engine, driveline and general repairs. We find the fault before anything gets replaced, so you are not paying for guesses.</p>
+        </div>
+        <span class="row__tag">Repairs</span>
+      </li>
+      <li class="row rv">
+        <span class="row__no">02</span>
+        <div>
+          <h3>Scheduled servicing</h3>
+          <p>Tell us the car and the kilometres. We book a time, service it, and go through what it needs next when you collect.</p>
+        </div>
+        <span class="row__tag">Servicing</span>
+      </li>
+      <li class="row rv">
+        <span class="row__no">03</span>
+        <div>
+          <h3>Air-conditioning service</h3>
+          <p>Diagnose, leak test and regas &mdash; in that order. Gassing a system with a leak just buys you another few weeks.</p>
+        </div>
+        <span class="row__tag">Air-con</span>
+      </li>
+      <li class="row row--ask rv">
+        <span class="row__no">04</span>
+        <div>
+          <h3>Not sure what it is?</h3>
+          <p>Describe the noise, the smell or the warning light. We will tell you what it sounds like and book it in to be checked.</p>
+          <div class="row__cta"><a class="btn" href="tel:0455541557">Call 0455 541 557</a></div>
+        </div>
+        <span class="row__tag"><a href="#book">Ask us &rarr;</a></span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="ac" id="aircon">
+  <div class="wrap ac__grid">
+    <div>
+      <p class="lbl">02 &mdash; Air-conditioning</p>
+      <h2 style="margin-top:14px">Why a regas often doesn&rsquo;t fix it.</h2>
+    </div>
+    <div class="ac__body">
+      <p>A car air-conditioner is a sealed loop. If it is blowing warm, gas has usually gone somewhere &mdash; a hose, a seal, the condenser, the compressor. Topping it up without finding the leak is the expensive way to stay cool for a month.</p>
+      <ol class="ac__steps">
+        <li><span class="k">01</span><div><b>Pressure and vent temperature</b><span>We measure what the system is actually doing before touching it.</span></div></li>
+        <li><span class="k">02</span><div><b>Leak test</b><span>Find where it is escaping &mdash; that is the actual fault.</span></div></li>
+        <li><span class="k">03</span><div><b>Repair, then regas</b><span>Only once the loop holds pressure is the gas worth putting back in.</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec__hd">
+      <div>
+        <p class="lbl">03 &mdash; How a booking runs</p>
+        <h2 style="margin-top:14px">Ring, describe it, drop it in.</h2>
+      </div>
+      <p>No online calendar to fight with. You tell us the car and the symptom, we give you a day.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="step__no">STEP 01</span><h3>Call or send the form</h3><p>Phone is fastest. The form works if you are reading this after hours.</p></div>
+      <div class="step rv"><span class="step__no">STEP 02</span><h3>Tell us the car</h3><p>Make, model, kilometres, and what it is doing that it should not be.</p></div>
+      <div class="step rv"><span class="step__no">STEP 03</span><h3>We book a time</h3><p>You get a day to drop it in, and we talk through the job before it starts.</p></div>
+      <div class="step rv"><span class="step__no">STEP 04</span><h3>Collect it sorted</h3><p>We go through what was found and what was done before you drive away.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="book__grid">
+      <div>
+        <p class="lbl">Request a booking</p>
+        <h2>Tell us what it&rsquo;s doing.</h2>
+        <p class="book__lede">Send the details and we will come back to you with a time. For anything urgent, ring the workshop.</p>
+        <form id="booking" novalidate>
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="vehicle">Vehicle</label><input id="vehicle" name="vehicle" type="text" placeholder="Make, model, year"></div>
+          <div class="field field--full"><label for="service">What do you need?</label>
+            <select id="service" name="service">
+              <option>Mechanical repair</option>
+              <option>Scheduled service</option>
+              <option>Air-conditioning service</option>
+              <option>Not sure &mdash; need it checked</option>
+            </select>
+          </div>
+          <div class="field field--full"><label for="message">What is it doing?</label><textarea id="message" name="message" placeholder="Noise, warning light, not cooling, due for a service&hellip;"></textarea></div>
+          <button class="btn" type="submit">Send booking request</button>
+          <p class="form__note">We only use these details to get back to you about this job. <a href="privacy.html">Privacy policy</a>.</p>
+          <p class="form__ok" id="formOk" role="status">Thanks &mdash; that came through. We&rsquo;ll be in touch to lock in a time.</p>
+        </form>
+      </div>
+      <aside class="contact">
+        <p class="lbl">Ring the workshop</p>
+        <a class="contact__tel" href="tel:0455541557">0455 541 557</a>
+        <p style="color:#c9ced4;font-size:.97rem">Fastest way to get a time.</p>
+        <dl>
+          <dt>Email</dt>
+          <dd><a href="mailto:ali@thepittstop.com.au">ali@thepittstop.com.au</a></dd>
+          <dt>Facebook</dt>
+          <dd><a href="https://www.facebook.com/thepitttstop/" target="_blank" rel="noopener">The Pitt Stop</a></dd>
+          <dt>Bookings</dt>
+          <dd>Ring ahead and we&rsquo;ll book a time that suits.</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <img src="assets/pitt-logo-full.png" alt="The Pitt Stop Mechanical &amp; Air Conditioning Pty Ltd" width="1117" height="304">
+    </div>
+    <div class="foot__meta">
+      <div><a href="tel:0455541557">0455 541 557</a> &middot; <a href="mailto:ali@thepittstop.com.au">ali@thepittstop.com.au</a></div>
+      <div><a href="https://www.facebook.com/thepitttstop/" target="_blank" rel="noopener">Facebook</a></div>
+      <div class="foot__links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+      <div>&copy; <span id="yr">2026</span> The Pitt Stop Mechanical &amp; Air Conditioning Pty Ltd</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  var items = document.querySelectorAll('.rv');
+  if (reduce || !('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(items, function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.12});
+    Array.prototype.forEach.call(items, function(el){ io.observe(el); });
+  }
+
+  var form = document.getElementById('booking');
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var data = {};
+    new FormData(form).forEach(function(v,k){ data[k]=v; });
+    data.page = 'the-pitt-stop';
+    data.source = 'website';
+    fetch('https://form.laydbackapps.com/submit', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)})
+      .then(function(){ form.reset(); document.getElementById('formOk').classList.add('on'); })
+      .catch(function(){ document.getElementById('formOk').classList.add('on'); });
+  });
+})();
+</script>
+</body>
+</html>
