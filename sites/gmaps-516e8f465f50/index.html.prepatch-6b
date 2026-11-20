@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hoff's Construction — Concreting services in Hunter NSW. Driveways, house slabs, shed slabs, patios, exposed aggregate, coloured concrete, repairs.">
+  <title>Hoff&rsquo;s Construction — Concreting, Hunter NSW</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <noscript><link rel="stylesheet" href="assets/noscript.css"></noscript>
+  <style>
+    /* ============================================================
+       TERRAZZO-STRIP DESIGN SYSTEM
+       ============================================================ */
+    :root {
+      --field: #f1ece1;
+      --ink: #2a2b28;
+      --brass: #b08d4f;
+      --chip-jade: #4f7d6a;
+      --chip-ochre: #c9932f;
+      --chip-rust: #a5502e;
+      --chip-steel: #5d7691;
+      --brass-width: 7px;
+      --max-width: 1200px;
+      --space-1: clamp(0.5rem, 1.5vw, 1rem);
+      --space-2: clamp(1rem, 3vw, 2rem);
+      --space-3: clamp(2rem, 5vw, 4rem);
+      --space-4: clamp(3rem, 8vw, 6rem);
+      --radius-soft: 9999px;
+      --radius-chip: 12px;
+      --transition-base: 0.4s cubic-bezier(0.2, 0.6, 0.2, 1);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      :root { --transition-base: 0.01ms; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ============================================================
+       BASE RESET & TYPOGRAPHY
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--field);
+      color: var(--ink);
+      font-family: "Schibsted Grotesk", system-ui, sans-serif;
+      font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4 { font-family: "Gabarito", system-ui, sans-serif; font-weight: 700; line-height: 1.1; margin: 0 0 var(--space-1); }
+    h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); letter-spacing: -0.02em; }
+    h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -0.01em; }
+    h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+    p { margin: 0 0 var(--space-1); max-width: 65ch; }
+    a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color var(--transition-base); }
+    a:hover, a:focus { border-bottom-color: var(--brass); outline: none; }
+    a:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 2px; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-2); }
+
+    /* ============================================================
+       TERRAZZO FIELD TEXTURE (CSS radial-gradient speckle)
+       ============================================================ */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 12% 18%, var(--chip-jade) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 28% 82%, var(--chip-ochre) 50%, transparent 51%),
+        radial-gradient(2px 2px at 44% 35%, var(--chip-rust) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 61% 67%, var(--chip-steel) 50%, transparent 51%),
+        radial-gradient(2px 2px at 76% 22%, var(--chip-jade) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 88% 48%, var(--chip-ochre) 50%, transparent 51%),
+        radial-gradient(2px 2px at 9% 73%, var(--chip-rust) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 33% 5%, var(--chip-steel) 50%, transparent 51%),
+        radial-gradient(2px 2px at 52% 88%, var(--chip-jade) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 70% 12%, var(--chip-ochre) 50%, transparent 51%),
+        radial-gradient(2px 2px at 18% 55%, var(--chip-rust) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 84% 78%, var(--chip-steel) 50%, transparent 51%),
+        radial-gradient(2px 2px at 41% 41%, var(--chip-jade) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 65% 33%, var(--chip-ochre) 50%, transparent 51%),
+        radial-gradient(2px 2px at 25% 92%, var(--chip-rust) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 93% 61%, var(--chip-steel) 50%, transparent 51%);
+      background-repeat: repeat;
+      background-size: 100vw 100vh;
+      opacity: 0.35;
+    }
+
+    /* ============================================================
+       BRASS DIVIDER STRIP
+       ============================================================ */
+    .brass-strip {
+      height: var(--brass-width);
+      background: linear-gradient(180deg, var(--brass) 0%, #9a7a3f 50%, var(--brass) 100%);
+      border-radius: 9999px;
+      margin: var(--space-3) 0;
+      position: relative;
+    }
+    .brass-strip::before,
+    .brass-strip::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 12px;
+      height: 12px;
+      background: var(--field);
+      border: 2px solid var(--brass);
+      border-radius: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0 0 0 4px var(--field);
+    }
+    .brass-strip::before { left: calc(25% - 6px); }
+    .brass-strip::after { right: calc(25% - 6px); }
+    .brass-strip--alt::before { left: calc(75% - 6px); }
+    .brass-strip--alt::after { right: calc(75% - 6px); }
+
+    /* ============================================================
+       REVEAL SYSTEM — Base-hide + noscript unhide + JS safety net
+       ============================================================ */
+    .rv { opacity: 0; transform: translateY(16px); transition: opacity 0.7s var(--transition-base), transform 0.7s var(--transition-base); }
+    .rv.is-visible { opacity: 1; transform: none; }
+    .rv--stagger-1 { transition-delay: 0.1s; }
+    .rv--stagger-2 { transition-delay: 0.2s; }
+    .rv--stagger-3 { transition-delay: 0.3s; }
+    .rv--stagger-4 { transition-delay: 0.4s; }
+    .rv--stagger-5 { transition-delay: 0.5s; }
+
+    /* no-JS fallback: noscript in head loads noscript.css which unhides */
+    /* JS safety net: 1100ms timeout adds .js-ready to html, reveals all */
+
+    /* ============================================================
+       AGGREGATE CHIPS — Large rounded-rect accent shapes
+       ============================================================ */
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 2.5vw, 1.75rem);
+      border-radius: var(--radius-chip);
+      font-family: "Gabarito", system-ui, sans-serif;
+      font-weight: 600;
+      font-size: clamp(0.875rem, 1.2vw, 1rem);
+      color: var(--field);
+      white-space: nowrap;
+      box-shadow: 0 4px 16px -4px rgba(42, 43, 40, 0.3);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .chip:hover { transform: translateY(-2px); box-shadow: 0 8px 24px -4px rgba(42, 43, 40, 0.4); }
+    .chip--jade { background: var(--chip-jade); }
+    .chip--ochre { background: var(--chip-ochre); }
+    .chip--rust { background: var(--chip-rust); }
+    .chip--steel { background: var(--chip-steel); }
+    .chip--brass { background: var(--brass); color: var(--ink); }
+    .chip--large { padding: clamp(1rem, 2vw, 1.5rem) clamp(1.5rem, 3vw, 2.5rem); font-size: clamp(1rem, 1.5vw, 1.25rem); border-radius: 18px; }
+
+    /* ============================================================
+       HERO — Soft-round wordmark + inline chip field
+       ============================================================ */
+    .hero {
+      padding: var(--space-4) 0 var(--space-3);
+      text-align: center;
+    }
+    .hero__wordmark {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-1);
+      padding: var(--space-2) var(--space-3);
+      background: var(--ink);
+      color: var(--field);
+      border-radius: var(--radius-soft);
+      margin-bottom: var(--space-3);
+    }
+    .hero__name { font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.01em; }
+    .hero__category { font-family: "Schibsted Grotesk", sans-serif; font-weight: 400; font-size: clamp(1rem, 1.5vw, 1.25rem); text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.8; }
+    .hero__chip-field { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(0.5rem, 1vw, 0.75rem); margin-top: var(--space-2); }
+    .hero__location { margin-top: var(--space-2); font-size: clamp(1rem, 1.2vw, 1.125rem); opacity: 0.7; }
+    .hero__location a { border-bottom-color: var(--brass); }
+
+    /* ============================================================
+       SECTIONS — Alternating alignment with brass strips
+       ============================================================ */
+    .section { padding: var(--space-3) 0; }
+    .section__inner { display: grid; gap: var(--space-3); }
+    .section--left .section__content { text-align: left; }
+    .section--right .section__content { text-align: right; }
+    .section--right .section__inner { direction: rtl; }
+    .section--right .section__content > * { direction: ltr; display: inline-block; text-align: left; max-width: 100%; }
+    .section__heading { margin-bottom: var(--space-2); }
+    .section__text { opacity: 0.85; }
+    .section__chips { display: flex; flex-wrap: wrap; gap: clamp(0.5rem, 1vw, 0.75rem); margin-top: var(--space-2); }
+    .section--left .section__chips { justify-content: flex-start; }
+    .section--right .section__chips { justify-content: flex-end; }
+
+    /* ============================================================
+       PROCESS STRIP — Horizontal row of chips
+       ============================================================ */
+    .process { padding: var(--space-3) 0; }
+    .process__strip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(0.75rem, 1.5vw, 1.5rem); }
+    .process__step { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); text-align: center; }
+    .process__number { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--ink); color: var(--field); border-radius: 50%; font-family: "Gabarito", sans-serif; font-weight: 700; font-size: 1.125rem; flex-shrink: 0; }
+    .process__label { font-family: "Gabarito", sans-serif; font-weight: 500; font-size: clamp(0.875rem, 1.1vw, 1rem); max-width: 120px; }
+    .process__connector { display: none; }
+    @media (min-width: 768px) {
+      .process__strip { justify-content: space-between; }
+      .process__connector { display: block; width: 100%; height: var(--brass-width); background: linear-gradient(90deg, var(--brass) 0%, #9a7a3f 50%, var(--brass) 100%); border-radius: 9999px; flex: 1; max-width: 120px; margin: 0 -2px; align-self: center; }
+      .process__step:last-child .process__connector { display: none; }
+    }
+
+    /* ============================================================
+       CONTACT / FOOTER — Brass strip + deep ink block
+       ============================================================ */
+    .footer {
+      background: var(--ink);
+      color: var(--field);
+      padding: var(--space-4) 0 var(--space-3);
+    }
+    .footer__brass { max-width: var(--max-width); margin: 0 auto var(--space-3); }
+    .footer__grid { display: grid; gap: var(--space-3); text-align: center; }
+    @media (min-width: 640px) { .footer__grid { grid-template-columns: repeat(3, 1fr); text-align: left; } }
+    .footer__block h3 { font-size: clamp(1rem, 1.3vw, 1.125rem); text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; margin-bottom: var(--space-2); }
+    .footer__block p { opacity: 0.9; margin-bottom: 0.5rem; }
+    .footer__block a { border-bottom-color: var(--brass); }
+    .footer__block a:hover { border-bottom-color: var(--field); }
+    .footer__copyright { grid-column: 1 / -1; margin-top: var(--space-2); padding-top: var(--space-2); border-top: 1px solid rgba(241, 236, 225, 0.15); text-align: center; opacity: 0.5; font-size: 0.875rem; }
+
+    /* ============================================================
+       NOSCRIPT FALLBACK STYLES (loaded via noscript in head)
+       ============================================================ */
+    /* These are also in assets/noscript.css for the noscript link */
+    .no-js .rv { opacity: 1 !important; transform: none !important; }
+    .no-js body::before { opacity: 0.35; }
+  </style>
+</head>
+<body>
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero__wordmark rv">
+        <span class="hero__name">Hoff&rsquo;s Construction</span>
+        <span class="hero__category">Concreting</span>
+      </div>
+      <div class="hero__chip-field rv rv--stagger-1" aria-label="Services">
+        <span class="chip chip--jade">Driveways</span>
+        <span class="chip chip--ochre">House slabs</span>
+        <span class="chip chip--rust">Shed slabs</span>
+        <span class="chip chip--steel">Patios & paths</span>
+        <span class="chip chip--jade">Exposed aggregate</span>
+        <span class="chip chip--ochre">Coloured concrete</span>
+        <span class="chip chip--rust">Concrete repairs</span>
+      </div>
+      <p class="hero__location rv rv--stagger-2">
+        <a href="https://maps.google.com/?q=Maitland+NSW+2320" target="_blank" rel="noopener">Maitland NSW 2320</a>
+        <span aria-hidden="true"> · </span>
+        <a href="tel:+61401958661">0401 958 661</a>
+        <span aria-hidden="true"> · </span>
+        <span>Open 24 hours</span>
+      </p>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       BRASS STRIP 1
+       ============================================================ -->
+  <div class="brass-strip" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       SECTION: ABOUT / SERVICES OVERVIEW (left-aligned)
+       ============================================================ -->
+  <section class="section section--left" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="section__inner">
+        <div class="section__content">
+          <h2 id="about-heading" class="section__heading rv">What we do</h2>
+          <p class="section__text rv rv--stagger-1">Hoff&rsquo;s Construction delivers concrete work across the Hunter region. From driveways and house slabs to shed bases, patios, exposed aggregate finishes, coloured concrete, and repairs — every job is prepped, formed, poured, and finished to standard.</p>
+          <div class="section__chips rv rv--stagger-2" aria-label="Service highlights">
+            <span class="chip chip--large chip--jade">Site prep & excavation</span>
+            <span class="chip chip--large chip--ochre">Formwork & reinforcement</span>
+            <span class="chip chip--large chip--rust">Pour, screed, finish</span>
+            <span class="chip chip--large chip--steel">Cure, seal, handover</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BRASS STRIP 2 (alternating alignment)
+       ============================================================ -->
+  <div class="brass-strip brass-strip--alt" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       PROCESS STRIP
+       ============================================================ -->
+  <section class="process" aria-labelledby="process-heading">
+    <div class="container">
+      <h2 id="process-heading" class="rv" style="text-align:center; margin-bottom:var(--space-3);">Process</h2>
+      <div class="process__strip" role="list">
+        <div class="process__step rv" role="listitem">
+          <span class="process__number">01</span>
+          <span class="process__label">Site prep & excavation</span>
+          <span class="process__connector" aria-hidden="true"></span>
+        </div>
+        <div class="process__step rv rv--stagger-1" role="listitem">
+          <span class="process__number">02</span>
+          <span class="process__label">Formwork & reinforcement</span>
+          <span class="process__connector" aria-hidden="true"></span>
+        </div>
+        <div class="process__step rv rv--stagger-2" role="listitem">
+          <span class="process__number">03</span>
+          <span class="process__label">Pour & screed</span>
+          <span class="process__connector" aria-hidden="true"></span>
+        </div>
+        <div class="process__step rv rv--stagger-3" role="listitem">
+          <span class="process__number">04</span>
+          <span class="process__label">Finish & cure</span>
+          <span class="process__connector" aria-hidden="true"></span>
+        </div>
+        <div class="process__step rv rv--stagger-4" role="listitem">
+          <span class="process__number">05</span>
+          <span class="process__label">Seal & handover</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BRASS STRIP 3
+       ============================================================ -->
+  <div class="brass-strip" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       SECTION: CONTACT (right-aligned)
+       ============================================================ -->
+  <section class="section section--right" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="section__inner">
+        <div class="section__content">
+          <h2 id="contact-heading" class="section__heading rv">Get in touch</h2>
+          <p class="section__text rv rv--stagger-1">Calls answered 24 hours. Quote requests welcome for any concreting job across the Hunter.</p>
+          <div class="section__chips rv rv--stagger-2">
+            <a href="tel:+61401958661" class="chip chip--brass chip--large">Call 0401 958 661</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER — Brass strip + deep ink block
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__brass">
+      <div class="brass-strip" aria-hidden="true"></div>
+    </div>
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__block">
+          <h3>Hoff&rsquo;s Construction</h3>
+          <p>Concrete contractor</p>
+          <p>Maitland NSW 2320</p>
+        </div>
+        <div class="footer__block">
+          <h3>Contact</h3>
+          <p><a href="tel:+61401958661">0401 958 661</a></p>
+          <p>Open 24 hours</p>
+        </div>
+        <div class="footer__block">
+          <h3>Services</h3>
+          <p>Driveways</p>
+          <p>House slabs</p>
+          <p>Shed slabs</p>
+          <p>Patios & paths</p>
+          <p>Exposed aggregate</p>
+          <p>Coloured concrete</p>
+          <p>Concrete repairs</p>
+        </div>
+        <p class="footer__copyright">&copy; 2025 Hoff&rsquo;s Construction. Built by LaydbackApps.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JS: IntersectionObserver reveal + 1100ms safety net
+       ============================================================ -->
+  <script>
+    (function() {
+      'use strict';
+
+      // Mark JS as active for CSS hooks
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+
+      // Reveal elements
+      var revealElements = document.querySelectorAll('.rv');
+
+      // IntersectionObserver for scroll reveals
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+
+      revealElements.forEach(function(el) { observer.observe(el); });
+
+      // JS Safety Net: reveal all after ~1100ms regardless of scroll
+      setTimeout(function() {
+        revealElements.forEach(function(el) { el.classList.add('is-visible'); });
+        document.documentElement.classList.add('js-ready');
+      }, 1100);
+    })();
+  </script>
+</body>
+</html>
