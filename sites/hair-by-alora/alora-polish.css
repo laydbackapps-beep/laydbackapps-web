@@ -79,3 +79,42 @@ body{background:radial-gradient(900px 620px at 88% 4%,rgba(217,176,121,.13),tran
 .head__cta{min-height:38px!important;font-size:.68rem!important}
 .head__toggle{color:#fffbee!important}
 @media(max-width:900px){.head{height:88px!important;min-height:88px!important}.head__inner{height:88px!important;min-height:88px!important}.head__brand{left:14px!important;top:50%!important;transform:translateY(-50%)!important;width:98px!important;height:71px!important}.head .head__brand-logo,.head__brand-logo{width:98px!important;height:71px!important}.head__nav{display:none!important}.head__toggle{display:inline-flex!important;margin-left:auto!important;position:relative!important;right:0!important;top:auto!important;transform:none!important}.head__nav.is-open{display:flex!important;position:fixed!important;inset:88px 0 0!important;flex-direction:column!important;align-items:flex-start!important;background:#211a15!important;padding:2rem 6vw!important;gap:1rem!important}.head__nav.is-open>a,.head__nav.is-open summary{width:100%!important;justify-content:flex-start!important;min-height:50px!important;font-size:.9rem!important}}
+
+/* ---- HEATH'S SIX, honoured ---- */
+/* 3. logo must sit inside the 104px bar, not breach it */
+.head__brand{width:112px!important;height:72px!important}
+.head .head__brand-logo,.head__brand-logo{width:112px!important;height:72px!important;max-height:72px!important;object-fit:contain!important;object-position:center!important}
+@media(max-width:900px){.head__brand,.head .head__brand-logo,.head__brand-logo{width:84px!important;height:60px!important;max-height:60px!important}}
+
+/* 2. scissors + dryer sit clear of the photo and never clip the frame:
+      the tools box starts to the right of the picture and is drawn 'contain'. */
+.hero--alora .hero__media::before{right:2%!important;top:50%!important;width:40%!important;height:70%!important;transform:translateY(-50%)!important;background:url("./assets/hero/alora-salon-kit.webp") center center/contain no-repeat!important;filter:drop-shadow(0 30px 55px rgba(0,0,0,.5)) saturate(1.02)!important}
+@media(max-width:900px){.hero--alora .hero__media::before{right:3%!important;top:auto!important;bottom:2%!important;width:94%!important;height:26%!important;transform:none!important;background-size:contain!important;background-position:center bottom!important}}
+
+/* 6. never one flat colour: every ground carries gradient + grain */
+#craft,#enquiry,#visit{
+  background-color:#fff8ec!important;
+  background-image:
+    repeating-linear-gradient(118deg,rgba(33,26,21,.030) 0 1px,transparent 1px 8px),
+    repeating-linear-gradient(32deg,rgba(255,255,255,.42) 0 1px,transparent 1px 12px),
+    radial-gradient(64% 52% at 88% 6%,rgba(217,176,121,.22),transparent 66%),
+    radial-gradient(72% 60% at 4% 96%,rgba(229,197,143,.20),transparent 68%),
+    linear-gradient(168deg,#fffdf7 0%,#fff6e6 46%,#f8ecdc 100%)!important
+}
+#work{
+  background-color:#1d1410!important;
+  background-image:
+    repeating-linear-gradient(126deg,rgba(255,255,255,.028) 0 1px,transparent 1px 10px),
+    radial-gradient(70% 58% at 86% 4%,rgba(229,197,143,.20),transparent 62%),
+    radial-gradient(64% 56% at 6% 98%,rgba(123,95,74,.42),transparent 66%),
+    linear-gradient(150deg,#241a13 0%,#1c130e 52%,#150e0a 100%)!important
+}
+#era{
+  background-color:#f0e4d6!important;
+  background-image:
+    repeating-linear-gradient(112deg,rgba(33,26,21,.032) 0 1px,transparent 1px 9px),
+    repeating-linear-gradient(24deg,rgba(255,255,255,.34) 0 1px,transparent 1px 13px),
+    radial-gradient(76% 62% at 0% 8%,rgba(255,251,238,.92),transparent 62%),
+    radial-gradient(70% 58% at 100% 96%,rgba(229,197,143,.42),transparent 66%),
+    linear-gradient(160deg,#f8ecdf 0%,#f0e4d6 52%,#e7d4c0 100%)!important
+}
