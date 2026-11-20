@@ -129,6 +129,60 @@ footer{background:var(--ink2);color:#e3d9c7}
   .js .rv{opacity:1;transform:none;transition:none}
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
 }
+/* === JTC board-formed pass === */
+:root{
+  --ink:#14161a; --ink2:#1c1f24; --paper:#edecef; --paper2:#e4e2dc;
+  --amber:#14161a; --amber-d:#101215; --amber-l:#d8d5cb;
+  --dim:#565a60; --line:#d3d0c7; --line2:#b9b5aa; --acc:#e8e83c;
+}
+body{background:var(--paper);color:var(--ink)}
+.jbrand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--ink);min-width:0}
+.jbrand__mono{display:grid;place-items:center;width:46px;height:46px;flex:0 0 46px;background:var(--ink);color:var(--acc);font-family:Bitter,Georgia,serif;font-weight:800;font-size:19px;letter-spacing:-.02em}
+.jbrand__name{display:block;font-family:Bitter,Georgia,serif;font-weight:800;font-size:19px;line-height:1.05;letter-spacing:-.015em;white-space:nowrap}
+.jbrand__sub{display:block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-top:4px;white-space:nowrap}
+@media(max-width:1000px){.jbrand__mono{width:40px;height:40px;flex:0 0 40px;font-size:17px}.jbrand__name{font-size:17px}}
+/* hero: full-bleed owned photo, no floating card */
+.hero{position:relative;min-height:clamp(540px,76vh,740px);display:grid;align-items:end;background:#0e1013;overflow:hidden;perspective:none}
+.hero .hero__media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;z-index:0}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(94deg,rgba(10,12,15,.95) 0%,rgba(10,12,15,.86) 40%,rgba(10,12,15,.32) 74%,rgba(10,12,15,.62) 100%)}
+.hero .wrap{position:relative;z-index:2;display:block;padding:clamp(96px,14vh,168px) 0 clamp(30px,4.6vh,52px);max-width:var(--max)}
+.hero .k{display:inline-flex;align-items:center;gap:10px;color:var(--acc);font-size:11.5px;letter-spacing:.24em;margin-bottom:18px}
+.hero .k::before{content:"";width:30px;height:2px;background:var(--acc)}
+.hero h1{max-width:23ch;font-size:clamp(38px,6vw,80px);line-height:.99;letter-spacing:-.035em;color:#fff}
+.hero h1 em{font-style:italic;color:var(--acc);letter-spacing:-.02em}
+.hero .sub{color:#e2e0d8;max-width:52ch;margin-top:20px}
+.hero .cta-row{margin-top:30px}
+.btn-fill{background:var(--acc);color:#14161a;border-color:var(--acc);font-weight:800}
+.btn-fill:hover{background:#f2f158;border-color:#f2f158;color:#14161a}
+.btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-ghost:hover{border-color:#fff;color:#fff}
+.hero__note{position:absolute;left:0;bottom:14px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.7);margin:0}
+@media(max-width:860px){.hero{min-height:min(78vh,620px)}.hero .wrap{padding:clamp(84px,13vh,120px) 0 46px}.hero h1{max-width:100%}}
+/* sections: hairline editorial rhythm */
+.pad{padding:clamp(64px,8vw,112px) 0}
+h1,h2,h3{letter-spacing:-.028em}
+.lede{letter-spacing:-.02em}
+.facts{gap:0;margin-top:36px;border-top:1px solid var(--line2);padding-top:0}
+.facts>div{padding:18px 22px 0 0;margin-right:22px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.facts>div:last-child{border-right:0;margin-right:0;padding-right:0}
+.facts b{font-size:clamp(24px,2.6vw,34px);color:var(--ink)}
+.facts span{margin-top:8px;font-size:13px;line-height:1.35;color:var(--dim)}
+/* services: two-column divided list, not a card grid */
+.grid6{grid-template-columns:1fr 1fr;gap:0;background:transparent;border:0;border-top:1px solid rgba(255,255,255,.22);margin-top:40px}
+.svc{background:transparent;padding:26px 0;display:grid;grid-template-columns:52px 1fr;column-gap:8px;border-bottom:1px solid rgba(255,255,255,.16)}
+.svc .n{grid-row:1;grid-column:1;color:var(--acc);font-size:11.5px;letter-spacing:.2em;padding-top:5px}
+.svc h3{grid-column:2;margin:0 0 7px;font-size:22px;letter-spacing:-.025em}
+.svc p{grid-column:2;color:#a9ada8;font-size:14.6px;max-width:46ch;line-height:1.55}
+.grid6 .svc:nth-child(odd){padding-right:44px;border-right:1px solid rgba(255,255,255,.16)}
+.grid6 .svc:nth-child(even){padding-left:44px}
+@media(max-width:900px){.grid6{grid-template-columns:1fr}.grid6 .svc:nth-child(odd){padding-right:0;border-right:0}.grid6 .svc:nth-child(even){padding-left:0}}
+/* gallery: bare plates, legible captions */
+.tile{border:0;border-radius:0;background:transparent;overflow:visible}
+.tile img{aspect-ratio:4/5;border-radius:0}
+.tile figcaption{font-size:11.5px;letter-spacing:.07em;color:var(--dim);border-top:1px solid var(--line2);padding:12px 0 0;margin-top:14px}
+.area{background:transparent;border-color:var(--line2)}
+.jtc-more{display:inline-flex;align-items:center;gap:12px;margin-top:28px;font-weight:700;text-decoration:none;color:var(--ink);border-bottom:2px solid var(--acc);padding-bottom:6px;font-size:16px}
+.jtc-more:hover{background:var(--acc)}
 </style>
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 <style id="lb-argon-standard">
@@ -207,9 +261,9 @@ p, li {
 
 <header class="bar">
   <div class="wrap bar__in">
-    <a class="brand" href="#top" aria-label="JTC Concreting — home">
-      <img class="mark" src="assets/logo-hdr-mark.png" alt="JC">
-      <img class="word" src="assets/logo-hdr-word.png" alt="JTC Concreting">
+    <a class="jbrand" href="#top" aria-label="JTC Concreting — home">
+      <span class="jbrand__mono" aria-hidden="true">JTC</span>
+      <span><span class="jbrand__name">JTC Concreting</span><span class="jbrand__sub">Hobart &middot; Tasmania</span></span>
     </a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <nav class="nav" id="nav" aria-label="Primary">
@@ -226,32 +280,20 @@ p, li {
 <main id="top">
 
   <section class="hero" id="hero" aria-label="JTC Concreting">
+    <img class="hero__media" src="images/hero.jpg" alt="Exposed aggregate driveway with timber fence edging at a Hobart property">
     <div class="wrap">
-      <div>
-        <p class="k">Concreting specialists &middot; Hobart, Tasmania</p>
-        <h1>Exposed aggregate, driveways and slabs. <em>Poured to last a Tasmanian winter.</em></h1>
-        <p class="sub">JTC Concreting lays exposed aggregate driveways, footpaths, house slabs and civil concrete across Hobart and surrounds &mdash; set out, formed, poured and finished by one crew.</p>
-        <div class="cta-row">
-          <a class="btn btn-fill" href="#lbq">Get a firm quote</a>
-          <a class="btn btn-ghost" href="tel:+61455997235">Call 0455 997 235</a>
-        </div>
+      <p class="k">JTC Concreting &middot; Hobart &amp; surrounds</p>
+      <h1>Concrete that takes a <em>Tasmanian winter</em> and still looks poured last week.</h1>
+      <p class="sub">Exposed aggregate driveways, paths, slabs and civil pours across Hobart. One crew sets it out, forms it, pours it and washes the stone back the same day.</p>
+      <div class="cta-row">
+        <a class="btn btn-fill" href="tel:+61455997235">Call 0455 997 235</a>
+        <a class="btn btn-ghost" href="#lbq">Send the job for a firm quote</a>
       </div>
-      <div class="heroshot rv">
-        <figure>
-          <img src="images/hero.jpg" alt="Wide exposed aggregate concrete driveway bordered by timber fencing at a Hobart property">
-          <div class="cap">Exposed aggregate driveway &mdash; Hobart</div>
-        </figure>
-      </div>
+      <p class="hero__note">Exposed aggregate driveway &mdash; Hobart</p>
       <!-- LB-3D-HERO --><canvas id="heroCanvas" width="1600" height="900" aria-hidden="true"></canvas>
     </div>
   </section>
 
-  <div class="strip">
-    <figure><img src="images/hero.jpg" alt="Wide exposed aggregate concrete driveway bordered by timber fencing"><figcaption>Exposed aggregate driveway &mdash; Hobart</figcaption></figure>
-    <figure><img src="images/work-02.jpg" alt="Exposed aggregate concrete surface with a sharp shadow line across it"><figcaption>Stone washed back, then sealed</figcaption></figure>
-    <figure><img src="images/work-03.jpg" alt="Angled view of a textured exposed aggregate concrete surface in sunlight"><figcaption>Textured, non-slip finish</figcaption></figure>
-    <figure><img src="images/work-04.jpg" alt="Macro close-up of stones and binder in exposed aggregate concrete"><figcaption>The aggregate up close</figcaption></figure>
-  </div>
 
   <section class="pad" id="about">
     <div class="wrap two">
@@ -276,14 +318,12 @@ p, li {
     <div class="wrap">
       <p class="eyebrow rv" style="color:var(--amber-l)">What we pour</p>
       <h2 class="rv" style="margin:16px 0 0;color:#fff;max-width:18ch">Concreting services</h2>
-      <div class="grid6">
-        <div class="svc rv"><div class="n">01</div><h3>Exposed aggregate</h3><p>Aggregate cast in and washed back for a durable, textured, non-slip surface.</p></div>
-        <div class="svc rv"><div class="n">02</div><h3>Driveways &amp; crossovers</h3><p>New driveways and council crossovers, set out to the right falls and finished how you want.</p></div>
-        <div class="svc rv"><div class="n">03</div><h3>Footpaths &amp; steps</h3><p>Footpaths, paths and steps that tie into the levels and stay safe underfoot.</p></div>
-        <div class="svc rv"><div class="n">04</div><h3>House &amp; shed slabs</h3><p>Slabs for homes, sheds and extensions &mdash; boxed, steel in and poured flat.</p></div>
-        <div class="svc rv"><div class="n">05</div><h3>Civil &amp; commercial works</h3><p>Civil and commercial concrete pours to plan, set out and finished on schedule.</p></div>
-        <div class="svc rv"><div class="n">06</div><h3>Footings &amp; formwork</h3><p>Trench and pad footings, formwork and structural pours, built to your plan.</p></div>
-      </div>
+        <div class="svc rv"><div class="n">01</div><h3>Exposed aggregate</h3><p>Stone cast into the top of the slab and washed back the same day &mdash; grip when wet, no glare, hides everyday staining.</p></div>
+        <div class="svc rv"><div class="n">02</div><h3>Driveways &amp; crossovers</h3><p>Set out to the right falls so water leaves the slab, then finished to the look you picked. Council crossover requirements handled in the set-out.</p></div>
+        <div class="svc rv"><div class="n">03</div><h3>Footpaths &amp; steps</h3><p>Paths and steps that meet your existing levels instead of sitting proud of them, with a non-slip finish underfoot.</p></div>
+        <div class="svc rv"><div class="n">04</div><h3>House &amp; shed slabs</h3><p>Boxed, steel tied on chairs and poured flat &mdash; the base compacted first, because that is what stops the cracking later.</p></div>
+        <div class="svc rv"><div class="n">05</div><h3>Civil &amp; commercial</h3><p>Larger pours set out and finished to plan, programmed around your site access and the weather window.</p></div>
+        <div class="svc rv"><div class="n">06</div><h3>Footings &amp; formwork</h3><p>Trench and pad footings, formwork and structural pours built to the engineer&rsquo;s plan, poured to the levels on it.</p></div>
     </div>
   </section>
 
@@ -296,9 +336,7 @@ p, li {
       <div class="rv body">
         <p style="color:var(--dim);max-width:60ch">Exposed aggregate is more than a look. The stone cast into the top of the slab gives the surface grip when it is wet, hides day-to-day staining, and stands up to frost and traffic far better than a plain finish. For a Hobart driveway it is the finish that keeps on going.</p>
         <p style="color:var(--dim);max-width:60ch">JTC washes the surface back the same day to reveal the stone consistently across the whole pour, then seals it. The result is even from the street to the garage door.</p>
-        <div class="areas">
-          <span class="area">Driveways</span><span class="area">Paths &amp; footpaths</span><span class="area">Patios</span><span class="area">Crossovers</span>
-        </div>
+        <a class="jtc-more" href="#lbq">Send your driveway for a firm quote <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
