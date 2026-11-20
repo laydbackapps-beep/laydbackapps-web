@@ -1,0 +1,314 @@
+<script>
+  // Reveal on scroll
+  (function() {
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); ro.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+    document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+    // Safety net
+    setTimeout(() => document.querySelectorAll('.rv:not(.on)').forEach(el => el.classList.add('on')), 1100);
+  })();
+
+  // Mobile nav toggle
+  (function() {
+    const burger = document.querySelector('.nav__burger');
+    const stations = document.querySelector('.nav__stations');
+    if (burger && stations) {
+      burger.addEventListener('click', () => {
+        const open = burger.getAttribute('aria-expanded') === 'true';
+        burger.setAttribute('aria-expanded', !open);
+        stations.classList.toggle('open');
+      });
+      stations.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        stations.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }));
+    }
+  })();
+
+  // Hero Canvas - Chisel Walk
+  (function() {
+    const canvas = document.querySelector('.hero__canvas');
+    if (!canvas) return;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    const ctx = canvas.getContext('2d');
+    let w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let animId = 0, settled = false, settleTimer = 0;
+    let pointer = { x: -9999, y: -9999, active: false };
+
+    // Wall geometry - 7 bed courses
+    const courses = 7;
+    const blocksPerCourse = [6, 7, 6, 7, 6, 7, 6]; // varying
+    const courseHeight = 0; // computed in resize
+    const jointHeight = 0; // computed in resize
+
+    // Chisel state
+    const chisel = {
+      x: -100,
+      targetX: -100,
+      y: 0,
+      course: 1, // second bed joint (0-indexed)
+      phase: 'walk', // walk, settle
+      progress: 0,
+      wobble: 0,
+      recoil: 0
+    };
+
+    // Trail state - lightened split-face behind chisel
+    const trail = [];
+
+    // Mote particles
+    const motes = [];
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      w = Math.floor(rect.width * dpr);
+      h = Math.floor(rect.height * dpr);
+      canvas.width = w;
+      canvas.height = h;
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      ctx.scale(dpr, dpr);
+      const cssW = rect.width;
+      const cssH = rect.height;
+      courseHeight = cssH / (courses * 1.15);
+      jointHeight = courseHeight * 0.12;
+      chisel.y = (chisel.course + 1) * courseHeight * 1.15 - jointHeight * 0.5;
+      chisel.targetX = cssW + 100;
+    }
+
+    function drawWall(t) {
+      const cssW = canvas.width / dpr;
+      const cssH = canvas.height / dpr;
+      const startY = cssH * 0.15;
+
+      // Quarry dark base
+      ctx.fillStyle = '#26201a';
+      ctx.fillRect(0, 0, cssW, cssH);
+
+      // Draw courses bottom to top
+      for (let c = courses - 1; c >= 0; c--) {
+        const cy = startY + c * courseHeight * 1.15;
+        const numBlocks = blocksPerCourse[c];
+        const blockW = cssW / (numBlocks + 0.5);
+        const offset = (c % 2 === 0) ? blockW * 0.25 : -blockW * 0.15;
+
+        for (let b = 0; b < numBlocks; b++) {
+          const bx = offset + b * blockW + blockW * 0.05;
+          const bw = blockW * 0.9;
+          const bh = courseHeight * 0.85;
+
+          // Determine if this block is in the trail (lightened)
+          let lighten = 0;
+          if (c === chisel.course && bx < chisel.x) {
+            const dist = chisel.x - bx;
+            if (dist < 300) lighten = Math.max(0, 1 - dist / 300);
+          }
+
+          // Block base color
+          const baseR = 38, baseG = 32, baseB = 26; // #26201a
+          const lightR = 217, lightG = 200, lightB = 166; // #d9c8a6
+          const r = Math.round(baseR + (lightR - baseR) * lighten * 0.6);
+          const g = Math.round(baseG + (lightG - baseG) * lighten * 0.6);
+          const bCol = Math.round(baseB + (lightB - baseB) * lighten * 0.6);
+          ctx.fillStyle = `rgb(${r},${g},${bCol})`;
+
+          // Block rect with slight irregularity
+          ctx.beginPath();
+          ctx.roundRect(bx, cy, bw, bh, 2);
+          ctx.fill();
+
+          // Split-face texture - vertical striations
+          if (lighten > 0.1) {
+            ctx.strokeStyle = `rgba(242,234,217,${0.08 + lighten * 0.12})`;
+            ctx.lineWidth = 0.5;
+            for (let s = 0; s < 5; s++) {
+              const sx = bx + (bw / 6) * (s + 1) + (Math.sin(t * 0.001 + s * 7) * 1.5);
+              ctx.beginPath();
+              ctx.moveTo(sx, cy + 2);
+              ctx.lineTo(sx + (Math.sin(t * 0.001 + s * 9) * 2), cy + bh - 2);
+              ctx.stroke();
+            }
+          }
+
+          // Bed joint highlight (top edge)
+          ctx.strokeStyle = 'rgba(242,234,217,0.06)';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(bx, cy);
+          ctx.lineTo(bx + bw, cy);
+          ctx.stroke();
+        }
+
+        // Bed joint line
+        ctx.strokeStyle = 'rgba(242,234,217,0.12)';
+        ctx.lineWidth = jointHeight;
+        ctx.setLineDash([courseHeight * 0.3, courseHeight * 0.2]);
+        ctx.lineDashOffset = (c % 2 === 0) ? 0 : courseHeight * 0.25;
+        ctx.beginPath();
+        ctx.moveTo(0, cy + bh + jointHeight * 0.5);
+        ctx.lineTo(cssW, cy + bh + jointHeight * 0.5);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+    }
+
+    function drawChisel(t) {
+      const cx = chisel.x;
+      const cy = chisel.y;
+
+      // Chisel body
+      ctx.save();
+      ctx.translate(cx, cy);
+
+      // Wedge
+      ctx.fillStyle = '#c08a3e';
+      ctx.beginPath();
+      ctx.moveTo(-4, -8);
+      ctx.lineTo(4, -8);
+      ctx.lineTo(2, 8);
+      ctx.lineTo(-2, 8);
+      ctx.closePath();
+      ctx.fill();
+
+      // Handle
+      ctx.strokeStyle = '#4a3c2c';
+      ctx.lineWidth = 3;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(0, 8);
+      ctx.lineTo(0, 22);
+      ctx.stroke();
+
+      // Tap animation - small recoil
+      if (chisel.recoil > 0) {
+        ctx.translate(0, -chisel.recoil * 3);
+        chisel.recoil *= 0.85;
+      }
+
+      ctx.restore();
+    }
+
+    function drawMotes(t) {
+      for (let i = motes.length - 1; i >= 0; i--) {
+        const m = motes[i];
+        m.life -= 1/60;
+        if (m.life <= 0) { motes.splice(i, 1); continue; }
+        m.y += m.vy;
+        m.x += m.vx;
+        m.vy += 0.02;
+        const alpha = m.life / m.maxLife;
+        ctx.fillStyle = `rgba(242,234,217,${alpha * 0.6})`;
+        ctx.beginPath();
+        ctx.arc(m.x, m.y, m.r * alpha, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function spawnMotes(x, y) {
+      for (let i = 0; i < 3; i++) {
+        motes.push({
+          x: x + (Math.random() - 0.5) * 20,
+          y: y + (Math.random() - 0.5) * 10,
+          vx: (Math.random() - 0.5) * 0.8,
+          vy: -Math.random() * 1.5 - 0.5,
+          r: Math.random() * 1.5 + 0.5,
+          life: Math.random() * 1.5 + 0.5,
+          maxLife: 2
+        });
+      }
+    }
+
+    function animate(t) {
+      if (!isFinite(t)) return;
+      const cssW = canvas.width / dpr;
+      const cssH = canvas.height / dpr;
+
+      // Clear
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, cssW, cssH);
+
+      drawWall(t);
+
+      if (chisel.phase === 'walk') {
+        // Move chisel
+        const speed = 1.8;
+        chisel.x += speed;
+        chisel.wobble = Math.sin(t * 0.02) * 1.5;
+
+        // Periodic tap recoil
+        if (Math.floor(chisel.x / 40) !== Math.floor((chisel.x - speed) / 40)) {
+          chisel.recoil = 1;
+          spawnMotes(chisel.x, chisel.y);
+        }
+
+        // Check if reached end
+        if (chisel.x >= chisel.targetX) {
+          chisel.x = chisel.targetX;
+          chisel.phase = 'settle';
+          settleTimer = t + 2000; // 2 second settle
+        }
+      } else if (chisel.phase === 'settle') {
+        // Gentle sheen pass
+        if (t > settleTimer) {
+          settled = true;
+        }
+      }
+
+      drawChisel(t);
+      drawMotes(t);
+
+      // Parallax guard
+      if (pointer.active && isFinite(pointer.x) && isFinite(pointer.y) && settled) {
+        const dx = (pointer.x - cssW * 0.5) * 0.008;
+        const dy = (pointer.y - cssH * 0.5) * 0.008;
+        ctx.save();
+        ctx.translate(dx, dy);
+        ctx.restore();
+      }
+
+      if (!settled) {
+        animId = requestAnimationFrame(animate);
+      }
+    }
+
+    // window.__heroSettle hook for deterministic capture
+    window.__heroSettle = function() {
+      chisel.x = chisel.targetX;
+      chisel.phase = 'settle';
+      settleTimer = 0;
+      settled = true;
+      cancelAnimationFrame(animId);
+      // Force one draw
+      animate(performance.now());
+    };
+
+    // Pointer parallax
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      pointer.x = e.clientX - rect.left;
+      pointer.y = e.clientY - rect.top;
+      pointer.active = true;
+    });
+    canvas.addEventListener('mouseleave', () => { pointer.active = false; });
+    canvas.addEventListener('touchmove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      if (touch) {
+        pointer.x = touch.clientX - rect.left;
+        pointer.y = touch.clientY - rect.top;
+        pointer.active = true;
+      }
+    }, { passive: true });
+    canvas.addEventListener('touchend', () => { pointer.active = false; });
+
+    // Init
+    window.addEventListener('resize', () => { resize(); if (settled) animate(performance.now()); });
+    resize();
+    animId = requestAnimationFrame(animate);
+  })();
+</script>
+</body>
+</html>
