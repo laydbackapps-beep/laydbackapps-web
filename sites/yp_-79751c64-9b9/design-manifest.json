@@ -1,0 +1,205 @@
+{
+  "lead_id": "yp_-79751c64-9b9",
+  "company_name": "Wrights plumbing",
+  "stage": "stage2_design",
+  "assigned_family": "stencil-stack",
+  "palette": {
+    "pale_concrete": "#f0efe8",
+    "blaze_orange": "#ff6b1a",
+    "ink": "#1a1a2e",
+    "warm_white": "#faf9f6"
+  },
+  "palette_usage": {
+    "background_primary": "pale_concrete",
+    "background_alt": "warm_white",
+    "text_primary": "ink",
+    "accent_primary": "blaze_orange",
+    "accent_hover": "#e85d15",
+    "focus_ring": "blaze_orange"
+  },
+  "fonts": {
+    "display": "Archivo Black",
+    "body": "Inter",
+    "mono": "JetBrains Mono",
+    "fallback_display": "system-ui, sans-serif",
+    "fallback_body": "system-ui, sans-serif",
+    "fallback_mono": "monospace"
+  },
+  "font_loading": {
+    "display": "swap",
+    "preload": ["Archivo Black", "Inter", "JetBrains Mono"],
+    "css_variables": {
+      "font-display": "\"Archivo Black\", var(--font-fallback-display)",
+      "font-body": "\"Inter\", var(--font-fallback-body)",
+      "font-mono": "\"JetBrains Mono\", var(--font-fallback-mono)"
+    }
+  },
+  "logo": {
+    "concept": "Pipe Junction Monogram",
+    "description": "W and P initials joined by a blaze-orange pipe T-junction; trade literal without clip-art",
+    "symbol_svg": "logo-final.svg",
+    "horizontal_lockup_svg": "logo-horizontal.svg",
+    "stacked_lockup_svg": "logo-stacked.svg",
+    "variants": {
+      "black": "logo-kit/logo-final-black.svg",
+      "white": "logo-kit/logo-final-white.svg",
+      "mono_ink": "logo-kit/logo-final-mono-1a1a2e.svg",
+      "square": "logo-kit/logo-final-square.svg",
+      "favicon": "logo-kit/logo-final-favicon.svg",
+      "app_icon": "logo-kit/logo-final-app-icon.svg"
+    },
+    "web_icons": {
+      "favicon_ico": "logo-kit/favicon.ico",
+      "favicon_svg": "logo-kit/favicon.svg",
+      "favicon_16": "logo-kit/favicon-16.png",
+      "favicon_32": "logo-kit/favicon-32.png",
+      "favicon_48": "logo-kit/favicon-48.png",
+      "apple_touch": "logo-kit/apple-touch-icon.png",
+      "icon_192": "logo-kit/icon-192.png",
+      "icon_512": "logo-kit/icon-512.png",
+      "maskable_512": "logo-kit/maskable-512.png",
+      "webmanifest": "logo-kit/site.webmanifest",
+      "head_snippet": "logo-kit/head-snippet.html"
+    },
+    "audit_score": 98,
+    "construction": "Geometric SVG on 16px grid, 256x256 viewBox, stroke-based paths, blaze-orange accent at pipe junction"
+  },
+  "hero_3d": {
+    "type": "canvas_particle_ribbon",
+    "description": "Canvas particle-ribbon hero in brand palette (pale concrete + blaze orange); rAF-first, reduced-motion static fallback, ink verify",
+    "palette": ["#f0efe8", "#ff6b1a"],
+    "reduced_motion": "static_fallback",
+    "performance": {
+      "target_fps": 60,
+      "particle_count": 120,
+      "ribbon_segments": 60,
+      "canvas_size": "full-viewport",
+      "rAF_loop": true
+    },
+    "accessibility": {
+      "respects_prefers_reduced_motion": true,
+      "static_fallback": "ink-on-pale-concrete geometric pattern",
+      "contrast_ratio": "7:1 minimum"
+    }
+  },
+  "components": {
+    "navigation": {
+      "type": "pill_nav",
+      "style": "stencil-stack",
+      "background": "ink",
+      "text": "warm_white",
+      "active_background": "blaze_orange",
+      "active_text": "ink",
+      "font": "Archivo Black",
+      "border_radius": "9999px",
+      "padding": "0.75rem 1.5rem"
+    },
+    "quote_form": {
+      "endpoint": "/functions/v1/quote-request",
+      "fields": [
+        {"name": "name", "type": "text", "required": true, "label": "Name"},
+        {"name": "phone", "type": "tel", "required": true, "label": "Phone"},
+        {"name": "email", "type": "email", "required": false, "label": "Email"},
+        {"name": "service", "type": "select", "required": true, "label": "Service", "options": ["General Plumbing", "Blocked Drains", "Hot Water", "Gas Fitting", "Roof & Gutter", "Emergency"]},
+        {"name": "message", "type": "textarea", "required": false, "label": "Details"},
+        {"name": "consent", "type": "checkbox", "required": true, "label": "I agree to be contacted"}
+      ],
+      "honeypot": "website",
+      "styling": {
+        "input_background": "warm_white",
+        "input_border": "ink",
+        "input_focus_border": "blaze_orange",
+        "input_focus_ring": "blaze_orange",
+        "label_color": "ink",
+        "button_background": "ink",
+        "button_text": "warm_white",
+        "button_hover_background": "blaze_orange",
+        "button_hover_text": "ink",
+        "button_font": "Archivo Black",
+        "error_color": "#c00"
+      }
+    },
+    "cta_primary": {
+      "text": "Get a Quote",
+      "href": "tel:+61415432848",
+      "style": "pill",
+      "background": "blaze_orange",
+      "text_color": "ink",
+      "font": "Archivo Black"
+    },
+    "cta_secondary": {
+      "text": "Call Now",
+      "href": "tel:+61415432848",
+      "style": "outline",
+      "border": "ink",
+      "text_color": "ink",
+      "font": "Archivo Black"
+    }
+  },
+  "layout": {
+    "container_max_width": "1200px",
+    "spacing_scale": "0.5rem base (8px)",
+    "border_radius": "0.5rem (8px) for cards, 9999px for pills",
+    "shadow": "0 4px 24px rgba(26,26,46,0.08)",
+    "shadow_hover": "0 8px 32px rgba(26,26,46,0.12)"
+  },
+  "animations": {
+    "duration_fast": "150ms",
+    "duration_normal": "250ms",
+    "duration_slow": "400ms",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "reduced_motion": "disable_all_transitions"
+  },
+  "reference_dna": [
+    "britive (kinetic type)",
+    "ayocin (edge-pinned oversized type)",
+    "illoca (grid-paper texture)"
+  ],
+  "uniqueness_baselines": "two_most_recent_live_sites",
+  "seo": {
+    "title": "Wrights Plumbing — The Entrance NSW | Licensed Plumber",
+    "description": "Wrights Plumbing: reliable, precise plumbing for The Entrance & Central Coast. Blocked drains, hot water, gas fitting, emergency callouts. Call 0415 432 848.",
+    "og_image": "/og-image.png",
+    "twitter_card": "summary_large_image",
+    "json_ld": {
+      "@type": "LocalBusiness",
+      "name": "Wrights plumbing",
+      "telephone": "+61415432848",
+      "address": {"@type": "PostalAddress", "addressLocality": "The Entrance", "addressRegion": "NSW", "addressCountry": "AU"},
+      "url": "https://wrightsplumbing.example.com",
+      "sameAs": ["https://instagram.com/wrightsplumbing"]
+    }
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "color_contrast": "7:1 for text, 4.5:1 for UI elements",
+    "focus_visible": true,
+    "skip_link": true,
+    "alt_text": "descriptive for all images",
+    "aria_labels": "on all interactive elements",
+    "reduced_motion": "honored globally"
+  },
+  "performance_budget": {
+    "html_kb": 15,
+    "css_kb": 20,
+    "js_kb": 30,
+    "images_kb": 100,
+    "total_kb": 165,
+    "lcp_target_ms": 2500,
+    "cls_target": 0.1,
+    "fid_target_ms": 100
+  },
+  "assets": {
+    "logo_files": [
+      "logo-final.svg",
+      "logo-horizontal.svg",
+      "logo-stacked.svg",
+      "logo-kit/favicon.ico",
+      "logo-kit/favicon.svg",
+      "logo-kit/icon-192.png",
+      "logo-kit/icon-512.png"
+    ],
+    "font_files": "Google Fonts (preload)",
+    "hero_canvas": "inline script, no external deps"
+  }
+}
