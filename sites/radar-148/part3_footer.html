@@ -1,0 +1,167 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="Gold Coast Wash Drones logo" height="52">
+          <span>
+            <span class="foot-brand-name">Gold Coast Wash Drones</span><br>
+            <span class="foot-brand-sub">Drone Cleaning · Gold Coast</span>
+          </span>
+        </div>
+        <p>Gold Coast Wash Drones — advanced drone cleaning services for buildings, roofs, solar panels and commercial properties across the Gold Coast.</p>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <p>
+          <a href="tel:+61448594096">0448 594 096</a><br>
+          <a href="mailto:info@goldcoastwashdrones.com.au">info@goldcoastwashdrones.com.au</a><br>Gold Coast QLD · servicing South-East Queensland
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Gold Coast Wash Drones · Gold Coast QLD</span>
+      <span>Safer access · Smarter cleaning</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), n = document.getElementById('navlinks');
+  if (b && n){
+    b.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ n.classList.remove('open'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+})();
+
+(function(){
+  var els = document.querySelectorAll('.drop');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+setTimeout(function(){
+  document.querySelectorAll('.drop').forEach(function(el){ el.classList.add('in'); });
+}, 1100);
+
+
+(function(){
+  var c = document.getElementById('heroCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px = 0, py = 0;
+  window.addEventListener('pointermove', function(e){
+    px = (e.clientX / window.innerWidth - 0.5) * 16;
+    py = (e.clientY / window.innerHeight - 0.5) * 9;
+  }, {passive: true});
+  function resize(){
+    W = c.clientWidth || c.offsetWidth;
+    H = c.clientHeight || c.offsetHeight;
+    if (!W || !H) return;
+    c.width = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  function loop(t){
+    if (!W || !H){ resize(); return; }
+    frame(t || 0);
+    if (!reduce) requestAnimationFrame(loop);
+  }
+  function frame(t){
+
+    var time = t * 0.001;
+    ctx.clearRect(0,0,W,H);
+    var g = ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,'#0B1016'); g.addColorStop(.55,'#111A24'); g.addColorStop(1,'#0B1016');
+    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+
+    /* building facade: window grid on left 60% */
+    var cols3 = 7, rows3 = 9;
+    for (var r3=0; r3<rows3; r3++){
+      for (var c3=0; c3<cols3; c3++){
+        var wx = W*0.05 + c3*W*0.082;
+        var wy = H*0.06 + r3*H*0.102;
+        var ww = W*0.062, wh = H*0.076;
+        var lum = 0.05 + ((r3*5+c3*9)%4)*0.02;
+        /* windows near drone get sprayed shimmer */
+        var distToDrone = Math.abs(wx - W*0.78) + Math.abs(wy - H*0.4);
+        if (distToDrone < W*0.3) lum += 0.05;
+        ctx.fillStyle = 'rgba(140,170,200,' + lum + ')';
+        ctx.fillRect(wx, wy, ww, wh);
+        ctx.strokeStyle = 'rgba(90,120,150,0.16)';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(wx, wy, ww, wh);
+      }
+    }
+
+    /* drone silhouette hovering (right) */
+    var dx0 = W*0.78 + Math.sin(time*0.9)*10 + px*0.7;
+    var dy0 = H*0.38 + Math.sin(time*1.3)*7 + py*0.5;
+    ctx.strokeStyle = 'rgba(210,225,240,0.85)'; ctx.lineWidth = 2.4;
+    ctx.beginPath();
+    ctx.moveTo(dx0-30, dy0-10); ctx.lineTo(dx0-8, dy0-2);
+    ctx.moveTo(dx0+30, dy0-10); ctx.lineTo(dx0+8, dy0-2);
+    ctx.moveTo(dx0-30, dy0+10); ctx.lineTo(dx0-8, dy0+2);
+    ctx.moveTo(dx0+30, dy0+10); ctx.lineTo(dx0+8, dy0+2);
+    ctx.stroke();
+    /* rotors */
+    ctx.strokeStyle = 'rgba(190,210,230,0.5)';
+    [[-30,-10],[30,-10],[-30,10],[30,10]].forEach(function(rr){
+      ctx.beginPath(); ctx.ellipse(dx0+rr[0], dy0+rr[1], 11, 3.4, 0, 0, Math.PI*2); ctx.stroke();
+    });
+    ctx.fillStyle = 'rgba(226,238,250,0.9)';
+    ctx.fillRect(dx0-7, dy0-4, 14, 8);
+
+    /* gold accent ring */
+    ctx.strokeStyle = 'rgba(201,162,75,0.5)'; ctx.lineWidth = 1.6;
+    ctx.beginPath(); ctx.arc(dx0, dy0, 26, 0, Math.PI*2); ctx.stroke();
+
+    /* spray fan from drone down the facade */
+    var sg = ctx.createLinearGradient(dx0, dy0, dx0-W*0.26, dy0+H*0.34);
+    sg.addColorStop(0,'rgba(150,200,235,0.20)');
+    sg.addColorStop(1,'rgba(150,200,235,0)');
+    ctx.fillStyle = sg;
+    ctx.beginPath();
+    ctx.moveTo(dx0-6, dy0+6);
+    ctx.lineTo(dx0-W*0.30, dy0+H*0.30);
+    ctx.lineTo(dx0-W*0.16, dy0+H*0.40);
+    ctx.closePath(); ctx.fill();
+
+    /* water droplets falling along facade */
+    for (var d3=0; d3<22; d3++){
+      var ddx = W*0.30 + ((d3*83) % Math.floor(W*0.42));
+      var ddy = H*0.08 + ((d3*57 + time*30*(0.5+(d3%4)*0.25)) % (H*0.82));
+      ctx.fillStyle = 'rgba(170,210,240,' + (0.14 + (d3%4)*0.05) + ')';
+      ctx.beginPath(); ctx.arc(ddx, ddy, 1.6 + (d3%3)*0.7, 0, Math.PI*2); ctx.fill();
+    }
+
+    var vg = ctx.createRadialGradient(W*0.5,H*0.45,H*0.25,W*0.5,H*0.45,H*0.9);
+    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,'rgba(0,0,0,0.42)');
+    ctx.fillStyle = vg; ctx.fillRect(0,0,W,H);
+
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
