@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPV Roofing — Roof restoration & repairs. Cardiff & Lake Macquarie NSW</title>
+<meta name="description" content="NPV Roofing — roof restoration, repairs and repainting across Cardiff, Lake Macquarie & Newcastle NSW. Call 0467 633 419.">
+<meta property="og:title" content="NPV Roofing Pty Ltd — Cardiff NSW">
+<link rel="icon" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1c1c1f; --ink2: #4a4a52; --paper: #f4f4f2; --paper2: #eaeae7;
+  --acc: #2f7f96; --acc2: #1e5f74; --acc-text: #ffffff;
+  --line: #d5dcdd; --dark: #1c1c1f;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; }
+body { font-family: 'Inter', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+a { color: inherit; }
+::selection { background: var(--acc); color: #fff; }
+.mono { font-family: 'Space Grotesk', monospace; }
+
+/* progress */
+.prog { position: fixed; top: 0; left: 0; height: 3px; width: 100%; z-index: 99; transform-origin: 0 50%; transform: scaleX(0); background: var(--acc); }
+
+/* nav — differs from tonight's batch: dark chip nav, centred brand */
+.nav { position: sticky; top: 0; z-index: 50; background: var(--dark); }
+.nav .wrap { max-width: 1300px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 22px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+.brand img { height: 46px; width: 46px; object-fit: contain; border-radius: 8px; background: #fff; padding: 3px; }
+.brand .bn { font-family: 'Space Grotesk'; font-weight: 700; font-size: 19px; letter-spacing: .02em; }
+.brand .bs { display: block; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--acc); font-weight: 600; }
+.nav-links { display: flex; gap: 22px; margin-left: auto; }
+.nav-links a { color: rgba(255,255,255,.75); text-decoration: none; font-size: 13.5px; font-weight: 600; letter-spacing: .04em; }
+.nav-links a:hover { color: var(--acc); }
+.nav .cta { background: var(--acc); color: #fff; padding: 11px 22px; border-radius: 6px; text-decoration: none; font-weight: 800; font-size: 13px; letter-spacing: .04em; }
+.nav .cta:hover { background: var(--acc2); }
+@media (max-width: 960px) { .nav-links { display: none; } }
+
+/* HERO — Design-5 diagonal split DNA: headline left, real photo right, rotated badge */
+.hero { max-width: 1300px; margin: 0 auto; padding: 64px 32px 56px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
+.hero .kick { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--acc); font-weight: 700; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+.hero .kick::before { content: ""; width: 34px; height: 2px; background: var(--acc); }
+.hero h1 { font-size: clamp(44px, 5.6vw, 82px); line-height: .99; font-weight: 700; letter-spacing: -.025em; }
+.hero h1 .mut { color: var(--ink2); display: block; font-size: .52em; font-weight: 400; margin-top: 12px; letter-spacing: -.01em; }
+.hero .sub { margin-top: 24px; font-size: 16.5px; color: var(--ink2); max-width: 480px; }
+.hero .ctas { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 15px 28px; border-radius: 6px; text-decoration: none; font-weight: 800; font-size: 14px; letter-spacing: .03em; transition: transform .15s, background .15s; }
+.btn-acc { background: var(--acc); color: #fff; }
+.btn-acc:hover { background: var(--acc2); transform: translateY(-2px); }
+.btn-ghost { border: 1.5px solid var(--ink); color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+.hero .photo { position: relative; }
+.hero .photo img { width: 100%; height: 500px; object-fit: cover; display: block; }
+.hero .badge { position: absolute; left: -30px; bottom: 34px; background: var(--acc); color: #fff; padding: 16px 22px; transform: rotate(-3deg); font-family: 'Space Grotesk'; font-weight: 700; font-size: 14px; letter-spacing: .04em; box-shadow: 10px 10px 0 rgba(28,28,31,.16); }
+@media (max-width: 900px) { .hero { grid-template-columns: 1fr; padding-top: 40px; } .hero .photo { order: -1; } .hero .badge { left: 12px; } .hero .photo img { height: 320px; } }
+
+/* marquee — service area */
+.mq { overflow: hidden; background: var(--dark); color: rgba(255,255,255,.85); padding: 14px 0; border-top: 1px solid #2a2a2e; }
+.mq .track { display: inline-flex; white-space: nowrap; animation: mq 34s linear infinite; }
+.mq span { padding: 0 34px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; }
+.mq span:nth-child(even) { color: var(--acc); }
+@keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .mq .track { animation: none; } }
+
+/* sections */
+section { padding: 96px 0; }
+.wrap { max-width: 1300px; margin: 0 auto; padding: 0 32px; }
+.sec-head { display: flex; gap: 26px; align-items: baseline; margin-bottom: 46px; border-bottom: 2px solid var(--ink); padding-bottom: 18px; }
+.sec-n { font-family: 'Space Grotesk'; font-weight: 700; color: var(--acc); font-size: 14px; letter-spacing: .18em; }
+.sec-head h2 { font-size: clamp(28px, 3.4vw, 44px); font-weight: 700; letter-spacing: -.02em; }
+
+/* services — icon cards grid (differs from numbered rows of tonight's batch) */
+.svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.svc { background: #fff; border: 1px solid var(--line); padding: 30px 28px; transition: transform .2s, box-shadow .2s; }
+.svc:hover { transform: translateY(-5px); box-shadow: 0 18px 36px rgba(28,28,31,.1); }
+.svc .ic { width: 44px; height: 44px; background: var(--chipbg); color: var(--acc); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px; border-radius: 8px; }
+.svc h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.svc p { color: var(--ink2); font-size: 15px; }
+@media (max-width: 800px) { .svc-grid { grid-template-columns: 1fr; } }
+
+/* WORK — 3DHERO hover-lift card grid DNA (differs from horizontal drag strip) */
+.work-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+.wc { position: relative; overflow: hidden; background: var(--dark); }
+.wc:nth-child(1) { grid-column: span 4; }
+.wc:nth-child(2) { grid-column: span 2; }
+.wc:nth-child(3), .wc:nth-child(4), .wc:nth-child(5) { grid-column: span 2; }
+.wc img { width: 100%; height: 320px; object-fit: cover; display: block; transition: transform .45s ease, opacity .3s; opacity: .92; }
+.wc:hover img { transform: scale(1.05); opacity: 1; }
+.wc::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,.12) 50%, transparent 60%); transform: translateX(-110%); transition: transform .7s; }
+.wc:hover::after { transform: translateX(110%); }
+.wc .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 16px; background: linear-gradient(transparent, rgba(28,28,31,.85)); color: #fff; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; }
+@media (max-width: 800px) { .work-grid { grid-template-columns: 1fr 1fr; } .wc { grid-column: span 2 !important; } }
+@media (max-width: 560px) { .work-grid { grid-template-columns: 1fr; } .wc { grid-column: span 1 !important; } }
+
+/* quote — split panel, phone-first (no email in record) */
+.quote { background: var(--dark); color: #fff; }
+.quote .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.quote h2 { font-size: clamp(30px, 3.6vw, 48px); font-weight: 700; letter-spacing: -.02em; line-height: 1.05; }
+.quote h2 .acc { color: var(--acc); }
+.quote .qp { margin-top: 20px; color: rgba(255,255,255,.72); font-size: 16px; max-width: 440px; }
+.quote .qlines { margin-top: 30px; display: flex; flex-direction: column; gap: 14px; }
+.quote .ql { display: flex; gap: 14px; align-items: baseline; font-size: 15px; }
+.quote .ql b { color: var(--acc); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; min-width: 64px; }
+.quote .qimg { position: relative; }
+.quote .qimg img { width: 100%; height: 420px; object-fit: cover; object-position: center 30%; display: block; }
+@media (max-width: 900px) { .quote .wrap { grid-template-columns: 1fr; } }
+
+/* cta band */
+.cta-panel { padding: 72px 0; background: var(--acc); color: #fff; text-align: center; }
+.cta-panel h2 { font-size: clamp(26px, 3.2vw, 42px); font-weight: 700; letter-spacing: -.02em; }
+.cta-panel .big { display: inline-block; margin-top: 22px; font-family: 'Space Grotesk'; font-size: clamp(30px, 4.4vw, 54px); font-weight: 700; text-decoration: none; color: #fff; border-bottom: 3px solid rgba(255,255,255,.5); padding-bottom: 4px; }
+.cta-panel .big:hover { border-color: #fff; }
+
+/* footer */
+footer { background: var(--dark); color: rgba(255,255,255,.7); padding: 54px 0 0; }
+footer .wrap { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; align-items: flex-start; }
+footer .fb { display: flex; gap: 12px; align-items: center; }
+footer .fb img { height: 42px; width: 42px; border-radius: 8px; background: #fff; padding: 3px; object-fit: contain; }
+footer .fb .n { color: #fff; font-family: 'Space Grotesk'; font-weight: 700; font-size: 16px; }
+footer .fb .s { display: block; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--acc); }
+footer .fl { font-size: 13px; max-width: 340px; margin-top: 14px; }
+footer .bar { margin-top: 44px; border-top: 1px solid #2a2a2e; padding: 18px 0 22px; font-size: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+footer a { color: rgba(255,255,255,.85); }
+
+/* reveal system — buyckveth continuous reveal, 90ms stagger */
+.rv { opacity: 0; transform: translateY(24px); transition: opacity .45s ease, transform .65s ease; }
+.rv.on { opacity: 1; transform: none; }
+.rv.d1 { transition-delay: 90ms; } .rv.d2 { transition-delay: 180ms; } .rv.d3 { transition-delay: 270ms; } .rv.d4 { transition-delay: 360ms; }
+@media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+</style>
+<noscript><style>.rv{opacity:1 !important;transform:none !important}</style></noscript>
+<script>
+
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;  // honeypot — silently accept bots
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+
+</script>
+<script>
+
+    (function(){
+      'use strict';
+      document.documentElement.classList.add('js');
+      function heroCanvas(){
+        var c=document.getElementById('hero-canvas'); if(!c) return;
+        var ctx=c.getContext('2d'); var dpr=window.devicePixelRatio||1;
+        function resize(){
+          var r=c.getBoundingClientRect();
+          c.width=r.width*dpr; c.height=r.height*dpr;
+          ctx.scale(dpr,dpr); c.style.width=r.width+'px'; c.style.height=r.height+'px';
+        }
+        var prefersReduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+        var traceProg=0; var traceTarget=1; var colsProg=0; var colsTarget=1;
+        var startTime=performance.now();
+        function drawTrace(t){
+          var w=c.width/dpr; var h=c.height/dpr;
+          ctx.clearRect(0,0,w,h);
+          ctx.strokeStyle='#3f88a8'; ctx.lineWidth=2; ctx.lineCap='round';
+          ctx.beginPath();
+          var y0=h*0.55; var y1=h*0.45;
+          var steps=80;
+          for(var i=0;i<=steps;i++){
+            var x=(i/steps)*w;
+            var wave=Math.sin(i*0.15)*12*(1-t);
+            var y=y0+(y1-y0)*(i/steps)+wave*(1-t);
+            if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+          }
+          ctx.stroke();
+        }
+        function drawCols(t){
+          var w=c.width/dpr; var h=c.height/dpr;
+          var baseline=h*0.72;
+          ctx.fillStyle='#2c5d7c';
+          var clusters=[{x:w*0.15,n:5},{x:w*0.35,n:7},{x:w*0.55,n:4},{x:w*0.75,n:6},{x:w*0.9,n:3}];
+          clusters.forEach(function(cl){
+            for(var i=0;i<cl.n;i++){
+              var hgt=(30+Math.random()*80)*t;
+              var x=cl.x+(i-(cl.n-1)/2)*10;
+              ctx.fillRect(x-2,baseline-hgt,4,hgt);
+            }
+          });
+        }
+        function frame(now){
+          var elapsed=(now-startTime)/1000;
+          if(!prefersReduced){
+            traceProg=Math.min(1,elapsed/1.5);
+            colsProg=Math.min(1,Math.max(0,(elapsed-0.4)/1.2));
+          }else{
+            traceProg=1; colsProg=1;
+          }
+          drawTrace(traceProg);
+          drawCols(colsProg);
+          if(traceProg<1 || colsProg<1) requestAnimationFrame(frame);
+        }
+        resize(); window.addEventListener('resize',resize);
+        if(prefersReduced){ drawTrace(1); drawCols(1); }
+        else requestAnimationFrame(frame);
+      }
+      function processTrace(){
+        var c=document.getElementById('process-trace'); if(!c) return;
+        var ctx=c.getContext('2d'); var dpr=window.devicePixelRatio||1;
+        function resize(){
+          var r=c.getBoundingClientRect();
+          c.width=r.width*dpr; c.height=r.height*dpr;
+          ctx.scale(dpr,dpr); c.style.width=r.width+'px'; c.style.height=r.height+'px';
+          draw();
+        }
+        var prefersReduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+        function draw(){
+          var w=c.width/dpr; var h=c.height/dpr;
+          ctx.clearRect(0,0,w,h);
+          var steps=c.querySelectorAll('.step');
+          if(steps.length<2) return;
+          var centers=Array.from(steps).map(function(s){
+            var r=s.getBoundingClientRect(); var cr=c.getBoundingClientRect();
+            return {x:r.left+ r.width/2 - cr.left, y:r.top + 40 - cr.top};
+          });
+          ctx.strokeStyle='#3f88a8'; ctx.lineWidth=2; ctx.lineCap='round';
+          ctx.beginPath();
+          centers.forEach(function(p,i){
+            if(i===0) ctx.moveTo(p.x,p.y);
+            else{
+              var prev=centers[i-1];
+              var cx=(prev.x+p.x)/2;
+              ctx.bezierCurveTo(cx,prev.y,cx,p.y,p.x,p.y);
+            }
+          });
+          ctx.stroke();
+          centers.forEach(function(p){
+            ctx.fillStyle='#2c5d7c';
+            ctx.beginPath(); ctx.arc(p.x,p.y,4,0,Math.PI*2); ctx.fill();
+          });
+        }
+        resize(); window.addEventListener('resize',resize);
+      }
+      function reveal(){
+        var els=document.querySelectorAll('.rv');
+        var io=new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+          });
+        },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+        els.forEach(function(el){ io.observe(el); });
+      }
+      function mobileNav(){
+        var burger=document.querySelector('.burger');
+        var menu=document.getElementById('mobile-menu');
+        var links=menu?menu.querySelectorAll('a'):[];
+        if(!burger || !menu) return;
+        burger.addEventListener('click',function(){
+          var open=burger.getAttribute('aria-expanded')==='true';
+          burger.setAttribute('aria-expanded',!open);
+          menu.style.display=open?'none':'block';
+        });
+        links.forEach(function(a){ a.addEventListener('click',function(){
+          burger.setAttribute('aria-expanded','false'); menu.style.display='none';
+        }); });
+        window.addEventListener('resize',function(){
+          if(window.innerWidth>=600){ burger.setAttribute('aria-expanded','false'); menu.style.display='none'; }
+        });
+      }
+      function init(){
+        heroCanvas(); processTrace(); reveal(); mobileNav();
+        setTimeout(function(){
+          document.documentElement.classList.add('loaded');
+          document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('on'); });
+        },1100);
+      }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+      else init();
+    })();
+  
+</script>
+<script>
+
+    (function(){
+      'use strict';
+      document.documentElement.classList.add('js');
+      function heroCanvas(){
+        var c=document.getElementById('hero-canvas'); if(!c) return;
+        var ctx=c.getContext('2d'); var dpr=window.devicePixelRatio||1;
+        function resize(){
+          var r=c.getBoundingClientRect();
+          c.width=r.width*dpr; c.height=r.height*dpr;
+          ctx.scale(dpr,dpr); c.style.width=r.width+'px'; c.style.height=r.height+'px';
+        }
+        var prefersReduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+        var traceProg=0; var traceTarget=1; var colsProg=0; var colsTarget=1;
+        var startTime=performance.now();
+        function drawTrace(t){
+          var w=c.width/dpr; var h=c.height/dpr;
+          ctx.clearRect(0,0,w,h);
+          ctx.strokeStyle='#3f88a8'; ctx.lineWidth=2; ctx.lineCap='round';
+          ctx.beginPath();
+          var y0=h*0.55; var y1=h*0.45;
+          var steps=80;
+          for(var i=0;i<=steps;i++){
+            var x=(i/steps)*w;
+            var wave=Math.sin(i*0.15)*12*(1-t);
+            var y=y0+(y1-y0)*(i/steps)+wave*(1-t);
+            if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+          }
+          ctx.stroke();
+        }
+        function drawCols(t){
+          var w=c.width/dpr; var h=c.height/dpr;
+          var baseline=h*0.72;
+          ctx.fillStyle='#2c5d7c';
+          var clusters=[{x:w*0.15,n:5},{x:w*0.35,n:7},{x:w*0.55,n:4},{x:w*0.75,n:6},{x:w*0.9,n:3}];
+          clusters.forEach(function(cl){
+            for(var i=0;i<cl.n;i++){
+              var hgt=(30+Math.random()*80)*t;
+              var x=cl.x+(i-(cl.n-1)/2)*10;
+              ctx.fillRect(x-2,baseline-hgt,4,hgt);
+            }
+          });
+        }
+        function frame(now){
+          var elapsed=(now-startTime)/1000;
+          if(!prefersReduced){
+            traceProg=Math.min(1,elapsed/1.5);
+            colsProg=Math.min(1,Math.max(0,(elapsed-0.4)/1.2));
+          }else{
+            traceProg=1; colsProg=1;
+          }
+          drawTrace(traceProg);
+          drawCols(colsProg);
+          if(traceProg<1 || colsProg<1) requestAnimationFrame(frame);
+        }
+        resize(); window.addEventListener('resize',resize);
+        if(prefersReduced){ drawTrace(1); drawCols(1); }
+        else requestAnimationFrame(frame);
+      }
+      function processTrace(){
+        var c=document.getElementById('process-trace'); if(!c) return;
+        var ctx=c.getContext('2d'); var dpr=window.devicePixelRatio||1;
+        function resize(){
+          var r=c.getBoundingClientRect();
+          c.width=r.width*dpr; c.height=r.height*dpr;
+          ctx.scale(dpr,dpr); c.style.width=r.width+'px'; c.style.height=r.height+'px';
+          draw();
+        }
+        var prefersReduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+        function draw(){
+          var w=c.width/dpr; var h=c.height/dpr;
+          ctx.clearRect(0,0,w,h);
+          var steps=c.querySelectorAll('.step');
+          if(steps.length<2) return;
+          var centers=Array.from(steps).map(function(s){
+            var r=s.getBoundingClientRect(); var cr=c.getBoundingClientRect();
+            return {x:r.left+ r.width/2 - cr.left, y:r.top + 40 - cr.top};
+          });
+          ctx.strokeStyle='#3f88a8'; ctx.lineWidth=2; ctx.lineCap='round';
+          ctx.beginPath();
+          centers.forEach(function(p,i){
+            if(i===0) ctx.moveTo(p.x,p.y);
+            else{
+              var prev=centers[i-1];
+              var cx=(prev.x+p.x)/2;
+              ctx.bezierCurveTo(cx,prev.y,cx,p.y,p.x,p.y);
+            }
+          });
+          ctx.stroke();
+          centers.forEach(function(p){
+            ctx.fillStyle='#2c5d7c';
+            ctx.beginPath(); ctx.arc(p.x,p.y,4,0,Math.PI*2); ctx.fill();
+          });
+        }
+        resize(); window.addEventListener('resize',resize);
+      }
+      function reveal(){
+        var els=document.querySelectorAll('.rv');
+        var io=new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+          });
+        },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+        els.forEach(function(el){ io.observe(el); });
+      }
+      function mobileNav(){
+        var burger=document.querySelector('.burger');
+        var menu=document.getElementById('mobile-menu');
+        var links=menu?menu.querySelectorAll('a'):[];
+        if(!burger || !menu) return;
+        burger.addEventListener('click',function(){
+          var open=burger.getAttribute('aria-expanded')==='true';
+          burger.setAttribute('aria-expanded',!open);
+          menu.style.display=open?'none':'block';
+        });
+        links.forEach(function(a){ a.addEventListener('click',function(){
+          burger.setAttribute('aria-expanded','false'); menu.style.display='none';
+        }); });
+        window.addEventListener('resize',function(){
+          if(window.innerWidth>=600){ burger.setAttribute('aria-expanded','false'); menu.style.display='none'; }
+        });
+      }
+      function init(){
+        heroCanvas(); processTrace(); reveal(); mobileNav();
+        setTimeout(function(){
+          document.documentElement.classList.add('loaded');
+          document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('on'); });
+        },1100);
+      }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+      else init();
+    })();
+  
+</script>
+<style>
+/* Header bar: the client's own lockup (images/logo-npv.png, keyed off its flat white plate) and nothing
+   typed. The artwork is dark type + a pale cyan bracket, so the bar carries it on the page paper. */
+.nav{background:var(--paper)!important;border-bottom:1px solid var(--line)!important}
+.nav .wrap{min-height:96px!important;gap:clamp(14px,2vw,26px)!important}
+.brand{display:flex!important;align-items:center!important;flex:none!important;color:var(--ink)!important}
+.brand img, .brand img.lb-logo-unlock.lb-logo-unlock{height:clamp(44px,4.2vw,56px)!important;width:auto!important;
+  max-height:none!important;max-width:none!important;display:block!important;object-fit:contain!important;
+  background:none!important;border-radius:0!important;padding:0!important;border:0!important}
+.brand .bs{display:none!important}
+.nav-links a{color:var(--ink2)!important}
+.nav-links a:hover{color:var(--acc)!important}
+@media(max-width:820px){.nav .wrap{min-height:78px!important}.brand img{height:40px!important}}
+</style></head>
+<body>
+<div class="prog" id="prog"></div>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="#top" aria-label="NPV Roofing - home"><img src="images/logo-npv.png" alt="NPV Roofing" class="lb-logo-unlock" width="267" height="102"><span class="bn lb-sr-only">NPV Roofing</span></a>
+  <div class="nav-links"><a href="#services">Services</a><a href="#work">Our work</a><a href="#contact">Contact</a></div>
+  <a class="cta" href="tel:0467633419">Call 0467 633 419</a>
+</div></nav>
+
+<header class="hero" id="top">
+      <canvas id="hero-canvas" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;z-index:1;"></canvas>
+
+  <div class="lb3d-shape s2"></div>
+  <div class="lb3d-shape s3"></div>
+  <div class="lb3d-shape s4"></div>
+  <div class="lb3d-shape s5"></div>
+</div>
+
+  <div>
+    <div class="kick rv">NPV Roofing Pty Ltd — Cardiff NSW</div>
+    <h1 class="rv d1">Roofs restored<br>properly.<span class="mut">By locals who do it once, right.</span></h1>
+    <p class="sub rv d2">Roof restoration, repairs and repainting across Cardiff, Lake Macquarie and Newcastle — quality work from a local crew that turns up and finishes the job.</p>
+    <div class="ctas rv d3">
+      <a class="btn btn-acc" href="tel:0467633419">Call 0467 633 419</a>
+      <a class="btn btn-ghost" href="#work">See our work</a>
+    </div>
+  </div>
+  <div class="photo rv d2">
+    <img src="images/work_4_v2.jpg" alt="NPV Roofing at work on a roof in Lake Macquarie">
+    <div class="badge">Serving Cardiff &amp; surrounds</div>
+  </div>
+</header>
+
+<div class="mq" aria-label="Service area"><div class="track">
+  <span>Cardiff</span><span>Lake Macquarie</span><span>Newcastle</span><span>Charlestown</span><span>Warners Bay</span><span>Eleebana</span><span>Kotara</span><span>Gateshead</span><span>Redhead</span><span>Mount Hutton</span><span>Cardiff</span><span>Lake Macquarie</span><span>Newcastle</span><span>Charlestown</span><span>Warners Bay</span><span>Eleebana</span><span>Kotara</span><span>Gateshead</span><span>Redhead</span><span>Mount Hutton</span>
+</div></div>
+
+<section id="services"><div class="wrap">
+  <div class="sec-head"><h2 class="rv d1">What we do</h2></div>
+  <div class="svc-grid">
+    <div class="svc rv d1"><div class="ic">&#8962;</div><h3>Roof restoration</h3><p>Full restore of tired tile and metal roofs — clean, repair, reseal, repaint.</p></div><div class="svc rv d2"><div class="ic">&#9878;</div><h3>Roof repairs</h3><p>Leaks, cracked tiles, rusted sheets and flashing faults fixed at the source.</p></div><div class="svc rv d3"><div class="ic">&#9998;</div><h3>Roof repainting</h3><p>Membrane coatings matched and applied for long-term colour and protection.</p></div><div class="svc rv d4"><div class="ic">&#8865;</div><h3>Gutter & flashing work</h3><p>Replacement and sealing so water goes where it should.</p></div>
+  </div>
+</div></section>
+
+<section id="work" style="background: var(--paper2);"><div class="wrap">
+  <div class="sec-head"><h2 class="rv d1">Our work</h2></div>
+  <div class="work-grid">
+    <figure class="wc rv d1"><img src="images/work_4_v2.jpg" alt="NPV Roofing — Roof work in progress" loading="lazy"><figcaption class="cap">Roof work in progress</figcaption></figure><figure class="wc rv d2"><img src="images/work_5_v2.jpg" alt="NPV Roofing — Completed roof job" loading="lazy"><figcaption class="cap">Completed roof job</figcaption></figure><figure class="wc rv d3"><img src="images/work_6_v2.jpg" alt="NPV Roofing — On the roof — at work" loading="lazy"><figcaption class="cap">On the roof — at work</figcaption></figure><figure class="wc rv d1"><img src="images/work_7_v2.jpg" alt="NPV Roofing — Recent roofing project" loading="lazy"><figcaption class="cap">Recent roofing project</figcaption></figure><figure class="wc rv d2"><img src="images/work_8_v2.jpg" alt="NPV Roofing — Finished roofing work" loading="lazy"><figcaption class="cap">Finished roofing work</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="quote" id="contact"><div class="wrap">
+  <div>
+    <h2 class="rv">Get a firm price <span class="acc">over the phone.</span></h2>
+    <p class="qp rv d1">Describe the roof, send a photo if you have one, and we will give you a straight answer and a firm price — no obligation.</p>
+    <div class="qlines">
+      <div class="ql rv d2"><b>Phone</b><a href="tel:0467633419" style="font-size:22px;font-weight:800;color:#fff;text-decoration:none;">0467 633 419</a></div>
+      <div class="ql rv d3"><b>Area</b><span>Cardiff, Lake Macquarie &amp; Newcastle NSW</span></div>
+      <div class="ql rv d4"><b>Hours</b><span>Mon&ndash;Sat, business hours</span></div>
+    </div>
+  </div>
+  <div class="qimg rv d2"><img src="images/work_8_v2.jpg" alt="NPV Roofing completed roofing work" loading="lazy"></div>
+</div></section>
+
+<section class="cta-panel">
+  <h2 class="rv">Ready when you are.</h2>
+  <div class="rv d1" style="display:flex;gap:16px;justify-content:center;margin-top:26px;flex-wrap:wrap;">
+    <a class="btn" style="background:#fff;color:var(--acc);" href="tel:0467633419">Call 0467 633 419 now</a>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div>
+    <div class="fb"><img src="images/logo.jpg" alt="NPV Roofing Pty Ltd logo"><span><span class="n">NPV Roofing Pty Ltd</span><span class="s">Roof restoration &amp; repairs</span></span></div>
+    <p class="fl">Serving Cardiff, Lake Macquarie and Newcastle NSW with roof restoration, repairs and repainting.</p>
+  </div>
+  <div style="font-size:13px;">
+    <a href="#services">Services</a><br>
+    <a href="#work">Our work</a><br>
+    <a href="tel:0467633419">0467 633 419</a>
+  </div>
+</div>
+<div class="wrap bar">
+  <span>&copy; 2026 NPV Roofing Pty Ltd</span>
+  <span>Cardiff NSW &middot; Serving Lake Macquarie &amp; Newcastle</span>
+</div>
+<section id="lbq">
+  <style>
+#lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#2f7f96))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,#9aa6b2);--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto}
+#lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
+#lbq .lbq-f{display:grid;gap:12px}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#0b0e12;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+/* v1 card */
+#lbq.v1 .lbq-card{background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
+#lbq.v1 .lbq-g{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+#lbq.v1 .lbq-full{grid-column:1/-1}
+@media(max-width:640px){#lbq.v1 .lbq-g{grid-template-columns:1fr}}
+/* v2 band */
+#lbq.v2{background:var(--lbq-panel);border-top:1px solid var(--lbq-line);border-bottom:1px solid var(--lbq-line)}
+#lbq.v2 .lbq-g{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+#lbq.v2 .lbq-full{grid-column:1/-1}
+#lbq.v2 .lbq-hd{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
+@media(max-width:760px){#lbq.v2 .lbq-g{grid-template-columns:1fr}#lbq.v2 .lbq-hd{display:block}}
+/* v3 split */
+#lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+#lbq.v3 .lbq-g{display:grid;gap:12px}
+#lbq.v3 .lbq-hp2{border-left:3px solid var(--lbq-accent);padding-left:16px}
+@media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
+/* v4 minimal */
+#lbq.v4 .lbq-w{max-width:620px}
+#lbq.v4 input,#lbq.v4 textarea{border:0;border-bottom:1px solid var(--lbq-line);border-radius:0;background:transparent;padding:11px 2px}
+#lbq.v4 .lbq-g{display:grid;gap:16px}
+
+/* mobile overflow guard 2026-10-14 */
+html,body{overflow-x:hidden}
+@media (max-width:820px){
+  h1,h2,h3,.h1,.hero h1,.sec-title,.k,.kicker,.kick,.eyebrow,.tag-line,.tag,.hero-kicker,.hero-sub,.lead{
+    white-space:normal!important;overflow-wrap:anywhere;word-break:break-word;max-width:100%!important}
+  .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(10px,3.1vw,13px)!important;letter-spacing:.22em!important}
+  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.05!important}
+}
+</style>
+  <div class="lbq-w">
+      <div class="lbq-hd"><div><h2 id="lbq-h">Request a quote</h2>
+      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p></div></div><form id="lbq-form" novalidate data-site="yp-3b4e017f-004" data-biz="NPV Roofing"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form>
+  </div>
+<script>
+
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;  // honeypot — silently accept bots
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+
+</script></section>
+</footer>
+
+<script>
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: .08 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+const pb = document.getElementById('prog');
+addEventListener('scroll', () => {
+  const h = document.documentElement;
+  pb.style.transform = 'scaleX(' + (h.scrollTop / (h.scrollHeight - h.clientHeight || 1)) + ')';
+}, { passive: true });
+</script>
+<script>/* reveal safety net (golden standard section 6): reveal all after load so content never sticks hidden */
+(function(){var es=[].slice.call(document.querySelectorAll('.rv'));function all(){for(var i=0;i<es.length;i++){es[i].classList.add('on');}}setTimeout(all,1100);})();
+</script>
+
+<script>
+
+    (function(){
+      'use strict';
+      document.documentElement.classList.add('js');
+      function heroCanvas(){
+        var c=document.getElementById('hero-canvas'); if(!c) return;
+        var ctx=c.getContext('2d'); var dpr=window.devicePixelRatio||1;
+        function resize(){
+          var r=c.getBoundingClientRect();
+          c.width=r.width*dpr; c.height=r.height*dpr;
+          ctx.scale(dpr,dpr); c.style.width=r.width+'px'; c.style.height=r.height+'px';
+        }
+        var prefersReduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+        var traceProg=0; var traceTarget=1; var colsProg=0; var colsTarget=1;
+        var startTime=performance.now();
+        function drawTrace(t){
+          var w=c.width/dpr; var h=c.height/dpr;
+          ctx.clearRect(0,0,w,h);
+          ctx.strokeStyle='#3f88a8'; ctx.lineWidth=2; ctx.lineCap='round';
+          ctx.beginPath();
+          var y0=h*0.55; var y1=h*0.45;
+          var steps=80;
+          for(var i=0;i<=steps;i++){
+            var x=(i/steps)*w;
+            var wave=Math.sin(i*0.15)*12*(1-t);
+            var y=y0+(y1-y0)*(i/steps)+wave*(1-t);
+            if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+          }
+          ctx.stroke();
+        }
+        function drawCols(t){
+          var w=c.width/dpr; var h=c.height/dpr;
+          var baseline=h*0.72;
+          ctx.fillStyle='#2c5d7c';
+          var clusters=[{x:w*0.15,n:5},{x:w*0.35,n:7},{x:w*0.55,n:4},{x:w*0.75,n:6},{x:w*0.9,n:3}];
+          clusters.forEach(function(cl){
+            for(var i=0;i<cl.n;i++){
+              var hgt=(30+Math.random()*80)*t;
+              var x=cl.x+(i-(cl.n-1)/2)*10;
+              ctx.fillRect(x-2,baseline-hgt,4,hgt);
+            }
+          });
+        }
+        function frame(now){
+          var elapsed=(now-startTime)/1000;
+          if(!prefersReduced){
+            traceProg=Math.min(1,elapsed/1.5);
+            colsProg=Math.min(1,Math.max(0,(elapsed-0.4)/1.2));
+          }else{
+            traceProg=1; colsProg=1;
+          }
+          drawTrace(traceProg);
+          drawCols(colsProg);
+          if(traceProg<1 || colsProg<1) requestAnimationFrame(frame);
+        }
+        resize(); window.addEventListener('resize',resize);
+        if(prefersReduced){ drawTrace(1); drawCols(1); }
+        else requestAnimationFrame(frame);
+      }
+      function processTrace(){
+        var c=document.getElementById('process-trace'); if(!c) return;
+        var ctx=c.getContext('2d'); var dpr=window.devicePixelRatio||1;
+        function resize(){
+          var r=c.getBoundingClientRect();
+          c.width=r.width*dpr; c.height=r.height*dpr;
+          ctx.scale(dpr,dpr); c.style.width=r.width+'px'; c.style.height=r.height+'px';
+          draw();
+        }
+        var prefersReduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+        function draw(){
+          var w=c.width/dpr; var h=c.height/dpr;
+          ctx.clearRect(0,0,w,h);
+          var steps=c.querySelectorAll('.step');
+          if(steps.length<2) return;
+          var centers=Array.from(steps).map(function(s){
+            var r=s.getBoundingClientRect(); var cr=c.getBoundingClientRect();
+            return {x:r.left+ r.width/2 - cr.left, y:r.top + 40 - cr.top};
+          });
+          ctx.strokeStyle='#3f88a8'; ctx.lineWidth=2; ctx.lineCap='round';
+          ctx.beginPath();
+          centers.forEach(function(p,i){
+            if(i===0) ctx.moveTo(p.x,p.y);
+            else{
+              var prev=centers[i-1];
+              var cx=(prev.x+p.x)/2;
+              ctx.bezierCurveTo(cx,prev.y,cx,p.y,p.x,p.y);
+            }
+          });
+          ctx.stroke();
+          centers.forEach(function(p){
+            ctx.fillStyle='#2c5d7c';
+            ctx.beginPath(); ctx.arc(p.x,p.y,4,0,Math.PI*2); ctx.fill();
+          });
+        }
+        resize(); window.addEventListener('resize',resize);
+      }
+      function reveal(){
+        var els=document.querySelectorAll('.rv');
+        var io=new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+          });
+        },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+        els.forEach(function(el){ io.observe(el); });
+      }
+      function mobileNav(){
+        var burger=document.querySelector('.burger');
+        var menu=document.getElementById('mobile-menu');
+        var links=menu?menu.querySelectorAll('a'):[];
+        if(!burger || !menu) return;
+        burger.addEventListener('click',function(){
+          var open=burger.getAttribute('aria-expanded')==='true';
+          burger.setAttribute('aria-expanded',!open);
+          menu.style.display=open?'none':'block';
+        });
+        links.forEach(function(a){ a.addEventListener('click',function(){
+          burger.setAttribute('aria-expanded','false'); menu.style.display='none';
+        }); });
+        window.addEventListener('resize',function(){
+          if(window.innerWidth>=600){ burger.setAttribute('aria-expanded','false'); menu.style.display='none'; }
+        });
+      }
+      function init(){
+        heroCanvas(); processTrace(); reveal(); mobileNav();
+        setTimeout(function(){
+          document.documentElement.classList.add('loaded');
+          document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('on'); });
+        },1100);
+      }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+      else init();
+    })();
+  
+</script><style>
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+img.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+</style>
+</body>
+</html>
