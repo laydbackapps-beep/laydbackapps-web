@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Webb's Concreting &mdash; Retaining Walls, Driveways &amp; Slabs | Melbourne South East</title>
-<meta name="description" content="Webb's Concreting &mdash; retaining walls, driveways, house slabs and all aspects of concrete across Melbourne's South East. Call 0412 980 745 for a free quote.">
+<title>Webbs Concreting &mdash; Retaining Walls, Driveways &amp; Slabs | Melbourne South East</title>
+<meta name="description" content="Webbs Concreting &mdash; retaining walls, driveways, house slabs and all aspects of concrete across Melbourne's South East. Call 0412 980 745 for a free quote.">
 <meta name="theme-color" content="#17181A">
 <link rel="icon" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/favicon-32.png">
@@ -15,7 +15,7 @@
 <style>
 :root{
   --bg:#17181A; --panel:#1F2124; --panel2:#24262A; --ink:#F2EEE8; --muted:#A7A199; --line:rgba(255,255,255,.13);
-  --accent:#A84A24; --accent2:#C87A45; --band:#F0EBE2; --bandink:#1B1916; --maxw:1220px; --pad:clamp(18px,4vw,56px);
+  --accent:#38606E; --accent2:#9DC2CB; --band:#F0EBE2; --bandink:#1B1916; --maxw:1220px; --pad:clamp(18px,4vw,56px);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -37,14 +37,14 @@ p{margin:0 0 1em}
   display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px var(--pad);min-height:86px}
 .brand{display:flex;align-items:center;gap:14px;flex:0 1 auto;min-width:0}
 .brand .bmark{height:64px;width:auto;flex:0 0 auto}
-.brand .bword{height:24px;width:auto;flex:0 1 auto;min-width:0}
+.brand .bword{height:30px;width:auto;flex:0 1 auto;min-width:0;filter:brightness(.72) saturate(1.2)}
 .nav{display:flex;align-items:center;gap:clamp(8px,1.6vw,26px);margin-left:auto}
 .nav a{font-weight:600;font-size:.92rem;color:#332f29;padding:6px 2px;position:relative}
 .nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--accent);transition:right .25s ease}
 .nav a:hover::after{right:0}
 .hcta{background:var(--accent);color:#fff;font-weight:700;font-size:.94rem;padding:13px 22px;white-space:nowrap;
   clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px);transition:background .2s ease}
-.hcta:hover{background:#8f3d1c}
+.hcta:hover{background:#2B4B56}
 .burger{display:none;background:none;border:2px solid #332f29;width:48px;height:44px;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer}
 .burger i{display:block;width:22px;height:2px;background:#332f29}
 @media(max-width:1080px){.nav{display:none}.burger{display:flex}}
@@ -66,7 +66,7 @@ p{margin:0 0 1em}
 .hero .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .btn{display:inline-flex;align-items:center;gap:.6em;font-weight:700;padding:16px 26px;font-size:.95rem;
   clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);transition:transform .2s ease}
-.btn.solid{background:var(--accent);color:#fff}
+.btn.solid{background:var(--accent);color:#fff;border-color:var(--accent);font-size:1.02rem;padding:18px 30px;box-shadow:0 12px 26px rgba(0,0,0,.35)}
 .btn.solid:hover{transform:translateY(-2px)}
 .btn.out{border:1px solid var(--line);color:#EFEAE2}
 .btn.out:hover{border-color:var(--accent2);color:var(--accent2)}
@@ -85,7 +85,8 @@ p{margin:0 0 1em}
 .texture-band{height:clamp(120px,16vw,220px);background-image:url("assets/work_06.jpg");background-size:cover;background-position:center;
   position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .texture-band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,24,26,.92),rgba(23,24,26,.35) 55%,rgba(23,24,26,.85))}
-.texture-band .cap{position:absolute;left:var(--pad);bottom:22px;z-index:2;max-width:40ch;color:#fff}
+.texture-band .cap{position:absolute;left:var(--pad);bottom:22px;z-index:2;max-width:42ch;color:#fff;
+  background:rgba(15,16,18,.94);padding:14px 18px;border-left:3px solid var(--accent2)}
 .texture-band .cap b{font-family:"Anton";font-weight:400;text-transform:uppercase;font-size:clamp(1.3rem,3vw,2.1rem);display:block;color:#fff}
 .texture-band .cap span{font-size:.85rem;color:#D6CFC5}
 
@@ -183,8 +184,23 @@ section{position:relative;z-index:2}
   .hero-media .plate{transform:none}
   #heroCanvas{display:none}
 }
+
+/* 6. CRON 1702: full-bleed hero on the owned driveway pour, plate deframed */
+.hero{isolation:isolate}
+.hero-media{position:absolute;inset:0;z-index:0;perspective:none;margin:0}
+.hero-media .plate{border:0;padding:0;height:100%;transform:none;background:none}
+.hero-media .plate img{height:100%;width:100%;object-fit:cover;object-position:center 50%}
+/* primary CTA on the dark hero needs the light treatment; slate-on-scrim kept failing contrast */
+.hero .btn.solid{background:#F2EEE8;color:#131416;border-color:#F2EEE8;box-shadow:0 14px 30px rgba(0,0,0,.5)}
+.hero .btn.solid:hover{background:#fff}
+/* CRON 1854: scrim was .95/.86 so the owned photo read as dark texture; lift it */
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(12,13,14,.9),rgba(12,13,14,.7) 40%,rgba(12,13,14,.12) 76%,rgba(12,13,14,0))}
+.hero-media .plate img{filter:brightness(1.14) contrast(1.03) saturate(1.04);object-position:center 58%}
+.hero-in{grid-template-columns:minmax(0,1fr);min-height:clamp(520px,74vh,760px);align-content:center}
+@media(max-width:900px){.hero-in{gap:0}.hero h1{font-size:clamp(2.5rem,12vw,4rem)}}
+
 </style>
-<style id="lb-argon-standard">
+<style>
 /* ==== LB ARGON EXCELLENCE PASS ==== */
 /* 1. Instant first-paint visibility: never leave any section or reveal element at opacity:0 */
 html.js .rv, html.js .rv.on, html.js .rv:not(.on),
@@ -254,6 +270,32 @@ small, .small, .meta, .caption, .eyebrow, .kicker, .mono {
 p, li {
   line-height: 1.55 !important;
 }
+/* 5. CRON 1632: mobile header lockup, heavy display headings, deframed hero */
+h1, h2, h3, h4, .disp {
+  font-family: "Anton", Impact, system-ui, sans-serif !important;
+  font-weight: 400 !important;
+  letter-spacing: .01em !important;
+}
+.hero h1 em { color: inherit !important; }
+.hero-media .plate {
+  border: 0 !important; padding: 0 !important; background: none !important;
+  box-shadow: none !important; transform: none !important;
+}
+.hero-media .plate img { height: clamp(300px, 40vw, 540px) !important; }
+@media (max-width: 860px) {
+  .hdr { display: flex !important; gap: 10px !important; padding: 10px 14px !important; min-height: 64px !important; }
+  .brand { gap: 8px !important; min-width: 0 !important; overflow: hidden !important; }
+  header .brand img.bmark, .brand .bmark { height: 38px !important; max-height: 38px !important; width: auto !important; max-width: 38px !important; }
+  header .brand img.bword, .brand .bword { height: 15px !important; max-height: 15px !important; width: auto !important; max-width: 42vw !important; }
+  .hcta { font-size: .78rem !important; padding: 10px 12px !important; white-space: nowrap !important; flex: 0 0 auto !important; }
+  .burger { width: 40px !important; height: 36px !important; flex: 0 0 auto !important; }
+  .mnav { inset: 64px 0 auto 0 !important; }
+}
+/* 7. CRON 1702: hero photo covers the fold, mobile scrim, CTA band on owned aggregate */
+.hero-media .plate img{height:100%!important}
+@media(max-width:900px){.hero-media::after{background:linear-gradient(180deg,rgba(12,13,14,.55) 0%,rgba(12,13,14,.78) 55%,rgba(12,13,14,.93))}}
+.cta{background:linear-gradient(rgba(10,11,12,.86),rgba(10,11,12,.9)),url("assets/work_06.jpg") center/cover no-repeat;border-top:0}
+.cta p{color:#DCD5CA}
 </style>
 </head>
 <body>
@@ -262,7 +304,7 @@ p, li {
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="hdr" id="top">
-  <a class="brand" href="#top" aria-label="Webb's Concreting &mdash; home">
+  <a class="brand" href="#top" aria-label="Webbs Concreting &mdash; home">
     <img class="bmark" src="assets/logo.svg" alt="">
     <img class="bword" src="assets/logo-word.png" alt="Webbs Concreting">
   </a>
@@ -289,29 +331,23 @@ p, li {
   <div class="hero-in">
     <div>
       <span class="kicker">Concreting &middot; Melbourne South East</span>
-      <h1>All aspects<em>of concrete</em></h1>
-      <p class="lede">Retaining walls, driveways, house slabs and the lot &mdash; set out, poured and finished properly by Webb&rsquo;s Concreting across Melbourne&rsquo;s south-east.</p>
-      <div class="btns">
-        <a class="btn solid" href="tel:+61412980745">Call 0412 980 745</a>
-        <a class="btn out" href="#quote">Request a quote</a>
-      </div>
-      <div class="rule-strip">
-        <div><b>Slabs</b><span>Houses, sheds &amp; garages</span></div>
-        <div><b>Walls</b><span>Retaining &amp; exposed</span></div>
-        <div><b>Finishes</b><span>Exposed aggregate &amp; broom</span></div>
-      </div>
+      <h1>Retaining walls, driveways<em>and house slabs.</em></h1>
+            <p class="lede">Webbs Concreting sets out the formwork, ties the steel and pours it on site &mdash; house and shed slabs, retaining walls, exposed-aggregate driveways and paths across Melbourne&rsquo;s south-east.</p>
+            <div class="btns">
+              <a class="btn solid" href="#quote">Request a quote</a>
+              <a class="btn out" href="tel:+61412980745">Call 0412 980 745</a>
+            </div>
     </div>
     <div class="hero-media">
       <div class="plate">
-        <img src="assets/work_02.jpg" alt="Curved concrete steps leading down to a swimming pool, formed and finished on site.">
+        <img src="assets/work_02.jpg" width="1280" height="1704" loading="eager" fetchpriority="high" alt="Curved concrete steps formed down to a swimming pool, finished on site by Webbs Concreting.">
       </div>
-      <span class="cap">Curved pool steps &mdash; on site</span>
     </div>
   </div>
 </section>
 
 <div class="texture-band">
-  <div class="cap"><b>Pour. Finish. Cure. Repeat.</b><span>Exposed aggregate work from the Webb&rsquo;s run.</span></div>
+  <div class="cap"><b>Formwork, steel, pour, finish.</b><span>Exposed aggregate and broom-finished concrete, poured and finished by Webbs.</span></div>
 </div>
 
 <section class="rb intro" id="about">
@@ -319,8 +355,9 @@ p, li {
     <div>
       <span class="kicker">Who we are</span>
       <h2 style="margin-top:.34em">One concreter, every stage of the job</h2>
-      <p>Webb&rsquo;s Concreting takes on the whole job &mdash; the site visit and quote, the set-out and preparation, the pour and finish, and the cure, seal and hand-over at the end.</p>
+      <p>Webbs Concreting takes on the whole job &mdash; the site visit and quote, the set-out and preparation, the pour and finish, and the cure, seal and hand-over at the end.</p>
       <p>Whether it&rsquo;s a house slab, a shed pad, a set of steps to the pool or a retaining wall holding a driveway in place, the work is done to spec and left clean. Jarred runs the jobs and is on the tools.</p>
+      <p><a class="btn solid" href="#quote" style="margin-top:8px">Get a quote from Jarred</a></p>
     </div>
     <div class="metrics">
       <div class="metric"><b>Slabs</b><span>House, shed &amp; garage</span></div>
@@ -336,17 +373,17 @@ p, li {
     <div class="sec-head">
       <div>
         <span class="kicker">What we do</span>
-        <h2 style="margin-top:.34em">Concrete services</h2>
+        <h2 style="margin-top:.34em">What we pour, from a garden path to a house slab</h2>
       </div>
       <p>Residential and commercial concrete across Melbourne&rsquo;s south-east &mdash; from a single path to a full house slab.</p>
     </div>
     <div class="svc-grid">
-      <article class="svc rv"><span class="no">01</span><h3>Retaining Walls</h3><p>Retaining walls formed and poured to hold a cut or a fill in place, finished to suit the site.</p></article>
-      <article class="svc rv"><span class="no">02</span><h3>Driveways &amp; Crossovers</h3><p>New driveways and crossovers with the falls set to the road, in plain, broom or exposed aggregate.</p></article>
-      <article class="svc rv"><span class="no">03</span><h3>House Slabs &amp; Foundations</h3><p>House slabs and foundations set out and poured to the engineer&rsquo;s spec, ready for the build.</p></article>
-      <article class="svc rv"><span class="no">04</span><h3>Shed &amp; Garage Slabs</h3><p>Slabs for sheds, garages and outbuildings &mdash; sized, reinforced and finished for a hard-wearing floor.</p></article>
-      <article class="svc rv"><span class="no">05</span><h3>Paths, Patios &amp; Alfresco</h3><p>Paths, patios and alfresco areas poured and finished to tie in with the house and the garden.</p></article>
-      <article class="svc rv"><span class="no">06</span><h3>Commercial &amp; Industrial Concrete</h3><p>Larger pours and hard-stand concrete for commercial and industrial sites, worked to program.</p></article>
+      <article class="svc rv"><h3>Retaining Walls</h3><p>Formed and poured in place to hold a cut or a fill, with the wall line set out from the pegs and the drainage behind it sorted before the pour.</p></article>
+      <article class="svc rv"><h3>Driveways &amp; Crossovers</h3><p>Falls set to the road so water leaves the slab, poured plain, broomed or exposed aggregate, with saw-cut control joints and no ponding at the crossover.</p></article>
+      <article class="svc rv"><h3>House Slabs &amp; Foundations</h3><p>Set-out, plastic and steel placed to the engineer&rsquo;s detail, then poured and screeded in one run so the frame can start on the level.</p></article>
+      <article class="svc rv"><h3>Shed &amp; Garage Slabs</h3><p>Level, reinforced slabs for sheds, garages and outbuildings, thickened at the edges where the frame and roller door loads land.</p></article>
+      <article class="svc rv"><h3>Paths, Patios &amp; Alfresco</h3><p>Paths and alfresco slabs run off the existing levels so the ground falls away from the house, finished to tie in with the brickwork and garden.</p></article>
+      <article class="svc rv"><h3>Commercial &amp; Industrial Concrete</h3><p>Hard-stand and larger pours worked to program, split into bays so the site keeps operating while the concrete cures.</p></article>
     </div>
   </div>
 </section>
@@ -361,7 +398,7 @@ p, li {
       <p>Real pours from around the south-east &mdash; steps, slabs, driveways and finishes.</p>
     </div>
     <div class="gal">
-      <figure class="rv wide tall"><img loading="eager" src="assets/work_01.jpg" alt="A large exposed-aggregate concrete driveway with a square stormwater pit, bordered by a brick wall."><figcaption><b>Aggregate driveway &amp; pit</b>Exposed-aggregate driveway with a formed stormwater pit.</figcaption></figure>
+      <figure class="rv wide tall"><img loading="eager" src="assets/work_02.jpg" alt="Curved concrete steps leading down to a swimming pool, formed and finished on site."><figcaption><b>Pool surround &amp; steps</b>Curved steps formed down to a pool, finished on site.</figcaption></figure>
       <figure class="rv"><img loading="eager" src="assets/work_04.jpg" alt="Straight concrete steps leading up to a brick house entrance."><figcaption><b>Entry steps</b>Straight formed steps up to a brick entry.</figcaption></figure>
       <figure class="rv"><img loading="eager" src="assets/work_03.jpg" alt="A backyard concrete slab with control joints and a central drain, a children's playset behind."><figcaption><b>Backyard slab</b>Sawn control joints and a centre drain.</figcaption></figure>
       <figure class="rv"><img loading="eager" src="assets/work_07.jpg" alt="A long plain concrete path running alongside a netted enclosure."><figcaption><b>Pathway run</b>A plain concrete path alongside the boundary.</figcaption></figure>
@@ -378,13 +415,13 @@ p, li {
         <span class="kicker">The process</span>
         <h2 style="margin-top:.34em">Set out, poured and finished properly</h2>
       </div>
-      <p>Four stages, every job &mdash; nothing skipped, nothing rushed.</p>
+      <p>Quote and set-out through to cure and clean-up &mdash; the same concreter on the job from the first peg to the last broom pass.</p>
     </div>
     <div class="proc-grid">
-      <div class="step rv"><span class="n">01</span><h3>Site visit &amp; quote</h3><p>We look at the site, check levels and access, and give you a clear quote for the work.</p></div>
-      <div class="step rv"><span class="n">02</span><h3>Set out &amp; prepare</h3><p>Set-out, excavation, formwork and reinforcement go in before the pour.</p></div>
-      <div class="step rv"><span class="n">03</span><h3>Pour &amp; finish</h3><p>Concrete placed, screeded and finished to the agreed surface.</p></div>
-      <div class="step rv"><span class="n">04</span><h3>Cure, seal &amp; hand over</h3><p>Cured properly, sealed where required, then cleaned up and handed back.</p></div>
+      <div class="step rv"><h3>Site visit &amp; quote</h3><p>We look at the site, check levels and access, and give you a clear quote for the work.</p></div>
+      <div class="step rv"><h3>Set out &amp; prepare</h3><p>Set-out, excavation, formwork and reinforcement go in before the pour.</p></div>
+      <div class="step rv"><h3>Pour &amp; finish</h3><p>Concrete placed, screeded and finished to the agreed surface.</p></div>
+      <div class="step rv"><h3>Cure, seal &amp; hand over</h3><p>Cured properly, sealed where required, then cleaned up and handed back.</p></div>
     </div>
   </div>
 </section>
@@ -394,7 +431,7 @@ p, li {
     <div>
       <span class="kicker">Service area</span>
       <h2>Concreting across Melbourne&rsquo;s south-east</h2>
-      <p>Webb&rsquo;s Concreting works across the south-eastern suburbs of Melbourne on residential and commercial concrete. Not sure if we cover your area? Give Jarred a call.</p>
+      <p>Webbs Concreting works across the south-eastern suburbs of Melbourne on residential and commercial concrete. Not sure if we cover your area? Give Jarred a call on <a href="tel:+61412980745" style="font-weight:800;color:#F2EEE8;text-decoration:underline">0412 980 745</a>.</p>
       <div class="area-chips">
         <span>Melbourne South East</span>
         <span>Residential</span>
@@ -411,8 +448,8 @@ p, li {
 <section class="rb cta">
   <div class="wrap">
     <span class="kicker" style="color:#FBE7DC;justify-content:center">Free quote</span>
-    <h2 style="margin:.36em 0 0">Got concrete to pour?</h2>
-    <p>Tell us the slab, driveway, wall or path you need and we&rsquo;ll come out and quote it properly.</p>
+    <h2 style="margin:.36em 0 0">Tell us the slab, wall or driveway and we&rsquo;ll price the pour</h2>
+    <p>Size, access and time frame is all Jarred needs to come out and give you a firm number.</p>
     <a class="big" href="tel:+61412980745">0412 980 745</a>
     <div><a class="btn solid" href="#quote">Request a quote</a></div>
   </div>
@@ -430,7 +467,7 @@ p, li {
 #lbq .lbq-f{display:grid;gap:12px}
 #lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:none;color:var(--lbq-muted);margin-bottom:5px}
 #lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
-#lbq input::placeholder,#lbq textarea::placeholder{color:#5b616a;opacity:1}
+#lbq input::placeholder,#lbq textarea::placeholder{color:#9aa3ac;opacity:1}
 #lbq textarea{min-height:96px;resize:vertical}
 #lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
 #lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:var(--on-accent,#FBF3E4);font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
@@ -462,7 +499,7 @@ p, li {
 </style>
   <div class="lbq-w">
       <div class="lbq-sp"><div class="lbq-hp2"><h2 id="lbq-h">Request a quote</h2>
-      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p><p class="lbq-s" style="margin-bottom:0">Prefer to talk? Call, text or email &mdash; we reply fast.</p></div><div><form id="lbq-form" novalidate data-site="user-target-webbs-concreting" data-biz="Webbs Concreting"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div></div>
+      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p><p class="lbq-s" style="margin-bottom:0">Prefer to talk? Call or text &mdash; we reply fast, usually the same day.</p></div><div><form id="lbq-form" novalidate data-site="user-target-webbs-concreting" data-biz="Webbs Concreting"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1"> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div></div>
   </div>
   <script>
 (function(){
@@ -563,7 +600,7 @@ p, li {
       </div>
     </div>
     <div class="bottom">
-      <span>&copy; <span id="yr">2026</span> Webb&rsquo;s Concreting</span>
+      <span>&copy; <span id="yr">2026</span> Webbs Concreting</span>
       <span><a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></span>
     </div>
   </div>
@@ -608,5 +645,17 @@ p, li {
   }
 })();
 </script>
+<style>
+/* review: steel-blue solid buttons sank into the dark hero, and body/label greys read thin.
+   Clay is the accent that holds on #17181A; ink text on clay, no colour invented. */
+.btn.solid{background:#D9A566;color:#241B13;box-shadow:0 12px 26px rgba(0,0,0,.45)}
+.btn.solid:hover{background:#E8BC85}
+.hcta{background:#A84A24;color:#FBF3E4}
+#lbq{--lbq-accent:#D9A566;--lbq-muted:#C6BFB4}
+#lbq label{font-size:.86rem;color:#CFC7BA}
+#lbq button{background:#D9A566;color:#241B13;font-weight:800}
+.area-chips span:first-child{background:#A84A24;border-color:#A84A24;color:#FBF3E4}
+p,li,.muted{--muted:#C6BFB4}
+</style>
 </body>
 </html>
