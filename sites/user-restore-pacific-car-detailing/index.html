@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pacific Car Detailing — interior, paint correction &amp; protection</title>
+<meta name="description" content="Pacific Car Detailing: full interior and exterior details, machine paint correction and paint protection, worked panel by panel by hand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#07080a; --sheet:#0c0f13; --panel:#11161b;
+    --pearl:#eef2f3; --mist:#9fadb3; --mint:#4fd9c6;
+    --line:rgba(238,242,243,.14); --line-soft:rgba(238,242,243,.07);
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--ink);color:var(--pearl);
+    font-family:Barlow,system-ui,-apple-system,Segoe UI,sans-serif;font-size:17px;line-height:1.68;
+    -webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Barlow Condensed",Impact,sans-serif;font-weight:700;text-transform:uppercase;
+    line-height:.95;letter-spacing:.005em;margin:0}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 26px}
+  .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--mint);margin:0 0 16px}
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{left:18px;top:18px;z-index:99;background:var(--mint);color:#06110f;padding:10px 16px;font-weight:600}
+  .btn{display:inline-block;font-family:Barlow,sans-serif;font-weight:600;font-size:14.5px;
+    letter-spacing:.04em;text-transform:uppercase;text-decoration:none;padding:15px 26px;
+    background:var(--mint);color:#05100e;border:1px solid var(--mint);
+    transition:background .18s,transform .18s}
+  .btn:hover,.btn:focus-visible{background:#7be8d8;transform:translateY(-1px)}
+  .btn.line{background:transparent;color:var(--pearl);border-color:var(--line)}
+  /* secondary actions read as links so the primary booking CTA wins */
+  .hero .actions .btn.line,.endcta .acts .btn.line{border:0;background:none;padding:2px 0;
+    color:var(--mist);font-weight:500;font-size:14px;text-decoration:underline;
+    text-decoration-color:rgba(238,242,243,.45);text-underline-offset:5px}
+  .hero .actions .btn.line:hover,.endcta .acts .btn.line:hover{background:none;color:var(--pearl);
+    text-decoration-color:var(--mint);transform:none}
+  .btn.line:hover{background:rgba(238,242,243,.06);border-color:var(--mist)}
+
+  header.site{position:sticky;top:0;z-index:60;background:rgba(7,8,10,.9);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft)}
+  .bar{display:flex;align-items:center;gap:26px;min-height:84px;border-top:3px solid var(--mint)}
+  .lockup{display:flex;align-items:center;gap:16px;text-decoration:none;color:#fff}
+  .lockup svg{flex:none;width:52px;height:auto;filter:drop-shadow(0 0 10px rgba(79,217,198,.45))}
+  .lockup .word{font-family:"Barlow Condensed",Impact,sans-serif;font-size:36px;font-weight:700;
+    letter-spacing:.1em;line-height:1;text-transform:uppercase;color:#fff}
+  .lockup .sub{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.22em;
+    color:var(--mint);text-transform:uppercase;margin-top:6px}
+  nav.main{margin-left:auto;display:flex;gap:24px;font-size:14px;letter-spacing:.03em}
+  nav.main a{text-decoration:none;color:#c3cdd1;padding:6px 0;border-bottom:1px solid transparent}
+  nav.main a:hover,nav.main a:focus-visible{color:#fff;border-color:var(--mint)}
+  .bar .btn{margin-left:6px;padding:11px 18px;white-space:nowrap}
+  @media(max-width:900px){.bar{flex-wrap:wrap;row-gap:10px;padding:14px 0}nav.main{display:none}.lockup .sub{font-size:10px}
+    .bar>.btn{display:none}}
+  .mob{display:none}
+  @media(max-width:900px){
+    .mob{display:block;margin-left:auto;position:relative}
+    .mob summary{list-style:none;cursor:pointer;font-family:var(--mono);font-size:11.5px;
+      letter-spacing:.16em;text-transform:uppercase;color:var(--pearl);border:1px solid var(--line);
+      padding:10px 14px;min-height:40px;display:flex;align-items:center}
+    .mob summary::-webkit-details-marker{display:none}
+    .mob[open] summary{border-color:var(--mint);color:var(--mint)}
+    .mob nav{position:absolute;right:0;top:calc(100% + 8px);z-index:70;min-width:210px;
+      background:var(--panel);border:1px solid var(--line);box-shadow:0 24px 50px -22px #000}
+    .mob nav a{display:block;padding:14px 18px;font-size:15px;color:var(--pearl);
+      text-decoration:none;border-bottom:1px solid var(--line-soft)}
+    .mob nav a:last-child{border-bottom:0;color:var(--mint)}
+  }
+  @media(max-width:760px){.panelfig .callouts{display:none}}
+
+  /* carousel-free hero: painted panel */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line-soft);
+    background:radial-gradient(90% 70% at 20% 0%,#111a20 0%,#0a0d11 52%,#07080a 100%)}
+  .hero .inner{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;
+    padding:72px 0 76px}
+  .hero h1{font-size:clamp(46px,6.6vw,84px)}
+  .hero h1 span{color:var(--mint)}
+  .hero p.lede{font-size:18.5px;color:#dbe2e5;max-width:46ch;margin:24px 0 0;line-height:1.6}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+
+  .paint{position:relative;aspect-ratio:1/1;max-width:520px;margin-left:auto;
+    border-radius:46% 46% 44% 44%/38% 38% 52% 52%;
+    background:
+      radial-gradient(70% 42% at 50% 8%,rgba(238,242,243,.5),transparent 60%),
+      radial-gradient(120% 80% at 22% 82%,rgba(79,217,198,.32),transparent 58%),
+      radial-gradient(90% 60% at 84% 34%,rgba(96,140,180,.25),transparent 62%),
+      linear-gradient(168deg,#151b21 0%,#0b0e12 42%,#1a232b 74%,#0a0d10 100%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -60px 90px rgba(0,0,0,.75),
+      0 40px 80px -30px rgba(0,0,0,.9);
+    overflow:hidden;border:1px solid rgba(238,242,243,.12)}
+  .paint::before{content:"";position:absolute;inset:-30% -60%;
+    background:conic-gradient(from 200deg at 50% 50%,
+      transparent 0deg,rgba(255,255,255,.42) 32deg,rgba(255,255,255,.03) 70deg,
+      transparent 120deg,transparent 250deg,rgba(79,217,198,.3) 300deg,transparent 350deg);
+    animation:sweep 13s linear infinite;mix-blend-mode:screen;opacity:.85}
+  .paint::after{content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(8deg,rgba(255,255,255,.05) 0 1px,transparent 1px 5px);
+    mix-blend-mode:overlay;opacity:.5}
+  @keyframes sweep{to{transform:rotate(360deg)}}
+  .paint .read{position:absolute;left:26px;bottom:22px;right:26px;z-index:2;
+    font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+    color:rgba(238,242,243,.8);display:flex;justify-content:space-between;gap:10px}
+  .paint .read b{color:var(--mint);font-weight:400}
+  @media(prefers-reduced-motion:reduce){.paint::before{animation:none}}
+  @media(max-width:920px){.hero .inner{grid-template-columns:1fr;gap:36px;padding:54px 0 58px}
+    .paint{max-width:300px;margin:0 auto}
+    .panelfig{padding:8px 8px 0}.panelfig figcaption{font-size:9px;letter-spacing:.1em}.paint .read{font-size:9px;letter-spacing:.1em}}
+
+  /* service ledger */
+  .sec{padding:88px 0;border-bottom:1px solid var(--line-soft)}
+  .lede-h{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:end;margin-bottom:46px}
+  .lede-h h2{font-size:clamp(32px,4.6vw,56px);max-width:20ch}
+  .lede-h p{margin:0;color:var(--mist);font-size:16px;max-width:44ch}
+  @media(max-width:840px){.lede-h{grid-template-columns:1fr;gap:18px;margin-bottom:30px}}
+
+  .ledger{border-top:1px solid var(--line)}
+  .row{display:grid;grid-template-columns:56px 250px 1fr;gap:26px;padding:26px 0;
+    border-bottom:1px solid var(--line);align-items:start}
+  .row .no{font-family:var(--mono);font-size:11px;color:var(--mint);letter-spacing:.1em;padding-top:6px}
+  .row h3{font-size:25px;letter-spacing:.02em}
+  .row p{margin:6px 0 0;color:#d2dadd;font-size:15.5px;grid-column:3}
+  .row .spec{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:#7f8c92;margin-top:10px;display:block}
+  @media(max-width:840px){.row{grid-template-columns:34px 1fr;gap:14px}.row p{grid-column:2}}
+
+  /* swirl diagnostic */
+  .swirl{background:#07090b;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:88px 0}
+  .swirl .grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px}
+  .chip{border:1px solid var(--line);padding:0;background:#0a0d11}
+  .chip .surface{height:250px;position:relative;overflow:hidden;background:
+    radial-gradient(28% 60% at 30% 20%,rgba(255,255,255,.10),transparent 60%),
+    linear-gradient(160deg,#101519,#07090b 70%)}
+  .chip.b .surface{background:
+    radial-gradient(30% 62% at 30% 18%,rgba(255,255,255,.34),transparent 58%),
+    linear-gradient(160deg,#1b242b,#0a0e12 70%)}
+  .chip .surface::after{content:"";position:absolute;inset:0;opacity:.55}
+  .chip.a .surface::after{background:repeating-radial-gradient(circle at 42% 46%,
+      rgba(255,255,255,.16) 0 1px,transparent 1px 7px)}
+  .chip.b .surface::after{background:repeating-linear-gradient(94deg,
+      rgba(255,255,255,.07) 0 1px,transparent 1px 26px)}
+  .chip .cap{padding:16px 18px;font-size:14.5px;color:#d2dadd;border-top:1px solid var(--line)}
+  .chip .cap b{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--mint);display:block;margin-bottom:6px;font-weight:400}
+  @media(max-width:760px){.swirl .grid{grid-template-columns:1fr}}
+
+  /* stages */
+  .stages{display:block;margin-top:36px;border-top:1px solid var(--line)}
+  .stage{display:grid;grid-template-columns:96px minmax(0,190px) minmax(0,1fr);gap:20px;align-items:baseline;
+    padding:22px 0;border-bottom:1px solid var(--line-soft);border-right:0}
+  .stage .k{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--mint);
+    text-transform:uppercase;margin:0}
+  .stage h3{font-size:clamp(20px,2.4vw,26px);margin:0}
+  .stage p{margin:0;font-size:14.5px;color:#bcc6ca;line-height:1.6;max-width:62ch}
+  @media(max-width:880px){.stages{display:block}.stage{grid-template-columns:78px minmax(0,1fr);gap:6px 16px}
+    .stage p{grid-column:2}}
+  @media(max-width:560px){.stage{grid-template-columns:1fr}.stage p{grid-column:1}}
+  .stage:last-child{border-bottom:0}
+
+  .faq details{border-bottom:1px solid var(--line-soft);padding:0}
+  .faq summary{cursor:pointer;list-style:none;display:flex;gap:16px;align-items:baseline;
+    padding:22px 0;font-family:"Barlow Condensed",Impact,sans-serif;text-transform:uppercase;
+    font-size:23px;font-weight:600;letter-spacing:.02em}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::before{content:"+";font-family:var(--mono);color:var(--mint);font-size:17px;flex:none}
+  .faq details[open] summary::before{content:"–"}
+  .faq summary:focus-visible{outline:2px solid var(--mint);outline-offset:4px}
+  .faq p{margin:0 0 24px 28px;color:#b0bbbf;font-size:15.5px;max-width:72ch}
+
+  .book{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:start}
+  .book h2{font-size:clamp(34px,4.8vw,58px);max-width:12ch}
+  .book p{color:#dbe2e5;max-width:40ch}
+  form{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  form .full{grid-column:1/-1}
+  label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--mist);margin-bottom:7px}
+  input,select,textarea{width:100%;background:#080b0e;border:1px solid var(--line);color:var(--pearl);
+    font-family:Barlow,sans-serif;font-size:15px;padding:13px 14px;border-radius:0}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--mint);box-shadow:0 0 0 3px rgba(79,217,198,.15)}
+  textarea{min-height:110px;resize:vertical}
+  .formnote{grid-column:1/-1;font-size:13px;color:#88949a;margin:2px 0 0}
+  .formnote a{color:#cdd6da}
+  @media(max-width:840px){.book{grid-template-columns:1fr;gap:32px}form{grid-template-columns:1fr}}
+
+  footer.site{padding:40px 0 52px;font-size:13.5px;color:#7c878d}
+  .foot{display:flex;gap:16px 36px;flex-wrap:wrap;justify-content:space-between;align-items:baseline}
+  .foot .mark{font-family:"Barlow Condensed",Impact,sans-serif;font-size:19px;letter-spacing:.2em;color:#e2e8ea}
+  .foot a{color:#b6c1c5;text-decoration:none;border-bottom:1px solid var(--line)}
+  .foot a:hover{color:#fff}
+.brandmark{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .brandmark span{font-family:"Barlow Condensed",Impact,sans-serif;font-size:15px;letter-spacing:.24em;
+    text-transform:uppercase;color:#cfd8db}
+  .brandmark svg{flex:none}
+
+  /* hero panel map */
+  .panelfig{position:relative;margin:0;border:1px solid var(--line);background:
+    radial-gradient(90% 70% at 30% 0%,#101820,#080b0e 70%);padding:14px 14px 0}
+  .panelfig svg{display:block;width:100%;height:auto}
+  .panelfig figcaption{font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:#8b979d;padding:10px 2px;display:flex;justify-content:space-between;gap:10px}
+  .panelfig figcaption b{color:var(--mint);font-weight:400}
+  .sheen{animation:sheen 9s ease-in-out infinite alternate}
+  @keyframes sheen{0%{transform:translateX(-52px)}100%{transform:translateX(58px)}}
+  @media(prefers-reduced-motion:reduce){.sheen{animation:none}}
+
+  .endcta{border-top:1px solid var(--line);background:
+      radial-gradient(80% 120% at 82% 20%,rgba(79,217,198,.14),transparent 62%),#090c0f}
+  .endcta .inner{display:flex;flex-wrap:wrap;gap:22px 40px;align-items:center;
+    justify-content:space-between;padding:44px 0}
+  .endcta h2{font-size:clamp(26px,3.4vw,40px);max-width:22ch}
+  .endcta .acts{display:flex;gap:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="lockup" href="#top" aria-label="Pacific Car Detailing home">
+      <svg width="46" height="38" viewBox="0 0 36 30" aria-hidden="true">
+        <path d="M1 22c5 0 5-5 9.5-5S15 22 20 22s4.5-5 9-5 5 5 6 5" fill="none" stroke="#4fd9c6" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M1 27c5 0 5-5 9.5-5S15 27 20 27s4.5-5 9-5 5 5 6 5" fill="none" stroke="#4fd9c6" stroke-width="2.2" stroke-linecap="round" opacity=".4"/>
+        <circle cx="18" cy="7" r="4.6" fill="none" stroke="#eef2f3" stroke-width="1.6"/>
+      </svg>
+      <span><span class="word">Pacific</span><span class="sub">Car Detailing</span></span>
+    </a>
+    <nav class="main" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#paint">Paint work</a>
+      <a href="#process">Process</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <details class="mob">
+      <summary aria-label="Open menu">Menu</summary>
+      <nav aria-label="Mobile">
+        <a href="#services">Services</a>
+        <a href="#paint">Paint work</a>
+        <a href="#process">Process</a>
+        <a href="#faq">Questions</a>
+        <a href="#book">Book a detail</a>
+      </nav>
+    </details>
+    <a class="btn line" href="#book">Book a detail</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap inner">
+    <div>
+      <p class="eyebrow"><b>Pacific Car Detailing</b> · Interior · Paint correction · Protection</p>
+      <h1>Decontaminated, machine-polished, sealed. <span>Not washed and called a detail.</span></h1>
+      <p class="lede">Full interior and exterior details, machine paint correction, and protection that
+        survives weather. Every panel is worked by hand — decontaminated first, then polished,
+        then sealed, with the clear coat read under inspection light before anything is booked.</p>
+      <div class="actions">
+        <a class="btn" href="#book">Book a detail</a>
+        <a class="btn line" href="#services">What's included</a>
+      </div>
+      <p style="font-family:inherit;font-size:15px;letter-spacing:0;color:#d7dee1;max-width:46ch;margin:20px 0 0;line-height:1.6">Tell us the car and what's bothering you — you get a time and a price range back before you commit.</p>
+    </div>
+
+    <figure class="panelfig">
+      <svg viewBox="0 0 560 400" role="img" aria-label="Technical panel map of a sedan side profile with inspection light and swirl cluster">
+        <defs>
+          <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#33444e"/>
+            <stop offset=".28" stop-color="#1a252d"/>
+            <stop offset=".62" stop-color="#0d1418"/>
+            <stop offset="1" stop-color="#05080a"/>
+          </linearGradient>
+          <linearGradient id="streak" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#eef2f3" stop-opacity="0"/>
+            <stop offset=".45" stop-color="#eef2f3" stop-opacity=".22"/>
+            <stop offset=".55" stop-color="#4fd9c6" stop-opacity=".18"/>
+            <stop offset="1" stop-color="#eef2f3" stop-opacity="0"/>
+          </linearGradient>
+          <clipPath id="bodyclip">
+            <path d="M58 286V252c0-20 8-32 26-38l34-11c22-6 38-9 58-10l70-3 32-42c6-8 16-12 28-12h44c14 0 24 4 30 12l32 42 54 6c20 2 30 14 30 32v58z"/>
+          </clipPath>
+          <pattern id="tick" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M24 0v6M0 24h6" stroke="#eef2f3" stroke-opacity=".16"/>
+          </pattern>
+        </defs>
+
+        <rect width="560" height="400" fill="url(#tick)"/>
+
+        <!-- body -->
+        <path d="M58 286V252c0-20 8-32 26-38l34-11c22-6 38-9 58-10l70-3 32-42c6-8 16-12 28-12h44c14 0 24 4 30 12l32 42 54 6c20 2 30 14 30 32v58z"
+              fill="url(#gloss)" stroke="#7f8f97" stroke-width="1.2"/>
+
+        <!-- glass -->
+        <path d="M286 190l26-34c5-7 12-10 21-10h30l-6 44z" fill="#0b1a20" stroke="#4fd9c6" stroke-opacity=".5"/>
+        <path d="M372 146h14c11 0 18 3 23 10l22 34h-53z" fill="#0b1a20" stroke="#4fd9c6" stroke-opacity=".5"/>
+
+        <!-- panel gaps -->
+        <g stroke="#9fadb3" stroke-opacity=".45" stroke-width="1">
+          <path d="M212 200v86"/>
+          <path d="M330 190v96"/>
+          <path d="M440 202v84"/>
+          <path d="M58 262h6M470 262h52"/>
+        </g>
+        <g fill="none" stroke="#cfd8db" stroke-opacity=".7" stroke-width="2">
+          <rect x="300" y="228" width="20" height="4" rx="2"/>
+          <rect x="404" y="228" width="20" height="4" rx="2"/>
+        </g>
+
+        <!-- animated reflection streak -->
+        <g clip-path="url(#bodyclip)">
+          <polygon class="sheen" points="120,120 190,110 132,290 62,290" fill="url(#streak)"/>
+          <polygon points="360,120 386,116 330,292 300,292" fill="url(#streak)" opacity=".6"/>
+        </g>
+
+        <!-- wheels -->
+        <g>
+          <circle cx="152" cy="288" r="46" fill="#06090b" stroke="#8e9aa0" stroke-opacity=".55"/>
+          <circle cx="152" cy="288" r="27" fill="none" stroke="#4fd9c6" stroke-opacity=".45"/>
+          <circle cx="152" cy="288" r="9" fill="#1b2429" stroke="#8e9aa0" stroke-opacity=".5"/>
+          <circle cx="416" cy="288" r="46" fill="#06090b" stroke="#8e9aa0" stroke-opacity=".55"/>
+          <circle cx="416" cy="288" r="27" fill="none" stroke="#4fd9c6" stroke-opacity=".45"/>
+          <circle cx="416" cy="288" r="9" fill="#1b2429" stroke="#8e9aa0" stroke-opacity=".5"/>
+        </g>
+
+        <!-- swirl cluster: the thing being corrected -->
+        <g stroke="#eef2f3" stroke-opacity=".5" fill="none">
+          <path d="M232 236a9 9 0 1 1 9 9"/>
+          <path d="M248 250a7 7 0 1 0-7 7"/>
+          <path d="M224 262a6 6 0 1 0 6-6"/>
+          <path d="M262 228a5 5 0 1 1 5 5"/>
+        </g>
+        <line x1="266" y1="226" x2="300" y2="196" stroke="#4fd9c6" stroke-opacity=".6"/>
+        <text x="304" y="192" font-family="monospace" font-size="10" fill="#4fd9c6" letter-spacing="1">MICRO-MARRING</text>
+
+        <!-- inspection light -->
+        <line x1="30" y1="120" x2="530" y2="120" stroke="#eef2f3" stroke-opacity=".18" stroke-dasharray="5 7"/>
+        <circle cx="34" cy="120" r="4" fill="#4fd9c6"/>
+        <text x="44" y="112" font-family="monospace" font-size="9.5" fill="#9fadb3" letter-spacing="1.4">INSPECTION LIGHT — LOW SUN, 45°</text>
+
+        <!-- callouts -->
+        <g class="callouts" font-family="monospace" font-size="9.5" fill="#cfd8db" letter-spacing="1.2">
+          <text x="96" y="182">01 BONNET</text>
+          <text x="300" y="132">02 ROOF</text>
+          <text x="336" y="222">03 DOORS</text>
+          <text x="452" y="186">04 QUARTERS</text>
+        </g>
+
+        <text x="30" y="378" font-family="monospace" font-size="9" fill="#7f8c92" letter-spacing="1.4">PANEL MAP · SIDE ELEVATION · NOT TO SCALE</text>
+      </svg>
+      <figcaption><span>Fig. 01 — exterior panel map</span><b>all six panels worked</b></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="lede-h">
+      <div>
+        <p class="eyebrow">01 / Services</p>
+        <h2 id="svc-h">Four jobs, done in this order.</h2>
+      </div>
+      <p>A detail isn't one product. It's decontamination, then correction, then protection — and
+        the last two only work if the first one was done properly.</p>
+    </div>
+
+    <div class="ledger">
+      <div class="row">
+        <span class="no">01</span>
+        <h3>Interior detail</h3>
+        <p>Full vacuum including under-seat and boot, steam through vents and seams, fabric or
+          leather cleaned and conditioned, glass done inside, plastics dressed matte rather than wet.</p>
+        <span class="spec" style="grid-column:2">Trim · carpets · leather · vents</span>
+      </div>
+      <div class="row">
+        <span class="no">02</span>
+        <h3>Exterior decontamination</h3>
+        <p>Two-bucket wash, tar and iron removal, clay bar over every panel, then a rinse and dry
+          that doesn't put the swirls straight back in. Wheels and arches done off the car.</p>
+        <span class="spec" style="grid-column:2">Iron · tar · clay · wheels</span>
+      </div>
+      <div class="row">
+        <span class="no">03</span>
+        <h3>Machine paint correction</h3>
+        <p>Measured, then compounded and polished panel by panel under proper light. Depth of
+          correction agreed before starting — a daily driver doesn't need the same pass as a
+          weekend car.</p>
+        <span class="spec" style="grid-column:2">Compound · polish · refine</span>
+      </div>
+      <div class="row">
+        <span class="no">04</span>
+        <h3>Protection</h3>
+        <p>Sealant for a straightforward top-up, or a coating for longer-term gloss and easier
+          washing. Applied to corrected paint only, then left to cure before the car goes out.</p>
+        <span class="spec" style="grid-column:2">Sealant · coating · cure</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="swirl" id="paint">
+  <div class="wrap">
+    <div class="brandmark">
+      <svg width="26" height="22" viewBox="0 0 36 30" aria-hidden="true">
+        <path d="M1 22c5 0 5-5 9.5-5S15 22 20 22s4.5-5 9-5 5 5 6 5" fill="none" stroke="#4fd9c6" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M1 27c5 0 5-5 9.5-5S15 27 20 27s4.5-5 9-5 5 5 6 5" fill="none" stroke="#4fd9c6" stroke-width="2.6" stroke-linecap="round" opacity=".4"/>
+        <circle cx="18" cy="7" r="4.6" fill="none" stroke="#eef2f3" stroke-width="1.8"/>
+      </svg>
+      <span>Pacific Car Detailing</span>
+    </div>
+    <p class="eyebrow">02 / Why paint looks flat</p>
+    <h2 style="font-size:clamp(30px,4.4vw,52px);max-width:24ch">You don't see the paint. You see the swirls in it.</h2>
+    <p style="color:var(--mist);max-width:62ch;margin:18px 0 0">Under a low sun or a service-station light, micro-marring
+      scatters the reflection instead of returning it. That is the grey haze on a clean car —
+      not dirt, and not something a wash will fix.</p>
+
+    <div class="grid">
+      <figure class="chip a" style="margin:0">
+        <div class="surface" aria-hidden="true"></div>
+        <figcaption class="cap"><b>Diagram A — 45° light, uncorrected</b>Reflection breaks into rings
+          and haze. The paint is clean; the surface simply isn't flat at a microscopic level.</figcaption>
+      </figure>
+      <figure class="chip b" style="margin:0">
+        <div class="surface" aria-hidden="true"></div>
+        <figcaption class="cap"><b>Diagram B — 45° light, corrected</b>Reflection returns as a line
+          instead of a smear. That is what gloss is: a flatter surface, not a shinier product.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process" aria-labelledby="proc-h">
+  <div class="wrap">
+    <div class="brandmark">
+      <svg width="26" height="22" viewBox="0 0 36 30" aria-hidden="true">
+        <path d="M1 22c5 0 5-5 9.5-5S15 22 20 22s4.5-5 9-5 5 5 6 5" fill="none" stroke="#4fd9c6" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M1 27c5 0 5-5 9.5-5S15 27 20 27s4.5-5 9-5 5 5 6 5" fill="none" stroke="#4fd9c6" stroke-width="2.6" stroke-linecap="round" opacity=".4"/>
+        <circle cx="18" cy="7" r="4.6" fill="none" stroke="#eef2f3" stroke-width="1.8"/>
+      </svg>
+      <span>Pacific Car Detailing</span>
+    </div>
+    <p class="eyebrow">03 / Process</p>
+    <h2 id="proc-h" style="font-size:clamp(30px,4.4vw,52px);max-width:22ch">A car is in the bay for a reason, in stages.</h2>
+    <div class="stages">
+      <div class="stage">
+        <span class="k">Stage 01</span>
+        <h3>Assess</h3>
+        <p>Paint depth read across panels, existing defects mapped, and the level of correction
+          you actually want agreed before anything touches the car.</p>
+      </div>
+      <div class="stage">
+        <span class="k">Stage 02</span>
+        <h3>Decontaminate</h3>
+        <p>Wash, iron and tar removal, clay. Correction done on dirty paint is correction wasted —
+          the grit just gets dragged around.</p>
+      </div>
+      <div class="stage">
+        <span class="k">Stage 03</span>
+        <h3>Correct</h3>
+        <p>Machine work in sections under inspection light, panel by panel, wiping down between
+          passes so the finish is judged on the paint and not on polish residue.</p>
+      </div>
+      <div class="stage">
+        <span class="k">Stage 04</span>
+        <h3>Protect</h3>
+        <p>Sealant or coating over corrected paint, cured indoors, with the maintenance routine
+          explained so the finish isn't undone in the first month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec faq" id="faq" aria-labelledby="faq-h" style="border-bottom:0">
+  <div class="wrap">
+    <p class="eyebrow">04 / Questions</p>
+    <h2 id="faq-h" style="font-size:clamp(30px,4.4vw,52px);max-width:22ch;margin-bottom:30px">Asked before every booking.</h2>
+
+    <details open>
+      <summary>How long does a full detail take?</summary>
+      <p>It depends on paint condition and whether correction is included — a maintenance detail and
+        a two-stage correction are not the same day. The realistic time is given at assessment,
+        after the paint has been read, rather than quoted blind over the phone.</p>
+    </details>
+
+    <details open>
+      <summary>Can you remove every scratch?</summary>
+      <p>No, and any detailer who says yes is either guessing or planning to take too much clear
+        coat. Swirls and light marring come out. Scratches you can feel with a fingernail have gone
+        through the clear and are a paint repair, not a polish.</p>
+    </details>
+
+    <details open>
+      <summary>Is a coating worth it over a sealant?</summary>
+      <p>If the car lives outside or gets washed often, a coating holds gloss longer and makes the
+        wash quicker. If it's garaged and driven occasionally, a good sealant topped up regularly
+        does most of the same job for less.</p>
+    </details>
+
+    <details open>
+      <summary>Do you need the car for the interior and exterior separately?</summary>
+      <p>No — they're done in one booking. Interior work happens while the paint is decontaminating
+        or curing, which is why a combined detail is more efficient than two separate visits.</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec" id="book" aria-labelledby="book-h" style="padding-top:36px">
+  <div class="wrap book">
+    <div>
+      <p class="eyebrow">05 / Booking</p>
+      <h2 id="book-h">Tell us the car and what's bothering you.</h2>
+      <p>Paint condition, interior state, and how the car is parked overnight — that's enough to
+        recommend a level of work instead of a package name.</p>
+      <div class="brandmark" style="margin-top:28px">
+        <svg width="30" height="25" viewBox="0 0 36 30" aria-hidden="true">
+          <path d="M1 22c5 0 5-5 9.5-5S15 22 20 22s4.5-5 9-5 5 5 6 5" fill="none" stroke="#4fd9c6" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M1 27c5 0 5-5 9.5-5S15 27 20 27s4.5-5 9-5 5 5 6 5" fill="none" stroke="#4fd9c6" stroke-width="2.2" stroke-linecap="round" opacity=".4"/>
+          <circle cx="18" cy="7" r="4.6" fill="none" stroke="#eef2f3" stroke-width="1.6"/>
+        </svg>
+        <span style="font-size:17px">Pacific Car Detailing</span>
+      </div>
+    </div>
+    <form action="#" method="post" novalidate>
+      <div>
+        <label for="nm">Name</label>
+        <input id="nm" name="name" type="text" autocomplete="name" placeholder="Your name">
+      </div>
+      <div>
+        <label for="ct">Phone or email</label>
+        <input id="ct" name="contact" type="text" autocomplete="tel" placeholder="How to reach you">
+      </div>
+      <div class="full">
+        <label for="car">Vehicle</label>
+        <input id="car" name="vehicle" type="text" placeholder="Make, model, colour">
+      </div>
+      <div class="full">
+        <label for="wk">What you're after</label>
+        <select id="wk" name="work">
+          <option>Full detail — interior and exterior</option>
+          <option>Paint correction</option>
+          <option>Protection / coating</option>
+          <option>Not sure — advise me</option>
+        </select>
+      </div>
+      <div class="full">
+        <label for="nt">Notes</label>
+        <textarea id="nt" name="notes" placeholder="Scratches, stains, pets, where it's parked, anything you want left alone."></textarea>
+      </div>
+      <div class="full"><button class="btn" type="submit">Request a booking</button></div>
+      <p class="formnote">Prefer to message? Use the contact button on the
+        <a href="https://www.facebook.com/people/Pacific-Car-Detailing/61584630863697/" rel="noopener">Pacific Car Detailing Facebook page</a>.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<section class="endcta" aria-labelledby="endcta-h">
+  <div class="wrap inner">
+    <h2 id="endcta-h">Book the detail, or get the paint read first.</h2>
+    <div class="acts">
+      <a class="btn" href="#book">Book a detail</a>
+      <a class="btn line" href="#paint">See the four correction stages</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap foot">
+    <span class="mark">PACIFIC</span>
+    <span>Car Detailing</span>
+    <a href="https://www.facebook.com/people/Pacific-Car-Detailing/61584630863697/" rel="noopener">Facebook</a>
+    <span>© <span id="y">2026</span> Pacific Car Detailing</span>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
