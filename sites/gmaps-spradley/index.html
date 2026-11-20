@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spradley Concreting — Newcastle &amp; Hunter concreting</title>
+<meta name="description" content="Spradley Concreting — driveways, slabs and finishes across Newcastle, Lake Macquarie and the Hunter. Poured clean, finished to last.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap');
+:root{
+  --bg:#0a0d11; --panel:#10151b; --ink:#eef4f6; --muted:#8a98a2;
+  --accent:#38c8e0; --accent-dim:rgba(56,200,224,.16);
+  --lb-bar:rgba(10,13,17,.96); --lb-bar-line:rgba(56,200,224,.28);
+  --lb-bar-muted:#8a98a2;
+  --line:rgba(238,244,246,.12); --field:#0a0d11;
+  --disp:'Space Grotesk',system-ui,sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--disp);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.kick{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+nav{position:sticky;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:clamp(12px,2vw,28px);min-height:clamp(84px,7vw,100px);padding:12px 4.5vw;background:var(--lb-bar);border-bottom:1px solid var(--lb-bar-line);backdrop-filter:blur(6px)}
+.brand{display:flex;gap:12px;align-items:center;font-weight:700;font-size:17px;letter-spacing:-.01em}
+.brand img{height:clamp(40px,4.6vw,56px);width:auto;max-width:none;max-height:none;display:block;object-fit:contain;border:0;border-radius:0}
+nav .tel{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:2px}
+/* ---- 3D HERO (perspective slab grid + screed sweep) ---- */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-start;overflow:hidden}
+#pourCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,13,17,.66) 0%,rgba(10,13,17,.06) 26%,rgba(10,13,17,.04) 62%,rgba(10,13,17,.78) 100%);pointer-events:none}
+.hero__inner{position:relative;z-index:2;padding:16vh 4.5vw 8vh;max-width:1080px}
+.hero__badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent-dim);background:rgba(56,200,224,.06);padding:8px 14px;border-radius:100px;margin-bottom:28px}
+.hero__badge i{width:7px;height:7px;border-radius:50%;background:var(--accent);display:block}
+.hero h1{font-weight:700;font-size:clamp(44px,7.6vw,116px);line-height:.98;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{margin-top:26px;max-width:560px;color:var(--muted);font-size:17px}
+.hero__cta{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 26px;border-radius:8px;background:var(--accent);color:#06222a;font-weight:700;font-size:15px}
+.btn--ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+/* ticker */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;overflow:hidden;white-space:nowrap;background:var(--panel)}
+.ticker__track{display:inline-block;animation:tick 26s linear infinite;font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ticker__track b{color:var(--accent);font-weight:400;padding:0 18px}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker__track{animation:none}}
+/* services */
+.services{padding:13vh 4.5vw 6vh}
+.svc-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;margin-bottom:8px}
+.services h2{font-size:clamp(30px,4vw,54px);letter-spacing:-.02em;line-height:1.05}
+.svc{display:grid;grid-template-columns:64px 1fr auto;gap:26px;align-items:baseline;padding:30px 0;border-top:1px solid var(--line)}
+.svc:last-of-type{border-bottom:1px solid var(--line)}
+.svc__n{font-family:var(--mono);font-size:13px;color:var(--accent)}
+.svc h3{font-size:22px;font-weight:700;letter-spacing:-.01em}
+.svc p{color:var(--muted);max-width:520px;margin-top:4px}
+.svc__tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+/* spec split */
+.spec{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;padding:12vh 4.5vw;align-items:center}
+.spec__panel{position:relative;border:1px solid var(--line);border-radius:14px;background:linear-gradient(160deg,var(--panel),rgba(56,200,224,.05));padding:40px;overflow:hidden}
+.spec__panel::before{content:"";position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,var(--accent-dim),transparent 70%)}
+.spec__row{display:flex;justify-content:space-between;gap:18px;padding:15px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.spec__row:last-child{border-bottom:0}
+.spec__row b{font-family:var(--mono);font-weight:400;color:var(--accent);font-size:13px}
+.spec h2{font-size:clamp(28px,3.6vw,48px);letter-spacing:-.02em;line-height:1.08;margin-bottom:20px}
+.spec p{color:var(--muted);max-width:520px}
+/* areas */
+.areas{padding:6vh 4.5vw 12vh}
+.areas__grid{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+.areas__grid span{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);border-radius:100px;padding:10px 20px}
+/* work gallery */
+.works{padding:12vh 4.5vw 4vh}
+.works h2{font-size:clamp(30px,4vw,54px);letter-spacing:-.02em;line-height:1.05;margin-bottom:8px}
+.works__sub{color:var(--muted);max-width:560px;margin-bottom:30px}
+.works__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;grid-auto-rows:clamp(210px,24vw,300px)}
+.work{position:relative;overflow:hidden;border-radius:12px;border:1px solid var(--line);background:var(--panel)}
+.work img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.work:hover img{transform:scale(1.045)}
+.work__cap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;background:linear-gradient(180deg,transparent,rgba(10,13,17,.88));font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.work__cap b{display:block;color:var(--accent);font-weight:400;margin-bottom:2px}
+.work--wide{grid-column:span 2}
+@media (max-width:700px){.works__grid{grid-template-columns:1fr;grid-auto-rows:auto}.work{aspect-ratio:4/3}.work--wide{grid-column:span 1}}
+/* cta */
+.cta{padding:13vh 4.5vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-end;gap:36px;flex-wrap:wrap}
+.cta h2{font-size:clamp(34px,5vw,72px);letter-spacing:-.03em;line-height:1}
+.cta h2 em{font-style:normal;color:var(--accent)}
+.cta .tel{font-family:var(--mono);font-size:clamp(20px,2.6vw,30px);color:var(--accent);font-weight:700}
+footer{padding:30px 4.5vw 44px;font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;border-top:1px solid var(--line)}
+footer .f-logo{display:flex;align-items:center;gap:10px}
+footer .f-logo img{width:26px;height:26px;border-radius:50%}
+.rv{opacity:0;transform:translateY(28px);transition: opacity .45s ease,transform .8s ease}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+@media (max-width:820px){
+  .svc{grid-template-columns:44px 1fr;gap:14px}
+  .svc__tag{display:none}
+  .spec{grid-template-columns:1fr;gap:30px}
+  .hero__inner{padding-bottom:12vh}
+}
+</style>
+<style id="lb-hdr-bar">
+html{overflow-x:hidden}
+nav .brand{flex:0 0 auto}
+nav > span{margin-left:auto}
+@media(max-width:560px){
+  nav{min-height:80px;gap:10px}
+  nav .brand img{height:clamp(36px,9vw,46px)}
+  nav > span{gap:12px!important}
+  nav > span a[href="#work"]{display:none}
+}
+</style></head>
+<body>
+<nav class="lb-bar">
+  <a class="brand" href="#top"><img src="assets/logo-header.png" alt="Spradley Concreting" width="150" height="150" loading="eager" decoding="async"></a>
+  <span style="display:flex;gap:22px;align-items:center"><a href="#work" style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Recent work</a><a class="tel" href="tel:+61427717485">0427 717 485</a></span>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="pourCanvas" aria-hidden="true"></canvas>
+  <div class="hero__inner">
+    <p class="hero__badge rv"><i></i>Newcastle &middot; Lake Macquarie &middot; Hunter</p>
+    <h1 class="rv">Poured flat.<br><em>Finished right.</em></h1>
+    <p class="rv">Spradley Concreting lays driveways, slabs and finishes across the Hunter — prepped properly, poured clean, signed off square.</p>
+    <div class="hero__cta rv">
+      <a class="btn" href="tel:+61427717485">Call 0427 717 485</a>
+      <a class="btn btn--ghost" href="#quote">Request a quote</a>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" role="presentation"><div class="ticker__track">
+  Driveways <b>&#9670;</b> Paths <b>&#9670;</b> Slabs &amp; pads <b>&#9670;</b> Exposed aggregate <b>&#9670;</b> Coloured concrete <b>&#9670;</b> Grinding &amp; sealing <b>&#9670;</b> Repairs <b>&#9670;</b>
+  Driveways <b>&#9670;</b> Paths <b>&#9670;</b> Slabs &amp; pads <b>&#9670;</b> Exposed aggregate <b>&#9670;</b> Coloured concrete <b>&#9670;</b> Grinding &amp; sealing <b>&#9670;</b> Repairs <b>&#9670;</b>
+</div></div>
+
+<section class="services" id="services">
+  <div class="svc-head"><div><p class="kick rv">What we pour</p><h2 class="rv">The work, start to finish.</h2></div></div>
+  <div class="svc rv"><span class="svc__n">01</span>
+    <div><h3>Driveways &amp; paths</h3><p>Plain, coloured and exposed-aggregate finishes — formed, poured and cut to level so water runs where it should.</p></div>
+    <span class="svc__tag">Form &middot; Pour &middot; Finish</span></div>
+  <div class="svc rv"><span class="svc__n">02</span>
+    <div><h3>Slabs &amp; pads</h3><p>Sheds, tanks and dwelling slabs — set out, reinforced and poured to spec, ready for the next trade.</p></div>
+    <span class="svc__tag">Set out &middot; Steel &middot; Pour</span></div>
+  <div class="svc rv"><span class="svc__n">03</span>
+    <div><h3>Finishing &amp; repairs</h3><p>Grinding, sealing and patchwork that blends into the existing pour instead of sitting on top of it.</p></div>
+    <span class="svc__tag">Grind &middot; Seal &middot; Patch</span></div>
+</section>
+
+<section class="spec">
+  <div>
+    <p class="kick rv">How a job runs</p>
+    <h2 class="rv">Measured twice, poured once.</h2>
+    <p class="rv">Every job starts on site — levels checked, fall worked out, access sorted before a truck is booked. The crew that quotes it runs it, and the finish is walked with you before we pack up.</p>
+  </div>
+  <div class="spec__panel rv">
+    <div class="spec__row"><span>On-site measure &amp; quote</span><b>STEP 01</b></div>
+    <div class="spec__row"><span>Prep, formwork &amp; steel</span><b>STEP 02</b></div>
+    <div class="spec__row"><span>Pour &amp; finish</span><b>STEP 03</b></div>
+    <div class="spec__row"><span>Cut, seal &amp; walk-through</span><b>STEP 04</b></div>
+  </div>
+</section>
+
+<section class="works" id="work">
+  <p class="kick rv">Recent work</p>
+  <h2 class="rv">Straight off the trowel.</h2>
+  <p class="works__sub rv">A look at recent pours across Newcastle and the Hunter — driveways, slabs, stairs and pattern-cove finishes, start to finish.</p>
+  <div class="works__grid">
+    <figure class="work work--wide rv"><img src="assets/work/work-01.jpg" alt="Finished concrete driveway entrance, Holmesville" loading="lazy"><figcaption class="work__cap"><b>Holmesville</b>Driveway &middot; start to finish</figcaption></figure>
+    <figure class="work rv"><img src="assets/work/work-02.jpg" alt="Large shed slab and pattern cove, Medowie" loading="lazy"><figcaption class="work__cap"><b>Medowie</b>200sqm shed &middot; pattern cove</figcaption></figure>
+    <figure class="work rv"><img src="assets/work/work-03.jpg" alt="Power trowel finishing a fresh concrete slab" loading="lazy"><figcaption class="work__cap"><b>On the tools</b>Power trowel finish</figcaption></figure>
+    <figure class="work rv"><img src="assets/work/work-04.jpg" alt="Finished concrete stairs and landing, North Lambton" loading="lazy"><figcaption class="work__cap"><b>North Lambton</b>Slabs &amp; stairs</figcaption></figure>
+    <figure class="work rv"><img src="assets/work/work-05.jpg" alt="Pattern cove slab in bluegum colourway, Mayfield" loading="lazy"><figcaption class="work__cap"><b>Mayfield</b>Bluegum pattern cove</figcaption></figure>
+    <figure class="work rv"><img src="assets/work/work-06.jpg" alt="Outdoor entertainment slab in bluegum colourway, Mayfield" loading="lazy"><figcaption class="work__cap"><b>Mayfield</b>Entertainment slab</figcaption></figure>
+    <figure class="work work--wide rv"><img src="assets/work/work-07.jpg" alt="140sqm pewter pattern cove slab, Valentine" loading="lazy"><figcaption class="work__cap"><b>Valentine</b>140sqm pewter pattern cove</figcaption></figure>
+    <figure class="work rv"><img src="assets/work/work-08.jpg" alt="Pattern cove slab, Chisholm" loading="lazy"><figcaption class="work__cap"><b>Chisholm</b>Pattern cove</figcaption></figure>
+    <figure class="work rv"><img src="assets/work/work-09.jpg" alt="Pattern cove slab replacing tiles, Highfields" loading="lazy"><figcaption class="work__cap"><b>Highfields</b>Tile removal &middot; pattern cove</figcaption></figure>
+    <figure class="work rv"><img src="assets/work/work-10.jpg" alt="Recently completed concrete work, Rankin Park" loading="lazy"><figcaption class="work__cap"><b>Rankin Park</b>Recent completion</figcaption></figure>
+  </div>
+</section>
+
+<section class="areas" id="area">
+  <p class="kick rv">Where we work</p>
+  <div class="areas__grid rv">
+    <span>Newcastle</span><span>Lake Macquarie</span><span>Hunter</span><span>Maitland</span><span>Cessnock</span>
+  </div>
+</section>
+
+<section class="cta" id="quote">
+  <h2 class="rv">Got a slab,<br>drive or <em>repair</em> in mind?</h2>
+  <div class="rv"><a class="tel" href="tel:+61427717485">0427 717 485</a></div>
+</section>
+
+<footer>
+  <div class="f-logo"><img src="assets/logo.jpg" alt=""><span>Spradley Concreting &middot; Newcastle NSW</span></div>
+  <div><a href="tel:+61427717485">0427 717 485</a></div>
+<section id="lbq" class="v3" aria-labelledby="lbq-h">
+  <style>
+#lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#c4fb24))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,#9aa6b2);--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto}
+#lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
+#lbq p.lbq-s{margin:0 0 26px;color:var(--lbq-muted);max-width:56ch}
+#lbq .lbq-f{display:grid;gap:12px}
+#lbq label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#0b0e12;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+/* v1 card */
+#lbq.v1 .lbq-card{background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
+#lbq.v1 .lbq-g{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+#lbq.v1 .lbq-full{grid-column:1/-1}
+@media(max-width:640px){#lbq.v1 .lbq-g{grid-template-columns:1fr}}
+/* v2 band */
+#lbq.v2{background:var(--lbq-panel);border-top:1px solid var(--lbq-line);border-bottom:1px solid var(--lbq-line)}
+#lbq.v2 .lbq-g{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+#lbq.v2 .lbq-full{grid-column:1/-1}
+#lbq.v2 .lbq-hd{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
+@media(max-width:760px){#lbq.v2 .lbq-g{grid-template-columns:1fr}#lbq.v2 .lbq-hd{display:block}}
+/* v3 split */
+#lbq.v3 .lbq-sp{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+#lbq.v3 .lbq-g{display:grid;gap:12px}
+#lbq.v3 .lbq-hp2{border-left:3px solid var(--lbq-accent);padding-left:16px}
+@media(max-width:760px){#lbq.v3 .lbq-sp{grid-template-columns:1fr}}
+/* v4 minimal */
+#lbq.v4 .lbq-w{max-width:620px}
+#lbq.v4 input,#lbq.v4 textarea{border:0;border-bottom:1px solid var(--lbq-line);border-radius:0;background:transparent;padding:11px 2px}
+#lbq.v4 .lbq-g{display:grid;gap:16px}
+</style>
+  <div class="lbq-w">
+      <div class="lbq-sp"><div class="lbq-hp2"><h2 id="lbq-h">Request a quote</h2>
+      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p><p class="lbq-s" style="margin-bottom:0">Prefer to talk? Call, text or email — we reply fast.</p></div><div><form id="lbq-form" novalidate data-site="gmaps-spradley" data-biz="Spradley Concreting"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame…" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div></div>
+  </div>
+  <script>
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;  // honeypot — silently accept bots
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</section>
+</footer>
+<script>
+(function(){
+  var c = document.getElementById('pourCanvas');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 1, H = 1;
+  var reduced = false;
+  try { reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e){}
+  var rnd = (function(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; var t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; })(20261001);
+  var speck = [];
+  function build(){ speck = []; for (var i=0;i<70;i++) speck.push({x:rnd(),z:2+rnd()*30,r:0.4+rnd()*1.3,a:0.05+rnd()*0.2}); }
+  function resize(){
+    var r = c.getBoundingClientRect();
+    W = Math.max(1, Math.round(r.width*dpr)); H = Math.max(1, Math.round(r.height*dpr));
+    c.width = W; c.height = H;
+  }
+  function project(x, z){
+    var f = H*1.15, camH = 1.35, horizon = H*0.54;
+    if (z < 0.9) z = 0.9;
+    var s = f/z;
+    return { x: W/2 + x*s, y: horizon + camH*f/z, s: s };
+  }
+  function draw(t){
+    if (!isFinite(t)) t = 0;
+    ctx.clearRect(0,0,W,H);
+    var horizon = H*0.54;
+    var sweep = (Math.sin(t/2600)*0.5+0.5);       // screed position 0..1 (far..near)
+    // horizon glow
+    var g = ctx.createLinearGradient(0, horizon-90*dpr, 0, horizon+30*dpr);
+    g.addColorStop(0,'rgba(56,200,224,0)'); g.addColorStop(.72,'rgba(56,200,224,.09)'); g.addColorStop(1,'rgba(56,200,224,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, horizon-90*dpr, W, 120*dpr);
+    // floor grid — depth lines (along x at increasing z)
+    ctx.lineWidth = Math.max(1, dpr*0.7);
+    for (var zi=1; zi<=18; zi++){
+      var z = 1.8 + zi*1.9;
+      var a = project(-12, z), b = project(12, z);
+      var fade = Math.max(0.05, 0.36 - zi*0.016);
+      ctx.strokeStyle = 'rgba(238,244,246,'+fade.toFixed(3)+')';
+      ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+    }
+    // rails (along z)
+    for (var xi=-6; xi<=6; xi++){
+      var x = xi*2.0;
+      var a2 = project(x, 1.6), b2 = project(x, 44);
+      ctx.strokeStyle = 'rgba(238,244,246,'+(xi===0?0.30:0.11)+')';
+      ctx.beginPath(); ctx.moveTo(a2.x,a2.y); ctx.lineTo(b2.x,b2.y); ctx.stroke();
+    }
+    // the slab being screeded: wet band between near edge and screed line
+    var zEdge = 2.2 + sweep*26;
+    var pL = project(-12, zEdge), pR = project(12, zEdge);
+    var pLb = project(-12, 1.5), pRb = project(12, 1.5);
+    ctx.save();
+    ctx.beginPath(); ctx.moveTo(pL.x,pL.y); ctx.lineTo(pR.x,pR.y); ctx.lineTo(pRb.x,pRb.y); ctx.lineTo(pLb.x,pLb.y); ctx.closePath();
+    var gg = ctx.createLinearGradient(0,pL.y,0,pLb.y);
+    gg.addColorStop(0,'rgba(56,200,224,.16)'); gg.addColorStop(1,'rgba(56,200,224,.03)');
+    ctx.fillStyle = gg; ctx.fill();
+    ctx.restore();
+    // screed edge (bright cyan line) + riser posts at the ends (bar + risers = screed anatomy)
+    ctx.strokeStyle = 'rgba(56,200,224,.9)'; ctx.lineWidth = Math.max(1.6, dpr*1.3);
+    ctx.beginPath(); ctx.moveTo(pL.x,pL.y); ctx.lineTo(pR.x,pR.y); ctx.stroke();
+    var rise = Math.max(14*dpr, 34*dpr/zEdge);
+    ctx.strokeStyle = 'rgba(56,200,224,.45)'; ctx.lineWidth = Math.max(1.1, dpr*0.9);
+    ctx.beginPath(); ctx.moveTo(pL.x, pL.y); ctx.lineTo(pL.x, pL.y - rise); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(pR.x, pR.y); ctx.lineTo(pR.x, pR.y - rise); ctx.stroke();
+    var upM = project(0, zEdge);
+    ctx.strokeStyle = 'rgba(56,200,224,.25)'; ctx.lineWidth = Math.max(1, dpr*0.8);
+    ctx.beginPath(); ctx.moveTo(upM.x, upM.y); ctx.lineTo(upM.x, upM.y - rise); ctx.stroke();
+    // wet-slab sheen just behind the screed edge
+    var sheenL = project(-12, zEdge+0.9), sheenR = project(12, zEdge+0.9);
+    ctx.strokeStyle = 'rgba(238,244,246,.10)'; ctx.lineWidth = Math.max(1, dpr*0.7);
+    ctx.beginPath(); ctx.moveTo(sheenL.x, sheenL.y); ctx.lineTo(sheenR.x, sheenR.y); ctx.stroke();
+    // speck texture
+    for (var i=0;i<speck.length;i++){
+      var s = speck[i];
+      var p = project((s.x-0.5)*26, 2 + s.z*1.1);
+      if (p.y < horizon || p.y > H) continue;
+      ctx.fillStyle = 'rgba(238,244,246,'+s.a.toFixed(3)+')';
+      ctx.beginPath(); ctx.arc(p.x,p.y,Math.max(0.5,s.r*dpr),0,6.2832); ctx.fill();
+    }
+  }
+  var start = null;
+  function animate(ts){
+    if (start === null && ts !== undefined) start = ts;
+    var t = (ts === undefined || start === null) ? 0 : (ts - start);
+    draw(t);
+    if (!reduced) requestAnimationFrame(animate);
+  }
+  resize();
+  window.addEventListener('resize', function(){ resize(); draw(0); });
+  requestAnimationFrame(animate);
+})();
+</script>
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target);} });
+  }, {threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<noscript><style>.rv{opacity:1;transform:none}
+/* mobile overflow guard 2026-10-14 */
+html,body{overflow-x:hidden}
+@media (max-width:820px){
+  h1,h2,h3,.h1,.hero h1,.sec-title,.k,.kicker,.kick,.eyebrow,.tag-line,.tag,.hero-kicker,.hero-sub,.lead{
+    white-space:normal!important;overflow-wrap:anywhere;word-break:break-word;max-width:100%!important}
+  .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(10px,3.1vw,13px)!important;letter-spacing:.22em!important}
+  h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.05!important}
+}
+</style></noscript>
+<script>/* reveal safety net: reveal all after load so content never sticks hidden */
+(function(){var es=[].slice.call(document.querySelectorAll('.rv'));function all(){for(var i=0;i<es.length;i++){es[i].classList.add('on');}}setTimeout(all,1100);})();
+</script>
+<style id="lb-header-fault-fix">
+.lb-sr-only.lb-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+</style>
+</body>
+</html>
