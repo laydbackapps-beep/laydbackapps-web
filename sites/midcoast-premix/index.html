@@ -208,7 +208,7 @@ footer a:hover { color: var(--acc); }
   .hero-visual img,.hero-right .hero-visual img{height:210px}
 }
 </style>
-<style id="lb-brand-css">
+<style>
 /* ==== LB BRAND (logo-true spanning wordmark) ==== */
 .lb-brand{display:inline-flex;align-items:center;gap:clamp(9px,1vw,16px);text-decoration:none;
  color:inherit;min-width:0;padding:0;background:none;border:0;flex:0 1 auto}
@@ -233,7 +233,7 @@ footer a:hover { color: var(--acc); }
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<style id="lb-motion-css">
+<style>
 /* ==== LB MOTION PACK ==== */
 .lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
 /* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
@@ -298,7 +298,7 @@ a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
 @keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
 </style>
-<style id="lb-depth-css">
+<style>
 /* ==== LB DEPTH PACK, layered shadow + gradient surfaces ==== */
 :root{
   --lb-acc: var(--acc, var(--accent, #e51924));
@@ -377,27 +377,27 @@ footer{ box-shadow:0 -1px 0 var(--lb-hair), 0 -14px 40px -30px rgba(8,10,14,.5);
   .card,.cards > *,.panel,.tile,figure,.gal figure, a.btn,.btn, img{ transition:none!important; transform:none!important; }
 }
 </style>
-<style id="lb-hero-css">
+<style>
 canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-<style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
+<style>/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
 .site-header,.header{z-index:50}
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-<style id="lb-markimg">.lb-brand__mark{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;margin-right:.6rem}.lb-brand__mark img{display:block;height:clamp(34px,3.4vw,44px);width:auto;border-radius:8px}</style>
-<style id="lb-bar-noname">
+<style>.lb-brand__mark{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;margin-right:.6rem}.lb-brand__mark img{display:block;height:clamp(34px,3.4vw,44px);width:auto;border-radius:8px}</style>
+<style>
 /* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
 .lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
 {display:none!important}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style><style id="lb-bar-noname-x">SPAN.lb-brand__name{display:none!important}
-</style><style id="lb-rb-cap">.lb-rb{max-width:1090px!important;margin-inline:auto!important}</style></head>
+</style><style>SPAN.lb-brand__name{display:none!important}
+</style><style>.lb-rb{max-width:1090px!important;margin-inline:auto!important}</style></head>
 <body>
 <script>document.documentElement.className+=' js';</script>
 <nav class="nav"><div class="nav-in">
@@ -453,24 +453,24 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
   </div>
 </section>
 <section id="services"><div class="wrap">
-  <div class="sec-head"><span class="sec-idx">01</span><div><h2 class="sec-title">What we supply.</h2><p class="lead">Domestic pours through to commercial supply, agi-truck delivery with a fleet that’s hard to miss.</p></div></div>
-  <div class="svc-grid"><div class="svc-row rv"><span class="svc-n">01</span><div class="svc-body"><h3>Driveways & pathways</h3><p>Clean, correctly-mixed concrete for new driveways, paths and aprons that go down right the first time.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><span class="svc-n">02</span><div class="svc-body"><h3>Slabs & footings</h3><p>House slabs, shed slabs, footings and strip footings, batched to your engineer’s spec.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><span class="svc-n">03</span><div class="svc-body"><h3>Custom mix designs</h3><p>Specific strength or finish? We batch custom mixes for residential, rural and commercial jobs.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><span class="svc-n">04</span><div class="svc-body"><h3>Scheduled delivery</h3><p>Book your pour windows ahead, the fleet coordinates with your crew for on-time arrivals.</p></div><span class="svc-arrow">&#8599;</span></div></div>
+  <div class="sec-head"><div><h2 class="sec-title">What we supply.</h2><p class="lead">Domestic pours through to commercial supply, agi-truck delivery with a fleet that’s hard to miss.</p></div></div>
+  <div class="svc-grid"><div class="svc-row rv"><div class="svc-body"><h3>Driveways & pathways</h3><p>Clean, correctly-mixed concrete for new driveways, paths and aprons that go down right the first time.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><div class="svc-body"><h3>Slabs & footings</h3><p>House slabs, shed slabs, footings and strip footings, batched to your engineer’s spec.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><div class="svc-body"><h3>Custom mix designs</h3><p>Specific strength or finish? We batch custom mixes for residential, rural and commercial jobs.</p></div><span class="svc-arrow">&#8599;</span></div><div class="svc-row rv"><div class="svc-body"><h3>Scheduled delivery</h3><p>Book your pour windows ahead, the fleet coordinates with your crew for on-time arrivals.</p></div><span class="svc-arrow">&#8599;</span></div></div>
 </div></section>
 
 <section class="band" id="process"><div class="wrap">
-  <div class="sec-head"><span class="sec-idx">02</span><div><h2 class="sec-title">From call to pour.</h2></div></div>
-  <div class="steps"><div class="step rv"><span class="step-n">01</span><div><h3>Call or enquire</h3><p>Tell us the job, volume and access, we confirm spec and price.</p></div></div><div class="step rv"><span class="step-n">02</span><div><h3>We batch your mix</h3><p>Your concrete is batched fresh to the required strength and slump.</p></div></div><div class="step rv"><span class="step-n">03</span><div><h3>Fleet delivers</h3><p>The agitator truck arrives on schedule, ready to pour.</p></div></div><div class="step rv"><span class="step-n">04</span><div><h3>You finish the pour</h3><p>Your crew screeds and finishes, we handle supply, you handle placement.</p></div></div></div>
+  <div class="sec-head"><div><h2 class="sec-title">From call to pour.</h2></div></div>
+  <div class="steps"><div class="step rv"><div><h3>Call or enquire</h3><p>Tell us the job, volume and access, we confirm spec and price.</p></div></div><div class="step rv"><div><h3>We batch your mix</h3><p>Your concrete is batched fresh to the required strength and slump.</p></div></div><div class="step rv"><div><h3>Fleet delivers</h3><p>The agitator truck arrives on schedule, ready to pour.</p></div></div><div class="step rv"><div><h3>You finish the pour</h3><p>Your crew screeds and finishes, we handle supply, you handle placement.</p></div></div></div>
 </div></section>
 
 <section id="faq"><div class="wrap faq-wrap">
-  <div class="sec-head"><span class="sec-idx">03</span><div><h2 class="sec-title">Concrete questions, answered.</h2></div></div>
+  <div class="sec-head"><div><h2 class="sec-title">Concrete questions, answered.</h2></div></div>
   <details class="faq rv"><summary>How far in advance should I book concrete?</summary><div class="a">Call at least a day ahead for most domestic pours; bigger or custom-mix jobs need more notice so we can batch to spec.</div></details><details class="faq rv"><summary>What areas do you deliver to?</summary><div class="a">Forster, Tuncurry and across the Great Lakes region, ask about your site when you call.</div></details><details class="faq rv"><summary>Can I order a custom mix strength?</summary><div class="a">Yes, we batch to the strength and slump your engineer or project needs.</div></details><details class="faq rv"><summary>Do you pump concrete?</summary><div class="a">We supply truck delivery; for pumping, we’ll point you to a local pump crew we work with.</div></details>
 </div></section>
 
 <section class="stat-band band" id="stats"><div class="wrap"><div class="stat rv d1"><b>Fresh</b><span>Batched per order</span></div><div class="stat rv d2"><b>On-time</b><span>Scheduled delivery</span></div><div class="stat rv d3"><b>Great Lakes</b><span>Local supplier</span></div><div class="stat rv d4"><b>Custom</b><span>Mix designs</span></div></div></section>
 
 <section id="trust"><div class="wrap">
-  <div class="sec-head"><span class="sec-idx">04</span><div><h2 class="sec-title">Why crews book MidCoast.</h2></div></div>
+  <div class="sec-head"><div><h2 class="sec-title">Why crews book MidCoast.</h2></div></div>
   <div class="trust-strip"><div class="tr-i rv d1"><div class="tr-t">&#10003;</div><div><b>Batched to spec</b><span>Fresh, correct mix every load</span></div></div><div class="tr-i rv d2"><div class="tr-t">&#10003;</div><div><b>On-time fleet</b><span>Scheduled pour windows</span></div></div><div class="tr-i rv d3"><div class="tr-t">&#10003;</div><div><b>Great Lakes local</b><span>Forster & Tuncurry</span></div></div><div class="tr-i rv d4"><div class="tr-t">&#10003;</div><div><b>Custom mixes</b><span>Engineer-spec strengths</span></div></div></div>
 </div></section>
 
@@ -831,7 +831,7 @@ header a[href^="tel"],.site-header a[href^="tel"]{
 }
 .lb-brand__sub:empty{display:none !important}
 </style>
-<style id="lb-header-fault-fix">
+<style>
 :is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
 img.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
