@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ramcon Earthworks &amp; Property Maintenance | Excavation, Drainage & Driveways, Gippsland VIC</title>
+<meta name="description" content="Tight-access excavation, drainage, trenching, driveways and land clearing across Gippsland. Owner operated, 2.6T machine. Call 0488 237 917.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Chivo:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Anton&family=Chivo:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
+<style>
+:root{
+  --bg:#141517; --bg2:#1b1d20; --ink:#f2f3f4; --ink2:#9aa0a6;
+  --acc:#e8b71e; --acc2:#c99a0f; --soil:#4d4238; --line:rgba(255,255,255,.12);
+  --nav-h:74px;
+  --disp:'Anton','Arial Narrow',sans-serif; --body-font:'Chivo',sans-serif;
+  --font-m:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:calc(var(--nav-h) + 10px)}
+html:not(.js) .rv{opacity:1!important;transform:none!important}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.js .rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body-font);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+::selection{background:var(--acc);color:#141517}
+.skip{position:absolute;top:-100%;left:50%;transform:translateX(-50%);padding:.7rem 1.2rem;background:var(--acc);color:#141517;font-weight:700;z-index:10000}
+.skip:focus{top:1rem}
+h1,h2,h3{font-family:var(--disp);font-weight:400;letter-spacing:.015em;text-transform:uppercase}
+.mono{font-family:var(--font-m)}
+.nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2.5rem);background:rgba(20,21,23,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:1000}
+.nav__b{display:flex;align-items:center;gap:.8rem}
+.nav__b img{height:44px;width:auto;border-radius:6px;display:block}
+.nav__b .nb-t{display:block;font-family:var(--disp);font-size:clamp(1.05rem,1.9vw,1.3rem);text-transform:uppercase;line-height:1.02}
+.nav__b .nb-s{display:block;font-family:var(--font-m);font-size:.53rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);white-space:nowrap}
+.nav__links{display:flex;gap:1.4rem;list-style:none}
+.nav__links a{font-size:.9rem;font-weight:500;color:var(--ink2)}
+.nav__links a:hover{color:var(--ink)}
+.nav__cta{display:flex;align-items:center;gap:.9rem}
+.nav__p{font-size:.82rem;font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.5rem;font-size:.84rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border:0;border-radius:4px;cursor:pointer;transition:transform .15s,background .15s,color .15s,border-color .15s}
+.btn--p{background:var(--acc);color:#141517}
+.btn--p:hover{background:var(--acc2);transform:translateY(-1px)}
+.btn--o{border:1.5px solid var(--acc);color:var(--acc);background:transparent}
+.btn--o:hover{background:var(--acc);color:#141517}
+.nav__cta .btn{padding:.52rem 1.05rem;font-size:.75rem;white-space:nowrap}
+@media (max-width:900px){.nav__links{display:none}.nav__p{display:none}}
+@media (max-width:640px){.nav__b .nb-s{display:none}}
+
+/* ============ hero: the excavator works ============ */
+#sceneWrap{height:450vh;position:relative}
+#sceneSticky{position:sticky;top:0;height:100vh;overflow:hidden;background:#141517}
+#digCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-copy{position:absolute;left:clamp(1.2rem,4.5vw,4rem);top:calc(var(--nav-h) + 4vh);max-width:620px;z-index:3}
+.hero-copy .k{display:inline-flex;align-items:center;gap:.6rem;margin:0 0 .8rem;font-family:var(--font-m);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--acc)}
+.hero-copy .k i{display:block;width:26px;height:3px;background:var(--acc)}
+.hero-copy h1{font-size:clamp(2.5rem,6.2vw,4.4rem);line-height:1.0;color:#fff}
+.hero-copy h1 em{font-style:normal;color:var(--acc)}
+.hero-copy .d{margin:1rem 0 1.4rem;font-size:clamp(.96rem,1.4vw,1.08rem);color:var(--ink2);max-width:48ch}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-copy .strip{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:1.7rem;padding-top:1.1rem;border-top:1px solid var(--line)}
+.hero-copy .strip p{font-size:.8rem;color:var(--ink2)}
+.hero-copy .strip b{display:block;color:var(--ink);font-size:.86rem}
+.hud{position:absolute;inset:0;pointer-events:none;z-index:2}
+.hud .stg{position:absolute;left:clamp(1.2rem,4.5vw,4rem);bottom:4.5vh;display:flex;align-items:baseline;gap:.8rem}
+.hud .stg b{font-family:var(--disp);font-size:clamp(2.4rem,4.6vw,3.6rem);color:var(--acc);opacity:.35;line-height:1}
+.hud .stg span{font-family:var(--font-m);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2)}
+.hud .rail{position:absolute;right:clamp(1rem,3.4vw,2.6rem);top:22vh;bottom:22vh;width:3px;background:rgba(255,255,255,.12);border-radius:2px}
+.hud .rail i{position:absolute;left:0;top:0;width:100%;height:0%;background:var(--acc);display:block;border-radius:2px}
+.scroll-hint{position:absolute;right:calc(clamp(1rem,3.4vw,2.6rem) + 1rem);bottom:4.5vh;font-family:var(--font-m);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);z-index:3}
+
+/* ============ sections ============ */
+.sec{max-width:1220px;margin:0 auto;padding:clamp(4rem,9vh,7rem) clamp(1.2rem,4vw,2.5rem)}
+.sec-head{display:flex;gap:1.2rem;align-items:flex-start;margin-bottom:2.4rem}
+.sec-idx{font-family:var(--font-m);font-size:.78rem;color:var(--acc);font-weight:700;padding-top:.5rem}
+.sec-title{font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.05}
+.sec-head p.lead{margin-top:.6rem;color:var(--ink2);max-width:62ch;font-size:1rem}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.svc{padding:1.6rem 1.2rem 1.6rem 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:70px 1fr;gap:1rem}
+.svc .n{font-family:var(--disp);font-size:1.5rem;color:var(--acc);line-height:1}
+.svc h3{font-size:1.12rem;margin-bottom:.35rem}
+.svc p{font-size:.93rem;color:var(--ink2)}
+@media (max-width:760px){.svc-grid{grid-template-columns:1fr}}
+.sec--tint{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.step{border-top:3px solid var(--acc);padding-top:1rem}
+.step b{font-family:var(--disp);font-size:1.7rem;color:var(--acc2);display:block;line-height:1}
+.step h3{font-size:1rem;margin:.5rem 0 .25rem}
+.step p{font-size:.9rem;color:var(--ink2)}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.faq{border-top:1px solid var(--line);max-width:840px}
+details.faq{border-bottom:1px solid var(--line)}
+details.faq summary{cursor:pointer;list-style:none;padding:1.05rem .3rem;font-weight:700;font-size:1rem;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary:after{content:'+';font-family:var(--font-m);color:var(--acc);font-size:1.2rem}
+details.faq[open] summary:after{content:'–'}
+details.faq .a{padding:0 .3rem 1.1rem;color:var(--ink2);max-width:70ch}
+.band{display:flex;gap:2.4rem;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:2rem clamp(1.2rem,4vw,2.5rem);max-width:1220px;margin:0 auto}
+.band .b-i{display:flex;gap:.7rem;align-items:baseline}
+.band .b-i b{font-family:var(--disp);font-size:1.3rem;color:var(--acc);text-transform:uppercase}
+.band .b-i span{font-size:.85rem;color:var(--ink2)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gal figure{margin:0}
+.gal img{width:100%;height:280px;object-fit:cover;border-radius:6px;border:1px solid var(--line)}
+.gal figcaption{display:flex;justify-content:space-between;padding:10px 2px;font-size:.84rem;color:var(--ink2)}
+@media (max-width:900px){.gal{grid-template-columns:repeat(2,1fr)}.gal img{height:220px}}
+@media (max-width:560px){.gal{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);background:#0f1012;color:#e8eaec;padding:62px 0 0;margin-top:3rem}
+footer .fw{max-width:1220px;margin:0 auto;padding:0 clamp(1.2rem,4vw,2.5rem);display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer h4{font-family:var(--font-m);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:1rem}
+footer a{display:block;color:#b9bec4;font-size:.94rem;padding:5px 0}
+footer a:hover{color:#fff}
+.fbrand{display:flex;align-items:center;gap:.9rem}
+.fbrand img{height:52px;border-radius:6px}
+.fbrand .fb-n{font-family:var(--disp);font-size:1.2rem;color:#fff;text-transform:uppercase}
+.fbrand .fb-s{font-family:var(--font-m);font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
+.footer-bar{max-width:1220px;margin:42px auto 0;padding:18px clamp(1.2rem,4vw,2.5rem);border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.8rem;color:#8d939a}
+@media (max-width:900px){footer .fw{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#services">Skip to content</a>
+
+<nav class="nav" aria-label="Main">
+  <a class="nav__b" href="#top" aria-label="Ramcon Earthworks and Property Maintenance home">
+    <img src="assets/logo.png" alt="Ramcon Earthworks logo">
+    <span><span class="nb-t">Ramcon Earthworks</span><span class="nb-s">Earthworks · Drainage · Property Maintenance</span></span>
+  </a>
+  <ul class="nav__links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#quote">Quote</a></li>
+  </ul>
+  <div class="nav__cta">
+    <span class="mono nav__p">0488 237 917</span>
+    <a class="btn btn--p" href="#quote">Get a quote</a>
+  </div>
+</nav>
+
+<header id="top">
+<div id="sceneWrap" aria-label="Scroll to watch the excavator dig">
+  <div id="sceneSticky">
+    <canvas id="digCanvas" aria-hidden="true"></canvas>
+
+    <div class="hero-copy" id="heroCopy">
+      <p class="k"><i></i>Earthworks &amp; property maintenance · Gippsland, VIC</p>
+      <h1>Ground work, <em>done properly</em>.</h1>
+      <p class="d">Tight-access excavation, drainage, trenching, driveways, land clearing and retaining walls across Gippsland. One operator for the cut, the drainage and the finished levels.</p>
+      <div class="cta">
+        <a class="btn btn--p" href="#quote">Get a free quote</a>
+        <a class="btn btn--o" href="tel:+61488237917" aria-label="Call 0488 237 917">Call 0488 237 917</a>
+      </div>
+      <div class="strip">
+        <p><b>Owner operated</b>Steve, on the tools</p>
+        <p><b>Tight access</b>2.6T machine</p>
+        <p><b>Gippsland</b>local &amp; insured</p>
+      </div>
+    </div>
+
+    <div class="hud" aria-hidden="true">
+      <div class="stg"><b id="stgNum">00</b><span id="stgName">On site</span></div>
+      <div class="rail"><i id="railFill"></i></div>
+      <div class="scroll-hint" id="scrollHint">Scroll · the machine digs</div>
+    </div>
+  </div>
+</div>
+</header>
+
+<section class="sec" id="services">
+  <div class="sec-head rv"><span class="sec-idx">01</span><div><h2 class="sec-title">What we do.</h2><p class="lead">One operator for the cut, the drainage and the finished levels, so the site is left ready for what comes next.</p></div></div>
+  <div class="svc-grid">
+    <article class="svc rv"><span class="n">01</span><div><h3>Tight-access excavation</h3><p>Excavation with a compact 2.6T machine where a full-size digger will not fit: tight blocks and backyards.</p></div></article>
+    <article class="svc rv"><span class="n">02</span><div><h3>Drainage &amp; trenching</h3><p>Surface and sub-surface drainage, agi lines and trenching cut to the right falls.</p></div></article>
+    <article class="svc rv"><span class="n">03</span><div><h3>Driveways &amp; site cuts</h3><p>Driveway cuts, site levelling and bulk earthworks graded to the plan.</p></div></article>
+    <article class="svc rv"><span class="n">04</span><div><h3>Land clearing &amp; retaining</h3><p>Land clearing, retaining walls and property maintenance that finishes the job.</p></div></article>
+  </div>
+</section>
+
+<section class="sec sec--tint" id="process">
+  <div class="sec-head rv"><span class="sec-idx">02</span><div><h2 class="sec-title">How a job runs.</h2></div></div>
+  <div class="steps">
+    <div class="step rv"><b>01</b><h3>Site visit &amp; scope</h3><p>Access, levels and soil checked. The job defined before any machinery moves.</p></div>
+    <div class="step rv"><b>02</b><h3>Firm quote</h3><p>Bulk, hours and finish priced in writing.</p></div>
+    <div class="step rv"><b>03</b><h3>Excavate &amp; prepare</h3><p>Cut, trench, drain, compact: a level, sound base for what comes next.</p></div>
+    <div class="step rv"><b>04</b><h3>Finish &amp; clean up</h3><p>Final grade, finished levels, site left clean.</p></div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="sec-head rv"><span class="sec-idx">03</span><div><h2 class="sec-title">Asked on every site.</h2></div></div>
+  <div class="faq">
+  <details class="faq rv"><summary>Do you handle tight-access jobs?</summary><div class="a">Yes. A compact 2.6T machine that gets into tight blocks and backyards a full-size digger cannot reach.</div></details>
+  <details class="faq rv"><summary>Are you licensed and insured?</summary><div class="a">Yes. Owner operated and fully insured.</div></details>
+  <details class="faq rv"><summary>Which areas do you cover?</summary><div class="a">Gippsland and surrounding areas, VIC.</div></details>
+  <details class="faq rv"><summary>Do you quote before starting?</summary><div class="a">Always. A firm written quote before any work starts.</div></details>
+  </div>
+</section>
+
+<section class="sec--tint" aria-label="At a glance">
+  <div class="band rv">
+    <div class="b-i"><b>Owner operated</b><span>Steve, on the tools</span></div>
+    <div class="b-i"><b>2.6T machine</b><span>tight-access ready</span></div>
+    <div class="b-i"><b>Drainage</b><span>&amp; trenching</span></div>
+    <div class="b-i"><b>Gippsland</b><span>local operator</span></div>
+  </div>
+</section>
+
+<section class="sec" id="work">
+  <div class="sec-head rv"><span class="sec-idx">04</span><div><h2 class="sec-title">On site.</h2><p class="lead">Recent jobs from around Gippsland.</p></div></div>
+  <div class="gal">
+    <figure class="rv"><img src="assets/gal_1.jpg" alt="Excavator and retaining wall" loading="lazy"><figcaption><span>Excavator &amp; retaining wall</span><span class="mono">/01</span></figcaption></figure>
+    <figure class="rv"><img src="assets/gal_2.jpg" alt="Site cut and levelling" loading="lazy"><figcaption><span>Site cut &amp; levelling</span><span class="mono">/02</span></figcaption></figure>
+    <figure class="rv"><img src="assets/gal_3.jpg" alt="Trenching and drainage" loading="lazy"><figcaption><span>Trenching &amp; drainage</span><span class="mono">/03</span></figcaption></figure>
+    <figure class="rv"><img src="assets/gal_4.jpg" alt="Driveway preparation" loading="lazy"><figcaption><span>Driveway preparation</span><span class="mono">/04</span></figcaption></figure>
+    <figure class="rv"><img src="assets/gal_5.jpg" alt="Bulk earthworks" loading="lazy"><figcaption><span>Bulk earthworks</span><span class="mono">/05</span></figcaption></figure>
+    <figure class="rv"><img src="assets/gal_6.jpg" alt="Land clearing" loading="lazy"><figcaption><span>Land clearing</span><span class="mono">/06</span></figcaption></figure>
+  </div>
+</section>
+
+<span id="quote" style="position:absolute;top:-90px"></span>
+<section id="lbq" aria-labelledby="lbq-h">
+<style>
+#lbq{--lbq-accent:var(--acc);--lbq-ink:var(--ink);--lbq-muted:var(--ink2);--lbq-bg:var(--paper2);--lbq-panel:#fff;--lbq-line:var(--line);padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq *{box-sizing:border-box}
+#lbq .lbq-w{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
+@media(max-width:900px){#lbq .lbq-w{grid-template-columns:1fr}}
+#lbq h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0 0 10px;letter-spacing:-.02em;font-family:var(--disp)}
+#lbq p.lbq-s{margin:0 0 22px;color:var(--lbq-muted);max-width:52ch}
+#lbq .lbq-info{display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--lbq-line);padding-top:22px}
+#lbq .lbq-info div{display:flex;gap:10px;align-items:baseline}
+#lbq .lbq-info b{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lbq-accent);min-width:64px}
+#lbq .lbq-info a{font-weight:800;text-decoration:none}
+#lbq .lbq-f{display:grid;gap:12px;background:var(--lbq-panel);border:1px solid var(--lbq-line);border-radius:14px;padding:26px}
+#lbq label{display:block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lbq-muted);margin-bottom:5px}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--paper);color:var(--ink);font:inherit;font-size:.95rem}
+#lbq textarea{min-height:96px;resize:vertical}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:var(--lbq-acc-text,#0b0e12);font:inherit;font-weight:800;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button:disabled{opacity:.6;cursor:wait}
+#lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
+#lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:auto}
+#lbq .lbq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+</style>
+<div class="lbq-w">
+  <div>
+    <h2 id="lbq-h">Get a free quote</h2>
+    <p class="lbq-s">Tell us about the job and we&rsquo;ll come back with a firm price &mdash; no surprises, no obligation.</p>
+    <div class="lbq-info">
+      <div><b>Call</b><a href="tel:+61488237917 237 917">0488 237 917</a></div>
+      <div><b>Email</b><a href="mailto:ramcon.earthworks@gmail.com">ramcon.earthworks@gmail.com</a></div>
+      <div><b>Area</b><span>Gippsland, VIC</span></div>
+    </div>
+  </div>
+  <form id="lbq-form" novalidate data-site="ramcon-earthworks" data-biz="Ramcon Earthworks & Property Maintenance">
+    <div class="lbq-f">
+      <div class="lbq-g">
+        <div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div>
+        <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
+        <div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
+        <div class="lbq-full"><label for="lbq-svc">Service</label>
+          <select id="lbq-svc" name="service"><option>Tight-access excavation</option><option>Drainage</option><option>Trenching</option><option>Driveways</option><option>Land clearing</option><option>Property maintenance</option><option>Other</option></select>
+        </div>
+        <div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Job type, access width, site size, timing…" required></textarea></div>
+      </div>
+      <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
+      <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit">Send quote request</button>
+      <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+</div>
+<script>
+(function(){
+  var EP = null;
+  function base(cb){
+    if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
+    var done = false;
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var b = (txt||'').trim().replace(/\/+$/, '');
+        if (done) return;
+        done = true; clearTimeout(t);
+        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+      })
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+  }
+  function init(){
+    var f = document.getElementById('lbq-form');
+    if (!f) return;
+    var st = document.getElementById('lbq-st');
+    var btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d = {};
+      new FormData(f).forEach(function(v,k){ d[k]=v; });
+      if (d.website) return;
+      if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
+        st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
+        st.style.color = '#ff9d8a';
+        return;
+      }
+      btn.disabled = true;
+      st.textContent = 'Sending\u2026';
+      st.style.color = '';
+      base(function(B){
+        var url = B + '/functions/v1/quote-request';
+        fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            site_id: f.dataset.site || '',
+            business_name: f.dataset.biz || '',
+            name: d.name, phone: d.phone, email: d.email,
+            service: d.service || '', message: d.message,
+            consent: !!d.consent
+          })
+        })
+        .then(function(r){ return r.json().catch(function(){ return {}; }); })
+        .then(function(x){
+          if (x && x.success) {
+            f.reset();
+            st.textContent = "Thanks \u2014 your request is in. We'll be in touch shortly.";
+            st.style.color = 'var(--lbq-accent)';
+          } else {
+            throw new Error((x && x.error) || 'Could not send');
+          }
+        })
+        .catch(function(err){
+          st.textContent = (err && err.message) ? err.message : 'Could not send \u2014 please try again or call.';
+          st.style.color = '#ff9d8a';
+        })
+        .finally(function(){ btn.disabled = false; });
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</section>
+
+<footer>
+  <div class="fw">
+    <div>
+      <div class="fbrand"><img src="assets/logo.png" alt="Ramcon Earthworks logo"><span><span class="fb-n">Ramcon Earthworks</span><br><span class="fb-s">Earthworks · Drainage · Property Maintenance</span></span></div>
+      <p style="margin-top:16px;font-size:.85rem;max-width:300px;color:#a3a9b0;">Tight-access excavation, drainage and earthworks across Gippsland. Owner operated.</p>
+      <p style="margin-top:10px;font-size:.78rem;max-width:300px;color:#a3a9b0;">Privacy &amp; terms: your details are only used to prepare your quote.</p>
+    </div>
+    <div><h4>Services</h4><a href="#services">Tight-access excavation</a><a href="#services">Drainage &amp; trenching</a><a href="#services">Driveways &amp; site cuts</a><a href="#services">Land clearing</a></div>
+    <div><h4>Company</h4><a href="#process">How a job runs</a><a href="#faq">FAQ</a><a href="#work">Recent work</a><a href="#quote">Free quote</a></div>
+    <div><h4>Contact</h4><a href="tel:+61488237917">0488 237 917</a><a href="mailto:ramcon.earthworks@gmail.com">ramcon.earthworks@gmail.com</a><a href="#quote">Free quote</a></div>
+  </div>
+  <div class="footer-bar mono">
+    <span>© <span id="year"></span> RAMCON EARTHWORKS &amp; PROPERTY MAINTENANCE · GIPPSLAND VIC</span>
+    <span><a href="tel:+61488237917">0488 237 917</a><a href="mailto:ramcon.earthworks@gmail.com">ramcon.earthworks@gmail.com</a></span>
+  </div>
+</footer>
+<script>
+document.documentElement.classList.add('js');
+/* ===== Ramcon — the excavator digs as you scroll ===== */
+(function(){
+'use strict';
+var wrap=document.getElementById('sceneWrap'),sticky=document.getElementById('sceneSticky'),cv=document.getElementById('digCanvas');
+if(!wrap||!sticky||!cv)return;
+var ctx=cv.getContext('2d'),W=0,H=0;
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var qp=new URLSearchParams(location.search),forceP=qp.get('p');
+var DBG=qp.get('dbg')==='1';
+var CL=function(v,a,b){return v<a?a:(v>b?b:v);};
+var EZ=function(t){return 1-Math.pow(1-t,3);};
+
+function resize(){
+  var dpr=Math.min(2,window.devicePixelRatio||1);
+  W=sticky.clientWidth||window.innerWidth;H=sticky.clientHeight||window.innerHeight;
+  cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);ctx.lineJoin='round';
+}
+var _s=3311;function rnd(){_s=(_s*1103515245+12345)%2147483648;return _s/2147483648;}
+function rr(a,b){return a+(b-a)*rnd();}
+function hex2rgb(h){return [parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];}
+function rotZv(p,a){var c=Math.cos(a),s=Math.sin(a);return [p[0]*c-p[1]*s,p[0]*s+p[1]*c,p[2]];}
+
+/* camera: front-left view (matches the flipped-az convention) */
+var camAz=Math.PI-0.35,camEl=0.20,camD=21,f=2.1,camAlt=3.1;
+function proj(x,y,z){
+  var ca=Math.cos(camAz),sa=Math.sin(camAz);
+  var xa=x*ca-z*sa,za=x*sa+z*ca,yy=y-camAlt;
+  var ce=Math.cos(camEl),se=Math.sin(camEl);
+  var vy=yy*ce+za*se,vz=-yy*se+za*ce+camD;
+  var s=f*Math.min(H,W*0.9)/Math.max(6,vz);
+  return {x:W/2+xa*s,y:H*0.55-vy*s,s:s,vz:vz};
+}
+
+/* piece system (boxes, rotX) */
+var pieces=[];
+function rotXv(p,a){var c=Math.cos(a),s=Math.sin(a);return [p[0],p[1]*c-p[2]*s,p[1]*s+p[2]*c];}
+function rotAv(p,ax,a){var c=Math.cos(a),s=Math.sin(a),d=1-c,x=p[0],y=p[1],z=p[2],x0=ax[0],x1=ax[1],x2=ax[2];
+ return [x*(x0*x0*d+c)+y*(x0*x1*d-x2*s)+z*(x0*x2*d+x1*s),
+         x*(x1*x0*d+x2*s)+y*(x1*x1*d+c)+z*(x1*x2*d-x0*s),
+         x*(x2*x0*d-x1*s)+y*(x2*x1*d+x0*s)+z*(x2*x2*d+c)];}
+var LAY=0;
+function add(o){
+  if(o.split){
+    var sp2=o.split,n=sp2[1],axs=sp2[0];delete o.split;
+    for(var si=0;si<n;si++){
+      var c={},k2;for(k2 in o)c[k2]=o[k2];
+      var off=si-(n-1)/2,step2;
+      if(axs==='x'){step2=o.sx/n;c.sx=step2+0.03;c.cx=(o.cx||0)+off*step2;}
+      else if(axs==='z'){step2=o.sz/n;c.sz=step2+0.03;c.cz=(o.cz||0)+off*step2;}
+      else{step2=o.sy/n;c.sy=step2+0.02;c.cy=(o.cy||0)+off*step2;}
+      add(c);
+    }
+    return;
+  }
+  o.rot=o.rot||0;o.spin=o.spin||0;o.alpha=(o.alpha==null)?1:o.alpha;
+  o.stroke=(o.stroke==null)?true:o.stroke;o.t0=(o.t0==null)?0:o.t0;o.dur=o.dur||0.1;
+  o.fly=o.fly||[0,0,0];o.axis=o.axis||[rr(-1,1),rr(0.4,1),rr(-1,1)];o.lay=(o.lay==null)?LAY:o.lay;
+  o.rgb=hex2rgb(o.c);
+  o.cx=o.cx||0;o.cy=o.cy||0;o.cz=o.cz||0;
+  pieces.push(o);
+}
+var FACES=[[0,2,3,1],[4,5,7,6],[0,4,6,2],[1,3,7,5],[0,1,5,4],[2,6,7,3]];
+
+var C={soil:'#4d4238',soil2:'#5a4d40',soilD:'#3a322b',lawn:'#6d7a55',
+       yel:'#e8b71e',yelD:'#c2960f',dark:'#26282b',track:'#1d1f22',
+       glass:'#2b3a49',steel:'#8a9099',blade:'#3a3d41'};
+
+/* ---- static site ---- */
+var MZ=1.0;
+LAY=1;
+add({cx:0,cy:-.09,cz:-3.5,sx:42,sy:.18,sz:29,c:C.soil,t0:-0.1,fly:[0,0,0],split:['x',6]});
+add({cx:-6.5,cy:.28,cz:-2.6,sx:4.2,sy:.56,sz:3.4,c:C.soil2,t0:-0.1,fly:[0,0,0],split:['x',2]});
+add({cx:6.8,cy:.22,cz:-3.2,sx:3.6,sy:.44,sz:3.0,c:C.soil2,t0:-0.1,fly:[0,0,0],split:['x',2]});
+add({cx:0,cy:.05,cz:8.6,sx:30,sy:.10,sz:6,c:C.lawn,t0:-0.1,fly:[0,0,0],split:['x',5]});
+
+/* ---- the machine (static parts) ---- */
+LAY=2;
+add({cx:2.0,cy:.30,cz:MZ+.52,sx:2.3,sy:.6,sz:.5,c:C.track,t0:-0.1,fly:[0,0,0],split:['x',2]});
+add({cx:2.0,cy:.30,cz:MZ-.52,sx:2.3,sy:.6,sz:.5,c:C.track,t0:-0.1,fly:[0,0,0],split:['x',2]});
+add({cx:2.0,cy:.72,cz:MZ,sx:2.0,sy:.34,sz:1.7,c:C.dark,t0:-0.1,fly:[0,0,0]});
+add({cx:1.95,cy:1.18,cz:MZ,sx:1.7,sy:.72,sz:1.5,c:C.yel,t0:-0.1,fly:[0,0,0]});
+add({cx:2.45,cy:1.05,cz:MZ,sx:.5,sy:.6,sz:1.4,c:C.yelD,t0:-0.1,fly:[0,0,0]});
+add({cx:2.30,cy:1.95,cz:MZ+.18,sx:.95,sy:1.0,sz:1.0,c:C.glass,t0:-0.1,fly:[0,0,0],stroke:false});
+add({cx:2.30,cy:2.52,cz:MZ+.18,sx:1.05,sy:.14,sz:1.1,c:C.yelD,t0:-0.1,fly:[0,0,0]});
+add({cx:2.62,cy:2.62,cz:MZ-.3,sx:.16,sy:.34,sz:.16,c:C.dark,t0:-0.1,fly:[0,0,0]});
+add({cx:1.55,cy:1.62,cz:MZ,sx:.5,sy:.5,sz:.62,c:C.yelD,t0:-0.1,fly:[0,0,0]});
+
+var PIV=[1.7,1.55,MZ],L1=3.0,L2=2.3;
+
+/* arm poses solved by IK (deg, from +y toward -x) */
+function deg(d){return d*Math.PI/180;}
+var A1=[[0.06,38.6],[0.20,68.0],[0.30,87.3],[0.40,77.6],[0.48,71.0],[0.56,65.6],[0.66,44.3],[0.78,25.1],[0.88,38.6],[1.00,42.0]];
+var A2=[[0.06,99.7],[0.20,56.3],[0.30,34.1],[0.40,57.0],[0.48,73.7],[0.56,88.8],[0.66,94.6],[0.78,115.7],[0.88,115.6],[1.00,106.0]];
+var A3=[[0.06,-0.2],[0.30,-0.5],[0.56,-0.6],[0.66,-0.9],[0.78,-0.6],[0.88,0.9],[1.00,0.2]];
+function kf1(keys,p){
+  if(p<=keys[0][0])return keys[0][1];
+  for(var i=1;i<keys.length;i++){
+    if(p<=keys[i][0]){
+      var t=(p-keys[i-1][0])/Math.max(.0001,keys[i][0]-keys[i-1][0]);
+      var e=EZ(CL(t,0,1));
+      return keys[i-1][1]+(keys[i][1]-keys[i-1][1])*e;
+    }
+  }
+  return keys[keys.length-1][1];
+}
+
+/* arm boxes computed per frame: segment along +y-from-pivot rotated by cumulative angle */
+function segCorners(px,py,pz,ang,len,w,h){
+  var c=Math.cos(ang),s=Math.sin(ang);
+  var out=[];
+  for(var i=0;i<8;i++){
+    var lx=((i&1)?.5:-.5)*w, ly=((i&2)?.5:-.5)*h, lz=((i&4)?.5:-.5)*len;
+    /* box: x width w, y thickness h, z length len -> rotate about Z so +z-ish maps to -x direction */
+    var wx=px + (lz*0)*0 , dummy=0;
+    out.push([0,0,0]);
+  }
+  return out;
+}
+/* build oriented box: local (width along x', length along y'), rotated about Z by ang, from pivot */
+function limb(px,py,pz,ang,len,w,h,dirSign){
+  /* returns 8 world corners: length runs along direction rotZ(+y)*ang (times dirSign handled by caller angles) */
+  var c=Math.cos(ang),s=Math.sin(ang);
+  var vs=[];
+  for(var i=0;i<8;i++){
+    var lw=((i&1)?.5:-.5)*w, ll=((i&2)?.5:-.5)*len, lh=((i&4)?.5:-.5)*h;
+    /* local: y'=length, x'=width, z'=depth. rotate about Z: x'' = x'*c - y'*s ; y'' = x'*s + y'*c */
+    var x2=lw*c - ll*s, y2=lw*s + ll*c;
+    vs.push([px+x2, py+y2, pz+lh*2]);
+  }
+  return vs;
+}
+
+var smoothP=0,curStage=-1;
+var stgNum=document.getElementById('stgNum'),stgName=document.getElementById('stgName'),
+    railFill=document.getElementById('railFill'),hint=document.getElementById('scrollHint'),
+    heroCopy=document.getElementById('heroCopy');
+var STAGES=[[0,'On site'],[0.20,'Reach out'],[0.30,'Bite in'],[0.40,'Cut the trench'],[0.66,'Lift'],[0.78,'Swing'],[0.88,'Spoil out'],[0.98,'Done']];
+
+function draw(p){
+  if(!isFinite(p))p=0;
+  var g=ctx.createLinearGradient(0,0,0,H*0.7);
+  g.addColorStop(0,'#191b1e');g.addColorStop(.65,'#21242a');g.addColorStop(1,'#2a2d31');
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  var sg=ctx.createRadialGradient(W*0.78,H*0.12,0,W*0.78,H*0.12,Math.min(W,H)*0.4);
+  sg.addColorStop(0,'rgba(232,183,30,.16)');sg.addColorStop(1,'rgba(232,183,30,0)');
+  ctx.fillStyle=sg;ctx.fillRect(0,0,W,H*0.7);
+
+  var faces=[];
+  var i,j,o,q;
+  var c1=1;
+  for(i=0;i<pieces.length;i++){
+    o=pieces[i];
+    q=EZ(CL((p-o.t0)/o.dur,0,1));
+    if(q<=0)continue;
+    var k=1-q,ox=o.fly[0]*k,oy=o.fly[1]*k,oz=o.fly[2]*k;
+    var sp=o.spin*k;
+    var vs=null;
+    if(!o._corners){
+      vs=[];var bad=false;
+      for(j=0;j<8;j++){
+        var l=[o.sx*((j&1)?.5:-.5),o.sy*((j&2)?.5:-.5),o.sz*((j&4)?.5:-.5)];
+        if(o.rot)l=rotXv(l,o.rot);
+        if(sp>0.001)l=rotAv(l,o.axis,sp);
+        var wx=o.cx+ox+l[0],wy=o.cy+oy+l[1],wz=o.cz+oz+l[2];
+        var pr=proj(wx,wy,wz);
+        if(!isFinite(pr.x)||!isFinite(pr.y)){vs=null;break;}
+        vs.push({x:pr.x,y:pr.y,vz:pr.vz,wx:wx,wy:wy,wz:wz});
+      }
+    }
+    if(!vs)continue;
+    for(j=0;j<6;j++){
+      var fc=FACES[j],a=vs[fc[0]],bb=vs[fc[1]],c2=vs[fc[2]],d2=vs[fc[3]];
+      var e1x=bb.wx-a.wx,e1y=bb.wy-a.wy,e1z=bb.wz-a.wz,e2x=c2.wx-a.wx,e2y=c2.wy-a.wy,e2z=c2.wz-a.wz;
+      var nx=e1y*e2z-e1z*e2y,ny=e1z*e2x-e1x*e2z,nz=e1x*e2y-e1y*e2x;
+      var nl=Math.sqrt(nx*nx+ny*ny+nz*nz)||1;nx/=nl;ny/=nl;nz/=nl;
+      var LX=0.3,LY=0.88,LZ=0.37;
+      var lam=nx*LX+ny*LY+nz*LZ;if(lam<0){lam=-lam;}
+      var sh=0.5+0.5*Math.max(0,lam);
+      faces.push({a:a,b:bb,c:c2,d:d2,z:(a.vz+bb.vz+c2.vz+d2.vz)*0.25,l:o.lay,o:o,sh:sh});
+    }
+  }
+  /* ---- computed arm (boom, stick, bucket) ---- */
+  var d1=deg(kf1(A1,p)),d2=deg(kf1(A2,p)),d3=deg(kf1(A3,p));
+  var p1x=PIV[0],p1y=PIV[1],pz=PIV[2];
+  var bx=p1x-L1*Math.sin(d1), by=p1y+L1*Math.cos(d1);
+  var sx2=bx-L2*Math.sin(d1+d2), sy2=by+L2*Math.cos(d1+d2);
+  var bkx=sx2-0.85*Math.sin(d1+d2+d3), bky=sy2+0.85*Math.cos(d1+d2+d3);
+  function pushBox(corners,col,shade){
+    var vvs=[];var bad=false;
+    for(var m=0;m<8;m++){
+      var pr=proj(corners[m][0],corners[m][1],corners[m][2]);
+      if(!isFinite(pr.x)){bad=true;break;}
+      vvs.push({x:pr.x,y:pr.y,vz:pr.vz,wx:corners[m][0],wy:corners[m][1],wz:corners[m][2]});
+    }
+    if(bad)return;
+    for(var m2=0;m2<6;m2++){
+      var fc2=FACES[m2],a2=vvs[fc2[0]],b2=vvs[fc2[1]],c3=vvs[fc2[2]],d3b=vvs[fc2[3]];
+      var e1x=b2.wx-a2.wx,e1y=b2.wy-a2.wy,e1z=b2.wz-a2.wz,e2x=c3.wx-a2.wx,e2y=c3.wy-a2.wy,e2z=c3.wz-a2.wz;
+      var nx=e1y*e2z-e1z*e2y,ny=e1z*e2x-e1x*e2z,nz=e1x*e2y-e1y*e2x;
+      var nl=Math.sqrt(nx*nx+ny*ny+nz*nz)||1;nx/=nl;ny/=nl;nz/=nl;
+      var LX=0.3,LY=0.88,LZ=0.37;
+      var lam=nx*LX+ny*LY+nz*LZ;if(lam<0)lam=-lam;
+      var sh=0.5+0.5*Math.max(0,lam);
+      faces.push({a:a2,b:b2,c:c3,d:d3b,z:(a2.vz+b2.vz+c3.vz+d3b.vz)*0.25,l:30,o:{rgb:hex2rgb(col),alpha:1,stroke:true},sh:sh});
+    }
+  }
+  /* boom: from pivot1 along ang d1, length L1, drawn as a box (len along the direction) */
+  function limbCorners(px,py,pz,ang,len,w,h){
+    var c=Math.cos(ang),s=Math.sin(ang);var vs=[];
+    for(var i=0;i<8;i++){
+      var lw=((i&1)?.5:-.5)*w, ll=((i&2)?1:0)*len, lh=((i&4)?.5:-.5)*h;
+      var x2=lw*c - ll*s, y2=lw*s + ll*c;
+      vs.push([px+x2, py+y2, pz+lh*2]);
+    }
+    return vs;
+  }
+  pushBox(limbCorners(p1x,p1y,pz-0.18,d1,L1,0.42,0.6),C.yel);
+  pushBox(limbCorners(p1x,p1y,pz-0.18,d1+0.5,1.5,0.16,0.2),C.steel);  /* hydraulic ram hint */
+  pushBox(limbCorners(bx,by,pz-0.14,d1+d2,L2,0.3,0.44),C.yel);
+  pushBox(limbCorners(bx,by,pz-0.14,d1+d2+0.5,1.1,0.12,0.14),C.steel);
+  /* bucket: box at the stick end angled with d3 + teeth */
+  pushBox(limbCorners(sx2,sy2,pz-0.22,d1+d2+d3,0.9,0.7,0.9),C.dark);
+  pushBox(limbCorners(sx2,sy2,pz-0.05,d1+d2+d3,1.0,0.55,0.5),C.yelD);
+
+  /* render faces */
+  faces.sort(function(p1,p2){var dq=p1.l-p2.l;return dq!==0?dq:(p2.z-p1.z);});
+  for(i=0;i<faces.length;i++){
+    var F=faces[i],oo=F.o;
+    var r2=Math.round(oo.rgb[0]*F.sh),g2=Math.round(oo.rgb[1]*F.sh),b2=Math.round(oo.rgb[2]*F.sh);
+    ctx.fillStyle='rgba('+r2+','+g2+','+b2+','+(oo.alpha==null?1:oo.alpha)+')';
+    ctx.beginPath();ctx.moveTo(F.a.x,F.a.y);ctx.lineTo(F.b.x,F.b.y);ctx.lineTo(F.c.x,F.c.y);ctx.lineTo(F.d.x,F.d.y);ctx.closePath();ctx.fill();
+    if(oo.stroke&&(oo.alpha==null||oo.alpha>0.9)){ctx.strokeStyle='rgba(12,12,14,.35)';ctx.lineWidth=.7;ctx.stroke();}
+  }
+  /* dust puff on the cut */
+  if(cutting){
+    for(var dp=0;dp<7;dp++){
+      var ph=(p*10+dp*0.37)%1;
+      var dx2=tipX-rr(0,0.8), dy2=0.1+ph*1.1;
+      var dpp=proj(dx2,dy2,pz+rr(-0.4,0.4));
+      ctx.fillStyle='rgba(180,165,140,'+(0.22*(1-ph))+')';
+      ctx.beginPath();ctx.arc(dpp.x,dpp.y,dpp.s*(0.35+ph*0.9),0,6.283);ctx.fill();
+    }
+  }
+  /* ---- trench (grows as the bucket drags) ---- */
+  var tipX=sx2-0.85*Math.sin(d1+d2+d3), tipY=sy2+0.85*Math.cos(d1+d2+d3);
+  var tz1=1.6-0.62,tz2=1.6+0.62;
+  var cutEnd=CL(tipX,-3.9,-2.35);
+  var cutting=(p>0.30&&p<0.58);
+  if(p>0.29){
+    var xs=-3.95, segs=10, wSeg=(cutEnd-xs)/segs;
+    if(wSeg>0.02){
+      ctx.save();
+      for(var sg2=0;sg2<segs;sg2++){
+        var xa=xs+sg2*wSeg, xb=xa+wSeg;
+        var a3=proj(xa,0.01,tz1),b3=proj(xb,0.01,tz1),c4=proj(xb,0.01,tz2),d4=proj(xa,0.01,tz2);
+        ctx.fillStyle='#1c1813';
+        ctx.beginPath();ctx.moveTo(a3.x,a3.y);ctx.lineTo(b3.x,b3.y);ctx.lineTo(c4.x,c4.y);ctx.lineTo(d4.x,d4.y);ctx.closePath();ctx.fill();
+        var w1=proj(xa,0.01,tz1),w2=proj(xa,-0.5,tz1),w3=proj(xb,-0.5,tz1),w4=proj(xb,0.01,tz1);
+        ctx.fillStyle='#332c24';
+        ctx.beginPath();ctx.moveTo(w1.x,w1.y);ctx.lineTo(w2.x,w2.y);ctx.lineTo(w3.x,w3.y);ctx.lineTo(w4.x,w4.y);ctx.closePath();ctx.fill();
+        var e1=proj(xa,0.01,tz1),e2=proj(xa,0.012,tz1),e3=proj(xb,0.012,tz2),e4=proj(xb,0.012,tz2);
+        ctx.fillStyle='rgba(214,192,150,.30)';
+        ctx.beginPath();ctx.moveTo(e1.x,e1.y);ctx.lineTo(e4.x,e4.y);ctx.lineTo(e3.x,e3.y);ctx.closePath();ctx.fill();
+        var lipA=proj(xa,0.04,tz1-0.10),lipB=proj(xb,0.04,tz1-0.10),lipC=proj(xb,0.16,tz1-0.26),lipD=proj(xa,0.16,tz1-0.26);
+        ctx.fillStyle='#635546';
+        ctx.beginPath();ctx.moveTo(lipA.x,lipA.y);ctx.lineTo(lipB.x,lipB.y);ctx.lineTo(lipC.x,lipC.y);ctx.lineTo(lipD.x,lipD.y);ctx.closePath();ctx.fill();
+      }
+      ctx.restore();
+    }
+  }
+  /* spoil heap near the machine, grows on dump */
+  if(p>0.58){
+    var hpf=CL((p-0.58)/0.4,0,1);
+    var heap=[ [0.35,1.45,2.2],[0.62,1.25,1.7],[0.88,1.05,1.2],[1.1,0.85,0.8] ];
+    for(var hh=0;hh<heap.length;hh++){
+      var fr=CL((hpf-hh*0.22)/0.3,0,1);
+      if(fr<=0)continue;
+      var hx=-1.35-hh*0.12, hy=heap[hh][0]*0.5*fr, hz=1.6+hh*0.2;
+      var h1=proj(hx-.5*heap[hh][1]*fr,0.02,hz-.5*heap[hh][2]*fr),h2=proj(hx+.5*heap[hh][1]*fr,0.02,hz-.5*heap[hh][2]*fr),
+          h3=proj(hx+.5*heap[hh][1]*fr,hy*1.6,hz+.5*heap[hh][2]*fr),h4=proj(hx-.5*heap[hh][1]*fr,hy*1.6,hz+.5*heap[hh][2]*fr);
+      ctx.fillStyle=hh%2?'#453a30':'#4f4437';
+      ctx.beginPath();ctx.moveTo(h1.x,h1.y);ctx.lineTo(h2.x,h2.y);ctx.lineTo(h3.x,h3.y);ctx.lineTo(h4.x,h4.y);ctx.closePath();ctx.fill();
+      ctx.fillStyle=(hh%2?'#3a3128':'#443a2f');
+      var k1=proj(hx-.5*heap[hh][1]*fr,hy*1.6,hz-.5*heap[hh][2]*fr),k2=proj(hx+.5*heap[hh][1]*fr,hy*1.6,hz-.5*heap[hh][2]*fr);
+      ctx.beginPath();ctx.moveTo(k1.x,k1.y);ctx.lineTo(k2.x,k2.y);ctx.lineTo(h3.x,h3.y);ctx.lineTo(h4.x,h4.y);ctx.closePath();ctx.fill();
+    }
+  }
+  /* bucket load of soil */
+  if(p>0.56&&p<0.885){
+    var lx2=sx2-0.55*Math.sin(d1+d2+d3), ly2=sy2+0.55*Math.cos(d1+d2+d3);
+    var lc=proj(lx2,ly2-0.25,pz);
+    ctx.fillStyle='#4a3f33';
+    ctx.beginPath();ctx.ellipse(lc.x,lc.y,lc.s*0.5,lc.s*0.32,0,0,6.283);ctx.fill();
+  }
+  var sI=0;
+  for(i=0;i<STAGES.length;i++){if(p>=STAGES[i][0])sI=i;}
+  if(sI!==curStage&&stgNum){
+    curStage=sI;
+    stgNum.textContent=(sI<10?'0':'')+sI;
+    stgName.textContent=STAGES[sI][1];
+  }
+  if(railFill)railFill.style.height=(p*100).toFixed(1)+'%';
+  if(heroCopy){var ho=reduce?1:CL(1-p*5.0,0,1);heroCopy.style.opacity=ho;heroCopy.style.transform='translateY('+(p*36)+'px)';}
+  if(hint)hint.style.opacity=reduce?0:CL(1-p*8,0,1);
+  if(DBG){
+    var pb=proj(tipX,tipY,pz);
+    document.title='DBG TIPW='+tipX.toFixed(2)+','+tipY.toFixed(2)+' | TRENCH@'+Math.round(pb.x)+','+Math.round(pb.y)+'=smp | P='+p.toFixed(2);
+  }
+}
+window.__buildTo=function(x){draw(CL(+x||0,0,1));};
+
+function animate(ts){
+  if(!isFinite(ts))ts=0;
+  var rect=wrap.getBoundingClientRect();
+  var span=wrap.offsetHeight-sticky.offsetHeight;
+  var p2=CL(-rect.top/Math.max(1,span),0,1);
+  smoothP+=(p2-smoothP)*0.10;
+  if(Math.abs(smoothP-p2)<0.0004)smoothP=p2;
+  draw(smoothP);
+  requestAnimationFrame(animate);
+}
+
+resize();
+window.addEventListener('resize',function(){resize();if(forceP!=null||reduce)draw(forceP!=null?CL(parseFloat(forceP)||0,0,1):1);});
+if(forceP!=null){draw(CL(parseFloat(forceP)||0,0,1));}
+else if(reduce){draw(1);}
+else{requestAnimationFrame(animate);}
+})();
+
+/* ===== reveals + year ===== */
+(function(){
+  var obs=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});
+  },{rootMargin:'0px 0px -8% 0px',threshold:0.08});
+  document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
+  setTimeout(function(){document.querySelectorAll('.rv:not(.on)').forEach(function(el){el.classList.add('on');});},1200);
+})();
+var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
