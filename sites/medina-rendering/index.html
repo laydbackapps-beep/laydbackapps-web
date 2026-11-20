@@ -178,7 +178,7 @@
   </style>
 
 <noscript><style>.rv{opacity:1 !important;transform:none !important}</style></noscript>
-<style id="lb-brand-css">
+<style>
 /* ==== LB BRAND (logo-true spanning wordmark) ==== */
 .lb-brand{display:inline-flex;align-items:center;gap:clamp(9px,1vw,16px);text-decoration:none;
  color:inherit;min-width:0;padding:0;background:none;border:0;flex:0 1 auto}
@@ -200,7 +200,7 @@
  .lb-brand__sub{letter-spacing:.2em;font-size:7px}
 }
 </style>
-<style id="lb-motion-css">
+<style>
 /* ==== LB MOTION PACK ==== */
 .lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
 /* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
@@ -265,7 +265,7 @@ a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
 @keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
 </style>
-<style id="lb-depth-css">
+<style>
 /* ==== LB DEPTH PACK — layered shadow + gradient surfaces ==== */
 :root{
   --lb-acc: var(--acc, var(--accent, #e51924));
@@ -342,51 +342,51 @@ footer{ box-shadow:0 -1px 0 var(--lb-hair), 0 -14px 40px -30px rgba(8,10,14,.5);
   .card,.cards > *,.panel,.tile,figure,.gal figure, a.btn,.btn, img{ transition:none!important; transform:none!important; }
 }
 </style>
-<style id="lb-hero-css">
+<style>
 canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-<style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
+<style>/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
 .site-header,.header{z-index:50}
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-<style id="lb-repair-tel">.lb-tel{white-space:nowrap;align-self:center;text-decoration:none;flex:0 0 auto}</style><style id="lb-repair-polish">/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>.lb-tel{white-space:nowrap;align-self:center;text-decoration:none;flex:0 0 auto}</style><style>/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<!--LB-HDRFIX--><style id="lb-hdrfix">header{position:sticky!important;top:0;min-height:72px;overflow:hidden}header>.lb-hero-canvas,header>canvas{position:absolute!important;inset:0!important;height:100%!important;width:100%!important;z-index:0!important;pointer-events:none}header>.container{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:nowrap;min-height:72px;padding-block:10px}header .lb-brand,header a[class*=brand]{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}header>.container>nav,header nav[role=navigation]{flex:0 1 auto;min-width:0;display:flex;align-items:center;gap:clamp(10px,1.4vw,22px)}header .lb-tel,header a[href^="tel:"]{white-space:nowrap;flex:0 0 auto}header .lb-brand__name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}</style><!--/LB-HDRFIX-->
+<!--LB-HDRFIX--><style>header{position:sticky!important;top:0;min-height:72px;overflow:hidden}header>.lb-hero-canvas,header>canvas{position:absolute!important;inset:0!important;height:100%!important;width:100%!important;z-index:0!important;pointer-events:none}header>.container{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:nowrap;min-height:72px;padding-block:10px}header .lb-brand,header a[class*=brand]{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}header>.container>nav,header nav[role=navigation]{flex:0 1 auto;min-width:0;display:flex;align-items:center;gap:clamp(10px,1.4vw,22px)}header .lb-tel,header a[href^="tel:"]{white-space:nowrap;flex:0 0 auto}header .lb-brand__name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}</style><!--/LB-HDRFIX-->
 
-<!--LB-EMPTY--><style id="lb-empty">[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
+<!--LB-EMPTY--><style>[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
 
-<!--LB-HERO-HEIGHT--><style id="lb-heroh">[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.34),rgba(0,0,0,.12) 45%,rgba(0,0,0,.42))}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
+<!--LB-HERO-HEIGHT--><style>[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.34),rgba(0,0,0,.12) 45%,rgba(0,0,0,.42))}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
 
-<!--LB-RV--><style id="lb-rv">.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
+<!--LB-RV--><style>.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
 
-<!--LB-HEROCOPY--><style id="lb-herocopy">[class*=hero-copy],[class*=hero__copy],[class*=hero].container>div:first-child{position:relative!important;z-index:6!important;max-width:min(780px,90vw)!important}[class*=hero-copy] h1,[class*=hero] h1{max-width:20ch!important}[class*=hero] canvas{pointer-events:none!important}[class*=hero-copy] p{max-width:56ch!important}</style><!--/LB-HEROCOPY-->
+<!--LB-HEROCOPY--><style>[class*=hero-copy],[class*=hero__copy],[class*=hero].container>div:first-child{position:relative!important;z-index:6!important;max-width:min(780px,90vw)!important}[class*=hero-copy] h1,[class*=hero] h1{max-width:20ch!important}[class*=hero] canvas{pointer-events:none!important}[class*=hero-copy] p{max-width:56ch!important}</style><!--/LB-HEROCOPY-->
 
-<!--LB-HEROCOPY2--><style id="lb-herocopy2">[class*=hero] canvas,canvas.lb-hero-canvas,[id*=scene] canvas{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{position:relative!important;z-index:3!important;width:min(780px,90vw)!important;max-width:none!important;flex:1 1 auto!important}[class*=hero-copy] h1{width:100%!important;max-width:none!important}</style><!--/LB-HEROCOPY2-->
+<!--LB-HEROCOPY2--><style>[class*=hero] canvas,canvas.lb-hero-canvas,[id*=scene] canvas{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{position:relative!important;z-index:3!important;width:min(780px,90vw)!important;max-width:none!important;flex:1 1 auto!important}[class*=hero-copy] h1{width:100%!important;max-width:none!important}</style><!--/LB-HEROCOPY2-->
 
-<!--LB-HEROBG--><style id="lb-herobg">[class*=hero-bg],[class*=hero__bg],[class*=hero-bgimg]{z-index:-1!important;pointer-events:none!important}[class*=hero-scrim],[class*=hero__scrim]{z-index:1!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{z-index:3!important}</style><!--/LB-HEROBG-->
+<!--LB-HEROBG--><style>[class*=hero-bg],[class*=hero__bg],[class*=hero-bgimg]{z-index:-1!important;pointer-events:none!important}[class*=hero-scrim],[class*=hero__scrim]{z-index:1!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{z-index:3!important}</style><!--/LB-HEROBG-->
 
-<!--LB-CANVASZ--><style id="lb-canvasz">[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
+<!--LB-CANVASZ--><style>[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
 
-<!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
+<!--LB-H1W--><style>[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
 
-<!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.28))}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
-<style id="lb-bar-noname">
+<!--LB-HEROFIX2--><style>[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.28))}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
+<style>
 /* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
 .lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
 {display:none!important}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style><style id="lb-bar-noname-x">SPAN.lb-brand__name{display:none!important}
-</style><style id="lb-bar-grow">
+</style><style>SPAN.lb-brand__name{display:none!important}
+</style><style>
 nav{height:auto!important;min-height:0!important}
 nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
-</style><!--LB-HERO-REPAIR--><style id="lb-hero-repair">/* LB-HERO-HEIGHT pack caps every [class*=hero] at 78vh and floors its children at clamp(440px,58vh,600px)!important; where the hero stack is taller than the cap the last line gets chopped mid-glyph - drop the cap and the floors so the hero fits its content */[class*=hero]:not(img){max-height:none!important}[class*=hero-sub],[class*=hero-cta],[class*=hero-ctas],[class*=hero-in],[class*=hero-inner],[class*=hero-copy],[class*=hero-kicker],[class*=hero-kick],[class*=hero-content],[class*=hero-strip],[class*=hero-trust],[class*=hero-fin],[class*=hero-title],[class*=hero__in],[class*=hero__inner],[class*=hero__k],[class*=hero__ttl],[class*=hero__d],[class*=hero__sub],[class*=hero__cta],[class*=hero__copy],[class*=hero__strip],[class*=hero-media],[class*=hero-photo],[class*=hero-stats],[class*=hero-stat],[class*=hero-feats],[class*=hero-bg],[class*=hero-scrim],[class*=hero-shade]{min-height:0!important}</style><!--/LB-HERO-REPAIR-->
-<style id="lb-rb-cap">.lb-rb{max-width:1160px!important;margin-inline:auto!important}</style></head>
+</style><!--LB-HERO-REPAIR--><style>/* LB-HERO-HEIGHT pack caps every [class*=hero] at 78vh and floors its children at clamp(440px,58vh,600px)!important; where the hero stack is taller than the cap the last line gets chopped mid-glyph - drop the cap and the floors so the hero fits its content */[class*=hero]:not(img){max-height:none!important}[class*=hero-sub],[class*=hero-cta],[class*=hero-ctas],[class*=hero-in],[class*=hero-inner],[class*=hero-copy],[class*=hero-kicker],[class*=hero-kick],[class*=hero-content],[class*=hero-strip],[class*=hero-trust],[class*=hero-fin],[class*=hero-title],[class*=hero__in],[class*=hero__inner],[class*=hero__k],[class*=hero__ttl],[class*=hero__d],[class*=hero__sub],[class*=hero__cta],[class*=hero__copy],[class*=hero__strip],[class*=hero-media],[class*=hero-photo],[class*=hero-stats],[class*=hero-stat],[class*=hero-feats],[class*=hero-bg],[class*=hero-scrim],[class*=hero-shade]{min-height:0!important}</style><!--/LB-HERO-REPAIR-->
+<style>.lb-rb{max-width:1160px!important;margin-inline:auto!important}</style></head>
 <body>
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-in">
@@ -425,39 +425,39 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
 
   <section class="sec" id="services" aria-labelledby="s-t">
     <div class="sec-head">
-      <span class="sec-idx">01</span>
+      
       <div>
         <h2 class="sec-title" id="s-t">What we render.</h2>
         <p class="lead">Four finishes. One standard - mixed, loaded, and applied in a continuous flow so the wall reads as one surface.</p>
       </div>
     </div>
     <div class="svc-grid">
-      <article class="svc rv"><span class="svc__num">01</span><h3>Cement Rendering</h3><p>Traditional sand-cement mix for solid masonry - breathable, durable, and finished to a clean float or sponge texture.</p></article>
-      <article class="svc rv"><span class="svc__num">02</span><h3>Acrylic Rendering</h3><p>Polymer-modified finish with built-in colour - crack-resistant, water-repellent, and ready to take the final texture in the same pass.</p></article>
-      <article class="svc rv"><span class="svc__num">03</span><h3>Texture Coating</h3><p>Heavy-build acrylic textures - rolled, trowelled, or sprayed - for pattern depth that hides substrate variation and weathers clean.</p></article>
-      <article class="svc rv"><span class="svc__num">04</span><h3>Repairs & Restorations</h3><p>Patch matching, crack stitching, and full re-skim work - blended so the repair disappears into the original plane.</p></article>
+      <article class="svc rv"><h3>Cement Rendering</h3><p>Traditional sand-cement mix for solid masonry - breathable, durable, and finished to a clean float or sponge texture.</p></article>
+      <article class="svc rv"><h3>Acrylic Rendering</h3><p>Polymer-modified finish with built-in colour - crack-resistant, water-repellent, and ready to take the final texture in the same pass.</p></article>
+      <article class="svc rv"><h3>Texture Coating</h3><p>Heavy-build acrylic textures - rolled, trowelled, or sprayed - for pattern depth that hides substrate variation and weathers clean.</p></article>
+      <article class="svc rv"><h3>Repairs & Restorations</h3><p>Patch matching, crack stitching, and full re-skim work - blended so the repair disappears into the original plane.</p></article>
     </div>
   </section>
 
   <section class="sec sec--panel" id="process" aria-labelledby="p-t">
     <div class="sec-head">
-      <span class="sec-idx">02</span>
+      
       <div>
         <h2 class="sec-title" id="p-t">Mix → Hopper → Wall.</h2>
         <p class="lead">Every job follows the same sequence - no shortcuts, no cold joints, one continuous application.</p>
       </div>
     </div>
     <div class="flow">
-      <article class="flow-i rv" style="--i:1"><span class="step-n">01</span><h3>Mix</h3><p>Sand, cement, and additives measured by weight - not shovel - into the forced-action mixer. Consistency locked before the first drop.</p></article>
-      <article class="flow-i rv" style="--i:2"><span class="step-n">02</span><h3>Load</h3><p>Mix discharges into the hopper. Pressure and flow calibrated. No air pockets, no segregation - just a steady column of material.</p></article>
-      <article class="flow-i rv" style="--i:3"><span class="step-n">03</span><h3>Base Coat Pass</h3><p>Spray/trowel lays the first skin. Thickness gauged, straight-edge ruled. Grain open for mechanical key - this is the skeleton.</p></article>
-      <article class="flow-i rv" style="--i:4"><span class="step-n">04</span><h3>Finish Coat Pass</h3><p>Second sweep follows immediately - same hopper, adjusted mix. Grain tightens, colour locks, straight edge cuts the clean line. Done.</p></article>
+      <article class="flow-i rv" style="--i:1"><h3>Mix</h3><p>Sand, cement, and additives measured by weight - not shovel - into the forced-action mixer. Consistency locked before the first drop.</p></article>
+      <article class="flow-i rv" style="--i:2"><h3>Load</h3><p>Mix discharges into the hopper. Pressure and flow calibrated. No air pockets, no segregation - just a steady column of material.</p></article>
+      <article class="flow-i rv" style="--i:3"><h3>Base Coat Pass</h3><p>Spray/trowel lays the first skin. Thickness gauged, straight-edge ruled. Grain open for mechanical key - this is the skeleton.</p></article>
+      <article class="flow-i rv" style="--i:4"><h3>Finish Coat Pass</h3><p>Second sweep follows immediately - same hopper, adjusted mix. Grain tightens, colour locks, straight edge cuts the clean line. Done.</p></article>
     </div>
   </section>
 
   <section class="sec" id="faq" aria-labelledby="f-t">
     <div class="sec-head">
-      <span class="sec-idx">03</span>
+      
       <div>
         <h2 class="sec-title" id="f-t">Asked on every site.</h2>
       </div>
@@ -473,7 +473,7 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
 
   <section class="sec" id="trust" aria-labelledby="t-t">
     <div class="sec-head">
-      <span class="sec-idx">04</span>
+      
       <div>
         <h2 class="sec-title" id="t-t">Why the wall holds.</h2>
       </div>
@@ -839,7 +839,7 @@ section,header,footer,.wrap,.container,.inner,[class*="section"]{
   scroll-margin-top:24px}
 
 </style>
-<style id="lb-header-fault-fix">
+<style>
 :is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
 img.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
 </style>
