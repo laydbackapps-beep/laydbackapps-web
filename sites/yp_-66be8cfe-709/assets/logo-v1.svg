@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- JNC monogram with masking tape cut aesthetic -->
+  <!-- Charcoal ink base -->
+  <defs>
+    <clipPath id="tape-cut">
+      <polygon points="0,0 256,0 256,180 0,256"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Background field (chalk) - will be transparent in final, shown for construction -->
+  <rect width="256" height="256" fill="none"/>
+  
+  <!-- Main mark: JNC letterforms with tape-cut diagonal -->
+  <g clip-path="url(#tape-cut)" fill="#1a1a2e">
+    <!-- J -->
+    <path d="M48 48 h80 v16 h-64 v128 h16 v-16 h48 v16 h16 v-128 h-16 z"/>
+    <!-- N -->
+    <path d="M144 48 v160 h16 v-160 h-16 z M144 48 l64 160 h16 l-64-160 h-16 z M208 48 v160 h16 v-160 h-16 z"/>
+    <!-- C -->
+    <path d="M48 144 h96 v16 h-80 v64 h80 v16 h-96 v-96 z M48 144 v-96 h80 v16 h-64 v64 h64 v16 h-80 z"/>
+  </g>
+  
+  <!-- Tape-yellow accent strip (diagonal cut edge) -->
+  <path d="M0 256 L256 180 L256 256 Z" fill="#e8c547" opacity="0.95"/>
+  
+  <!-- Small tape corner accent (serrated edge hint) -->
+  <path d="M16 224 h8 l-4 8 h8 l-4 8 h8 l-4 8" fill="none" stroke="#e8c547" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+</svg>
