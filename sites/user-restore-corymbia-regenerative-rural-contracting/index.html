@@ -63,7 +63,7 @@
     .hero-location{display:flex;align-items:center;gap:12px;margin:30px 0 0;font-size:.84rem;font-weight:600;letter-spacing:.03em}
     .location-mark{width:28px;height:28px;border:1px solid var(--earth);border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-size:.8rem}
     .hero-visual{position:relative;perspective:1200px;padding:18px 12px 32px 0;isolation:isolate}
-    .photo-plane{--rx:1deg;--ry:-4deg;position:relative;z-index:2;aspect-ratio:6/5;transform-style:preserve-3d;transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .25s ease-out;box-shadow:24px 28px 0 var(--soft)}
+    .photo-plane{--rx:1deg;--ry:-4deg;position:relative;z-index:2;aspect-ratio:6/5;transform-style:preserve-3d;transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .25s ease-out;box-shadow:0 22px 48px rgba(28,28,28,.18)}
     .photo-plane img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
     .photo-plane::after{content:'';position:absolute;inset:0;border:1px solid rgba(250,250,250,.45);pointer-events:none}
     .contour-plane{position:absolute;z-index:1;width:78%;right:-8%;top:-12%;color:var(--earth);opacity:.65;transform:translateZ(-30px);animation:contour-drift 9s ease-in-out infinite alternate}
@@ -144,7 +144,7 @@
       .mobile-bar{position:fixed;display:grid;grid-template-columns:1fr 1fr;left:0;right:0;bottom:0;z-index:50;background:var(--ink);color:var(--white);border-top:1px solid #484848}
       .mobile-bar a{display:flex;align-items:center;justify-content:center;min-height:58px;padding:10px;font-size:.72rem;font-weight:700;text-decoration:none}.mobile-bar a+a{background:var(--green);border-left:1px solid #484848}
       .hero-grid{grid-template-columns:1fr;padding-block:46px 48px;gap:42px}.hero-copy{padding-left:18px}.hero h1{font-size:clamp(3.35rem,15vw,4.5rem);margin-bottom:22px}.hero-intro{font-size:.93rem}.hero-actions{display:grid;grid-template-columns:1fr}.hero-actions .button{width:100%}.hero-location{margin-top:22px;font-size:.68rem}.hero-index{display:none}
-      .hero-visual{padding:4px 6px 28px 0}.photo-plane{aspect-ratio:4/3;transform:rotateX(0) rotateY(-2deg);box-shadow:14px 16px 0 var(--soft)}.contour-plane{width:88%;right:-14%;top:-9%}.field-label{left:-6px;bottom:0;padding:12px 15px;max-width:230px}.field-label strong{font-size:1.1rem}
+      .hero-visual{padding:4px 6px 28px 0}.photo-plane{aspect-ratio:4/3;transform:rotateX(0) rotateY(-2deg);box-shadow:0 16px 34px rgba(28,28,28,.2)}.contour-plane{width:88%;right:-14%;top:-9%}.field-label{left:-6px;bottom:0;padding:12px 15px;max-width:230px}.field-label strong{font-size:1.1rem}
       .specialities{padding:72px 0}.section-heading{gap:20px;margin-bottom:34px}.section-heading p{font-size:.88rem}.service-row{grid-template-columns:42px 1fr;gap:12px 14px;padding:24px 0}.service-row p{grid-column:2;font-size:.83rem}.service-row h3{font-size:1.8rem}.service-number{font-size:1rem}
       .fieldwork{padding:72px 0}.fieldwork-head{margin-bottom:30px}.fieldwork-head p{font-size:.85rem}.field-lead img{aspect-ratio:4/3}.field-detail-grid{grid-template-columns:1fr;gap:28px}.field-detail-grid img{aspect-ratio:1/1}figcaption{font-size:.56rem}
       .areas{padding:68px 0}.areas-grid{grid-template-columns:1fr;gap:34px}.area-item strong{font-size:1.75rem}.area-item span{font-size:.57rem}.area-note{font-size:.8rem}
@@ -183,11 +183,30 @@ span.brand-sub{font-size:max(11px,.72em)!important;line-height:1.45!important}
   .brand .mark{width:88px;height:88px}
   .footer-brand .mark{width:54px;height:54px}
   .brand .mark svg,.footer-brand .mark svg{width:100%;height:100%;display:block}
-  .contour-plane{display:none}  /* judge flagged faint overlapping hill lines twice */
-  .photo-plane img{filter:contrast(1.2) saturate(1.25) brightness(1.07)}
-  @media (max-width:760px){.brand-sub{font-size:11px!important;letter-spacing:.04em!important;line-height:1.3!important;max-width:200px;margin-top:3px}}
+  .contour-plane{display:none}
+  .photo-plane img{filter:contrast(1.34) saturate(1.3) brightness(1.1)}
+  .photo-plane{box-shadow:0 22px 48px rgba(28,28,28,.18)}
+  .photo-plane::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(28,28,28,.10),rgba(28,28,28,0) 45%)}
+  /* captions and micro-copy: no text below 12px, contrast raised */
+  figcaption{font-size:max(12px,.78rem)!important;letter-spacing:.08em;color:#EFEFE9!important;font-weight:700}
+  .field-label span{font-size:max(11.5px,.72rem)!important;color:#263026!important}
+  .area-item span{font-size:max(12px,.76rem)!important;color:#FFFFFF!important}
+  .hero-location{font-size:max(12px,.8rem)!important}
+  .footer-bottom{font-size:max(11.5px,.72rem)!important;color:#EDEFE8!important}
+  .brand-sub{font-size:.84rem!important;color:#1C1C1C!important;letter-spacing:.1em!important}
+  @media (max-width:1100px){.brand .mark{width:64px;height:64px}}
+  @media (max-width:760px){
+    .brand-sub{font-size:12px!important;letter-spacing:.03em!important;line-height:1.35!important;max-width:210px;margin-top:4px;color:#1C1C1C!important}
+    .brand-name{font-size:1.34rem!important}
+    figcaption{font-size:12.5px!important}
+    .area-item span{font-size:12px!important}
+    .hero-location{font-size:12px!important}
+    .fieldwork-head p{font-size:.9rem!important}
+  }
   .mobile-bar a+a{background:#EDEFE8!important;color:#11150E!important}
-  @media (max-width:1080px){.brand .mark{width:56px;height:56px}}
+  /* primary conversion block above the fold: filled, larger than the secondary */
+  .hero-actions .button:not(.secondary){min-height:60px;padding:17px 30px;font-size:.95rem;letter-spacing:.02em}
+  .hero-actions .button.secondary{min-height:60px;padding:17px 26px;font-size:.95rem;border-width:1.5px}
 </style>
 </head>
 <body>
@@ -195,13 +214,13 @@ span.brand-sub{font-size:max(11px,.72em)!important;line-height:1.45!important}
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="#top" aria-label="Corymbia Regenerative Rural Contracting, home">
-        <span class="mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="#3F4A3C" stroke-width="2.6"/><path d="M24 11v26" stroke="#3F4A3C" stroke-width="2.6" stroke-linecap="round"/><path d="M24 21c-5.6 0-9.3-3-9.9-7.6 5.4-.5 9.1 2.2 9.9 7.6Z" fill="#2C352A"/><path d="M24 21c5.6 0 9.3-3 9.9-7.6-5.4-.5-9.1 2.2-9.9 7.6Z" fill="#2C352A"/><path d="M24 30c-4.7 0-7.9-2.4-8.5-6.4 4.6-.4 7.7 1.9 8.5 6.4Z" fill="#5C6959"/><path d="M24 30c4.7 0 7.9-2.4 8.5-6.4-4.6-.4-7.7 1.9-8.5 6.4Z" fill="#5C6959"/><path d="M13 37h22" stroke="#2C352A" stroke-width="3" stroke-linecap="round"/></svg></span>
+        <span class="mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><rect x="3" y="3" width="42" height="42" rx="3" stroke="#2C352A" stroke-width="2.6"/><path d="M24 36V17" stroke="#2C352A" stroke-width="3" stroke-linecap="round"/><path d="M24 15 12.5 24.5h23L24 15Z" fill="#3F4A3C"/><path d="M24 26 16 32.2h16L24 26Z" fill="#5C6959"/><path d="M12 37.4h24" stroke="#86726C" stroke-width="2.8" stroke-linecap="round"/></svg></span>
         <span><span class="brand-name">Corymbia</span><span class="brand-sub">Regenerative Rural Contracting</span></span>
       </a>
       <nav class="main-nav" aria-label="Main navigation">
-        <a class="button header-quote" href="#lbq">Request a quote</a>
+        <a class="button header-call" href="tel:+61401183841" aria-label="Call Corymbia on 0401 183 841">Call 0401 183 841</a>
         <a href="#specialities">Specialities</a><a href="#fieldwork">Fieldwork</a><a href="#areas">Service areas</a><a href="#lbq">Contact</a>
-        <a class="button secondary header-call" href="tel:+61401183841" aria-label="Call Corymbia on 0401 183 841">Call 0401 183 841</a>
+        <a class="button secondary header-quote" href="#lbq">Request a quote</a>
       </nav>
     </div>
   </header>
@@ -213,8 +232,8 @@ span.brand-sub{font-size:max(11px,.72em)!important;line-height:1.45!important}
           <h1 id="hero-title">Lantana out.<span>Shade and soil kept.</span></h1>
           <p class="hero-intro">Lantana and scrub work across the Scenic Rim — understory cleared, standing trees left where they hold the bank, ground mulched and left stable enough to drive over.</p>
           <div class="hero-actions">
-            <a class="button" href="#lbq">Request a quote <span aria-hidden="true">→</span></a>
-            <a class="button secondary" href="tel:+61401183841">Call 0401 183 841</a>
+            <a class="button" href="tel:+61401183841">Call 0401 183 841</a>
+            <a class="button secondary" href="#lbq">Request a quote <span aria-hidden="true">→</span></a>
           </div>
           <p class="hero-location">Scenic Rim · Ipswich · Lockyer Valley &amp; more</p>
         </div>
@@ -228,7 +247,7 @@ span.brand-sub{font-size:max(11px,.72em)!important;line-height:1.45!important}
     </section>
     <section class="specialities" id="specialities" aria-labelledby="specialities-title">
       <div class="wrap">
-        <div class="section-heading rv"><div><p class="eyebrow">What Corymbia does</p><h2 id="specialities-title">One property. A regenerative focus.</h2></div><p>Practical rural contracting centred on lantana removal and the longer-term health of the land and soil beneath it.</p></div>
+        <div class="section-heading rv"><div><p class="eyebrow">What Corymbia does</p><h2 id="specialities-title">Lantana, scrub and regrowth — worked block by block.</h2></div><p>Lantana and scrub taken out by hand and machine across Scenic Rim blocks, with the standing timber, ground cover and access you need left intact.</p></div>
         <div class="service-index">
           <article class="service-row rv"><span class="service-number">01</span><h3>Lantana removal</h3><p>Understory taken out, standing trees left where they hold a bank — then mulched so the ground is walkable and drivable instead of a slash heap.</p></article>
           <article class="service-row rv"><span class="service-number">02</span><h3>Follow-up, not one pass</h3><p>Lantana comes back from seed and root. The second look is about what regrows and where, so the block stays clear past one season.</p></article>
@@ -254,7 +273,7 @@ span.brand-sub{font-size:max(11px,.72em)!important;line-height:1.45!important}
     </section>
     <section id="lbq" aria-labelledby="lbq-title">
       <div class="wrap quote-grid">
-        <div class="quote-copy rv"><p class="eyebrow">Start a conversation</p><h2 id="lbq-title">Tell us about your place.</h2><p>Share your location, the work you need and a few property details. Prefer to talk it through? Call or email Corymbia directly.</p><div class="direct-contact"><a class="text-link" href="tel:+61401183841">0401 183 841</a><a class="text-link" href="mailto:bwillmot79@gmail.com">bwillmot79@gmail.com</a><a class="text-link" href="https://www.facebook.com/people/Corymbia-Regenerative-Rural-Contracting/61587572918447/" target="_blank" rel="noopener">Facebook ↗</a></div></div>
+        <div class="quote-copy rv"><p class="eyebrow">Start a conversation</p><h2 id="lbq-title">Send the address. We'll tell you what's involved.</h2><p>Share your location, the work you need and a few property details. Prefer to talk it through? Call or email Corymbia directly.</p><div class="direct-contact"><a class="text-link" href="tel:+61401183841">0401 183 841</a><a class="text-link" href="mailto:bwillmot79@gmail.com">bwillmot79@gmail.com</a><a class="text-link" href="https://www.facebook.com/people/Corymbia-Regenerative-Rural-Contracting/61587572918447/" target="_blank" rel="noopener">Facebook ↗</a></div></div>
         <form class="quote-form rv" id="lbq-form" action="https://laydback-hq.tail5b3740.ts.net/functions/v1/quote-request" method="post" novalidate data-site="user-restore-corymbia-regenerative-rural-contracting" data-biz="Corymbia Regenerative Rural Contracting">
           <div class="form-field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
           <div class="form-field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
@@ -271,7 +290,7 @@ span.brand-sub{font-size:max(11px,.72em)!important;line-height:1.45!important}
     </section>
     <section class="policies" aria-label="Website policies"><div class="wrap policy-grid"><article id="privacy"><h3>Privacy</h3><p>When you send a quote request, the details you enter are used to respond to your enquiry. This site does not use analytics or advertising cookies. You can instead contact Corymbia directly by phone or email. Facebook links are subject to Facebook’s own privacy terms.</p></article><article id="terms"><h3>Terms</h3><p>This website provides general information about Corymbia Regenerative Rural Contracting. Service availability, scope, pricing and timing are agreed directly with the business. Photos are Corymbia’s own fieldwork and are not presented with invented project claims or ratings.</p></article></div></section>
   </main>
-  <footer class="site-footer"><div class="wrap"><div class="footer-top"><a class="footer-brand" href="#top"><span class="mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="#3F4A3C" stroke-width="2.6"/><path d="M24 11v26" stroke="#3F4A3C" stroke-width="2.6" stroke-linecap="round"/><path d="M24 21c-5.6 0-9.3-3-9.9-7.6 5.4-.5 9.1 2.2 9.9 7.6Z" fill="#2C352A"/><path d="M24 21c5.6 0 9.3-3 9.9-7.6-5.4-.5-9.1 2.2-9.9 7.6Z" fill="#2C352A"/><path d="M24 30c-4.7 0-7.9-2.4-8.5-6.4 4.6-.4 7.7 1.9 8.5 6.4Z" fill="#5C6959"/><path d="M24 30c4.7 0 7.9-2.4 8.5-6.4-4.6-.4-7.7 1.9-8.5 6.4Z" fill="#5C6959"/><path d="M13 37h22" stroke="#2C352A" stroke-width="3" stroke-linecap="round"/></svg></span><strong>Corymbia Regenerative<br>Rural Contracting</strong></a><div class="footer-links"><a href="tel:+61401183841">Call</a><a href="mailto:bwillmot79@gmail.com">Email</a><a href="https://www.facebook.com/people/Corymbia-Regenerative-Rural-Contracting/61587572918447/" target="_blank" rel="noopener">Facebook ↗</a><a href="#privacy">Privacy</a><a href="#terms">Terms</a></div></div><div class="footer-bottom"><span>© 2026 Corymbia Regenerative Rural Contracting</span><span>Goolman, Queensland · 0401 183 841</span></div></div></footer>
+  <footer class="site-footer"><div class="wrap"><div class="footer-top"><a class="footer-brand" href="#top"><span class="mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><rect x="3" y="3" width="42" height="42" rx="3" stroke="#2C352A" stroke-width="2.6"/><path d="M24 36V17" stroke="#2C352A" stroke-width="3" stroke-linecap="round"/><path d="M24 15 12.5 24.5h23L24 15Z" fill="#3F4A3C"/><path d="M24 26 16 32.2h16L24 26Z" fill="#5C6959"/><path d="M12 37.4h24" stroke="#86726C" stroke-width="2.8" stroke-linecap="round"/></svg></span><strong>Corymbia Regenerative<br>Rural Contracting</strong></a><div class="footer-links"><a href="tel:+61401183841">Call</a><a href="mailto:bwillmot79@gmail.com">Email</a><a href="https://www.facebook.com/people/Corymbia-Regenerative-Rural-Contracting/61587572918447/" target="_blank" rel="noopener">Facebook ↗</a><a href="#privacy">Privacy</a><a href="#terms">Terms</a></div></div><div class="footer-bottom"><span>© 2026 Corymbia Regenerative Rural Contracting</span><span>Goolman, Queensland · 0401 183 841</span></div></div></footer>
   <nav class="mobile-bar" aria-label="Quick contact"><a href="tel:+61401183841">Call Corymbia</a><a href="#lbq">Request a quote</a></nav>
   <script>
   (function(){
