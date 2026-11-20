@@ -7,7 +7,6 @@
   <meta name="description" content="Pinnacle Painting & Decorating provides residential and commercial painting, staining, pressure washing, concrete sealing and privacy screens across Lake Macquarie, the Central Coast and Hunter Valley. Call 0422 735 430 for a quote.">
   <link rel="icon" href="assets/logo-mark.png" type="image/png">
   <link rel="preload" href="assets/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/project-kitchen.jpg" as="image">
   <style>
     @font-face{font-family:Jakarta;src:url('assets/fonts/plus-jakarta-sans-400.woff2') format('woff2');font-weight:400;font-display:swap}
     @font-face{font-family:Jakarta;src:url('assets/fonts/plus-jakarta-sans-600.woff2') format('woff2');font-weight:600 800;font-display:swap}
@@ -28,14 +27,27 @@
     .brand img{width:58px;height:58px;flex:0 0 auto}
     .brand-mark{display:none}
     .brand-copy{display:flex;flex-direction:column;line-height:1.1}
-    .brand-copy strong{font-family:Georgia,'Times New Roman',serif;font-size:31px;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
-    .brand-copy span{margin-top:5px;font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+    .brand-copy strong{font-family:Georgia,'Times New Roman',serif;font-size:35px;font-weight:700;letter-spacing:-.025em;line-height:1;color:var(--ink)}
+    .brand-copy span{margin-top:6px;font-size:13px;font-weight:600;letter-spacing:.015em;color:var(--muted)}
     .main-nav{display:flex;gap:26px;margin-left:auto}
     .main-nav a{text-decoration:none;font-size:14px;color:var(--muted);font-weight:600}
     .main-nav a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:5px}
     .header-call{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);text-decoration:none;font-size:15px;font-weight:700;white-space:nowrap}
     .header-call:hover{background:var(--ink);color:var(--paper)}
-    .hero{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:clamp(30px,3.6vw,58px);align-items:start;padding-block:clamp(26px,3.2vw,46px)}
+    .hero{position:relative;isolation:isolate;display:flex;align-items:flex-end;min-height:clamp(400px,48vw,520px);margin-top:clamp(14px,2vw,22px);overflow:hidden;background:#10150f}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
+      linear-gradient(100deg,rgba(16,21,15,.96) 0%,rgba(16,21,15,.86) 46%,rgba(16,21,15,.42) 78%,rgba(16,21,15,.3) 100%),
+      url('assets/gal_1.jpg') center 55%/cover no-repeat,#10150f}
+    .hero::after{display:none}
+    .hero-inner{width:100%;padding:clamp(26px,4vw,52px) clamp(22px,4vw,46px);color:var(--white)}
+    .hero .eyebrow{color:#b9c9c0}
+    .hero h1{color:var(--white);max-width:19ch}
+    .hero h1 em{color:#9be2c4}
+    .hero .lede{color:#dde5de;max-width:52ch}
+    .hero-call{align-self:center;font-size:15px;font-weight:600;color:#dde5de;text-underline-offset:4px}
+    .prep-strip{display:flex;flex-wrap:wrap;gap:0;margin:clamp(20px,3vw,30px) 0 0;padding:0;list-style:none;border-top:1px solid rgba(249,251,247,.3);max-width:640px}
+    .prep-strip li{flex:1 1 0;min-width:min(40%,140px);padding:13px 12px 0 0;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--white)}
+    .prep-strip li span{display:block;font-size:11px;letter-spacing:.2em;color:#9be2c4;margin-bottom:5px}
     .tape-rule{width:68px;height:7px;background:var(--accent);margin-bottom:25px}
     .eyebrow{margin:0 0 15px;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
     h1,h2,h3,p{margin-top:0}
@@ -55,7 +67,7 @@
     .photo{margin:0}
     .photo-main{position:relative;border-top:7px solid var(--accent)}
     .photo-secondary{width:56%;margin-left:auto;margin-top:14px;border-top:7px solid var(--ink)}
-    .photo img{width:100%;height:clamp(230px,25vw,350px);object-fit:cover;object-position:50% 55%;border:1px solid var(--line);border-top:0;background:#ddd}
+    .photo img{width:100%;height:clamp(320px,34vw,470px);object-fit:cover;object-position:50% 62%;border:1px solid var(--line);border-top:0;background:#ddd}
     .photo figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:11px 0 0;font-size:13px;line-height:1.45;letter-spacing:.03em;text-transform:uppercase;color:var(--ink)}
     .photo figcaption span:last-child{text-align:right;color:var(--accent);font-weight:600}
     .settle{animation:none}
@@ -64,11 +76,24 @@
     h2{margin-bottom:0;font-family:Georgia,'Times New Roman',serif;font-size:clamp(38px,4.1vw,58px);font-weight:400;line-height:1.06;letter-spacing:-.035em}
     .section-heading p{max-width:520px;margin:0;color:var(--ink);font-size:17px;line-height:1.7}
     .service-list{border-top:1px solid var(--ink)}
-    .service-row{display:grid;grid-template-columns:minmax(210px,.75fr) minmax(0,1.25fr) auto;gap:28px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
-    .service-row h3{margin:0;font-family:Georgia,'Times New Roman',serif;font-size:25px;font-weight:400;line-height:1.2}
+    .work-band{padding-block:clamp(28px,4vw,44px);border-top:0}
+    .work-grid{display:grid;grid-template-columns:1fr;gap:clamp(14px,2vw,24px)}
+    .work-tile{margin:0}
+    .work-tile img{width:100%;height:clamp(260px,30vw,420px);object-fit:cover;object-position:50% 55%;border-top:6px solid var(--accent);background:#d9ded6}
+    .work-tile figcaption{padding-top:10px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+    @media(max-width:680px){.work-grid{grid-template-columns:1fr}}
+    .prep-band{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:0 0 34px;padding:0;list-style:none;border-top:3px solid var(--accent);background:var(--white)}
+    .prep-band li{padding:20px 18px 22px;border-right:1px solid var(--line);font-size:14px;line-height:1.5;color:var(--muted)}
+    .prep-band li:last-child{border-right:0}
+    .prep-band span{display:block;font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--accent-dark,#4a6b53);margin-bottom:7px}
+    .prep-band strong{display:block;margin-bottom:5px;font-size:19px;line-height:1.1;color:var(--ink)}
+    @media(max-width:860px){.prep-band{grid-template-columns:1fr 1fr}.prep-band li:nth-child(2n){border-right:0}.prep-band li:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+    @media(max-width:520px){.prep-band{grid-template-columns:1fr}.prep-band li{border-right:0;border-bottom:1px solid var(--line)}.prep-band li:last-child{border-bottom:0}}
+    .service-row{display:grid;grid-template-columns:minmax(210px,.8fr) minmax(0,1.2fr);gap:28px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
+    .service-row h3{margin:0;font-family:Jakarta,Arial,sans-serif;font-size:23px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
     .service-row p{margin:0;color:var(--ink);font-size:16.5px;line-height:1.6}
-    .service-link{font-size:12px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--accent);white-space:nowrap}
-    .service-link:hover{color:var(--accent)}
+    .service-link{display:inline-block;font-size:14.5px;font-weight:700;text-decoration:none;border:1px solid var(--ink);padding:9px 16px;color:var(--ink);white-space:nowrap;min-height:40px}
+    .service-link:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
     .credentials{background:var(--ink);color:var(--paper);border-top:0}
     .credentials-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(44px,7vw,100px);align-items:start}
     .credentials .eyebrow{color:#c9c5bb}
@@ -93,22 +118,33 @@
     .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
     .field{margin-bottom:18px}
     .field label{display:block;margin-bottom:7px;font-size:12px;font-weight:600;letter-spacing:.03em}
-    .field input,.field select,.field textarea{display:block;width:100%;min-height:48px;padding:11px 12px;border:1px solid #8c887f;border-radius:0;background:var(--paper);color:var(--ink)}
+    .field input,.field select,.field textarea{display:block;width:100%;min-height:48px;padding:11px 13px;border:1px solid #8c887f;border-radius:2px;background:#fff;color:var(--ink)}
+    .field select{appearance:none;-webkit-appearance:none;padding-right:38px;background-image:linear-gradient(45deg,transparent 50%,var(--accent) 50%),linear-gradient(135deg,var(--accent) 50%,transparent 50%);background-position:calc(100% - 19px) 50%,calc(100% - 13px) 50%;background-size:6px 6px,6px 6px;background-repeat:no-repeat}
+    .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+    .quote-form .button-primary{width:100%;min-height:56px;font-size:17px;letter-spacing:.01em}
+    .form-trust{margin:14px 0 0;font-size:14.5px;font-weight:600;color:var(--ink)}
+    .form-trust a{text-decoration-color:var(--accent);text-underline-offset:3px}
     .field textarea{min-height:112px;resize:vertical}
     .field input::placeholder,.field textarea::placeholder{color:#706c64}
-    .quote-form .button{width:100%;background:var(--ink);color:var(--paper);border-color:var(--ink)}
-    .quote-form .button:hover{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+    .quote-form .button:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
     .quote-form .button:disabled{cursor:wait;opacity:.7}
-    .form-note{margin:13px 0 0;font-size:12px;color:var(--muted)}
+    .form-note{margin:13px 0 0;font-size:14px;line-height:1.5;color:#3c453e}
+    .quote-photo{margin:clamp(18px,2.6vw,26px) 0 0;border:1px solid var(--line);background:var(--white)}
+    .quote-photo img{width:100%;height:clamp(180px,24vw,270px);object-fit:cover}
+    .quote-photo figcaption{font-size:13.5px;color:var(--muted);padding:9px 12px;border-top:1px solid var(--line)}
     .form-status{min-height:24px;margin:12px 0 0;font-size:14px;font-weight:600}
-    .quote-section{background:var(--ink);color:var(--paper);border-top:0;padding-bottom:clamp(96px,10vw,140px)}
-    .quote-section h2{color:var(--white)}
-    .quote-section .eyebrow,.quote-section .quote-intro>p,.quote-section .areas-line,.quote-section .direct-contact{color:#d8d4c9}
+    .quote-section{background:#e6ebe4;color:var(--ink);border-top:1px solid var(--line);padding-bottom:clamp(96px,10vw,140px)}
+    .quote-section h2{color:var(--ink)}
+    .quote-section .eyebrow,.quote-section .quote-intro>p,.quote-section .areas-line,.quote-section .direct-contact{color:var(--ink)}
     .quote-section .quote-grid{grid-template-columns:minmax(0,.76fr) minmax(0,1.24fr);gap:clamp(28px,4vw,64px);align-items:start}
-    .quote-section .quote-form{margin-top:clamp(-64px,-4vw,-26px);box-shadow:0 26px 60px rgba(0,0,0,.35)}
+    .quote-section .quote-form{margin-top:clamp(-64px,-4vw,-26px);box-shadow:0 18px 40px rgba(23,23,21,.10)}
     @media(max-width:780px){
-      .hero{display:flex;flex-direction:column}
-      .hero-copy{order:1}.hero .diptych{order:2}
+      .hero{flex-direction:column;align-items:stretch;min-height:clamp(380px,88vw,470px)}
+      .hero-inner{padding:24px 20px}
+      .hero h1{max-width:none;font-size:clamp(31px,8.4vw,40px)}
+      .hero-actions{display:flex;flex-direction:column;align-items:stretch;gap:10px;margin-bottom:0}
+      .hero-call{align-self:flex-start;font-size:15px;margin-top:2px}
+      .prep-strip{margin-top:20px}.prep-strip li{min-width:45%;font-size:11px;padding-top:11px}
       .brand img{width:42px;height:42px}
       .quote-section .quote-form{margin-top:0;box-shadow:none}
     }
@@ -125,8 +161,14 @@
     }
     @media(max-width:780px){
       .wrap{width:calc(100% - 36px)}
-      .header-inner{min-height:74px;gap:12px}.main-nav{display:none}.header-call{margin-left:auto}
-      .brand img{width:45px;height:45px}.brand-copy strong{font-size:20px}.brand-copy span{font-size:11px}
+      .header-inner{min-height:74px;gap:12px}.main-nav{display:none}.header-call{margin-left:auto}.mnav{display:block}
+      .mnav{margin-left:auto}
+      .mnav summary{list-style:none;cursor:pointer;min-height:44px;display:flex;align-items:center;gap:9px;font:700 14px/1 inherit;color:var(--ink)}
+      .mnav summary::-webkit-details-marker{display:none}
+      .mnav summary:before{content:"";width:18px;height:2px;background:var(--ink);box-shadow:0 6px 0 var(--ink),0 12px 0 var(--ink)}
+      .mnav[open]{flex:0 0 100%}
+      .mnav a{display:block;padding:13px 2px;border-top:1px solid rgba(0,0,0,.12);font-size:16px;font-weight:600;text-decoration:none;color:var(--ink)}
+      .brand img{width:45px;height:45px}.brand-copy strong{font-size:20px}.brand-copy span{font-size:12.5px}.brand{min-width:0;flex-shrink:1}.brand-copy{min-width:0}.brand-copy span{line-height:1.2;overflow-wrap:anywhere}
       .hero{grid-template-columns:1fr;padding-block:22px 40px}
       .hero-copy{max-width:650px}.photo img{height:clamp(190px,44vw,285px)}
       .photo figcaption{font-size:12px;letter-spacing:.04em}
@@ -138,7 +180,7 @@
     }
     @media(max-width:420px){
       .wrap{width:calc(100% - 30px)}
-      .header-inner{gap:8px}.brand{gap:8px}.brand img{width:40px;height:40px}.brand-copy strong{font-size:18px}.brand-copy span{font-size:12.5px;letter-spacing:.03em}
+      .header-inner{gap:8px}.brand{gap:8px}.brand img{width:40px;height:40px}.brand-copy strong{font-size:18px}.brand-copy span{font-size:13px;letter-spacing:0;text-transform:none;line-height:1.25}
       .header-call{padding:7px 10px;font-size:12px;min-height:40px}
       h1{font-size:33px}.lede{font-size:16px}.hero-actions{display:grid;grid-template-columns:1fr;gap:14px}.button{width:100%}
       .quick-facts{display:grid;grid-template-columns:1fr 1fr;font-size:12px;gap:9px}
@@ -153,8 +195,8 @@
     .service-row h3{font-size:21px;font-weight:700;letter-spacing:-.01em}
     .form-heading{font-size:26px}
     .years-label{font-size:clamp(24px,2.8vw,34px);line-height:1.16}
-    .header-call{background:transparent;color:var(--ink);border:0;border-bottom:2px solid var(--accent);min-height:0;padding:5px 0;font-size:15px}
-    .header-call:hover{background:transparent;color:var(--accent)}
+    .header-call{background:var(--ink);color:var(--paper);border:0;min-height:46px;padding:0 20px;font-size:15px;font-weight:700}
+    .header-call:hover{background:var(--accent);color:var(--ink)}
     .quick-facts{font-size:15px;font-weight:700;gap:12px 28px}
     .quick-facts li::before{width:9px;height:9px}
     .credentials-list{border-top:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0 40px}
@@ -162,7 +204,8 @@
     .credential dt{font-size:12px;color:#d8d4c9}
     .credential dd{font-size:16.5px}
     .footer-links a{font-weight:600;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
-    .photo figcaption{font-size:14px;font-weight:600;color:var(--ink);letter-spacing:.02em}
+    .photo figcaption{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:.02em;align-items:flex-start}
+    .service-row{border-bottom:1px solid #93a096}
     .photo figcaption span:last-child{font-weight:700}
     .quick-facts li{white-space:nowrap}
     @media(max-width:420px){
@@ -170,11 +213,11 @@
       .quick-facts{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px}
     }
   /* bespoke header lockup, trust strip, featured service panel, caption wrap */
-    .brand{padding:10px 0;gap:15px}
-    .brand img{display:block;width:46px;height:46px;object-fit:contain}
-    .brand::before{content:"";width:5px;height:42px;background:var(--accent);flex:0 0 auto}
-    .brand-copy strong{font-size:34px;line-height:1}
-    .brand-copy span{margin-top:4px;font-size:13px;font-weight:600;letter-spacing:.1em;line-height:1.3}
+    .brand{padding:10px 0;gap:18px;align-items:center}
+    .brand::before{content:"";width:9px;height:62px;background:var(--accent);flex:0 0 auto}
+    .brand-copy strong{display:block;font-family:Jakarta,Arial,sans-serif;font-size:42px;font-weight:800;letter-spacing:-.045em;line-height:.92;color:var(--ink)}
+    .brand-copy span{display:block;margin-top:6px;font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.35;color:#3f4a42}
+    .field select,.field select option{background:var(--paper);color:var(--ink)}
     .trust-strip{background:var(--white);border-bottom:1px solid var(--line)}
     .trust-strip ul{display:flex;flex-wrap:wrap;gap:9px 34px;margin:0;padding:11px 0;list-style:none;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
     .trust-strip li{display:flex;align-items:center;gap:8px}
@@ -186,7 +229,6 @@
     .service-row:first-child .service-link{color:var(--white);border-bottom-color:var(--accent)}
     .photo figcaption{flex-wrap:wrap;row-gap:3px}
     .photo figcaption span:last-child{text-align:left;white-space:normal}
-    .hero{padding-bottom:clamp(34px,4vw,54px)}
     @media(max-width:780px){
       .header-inner{min-height:0;padding:11px 0;flex-wrap:wrap;row-gap:7px}
       .brand{padding:0}
@@ -197,6 +239,10 @@
       .service-row:first-child{grid-template-columns:1fr;padding:24px 18px}
       .photo figcaption{flex-direction:column;align-items:flex-start}
     }
+  @media(min-width:781px){.mnav{display:none}}
+    .section-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin:34px 0 0}
+    .section-cta-call{font-size:15px;font-weight:600;text-underline-offset:4px}
+    @media(max-width:600px){.section-cta{flex-direction:column;align-items:stretch}.section-cta .button{width:100%}.section-cta-call{align-self:flex-start}}
   </style>
 </head>
 <body>
@@ -204,7 +250,8 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="#main" aria-label="Pinnacle Painting and Decorating home">
-        <span class="brand-copy"><strong>Pinnacle</strong><span>Painting &amp; Decorating, Lake Macquarie</span></span>
+        <img src="assets/logo-mark.png" alt="" width="64" height="64" aria-hidden="true">
+        <span class="brand-copy"><strong>Pinnacle</strong><span>Painting &amp; Decorating &middot; Lake Macquarie</span></span>
       </a>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#work">Our work</a>
@@ -212,44 +259,52 @@
         <a href="#credentials">Credentials</a>
       </nav>
       <a class="header-call" href="tel:0422735430">Call 0422 735 430</a>
+      <details class="mnav"><summary>Menu</summary><a href="#work">Our work</a><a href="#services">Services</a><a href="#credentials">Credentials</a><a href="#quote">Get a quote</a></details>
     </div>
   </header>
   <main id="main">
     <div class="wrap">
       <section class="hero" id="work" aria-labelledby="hero-title">
-        <div class="hero-copy settle">
-          <div class="tape-rule" aria-hidden="true"></div>
+        <div class="hero-inner">
+          <div class="tape-rule"></div>
           <p class="eyebrow">Painter, Lake Macquarie, NSW</p>
-          <h1 id="hero-title">The finish you notice.<br><em>The prep you never see.</em></h1>
+          <h1 id="hero-title">Every surface, one quote:<br><em>prep priced in.</em></h1>
           <p class="lede">Interior and exterior repaints, timber staining and surface sealing for homes and commercial properties across Lake Macquarie, the Central Coast and the Hunter.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#quote">Get a painting quote</a>
-            <a href="tel:0422735430" style="align-self:center;font-size:15px;font-weight:600;text-underline-offset:4px">or call 0422 735 430</a>
+            <a class="hero-call" href="tel:0422735430">or call 0422 735 430</a>
           </div>
-        </div>
-        <div class="diptych" aria-label="Pinnacle project photographs">
-          <figure class="photo photo-main settle delay">
-            <img src="assets/project-kitchen.jpg" alt="Clean finished kitchen and living interior by Pinnacle Painting and Decorating" width="2200" height="1151" fetchpriority="high">
-            <figcaption><span>Kitchen repaint &mdash; walls, ceiling and trim</span><span>Lake Macquarie</span></figcaption>
-          </figure>
         </div>
       </section>
     </div>
+    <section class="section work-band" id="recent-work" aria-label="Recent painting work">
+      <div class="wrap">
+        <div class="work-grid">
+          <figure class="work-tile"><img src="assets/gal_2.jpg" alt="Completed repaint by Pinnacle Painting and Decorating, Lake Macquarie" width="1200" height="900" loading="lazy"><figcaption>Recent repaint &middot; Lake Macquarie</figcaption></figure>
+        </div>
+      </div>
+    </section>
     <section class="section" id="services" aria-labelledby="services-title">
       <div class="wrap">
         <div class="section-heading">
-          <h2 id="services-title">Walls, trim, decks and driveways &mdash; painted and sealed.</h2>
-          <p>Interior rooms, exterior facades, timber staining, pressure washing, concrete sealing and privacy screens &mdash; quoted after Pinnacle has seen the surface.</p>
-          <p style="margin:18px 0 38px"><a class="button button-primary" href="#quote">Tell us about your project</a></p>
+          <h2 id="services-title">What sits under the first coat &mdash; patching, sanding, priming.</h2>
+          <p>Surfaces patched, sanded and primed before the first coat goes on: the part of the job a phone estimate cannot price.</p>
         </div>
+        <ol class="prep-band" aria-label="How a Pinnacle job runs">
+          <li><span>01</span><strong>Patch</strong>Holes, cracks and dents filled and levelled.</li>
+          <li><span>02</span><strong>Sand</strong>Sanded back so the next coat sits flat.</li>
+          <li><span>03</span><strong>Prime</strong>Sealed where bare or stained surface needs it.</li>
+          <li><span>04</span><strong>Paint</strong>Two coats, cut in by hand, trimmed clean.</li>
+        </ol>
         <div class="service-list">
-          <article class="service-row"><h3>Residential painting</h3><p>Whole-home repaints and room-by-room refresh: walls, ceilings, trim and doors, patched and sanded before the first coat.</p><a class="service-link" href="#quote">Request quote</a></article>
-          <article class="service-row"><h3>Commercial painting</h3><p>Painting for commercial properties, planned around the surfaces, access and requirements of your site.</p><a class="service-link" href="#quote">Request quote</a></article>
-          <article class="service-row"><h3>Staining</h3><p>Timber staining for suitable interior and exterior surfaces. Include project photos with your enquiry.</p><a class="service-link" href="#quote">Request quote</a></article>
-          <article class="service-row"><h3>Pressure washing</h3><p>Ask about pressure washing for exterior surfaces as part of your property refresh or preparation work.</p><a class="service-link" href="#quote">Request quote</a></article>
-          <article class="service-row"><h3>Concrete sealing</h3><p>Concrete sealing for areas such as driveways and garage surrounds, based on the condition of your surface.</p><a class="service-link" href="#quote">Request quote</a></article>
-          <article class="service-row"><h3>Privacy screens</h3><p>Discuss privacy screen work alongside your painting, staining or outdoor property project.</p><a class="service-link" href="#quote">Request quote</a></article>
+          <article class="service-row"><h3>Residential painting</h3><p>Whole-home repaints and room-by-room refresh: walls, ceilings, trim and doors, patched and sanded before the first coat.</p></article>
+          <article class="service-row"><h3>Commercial painting</h3><p>Painting for commercial properties, planned around the surfaces, access and requirements of your site.</p></article>
+          <article class="service-row"><h3>Staining</h3><p>Timber staining for suitable interior and exterior surfaces. Include project photos with your enquiry.</p></article>
+          <article class="service-row"><h3>Pressure washing</h3><p>Ask about pressure washing for exterior surfaces as part of your property refresh or preparation work.</p></article>
+          <article class="service-row"><h3>Concrete sealing</h3><p>Concrete sealing for areas such as driveways and garage surrounds, based on the condition of your surface.</p></article>
+          <article class="service-row"><h3>Privacy screens</h3><p>Discuss privacy screen work alongside your painting, staining or outdoor property project.</p></article>
         </div>
+        <p class="section-cta"><a class="button button-primary" href="#quote">Get a painting quote</a> <a class="section-cta-call" href="tel:0422735430">or call 0422 735 430</a></p>
       </div>
     </section>
     <section class="section credentials" id="credentials" aria-labelledby="credentials-title">
@@ -257,38 +312,37 @@
         <div>
           <p class="eyebrow">Pinnacle Painting &amp; Decorating</p>
           <h2 class="years-label" id="credentials-title">Prep first, then paint &mdash; the order that decides the finish.</h2>
-          <p style="margin:20px 0 0"><a class="button button-primary" href="#quote">Book your free quote</a></p>
+          <p style="margin:20px 0 0"><a class="button button-secondary" href="tel:0422735430">Call 0422 735 430</a></p>
         </div>
         <dl class="credentials-list">
           <div class="credential"><dt>Area</dt><dd>Lake Macquarie, Central Coast, Hunter Valley</dd></div>
-          <div class="credential"><dt>Questions</dt><dd>Call <a href="tel:0422735430">0422 735 430</a>, weekdays</dd></div>
-          <div class="credential"><dt>Quote</dt><dd>Free, no obligation</dd></div>
-          <div class="credential"><dt>Social</dt><dd><a href="https://www.instagram.com/pinnacle_pad/" rel="noopener noreferrer" target="_blank">Instagram</a>, <a href="https://www.facebook.com/people/Pinnacle-painting-and-decorating/100066599056806/" rel="noopener noreferrer" target="_blank">Facebook</a></dd></div>
+          <div class="credential"><dt>Quote</dt><dd>Free, no obligation &mdash; call weekdays</dd></div>
         </dl>
       </div>
     </section>
     <section class="section quote-section" id="quote" aria-labelledby="quote-title">
       <div class="wrap quote-grid">
         <div class="quote-intro">
-          <p class="eyebrow">Request a quote</p>
-          <h2 id="quote-title">Get a free quote for your next repaint.</h2>
-          <p>Tell us the suburb, the surface and roughly when you want it done, and Pinnacle will come back with a scope and a price.</p>
+          <p class="eyebrow">Free, no-obligation quote</p>
+          <h2 id="quote-title">Prep included in every quote &mdash; so the finish lasts.</h2>
+          <p>Send the suburb, the surface and your timing. Pinnacle prices the prep and the paint together, so there is no surprise step later.</p>
           <p class="areas-line">Serving Lake Macquarie, the Central Coast and the Hunter Valley.</p>
           <p class="direct-contact">Prefer to talk it through? Call <a href="tel:0422735430">0422 735 430</a>, weekdays.</p>
-          <figure style="margin:26px 0 0"><img src="assets/gal_3.jpg" alt="Recently completed repaint by Pinnacle Painting and Decorating" width="1200" height="1200" loading="lazy" style="width:100%;height:clamp(170px,21vw,245px);object-fit:cover;border-top:6px solid var(--accent)"></figure>
         </div>
         <form class="quote-form" id="quote-form" data-site="radar-154">
-          <h3 class="form-heading">Start your painting quote</h3>
+          <h3 class="form-heading">Your details</h3>
           <div class="field-grid">
-            <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required placeholder="Your name"></div>
-            <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="04xx xxx xxx"></div>
+            <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
           </div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
           <div class="field-grid">
-            <div class="field"><label for="suburb">Suburb</label><input id="suburb" name="suburb" autocomplete="address-level2" required placeholder="Property suburb"></div>
+            <div class="field"><label for="suburb">Suburb</label><input id="suburb" name="suburb" autocomplete="address-level2" required></div>
             <div class="field"><label for="service">Service</label><select id="service" name="service" required><option value="">Choose a service</option><option>Residential painting</option><option>Commercial painting</option><option>Staining</option><option>Pressure washing</option><option>Concrete sealing</option><option>Privacy screens</option></select></div>
           </div>
           <div class="field"><label for="message">Project details</label><textarea id="message" name="message" required placeholder="Tell us about the property, surfaces and timing"></textarea></div>
-          <button class="button" type="submit">Get my free quote</button>
+          <button class="button button-primary" type="submit">Get my free quote</button>
+          <p class="form-trust">Local to Lake Macquarie &middot; Free, no-obligation quote &middot; <a href="tel:0422735430">0422 735 430</a></p>
           <p class="form-note">Your details are used to respond to this enquiry. Read our <a href="privacy.html">privacy policy</a>.</p>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
           <noscript><p class="form-note">JavaScript is off. Please call 0422 735 430 for a quote.</p></noscript>
@@ -298,7 +352,7 @@
   </main>
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <div class="footer-brand"><img src="assets/logo-mark.png" alt="" width="446" height="447" loading="lazy"><span>Pinnacle Painting &amp; Decorating</span></div>
+      <div class="footer-brand"><span>Pinnacle Painting &amp; Decorating</span></div>
       <div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="https://www.instagram.com/pinnacle_pad/" rel="noopener noreferrer" target="_blank">Instagram</a><a href="tel:0422735430">0422 735 430</a></div>
     </div>
   </footer>
@@ -307,7 +361,7 @@
       e.preventDefault();
       var f=e.currentTarget,b=f.querySelector('button'),s=document.getElementById('form-status');
       b.textContent='Sending…';b.disabled=true;s.textContent='';
-      fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:f.message.value})})
+      fetch('https://laydback-hq.tail5b3740.ts.net/rest/v1/quote_requests',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify({site:f.dataset.site,name:f.name.value,phone:f.phone.value,suburb:f.suburb.value,service:f.service.value,message:'Email: '+f.email.value+'\n'+f.message.value})})
       .then(function(r){if(!r.ok)throw new Error('Request failed');f.reset();b.textContent='Request sent';s.textContent='Thanks. Pinnacle will contact you about your quote.';})
       .catch(function(){b.textContent='Try again';b.disabled=false;s.textContent='The form could not send. Please call 0422 735 430.';});
     });
