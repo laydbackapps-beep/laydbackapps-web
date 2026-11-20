@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mark Reed Concrete &amp; Earthmoving — Concrete Contractor, Hunter NSW</title>
+<meta name="description" content="Mark Reed Concrete &amp; Earthmoving — concreting and earthmoving across the Hunter region, NSW. Driveways, slabs, paths, exposed aggregate, site cuts and preparation. Call 0411 663 920.">
+<meta name="theme-color" content="#e8e0c9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23e8e0c9'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%2333302a'/%3E%3C/svg%3E">
+<style>
+:root{
+  --field:#e8e0c9;
+  --umber:#33302a;
+  --slate:#475e75;
+  --slate-deep:#3a4d60;
+  --muted:#4e4a42;
+  --hairline:rgba(51,48,42,.22);
+  --hairline-soft:rgba(51,48,42,.12);
+  --pad:clamp(1.25rem,4.5vw,4.5rem);
+  --s1:0px;
+  --s2:clamp(20px,3.75vw,48px);
+  --s3:clamp(40px,7.5vw,96px);
+  --s4:clamp(60px,11.25vw,144px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--field);
+  color:var(--umber);
+  font-family:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-weight:300;
+  font-size:1rem;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--slate);outline-offset:3px}
+h1,h2,h3{font-weight:800;text-transform:uppercase;letter-spacing:.01em;line-height:.98}
+.wrap{padding-inline:var(--pad)}
+section{scroll-margin-top:5rem}
+
+/* ---------- reveal system ---------- */
+.rise{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.rise.on{opacity:1;transform:none}
+.rule-draw{transform-origin:left center;transform:scaleX(0);transition:transform .85s cubic-bezier(.2,.7,.2,1)}
+.rule-draw.on{transform:scaleX(1)}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .rise,.rule-draw{opacity:1;transform:none;transition:none}
+  *{animation:none !important;transition:none !important}
+}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;gap:.9rem 1.2rem;
+  padding:.8rem var(--pad);
+  background:rgba(232,224,201,.95);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--hairline);
+}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;min-width:0}
+.brand .plot-sm{width:11px;height:11px;background:var(--umber);flex:none;align-self:flex-start;margin-top:.32rem}
+.brand .bn{font-weight:700;font-size:.86rem;letter-spacing:.13em;text-transform:uppercase;line-height:1.35}
+.brand .bn em{font-style:normal;color:var(--muted);font-weight:500}
+.navlinks{display:flex;gap:1.5rem;font-size:.76rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.navlinks a{text-decoration:none;padding-bottom:.15rem;border-bottom:1px solid transparent}
+.navlinks a:hover{color:var(--slate-deep);border-bottom-color:var(--slate-deep)}
+.topbar .call{
+  display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;flex:none;
+  font-weight:600;font-size:.88rem;letter-spacing:.02em;white-space:nowrap;
+  padding:.5rem .95rem;border:1.5px solid var(--umber);
+  transition:background .25s ease,color .25s ease,border-color .25s ease;
+}
+.topbar .call:hover{background:var(--slate);border-color:var(--slate);color:var(--field)}
+.topbar .call .dot{width:7px;height:7px;background:var(--slate);flex:none}
+.topbar .call:hover .dot{background:var(--field)}
+
+/* ---------- survey benchmark line ---------- */
+.survey{margin:clamp(2rem,4.5vh,3.2rem) 0 clamp(1.4rem,3vh,2rem)}
+.rail{
+  position:relative;display:flex;justify-content:space-between;align-items:flex-start;
+  border-top:3px solid var(--umber);
+}
+.rail-minors{
+  position:absolute;left:0;right:0;top:0;height:7px;
+  background-image:repeating-linear-gradient(90deg,var(--umber) 0 1px,transparent 1px 22px);
+  opacity:.45;
+}
+.tick{display:flex;flex-direction:column;gap:7px;align-items:flex-start}
+.tick i{display:block;width:1.5px;height:15px;background:var(--umber)}
+.tick em{font-style:normal;font-size:.68rem;font-weight:500;letter-spacing:.16em;color:var(--muted);font-variant-numeric:tabular-nums}
+.tick.end i{background:var(--slate);width:2px}
+.tick.end em{color:var(--slate-deep);font-weight:700}
+.tick.end .peg{position:absolute;right:0;top:-5px;width:11px;height:11px;background:var(--slate)}
+/* rail legend: the verified facts read as instrument annotations off the benchmark line,
+   not as a nav/info bar (no bordered strip anywhere in the hero) */
+.legend{
+  display:flex;flex-wrap:wrap;gap:.5rem 2.6rem;margin-top:1.5rem;
+  font-size:.74rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+}
+.legend span{display:inline-flex;align-items:baseline;gap:.55rem}
+.legend span::before{
+  content:"";width:1.5px;height:9px;background:var(--slate);flex:none;transform:translateY(-1px);
+}
+.legend b{color:var(--umber);font-weight:700}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(2.6rem,6vh,4.4rem) var(--pad) clamp(3rem,7vh,5.4rem)}
+.eyebrow{
+  display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;
+  font-size:.75rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--slate-deep);
+}
+.eyebrow::after{content:"";width:2.4rem;height:2px;background:var(--slate);flex:none}
+.display{font-size:clamp(2.3rem,8.4vw,7.6rem);letter-spacing:-.005em;margin-top:clamp(.2rem,1vh,.6rem)}
+.display span{display:block}
+.display .d0{
+  font-size:clamp(.95rem,1.6vw,1.35rem);font-weight:600;letter-spacing:.3em;
+  color:var(--muted);margin-bottom:clamp(.9rem,2.2vh,1.5rem);
+}
+.display .d1{margin-left:clamp(.6rem,2.6vw,2.4rem);color:var(--slate-deep)}
+.display .d2{margin-left:clamp(1.2rem,5.2vw,4.8rem)}
+.hero-foot{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;margin-top:clamp(2rem,4.5vh,3.2rem)}
+.lede{max-width:34rem;font-size:clamp(1rem,1.25vw,1.12rem);color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.4rem}
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;
+  font-weight:600;font-size:.92rem;letter-spacing:.04em;
+  padding:.9rem 1.5rem;border:2px solid var(--umber);
+  transition:background .25s ease,color .25s ease,border-color .25s ease;
+}
+.btn.solid{background:var(--umber);color:var(--field)}
+.btn.solid:hover{background:var(--slate);border-color:var(--slate)}
+.btn.ghost{background:transparent;color:var(--umber)}
+.btn.ghost:hover{background:var(--umber);color:var(--field)}
+
+/* ---------- benches ---------- */
+.bench{padding-bottom:clamp(3rem,7vh,5rem)}
+.bench-rule{
+  position:relative;height:7px;background:var(--umber);
+  margin-left:var(--step,0px);margin-bottom:clamp(1.6rem,3.6vh,2.6rem);
+  transform-origin:left center;
+}
+.bench-rule .ticks{
+  position:absolute;left:0;right:0;top:0;height:100%;
+  background-image:repeating-linear-gradient(90deg,var(--field) 0 1px,transparent 1px 26px);
+  opacity:.5;
+}
+.bench-rule .plot{
+  position:absolute;left:-6px;top:-2.5px;width:12px;height:12px;background:var(--slate);
+}
+.bench-rule .el{
+  position:absolute;right:0;bottom:13px;
+  font-size:.68rem;font-weight:700;letter-spacing:.16em;color:var(--slate-deep);
+  font-variant-numeric:tabular-nums;
+}
+.bench-inner{margin-left:var(--step,0px);max-width:62rem}
+.b1{--step:var(--s1)} .b2{--step:var(--s2)} .b3{--step:var(--s3)} .b4{--step:var(--s4)}
+.bench-head{margin-bottom:clamp(1.5rem,3.4vh,2.4rem)}
+.b-no{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.7rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--slate-deep);
+  margin-bottom:.85rem;
+}
+.b-no::after{content:"";width:2rem;height:1.5px;background:var(--slate);opacity:.8;flex:none}
+h2{font-size:clamp(1.7rem,3.6vw,3rem)}
+.bench-note{margin-top:.9rem;max-width:44rem;color:var(--muted);font-size:1rem}
+
+/* service table */
+.svc{list-style:none}
+.svc li{
+  display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr) auto;gap:.35rem 2rem;
+  padding:.95rem 0;border-top:1px solid var(--hairline-soft);
+  align-items:baseline;
+}
+.svc li:first-child{border-top:0}
+.svc li:last-child{border-bottom:1px solid var(--hairline-soft)}
+.svc-n{
+  font-size:.92rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  display:flex;align-items:baseline;gap:.7rem;
+}
+.svc-n::before{content:"";width:8px;height:8px;background:var(--slate);flex:none;transform:translateY(-1px)}
+.svc-d{color:var(--muted);font-size:.95rem}
+.svc-i{
+  font-size:.72rem;font-weight:600;letter-spacing:.14em;color:var(--muted);
+  font-variant-numeric:tabular-nums;padding-left:1rem;
+}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.step{padding:1.4rem 1.6rem 1.6rem 0;border-left:1px solid var(--hairline-soft)}
+.step:first-child{border-left:0;padding-left:0}
+.step .sn{
+  display:block;margin-bottom:.9rem;line-height:1;
+  font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:800;letter-spacing:.02em;
+  color:transparent;-webkit-text-stroke:1.5px var(--slate-deep);
+}
+@supports not (-webkit-text-stroke: 1px black){ .step .sn{color:var(--slate-deep)} }
+.step h3{font-size:1rem;letter-spacing:.09em;margin-bottom:.5rem}
+.step p{color:var(--muted);font-size:.94rem}
+
+/* areas */
+.areas{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,22rem);gap:clamp(1.4rem,4vw,3rem);align-items:end}
+.area-big{
+  font-size:clamp(2rem,5.6vw,4.6rem);font-weight:800;text-transform:uppercase;line-height:.96;letter-spacing:-.005em;
+}
+.area-big span{color:var(--slate-deep)}
+.area-side{border-top:3px solid var(--umber);padding-top:1.1rem;color:var(--muted);font-size:.95rem}
+.area-side b{color:var(--umber);font-weight:700}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,20rem);gap:clamp(1.6rem,4vw,3.4rem);align-items:start}
+.tel-big{
+  display:inline-flex;align-items:center;gap:1rem;text-decoration:none;
+  font-size:clamp(1.85rem,5.2vw,4.2rem);font-weight:800;letter-spacing:.01em;line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.tel-big::before{content:"";width:14px;height:14px;background:var(--slate);flex:none}
+.tel-big:hover{color:var(--slate-deep)}
+.contact-lines{margin-top:1.6rem;display:grid;gap:.55rem;font-size:.95rem;color:var(--muted)}
+.contact-lines b{color:var(--umber);font-weight:700}
+.contact-side{border-top:3px solid var(--umber);padding-top:1.1rem}
+.contact-side p{color:var(--muted);font-size:.95rem}
+.contact-side .btn{margin-top:1.2rem;width:100%;justify-content:flex-start}
+
+/* footer */
+footer{
+  border-top:7px solid var(--umber);
+  padding:clamp(2rem,4.5vh,3rem) var(--pad) clamp(2.4rem,5vh,3.4rem);
+  display:flex;flex-wrap:wrap;gap:1.2rem 2.4rem;align-items:flex-start;justify-content:space-between;
+}
+.foot-lockup{display:flex;align-items:center;gap:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;font-size:.86rem}
+.foot-lockup .plot-sm{width:11px;height:11px;background:var(--slate);flex:none}
+.f-lines{display:grid;gap:.35rem;font-size:.85rem;color:var(--muted)}
+.f-lines a{text-decoration:none;font-weight:700;color:var(--umber)}
+.f-lines a:hover{color:var(--slate-deep)}
+.fine{font-size:.75rem;color:var(--muted);letter-spacing:.06em;max-width:26rem}
+.f-ticks{
+  flex-basis:100%;height:8px;margin-top:.4rem;
+  background-image:repeating-linear-gradient(90deg,var(--umber) 0 1px,transparent 1px 26px);
+  opacity:.4;
+}
+
+@media (max-width:900px){
+  .navlinks{display:none}
+  .svc li{grid-template-columns:minmax(0,1fr) auto;gap:.15rem .8rem}
+  .svc-n{grid-column:1}
+  .svc-i{grid-column:2;text-align:right;padding-left:0}
+  .svc-d{grid-column:1/-1;margin-left:1.45rem}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .step{border-left:0;border-top:1px solid var(--hairline-soft);padding:1.2rem 0}
+  .step:first-child{border-top:0;padding-top:0}
+  .areas,.contact{grid-template-columns:minmax(0,1fr)}
+  .bench-inner{max-width:none}
+}
+@media (max-width:640px){
+  .brand{align-items:flex-start}
+  .brand .bn{font-size:.76rem;letter-spacing:.1em}
+  .topbar .call{font-size:.8rem;padding:.45rem .7rem}
+}
+@media (max-width:520px){
+  .rail .tick:nth-child(2),.rail .tick:nth-child(4){display:none}
+  .tick em{font-size:.62rem}
+  .display .d1{margin-left:.35rem}
+  .display .d2{margin-left:.7rem}
+  .tel-big::before{width:10px;height:10px}
+}
+@media (max-width:360px){
+  :root{--pad:1rem}
+  .brand .bn{font-size:.68rem;letter-spacing:.06em}
+  .topbar .call{font-size:.74rem;padding:.4rem .55rem;gap:.35rem}
+  .display{font-size:2.05rem}
+  .display .d1,.display .d2{margin-left:0}
+  .tel-big{font-size:1.6rem;gap:.6rem}
+  .tel-big::before{width:9px;height:9px}
+  .rail .tick:nth-child(3){display:none}
+}
+</style>
+</head>
+<body>
+<noscript><style>.rise,.rule-draw{opacity:1;transform:none}</style></noscript>
+
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Mark Reed Concrete &amp; Earthmoving — top of page">
+    <span class="plot-sm" aria-hidden="true"></span>
+    <span class="bn">Mark Reed <em>Concrete &amp; Earthmoving</em></span>
+  </a>
+  <nav class="navlinks" aria-label="Sections">
+    <a href="#services">01 Services</a>
+    <a href="#process">02 Process</a>
+    <a href="#areas">03 Areas</a>
+    <a href="#contact">04 Contact</a>
+  </nav>
+  <a class="call" href="tel:+61411663920"><span class="dot" aria-hidden="true"></span>0411 663 920</a>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO — survey benchmark line ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <p class="eyebrow rise">Concreting &amp; earthmoving — Hunter region, NSW</p>
+
+    <div class="survey rise" aria-hidden="true">
+      <div class="rail">
+        <span class="rail-minors"></span>
+        <span class="tick"><i></i><em>24.0</em></span>
+        <span class="tick"><i></i><em>18.0</em></span>
+        <span class="tick"><i></i><em>12.0</em></span>
+        <span class="tick"><i></i><em>6.0</em></span>
+        <span class="tick end"><i></i><em>0.0</em><span class="peg"></span></span>
+      </div>
+    </div>
+
+    <div class="legend rise">
+      <span><b>Concrete contractor</b></span>
+      <span>Hunter region, NSW</span>
+      <span>Concreting &amp; earthmoving</span>
+    </div>
+
+    <h1 class="display rise" id="hero-title">
+      <span class="d0">Mark Reed</span>
+      <span class="d1">Concrete &amp;</span>
+      <span class="d2">Earthmoving</span>
+    </h1>
+
+    <div class="hero-foot">
+      <p class="lede rise">Concrete and earthworks across the Hunter — driveways, slabs, paths and site preparation, set out, poured and finished.</p>
+      <div class="cta rise">
+        <a class="btn solid" href="tel:+61411663920">Call 0411 663 920</a>
+        <a class="btn ghost" href="#services">What we do</a>
+      </div>
+    </div>
+  </section>
+  <!-- ============ BENCH 01 — services ============ -->
+  <section class="bench b1 wrap" id="services" aria-labelledby="svc-title">
+    <div class="bench-rule rule-draw rise"><span class="ticks" aria-hidden="true"></span><span class="plot" aria-hidden="true"></span><span class="el" aria-hidden="true">24.0</span></div>
+    <div class="bench-inner">
+      <div class="bench-head rise">
+        <span class="b-no">Bench 01</span>
+        <h2 id="svc-title">What we do</h2>
+        <p class="bench-note">Concreting and earthmoving work, from driveways and slabs through to site cuts and preparation.</p>
+      </div>
+      <ul class="svc">
+        <li class="rise"><span class="svc-n">Driveways</span><span class="svc-d">Concrete driveways formed, poured and finished — plain or decorative.</span><span class="svc-i">01</span></li>
+        <li class="rise"><span class="svc-n">House slabs &amp; footings</span><span class="svc-d">Slabs, footings and pads set out and poured to plan.</span><span class="svc-i">02</span></li>
+        <li class="rise"><span class="svc-n">Patios &amp; alfresco</span><span class="svc-d">Outdoor slabs and paved areas for patios and entertaining spaces.</span><span class="svc-i">03</span></li>
+        <li class="rise"><span class="svc-n">Pool surrounds</span><span class="svc-d">Slabs and surrounds finished for wet areas.</span><span class="svc-i">04</span></li>
+        <li class="rise"><span class="svc-n">Exposed aggregate</span><span class="svc-d">Aggregate finishes for driveways, paths and outdoor areas.</span><span class="svc-i">05</span></li>
+        <li class="rise"><span class="svc-n">Footpaths &amp; retaining walls</span><span class="svc-d">Paths, edging and concrete retaining structures.</span><span class="svc-i">06</span></li>
+        <li class="rise"><span class="svc-n">Site cuts &amp; excavation</span><span class="svc-d">Cut and fill, levelling and site preparation.</span><span class="svc-i">07</span></li>
+        <li class="rise"><span class="svc-n">Trenching &amp; drainage</span><span class="svc-d">Service trenches and drainage runs.</span><span class="svc-i">08</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ BENCH 02 — process ============ -->
+  <section class="bench b2 wrap" id="process" aria-labelledby="proc-title">
+    <div class="bench-rule rule-draw rise"><span class="ticks" aria-hidden="true"></span><span class="plot" aria-hidden="true"></span><span class="el" aria-hidden="true">18.0</span></div>
+    <div class="bench-inner">
+      <div class="bench-head rise">
+        <span class="b-no">Bench 02</span>
+        <h2 id="proc-title">How a job runs</h2>
+        <p class="bench-note">Three steps, start to finish.</p>
+      </div>
+      <div class="steps">
+        <div class="step rise">
+          <span class="sn">01</span>
+          <h3>Call &amp; scope</h3>
+          <p>Talk through the job, the site and what you need done.</p>
+        </div>
+        <div class="step rise">
+          <span class="sn">02</span>
+          <h3>Set out &amp; prepare</h3>
+          <p>Levels set, ground prepared, formed and ready.</p>
+        </div>
+        <div class="step rise">
+          <span class="sn">03</span>
+          <h3>Pour &amp; finish</h3>
+          <p>Concrete placed, finished and left to cure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENCH 03 — areas ============ -->
+  <section class="bench b3 wrap" id="areas" aria-labelledby="area-title">
+    <div class="bench-rule rule-draw rise"><span class="ticks" aria-hidden="true"></span><span class="plot" aria-hidden="true"></span><span class="el" aria-hidden="true">12.0</span></div>
+    <div class="bench-inner">
+      <div class="bench-head rise">
+        <span class="b-no">Bench 03</span>
+        <h2 id="area-title">Where we work</h2>
+      </div>
+      <div class="areas">
+        <p class="area-big rise">Hunter region,<br><span>NSW</span></p>
+        <div class="area-side rise">
+          <p><b>Service area:</b> the Hunter region, New South Wales. Call to confirm coverage for your site.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENCH 04 — contact ============ -->
+  <section class="bench b4 wrap" id="contact" aria-labelledby="contact-title">
+    <div class="bench-rule rule-draw rise"><span class="ticks" aria-hidden="true"></span><span class="plot" aria-hidden="true"></span><span class="el" aria-hidden="true">6.0</span></div>
+    <div class="bench-inner">
+      <div class="bench-head rise">
+        <span class="b-no">Bench 04</span>
+        <h2 id="contact-title">Get in touch</h2>
+      </div>
+      <div class="contact">
+        <div>
+          <a class="tel-big rise" href="tel:+61411663920">0411 663 920</a>
+          <div class="contact-lines rise">
+            <span><b>Mark Reed Concrete &amp; Earthmoving</b></span>
+            <span>Concrete contractor — Hunter region, NSW</span>
+            <span>Driveways, slabs, paths, exposed aggregate, site cuts and preparation.</span>
+          </div>
+        </div>
+        <div class="contact-side rise">
+          <p>Call to talk through your job and arrange a time to look at the site.</p>
+          <a class="btn solid" href="tel:+61411663920">Call now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-lockup"><span class="plot-sm" aria-hidden="true"></span>Mark Reed Concrete &amp; Earthmoving</div>
+  <div class="f-lines">
+    <a href="tel:+61411663920">0411 663 920</a>
+    <span>Concrete contractor — Hunter region, NSW</span>
+  </div>
+  <p class="fine">Concreting &amp; earthmoving. Site content reflects the business listing on Google Maps.</p>
+  <span class="f-ticks" aria-hidden="true"></span>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.rise, .rule-draw');
+  function showAll(){ for (var i=0;i<els.length;i++) els[i].classList.add('on'); }
+  if (!('IntersectionObserver' in window)) { showAll(); return; }
+  try {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        var sibs = el.parentNode ? el.parentNode.querySelectorAll(':scope > .rise, :scope > .rule-draw') : null;
+        var d = 0;
+        if (sibs) { for (var i=0;i<sibs.length;i++){ if (sibs[i]===el){ d=i; break; } } }
+        el.style.transitionDelay = Math.min(d*70, 420) + 'ms';
+        el.classList.add('on');
+        io.unobserve(el);
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+    for (var i=0;i<els.length;i++) io.observe(els[i]);
+    setTimeout(showAll, 3500);
+  } catch(e) { showAll(); }
+})();
+</script>
+</body>
+</html>
