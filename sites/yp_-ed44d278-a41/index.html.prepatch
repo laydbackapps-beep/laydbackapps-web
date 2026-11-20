@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saliba Interior Linings — Plasterer, Wyong NSW</title>
+<meta name="description" content="Plastering and interior linings in Wyong NSW — plasterboard, skim coats, cornice and repairs, set and sanded to a paint-ready finish. Call 0417 698 109.">
+<meta name="theme-color" content="#f7f5f1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@200;300;400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2326282a'/%3E%3Ctext x='16' y='23' font-family='Helvetica,Arial,sans-serif' font-size='17' font-weight='300' fill='%23f7f5f1' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<script>window.__errs=[];window.addEventListener('error',function(e){window.__errs.push(String(e.message||e));});</script>
+<style>
+:root{
+  --field:#f7f5f1;
+  --ink:#26282a;
+  --blue:#5b7a92;
+  --blue-deep:#44607a;
+  --blue-light:#9db4c6;
+  --muted:rgba(38,40,42,.78);
+  --label:rgba(38,40,42,.72);
+  --hair:rgba(38,40,42,.14);
+  --hair-soft:rgba(38,40,42,.07);
+  --wrap:clamp(1.25rem,5vw,5.5rem);
+  --ease:cubic-bezier(.16,.84,.28,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--field);
+  color:var(--ink);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:1rem;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* very subtle soft grey radial washes on the plaster field */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(58rem 40rem at 86% 6%,rgba(38,40,42,.05),transparent 62%),
+    radial-gradient(48rem 34rem at 6% 46%,rgba(91,122,146,.055),transparent 64%),
+    radial-gradient(64rem 46rem at 74% 96%,rgba(38,40,42,.04),transparent 62%);
+}
+main,header,footer{position:relative;z-index:1}
+a{color:var(--blue-deep);text-decoration-thickness:1px;text-underline-offset:4px}
+a:hover{color:var(--ink)}
+.statement a:hover,.contact a:hover,.foot a:hover{color:var(--field)}
+:focus-visible{outline:2px solid var(--blue-deep);outline-offset:4px}
+::selection{background:rgba(91,122,146,.22)}
+img,svg{display:block;max-width:100%}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--field);padding:.7rem 1.1rem;z-index:50}
+.skip:focus{left:1rem;top:1rem}
+
+.wrap{max-width:80rem;margin-inline:auto;padding-inline:var(--wrap)}
+.display{font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:200;letter-spacing:-.02em;line-height:1.06}
+.eyebrow{
+  font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--label);margin-bottom:clamp(1.1rem,2.4vw,1.8rem);
+}
+.lede{color:var(--muted);font-size:clamp(1.02rem,1.35vw,1.16rem);max-width:44ch;line-height:1.75;text-wrap:pretty}
+
+/* ---------- trowel sweep lines ---------- */
+.sweep{position:relative;height:1px;margin-bottom:clamp(1.5rem,3vw,2.4rem);pointer-events:none}
+.sweep::after{
+  content:"";position:absolute;left:0;top:0;height:1px;width:var(--sw,100%);
+  background:var(--blue);
+  transform:scaleX(0);transform-origin:left center;
+  transition:transform 1.3s var(--ease);
+}
+.sweep.on::after{transform:scaleX(1)}
+.sweep-hero{--sw:9rem}
+.sweep-row{--sw:5.5rem;margin-bottom:1.6rem}
+.sweep-soft{--sw:100%;opacity:.55}
+
+/* ---------- reveals ---------- */
+.rise{opacity:0;transform:translateY(16px);transition:opacity .95s ease,transform .95s var(--ease)}
+.rise.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}
+.d2{transition-delay:.2s}
+.d3{transition-delay:.3s}
+.d4{transition-delay:.42s}
+
+/* ---------- header ---------- */
+.top{border-bottom:1px solid var(--hair)}
+.top-in{
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+  padding-block:1.05rem;
+}
+.brand{
+  font-family:'Manrope',sans-serif;font-weight:300;font-size:1.02rem;letter-spacing:.01em;
+  color:var(--ink);text-decoration:none;
+}
+.top-right{display:flex;align-items:baseline;gap:clamp(1rem,3vw,2.4rem)}
+.top-loc{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--label)}
+.top-tel{font-weight:500;font-size:.95rem;white-space:nowrap;flex-shrink:0}
+
+/* ---------- hero ---------- */
+.hero{padding-block:clamp(3.2rem,7.5vh,5.4rem) clamp(6rem,17vh,12rem)}
+.hero h1{font-size:clamp(2.5rem,7.4vw,6.3rem);max-width:15ch}
+.hero .lede{margin-top:clamp(1.4rem,3vw,2.2rem)}
+.hero-cta{
+  margin-top:clamp(2.2rem,4.6vw,3.4rem);
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:1rem clamp(1.6rem,4vw,3rem);
+}
+.tel-hero{font-family:'Manrope',sans-serif;font-weight:300;font-size:clamp(1.5rem,3vw,2.3rem);letter-spacing:-.01em;white-space:nowrap;flex-shrink:0}
+.ghost{
+  font-size:.78rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--blue-deep);text-decoration:none;border-bottom:1px solid rgba(68,96,122,.4);
+  padding-bottom:.35rem;
+}
+.ghost:hover{color:var(--ink);border-color:var(--ink)}
+.meta{
+  margin-top:clamp(4rem,10vh,7rem);
+  padding-top:1.4rem;border-top:1px solid var(--hair);
+  display:flex;flex-wrap:wrap;gap:1.4rem clamp(2.2rem,6vw,5rem);
+}
+.meta dt{font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--label);margin-bottom:.4rem}
+.meta dd{font-size:.98rem;font-weight:500}
+
+/* ---------- sections ---------- */
+.sec{padding-block:clamp(5rem,11vw,10.5rem)}
+.sec-head h2{font-size:clamp(1.9rem,4.4vw,3.6rem);max-width:20ch}
+.sec-head .lede{margin-top:clamp(1.2rem,2.6vw,1.9rem)}
+
+/* services — airy hanging-indent bands */
+.svcs{margin-top:clamp(3rem,7vw,5.5rem)}
+.svc{padding-block:clamp(2.2rem,4.6vw,3.6rem);border-top:1px solid var(--hair-soft)}
+.svc:first-child{border-top:0;padding-top:0}
+.svc-grid{display:grid;grid-template-columns:4.2rem minmax(0,1fr);align-items:baseline}
+.svc-num{font-size:.82rem;font-weight:500;color:var(--label);letter-spacing:.06em}
+.svc h3{font-family:'Manrope',sans-serif;font-weight:300;font-size:clamp(1.45rem,2.7vw,2.3rem);letter-spacing:-.015em;line-height:1.15}
+.svc p{grid-column:2;color:var(--muted);max-width:52ch;margin-top:.9rem;text-wrap:pretty}
+
+/* statement — charcoal band */
+.statement{position:relative;background:var(--ink);color:var(--field);padding-block:clamp(5.5rem,13vw,12rem)}
+.statement::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(52rem 34rem at 80% 12%,rgba(247,245,241,.05),transparent 64%)}
+.statement .wrap{position:relative}
+.statement .sweep::after{background:var(--blue-light)}
+.statement .eyebrow{color:rgba(247,245,241,.66)}
+.statement h2{font-size:clamp(1.8rem,4.6vw,3.8rem);max-width:22ch}
+.statement p{color:rgba(247,245,241,.72);max-width:54ch;margin-top:clamp(1.5rem,3vw,2.3rem);font-size:clamp(1rem,1.3vw,1.1rem);text-wrap:pretty}
+
+/* process — airy rows */
+.steps{margin-top:clamp(3rem,7vw,5.5rem)}
+.step{display:grid;grid-template-columns:4.2rem minmax(0,1fr);align-items:baseline;padding-block:clamp(1.7rem,3.4vw,2.6rem);border-top:1px solid var(--hair-soft)}
+.step:first-child{border-top:0;padding-top:0}
+.step-num{font-size:.82rem;font-weight:500;color:var(--label);letter-spacing:.06em}
+.step h3{font-family:'Manrope',sans-serif;font-weight:300;font-size:clamp(1.2rem,2vw,1.6rem);letter-spacing:-.01em}
+.step p{grid-column:2;color:var(--muted);max-width:50ch;margin-top:.6rem;text-wrap:pretty}
+
+/* areas — ghost locality word */
+.areas{overflow:hidden}
+.areas .lede{margin-top:clamp(1.2rem,2.6vw,1.9rem)}
+.ghost-word{
+  font-family:'Manrope',sans-serif;font-weight:200;letter-spacing:-.035em;line-height:.9;
+  font-size:clamp(4.5rem,17vw,13.5rem);color:rgba(38,40,42,.06);
+  margin-top:clamp(2.5rem,6vw,4.5rem);user-select:none;
+}
+
+/* contact — charcoal close */
+.contact{position:relative;background:var(--ink);color:var(--field);padding-block:clamp(5.5rem,13vw,11rem)}
+.contact::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(50rem 32rem at 18% 88%,rgba(91,122,146,.16),transparent 66%)}
+.contact .wrap{position:relative}
+.contact .sweep::after{background:var(--blue-light)}
+.contact .eyebrow{color:rgba(247,245,241,.66)}
+.contact h2{font-size:clamp(1.9rem,4.6vw,3.8rem);max-width:18ch}
+.tel-big{
+  display:inline-block;margin-top:clamp(2.2rem,5vw,3.6rem);
+  font-family:'Manrope',sans-serif;font-weight:200;letter-spacing:-.02em;
+  font-size:clamp(2.1rem,6.4vw,5rem);line-height:1.05;
+  color:var(--field);text-decoration:none;white-space:nowrap;
+}
+.tel-big:hover{color:var(--blue-light)}
+.contact .note{color:rgba(247,245,241,.72);margin-top:clamp(1.4rem,3vw,2rem);max-width:46ch}
+.contact .meta{border-top-color:rgba(247,245,241,.18)}
+.contact .meta dt{color:rgba(247,245,241,.6)}
+.contact .meta dd{color:var(--field)}
+.contact .meta a{color:var(--blue-light)}
+
+/* footer */
+.foot{border-top:1px solid rgba(247,245,241,.18);background:var(--ink);color:var(--field);padding-block:2.2rem}
+.foot-in{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.8rem 2rem}
+.foot .brand{color:var(--field)}
+.foot .fine{font-size:.82rem;color:rgba(247,245,241,.62)}
+.foot a{color:var(--blue-light);text-decoration:none;white-space:nowrap}
+.foot a:hover{color:var(--field)}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .rise{opacity:1;transform:none}
+  .sweep::after{transform:scaleX(1)}
+}
+@media (max-width:640px){
+  .top-loc{display:none}
+  .svc-grid,.step{grid-template-columns:2.6rem minmax(0,1fr)}
+  .hero .meta{gap:1.2rem 2rem}
+  .ghost-word{font-size:clamp(4rem,26vw,7rem)}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#main">Saliba Interior Linings</a>
+    <div class="top-right">
+      <span class="top-loc">Plasterer &middot; Wyong NSW</span>
+      <a class="top-tel" href="tel:+61417698109">0417 698 109</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="sweep sweep-hero rise" aria-hidden="true"></div>
+      <p class="eyebrow rise">Plasterer &middot; Wyong NSW</p>
+      <h1 class="display rise d1">Interior linings, finished smooth.</h1>
+      <p class="lede rise d2">Plasterboard, skim coats, cornice and repairs &mdash; lined, set and sanded to a paint-ready finish.</p>
+      <div class="hero-cta rise d3">
+        <a class="tel-hero" href="tel:+61417698109">0417 698 109</a>
+        <a class="ghost" href="#services">What we do</a>
+      </div>
+      <dl class="meta rise d4">
+        <div><dt>Trade</dt><dd>Plasterer</dd></div>
+        <div><dt>Locality</dt><dd>Wyong NSW</dd></div>
+        <div><dt>Listing</dt><dd>Open &middot; Closes 6 pm</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec services" id="services">
+    <div class="wrap">
+      <div class="sweep sweep-soft rise" aria-hidden="true"></div>
+      <div class="sec-head">
+        <p class="eyebrow rise">What we do</p>
+        <h2 class="display rise d1">Plastering and lining work, start to finish.</h2>
+        <p class="lede rise d2">The standard scope of the trade &mdash; linings, finishes, and the details in between.</p>
+      </div>
+      <div class="svcs">
+        <article class="svc rise">
+          <div class="sweep sweep-row" aria-hidden="true"></div>
+          <div class="svc-grid">
+            <span class="svc-num">01</span>
+            <h3>Interior linings</h3>
+            <p>Plasterboard hung, set and finished for walls and ceilings, ready for paint.</p>
+          </div>
+        </article>
+        <article class="svc rise">
+          <div class="sweep sweep-row" aria-hidden="true"></div>
+          <div class="svc-grid">
+            <span class="svc-num">02</span>
+            <h3>Skim coating</h3>
+            <p>Fine skim coats worked over existing surfaces to bring them back to smooth.</p>
+          </div>
+        </article>
+        <article class="svc rise">
+          <div class="sweep sweep-row" aria-hidden="true"></div>
+          <div class="svc-grid">
+            <span class="svc-num">03</span>
+            <h3>Setting &amp; stopping</h3>
+            <p>Joints, corners and fixings stopped, taped and sanded flush.</p>
+          </div>
+        </article>
+        <article class="svc rise">
+          <div class="sweep sweep-row" aria-hidden="true"></div>
+          <div class="svc-grid">
+            <span class="svc-num">04</span>
+            <h3>Cornice &amp; detail</h3>
+            <p>Cornice installed or replaced, mitres cut clean and lines kept true.</p>
+          </div>
+        </article>
+        <article class="svc rise">
+          <div class="sweep sweep-row" aria-hidden="true"></div>
+          <div class="svc-grid">
+            <span class="svc-num">05</span>
+            <h3>Ceiling linings</h3>
+            <p>Ceilings lined and finished flat, with cut-outs for fittings kept neat.</p>
+          </div>
+        </article>
+        <article class="svc rise">
+          <div class="sweep sweep-row" aria-hidden="true"></div>
+          <div class="svc-grid">
+            <span class="svc-num">06</span>
+            <h3>Patch &amp; repair</h3>
+            <p>Cracks, holes and damaged linings repaired and blended into the surrounding finish.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="statement">
+    <div class="wrap">
+      <div class="sweep sweep-soft rise" aria-hidden="true"></div>
+      <p class="eyebrow rise">The trade</p>
+      <h2 class="display rise d1">A plastered finish is judged by what&rsquo;s under it.</h2>
+      <p class="rise d2">Straight framing, tight joints, and a surface sanded honest before paint ever touches it. The parts nobody sees are the parts that decide how a wall reads in lamplight &mdash; so that is where the care goes.</p>
+    </div>
+  </section>
+
+  <section class="sec process">
+    <div class="wrap">
+      <div class="sweep sweep-soft rise" aria-hidden="true"></div>
+      <div class="sec-head">
+        <p class="eyebrow rise">How it runs</p>
+        <h2 class="display rise d1">From first call to final sand.</h2>
+      </div>
+      <div class="steps">
+        <div class="step rise">
+          <span class="step-num">01</span>
+          <h3>Call &amp; scope</h3>
+          <p>Tell us what is being lined, replaced or repaired, and what state it is in.</p>
+        </div>
+        <div class="step rise">
+          <span class="step-num">02</span>
+          <h3>Quote</h3>
+          <p>The scope put in plain terms, so nothing about the job is a surprise.</p>
+        </div>
+        <div class="step rise">
+          <span class="step-num">03</span>
+          <h3>Hang &amp; set</h3>
+          <p>Boards hung, joints taped and set, skim coats worked on.</p>
+        </div>
+        <div class="step rise">
+          <span class="step-num">04</span>
+          <h3>Finish</h3>
+          <p>Sanded smooth, edges cleaned, ready for the painter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec areas">
+    <div class="wrap">
+      <div class="sweep sweep-soft rise" aria-hidden="true"></div>
+      <div class="sec-head">
+        <p class="eyebrow rise">Where we work</p>
+        <h2 class="display rise d1">Wyong, NSW.</h2>
+        <p class="lede rise d2">Saliba Interior Linings takes on plastering and lining work across Wyong and the surrounding area.</p>
+      </div>
+      <div class="ghost-word rise" aria-hidden="true">Wyong</div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <div class="sweep sweep-soft rise" aria-hidden="true"></div>
+      <p class="eyebrow rise">Contact</p>
+      <h2 class="display rise d1">One call starts the job.</h2>
+      <a class="tel-big rise d2" href="tel:+61417698109">0417 698 109</a>
+      <p class="note rise d3">Call to talk the job through directly.</p>
+      <dl class="meta rise d4">
+        <div><dt>Trade</dt><dd>Plasterer</dd></div>
+        <div><dt>Locality</dt><dd>Wyong NSW</dd></div>
+        <div><dt>Listing</dt><dd>Open &middot; Closes 6 pm</dd></div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span class="brand">Saliba Interior Linings</span>
+    <span class="fine">Plasterer &mdash; Wyong NSW</span>
+    <a href="tel:+61417698109">0417 698 109</a>
+  </div>
+</footer>
+
+<noscript><style>.rise{opacity:1;transform:none}.sweep::after{transform:scaleX(1)}</style></noscript>
+<script>
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.rise,.sweep'));
+  function all(){els.forEach(function(e){e.classList.add('on');});}
+  if(!('IntersectionObserver' in window)){all();return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}
+    });
+  },{threshold:0,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(e){io.observe(e);});
+  /* safety net: never leave content hidden in odd environments */
+  setTimeout(all,1400);
+})();
+</script>
+</body>
+</html>
