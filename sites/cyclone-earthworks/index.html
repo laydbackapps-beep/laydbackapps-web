@@ -182,7 +182,7 @@ html,body{overflow-x:hidden}
   .hero-kicker,.k,.kicker,.kick,.eyebrow,.tag{font-size:clamp(10px,3.1vw,13px)!important;letter-spacing:.22em!important}
   h1,.h1{font-size:clamp(26px,10.5vw,54px)!important;line-height:1.05!important}
 }
-</style></noscript><style id="lb-motion-css">
+</style></noscript><style>
 /* ==== LB MOTION PACK ==== */
 .lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
 /* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
@@ -247,13 +247,13 @@ a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
 @keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
 </style>
-<style id="lb-hero-css">
+<style>
 canvas.lb-hero-canvas{position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0; pointer-events:none}
 canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-<style id="lb-brand-css">
+<style>
 /* ==== LB BRAND (logo-true spanning wordmark) ==== */
 .lb-brandwrap{display:block;padding:14px 18px;background:inherit}
 .lb-brandwrap .lb-brand{display:inline-flex}
@@ -277,35 +277,35 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
  .lb-brand__sub{letter-spacing:.2em;font-size:7px}
 }
 </style>
-<style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
+<style>/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
 .site-header,.header{z-index:50}
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-<style id="lb-repair-tel">.lb-tel{white-space:nowrap;align-self:center;text-decoration:none;flex:0 0 auto}</style><style id="lb-repair-polish">/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>.lb-tel{white-space:nowrap;align-self:center;text-decoration:none;flex:0 0 auto}</style><style>/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(18px,2vw,26px) !important}.lb-brand__word{max-width:42vw}</style><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<!--LB-EMPTY--><style id="lb-empty">[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
+<!--LB-EMPTY--><style>[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
 
-<!--LB-HERO-HEIGHT--><style id="lb-heroh">[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.26)}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
+<!--LB-HERO-HEIGHT--><style>[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.26)}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
 
-<!--LB-RV--><style id="lb-rv">.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
+<!--LB-RV--><style>.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
 
-<!--LB-HEROCOPY--><style id="lb-herocopy">[class*=hero-copy],[class*=hero__copy],[class*=hero].container>div:first-child{position:relative!important;z-index:6!important;max-width:min(780px,90vw)!important}[class*=hero-copy] h1,[class*=hero] h1{max-width:20ch!important}[class*=hero] canvas{pointer-events:none!important}[class*=hero-copy] p{max-width:56ch!important}</style><!--/LB-HEROCOPY-->
+<!--LB-HEROCOPY--><style>[class*=hero-copy],[class*=hero__copy],[class*=hero].container>div:first-child{position:relative!important;z-index:6!important;max-width:min(780px,90vw)!important}[class*=hero-copy] h1,[class*=hero] h1{max-width:20ch!important}[class*=hero] canvas{pointer-events:none!important}[class*=hero-copy] p{max-width:56ch!important}</style><!--/LB-HEROCOPY-->
 
-<!--LB-HEROCOPY2--><style id="lb-herocopy2">[class*=hero] canvas,canvas.lb-hero-canvas,[id*=scene] canvas{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{position:relative!important;z-index:3!important;width:min(780px,90vw)!important;max-width:none!important;flex:1 1 auto!important}[class*=hero-copy] h1{width:100%!important;max-width:none!important}</style><!--/LB-HEROCOPY2-->
+<!--LB-HEROCOPY2--><style>[class*=hero] canvas,canvas.lb-hero-canvas,[id*=scene] canvas{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important}[class*=hero-copy],[class*=hero__copy]{position:relative!important;z-index:3!important;width:min(780px,90vw)!important;max-width:none!important;flex:1 1 auto!important}[class*=hero-copy] h1{width:100%!important;max-width:none!important}</style><!--/LB-HEROCOPY2-->
 
-<!--LB-CANVASZ--><style id="lb-canvasz">[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
+<!--LB-CANVASZ--><style>[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
 
-<!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
+<!--LB-H1W--><style>[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
 
-<!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.28)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
+<!--LB-HEROFIX2--><style>[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.28)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
 
-<!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
+<!--LB-RM--><style>@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
 
-<!--LB-HEROGRID--><style id="lb-herogrid">[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
-<style id="lb-batchc">
+<!--LB-HEROGRID--><style>[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
+<style>
 /* ==== LB-BATCH-C: earthworks trade detail (ground layers, track marks) + honest hero exposure ==== */
 .lbhf img{filter:saturate(1.06) contrast(1.03) brightness(1.02)!important;object-position:center 46%!important}
 .lbhf-scrim{background:linear-gradient(96deg,rgba(9,12,9,.92) 0%,rgba(9,12,9,.74) 40%,rgba(9,12,9,.34) 74%,rgba(9,12,9,.18) 100%)!important}
@@ -337,14 +337,14 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
 .rig__item p{font-size:.86rem;color:var(--ink-muted)}
 .lb-rb__cap{font-size:.72rem;letter-spacing:.12em!important}
 </style>
-<style id="lb-bar-noname">
+<style>
 /* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
 .lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
 {display:none!important}
 .lb-brand{display:flex!important;align-items:center!important;gap:0!important}
 .lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style><style id="lb-bar-noname-x">SPAN.lb-brand__name{display:none!important}
-</style><style id="lb4-logo-palette">
+</style><style>SPAN.lb-brand__name{display:none!important}
+</style><style>
 :root{--acc:#9cf81c;--acc-up:#b8ff5c;--focus:#b8ff5c;--acc-dim:#7d9a3c;--ink:#f7f8f3;
 --bg:#0f1210;--ground:#12150f;--ground-lighter:#1d2318;--card:#161a14;--card-border:#33401f;
 --sky-top:#181d14;--sky-mid:#232a18;--sky-low:#333c22;--line:rgba(156,248,28,.18)}
@@ -356,9 +356,9 @@ border-radius:0!important}
 .lb-brand--logoonly .lb-brand__mark,.lb-brand--logoonly .lb-brand__mark img{height:46px!important;max-width:none!important}
 @media(max-width:760px){.nav{height:78px}.lb-brand__mark img,.lb-brand .lb-logo,.lb-logo{height:38px!important}}
 </style>
-<style id="lb4-imgcap">img[src="assets/work-1.jpg"],img[src="assets/work-2.jpg"]{transform:none!important;scale:none!important;max-width:1600px!important;margin-left:auto!important;margin-right:auto!important}</style>
-<!--LB-HERO-REPAIR--><style id="lb-hero-repair">/* LB-HERO-HEIGHT pack caps every [class*=hero] at 78vh and floors its children at clamp(440px,58vh,600px)!important; where the hero stack is taller than the cap the last line gets chopped mid-glyph - drop the cap and the floors so the hero fits its content */[class*=hero]:not(img){max-height:none!important}[class*=hero-sub],[class*=hero-cta],[class*=hero-ctas],[class*=hero-in],[class*=hero-inner],[class*=hero-copy],[class*=hero-kicker],[class*=hero-kick],[class*=hero-content],[class*=hero-strip],[class*=hero-trust],[class*=hero-fin],[class*=hero-title],[class*=hero__in],[class*=hero__inner],[class*=hero__k],[class*=hero__ttl],[class*=hero__d],[class*=hero__sub],[class*=hero__cta],[class*=hero__copy],[class*=hero__strip],[class*=hero-media],[class*=hero-photo],[class*=hero-stats],[class*=hero-stat],[class*=hero-feats],[class*=hero-bg],[class*=hero-scrim],[class*=hero-shade]{min-height:0!important}</style><!--/LB-HERO-REPAIR-->
-<style id="lb-rb-cap">.lb-rb{max-width:1450px!important;margin-inline:auto!important}</style></head>
+<style>img[src="assets/work-1.jpg"],img[src="assets/work-2.jpg"]{transform:none!important;scale:none!important;max-width:1600px!important;margin-left:auto!important;margin-right:auto!important}</style>
+<!--LB-HERO-REPAIR--><style>/* LB-HERO-HEIGHT pack caps every [class*=hero] at 78vh and floors its children at clamp(440px,58vh,600px)!important; where the hero stack is taller than the cap the last line gets chopped mid-glyph - drop the cap and the floors so the hero fits its content */[class*=hero]:not(img){max-height:none!important}[class*=hero-sub],[class*=hero-cta],[class*=hero-ctas],[class*=hero-in],[class*=hero-inner],[class*=hero-copy],[class*=hero-kicker],[class*=hero-kick],[class*=hero-content],[class*=hero-strip],[class*=hero-trust],[class*=hero-fin],[class*=hero-title],[class*=hero__in],[class*=hero__inner],[class*=hero__k],[class*=hero__ttl],[class*=hero__d],[class*=hero__sub],[class*=hero__cta],[class*=hero__copy],[class*=hero__strip],[class*=hero-media],[class*=hero-photo],[class*=hero-stats],[class*=hero-stat],[class*=hero-feats],[class*=hero-bg],[class*=hero-scrim],[class*=hero-shade]{min-height:0!important}</style><!--/LB-HERO-REPAIR-->
+<style>.lb-rb{max-width:1450px!important;margin-inline:auto!important}</style></head>
 <body><!-- sigSplashGuard --><script>setTimeout(function(){var s=document.getElementById('sigSplash');if(s){s.style.transition='opacity .4s';s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.remove();},450);}},2000);</script>
 <!-- LB-3D-HERO (retained, hidden 2026-10-14): 3D hero system kept as hidden marker; visible scroll-canvas removed -->
 <canvas id="heroCanvas" class="LB-3D-HERO" aria-hidden="true" tabindex="-1" width="1440" height="760"></canvas>
@@ -400,19 +400,19 @@ border-radius:0!important}
 </header><section id="services" aria-labelledby="services-title">
   <div class="wrap">
     <div class="sec__head">
-      <span class="sec__idx">01</span>
+      
       <div>
         <h2 class="sec__title" id="services-title">What we do.</h2>
         <p class="lead">Earthworks, cartage, quarry supply and disposal - plant, operators and logistics handled from one place.</p>
       </div>
     </div>
     <div class="cap-grid">
-      <article class="cap rv"><span class="cap__num">01</span><h3>Earthworks</h3><p>Bulk and detailed excavation, site cuts, pad prep, trenching and grading to finished levels.</p></article>
-      <article class="cap rv"><span class="cap__num">02</span><h3>Cartage & Disposal</h3><p>Tipper and truck-and-dog cartage - spoil, VENM, demolition waste and contaminated material to licensed facilities.</p></article>
-      <article class="cap rv"><span class="cap__num">03</span><h3>Quarry Product Supply</h3><p>Road base, drainage aggregate, sand, crusher dust and decorative gravel - delivered to site.</p></article>
-      <article class="cap rv"><span class="cap__num">04</span><h3>Tight-Access Excavation</h3><p>Compact machines for restricted sites, rear yards and basement digs where full-size plant won't fit.</p></article>
-      <article class="cap rv"><span class="cap__num">05</span><h3>VENM & Demolition Waste</h3><p>Virgin excavated natural material and mixed demolition streams - classified, loaded and disposed legally.</p></article>
-      <article class="cap rv"><span class="cap__num">06</span><h3>Site Clearing</h3><p>Vegetation removal, strip-topsoil, demolition rubble clear-out and site prep for following trades.</p></article>
+      <article class="cap rv"><h3>Earthworks</h3><p>Bulk and detailed excavation, site cuts, pad prep, trenching and grading to finished levels.</p></article>
+      <article class="cap rv"><h3>Cartage & Disposal</h3><p>Tipper and truck-and-dog cartage - spoil, VENM, demolition waste and contaminated material to licensed facilities.</p></article>
+      <article class="cap rv"><h3>Quarry Product Supply</h3><p>Road base, drainage aggregate, sand, crusher dust and decorative gravel - delivered to site.</p></article>
+      <article class="cap rv"><h3>Tight-Access Excavation</h3><p>Compact machines for restricted sites, rear yards and basement digs where full-size plant won't fit.</p></article>
+      <article class="cap rv"><h3>VENM & Demolition Waste</h3><p>Virgin excavated natural material and mixed demolition streams - classified, loaded and disposed legally.</p></article>
+      <article class="cap rv"><h3>Site Clearing</h3><p>Vegetation removal, strip-topsoil, demolition rubble clear-out and site prep for following trades.</p></article>
     </div>
   </div>
 </section>
@@ -420,7 +420,7 @@ border-radius:0!important}
 <section id="waste" aria-labelledby="waste-title">
   <div class="wrap">
     <div class="sec__head">
-      <span class="sec__idx">02</span>
+      
       <div>
         <h2 class="sec__title" id="waste-title">Quarry Products.</h2>
         <p class="lead">Licensed disposal across the waste stream - we classify, load and cart to the right facility.</p>
@@ -440,7 +440,7 @@ border-radius:0!important}
 <section id="area" class="area" aria-labelledby="area-title">
   <div class="wrap">
     <div class="sec__head">
-      <span class="sec__idx">03</span>
+      
       <div>
         <h2 class="sec__title" id="area-title">Sydney & surrounding areas.</h2>
         <p class="lead">Based in Sydney, working across the metro and fringe - one mobilisation, no travel surcharge.</p>
@@ -466,7 +466,7 @@ border-radius:0!important}
 <section id="layers" class="layers" aria-labelledby="layers-title">
   <div class="wrap">
     <div class="sec__head">
-      <span class="sec__idx">03</span>
+      
       <div>
         <h2 class="sec__title" id="layers-title">Ground out, material in.</h2>
         <p class="lead">We take the ground down to design level, cart what comes out, and put the right product back in its place - road base, drainage aggregate, bedding sand and crusher dust, tipped where the machine needs it.</p>
