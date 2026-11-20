@@ -1,0 +1,112 @@
+<style>
+/* motion */
+.rv{transition:opacity .7s ease,transform .7s ease}
+.js .rv{opacity:0;transform:translateY(16px)}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none}}
+/* helpers */
+.band{padding:80px 0}
+.sub{color:var(--muted);max-width:62ch;margin:12px 0 0;font-size:1.03rem}
+.rulewrap{display:flex;align-items:center;gap:12px;margin:0 0 24px}
+.rule{width:min(280px,50%);height:16px;color:var(--sage);opacity:.55}
+.rnum{display:inline-flex;width:26px;height:26px;border:1px solid var(--line);border-radius:50%;align-items:center;justify-content:center;font-family:var(--mono);font-size:.7rem;color:var(--clay)}
+.navactions{display:flex;align-items:center;gap:12px}
+/* plinth (bone paper statement) */
+.plinth{background:var(--bone);color:var(--inktext);padding:80px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.plinth .pwrap{display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:34px;align-items:start}
+.plinth .tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);margin-bottom:14px}
+.plinth .side{font-family:var(--serif);font-size:clamp(1.3rem,2.5vw,1.95rem);line-height:1.36;margin:0;color:#213530}
+.plinth .side .hl{color:var(--clay)}
+/* services trace rows */
+.trow{display:grid;grid-template-columns:72px minmax(0,1fr) 52px;gap:22px;align-items:center;padding:26px 0;border-top:1px solid var(--line)}
+.trow:last-child{border-bottom:1px solid var(--line)}
+.trow .swatch{color:var(--sage)}
+.trow .swatch svg{width:62px;height:26px}
+.trow h3{margin:0 0 5px}
+.trow p{margin:0;color:var(--muted);font-size:.97rem}
+.trow .tidx{font-family:var(--mono);font-size:.8rem;color:var(--clay);text-align:right}
+/* method */
+.method{background:rgba(243,236,221,.035);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
+.stage{padding:28px 26px 30px;border-right:1px solid var(--line)}
+.stage:last-child{border-right:0}
+.stage .k{font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);margin-bottom:12px}
+.stage h3{margin:0 0 8px}
+.stage p{margin:0;color:var(--muted)}
+/* options band */
+.mixband{background:rgba(243,236,221,.04);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:64px 0}
+.mixchips{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 14px}
+.mixchip{display:flex;gap:12px;align-items:baseline;padding:12px 18px;border:1px solid var(--line);border-radius:12px}
+.mixchip .ltr{font-family:var(--serif);font-size:1.22rem;color:var(--clay)}
+.mixchip .mlab{font-size:.94rem}
+.mixnote{color:var(--muted);font-size:.92rem;max-width:62ch;margin:0}
+/* reach */
+.reach .rwrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:40px;align-items:end}
+.reach .big{font-family:var(--serif);font-size:clamp(1.9rem,5.2vw,3.3rem);line-height:1.06;margin:0}
+.reach .big .hl{color:var(--clay)}
+.reach .side{color:var(--muted);margin:0}
+/* footer */
+.tracefoot{background:rgba(8,24,19,.5);border-top:1px solid var(--line);padding:60px 0 34px}
+.tracefoot .cols{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.8fr) minmax(0,.8fr);gap:34px}
+.tracefoot .fbrand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-size:1.05rem;margin-bottom:14px}
+.tracefoot .fbrand img{width:26px;height:26px}
+.tracefoot h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin:0 0 14px}
+.tracefoot .fcol a{display:inline-block;text-decoration:none;color:var(--bone);padding:3px 0}
+.tracefoot .fcol a:hover{color:var(--clay)}
+.tracefoot .fcol p{margin:0 0 8px;color:var(--muted)}
+.tracefoot .base{margin-top:42px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}
+.tracefoot .base nav a{margin-right:16px;text-decoration:none}
+.tracefoot .base nav a:hover{color:var(--clay)}
+@media (max-width:880px){
+ .navlinks{display:none}
+ .burger{display:inline-flex;align-items:center;justify-content:center}
+ .tracebar .row{grid-template-columns:1fr auto}
+ .brand span{display:none}
+ .tracebar.nav-open .navlinks{display:flex;position:absolute;left:0;right:0;top:66px;flex-direction:column;gap:0;background:rgba(20,46,38,.98);border-bottom:1px solid var(--line);padding:10px 22px 16px}
+ .tracebar.nav-open .navlinks a{padding:12px 0;border-bottom:1px solid var(--line)}
+ .plinth .pwrap,.reach .rwrap,.tracefoot .cols{grid-template-columns:1fr;gap:22px}
+ .phases{grid-template-columns:1fr}
+ .stage{border-right:0;border-bottom:1px solid var(--line)}
+ .stage:last-child{border-bottom:0}
+ .trow{grid-template-columns:54px minmax(0,1fr) 38px;gap:14px}
+ .hero-inner{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+ .chip{padding:8px 13px;font-size:.8rem}
+ .mixchip{padding:11px 14px}
+ .tracefoot .base{font-size:.78rem}
+}
+</style>
+<header class="tracebar" id="tracebar">
+  <div class="wrap row">
+    <a class="brand" href="#top"><img src="assets/logo.svg" alt="Strolin Landscapes" width="27" height="27"><span>Strolin Landscapes</span></a>
+    <nav class="navlinks" id="navlinks" aria-label="Sections">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#options">Options</a>
+      <a href="#area">Area</a>
+      <a href="#lbq">Quote</a>
+    </nav>
+    <div class="navactions">
+      <a class="chip" href="tel:+61424616496"><span class="dot" aria-hidden="true"></span>0424 616 496</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">Menu</button>
+    </div>
+  </div>
+  <div class="traceprogress" id="traceprogress"></div>
+</header>
+<main id="main">
+<section class="bedfield" id="top" aria-label="Strolin Landscapes">
+  <canvas id="bedcanvas" aria-hidden="true"></canvas>
+  <div class="hero-inner wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Landscape design &middot; Terrigal NSW</p>
+      <h1>The garden begins as a drawn line.</h1>
+      <p class="lead">Strolin Landscapes designs and builds residential gardens across Terrigal and the Central Coast. Each garden is drawn first, then planted to that drawing.</p>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="#lbq">Request a quote</a>
+        <a class="btn btn-g" href="tel:+61424616496">Call <span class="mono">0424 616 496</span></a>
+      </div>
+      <p class="hero-note">Design &middot; Construct &middot; Plant</p>
+    </div>
+  </div>
+</section>
