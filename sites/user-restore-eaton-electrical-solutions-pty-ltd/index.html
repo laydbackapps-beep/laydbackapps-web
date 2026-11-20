@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eaton Electrical Solutions — Electrical services, Newcastle &amp; beyond</title>
+<meta name="description" content="Eaton Electrical Solutions Pty Ltd — switchboards, lighting, power, fault finding and fit-outs. Call 0426 981 166 or send a job request.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0C0F0D;--ink2:#161B18;--paper:#F4F5F0;--white:#fff;
+    --lime:#F2B531;--accent:#F2B531;--steel:#2C332E;--line:#D7DAD2;--muted:#4A514B;
+    --display:'Sora',system-ui,sans-serif;--body:'Inter',system-ui,sans-serif;
+    --wrap:1280px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:96px}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  img,svg{max-width:100%}
+  h1,h2,h3{margin:0;font-family:var(--display);line-height:1.02;letter-spacing:-.025em}
+  h2{font-size:clamp(2.2rem,4.2vw,3.6rem);margin-bottom:20px}
+  h3{font-size:1.22rem;letter-spacing:-.01em}
+  p{margin:0 0 16px}
+  a{color:inherit}
+  .wrap{width:min(100% - 48px,var(--wrap));margin-inline:auto}
+  .skip{position:fixed;top:8px;left:8px;z-index:99;padding:12px 18px;background:var(--ink);color:var(--lime);transform:translateY(-200%);opacity:0;pointer-events:none;clip-path:inset(50%)}
+  .skip:focus,.skip:focus-visible{transform:none;opacity:1;pointer-events:auto;clip-path:none}
+  :focus-visible{outline:3px solid #1D6FE0;outline-offset:3px}
+
+  /* header */
+  .site-header{position:sticky;top:0;z-index:40;background:rgba(12,15,13,.97);color:#fff;border-bottom:1px solid rgba(255,255,255,.12)}
+  .header-inner{min-height:88px;display:flex;align-items:center;gap:26px}
+  .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff}
+  .mark{width:52px;height:52px;flex:none;border-radius:12px;background:var(--lime);display:grid;place-items:center;box-shadow:0 0 0 1px rgba(255,255,255,.15) inset}
+  .mark svg{width:26px;height:26px}
+  .brand-name{display:block;font-family:var(--display);font-weight:700;font-size:1.68rem;line-height:1.02;letter-spacing:-.02em}
+  .brand-sub{display:block;font-size:.98rem;font-weight:700;letter-spacing:.055em;text-transform:uppercase;color:#fff;margin-top:6px}
+  .nav{display:flex;align-items:center;gap:26px;margin-left:auto}
+  .nav a{font-size:.95rem;font-weight:500;text-decoration:none;color:#EDF2EA}
+  .nav a:hover{color:var(--lime)}
+  .call{display:inline-flex;align-items:center;gap:9px;color:#fff;text-decoration:none;font-weight:600;font-size:.98rem;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.4);white-space:nowrap}
+  .call:hover{color:var(--accent);border-color:var(--accent)}
+
+  /* hero */
+  .hero{background:var(--ink);color:#fff;overflow:hidden;position:relative}
+  .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(88% 66% at 72% 12%,rgba(242,181,49,.085),transparent 56%)}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;padding:76px 0 88px}
+  .kicker{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:26px}
+  .kicker::before{content:'';width:28px;height:2px;background:var(--lime)}
+  .hero h1{font-size:clamp(2.9rem,6.1vw,5.2rem);font-weight:700;max-width:17ch;hyphens:none;-webkit-hyphens:none;overflow-wrap:normal;text-wrap:balance}
+  .hero h1 em{font-style:normal;color:var(--lime);white-space:nowrap}
+  .lede{margin:26px 0 34px;max-width:50ch;font-size:1.12rem;line-height:1.7;color:#DCE3DA}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:999px;background:var(--lime);color:var(--ink);font-weight:700;font-size:1rem;text-decoration:none;border:1px solid var(--lime);transition:transform .18s ease,background .18s ease}
+  .btn:hover{transform:translateY(-2px);background:#fff;border-color:#fff}
+  .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.38)}
+  .btn.ghost:hover{background:#fff;color:var(--ink)}
+  .btn-text{display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:1rem;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:2px}
+  .btn-text:hover{color:var(--lime);border-color:var(--lime)}
+  .hero-facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:38px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);font-size:.9rem;color:#C9D2C8}
+  .hero-facts span{display:inline-flex;align-items:center;gap:8px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime)}
+
+  /* hero call-out schedule (typographic, no stock imagery) */
+  .scope-wrap{perspective:1400px;display:grid;place-items:center;min-height:420px}
+  .scope{width:100%;max-width:430px;background:#F6F5F0;color:#14180F;border-radius:4px;padding:26px 24px 22px;border-top:6px solid var(--lime);box-shadow:0 40px 70px -34px rgba(0,0,0,.85);transform:rotateX(3deg) rotateY(-8deg)}
+  .scope-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:#4E584D;border-bottom:1px solid #D3D6CC;padding-bottom:10px}
+  .scope-head b{font-family:var(--display);font-size:.8rem;letter-spacing:.05em;color:#14180F;text-transform:none}
+  .scope-title{font-family:var(--display);font-size:1.5rem;line-height:1.12;letter-spacing:-.02em;margin:16px 0 18px;max-width:20ch}
+  .scope-list{list-style:none;margin:0;padding:0;border-top:1px solid #D3D6CC}
+  .scope-list li{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #E2E4DC;font-size:.86rem}
+  .scope-list b{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.72rem;letter-spacing:.06em;color:#4E584D}
+  .scope-list i{justify-self:end;width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 3px rgba(242,181,49,.24)}
+  .scope-note{margin:16px 0 0;font-size:.76rem;line-height:1.5;color:#4E584D}
+
+  /* sections */
+  section{position:relative;scroll-margin-top:96px}
+  .band{padding:104px 0 88px}
+  .band.alt{background:var(--white);border-block:1px solid var(--line)}
+  .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+  .head-row{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:44px}
+  .head-row p{color:var(--muted);margin:0;max-width:46ch}
+  .sched{border-top:2px solid var(--ink)}
+  .sched-row{display:grid;grid-template-columns:52px minmax(200px,.85fr) 1.55fr;gap:8px 28px;padding:24px 6px;border-bottom:1px solid var(--line);align-items:baseline}
+  .sched-row:hover{background:#FBFAF6}
+  .sched-no{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.76rem;letter-spacing:.1em;color:var(--muted)}
+  .sched-row h3{font-size:clamp(1.2rem,2vw,1.5rem)}
+  .sched-row p{margin:0;font-size:.98rem;color:var(--muted);max-width:58ch}
+  .note{margin-top:26px;font-size:.92rem;color:var(--muted)}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;counter-reset:s}
+  .step{border-top:2px solid var(--ink);padding-top:20px}
+  .step .n{font-family:var(--display);font-weight:700;color:var(--lime);background:var(--ink);display:inline-grid;place-items:center;width:38px;height:38px;border-radius:10px;margin-bottom:14px;font-size:1rem}
+  .step p{color:var(--muted);margin:0;font-size:.96rem}
+
+  /* contact */
+  .contact{background:var(--ink);color:#fff;padding:84px 0}
+  .contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:start}
+  .contact h2{color:#fff}
+  .contact .eyebrow{color:var(--lime)}
+  .contact p{color:#D3DBD1}
+  .direct{margin-top:26px;display:grid;gap:12px;font-size:1.02rem}
+  .direct a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;font-weight:600}
+  .direct a:hover{color:var(--lime);border-color:var(--lime)}
+  form{background:#fff;color:var(--ink);border-radius:16px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+  .f{display:flex;flex-direction:column;gap:7px}
+  .f.full{grid-column:1/-1}
+  label{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#3B423C}
+  input,select,textarea{font:inherit;font-size:1rem;padding:13px 14px;border:1px solid #C6CBC1;border-radius:9px;background:#FCFCF8;color:var(--ink);width:100%}
+  textarea{min-height:112px;resize:vertical}
+  input:focus,select:focus,textarea:focus{outline:3px solid #1D6FE0;outline-offset:1px;border-color:#1D6FE0}
+  .consent{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font-size:.9rem;color:#3B423C;text-transform:none;letter-spacing:0;font-weight:500}
+  .consent input{width:auto;margin-top:3px}
+  form .btn{grid-column:1/-1;width:100%;border-radius:10px}
+  .status{grid-column:1/-1;margin:0;font-size:.9rem;min-height:1.2em}
+  .fine{grid-column:1/-1;margin:0;font-size:.8rem;color:#5B635A;text-transform:none;letter-spacing:0;font-weight:400}
+  .hp{position:absolute;left:-9999px}
+
+  .policies{background:#fff;border-top:1px solid var(--line);padding:46px 0}
+  .policy-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;font-size:.9rem;color:var(--muted)}
+  .policy-grid h3{font-size:1rem;margin-bottom:8px}
+
+  .site-footer{background:var(--ink2);color:#C6CFC4;padding:38px 0}
+  .footer-top{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .footer-brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;font-family:var(--display);font-weight:700}
+  .footer-links{display:flex;flex-wrap:wrap;gap:20px;font-size:.92rem}
+  .footer-links a{text-decoration:none}
+  .footer-links a:hover{color:var(--lime)}
+  .footer-bottom{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:.84rem;padding-top:18px;color:#9EAA9C}
+  .mobile-bar{display:none}
+
+  @media (max-width:1080px){
+    .cards{grid-template-columns:1fr 1fr}
+    .hero-grid{grid-template-columns:1fr;gap:44px;padding:56px 0 64px}
+    .scope-wrap{min-height:0;order:2}.scope{transform:none;padding:22px 18px}.scope-title{font-size:1.28rem}
+    .head-row{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr;gap:36px}
+  }
+  @media (max-width:760px){
+    body{font-size:16px}
+    .nav{display:none}
+    .brand-sub{font-size:.72rem;letter-spacing:.08em;margin-top:4px}
+    .header-inner{min-height:76px}
+    .mark{width:44px;height:44px}
+    .brand-name{font-size:1.18rem}
+    .call{display:none}
+    .band{padding:60px 0}
+    .steps,.policy-grid{grid-template-columns:1fr}
+    .sched-row{grid-template-columns:40px 1fr;gap:4px 14px;padding:20px 2px}
+    .sched-row p{grid-column:2}
+    .hero-actions{gap:12px}
+    .hero-actions .btn-text{display:none}
+    .scope{padding:16px 14px}
+    .scope-title{font-size:1.06rem;margin:10px 0 10px}
+    .scope-list li{padding:8px 0}
+    .scope-note{display:none}
+    .hero-facts{gap:8px 16px;margin-top:26px}
+    form{grid-template-columns:1fr;padding:20px}
+    .f{grid-column:1/-1}
+    .mobile-bar{display:grid;grid-template-columns:1fr;position:fixed;bottom:0;left:0;right:0;z-index:50;background:var(--ink);border-top:1px solid rgba(255,255,255,.15)}
+    .mobile-bar a{padding:15px 8px;text-align:center;font-weight:700;font-size:.95rem;text-decoration:none;color:#fff}
+    .mobile-bar a:first-child{background:var(--lime);color:var(--ink)}
+    .site-footer{padding-bottom:76px}
+  }
+  @media (prefers-reduced-motion:reduce){.scope{transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Eaton Electrical Solutions, home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="4.4" stroke="#0C0F0D" stroke-width="1.8"/><path d="M13 6.3 8.3 13.1h3.1l-.7 4.6 5-7.2h-3.2l.5-4.2Z" fill="#0C0F0D"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">Eaton Electrical</span>
+        <span class="brand-sub">Solutions Pty Ltd</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#work">What we cover</a>
+      <a href="#how">How it works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call" href="tel:+61426981166">0426 981 166</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">Electrical services · call-out enquiries</p>
+        <h1 id="hero-title">Switchboards, faults and <em>fit-outs</em>.</h1>
+        <p class="lede">Board upgrades, safety switches, downlights, outdoor power and dead circuits traced rather than swapped at random. Tell us what's tripping, buzzing or not working and you get a scope, a price and a date before anything is opened up.</p>
+        <div class="hero-actions">
+          <a class="btn" href="tel:+61426981166">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 3h3l1.2 4.2-2 1.4a12 12 0 0 0 6.6 6.6l1.4-2L21 14.4v3A2.6 2.6 0 0 1 18.4 20C10.5 19.7 4.3 13.5 4 5.6A2.6 2.6 0 0 1 6.6 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            Call 0426 981 166
+          </a>
+        </div>
+        <div class="hero-facts">
+          <span><i class="dot" aria-hidden="true"></i>Switchboards &amp; safety switches</span>
+          <span><i class="dot" aria-hidden="true"></i>Lighting &amp; power</span>
+          <span><i class="dot" aria-hidden="true"></i>Fault finding</span>
+        </div>
+      </div>
+
+      <div class="scope-wrap">
+        <article class="scope" aria-label="What an Eaton call-out covers">
+          <div class="scope-head"><span>Call-out scope</span><b>Eaton Electrical</b></div>
+          <p class="scope-title">What gets checked before anything is replaced.</p>
+          <ul class="scope-list">
+            <li><b>01</b><span>Main switch and supply checked</span><i aria-hidden="true"></i></li>
+            <li><b>02</b><span>RCD / safety switch trip tested</span><i aria-hidden="true"></i></li>
+            <li><b>03</b><span>Fault traced circuit by circuit</span><i aria-hidden="true"></i></li>
+            <li><b>04</b><span>Labels written up at the board</span><i aria-hidden="true"></i></li>
+          </ul>
+          <p class="scope-note">Scope, price and date agreed before the board comes off — not after.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <h2 id="work-title">Boards replaced, faults traced, circuits labelled.</h2>
+        </div>
+        <p>Scope, pricing and timing are agreed directly with Eaton — every job is different, so we'd rather ask than assume.</p>
+      </div>
+      <div class="sched">
+        <article class="sched-row">
+          
+          <h3>Switchboards &amp; safety</h3>
+          <p>Board replacement and upgrades, RCD and safety-switch protection, plus circuits labelled so the next fault starts from a known point.</p>
+        </article>
+        <article class="sched-row">
+          
+          <h3>Lighting &amp; power</h3>
+          <p>Downlights that stop flickering and buzzing, weatherproof outdoor points, and GPOs where the appliances actually sit — not where the old wall was.</p>
+        </article>
+        <article class="sched-row">
+          
+          <h3>Fault finding</h3>
+          <p>Breakers that trip the moment something else turns on, half-dead powerpoints, lights that pulse — tested circuit by circuit instead of swapping parts until it stops.</p>
+        </article>
+        <article class="sched-row">
+          
+          <h3>Fit-outs &amp; additions</h3>
+          <p>New circuits for renos, sheds, caravans and granny flats, sized for the load the place will carry rather than the smallest cable that passed.</p>
+        </article>
+      </div>
+      <p class="note">Not sure which applies? Call 0426 981 166 and describe it — that's the fastest way to a straight answer.</p>
+    </div>
+  </section>
+
+  <section class="band alt" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <p class="eyebrow">How an enquiry goes</p>
+          <h2 id="how-title">One electrician, from the first call to the invoice.</h2>
+        </div>
+        <p>No call centre and no ticket number. You deal with the person doing the work.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>You call or send details</h3><p>Phone or the form below — address, what's happening, and anything you've already tried.</p></div>
+        <div class="step"><h3>We scope it</h3><p>Eaton confirms what's involved, what it costs and when it can be done, before any work starts.</p></div>
+        <div class="step"><h3>The work gets done</h3><p>Agreed scope, tidy finish, and a clear explanation of what was changed and why.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Get in touch</p>
+        <h2 id="contact-title">Tell us what the power's doing.</h2>
+        <p>Send the details and Eaton will come back on scope and timing. Prefer to talk it through? The phone is faster.</p>
+        <div class="direct">
+          <a href="tel:+61426981166">0426 981 166</a>
+          <a href="mailto:eatonelectrical@outlook.com">eatonelectrical@outlook.com</a>
+          <a href="https://www.instagram.com/eatonelectricalsolutions" target="_blank" rel="noopener">Instagram — @eatonelectricalsolutions ↗</a>
+        </div>
+      </div>
+      <form id="job-form" action="https://laydback-hq.tail5b3740.ts.net/functions/v1/quote-request" method="post" data-site="user-restore-eaton-electrical-solutions-pty-ltd" data-biz="Eaton Electrical Solutions Pty Ltd">
+        <div class="f"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+        <div class="f"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="f full"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
+        <div class="f full"><label for="service">Work needed</label>
+          <select id="service" name="service">
+            <option value="">Select one</option>
+            <option>Switchboard or safety switch</option>
+            <option>Lighting or power points</option>
+            <option>Fault finding</option>
+            <option>Fit-out or addition</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="f full"><label for="message">Job details</label><textarea id="message" name="message" required placeholder="Suburb, property type, what the electrical problem is and how long it's been happening…"></textarea></div>
+        <label class="consent"><input type="checkbox" name="consent" value="1" required> <span>I agree to be contacted about this request.</span></label>
+        <div class="hp"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <button class="btn" type="submit">Send job request</button>
+        <p class="status" id="job-status" role="status" aria-live="polite"></p>
+        <p class="fine">Your details are used to respond to this enquiry only.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="policies" aria-label="Website policies">
+    <div class="wrap policy-grid">
+      <article id="privacy"><h3>Privacy</h3><p>When you send a job request, the details you enter are passed to Eaton Electrical Solutions and used to respond to your enquiry. This site sets no analytics or advertising cookies. Instagram links are subject to Instagram's own terms.</p></article>
+      <article id="terms"><h3>Terms</h3><p>This site provides general information about Eaton Electrical Solutions Pty Ltd. Scope, pricing and timing are agreed directly with the business. No ratings, review counts or project histories are claimed here.</p></article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="footer-brand" href="#top">
+        <span class="mark" aria-hidden="true" style="width:38px;height:38px;border-radius:9px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="4.4" stroke="#0C0F0D" stroke-width="1.8"/><path d="M13 6.3 8.3 13.1h3.1l-.7 4.6 5-7.2h-3.2l.5-4.2Z" fill="#0C0F0D"/></svg></span>
+        Eaton Electrical Solutions
+      </a>
+      <div class="footer-links">
+        <a href="tel:+61426981166">0426 981 166</a>
+        <a href="mailto:eatonelectrical@outlook.com">Email</a>
+        <a href="https://www.instagram.com/eatonelectricalsolutions" target="_blank" rel="noopener">Instagram ↗</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Eaton Electrical Solutions Pty Ltd</span>
+      <span>Electrical services · 0426 981 166</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="mobile-bar" aria-label="Quick contact">
+  <a href="tel:+61426981166">Call 0426 981 166</a>
+</nav>
+
+<script>
+(function(){
+  var f=document.getElementById('job-form'),s=document.getElementById('job-status');
+  if(!f)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.reportValidity())return;
+    s.textContent='Sending…';
+    fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))})
+      .then(function(r){if(!r.ok)throw new Error(r.status);return r.json().catch(function(){return{}});})
+      .then(function(){f.reset();s.textContent='Thanks — Eaton will be in touch.';})
+      .catch(function(){s.textContent='That didn\'t send. Please call 0426 981 166 or email eatonelectrical@outlook.com.';});
+  });
+})();
+</script>
+</body>
+</html>
