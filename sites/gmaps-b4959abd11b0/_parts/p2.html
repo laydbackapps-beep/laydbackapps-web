@@ -1,0 +1,100 @@
+.buildbar{background:var(--panel);border-bottom:1px solid var(--line)}
+.buildbar .wrap{display:flex}
+.bcell{position:relative;flex:1 1 0;min-width:0;padding:28px 20px 24px;border-left:1px solid var(--line)}
+.bcell:first-child{border-left:0}
+.bcell .notch{position:absolute;top:0;left:20px;right:20px;height:9px;display:flex;justify-content:space-between}
+.bcell .notch i{width:1px;height:9px;background:var(--hair)}
+.bcell .lbl{display:block;margin-bottom:7px}
+.bcell .bv{font-family:'Aleo',Georgia,serif;font-size:1rem;letter-spacing:-.01em}
+.smark{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.smark .stp{display:block;flex:0 0 auto}
+.smark .sidx{font-family:'B612 Mono',ui-monospace,monospace;font-size:.7rem;color:var(--sub)}
+.smark .stick{width:20px;height:2px;background:var(--red)}
+.statement{border-bottom:1px solid var(--line);padding:96px 0}
+.statement .wrap{display:flex;gap:56px;align-items:flex-start}
+.statement .scol{flex:0 0 40%}
+.statement h2{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.14}
+.statement .body{flex:1;max-width:60ch}
+.statement .body p+p{margin-top:16px;color:var(--sub)}
+.scope{border-bottom:1px solid var(--line);padding:92px 0 116px}
+.scope h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:44px;max-width:20ch}
+.bands{position:relative;padding-left:34px}
+.bands::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--red)}
+.band{position:relative;display:flex;align-items:baseline;gap:26px;padding:26px 22px;border-top:1px solid var(--line);transition:transform .2s ease,background .2s ease}
+.band:last-child{border-bottom:1px solid var(--line)}
+.band+.band{margin:-10px 0 0 -10px}
+.band .bn{flex:0 0 40px;font-family:'B612 Mono',ui-monospace,monospace;font-size:.76rem;color:var(--sub)}
+.band h3{flex:0 0 300px;font-size:1.4rem;letter-spacing:-.01em}
+.band .bs{flex:1;color:var(--sub);max-width:54ch}
+.band .btick{position:absolute;left:-34px;top:50%;width:12px;height:2px;background:var(--red);opacity:0;transition:opacity .2s ease}
+.band:hover{transform:translateY(-2px);background:var(--panel)}
+.band:hover .btick{opacity:1}
+.areas{background:var(--deep);border-bottom:1px solid var(--line);padding:94px 0}
+.areas h2{font-size:clamp(1.5rem,2.8vw,2.1rem)}
+.areas .aline{margin-top:14px;color:var(--sub)}
+.areas .prof{display:block;margin-top:44px;width:100%;height:auto}
+.quotelead{padding:92px 0 4px}
+.quotelead h2{font-size:clamp(1.5rem,3vw,2.1rem)}
+.quotelead p{margin-top:12px;color:var(--sub);max-width:54ch}
+.foot{background:var(--deep);border-top:1px solid var(--line);padding:46px 0 42px}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between}
+.fcol{display:flex;flex-direction:column;gap:9px}
+.foot a{transition:color .18s ease}
+.foot a:hover{color:var(--red)}
+.foot .ftel{font-family:'B612 Mono',ui-monospace,monospace;font-size:.92rem;color:var(--ink)}
+.foot .fsub{color:var(--sub);font-size:.78rem}
+.fbot{display:flex;gap:18px;align-items:center;font-family:'B612 Mono',ui-monospace,monospace;font-size:.72rem;color:var(--sub)}
+#lbq input[type=checkbox]{accent-color:var(--red)}
+.rv{opacity:1}
+.js .rv{opacity:0;transform:translateY(20px)}
+.js .rv.on{opacity:1;transform:none;transition:opacity .75s ease,transform .8s cubic-bezier(.2,.75,.2,1)}
+@media(max-width:760px){.statement .wrap{display:block}.statement .scol{margin-bottom:24px}.band{display:block;padding:22px 20px}.band+.band{margin:0}.band .bn{display:block;margin-bottom:5px}.band h3{font-size:1.25rem;margin-bottom:6px}.band .bs{max-width:none}.buildbar .wrap{display:block}.bcell{border-left:0;border-top:1px solid var(--line)}.bcell:first-child{border-top:0}}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none}.js .rv.on{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topmark">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="LBH Constructions, top of page">
+      <img class="bmark" src="assets/logo.png" alt="" width="26" height="26">
+      <span class="bword">
+        <span class="wordmark">LBH</span>
+        <span class="wordsub">CONSTRUCTIONS</span>
+      </span>
+    </a>
+    <nav class="sitenav" aria-label="Primary">
+      <a href="#buildup">Build-up</a>
+      <a href="#scope">Scope</a>
+      <a href="#areas">Areas</a>
+      <a href="#lbq">Quote</a>
+      <a class="navcall" href="tel:+61434088828">Call 0434 088 828</a>
+    </nav>
+    <div class="mobcta">
+      <a class="p" href="tel:+61434088828">Call</a>
+      <a href="#lbq">Quote</a>
+    </div>
+  </div>
+</header>
+<nav class="elev" aria-label="Page elevation">
+  <a href="#top" class="on"><span class="tk"></span>L0</a>
+  <a href="#buildup"><span class="tk"></span>L1</a>
+  <a href="#scope"><span class="tk"></span>L2</a>
+  <a href="#areas"><span class="tk"></span>L3</a>
+  <a href="#lbq"><span class="tk"></span>L4</a>
+</nav>
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="h1">
+    <canvas id="hero" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="lbl">Builder &amp; carpentry · Coffs Harbour NSW</p>
+        <h1 id="h1">Your premier building &amp; carpentry company.</h1>
+        <p class="lede">Based in Coffs Harbour and working across the Mid North Coast, from decks and pergolas to renovations and extensions.</p>
+        <div class="hero-cta">
+          <a class="btn btn-p" href="#lbq">Request a quote</a>
+          <a class="btn btn-o" href="tel:+61434088828">Call 0434 088 828</a>
+        </div>
+      </div>
+    </div>
+  </section>
