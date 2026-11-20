@@ -6,49 +6,81 @@
 <title>Elite Concrete FNQ, Commercial • Residential • Decorative • Driveways</title>
 <meta name="description" content="Elite Concrete FNQ delivers premium concrete solutions across Far North Queensland — from commercial slabs and residential driveways to decorative con">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,900&family=Inter:wght@400;600&display=swap');
-:root{--bg:#EFE7DA;--ink:#2A211A;--accent:#402000;--muted:#655745}
+
+:root{--bg:#EFE7DA;--ink:#2A211A;--accent:#402000;--muted:#4A3D2E}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--ink);font-family:system-ui, sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 .kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600}
-nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 5vw;background:linear-gradient(180deg,var(--bg) 60%,transparent);mix-blend-mode:normal}
-nav .brand{font-family:Fraunces,serif;font-weight:900;font-size:19px;display:flex;gap:10px;align-items:center}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 5vw;background:transparent;mix-blend-mode:normal}
+nav .brand{font-family:Fraunces, serif;font-weight:900;font-size:19px;display:flex;gap:10px;align-items:center}
 .nav-logo{width:34px;height:34px;border-radius:50%;object-fit:cover}
 nav .tel{font-size:13px;font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}
 .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:0 5vw}
-.hero h1{font-family:Fraunces,serif;font-weight:900;font-size:clamp(56px,10vw,150px);line-height:.95;letter-spacing:-.02em}
+.hero h1{font-family:Fraunces, serif;font-weight:900;font-size:clamp(56px,10vw,150px);line-height:.95;letter-spacing:-.02em}
 .hero h1 .line{display:block}
 .hero h1 .line:nth-child(2){color:var(--accent);font-style:italic;font-weight:300}
 .hero p{margin-top:34px;max-width:520px;font-size:17px;color:var(--muted)}
 .manifesto{padding:16vh 5vw;max-width:880px}
-.manifesto .big{font-family:Fraunces,serif;font-weight:300;font-size:clamp(26px,3.4vw,42px);line-height:1.35}
-.manifesto .big em{font-style:italic;color:var(--accent)}
-.services{padding:10vh 5vw}
-.svc{display:grid;grid-template-columns:80px 1fr;gap:28px;padding:36px 0;border-top:1px solid rgba(0,0,0,.12)}
-.svc:last-child{border-bottom:1px solid rgba(0,0,0,.12)}
-.svc-n{font-family:Fraunces,serif;font-weight:300;font-size:34px;color:var(--accent)}
-.svc h3{font-family:Fraunces,serif;font-weight:600;font-size:24px}
-.svc p{margin-top:6px;color:var(--muted);max-width:560px}
-.gallery{padding:6vh 5vw 14vh}
+.manifesto .big{font-family:system-ui,-apple-system,sans-serif;font-weight:400;font-size:clamp(24px,3.1vw,38px);line-height:1.35;letter-spacing:-.01em}
+.manifesto .big em{font-style:normal;font-weight:700;color:var(--accent)}
+.services{padding:10vh 5vw;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.services>.kicker,.services>p{grid-column:1/-1}
+.svc{display:block;padding:28px 28px 30px;background:#F7F1E6;border:1px solid rgba(42,33,26,.14);border-top:3px solid var(--accent)}
+.svc-n{display:inline-block;font-family:Fraunces, serif;font-weight:400;font-size:12px;letter-spacing:.2em;color:var(--accent);margin-bottom:14px}
+.svc h3{font-family:Fraunces, serif;font-weight:600;font-size:22px}
+.svc p{margin-top:8px;color:var(--muted);max-width:46ch;font-size:15.5px}
+@media(max-width:760px){.services{grid-template-columns:1fr}}
+/* CRON 1858: services grid was text-only with a dead half; one owned pour fills it */
+.svc-fig{grid-column:span 2;grid-row:span 2;margin:0;min-height:300px;position:relative}
+.svc-fig img{width:100%;height:100%;object-fit:cover;display:block;border-radius:4px;position:absolute;inset:0}
+@media(max-width:760px){.svc-fig{grid-column:1/-1;grid-row:auto;min-height:230px}}
+.gallery{padding:6vh 5vw 14vh;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 4vw;align-items:start}
+@media (max-width:760px){.gallery{grid-template-columns:1fr}}
+.gallery .kicker{grid-column:1/-1}
 .ph{margin-bottom:9vh}
-.ph img{width:100%;border-radius:4px}
+.ph img{width:100%;border-radius:4px;aspect-ratio:16/10;object-fit:cover;max-height:74vh}
 .ph figcaption{margin-top:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .areas{padding:0 5vw 12vh}
-.areas span{display:inline-block;font-family:Fraunces,serif;font-style:italic;font-size:22px;margin:0 22px 12px 0;color:var(--muted)}
+.areas span{display:inline-block;font-family:Fraunces, serif;font-style:italic;font-size:22px;margin:0 22px 12px 0;color:var(--muted)}
 .contact{padding:14vh 5vw;border-top:1px solid rgba(0,0,0,.12);display:flex;flex-wrap:wrap;gap:34px;align-items:baseline;justify-content:space-between}
-.contact h2{font-family:Fraunces,serif;font-weight:900;font-size:clamp(40px,6vw,84px);line-height:1}
-.tel{font-family:Fraunces,serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--accent)}
-.tel.ghost{font-size:16px;font-family:Inter;color:var(--muted);border-bottom:none;margin-left:18px}
+.contact h2{font-family:Fraunces, serif;font-weight:900;font-size:clamp(40px,6vw,84px);line-height:1}
+.tel{font-family:Fraunces, serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--accent)}
+.tel.ghost{font-size:16px;font-family:system-ui;color:var(--muted);border-bottom:none;margin-left:18px}
 footer{padding:30px 5vw 44px;font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
 footer .trust{display:flex;gap:20px}
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
 .rv.on{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 @media (max-width:760px){.svc{grid-template-columns:1fr;gap:8px}.hero h1{font-size:clamp(44px,13vw,90px)}nav .tel{padding:10px 2px}}
+/* hero: full-bleed owned pour photo under a graded scrim; copy sits on it */
+.hero{position:relative;overflow:hidden;display:block!important;
+  background:#1B120C!important;color:#F8F2E9;padding:clamp(130px,17vh,200px) 6vw clamp(64px,9vh,104px)!important;min-height:clamp(540px,84vh,780px)!important;max-height:none!important}
+.hero-photo{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-height:none!important;object-fit:cover;object-position:center 62%;z-index:0;filter:saturate(.9) contrast(1.08)}
+.hero::before{content:""!important;display:block!important;position:absolute;inset:0;z-index:1;
+  background:linear-gradient(98deg,rgba(16,10,6,.95) 0%,rgba(22,14,8,.88) 44%,rgba(26,17,10,.5) 76%,rgba(26,17,10,.2) 100%)}
+header.hero{position:relative!important;top:auto!important;min-height:0!important;overflow:hidden!important}
+nav{position:static;top:auto;z-index:60;background:var(--bg)}
+.hero>*:not(.hero-photo){position:relative;z-index:2;grid-column:auto;max-width:min(640px,56ch)}
+.hero .kicker{color:#F2C486!important}
+.hero h1{font-size:clamp(32px,4.6vw,64px)!important;line-height:1.05!important;max-width:19ch!important;letter-spacing:-.02em!important}
+.hero h1,.hero h1 .line{white-space:normal!important;overflow-wrap:break-word;hyphens:none}
+.hero p{color:#E8DAC6;max-width:42ch;margin-top:18px!important;font-size:16px!important}
+.hero h1 .line:nth-child(2){color:#F2C486}
+.lb-hero-canvas{display:none!important}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.hero .hero-cta{min-height:0!important;height:auto!important}
+@media(max-width:640px){.hero h1{font-size:clamp(27px,8.4vw,36px)!important;line-height:1.14!important}.hero{padding:44px 6vw 30px!important}}
+@media(max-width:880px){.hero{grid-template-columns:1fr!important}.hero-photo{grid-column:1;grid-row:auto;aspect-ratio:16/10;max-height:none}}
+.hero-cta a{display:inline-block;padding:15px 26px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;text-decoration:none}
+.hero-cta a.cta{background:#F2C486;color:#241608;padding:20px 40px;font-size:14px;letter-spacing:.16em;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.hero-cta a.cta:hover{background:#FFD79B}
+.hero-cta a.ghost{border:0!important;background:none!important;padding:20px 2px!important;font-size:12px!important;letter-spacing:.14em;text-decoration:underline;text-underline-offset:6px;font-weight:600!important;color:#F2C486!important;opacity:.85}
+.contact a.cta{display:inline-block;background:var(--ink);color:var(--bg);padding:16px 30px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.contact .sub{font-size:16px;color:var(--muted);max-width:34ch;margin-bottom:22px}
 </style>
 <style id="lb-brand-css">
 /* ==== LB BRAND (logo-true spanning wordmark) ==== */
@@ -57,24 +89,21 @@ footer .trust{display:flex;gap:20px}
 .lb-brand__mark{flex:0 0 auto;display:block;height:clamp(34px,4.1vw,58px);width:auto;max-width:22vw}
 .lb-brand__mark img{display:block;height:100%;width:auto;max-width:22vw;object-fit:contain}
 .lb-brand__word{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:.94}
-.lb-brand__name{font-family:var(--lb-disp,Inter),sans-serif;font-weight:700;text-transform:uppercase;
+.lb-brand__name{font-family:var(--lb-disp, system-ui), sans-serif;font-weight:700;text-transform:none;
  font-size:clamp(21px,2.75vw,44px);letter-spacing:.004em;white-space:nowrap;line-height:.92;
  color:var(--lb-name,currentColor)}
 .lb-brand__name .lb-acc{color:var(--lb-acc,currentColor)}
-.lb-brand__sub{font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;text-transform:uppercase;
+.lb-brand__sub{font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;text-transform:none;
  font-size:clamp(7px,.82vw,12px);letter-spacing:.30em;white-space:nowrap;margin-top:.34em;
  color:var(--lb-subc,currentColor);opacity:.86}
 .lb-brand__rule{display:block;height:3px;width:100%;margin-top:.5em;border-radius:2px;
- background:linear-gradient(90deg,var(--lb-acc,currentColor),transparent)}
+ background:transparent}
 @media (max-width:640px){
  .lb-brand__mark{height:clamp(30px,8vw,40px)}
  .lb-brand__name{font-size:clamp(18px,6.2vw,26px)}
  .lb-brand__sub{letter-spacing:.2em;font-size:7px}
 }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&display=swap" rel="stylesheet">
 <style id="lb-motion-css">
 /* ==== LB MOTION PACK ==== */
 .lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
@@ -92,8 +121,8 @@ header .rv, .site-header .rv, .nav-inner .rv{
 .lb-rb__slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03);transition:transform 7s linear}
 .lb-rb__slide.is-on img{transform:scale(1.10)}
 .lb-rb__cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2.2vw,30px);
- background:linear-gradient(180deg,transparent,rgba(6,7,10,.72));color:#fff;
- font-family:var(--lb-sub,Inter),sans-serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+ background:rgba(6,7,10,.72);color:#fff;
+ font-family:var(--lb-sub, system-ui), sans-serif;font-weight:600;letter-spacing:.16em;text-transform:none;
  font-size:clamp(9px,1vw,13px);z-index:2}
 .lb-rb__dots{position:absolute;top:50%;right:clamp(10px,1.6vw,22px);transform:translateY(-50%);
  display:flex;flex-direction:column;gap:9px;z-index:3}
@@ -116,7 +145,7 @@ a.btn:hover,.btn:hover,button.btn:hover,.nav-cta a:hover{transform:translateY(-2
  box-shadow:0 10px 24px -12px rgba(0,0,0,.55);filter:brightness(1.05)}
 a.btn:active,.btn:active,button.btn:active,.nav-cta a:active{transform:translateY(0) scale(.985)}
 a.btn::after,.btn::after,.nav-cta a::after{content:'';position:absolute;top:0;bottom:0;width:38%;
- left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);
+ left:-60%;background:rgba(255,255,255,.32);
  transform:skewX(-18deg);transition:left .55s ease;pointer-events:none}
 a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
 
@@ -134,8 +163,8 @@ a.btn:hover::after,.btn:hover::after,.nav-cta a:hover::after{left:130%}
 .lb-mq__in{display:flex;width:max-content;animation:lb-mq 34s linear infinite}
 .lb-mq:hover .lb-mq__in{animation-play-state:paused}
 .lb-mq__in span{display:inline-flex;align-items:center;gap:clamp(18px,3vw,44px);
- padding:clamp(11px,1.5vw,19px) clamp(14px,2vw,26px);color:#fff;font-family:var(--lb-disp,Inter),sans-serif;
- font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:clamp(11px,1.25vw,17px);white-space:nowrap}
+ padding:clamp(11px,1.5vw,19px) clamp(14px,2vw,26px);color:#fff;font-family:var(--lb-disp, system-ui), sans-serif;
+ font-weight:700;text-transform:none;letter-spacing:.14em;font-size:clamp(11px,1.25vw,17px);white-space:nowrap}
 .lb-mq__in span i{font-style:normal;color:var(--lb-acc,#e51924)}
 @keyframes lb-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion: reduce){.lb-mq__in{animation:none}}
@@ -158,15 +187,14 @@ section{ position:relative; }
 section::before{
   content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
   background:
-    radial-gradient(120% 70% at 12% 0%, color-mix(in srgb, var(--lb-acc) 7%, transparent) 0%, transparent 58%),
-    radial-gradient(90% 60% at 100% 100%, color-mix(in srgb, var(--lb-acc) 5%, transparent) 0%, transparent 60%);
+    transparent,
+    transparent;
 }
 section > *{ position:relative; z-index:1; }
 
 /* cards / panels / figures: gradient surface + hairline + elevation, lift on hover */
 .card,.cards > *,.panel,.tile,.service,.box,.grid > article,.grid > div,figure,.gal figure,.gallery figure{
-  background:linear-gradient(180deg, color-mix(in srgb, var(--lb-paper) 100%, transparent) 0%,
-                                    color-mix(in srgb, var(--lb-ink) 3%, var(--lb-paper)) 100%);
+  background:transparent;
   border:1px solid var(--lb-hair);
   border-radius:14px;
   box-shadow:var(--lb-e1);
@@ -187,7 +215,7 @@ figure:hover img, .gal figure:hover img, .gallery figure:hover img{ transform:sc
 
 /* buttons: gradient fill, inset highlight, layered shadow */
 a.btn,.btn,button.btn,.nav-cta a,.btn-primary{
-  background-image:linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0) 55%);
+  background-image:rgba(255,255,255,.16);
   box-shadow:var(--lb-e1), inset 0 1px 0 rgba(255,255,255,.22);
   border-radius:10px;
 }
@@ -198,8 +226,7 @@ a.btn:hover,.btn:hover,button.btn:hover,.nav-cta a:hover{
 
 /* nav: subtle vertical gradient + hairline for separation from the page */
 .nav,nav,.site-header,header.nav{
-  background-image:linear-gradient(180deg, color-mix(in srgb, var(--lb-paper) 96%, transparent) 0%,
-                                         color-mix(in srgb, var(--lb-ink) 3%, var(--lb-paper)) 100%);
+  background-image:transparent;
   box-shadow:0 1px 0 var(--lb-hair), 0 6px 20px -14px rgba(8,10,14,.28);
 }
 
@@ -213,7 +240,7 @@ footer{ box-shadow:0 -1px 0 var(--lb-hair), 0 -14px 40px -30px rgba(8,10,14,.5);
 /* dark surfaces get stronger, softer shadows */
 @media (prefers-color-scheme: dark){ :root{ --lb-hair: rgba(255,255,255,.12); } }
 @supports not (background: color-mix(in srgb, red 5%, blue)){
-  section::before{ background:radial-gradient(120% 70% at 12% 0%, rgba(229,25,36,.06) 0%, transparent 58%); }
+  section::before{ background:rgba(229,25,36,.06); }
 }
 @media (prefers-reduced-motion: reduce){
   .card,.cards > *,.panel,.tile,figure,.gal figure, a.btn,.btn, img{ transition:none!important; transform:none!important; }
@@ -224,7 +251,6 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
   position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0;
 }
 </style>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
@@ -232,77 +258,141 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas, header canvas{
 .container.nav,.nav,.nav-in{z-index:5}
 .lb-brand,.nav__brand{position:relative;z-index:6;opacity:1 !important;visibility:visible !important;transform:none !important}
 </style>
-<style id="lb-bar-noname">
-/* the bar shows the client's own logo artwork and nothing typed — the name belongs in the logo, not in a system font */
-.lb-brand__word, .lb-brand__name, .lb-brand__sub, .lb-brand__rule, .lb-acc, .lb-span-word, .brand__name, .brand-name, .lb-name, .logo-name
-{display:none!important}
-.lb-brand{display:flex!important;align-items:center!important;gap:0!important}
-.lb-brand__mark img, .lb-logo{height:clamp(38px,3.2vw,54px)!important;width:auto!important;display:block!important}
-</style><style id="lb4-logo-palette">
-:root{--bg:#efe8dc;--ink:#180c02;--accent:#402000;--muted:#6f6046}
-nav{padding:20px 5vw;min-height:86px}
-nav .lb-brand__mark,nav .lb-brand__mark img,nav .lb4-logo{height:46px!important;width:auto!important;
-max-height:46px!important;max-width:none!important;display:block!important;object-fit:contain!important}
-nav .lb-brand{gap:0!important;min-height:46px!important}
-@media(max-width:760px){nav{padding:14px 5vw;min-height:74px}
-nav .lb-brand__mark img,nav .lb4-logo{height:38px!important;max-height:38px!important}}
+<style id="lb-repair-polish">/* the brand wordmark scales with vw (2.75vw) and runs away on wide screens, crowding the nav links. Cap it at a nav-appropriate size and keep a gap. */.lb-brand__name{font-size:clamp(19px,2.3vw,31px) !important}
+.lb-brand__mark{height:clamp(38px,4.6vw,64px)!important}.lb-brand__word{max-width:42vw}</style>
+<!--LB-HDRFIX--><style id="lb-hdrfix">header{position:sticky!important;top:0;min-height:72px;overflow:hidden}header>.lb-hero-canvas,header>canvas{position:absolute!important;inset:0!important;height:100%!important;width:100%!important;z-index:0!important;pointer-events:none}header>.container{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:nowrap;min-height:72px;padding-block:10px}header .lb-brand,header a[class*=brand]{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}header>.container>nav,header nav[role=navigation]{flex:0 1 auto;min-width:0;display:flex;align-items:center;gap:clamp(10px,1.4vw,22px)}header .lb-tel,header a[href^="tel:"]{white-space:nowrap;flex:0 0 auto}header .lb-brand__name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}</style><!--/LB-HDRFIX-->
+
+<!--LB-EMPTY--><style id="lb-empty">[class*=btn]:empty,[class*=button]:empty,.btn:empty,.button:empty,[class*=cta]:empty,[class*=card]:empty>a:empty,[class*=img]:empty,[class*=hero-img]:empty,[class*=media]:empty:not(canvas),div[class*=box]:empty{display:none!important}</style><!--/LB-EMPTY-->
+
+<!--LB-HERO-HEIGHT--><style id="lb-heroh">[class*=hero]{min-height:clamp(440px,58vh,600px)!important;max-height:78vh;display:flex;align-items:center}[class*=hero]>*{position:relative;z-index:2}[class*=hero]:has(canvas):before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.26)}canvas.lb-hero-canvas,[class*=hero] canvas{height:100%!important}</style><!--/LB-HERO-HEIGHT-->
+
+<!--LB-RV--><style id="lb-rv">.rv,[class~="rv"],.reveal,[data-reveal]{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}</style><!--/LB-RV-->
+
+<!--LB-CANVASZ--><style id="lb-canvasz">[class*=hero] canvas,canvas.lb-hero-canvas,#heroCanvas{position:absolute!important;inset:0!important;z-index:-1!important;pointer-events:none!important}</style><!--/LB-CANVASZ-->
+
+<!--LB-H1W--><style id="lb-h1w">[class*=hero] h1,[class*=hero-copy] h1{max-width:none!important;width:100%!important;font-size:clamp(2.1rem,4.4vw,3.6rem)!important;line-height:1.08!important}</style><!--/LB-H1W-->
+
+<!--LB-HEROFIX2--><style id="lb-herofix2">[class*=hero]:has([class*=hero-bg])::before,[class*=hero]:has([class*=hero-scrim])::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.28)}[class*=hero-copy] h1{width:100%!important;max-width:none!important;display:block!important}</style><!--/LB-HEROFIX2-->
+
+<!--LB-RM--><style id="lb-rm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}canvas{opacity:1!important}}</style><!--/LB-RM-->
+
+<!--LB-HEROGRID--><style id="lb-herogrid">[class*=hero]{flex-wrap:wrap!important}[class*=hero]>div,[class*=hero-copy],[class*=hero__copy]{flex:1 1 min(720px,90%)!important;min-width:0!important}[class*=hero] h1{width:100%!important;max-width:none!important;flex:none!important}</style><!--/LB-HEROGRID-->
+
+<!--LB-BESPOKE-->
+<style id="lb-bespoke">
+:root{--bg:#E7E5E1;--ink:#15181B;--accent:#B4400F;--muted:#4E5257}
+body{background:var(--bg);color:var(--ink)}
+.svc{background:#F3F2EF;border-color:rgba(21,24,27,.16);border-top-color:var(--ink)}
+.svc-n,.kicker{color:var(--accent)}
+/* CRON 1858: split hero left the right half as flat black (measured stddev 1-4).
+   Owned pour photo fills the whole hero behind a scrim; duplicate panel dropped. */
+.hero{background:#15181B!important;color:#EDEBE6!important;display:block!important;grid-template-columns:none!important;padding:clamp(120px,16vh,190px) 6vw clamp(64px,9vh,110px)!important;min-height:clamp(560px,78vh,720px)!important;max-height:none!important;overflow:hidden!important;position:relative!important}
+.hero-photo{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-height:none!important;object-fit:cover;object-position:center 58%;z-index:0;filter:saturate(1.02) contrast(1.06) brightness(1.06)}
+.hero::before{content:""!important;display:block!important;position:absolute;inset:0;z-index:1;background:linear-gradient(96deg,rgba(14,16,18,.94) 0%,rgba(16,19,22,.82) 42%,rgba(16,19,22,.34) 74%,rgba(16,19,22,.12) 100%)}
+.hero-panel{display:none!important}
+.hero .kicker{color:#E9A07A!important}
+.hero h1{font-family:system-ui,sans-serif!important;font-weight:800!important;font-size:clamp(34px,5vw,62px)!important;line-height:1.02!important;letter-spacing:-.03em!important;color:#F5F3EF!important;max-width:20ch!important}
+.hero h1 .line:nth-child(2){color:#E9A07A!important;font-style:normal!important;font-weight:800!important}
+.hero p{color:#C9C6C0!important;font-size:16.5px!important;max-width:44ch!important}
+.hero-cta a.cta{background:#E9A07A!important;color:#15181B!important;box-shadow:none!important}
+.hero-panel{display:grid!important;grid-template-columns:1fr;gap:14px;align-content:center}
+.hero-panel figure{margin:0;background:#1D2124;border:1px solid rgba(255,255,255,.16)}
+.hero-panel img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.hero-panel figcaption{padding:9px 12px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#B9B6B0}
+.lb-navlinks{display:flex;gap:clamp(14px,2vw,28px);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+.lb-navlinks a{border-bottom:2px solid transparent;padding-bottom:2px}
+.lb-navlinks a:hover{border-bottom-color:var(--accent)}
+.lb-brand__mark{height:clamp(44px,5vw,68px)!important}
+.lb-brand__name{font-size:clamp(19px,2.1vw,26px)!important}
+@media(max-width:900px){.hero{grid-template-columns:1fr!important}.hero-panel{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.hero-panel{grid-template-columns:1fr}.hero{padding:34px 6vw 30px!important}.lb-navlinks{display:none}}
 </style>
-<style id="lb4-imgcap">img[src="assets/elite-mark.png"]{transform:none!important;scale:none!important;max-width:672px!important;height:auto!important;margin-left:auto!important;margin-right:auto!important}
-img[src="assets/ig_1.jpg"]{transform:none!important;scale:none!important;max-width:2200px!important;height:auto!important;margin-left:auto!important;margin-right:auto!important}
-img[src="assets/ig_2.jpg"]{transform:none!important;scale:none!important;max-width:2200px!important;height:auto!important;margin-left:auto!important;margin-right:auto!important}
-img[src="assets/ig_3.jpg"]{transform:none!important;scale:none!important;max-width:2200px!important;height:auto!important;margin-left:auto!important;margin-right:auto!important}
-img[src="assets/ig_4.jpg"]{transform:none!important;scale:none!important;max-width:2200px!important;height:auto!important;margin-left:auto!important;margin-right:auto!important}
-img[src="images/work_01.jpg"]{transform:none!important;scale:none!important;max-width:1440px!important;height:auto!important;margin-left:auto!important;margin-right:auto!important}
-img[src="images/work_02.jpg"]{transform:none!important;scale:none!important;max-width:1519px!important;height:auto!important;margin-left:auto!important;margin-right:auto!important}
-img[src="images/work_03.jpg"]{transform:none!important;scale:none!important;max-width:1440px!important;height:auto!important;margin-left:auto!important;margin-right:auto!important}
-img[src="images/work_04.jpg"]{transform:none!important;scale:none!important;max-width:1440px!important;height:auto!important;margin-left:auto!important;margin-right:auto!important}
-img[src="images/work_05.jpg"]{transform:none!important;scale:none!important;max-width:1193px!important;height:auto!important;margin-left:auto!important;margin-right:auto!important}
-img[src="images/work_06.jpg"]{transform:none!important;scale:none!important;max-width:1206px!important;height:auto!important;margin-left:auto!important;margin-right:auto!important}
-img[src="images/work_07.jpg"]{transform:none!important;scale:none!important;max-width:825px!important;height:auto!important;margin-left:auto!important;margin-right:auto!important}
-img[src="images/work_08.jpg"]{transform:none!important;scale:none!important;max-width:720px!important;height:auto!important;margin-left:auto!important;margin-right:auto!important}
+<style id="cron1657-lockup">/* lockup needs to read at capture size: bigger mark, heavier wordmark, real vertical rhythm */
+nav .lb-brand{gap:14px!important;align-items:center!important}
+nav .lb-brand__mark{width:clamp(44px,4vw,58px)!important;height:clamp(44px,4vw,58px)!important;flex:none!important}
+nav .lb-brand__mark img{width:100%!important;height:100%!important;object-fit:contain!important}
+nav .lb-brand__name{font-weight:800!important;letter-spacing:-.015em!important;line-height:1!important}
+nav .lb-brand__sub,nav .lb-brand__rule{display:block!important;font-size:10px!important;letter-spacing:.16em!important;text-transform:uppercase!important;opacity:.85}
 </style>
-<style id="lb-rb-cap">.lb-rb{max-width:650px!important;margin-inline:auto!important}</style></head>
+<!--/LB-BESPOKE-->
+<style id="gate-concrete-1725">
+/* peach read cosmetic for a concrete trade: brick-orange, high contrast on #15181B */
+.hero .kicker,.hero h1 .line:nth-child(2){color:#E8622A!important}
+.hero-cta a.cta{background:#E8622A!important;color:#12100E!important}
+/* winged emblem read as clip-art: text-only wordmark */
+nav .lb-brand__mark{display:none!important}
+nav .lb-brand__name{font-weight:800!important;font-size:clamp(20px,2vw,26px)!important;letter-spacing:-.01em!important;color:#1A1512!important}
+/* mobile: stack, never side-by-side; readable floor */
+@media(max-width:900px){.hero{grid-template-columns:1fr!important;gap:26px!important}.hero-panel{grid-template-columns:1fr!important}.hero h1{font-size:clamp(30px,8.6vw,46px)!important}.hero p{font-size:16.5px!important;max-width:38ch!important}}
+@media(max-width:640px){.hero{padding:28px 6vw 34px!important}.hero-panel figcaption{font-size:12.5px!important;padding:12px 14px!important;letter-spacing:.12em!important}}
+</style>
+<style id="cron1752-final">
+/* 1 logo lockup: no clip-art mark, industrial wordmark that reads at capture size */
+nav .lb-brand__mark{display:none!important}
+nav .lb-brand__name{text-transform:uppercase!important;letter-spacing:.01em!important;font-weight:800!important;font-size:clamp(18px,1.7vw,22px)!important;color:#12100E!important}
+nav .lb-brand__rule{display:block!important;width:100%!important;height:3px!important;background:#B4400F!important;margin-top:6px!important}
+.contact .sect-mark{display:none!important}
+/* 2 hero: dead top space gone, headline sized to sit in two lines */
+.hero{padding:clamp(52px,6.5vh,78px) 6vw clamp(38px,5.5vh,58px)!important}
+.hero h1{font-size:clamp(30px,4.4vw,56px)!important;max-width:23ch!important}
+/* 3 readable floor: nothing under 16.5px, contrast on the stone ground */
+.hero p,.manifesto .big,section p,figcaption,.areas span{font-size:16.5px!important}
+.manifesto .big{font-size:clamp(22px,2.6vw,32px)!important;line-height:1.4!important;color:#2A2622!important}
+/* 4 one primary action: orange CTA everywhere, bigger tap target */
+a.cta{background:#B4400F!important;color:#FFF6EE!important;padding:19px 36px!important;font-size:14px!important;letter-spacing:.08em!important;border:0!important}
+.nav-cta{background:#B4400F!important;color:#FFF6EE!important;padding:11px 18px!important;border:0!important}
+/* 5 gallery: no muddy upscales */
+.gallery .ph img{width:100%!important;aspect-ratio:4/3!important;max-height:62vh!important;object-fit:cover!important}
+/* 6 duplicate low-res strip removed */
+.lb-rb{display:none!important}
+@media(max-width:640px){.hero h1{font-size:clamp(28px,7.4vw,38px)!important;line-height:1.08!important}}
+</style>
+</head>
 <body>
 <nav>
-  <a class="lb-brand" href="#top" aria-label="Elite Concrete FNQ - Home" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#402000;--lb-subc:#402000;--lb-acc:#402000;"><span class="lb-brand__mark" aria-hidden="true"><img class="lb4-logo" src="assets/elite-mark.png" alt="Elite Concrete FNQ" width="672" height="294" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">Elite Concrete FNQ</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
-  
+  <a class="lb-brand" href="#top" aria-label="Elite Concrete FNQ - Home" style="--lb-disp:system-ui;--lb-sub:system-ui;--lb-name:#402000;--lb-subc:#402000;--lb-acc:#402000;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/lb-mark_user-target-elite-concrete-fnq.png" alt="" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">Elite Concrete FNQ</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
+  <div class="lb-navlinks"><a href="#services">Services</a><a href="#work">Recent work</a><a href="#contact">Quote</a><a class="nav-cta" href="#contact">Get a quote</a></div>
 </nav>
-<header class="hero" id="top"><canvas class="lb-hero-canvas" aria-hidden="true"></canvas>
-  <div class="kicker rv">FAR NORTH QUEENSLAND CONCRETE SPECIALISTS</div>
-  <h1 class="rv"><span class="line">Commercial • Residential • Decorative • Driveways,</span><span class="line">done properly.</span></h1>
-  <p class="rv">Elite Concrete FNQ delivers premium concrete solutions across Far North Queensland, from commercial slabs and residential driveways to decorative concrete finishes. Quality workmanship, professional service and local expertise.</p>
+<header class="hero" id="top"><img class="hero-photo" src="assets/ig_2.jpg" alt="Recent concrete work by Elite Concrete FNQ, Cairns" fetchpriority="high">
+  <div class="hero-copy">
+  <div class="kicker rv">Set out, poured and finished by our own crew &middot; Cairns to Port Douglas</div>
+  <h1 class="rv"><span class="line">Slabs and driveways,</span><span class="line">poured by the crew that quoted it.</span></h1>
+  <p class="rv">Commercial slabs, house and shed slabs, driveways and crossovers across Cairns and the FNQ coast, finished plain, coloured or stamped to your spec.</p>
+  <div class="hero-cta rv"><a class="cta" href="#contact">Get a quote</a><a class="ghost" href="#work">See the work</a></div>
+  </div>
+  <div class="hero-panel rv">
+    <figure><img src="assets/ig_3.jpg" alt="Elite Concrete FNQ exposed aggregate driveway, washed and sealed" loading="eager"><figcaption>Exposed aggregate, washed and sealed</figcaption></figure>
+  </div>
 </header>
 <section class="manifesto">
-  <div class="big rv">The work speaks through <em>the finish</em>, every job priced straight, run by the people who do it, and signed off clean.</div>
+  <div class="big rv">Priced off the <em>slab schedule and finish call</em>. Set out, poured and finished by the crew that quoted it, then signed off before we leave site.</div>
 </section>
 <section class="services" id="services">
-  <div class="kicker rv" style="margin-bottom:30px">WHAT WE DO</div>
-  <div class="svc rv"><span class="svc-n">01</span>
-  <div><h3>Commercial Concrete</h3><p>Warehouse slabs, loading docks, commercial hardstands and civil works, engineered and certified.</p></div></div>
-<div class="svc rv"><span class="svc-n">02</span>
-  <div><h3>Residential Slabs</h3><p>House slabs, shed slabs, garage floors and extensions, waffle pod, raft and strip footings.</p></div></div>
-<div class="svc rv"><span class="svc-n">03</span>
-  <div><h3>Driveways & Pathways</h3><p>Concrete driveways, footpaths and crossovers, finished to your spec with plain, exposed or coloured finish.</p></div></div>
-<div class="svc rv"><span class="svc-n">04</span>
-  <div><h3>Decorative Concrete</h3><p>Exposed aggregate, coloured concrete, stamped patterns and polished finishes for premium aesthetics.</p></div></div>
-<div class="svc rv"><span class="svc-n">05</span>
-  <div><h3>Retaining Walls</h3><p>Structural retaining walls, garden walls and sleeper replacements, engineered for FNQ conditions.</p></div></div>
-<div class="svc rv"><span class="svc-n">06</span>
-  <div><h3>Patios & Alfresco</h3><p>Outdoor living slabs, entertaining areas and alfresco dining spaces, poured and finished.</p></div></div>
+  <div class="kicker rv" style="margin-bottom:22px">WHAT WE POUR</div>
+  <div class="rv" style="border-top:2px solid var(--ink);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));column-gap:clamp(24px,4vw,64px)">
+  <div style="padding:22px 0;border-bottom:1px solid rgba(64,32,0,.22)"><h3 style="margin:0;font-size:clamp(18px,1.9vw,23px)">Commercial slabs</h3><p style="margin:6px 0 0">Warehouse slabs, loading docks, hardstands and civil works, poured and finished on program.</p></div>
+  <div style="padding:22px 0;border-bottom:1px solid rgba(64,32,0,.22)"><h3 style="margin:0;font-size:clamp(18px,1.9vw,23px)">House &amp; shed slabs</h3><p style="margin:6px 0 0">Waffle pod, raft and strip footings, garage floors and extensions.</p></div>
+  <div style="padding:22px 0;border-bottom:1px solid rgba(64,32,0,.22)"><h3 style="margin:0;font-size:clamp(18px,1.9vw,23px)">Driveways &amp; crossovers</h3><p style="margin:6px 0 0">Footpaths and crossovers to your spec, plain, exposed or coloured finish.</p></div>
+  <div style="padding:22px 0;border-bottom:1px solid rgba(64,32,0,.22)"><h3 style="margin:0;font-size:clamp(18px,1.9vw,23px)">Exposed aggregate</h3><p style="margin:6px 0 0">Aggregate, coloured, stamped and polished finishes for the front of the house.</p></div>
+  <div style="padding:22px 0;border-bottom:1px solid rgba(64,32,0,.22)"><h3 style="margin:0;font-size:clamp(18px,1.9vw,23px)">Retaining walls</h3><p style="margin:6px 0 0">Structural and garden walls, sleeper replacements, engineered for FNQ conditions.</p></div>
+  <div style="padding:22px 0;border-bottom:1px solid rgba(64,32,0,.22)"><h3 style="margin:0;font-size:clamp(18px,1.9vw,23px)">Patios &amp; alfresco</h3><p style="margin:6px 0 0">Outdoor living slabs and entertaining areas, poured and finished.</p></div>
+  <figure class="svc-fig"><img src="assets/ig_1.jpg" alt="Concrete pour on a Far North Queensland site by Elite Concrete FNQ" loading="lazy" decoding="async"></figure>
+  </div>
+<p class="rv" style="margin-top:34px"><a class="cta" href="#contact" style="display:inline-block;background:var(--ink);color:var(--bg);padding:18px 34px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;text-decoration:none">Get a price for your job</a></p>
 </section>
-<section class="gallery" id="work"><div class="kicker rv" style="margin-bottom:40px">THE WORK</div><figure class="ph rv"><img src="assets/ig_1.jpg" alt="Elite Concrete FNQ - Commercial concrete project" loading="eager"><figcaption>Commercial concrete slab pour</figcaption></figure>
+<section class="gallery" id="work"><div class="kicker rv" style="margin-bottom:16px">RECENT POURS &middot; CAIRNS TO PORT DOUGLAS</div><p class="rv" style="margin-bottom:40px;font-size:15px;color:var(--muted);max-width:46ch">Three recent finishes: a residential driveway, an exposed aggregate drive and a driveway and pathway job.</p>
 <figure class="ph rv"><img src="assets/ig_2.jpg" alt="Elite Concrete FNQ - Residential driveway" loading="eager"><figcaption>Residential driveway finish</figcaption></figure>
 <figure class="ph rv"><img src="assets/ig_3.jpg" alt="Elite Concrete FNQ - Decorative concrete" loading="eager"><figcaption>Decorative exposed aggregate</figcaption></figure>
 <figure class="ph rv"><img src="assets/ig_4.jpg" alt="Elite Concrete FNQ - Driveway project" loading="eager"><figcaption>Driveway and pathways</figcaption></figure></section>
-<section class="areas"><div class="kicker rv" style="margin-bottom:26px">WHERE WE WORK</div><div><span>Cairns</span> <span>Port Douglas</span> <span>Mossman</span> <span>Yarrabah</span> <span>Gordonvale</span> <span>Edmonton</span> <span>Mount Sheridan</span> <span>Bentley Park</span> <span>Redlynch</span> <span>Smithfield</span> <span>Trinity Beach</span> <span>Palm Cove</span> <span>Machans Beach</span> <span>Yorkeys Knob</span> <span>Holloways Beach</span> <span>Edge Hill</span> <span>Whitfield</span> <span>Kanimbla</span> <span>Manunda</span> <span>Manoora</span> <span>Mooroobool</span> <span>Bayview Heights</span> <span>Woree</span> <span>Brinsmead</span> <span>Freshwater</span> <span>Stratford</span></div></section>
+<section class="areas"><p class="rv" style="margin-bottom:44px;font-size:15px;color:var(--muted);max-width:52ch">Want a price on a slab, driveway or crossover? Send the site address and what needs pouring &mdash; that is all we need to quote it.</p><p class="rv" style="margin-bottom:44px"><a class="cta" href="#contact" style="display:inline-block;background:var(--ink);color:var(--bg);padding:16px 30px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;text-decoration:none">Get a quote on your job &rarr;</a><span style="display:block;margin-top:10px;font-size:14px;color:var(--muted)">Opens the quote form below &mdash; site address, what needs pouring, photos if you have them.</span></p><div class="kicker rv" style="margin-bottom:26px">WHERE WE WORK</div><div><span>Cairns</span> <span>Port Douglas</span> <span>Mossman</span> <span>Gordonvale</span> <span>Smithfield</span> <span>Trinity Beach</span> <span style="font-family:inherit;font-size:17px">and the surrounding FNQ coast</span></div></section>
 <section class="contact" id="contact">
-  <h2 class="rv">Let's talk about<br>your job.</h2>
-  <div class="rv"></div>
+  <img class="rv sect-mark" src="assets/lb-mark_user-target-elite-concrete-fnq.png" alt="Elite Concrete FNQ" width="672" height="294" style="display:block;width:132px;height:auto;margin-bottom:26px">
+  <h2 class="rv">Send the site address.<br>Get the price.</h2>
+  <div class="rv"><p class="sub">Send through the site address and what needs poured — slab, driveway, exposed aggregate or a retaining wall — and we will come back with a price.</p><a class="cta" href="https://www.instagram.com/eliteconcretefnq" rel="noopener" target="_blank">Send the site address</a></div>
 </section>
 <section class="lb-rb" aria-label="Recent work and services"><div class="lb-rb__track"><div class="lb-rb__slide is-on"><img src="images/work_01.jpg" alt="Elite Concrete FNQ" loading="eager" decoding="async"></div><div class="lb-rb__slide"><img src="images/work_02.jpg" alt="Elite Concrete FNQ" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="images/work_03.jpg" alt="Elite Concrete FNQ" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="images/work_04.jpg" alt="Elite Concrete FNQ" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="images/work_05.jpg" alt="Elite Concrete FNQ" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="images/work_06.jpg" alt="Elite Concrete FNQ" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="images/work_07.jpg" alt="Elite Concrete FNQ" loading="lazy" decoding="async"></div><div class="lb-rb__slide"><img src="images/work_08.jpg" alt="Elite Concrete FNQ" loading="lazy" decoding="async"></div><button class="lb-rb__nav lb-rb__nav--prev" type="button" aria-label="Previous">&#8249;</button><button class="lb-rb__nav lb-rb__nav--next" type="button" aria-label="Next">&#8250;</button><div class="lb-rb__dots"><button type="button" class="is-on" aria-label="Slide 1"></button><button type="button" class="" aria-label="Slide 2"></button><button type="button" class="" aria-label="Slide 3"></button><button type="button" class="" aria-label="Slide 4"></button><button type="button" class="" aria-label="Slide 5"></button><button type="button" class="" aria-label="Slide 6"></button><button type="button" class="" aria-label="Slide 7"></button><button type="button" class="" aria-label="Slide 8"></button></div><div class="lb-rb__cap">Elite Concrete FNQ &mdash; recent work</div></div></section><footer>
-  <div class="trust"></div>
   <div><a href="https://www.instagram.com/eliteconcretefnq" rel="noopener" target="_blank">INSTAGRAM</a></div>
-</footer>
+<span class="lb-legal"><a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms</a></span></footer>
 <script>
 (function(){
   var obs = new IntersectionObserver(function(es){
@@ -479,7 +569,7 @@ header,.site-header,.page-header,.header-inner,nav.nav,.nav-inner,
 
 :root{--lb-disp:"Archivo",system-ui,sans-serif;--lb-sub:"Archivo",system-ui,sans-serif}
 body,h1,h2,h3,h4,h5,h6,p,li,span,a,button,input,blockquote{
-  font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
+  font-family:"Archivo", system-ui, -apple-system, "Segoe UI", sans-serif}
 small,.small,.meta,.caption,.eyebrow,.kicker{font-size:max(0.82em,13px)}
 p,li{line-height:1.55}
 section,header,footer,.wrap,.container,.inner,[class*="section"]{
@@ -512,6 +602,57 @@ header a[href^="tel"],.site-header a[href^="tel"]{
   opacity:1 !important;
 }
 .lb-brand__sub:empty{display:none !important}
+</style>
+<style id="lb-pass-1730">
+/* hero: wider text column, tighter lockup, no dead gutter */
+.hero{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)!important;gap:clamp(24px,3.4vw,52px)!important;
+ padding:clamp(44px,6vh,72px) clamp(20px,5vw,64px) clamp(44px,6vh,72px)!important}
+.hero-copy{max-width:none!important}
+.hero h1{max-width:26ch!important;font-size:clamp(36px,4.6vw,58px)!important;line-height:1.07!important}
+.hero p{font-size:17.5px!important;line-height:1.6!important;color:#DCD8D1!important;max-width:46ch!important}
+.hero-panel figcaption{font-size:13px!important;letter-spacing:.02em!important;text-transform:none!important;
+ color:#D6D2CB!important;font-weight:600!important;padding:11px 13px!important}
+.hero-panel img{aspect-ratio:4/3!important}
+/* nav CTA so the bar reads as a header, not a floating logo */
+.lb-navlinks a.nav-cta{background:#402000;color:#F7F1E6!important;padding:11px 18px;font-size:12px;
+ letter-spacing:.1em;border-bottom:0!important;font-weight:800;white-space:nowrap}
+.lb-navlinks a.nav-cta:hover{background:#2A211A}
+@media(max-width:860px){.lb-navlinks a.nav-cta{display:none}}
+/* readable body copy */
+body{font-size:16.5px}
+.manifesto .big{font-size:clamp(24px,3vw,34px)!important;line-height:1.45!important}
+.svc p{font-size:16.5px!important;line-height:1.65!important;color:#4A3D2E!important}
+.ph figcaption{font-size:13.5px!important;letter-spacing:.02em!important;text-transform:none!important;
+ color:#4A3D2E!important;font-weight:600!important}
+.contact .sub{font-size:17px!important;color:#4A3D2E!important}
+.contact a.cta{font-size:15px!important;padding:20px 36px!important;letter-spacing:.06em!important;font-weight:800!important}
+/* lead with the finished job, and never 2-col on a phone */
+.hero-panel figure:last-child{order:-1}
+@media(max-width:900px){
+ .hero{grid-template-columns:1fr!important;gap:22px!important;padding:26px 20px 30px!important}
+ .hero-copy{order:1}
+ .hero-panel{order:2;grid-template-columns:1fr 1fr!important;gap:10px}
+ .hero h1{font-size:clamp(30px,8.6vw,40px)!important;max-width:none!important}
+ .hero p{font-size:16px!important;max-width:none!important}
+ .hero-cta{margin-top:18px!important}
+ .hero-panel figure:last-child{order:0}
+ .hero-panel img{aspect-ratio:1/1!important}
+ .hero-panel figcaption{font-size:12px!important;padding:8px 9px!important}
+}
+/* one hero image, no card chrome; header matches the hero band */
+.hero-panel figure:first-child{display:none!important}
+.hero-panel figure{border:0!important;background:none!important}
+.hero-panel figcaption{background:none!important;padding-left:0!important}
+nav{background:#15181B!important;border-bottom:1px solid rgba(255,255,255,.12)!important}
+nav .lb-brand__name{color:#F5F3EF!important}
+nav .lb-brand__rule{background:#E9A07A!important}
+.lb-navlinks a{color:#EDEBE6!important}
+.lb-navlinks a.nav-cta{background:#E9A07A!important;color:#15181B!important}
+@media(max-width:900px){
+ .lb-navlinks{display:flex!important;gap:12px!important}
+ .lb-navlinks a{font-size:11px!important;letter-spacing:.06em!important}
+ .lb-navlinks a[href="#contact"]:not(.nav-cta){display:none}
+}
 </style>
 </body>
 </html>
