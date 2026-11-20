@@ -42,15 +42,15 @@ html.js .rv.on{opacity:1;transform:none}
 
 /* header */
 .bar{position:sticky;top:0;z-index:60;background:var(--ink);color:var(--on-ink);transition:transform .28s ease;border-top:4px solid var(--brand-orange)}
-.bar.up{transform:translateY(-100%)}
-.bar.up .nav.open{transform:translateY(-124px)}
-.bar-in{display:flex;align-items:center;gap:22px;min-height:92px;padding-block:6px}
+/* header stays visible: sticky bar, no scroll-hide */
+.bar-in{display:flex;align-items:center;gap:22px;min-height:96px;padding-block:6px}
 .brand{display:flex;align-items:center;gap:16px;text-decoration:none;flex:none;min-width:0}
-.brand::before{content:"";width:5px;height:40px;background:var(--stone);flex:none}
-.brand img{display:none}
+.brand::before{content:"";width:6px;height:54px;background:var(--stone);flex:none}
+.brand>img{display:block;height:52px;width:auto;flex:none}
+.brand-txt i{display:none}
 .brand-txt{min-width:0}
-.brand-txt b{display:block;font-family:var(--disp);font-weight:400;font-size:1.75rem;letter-spacing:.005em;line-height:1;color:#FBFAF6;white-space:nowrap}
-.brand-txt i{display:block;font-style:normal;font-family:var(--sans);font-weight:600;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#D3D4E4;margin-top:7px;white-space:nowrap}
+.brand-txt b{display:block;font-family:var(--disp);font-weight:400;font-size:2.7rem;letter-spacing:-.015em;line-height:.95;color:#FFFFFF;white-space:nowrap}
+.brand-txt i{display:block;font-style:normal;font-family:var(--sans);font-weight:700;font-size:1.02rem;letter-spacing:.07em;text-transform:uppercase;color:#FBFAF6;margin-top:8px;white-space:nowrap}
 .nav{margin-left:auto;display:flex;align-items:center;gap:24px}
 .nav a{font-size:.9rem;text-decoration:none;color:#D8D9E6;font-weight:500;padding:6px 0;border-bottom:1px solid transparent;white-space:nowrap}
 .nav a:hover{color:#fff;border-bottom-color:var(--stone)}
@@ -76,6 +76,10 @@ html.js .rv.on{opacity:1;transform:none}
   .brand-txt b{font-size:1.12rem;white-space:normal}
   .brand-txt i{font-size:.74rem;letter-spacing:.08em;display:block;margin-top:4px;color:#F0F1F8}
   .bar-in{min-height:88px;gap:10px}
+  .steps{grid-template-columns:1fr}
+  .steps li{padding:16px 0;border-right:0}
+  .steps p{font-size:.95rem}
+  .spec-list p{font-size:.95rem}
 }
 
 /* hero */
@@ -83,7 +87,7 @@ html.js .rv.on{opacity:1;transform:none}
 .hero-in{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:46px;align-items:center;padding:52px 0 58px}
 .kicker{display:flex;align-items:center;gap:12px;margin-bottom:22px;font-family:var(--sans);font-weight:600;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .kicker::before{content:"";width:30px;height:3px;background:var(--brand-orange);flex:none}
-.hero h1{font-size:clamp(2.5rem,4.4vw,4rem);max-width:12ch}
+.hero h1{font-size:clamp(2.5rem,4.4vw,4.6rem);max-width:15ch;font-weight:400}
 .hero .lede{font-family:var(--sans);font-weight:400;font-size:1.08rem;line-height:1.6;letter-spacing:0;margin-top:20px;color:var(--ink-soft);max-width:40ch;display:block}
 .hero-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#FBFAF6;text-decoration:none;font-weight:500;font-size:1rem;padding:.98rem 1.5rem;border-radius:2px;border:2px solid var(--ink);transition:background .18s,color .18s;font-family:var(--mono);letter-spacing:.01em}
@@ -94,8 +98,8 @@ html.js .rv.on{opacity:1;transform:none}
 .sheet{margin:0;position:relative;background:#F7F4ED}
 .sheet img{width:100%;height:auto;display:block}
 .hero-shot{position:relative;background:#12161A;overflow:hidden}
-.hero-shot img{width:100%;aspect-ratio:4/5;max-height:560px;object-fit:cover}
-.hero-shot::after{content:"";position:absolute;inset:auto 0 0 0;height:52%;background:linear-gradient(to top,rgba(15,20,17,.9),rgba(15,20,17,0));pointer-events:none}
+.hero-shot img{width:100%;aspect-ratio:4/5;max-height:600px;object-fit:cover;filter:contrast(1.08) saturate(1.1) brightness(1.03)}
+.hero-shot::after{content:"";position:absolute;inset:auto 0 0 0;height:64%;background:linear-gradient(to top,rgba(15,20,17,.96),rgba(15,20,17,.55) 55%,rgba(15,20,17,0));pointer-events:none}
 @media(max-width:1000px){.hero-shot img{aspect-ratio:16/10;max-height:360px}}
 @media(max-width:520px){.hero-shot img{aspect-ratio:4/3;max-height:270px}}
 .sheet-head{display:none}
@@ -125,7 +129,7 @@ html.js .rv.on{opacity:1;transform:none}
 @media(max-width:900px){.sec-head{grid-template-columns:1fr;gap:14px}.sec-head p{justify-self:start}}
 
 /* finishes ledger */
-.finishes{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.finishes{background:var(--paper-2)}
 .spec-list{list-style:none;border-top:1px solid var(--ink)}
 .spec-list li{display:grid;grid-template-columns:54px 1fr 1.4fr .8fr;gap:26px;padding:23px 2px;border-bottom:1px solid var(--line);align-items:baseline}
 .spec-list .idx{font-family:var(--mono);font-size:.8rem;color:var(--muted);letter-spacing:.05em}
@@ -172,10 +176,10 @@ html.js .rv.on{opacity:1;transform:none}
 .steps h3{font-size:1.16rem;margin-bottom:8px}
 .steps p{font-size:.9rem;color:var(--on-ink-mut);line-height:1.55}
 .process-foot{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;margin-top:36px}
-.process-foot p{font-size:1rem;color:var(--on-ink-mut);max-width:44ch}
+.process-foot p{font-size:1rem;color:var(--on-ink-mut);max-width:44ch;padding-left:18px;border-left:3px solid var(--brand-orange)}
 .process-foot .frame{overflow:hidden;border:1px solid rgba(237,235,227,.22)}
-.process-foot img{width:100%;height:236px;object-fit:cover}
-.process-foot figcaption{font-family:var(--mono);font-size:.67rem;letter-spacing:.05em;text-transform:uppercase;color:var(--on-ink-mut);margin-top:8px}
+.process-foot img{width:100%;height:236px;object-fit:cover;filter:brightness(1.12) contrast(1.06) saturate(1.05)}
+.process-foot figcaption{font-family:var(--mono);font-size:.88rem;letter-spacing:.07em;text-transform:uppercase;color:#F5F6FB;margin-top:10px}
 @media(max-width:900px){
   .steps{grid-template-columns:1fr 1fr}
   .steps li{padding:18px 18px 18px 0;border-bottom:1px solid rgba(237,235,227,.18)}
@@ -188,7 +192,10 @@ html.js .rv.on{opacity:1;transform:none}
 .areas h2{font-size:clamp(1.85rem,2.9vw,2.6rem);max-width:17ch;margin-bottom:18px}
 .areas p{color:var(--ink-soft);max-width:38ch}
 .suburbs{list-style:none;columns:2;column-gap:32px;border-top:1px solid var(--ink);padding-top:14px}
-.suburbs li{font-family:var(--mono);font-size:.81rem;letter-spacing:.02em;padding:7px 0;border-bottom:1px solid var(--line-2);break-inside:avoid}
+.areas-shot{margin:0 0 18px}
+.areas-shot img{width:100%;height:300px;object-fit:cover;border:1px solid var(--line)}
+.areas-shot .cap{display:block;margin-top:8px;font-family:var(--sans);font-weight:600;font-size:.92rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)}
+.suburbs li{font-family:var(--sans);font-size:.96rem;letter-spacing:.01em;padding:9px 0;border-bottom:1px solid var(--line-2);break-inside:avoid}
 @media(max-width:900px){.areas-in{grid-template-columns:1fr;gap:26px}}
 
 /* quote */
@@ -202,17 +209,20 @@ html.js .rv.on{opacity:1;transform:none}
 .big-tel{display:block;font-family:var(--mono);font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:500;text-decoration:none;margin-top:26px;white-space:nowrap;border-bottom:3px solid var(--stone);padding-bottom:4px;width:fit-content}
 .big-tel:hover{border-bottom-color:var(--ink)}
 .quote-copy small{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;color:var(--muted);margin-top:10px}
-.fb{display:inline-flex;align-items:center;gap:9px;margin-top:18px;font-size:.92rem;font-weight:600;text-decoration:none;color:var(--ink);border:2px solid var(--ink);border-radius:2px;padding:.62rem 1rem}
-.fb:hover{background:var(--ink);color:#FBFAF6}
-.fb svg{width:15px;height:15px;flex:none}.fb:hover svg{stroke:#FBFAF6}
+.fb{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.88rem;font-weight:400;text-decoration:underline;text-underline-offset:3px;color:var(--ink-soft);padding:0;border:0;background:none}
+.fb:hover{color:var(--ink)}
+.fb svg{width:15px;height:15px;flex:none}
 form{margin:0}
 .fld{margin-bottom:12px}
-.fld label{display:block;font-family:var(--sans);font-weight:600;font-size:.84rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink);margin-bottom:7px}
-.fld input,.fld textarea,.fld select{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:2px;background:#fff;color:var(--ink);font:inherit;font-size:.95rem}
-.fld textarea{min-height:104px;resize:vertical}
-.fld input:focus,.fld textarea:focus{outline:2px solid var(--ink);outline-offset:1px;border-color:transparent}
+.fld label{display:block;font-family:var(--sans);font-weight:600;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+.fld input,.fld textarea,.fld select{width:100%;padding:14px 15px;border:1px solid rgba(27,42,36,.34);border-radius:4px;background:#FFFDF8;color:var(--ink);font:inherit;font-size:1.05rem;box-shadow:0 1px 0 rgba(27,42,36,.05);transition:border-color .15s,background .15s,box-shadow .15s}
+.fld textarea{min-height:112px;resize:vertical}
+.fld select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:44px}
+.fld input:focus,.fld textarea:focus,.fld select:focus{outline:3px solid var(--brand-orange);outline-offset:2px;border-color:var(--ink);background:#FFFDF8}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--muted)}
+.cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.95rem;color:var(--muted)}
+.cons input{width:18px;height:18px;accent-color:var(--ink)}
+.pin.mid{font-size:.95rem}
 .cons input{width:auto}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 form button{margin-top:14px;padding:13px 26px;border:2px solid var(--ink);border-radius:2px;background:var(--ink);color:#FBFAF6;font:inherit;font-weight:600;font-size:.96rem;cursor:pointer}
@@ -239,11 +249,15 @@ form button:disabled{opacity:.6;cursor:wait}
 .label,.card-foot,.card-top .label,.spec .nm,.work-grid figcaption b,.spec-list .where,.suburbs li,.hero-facts b{font-family:var(--sans)!important;font-weight:600!important;letter-spacing:.12em!important;text-transform:uppercase}
 .label,.spec .nm,.work-grid figcaption b,.spec-list .where{font-size:.76rem!important}
 .suburbs li{font-size:.82rem!important;letter-spacing:.06em!important}
+.suburbs.inline{columns:1!important;display:block!important;border-top:0!important;padding-top:0!important;margin-top:10px}
+.suburbs.inline li{display:inline!important;border:0!important;padding:0!important;font-size:1rem!important;letter-spacing:.01em!important;text-transform:none!important;font-weight:500!important;color:var(--ink-soft)!important}
+.suburbs.inline li+li::before{content:"\00b7\00a0\00a0";color:var(--brand-orange);font-weight:700}
+.suburbs.inline li.home{color:var(--ink)!important;font-weight:700!important}
 .card-foot{font-size:.74rem!important;letter-spacing:.08em!important;color:var(--muted)}
 .quote-copy small{font-family:var(--sans);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
 .steps .n,.spec .idx,.spec-list .idx{font-family:var(--mono)!important}
 .process .sec-head p,.process .sec-tag,.steps p,.process-foot p,.process-foot figcaption{color:#E4E5F0}
-.work-grid figcaption b,.spec-list .where,.label,.spec .nm{font-size:.8rem!important}
+.work-grid figcaption b,.spec-list .where,.label,.spec .nm{font-size:.9rem!important}
 </style>
 </head>
 <body id="top">
@@ -251,6 +265,7 @@ form button:disabled{opacity:.6;cursor:wait}
 <header class="bar">
   <div class="wrap bar-in">
     <a class="brand" href="#top" aria-label="By Design Concrete Construction, home">
+      <img src="assets/logo-mark-hdr.png" width="56" height="56" alt="By Design Concrete Construction logo">
       <span class="brand-txt"><b>By Design</b><i>Concrete Construction</i></span>
     </a>
     <a class="bar-call" href="tel:+61455551454" aria-label="Call 0455 551 454"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></a>
@@ -270,8 +285,8 @@ form button:disabled{opacity:.6;cursor:wait}
   <div class="wrap hero-in">
     <div class="hero-copy">
       <p class="kicker">Terrigal, Central Coast NSW</p>
-      <h1>Choose the finish first.</h1>
-      <p class="lede">Exposed aggregate, colour and decorative concrete for driveways, slabs and pool surrounds. Terrigal based, pouring on the coast since 2005.</p>
+      <h1>Exposed aggregate, colour and decorative concrete &mdash; Terrigal to Newcastle.</h1>
+      <p class="lede">Driveways, slabs and pool surrounds, poured by a Terrigal crew on the coast since 2005.</p>
       <div class="hero-cta">
         <a class="btn" href="tel:+61455551454">Call 0455 551 454</a>
         <a class="txt-link" href="#finishes">See the finishes</a>
@@ -281,7 +296,7 @@ form button:disabled{opacity:.6;cursor:wait}
     <figure class="sheet hero-shot">
       <span class="hero-tag">Exposed aggregate, diamond sawn</span>
       <img src="assets/gal_2.jpg" width="1280" height="1706" alt="Finished exposed aggregate driveway washed back to stone, with diamond saw-cut joints running to the garage line">
-      <figcaption class="sheet-foot">Washed-back aggregate with the joints cut on the diamond, on a driveway we poured on the coast.</figcaption>
+      <figcaption class="sheet-foot">Washed-back aggregate with diamond sawn joints, on a driveway we poured on the coast.</figcaption>
     </figure>
   </div>
 </section>
@@ -297,40 +312,40 @@ form button:disabled{opacity:.6;cursor:wait}
     </div>
     <ul class="spec-list rv">
       <li>
-        
+        <span class="idx">01</span>
         <h3>Exposed aggregate</h3>
         <p>Stone carried in the mix and washed back once the surface has gone off, so the aggregate is the finish rather than a topping over it.</p>
-        <span class="where">Driveways, paths, pool surrounds</span>
+        <span class="where">Driveways · paths · pool surrounds</span>
       </li>
       <li>
-        
+        <span class="idx">02</span>
         <h3>Coloured concrete</h3>
         <p>Oxide pigment through the batch, so the colour is in the slab and wears with it instead of sitting on top.</p>
-        <span class="where">Paths, alfresco slabs, aprons</span>
+        <span class="where">Paths · alfresco slabs · aprons</span>
       </li>
       <li>
-        
+        <span class="idx">03</span>
         <h3>Decorative and sawn</h3>
         <p>Saw cuts and pattern set out to the job, squares, diamonds or borders cut after the pour, with the joints doing the drawing.</p>
-        <span class="where">Driveways, courtyards, entries</span>
+        <span class="where">Driveways · courtyards · entries</span>
       </li>
       <li>
-        
+        <span class="idx">04</span>
         <h3>Slabs and footings</h3>
         <p>House slabs, shed slabs and extensions, formed, reinforced and screeded to level, with the falls set where the water has to go.</p>
-        <span class="where">New builds, sheds, extensions</span>
+        <span class="where">New builds · sheds · extensions</span>
       </li>
       <li>
-        
+        <span class="idx">05</span>
         <h3>Driveways</h3>
         <p>Crossovers, aprons and full drives, formed to the line and finished so a car can use it in the first week.</p>
-        <span class="where">Crossovers, aprons, full drives</span>
+        <span class="where">Crossovers · aprons · full drives</span>
       </li>
       <li>
-        
+        <span class="idx">06</span>
         <h3>Pool surrounds</h3>
         <p>Surround slabs and coping detailed around the shell, with the edge and the fall worked out against the waterline.</p>
-        <span class="where">Coping, surrounds, paved margins</span>
+        <span class="where">Coping · surrounds · paved margins</span>
       </li>
     </ul>
   </div>
@@ -384,10 +399,10 @@ form button:disabled{opacity:.6;cursor:wait}
       <p>Set-out, steel, placement, finish. The order is the same on a garden path as it is on a house slab, and the finish is decided in the first two.</p>
     </div>
     <ol class="steps rv">
-      <li><h3>Set out</h3><p>Levels, falls and the line of the slab pegged and checked against the house, the fence and the street.</p></li>
-      <li><h3>Form and steel</h3><p>Formwork fixed, mesh and bar tied and chaired so the steel sits in the slab, not under it.</p></li>
-      <li><h3>Place and screed</h3><p>Concrete placed in one run where the access allows, then screeded to the falls and edged.</p></li>
-      <li><h3>Finish and cure</h3><p>Wash-back, saw cuts or a trowelled surface, then left to cure before anything drives on it.</p></li>
+      <li><span class="n">01</span><h3>Set out</h3><p>Levels, falls and the line of the slab pegged and checked against the house, the fence and the street.</p></li>
+      <li><span class="n">02</span><h3>Form and steel</h3><p>Formwork fixed, mesh and bar tied and chaired so the steel sits in the slab, not under it.</p></li>
+      <li><span class="n">03</span><h3>Place and screed</h3><p>Concrete placed in one run where the access allows, then screeded to the falls and edged.</p></li>
+      <li><span class="n">04</span><h3>Finish and cure</h3><p>Wash-back, saw cuts or a trowelled surface, then left to cure before anything drives on it.</p></li>
     </ol>
     <div class="process-foot rv">
       <p>If the aggregate or the colour is the reason for the job, say so when you call. It changes the mix, the timing of the wash and how the joints are set out.</p>
@@ -407,25 +422,11 @@ form button:disabled{opacity:.6;cursor:wait}
       <p>Most jobs sit within half an hour of Terrigal. Anything further up the coast gets the travel quoted in, so the number does not move later.</p>
     </div>
     <div class="coverage rv">
-      <div class="coast" aria-hidden="true">
-        <svg viewBox="0 0 640 96" preserveAspectRatio="none" focusable="false">
-          <line x1="24" y1="56" x2="618" y2="56" stroke="var(--ink)" stroke-width="1.5"/>
-          <g stroke="var(--ink)" stroke-width="1.5">
-            <line x1="24" y1="44" x2="24" y2="68"/><line x1="83" y1="48" x2="83" y2="64"/>
-            <line x1="142" y1="48" x2="142" y2="64"/><line x1="201" y1="48" x2="201" y2="64"/>
-            <line x1="260" y1="48" x2="260" y2="64"/><line x1="319" y1="48" x2="319" y2="64"/>
-            <line x1="378" y1="48" x2="378" y2="64"/><line x1="437" y1="48" x2="437" y2="64"/>
-            <line x1="496" y1="48" x2="496" y2="64"/><line x1="555" y1="48" x2="555" y2="64"/>
-            <line x1="616" y1="44" x2="616" y2="68"/>
-          </g>
-          <circle cx="24" cy="56" r="6" fill="var(--brand-orange)" stroke="var(--ink)" stroke-width="1.5"/>
-          <circle cx="616" cy="56" r="6" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="1.5"/>
-        </svg>
-        <span class="pin start">Terrigal 2260</span>
-        <span class="pin end">Newcastle</span>
-        <span class="pin mid">Half an hour of coast, quoted with the travel in</span>
-      </div>
-      <ul class="suburbs">
+      <figure class="areas-shot">
+        <img src="assets/work.jpg" width="1280" height="1706" alt="Concrete drive poured and finished by By Design Concrete on the Central Coast" loading="lazy">
+        <figcaption class="cap"><b>Terrigal 2260</b> &nbsp;&rarr;&nbsp; <b>Newcastle</b> — travel quoted in</figcaption>
+      </figure>
+      <ul class="suburbs inline">
         <li class="home">Terrigal</li><li>North Avoca</li><li>Wamberal</li><li>Forresters Beach</li>
         <li>Erina</li><li>Green Point</li><li>Bateau Bay</li><li>Killarney Vale</li>
         <li>Chittaway Bay</li><li>Tumbi Umbi</li><li class="home">Newcastle</li>
@@ -438,9 +439,11 @@ form button:disabled{opacity:.6;cursor:wait}
       .pin{position:absolute;top:0;font-family:var(--sans);font-weight:600;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
       .pin.start{left:0}.pin.end{right:0}
       .pin.mid{left:50%;transform:translateX(-50%);top:64px;font-weight:600;font-size:.82rem;letter-spacing:.02em;text-transform:none;color:var(--ink);white-space:nowrap;max-width:96vw;text-align:center}
-      .suburbs{list-style:none;columns:2;column-gap:34px;border-top:1px solid var(--line);padding-top:6px}
-      .suburbs li{font-family:var(--sans);font-weight:500;font-size:.88rem;letter-spacing:.01em;text-transform:none!important;padding:7px 0;border:0;border-bottom:1px solid var(--line-2);border-radius:0;background:none;color:var(--ink-soft);break-inside:avoid}
-      .suburbs li.home{color:var(--ink);font-weight:600}
+      .suburbs{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 34px;border-top:1px solid var(--ink);margin-top:4px}
+      .suburbs li{font-family:var(--sans);font-weight:500;font-size:1.02rem;letter-spacing:0;text-transform:none!important;padding:11px 0;border:0;border-bottom:1px solid var(--line-2);border-radius:0;background:none;color:var(--ink);display:flex;align-items:baseline;gap:10px;break-inside:avoid}
+      .suburbs li::before{content:"";width:5px;height:5px;background:var(--brand-orange);flex:none;transform:translateY(-2px)}
+      .suburbs li.home{color:var(--ink);font-weight:700;background:none}
+      @media(max-width:560px){.suburbs{grid-template-columns:1fr;gap:0}}
     </style>
   </div>
 </section>
@@ -448,12 +451,11 @@ form button:disabled{opacity:.6;cursor:wait}
 <section class="sec quote" id="quote">
   <div class="wrap quote-in">
     <div class="quote-copy rv">
-      <div class="q-brand"><img src="assets/logo-word-hdr.png" width="222" height="75" alt="By Design Concrete Construction"></div>
       <span class="sec-tag">Get a quote</span>
       <h2>Tell us the finish, and we will price the pour.</h2>
       <p>Send the plan through, or ask for a site visit. A quote covers the slab, the steel, the finish and the tip, with nothing left to add on the day.</p>
       <a class="big-tel" href="tel:+61455551454">0455 551 454</a>
-      <small>Mon to Sat, Central Coast NSW</small>
+      <small>Mon to Sat · Central Coast NSW</small>
       <a class="fb" href="https://www.facebook.com/people/By-Design-Concrete-Construction/61591406341928/" target="_blank" rel="noopener">Message on Facebook</a>
     </div>
     <div class="rv">
@@ -463,8 +465,9 @@ form button:disabled{opacity:.6;cursor:wait}
           <div class="fld"><label for="q-p">Phone</label><input id="q-p" name="phone" type="tel" autocomplete="tel"></div>
           <div class="fld"><label for="q-e">Email</label><input id="q-e" name="email" type="email" autocomplete="email"></div>
         </div>
-        <div class="fld"><label for="q-s">Job type</label>
+        <div class="fld"><label for="q-s">Concrete finish</label>
           <select id="q-s" name="service">
+            <option value="" selected disabled>Choose a finish</option>
             <option>Exposed aggregate</option>
             <option>Coloured concrete</option>
             <option>Decorative or sawn</option>
@@ -489,8 +492,8 @@ form button:disabled{opacity:.6;cursor:wait}
   <div class="wrap">
     <div class="foot-in">
       <div class="foot-brand">
-        <img src="assets/logo-word-hdr.png" width="222" height="75" alt="By Design Concrete Construction">
-        <span><span>Concreting, Terrigal NSW 2260, Est. 2005</span></span>
+        <span class="brand-txt"><b>By Design</b><i>Concrete Construction</i></span>
+        <span><span>Concreting · Terrigal NSW 2260 · Est. 2005</span></span>
       </div>
       <nav class="foot-nav" aria-label="Footer">
         <a href="#finishes">Finishes</a>
@@ -505,7 +508,7 @@ form button:disabled{opacity:.6;cursor:wait}
       </div>
     </div>
     <div class="foot-base">
-      <span>By Design Concrete Construction, Terrigal, Central Coast NSW</span>
+      <span>By Design Concrete Construction · Terrigal, Central Coast NSW</span>
       <span>Est. 2005</span>
     </div>
   </div>
