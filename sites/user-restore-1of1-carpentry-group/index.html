@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1OF1 Carpentry Group | Bespoke Carpentry</title>
+<meta name="description" content="1OF1 Carpentry Group — one-off carpentry: framing, decking, custom joinery and fit-outs, built to the room they are going into.">
+<meta property="og:title" content="1OF1 Carpentry Group | One-off Carpentry">
+<meta property="og:description" content="Carpentry built to the space it lives in — framing, decking, joinery and fit-outs.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#12100d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2312100d'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='700' fill='%23d9a25f' text-anchor='middle'%3E1%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#12100d; --bg2:#191510; --panel:#1f1a14; --line:rgba(255,255,255,.13);
+  --ink:#f6f0e6; --dim:#b9ae9d; --acc:#d9a25f; --acc-dk:#8f5f22;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --gut:clamp(18px,4.4vw,58px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.62 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--gut)}
+p{margin:0 0 1em}
+h1,h2,h3{margin:0}
+
+header.site{position:sticky;top:0;z-index:60;background:rgba(16,13,10,.95);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:clamp(12px,2.4vw,30px);padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .mark{width:42px;height:42px;border:1px solid var(--acc);display:grid;place-items:center;
+  font:700 15px/1 var(--serif);color:var(--acc);letter-spacing:.02em}
+.brand .name{font:700 17px/1.05 var(--serif);letter-spacing:.01em;color:#fff}
+.brand .sub{display:block;font:600 9.5px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--dim);margin-top:6px}
+nav.main{display:flex;align-items:center;gap:clamp(13px,2vw,26px);margin-left:auto}
+nav.main a{font:600 14px/1 var(--sans);color:#ddd3c4;text-decoration:none;padding:6px 0}
+nav.main a:hover{color:var(--acc)}
+.cta{background:var(--acc);color:#1a1208!important;font-weight:700;padding:13px 18px;text-decoration:none;white-space:nowrap}
+.cta:hover{background:#f0bb7c}
+
+.hero{position:relative;overflow:hidden;background:#0d0b09;border-bottom:1px solid var(--line);perspective:1100px}
+.hero .grain{position:absolute;inset:0;z-index:0;
+  background:
+    repeating-linear-gradient(96deg,rgba(217,162,95,.055) 0 2px,rgba(0,0,0,0) 2px 13px),
+    repeating-linear-gradient(96deg,rgba(0,0,0,.5) 0 1px,rgba(0,0,0,0) 1px 41px),
+    linear-gradient(170deg,#221a12 0%,#0f0c09 58%,#0a0806 100%)}
+.hero .frame{position:absolute;inset:0;z-index:1;pointer-events:none;transform-origin:50% 100%;
+  background:
+    linear-gradient(90deg,rgba(217,162,95,.28) 0 1px,transparent 1px) 0 0/ calc(100%/6) 100%,
+    linear-gradient(0deg,rgba(217,162,95,.16) 0 1px,transparent 1px) 0 0/100% calc(100%/5);
+  mask-image:linear-gradient(180deg,transparent 0%,#000 42%,#000 100%)}
+.hero .scrim{position:absolute;inset:0;z-index:2;
+  background:linear-gradient(90deg,rgba(9,7,5,.9) 0%,rgba(9,7,5,.62) 52%,rgba(9,7,5,.12) 100%)}
+.hero .inner{position:relative;z-index:3;padding:clamp(64px,13vh,140px) 0 clamp(48px,7vh,86px);max-width:min(680px,92vw)}
+.kick{font:700 11.5px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--acc);margin:0 0 20px}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.3rem,5.4vw,4.1rem);line-height:1.02;letter-spacing:-.015em;max-width:16ch}
+.hero h1 em{font-style:italic;color:var(--acc)}
+.hero .lede{margin:22px 0 0;max-width:48ch;color:#e3d9c9;font-size:clamp(16px,1.5vw,18.5px)}
+.hero .btns{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;padding:15px 24px;background:var(--acc);color:#1a1208;
+  font:700 15px/1 var(--sans);text-decoration:none;border:1px solid var(--acc)}
+.btn:hover{background:#f0bb7c}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.btn.ghost:hover{background:rgba(255,255,255,.08);color:#fff}
+.hero .facts{display:flex;flex-wrap:wrap;gap:8px 22px;list-style:none;padding:0;margin:26px 0 0;color:#cfc4b4;font-size:.9rem}
+.hero .facts li::before{content:"";display:inline-block;width:5px;height:5px;background:var(--acc);margin-right:9px;vertical-align:middle}
+
+section{padding:clamp(56px,7.6vw,104px) 0;border-bottom:1px solid var(--line)}
+.band{background:var(--bg2)}
+.rail{display:grid;grid-template-columns:minmax(0,270px) minmax(0,1fr);gap:clamp(22px,4vw,64px);align-items:start}
+@media(max-width:820px){.rail{grid-template-columns:1fr;gap:18px}}
+h2.t{font-family:var(--serif);font-weight:700;font-size:clamp(1.7rem,3.3vw,2.5rem);line-height:1.06}
+.intro{color:var(--dim);font-size:1.02rem;max-width:56ch}
+.svc{border-top:1px solid var(--line)}
+.svc article{display:grid;grid-template-columns:52px minmax(0,1fr);gap:clamp(14px,3vw,34px);
+  padding:26px 0;border-bottom:1px solid var(--line);align-items:start}
+.svc .num{font:700 13px/1 var(--sans);letter-spacing:.1em;color:var(--acc);padding-top:6px}
+.svc h3{font-family:var(--serif);font-size:clamp(1.15rem,2vw,1.45rem);margin-bottom:7px}
+.svc p{color:var(--dim);font-size:.97rem;margin:0;max-width:62ch}
+@media(max-width:560px){.svc article{grid-template-columns:1fr}.svc .num{padding:0 0 6px}}
+
+.step{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,34px);border-top:1px solid var(--line);padding-top:26px}
+@media(max-width:760px){.step{grid-template-columns:1fr}}
+.step h3{font-family:var(--serif);font-size:1.15rem;margin-bottom:8px}
+.step p{color:var(--dim);font-size:.95rem;margin:0}
+.step span{display:block;font:700 11px/1 var(--sans);letter-spacing:.18em;color:var(--acc);margin-bottom:12px}
+
+.about{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4.6vw,68px);align-items:start}
+@media(max-width:860px){.about{grid-template-columns:1fr}}
+.about p{color:var(--dim)}
+.about .quote{font-family:var(--serif);font-size:clamp(1.15rem,2.1vw,1.5rem);line-height:1.45;color:#f3ead9;
+  border-left:2px solid var(--acc);padding-left:20px;margin:0}
+.craft{position:relative;aspect-ratio:4/5;border:1px solid var(--line);overflow:hidden;background:#171310}
+.craft .planks{position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(180deg,rgba(217,162,95,.10) 0 1px,transparent 1px 46px),
+    repeating-linear-gradient(90deg,#3a2b1d 0 62px,#2e2216 62px 64px,#43311f 64px 126px,#332618 126px 128px);
+  transform:rotate(-6deg) scale(1.25)}
+.craft .label{position:absolute;right:0;bottom:0;background:#0d0b09;border-top:1px solid var(--acc);border-left:1px solid var(--acc);
+  padding:9px 14px;font:700 10.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--acc)}
+
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4.4vw,64px);align-items:start}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+.contact h2{font-family:var(--serif);font-size:clamp(1.7rem,3.2vw,2.4rem);line-height:1.06;margin-bottom:14px}
+.dm{display:inline-flex;align-items:center;gap:10px;margin:6px 0 18px;padding:14px 20px;border:1px solid var(--acc);
+  color:#fff;text-decoration:none;font-weight:700;font-size:.97rem}
+.dm:hover{background:rgba(217,162,95,.14);color:var(--acc)}
+form{background:var(--panel);border:1px solid var(--line);padding:24px}
+label{display:block;font-size:.85rem;color:#ded3c2;font-weight:600;margin-bottom:6px}
+input,textarea{width:100%;padding:13px 14px;border:1px solid rgba(255,255,255,.26);background:#16120e;color:#fff;
+  font:inherit;margin-bottom:15px;border-radius:0}
+input:focus,textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
+form .btn{width:100%;justify-content:center;border-radius:0}
+.note{color:var(--dim);font-size:.85rem;margin:12px 0 0}
+
+footer{padding:44px 0 30px;background:#0b0907}
+.foot{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;align-items:baseline;color:var(--dim);font-size:.9rem}
+.foot a{text-decoration:none;color:#ddd3c4}
+.foot a:hover{color:var(--acc)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+<style id="pass3">
+/* pass-3: drafting-paper skin, bespoke joint mark, measured frame hero */
+:root{--bg:#f2ede3;--bg2:#eae3d6;--panel:#fffdf8;--line:rgba(27,25,22,.16);
+  --ink:#1b1916;--dim:#4f4a41;--acc:#94531a;--acc-dk:#6d3c10}
+body{background:var(--bg);color:var(--ink);
+  background-image:linear-gradient(rgba(27,25,22,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(27,25,22,.05) 1px,transparent 1px);
+  background-size:26px 26px}
+header.site{background:rgba(242,237,227,.96);border-bottom:1px solid rgba(27,25,22,.6)}
+.brand{gap:13px}
+.brand .mark{width:44px;height:44px;border:0;background:none;padding:0;color:var(--ink)}
+.brand .mark svg{width:100%;height:100%;display:block}
+.brand .name{color:var(--ink);font-size:17px}
+.brand .sub{color:#6b6459;font-size:9.5px;letter-spacing:.2em;white-space:nowrap;margin-top:5px}
+nav.main a{color:#332e28;white-space:nowrap;font-size:13.5px}
+nav.main a:hover{color:var(--acc)}
+.cta{background:var(--ink);color:#f7f2e7!important}
+.cta:hover{background:#3a342c}
+
+.hero{background:transparent;border-bottom:1px solid rgba(27,25,22,.6);perspective:none}
+.hero .grain,.hero .frame,.hero .scrim{display:none}
+.hero .inner{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+  gap:clamp(22px,4vw,56px);align-items:center;max-width:none;
+  padding:clamp(42px,6.5vh,84px) 0 clamp(38px,5.5vh,68px)}
+@media(max-width:900px){.hero .inner{grid-template-columns:1fr;gap:clamp(24px,5vw,40px)}}
+.brandline{color:#6b6459}
+.brandline b{color:var(--acc)}
+.kick{color:var(--acc)}
+.hero h1{color:var(--ink);font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.04;max-width:15ch}
+.hero h1 em{color:var(--acc)}
+.hero .lede{color:#332e28;max-width:46ch}
+.btn{background:var(--ink);color:#f7f2e7;border-color:var(--ink)}
+.btn:hover{background:#3a342c;border-color:#3a342c}
+.btn.ghost{background:transparent;color:var(--ink);border-color:rgba(27,25,22,.4)}
+.btn.ghost:hover{background:rgba(27,25,22,.06);color:var(--ink)}
+.hero .facts{color:#4a443a}
+.hero .facts li::before{background:var(--acc)}
+.plate{margin:0;background:var(--panel);border:1px solid rgba(27,25,22,.55);padding:clamp(10px,1.5vw,18px);
+  display:flex;flex-direction:column;gap:10px;box-shadow:5px 5px 0 rgba(27,25,22,.07)}
+.plate svg{width:100%;height:auto;display:block}
+.plate figcaption{display:flex;justify-content:space-between;gap:12px;border-top:1px solid rgba(27,25,22,.25);
+  padding-top:9px;font:700 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#6b6459}
+
+section{background:transparent;border-bottom:1px solid rgba(27,25,22,.22)}
+.band{background:rgba(255,253,248,.6)}
+.intro{color:var(--dim)}
+h2.t{color:var(--ink)}
+.svc{border-top:1px solid rgba(27,25,22,.22)}
+.svc article{grid-template-columns:58px minmax(0,1fr);border-bottom:1px solid rgba(27,25,22,.16)}
+.svc .idx{display:flex;flex-direction:column;gap:11px;align-items:flex-start;padding-top:2px}
+.svc .num{color:var(--acc);padding:0}
+.svc .ico{width:34px;height:34px;color:#7a7266}
+.svc h3{color:var(--ink)}
+.svc p{color:var(--dim)}
+.svc-cta p{color:var(--dim)}
+.step{border-top:1px solid rgba(27,25,22,.22)}
+.step h3{color:var(--ink)}
+.step p{color:var(--dim)}
+.step span{color:var(--acc)}
+.about p{color:var(--dim)}
+.about .quote{color:var(--ink);border-left:2px solid var(--acc)}
+.craft{margin:0;aspect-ratio:1/1;background:var(--panel);border:1px solid rgba(27,25,22,.5);
+  display:flex;flex-direction:column;padding:clamp(12px,2vw,20px);gap:10px}
+.craft svg{width:100%;height:auto;flex:1;display:block}
+.craft figcaption{display:flex;justify-content:space-between;gap:10px;border-top:1px solid rgba(27,25,22,.25);
+  padding-top:8px;font:700 10px/1 var(--sans);letter-spacing:.2em;color:#6b6459}
+
+.contact h2{color:var(--ink)}
+form{background:var(--panel);border:1px solid rgba(27,25,22,.45)}
+label{color:#3a342c}
+input,textarea,select{background:#fff;border:1px solid #b3a999;color:var(--ink)}
+input::placeholder,textarea::placeholder{color:#8b8377}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--acc);outline-offset:1px;background:#fff}
+.dm{display:inline;border:0;padding:0;background:none;color:var(--acc);text-decoration:underline;
+  font:700 inherit/1.5 var(--sans)}
+.dm:hover{background:none;color:var(--acc-dk)}
+.note{color:var(--dim)}
+
+footer{background:#171512;color:#b7ae9f;border-top:1px solid rgba(27,25,22,.6)}
+.foot{color:#b7ae9f}
+.foot a{color:#efe6d6}
+@media(max-width:820px){
+  .bar{flex-wrap:wrap;row-gap:6px}
+  nav.main{margin-left:0;flex-basis:100%;justify-content:flex-start;gap:15px;padding-bottom:8px}
+}
+@media(max-width:520px){
+  nav.main{overflow-x:auto;-webkit-overflow-scrolling:touch;gap:13px}
+  .brand .mark{width:38px;height:38px}
+}
+@media(max-width:430px){.brand .mark{width:44px;height:44px;font-size:15px}.brand .sub{font-size:10.5px;letter-spacing:.1em}.brand .name{font-size:16px}}
+</style>
+<style id="pass4">
+/* pass-4: warm workshop ground (no blueprint grid), solid 1OF1 lockup, 3D joinery hero */
+:root{--acc:#8a4a15;--acc-dk:#67350c}
+body{background:#efe9dd;background-image:repeating-linear-gradient(93deg,rgba(120,86,44,.045) 0 1px,transparent 1px 26px),radial-gradient(140% 90% at 12% 0%,#f6f1e6,#e8e0cf 62%,#e2d8c4)}
+header.site{background:rgba(239,233,221,.97);border-bottom:1px solid rgba(27,25,22,.55)}
+.brand .mark{width:54px;height:54px;border:0;background:#1b1916;display:block;padding:7px}
+.brand .mark svg{width:100%;height:100%;display:block}
+.brand .name{font-size:19px;letter-spacing:-.005em}
+.brand .sub{color:#5c554a;font-size:12px;letter-spacing:.13em;line-height:1.25}
+nav.main a.cta{background:#8a4a15;color:#fff8ee!important;border:0;
+  padding:11px 18px;font-weight:700}
+nav.main a.cta:hover{background:#a05a1c}
+
+/* hero: three-quarter view of a built-in in warm timber, not a drawing */
+.hero .inner{max-width:1160px;margin-inline:auto;
+  padding:clamp(42px,6.5vh,84px) var(--gut) clamp(38px,5.5vh,68px)}
+.hero{border-bottom:1px solid rgba(27,25,22,.55)}
+.hero .inner{align-items:center}
+.build{margin:0;position:relative;aspect-ratio:5/4;overflow:hidden;background:#e5dccb;
+  border:1px solid rgba(27,25,22,.45);box-shadow:10px 10px 0 rgba(27,25,22,.06)}
+.build .room{position:absolute;inset:0;background:
+  linear-gradient(180deg,#e9e1d1 0%,#e2d8c4 62%,#cbb99d 100%)}
+.build .back{position:absolute;inset:9% 10% 22% 10%;
+  background:repeating-linear-gradient(90deg,rgba(70,44,20,.10) 0 1px,transparent 1px 34px),
+             linear-gradient(160deg,#f7f0e1,#e6d8bf 70%,#d6c4a4);box-shadow:inset 0 0 60px rgba(60,38,16,.18)}
+.build .cab{position:absolute;left:14%;right:14%;bottom:18%;height:58%;
+  transform:perspective(900px) rotateY(-13deg);transform-origin:50% 100%;
+  background:linear-gradient(105deg,#cfa068 0%,#b8863f 34%,#a06e2c 58%,#7d5220 100%)}
+.build .cab::before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(92deg,rgba(74,44,12,.16) 0 1px,transparent 1px 9px),
+  repeating-linear-gradient(88deg,rgba(255,240,210,.10) 0 2px,transparent 2px 22px)}
+.build .void{position:absolute;left:18%;right:18%;top:16%;height:40%;background:
+  linear-gradient(180deg,#4a3a28,#2a2015 70%,#3a2c1d);box-shadow:inset 0 12px 24px rgba(0,0,0,.55)}
+.build .shelf{position:absolute;left:16%;right:16%;height:7px;background:linear-gradient(180deg,#d9b071,#8b5c22);
+  box-shadow:0 5px 8px rgba(50,30,10,.35)}
+.build .sh1{top:35%}.build .sh2{top:59%}
+.build .toe{position:absolute;left:14%;right:14%;bottom:14%;height:4%;background:rgba(40,26,10,.6)}
+.build .rail{position:absolute;left:0;right:0;bottom:0;height:14%;background:
+  repeating-linear-gradient(90deg,#b48a55 0 78px,#a67c48 78px 82px);
+  box-shadow:inset 0 8px 14px rgba(60,40,15,.25)}
+.build .sun{position:absolute;inset:0;background:
+  linear-gradient(115deg,rgba(255,236,198,.55) 0%,rgba(255,236,198,0) 46%),
+  radial-gradient(120% 80% at 88% 6%,rgba(255,240,206,.7),transparent 60%)}
+.build figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px;
+  padding:11px 13px;background:rgba(24,21,17,.94);color:#f2e8d6;
+  font:700 10.5px/1.35 var(--sans);letter-spacing:.14em;text-transform:uppercase}
+@media(max-width:600px){.build{aspect-ratio:1/1}.build .cab{left:9%;right:9%;bottom:20%;height:56%}.build .void{left:13%;right:13%}.build .shelf{left:11%;right:11%}.build figcaption{font-size:10px;letter-spacing:.09em;padding:10px 11px}}
+
+.svc .ico{display:none}
+.svc article{grid-template-columns:44px minmax(0,1fr)}
+.svc .idx{padding-top:4px}
+.svc .num{font-size:12px;letter-spacing:.16em}
+.svc h3{font-size:clamp(1.1rem,1.9vw,1.35rem)}
+
+.contact h2{max-width:18ch}
+form{box-shadow:none;border:1px solid rgba(27,25,22,.5);border-top:3px solid var(--acc)}
+input,textarea,select{border:1px solid #a89d89;background:#fffdf8;padding:14px}
+form .btn{background:#8a4a15;border-color:#8a4a15;color:#fff8ee;font-size:15.5px;letter-spacing:.01em}
+form .btn:hover{background:#a05a1c;border-color:#a05a1c}
+.note a.dm{color:var(--acc-dk)}
+label .opt{font-weight:400;color:#7a7266}
+input.file{padding:11px;background:#f5efe2;font-size:.9rem;cursor:pointer}
+input.file::file-selector-button{font:600 .85rem var(--sans);background:var(--ink);color:#f7f2e7;border:0;padding:9px 13px;margin-right:12px;cursor:pointer}
+.hint{color:#6b6459;font-size:.8rem;margin:-6px 0 15px}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="./" aria-label="1OF1 Carpentry Group home">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 56 56" role="presentation">
+        <rect width="56" height="56" fill="#1b1916"/>
+        <g fill="#efe6d4"><rect x="10" y="13" width="36" height="12"/><path d="M10 25h8l4 6 4-6 4 6 4-6h12v7H10z"/></g>
+        <g fill="#c98a3e"><rect x="10" y="30" width="36" height="13"/><path d="M10 30h10l4 6 4-6 4 6 4-6h10v7H10z"/></g>
+      </svg></span>
+      <span class="name">1OF1 Carpentry Group<span class="sub">One-off carpentry</span></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#work">What we build</a>
+      <a href="#method">Method</a>
+      <a href="#about">About</a>
+      <a class="cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" id="top" aria-label="Bespoke carpentry">
+    <div class="wrap inner">
+      <div>
+      <span class="kick">Carpentry &middot; Joinery &middot; Fit-out</span>
+      <h1>One of one. <em>Not one of many.</em></h1>
+      <p class="lede">1OF1 Carpentry Group builds carpentry that has to fit one particular room &mdash; measured on site, cut once, scribed into the walls that are actually there.</p>
+      <div class="btns"><a class="btn" href="#contact">Send the job details</a><a class="btn ghost" href="#work">See the scope</a></div>
+      <ul class="facts"><li>Bespoke carpentry</li><li>Measured on site</li><li>Scribed to the existing structure</li><li>Direct with the carpenter</li></ul>
+      </div>
+      <figure class="build">
+        <div class="room" aria-hidden="true">
+          <span class="back"></span>
+          <span class="cab"></span>
+          <span class="void"></span>
+          <span class="shelf sh1"></span>
+          <span class="shelf sh2"></span>
+          <span class="toe"></span>
+          <span class="rail"></span>
+          <span class="sun"></span>
+        </div>
+        <figcaption><span>Built-in joinery</span><span>Solid timber, scribed to wall</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap rail">
+      <h2 class="t">What we build</h2>
+      <div>
+        <p class="intro">The work sits between framing and finishing: structures that have to be straight and true, and details that get looked at every day. If it is built from timber and it has to fit, it is our kind of job.</p>
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+          <symbol id="i-frame" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 5h26M3 27h26"/><path d="M7 5v22M15 5v22M23 5v22"/><path d="M7 16h16"/></g></symbol>
+          <symbol id="i-deck" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="6" width="26" height="21"/><path d="M3 11h26M3 16h26M3 21h26"/></g></symbol>
+          <symbol id="i-joinery" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="24" height="24"/><path d="M4 12h24M4 20h24M13 4v24"/></g></symbol>
+          <symbol id="i-fitout" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="3" width="15" height="26"/><path d="M21 3a10.5 10.5 0 0 1 0 26" stroke-dasharray="3 3"/><path d="M17.5 16h1"/></g></symbol>
+        </defs></svg>
+        <div class="svc">
+          <article><span class="idx"><span class="num">01</span><svg class="ico" aria-hidden="true"><use href="#i-frame"/></svg></span><div><h3>Framing &amp; structural carpentry</h3><p>Walls, floors and roof framing set out to the plan, with the tolerances that make the trades after us easy.</p></div></article>
+          <article><span class="idx"><span class="num">02</span><svg class="ico" aria-hidden="true"><use href="#i-deck"/></svg></span><div><h3>Decks, pergolas &amp; outdoor timber</h3><p>Substructure, bearers, joists and decking built for weather and for foot traffic, not just for the photo.</p></div></article>
+          <article><span class="idx"><span class="num">03</span><svg class="ico" aria-hidden="true"><use href="#i-joinery"/></svg></span><div><h3>Custom joinery &amp; built-ins</h3><p>Shelving, robes and cabinetry made to the millimetre of the space, scribed to walls and ceilings that are never quite square.</p></div></article>
+          <article><span class="idx"><span class="num">04</span><svg class="ico" aria-hidden="true"><use href="#i-fitout"/></svg></span><div><h3>Fit-out &amp; finishing carpentry</h3><p>Doors, trims, skirtings, stairs and the final fixing &mdash; the parts that decide whether a build looks finished.</p></div></article>
+        </div>
+        <div class="svc-cta"><a class="btn" href="#contact">Send the job details</a><p>Photos and rough dimensions are enough to price it properly.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="method" class="band">
+    <div class="wrap">
+      <div class="rail" style="margin-bottom:clamp(26px,4vw,44px)">
+        <h2 class="t">How a job runs</h2>
+        <p class="intro">Three stages, and nothing gets ordered before the stage before it is settled.</p>
+      </div>
+      <div class="step">
+        <article><span>STAGE 01</span><h3>Measure and listen</h3><p>Site visit, real measurements, and an honest read on what the structure will let you do.</p></article>
+        <article><span>STAGE 02</span><h3>Detail and price</h3><p>Materials, sections and fixing method set out with a fixed price, so the quote matches the build.</p></article>
+        <article><span>STAGE 03</span><h3>Cut, fit, finish</h3><p>Built on site to those details, with the offcuts taken away and the joinery left ready to use.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2 class="t" style="margin-bottom:18px">Why one of one</h2>
+        <p>Most carpentry problems are not carpentry problems. They are measuring problems: a cabinet built to a number on a drawing that the wall never agreed with, a deck set out before the fall of the ground was checked.</p>
+        <p>1OF1 Carpentry Group works the other way around. The space gets measured first, the detail gets settled against those measurements, and the job is built to that &mdash; one room, one set of dimensions, one outcome.</p>
+        <p class="quote">&ldquo;If it is worth building, it is worth measuring twice.&rdquo;</p>
+      </div>
+      <figure class="craft">
+        <svg viewBox="0 0 400 400" role="img" aria-label="Dovetail joint detail drawing with dimension ticks">
+          <g fill="none" stroke="#1b1916" stroke-width="2">
+            <path d="M56 84h288v232H56z"/>
+            <path d="M200 84v74l-26 24v36l26 24v74"/>
+            <path d="M200 158l26 24v36l-26 24"/>
+            <path d="M96 84v232"/>
+          </g>
+          <g fill="none" stroke="#94531a" stroke-width="1.3">
+            <path d="M200 84v-26M200 158l-26 24v36l26 24"/>
+            <path d="M150 316h100"/>
+            <path d="M56 340h288"/><path d="M56 334v12"/><path d="M344 334v12"/>
+          </g>
+          <g fill="#94531a" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="14" letter-spacing="1.4" font-weight="700">
+            <text x="200" y="354" text-anchor="middle">OVERALL</text>
+            <text x="212" y="80">DOVETAIL &#183; 1:1</text>
+          </g>
+          <g fill="#4a443a" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="13" letter-spacing="1.2">
+            <text x="56" y="60" font-size="12.5">MARKED OFF THE WALL</text>
+          </g>
+        </svg>
+        <figcaption><span>Site measure</span><span>1:1</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="contact" class="band">
+    <div class="wrap contact">
+      <div>
+        <span class="kick">Start a job</span>
+        <h2>Tell us the room. We price it fixed.</h2>
+        <p class="intro">Send through what you want built and the space it is going into. Photos and rough dimensions are enough to start a proper conversation.</p>
+        <p class="note" style="margin-top:0">Prefer Instagram? <a class="dm" href="https://www.instagram.com/1of1_carpentrygroup" rel="noopener">DM @1of1_carpentrygroup</a> with a photo of the space.</p>
+      </div>
+      <form id="lbq-form" novalidate data-site="user-restore-1of1-carpentry-group" data-biz="1OF1 Carpentry Group">
+        <label for="lbq-n">Name</label>
+        <input id="lbq-n" name="name" autocomplete="name" required>
+        <label for="lbq-e">Email</label>
+        <input id="lbq-e" name="email" type="email" autocomplete="email" required>
+        <label for="lbq-p">Phone <span class="opt">(optional)</span></label>
+        <input id="lbq-p" name="phone" type="tel" autocomplete="tel">
+        <label for="lbq-t">Project type</label>
+        <select id="lbq-t" name="project_type">
+          <option>Custom joinery &amp; built-ins</option>
+          <option>Deck, pergola or outdoor timber</option>
+          <option>Framing &amp; structural</option>
+          <option>Fit-out &amp; finishing</option>
+          <option>Not sure yet</option>
+        </select>
+        <label for="lbq-m">Project details &mdash; room, rough size, what it has to do</label>
+        <textarea id="lbq-m" name="message" rows="4" placeholder="e.g. 3.2m wall in the lounge, built-in shelving around a fireplace"></textarea>
+        <button class="btn" type="submit">Send the job details</button>
+        <p class="note" id="lbq-note">We reply during the working week and ask for photos of the space if we need them.</p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap foot">
+    <span>&copy; <span id="yr">2026</span> 1OF1 Carpentry Group</span>
+    <span><a href="https://www.instagram.com/1of1_carpentrygroup" rel="noopener">Instagram</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span>
+  </div>
+</footer>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+(function(){
+  var f=document.getElementById('lbq-form'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=f.querySelector('[name=name]').value.trim();
+    var em=f.querySelector('[name=email]').value.trim();
+    var p=f.querySelector('[name=phone]').value.trim();
+    var m=f.querySelector('[name=message]').value.trim();
+    var note=document.getElementById('lbq-note');
+    if(!n||!em){ note.textContent='Add your name and email so we can reply with a price.'; return; }
+    var body='Name: '+n+'\nEmail: '+em+(p?'\nPhone: '+p:'')+'\nProject type: '+(f.querySelector('[name=project_type]')||{}).value+'\nJob: '+m+'\n\n(1OF1 Carpentry Group site)';
+    window.location.href='mailto:?subject='+encodeURIComponent('Quote request — 1OF1 Carpentry Group')+'&body='+encodeURIComponent(body);
+    note.textContent='Your email app is opening with the details — attach any photos there and send.';
+  });
+})();
+</script>
+</body>
+</html>
