@@ -1,4 +1,3 @@
-import * as THREE from './vendor/three.module.js';
 
 const hero = document.querySelector('.hero--cinema') || await new Promise((resolve) => {
   const observer = new MutationObserver(() => {
@@ -12,6 +11,7 @@ const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const mobile = matchMedia('(max-width: 679px)').matches;
 
 if (media && !reduced && !mobile) {
+  const THREE = await import('./vendor/three.module.js');
   const canvas = document.createElement('canvas');
   canvas.className = 'hero__spatial-canvas hero__balayage-lock';
   canvas.setAttribute('aria-hidden', 'true');
