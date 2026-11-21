@@ -118,3 +118,30 @@ body{background:radial-gradient(900px 620px at 88% 4%,rgba(217,176,121,.13),tran
     radial-gradient(70% 58% at 100% 96%,rgba(229,197,143,.42),transparent 66%),
     linear-gradient(160deg,#f8ecdf 0%,#f0e4d6 52%,#e7d4c0 100%)!important
 }
+
+/* ── Header, corrected: one cream field, no logo plate, no gold pills ──────
+   The dark gradient plus the flat #211a15 plate behind the wordmark is what
+   read as a pasted-on box. The site's own system is cream + ink; use it. */
+.head{background:var(--cream,#fffbee)!important;background-image:none!important;border-bottom:1px solid rgba(33,26,21,.14)!important;color:var(--ink,#211a15)!important;box-shadow:none!important}
+.head .head__brand{background:transparent!important}
+.head .head__brand-logo{content:url("./img/alora-mark-ink.png")!important;filter:none!important}
+.head__nav,.head__nav a,.head__nav summary,.head__toggle{color:var(--ink,#211a15)!important}
+.head__sister{color:rgba(33,26,21,.6)!important}
+.head__cta{background:var(--ink,#211a15)!important;color:var(--cream,#fffbee)!important;border:1px solid var(--ink,#211a15)!important;border-radius:100px!important;font-size:11.5px!important;letter-spacing:.08em!important;padding:11px 24px!important}
+.head__cta:hover{background:transparent!important;color:var(--ink,#211a15)!important}
+.head__nav>a:hover,.head__nav summary:hover{background:transparent!important;color:rgba(33,26,21,.55)!important;border-color:transparent!important}
+/* the standalone gold button and the numbered work captions */
+.era__flagship-btn{background:var(--ink,#211a15)!important;color:var(--cream,#fffbee)!important;border-radius:100px!important}
+.era__flagship-btn:hover{background:var(--ink-soft,#3b2d22)!important}
+.work.is-motion .work__cap::before{content:none!important}
+
+/* Nav: five bordered 10.8px boxes read as chunky commercial buttons.
+   Strip the chrome, set them in the display serif, and drop the duplicate
+   "Book" link — the ink pill beside it is the booking action. */
+.head__nav>a{background:transparent!important;border:0!important;border-radius:0!important;padding:8px 2px!important;margin-inline:13px!important;font-family:"Italiana",Georgia,serif!important;font-size:15.5px!important;font-weight:400!important;letter-spacing:.035em!important;text-transform:none!important;color:var(--ink,#211a15)!important;text-underline-offset:6px;text-decoration-thickness:1px}
+.head__nav>a:hover{background:transparent!important;border:0!important;color:var(--ink,#211a15)!important;text-decoration:underline!important}
+.head__nav>a.is-book{display:none!important}
+.head__nav{margin-right:18px!important}
+/* The CTA was display:none from an earlier cleanup; the nav duplicate is now
+   hidden instead, so bring the single booking pill back. */
+.head__cta{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:40px!important}
