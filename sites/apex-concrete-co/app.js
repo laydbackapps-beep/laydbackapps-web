@@ -58,7 +58,7 @@
       status.textContent = "Sent. We'll call you about the site.";
       status.classList.add('success'); status.hidden = false;
     } catch (err) {
-      status.innerHTML = 'Could not send just now. Call <a href="tel:+61484096182"><strong>0484 096 182</strong></a>.';
+      status.innerHTML = 'Could not send just now. Message us on Instagram: <a href="https://www.instagram.com/apexconcrete.co" target="_blank" rel="noopener"><strong>@apexconcrete.co</strong></a>.';
       status.classList.add('error'); status.hidden = false;
     } finally {
       submit.disabled = false;

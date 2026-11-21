@@ -58,7 +58,7 @@
       status.textContent = "Sent. We'll call you about the site.";
       status.classList.add('success'); status.hidden = false;
     } catch (err) {
-      status.innerHTML = 'Could not send just now. Call <a href="tel:tel:+61405212327"><strong>0405 212 327</strong></a>.';
+      status.innerHTML = 'Could not send just now. Call <a href="tel:+61405212327"><strong>0405 212 327</strong></a>.';
       status.classList.add('error'); status.hidden = false;
     } finally {
       submit.disabled = false;
