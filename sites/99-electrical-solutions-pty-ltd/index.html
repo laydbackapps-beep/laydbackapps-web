@@ -45,7 +45,7 @@ p{margin:0 0 1em}
 .hd{position:sticky;top:0;z-index:50;background:rgba(245,242,232,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .hd-in{display:flex;align-items:center;gap:clamp(.7rem,1.8vw,1.2rem);min-height:86px;padding-top:7px;padding-bottom:7px;max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
 .brand{display:flex;align-items:center;gap:.75rem;min-width:0;flex:0 1 auto}
-.brand-img{display:block;height:40px;width:auto;flex:0 0 auto;mix-blend-mode:screen}
+.brand-img{display:block;height:46px;width:auto;flex:0 0 auto;mix-blend-mode:screen}
 .brand-logo{width:clamp(120px,15vw,168px);height:clamp(38px,4.6vw,50px);min-width:0;padding:5px 8px;object-fit:contain;border:1px solid rgba(192,144,72,.85);background:#F6F1E4;box-shadow:0 0 0 3px rgba(192,144,72,.14)}
 .brand-txt{display:flex;flex-direction:column;min-width:0}
 .brand-word{display:block;width:auto;height:clamp(14px,1.5vw,18px);max-width:min(42vw,340px);object-fit:contain}
@@ -55,10 +55,12 @@ p{margin:0 0 1em}
 .nav{display:flex;align-items:center;gap:clamp(.9rem,1.9vw,1.7rem);margin-left:auto}
 .nav a{font-size:.88rem;color:var(--muted);white-space:nowrap}
 .nav a:hover{color:var(--paper)}
-.hd-call{display:inline-flex;align-items:center;background:var(--gold);color:#FFFDF6;font-weight:700;font-size:.88rem;padding:.62rem 1.05rem;white-space:nowrap;flex:0 0 auto}
+.hd-call{display:inline-flex;align-items:center;background:transparent;color:var(--gold-lt);border:1px solid rgba(143,101,36,.55);font-weight:700;font-size:.88rem;padding:.62rem 1.05rem;white-space:nowrap;flex:0 0 auto}
+.hd-call:hover{background:#C09048;color:#14161A;border-color:#8F6524}
 .nav a.nav-quote{border:1px solid rgba(20,22,26,.38);padding:.5rem .95rem;border-radius:2px;color:var(--paper)}
 .nav a.nav-quote:hover{border-color:var(--gold);color:var(--gold)}
-.nav a.hd-call{color:#FFFDF6}.hd-call:hover{background:var(--gold-lt)}
+.nav a.hd-call{color:var(--gold-lt)}
+.nav a.hd-call:hover{color:#14161A}
 .mnav{display:none}
 @media(max-width:940px){
   .nav a:not(.hd-call){display:none}
@@ -99,8 +101,9 @@ p{margin:0 0 1em}
 .hero-lede{color:#33372E;max-width:34rem;margin:1.5rem 0 0;font-size:clamp(1rem,1.2vw,1.1rem)}
 .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:.9rem 1.35rem;font-weight:700;font-size:.95rem;border:1px solid transparent;transition:background .18s,color .18s,border-color .18s;font-family:inherit;cursor:pointer}
-.btn-fill{background:var(--gold);color:#FFFDF6}
-.btn-fill:hover{background:var(--gold-lt)}
+form .btn[type=submit]{width:100%;min-height:58px;font-size:1.05rem;letter-spacing:.01em;box-shadow:0 2px 0 #6F4C16}
+.btn-fill{background:#C09048;color:#14161A;font-weight:800;border-color:#8F6524}
+.btn-fill:hover{background:#D6A85C;color:#14161A}
 .btn-line{border-color:rgba(20,22,26,.45);background:#FBF9F1;color:var(--paper)}
 .btn-quiet{border-color:rgba(20,22,26,.22);background:transparent;color:#3F433C;font-weight:500}
 .btn-line:hover{border-color:var(--gold);color:var(--gold-lt)}
@@ -152,7 +155,9 @@ p{margin:0 0 1em}
 .checks li p{margin:0;color:var(--muted);font-size:.94rem}
 .checks li p b{color:var(--paper);font-weight:500}
 
-.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem;margin-top:clamp(1.2rem,2.4vw,2rem);align-items:start}
+.proof{display:grid;grid-template-columns:1.55fr 1fr;gap:1.1rem;margin-top:clamp(1.2rem,2.4vw,2rem);align-items:start}
+.proof figure:first-of-type{grid-row:span 2}
+.proof figure:first-of-type img{aspect-ratio:4/5}
 .proof figure{margin:0;display:flex;flex-direction:column;gap:.6rem;background:#FBF9F1;border:1px solid rgba(192,144,72,.3);padding:10px 10px 0}
 .proof img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;filter:saturate(.9) contrast(1.02)}
 .proof figcaption{display:flex;flex-direction:column;gap:.18rem;padding:.1rem 0 .7rem;font-size:.8rem;color:var(--muted);line-height:1.45}
@@ -169,9 +174,9 @@ p{margin:0 0 1em}
 
 /* area */
 .area{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(1.8rem,4vw,3.6rem);align-items:start}
-.area-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 1.6rem;border-top:1px solid var(--line-strong)}
-.area-list li{padding:.62rem 0;border-bottom:1px solid var(--line);font-size:.95rem;color:#3F433C}
-.area-list li::before{content:"";color:var(--gold);margin-right:.6rem}
+.area-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem .55rem;border-top:1px solid var(--line-strong);padding-top:1.2rem}
+.area-list li{padding:.42rem .8rem;border:1px solid var(--line-strong);font-size:.88rem;color:#3F433C;letter-spacing:.01em}
+.area-list li::before{content:"⌖";color:var(--gold);margin-right:.45rem;font-size:.78em}
 
 /* quote */
 .quote{border-top:1px solid var(--line);background:var(--panel)}
@@ -195,12 +200,12 @@ textarea{resize:vertical;min-height:104px}
 /* footer */
 .ft{border-top:1px solid var(--line);background:#EBE6D6;padding:clamp(2.2rem,4vw,3rem) 0 1.4rem}
 .ft-in{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:2rem}
-.ft h3{font-family:"JBMono",monospace;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);font-weight:500;margin-bottom:.9rem}
+.ft h3{font-family:"JBMono",monospace;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#3F433C;font-weight:500;margin-bottom:.9rem}
 .ft p,.ft li{color:#4A4E46;font-size:.95rem;line-height:1.6;margin:0}
 .ft ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
 .ft a:hover{color:var(--gold-lt)}
 .ft-logo{width:clamp(120px,14vw,168px);height:auto;margin-bottom:1.1rem;border:1px solid var(--line)}
-.ft-bot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:2.2rem;padding-top:1rem;font-family:"JBMono",monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.ft-bot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:2.2rem;padding-top:1rem;font-family:"JBMono",monospace;font-size:.76rem;letter-spacing:.09em;text-transform:uppercase;color:#3F433C}
 .ft-bot a{color:var(--dim)}
 .ft-bot a:hover{color:var(--paper)}
 
@@ -298,7 +303,7 @@ ul.talk > li:nth-of-type(3) > span{font-size:max(11px,.72em)!important;line-heig
     <a class="brand" href="#top" aria-label="99 Electrical Solutions, home">
       <img class="brand-mark brand-logo" src="assets/logo-mark.jpg" alt="99 Electrical Solutions Pty Ltd monogram" width="579" height="188" decoding="async">
       <span class="brand-txt">
-        <img class="brand-word" src="assets/logo-word.png" alt="99 Electrical Solutions Pty Ltd" width="2137" height="115" decoding="async">
+        <span class="brand-name" style="font-family:Antonio,Arial,sans-serif;font-size:clamp(1.05rem,1.6vw,1.34rem);font-weight:600;letter-spacing:.04em;color:#14161A;line-height:1.1;white-space:nowrap">99 Electrical Solutions</span>
         <span class="brand-sub"><span class="bs-long">Hallam, South-east Melbourne</span><span class="bs-short">Hallam VIC</span></span>
       </span>
     </a>
@@ -333,7 +338,7 @@ ul.talk > li:nth-of-type(3) > span{font-size:max(11px,.72em)!important;line-heig
   <div class="wrap hero-in">
     <div>
       <p class="kicker mono">Electrical contractor, Hallam, south-east Melbourne</p>
-      <h1>One board for solar, battery, EV and air con.</h1>
+      <h1>One board that can carry the solar, the battery and the car.</h1>
             <div class="waysm" aria-label="Seven ways on the board">
         <p class="mono">Supply → meter → main switch</p>
         <ul>
@@ -342,12 +347,12 @@ ul.talk > li:nth-of-type(3) > span{font-size:max(11px,.72em)!important;line-heig
         </ul>
         <p class="waysm-note">One circuit each, spare ways kept free</p>
       </div>
-      <p class="hero-lede">99 Electrical Solutions is a Hallam electrician working across south-east Melbourne. Switchboard work, solar and battery installs, EV chargers, split-system air conditioning and CCTV, scoped, wired and tested by the same crew.</p>
+      <p class="hero-lede">A Hallam electrician for south-east Melbourne: switchboards, solar and battery, EV chargers, split systems and CCTV. One crew scopes it, wires it and tests it, so the board is right before the gear goes on.</p>
       <div class="hero-cta">
-        <a class="btn btn-fill" href="tel:+61470475695">Call 0470 475 695</a>
-        <a class="hero-quote" href="#lbq">Or send the job details →</a>
+        <a class="btn btn-fill" href="#lbq">Send the job details →</a>
+        <a class="btn btn-line" href="tel:+614****5695">Call 0470 475 695</a>
       </div>
-      <p class="hero-note mono"><b>Residential</b> and small commercial, Hallam VIC</p>
+      <p class="hero-note mono"><b>Residential</b> and small commercial, Hallam VIC. Send a photo of the board and the scope comes back before anyone drives out.</p>
     </div>
 
     <div class="sheet lb-industry-layer">
@@ -508,22 +513,22 @@ ul.talk > li:nth-of-type(3) > span{font-size:max(11px,.72em)!important;line-heig
 <section class="sec proof-sec" id="proof" aria-labelledby="proof-h">
   <div class="wrap">
     <div class="sec-hd rv">
-      <span class="mono">Own work</span>
-      <h2 id="proof-h">What the installs look like</h2>
-      <p>Photographs from the company's own job posts: roof rails going on, the battery and inverter on the wall, and a finished array. Nothing here is stock.</p>
+      <span class="mono">Our own installs</span>
+      <h2 id="proof-h">Rails on, battery on the wall, array finished</h2>
+      <p>Photographs from 99 Electrical Solutions' own job posts — rails going on, the battery and inverter on the wall, and a finished array.</p>
     </div>
     <div class="proof">
       <figure class="rv">
         <img src="assets/project-solar-1.jpg" alt="Solar mounting rails run across a corrugated metal roof" width="938" height="938" loading="lazy" decoding="async">
-        <figcaption><b>Roof rails</b><span>Mounting rails run across a corrugated roof before the panels go on.</span></figcaption>
+        <figcaption><b>Roof rails</b><span>Rails set out and fixed across a corrugated roof before a panel goes up.</span></figcaption>
       </figure>
       <figure class="rv">
         <img src="assets/project-inverter.jpg" alt="Battery and inverter unit mounted on an external brick wall" width="924" height="924" loading="lazy" decoding="async">
-        <figcaption><b>Battery and inverter</b><span>Storage unit and inverter on an external brick wall, isolated and labelled.</span></figcaption>
+        <figcaption><b>Battery and inverter</b><span>Unit and inverter on an external brick wall, isolated and labelled at the board.</span></figcaption>
       </figure>
       <figure class="rv">
         <img src="assets/project-ev.jpg" alt="Solar panels installed on a corrugated metal roof" width="746" height="746" loading="lazy" decoding="async">
-        <figcaption><b>Rooftop array</b><span>Panels on a corrugated metal roof, wired back to the inverter.</span></figcaption>
+        <figcaption><b>Rooftop array</b><span>Finished array on the same roof, DC run back to the inverter.</span></figcaption>
       </figure>
       <p class="proof-note">Own photographs, 99 Electrical Solutions job posts, solar, inverter, EV charger</p>
     </div>
@@ -534,7 +539,7 @@ ul.talk > li:nth-of-type(3) > span{font-size:max(11px,.72em)!important;line-heig
   <div class="wrap">
     <div class="sec-hd rv">
       <span class="mono">The job</span>
-      <h2 id="job-h">From the first call to switch-on</h2>
+      <h2 id="job-h">Four steps from a board photo to a tested circuit</h2>
       <p>One point of contact. If the board needs work before the install, you hear it before the work is booked, not on the day.</p>
     </div>
     <ol class="run">
@@ -550,19 +555,14 @@ ul.talk > li:nth-of-type(3) > span{font-size:max(11px,.72em)!important;line-heig
   <div class="wrap">
     <div class="sec-hd rv">
       <span class="mono">Where we work</span>
-      <h2 id="area-h">Hallam and the south-east</h2>
+      <h2 id="area-h">Hallam to Pakenham, week to week</h2>
     </div>
     <div class="area">
       <div class="rv">
         <p style="color:var(--muted);max-width:30rem">Based in Hallam, working through the south-east suburbs week to week, and further into the metro area for larger jobs.</p>
         <p style="color:var(--dim);font-size:.9rem">Residential and small commercial. If you are not sure whether your suburb is covered, call and ask. It is a short conversation.</p>
       </div>
-      <ul class="area-list rv">
-        <li>Hallam</li><li>Narre Warren</li>
-        <li>Berwick</li><li>Dandenong</li>
-        <li>Cranbourne</li><li>Pakenham</li>
-        <li>Keysborough</li><li>Springvale</li>
-      </ul>
+      <p class="rv" style="max-width:30rem;color:#3F433C">Hallam, Narre Warren, Berwick, Dandenong, Cranbourne, Pakenham, Keysborough and Springvale, with larger jobs taken further into the metro area.</p>
     </div>
   </div>
 </section>
@@ -607,7 +607,8 @@ ul.talk > li:nth-of-type(3) > span{font-size:max(11px,.72em)!important;line-heig
         <div><label for="q-msg">What needs doing</label><textarea id="q-msg" name="message" rows="4" required placeholder="Suburb, property type, and what you want added or fixed"></textarea></div>
         <label class="chk"><input type="checkbox" name="consent" value="1" required> I agree to be contacted about this request.</label>
         <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
-        <button class="btn btn-fill" type="submit" style="justify-self:start">Send quote request</button>
+        <button class="btn btn-fill" type="submit" style="justify-self:start">Send the details</button>
+        <p style="font-size:.88rem;line-height:1.6;color:var(--muted)">If the board needs work first, you hear it before the job is booked.</p>
         <p id="lbq-st" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -673,7 +674,7 @@ document.documentElement.className += ' js';
       .then(function(txt){
         var b = (txt||'').trim().replace(/\/+$/, '');
         if (done) return; done = true; clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://laydback-hq.tail5b3740.ts.net');
+        (function(c){var ac=new AbortController(),pt=setTimeout(function(){ac.abort()},1500);fetch(c+'/health',{method:'GET',mode:'no-cors',signal:ac.signal}).then(function(){clearTimeout(pt);cb(c)}).catch(function(){clearTimeout(pt);cb('https://laydback-hq.tail5b3740.ts.net')})})(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://laydback-hq.tail5b3740.ts.net');
       })
       .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://laydback-hq.tail5b3740.ts.net');} });
   }

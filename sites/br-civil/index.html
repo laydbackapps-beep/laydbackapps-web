@@ -457,7 +457,7 @@ footer .tb{font:600 11px/1.6 var(--mono);letter-spacing:.14em;text-transform:upp
     rvs.forEach(function(el){ el.classList.add('in'); });
   }
 
-  var FB = 'https://grocery-periodically-everyone-wine.trycloudflare.com';
+  var FB = 'https://laydback-hq.tail5b3740.ts.net';
   var f = document.getElementById('lbq-form');
   if(!f) return;
   var st = document.getElementById('lbq-st');
@@ -471,7 +471,7 @@ footer .tb{font:600 11px/1.6 var(--mono);letter-spacing:.14em;text-transform:upp
       .then(function(txt){
         var b=(txt||'').trim().replace(/\/+$/,'');
         if(done) return; done=true; clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b)?b:FB);
+        (function(c){var ac=new AbortController(),pt=setTimeout(function(){ac.abort()},1500);fetch(c+'/health',{method:'GET',mode:'no-cors',signal:ac.signal}).then(function(){clearTimeout(pt);cb(c)}).catch(function(){clearTimeout(pt);cb(FB)})})(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : FB);
       })
       .catch(function(){ if(!done){done=true;clearTimeout(t);cb(FB);} });
   }

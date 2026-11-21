@@ -14,7 +14,7 @@
 <style>
 :root{
   --navy:#0c1119; --navy2:#121a24; --panel:#16202b; --line:#243042; --line2:#33445a;
-  --ink:#eef4f8; --mute:#9db0c2; --orange:#f5761a; --orange-d:#c75a0a; --steel:#5f7591;
+  --ink:#eef4f8; --mute:#c3d1de; --orange:#f5761a; --orange-d:#c75a0a; --steel:#5f7591;
   --max:1200px;
 }
 *{box-sizing:border-box}
@@ -31,15 +31,15 @@ p{margin:0}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4vw,44px)}
 .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:inline-flex;align-items:center;gap:10px}
 .eyebrow::before{content:"";width:24px;height:2px;background:var(--orange)}
-.stamp{display:inline-flex;align-items:center;gap:10px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:#cfdae6}
+.stamp{display:inline-flex;align-items:center;gap:9px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#cfdae6}
 .stamp b{display:grid;place-items:center;width:26px;height:26px;border-radius:5px;background:var(--orange);color:#0c1119;font-family:"Chakra Petch",sans-serif;font-weight:700;font-size:12px;letter-spacing:0}
 section{border-top:1px solid var(--line)}
 .pad{padding:clamp(52px,6.8vw,96px) 0}
 .bar{position:sticky;top:0;z-index:60;background:rgba(10,14,20,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .bar__in{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
-.brand .mark{height:clamp(54px,5.4vw,68px);width:auto;display:block}
-.brand .word{height:clamp(20px,2.1vw,26px);width:auto;display:block}
+.brand .mark{height:clamp(48px,5vw,60px);width:auto;display:block;border-radius:9px}
+.brand .word{height:clamp(32px,3.4vw,44px);width:auto;display:block}
 .brand-mark{display:grid;place-items:center;width:clamp(44px,4.4vw,56px);height:clamp(44px,4.4vw,56px);border-radius:11px;background:var(--orange);color:#0c1119;font-family:"Chakra Petch",sans-serif;font-weight:700;font-size:clamp(17px,1.8vw,21px);letter-spacing:.01em;line-height:1;flex:none}
 .nav{display:flex;align-items:center;gap:clamp(13px,1.7vw,24px);flex-wrap:wrap}
 .nav a:not(.cta){text-decoration:none;font-size:14.4px;font-weight:500;color:var(--mute);padding:7px 0;border-bottom:2px solid transparent}
@@ -60,6 +60,7 @@ section{border-top:1px solid var(--line)}
 .hero{border-top:0;position:relative;perspective:1300px;overflow:hidden;background:radial-gradient(120% 90% at 80% 0%,#13202c 0%,#0b1017 60%)}
 .hero__in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,3.6vw,52px);align-items:center;padding:clamp(34px,4.6vw,64px) 0 clamp(36px,4.8vw,66px)}
 .hero h1{margin:16px 0 18px;max-width:15ch}
+@media(max-width:640px){.hero-plate svg{width:100%}.hero-plate svg text{font-size:15px}.hero-plate svg text[fill="#b6c6d6"]{display:none}.hero-plate figcaption{font-size:14px}}
 .hero h1 em{font-style:normal;color:var(--orange)}
 .hero .sub{color:var(--mute);font-size:clamp(16px,1.3vw,18px);max-width:50ch}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
@@ -95,19 +96,24 @@ section{border-top:1px solid var(--line)}
 @media(max-width:860px){.two{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}}
 /* services */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-.card{border:1px solid var(--line);border-radius:10px;background:var(--navy2);padding:24px;transition:border-color .25s ease,transform .25s ease}
+.card{border:1px solid #3b4d66;border-radius:10px;background:#18232f;padding:24px;transition:border-color .25s ease,transform .25s ease}
 .card:hover{border-color:var(--orange);transform:translateY(-3px)}
 .card .n{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--orange);letter-spacing:.14em}
 .card h3{margin:12px 0 8px;font-size:20px;color:#fff}
-.card p{color:var(--mute);font-size:15px}
+.card p{color:#dde8f2;font-size:16.5px}
+/* card hierarchy: large index numeral instead of a text-only box */
+.cards{counter-reset:svc}
+.card{counter-increment:svc;position:relative;padding-top:20px}
+.card::before{content:counter(svc,decimal-leading-zero);display:block;font-family:"Chakra Petch",sans-serif;
+  font-weight:700;font-size:30px;line-height:1;color:rgba(245,118,26,.55);margin:0 0 10px;letter-spacing:-.02em}
+.card h3{font-size:22px}
 @media(max-width:900px){.cards{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.cards{grid-template-columns:1fr}}
 /* gallery */
-.gal{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:clamp(180px,19vw,235px);gap:16px}
-.tile{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--navy2)}
-.tile:first-child{grid-column:span 2}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(190px,22vw,265px);gap:16px}
+.tile{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--navy2);position:relative;display:grid}
 .tile img{width:100%;height:100%;object-fit:cover;display:block}
-.tile figcaption{font-family:"Archivo",system-ui,sans-serif;font-size:14.5px;font-weight:500;letter-spacing:.005em;text-transform:none;color:#eaf2f8;background:#131e29;padding:13px 16px;border-top:1px solid var(--line2)}
+.tile figcaption{position:absolute;left:0;right:0;bottom:0;font-family:"Archivo",system-ui,sans-serif;font-size:14.5px;font-weight:600;letter-spacing:.005em;text-transform:none;color:#fff;background:linear-gradient(to top,rgba(7,12,18,.95) 12%,rgba(7,12,18,0));padding:40px 16px 13px;border:0}
 @media(max-width:820px){.gal{grid-template-columns:1fr 1fr;grid-auto-rows:190px}.tile:last-child{grid-column:span 2}}
 @media(max-width:520px){.gal{grid-template-columns:1fr;grid-auto-rows:210px}.tile:first-child,.tile:last-child{grid-column:auto}}
 /* process */
@@ -175,7 +181,7 @@ html, body {
   .bar__in { flex-wrap: nowrap !important; gap: 10px !important; }
   .brand { flex: 1 1 auto !important; min-width: 0 !important; overflow: hidden; gap: 8px !important; }
   .brand .mark { height: clamp(38px, 9vw, 48px) !important; max-width: 78px !important; flex: 0 0 auto; }
-  .brand .word { height: clamp(15px, 3.9vw, 20px) !important; max-width: min(50vw, 180px) !important; object-fit: contain; object-position: left center; }
+  .brand .word { height: clamp(24px, 6vw, 32px) !important; max-width: min(62vw, 240px) !important; object-fit: contain; object-position: left center; }
   .burger { flex: 0 0 auto !important; margin-left: 0 !important; }
   .stack, .plate, .card, .hero, .hero-in, .hero__in, .hero-grid, .hero-copy, .hero__copy {
     max-width: 100% !important;
@@ -193,6 +199,7 @@ html, body {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
+    font-size: clamp(29px, 8.4vw, 40px) !important;
     overflow-wrap: break-word !important;
   }
   .sjn-ticker, .asap-ticker, .tt-ticker, .lb-mq {
@@ -215,21 +222,63 @@ p, li {
   line-height: 1.55 !important;
 }
 </style>
+<style id="lb-r27">
+/* r27: the flared ute photo read as saturated stock; the flared glare was baked into the
+   file, so the hero carries a drawn dual-trade plate instead. No new facts invented. */
+.hero .hero-plate{margin:0;border:0;border-top:5px solid var(--orange);border-radius:0;overflow:hidden;
+  background:linear-gradient(160deg,#131d29,#0b1118);position:relative}
+.hero .hero-plate img{height:clamp(280px,36vw,460px)!important}
+.hero .hero-plate svg{display:block;width:100%;height:auto;padding:clamp(10px,1.4vw,20px)}
+.hero .hero-plate figcaption{padding:14px 2px 0;border-top:0;background:transparent;
+  color:#eaf2f8;font-size:15px;line-height:1.45;letter-spacing:.01em}
+/* template filler: the floating orange dash before the eyebrow carried no meaning */
+.eyebrow::before{display:none!important}
+.eyebrow{gap:0!important;color:#f7a05e!important;font-size:12.5px!important;letter-spacing:.18em!important}
+/* four services on a three-column grid left a dead cell bottom-right */
+@media(min-width:901px){.cards{grid-template-columns:1fr 1fr!important}}
+/* form labels at 11px on dark failed the readability bar */
+#lbq label{font-size:14.5px!important;color:#f2f7fb!important;letter-spacing:.06em!important;font-weight:600!important}
+#lbq input,#lbq textarea,#lbq select{background:#1c2732!important;border-color:rgba(255,255,255,.35)!important;color:#fff!important}
+#lbq input::placeholder,#lbq textarea::placeholder{color:#dbe6ef!important}
+#lbq .lbq-cl b{font-size:12.5px!important;color:#c3d3e0!important}
+/* r28: header lockup as live type (orange KB mark, white name) — the all-orange
+   word image read as one flat colour block and lost the brand name at small sizes */
+.brand{display:flex;align-items:center;gap:13px;min-width:0}
+.brand__mk{display:grid;place-items:center;width:clamp(50px,5.2vw,62px);height:clamp(50px,5.2vw,62px);
+  border-radius:2px;background:transparent;border:2px solid var(--orange);color:#fff;
+  font-family:"Rubik",system-ui,sans-serif;font-weight:700;font-size:clamp(21px,2.2vw,26px);
+  letter-spacing:.01em;line-height:1;flex:none}
+.brand__lock{display:flex;flex-direction:column;gap:5px;min-width:0;padding-left:13px;
+  border-left:1px solid rgba(245,118,26,.6)}
+.brand__nm{font-family:"Rubik",system-ui,sans-serif;font-weight:700;color:#fff;
+  font-size:clamp(21px,2.3vw,28px);line-height:1.05;letter-spacing:-.01em;text-transform:none;white-space:nowrap}
+.brand__nm b{color:var(--orange);font-weight:700}
+.brand__sub{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:#d5e2ed;white-space:nowrap}
+@media(max-width:460px){.brand__sub{display:none}.brand__nm{font-size:17px}}
+/* header/hero seam read as a bright rule; keep the band, drop the hard line */
+.bar{border-bottom-color:transparent!important;box-shadow:none}
+/* form fields: lift the fill off the panel and keep placeholder text legible */
+#lbq input,#lbq textarea,#lbq select{background:#26364a!important;border-color:rgba(255,255,255,.42)!important}
+#lbq input::placeholder,#lbq textarea::placeholder{color:#eef4fa!important;opacity:1!important}
+</style>
 </head>
 <body>
 
 <header class="bar">
   <div class="wrap bar__in">
     <a class="brand" href="#top" aria-label="KB Climate &amp; Power, home">
-      <span class="brand-mark" aria-hidden="true">KB</span>
-      <img class="word" src="assets/logo-hdr-word.png" alt="KB Climate &amp; Power">
+      <span class="brand__mk" aria-hidden="true">KB</span>
+      <span class="brand__lock">
+        <span class="brand__nm">Climate &amp; Power</span>
+      </span>
     </a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="#services">Services</a>
       <a href="#work">Projects</a>
       <a class="tel" href="tel:+61499317948">0499 317 948</a>
-      <a class="cta" href="#lbq">Book a job</a>
+      <a class="cta" href="#lbq">Request a quote</a>
     </nav>
   </div>
 </header>
@@ -240,16 +289,16 @@ p, li {
     <div class="wrap hero__in">
       <div>
         <p class="eyebrow">Air conditioning &amp; electrical, Orange NSW</p>
-        <h1>Cooling, heating &mdash; and the <em>wiring that runs it.</em></h1>
+        <h1>Cooling, heating &mdash; and the <em>switchboard behind it.</em></h1>
         <p class="sub">KB Climate &amp; Power installs and services air conditioning, refrigeration and electrical work across Orange and the Central West &mdash; one trade for the system and the switchboard that runs it.</p>
         <div class="cta-row">
-          <a class="btn btn-fill" href="#lbq">Book a job</a>
+          <a class="btn btn-fill" href="#lbq">Request a quote</a>
           <a class="btn btn-ghost" href="tel:+61499317948">Call 0499 317 948</a>
         </div>
       </div>
-      <figure class="rv" style="margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--navy2);position:relative">
-        <img src="images/work_04.jpg" alt="KB Climate &amp; Power vehicle on site in Orange NSW" loading="eager" style="display:block;width:100%;height:clamp(230px,34vh,340px);object-fit:cover">
-        <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:10px 16px;color:#fff;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;background:#070b11;border-top:2px solid var(--orange)">On the road, Orange and the Central West</figcaption>
+      <figure class="rv hero-plate" aria-label="Electrical switchboard installed and labelled by KB Climate and Power">
+        <img src="images/work_01.jpg" alt="Electrical switchboard with circuit breakers installed and labelled by KB Climate and Power" width="1200" height="900" fetchpriority="high" style="display:block;width:100%;height:clamp(250px,31vw,400px);object-fit:cover">
+        <figcaption>The board, the circuits &mdash; and the unit they run. One job, one trade.</figcaption>
       </figure>
       <!-- LB-3D-HERO --><canvas id="heroCanvas" width="1600" height="900" aria-hidden="true"></canvas>
     </div>
@@ -258,12 +307,12 @@ p, li {
   <section class="pad" id="systems">
     <div class="wrap two">
       <div>
-        <p class="stamp rv" style="margin:0 0 4px"><b aria-hidden="true">KB</b> Climate &amp; Power, Orange</p>
-        <p class="lede rv" style="margin-top:18px;font-size:clamp(19px,2.1vw,25px);line-height:1.3;color:var(--ink)">Climate control and electrical, handled by the same people.</p>
+        <p class="stamp rv" style="margin:0 0 4px">Orange NSW</p>
+        <p class="lede rv" style="margin-top:18px;font-size:clamp(16px,1.4vw,18px);line-height:1.55;color:#c9d7e4">Climate control and electrical, handled by the same people.</p>
         <figure class="sys-shot rv"><img src="images/work_03.jpg" alt="KB Climate &amp; Power outdoor condenser piped and set" loading="lazy"><figcaption>Condenser piped, set and commissioned</figcaption></figure>
       </div>
       <div class="body rv">
-        <h2 style="font-size:clamp(23px,2.8vw,34px)">What that looks like on site</h2>
+        <h2 style="font-size:clamp(23px,2.8vw,34px)">One team, two trades</h2>
         <p>An air conditioner is half a refrigeration job and half an electrical one. KB does both, so the install, the circuit and the switchboard are handled together, start to finish.</p>
         <ul class="chk">
           <li><b>Supply &amp; install</b> split systems, ducted and multi-head, sized to the room.</li>
@@ -277,7 +326,7 @@ p, li {
 
   <section class="pad" id="services">
     <div class="wrap">
-      <p class="stamp rv" style="margin:0 0 14px"><b aria-hidden="true">KB</b> Climate &amp; Power, Services</p>
+      <p class="stamp rv" style="margin:0 0 14px">Services</p>
       <h2 class="rv" style="margin:0;max-width:22ch">What KB installs, wires and fixes</h2>
       <div class="cards">
         <div class="card rv"><h3>Split &amp; ducted installs</h3><p>Head and condenser sized to the room, mounted level, commissioned and set before we leave.</p></div>
@@ -286,7 +335,7 @@ p, li {
         <div class="card rv"><h3>Repairs &amp; call-outs</h3><p>Not cooling, tripping or leaking &mdash; diagnosed on site and told straight what it needs.</p></div>
       </div>
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px">
-        <a class="btn btn-fill" href="#lbq">Book a job</a>
+        <a class="btn btn-fill" href="#lbq">Request a quote</a>
         <a class="btn btn-ghost" href="tel:+61499317948">Call 0499 317 948</a>
       </div>
     </div>
@@ -294,18 +343,17 @@ p, li {
 
   <section class="pad" id="work">
     <div class="wrap">
-      <p class="stamp rv" style="margin:0 0 14px"><b aria-hidden="true">KB</b> Climate &amp; Power, Projects</p>
-      <h2 class="rv" style="margin:0 0 30px">Jobs KB has finished around Orange</h2>
+      <p class="stamp rv" style="margin:0 0 14px">Projects</p>
+      <h2 class="rv" style="margin:0 0 30px">Recent work around Orange and the Central West</h2>
       <div class="gal">
         <figure class="tile rv"><img src="images/work_02.jpg" alt="Indoor split-system air conditioner mounted high on a wall"><figcaption>Indoor head, mounted and level</figcaption></figure>
-        <figure class="tile rv"><img src="images/work_03.jpg" alt="Toshiba outdoor condenser unit installed against a brick wall"><figcaption>Outdoor condenser, piped and set</figcaption></figure>
-        <figure class="tile rv"><img src="images/work_05.jpg" alt="Wall-mounted control panel showing a cooling setpoint of 17 degrees"><figcaption>Controls set and explained</figcaption></figure>
+        <figure class="tile rv"><img src="images/work_03.jpg" alt="Outdoor condenser unit installed against a brick wall"><figcaption>Outdoor condenser, piped and set</figcaption></figure>
         <figure class="tile rv"><img src="images/hero.jpg" alt="Commercial rooftop air conditioning package unit on a flat roof"><figcaption>Commercial rooftop unit</figcaption></figure>
         <figure class="tile rv"><img src="images/work_04.jpg" alt="KB-branded company utility vehicle parked under a shelter"><figcaption>The KB van, on the road across Orange and the Central West</figcaption></figure>
       </div>
       <div class="rv" style="margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:22px 26px;border:1px solid var(--line2);border-radius:10px;background:linear-gradient(90deg,#16202b,#111a24)">
-        <p style="margin:0;max-width:46ch;color:#eaf2f8;font-size:17px"><strong style="color:#fff">Unit not cooling, or a switchboard to sort?</strong><br>Tell us what it is doing and we will book a time to look at it.</p>
-        <span style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-fill" href="#lbq">Book a job</a><a class="btn btn-ghost" href="tel:+614****7948">0499 317 948</a></span>
+        <p style="margin:0;max-width:46ch;color:#eaf2f8;font-size:17px"><strong style="color:#fff">Unit not cooling, or a switchboard to sort?</strong><br>Describe the fault and we will book a time to assess the fault.</p>
+        <span style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-fill" href="#lbq">Request a quote</a><a class="btn btn-ghost" href="tel:+61499317948">0499 317 948</a></span>
       </div>
     </div>
   </section>
@@ -313,17 +361,21 @@ p, li {
   <section class="pad" id="areas">
     <div class="wrap two">
       <div>
-        <p class="stamp rv" style="margin:0 0 14px"><b aria-hidden="true">KB</b> Climate &amp; Power, Service area</p>
-        <h2 class="rv" style="margin:0;max-width:14ch">Orange NSW</h2>
+        <p class="stamp rv" style="margin:0 0 14px">Service area</p>
+        <h2 class="rv" style="margin:0;max-width:18ch">Based in Orange, on the road across the Central West</h2>
         <figure class="rv" style="margin:24px 0 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--navy2)">
           <img src="images/work_01.jpg" alt="Electrical switchboard with circuit breakers mounted on a brick wall" style="width:100%;height:clamp(170px,22vw,230px);object-fit:cover;display:block">
-          <figcaption style="font-size:13.5px;color:#c3d2df;padding:11px 14px;border-top:1px solid var(--line)">Switchboards, labelled and left safe</figcaption>
+          <figcaption style="font-size:13.5px;color:#c3d2df;padding:11px 14px;border-top:1px solid var(--line)">New circuits, labelled at the board</figcaption>
         </figure>
       </div>
       <div class="rv">
-        <p style="color:var(--mute);max-width:58ch">KB Climate &amp; Power is based in Orange and works across the surrounding area for homes and businesses. Send through the job and we will let you know when we can get there.</p>
+        <p style="color:#e4ecf3;font-size:16.5px;max-width:58ch">KB Climate &amp; Power is based in Orange and works across the surrounding area for homes and businesses. Send the address and what needs doing, and we will reply with a time to attend.</p>
         <div class="areas">
           <span class="area">Orange</span><span class="area">Central West NSW</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px">
+          <a class="btn btn-fill" href="#lbq">Request a quote</a>
+          <a class="btn btn-ghost" href="tel:+61499317948">Call 0499 317 948</a>
         </div>
       </div>
     </div>
@@ -332,10 +384,10 @@ p, li {
   <section id="lbq" aria-labelledby="lbq-h">
   <div class="lbq-w">
     <div>
-      <p class="stamp"><b aria-hidden="true">KB</b> Climate &amp; Power, Orange NSW</p>
-      <h2 id="lbq-h">Tell KB the job &mdash; we book the time</h2>
-      <p class="lbq-s">Air conditioning, refrigeration or electrical, tell us what is going on and we will get you sorted.</p>
-      <div class="lbq-cl"><div><b>Call</b><a href="tel:+61499317948">0499 317 948</a></div><div><b>Email</b><a href="mailto:kbclimateandpower@gmail.com">kbclimateandpower@gmail.com</a></div><div><b>Instagram</b><a href="https://www.instagram.com/kb_climate" rel="noopener" target="_blank">@kb_climate</a></div><div><b>Area</b><span>Orange NSW</span></div></div>
+      <p class="stamp">Orange NSW</p>
+      <h2 id="lbq-h">Cooling, heating or a switchboard &mdash; one team for both</h2>
+      <p class="lbq-s">Air conditioning, refrigeration and electrical work across Orange and the Central West. Send the address and what the unit or board is doing, and we will reply with a price and a time to attend.</p>
+      <div class="lbq-cl"><div><b>Call</b><a href="tel:+61499317948">0499 317 948</a></div><div><b>Instagram</b><a href="https://www.instagram.com/kb_climate" rel="noopener" target="_blank">@kb_climate</a></div></div>
     </div>
     <form id="lbq-form" novalidate data-site="user-target-kb-climate-power" data-biz="KB Climate &amp; Power">
       <div class="lbq-g">
@@ -343,11 +395,11 @@ p, li {
         <div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div>
         <div class="lbq-full"><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div>
         <div class="lbq-full"><label for="lbq-svc">Service</label><select id="lbq-svc" name="service"><option>Air conditioning</option><option>Electrical</option><option>Refrigeration</option><option>Repairs / call-out</option><option>Ducted or split system</option><option>Switchboard / safety switch</option><option>Other</option></select></div>
-        <div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, finish, timing…" required></textarea></div>
+        <div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Scope of work, access details, preferred dates…" required></textarea></div>
       </div>
-      <label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label>
+      <label class="lbq-cons"><input type="checkbox" name="consent" value="1"> I agree to be contacted about this request and accept the <a href="privacy.html" style="color:#fff;text-decoration:underline;text-transform:none;letter-spacing:0;font-weight:700">privacy policy</a>.</label>
       <div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
-      <button type="submit">Send quote request</button>
+      <button type="submit">Request a quote</button>
       <p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -357,15 +409,18 @@ p, li {
 #lbq .lbq-k{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#9db0c0;margin:0 0 16px}
 #lbq h2{font-size:clamp(26px,3.4vw,42px);margin:0 0 14px;line-height:1.05}
 #lbq p.lbq-s{margin:0 0 24px;color:#9db0c0;max-width:46ch;font-size:15.5px}
-#lbq .lbq-cl{display:grid;gap:2px}
-#lbq .lbq-cl a,#lbq .lbq-cl span{color:#eef3f7;text-decoration:none}
-#lbq .lbq-cl div{display:flex;gap:12px;padding:11px 0;border-top:1px solid rgba(255,255,255,.18);font-size:15px}
+#lbq .lbq-cl{display:grid;gap:0;margin-top:8px}
+#lbq .lbq-cl a,#lbq .lbq-cl span{color:#fff;text-decoration:none;font-weight:700}
+#lbq .lbq-cl a:hover,#lbq .lbq-cl a:focus-visible{color:var(--orange);text-decoration:underline;text-underline-offset:3px}
+#lbq .lbq-cl div{display:flex;align-items:baseline;gap:14px;padding:13px 0;border-top:1px solid rgba(255,255,255,.18);font-size:19px}
 #lbq .lbq-cl b{min-width:84px;color:#9db0c0;font-weight:500;font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
-#lbq form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.18);padding:clamp(20px,3vw,30px)}
+#lbq form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:12px;
+ padding:clamp(20px,3vw,30px);box-shadow:0 22px 48px rgba(0,0,0,.38)}
 #lbq .lbq-g{display:grid;grid-template-columns:1fr 1fr;gap:13px}
 #lbq .lbq-full{grid-column:1/-1}
-#lbq label{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#9db0c0;margin-bottom:6px}
-#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 13px;border:1px solid rgba(255,255,255,.32);background:rgba(255,255,255,.11);color:#eef3f7;font:inherit;font-size:15px;border-radius:0}
+#lbq label{display:block;font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#d7e3ee;margin-bottom:7px;font-weight:600}
+#lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 13px;border:1px solid rgba(255,255,255,.35);background:#1c2732;color:#ffffff;font:inherit;font-size:16px;border-radius:0}
+#lbq input::placeholder,#lbq textarea::placeholder{color:#c3d2df;opacity:1}
 #lbq textarea{min-height:104px;resize:vertical}
 #lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid #f5761a;outline-offset:1px;border-color:transparent}
 #lbq button{margin-top:16px;width:100%;padding:15px 20px;border:0;background:#f5761a;color:#10161d;font:inherit;font-weight:700;font-size:16px;cursor:pointer;letter-spacing:.03em}
@@ -387,7 +442,7 @@ p, li {
     fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_='+Date.now())
       .then(function(r){return r.text();})
       .then(function(txt){var b=(txt||'').trim().replace(/\/+$/,'');if(done)return;done=true;clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b)?b:'https://laydback-hq.tail5b3740.ts.net');})
+        (function(c){var ac=new AbortController(),pt=setTimeout(function(){ac.abort()},1500);fetch(c+'/health',{method:'GET',mode:'no-cors',signal:ac.signal}).then(function(){clearTimeout(pt);cb(c)}).catch(function(){clearTimeout(pt);cb('https://laydback-hq.tail5b3740.ts.net')})})(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://laydback-hq.tail5b3740.ts.net');})
       .catch(function(){if(!done){done=true;clearTimeout(t);cb('https://laydback-hq.tail5b3740.ts.net');}});
   }
   var f=document.getElementById('lbq-form'); if(!f) return;
@@ -421,7 +476,6 @@ p, li {
 <footer>
   <div class="wrap foot">
     <div>
-      <span class="brand-mark" style="margin-bottom:14px" aria-hidden="true">KB</span>
       <p>Air conditioning, electrical and refrigeration across Orange and the Central West NSW &mdash; climate control and power done properly, by one trade.</p>
     </div>
     <div>
@@ -429,7 +483,7 @@ p, li {
       <a href="tel:+61499317948">0499 317 948</a>
       <a href="mailto:kbclimateandpower@gmail.com">kbclimateandpower@gmail.com</a>
       <a href="https://www.instagram.com/kb_climate" rel="noopener" target="_blank">Instagram</a>
-      <a href="#lbq">Book a job</a>
+      <a href="#lbq">Request a quote</a>
     </div>
     <div>
       <h4>Services</h4>
@@ -441,7 +495,7 @@ p, li {
   </div>
   <div class="wrap legal">
     <span>KB Climate &amp; Power &mdash; Orange, NSW</span>
-    <span><a href="privacy.html">Privacy</a> &nbsp;, &nbsp; <a href="terms.html">Terms</a></span>
+    <span><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span>
   </div>
 </footer>
 
@@ -526,18 +580,24 @@ ul.chk li b{color:#fff;font-weight:700}
 /* kill the decorative canvas wash over the hero photo; legible caption */
 #heroCanvas{display:none!important}
 .hero figure img{filter:none!important}
-.hero figcaption{font-size:12.5px!important;color:#fff!important;letter-spacing:.06em!important;
- background:rgba(7,11,17,.92)!important;padding:12px 16px!important}
+.hero figcaption{font-size:15px!important;line-height:1.45!important;color:#fff!important;letter-spacing:.04em!important;
+ background:rgba(7,11,17,.92)!important;padding:14px 16px!important}
 /* section visual anchor */
 .sys-shot{margin:26px 0 0}
 .sys-shot img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:8px;display:block;background:#0e1620}
-.sys-shot figcaption{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.1em;
- text-transform:uppercase;color:#ffb273;margin-top:9px}
+.sys-shot figcaption{font-family:"IBM Plex Mono",monospace;font-size:13.5px;line-height:1.4;letter-spacing:.06em;
+ text-transform:uppercase;color:#ffe3cc;margin-top:0;background:#070b11;border-top:2px solid var(--orange);padding:10px 14px}
 @media(max-width:620px){
  .cta-row{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
  .cta-row .btn{width:100%!important;justify-content:center;text-align:center}
  .hero p{font-size:16px!important;line-height:1.6!important}
 }
+/* r30: consent block stacked + legible, header meta contrast, visible focus */
+#lbq .lbq-cons{display:grid;grid-template-columns:auto 1fr;align-items:start;gap:11px;margin-top:14px;
+  font-family:inherit;font-size:13.5px;line-height:1.5;color:#e3edf6;text-transform:none;letter-spacing:0}
+#lbq .lbq-cons input{width:20px;height:20px;margin:1px 0 0;accent-color:var(--orange);flex:none}
+.brand__sub{font-size:12px;color:#e8f1f8}
+#lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--orange);outline-offset:1px;border-color:var(--orange)!important}
 </style>
 </body>
 </html>

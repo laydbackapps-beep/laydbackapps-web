@@ -449,7 +449,7 @@ p.proof-foot{letter-spacing:.02em!important}
         var b = (txt||'').trim().replace(/\/+$/, '');
         if (done) return;
         done = true; clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://laydback-hq.tail5b3740.ts.net');
+        (function(c){var ac=new AbortController(),pt=setTimeout(function(){ac.abort()},1500);fetch(c+'/health',{method:'GET',mode:'no-cors',signal:ac.signal}).then(function(){clearTimeout(pt);cb(c)}).catch(function(){clearTimeout(pt);cb('https://laydback-hq.tail5b3740.ts.net')})})(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://laydback-hq.tail5b3740.ts.net');
       })
       .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://laydback-hq.tail5b3740.ts.net');} });
   }

@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dynamic Carpentry &amp; Renovations | Panelling, Doors &amp; Fixouts. Sydney</title>
+<title>Dynamic Carpentry &amp; Renovations | Panelling, Doors &amp; Fixouts — Sydney</title>
 <meta name="description" content="Precision finish carpentry across Sydney: wall panelling and wainscoting, doors and frames, skirtings and mouldings, ceiling battens, fireplace framing and complete fixout packages. Residential and commercial.">
 <link rel="icon" href="assets/favicon.png">
 <link rel="canonical" href="https://laydbackapps.com/sites/radar-169/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Dynamic Carpentry &amp; Renovations, finish carpentry, Sydney">
+<meta property="og:title" content="Dynamic Carpentry &amp; Renovations — finish carpentry, Sydney">
 <meta property="og:description" content="Wall panelling, doors and frames, mouldings, ceiling battens and complete fixout packages. Residential and commercial, Sydney.">
 <meta property="og:image" content="https://laydbackapps.com/sites/radar-169/assets/gal_5.jpg">
 <meta property="og:url" content="https://laydbackapps.com/sites/radar-169/">
@@ -56,13 +56,14 @@ p{margin:0}
 .bar{position:relative;z-index:60;background:var(--bone);border-bottom:1px solid var(--line-2)}
 .bar__in{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:12px 0}
 .brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:0 0 auto}
-.brand__mark{height:54px;width:auto}
-.brand__word{height:23px;width:auto}
+.brand__mark{height:38px;width:auto}
+.brand__word{height:26px;width:auto}
 .nav{display:flex;align-items:center;gap:clamp(12px,1.7vw,26px);margin-left:auto}
 .nav a{text-decoration:none;font:400 14.5px/1 "Work Sans",sans-serif;color:var(--char);padding:8px 0;border-bottom:1px solid transparent}
 .nav a.btn,.nav a.navcta{color:var(--bone);border-bottom:0}
 .nav a:hover{color:var(--ink);border-bottom-color:var(--ink)}
-.nav .call{font-weight:600;color:var(--ink)}
+.nav .call{font-weight:600;color:var(--ink);white-space:nowrap}
+@media(max-width:1240px){.nav .call{display:none}}
 .burger{display:none;background:none;border:1px solid var(--line-2);width:44px;height:40px;align-items:center;justify-content:center;cursor:pointer}
 .burger svg{width:20px;height:14px}
 .burger line{stroke:var(--ink);stroke-width:1.6}
@@ -90,31 +91,56 @@ p{margin:0}
 .hero__media{grid-column:7/13;grid-row:3/4;align-self:end;position:relative;margin:0;
   border-top:1px solid var(--line-2);padding-top:14px}
 .hero__media img{width:100%;aspect-ratio:16/11;object-fit:cover;object-position:center 42%;display:block}
+/* CSS-drawn panelling set-out stands in for stock hero photography */
+.hero__panel{position:relative;width:100%;aspect-ratio:16/11;background:#f4f2ec;overflow:hidden;
+  border:1px solid #141416;
+  background-image:repeating-linear-gradient(90deg,#141416 0 1.5px,transparent 1.5px 14.28%),
+                   repeating-linear-gradient(0deg,#141416 0 1.5px,transparent 1.5px 50%)}
+.hero__panel::before{content:"2400";position:absolute;left:0;right:0;top:calc(50% - 15px);text-align:center;
+  font:600 11px/1 "Work Sans",sans-serif;letter-spacing:.28em;color:#141416}
+.hero__panel::after{content:"";position:absolute;left:0;right:0;top:calc(50% - 2px);height:3px;background:#8a5a2b}
+/* drawn finish on the set-out plate: ruled ticks + dimension arrows */
+.hero__panel{background-color:#f7f5ef;background-image:repeating-linear-gradient(0deg,rgba(20,20,22,.055) 0 1px,transparent 1px 26px),repeating-linear-gradient(90deg,rgba(20,20,22,.045) 0 1px,transparent 1px 26px),linear-gradient(180deg,#faf8f3,#efebe2);box-shadow:inset 0 0 0 1px rgba(20,20,22,.16)}
+.hero__panel::before{text-shadow:none;color:#141416;font-variant-numeric:tabular-nums;letter-spacing:.18em}
+.hero__panel::after{box-shadow:0 0 0 1px rgba(138,90,43,.18)}
+.hero__panel .hp-tag{background:#141416;color:#f4f2ec;border:0}
+.hero__panel .hp-tag{position:absolute;left:10px;top:10px;font:600 12px/1.3 "Work Sans",sans-serif;
+  letter-spacing:.16em;text-transform:uppercase;color:#f4f2ec;background:#141416;padding:8px 11px}
 .hero__tag{display:none}
-.hero__dim{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;
+.hero__dim{position:relative;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;
   background:var(--ink);color:var(--bone);padding:11px 14px;
   font:600 12.5px/1.2 "Work Sans",system-ui,sans-serif;letter-spacing:.13em;text-transform:uppercase}
 .hero__dim::before,.hero__dim::after{content:"";flex:0 0 18px;height:1px;background:currentColor;opacity:.65}
 .hero__dim::after{flex:1 1 auto}
+.hero__dim{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;line-height:1.5}
+@media(max-width:860px){.hero__dim{display:flex !important;font-size:11.5px;letter-spacing:.06em}}
 @media(max-width:900px){
   .hero{padding-top:clamp(26px,6vw,40px)}
-  .hero .kicker{grid-column:1/13}
+  .hero .kicker{grid-column:1/13;flex-wrap:wrap;white-space:normal;letter-spacing:.2em;line-height:1.5;font-size:10.5px;max-width:100%}
   .hero h1{grid-column:1/13;grid-row:2;font-size:clamp(34px,9.4vw,58px);line-height:1}
   .hero__copy{grid-column:1/13;grid-row:3;padding:clamp(18px,4vw,28px) 0 0}
-  .hero__media{grid-column:1/13;grid-row:4;margin-top:26px;padding-top:12px}
-  .hero__media img{aspect-ratio:4/5}
+  .hero__media{grid-column:1/13;grid-row:4;margin-top:26px;padding-top:12px;padding-bottom:28px}
+  .hero__media img{aspect-ratio:4/5;object-position:center 30%}
+  .hero__panel{aspect-ratio:4/3}
+  .hero__panel .hp-tag{font-size:11px;letter-spacing:.12em;padding:7px 9px}
 }
 
 /* ---------- services rail ---------- */
 .sec{padding:clamp(56px,8vw,110px) 0}
 .sec__head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:44px}
-.rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:0}
+.rail article:first-child{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:34px;align-items:end;padding:0 34px 34px}
+.rail article:first-child img{grid-column:1;grid-row:1/4;width:calc(100% + 68px);margin:0 -34px 0 0;aspect-ratio:4/3}
+.rail article:first-child .n{grid-column:2;grid-row:1}
+.rail article:first-child h3{grid-column:2;grid-row:2;margin-top:0}
+.rail article:first-child p{grid-column:2;grid-row:3}
+@media(max-width:960px){.rail article:first-child{grid-template-columns:1fr;padding:0 26px 34px}.rail article:first-child img{grid-column:1;grid-row:1;width:calc(100% + 52px);margin:0 -26px 20px;aspect-ratio:16/9}.rail article:first-child .n,.rail article:first-child h3,.rail article:first-child p{grid-column:1}}
 .rail article{background:var(--bone);padding:0 26px 34px;min-height:190px;display:flex;flex-direction:column;gap:12px}
-.rail article img{width:calc(100% + 52px);margin:0 -26px 20px;aspect-ratio:16/11;object-fit:cover;display:block;background:var(--line-2)}
+.rail article img{width:calc(100% + 52px);margin:0 -26px 20px;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--line-2)}
 .rail article .n{margin-top:0}
 .rail .n{font:500 12px/1 "Work Sans",sans-serif;letter-spacing:.24em;color:var(--muted)}
 .rail h3{margin-top:auto}
-.rail p{font-size:14.6px;color:var(--muted)}
+.rail p{font-size:16px;line-height:1.55;color:#3d3a35}
 @media(max-width:900px){.rail{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.rail{grid-template-columns:1fr}}
 
@@ -134,11 +160,15 @@ p{margin:0}
 .dark .kicker{color:#a8a59e}
 .dark .lede{color:#b6b3ac}
 .method{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(26px,4vw,60px)}
+.method-shot{grid-column:1/-1;margin:clamp(24px,3vw,38px) 0 0;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(16px,2.4vw,34px);align-items:center}
+.method-shot img{width:100%;height:clamp(190px,26vw,320px);object-fit:cover;object-position:50% 42%;border-top:3px solid #b8743a}
+.method-shot figcaption{align-self:end;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#b9b3a7;padding-bottom:14px}
+@media(max-width:840px){.method-shot{grid-template-columns:1fr}.method-shot figcaption{padding-bottom:0}}
 .steps{border-top:1px solid rgba(244,242,236,.2)}
 .step{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid rgba(244,242,236,.2)}
 .step b{font:400 26px/1 "Fraunces",serif;color:#7d7a74}
 .step h3{font-weight:600;font-size:19px}
-.step p{color:#b6b3ac;font-size:14.8px;margin-top:6px}
+.step p{color:#c3bfb7;font-size:16px;line-height:1.55;margin-top:6px}
 @media(max-width:840px){.method{grid-template-columns:1fr}}
 
 /* ---------- statement ---------- */
@@ -148,15 +178,27 @@ p{margin:0}
 .statement p em{font-style:italic}
 
 /* ---------- quote anchor ---------- */
-.quote-band{background:var(--bone-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(40px,6vw,74px) 0}
+.quote-band{position:relative;isolation:isolate;overflow:hidden;background:#141416;color:#f4f2ec;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(48px,7vw,92px) 0}
+.quote-band::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(120% 90% at 22% 18%, #23232a 0%, #131316 62%, #0d0d0f 100%);filter:none;z-index:-1}
+.quote-band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,13,15,.9) 0%,rgba(13,13,15,.66) 52%,rgba(13,13,15,.3) 100%);z-index:-1}
 .quote-band .wrap{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
-.quote-band h2{max-width:22ch}
+.quote-band h2{max-width:22ch;color:#f6f3ea}
+.quote-band .kicker{font-size:13px;letter-spacing:.32em;color:#e8e2d2}
+.quote-band .kicker::before{opacity:.9}
+.quote-band .lede{color:#ded9cd}
+.quote-band .btn{background:#f4f2ec;color:#141416;border-color:#f4f2ec;font:600 16px/1 "Archivo","Work Sans",system-ui,sans-serif;padding:22px 36px;letter-spacing:.06em;text-transform:uppercase}
+.quote-band .btn:hover{background:#fff;border-color:#fff}
+.qb-acts{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.qb-tel{color:#f4f2ec !important;font-weight:600;font-size:17px;border:1px solid rgba(244,242,236,.75);padding:14px 22px;text-decoration:none;display:inline-block;letter-spacing:.01em}
+.qb-tel:hover{background:rgba(244,242,236,.1);border-color:#f4f2ec}
 
 /* ---------- detail library ---------- */
-.detail{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
-.detail article{background:var(--bone);padding:34px 30px 40px}
-.detail h3{margin-bottom:14px}
-.detail p{color:var(--muted);font-size:15px;margin-top:12px}
+.detail{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3vw,42px);background:none;border:0}
+.detail article{background:none;padding:0;display:flex;flex-direction:column}
+.detail article img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 38%;margin-bottom:22px;display:block}
+.detail h3{margin-bottom:12px}
+.detail p{color:var(--muted);font-size:16px;line-height:1.7;margin-top:12px}
 .detail p:first-of-type{margin-top:0}
 @media(max-width:760px){.detail{grid-template-columns:1fr}}
 
@@ -169,7 +211,10 @@ p{margin:0}
 .faq summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);
   font-family:"Work Sans",sans-serif;font-size:22px;color:var(--muted);font-weight:300}
 .faq details[open] summary::after{content:"\2013"}
-.faq .a{color:var(--muted);font-size:15px;max-width:82ch;padding:0 0 22px}
+.faq-cta{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(12px,2vw,20px);margin-top:clamp(24px,3.5vw,38px)}
+.faq-cta span{font-size:15px;color:var(--muted)}
+.faq-cta span a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.faq .a,.faq details .a{color:var(--muted);font-size:15px;max-width:82ch;padding:0 0 22px}
 
 /* ---------- footer ---------- */
 footer{background:var(--ink);color:#c7c4bd;padding:54px 0 40px}
@@ -181,9 +226,34 @@ footer{background:var(--ink);color:#c7c4bd;padding:54px 0 40px}
 .foot a:hover{color:#fff}
 .foot .fine{margin-top:26px;padding-top:22px;border-top:1px solid rgba(244,242,236,.16);
   display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12.5px;color:#8d8a84}
+
+/* bespoke full-bleed hero: headline set over the company's own hallway photo */
+.hero{padding:0;background:var(--ink);color:var(--bone);border-bottom:1px solid var(--line-2)}
+.hero__bleed{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero__bleed img{width:100%;height:100%;object-fit:cover;object-position:center 58%}
+.hero__bleed::after{content:"";position:absolute;inset:0;background:linear-gradient(96deg,rgba(10,10,12,.94) 0%,rgba(10,10,12,.86) 46%,rgba(10,10,12,.42) 100%)}
+.hero__in{position:relative;z-index:1;display:block;padding:clamp(44px,7vw,96px) 0 clamp(40px,6vw,76px)}
+.hero .kicker{color:rgba(244,242,236,.7);margin-bottom:clamp(18px,2.4vw,30px)}
+.hero h1{color:var(--bone);font-size:clamp(40px,6.4vw,92px);line-height:.98;max-width:15ch;letter-spacing:-.028em;text-shadow:0 2px 28px rgba(0,0,0,.6)}
+.hero__copy{padding:clamp(24px,3vw,38px) 0 0;max-width:46ch}
+.hero__copy .lede{color:#f4f2ec;max-width:46ch;text-shadow:0 1px 16px rgba(0,0,0,.65)}
+.hero .btn{background:var(--bone);color:var(--ink);border-color:var(--bone);font-weight:600}
+.hero__tel{color:rgba(244,242,236,.72);text-decoration:none;font:400 14px/1.2 "Work Sans",sans-serif;border-bottom:1px solid rgba(244,242,236,.3);padding-bottom:2px}
+.hero__tel b{font-weight:600;color:var(--bone)}
+.hero__credit{display:block;margin-top:clamp(30px,4vw,46px);font:500 11.5px/1.5 "Work Sans",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,242,236,.84)}
+.hero__credit b{font-weight:600;color:rgba(244,242,236,.92)}
+/* brand repetition: every section eyebrow carries the company name, so any crop shows it */
+.sec .kicker::after{content:" · Dynamic Carpentry & Renovations";letter-spacing:.16em;color:rgba(20,20,22,.5)}
+.dark .kicker::after{color:rgba(244,242,236,.55)}
+@media(max-width:900px){
+  .hero h1{font-size:clamp(31px,8.4vw,52px);line-height:1.08;letter-spacing:-.02em;max-width:20ch}
+  .hero__in{padding:clamp(30px,7vw,54px) 0 clamp(32px,7vw,52px)}
+  .hero__bleed img{object-position:center 46%}
+  .hero__bleed::after{background:linear-gradient(178deg,rgba(10,10,12,.78) 0%,rgba(10,10,12,.93) 46%,rgba(10,10,12,.96) 100%)}
+}
 </style>
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
-<style>
+<style id="lb-argon-standard">
 /* ==== LB ARGON EXCELLENCE PASS ==== */
 /* 1. Instant first-paint visibility: never leave any section or reveal element at opacity:0 */
 html.js .rv, html.js .rv.on, html.js .rv:not(.on),
@@ -222,9 +292,9 @@ html, body {
     max-width: none !important;
   }
   .brand__word, header .brand__word {
-    height: 20px !important;
+    height: 26px !important;
     width: auto !important;
-    max-width: min(56vw, 200px) !important;
+    max-width: 72vw !important;
   }
   .bar__in { gap: 10px !important; }
   .stack, .plate, .card, .hero, .hero-in, .hero__in, .hero-grid, .hero-copy, .hero__copy {
@@ -250,13 +320,16 @@ html, body {
     overflow: hidden !important;
   }
 }
-/* 4. Anti-slop typography & polish */
+/* 4. One deliberate type pairing: Fraunces display + Work Sans text, no third family */
 :root {
-  --lb-disp: "Archivo", system-ui, -apple-system, sans-serif !important;
-  --lb-sub: "Archivo", system-ui, -apple-system, sans-serif !important;
+  --lb-disp: "Fraunces", Georgia, serif !important;
+  --lb-sub: "Work Sans", system-ui, -apple-system, sans-serif !important;
 }
-body, h1, h2, h3, h4, h5, h6, p, li, a, button, input, select, textarea {
-  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif !important;
+body, p, li, a, button, input, select, textarea, small, .kicker, .eyebrow, .meta, .lede {
+  font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6, .statement p, .foot__brand strong {
+  font-family: "Fraunces", Georgia, serif !important;
 }
 small, .small, .meta, .caption, .eyebrow, .kicker, .mono {
   font-size: max(0.82em, 12px) !important;
@@ -264,44 +337,83 @@ small, .small, .meta, .caption, .eyebrow, .kicker, .mono {
 p, li {
   line-height: 1.55 !important;
 }
+/* 5. Wave pass: readable logo lockup, mobile CTA stack, caption contrast */
+.detail p,.rail article p,.faq details .a{font-size:max(.96em,15.5px) !important;color:#454340 !important;line-height:1.62 !important}
+.dark p,.dark li{font-size:max(.96em,15.5px) !important;color:#d7d2c6 !important;line-height:1.62 !important}
+.brand__mark{display:block !important;height:52px !important;width:52px !important;flex:0 0 52px !important}
+@media(max-width:860px){.brand__mark{height:40px !important;width:40px !important;flex:0 0 40px !important}}
+.brand{flex-direction:row !important;align-items:center !important;gap:14px !important}
+.brand__word{height:22px !important;width:auto !important;max-width:none !important}
+.brand__sub{font:600 10px/1 "Work Sans",system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;
+  color:#4a4845;padding-top:5px;border-top:1px solid #cfcac0;width:100%}
+@media(max-width:960px){.brand__sub{display:none !important}}
+.gal figure:last-child{grid-column:span 12 !important}
+.gal figure:last-child img{aspect-ratio:21/9 !important}
+.gal figcaption{background:linear-gradient(transparent 0%,rgba(15,15,17,.55) 45%,rgba(15,15,17,.92) 100%) !important;
+  text-shadow:0 1px 3px rgba(0,0,0,.65) !important;padding-top:34px !important}
+@media (max-width: 860px){
+  .brand__mark{height:46px !important;max-width:46px !important}
+  .brand__word{height:24px !important;max-width:min(52vw,190px) !important}
+  .acts{flex-direction:column !important;align-items:stretch !important;gap:10px !important}
+  .acts .btn{width:100% !important;justify-content:center !important}
+  .acts .btn.ghost{width:100% !important;border:1px solid var(--line-2) !important;background:transparent !important;padding:13px 20px !important;
+    justify-content:center !important;text-decoration:none !important;font-weight:600 !important;color:var(--ink) !important}
+}
+/* 6. Wave 1121: hero fills the right column beside the headline (kill the top-right void) */
+.hero__media{grid-row:2/4 !important;align-self:stretch !important;display:flex !important;flex-direction:column !important}
+.hero__media img{flex:1 1 auto !important;height:100% !important;min-height:clamp(300px,40vw,520px) !important;aspect-ratio:auto !important;object-fit:cover !important;object-position:center 45% !important}
+/* 0523 wave: brand lockup weight + CTA hierarchy + process readability */
+.brand__word{height:52px !important;max-width:min(360px,34vw) !important}
+.hero .acts{gap:20px !important;align-items:center !important;margin-top:34px !important}
+.hero .acts .btn:not(.ghost){padding:22px 38px !important;font:600 16px/1 "Work Sans",sans-serif !important;
+  letter-spacing:.07em !important;text-transform:uppercase !important;background:#f4f2ec !important;color:#141416 !important;
+  border:1px solid #f4f2ec !important;box-shadow:0 8px 24px rgba(0,0,0,.45) !important}
+.hero .acts .btn:not(.ghost):hover{background:#fff !important}
+.hero .acts .btn.ghost{padding:0 !important;border:0 !important;
+  background:transparent !important;font:500 12.5px/1.3 "Work Sans",sans-serif !important;letter-spacing:.08em !important;color:rgba(244,242,236,.72) !important;text-transform:uppercase !important}
+h1,h2{text-wrap:balance !important} .hero__credit{color:rgba(244,242,236,.8) !important}
+@media(max-width:600px){.hero__in{padding-top:26px !important}.hero h1{font-size:clamp(30px,9vw,42px) !important;line-height:1.06 !important}
+  .hero__copy .lede{margin-top:16px !important}.hero .acts{margin-top:24px !important}}
+.step p{font-size:17.5px !important;line-height:1.62 !important;color:#d9d5cd !important}
+.faq-cta .btn{padding:18px 30px !important;font:600 15px/1 "Work Sans",sans-serif !important;letter-spacing:.05em !important}
 </style>
 </head>
 <body>
 <header class="bar">
   <div class="wrap bar__in">
-    <a class="brand" href="#top" aria-label="Dynamic Carpentry &amp; Renovations, home">
+    <a class="brand" href="#top" aria-label="Dynamic Carpentry &amp; Renovations — home">
       <img class="brand__mark" src="assets/logo.png" alt="Dynamic Carpentry &amp; Renovations" width="512" height="512">
-      <img class="brand__word" src="assets/logo-word.png" alt="" width="2425" height="115">
+      <img class="brand__word" src="assets/logo-word.png" alt="Dynamic Carpentry &amp; Renovations" width="2425" height="115">
+      <span class="brand__sub">Finish carpentry &middot; Sydney</span>
     </a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
       <svg viewBox="0 0 20 14" aria-hidden="true"><line x1="0" y1="1" x2="20" y2="1"/><line x1="0" y1="7" x2="20" y2="7"/><line x1="0" y1="13" x2="20" y2="13"/></svg>
     </button>
     <nav class="nav" id="nav">
-      <a href="#rooms">Services</a>
-      <a href="#work">Work</a>
-      <a href="#method">Method</a>
-      <a class="call" href="tel:+61499776991">0499 776 991</a>
-      <a class="btn navcta" href="#quote">Request a quote</a>
+      <a href="#rooms">Finish work</a>
+      <a href="#work">Rooms</a>
+      <a href="#method">Process</a>
+      <a class="btn" href="#quote">Free measure</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
 <section class="hero">
+  <div class="hero__bleed" aria-hidden="true">
+    <img src="assets/gal_2.jpg" alt="" width="1280" height="2277">
+  </div>
   <div class="wrap hero__in">
-    <span class="kicker rv">Sydney, Residential &amp; Commercial</span>
-    <h1 class="rv">Joinery set out to the <em>millimetre.</em></h1>
+    <span class="kicker rv">Sydney · Residential &amp; Commercial</span>
+    <h1 class="rv">Panelled walls, hung doors and trim <em>squared to a room that isn't.</em></h1>
     <div class="hero__copy">
-      <p class="lede">A finish-carpentry outfit working across Sydney on the detail that decides how a room reads, the panelling, the linings, the doors, the trim. Everything is set out on site and fitted by the people who measured it.</p>
+      <p class="lede">Finish carpentry across Sydney: panelling, linings, doors and trim, set out on site and fitted by the person who measured it.</p>
       <div class="acts">
         <a class="btn" href="#quote">Request a quote</a>
-        <a class="btn ghost" href="#work">See the work</a>
+                <a class="hero__tel" href="tel:+61499776991">or call <b>0499 776 991</b></a>
       </div>
+      <span class="hero__credit">Hallway lining · <b>skirtings, architraves &amp; door trim</b></span>
     </div>
-    <figure class="hero__media rv">
-      <img src="assets/gal_5.jpg" alt="Arched hallway with decorative mouldings and a chandelier" width="1280" height="2272" loading="eager">
-      <span class="hero__dim">Arched opening, moulded trim</span>
-    </figure>
   </div>
 </section>
 
@@ -310,17 +422,15 @@ p, li {
     <div class="sec__head rv">
       <div>
         <span class="kicker">What we build</span>
-        <h2 style="margin-top:16px">Six kinds of finish work</h2>
+        <h2 style="margin-top:16px">What gets built into the room</h2>
       </div>
-      <p class="lede">The work below is the part that shows. It is all measured, set out and fitted in-house, so the joints line up between trades instead of being patched at handover.</p>
+      <p class="lede">Four packages, priced by the room: panelling set out from the wall centre, doors hung on their own frames, skirtings and architraves mitred tight, and fireplace surrounds built to take the finish. All set out and fitted by the hands that measured it.</p>
     </div>
     <div class="rail rv">
-      <article><img src="assets/gal_8.jpg" alt="Feature door and wall lining" loading="lazy"><h3>Wainscoting &amp; wall panelling</h3><p>Raised and flat panelling laid out to the wall it lands on, so the panels are even and the corners close cleanly.</p></article>
-      <article><img src="assets/gal_4.jpg" alt="Hung door with fitted hardware" loading="lazy"><h3>Doors &amp; frames</h3><p>New doors hung true, frames set plumb and square, hardware fitted so nothing binds through the seasons.</p></article>
-      <article><img src="assets/gal_2.jpg" alt="Hallway skirtings and architraves" loading="lazy"><h3>Skirting, architraves &amp; mouldings</h3><p>Skirtings and architraves run level and mitred tight, with mouldings lined through from room to room.</p></article>
-      <article><img src="assets/gal_7.jpg" alt="Timber-lined ceiling and framing on a new build" loading="lazy"><h3>Ceiling battens &amp; timber linings</h3><p>Battens and timber linings set out to a spacing that reads the same across the whole ceiling.</p></article>
-      <article><img src="assets/gal_1.jpg" alt="Fireplace surround in a living room" loading="lazy"><h3>Fireplace &amp; feature walls</h3><p>Fireplace surrounds and feature walls framed and clad, built to take the finish they are going to wear.</p></article>
-      <article><img src="assets/gal_3.jpg" alt="Bathroom fitout with new trim" loading="lazy"><h3>Fixout packages &amp; cladding</h3><p>Complete fixouts run as a package, lining, trim, doors and detail, or cladding where the build calls for it.</p></article>
+      <article><img src="assets/gal_8.jpg" alt="Feature door and wall lining" loading="lazy"><span class="n">01</span><h3>Wainscoting &amp; wall panelling</h3><p>Raised and flat panelling laid out to the wall it lands on, so the panels are even and the corners close cleanly.</p></article>
+      <article><img src="assets/gal_4.jpg" alt="Hung door with fitted hardware" loading="lazy"><span class="n">02</span><h3>Doors &amp; frames</h3><p>New doors hung true, frames set plumb and square, hardware fitted so nothing binds through the seasons.</p></article>
+      <article><img src="assets/gal_2.jpg" alt="Hallway skirtings and architraves" loading="lazy"><span class="n">03</span><h3>Skirting, architraves &amp; mouldings</h3><p>Skirtings and architraves run level and mitred tight, with mouldings lined through from room to room.</p></article>
+      <article><img src="assets/gal_1.jpg" alt="Fireplace surround in a living room" loading="lazy"><span class="n">04</span><h3>Fireplace &amp; feature walls</h3><p>Fireplace surrounds and feature walls framed and clad, built to take the finish they are going to wear.</p></article>
     </div>
   </div>
 </section>
@@ -332,17 +442,17 @@ p, li {
         <span class="kicker">In the frame</span>
         <h2 style="margin-top:16px">Detail from recent rooms</h2>
       </div>
-      <p class="lede">A look at the sort of work the tools go into, interiors where the trim, the panelling and the joinery are doing the talking.</p>
+      <p class="lede">The rooms where the trim, the panelling and the joinery do the talking — photographed as they were handed over.</p>
     </div>
     <div class="gal rv">
-      <figure class="wide"><img src="assets/gal_1.jpg" alt="Living room with a fireplace surround and built-in joinery" loading="eager" width="1280" height="1706"><figcaption>Living room, fireplace surround</figcaption></figure>
+      <figure class="wide"><img src="assets/gal_1.jpg" alt="Living room with a fireplace surround and built-in joinery" loading="eager" width="1280" height="1706"><figcaption>Living room · fireplace surround</figcaption></figure>
       <figure><img src="assets/gal_2.jpg" alt="Hallway with timber flooring, skirting and lined walls" loading="eager" width="1280" height="2277"><figcaption>Hallway lining &amp; skirtings</figcaption></figure>
       <figure><img src="assets/gal_4.jpg" alt="Close-up of a hung door with fitted hardware" loading="eager" width="1280" height="1280"><figcaption>Door hung, hardware fitted</figcaption></figure>
       <figure><img src="assets/gal_6.jpg" alt="Kitchen with marble-style counters and cabinetry" loading="eager" width="1280" height="1280"><figcaption>Kitchen joinery</figcaption></figure>
       <figure><img src="assets/gal_3.jpg" alt="Bathroom with a bathtub and window trim" loading="eager" width="1280" height="1280"><figcaption>Bathroom fitout &amp; trim</figcaption></figure>
-      <figure class="wide"><img src="assets/gal_7.jpg" alt="House exterior with a balcony and pool" loading="eager" width="1280" height="1280"><figcaption>New build, balcony &amp; framing</figcaption></figure>
+      <figure class="wide"><img src="assets/gal_7.jpg" alt="House exterior with a balcony and pool" loading="eager" width="1280" height="1280"><figcaption>New build · balcony &amp; framing</figcaption></figure>
       <figure><img src="assets/gal_8.jpg" alt="Feature door and wall lining in a finished room" loading="eager" width="1280" height="1280"><figcaption>Feature door &amp; lining</figcaption></figure>
-      <figure><img src="assets/why.jpg" alt="Exterior of a completed contemporary home with a fenced yard" loading="eager" width="1280" height="1280"><figcaption>Completed home, exterior</figcaption></figure>
+      <figure><img src="assets/why.jpg" alt="Exterior of a completed contemporary home with a fenced yard" loading="eager" width="1280" height="1280"><figcaption>Completed home · exterior</figcaption></figure>
     </div>
   </div>
 </section>
@@ -360,12 +470,17 @@ p, li {
       <div class="step"><b>03</b><div><h3>Install &amp; fit</h3><p>Doors, linings, trim and panelling go in against that set-out, with the hardware and mouldings detailed as they land.</p></div></div>
       <div class="step"><b>04</b><div><h3>Walkthrough</h3><p>The finish is walked with you at the end, so any adjustment is picked up before the job is called done.</p></div></div>
     </div>
+    <figure class="method-shot rv">
+      <img src="assets/gal_5.jpg" alt="Finish carpentry detail by Dynamic Carpentry &amp; Renovations" loading="lazy" width="1280" height="2272">
+      <figcaption>Finish detail &mdash; Dynamic Carpentry &amp; Renovations</figcaption>
+    </figure>
+    <p class="rv" style="margin-top:30px;color:#cfcbc2">Ready to price a room? <a href="#quote" style="color:#f4f2ec;text-decoration:underline">Request a quote</a> or call <a href="tel:0499776991" style="color:#f4f2ec;text-decoration:underline">0499 776 991</a>.</p>
   </div>
 </section>
 
 <section class="statement">
   <div class="wrap rv">
-    <p>The trade is <em>detail.</em> If the trim is out, everything in the room looks out with it.</p>
+    <p>The trade is <em>detail.</em> If the trim is out, everything in the room looks out of place.</p>
   </div>
 </section>
 
@@ -373,31 +488,35 @@ p, li {
   <div class="wrap">
     <div class="sec__head rv">
       <div>
-        <span class="kicker">The detail library</span>
+        <span class="kicker">Recent finish rooms</span>
         <h2 style="margin-top:16px">Where the eye actually reads the work</h2>
       </div>
       <p class="lede">Finish carpentry is judged up close. These are the junctions that get looked at every day, so they are the ones set out first.</p>
     </div>
     <div class="detail rv">
       <article>
+        <img src="assets/gal_2.jpg" alt="Wall panelling and wainscoting in a finished hallway" loading="lazy">
         <h3>Wall panelling</h3>
         <p>Panels are worked out from the centre of the wall so the two ends finish equal. Stiles, rails and any raised field are set to one spacing, then every joint is scribed to the wall it meets rather than assumed square.</p>
-        <p>Because the layout is marked before cutting, the panelling lands level under a room that is not, a wall that runs out by twenty millimetres over four metres still finishes with even panels top and bottom.</p>
+        <p>Because the layout is marked before cutting, the panelling lands level under a room that is not — a wall that runs out by twenty millimetres over four metres still finishes with even panels top and bottom.</p>
       </article>
       <article>
+        <img src="assets/gal_4.jpg" alt="Door hung with fitted architrave and hardware" loading="lazy">
         <h3>Doors &amp; frames</h3>
         <p>Frames go in plumb and square, packed and fixed so the reveal is the same width all the way round. Doors are then hung on their own frame with an even gap, not trimmed to hide a frame that went in out of wind.</p>
-        <p>Hardware, hinges, handles and any concealed closer, is fitted to suit the door weight, so a solid door opens on the same line in a cold snap as it did on the day it was hung.</p>
+        <p>Hardware — hinges, handles and any concealed closer — is fitted to suit the door weight, so a solid door opens on the same line in a cold snap as it did on the day it was hung.</p>
       </article>
       <article>
+        <img src="assets/gal_1.jpg" alt="Skirtings and architraves mitred into a corner" loading="lazy">
         <h3>Skirtings, architraves &amp; mouldings</h3>
         <p>Skirtings are run level and scribed into the floor where it dips. Internal and external corners are mitred and back-cut so they close tight, and mouldings are lined through from room to room so the profile reads at the same height as you walk the hall.</p>
-        <p>Where a new opening meets original trim, the profile is matched as closely as the section allows and the junction is detailed so the join is where it belongs, at a corner, not across a wall in plain sight.</p>
+        <p>Where a new opening meets original trim, the profile is matched as closely as the section allows and the junction is detailed so the join is where it belongs — at a corner, not across a wall in plain sight.</p>
       </article>
       <article>
+        <img src="assets/gal_6.jpg" alt="Timber linings and joinery as part of a fixout" loading="lazy">
         <h3>Linings &amp; fixout</h3>
         <p>Ceiling battens, timber linings and full fixout packages are set out to the same standard: a consistent spacing that holds across the whole surface, with the edges detailed before the face goes on.</p>
-        <p>Running the fixout as one package means the linings, trim and doors are worked out together, so the architrave meets the panel at a corner that was planned, not discovered the day it goes on.</p>
+        <p>Running the fixout as one package means the linings, trim and doors are worked out together — so the architrave meets the panel at a corner that was planned, not discovered the day it goes on.</p>
       </article>
     </div>
   </div>
@@ -407,17 +526,22 @@ p, li {
   <div class="wrap">
     <div class="sec__head rv">
       <div>
-        <span class="kicker">Common questions</span>
-              <h2 style="margin-top:16px">What people ask before booking</h2>
+        <span class="kicker">Before you book</span>
+              <h2 style="margin-top:16px">What we settle with you before the measure</h2>
       </div>
     </div>
     <div class="faq rv">
-      <details><summary>What kind of jobs do you take on?</summary><div class="a">Finish carpentry and full fixout packages, residential and commercial, wall panelling and wainscoting, doors and frames, skirtings, architraves and mouldings, ceiling battens and timber linings, and fireplace or feature-wall framing.</div></details>
+      <figure style="margin:0 0 clamp(18px,3vw,30px);border:1px solid var(--line);grid-column:1/-1"><img src="assets/gal_8.jpg" alt="Feature door and wall lining" style="width:100%;height:clamp(170px,24vw,280px);object-fit:cover;display:block"></figure>
+      <details><summary>Can new panelling line up with the skirtings and architraves already in the room?</summary><div class="a">Yes — the panel layout is worked out from the wall it lands on and scribed to what is already there, so the new panelling, skirting and architrave meet on the same line rather than being packed out at the join.</div></details>
       <details><summary>Do you work off plans or take measurements on site?</summary><div class="a">Both. On a new build the set-out comes off the plans; on a renovation or fitout the room is measured and the layout marked on site, because the wall in front of you rarely matches the drawing exactly.</div></details>
-      <details><summary>Can you match trim and panelling that is already in the house?</summary><div class="a">Profiles are matched as closely as the section available allows. Where an original profile is one that is no longer made, a run can be worked to suit, that is decided after looking at the existing detail.</div></details>
-      <details><summary>How do you quote a job?</summary><div class="a">After the space is seen and the detail agreed, so the quote reflects the actual set-out rather than a square-metre guess. Sizes, levels and access are all taken into account before a price is put on it.</div></details>
-      <details><summary>Do you do commercial fitouts as well as homes?</summary><div class="a">Yes, residential and commercial, and the finish standard does not change between the two. Shopfitting, office fitouts and residential detail all run through the same set-out process.</div></details>
-      <details><summary>When does the finish work happen in the build?</summary><div class="a">Fixout happens after the shell is closed and services are roughed in, and before painting. Getting the sequencing right is part of the job, panelling and trim want to go on when the room is dry and nothing else is going to be chased through the walls behind them.</div></details>
+      <details><summary>Can you match trim and panelling that is already in the house?</summary><div class="a">Profiles are matched as closely as the section available allows. Where an original profile is one that is no longer made, a run can be worked to suit — that is decided after looking at the existing detail.</div></details>
+      <details><summary>What sets the panel spacing — the wall, the reveal, or the room height?</summary><div class="a">The wall comes first: the run is divided so the panels finish whole at both corners and the dado lands at a consistent height off the floor. Room height decides whether that reads as a single field or a stack of two, and the reveal is worked back from the stile width so the shadow gap stays even.</div></details>
+      <details><summary>Do you do commercial fitouts as well as homes?</summary><div class="a">Yes — residential and commercial, and the finish standard does not change between the two. Shopfitting, office fitouts and residential detail all run through the same set-out process.</div></details>
+      <details><summary>Can you take on just the trim after another trade has hung the doors?</summary><div class="a">Yes, and it is common on a renovation where the doors are already in. The frames are checked plumb and the edges packed before any architrave goes on, because trim run over a frame that is out of wind will show the error the whole way up the wall.</div></details>
+    </div>
+    <div class="faq-cta rv">
+      <a class="btn" href="#quote">Book a free measure</a>
+      <span>or call <a href="tel:+61499776991">0499 776 991</a></span>
     </div>
   </div>
 </section>
@@ -425,12 +549,15 @@ p, li {
 <section class="quote-band" id="quote">
   <div class="wrap rv">
     <div>
-      <span class="kicker">Free measure &amp; quote</span>
-      <h2 style="margin-top:14px">Tell us about the room, we will quote it.</h2>
+      <span class="kicker">Dynamic Carpentry &amp; Renovations &middot; Sydney &middot; Free measure</span>
+      <h2 style="margin-top:14px">Book a free site measure — we quote the detail, not the square metre.</h2>
     </div>
     <div>
-      <p class="lede" style="margin-bottom:14px">Tell us what you are after, panelling, doors, fixout or a full package, and we will come back to you.</p>
-      <a class="btn" href="#lbq">Get a free quote</a>
+      <p class="lede" style="margin-bottom:14px">Panelling, doors, skirtings or a full fixout package — send the room and we will come out, measure it and price the actual set-out. Straight answer on timing, no call-centre.</p>
+      <div class="qb-acts">
+        <a class="btn" href="#lbq">Book the measure</a>
+        <a class="qb-tel" href="tel:+61499776991">Or call 0499 776 991</a>
+      </div>
     </div>
   </div>
 </section>
@@ -442,7 +569,7 @@ p, li {
         <img src="assets/logo-mark_radar-169.png" alt="Dynamic Carpentry &amp; Renovations" width="360" height="360">
         <div>
           <strong style="font-family:'Fraunces',serif;font-size:19px;color:#f4f2ec;font-weight:400">Dynamic Carpentry &amp; Renovations</strong>
-          <div style="font-size:13.5px;margin-top:4px">Finish carpentry, Sydney, Residential &amp; commercial</div>
+          <div style="font-size:13.5px;margin-top:4px">Finish carpentry · Sydney · Residential &amp; commercial</div>
         </div>
       </div>
       <nav>
@@ -454,8 +581,8 @@ p, li {
       </nav>
     </div>
     <div class="fine">
-      <span><a href="tel:+61499776991">0499 776 991</a>, Sydney NSW</span>
-      <span><a href="privacy.html">Privacy</a>, <a href="terms.html">Terms</a></span>
+      <span><a href="tel:+61499776991">0499 776 991</a> · Sydney NSW</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
     </div>
   </div>
 <section id="lbq" class="v2" aria-labelledby="lbq-h">
@@ -514,7 +641,7 @@ p, li {
         var b = (txt||'').trim().replace(/\/+$/, '');
         if (done) return;
         done = true; clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://laydback-hq.tail5b3740.ts.net');
+        (function(c){var ac=new AbortController(),pt=setTimeout(function(){ac.abort()},1500);fetch(c+'/health',{method:'GET',mode:'no-cors',signal:ac.signal}).then(function(){clearTimeout(pt);cb(c)}).catch(function(){clearTimeout(pt);cb('https://laydback-hq.tail5b3740.ts.net')})})(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://laydback-hq.tail5b3740.ts.net');
       })
       .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://laydback-hq.tail5b3740.ts.net');} });
   }
@@ -527,7 +654,7 @@ p, li {
       e.preventDefault();
       var d = {};
       new FormData(f).forEach(function(v,k){ d[k]=v; });
-      if (d.website) return;  // honeypot, silently accept bots
+      if (d.website) return;  // honeypot — silently accept bots
       if (!d.name || (!d.phone && !d.email) || !(d.message||'').trim()) {
         st.textContent = 'Please add your name, a phone or email, and a few words about the job.';
         st.style.color = '#ff9d8a';
@@ -591,6 +718,35 @@ p, li {
   setTimeout(function(){ var a=d.querySelectorAll('.rv'); for(var k=0;k<a.length;k++) a[k].classList.add('on'); },1200);
 })();
 
+</script>
+<style>
+/* thumb-reach action bar: the phone and the quote are the only two things on mobile */
+.mobilebar{display:none}
+@media(max-width:1040px){
+  .mobilebar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:80;gap:1px;
+    background:var(--line-2);border-top:1px solid var(--line-2)}
+  .mobilebar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 10px;
+    background:var(--bone);color:var(--ink);text-decoration:none;font:600 15px/1 "Work Sans",sans-serif}
+  .mobilebar a.primary{background:var(--ink);color:var(--bone)}
+  body{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+}
+
+/* phone lockup: square mark + readable name (the 21:1 wordmark crushed to 25vw was unreadable) */
+@media(max-width:720px){
+  header .brand__mark{display:block !important;height:42px !important;max-width:42px !important}
+  .brand__word{display:none !important}
+  .brand::after{content:"Dynamic Carpentry & Renovations";font:600 13px/1.2 "Work Sans",system-ui,sans-serif;letter-spacing:.01em;color:#17171a;max-width:12ch}
+}
+</style>
+<div class="mobilebar" aria-label="Contact">
+  <a class="primary" id="mb-call" href="#quote">Call</a>
+  <a href="#quote">Request a quote</a>
+</div>
+<script>
+(function(){
+  var d=document, src=d.querySelector('.nav a.call'), call=d.getElementById('mb-call');
+  if(src&&call){ call.href=src.getAttribute('href'); call.textContent=src.textContent; }
+})();
 </script>
 </body>
 </html>

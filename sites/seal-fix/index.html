@@ -489,7 +489,7 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:clamp(2.
 <script>
 /* quote form */
 (function(){
-  var EP = 'https://grocery-periodically-everyone-wine.trycloudflare.com';
+  var EP = 'https://laydback-hq.tail5b3740.ts.net';
   function base(cb){
     if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
     var done = false;
@@ -499,7 +499,7 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:clamp(2.
       .then(function(txt){
         var b = (txt || '').trim().replace(/\/+$/, '');
         if (done) return; done = true; clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : EP);
+        (function(c){var ac=new AbortController(),pt=setTimeout(function(){ac.abort()},1500);fetch(c+'/health',{method:'GET',mode:'no-cors',signal:ac.signal}).then(function(){clearTimeout(pt);cb(c)}).catch(function(){clearTimeout(pt);cb(EP)})})(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : EP);
       })
       .catch(function(){ if(!done){ done = true; clearTimeout(t); cb(EP); } });
   }

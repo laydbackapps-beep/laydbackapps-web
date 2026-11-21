@@ -444,16 +444,16 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
   function base(cb){
     if (window.__LAYDBACK_API_BASE) return cb(window.__LAYDBACK_API_BASE);
     var done = false;
-    var t = setTimeout(function(){ if(!done){done=true;cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} }, 2500);
+    var t = setTimeout(function(){ if(!done){done=true;cb('https://laydback-hq.tail5b3740.ts.net');} }, 2500);
     fetch('https://gist.githubusercontent.com/laydbackapps-beep/48ff985c786b72a1637d7875f4df79b8/raw/api-base.txt?_=' + Date.now())
       .then(function(r){ return r.text(); })
       .then(function(txt){
         var b = (txt||'').trim().replace(/\/+$/, '');
         if (done) return;
         done = true; clearTimeout(t);
-        cb(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://grocery-periodically-everyone-wine.trycloudflare.com');
+        (function(c){var ac=new AbortController(),pt=setTimeout(function(){ac.abort()},1500);fetch(c+'/health',{method:'GET',mode:'no-cors',signal:ac.signal}).then(function(){clearTimeout(pt);cb(c)}).catch(function(){clearTimeout(pt);cb('https://laydback-hq.tail5b3740.ts.net')})})(/^https:\/\/[a-z0-9.\-]+(:\d+)?$/i.test(b) ? b : 'https://laydback-hq.tail5b3740.ts.net');
       })
-      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://grocery-periodically-everyone-wine.trycloudflare.com');} });
+      .catch(function(){ if(!done){done=true;clearTimeout(t);cb('https://laydback-hq.tail5b3740.ts.net');} });
   }
   function init(){
     var f = document.getElementById('lbq-form');
@@ -474,7 +474,7 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
       st.textContent = 'Sending\u2026';
       st.style.color = '';
       base(function(B){
-        var url = (B === 'https://grocery-periodically-everyone-wine.trycloudflare.com' ? 'https://grocery-periodically-everyone-wine.trycloudflare.com' : B) + '/functions/v1/quote-request';
+        var url = (B === 'https://laydback-hq.tail5b3740.ts.net' ? 'https://laydback-hq.tail5b3740.ts.net' : B) + '/functions/v1/quote-request';
         fetch(url, {
           method:'POST',
           headers:{'Content-Type':'application/json'},
