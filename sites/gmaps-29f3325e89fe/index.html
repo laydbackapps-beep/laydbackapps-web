@@ -114,26 +114,23 @@ section{padding:110px 0}
   text-transform:uppercase;color:#5a636e;
 }
 
-/* ---------- marquee strips ---------- */
-.marquee{
-  overflow:hidden;white-space:nowrap;user-select:none;
+/* ---------- divider strips ---------- */
+.strip{
+  overflow:hidden;white-space:normal;user-select:none;
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   background:var(--bg2);
 }
-.marquee.yel{background:var(--yel);border-color:var(--yel)}
-.mq-track{display:inline-flex;animation:mq 26s linear infinite;will-change:transform}
-.marquee.rev .mq-track{animation-direction:reverse}
-.marquee:hover .mq-track{animation-play-state:paused}
+.strip.yel{background:var(--yel);border-color:var(--yel)}
+.mq-track{display:block}
 .mq-seg{
-  display:inline-flex;align-items:center;
+  display:block;text-align:center;text-wrap:balance;
   font-family:'Anton',Impact,sans-serif;text-transform:uppercase;
-  font-size:26px;letter-spacing:.04em;padding:16px 0;
+  font-size:clamp(15px,2.2vw,26px);letter-spacing:.04em;padding:16px 24px;
 }
-.marquee.yel .mq-seg{color:var(--yel-d)}
-.marquee.dark .mq-seg{color:var(--yel)}
-.mq-seg i{font-style:normal;margin:0 26px;color:var(--yel)}
-.marquee.yel .mq-seg i{color:var(--yel-d)}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.strip.yel .mq-seg{color:var(--yel-d)}
+.strip.dark .mq-seg{color:var(--yel)}
+.mq-seg i{font-style:normal;margin:0 10px;color:var(--yel)}
+.strip.yel .mq-seg i{color:var(--yel-d)}
 
 /* ---------- services mosaic grid ---------- */
 .svc-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:52px;flex-wrap:wrap}
@@ -308,20 +305,14 @@ footer .fmark{font-family:'Anton',Impact,sans-serif;font-size:14px;color:var(--m
     </div>
   </header>
 
-  <!-- MARQUEE A -->
-  <div class="marquee yel" aria-hidden="true">
-    <div class="mq-track">
-      <span class="mq-seg">A &amp; M Concreting<i>, </i>Redhead NSW<i>, </i>Hunter Region<i>, </i>Lake Macquarie<i>, </i>A &amp; M Concreting<i>, </i>Redhead NSW<i>, </i>Hunter Region<i>, </i>Lake Macquarie<i>, </i></span>
-      <span class="mq-seg" aria-hidden="true">A &amp; M Concreting<i>, </i>Redhead NSW<i>, </i>Hunter Region<i>, </i>Lake Macquarie<i>, </i>A &amp; M Concreting<i>, </i>Redhead NSW<i>, </i>Hunter Region<i>, </i>Lake Macquarie<i>, </i></span>
-    </div>
-  </div>
+  <!-- DIVIDER -->
+  <div class="strip yel" aria-hidden="true"><div class="mq-track"><span class="mq-seg">A &amp; M Concreting&nbsp;&nbsp;&nbsp;&nbsp;Redhead NSW&nbsp;&nbsp;&nbsp;&nbsp;Hunter Region&nbsp;&nbsp;&nbsp;&nbsp;Lake Macquarie</span></div></div>
 
   <!-- SERVICES -->
   <section id="work">
     <div class="wrap">
       <div class="svc-head rv">
         <div>
-          <p class="kicker">Work scope</p>
           <h2 class="display">What we pour</h2>
         </div>
         
@@ -365,7 +356,6 @@ footer .fmark{font-family:'Anton',Impact,sans-serif;font-size:14px;color:var(--m
   <section id="about">
     <div class="wrap about-grid">
       <div class="rv">
-        <p class="kicker">The outfit</p>
         <h2 class="display">A concreting crew that keeps it <em>square</em>.</h2>
         <p class="body" style="margin-top:22px">A &amp; M Concreting is a Hunter-based concreting outfit working from Redhead NSW. Every job starts the same way, formwork set true, levels checked twice, and a finish that's right the first time.</p>
       </div>
@@ -377,19 +367,13 @@ footer .fmark{font-family:'Anton',Impact,sans-serif;font-size:14px;color:var(--m
     </div>
   </section>
 
-  <!-- MARQUEE B (reverse) -->
-  <div class="marquee dark rev" aria-hidden="true">
-    <div class="mq-track">
-      <span class="mq-seg">Driveways<i>, </i>House slabs<i>, </i>Patios & alfresco<i>, </i>Pool surrounds<i>, </i>Exposed aggregate<i>, </i>Footpaths & retaining walls<i>, </i>Driveways<i>, </i>House slabs<i>, </i>Patios & alfresco<i>, </i>Pool surrounds<i>, </i>Exposed aggregate<i>, </i>Footpaths & retaining walls<i>, </i></span>
-      <span class="mq-seg" aria-hidden="true">Driveways<i>, </i>House slabs<i>, </i>Patios & alfresco<i>, </i>Pool surrounds<i>, </i>Exposed aggregate<i>, </i>Footpaths & retaining walls<i>, </i>Driveways<i>, </i>House slabs<i>, </i>Patios & alfresco<i>, </i>Pool surrounds<i>, </i>Exposed aggregate<i>, </i>Footpaths & retaining walls<i>, </i></span>
-    </div>
-  </div>
+  <!-- DIVIDER -->
+  <div class="strip dark" aria-hidden="true"><div class="mq-track"><span class="mq-seg">Driveways&nbsp;&nbsp;&nbsp;&nbsp;House slabs&nbsp;&nbsp;&nbsp;&nbsp;Patios &amp; alfresco&nbsp;&nbsp;&nbsp;&nbsp;Pool surrounds&nbsp;&nbsp;&nbsp;&nbsp;Exposed aggregate&nbsp;&nbsp;&nbsp;&nbsp;Footpaths &amp; retaining walls</span></div></div>
 
   <!-- AREAS -->
   <section id="areas">
     <div class="wrap">
       <div class="rv">
-        <p class="kicker">Service area</p>
         <h2 class="display" style="font-size:clamp(40px,4.6vw,68px);line-height:1;margin-top:18px">Where we work</h2>
         <p class="body" style="color:var(--mut);margin-top:18px;max-width:60ch">Working from Redhead across the Hunter and Lake Macquarie region. Not sure if you're in range? Call and ask.</p>
       </div>
@@ -719,7 +703,7 @@ html,body{overflow-x:hidden}
 </style>
   <div class="lbq-w">
       <div class="lbq-sp"><div class="lbq-hp2"><h2 id="lbq-h">Request a quote</h2>
-      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p><p class="lbq-s" style="margin-bottom:0">Prefer to talk? Call, text or email &mdash; we reply fast.</p></div><div><form id="lbq-form" novalidate data-site="gmaps-29f3325e89fe" data-biz="A &amp; M Concreting — Concreting Redhead &amp; Hunter NSW"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div></div>
+      <p class="lbq-s">Tell us a few details and we&#39;ll get back to you with a free, no-obligation quote.</p><p class="lbq-s" style="margin-bottom:0">Prefer to talk? Call, text or email, we reply fast.</p></div><div><form id="lbq-form" novalidate data-site="gmaps-29f3325e89fe" data-biz="A &amp; M Concreting — Concreting Redhead &amp; Hunter NSW"><div class="lbq-g"><div><label for="lbq-n">Name</label><input id="lbq-n" name="name" autocomplete="name" required></div><div><label for="lbq-p">Phone</label><input id="lbq-p" name="phone" type="tel" autocomplete="tel"></div><div><label for="lbq-e">Email</label><input id="lbq-e" name="email" type="email" autocomplete="email"></div><div class="lbq-full"><label for="lbq-m">Tell us about the job</label><textarea id="lbq-m" name="message" placeholder="Size, location, time frame&#8230;" required></textarea></div></div><label class="lbq-cons"><input type="checkbox" name="consent" value="1" checked> I agree to be contacted about this request.</label><div class="lbq-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">Send quote request</button><p class="lbq-st" id="lbq-st" role="status" aria-live="polite"></p></form></div></div>
   </div>
   <script>
 (function(){
