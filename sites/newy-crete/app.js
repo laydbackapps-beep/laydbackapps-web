@@ -73,9 +73,15 @@
       const timer = setTimeout(() => settle(local ? 'http://' + location.host : fallback), 2200);
       if (local) return;
       fetch(pointer + '?_=' + Date.now()).then(r => r.ok ? r.text() : Promise.reject()).then(t => {
-        clearTimeout(timer);
         const base = (t || '').trim().replace(/\/+$/, '');
-        settle(/^https:\/\/[a-z0-9.-]+(:\d+)?$/i.test(base) ? base : fallback);
+        const candidate = /^https:\/\/[a-z0-9.-]+(:\d+)?$/i.test(base) ? base : fallback;
+        if (candidate === fallback) { clearTimeout(timer); return settle(fallback); }
+        // A dead base in the pointer used to mean every enquiry vanished. Probe it first.
+        const ac = new AbortController();
+        const pt = setTimeout(() => ac.abort(), 1500);
+        fetch(candidate + '/health', { method: 'GET', mode: 'no-cors', signal: ac.signal })
+          .then(() => { clearTimeout(pt); clearTimeout(timer); settle(candidate); })
+          .catch(() => { clearTimeout(pt); clearTimeout(timer); settle(fallback); });
       }).catch(() => { clearTimeout(timer); settle(fallback); });
     });
   }
