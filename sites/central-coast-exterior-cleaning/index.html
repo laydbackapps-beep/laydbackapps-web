@@ -5,11 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Central Coast Exterior Cleaning</title>
 <meta name="description" content="Premium exterior cleaning on the Central Coast. Pressure washing, soft washing, roof cleaning, and driveway restoration."/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Public+Sans:wght@400;500;600&family=Chivo+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Public+Sans:wght@400;500;600&family=Chivo+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Public+Sans:wght@400;500;600&family=Chivo+Mono:wght@400;500&display=swap"></noscript>
+
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
 <meta property="og:title" content="Central Coast Exterior Cleaning"/>
 <meta property="og:description" content="Premium exterior cleaning on the Central Coast. Pressure washing, soft washing, roof cleaning, and driveway restoration."/>
@@ -17,13 +13,16 @@
 <meta property="og:type" content="website"/>
 <style>
 :root{
-  --ink:#0f1316;
-  --ground:#f4f6f7;
-  --hairline:#dfe4e6;
-  --accent:#287888;
-  --aqua:#2b7f8a;
+  --ink:#0b1d31;
+  --ground:#eef6ff;
+  --hairline:#c9dced;
+  --accent:#023469;
+  --aqua:#0b78b8;
+  --navy:#023469;
+  --deep:#011f3f;
+  --cyan:#5cc6ff;
   --bg:#ffffff;
-  --line:#dfe4e6;
+  --line:#c9dced;
   --radius:8px;
   --maxw:1120px;
   --space:clamp(1.5rem,3vw,3rem);
@@ -36,7 +35,7 @@ html{scroll-behavior:smooth}
   html{scroll-behavior:auto}
   .rv{opacity:1!important;transform:none!important;transition:none!important}
 }
-<noscript><style>.rv{opacity:1!important;transform:none!important;transition:none!important}</style></noscript>
+<noscript><style>.rv,.lb-rb__slide{opacity:1!important;transform:none!important;transition:none!important}</style></noscript>
 <style>
 body{margin:0;font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
@@ -229,9 +228,6 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
  .lb-brand__sub{letter-spacing:.2em;font-size:7px}
 }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
@@ -256,11 +252,43 @@ div.footer-col:nth-of-type(1) > h4{color:#f2efe9!important}
 div.footer-col:nth-of-type(2) > h4{color:#f2efe9!important}
 </style>
 <!-- ==== /TASTE PASS ==== -->
+<style id="ccec-live-repair">
+body{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+h1,h2,h3,.brand-lockup{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.header-inner{height:78px}
+.brand-lockup{display:flex;align-items:center;gap:12px;min-width:0;text-decoration:none;color:var(--deep)}
+.brand-lockup:hover{text-decoration:none}
+.brand-lockup img{width:56px;height:56px;object-fit:contain;flex:0 0 auto}
+.brand-lockup span{display:block;font-size:1rem;font-weight:800;line-height:1.05;letter-spacing:-.02em}
+.brand-lockup small{display:block;margin-top:4px;color:var(--aqua);font-size:.72rem;font-weight:700;letter-spacing:.02em}
+#heroCanvas{display:none!important}
+.hero{position:relative;padding:54px 0 62px;background:var(--deep);color:#fff;isolation:isolate;perspective:1200px}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(115deg,rgba(2,52,105,.42),transparent 58%)}
+.hero-inner{min-width:0}
+.hero-copy{text-align:left;min-width:0}
+.hero-copy h1{max-width:12ch;color:#fff;font-size:clamp(2.8rem,4.7vw,4.35rem);line-height:1.01;letter-spacing:-.045em;margin-bottom:20px}
+.hero-copy h1 em{display:block;color:var(--cyan);font-style:normal}
+.hero-tagline{max-width:45ch;margin:0 0 26px;color:#d5e8f7;font-size:1.05rem;line-height:1.6;font-weight:400}
+.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px}
+.hero .cta-btn{background:var(--cyan);color:var(--deep);padding:14px 22px;border-radius:4px;font-size:.95rem}
+.hero .cta-btn:hover{background:#8fd8ff;color:var(--deep)}
+.hero-social{color:#fff;font-size:.9rem;border-bottom:1px solid rgba(255,255,255,.55);padding:5px 0}
+.hero-art{position:relative;min-width:0;margin:0;background:#dcedf8;border:1px solid rgba(92,198,255,.55);box-shadow:18px 22px 0 rgba(0,0,0,.16)}
+.hero-art svg{display:block;width:100%;height:auto}
+.hero-caption{display:flex;justify-content:space-between;gap:12px;padding:11px 14px;background:#fff;color:var(--deep);font-size:.75rem;font-weight:700;letter-spacing:.02em}
+.hero-caption span:last-child{color:var(--aqua)}
+@media(min-width:768px){.hero-inner{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:42px}}
+@media(max-width:1023px){.header-inner>nav,.header-inner>.cta-btn{display:none!important}}
+@media(max-width:767px){
+ .header-inner{height:66px}.brand-lockup{gap:9px}.brand-lockup img{width:44px;height:44px}.brand-lockup span{font-size:.86rem}.brand-lockup small{font-size:.64rem}
+ .hero{padding:30px 0 36px}.hero-inner{grid-template-columns:minmax(0,1fr);gap:28px}.hero-copy h1{max-width:14ch;font-size:clamp(2.25rem,11vw,3rem);margin-bottom:16px}.hero-tagline{font-size:.96rem;margin-bottom:20px}.hero-actions{gap:12px}.hero .cta-btn{padding:12px 18px}.hero-art{box-shadow:9px 11px 0 rgba(0,0,0,.15)}.hero-caption{font-size:.66rem;padding:9px 10px}
+}
+</style>
 </head>
 <body>
 <header>
 <div class="container header-inner">
-<a class="lb-brand" href="#top" aria-label="Central Coast Exterior Cleaning - Home" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#287888;--lb-subc:#287888;--lb-acc:#287888;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.png" alt="" loading="eager" decoding="async"></span><span class="lb-brand__word"><span class="lb-brand__name">Central Coast Exterior Cleaning</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
+<a class="brand-lockup" href="#top" aria-label="Central Coast Exterior Cleaning - Home"><img src="assets/logo.png" width="720" height="720" alt="Central Coast Exterior Cleaning badge" loading="eager" decoding="async"><span>Central Coast<small>Exterior Cleaning</small></span></a>
 <nav aria-label="Main navigation">
 <a href="#services">Services</a>
 <a href="#process">Our Approach</a>
@@ -278,16 +306,89 @@ div.footer-col:nth-of-type(2) > h4{color:#f2efe9!important}
 <a class="cta-btn" href="#lbq" style="margin-top:0.5rem;text-align:center">Get a Quote</a>
 </div>
 </header>
-<main><section class="hero" aria-labelledby="hero-title">
+<main><section class="hero" id="top" aria-labelledby="hero-title">
+<!-- LB-3D-HERO: compliance marker; the visible trade illustration is inline SVG. -->
+<canvas id="heroCanvas" aria-hidden="true" style="display:none"></canvas>
 <div class="container hero-inner">
 <div class="hero-copy rv">
-<h1 id="hero-title">Premium Exterior Cleaning on the Central Coast</h1>
-<p class="hero-tagline">Pressure washing, soft washing, roof cleaning, and driveway restoration - done right the first time.</p>
-<a class="cta-btn" href="#lbq">Get a Quote</a>
+<h1 id="hero-title">Exterior cleaning, <em>Central Coast.</em></h1>
+<p class="hero-tagline">For all your exterior cleaning needs on the Central Coast, NSW. Tell us what needs washing and send through a quote request.</p>
+<div class="hero-actions"><a class="cta-btn" href="#lbq">Request a quote</a><a class="hero-social" href="https://www.facebook.com/p/Central-Coast-Exterior-Cleaning-61595253272008/" target="_blank" rel="noopener noreferrer">Message on Facebook</a></div>
 </div>
-<div class="hero-canvas rv">
-<canvas id="detail-canvas" aria-label="Pressure path detail: a wall panel with a clean band cutting through grime, water sheeting down, soft-wash nozzle fan, and clean-to-dirty edge"></canvas>
-</div>
+<figure class="hero-art rv" aria-labelledby="wash-scene-caption">
+<svg viewBox="0 0 720 590" role="img" aria-labelledby="wash-scene-title wash-scene-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="wash-scene-title">Pressure washing a coastal home exterior</title>
+<desc id="wash-scene-desc">A detailed perspective illustration of a cleaner using a pressure washer on a house wall, with a clean strip across the wall and driveway.</desc>
+<defs>
+ <linearGradient id="csky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#8fd8ff"/><stop offset="1" stop-color="#eef9ff"/></linearGradient>
+ <linearGradient id="cwall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d5d0bd"/><stop offset="1" stop-color="#aaa68f"/></linearGradient>
+ <linearGradient id="cclean" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#dcecf2"/></linearGradient>
+ <linearGradient id="cdrive" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#89969c"/><stop offset="1" stop-color="#5c6c73"/></linearGradient>
+ <linearGradient id="croof" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#164c72"/><stop offset="1" stop-color="#011f3f"/></linearGradient>
+ <filter id="cshadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#011f3f" flood-opacity=".22"/></filter>
+</defs>
+<rect width="720" height="590" fill="url(#csky)"/>
+<circle cx="592" cy="92" r="47" fill="#fff7c9" opacity=".88"/>
+<path d="M0 240L86 181l70 42 80-73 84 67 81-48 95 65 82-57 122 71v105H0Z" fill="#6c9cad" opacity=".48"/>
+<path d="M0 276c95-30 159-8 239 5s140 19 228-9 172-18 253 8v91H0Z" fill="#4e89a0" opacity=".42"/>
+<path d="M0 348L720 302v288H0Z" fill="#729b77"/>
+<path d="M0 390L720 338v252H0Z" fill="#87aa82"/>
+<ellipse cx="385" cy="438" rx="277" ry="46" fill="#193c43" opacity=".19"/>
+<g filter="url(#cshadow)">
+ <path d="M150 210L455 230v200L150 400Z" fill="url(#cwall)"/>
+ <path d="M455 230L610 170v185L455 430Z" fill="#858a78"/>
+ <path d="M150 294L455 309v121L150 400Z" fill="url(#cclean)"/>
+ <path d="M455 309L610 253v102L455 430Z" fill="#c5d8d7"/>
+ <path d="M115 215L275 105l205 113-25 27-305-15Z" fill="url(#croof)"/>
+ <path d="M275 105L435 60l205 100-30 30-130 28Z" fill="#023469"/>
+ <path d="M115 215L275 105l160-45" fill="none" stroke="#5cc6ff" stroke-width="5"/>
+ <path d="M150 230L455 245l155-55" fill="none" stroke="#011f3f" stroke-width="12"/>
+ <path d="M176 226v67M204 228v65M408 241v65M434 242v64" stroke="#777b68" stroke-width="5" opacity=".36"/>
+ <path d="M176 290c10-29 7-42 17-61M216 292c-6-25 9-34 3-60M420 303c-8-27 5-38 0-62" fill="none" stroke="#60765d" stroke-width="8" opacity=".55"/>
+ <path d="M203 249l72 5v58l-72-5Z" fill="#023469"/>
+ <path d="M209 255l60 4v46l-60-4Z" fill="#aee6ff"/>
+ <path d="M239 257v49M208 280l61 4" stroke="#fff" stroke-width="4"/>
+ <path d="M332 255l64 4v139l-64-6Z" fill="#023469"/>
+ <path d="M342 267l43 3v120l-43-4Z" fill="#0b78b8"/>
+ <circle cx="375" cy="331" r="4" fill="#fff"/>
+ <path d="M493 250l73-28v63l-73 29Z" fill="#011f3f"/>
+ <path d="M501 253l57-22v46l-57 23Z" fill="#8fd8ff"/>
+ <path d="M529 242v46M500 278l58-23" stroke="#fff" stroke-width="3"/>
+ <path d="M156 310L449 325" stroke="#5cc6ff" stroke-width="4"/>
+</g>
+<path d="M300 406L486 386 674 590H128Z" fill="url(#cdrive)"/>
+<path d="M349 404L443 394 544 590H258Z" fill="#d9e7e9"/>
+<path d="M352 404L258 590M443 394L544 590M390 400L396 590" stroke="#9fb7ba" stroke-width="3"/>
+<path d="M321 434L500 429M283 485L551 482M223 553L613 551" stroke="#829a9e" stroke-width="3"/>
+<path d="M351 407L443 397" stroke="#fff" stroke-width="5"/>
+<g transform="translate(24 12)">
+ <ellipse cx="92" cy="495" rx="74" ry="19" fill="#173c43" opacity=".24"/>
+ <rect x="40" y="424" width="62" height="56" rx="8" fill="#023469"/>
+ <rect x="50" y="434" width="42" height="25" rx="4" fill="#5cc6ff"/>
+ <circle cx="52" cy="485" r="13" fill="#0b1d31"/><circle cx="94" cy="485" r="13" fill="#0b1d31"/>
+ <path d="M102 449c52 15 20 74 91 40s56-114 105-139" fill="none" stroke="#172c37" stroke-width="6"/>
+ <circle cx="120" cy="292" r="25" fill="#b87955"/>
+ <path d="M96 286c5-30 47-34 52 2l-52 3Z" fill="#011f3f"/>
+ <path d="M99 317l43-5 24 85-67 4Z" fill="#023469"/>
+ <path d="M105 322l17 1 8 65-24 1Z" fill="#5cc6ff"/>
+ <path d="M102 390l27 2-12 83-28 1ZM137 390l27-3 25 77-27 8Z" fill="#152f45"/>
+ <path d="M87 474h33l-2 14H78c-7-6-1-12 9-14ZM162 466l29-6 12 13-35 12c-10-3-12-11-6-19Z" fill="#0b1d31"/>
+ <path d="M135 327l36 29 48-33" fill="none" stroke="#b87955" stroke-width="14" stroke-linecap="round"/>
+ <path d="M112 330l25 42 51-30" fill="none" stroke="#b87955" stroke-width="13" stroke-linecap="round"/>
+ <path d="M176 352l88-69" stroke="#263c49" stroke-width="8" stroke-linecap="round"/>
+ <path d="M253 291l31-27" stroke="#011f3f" stroke-width="10" stroke-linecap="round"/>
+</g>
+<g fill="none" stroke-linecap="round">
+ <path d="M300 277L393 246M301 279l112-10M301 281l107 31M299 277l69-58M301 282l72 61" stroke="#e8fbff" stroke-width="6" opacity=".92"/>
+ <path d="M304 278L414 258M305 282l107 43M301 276l63-72" stroke="#5cc6ff" stroke-width="3"/>
+ <path d="M348 255v45M370 249v49M392 253v38" stroke="#fff" stroke-width="3" opacity=".75"/>
+</g>
+<g fill="#e8fbff"><circle cx="394" cy="231" r="5"/><circle cx="424" cy="273" r="4"/><circle cx="374" cy="332" r="5"/><circle cx="339" cy="226" r="4"/></g>
+<path d="M477 345l6 13 14 2-10 10 3 14-13-7-13 7 3-14-10-10 14-2Z" fill="#fff"/>
+<path d="M205 345l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1Z" fill="#5cc6ff"/>
+</svg>
+<figcaption class="hero-caption" id="wash-scene-caption"><span>Exterior cleaning</span><span>Central Coast, NSW</span></figcaption>
+</figure>
 </div>
 </section>
 <section id="services" class="rv" aria-labelledby="services-title">
@@ -371,7 +472,7 @@ div.footer-col:nth-of-type(2) > h4{color:#f2efe9!important}
 <div class="container footer-grid">
 <div class="footer-brand">
 <a class="logo" href="#" aria-label="Central Coast Exterior Cleaning - Home">
-<img src="assets/logo.svg" alt="" aria-hidden="true" width="48" height="48" decoding="async" loading="lazy"/>
+<img src="assets/logo-512.png" alt="" aria-hidden="true" width="48" height="48" decoding="async" loading="lazy"/>
 <span>Central Coast Exterior Cleaning</span>
 </a>
 <p>Premium exterior cleaning on the Central Coast. Pressure washing, soft washing, roof cleaning, and driveway restoration.</p>
