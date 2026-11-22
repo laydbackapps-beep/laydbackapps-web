@@ -9,9 +9,9 @@
 <meta name="theme-color" content="#101410">
 <style>
 :root{
-  --lb-name:#ffffff; --lb-acc:#cdb87a; --lb-subc:rgba(255,255,255,.72);
-  --ink:#f5f3ec; --muted:rgba(245,243,236,.68); --line:rgba(245,243,236,.13); --panel:rgba(255,255,255,.045);
-  --bg:#101410; --bg2:#171d17; --accent:#cdb87a;
+  --lb-name:#ffffff; --lb-acc:#7AC143; --lb-subc:rgba(255,255,255,.72);
+  --ink:#f5f3ec; --muted:rgba(245,243,236,.72); --line:rgba(245,243,236,.13); --panel:rgba(255,255,255,.045);
+  --bg:#101410; --bg2:#171d17; --accent:#2E5E3A; --accent-light:#7AC143; --header-h:79px;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -22,8 +22,8 @@ img{max-width:100%;display:block}
 h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.08;margin:0}
 p{margin:0}
 .container{width:min(1140px,92vw);margin-inline:auto}
-header.site{position:sticky;top:0;z-index:60;background:#ffffff;border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:clamp(14px,3vw,48px);padding:12px 0}
+header.site{position:sticky;top:0;z-index:60;height:var(--header-h);background:#f7f9f5;border-bottom:3px solid var(--accent)}
+.bar{display:flex;align-items:center;gap:clamp(14px,3vw,48px);height:100%;padding:12px 0}
 .brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:0 1 auto;min-width:0}
 .brand img{height:54px;width:auto;max-width:min(340px,46vw);object-fit:contain}
 .brand .name{font-weight:800;letter-spacing:-.01em;font-size:clamp(15px,1.6vw,21px);color:#1d2a20;
@@ -32,22 +32,22 @@ header.site{position:sticky;top:0;z-index:60;background:#ffffff;border-bottom:1p
 nav.main{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,2vw,28px);flex-wrap:wrap}
 nav.main a{color:#1d2a20;text-decoration:none;font-size:.95rem;opacity:.86;white-space:nowrap}
 nav.main a:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;
-  text-decoration:none;font-weight:700;font-size:.95rem;background:var(--accent);color:#0b0b0c;border:1px solid var(--accent)}
-nav.main a.btn,header .btn{background:var(--accent)!important;color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;
+  text-decoration:none;font-weight:700;font-size:.95rem;background:var(--accent);color:#fff;border:1px solid var(--accent);border-radius:4px}
+.btn:hover{background:#23492d;border-color:#23492d}
+nav.main a.btn,header .btn{background:var(--accent)!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
 .btn.ghost{background:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff!important;
   border:1px solid rgba(255,255,255,.5)!important}
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#0b0f0b}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.34)}
-.hero .inner{position:relative;z-index:3;padding:clamp(38px,6vh,78px) 0 clamp(34px,4.5vh,58px);max-width:min(780px,92vw)}
-.kicker{display:inline-block;font-size:.82rem;font-weight:700;letter-spacing:.13em;color:#d6d8db;margin-bottom:14px}
-.hero h1{font-size:clamp(1.95rem,4vw,3.1rem);margin-bottom:14px}
-.hero h1 em{font-style:normal;color:#cfd2d6}
-.hero .lede{color:var(--muted);font-size:clamp(1rem,1.5vw,1.14rem);max-width:54ch;margin-bottom:22px}
+.hero{position:relative;display:flex;align-items:center;min-height:calc(100svh - var(--header-h));overflow:hidden;border-bottom:1px solid var(--line);background:#0b0f0b}
+.hero .earthworks{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;opacity:.64;pointer-events:none}
+.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(3,8,4,.1)}
+.hero .inner{position:relative;z-index:3;padding:clamp(42px,7vh,76px) 0;max-width:min(1140px,92vw)}
+.kicker{display:flex;align-items:center;gap:12px;font-size:.88rem;font-weight:750;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-light);margin-bottom:18px}
+.kicker::before{content:"";width:42px;height:2px;background:currentColor}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.6rem);margin-bottom:18px;max-width:760px;letter-spacing:-.045em}
+.hero h1 em{font-style:normal;color:var(--accent-light)}
+.hero .lede{color:var(--muted);font-size:clamp(1rem,1.5vw,1.14rem);max-width:48ch;margin-bottom:26px}
 .hero .acts{display:flex;flex-wrap:wrap;gap:14px}
-.hero .facts{display:flex;flex-wrap:wrap;gap:9px 24px;list-style:none;padding:0;margin:20px 0 0;color:rgba(255,255,255,.82);font-size:.95rem}
-.hero .facts li::before{content:"";display:inline-block;width:6px;height:6px;margin-right:9px;background:var(--accent);vertical-align:middle;border-radius:50%}
 section{padding:clamp(56px,8vh,96px) 0;border-bottom:1px solid var(--line)}
 section.alt{background:var(--bg2)}
 .head{max-width:60ch;margin-bottom:clamp(26px,4vh,44px)}
@@ -60,7 +60,7 @@ section.alt{background:var(--bg2)}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
 .card h3{font-size:1.08rem;margin-bottom:8px}
 .card p{color:var(--muted);font-size:.95rem}
-.swatch{width:38px;height:5px;background:var(--accent);border-radius:3px;margin-bottom:16px}
+.swatch{width:38px;height:5px;background:var(--accent-light);border-radius:3px;margin-bottom:16px}
 .about{display:grid;gap:clamp(24px,4vw,52px);grid-template-columns:1.15fr .85fr;align-items:start}
 @media(max-width:880px){.about{grid-template-columns:1fr}}
 .about p{color:var(--muted);margin-bottom:14px}
@@ -73,11 +73,11 @@ section.alt{background:var(--bg2)}
 .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 .links a{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border:1px solid var(--line);
   border-radius:10px;text-decoration:none;color:rgba(255,255,255,.9);font-size:.93rem}
-.links a:hover{border-color:var(--accent)}
+.links a:hover{border-color:var(--accent-light)}
 form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
 label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:6px}
 input,textarea{width:100%;padding:12px 14px;border-radius:9px;border:1px solid var(--line);background:#0e0f11;color:#fff;font:inherit;margin-bottom:14px}
-input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+input:focus,textarea:focus{outline:2px solid var(--accent-light);outline-offset:1px}
 form .btn{width:100%}
 .note{color:var(--muted);font-size:.85rem;margin-top:12px}
 footer{padding:48px 0 34px;background:#08090a}
@@ -107,13 +107,14 @@ footer a:hover{text-decoration:underline}
 .navtog span:before,.navtog span:after{content:"";position:absolute;left:0;width:20px;height:2px;background:currentColor}
 .navtog span:before{top:-6px}.navtog span:after{top:6px}
 @media(max-width:820px){
+  .hero .veil{background:rgba(3,8,4,.24)}
   .bar{position:relative;flex-wrap:nowrap}
-  .navtog{display:flex;color:#fff;margin-left:auto}
+  .navtog{display:flex;color:var(--accent);margin-left:auto}
   nav.main{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;
     align-items:stretch;gap:2px;background:rgba(12,12,14,.98);border:1px solid rgba(255,255,255,.14);
     border-radius:14px;padding:10px;box-shadow:0 24px 60px rgba(0,0,0,.55);z-index:60}
   nav.main.open{display:flex}
-  nav.main a{padding:14px 14px;border-radius:10px;font-size:17px}
+  nav.main a{padding:14px 14px;border-radius:10px;font-size:17px;color:var(--ink)}
   nav.main .btn{margin-top:6px;text-align:center;justify-content:center}
 }
 </style>
@@ -136,32 +137,70 @@ footer a:hover{text-decoration:underline}
 </header>
 <main>
   <section class="rv hero" id="top" aria-label="Civil works">
-    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <svg class="earthworks lb-industry-layer" viewBox="0 0 1440 820" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+      <defs>
+        <pattern id="gravel" width="28" height="18" patternUnits="userSpaceOnUse">
+          <circle cx="6" cy="6" r="3.2" fill="#7AC143" opacity=".72"/><circle cx="20" cy="12" r="2.8" fill="#7AC143" opacity=".5"/>
+        </pattern>
+        <pattern id="soil" width="48" height="34" patternUnits="userSpaceOnUse">
+          <path d="M5 9L14 6M31 24L41 20" stroke="#7AC143" stroke-width="2" opacity=".2"/>
+          <circle cx="25" cy="8" r="2" fill="#7AC143" opacity=".2"/><circle cx="10" cy="28" r="2.5" fill="#7AC143" opacity=".16"/>
+        </pattern>
+      </defs>
+      <g stroke-linejoin="round" stroke-linecap="round">
+        <path d="M460 264H634L800 500H1180L1372 626H1440V820H460Z" fill="#2E5E3A" opacity=".62"/>
+        <path d="M460 264H634L800 500H1180L1372 626H1440V820H460Z" fill="url(#soil)"/>
+        <path d="M460 264H634L800 500H1180L1372 626H1440" fill="none" stroke="#7AC143" stroke-width="4" opacity=".82"/>
+        <path d="M798 500H1182L1212 532H778Z" fill="url(#gravel)" stroke="#7AC143" stroke-width="3"/>
+        <path d="M778 532H1212L1262 578H732Z" fill="#2E5E3A" opacity=".8"/>
+        <path d="M732 578H1262M690 626H1310M650 678H1350" fill="none" stroke="#7AC143" stroke-width="3" opacity=".34"/>
+        <path d="M540 449H1390" fill="none" stroke="#7AC143" stroke-width="3" stroke-dasharray="16 14" opacity=".85">
+          <animate attributeName="opacity" values=".45;.95;.45" dur="5s" repeatCount="indefinite"/>
+        </path>
+        <g fill="none" stroke="#7AC143" stroke-width="3" opacity=".9">
+          <path d="M822 449L800 500M822 449L845 500M822 449V500"/>
+          <rect x="804" y="422" width="36" height="24" rx="3" fill="#2E5E3A"/>
+          <path d="M840 434H860M800 478V512M1180 478V512M790 478H810M1170 478H1190"/>
+        </g>
+        <g opacity=".94">
+          <path d="M902 452H1090Q1120 452 1120 476Q1120 500 1090 500H902Q872 500 872 476Q872 452 902 452Z" fill="#2E5E3A" stroke="#7AC143" stroke-width="4"/>
+          <g fill="#7AC143" stroke="#2E5E3A" stroke-width="3">
+            <circle cx="910" cy="476" r="14"/><circle cx="950" cy="476" r="14"/><circle cx="990" cy="476" r="14"/><circle cx="1030" cy="476" r="14"/><circle cx="1078" cy="476" r="14"/>
+          </g>
+          <path d="M920 442L900 394H1045L1100 442V456H920Z" fill="#7AC143" stroke="#7AC143" stroke-width="4"/>
+          <path d="M948 394V312H1030L1060 394Z" fill="#7AC143" stroke="#7AC143" stroke-width="4"/>
+          <path d="M968 330H1016L1036 376H968Z" fill="#0b0f0b" opacity=".82" stroke="#2E5E3A" stroke-width="3"/>
+          <path d="M1052 394L1128 214L1258 284L1320 424" fill="none" stroke="#7AC143" stroke-width="28"/>
+          <path d="M1080 370L1150 254L1240 300" fill="none" stroke="#2E5E3A" stroke-width="5"/>
+          <path d="M1300 412L1360 438L1330 482L1272 458Z" fill="#7AC143" stroke="#7AC143" stroke-width="4"/>
+          <path d="M1282 458L1262 478M1302 468L1288 492M1324 478L1316 498" fill="none" stroke="#7AC143" stroke-width="5"/>
+        </g>
+      </g>
+    </svg>
     <div class="veil" aria-hidden="true"></div>
     <div class="container inner">
-      <span class="kicker">Civil works</span>
-      <h1>Sites prepared.<br><em>Ground worked.</em></h1>
-      <p class="lede">Civil works across NSW: excavation, demolition, retaining walls, piling and shoring, site remediation and levelling.</p>
+      <span class="kicker">Spire Civil / NSW</span>
+      <h1>Civil works.<br><em>From the ground up.</em></h1>
+      <p class="lede">Site preparation, earthworks, drainage and concrete across NSW.</p>
       <div class="acts"><a class="btn" href="#contact">Get a quote</a><a class="btn ghost" href="#services">See what we do</a></div>
-      <ul class="facts"><li>Excavation</li><li>Demolition</li><li>Retaining walls</li><li>Piling & shoring</li><li>Remediation</li><li>NSW</li></ul>
     </div>
   </section>
   <section class="rv" id="services">
     <div class="container">
-      <div class="head"><h2>What we do</h2><p>Civil works work for homes and businesses across NSW.</p></div>
-      <div class="grid g3"><article class="card"><div class="swatch"></div><h3>Excavation</h3><p>Bulk and detailed excavation with the spoil managed and the levels held.</p></article><article class="card"><div class="swatch"></div><h3>Demolition</h3><p>Structures taken down and cleared, with the site left ready for the next stage.</p></article><article class="card"><div class="swatch"></div><h3>Retaining walls</h3><p>Walls built to hold the ground where it needs holding, with drainage allowed for.</p></article><article class="card"><div class="swatch"></div><h3>Piling and shoring</h3><p>Ground supported before the dig goes deep, so the site stays stable.</p></article><article class="card"><div class="swatch"></div><h3>Site remediation and levelling</h3><p>Contaminated or uneven ground dealt with and brought to level.</p></article><article class="card"><div class="swatch"></div><h3>Construct and design</h3><p>The works designed and built by the same team, so the detail carries through.</p></article></div>
+      <div class="head"><h2>What we do</h2><p>Civil works for sites across NSW.</p></div>
+      <div class="grid g3"><article class="card"><div class="swatch"></div><h3>Site preparation</h3><p>Preparing and levelling the ground for the next stage of work.</p></article><article class="card"><div class="swatch"></div><h3>Earthworks</h3><p>Cut, fill and ground shaping to form levels for construction.</p></article><article class="card"><div class="swatch"></div><h3>Drainage</h3><p>Drainage works considered around site levels and water flow.</p></article><article class="card"><div class="swatch"></div><h3>Concrete</h3><p>Concrete work for civil construction and prepared site surfaces.</p></article></div>
     </div>
   </section>
   <section id="process" class="rv alt">
     <div class="container">
       <div class="head"><h2>How a job runs</h2><p>From the first look to the final clean up.</p></div>
-      <div class="grid g3"><article class="card"><h3>Assess the site</h3><p>Ground conditions, access and levels looked at before the method is settled.</p></article><article class="card"><h3>Set the method</h3><p>The excavation, support and sequencing worked out so the site stays stable throughout.</p></article><article class="card"><h3>Work and hand over</h3><p>The works completed to level, with the site left clean and ready for the build.</p></article></div>
+      <div class="grid g3"><article class="card"><h3>Assess the site</h3><p>Ground conditions, access and levels looked at before the method is settled.</p></article><article class="card"><h3>Set the method</h3><p>The earthworks, drainage and sequencing considered around the needs of the site.</p></article><article class="card"><h3>Work and hand over</h3><p>The works completed to level, with the site left clean and ready for the build.</p></article></div>
     </div>
   </section>
   <section class="rv" id="about">
     <div class="container about">
-      <div><h2>About Spire Civil</h2><p>Spire Civil is a civil works contractor operating across NSW on excavation, demolition, retaining walls, piling and shoring, and site remediation.</p><p>The works are designed and constructed by the same team, which keeps the method and the detail joined up from the first site visit through to handover.</p></div>
-      <ul><li>Excavation and demolition <span>&middot; bulk, detailed and cleared</span></li><li>Retaining and shoring <span>&middot; ground held where it needs holding</span></li><li>Remediation and levelling <span>&middot; sites brought to level</span></li><li>Construct and design <span>&middot; designed and built by the same team</span></li></ul>
+      <div><h2>About Spire Civil</h2><p>Spire Civil is a civil works business operating across NSW. Enquiries can cover site preparation, earthworks, drainage and concrete work.</p><p>Use the quote form to describe the site, access and scope of work.</p></div>
+      <ul><li>Site preparation <span>&middot; prepared ground and levels</span></li><li>Earthworks <span>&middot; cut, fill and ground shaping</span></li><li>Drainage <span>&middot; site levels and water flow</span></li><li>Concrete <span>&middot; civil construction and site surfaces</span></li></ul>
     </div>
   </section>
   <section id="contact" class="rv alt">
@@ -180,7 +219,7 @@ footer a:hover{text-decoration:underline}
   <div class="container">
     <div class="foot">
       <div><h4>SPIRE CIVIL</h4><p style="color:var(--muted);max-width:34ch">Civil works across NSW.</p></div>
-      <div><h4>SERVICES</h4><ul><li><a href="#services">Excavation</a></li><li><a href="#services">Demolition</a></li><li><a href="#services">Retaining walls</a></li><li><a href="#services">Piling and shoring</a></li></ul></div>
+      <div><h4>SERVICES</h4><ul><li><a href="#services">Site preparation</a></li><li><a href="#services">Earthworks</a></li><li><a href="#services">Drainage</a></li><li><a href="#services">Concrete</a></li></ul></div>
       <div><h4>CONTACT</h4><ul><li><a href="https://www.instagram.com/spirecivil/" rel="noopener">Spire Civil on Instagram</a></li></ul></div>
     </div>
     <div class="footbottom">
@@ -190,7 +229,7 @@ footer a:hover{text-decoration:underline}
   </div>
 <section id="lbq" class="rv v1" aria-labelledby="lbq-h">
   <style>
-#lbq{--lbq-accent:var(--accent,var(--brand,var(--lime,var(--color-lime,#c4fb24))));--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,var(--text-muted,#5b6b7a));--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
+#lbq{--lbq-accent:var(--accent-light,#7AC143);--lbq-ink:var(--ink,var(--text,#e9eef4));--lbq-muted:var(--muted,var(--text-muted,#5b6b7a));--lbq-bg:var(--bg,var(--bg-0,#0f1115));--lbq-panel:var(--panel,rgba(255,255,255,.045));--lbq-line:var(--line,var(--border,rgba(255,255,255,.14)));padding:72px 20px;background:var(--lbq-bg);color:var(--lbq-ink)}
 #lbq *{box-sizing:border-box}
 #lbq .lbq-w{max-width:1060px;margin:0 auto}
 #lbq h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 8px;letter-spacing:-.02em}
@@ -200,7 +239,7 @@ footer a:hover{text-decoration:underline}
 #lbq input,#lbq textarea,#lbq select{width:100%;padding:12px 14px;border:1px solid var(--lbq-line);border-radius:8px;background:var(--lbq-panel);color:inherit;font:inherit;font-size:.95rem}
 #lbq textarea{min-height:96px;resize:vertical}
 #lbq input:focus,#lbq textarea:focus,#lbq select:focus{outline:2px solid var(--lbq-accent);outline-offset:1px;border-color:transparent}
-#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--lbq-accent);color:#0b0e12;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
+#lbq button{margin-top:6px;padding:13px 22px;border:0;border-radius:8px;background:var(--accent);color:#fff;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.02em}
 #lbq button:disabled{opacity:.6;cursor:wait}
 #lbq .lbq-st{margin:10px 0 0;font-size:.9rem;color:var(--lbq-muted);min-height:1.2em}
 #lbq .lbq-cons{display:flex;gap:9px;align-items:center;margin-top:12px;font-size:.82rem;color:var(--lbq-muted);text-transform:none;letter-spacing:0}
@@ -305,48 +344,10 @@ footer a:hover{text-decoration:underline}
 </footer>
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
-(function(){
-  var c=document.getElementById('heroCanvas'); if(!c) return;
-  var ctx=c.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2), w=0,h=0,t=0,raf=null;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function size(){var r=c.getBoundingClientRect(); w=Math.max(320,r.width|0); h=Math.max(320,r.height|0);
-    c.width=w*dpr; c.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);}
-  function draw(){
-    var g=ctx.createLinearGradient(0,0,0,h);
-    g.addColorStop(0,'#141518'); g.addColorStop(.55,'#0e0f11'); g.addColorStop(1,'#090a0b');
-    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
-    var y0=h*0.52;
-    ctx.beginPath(); ctx.moveTo(0,y0); ctx.lineTo(w,y0); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
-
-    // exposed aggregate: stone speckle over a slab, joints, low warm key light
-    var gg=ctx.createLinearGradient(0,y0,0,h);
-    gg.addColorStop(0,'#5a5d61'); gg.addColorStop(.5,'#3d4044'); gg.addColorStop(1,'#24262a');
-    ctx.fillStyle=gg; ctx.fill();
-    for(var s=0;s<900;s++){
-      var sx=(s*37.13)%w, sy=y0+((s*53.7)%(h-y0)), r=1+(s%3);
-      var tone = s%4===0 ? '255,217,0' : (s%7===0 ? '227,27,35' : '220,222,226');
-      ctx.fillStyle='rgba('+tone+',.16)';
-      ctx.beginPath(); ctx.arc(sx,sy,r,0,6.283); ctx.fill();
-    }
-    ctx.strokeStyle='rgba(0,0,0,.22)'; ctx.lineWidth=1.5;
-    for(var k=1;k<=2;k++){var yy=y0+(h-y0)*(k/3.2); ctx.beginPath(); ctx.moveTo(0,yy); ctx.lineTo(w,yy); ctx.stroke();}
-    var lg=ctx.createRadialGradient(w*.2,h*.08,10,w*.2,h*.08,w*.6);
-    lg.addColorStop(0,'rgba(255,255,255,.12)'); lg.addColorStop(1,'rgba(255,255,255,0)');
-    ctx.fillStyle=lg; ctx.fillRect(0,0,w,h);
-
-  }
-  function loop(){ t+=0.004; draw(); raf=requestAnimationFrame(loop); }
-  size(); draw(); if(!reduce){ loop(); }
-  window.addEventListener('resize', function(){ size(); draw(); }, {passive:true});
-  window.addEventListener('pagehide', function(){ if(raf) cancelAnimationFrame(raf); });
-})();
-(function(){
-  var f=document.getElementById('lbq-form'); if(!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('lbq-note').textContent = "Thanks. This preview form isn\u2019t wired to a mailbox yet \u2014 message us on Facebook and we\u2019ll get straight back to you.";
-  });
-})();
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var scene=document.querySelector('.earthworks');
+  if(scene) scene.pauseAnimations();
+}
 </script>
 
 <script>
