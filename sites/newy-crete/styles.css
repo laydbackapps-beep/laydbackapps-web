@@ -223,3 +223,14 @@ section{scroll-margin-top:76px}
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .wall figure:hover img{transform:none}
 }
+/* board margins: sections below the hero had no horizontal padding, so every line of
+   copy sat flush on the viewport edge. Hero and header already carry --pad. */
+:root{
+  --pad:clamp(20px,4.5vw,72px);
+  /* concreteresk: black, white and grey only - bone/yellow came out */
+  --ink:#0a0a0a; --panel:#121212; --panel2:#191919; --line:#2e2e2e;
+  --text:#cfcfcf; --dim:#8a8a8a; --bone:#f2f2f0; --accent:#d6d3cb;
+}
+main > section:not(.hero){padding-inline:var(--pad)}
+/* photography in mono: kills the high-vis and sky colour, leaves the concrete */
+.wall img,.hero img,figure img{filter:grayscale(1) contrast(1.06)}
