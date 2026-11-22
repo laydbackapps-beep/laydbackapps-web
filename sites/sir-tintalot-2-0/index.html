@@ -275,7 +275,7 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
         </div>
       </div>
       <figure class="hero-visual" aria-label="Sir Tintalot film application photo and window-tinting illustration">
-        <div class="hero-photo"><img src="assets/photo_2.jpg" width="1200" height="800" alt="Sir Tintalot applying tint film to a vehicle window" loading="eager"><span>Film application &bull; Sir Tintalot 2.0</span></div>
+        <div class="hero-photo"><img src="assets/photo_2.jpg" width="1200" height="800" alt="Sir Tintalot applying tint film to a vehicle window" loading="eager"><span>Window film application</span></div>
         <svg class="hero-scene" viewBox="0 0 640 250" role="img" aria-labelledby="tint-scene-title tint-scene-desc" xmlns="http://www.w3.org/2000/svg">
           <title id="tint-scene-title">Tint film and squeegee on a car window</title>
           <desc id="tint-scene-desc">A dimensional close-up of a vehicle side window with blue tint film being applied using a professional squeegee, with a peeled film corner and reflective glass.</desc>
@@ -295,7 +295,7 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
           <path d="M157 51h314l82 110H85Z" fill="none" stroke="#9cb0bc" stroke-width="3" opacity=".5"/>
           <path d="M340 51l17 110" stroke="#050b12" stroke-width="15"/>
           <path d="M346 55l15 102" stroke="#50697b" stroke-width="3" opacity=".65"/>
-          <path d="M358 52h113l82 110-182-2Z" fill="url(#tfFilm)"/>
+          <path id="tfFilmLayer" d="M358 52h113l82 110-182-2Z" fill="url(#tfFilm)" opacity=".65"/>
           <path d="M425 52h46l82 110-54-28Z" fill="#6bbcff" opacity=".32"/>
           <path d="M471 52l27 61 55 49-82-110Z" fill="#b7e2ff" opacity=".38"/>
           <path d="M471 52l27 61-36-16Z" fill="#d9f2ff" opacity=".55"/>
@@ -318,6 +318,7 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
           <path d="M0 229L640 188M0 244L640 205" stroke="#3e5569" stroke-width="2" opacity=".45"/>
           <path d="M54 207l51-5M583 174l35-3" stroke="#a5bcc9" stroke-width="3" opacity=".45"/>
         </svg>
+        <div class="tint-control"><label for="filmShade">Film shade preview</label><input id="filmShade" type="range" min="15" max="100" value="65" aria-label="Film shade preview"><span>Light&nbsp; / &nbsp;Dark</span></div>
       </figure>
     </div>
   </section>
@@ -804,11 +805,16 @@ header .container{gap:20px;flex-wrap:nowrap!important}
 .hero-photo::after{content:"";position:absolute;inset:58% 0 0;background:linear-gradient(transparent,rgba(4,9,15,.72));pointer-events:none}
 .hero-photo span{position:absolute;z-index:1;left:15px;bottom:12px;color:#fff;font-size:.75rem;font-weight:650}
 .hero-scene{display:block;width:100%;height:auto;background:#0d1621;border-top:1px solid #263b51}
+.tint-control{display:grid;grid-template-columns:auto minmax(80px,1fr) auto;align-items:center;gap:14px;padding:11px 14px;border-top:1px solid #263b51;background:#111d2a}
+.tint-control label{color:#dbe8f3;font-size:.73rem;font-weight:650;white-space:nowrap}.tint-control input{width:100%;accent-color:var(--accent);cursor:pointer}.tint-control>span{color:var(--muted);font-size:.65rem;white-space:nowrap}
 @media(max-width:900px){header nav{display:none}}
 @media(max-width:700px){
  header .container{gap:10px}.tint-brand{gap:8px}.tint-brand img{width:40px;height:40px;max-width:40px}.tint-brand>span{font-size:.88rem}.tint-brand small{font-size:.52rem;margin-top:4px}header .container>.btn{padding:11px 13px;font-size:.75rem}
- .hero{min-height:auto;padding:28px 0 32px}.hero .container{grid-template-columns:minmax(0,1fr);gap:25px}.hero-copy h1{max-width:14ch;font-size:2.4rem}.hero-copy p{font-size:.92rem;line-height:1.55}.hero-cta{margin-top:19px;flex-wrap:nowrap}.hero .btn{padding:12px 15px;font-size:.78rem}.hero-photo{height:190px}.hero-photo span{left:12px;bottom:9px;font-size:.66rem}.hero-visual{box-shadow:8px 10px 0 rgba(0,0,0,.18)}
+ .hero{min-height:auto;padding:28px 0 32px}.hero .container{grid-template-columns:minmax(0,1fr);gap:25px}.hero-copy h1{max-width:14ch;font-size:2.4rem}.hero-copy p{font-size:.92rem;line-height:1.55}.hero-cta{margin-top:19px;flex-wrap:nowrap}.hero .btn{padding:12px 15px;font-size:.78rem}.hero-photo{height:190px}.hero-photo span{left:12px;bottom:9px;font-size:.66rem}.hero-visual{box-shadow:8px 10px 0 rgba(0,0,0,.18)}.tint-control{grid-template-columns:auto minmax(80px,1fr);gap:12px}.tint-control>span{display:none}
 }
 </style>
+<script>
+(function(){var r=document.getElementById('filmShade'),f=document.getElementById('tfFilmLayer');if(!r||!f)return;function paint(){f.setAttribute('opacity',(Number(r.value)/100).toFixed(2))}r.addEventListener('input',paint);paint()})();
+</script>
 </body>
 </html>
