@@ -33,20 +33,20 @@
     },
     bronde: {
       title: "Dimensional Bronde & Melts",
-      body: "Designed for brunette warmth or transitioning outgrown blonde into rich, ribboned dimension. Seamless root shadows and glossing restore mirror-like shine without a harsh regrowth line.",
+      body: "Designed for brunette warmth or transitioning outgrown blonde into rich, ribboned dimension. Soft root shadows and glossing restore mirror-like shine without a harsh regrowth line.",
       items: [
-        "Outgrown-blonde to seamless bronde corrections",
+        "Outgrown-blonde to soft bronde corrections",
         "Custom tonal root melts & mid-length ribbons",
         "Low-maintenance grow-out built for busy schedules",
       ],
       img: "./img/DdoNZz-E7BJ-1280.jpg",
-      alt: "Seamless bronde colour melt from natural dark base",
+      alt: "Soft bronde colour melt from natural dark base",
     },
     styling: {
       title: "Occasion & Bridal Styling",
       body: "Sculpted textured upstyles, romantic tendrils and Cloud Nine waves tailored to weddings, milestone birthdays and special events across Lake Macquarie and Newcastle.",
       items: [
-        "Textured effortless upstyles & soft face-framing tendrils",
+        "Textured undone upstyles & soft face-framing tendrils",
         "Long-wear prep & humidity-resistant gloss finish",
         "Individual event bookings & bridal party enquiries",
       ],
