@@ -236,6 +236,8 @@ main > section:not(.hero){padding-inline:var(--pad)}
 .wall img,.hero img,figure img{filter:grayscale(.55) sepia(.14) saturate(1.05) contrast(1.04)}
 /* warm scrim: the cold rgba(12,13,12) overlay was flattening the hero photo back to grey */
 .hero{background:#100c08}
-.hero__media::after{background:linear-gradient(180deg,rgba(16,12,8,.62) 0%,rgba(16,12,8,.16) 34%,rgba(16,12,8,.92) 88%)}
+.hero__media::after{background:linear-gradient(180deg,rgba(16,12,8,.42) 0%,rgba(16,12,8,.10) 38%,rgba(16,12,8,.94) 86%)}
 .hero__lede{color:#e9e3d6}
 .bar{background:rgba(13,12,10,.94)}
+/* the 38% black under the photo was crushing it to grey */
+.hero__media img{opacity:.86}
