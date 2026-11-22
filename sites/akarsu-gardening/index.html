@@ -11,7 +11,7 @@
 :root{
   --lb-name:#ffffff; --lb-acc:#b7cfa4; --lb-subc:rgba(255,255,255,.72);
   --ink:#f3f7ee; --muted:rgba(243,247,238,.68); --line:rgba(243,247,238,.13); --panel:rgba(255,255,255,.045);
-  --bg:#0d1a10; --bg2:#122216; --accent:#b7cfa4;
+  --bg:#0d1a10; --bg2:#122216; --accent:#b7cfa4; --header-h:57px;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -23,9 +23,9 @@ h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.08;margin:0}
 p{margin:0}
 .container{width:min(1140px,92vw);margin-inline:auto}
 header.site{position:sticky;top:0;z-index:60;background:#ffffff;border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:clamp(14px,3vw,48px);padding:12px 0}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:0 1 auto;min-width:0}
-.brand img{height:54px;width:auto;max-width:min(340px,46vw);object-fit:contain}
+.bar{display:flex;align-items:center;gap:clamp(14px,3vw,48px);height:calc(var(--header-h) - 1px);padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:0 1 auto;min-width:0}
+.brand img{height:32px;width:auto;max-width:120px;object-fit:contain}
 .brand .name{font-weight:800;letter-spacing:-.01em;font-size:clamp(15px,1.6vw,21px);color:#1b2b1c;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .brand .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
@@ -37,13 +37,14 @@ nav.main a:hover{opacity:1}
 nav.main a.btn,header .btn{background:var(--accent)!important;color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important}
 .btn.ghost{background:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff!important;
   border:1px solid rgba(255,255,255,.5)!important}
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#0a140c}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.34)}
-.hero .inner{position:relative;z-index:3;padding:clamp(38px,6vh,78px) 0 clamp(34px,4.5vh,58px);max-width:min(780px,92vw)}
-.kicker{display:inline-block;font-size:.82rem;font-weight:700;letter-spacing:.13em;color:#d6d8db;margin-bottom:14px}
-.hero h1{font-size:clamp(1.95rem,4vw,3.1rem);margin-bottom:14px}
-.hero h1 em{font-style:normal;color:#cfd2d6}
+.hero{position:relative;display:flex;align-items:center;min-height:calc(100svh - var(--header-h));padding:0;overflow:hidden;border-bottom:1px solid var(--line);background:#0a140c}
+.hero .trade-scene{position:absolute;inset:-8px;width:calc(100% + 16px);height:calc(100% + 16px);display:block;z-index:0;opacity:.82;animation:scene-drift 16s ease-in-out infinite}
+@keyframes scene-drift{50%{transform:translate3d(0,-6px,0)}}
+.hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(7,17,9,.96) 0%,rgba(7,17,9,.80) 40%,rgba(7,17,9,.12) 72%,rgba(7,17,9,.18) 100%)}
+.hero .inner{position:relative;z-index:3;max-width:none;padding:clamp(42px,7vh,72px) 0}
+.kicker{display:inline-block;font-size:.82rem;font-weight:700;letter-spacing:.13em;color:#c9dbba;margin-bottom:14px}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.8rem);margin-bottom:18px}
+.hero h1 em{font-style:normal;color:#dce9d2}
 .hero .lede{color:var(--muted);font-size:clamp(1rem,1.5vw,1.14rem);max-width:54ch;margin-bottom:22px}
 .hero .acts{display:flex;flex-wrap:wrap;gap:14px}
 .hero .facts{display:flex;flex-wrap:wrap;gap:9px 24px;list-style:none;padding:0;margin:20px 0 0;color:rgba(255,255,255,.82);font-size:.95rem}
@@ -107,13 +108,16 @@ footer a:hover{text-decoration:underline}
 .navtog span:before,.navtog span:after{content:"";position:absolute;left:0;width:20px;height:2px;background:currentColor}
 .navtog span:before{top:-6px}.navtog span:after{top:6px}
 @media(max-width:820px){
+  :root{--header-h:49px}
   .bar{position:relative;flex-wrap:nowrap}
-  .navtog{display:flex;color:#fff;margin-left:auto}
+  .brand img{height:24px}
+  .hero .veil{background:linear-gradient(90deg,rgba(7,17,9,.88),rgba(7,17,9,.58))}
+  .navtog{display:flex;color:#1b2b1c;margin-left:auto}
   nav.main{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;
     align-items:stretch;gap:2px;background:rgba(12,12,14,.98);border:1px solid rgba(255,255,255,.14);
     border-radius:14px;padding:10px;box-shadow:0 24px 60px rgba(0,0,0,.55);z-index:60}
   nav.main.open{display:flex}
-  nav.main a{padding:14px 14px;border-radius:10px;font-size:17px}
+  nav.main a{padding:14px 14px;border-radius:10px;font-size:17px;color:var(--ink);opacity:1}
   nav.main .btn{margin-top:6px;text-align:center;justify-content:center}
 }
 </style>
@@ -123,7 +127,7 @@ footer a:hover{text-decoration:underline}
   <div class="container bar">
     <a class="brand" href="./" aria-label="Akarsu Gardening">
       <img src="assets/logo.png" alt="" loading="eager" decoding="async">
-      <span class="sr">Akarsu Gardening</span>
+      <span class="name">Akarsu Gardening</span>
     </a>
     <button class="navtog" aria-expanded="false" aria-controls="mainnav" aria-label="Menu"><span></span></button><nav id="mainnav" class="main" aria-label="Main">
       <a href="#services">Services</a>
@@ -136,14 +140,54 @@ footer a:hover{text-decoration:underline}
 </header>
 <main>
   <section class="rv hero" id="top" aria-label="Garden maintenance, Melbourne">
-    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <svg class="trade-scene lb-industry-layer" viewBox="0 0 1280 840" preserveAspectRatio="xMaxYMid slice" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="ak-sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b7cfa4"/><stop offset="1" stop-color="#68875d"/></linearGradient>
+        <linearGradient id="ak-lawn" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6b9156"/><stop offset="1" stop-color="#2c4f30"/></linearGradient>
+        <linearGradient id="ak-hedge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#557c46"/><stop offset="1" stop-color="#294c2d"/></linearGradient>
+        <linearGradient id="ak-hedge-top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b7cfa4"/><stop offset="1" stop-color="#668d50"/></linearGradient>
+        <pattern id="ak-leaves" width="32" height="30" patternUnits="userSpaceOnUse"><path d="M3 10Q8 2 14 7Q10 15 3 10Z" fill="#d3e2c5" opacity=".25"/><path d="M18 24Q22 14 30 18Q27 27 18 24Z" fill="#b7cfa4" opacity=".2"/></pattern>
+      </defs>
+      <rect width="1280" height="840" fill="url(#ak-sky)"/>
+      <path d="M0 380L1280 300V840H0Z" fill="url(#ak-lawn)"/>
+      <g fill="#d3e2c5" opacity=".3">
+        <path d="M655 342L744 336L390 840H30Z"/>
+        <path d="M828 329L904 324L810 840H555Z"/>
+        <path d="M982 317L1048 313L1200 840H995Z"/>
+      </g>
+      <g fill="none" stroke="#b7cfa4" opacity=".12" stroke-width="3">
+        <path d="M570 349L0 822"/><path d="M772 334L475 840"/><path d="M945 322L908 840"/><path d="M1090 310L1280 675"/>
+      </g>
+      <path d="M740 345L1210 365V500L740 480Z" fill="url(#ak-hedge)"/>
+      <path d="M740 345L875 285L1280 300L1210 365Z" fill="url(#ak-hedge-top)"/>
+      <path d="M1210 365L1280 300V435L1210 500Z" fill="#172d1b"/>
+      <path d="M740 345L1210 365V500L740 480Z" fill="url(#ak-leaves)"/>
+      <path d="M740 345L875 285L1280 300L1210 365Z" fill="url(#ak-leaves)"/>
+      <path d="M740 345L875 285L1280 300" fill="none" stroke="#d3e2c5" stroke-width="4" opacity=".55"/>
+      <g stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1000 650L1135 440L1190 450" fill="none" stroke="#e1eadb" stroke-width="14"/>
+        <path d="M1135 440L1190 450" fill="none" stroke="#1a271b" stroke-width="19"/>
+        <path d="M880 640L1030 610L1110 690L920 735Z" fill="#b7cfa4" stroke="#1a271b" stroke-width="8"/>
+        <path d="M940 610L1015 570L1060 620L985 655Z" fill="#41633c" stroke="#1a271b" stroke-width="7"/>
+        <circle cx="920" cy="735" r="34" fill="#111813"/><circle cx="920" cy="735" r="13" fill="#8fac78"/>
+        <circle cx="1080" cy="690" r="29" fill="#111813"/><circle cx="1080" cy="690" r="11" fill="#8fac78"/>
+      </g>
+      <path d="M600 840C790 705 1000 650 1280 690V840Z" fill="#263a25"/>
+      <g fill="#8fac78" opacity=".82">
+        <path d="M1028 838Q982 770 1024 724Q1054 770 1028 838Z"/><path d="M1032 838Q1074 750 1120 758Q1098 814 1032 838Z"/>
+        <path d="M1150 838Q1112 780 1148 744Q1176 784 1150 838Z"/><path d="M1154 838Q1194 766 1238 782Q1206 824 1154 838Z"/>
+        <path d="M890 838Q856 790 886 756Q912 792 890 838Z"/><path d="M894 838Q926 778 962 790Q938 824 894 838Z"/>
+      </g>
+      <path d="M600 840C790 705 1000 650 1280 690" fill="none" stroke="#071009" stroke-width="34" opacity=".65"/>
+      <path d="M600 840C790 705 1000 650 1280 690" fill="none" stroke="#b7cfa4" stroke-width="16" opacity=".8"/>
+      <path d="M600 840C790 705 1000 650 1280 690" fill="none" stroke="#edf4e7" stroke-width="3" opacity=".65"/>
+    </svg>
     <div class="veil" aria-hidden="true"></div>
     <div class="container inner">
       <span class="kicker">Garden maintenance, Melbourne</span>
-      <h1>Gardens kept<br><em>in order.</em></h1>
-      <p class="lede">Reliable garden maintenance across Melbourne. Mowing, edging, hedges, pruning and clean-ups, done on a schedule you can rely on.</p>
+      <h1>Lawns mown.<br><em>Hedges shaped.</em></h1>
+      <p class="lede">Garden maintenance across Melbourne. Mowing, edging, hedges, pruning and clean-ups, with regular visits to keep your garden in shape.</p>
       <div class="acts"><a class="btn" href="#contact">Get a quote</a><a class="btn ghost" href="#services">See what we do</a></div>
-      <ul class="facts"><li>Mowing</li><li>Edging</li><li>Hedge trimming</li><li>Pruning</li><li>Garden clean-ups</li><li>Melbourne</li></ul>
     </div>
   </section>
   <section class="rv" id="services">
@@ -305,59 +349,6 @@ footer a:hover{text-decoration:underline}
 </footer>
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
-(function(){
-  var c=document.getElementById('heroCanvas'); if(!c) return;
-  var ctx=c.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2), w=0,h=0,t=0,raf=null;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function size(){var r=c.getBoundingClientRect(); w=Math.max(320,r.width|0); h=Math.max(320,r.height|0);
-    c.width=w*dpr; c.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);}
-  function draw(){
-    var g=ctx.createLinearGradient(0,0,0,h);
-    g.addColorStop(0,'#141518'); g.addColorStop(.55,'#0e0f11'); g.addColorStop(1,'#090a0b');
-    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
-    var y0=h*0.52;
-    ctx.beginPath(); ctx.moveTo(0,y0); ctx.lineTo(w,y0); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
-
-    // a tree line and a trimmed hedge in their green, cream light behind
-    var gg=ctx.createLinearGradient(0,y0,0,h);
-    gg.addColorStop(0,'#2b4a2b'); gg.addColorStop(.5,'#1f3620'); gg.addColorStop(1,'#152414');
-    ctx.fillStyle=gg; ctx.fill();
-    // distant tree silhouettes
-    ctx.fillStyle='rgba(12,26,12,.95)';
-    for(var i=0;i<14;i++){
-      var tx=(i*w/13)+((i%3)*w*0.012), th=h*(0.20+((i*7)%5)*0.045);
-      ctx.beginPath(); ctx.moveTo(tx,y0); ctx.lineTo(tx-w*0.018,y0);
-      ctx.lineTo(tx-w*0.009,y0-th); ctx.closePath(); ctx.fill();
-      ctx.fillRect(tx-w*0.014,y0-4,w*0.010,7);
-    }
-    // hedge block, trimmed flat on top
-    ctx.fillStyle='#2f5230';
-    ctx.fillRect(0, y0+ (h-y0)*0.22, w, (h-y0)*0.30);
-    ctx.fillStyle='rgba(255,255,255,.06)';
-    for(var b=0;b<170;b++){
-      var bx=(b*71.3)%w, by=y0+(h-y0)*0.22+((b*29.7)%((h-y0)*0.30));
-      ctx.fillRect(bx,by,2,2);
-    }
-    ctx.strokeStyle='rgba(0,0,0,.25)'; ctx.lineWidth=2;
-    ctx.beginPath(); ctx.moveTo(0, y0+(h-y0)*0.22); ctx.lineTo(w, y0+(h-y0)*0.22); ctx.stroke();
-    // cool morning light from the left
-    var lg=ctx.createRadialGradient(w*.18,h*.12,12,w*.18,h*.12,w*.7);
-    lg.addColorStop(0,'rgba(238,226,207,.20)'); lg.addColorStop(1,'rgba(238,226,207,0)');
-    ctx.fillStyle=lg; ctx.fillRect(0,0,w,h);
-
-  }
-  function loop(){ t+=0.004; draw(); raf=requestAnimationFrame(loop); }
-  size(); draw(); if(!reduce){ loop(); }
-  window.addEventListener('resize', function(){ size(); draw(); }, {passive:true});
-  window.addEventListener('pagehide', function(){ if(raf) cancelAnimationFrame(raf); });
-})();
-(function(){
-  var f=document.getElementById('lbq-form'); if(!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('lbq-note').textContent = "Thanks. This preview form isn\u2019t wired to a mailbox yet \u2014 message us on Facebook and we\u2019ll get straight back to you.";
-  });
-})();
 </script>
 
 <script>
