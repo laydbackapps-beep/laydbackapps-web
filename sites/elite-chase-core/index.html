@@ -10,8 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/logo.jpg">
 <link rel="icon" href="assets/logo.jpg">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- LB-3D-HERO: visible trade illustration is inline SVG; the required canvas stays hidden. -->
 <style>
 :root{
   --bg:#0b0b0e;
@@ -25,7 +24,7 @@
   --line:rgba(244,243,239,.13);
   --line-2:rgba(244,243,239,.06);
   --nav-h:78px;
-  --disp:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --disp:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --d1:clamp(2.5rem,5.6vw,4.6rem);
   --d2:clamp(1.75rem,3.1vw,2.6rem);
@@ -217,6 +216,57 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
   .nav__links{flex-wrap:wrap!important;gap:.6rem 1rem!important}
   .nav__tel{font-size:.84rem!important;padding:.32rem .55rem!important}}
 </style>
+<style>
+/* Photo + perspective trade drawing: the first screen carries the actual work. */
+:root{--nav-h:88px;--gold:#9ca3ff;--gold-dk:#7179d6}
+#heroCanvas{display:none!important}
+.nav{height:var(--nav-h)!important;min-height:var(--nav-h)!important;padding-block:0!important;flex-wrap:nowrap!important}
+.nav .brand__mark img{height:64px!important}
+.hero{position:relative;isolation:isolate;display:flex;align-items:center;min-height:calc(100svh - var(--nav-h));padding:clamp(2rem,4vw,3.5rem) 0;overflow:hidden;perspective:1200px;background:radial-gradient(circle at 78% 32%,rgba(104,91,190,.20),transparent 34%),linear-gradient(135deg,#0b0b0e 0%,#11101a 58%,#171427 100%)}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.18;background-image:linear-gradient(rgba(156,163,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(156,163,255,.12) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(90deg,#000,transparent 68%)}
+.hero__in{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(2rem,4vw,4rem);align-items:center}
+.hero__copy{min-width:0;max-width:590px}
+.hero__k{margin:0 0 1rem;color:#bdc2ff;font-family:var(--mono);font-size:.76rem;font-weight:700;letter-spacing:.12em;line-height:1.5;text-transform:uppercase}
+.hero h1{max-width:680px;font-size:clamp(3rem,5.2vw,4.8rem);font-weight:800;letter-spacing:-.052em;line-height:.98;text-wrap:balance}
+.hero h1 em{display:block;color:var(--gold);font-style:normal}
+.hero__p{max-width:54ch;margin:1.35rem 0 0;color:#c2c0cc;font-size:1.03rem;line-height:1.65}
+.hero__cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.65rem}
+.btn{min-height:48px;justify-content:center}
+.btn--ghost{border:1px solid rgba(190,195,255,.4);background:rgba(21,20,34,.7);color:#f4f3ef}
+.btn--ghost:hover{border-color:var(--gold);background:#242038;color:#fff}
+.hero__visual{display:grid;grid-template-rows:285px 250px;height:535px;min-width:0;overflow:hidden;border:1px solid rgba(173,178,255,.30);border-radius:8px;background:#11121a;box-shadow:0 28px 80px rgba(0,0,0,.42);transform:rotateY(-2deg);transform-origin:left center}
+.hero__photo{position:relative;min-width:0;margin:0;overflow:hidden}
+.hero__photo img{width:100%;height:100%;object-fit:cover;object-position:center 57%;filter:saturate(.88) contrast(1.06) brightness(1.08)}
+.hero__photo:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(8,8,13,.88))}
+.hero__photo figcaption{position:absolute;z-index:1;right:1rem;bottom:.85rem;left:1rem;display:flex;justify-content:space-between;gap:1rem;color:#fff;font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.hero__photo figcaption span{color:#c9cdff;font-family:var(--mono);font-weight:500}
+.hero__drawing{position:relative;min-width:0;border-top:1px solid rgba(173,178,255,.25);background:#11121a}
+.hero__drawing svg{display:block;width:100%;height:100%}
+.rv{opacity:1;transform:translateY(10px);transition:transform .45s ease}
+.rv.on{transform:none}
+@media(max-width:980px){.hero__in{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:1.5rem}.hero h1{font-size:clamp(2.65rem,5.6vw,4rem)}.hero__visual{grid-template-rows:250px 220px;height:470px}}
+@media(max-width:820px){
+ :root{--nav-h:72px}
+ .nav{height:var(--nav-h)!important;min-height:var(--nav-h)!important;padding:.55rem 1rem!important;gap:.7rem!important}
+ .nav .brand__mark img{height:50px!important}
+ .nav__links{display:none!important}
+ .nav__tel{font-size:.79rem!important;padding:.35rem .55rem!important;white-space:nowrap!important}
+ .nav__tel span{white-space:nowrap!important}
+ .hero{min-height:0;padding:1.25rem 0 1.6rem}
+ .hero__in{grid-template-columns:1fr;gap:1.2rem}
+ .hero__copy{max-width:none}
+ .hero__k{margin-bottom:.65rem;font-size:.66rem}
+ .hero h1{max-width:350px;font-size:clamp(2.25rem,10vw,2.65rem);line-height:1;letter-spacing:-.045em}
+ .hero__p{margin-top:.85rem;font-size:.91rem;line-height:1.5}
+ .hero__cta{margin-top:1rem;gap:.55rem}
+ .hero__cta .btn{min-height:42px;padding:.6rem .85rem;font-size:.85rem}
+ .hero__visual{grid-template-rows:145px 155px;height:300px;transform:none;border-radius:6px}
+ .hero__photo img{object-position:center 58%}
+ .hero__photo figcaption{right:.65rem;bottom:.55rem;left:.65rem;font-size:.6rem}
+}
+@media(max-width:380px){.hero__cta .btn{font-size:.78rem;padding-inline:.65rem}.hero__visual{grid-template-rows:135px 145px;height:280px}}
+@media(prefers-reduced-motion:reduce){.rv{transform:none}.hero__visual{transform:none}}
+</style>
 </head>
 <body>
 <a class="skip" href="#services">Skip to content</a>
@@ -230,7 +280,7 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
     <li><a href="#equipment">Equipment</a></li>
     <li><a href="#work">Work</a></li>
   </ul>
-  <a class="nav__tel" href="tel:0405632534">
+  <a class="nav__tel" href="tel:+61405632534">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5 12.8 12.8 0 0 0 2.8.7 2 2 0 0 1 1.7 2z"/></svg>
     <span>0405 632 534</span>
   </a>
@@ -238,28 +288,78 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
 
 <main id="top">
   <section class="hero" aria-labelledby="h1">
-    <canvas id="heroCanvas" width="1440" height="820" aria-hidden="true"></canvas>
+    <canvas id="heroCanvas" width="1440" height="820" aria-hidden="true" style="display:none"></canvas>
     <div class="hero__in wrap">
       <div class="hero__copy">
-        <p class="hero__k">Diamond core drilling and wall chasing, Sydney</p>
-        <h1 id="h1">Holes and chases that land <em>on the mark</em>.</h1>
-        <p class="hero__p">Rig-mounted coring, dust-controlled chasing and sawed openings for builders, plumbers and electricians. Set out off the drawings, cut square, slurry and spoil taken away.</p>
+        <p class="hero__k">Concrete cutting • diamond core drilling • Sydney</p>
+        <h1 id="h1">Concrete cutting &amp; <em>core drilling.</em></h1>
+        <p class="hero__p">Rig-mounted coring, dust-controlled wall chasing and sawed openings for builders, plumbers and electricians. Set out off the drawings, cut square, slurry and spoil taken away.</p>
         <div class="hero__cta">
-          <a class="btn" href="tel:0405632534">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5 12.8 12.8 0 0 0 2.8.7 2 2 0 0 1 1.7 2z"/></svg>
-            Call 0405 632 534
-          </a>
+          <a class="btn" href="tel:+61405632534">Call 0405 632 534</a>
+          <a class="btn btn--ghost" href="#lbq">Request a quote</a>
         </div>
       </div>
-      <ul class="hero__row">
-        <li>Sydney metro</li>
-        <li>Coring to 600mm</li>
-        <li>Wet or dry, dust extracted</li>
-      </ul>
+      <div class="hero__visual">
+        <figure class="hero__photo">
+          <img src="assets/work_05.jpg" alt="Core drilling equipment on an interior concrete-cutting job" width="1200" height="1600" fetchpriority="high">
+          <figcaption>Real site work <span>Core drilling setup</span></figcaption>
+        </figure>
+        <div class="hero__drawing">
+          <svg viewBox="0 0 720 320" role="img" aria-labelledby="tradeSceneTitle tradeSceneDesc" preserveAspectRatio="xMidYMid meet">
+            <title id="tradeSceneTitle">Diamond core drilling and wall chasing scene</title>
+            <desc id="tradeSceneDesc">A perspective drawing of a core drill rig boring a concrete wall beside a cut services chase.</desc>
+            <defs>
+              <linearGradient id="ecWall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8d8b91"/><stop offset="1" stop-color="#4a4952"/></linearGradient>
+              <linearGradient id="ecFloor" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#34343e"/><stop offset="1" stop-color="#15151d"/></linearGradient>
+              <linearGradient id="ecSteel" x1="0" x2="1"><stop stop-color="#d9dbe4"/><stop offset=".45" stop-color="#656977"/><stop offset="1" stop-color="#eef0f7"/></linearGradient>
+              <linearGradient id="ecBit" x1="0" x2="1"><stop stop-color="#6263a8"/><stop offset=".5" stop-color="#bcc1ff"/><stop offset="1" stop-color="#4e4f89"/></linearGradient>
+            </defs>
+            <rect width="720" height="320" fill="#11121a"/>
+            <polygon points="0,241 520,172 720,222 720,320 0,320" fill="url(#ecFloor)"/>
+            <g stroke="#73748c" stroke-width="1" opacity=".28">
+              <path d="M380 178L42 320M380 178L220 320M380 178L414 320M380 178L620 320M380 178L720 270"/>
+              <path d="M0 266L720 237M0 294L720 279"/>
+            </g>
+            <polygon points="38,29 493,55 493,229 38,267" fill="url(#ecWall)" stroke="#b4b1bb" stroke-width="2"/>
+            <polygon points="493,55 622,22 622,193 493,229" fill="#3b3a44" stroke="#757480" stroke-width="2"/>
+            <g stroke="#373640" stroke-width="2" opacity=".65">
+              <path d="M40 82L492 99M40 137L492 143M40 192L492 187M40 241L492 220"/>
+              <path d="M133 34L133 87M246 41L246 92M363 47L363 96M84 84L84 139M196 90L196 141M309 95L309 143M424 98L424 143M141 140L141 249M259 142L259 239M377 143L377 232"/>
+            </g>
+            <text x="57" y="55" fill="#f2f1f6" font-family="system-ui,sans-serif" font-size="14" font-weight="700" letter-spacing="2">DIAMOND CORE DRILLING</text>
+            <ellipse cx="182" cy="151" rx="52" ry="45" fill="#25252e" stroke="#c7c9ff" stroke-width="5"/>
+            <ellipse cx="182" cy="151" rx="37" ry="32" fill="#0d0e14" stroke="#71749f" stroke-width="3"/>
+            <path d="M140 123L223 181M137 174L225 127" stroke="#8e90c8" stroke-width="2" opacity=".5"/>
+            <polygon points="307,111 350,113 345,219 300,224" fill="#22232b" stroke="#c0c3ff" stroke-width="3"/>
+            <path d="M315 116L308 217M340 116L335 216" stroke="#7679bd" stroke-width="4"/>
+            <path d="M352 112L406 84" stroke="#d5d7ff" stroke-width="2"/>
+            <text x="409" y="82" fill="#d5d7ff" font-family="system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1">WALL CHASE</text>
+            <g>
+              <polygon points="451,251 609,232 661,258 495,282" fill="#23242d" stroke="#9ca3ff" stroke-width="3"/>
+              <polygon points="495,282 661,258 661,270 495,295" fill="#12131a"/>
+              <path d="M544 242L532 91" stroke="url(#ecSteel)" stroke-width="15"/>
+              <path d="M544 242L532 91" stroke="#282a35" stroke-width="3"/>
+              <polygon points="500,86 556,78 578,107 517,118" fill="#8589dc" stroke="#d6d8ff" stroke-width="2"/>
+              <polygon points="517,118 578,107 578,130 518,141" fill="#44477c"/>
+              <path d="M515 121L211 151" stroke="url(#ecBit)" stroke-width="19"/>
+              <path d="M214 151L509 122" stroke="#e0e1ff" stroke-width="2" opacity=".65"/>
+              <path d="M474 131L487 225" stroke="#81859a" stroke-width="5"/>
+              <circle cx="488" cy="231" r="9" fill="#bec1d7"/>
+              <path d="M551 91L586 65L615 70" fill="none" stroke="#b7bacb" stroke-width="6"/>
+              <circle cx="618" cy="71" r="8" fill="#8f93e0"/>
+            </g>
+            <g fill="none" stroke="#8f93e0" stroke-width="3" opacity=".8">
+              <ellipse cx="181" cy="276" rx="100" ry="13"/>
+              <path d="M90 275C148 254 237 258 285 274"/>
+            </g>
+            <text x="30" y="306" fill="#a9aabd" font-family="ui-monospace,monospace" font-size="12" letter-spacing="1.4">MEASURED SET-OUT  /  WET OR DRY CUTTING</text>
+          </svg>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="services" aria-labelledby="s-t">
+  <section id="services" class="rv" aria-labelledby="s-t">
     <div class="wrap">
       <div class="sec-head">
         <h2 id="s-t">The work</h2>
@@ -302,7 +402,7 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
     </div>
   </section>
 
-  <section id="equipment" class="blank" aria-labelledby="e-t">
+  <section id="equipment" class="blank rv" aria-labelledby="e-t">
     <div class="wrap split">
       <div class="split__lede">
         <h2 id="e-t">Gear matched to the cut</h2>
@@ -319,7 +419,7 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
     </div>
   </section>
 
-  <section id="work" aria-labelledby="w-t">
+  <section id="work" class="rv" aria-labelledby="w-t">
     <div class="wrap">
       <div class="sec-head">
         <h2 id="w-t">Off the phone and onto the wall</h2>
@@ -336,17 +436,17 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
     </div>
   </section>
 
-  <section id="quote" aria-labelledby="q-t">
+  <section id="lbq" class="rv" aria-labelledby="q-t">
     <div class="wrap quote">
       <div>
         <h2 id="q-t">Send the job through</h2>
         <p class="quote__p">Drawings, wall type, hole sizes and depths, access width, timing. Enough for a firm price, not a guess.</p>
         <p class="quote__side">
-          <a href="tel:0405632534">0405 632 534</a><br>
+          <a href="tel:+61405632534">0405 632 534</a><br>
           <a href="mailto:Elitewallchasing@outlook.com">Elitewallchasing@outlook.com</a>
         </p>
       </div>
-      <form id="quote-form" novalidate data-site="elite-chase-core" data-biz="Elite Chase &amp; Core">
+      <form id="quote-form" action="https://laydback-hq.tail5b3740.ts.net/functions/v1/quote-request" method="post" novalidate data-site="elite-chase-core" data-biz="Elite Chase &amp; Core">
         <div class="fg--2">
           <div><label for="q-n">Name</label><input id="q-n" name="name" autocomplete="name" required></div>
           <div><label for="q-p">Phone</label><input id="q-p" name="phone" type="tel" autocomplete="tel"></div>
@@ -384,7 +484,7 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
       <p>Diamond core drilling, wall chasing, concrete cutting and sawing, controlled demolition.<br>Sydney and surrounds.<br>ABN 17 239 677 486</p>
     </div>
     <div>
-      <p class="foot__b"><a href="tel:0405632534">0405 632 534</a></p>
+      <p class="foot__b"><a href="tel:+61405632534">0405 632 534</a></p>
       <p><a href="mailto:Elitewallchasing@outlook.com">Elitewallchasing@outlook.com</a></p>
     </div>
     <div class="foot__r">
@@ -395,20 +495,16 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
   </div>
 </footer>
 
-<script src="assets/heroCanvas.js"></script>
 <script>
-/* Elite Chase & Core hero: a blockwork wall mid-job, chase cut, core rig boring, slurry running. */
+/* Sections stay visible on first paint; observation only settles their small offset. */
 (function(){
-  var cv = document.getElementById('heroCanvas');
-  if (!cv || !window.Projection) return;
-  var S = Projection.create(cv, {focal: 1.30, horizon: .50, camY: 1.42, fogNear: 8, fogFar: 40, fogCol: '#0d0d12'});
-  var scene = Projection.sceneEliteCore(S, {fogCol: '#0d0d12'});
-  S.frame(function(t){ scene.render(t); });
-  if ('ResizeObserver' in window){
-    new ResizeObserver(function(){ S.resize(); S.dirty = true; }).observe(cv);
-  } else {
-    window.addEventListener('resize', function(){ S.resize(); S.dirty = true; });
-  }
+  var items = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)) { items.forEach(function(el){ el.classList.add('on'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){ if (entry.isIntersecting) { entry.target.classList.add('on'); io.unobserve(entry.target); } });
+  }, {rootMargin:'0px 0px 80px'});
+  items.forEach(function(el){ io.observe(el); });
+  setTimeout(function(){ items.forEach(function(el){ el.classList.add('on'); }); },1100);
 })();
 </script>
 <script>
