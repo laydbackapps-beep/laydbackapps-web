@@ -244,3 +244,45 @@ main > section:not(.hero){padding-inline:var(--pad)}
 /* photos were sitting at 62% over a black panel, which greyed them out */
 .wall img{opacity:.94}
 .wall figure{background:#1a1714}
+/* ---------- type: condensed grotesque for the display, Barlow for text ---------- */
+:root{
+  --display:'Barlow Condensed','Arial Narrow','Helvetica Neue',sans-serif;
+  --body:'Barlow',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+body{font-family:var(--body);letter-spacing:.005em;
+  /* concrete grain (procedural, no image file) under two warm light pools */
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='140' height='140' filter='url(%23n)' opacity='.55'/></svg>"),
+    radial-gradient(1200px 620px at 12% -12%, rgba(205,187,154,.17), transparent 62%),
+    radial-gradient(1000px 520px at 108% 18%, rgba(205,187,154,.09), transparent 58%);
+  background-repeat:repeat,no-repeat,no-repeat;
+  background-blend-mode:soft-light,normal,normal;
+}
+h1,h2,h3,.hero__name,.work__link,.tag,.fact dt{font-family:var(--display)}
+.hero__name{font-stretch:normal!important;font-weight:800;letter-spacing:.005em;line-height:.84;
+  font-size:clamp(3.4rem,9.4vw,7.6rem)}
+.tag,.fact dt,nav.main a,.menu summary{letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+nav.main a,.menu summary{font-family:var(--body);font-weight:500;letter-spacing:.09em}
+
+/* ---------- gradients: raking light and section falloff ---------- */
+.hero__name span{background:linear-gradient(176deg,#ffffff 8%,#e6dfcf 58%,#b9b0a0 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+section{background-image:linear-gradient(180deg,rgba(255,255,255,.038),rgba(255,255,255,0) 26%)}
+.facts{background-image:linear-gradient(94deg,rgba(205,187,154,.14),rgba(205,187,154,0) 42%,rgba(205,187,154,.08))}
+.btn{background-image:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,0) 62%)}
+.btn--ghost{background-image:none}
+.wall{background-image:linear-gradient(180deg,rgba(255,255,255,.05),rgba(0,0,0,.35))}
+.contact{background-image:radial-gradient(900px 420px at 85% 0%,rgba(205,187,154,.12),transparent 60%)}
+
+/* ---------- shader layer over the hero photo ---------- */
+.hero__shader{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;
+  mix-blend-mode:soft-light;opacity:.85}
+.hero__media::after{z-index:2}
+.hero__inner{z-index:3}
+@media (prefers-reduced-motion:reduce){.hero__shader{opacity:.5}}
+/* raking light over the shader grain: CSS only, transforms are on the GPU */
+.hero__sheen{position:absolute;inset:-22%;z-index:1;pointer-events:none;mix-blend-mode:screen;
+  background:radial-gradient(40% 48% at 22% 16%,rgba(255,236,205,.17),rgba(255,236,205,0) 64%);
+  animation:rake 17s ease-in-out infinite alternate;will-change:transform}
+@keyframes rake{from{transform:translate3d(-5%,-3%,0) scale(1)}to{transform:translate3d(9%,6%,0) scale(1.14)}}
+@media (prefers-reduced-motion:reduce){.hero__sheen{animation:none}}
