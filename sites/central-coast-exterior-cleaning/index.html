@@ -262,9 +262,9 @@ h1,h2,h3,.brand-lockup{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans
 .brand-lockup span{display:block;font-size:1rem;font-weight:800;line-height:1.05;letter-spacing:-.02em}
 .brand-lockup small{display:block;margin-top:4px;color:var(--aqua);font-size:.72rem;font-weight:700;letter-spacing:.02em}
 #heroCanvas{display:none!important}
-.hero{position:relative;padding:54px 0 62px;background:var(--deep);color:#fff;isolation:isolate;perspective:1200px}
+.hero{position:relative;display:flex;align-items:center;min-height:calc(100vh - 79px);padding:54px 0 62px;background:var(--deep);color:#fff;isolation:isolate;perspective:1200px}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(115deg,rgba(2,52,105,.42),transparent 58%)}
-.hero-inner{min-width:0}
+.hero-inner{min-width:0;width:100%}
 .hero-copy{text-align:left;min-width:0}
 .hero-copy h1{max-width:12ch;color:#fff;font-size:clamp(2.8rem,4.7vw,4.35rem);line-height:1.01;letter-spacing:-.045em;margin-bottom:20px}
 .hero-copy h1 em{display:block;color:var(--cyan);font-style:normal}
@@ -272,12 +272,13 @@ h1,h2,h3,.brand-lockup{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans
 .hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px}
 .hero .cta-btn{background:var(--cyan);color:var(--deep);padding:14px 22px;border-radius:4px;font-size:.95rem}
 .hero .cta-btn:hover{background:#8fd8ff;color:var(--deep)}
-.hero-social{color:#fff;font-size:.9rem;border-bottom:1px solid rgba(255,255,255,.55);padding:5px 0}
-.hero-art{position:relative;min-width:0;margin:0;background:#dcedf8;border:1px solid rgba(92,198,255,.55);box-shadow:18px 22px 0 rgba(0,0,0,.16)}
+.hero-social{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;color:#fff;font-size:.9rem;border:1px solid rgba(143,216,255,.55);border-radius:4px;text-decoration:none}
+.hero-social:hover{border-color:var(--cyan);background:rgba(92,198,255,.08)}
+.hero-art{position:relative;min-width:0;margin:0;background:transparent;filter:drop-shadow(0 24px 28px rgba(0,0,0,.28))}
 .hero-art svg{display:block;width:100%;height:auto}
-.hero-caption{display:flex;justify-content:space-between;gap:12px;padding:11px 14px;background:#fff;color:var(--deep);font-size:.75rem;font-weight:700;letter-spacing:.02em}
-.hero-caption span:last-child{color:var(--aqua)}
-@media(min-width:768px){.hero-inner{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:42px}}
+.hero-caption{display:none}
+@media(min-width:768px){.hero-inner{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:42px}}
+@media(min-width:1024px){.mobile-menu-btn{display:none!important}}
 @media(max-width:1023px){.header-inner>nav,.header-inner>.cta-btn{display:none!important}}
 @media(max-width:767px){
  .header-inner{height:66px}.brand-lockup{gap:9px}.brand-lockup img{width:44px;height:44px}.brand-lockup span{font-size:.86rem}.brand-lockup small{font-size:.64rem}
@@ -315,79 +316,112 @@ h1,h2,h3,.brand-lockup{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans
 <p class="hero-tagline">For all your exterior cleaning needs on the Central Coast, NSW. Tell us what needs washing and send through a quote request.</p>
 <div class="hero-actions"><a class="cta-btn" href="#lbq">Request a quote</a><a class="hero-social" href="https://www.facebook.com/p/Central-Coast-Exterior-Cleaning-61595253272008/" target="_blank" rel="noopener noreferrer">Message on Facebook</a></div>
 </div>
-<figure class="hero-art rv" aria-labelledby="wash-scene-caption">
-<svg viewBox="0 0 720 590" role="img" aria-labelledby="wash-scene-title wash-scene-desc" xmlns="http://www.w3.org/2000/svg">
-<title id="wash-scene-title">Pressure washing a coastal home exterior</title>
-<desc id="wash-scene-desc">A detailed perspective illustration of a cleaner using a pressure washer on a house wall, with a clean strip across the wall and driveway.</desc>
+<figure class="hero-art rv" aria-label="Detailed exterior pressure-washing illustration">
+<svg viewBox="0 0 760 650" role="img" aria-labelledby="wash-scene-title wash-scene-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="wash-scene-title">Exterior pressure washing in perspective</title>
+<desc id="wash-scene-desc">A detailed coastal home with weatherboard walls and a paved driveway. A professional pressure-washing lance sends a fan of water across the wall, revealing a bright clean surface beneath salt and grime.</desc>
 <defs>
- <linearGradient id="csky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#8fd8ff"/><stop offset="1" stop-color="#eef9ff"/></linearGradient>
- <linearGradient id="cwall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d5d0bd"/><stop offset="1" stop-color="#aaa68f"/></linearGradient>
- <linearGradient id="cclean" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#dcecf2"/></linearGradient>
- <linearGradient id="cdrive" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#89969c"/><stop offset="1" stop-color="#5c6c73"/></linearGradient>
- <linearGradient id="croof" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#164c72"/><stop offset="1" stop-color="#011f3f"/></linearGradient>
- <filter id="cshadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#011f3f" flood-opacity=".22"/></filter>
+ <linearGradient id="wSky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#72bde4"/><stop offset=".58" stop-color="#d9eff8"/><stop offset="1" stop-color="#f6f4e9"/></linearGradient>
+ <linearGradient id="wWall" x1="0" y1="0" x2="1" y2=".7"><stop stop-color="#777b70"/><stop offset=".45" stop-color="#aaa996"/><stop offset="1" stop-color="#d0cbb6"/></linearGradient>
+ <linearGradient id="wClean" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset=".48" stop-color="#edf6f6"/><stop offset="1" stop-color="#bfd7dc"/></linearGradient>
+ <linearGradient id="wSide" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9ba99f"/><stop offset="1" stop-color="#64766f"/></linearGradient>
+ <linearGradient id="wRoof" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#315e78"/><stop offset=".45" stop-color="#123c5b"/><stop offset="1" stop-color="#011f3f"/></linearGradient>
+ <linearGradient id="wGlass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9f5ff"/><stop offset=".35" stop-color="#72b7d2"/><stop offset=".38" stop-color="#e9fbff"/><stop offset=".55" stop-color="#3c829f"/><stop offset="1" stop-color="#123c5b"/></linearGradient>
+ <linearGradient id="wGround" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#9da9a6"/><stop offset="1" stop-color="#52636a"/></linearGradient>
+ <linearGradient id="wPaveClean" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e5efed"/><stop offset="1" stop-color="#9fb9bd"/></linearGradient>
+ <linearGradient id="wMetal" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#182d39"/><stop offset=".28" stop-color="#e6f4f5"/><stop offset=".45" stop-color="#77939d"/><stop offset=".7" stop-color="#f4ffff"/><stop offset="1" stop-color="#1d3642"/></linearGradient>
+ <linearGradient id="wSpray" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ffffff" stop-opacity=".92"/><stop offset=".45" stop-color="#b8edff" stop-opacity=".6"/><stop offset="1" stop-color="#5cc6ff" stop-opacity="0"/></linearGradient>
+ <radialGradient id="wMist"><stop stop-color="#ffffff" stop-opacity=".85"/><stop offset="1" stop-color="#b8edff" stop-opacity="0"/></radialGradient>
+ <filter id="wShadow" x="-30%" y="-30%" width="170%" height="190%"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#00182e" flood-opacity=".32"/></filter>
+ <filter id="wGrime" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".025 .12" numOctaves="3" seed="8" result="n"/><feColorMatrix in="n" type="saturate" values="0" result="g"/><feBlend in="SourceGraphic" in2="g" mode="multiply"/></filter>
+ <filter id="wConcrete" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".11" numOctaves="2" seed="4" result="n"/><feColorMatrix in="n" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .16 0"/><feBlend in="SourceGraphic" mode="multiply"/></filter>
+ <filter id="wBlur"><feGaussianBlur stdDeviation="7"/></filter>
+ <clipPath id="wFrontClip"><path d="M165 190L575 235v251L165 425Z"/></clipPath>
+ <clipPath id="wDriveClip"><path d="M245 429L604 398 758 650H82Z"/></clipPath>
 </defs>
-<rect width="720" height="590" fill="url(#csky)"/>
-<circle cx="592" cy="92" r="47" fill="#fff7c9" opacity=".88"/>
-<path d="M0 240L86 181l70 42 80-73 84 67 81-48 95 65 82-57 122 71v105H0Z" fill="#6c9cad" opacity=".48"/>
-<path d="M0 276c95-30 159-8 239 5s140 19 228-9 172-18 253 8v91H0Z" fill="#4e89a0" opacity=".42"/>
-<path d="M0 348L720 302v288H0Z" fill="#729b77"/>
-<path d="M0 390L720 338v252H0Z" fill="#87aa82"/>
-<ellipse cx="385" cy="438" rx="277" ry="46" fill="#193c43" opacity=".19"/>
-<g filter="url(#cshadow)">
- <path d="M150 210L455 230v200L150 400Z" fill="url(#cwall)"/>
- <path d="M455 230L610 170v185L455 430Z" fill="#858a78"/>
- <path d="M150 294L455 309v121L150 400Z" fill="url(#cclean)"/>
- <path d="M455 309L610 253v102L455 430Z" fill="#c5d8d7"/>
- <path d="M115 215L275 105l205 113-25 27-305-15Z" fill="url(#croof)"/>
- <path d="M275 105L435 60l205 100-30 30-130 28Z" fill="#023469"/>
- <path d="M115 215L275 105l160-45" fill="none" stroke="#5cc6ff" stroke-width="5"/>
- <path d="M150 230L455 245l155-55" fill="none" stroke="#011f3f" stroke-width="12"/>
- <path d="M176 226v67M204 228v65M408 241v65M434 242v64" stroke="#777b68" stroke-width="5" opacity=".36"/>
- <path d="M176 290c10-29 7-42 17-61M216 292c-6-25 9-34 3-60M420 303c-8-27 5-38 0-62" fill="none" stroke="#60765d" stroke-width="8" opacity=".55"/>
- <path d="M203 249l72 5v58l-72-5Z" fill="#023469"/>
- <path d="M209 255l60 4v46l-60-4Z" fill="#aee6ff"/>
- <path d="M239 257v49M208 280l61 4" stroke="#fff" stroke-width="4"/>
- <path d="M332 255l64 4v139l-64-6Z" fill="#023469"/>
- <path d="M342 267l43 3v120l-43-4Z" fill="#0b78b8"/>
- <circle cx="375" cy="331" r="4" fill="#fff"/>
- <path d="M493 250l73-28v63l-73 29Z" fill="#011f3f"/>
- <path d="M501 253l57-22v46l-57 23Z" fill="#8fd8ff"/>
- <path d="M529 242v46M500 278l58-23" stroke="#fff" stroke-width="3"/>
- <path d="M156 310L449 325" stroke="#5cc6ff" stroke-width="4"/>
+<path d="M5 5h750v640H5Z" fill="url(#wSky)"/>
+<circle cx="625" cy="94" r="50" fill="#fff8d9" opacity=".82"/>
+<path d="M5 240L86 195l62 26 86-72 91 67 86-45 104 62 80-52 85 46 70-26v154H5Z" fill="#729aa1" opacity=".35"/>
+<path d="M5 290c92-24 174-12 249 11 86 26 165 20 247-8 89-30 170-23 254 3v108H5Z" fill="#548a99" opacity=".32"/>
+<path d="M5 360L755 308v342H5Z" fill="#678c70"/>
+<path d="M5 423L755 363v287H5Z" fill="#7e9b78"/>
+<ellipse cx="412" cy="469" rx="303" ry="54" fill="#173c43" opacity=".24" filter="url(#wBlur)"/>
+<g filter="url(#wShadow)">
+ <path d="M165 190L575 235v251L165 425Z" fill="url(#wWall)"/>
+ <path d="M575 235L700 160v235L575 486Z" fill="url(#wSide)"/>
+ <g clip-path="url(#wFrontClip)">
+  <path d="M150 185H590V445H150Z" fill="#777b70" opacity=".26" filter="url(#wGrime)"/>
+  <path d="M337 207L595 235v275L337 447Z" fill="url(#wClean)"/>
+  <path d="M337 207L365 211v240l-28-4Z" fill="#d7f5fa" opacity=".72"/>
+  <g fill="none" stroke="#344c48" stroke-width="3" opacity=".3">
+   <path d="M150 217L590 265M150 246L590 294M150 275L590 323M150 304L590 352M150 333L590 381M150 362L590 410M150 391L590 439M150 420L590 468"/>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-width="2" opacity=".72">
+   <path d="M340 249L584 275M340 278L584 304M340 307L584 333M340 336L584 362M340 365L584 391M340 394L584 420M340 423L584 449"/>
+  </g>
+  <g stroke="#435f50" stroke-linecap="round" opacity=".52">
+   <path d="M183 204l5 105M202 210l-4 74M229 209l9 129M262 222l-3 86M294 218l8 105M318 226l-3 83" stroke-width="7"/>
+   <path d="M191 315l-5 82M237 318l6 94M284 326l-4 71M313 327l7 105" stroke-width="4"/>
+  </g>
+  <g stroke="#8cdcff" stroke-linecap="round" opacity=".7">
+   <path d="M381 261l2 132M407 280l-3 143M439 265l4 110M493 283l-2 153M541 280l4 131" stroke-width="3"/>
+  </g>
+ </g>
+ <path d="M125 187L322 75l288 145-35 29-410-44Z" fill="url(#wRoof)"/>
+ <path d="M322 75L475 35l260 110-35 32-90 43Z" fill="#023469"/>
+ <path d="M125 187L322 75l153-40" fill="none" stroke="#6bb7d8" stroke-width="5"/>
+ <path d="M165 205L575 249l125-72" fill="none" stroke="#011f3f" stroke-width="15"/>
+ <path d="M165 211L575 255l125-72" fill="none" stroke="#6b8b96" stroke-width="3" opacity=".75"/>
+ <path d="M209 239l103 11v91l-103-12Z" fill="#f4fbf8"/>
+ <path d="M218 248l86 9v73l-86-10Z" fill="url(#wGlass)"/>
+ <path d="M261 253v73M218 285l86 9" stroke="#eaf7f6" stroke-width="5"/>
+ <path d="M218 248l86 9" stroke="#ffffff" stroke-width="3"/>
+ <path d="M415 261l105 12v112l-105-13Z" fill="#f8ffff"/>
+ <path d="M425 272l85 10v91l-85-11Z" fill="url(#wGlass)"/>
+ <path d="M468 277v91M425 317l85 10" stroke="#f3ffff" stroke-width="5"/>
+ <path d="M608 259l59-36v83l-59 37Z" fill="#eaf7f5"/>
+ <path d="M616 260l43-26v64l-43 27Z" fill="url(#wGlass)"/>
+ <path d="M638 247v65M616 292l43-27" stroke="#f5ffff" stroke-width="4"/>
+ <path d="M335 210L337 447" stroke="#5cc6ff" stroke-width="4" opacity=".8"/>
 </g>
-<path d="M300 406L486 386 674 590H128Z" fill="url(#cdrive)"/>
-<path d="M349 404L443 394 544 590H258Z" fill="#d9e7e9"/>
-<path d="M352 404L258 590M443 394L544 590M390 400L396 590" stroke="#9fb7ba" stroke-width="3"/>
-<path d="M321 434L500 429M283 485L551 482M223 553L613 551" stroke="#829a9e" stroke-width="3"/>
-<path d="M351 407L443 397" stroke="#fff" stroke-width="5"/>
-<g transform="translate(24 12)">
- <ellipse cx="92" cy="495" rx="74" ry="19" fill="#173c43" opacity=".24"/>
- <rect x="40" y="424" width="62" height="56" rx="8" fill="#023469"/>
- <rect x="50" y="434" width="42" height="25" rx="4" fill="#5cc6ff"/>
- <circle cx="52" cy="485" r="13" fill="#0b1d31"/><circle cx="94" cy="485" r="13" fill="#0b1d31"/>
- <path d="M102 449c52 15 20 74 91 40s56-114 105-139" fill="none" stroke="#172c37" stroke-width="6"/>
- <circle cx="120" cy="292" r="25" fill="#b87955"/>
- <path d="M96 286c5-30 47-34 52 2l-52 3Z" fill="#011f3f"/>
- <path d="M99 317l43-5 24 85-67 4Z" fill="#023469"/>
- <path d="M105 322l17 1 8 65-24 1Z" fill="#5cc6ff"/>
- <path d="M102 390l27 2-12 83-28 1ZM137 390l27-3 25 77-27 8Z" fill="#152f45"/>
- <path d="M87 474h33l-2 14H78c-7-6-1-12 9-14ZM162 466l29-6 12 13-35 12c-10-3-12-11-6-19Z" fill="#0b1d31"/>
- <path d="M135 327l36 29 48-33" fill="none" stroke="#b87955" stroke-width="14" stroke-linecap="round"/>
- <path d="M112 330l25 42 51-30" fill="none" stroke="#b87955" stroke-width="13" stroke-linecap="round"/>
- <path d="M176 352l88-69" stroke="#263c49" stroke-width="8" stroke-linecap="round"/>
- <path d="M253 291l31-27" stroke="#011f3f" stroke-width="10" stroke-linecap="round"/>
+<path d="M245 429L604 398 758 650H82Z" fill="url(#wGround)" filter="url(#wConcrete)"/>
+<path d="M382 419L534 406 662 650H276Z" fill="url(#wPaveClean)"/>
+<g clip-path="url(#wDriveClip)" fill="none" stroke="#40575e" stroke-width="3" opacity=".52">
+ <path d="M245 429L82 650M337 420L276 650M430 412L454 650M520 404L625 650M604 398L758 650"/>
+ <path d="M183 483L652 471M145 544L697 538M105 615L741 615"/>
 </g>
+<path d="M382 419L534 406" stroke="#f7ffff" stroke-width="6"/>
+<path d="M390 432L538 420" stroke="#8fd8ff" stroke-width="3" opacity=".8"/>
+<g opacity=".9">
+ <path d="M35 497c18-88 42-128 72-154-6 60-22 106-45 151 23-67 57-106 94-125-21 51-49 94-83 131 40-45 74-61 111-67-35 33-71 57-110 76Z" fill="#214f48"/>
+ <path d="M30 506c45-31 90-40 137-31-37 14-74 25-112 32Z" fill="#123c3c"/>
+ <path d="M699 453c-8-54 2-95 28-128 5 42 0 83-14 123 16-36 29-53 42-60v107Z" fill="#315f50"/>
+</g>
+<ellipse cx="129" cy="585" rx="100" ry="24" fill="#102c36" opacity=".3"/>
+<path d="M30 589c43-33 63-77 104-104 48-32 83-22 122-69" fill="none" stroke="#142b36" stroke-width="10"/>
+<path d="M31 589c43-33 63-77 104-104 48-32 83-22 122-69" fill="none" stroke="#4b6871" stroke-width="3"/>
+<path d="M71 563L302 323" stroke="#102732" stroke-width="20" stroke-linecap="round"/>
+<path d="M78 556L309 316" stroke="url(#wMetal)" stroke-width="12" stroke-linecap="round"/>
+<path d="M65 570l-21 33" stroke="#011f3f" stroke-width="31" stroke-linecap="round"/>
+<path d="M62 568l-18 29" stroke="#315163" stroke-width="8" stroke-linecap="round"/>
+<path d="M291 334l41-43" stroke="#0b1d31" stroke-width="18" stroke-linecap="round"/>
+<path d="M326 298l18-17" stroke="#d9f5ff" stroke-width="7" stroke-linecap="round"/>
+<path d="M340 285L514 208 540 405Z" fill="url(#wSpray)" opacity=".52" filter="url(#wBlur)"/>
+<ellipse cx="454" cy="312" rx="128" ry="124" fill="url(#wMist)" opacity=".56"/>
 <g fill="none" stroke-linecap="round">
- <path d="M300 277L393 246M301 279l112-10M301 281l107 31M299 277l69-58M301 282l72 61" stroke="#e8fbff" stroke-width="6" opacity=".92"/>
- <path d="M304 278L414 258M305 282l107 43M301 276l63-72" stroke="#5cc6ff" stroke-width="3"/>
- <path d="M348 255v45M370 249v49M392 253v38" stroke="#fff" stroke-width="3" opacity=".75"/>
+ <path d="M340 285Q411 247 510 218M341 286Q433 269 531 263M341 287Q434 299 538 315M340 289Q423 337 530 390" stroke="#f4ffff" stroke-width="6" opacity=".86"/>
+ <path d="M342 283Q424 231 486 218M344 287Q449 278 528 282M342 290Q428 332 504 378" stroke="#8fd8ff" stroke-width="3"/>
+ <path d="M349 289Q405 307 468 352M348 282Q400 254 457 239" stroke="#ffffff" stroke-width="2"/>
 </g>
-<g fill="#e8fbff"><circle cx="394" cy="231" r="5"/><circle cx="424" cy="273" r="4"/><circle cx="374" cy="332" r="5"/><circle cx="339" cy="226" r="4"/></g>
-<path d="M477 345l6 13 14 2-10 10 3 14-13-7-13 7 3-14-10-10 14-2Z" fill="#fff"/>
-<path d="M205 345l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1Z" fill="#5cc6ff"/>
+<g fill="#e9fbff">
+ <circle cx="493" cy="222" r="5"/><circle cx="521" cy="245" r="4"/><circle cx="482" cy="253" r="3"/><circle cx="531" cy="304" r="5"/><circle cx="501" cy="344" r="4"/><circle cx="519" cy="383" r="5"/><circle cx="459" cy="363" r="3"/><circle cx="428" cy="237" r="4"/>
+</g>
+<g fill="none" stroke="#ffffff" stroke-linecap="round" opacity=".9">
+ <path d="M504 232l-4 58M474 244l3 36M518 321l-3 66M455 336l4 62M489 355l-2 49" stroke-width="3"/>
+</g>
+<path d="M562 369l5 12 13 2-9 9 2 13-11-6-12 6 3-13-10-9 13-2Z" fill="#ffffff" opacity=".92"/>
+<path d="M380 397l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1Z" fill="#5cc6ff"/>
 </svg>
-<figcaption class="hero-caption" id="wash-scene-caption"><span>Exterior cleaning</span><span>Central Coast, NSW</span></figcaption>
 </figure>
 </div>
 </section>
