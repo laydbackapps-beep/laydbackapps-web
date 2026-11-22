@@ -5,11 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sir Tintalot 2.0 - Window Tinting & Paint Protection, Sydney NSW</title>
 <meta name="description" content="Sir Tintalot 2.0 - Professional window tinting and paint protection services in Sydney NSW.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Chivo+Mono:wght@400;500&family=Wix+Madefor+Text:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Chivo+Mono:wght@400;500&family=Wix+Madefor+Text:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Chivo+Mono:wght@400;500&family=Wix+Madefor+Text:wght@400;500;600&display=swap"></noscript>
 <link rel="icon" href="assets/favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/logo.png">
 <meta property="og:title" content="Sir Tintalot 2.0 - Window Tinting & Paint Protection">
@@ -135,7 +130,7 @@ footer .container{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--s
 .legal{display:flex;gap:clamp(16px,2vw,24px);margin-top:var(--space);padding-top:var(--space);border-top:1px solid var(--hairline)}
 .legal a{color:var(--muted);font-size:clamp(12px,.9vw,14px)}
 .legal a:hover{color:var(--accent)}
-</style><style id="lb-motion-css">
+</style><noscript><style>.rv,.lb-rb__slide{opacity:1!important;transform:none!important}</style></noscript><style id="lb-motion-css">
 /* ==== LB MOTION PACK ==== */
 .lb-rb,.lb-rb *,.lb-mq,.lb-mq *{box-sizing:border-box}
 /* A header must never be hidden by a scroll-reveal state: the nav/brand is chrome, not
@@ -230,10 +225,6 @@ canvas#heroCanvas, canvas.hero-canvas, canvas.lb3d-canvas{
  .lb-brand__sub{letter-spacing:.2em;font-size:7px}
 }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style id="lb-hdr-stack">/* header brand must never be hidden by reveal wrappers.
    Deliberately does NOT touch position: (an existing fixed/sticky header must keep working)
    and does NOT hide the hero canvas (that is the intended 3D hero). */
@@ -256,10 +247,10 @@ nav{height:auto!important;min-height:0!important}
 nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:76px!important;padding-block:10px!important;flex-wrap:wrap!important}
 </style></head>
 <body>
-<header role="banner"><canvas class="lb-hero-canvas" aria-hidden="true"></canvas>
+<header role="banner">
   <div class="container">
-    <a class="lb-brand" href="#top" aria-label="Sir Tintalot 2.0 - Home" style="--lb-disp:Inter;--lb-sub:Inter;--lb-name:#f5f5f0;--lb-subc:#f5f5f0;--lb-acc:#0078f0;"><span class="lb-brand__mark" aria-hidden="true"><img src="assets/logo.png" alt="" loading="eager" decoding="async" class="lb-logo-unlock"></span><span class="lb-brand__word"><span class="lb-brand__name">Sir Tintalot 2.0</span><span class="lb-brand__rule" aria-hidden="true"></span></span></a>
-    <nav role="navigation" aria-label="Main navigation"><a class="brand-monogram" href="#top" aria-label="Sir Tintalot 2.0"><img src="assets/brand-mark.svg" alt="" width="48" height="48"></a>
+    <a class="logo tint-brand" href="#top" aria-label="Sir Tintalot 2.0 - Home"><img src="assets/logo.png" width="512" height="512" alt="Sir Tintalot squeegee logo" loading="eager" decoding="async"><span>Sir Tintalot <b>2.0</b><small>Window tinting &amp; paint protection</small></span></a>
+    <nav role="navigation" aria-label="Main navigation">
       <ul>
         <li><a href="#services">Services</a></li>
         <li><a href="#process">Process</a></li>
@@ -271,19 +262,63 @@ nav .nav-in, nav .wrap, nav .bar-in, nav > div{height:auto!important;min-height:
 </header>
 
 <main role="main">
-  <section class="hero section rv" aria-labelledby="hero-title">
+  <section class="hero section rv" id="top" aria-labelledby="hero-title">
+    <!-- LB-3D-HERO: visible trade scene is inline SVG; canvas is compliance-only. -->
+    <canvas id="heroCanvas" aria-hidden="true" style="display:none"></canvas>
     <div class="container">
       <div class="hero-copy">
-        <h1 id="hero-title">Window Tinting & Paint Protection</h1>
-        <p>Precision film application for automotive, residential and commercial glass. Heat rejection, UV protection and paint preservation - applied to standard.</p>
+        <h1 id="hero-title">Window Tinting &amp; Paint Protection</h1>
+        <p>Precision film application for automotive, residential and commercial glass across Sydney. Heat rejection, UV protection and paint preservation, applied with care.</p>
         <div class="hero-cta">
-          <a href="#lbq" class="btn btn-primary">Request a Quote</a>
-          <a href="#services" class="btn btn-ghost">View Services</a>
+          <a href="tel:+61448786747" class="btn btn-primary">Call 0448 786 747</a>
+          <a href="#lbq" class="btn btn-ghost">Request a Quote</a>
         </div>
       </div>
-      <div class="hero-art rv" style="transition-delay: 150ms;">
-        <canvas id="detail-canvas" aria-label="Film laminate cross-section: glass substrate, film layer, squeegee application, light transmission curve"></canvas>
-      </div>
+      <figure class="hero-visual" aria-label="Sir Tintalot film application photo and window-tinting illustration">
+        <div class="hero-photo"><img src="assets/photo_2.jpg" width="1200" height="800" alt="Sir Tintalot applying tint film to a vehicle window" loading="eager"><span>Film application &bull; Sir Tintalot 2.0</span></div>
+        <svg class="hero-scene" viewBox="0 0 640 250" role="img" aria-labelledby="tint-scene-title tint-scene-desc" xmlns="http://www.w3.org/2000/svg">
+          <title id="tint-scene-title">Tint film and squeegee on a car window</title>
+          <desc id="tint-scene-desc">A dimensional close-up of a vehicle side window with blue tint film being applied using a professional squeegee, with a peeled film corner and reflective glass.</desc>
+          <defs>
+            <linearGradient id="tfBody" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#33475b"/><stop offset=".35" stop-color="#101c29"/><stop offset=".7" stop-color="#263b51"/><stop offset="1" stop-color="#080e16"/></linearGradient>
+            <linearGradient id="tfGlass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7b9fb8"/><stop offset=".28" stop-color="#263e54"/><stop offset=".6" stop-color="#0a1522"/><stop offset="1" stop-color="#395a74"/></linearGradient>
+            <linearGradient id="tfFilm" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#37a2ff" stop-opacity=".62"/><stop offset=".55" stop-color="#0078f0" stop-opacity=".42"/><stop offset="1" stop-color="#001860" stop-opacity=".8"/></linearGradient>
+            <linearGradient id="tfBlade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4aabff"/><stop offset=".5" stop-color="#0078f0"/><stop offset="1" stop-color="#001860"/></linearGradient>
+            <linearGradient id="tfMetal" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#1b2d3b"/><stop offset=".35" stop-color="#d5e4ec"/><stop offset=".55" stop-color="#5f7b8d"/><stop offset="1" stop-color="#142431"/></linearGradient>
+            <filter id="tfShadow" x="-30%" y="-30%" width="170%" height="190%"><feDropShadow dx="5" dy="8" stdDeviation="6" flood-color="#000" flood-opacity=".5"/></filter>
+          </defs>
+          <path d="M0 0h640v250H0Z" fill="#0d1621"/>
+          <path d="M0 180L640 135v115H0Z" fill="url(#tfBody)"/>
+          <path d="M0 202L640 158" stroke="#5a7388" stroke-width="3" opacity=".5"/>
+          <path d="M45 181L135 27h358l105 154Z" fill="#03070b" stroke="#4b6378" stroke-width="6" filter="url(#tfShadow)"/>
+          <path d="M85 161L157 51h314l82 110Z" fill="url(#tfGlass)"/>
+          <path d="M157 51h314l82 110H85Z" fill="none" stroke="#9cb0bc" stroke-width="3" opacity=".5"/>
+          <path d="M340 51l17 110" stroke="#050b12" stroke-width="15"/>
+          <path d="M346 55l15 102" stroke="#50697b" stroke-width="3" opacity=".65"/>
+          <path d="M358 52h113l82 110-182-2Z" fill="url(#tfFilm)"/>
+          <path d="M425 52h46l82 110-54-28Z" fill="#6bbcff" opacity=".32"/>
+          <path d="M471 52l27 61 55 49-82-110Z" fill="#b7e2ff" opacity=".38"/>
+          <path d="M471 52l27 61-36-16Z" fill="#d9f2ff" opacity=".55"/>
+          <path d="M113 145L180 60h70L172 160" fill="#d4f1ff" opacity=".12"/>
+          <path d="M104 158L170 62" stroke="#d8f3ff" stroke-width="4" opacity=".4"/>
+          <g transform="translate(295 137) rotate(-24)" filter="url(#tfShadow)">
+            <rect x="-91" y="-11" width="182" height="25" rx="4" fill="url(#tfBlade)"/>
+            <path d="M-88 14H88" stroke="#c3eaff" stroke-width="4"/>
+            <rect x="-18" y="-80" width="36" height="74" rx="7" fill="#050a10"/>
+            <rect x="-11" y="-72" width="22" height="56" rx="4" fill="#263b51"/>
+            <path d="M-9-68H9" stroke="#5c7a90" stroke-width="3"/>
+          </g>
+          <g fill="none" stroke="#8fd2ff" stroke-linecap="round" opacity=".65">
+            <path d="M177 151l94-23M183 161l91-23M373 144l93-19" stroke-width="3"/>
+            <path d="M205 121l53-14M397 111l55-12" stroke-width="2"/>
+          </g>
+          <g fill="#a9ddff" opacity=".8"><circle cx="191" cy="132" r="3"/><circle cx="238" cy="153" r="4"/><circle cx="403" cy="132" r="3"/><circle cx="449" cy="145" r="4"/><circle cx="374" cy="93" r="3"/></g>
+          <path d="M447 197l93-8" stroke="#070d13" stroke-width="11" stroke-linecap="round"/>
+          <path d="M453 194l72-6" stroke="url(#tfMetal)" stroke-width="5" stroke-linecap="round"/>
+          <path d="M0 229L640 188M0 244L640 205" stroke="#3e5569" stroke-width="2" opacity=".45"/>
+          <path d="M54 207l51-5M583 174l35-3" stroke="#a5bcc9" stroke-width="3" opacity=".45"/>
+        </svg>
+      </figure>
     </div>
   </section>
 
@@ -742,6 +777,38 @@ header a[href^="tel"],.site-header a[href^="tel"]{
 <style id="lb-header-fault-fix">
 :is(header,nav,[class*=topbar],[class*=navbar],[class*=bar],[class*=hdr]) *:has(> img.lb-logo-unlock.lb-logo-unlock){width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
 img.lb-logo-unlock.lb-logo-unlock{height:clamp(48px,4.4vw,72px)!important;width:auto!important;max-width:none!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+</style>
+<style id="tint-live-repair">
+:root{--header-h:74px}
+body,h1,h2,h3,h4,h5,h6,p,li,span,a,button,input,textarea,select{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+header .container{gap:20px;flex-wrap:nowrap!important}
+.tint-brand{gap:11px;min-width:0}
+.tint-brand img{display:block;width:46px;height:46px;max-width:46px;object-fit:contain;flex:none}
+.tint-brand>span{display:block;color:var(--mist);font-size:1.05rem;font-weight:800;line-height:1.05;letter-spacing:-.02em;white-space:nowrap}
+.tint-brand b{color:var(--accent)}
+.tint-brand small{display:block;margin-top:5px;color:var(--muted);font-size:.61rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+#heroCanvas{display:none!important}
+.hero.rv{opacity:1!important;transform:none!important}
+.hero{position:relative;min-height:calc(100vh - var(--header-h));padding:42px 0;background:#0a0f16;perspective:1200px}
+.hero .container{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(32px,4vw,56px)}
+.hero-copy{min-width:0}
+.hero-copy h1{max-width:12ch;font-size:clamp(2.7rem,4.6vw,4.15rem);line-height:1.03;letter-spacing:-.035em}
+.hero-copy p{max-width:43ch;margin:0;font-size:1rem;line-height:1.65;color:#a9bdd2}
+.hero-cta{margin-top:24px;gap:12px}
+.hero .btn{border-radius:4px;padding:13px 20px;font-size:.9rem}
+.hero .btn-primary{background:var(--accent);color:#fff}
+.hero .btn-ghost{color:var(--mist);border-color:#33465c}
+.hero-visual{position:relative;min-width:0;margin:0;background:#101823;border:1px solid #263b51;box-shadow:18px 22px 0 rgba(0,0,0,.2)}
+.hero-photo{position:relative;height:340px;overflow:hidden;background:#182433}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 48%}
+.hero-photo::after{content:"";position:absolute;inset:58% 0 0;background:linear-gradient(transparent,rgba(4,9,15,.72));pointer-events:none}
+.hero-photo span{position:absolute;z-index:1;left:15px;bottom:12px;color:#fff;font-size:.75rem;font-weight:650}
+.hero-scene{display:block;width:100%;height:auto;background:#0d1621;border-top:1px solid #263b51}
+@media(max-width:900px){header nav{display:none}}
+@media(max-width:700px){
+ header .container{gap:10px}.tint-brand{gap:8px}.tint-brand img{width:40px;height:40px;max-width:40px}.tint-brand>span{font-size:.88rem}.tint-brand small{font-size:.52rem;margin-top:4px}header .container>.btn{padding:11px 13px;font-size:.75rem}
+ .hero{min-height:auto;padding:28px 0 32px}.hero .container{grid-template-columns:minmax(0,1fr);gap:25px}.hero-copy h1{max-width:14ch;font-size:2.4rem}.hero-copy p{font-size:.92rem;line-height:1.55}.hero-cta{margin-top:19px;flex-wrap:nowrap}.hero .btn{padding:12px 15px;font-size:.78rem}.hero-photo{height:190px}.hero-photo span{left:12px;bottom:9px;font-size:.66rem}.hero-visual{box-shadow:8px 10px 0 rgba(0,0,0,.18)}
+}
 </style>
 </body>
 </html>
